@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E📝%3C/text%3E%3C/svg%3E" />
+<title>성글벙글 콘텐츠 허브</title>
+<style>
+  :root{
+    --bg:#f5f6f8; --panel:#ffffff; --panel-2:#fafbfc; --line:#e3e6ea;
+    --text:#1b1f24; --muted:#606a76; --accent:#1f6feb; --accent-soft:#e8f0fe;
+    --ok:#1a7f37; --warn:#9a6700; --radius:12px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0f1216; --panel:#171b21; --panel-2:#1d222a; --line:#2b323c;
+      --text:#e6e9ee; --muted:#9aa4b2; --accent:#589bff; --accent-soft:#16304f;
+      --ok:#57ab5a; --warn:#d4a72c;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0f1216; --panel:#171b21; --panel-2:#1d222a; --line:#2b323c;
+    --text:#e6e9ee; --muted:#9aa4b2; --accent:#589bff; --accent-soft:#16304f;
+    --ok:#57ab5a; --warn:#d4a72c;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;
+    line-height:1.7; -webkit-text-size-adjust:100%;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:20px 16px 80px}
+
+  header.hero{
+    background:var(--panel); border:1px solid var(--line); border-radius:var(--radius);
+    padding:22px 20px; margin-bottom:16px;
+  }
+  .brand{font-size:13px;letter-spacing:.08em;color:var(--muted);font-weight:700;margin:0 0 6px}
+  .datestamp{
+    display:inline-block;background:var(--accent-soft);color:var(--accent);
+    font-weight:700;font-size:13px;padding:4px 10px;border-radius:999px;margin-bottom:10px;
+  }
+  h1.topic{font-size:22px;line-height:1.4;margin:6px 0 10px;word-break:keep-all}
+  .summary{color:var(--muted);font-size:14px;margin:0 0 14px;word-break:keep-all}
+  .kw{display:flex;flex-wrap:wrap;gap:6px}
+  .kw span{font-size:12px;color:var(--muted);background:var(--panel-2);border:1px solid var(--line);border-radius:6px;padding:2px 8px}
+  .counts{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .counts b{
+    font-size:12px;font-weight:700;background:var(--panel-2);border:1px solid var(--line);
+    border-radius:8px;padding:6px 10px;color:var(--muted)
+  }
+  .counts b i{font-style:normal;color:var(--text)}
+
+  nav.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;margin-bottom:14px;-webkit-overflow-scrolling:touch}
+  nav.tabs button{
+    flex:0 0 auto;background:var(--panel);color:var(--muted);border:1px solid var(--line);
+    border-radius:999px;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer;
+    font-family:inherit;white-space:nowrap;
+  }
+  nav.tabs button[aria-selected="true"]{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+  section.panel{display:none}
+  section.panel.active{display:block}
+
+  article.card{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    padding:18px 18px 20px;margin-bottom:14px;
+  }
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap}
+  .card-title{font-size:17px;font-weight:700;margin:0;word-break:keep-all;flex:1 1 260px}
+  .badge{font-size:11px;font-weight:700;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:3px 8px;white-space:nowrap}
+  .badge.ok{color:var(--ok);border-color:var(--ok)}
+  .hook{color:var(--muted);font-size:14px;margin:8px 0 0;word-break:keep-all}
+  .meta-desc{
+    font-size:13px;color:var(--muted);background:var(--panel-2);border:1px solid var(--line);
+    border-left:3px solid var(--accent);border-radius:8px;padding:10px 12px;margin:10px 0 0;word-break:keep-all
+  }
+  .btnrow{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 0}
+  .btnrow button{
+    background:var(--panel-2);color:var(--text);border:1px solid var(--line);border-radius:8px;
+    padding:7px 14px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;
+  }
+  .btnrow button:hover{border-color:var(--accent);color:var(--accent)}
+  .body{
+    display:none;white-space:pre-wrap;word-break:break-word;background:var(--panel-2);
+    border:1px solid var(--line);border-radius:8px;padding:16px;margin-top:12px;font-size:14.5px;line-height:1.85
+  }
+  .body.open{display:block}
+  .tagline{margin-top:10px;font-size:12px;color:var(--muted);word-break:break-word}
+
+  table.plan{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px;display:none}
+  table.plan.open{display:table}
+  .planwrap{overflow-x:auto}
+  table.plan th,table.plan td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top;word-break:keep-all}
+  table.plan th{background:var(--panel-2);color:var(--muted);font-size:12px;white-space:nowrap}
+
+  .slides{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:14px}
+  .slide{background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:12px;min-height:120px}
+  .slide .n{font-size:11px;color:var(--accent);font-weight:700}
+  .slide .h{font-size:14px;font-weight:700;margin:4px 0 6px;word-break:keep-all}
+  .slide ul{margin:0;padding-left:16px}
+  .slide li{font-size:12.5px;color:var(--muted);word-break:keep-all;line-height:1.6}
+
+  table.facts{width:100%;border-collapse:collapse;font-size:13.5px}
+  table.facts th,table.facts td{border:1px solid var(--line);padding:9px 10px;text-align:left;word-break:keep-all}
+  table.facts th{background:var(--panel-2);color:var(--muted);white-space:nowrap;width:36%}
+  .note{font-size:13px;color:var(--warn);background:var(--panel-2);border:1px solid var(--line);border-left:3px solid var(--warn);border-radius:8px;padding:10px 12px;margin:12px 0}
+  .srcs{margin:14px 0 0;padding-left:18px;font-size:13px}
+  .srcs li{margin-bottom:6px;word-break:break-all}
+  .srcs a{color:var(--accent)}
+
+  .hist{border-left:2px solid var(--line);padding-left:16px;margin-left:6px}
+  .hist .item{position:relative;padding-bottom:16px}
+  .hist .item::before{content:"";position:absolute;left:-22px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+  .hist .d{font-size:12px;color:var(--accent);font-weight:700}
+  .hist .t{font-size:15px;font-weight:600;margin:2px 0 4px;word-break:keep-all}
+  .hist .k{font-size:12px;color:var(--muted);word-break:keep-all}
+
+  footer{margin-top:24px;text-align:center;font-size:12px;color:var(--muted)}
+  .toast{
+    position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--text);color:var(--bg);
+    padding:10px 18px;border-radius:999px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .2s
+  }
+  .toast.show{opacity:1}
+  @media (max-width:520px){
+    h1.topic{font-size:19px}
+    .wrap{padding:14px 12px 60px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <p class="brand">성글벙글 콘텐츠 허브</p>
+    <span class="datestamp" id="datestamp">—</span>
+    <h1 class="topic" id="topic">불러오는 중…</h1>
+    <p class="summary" id="summary"></p>
+    <div class="kw" id="keywords"></div>
+    <div class="counts" id="counts"></div>
+  </header>
+
+  <nav class="tabs" id="tabs" role="tablist"></nav>
+
+  <section class="panel" id="p-naver"></section>
+  <section class="panel" id="p-tistory"></section>
+  <section class="panel" id="p-cardnews"></section>
+  <section class="panel" id="p-fact"></section>
+  <section class="panel" id="p-history"></section>
+
+  <footer>
+    매일 오전 9시(KST) 갱신 · 고정 링크 유지<br>
+    <span id="built"></span>
+  </footer>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="./format-rules.js"></script>
+<script src="./content-data.js"></script>
+<script>
+(function(){
+  var D = CONTENT_DATA, R = FORMAT_RULES;
+  var esc = function(s){ return String(s==null?"":s).replace(/[&<>"']/g, function(c){
+    return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); };
+  var el = function(id){ return document.getElementById(id); };
+
+  // ---- 헤더 ----
+  el("datestamp").textContent = D.dateLabel || D.date;
+  el("topic").textContent = D.topic;
+  el("summary").textContent = D.summary || "";
+  el("keywords").innerHTML = (D.keywords||[]).map(function(k){
+    return "<span>#"+esc(k)+"</span>"; }).join("");
+  el("counts").innerHTML =
+    '<b>네이버 <i>'+D.naver.length+'편</i></b>' +
+    '<b>티스토리 <i>'+D.tistory.length+'편</i></b>' +
+    '<b>카드뉴스 <i>'+D.cardnews.length+'세트</i></b>' +
+    '<b>카드 <i>'+D.cardnews.reduce(function(a,s){return a+s.slides.length;},0)+'장</i></b>' +
+    '<b>이미지 기획 <i>'+D.naver.concat(D.tistory).reduce(function(a,p){return a+p.imagePlan.length;},0)+'개</i></b>';
+  el("built").textContent = "데이터 기준일 " + D.date;
+
+  // ---- 원고 카드 ----
+  function planTable(id, plans){
+    return '<div class="planwrap"><table class="plan" id="plan-'+id+'">'+
+      '<thead><tr><th>#</th><th>위치</th><th>이미지 콘셉트</th><th>삽입 문구</th></tr></thead><tbody>'+
+      plans.map(function(p){
+        return "<tr><td>"+p.no+"</td><td>"+esc(p.position)+"</td><td>"+esc(p.concept)+"</td><td>"+esc(p.text)+"</td></tr>";
+      }).join("")+"</tbody></table></div>";
+  }
+
+  function postCard(p, cfg){
+    var len = String(p.body).length;
+    var inRange = len >= cfg.bodyChars.min && len <= cfg.bodyChars.max;
+    return '<article class="card">'+
+      '<div class="card-top">'+
+        '<h2 class="card-title">'+esc(p.title)+'</h2>'+
+        '<span class="badge '+(inRange?"ok":"")+'">'+len.toLocaleString()+'자</span>'+
+      '</div>'+
+      (p.hook ? '<p class="hook">'+esc(p.hook)+'</p>' : '')+
+      (p.metaDescription ? '<p class="meta-desc"><strong>메타 설명</strong><br>'+esc(p.metaDescription)+'</p>' : '')+
+      '<div class="btnrow">'+
+        '<button data-toggle="body-'+p.id+'">본문 보기</button>'+
+        '<button data-toggle="plan-'+p.id+'">이미지 기획 8개</button>'+
+        '<button data-copy="'+p.id+'">본문 복사</button>'+
+        '<button data-copytitle="'+p.id+'">제목 복사</button>'+
+      '</div>'+
+      '<div class="body" id="body-'+p.id+'">'+esc(p.body)+'</div>'+
+      planTable(p.id, p.imagePlan)+
+      '<p class="tagline">태그 · '+(p.tags||[]).map(function(t){return "#"+esc(t);}).join(" ")+'</p>'+
+    '</article>';
+  }
+
+  el("p-naver").innerHTML   = D.naver.map(function(p){ return postCard(p, R.naver); }).join("");
+  el("p-tistory").innerHTML = D.tistory.map(function(p){ return postCard(p, R.tistory); }).join("");
+
+  // ---- 카드뉴스 ----
+  el("p-cardnews").innerHTML = D.cardnews.map(function(s){
+    return '<article class="card">'+
+      '<div class="card-top">'+
+        '<h2 class="card-title">'+esc(s.title)+'</h2>'+
+        '<span class="badge ok">'+s.slides.length+'장</span>'+
+      '</div>'+
+      '<p class="hook">'+esc(s.purpose||"")+'</p>'+
+      '<div class="slides">'+ s.slides.map(function(c){
+        return '<div class="slide"><div class="n">'+c.no+' / '+s.slides.length+'</div>'+
+          '<div class="h">'+esc(c.headline)+'</div><ul>'+
+          c.lines.map(function(l){ return "<li>"+esc(l)+"</li>"; }).join("")+
+          '</ul></div>';
+      }).join("") +'</div>'+
+    '</article>';
+  }).join("");
+
+  // ---- MASTER FACT ----
+  var mf = D.masterFact;
+  el("p-fact").innerHTML = '<article class="card">'+
+    '<div class="card-top"><h2 class="card-title">MASTER FACT</h2>'+
+    '<span class="badge ok">'+mf.facts.length+'개 항목</span></div>'+
+    '<p class="hook">모든 플랫폼 원고는 이 표의 값과 일치해야 한다. 하루 한 번만 작성한다.</p>'+
+    (mf.caution ? '<p class="note">⚠ '+esc(mf.caution)+'</p>' : '')+
+    '<div class="planwrap"><table class="facts"><tbody>'+
+      mf.facts.map(function(f){
+        return "<tr><th>"+esc(f.label)+"</th><td>"+esc(f.value)+
+          (f.status ? ' <span class="badge">'+esc(f.status)+'</span>' : '')+"</td></tr>";
+      }).join("")+
+    '</tbody></table></div>'+
+    '<p class="tagline" style="margin-top:14px"><strong>확인 경로</strong> · '+esc(mf.verifiedBy||"")+'</p>'+
+    '<ol class="srcs">'+ (mf.sources||[]).map(function(s){
+      return "<li><strong>"+esc(s.org)+"</strong> — "+esc(s.title)+
+        '<br><a href="'+esc(s.url)+'" target="_blank" rel="noopener">'+esc(s.url)+"</a>"+
+        (s.note ? "<br><span style=\"color:var(--muted)\">"+esc(s.note)+"</span>" : "")+"</li>";
+    }).join("") +'</ol>'+
+  '</article>';
+
+  // ---- 이력 ----
+  var histEl = el("p-history");
+  histEl.innerHTML = '<article class="card"><h2 class="card-title">지난 발행 이력</h2>'+
+    '<p class="hook">중복 주제·제목을 막기 위한 경량 이력이다. 원고 본문은 담지 않는다.</p>'+
+    '<div class="hist" id="histlist"><p class="k">불러오는 중…</p></div></article>';
+
+  fetch("./content-history.json", {cache:"no-store"})
+    .then(function(r){ return r.json(); })
+    .then(function(h){
+      var items = (h.entries||[]).slice().sort(function(a,b){ return b.date.localeCompare(a.date); });
+      el("histlist").innerHTML = items.length ? items.map(function(e){
+        var titles = (e.titles && (e.titles.naver||[]).concat(e.titles.tistory||[])) || [];
+        return '<div class="item"><div class="d">'+esc(e.date)+'</div>'+
+          '<div class="t">'+esc(e.topic)+'</div>'+
+          '<div class="k">키워드 · '+(e.keywords||[]).map(esc).join(", ")+'</div>'+
+          '<div class="k">발행 · 네이버 '+(e.counts?e.counts.naver:0)+'편 / 티스토리 '+
+            (e.counts?e.counts.tistory:0)+'편 / 카드뉴스 '+(e.counts?e.counts.cardnews:0)+'세트</div>'+
+          (titles.length ? '<div class="k">제목 '+titles.length+'건 기록됨</div>' : '')+
+          (e.sourceNote ? '<div class="k">※ '+esc(e.sourceNote)+'</div>' : '')+
+        '</div>';
+      }).join("") : '<p class="k">기록된 이력이 없습니다.</p>';
+    })
+    .catch(function(){
+      el("histlist").innerHTML = '<p class="k">이력을 불러오지 못했습니다. 웹 서버로 열어 주세요.</p>';
+    });
+
+  // ---- 탭 ----
+  var TABS = [
+    ["p-naver",   "네이버 " + D.naver.length],
+    ["p-tistory", "티스토리 " + D.tistory.length],
+    ["p-cardnews","카드뉴스 " + D.cardnews.length],
+    ["p-fact",    "MASTER FACT"],
+    ["p-history", "지난 이력"]
+  ];
+  el("tabs").innerHTML = TABS.map(function(t,i){
+    return '<button role="tab" data-target="'+t[0]+'" aria-selected="'+(i===0)+'">'+t[1]+'</button>';
+  }).join("");
+  function select(id){
+    TABS.forEach(function(t){ el(t[0]).classList.toggle("active", t[0]===id); });
+    Array.prototype.forEach.call(el("tabs").children, function(b){
+      b.setAttribute("aria-selected", String(b.dataset.target===id));
+    });
+  }
+  select("p-naver");
+
+  // ---- 이벤트 ----
+  var toast = el("toast"), toastTimer;
+  function say(msg){
+    toast.textContent = msg; toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove("show"); }, 1600);
+  }
+  function findPost(id){
+    return D.naver.concat(D.tistory).filter(function(p){ return p.id===id; })[0];
+  }
+  document.addEventListener("click", function(ev){
+    var b = ev.target.closest("button"); if(!b) return;
+    if (b.dataset.target){ select(b.dataset.target); return; }
+    if (b.dataset.toggle){
+      var node = el(b.dataset.toggle); if(!node) return;
+      node.classList.toggle("open");
+      var isBody = b.dataset.toggle.indexOf("body-")===0;
+      b.textContent = node.classList.contains("open")
+        ? (isBody ? "본문 접기" : "이미지 기획 접기")
+        : (isBody ? "본문 보기" : "이미지 기획 8개");
+      return;
+    }
+    var copyId = b.dataset.copy || b.dataset.copytitle;
+    if (copyId){
+      var p = findPost(copyId); if(!p) return;
+      var text = b.dataset.copy ? p.body : p.title;
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text)
+          .then(function(){ say(b.dataset.copy ? "본문을 복사했습니다" : "제목을 복사했습니다"); })
+          .catch(function(){ say("복사에 실패했습니다"); });
+      } else { say("이 브라우저에서는 복사가 지원되지 않습니다"); }
+    }
+  });
+})();
+</script>
+</body>
+</html>

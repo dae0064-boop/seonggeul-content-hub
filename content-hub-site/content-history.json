@@ -1,0 +1,30 @@
+{
+  "updatedAt": "2026-08-20T06:00:00.000Z",
+  "note": "중복 확인 전용 경량 이력. 원고 본문은 넣지 않는다. 매일 이 파일만 읽는다.",
+  "entries": [
+    {
+      "date": "2026-08-18",
+      "topic": "습한 집과 세탁 냄새를 줄이는 환기·건조 순서",
+      "keywords": ["장마 습기", "빨래 냄새", "제습", "환기 순서", "실내 건조"],
+      "searchIntent": "여름철 실내 습기와 세탁물 냄새를 없애는 실행 순서를 찾는 의도",
+      "titles": { "naver": [], "tistory": [] },
+      "counts": { "naver": 3, "tistory": 3, "cardnews": 6 },
+      "status": "완료",
+      "archive": null,
+      "source": "legacy",
+      "sourceNote": "이전 운영 환경(Vercel CLI 배포)에서 제작. 본문은 이 저장소에 없다. 주제 중복 방지용으로만 기록한다."
+    },
+    {
+      "date": "2026-08-20",
+      "topic": "2026년 2학기 국가장학금 2차 신청",
+      "keywords": ["국가장학금", "2차 신청", "한국장학재단", "학자금 지원구간", "2학기 등록금"],
+      "searchIntent": "2학기 국가장학금 2차 신청 일정과 지원금액을 확인하려는 의도",
+      "titles": { "naver": [], "tistory": [] },
+      "counts": { "naver": 3, "tistory": 3, "cardnews": 6 },
+      "status": "완료",
+      "archive": null,
+      "source": "legacy",
+      "sourceNote": "이전 운영 환경에서 제작·배포. 본문은 이 저장소에 없다. 주제 중복 방지용으로만 기록한다."
+    }
+  ]
+}
