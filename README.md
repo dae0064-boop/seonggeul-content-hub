@@ -33,6 +33,16 @@ npm run validate   # 문법·분량·구성·중복 일괄 검수
 
 자세한 규칙은 [CONTENT_HUB.md](./CONTENT_HUB.md)에 있다.
 
+## 고정 링크
+
+| 링크 | 갱신 주체 |
+|---|---|
+| https://dae0064-boop.github.io/seonggeul-content-hub/ | **이 저장소.** 푸시하면 검수 → 배포가 자동으로 돈다 |
+| https://seonggeul-content-hub-dae0064-1422s-projects.vercel.app/ | 기존 ChatGPT 자동화 |
+
+같은 Vercel 프로젝트에 CLI 배포와 Git 연동을 함께 붙이면 서로 덮어쓴다.
+그래서 비교 기간에는 링크를 나눠 쓴다. 합치는 절차는 [CONTENT_HUB.md](./CONTENT_HUB.md) 5장에 있다.
+
 ## 사용량 절약 설계
 
 과거 원고 전체(약 47,000자)를 매일 다시 읽던 방식을 없앴다.

@@ -1,7 +1,20 @@
 {
   "siteName": "성글벙글 콘텐츠 허브",
-  "publicUrl": "https://seonggeul-content-hub-dae0064-1422s-projects.vercel.app/",
+  "links": {
+    "pages": {
+      "url": "https://dae0064-boop.github.io/seonggeul-content-hub/",
+      "role": "이 저장소의 고정 링크. 푸시하면 GitHub Actions 가 자동 배포한다.",
+      "status": "운영"
+    },
+    "vercel": {
+      "url": "https://seonggeul-content-hub-dae0064-1422s-projects.vercel.app/",
+      "projectId": "prj_Gio0fckc5NgkgjrlSalcbI8f2SZL",
+      "role": "기존 고정 링크. 현재는 ChatGPT 자동화가 Vercel CLI 로 갱신 중이다.",
+      "status": "외부 운영",
+      "note": "이 저장소를 Vercel 에 Git 연결하면 두 시스템이 같은 프로젝트를 덮어쓴다. ChatGPT 자동화를 중단한 뒤에 연결할 것. vercel.json 은 이미 준비돼 있다."
+    }
+  },
   "updateTimeKST": "09:00",
   "timezone": "Asia/Seoul",
-  "note": "고정 링크. 매일 같은 주소를 갱신한다. 새 링크를 만들지 않는다."
+  "rule": "새 링크를 만들지 않는다. 매일 같은 주소를 갱신한다."
 }

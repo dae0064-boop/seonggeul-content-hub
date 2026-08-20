@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": null,
+  "outputDirectory": "content-hub-site",
+  "framework": null,
+  "cleanUrls": true,
+  "github": { "silent": true }
+}

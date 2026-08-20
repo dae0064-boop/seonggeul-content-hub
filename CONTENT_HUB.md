@@ -93,8 +93,28 @@
 
 ## 5. 고정 링크
 
-배포 대상 링크는 `content-hub-site/site-config.json`의 `publicUrl`에 기록한다.
-이 값은 **변경하지 않는다.** 매일 같은 주소를 갱신한다.
+링크는 `content-hub-site/site-config.json`에 기록한다. **주소는 변경하지 않는다.**
+매일 같은 주소를 갱신한다.
+
+| 링크 | 주소 | 갱신 주체 |
+|---|---|---|
+| GitHub Pages | https://dae0064-boop.github.io/seonggeul-content-hub/ | **이 저장소** (푸시 → Actions 자동 배포) |
+| Vercel | https://seonggeul-content-hub-dae0064-1422s-projects.vercel.app/ | 기존 ChatGPT 자동화 (Vercel CLI) |
+
+### 두 링크를 나눠 쓰는 이유
+
+같은 Vercel 프로젝트에 CLI 배포와 Git 연동 배포가 함께 붙으면 서로를 덮어쓴다.
+그래서 비교 운영 기간에는 각자 다른 링크를 쓴다.
+
+### Vercel 로 합칠 때
+
+ChatGPT 자동화를 중단한 뒤에만 연결한다.
+
+1. Vercel 대시보드 → `seonggeul-content-hub` 프로젝트 → Settings → Git
+2. 이 GitHub 저장소를 연결한다.
+3. 빌드 설정은 루트의 `vercel.json`이 이미 담고 있다. (`outputDirectory: content-hub-site`)
+
+연결하면 푸시할 때마다 기존 고정 링크가 그대로 갱신된다.
 
 ---
 
