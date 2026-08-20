@@ -3,10 +3,10 @@
   "private": true,
   "version": "1.0.0",
   "description": "성글벙글 콘텐츠 허브 — 매일 오전 9시(KST) 원고 갱신, 고정 링크 유지",
-  "type": "module",
   "scripts": {
     "rotate": "node scripts/rotate-content.mjs",
     "validate": "node scripts/validate-content.mjs",
     "serve": "node scripts/serve.mjs"
-  }
+  },
+  "comment": "사이트의 .js 파일이 CommonJS 로 로드되어야 하므로 type:module 을 쓰지 않는다. scripts/ 는 .mjs 확장자로 ESM 이다."
 }

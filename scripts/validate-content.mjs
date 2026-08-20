@@ -22,6 +22,12 @@ const no = (m) => fail.push(m);
 let data, rules;
 try {
   rules = require(resolve(SITE, "format-rules.js"));
+  // package.json 에 type:module 이 들어가면 이 파일이 ESM 으로 해석되어
+  // module.exports 가 무시된다. 빈 객체가 조용히 통과하지 않도록 막는다.
+  if (!rules || !rules.naver || !rules.tistory || !rules.cardnews) {
+    no("format-rules.js 를 불러왔지만 규칙이 비어 있다. package.json 에 type:module 이 있는지 확인할 것");
+    report();
+  }
   ok("format-rules.js 문법 정상");
 } catch (e) {
   no(`format-rules.js 문법 오류: ${e.message}`);
@@ -29,6 +35,10 @@ try {
 }
 try {
   data = require(resolve(SITE, "content-data.js"));
+  if (!data || !data.date || !Array.isArray(data.naver)) {
+    no("content-data.js 를 불러왔지만 콘텐츠가 비어 있다. module.exports 가 실행되는지 확인할 것");
+    report();
+  }
   ok("content-data.js 문법 정상");
 } catch (e) {
   no(`content-data.js 문법 오류: ${e.message}`);
