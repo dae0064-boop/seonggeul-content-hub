@@ -33,11 +33,23 @@ npm run validate   # 문법·분량·구성·중복 일괄 검수
 
 자세한 규칙은 [CONTENT_HUB.md](./CONTENT_HUB.md)에 있다.
 
+## 최초 1회 설정 (아직 안 되어 있음)
+
+배포가 돌려면 저장소 관리자가 GitHub Pages 를 한 번 켜야 한다.
+
+> **Settings → Pages → Build and deployment → Source 를 `GitHub Actions` 로 변경**
+
+워크플로 토큰으로는 켤 수 없다. `pages: write` 권한이 있어도 사이트 생성은
+관리자 전용이라 `Resource not accessible by integration` 으로 막힌다.
+켜기 전까지 배포 job 은 `configure-pages` 단계에서 실패한다.
+
+한 번 켜면 그 뒤로는 손댈 일이 없다.
+
 ## 고정 링크
 
 | 링크 | 갱신 주체 |
 |---|---|
-| https://dae0064-boop.github.io/seonggeul-content-hub/ | **이 저장소.** 푸시하면 검수 → 배포가 자동으로 돈다 |
+| https://dae0064-boop.github.io/seonggeul-content-hub/ | **이 저장소.** Pages 를 켠 뒤부터 푸시할 때마다 검수 → 배포가 자동으로 돈다 |
 | https://seonggeul-content-hub-dae0064-1422s-projects.vercel.app/ | 기존 ChatGPT 자동화 |
 
 같은 Vercel 프로젝트에 CLI 배포와 Git 연동을 함께 붙이면 서로 덮어쓴다.
