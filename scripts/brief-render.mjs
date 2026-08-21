@@ -257,7 +257,7 @@ footer{border-top:1px solid var(--rule);padding-top:1.5rem;margin-top:3rem;
 <header class="top wrap">
   <p class="kicker"><span>${esc(day)}</span><span>모바일 가독성 적용</span></p>
   <h1>오늘의 원고</h1>
-  <p class="standfirst">네이버 원고는 모바일 한 줄 20자에 맞춰 줄을 끊었습니다. 보이는 그대로 복사해서 붙여넣으시면 됩니다.</p>
+  <p class="standfirst">네이버 원고는 글자 수가 아니라 의미 덩어리로 줄을 끊었습니다. 보이는 그대로 복사해서 붙여넣으시면 됩니다.</p>
 </header>
 
 <main class="wrap">
