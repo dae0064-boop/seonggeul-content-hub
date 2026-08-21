@@ -16,3 +16,6 @@ Thumbs.db
 # API 키 (절대 커밋 금지)
 .env
 .env.local
+
+# 전역 playwright 링크
+node_modules/
