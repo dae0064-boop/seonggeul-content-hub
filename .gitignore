@@ -1,0 +1,14 @@
+# 머신별 드라이브 경로 설정
+.drive-local
+
+# 동기화 로그
+.drive-sync.log
+
+# OS / 드라이브 앱 부산물
+.DS_Store
+desktop.ini
+Icon?
+Thumbs.db
+
+# 개인 설정 오버라이드
+.claude/settings.local.json
