@@ -12,3 +12,7 @@ Thumbs.db
 
 # 개인 설정 오버라이드
 .claude/settings.local.json
+
+# API 키 (절대 커밋 금지)
+.env
+.env.local
