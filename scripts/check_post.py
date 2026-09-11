@@ -195,10 +195,29 @@ def check_daily_premium(body: str, rep: Report) -> None:
             rep.error(f"일 단위 보험료 단독 강조 — …{near}… (가입금액·연령·납입기간 병기 필요)")
 
 
-def check_sources(body: str, rep: Report) -> None:
+def check_sources(body: str, meta: dict, rep: Report) -> None:
+    """규칙 [5]는 '수치·제도'에 1차 원문을 요구한다. 모든 글이 아니다.
+
+    약관 구조를 설명하는 글(예: '암치료비는 몇 번 받을 수 있나')은
+    제도 수치를 주장하지 않으므로 출처 링크가 없어도 규칙에 맞다.
+    글쓴이가 앞머리에 유형을 밝히고, 그에 맞게 검사한다.
+    """
+    kind = meta.get("유형", "제도안내").strip()
     urls = re.findall(r"https?://[^\s)\]]+", body)
+
     if not urls:
-        rep.error("출처 URL이 없습니다. 수치·제도는 1차 원문 링크가 필요합니다.")
+        if kind == "구조설명":
+            rep.ok("구조설명 글 — 제도 수치를 주장하지 않으므로 출처 링크는 필수가 아닙니다.")
+            # 다만 실제로 제도를 인용했다면 걸러낸다.
+            institutions = ["질병관리청", "보건복지부", "고용노동부", "국민건강보험공단",
+                            "금융감독원", "통계청", "보험협회", "국세청"]
+            hit = [i for i in institutions if i in body]
+            if hit:
+                rep.error(f"구조설명 글인데 기관을 인용했습니다: {', '.join(hit)}. "
+                          f"유형을 '제도안내'로 바꾸고 1차 원문을 다세요.")
+            return
+        rep.error("출처 URL이 없습니다. 수치·제도는 1차 원문 링크가 필요합니다. "
+                  "(약관 구조만 다루는 글이면 앞머리에 '유형: 구조설명'을 적으세요)")
         return
     rep.ok(f"출처 링크 {len(urls)}개")
     for u in urls:
@@ -372,7 +391,7 @@ def main(argv=None) -> int:
     check_keywords(body, meta, rep)
     check_banned(body, rep)
     check_daily_premium(body, rep)
-    check_sources(body, rep)
+    check_sources(body, meta, rep)
     check_tags(body, rep)
     check_naver_format(body, rep)
     check_verification_flags(body, rep)
