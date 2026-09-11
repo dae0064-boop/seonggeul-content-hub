@@ -21,6 +21,10 @@
 from __future__ import annotations
 
 import sys
+
+# Drive 안에 __pycache__ 가 만들어지면 동기화 쓰레기가 된다.
+sys.dont_write_bytecode = True
+
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -88,10 +92,14 @@ def main() -> int:
     print(f"\n워크스페이스: {HERE}\n")
 
     tool = BIN / "workspace.py"
+    missing = [str(d.name) for d in FILES.values() if not d.is_file()]
 
-    if update or not tool.is_file():
-        if tool.is_file():
+    if update or missing:
+        if update:
             print("도구를 최신 버전으로 갱신합니다.")
+        elif tool.is_file():
+            # 일부만 있는 반쪽 상태. 예전 버전이 남겨 놓았거나 받다가 끊긴 경우다.
+            print(f"빠진 파일이 있어 다시 받아옵니다: {', '.join(missing)}")
         else:
             print("도구가 없어 GitHub 에서 받아옵니다.")
         if not download_tools():
