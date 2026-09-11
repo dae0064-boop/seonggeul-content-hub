@@ -88,13 +88,34 @@ def now_iso() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
+def _sanitize(name: str) -> str:
+    return re.sub(r"[^A-Za-z0-9._-]", "-", name).strip("-._")
+
+
 def machine_id() -> str:
-    """이 컴퓨터를 식별하는 안정적인 이름."""
-    env = os.environ.get("CLAUDE_WORKSPACE_MACHINE")
-    if env:
-        return re.sub(r"[^A-Za-z0-9._-]", "_", env)
-    name = socket.gethostname().split(".")[0] or "unknown"
-    return re.sub(r"[^A-Za-z0-9._-]", "_", name)
+    """이 컴퓨터를 식별하는 안정적인 이름.
+
+    한글 PC 이름을 그대로 치환하면 모든 글자가 '-' 가 되어 컴퓨터끼리
+    구별되지 않는다(예: '데스크탑' -> '----'). 그러면 두 대가 같은 상태
+    파일을 덮어써 동기화 기록이 뭉개진다. ASCII 로 온전히 표현되지 않는
+    이름에는 원래 이름의 해시를 붙여 반드시 서로 달라지게 한다.
+    """
+    raw = (os.environ.get("CLAUDE_WORKSPACE_MACHINE")
+           or socket.gethostname().split(".")[0]
+           or "unknown")
+    safe = _sanitize(raw)
+    if safe != raw:
+        digest = hashlib.sha256(raw.encode("utf-8")).hexdigest()[:8]
+        safe = f"{safe}-{digest}" if safe else f"pc-{digest}"
+    return safe[:60]
+
+
+def legacy_machine_id() -> str:
+    """예전 방식으로 만들던 이름. 상태 파일을 옮겨오기 위해서만 쓴다."""
+    raw = (os.environ.get("CLAUDE_WORKSPACE_MACHINE")
+           or socket.gethostname().split(".")[0]
+           or "unknown")
+    return re.sub(r"[^A-Za-z0-9._-]", "_", raw)
 
 
 # ---------------------------------------------------------------------------
@@ -231,6 +252,16 @@ def state_path(ws: Path) -> Path:
 
 def load_state(ws: Path) -> dict:
     p = state_path(ws)
+    if not p.is_file():
+        # 예전 이름(한글이 뭉개진 형태)으로 남은 기록이 있으면 이어받는다.
+        legacy = ws / ".workspace" / "state" / f"{legacy_machine_id()}.json"
+        if legacy.is_file() and legacy != p:
+            try:
+                p.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(legacy, p)
+                warn(f"이전 기록을 새 이름으로 옮겼습니다: {legacy.name} -> {p.name}")
+            except OSError:
+                pass
     if p.is_file():
         try:
             return json.loads(p.read_text(encoding="utf-8"))
@@ -757,9 +788,10 @@ def cmd_status(args) -> int:
     others = []
     state_dir = ws / ".workspace" / "state"
     if state_dir.is_dir():
+        mine = {machine_id(), legacy_machine_id()}
         for f in state_dir.glob("*.json"):
-            if f.stem == machine_id():
-                continue
+            if f.stem in mine:
+                continue  # 예전 이름으로 남은 내 기록은 다른 컴퓨터가 아니다
             try:
                 other = json.loads(f.read_text(encoding="utf-8"))
                 if other.get("last_push"):
