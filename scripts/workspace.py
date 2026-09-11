@@ -629,10 +629,44 @@ def _is_link(path: Path) -> bool:
     return False
 
 
+# 설치된 응용프로그램임을 알려주는 표시들. 이런 폴더의 node_modules 는
+# 소스가 아니라 프로그램의 일부라서 건드리면 프로그램이 깨진다.
+APP_MARKERS = ["app.asar", "app-update.yml", "resources/app.asar", "*.exe", "*.app"]
+
+
+def looks_like_installed_app(root: Path) -> list[str]:
+    """설치된 프로그램 폴더로 보이는 근거를 모은다. 비어 있으면 소스 프로젝트."""
+    found = []
+    for pattern in APP_MARKERS:
+        try:
+            for hit in list(root.glob(pattern))[:2]:
+                found.append(hit.name)
+        except OSError:
+            continue
+    return found
+
+
 def cmd_detach(args) -> int:
     root = Path(args.path).expanduser().resolve()
     if not root.is_dir():
         print(f"디렉터리가 아닙니다: {root}", file=sys.stderr)
+        return 2
+
+    markers = looks_like_installed_app(root)
+    if markers and not args.force:
+        print(
+            f"여기는 설치된 프로그램 폴더로 보입니다: {root}\n"
+            f"  근거: {', '.join(sorted(set(markers)))}\n\n"
+            "이런 폴더의 node_modules 는 소스가 아니라 프로그램의 일부입니다.\n"
+            "네이티브 모듈(.node)이 들어 있으면 npm install 로 되살릴 수 없고,\n"
+            "잘못 건드리면 프로그램이 실행되지 않습니다.\n\n"
+            "게다가 용량의 대부분은 node_modules 가 아니라 app.asar 과 .exe 입니다.\n"
+            "detach 를 해도 문제는 거의 해결되지 않습니다.\n\n"
+            "이런 경우의 올바른 해결책은 프로그램을 Drive 동기화 대상 폴더\n"
+            "(바탕 화면 등) 바깥으로 옮기는 것입니다. docs/SETUP.md 를 보세요.\n\n"
+            "그래도 진행하려면 --force 를 붙이세요.",
+            file=sys.stderr,
+        )
         return 2
 
     key = _project_key(root)
@@ -931,6 +965,8 @@ def build_parser() -> argparse.ArgumentParser:
     d = sub.add_parser("detach", parents=[common],
                        help="node_modules 등 무거운 폴더를 Drive 바깥으로")
     d.add_argument("path", help="프로젝트 경로")
+    d.add_argument("--force", action="store_true",
+                   help="설치된 프로그램 폴더여도 강행 (프로그램이 깨질 수 있음)")
     d.set_defaults(func=cmd_detach)
 
     a = sub.add_parser("attach", parents=[common], help="detach 를 되돌리기")
