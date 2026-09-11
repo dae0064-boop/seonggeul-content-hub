@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+
+# 워크스페이스 도구가 만드는 로컬 상태 (컴퓨터마다 다름)
+.claude-workspace.json
+.claude-ws-cache/
+
+# 무거운 폴더는 저장소에도 Drive 에도 두지 않는다
+node_modules/
+.venv/
+venv/
+dist/
+build/
+
+.DS_Store
+Thumbs.db
