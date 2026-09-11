@@ -19,50 +19,61 @@ Python 이 없다면:
 
 ---
 
-## 1. 첫 번째 컴퓨터
+## 1. 연결하기 — 모든 컴퓨터 공통
 
-이 저장소를 받아서 `bootstrap` 을 한 번 실행합니다.
+**컴퓨터마다 딱 한 번, 같은 방법입니다.** 첫 번째든 세 번째든 다르지 않습니다.
+
+### Windows
+
+탐색기에서 `내 드라이브 > ClaudeWorkspace` 를 열고 **`connect.cmd` 를 더블클릭**하세요.
+
+끝입니다. 검은 창이 뜨고 연결 과정이 보인 뒤 "Done" 이 나오면 완료입니다.
+
+> Python 이 없으면 설치 방법을 알려주고 멈춥니다. 안내대로 설치한 뒤 다시 더블클릭하세요.
+
+### macOS / Linux
+
+터미널에서:
+
+```bash
+cd ~/Library/CloudStorage/GoogleDrive-dae0064@gmail.com/My\ Drive/ClaudeWorkspace
+python3 connect.py
+```
+
+### 이때 일어나는 일
+
+1. Drive 에 동기화 도구가 있으면 그걸 쓰고, 없으면 GitHub 에서 받아옵니다.
+2. 블로그 글쓰기 규칙을 이 컴퓨터의 `~/.claude/CLAUDE.md` 로 심습니다.
+3. Claude Code 설정에 자동 동기화 훅을 넣습니다.
+   - 세션 **시작** 시 → Drive 의 최신 메모리를 받아옴
+   - 세션 **종료** 시 → 메모리를 Drive 에 백업
+4. 첫 동기화를 실행합니다.
+
+> 훅이 싫으면 `python connect.py --no-hooks` 로 실행하세요.
+> 도구를 최신으로 갱신하려면 `python connect.py --update` 입니다.
+
+## 2. 다음 컴퓨터로 넘어가기 전에 ⚠️
+
+Google Drive 트레이 아이콘이 **"최신 상태"** 가 될 때까지 기다리세요.
+이걸 안 기다리면 다음 컴퓨터에 파일이 아직 안 내려와 있습니다.
+
+그다음 두 번째, 세 번째 컴퓨터에서 똑같이 `connect.cmd` 를 더블클릭하면 됩니다.
+
+### 잘 됐는지 확인
+
+아무 컴퓨터에서나 **`status.cmd` 를 더블클릭**하세요.
+**등록된 컴퓨터가 3대**로 나오고 진단이 "이상 없습니다" 면 완료입니다.
+
+### 저장소에서 직접 설치하고 싶다면
+
+개발자용 경로입니다. 보통은 필요 없습니다.
 
 ```bash
 git clone https://github.com/dae0064-boop/seonggeul-content-hub.git
 cd seonggeul-content-hub
+git checkout claude/beautiful-maxwell-bjdkgb
 python3 scripts/workspace.py bootstrap
 ```
-
-이때 일어나는 일:
-
-1. Google Drive 를 찾아 `내 드라이브/ClaudeWorkspace/` 를 만듭니다.
-2. `memory/CLAUDE.md` (블로그 규칙)를 공유 메모리로 심습니다.
-3. 도구 자체를 `ClaudeWorkspace/.workspace/bin/` 안에 복사합니다.
-   → 다른 컴퓨터는 git clone 없이 이 사본으로 설치할 수 있습니다.
-4. Claude Code 설정에 자동 동기화 훅을 넣습니다.
-   - 세션 **시작** 시 → Drive 의 최신 메모리를 받아옴
-   - 세션 **종료** 시 → 메모리를 Drive 에 백업
-5. 첫 동기화를 실행합니다.
-
-> 훅을 넣고 싶지 않다면 `--no-hooks` 를 붙이세요. 대신 `workspace.py sync` 를 직접 실행해야 합니다.
-
----
-
-## 2. 두 번째, 세 번째 컴퓨터
-
-git clone 이 필요 없습니다. Drive 가 동기화되기를 기다린 뒤, Drive 안의 도구를 그대로 실행합니다.
-
-**Windows (PowerShell)**
-
-```powershell
-python "G:\내 드라이브\ClaudeWorkspace\.workspace\bin\workspace.py" bootstrap
-```
-
-**macOS**
-
-```bash
-python3 ~/Library/CloudStorage/GoogleDrive-dae0064@gmail.com/My\ Drive/ClaudeWorkspace/.workspace/bin/workspace.py bootstrap
-```
-
-경로가 다르면 `내 드라이브` 안의 `ClaudeWorkspace/.workspace/bin/workspace.py` 를 찾아 그 경로를 쓰면 됩니다.
-
----
 
 ## 3. 매일 쓰는 법
 

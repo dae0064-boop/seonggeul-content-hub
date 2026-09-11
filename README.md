@@ -7,17 +7,19 @@
 
 ## 빠른 시작
 
-```bash
-git clone https://github.com/dae0064-boop/seonggeul-content-hub.git
-cd seonggeul-content-hub
-python3 scripts/workspace.py bootstrap
-```
+컴퓨터마다 한 번씩, 모두 같은 방법입니다. git clone 이 필요 없습니다.
 
-두 번째 컴퓨터부터는 clone 없이 Drive 안의 사본으로 설치합니다.
+**Windows** — `내 드라이브\ClaudeWorkspace\connect.cmd` 더블클릭
+
+**macOS / Linux**
 
 ```bash
-python3 "<내 드라이브>/ClaudeWorkspace/.workspace/bin/workspace.py" bootstrap
+cd "<내 드라이브>/ClaudeWorkspace"
+python3 connect.py
 ```
+
+`connect.py` 는 Drive 에 도구가 없으면 GitHub 에서 받아오고, 있으면 그대로 씁니다.
+그래서 첫 컴퓨터든 세 번째든 절차가 같고, 두 번째부터는 인터넷이 막혀 있어도 됩니다.
 
 자세한 설치·문제 해결은 **[docs/SETUP.md](docs/SETUP.md)** 를 보세요.
 
@@ -28,6 +30,8 @@ python3 "<내 드라이브>/ClaudeWorkspace/.workspace/bin/workspace.py" bootstr
 | `memory/CLAUDE.md` | 성글벙글 블로그 글쓰기 규칙 (모든 컴퓨터가 공유하는 기준 메모리) |
 | `scripts/workspace.py` | 동기화 도구 본체 |
 | `scripts/ws_hooks.py` | Claude Code 자동 동기화 훅 설치기 |
+| `launchers/connect.py` | Drive 에 두는 연결 스크립트 (도구를 받아와 bootstrap) |
+| `launchers/*.cmd` | Windows 더블클릭 런처 |
 | `CLAUDE.md` | Claude 가 이 저장소에서 따를 작업 규칙 |
 | `docs/SETUP.md` | 컴퓨터별 설치 가이드 |
 
