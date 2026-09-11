@@ -1,0 +1,14 @@
+{
+  "name": "seonggeul-content-hub",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "생활정보 콘텐츠 원고 관리 + 네이버 블로그 예약발행 자동화",
+  "scripts": {
+    "publish": "node scripts/publish-naver.mjs",
+    "publish:dry": "node scripts/publish-naver.mjs --dry-run --dump"
+  },
+  "dependencies": {
+    "playwright": "^1.47.0"
+  }
+}
