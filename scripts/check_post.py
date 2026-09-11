@@ -334,9 +334,20 @@ def check_structure(body: str, meta: dict, rep: Report) -> None:
     elif len(questions) < QA_MIN:
         rep.warn(f"질문형 문장이 {len(questions)}개뿐입니다. Q&A를 {QA_MIN}~{QA_MAX}개 넣으세요.")
 
-    cta_hints = ["확인해보세요", "확인해 보세요", "살펴보세요", "확인해보는", "점검"]
-    if not any(h in body for h in cta_hints):
-        rep.error("점검형 CTA가 보이지 않습니다. 판매가 아니라 '확인해보세요'로 끝내야 합니다.")
+    # 규칙 [7]은 보험 글의 점검형 CTA다. 정보성 글([10])은 실행형으로 끝낸다.
+    field = meta.get("분야", "보험").strip()
+    action_hints = ["확인해보세요", "확인해 보세요", "살펴보세요", "확인해보는",
+                    "점검", "신청해보세요", "해보세요", "챙겨보세요", "알아보세요"]
+    if not any(h in body for h in action_hints):
+        rep.error("독자가 할 행동이 없습니다. 마지막을 행동으로 끝내세요.")
+    elif field == "생활정보":
+        rep.ok("실행형 CTA 있음 (정보성 글)")
+        # 정보성 글에 보험 영업을 붙이지 않는다
+        insurance_words = ["내 보험", "증권", "보장", "약관", "특약", "가입금액", "설계사"]
+        hit = [w for w in insurance_words if w in body]
+        if hit:
+            rep.error(f"정보성 글에 보험 이야기가 섞였습니다: {', '.join(hit)}. "
+                      f"현재 지시상 보험 글은 쓰지 않습니다.")
     else:
         rep.ok("점검형 CTA 있음")
 
