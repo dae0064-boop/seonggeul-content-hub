@@ -185,8 +185,6 @@ const NEXT = {todo:"doing", doing:"done", done:"todo"};
 const LABEL = {todo:"미완료", doing:"작성중", done:"작성완료"};
 const RED = "#e03127", YEL = "#ffe400", INK = "#000000";
 const BASE = `color:${INK};`;
-const QSTYLE = "border-left:1px dotted #cccccc;border-right:1px dotted #cccccc;"
-             + "padding:18px 22px;margin:26px 0;";
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
 const tidy = t => t
@@ -213,15 +211,11 @@ function toNaverHtml(t, keepImg){
       continue;
     }
     if (first.startsWith("인용구(소제목)")) {
-      // 네이버 인용구 4번(따옴표 + 좌우 점선) 모양에 맞춘 마크업.
-      // 에디터가 blockquote 를 자기 인용구 컴포넌트로 바꾸면 인라인 스타일은 버려진다.
-      // 그 경우 종류는 에디터에서 한 번 지정해야 한다.
+      // 네이버는 blockquote 를 자기 인용구 컴포넌트로 바꾼다(확인함).
+      // 따옴표 장식과 정렬은 에디터가 직접 그리므로 여기서 넣으면 중복된다.
+      // 인용구 종류(4번)는 붙여넣기로 지정할 수 없어 에디터에서 골라야 한다.
       const qt = esc(first.replace(/^인용구\(소제목\)\s*/, ""));
-      parts.push(
-        `<blockquote style="${QSTYLE}">` +
-        `<p style="color:#b5b5b5;font-size:26px;line-height:1;margin:0 0 10px;">&#8220;</p>` +
-        `<p style="${BASE}font-weight:bold;margin:0;">${qt}</p>` +
-        `</blockquote>`);
+      parts.push(`<blockquote><p style="${BASE}">${qt}</p></blockquote>`);
       continue;
     }
     // 문단마다 기본 글자색을 박아둔다. 지정하지 않으면 앞 문단의 빨간색이
@@ -315,7 +309,7 @@ function render(){
       <button class="btn" data-act="toggle" data-i="${i}" data-t="ms">원고 보기</button>
       <button class="btn" data-act="toggle" data-i="${i}" data-t="img">이미지 프롬프트 10장</button>
     </div>
-    <p class="hint">서식 복사는 빨간 글씨·노란 형광펜이 그대로 들어가요. 이미지 자리 표시는 회색 글씨로 같이 붙습니다.</p>
+    <p class="hint">빨간 글씨·노란 형광펜은 그대로 들어가요. 소제목은 인용구로 바뀌는데, 종류(4번)는 붙여넣은 뒤 에디터에서 골라주세요.</p>
 
     <div class="panel" id="ms${i}" hidden>
       <p class="ptitle">원고 전문</p>
