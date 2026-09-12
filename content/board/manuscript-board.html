@@ -205,7 +205,8 @@ function paint(t){
 function toNaverHtml(t, keepImg){
   const parts = [];
   for (const block of t.trim().split(/\n\s*\n/)) {
-    const first = block.split("\n")[0];
+    const lines = block.split("\n").map(l => l.trim()).filter(Boolean);
+    const first = lines[0] || "";
     if (/^\[이미지\s*\d+\]/.test(first)) {
       if (keepImg) parts.push(`<p style="color:#999999;">${esc(first)}</p>`);
       continue;
@@ -218,13 +219,28 @@ function toNaverHtml(t, keepImg){
       parts.push(`<blockquote><p style="${BASE}">${qt}</p></blockquote>`);
       continue;
     }
-    // 문단마다 기본 글자색을 박아둔다. 지정하지 않으면 앞 문단의 빨간색이
-    // 그대로 상속돼 본문 전체가 빨갛게 붙여넣어진다.
-    let h = esc(block)
-      .replace(/\[빨간글씨\]([\s\S]*?)\[\/빨간글씨\]/g, `<span style="color:${RED};">$1</span>`)
-      .replace(/\[노란배경\]([\s\S]*?)\[\/노란배경\]/g, `<span style="color:${INK};background-color:${YEL};">$1</span>`)
-      .replace(/\n/g, "<br>");
-    parts.push(`<p style="${BASE}">${h}</p>`);
+    // 줄마다 span 을 따로 씌우고 <br> 은 span 바깥에 둔다.
+    // span 하나로 여러 줄을 감싸면 네이버가 안쪽 <br> 을 버려서
+    // 강조 구간만 한 줄로 뭉쳐진다.
+    // 문단의 기본 글자색도 반드시 명시한다. 없으면 앞 문단의 빨간색을
+    // 그대로 상속해 본문 전체가 빨갛게 붙여넣어진다.
+    const pieces = [];
+    let carry = null;
+    for (const line of lines) {
+      const opens  = [...line.matchAll(/\[(빨간글씨|노란배경)\]/g)];
+      const closes = [...line.matchAll(/\[\/(빨간글씨|노란배경)\]/g)];
+      const applied = opens.length ? opens[0][1] : carry;
+      if (opens.length && !closes.length) carry = opens[opens.length - 1][1];
+      else if (closes.length) carry = null;
+
+      const txt = esc(line.replace(/\[\/?(빨간글씨|노란배경)\]/g, "").trim());
+      if (!txt) continue;
+      pieces.push(
+        applied === "빨간글씨" ? `<span style="color:${RED};">${txt}</span>` :
+        applied === "노란배경" ? `<span style="color:${INK};background-color:${YEL};">${txt}</span>` :
+        txt);
+    }
+    if (pieces.length) parts.push(`<p style="${BASE}">${pieces.join("<br>")}</p>`);
   }
   return parts.join("\n");
 }
