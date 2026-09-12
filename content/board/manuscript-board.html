@@ -183,7 +183,10 @@ const PRISTINE = "<!doctype html>\n" + document.documentElement.outerHTML;
 const S = JSON.parse(document.getElementById("state").textContent);
 const NEXT = {todo:"doing", doing:"done", done:"todo"};
 const LABEL = {todo:"미완료", doing:"작성중", done:"작성완료"};
-const RED = "#e03127", YEL = "#ffe400";
+const RED = "#e03127", YEL = "#ffe400", INK = "#000000";
+const BASE = `color:${INK};`;
+const QSTYLE = "border-left:1px dotted #cccccc;border-right:1px dotted #cccccc;"
+             + "padding:18px 22px;margin:26px 0;";
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
 const tidy = t => t
@@ -206,18 +209,28 @@ function toNaverHtml(t, keepImg){
   for (const block of t.trim().split(/\n\s*\n/)) {
     const first = block.split("\n")[0];
     if (/^\[이미지\s*\d+\]/.test(first)) {
-      if (keepImg) parts.push(`<p><span style="color:#999999;">${esc(first)}</span></p>`);
+      if (keepImg) parts.push(`<p style="color:#999999;">${esc(first)}</p>`);
       continue;
     }
     if (first.startsWith("인용구(소제목)")) {
-      parts.push(`<blockquote><p><b>${esc(first.replace(/^인용구\(소제목\)\s*/, ""))}</b></p></blockquote>`);
+      // 네이버 인용구 4번(따옴표 + 좌우 점선) 모양에 맞춘 마크업.
+      // 에디터가 blockquote 를 자기 인용구 컴포넌트로 바꾸면 인라인 스타일은 버려진다.
+      // 그 경우 종류는 에디터에서 한 번 지정해야 한다.
+      const qt = esc(first.replace(/^인용구\(소제목\)\s*/, ""));
+      parts.push(
+        `<blockquote style="${QSTYLE}">` +
+        `<p style="color:#b5b5b5;font-size:26px;line-height:1;margin:0 0 10px;">&#8220;</p>` +
+        `<p style="${BASE}font-weight:bold;margin:0;">${qt}</p>` +
+        `</blockquote>`);
       continue;
     }
+    // 문단마다 기본 글자색을 박아둔다. 지정하지 않으면 앞 문단의 빨간색이
+    // 그대로 상속돼 본문 전체가 빨갛게 붙여넣어진다.
     let h = esc(block)
       .replace(/\[빨간글씨\]([\s\S]*?)\[\/빨간글씨\]/g, `<span style="color:${RED};">$1</span>`)
-      .replace(/\[노란배경\]([\s\S]*?)\[\/노란배경\]/g, `<span style="background-color:${YEL};">$1</span>`)
+      .replace(/\[노란배경\]([\s\S]*?)\[\/노란배경\]/g, `<span style="color:${INK};background-color:${YEL};">$1</span>`)
       .replace(/\n/g, "<br>");
-    parts.push(`<p>${h}</p>`);
+    parts.push(`<p style="${BASE}">${h}</p>`);
   }
   return parts.join("\n");
 }
