@@ -10,8 +10,8 @@ import { parsePost, flatLines } from './lib/parse-post.mjs';
 // 실제 발행글(119 안심콜) 실측치에 맞춰 잡은 기준
 //   3,066자 / 평균 줄 19.8자 / 최장 29자 / 덩어리당 3.4줄
 const MAX_LINE = 30;          // 한 줄 최대 글자수(공백 포함)
-const AVG_LINE = [17, 23];    // 평균 줄 길이 권장 구간
-const MIN_BLOCK_LINES = 2.6;  // 덩어리당 평균 줄 수 하한 (너무 잘게 쪼개지 않기)
+const AVG_LINE = [21, 27];    // 평균 줄 길이 권장 구간
+const MIN_BLOCK_LINES = 2.2;  // 덩어리당 평균 줄 수 하한
 const MIN_CHARS = 2300;       // 본문 최소 (공백 포함)
 const MAX_CHARS = 2500;       // 본문 최대
 const MIN_MAIN = 10;          // 메인 키워드 최소 등장 횟수
