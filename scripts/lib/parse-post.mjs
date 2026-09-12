@@ -16,12 +16,13 @@
  *   인용구(소제목) 소제목 텍스트
  *
  *   [빨간글씨]강조되는 줄[/빨간글씨]
- *   [노란배경]배경색 들어가는 줄[/노란배경]
+ *   [파란글씨]행동·방법을 말하는 줄[/파란글씨]
+ *   [노란배경]기억할 원리[/노란배경]
  *
  * 강조 태그는 줄 경계를 넘어갈 수 있다(여러 줄을 한 번에 감싸는 경우).
  */
 
-const STYLE = { 빨간글씨: 'red', 노란배경: 'yellow' };
+const STYLE = { 빨간글씨: 'red', 파란글씨: 'blue', 노란배경: 'yellow' };
 const QUOTE_PREFIX = '인용구(소제목)';
 
 export function parsePost(raw) {
@@ -62,15 +63,15 @@ export function parsePost(raw) {
 
     const out = [];
     for (const line of lines) {
-      const opens  = [...line.matchAll(/\[(빨간글씨|노란배경)\]/g)];
-      const closes = [...line.matchAll(/\[\/(빨간글씨|노란배경)\]/g)];
+      const opens  = [...line.matchAll(/\[(빨간글씨|파란글씨|노란배경)\]/g)];
+      const closes = [...line.matchAll(/\[\/(빨간글씨|파란글씨|노란배경)\]/g)];
 
       const applied = opens.length ? opens[0][1] : carry;
 
       if (opens.length && !closes.length) carry = opens[opens.length - 1][1];
       else if (closes.length) carry = null;
 
-      const t = line.replace(/\[\/?(빨간글씨|노란배경)\]/g, '').trim();
+      const t = line.replace(/\[\/?(빨간글씨|파란글씨|노란배경)\]/g, '').trim();
       if (!t) continue;
       out.push(applied ? { t, s: STYLE[applied] } : { t });
     }

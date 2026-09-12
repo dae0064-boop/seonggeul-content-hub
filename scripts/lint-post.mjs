@@ -48,7 +48,7 @@ for (const file of files) {
     for (const l of lines) { if (l.s === k && prev !== k) n++; prev = l.s; }
     return n;
   };
-  const red = countRuns('red'), yellow = countRuns('yellow');
+  const red = countRuns('red'), blue = countRuns('blue'), yellow = countRuns('yellow');
   const charsWith = texts.join('').length;
   const chars = texts.join('').replace(/\s/g, '').length;   // 기준은 공백 제외
   const errors = [];
@@ -82,7 +82,7 @@ for (const file of files) {
 
   if (chars < MIN_CHARS) errors.push(`본문이 짧습니다: ${chars}자 (최소 ${MIN_CHARS}, 공백 제외)`);
   if (chars > MAX_CHARS) errors.push(`본문이 깁니다: ${chars}자 (최대 ${MAX_CHARS}, 공백 제외)`);
-  const marks = red + yellow;
+  const marks = red + blue + yellow;
   if (marks < MARKS[0] || marks > MARKS[1])
     errors.push(`강조 ${marks}구간 — ${MARKS[0]}~${MARKS[1]}구간이어야 합니다`);
   if (post.mainKeyword && mainN < MIN_MAIN)
@@ -130,7 +130,9 @@ for (const file of files) {
   console.log(`  덩어리당    : ${perBlock.toFixed(1)}줄 (최소 ${MIN_BLOCK_LINES})`);
   console.log(`  인용구      : ${quotes}개`);
   console.log(`  이미지 자리 : ${images.length}개`);
-  console.log(`  강조        : ${red + yellow}구간 (빨강 ${red} / 노랑 ${yellow}) 기준 ${MARKS[0]}~${MARKS[1]}`);
+  console.log(`  강조        : ${marks}구간 (빨강 ${red} · 파랑 ${blue} · 노랑 ${yellow}) 기준 ${MARKS[0]}~${MARKS[1]}`);
+  if (yellow > marks / 2) notes.push(`노란배경이 ${yellow}구간 — 절반을 넘으면 강조가 배경처럼 보입니다.`);
+  if (!blue) notes.push('파란글씨가 없습니다. 행동·방법을 말하는 문장에 걸어보세요.');
   console.log(`  태그        : ${post.tags.join(', ') || '(없음)'}`);
 
   for (const n of notes) console.log(`  · ${n}`);
