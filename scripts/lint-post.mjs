@@ -12,8 +12,9 @@ import { parsePost, flatLines } from './lib/parse-post.mjs';
 const MAX_LINE = 30;          // 한 줄 최대 글자수(공백 포함)
 const AVG_LINE = [21, 27];    // 평균 줄 길이 권장 구간
 const MIN_BLOCK_LINES = 2.2;  // 덩어리당 평균 줄 수 하한
-const MIN_CHARS = 2300;       // 본문 최소 (공백 포함)
-const MAX_CHARS = 2500;       // 본문 최대
+const MIN_CHARS = 2100;       // 본문 최소 (공백 제외)
+const MAX_CHARS = 2350;       // 본문 최대 (공백 제외)
+const MARKS = [10, 12];       // 강조 구간 수 (빨간글씨 + 노란배경)
 const MIN_MAIN = 10;          // 메인 키워드 최소 등장 횟수
 const MIN_SUB = 5;            // 서브 키워드 각각 최소 등장 횟수
 const MIN_TAGS = 15;          // 해시태그 최소 개수
@@ -41,7 +42,15 @@ for (const file of files) {
   const lines = flatLines(post).filter((l) => l.block !== 'image');
   const images = post.blocks.filter((b) => b.type === 'image');
   const texts = lines.map((l) => l.t);
-  const chars = texts.join('').length;
+  // 구간 수로 센다. 여러 줄에 걸친 강조 하나는 1구간이다.
+  const countRuns = (k) => {
+    let n = 0, prev = null;
+    for (const l of lines) { if (l.s === k && prev !== k) n++; prev = l.s; }
+    return n;
+  };
+  const red = countRuns('red'), yellow = countRuns('yellow');
+  const charsWith = texts.join('').length;
+  const chars = texts.join('').replace(/\s/g, '').length;   // 기준은 공백 제외
   const errors = [];
   const notes = [];
 
@@ -71,8 +80,11 @@ for (const file of files) {
   const mainN = countOf(post.mainKeyword);
   const subN = post.subKeywords.map((k) => [k, countOf(k)]);
 
-  if (chars < MIN_CHARS) errors.push(`본문이 짧습니다: ${chars}자 (최소 ${MIN_CHARS})`);
-  if (chars > MAX_CHARS) errors.push(`본문이 깁니다: ${chars}자 (최대 ${MAX_CHARS})`);
+  if (chars < MIN_CHARS) errors.push(`본문이 짧습니다: ${chars}자 (최소 ${MIN_CHARS}, 공백 제외)`);
+  if (chars > MAX_CHARS) errors.push(`본문이 깁니다: ${chars}자 (최대 ${MAX_CHARS}, 공백 제외)`);
+  const marks = red + yellow;
+  if (marks < MARKS[0] || marks > MARKS[1])
+    errors.push(`강조 ${marks}구간 — ${MARKS[0]}~${MARKS[1]}구간이어야 합니다`);
   if (post.mainKeyword && mainN < MIN_MAIN)
     errors.push(`메인 키워드 "${post.mainKeyword}" ${mainN}회 — ${MIN_MAIN}회 이상 필요`);
   for (const [k, n] of subN)
@@ -104,15 +116,13 @@ for (const file of files) {
     notes.push(`평균 줄 길이 ${avgLine.toFixed(1)}자 — 권장 ${AVG_LINE[0]}~${AVG_LINE[1]}자`);
 
   const quotes = post.blocks.filter((b) => b.type === 'quote').length;
-  const red = lines.filter((l) => l.s === 'red').length;
-  const yellow = lines.filter((l) => l.s === 'yellow').length;
   const avg = (texts.reduce((a, t) => a + t.length, 0) / texts.length).toFixed(1);
   const max = Math.max(...texts.map((t) => t.length));
 
   console.log(`\n${file}`);
   console.log(`  제목        : ${post.title} (${post.title.length}자)`);
   const range = chars < MIN_CHARS ? '짧음' : chars > MAX_CHARS ? '김' : 'OK';
-  console.log(`  본문        : ${chars}자 (기준 ${MIN_CHARS}~${MAX_CHARS}) ${range}`);
+  console.log(`  본문        : 공백 제외 ${chars}자 (기준 ${MIN_CHARS}~${MAX_CHARS}) ${range}  ·  공백 포함 ${charsWith}자`);
   console.log(`  메인 키워드 : "${post.mainKeyword}" ${mainN}회 (최소 ${MIN_MAIN})`);
   if (subN.length) console.log(`  서브 키워드 : ${subN.map(([k, n]) => `${k} ${n}회`).join(' / ')}`);
   console.log(`  줄/덩어리   : ${lines.length}줄 / ${post.blocks.length}덩어리`);
@@ -120,7 +130,7 @@ for (const file of files) {
   console.log(`  덩어리당    : ${perBlock.toFixed(1)}줄 (최소 ${MIN_BLOCK_LINES})`);
   console.log(`  인용구      : ${quotes}개`);
   console.log(`  이미지 자리 : ${images.length}개`);
-  console.log(`  강조        : 빨강 ${red}줄 / 노랑 ${yellow}줄`);
+  console.log(`  강조        : ${red + yellow}구간 (빨강 ${red} / 노랑 ${yellow}) 기준 ${MARKS[0]}~${MARKS[1]}`);
   console.log(`  태그        : ${post.tags.join(', ') || '(없음)'}`);
 
   for (const n of notes) console.log(`  · ${n}`);
