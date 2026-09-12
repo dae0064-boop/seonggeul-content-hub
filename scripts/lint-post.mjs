@@ -11,7 +11,13 @@ const MAX_LINE = 22;          // 한 줄 최대 글자수(공백 포함)
 const MIN_CHARS = 2200;       // 본문 최소 (공백 포함)
 const MAX_CHARS = 2500;       // 본문 최대
 const MIN_MAIN = 10;          // 메인 키워드 최소 등장 횟수
-const BAN = ['무조건', '100%', '절대로', '확실히', '반드시'];
+const MIN_SUB = 5;            // 서브 키워드 각각 최소 등장 횟수
+const MIN_TAGS = 15;          // 해시태그 최소 개수
+
+// 단정적 우위 표현 — 쓰면 안 된다
+const BAN = ['무조건', '100%', '단언컨대', '절대로', '손실 없음', '공짜'];
+// 문맥에 따라 괜찮을 수 있어 경고만 한다 ("가장 먼저" 처럼 순서를 뜻하는 경우)
+const WARN_WORDS = ['최고', '최저', '제일', '가장', '확실히', '반드시'];
 
 const files = process.argv.slice(2);
 if (!files.length) {
@@ -23,7 +29,8 @@ let failed = 0;
 
 for (const file of files) {
   const post = parsePost(fs.readFileSync(file, 'utf8'));
-  const lines = flatLines(post);
+  const lines = flatLines(post).filter((l) => l.block !== 'image');
+  const images = post.blocks.filter((b) => b.type === 'image');
   const texts = lines.map((l) => l.t);
   const chars = texts.join('').length;
   const errors = [];
@@ -32,13 +39,15 @@ for (const file of files) {
   if (!post.title) errors.push('title 이 없습니다.');
   if (!post.mainKeyword) errors.push('main_keyword 가 없습니다.');
   if (post.title.length > 30) notes.push(`제목이 깁니다 (${post.title.length}자). 모바일에서 잘릴 수 있습니다.`);
-  if (!post.tags.length) notes.push('태그가 없습니다.');
+
 
   lines.forEach((l, i) => {
     if (l.t.length > MAX_LINE) errors.push(`${MAX_LINE}자 초과 (${l.t.length}자): "${l.t}"`);
   });
 
-  for (const w of BAN) if (texts.join('').includes(w)) errors.push(`과장 표현 사용: "${w}"`);
+  const body = texts.join('');
+  for (const w of BAN) if (body.includes(w)) errors.push(`단정적 표현 사용: "${w}"`);
+  for (const w of WARN_WORDS) if (body.includes(w)) notes.push(`"${w}" — 우위를 단정하는 뜻이면 고치세요.`);
   for (const w of post.warnings) errors.push(w);
 
   // 키워드 세기: 띄어쓰기 차이를 흡수하려고 양쪽 공백을 제거하고 센다
@@ -57,7 +66,18 @@ for (const file of files) {
   if (chars > MAX_CHARS) errors.push(`본문이 깁니다: ${chars}자 (최대 ${MAX_CHARS})`);
   if (post.mainKeyword && mainN < MIN_MAIN)
     errors.push(`메인 키워드 "${post.mainKeyword}" ${mainN}회 — ${MIN_MAIN}회 이상 필요`);
-  for (const [k, n] of subN) if (n === 0) notes.push(`서브 키워드 "${k}" 가 본문에 없습니다.`);
+  for (const [k, n] of subN)
+    if (n < MIN_SUB) errors.push(`서브 키워드 "${k}" ${n}회 — ${MIN_SUB}회 이상 필요`);
+
+  // 제목은 메인 키워드로 시작해야 한다 (타깃 키워드를 첫 어절에)
+  if (post.mainKeyword) {
+    const t = post.title.replace(/\s/g, ''), k = post.mainKeyword.replace(/\s/g, '');
+    if (!t.startsWith(k)) errors.push(`제목이 메인 키워드로 시작하지 않습니다: "${post.title}"`);
+  }
+  if (post.tags.length < MIN_TAGS) errors.push(`해시태그 ${post.tags.length}개 — ${MIN_TAGS}개 이상 필요`);
+
+  if (images.length && images.length !== 10)
+    notes.push(`이미지 자리 ${images.length}개 — 10개 기준입니다.`);
 
   const quotes = post.blocks.filter((b) => b.type === 'quote').length;
   const red = lines.filter((l) => l.s === 'red').length;
@@ -74,6 +94,7 @@ for (const file of files) {
   console.log(`  줄/덩어리   : ${lines.length}줄 / ${post.blocks.length}덩어리`);
   console.log(`  줄 길이     : 평균 ${avg}자, 최장 ${max}자 (기준 ${MAX_LINE}자)`);
   console.log(`  인용구      : ${quotes}개`);
+  console.log(`  이미지 자리 : ${images.length}개`);
   console.log(`  강조        : 빨강 ${red}줄 / 노랑 ${yellow}줄`);
   console.log(`  태그        : ${post.tags.join(', ') || '(없음)'}`);
 

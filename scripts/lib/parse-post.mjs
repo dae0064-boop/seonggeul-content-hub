@@ -45,6 +45,13 @@ export function parsePost(raw) {
     const lines = chunk.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
     if (!lines.length) continue;
 
+    // [이미지 N] 설명 — 사진 들어갈 자리. 본문으로 입력하지 않는다.
+    const im = /^\[이미지\s*(\d+)\]\s*(.*)$/.exec(lines[0]);
+    if (im) {
+      blocks.push({ type: 'image', n: Number(im[1]), lines: [{ t: im[2].trim() }] });
+      continue;
+    }
+
     if (lines[0].startsWith(QUOTE_PREFIX)) {
       const text = lines[0].slice(QUOTE_PREFIX.length).trim();
       if (!text) warnings.push('인용구(소제목) 뒤에 텍스트가 없습니다.');
