@@ -1,0 +1,329 @@
+<title>성글벙글 발행 캘린더</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  --paper:#f6f7f4; --surface:#fff; --surface-2:#fbfcfa;
+  --ink:#18211c; --ink-2:#54635a; --ink-3:#8a998f;
+  --line:#dde2dc; --line-2:#eaeee8;
+  --info:#0f6b5c; --info-bg:#e4f0ec;
+  --search:#a8521c; --search-bg:#f7ebe1;
+  --home:#6a4a99; --home-bg:#eee9f6;
+  --anchor:#9d1f1a; --anchor-bg:#f8e7e5;
+  --past:#9aa89f;
+  --display:"Gowun Batang",Georgia,serif;
+  --body:"IBM Plex Sans KR",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#121614; --surface:#1a201c; --surface-2:#171d19;
+  --ink:#e8ece7; --ink-2:#9aa89f; --ink-3:#718077;
+  --line:#2c342e; --line-2:#232a25;
+  --info:#4fbfa8; --info-bg:#12302b;
+  --search:#e0904e; --search-bg:#35251a;
+  --home:#ad95d8; --home-bg:#272036;
+  --anchor:#e5716a; --anchor-bg:#361e1d;
+  --past:#5d6c63;
+}}
+:root[data-theme="dark"]{
+  --paper:#121614; --surface:#1a201c; --surface-2:#171d19;
+  --ink:#e8ece7; --ink-2:#9aa89f; --ink-3:#718077;
+  --line:#2c342e; --line-2:#232a25;
+  --info:#4fbfa8; --info-bg:#12302b;
+  --search:#e0904e; --search-bg:#35251a;
+  --home:#ad95d8; --home-bg:#272036;
+  --anchor:#e5716a; --anchor-bg:#361e1d;
+  --past:#5d6c63;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:300;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1420px;margin:0 auto;padding-inline:20px;padding-block:40px 72px}
+
+/* ---------- masthead ---------- */
+.mast{display:flex;flex-wrap:wrap;gap:20px 32px;align-items:flex-end;justify-content:space-between;
+  border-bottom:2px solid var(--ink);padding-bottom:18px}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,4.4vw,44px);margin:0;letter-spacing:-.01em;text-wrap:balance}
+.sub{color:var(--ink-2);font-size:14px;margin-top:6px;max-width:62ch}
+.meta{font-family:var(--mono);font-size:12px;color:var(--ink-2);text-align:right;line-height:1.9;font-variant-numeric:tabular-nums}
+.meta b{color:var(--ink);font-weight:600}
+
+/* ---------- stats ---------- */
+.stats{display:flex;flex-wrap:wrap;gap:0;margin-top:22px;border:1px solid var(--line);background:var(--surface);border-radius:3px;overflow:hidden}
+.stat{flex:1 1 130px;padding:14px 18px;border-right:1px solid var(--line-2)}
+.stat:last-child{border-right:0}
+.stat .n{font-family:var(--mono);font-size:24px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.2}
+.stat .l{font-size:11px;color:var(--ink-3);letter-spacing:.08em;text-transform:uppercase;margin-top:3px}
+
+/* ---------- anchors ---------- */
+.section-label{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);
+  margin:42px 0 12px;display:flex;align-items:center;gap:12px}
+.section-label::after{content:"";flex:1;height:1px;background:var(--line)}
+.anchors{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.anchor{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--anchor);border-radius:2px;padding:13px 16px}
+.anchor .d{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--anchor);font-variant-numeric:tabular-nums}
+.anchor .t{font-size:14px;font-weight:500;margin-top:3px}
+.anchor .n{font-size:12.5px;color:var(--ink-2);margin-top:5px;line-height:1.5}
+
+/* ---------- legend ---------- */
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:14px;align-items:center;font-size:12.5px;color:var(--ink-2)}
+.key{display:inline-flex;align-items:center;gap:6px}
+.dot{width:9px;height:9px;border-radius:2px;flex:none}
+.badge{font-family:var(--mono);font-size:10px;padding:1px 5px;border-radius:2px;border:1px solid currentColor;letter-spacing:.04em}
+
+/* ---------- weeks ---------- */
+.week{margin-top:34px}
+.week-head{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;padding-bottom:9px;border-bottom:1px solid var(--ink);margin-bottom:14px}
+.week-n{font-family:var(--display);font-size:21px;font-weight:700}
+.week-range{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.week-focus{font-size:13px;color:var(--ink-2);margin-left:auto;text-align:right}
+.week.is-past .week-n,.week.is-past .week-range{color:var(--past)}
+
+.days{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:12px;align-items:start}
+.day{background:var(--surface);border:1px solid var(--line);border-radius:3px;display:flex;flex-direction:column;overflow:hidden}
+.day.past{background:var(--surface-2);opacity:.62}
+.day.holiday{border-color:var(--anchor)}
+.day-head{padding:10px 13px;border-bottom:1px solid var(--line-2);display:flex;align-items:baseline;gap:8px;background:var(--surface-2)}
+.day.holiday .day-head{background:var(--anchor-bg)}
+.dnum{font-family:var(--display);font-size:19px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1}
+.dow{font-family:var(--mono);font-size:11px;color:var(--ink-2)}
+.dtag{margin-left:auto;font-family:var(--mono);font-size:9.5px;letter-spacing:.05em;padding:2px 5px;border-radius:2px;
+  background:var(--anchor);color:#fff;text-transform:uppercase}
+.day.past .dtag{background:var(--past)}
+ol.topics{list-style:none;margin:0;padding:6px 0;counter-reset:t}
+ol.topics li{display:grid;grid-template-columns:auto 1fr;gap:8px;padding:7px 13px;border-bottom:1px solid var(--line-2);align-items:start}
+ol.topics li:last-child{border-bottom:0}
+.chip{font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.03em;padding:2px 5px;border-radius:2px;margin-top:2px;white-space:nowrap}
+.c-info{background:var(--info-bg);color:var(--info)}
+.c-search{background:var(--search-bg);color:var(--search)}
+.c-home{background:var(--home-bg);color:var(--home)}
+.topic-t{font-size:13px;line-height:1.45;color:var(--ink)}
+.topic-n{font-size:11.5px;color:var(--ink-3);margin-top:2px;display:block}
+.ver{font-family:var(--mono);font-size:9px;color:var(--anchor);border:1px solid currentColor;padding:0 3px;border-radius:2px;margin-left:4px;vertical-align:1px}
+
+/* ---------- footer ---------- */
+.note{margin-top:48px;border-top:2px solid var(--ink);padding-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px}
+.note h3{font-family:var(--display);font-size:16px;margin:0 0 7px}
+.note p,.note li{font-size:13px;color:var(--ink-2);line-height:1.65;margin:0 0 6px}
+.note ul{margin:0;padding-left:17px}
+.note code{font-family:var(--mono);font-size:12px;background:var(--line-2);padding:1px 4px;border-radius:2px;color:var(--ink)}
+a{color:var(--info)}
+@media (max-width:640px){
+  .wrap{padding-block:26px 48px}
+  .week-focus{margin-left:0;text-align:left;width:100%}
+  .meta{text-align:left}
+}
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div>
+      <h1>성글벙글 발행 캘린더</h1>
+      <p class="sub">네이버 블로그 주 5회(월~금) 발행 계획. 하루 5개 글감을 정보성·검색유입·홈판 세 갈래로 배분합니다.</p>
+    </div>
+    <div class="meta">
+      계획 기간 <b>2026.09.07 – 09.30</b><br>
+      작성 기준일 <b>2026.09.12</b><br>
+      다음 개정 <b>2026.09.30</b> (월말)
+    </div>
+  </header>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="section-label">검증된 일정 앵커</div>
+  <div class="anchors" id="anchors"></div>
+
+  <div class="legend">
+    <span class="key"><span class="dot" style="background:var(--info)"></span>정보성 — 절차·방법. 매년 재사용</span>
+    <span class="key"><span class="dot" style="background:var(--search)"></span>검색유입 — 시기 키워드 겨냥</span>
+    <span class="key"><span class="dot" style="background:var(--home)"></span>홈판 — 경험·공감. 노출 겨냥</span>
+    <span class="key"><span class="badge" style="color:var(--anchor)">검증</span>날짜 근거 확인함</span>
+  </div>
+
+  <main id="weeks"></main>
+
+  <section class="note">
+    <div>
+      <h3>이 계획의 근거</h3>
+      <p><b>검증</b> 표시가 붙은 항목만 날짜 근거를 확인했습니다. 추석 연휴, 독감 국가예방접종 일정, 근로장려금 마감일이 여기 해당합니다.</p>
+      <p>나머지 글감은 <b>계절성과 일반 지식으로 세운 가설</b>입니다. 네이버 실검색량 데이터에는 접근하지 못했으므로, 조회수 예측이 아니라 출발점으로 보셔야 합니다.</p>
+    </div>
+    <div>
+      <h3>제목을 질문형으로 쓴 이유</h3>
+      <p>검색창에 실제로 입력되는 형태에 맞췄습니다. "추석 차례상 차리는 법"보다 <b>"추석 차례상 순서 어떻게 되나요?"</b> 쪽이 실제 질문에 가깝습니다.</p>
+      <p>발행 시에는 제목을 그대로 쓰지 말고, 해당 키워드로 한 번 검색해 상위 글과 겹치지 않는 각도를 잡으세요.</p>
+    </div>
+    <div>
+      <h3>운영 방법</h3>
+      <ul>
+        <li>원고는 <code>content/posts/</code> 에 <code>.md</code> 로 작성</li>
+        <li><code>node scripts/lint-post.mjs</code> 로 줄 길이 검사</li>
+        <li><code>node scripts/build-post.mjs</code> 로 <code>.json</code> 변환</li>
+        <li><code>node scripts/publish-naver.mjs --at</code> 로 예약발행</li>
+      </ul>
+      <p>이 페이지는 <b>매달 월말 같은 주소로 갱신</b>됩니다. 채널 성과를 반영해 익월 계획으로 다시 씁니다.</p>
+    </div>
+  </section>
+</div>
+
+<script>
+const ANCHORS=[
+ {d:"09.15 (화)",t:"근로장려금 반기신청 마감",n:"신청주의 원칙. 기한 내 신청하지 않으면 받을 수 없습니다."},
+ {d:"09.21 (월)",t:"독감 국가예방접종 시작",n:"임신부·2회 접종 대상 아동부터. 이번 절기 어린이 대상이 14세까지 확대."},
+ {d:"09.24–27",t:"추석 연휴 (4일)",n:"추석 당일 9/25(금). 대체공휴일 없음. 연휴 중에도 예약발행으로 운영."},
+ {d:"09.28 (월)",t:"독감 1회 접종 아동 시작",n:"65세 이상은 10/12·15·19로 연령별 분산."},
+];
+const W=[
+ {n:"1주차",r:"09.07 – 09.11",f:"환절기 진입 · 추석 D-18 · 장려금 예고",past:true,days:[
+  {d:7,w:"월",t:[
+   ["info","근로장려금 반기신청 언제까지인가요?","9/15 마감. 주 초에 예고성으로 선점",1],
+   ["info","환절기 감기 예방, 집에서 뭘 챙겨야 하나요?","일교차 벌어지는 시점"],
+   ["search","여름이불 언제 정리해야 하나요?","원고 완성본 보유"],
+   ["search","벌초 언제 하는 게 맞나요?","추석 전 성묘 수요"],
+   ["home","9월 첫 주, 옷장 정리하다 알게 된 것","계절 전환 공감"]]},
+  {d:8,w:"화",t:[
+   ["info","전입신고 인터넷으로 어떻게 하나요?","가을 이사철 · 연중 검색"],
+   ["info","실내 적정 습도는 몇 퍼센트인가요?","환절기 연계"],
+   ["search","추석 기차표 예매 언제부터인가요?","연휴 4일 확정",1],
+   ["search","가을 이사철 전세 계약 전 뭘 확인하나요?","확정일자·전입신고 묶기"],
+   ["home","이사 준비하면서 가장 후회한 것","경험담"]]},
+  {d:9,w:"수",t:[
+   ["info","전기요금 9월분은 왜 더 나오나요?","8월 사용분 청구 시점"],
+   ["info","에어컨 언제 청소하고 넣어야 하나요?","시즌 종료"],
+   ["search","환절기 비염과 감기 어떻게 구분하나요?","증상 혼동 검색 다발"],
+   ["search","국가장학금 2학기 신청 마감 언제인가요?","9/9 18시 마감",1],
+   ["home","에어컨 정리하며 깨달은 계절의 끝","계절감"]]},
+  {d:10,w:"목",t:[
+   ["info","건강보험료 환급금 조회 어떻게 하나요?","연중 검색"],
+   ["info","가을 이불 세탁, 몇 도로 돌려야 하나요?","이불 교체기"],
+   ["search","추석 선물 언제 주문해야 늦지 않나요?","배송 마감 역산"],
+   ["search","제습기 가을에도 써야 하나요?","시즌 전환 의문"],
+   ["home","명절 선물 고르다 생긴 고민","공감 소재"]]},
+  {d:11,w:"금",t:[
+   ["info","근로장려금 신청 자격 어떻게 확인하나요?","마감 D-4 재진입",1],
+   ["info","환절기 목 통증, 병원 가야 할 기준은?","생활관리 수준으로"],
+   ["search","9월에 심는 채소 뭐가 있나요?","가을 텃밭"],
+   ["search","가을 등산 초보 뭘 챙겨야 하나요?","주말 수요"],
+   ["home","주말 등산 가기 전 챙긴 것들","주말 전 금요일"]]}]},
+
+ {n:"2주차",r:"09.14 – 09.18",f:"장려금 마감 · 추석 D-11 → D-7 · 독감 예고",days:[
+  {d:14,w:"월",t:[
+   ["info","근로장려금 신청 내일 마감, 지금도 되나요?","D-1",1],
+   ["info","추석 차례상 차리는 순서가 어떻게 되나요?","명절 핵심 키워드"],
+   ["search","추석 열차표 못 구했는데 방법 없나요?","취소표 수요"],
+   ["search","성묘 갈 때 뭘 준비하나요?","연휴 전 주말"],
+   ["home","올해 차례상, 간소화하기로 했습니다","최근 흐름 공감"]]},
+  {d:15,w:"화",t:[
+   ["info","근로장려금 오늘까지, 놓치면 어떻게 되나요?","마감 당일",1],
+   ["info","추석 지방 쓰는 법 어떻게 되나요?","매년 반복 검색"],
+   ["search","추석 앞두고 냉장고 정리 어떻게 하나요?","장보기 전 단계"],
+   ["search","명절 음식 미리 만들어 얼려도 되나요?","준비 분산"],
+   ["home","지방 쓰다가 아버지께 여쭤본 것","세대 소재"]]},
+  {d:16,w:"수",t:[
+   ["info","독감 예방접종 무료 대상 나도 되나요?","9/21 시작 · 14세 확대",1],
+   ["info","추석 용돈 얼마가 적당한가요?","매년 반복"],
+   ["search","추석 연휴 문 여는 병원 어떻게 찾나요?","연휴 필수 검색"],
+   ["search","벌초 대행 비용 얼마인가요?","가격 검색"],
+   ["home","명절 용돈 봉투 앞에서 하는 계산","공감도 높음"]]},
+  {d:17,w:"목",t:[
+   ["info","독감 예방접종 언제 맞는 게 가장 좋은가요?","접종 시기 판단",1],
+   ["info","추석 차례 음식 몇 가지면 되나요?","간소화 수요"],
+   ["search","송편 반죽 질면 어떻게 하나요?","실패 대응 검색"],
+   ["search","추석 고속도로 언제 가장 막히나요?","귀성 계획"],
+   ["home","송편 빚다가 알게 된 할머니 방식","명절 정서"]]},
+  {d:18,w:"금",t:[
+   ["info","명절 연휴 응급실 가기 전 확인할 것은?","연휴 안전"],
+   ["info","전 부칠 때 기름 튀지 않게 하는 법은?","조리 실용"],
+   ["search","추석 택배 언제까지 보내야 도착하나요?","마감 역산"],
+   ["search","명절 스트레스 어떻게 넘기나요?","연휴 전 심리"],
+   ["home","연휴 전 금요일에 미리 해두면 좋은 일","타이밍 일치"]]}]},
+
+ {n:"3주차",r:"09.21 – 09.25",f:"독감 접종 시작 · 추석 연휴 진입 (9/24~27)",days:[
+  {d:21,w:"월",t:[
+   ["info","독감 무료접종 오늘 시작, 어디서 맞나요?","접종 개시일",1],
+   ["info","임신부 독감 예방접종 안전한가요?","무료 대상 포함",1],
+   ["search","추석 성수품 언제 사야 싼가요?","장보기 타이밍"],
+   ["search","차례상 비용 올해 얼마나 드나요?","비용 검색"],
+   ["home","장 보러 가서 놀란 가격","체감 물가"]]},
+  {d:22,w:"화",t:[
+   ["info","추석 연휴 쓰레기 배출 언제 하나요?","연휴 생활정보"],
+   ["info","명절 귀성길 차량 점검 뭘 하나요?","장거리 전"],
+   ["search","연휴 전 은행 업무 언제까지 되나요?","마감 확인"],
+   ["search","추석 연휴 택배 접수 언제 멈추나요?","배송 중단"],
+   ["home","귀성 짐 싸면서 매번 빠뜨리는 것","공감"]]},
+  {d:23,w:"수",t:[
+   ["info","장거리 운전 전 뭘 점검해야 하나요?","연휴 전날"],
+   ["info","명절 음식 상하지 않게 보관하는 법은?","식중독 주의"],
+   ["search","추석 당일 문 여는 약국 찾는 법은?","연휴 필수"],
+   ["search","고속도로 휴게소 붐비는 시간 언제인가요?","귀성 실전"],
+   ["home","내일이면 연휴, 오늘 밤의 준비","시점 일치"]]},
+  {d:24,w:"목",hol:"연휴 1일",t:[
+   ["info","차례 지내는 순서 간단 정리","당일 참조용"],
+   ["info","명절 과식 후 속 불편할 때는?","생활관리 수준"],
+   ["search","추석 연휴 응급실 어디로 가나요?","응급 검색 급증"],
+   ["search","오랜만에 만난 친척 질문 어떻게 넘기나요?","연휴 스트레스"],
+   ["home","연휴 첫날의 풍경","예약발행 운영"]]},
+  {d:25,w:"금",hol:"추석",t:[
+   ["info","남은 명절 음식 어떻게 보관하나요?","당일 이후"],
+   ["info","추석 보름달 뜨는 시간 언제인가요?","당일 검색"],
+   ["search","차례 음식 재활용 요리 뭐가 있나요?","남은 음식"],
+   ["search","명절 후유증 빨리 푸는 법은?","연휴 말"],
+   ["home","올해 보름달 아래서 빈 소원","정서 · 홈판"]]}]},
+
+ {n:"4주차",r:"09.28 – 09.30",f:"연휴 회복 · 독감 2차 · 10월 전환",days:[
+  {d:28,w:"월",t:[
+   ["info","독감 예방접종 오늘부터 추가 대상, 누구인가요?","1회 접종 아동",1],
+   ["info","연휴 끝나고 생활 리듬 되돌리는 법은?","복귀 첫날"],
+   ["search","남은 전 맛있게 데우는 법은?","연휴 직후"],
+   ["search","명절 후 체중 관리 어떻게 하나요?","반복 수요"],
+   ["home","연휴가 끝나고 남은 것들","복귀 공감"]]},
+  {d:29,w:"화",t:[
+   ["info","10월 달라지는 제도 뭐가 있나요?","월 전환 · 발행 전 확인 필요"],
+   ["info","가을 환절기 피부 건조 관리법은?","건조 시작"],
+   ["search","김장 언제부터 준비하나요?","10~11월 선점"],
+   ["search","보일러 첫 가동 전 점검할 것은?","난방 전환"],
+   ["home","올해 김장, 할지 말지 고민 중","연례 고민"]]},
+  {d:30,w:"수",t:[
+   ["info","연말정산 미리보기 언제부터 되나요?","10월 서비스 · 발행 전 확인"],
+   ["info","가을철 벌 쏘임·진드기 주의할 점은?","성묘·야외"],
+   ["search","10월 단풍 언제 절정인가요?","가을 대표 검색"],
+   ["search","난방비 아끼려면 지금 뭘 해야 하나요?","겨울 대비"],
+   ["home","9월을 닫으며 정리한 체크리스트","월말 마감"]]}]},
+];
+
+const NAME={info:"정보성",search:"검색유입",home:"홈판"};
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+document.getElementById("anchors").innerHTML=ANCHORS.map(a=>
+ `<div class="anchor"><div class="d">${esc(a.d)}</div><div class="t">${esc(a.t)}</div><div class="n">${esc(a.n)}</div></div>`).join("");
+
+const days=W.flatMap(w=>w.days), topics=days.flatMap(d=>d.t);
+const count=k=>topics.filter(t=>t[0]===k).length;
+document.getElementById("stats").innerHTML=[
+ [days.length,"발행일"],[topics.length,"글감 총계"],
+ [count("info"),"정보성"],[count("search"),"검색유입"],[count("home"),"홈판"],
+ [topics.filter(t=>t[3]).length,"검증 앵커"],
+].map(([n,l])=>`<div class="stat"><div class="n">${n}</div><div class="l">${l}</div></div>`).join("");
+
+document.getElementById("weeks").innerHTML=W.map(w=>`
+ <section class="week${w.past?" is-past":""}">
+  <div class="week-head">
+   <span class="week-n">${esc(w.n)}</span>
+   <span class="week-range">${esc(w.r)}</span>
+   <span class="week-focus">${esc(w.f)}</span>
+  </div>
+  <div class="days">${w.days.map(d=>`
+   <article class="day${w.past?" past":""}${d.hol?" holiday":""}">
+    <div class="day-head">
+     <span class="dnum">${d.d}</span><span class="dow">${esc(d.w)}</span>
+     ${d.hol?`<span class="dtag">${esc(d.hol)}</span>`:w.past?`<span class="dtag">지남</span>`:""}
+    </div>
+    <ol class="topics">${d.t.map(([k,t,n,v])=>`
+     <li><span class="chip c-${k}">${NAME[k]}</span>
+      <span><span class="topic-t">${esc(t)}</span>${v?`<span class="ver">검증</span>`:""}
+      <span class="topic-n">${esc(n)}</span></span></li>`).join("")}
+    </ol>
+   </article>`).join("")}
+  </div>
+ </section>`).join("");
+</script>
