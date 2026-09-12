@@ -4,6 +4,20 @@
 규칙 중 사람이 판단할 것과 기계가 셀 수 있는 것을 분리한다.
 이 스크립트는 세는 것만 한다. 글이 좋은지는 판단하지 않는다.
 
+*** 현재 상태: 발행 게이트가 아니다 ***
+
+    content/posts/ 의 원고는 `node scripts/lint-post.mjs` 가 검사한다.
+    그쪽이 실제 발행을 막는 게이트다.
+
+    이 스크립트는 아래 한글 앞머리(제목/타겟/목적/메인키워드) 규격을 전제로
+    쓰였는데, 지금 원고는 그 형식이 아니라서 그대로는 돌지 않는다.
+    대신 lint-post.mjs 에 없는 것 — 광고 심의 금지어, 출처 URL, 이미지 장수,
+    Q&A 개수 — 을 갖고 있으므로 지우지 않고 둔다.
+
+    쓰려면 앞머리 파서를 현재 형식에 맞추고, 분량 세는 법도
+    lint-post.mjs 와 같게(줄바꿈 제외) 맞춰야 한다. 지금은 세는 법이 달라
+    같은 원고를 2,310자 / 2,854자로 다르게 센다.
+
     python3 check_post.py 원고.md
 
 원고는 앞머리에 다음 정보를 둔다(--- 사이).
@@ -60,7 +74,9 @@ SECONDARY_SOURCE_HINTS = [
 # 규칙 [3] 필수 해시태그
 REQUIRED_TAGS = ["#설계사한다", "#한다블로그"]
 
-MIN_CHARS = 2000
+# 분량 기준은 scripts/lint-post.mjs 와 같은 값을 쓴다. 한쪽만 고치지 말 것.
+MIN_CHARS = 2300
+MAX_CHARS = 2500
 MIN_MAIN_KEYWORD = 10
 MIN_SUB_KEYWORD = 5
 TARGET_TAGS = 15
@@ -132,10 +148,12 @@ def check_length(body: str, rep: Report) -> None:
     prose = re.sub(r"^#\S+.*$", "", body, flags=re.MULTILINE)
     prose = re.sub(r"https?://\S+", "", prose)
     n = len(prose)
-    if n >= MIN_CHARS:
-        rep.ok(f"분량 {n:,}자 (기준 {MIN_CHARS:,}자)")
-    else:
+    if n < MIN_CHARS:
         rep.error(f"분량 부족: {n:,}자. {MIN_CHARS - n:,}자 더 필요합니다.")
+    elif n > MAX_CHARS:
+        rep.error(f"분량 초과: {n:,}자. {n - MAX_CHARS:,}자 줄이세요.")
+    else:
+        rep.ok(f"분량 {n:,}자 (기준 {MIN_CHARS:,}~{MAX_CHARS:,}자)")
 
 
 def check_keywords(body: str, meta: dict, rep: Report) -> None:
