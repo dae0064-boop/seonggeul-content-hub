@@ -192,21 +192,25 @@ async function runCheck(args) {
     return;
   }
 
+  let openOk = false;
   if (open) {
     console.log('\n검색 API 호출 중...');
     try {
       const t = await blogTotal('환절기', openHost);
       console.log(`  ✅ 인증 성공 — 문서수 ${t?.toLocaleString?.() ?? t}`);
+      openOk = true;
     } catch (e) {
       console.log(`  ❌ 실패: ${e.message}`);
-      console.log('     → --with-competition 없이 돌리면 검색량은 정상적으로 나옵니다.');
+      if (/401/.test(e.message))
+        console.log('     → 앱에 "검색" API 권한이 없을 때 나옵니다. 문서수는 선택이라 없어도 됩니다.');
     }
   } else {
-    console.log('\n검색 API 키가 없어 건너뜁니다 (--with-competition 사용 불가).');
+    console.log('\n검색 API 키가 없어 건너뜁니다.');
   }
 
   console.log('\n다음 단계:');
-  console.log('  node scripts/naver-keywords.mjs --keywords content/calendar/keywords.txt' + (open ? ' --with-competition' : ''));
+  console.log('  node scripts/naver-keywords.mjs --keywords content/calendar/keywords.txt' + (openOk ? ' --with-competition' : ''));
+  if (!openOk) console.log('  (문서수 조회는 빠집니다. 월간검색수는 정상적으로 나옵니다.)');
 }
 
 // ---------------------------------------------------------------- main
