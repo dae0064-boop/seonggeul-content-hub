@@ -4,6 +4,8 @@
  * 형식
  *   ---
  *   title: 제목
+ *   main_keyword: 메인 키워드
+ *   sub_keywords: 서브1, 서브2
  *   category: 생활정보
  *   tags: 태그1, 태그2
  *   ---
@@ -74,6 +76,8 @@ export function parsePost(raw) {
     title: meta.title || '',
     category: meta.category || '',
     tags: meta.tags ? meta.tags.split(',').map((s) => s.trim()).filter(Boolean) : [],
+    mainKeyword: meta.main_keyword || '',
+    subKeywords: meta.sub_keywords ? meta.sub_keywords.split(',').map((s) => s.trim()).filter(Boolean) : [],
     blocks,
     warnings,
   };
