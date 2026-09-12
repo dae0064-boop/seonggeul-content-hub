@@ -24,6 +24,7 @@ const BAN = ['무조건', '100%', '단언컨대', '절대로', '손실 없음', 
 
 // 고정 인사말 — 모든 글이 이걸로 열고 닫는다
 const OPEN = ['안녕하세요', '매일매일 좋은 날을 나누는 성글벙글입니다😊'];
+const INTRO_RE = /^오늘은 .+ 포스팅 내용에 대해$/;
 const CLOSE_1 = '좋아요·공감과 이웃추가 부탁드려요💙';
 const CLOSE_RE = /^이상 성글벙글의 .+ 포스팅이었습니다😎$/;
 // 문맥에 따라 괜찮을 수 있어 경고만 한다 ("가장 먼저" 처럼 순서를 뜻하는 경우)
@@ -103,6 +104,8 @@ for (const file of files) {
   // 고정 인사말
   if (texts[0] !== OPEN[0] || texts[1] !== OPEN[1])
     errors.push(`오프닝이 고정 문구와 다릅니다. "${OPEN[0]} / ${OPEN[1]}" 로 시작해야 합니다.`);
+  if (!INTRO_RE.test(texts[2] || ''))
+    errors.push('인사말 다음 줄이 "오늘은 OO 포스팅 내용에 대해 / 설명드리겠습니다" 여야 합니다.');
   if (texts[texts.length - 2] !== CLOSE_1 || !CLOSE_RE.test(texts[texts.length - 1]))
     errors.push(`클로징이 고정 문구와 다릅니다. "${CLOSE_1} / 이상 성글벙글의 OO 포스팅이었습니다😎" 로 끝나야 합니다.`);
 
