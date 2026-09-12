@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/scripts/drive-sync.sh\" pull",
+            "timeout": 120,
+            "statusMessage": "구글 드라이브에서 작업물·메모리 불러오는 중..."
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/scripts/drive-sync.sh\" push",
+            "timeout": 120,
+            "statusMessage": "구글 드라이브에 백업하는 중..."
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/scripts/drive-sync.sh\" push",
+            "timeout": 120
+          }
+        ]
+      }
+    ]
+  }
+}
