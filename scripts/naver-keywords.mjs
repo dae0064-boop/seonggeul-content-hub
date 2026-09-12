@@ -18,6 +18,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { loadEnv, requireEnv } from './lib/env.mjs';
 
 const AD_HOST = 'https://api.searchad.naver.com';
 const OPEN_HOST = 'https://openapi.naver.com';
@@ -25,55 +26,7 @@ const BATCH = 5;          // keywordstool 은 hintKeywords 를 최대 5개까지
 const GAP_MS = 350;       // 호출 간 간격 (쿼터 보호)
 
 // ---------------------------------------------------------------- env
-/**
- * .env 를 읽어 process.env 에 채운다.
- *
- * 윈도우 메모장이 만드는 파일까지 받아내야 한다:
- *  - 줄 끝이 CRLF 다. 정규식의 `.` 은 \r 을 매칭하지 않으므로 반드시 먼저 털어낸다.
- *  - UTF-16(LE/BE) 또는 BOM 붙은 UTF-8 로 저장되기도 한다.
- */
-function decodeEnvFile(buf) {
-  if (buf[0] === 0xff && buf[1] === 0xfe) return buf.subarray(2).toString('utf16le');
-  if (buf[0] === 0xfe && buf[1] === 0xff) return buf.subarray(2).swap16().toString('utf16le');
-  // BOM 없는 UTF-16LE: ASCII 자리에 널바이트가 섞여 들어온다
-  if (buf.length > 1 && buf[1] === 0x00 && buf[3] === 0x00) return buf.toString('utf16le');
-  let s = buf.toString('utf8');
-  if (s.charCodeAt(0) === 0xfeff) s = s.slice(1);
-  return s;
-}
 
-function loadEnv() {
-  let loaded = 0, found = null;
-  for (const f of ['.env', '.env.local']) {
-    if (!fs.existsSync(f)) continue;
-    found = f;
-    for (let line of decodeEnvFile(fs.readFileSync(f)).split(/\r?\n/)) {
-      line = line.replace(/[\r\u0000]/g, '').trim();
-      if (!line || line.startsWith('#')) continue;
-      const m = /^([A-Za-z0-9_]+)\s*=\s*(.*)$/.exec(line);
-      if (!m) continue;
-      const v = m[2].trim().replace(/^["']|["']$/g, '');
-      if (!v) continue;
-      if (!process.env[m[1]]) process.env[m[1]] = v;
-      loaded++;
-    }
-  }
-  if (found && loaded === 0) {
-    console.error(`⚠ ${found} 를 찾았지만 읽어낸 값이 없습니다.`);
-    console.error('  KEY=값 형식인지, = 앞뒤에 공백이 없는지 확인하세요.');
-  }
-  return loaded;
-}
-
-function requireEnv(names) {
-  const missing = names.filter((n) => !process.env[n]);
-  if (missing.length) {
-    throw new Error(
-      `자격증명이 없습니다: ${missing.join(', ')}\n` +
-      `.env 파일에 넣거나 환경변수로 설정하세요. README 의 "네이버 API 키 발급" 참고.`
-    );
-  }
-}
 
 // ---------------------------------------------------------------- args
 function parseArgs(argv) {
