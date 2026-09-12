@@ -1,0 +1,213 @@
+<title>성글벙글 키워드 도구 설치</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#f4f5f3; --card:#fff; --ink:#1b211d; --ink2:#5a6760; --ink3:#8d9a93;
+  --line:#dfe4e0; --line2:#edf0ed;
+  --term-bg:#1e2622; --term-ink:#dfe8e2; --term-dim:#7d8d84;
+  --ok:#1a7f5a; --ok-bg:#e3f2ea;
+  --warn:#9a6212; --warn-bg:#fbf0dd;
+  --step:#22564a;
+  --sans:"IBM Plex Sans KR",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11150f; --card:#1a201b; --ink:#e9ede9; --ink2:#9fada4; --ink3:#74827a;
+  --line:#2b332d; --line2:#222a24;
+  --term-bg:#0c100e; --term-ink:#dfe8e2; --term-dim:#6d7d74;
+  --ok:#57c295; --ok-bg:#143024;
+  --warn:#d9a441; --warn-bg:#332714;
+  --step:#7fd3bd;
+}}
+:root[data-theme="dark"]{
+  --bg:#11150f; --card:#1a201b; --ink:#e9ede9; --ink2:#9fada4; --ink3:#74827a;
+  --line:#2b332d; --line2:#222a24;
+  --term-bg:#0c100e; --term-ink:#dfe8e2; --term-dim:#6d7d74;
+  --ok:#57c295; --ok-bg:#143024;
+  --warn:#d9a441; --warn-bg:#332714;
+  --step:#7fd3bd;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding-inline:20px;padding-block:44px 80px}
+header{border-bottom:2px solid var(--ink);padding-bottom:20px;margin-bottom:8px}
+h1{font-size:clamp(26px,5vw,36px);font-weight:700;margin:0;letter-spacing:-.02em;text-wrap:balance}
+.lede{color:var(--ink2);font-size:15px;margin-top:10px;max-width:58ch}
+.lede b{color:var(--ink);font-weight:500}
+
+.step{display:grid;grid-template-columns:38px 1fr;gap:0 16px;margin-top:36px}
+.num{grid-row:1/999;font-family:var(--mono);font-size:13px;font-weight:500;color:#fff;background:var(--step);
+  width:30px;height:30px;border-radius:50%;display:grid;place-items:center;margin-top:4px}
+:root[data-theme="dark"] .num,:root:not([data-theme="light"]) .num{color:#0c100e}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .num{color:#0c100e}}
+h2{font-size:19px;font-weight:600;margin:0 0 4px;letter-spacing:-.01em}
+.why{color:var(--ink2);font-size:14px;margin:0 0 14px}
+.step > *:not(.num){grid-column:2}
+
+.term{background:var(--term-bg);border-radius:6px;overflow:hidden;margin:0 0 12px}
+.term-bar{display:flex;align-items:center;gap:8px;padding:7px 12px;border-bottom:1px solid rgba(255,255,255,.07)}
+.term-bar span{font-family:var(--mono);font-size:10.5px;color:var(--term-dim);letter-spacing:.05em}
+.copy{margin-left:auto;background:rgba(255,255,255,.09);color:var(--term-ink);border:0;border-radius:3px;
+  font-family:var(--sans);font-size:11.5px;padding:3px 10px;cursor:pointer;font-weight:400}
+.copy:hover{background:rgba(255,255,255,.17)}
+.copy:focus-visible{outline:2px solid var(--step);outline-offset:1px}
+.copy.done{background:var(--ok);color:#fff}
+pre{margin:0;padding:13px 14px;overflow-x:auto;font-family:var(--mono);font-size:13px;line-height:1.75;color:var(--term-ink);white-space:pre}
+
+.ok,.warn{border-radius:4px;padding:11px 14px;font-size:13.5px;margin:0 0 12px;line-height:1.6}
+.ok{background:var(--ok-bg);color:var(--ok);border-left:3px solid var(--ok)}
+.warn{background:var(--warn-bg);color:var(--warn);border-left:3px solid var(--warn)}
+.ok b,.warn b{font-weight:600}
+.ok code,.warn code{font-family:var(--mono);font-size:12.5px;background:rgba(0,0,0,.07);padding:1px 4px;border-radius:2px}
+:root[data-theme="dark"] .ok code,:root[data-theme="dark"] .warn code{background:rgba(255,255,255,.1)}
+
+p{margin:0 0 12px;font-size:14.5px}
+p.tight{margin-bottom:8px}
+.tree{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:13px 15px;
+  font-family:var(--mono);font-size:12.5px;line-height:1.9;color:var(--ink2);white-space:pre;overflow-x:auto;margin:0 0 12px}
+.tree b{color:var(--ink);font-weight:500}
+.env-box{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:14px 15px;margin:0 0 12px}
+.env-row{display:grid;grid-template-columns:1fr;gap:2px;padding:7px 0;border-bottom:1px solid var(--line2)}
+.env-row:last-child{border-bottom:0}
+.env-k{font-family:var(--mono);font-size:12.5px;color:var(--ink);font-weight:500;word-break:break-all}
+.env-v{font-size:12.5px;color:var(--ink3)}
+
+.trouble{margin-top:48px;border-top:2px solid var(--ink);padding-top:20px}
+.trouble h2{margin-bottom:14px}
+.q{border-left:2px solid var(--line);padding-left:14px;margin-bottom:18px}
+.q b{display:block;font-size:14.5px;font-weight:600;margin-bottom:4px}
+.q p{font-size:13.5px;color:var(--ink2);margin:0}
+.q code{font-family:var(--mono);font-size:12.5px;background:var(--line2);padding:1px 4px;border-radius:2px;color:var(--ink)}
+a{color:var(--step)}
+@media(max-width:520px){
+  .step{grid-template-columns:26px 1fr;gap:0 11px}
+  .num{width:24px;height:24px;font-size:11px}
+}
+</style>
+
+<div class="wrap">
+<header>
+  <h1>키워드 도구 설치</h1>
+  <p class="lede">네이버 <b>월간검색수</b>를 받아오는 도구를 내 PC에 설치합니다.<br>
+  아래 순서대로만 따라오시면 됩니다. 각 단계마다 <b>성공 신호</b>를 적어뒀으니, 그게 보이면 다음으로 넘어가세요.</p>
+</header>
+
+<section class="step">
+  <div class="num">1</div>
+  <h2>검은 창 열기</h2>
+  <p class="why">앞으로 모든 명령은 이 창에 붙여넣습니다. 윈도우의 "명령 프롬프트"입니다.</p>
+  <p class="tight">키보드에서 <b>Windows 키 + R</b> 을 같이 누르고, 작은 창이 뜨면 <b>cmd</b> 라고 친 뒤 엔터.</p>
+  <div class="ok">검은 배경 창이 뜨면 성공입니다. 이 창을 끝까지 켜두세요.</div>
+</section>
+
+<section class="step">
+  <div class="num">2</div>
+  <h2>준비물 확인</h2>
+  <p class="why">도구를 돌리려면 Node.js와 Git 두 가지가 필요합니다. 깔려 있는지 먼저 봅니다.</p>
+  <div class="term"><div class="term-bar"><span>명령 프롬프트</span><button class="copy">복사</button></div><pre>node -v</pre></div>
+  <div class="ok"><b>v20.19.0</b> 처럼 <b>v</b>로 시작하는 숫자가 나오면 OK</div>
+  <div class="warn"><b>'node'은(는) 내부 또는 외부 명령... 이 아닙니다</b> 가 나오면 →
+  <a href="https://nodejs.org">nodejs.org</a> 에서 왼쪽 <b>LTS</b> 버튼으로 설치하세요.
+  설치 후 <b>검은 창을 닫고 1단계부터 다시</b> 해야 인식됩니다.</div>
+  <div class="term"><div class="term-bar"><span>명령 프롬프트</span><button class="copy">복사</button></div><pre>git --version</pre></div>
+  <div class="ok"><b>git version 2.xx.x</b> 가 나오면 OK</div>
+  <div class="warn">안 나오면 <a href="https://git-scm.com/download/win">git-scm.com</a> 에서 설치 후, 역시 창을 새로 여세요.</div>
+</section>
+
+<section class="step">
+  <div class="num">3</div>
+  <h2>파일 내려받기</h2>
+  <p class="why">지금 코드는 GitHub에만 있습니다. 내 PC 문서 폴더로 복사해 옵니다.</p>
+  <p class="tight">아래 세 줄을 <b>한 번에</b> 복사해서 붙여넣고 엔터하세요.</p>
+  <div class="term"><div class="term-bar"><span>명령 프롬프트</span><button class="copy">복사</button></div><pre>cd %USERPROFILE%\Documents
+git clone -b claude/kind-dijkstra-qdzck2 https://github.com/dae0064-boop/seonggeul-content-hub
+cd seonggeul-content-hub</pre></div>
+  <div class="warn"><b>-b claude/kind-dijkstra-qdzck2</b> 부분이 꼭 있어야 합니다.
+  빼먹으면 빈 폴더만 받아집니다.</div>
+  <p class="tight">이어서 필요한 부품을 설치합니다. 1~2분 걸립니다.</p>
+  <div class="term"><div class="term-bar"><span>명령 프롬프트</span><button class="copy">복사</button></div><pre>npm install</pre></div>
+  <p class="tight">제대로 받아졌는지 봅니다.</p>
+  <div class="term"><div class="term-bar"><span>명령 프롬프트</span><button class="copy">복사</button></div><pre>dir</pre></div>
+  <div class="ok">아래 이름들이 목록에 보이면 성공입니다.
+  <code>package.json</code> <code>scripts</code> <code>content</code> <code>.env.example</code></div>
+  <div class="warn"><code>.gitattributes</code> 하나만 보이면 브랜치를 잘못 받은 겁니다.
+  <code>git checkout claude/kind-dijkstra-qdzck2</code> 를 치세요.</div>
+</section>
+
+<section class="step">
+  <div class="num">4</div>
+  <h2>열쇠 파일 만들기</h2>
+  <p class="why">발급받은 네이버 키 5개를 <b>.env</b> 라는 파일에 적어둡니다. 도구가 여기서 키를 읽습니다.</p>
+  <p class="tight">예시 파일을 복사한 뒤 메모장으로 엽니다.</p>
+  <div class="term"><div class="term-bar"><span>명령 프롬프트</span><button class="copy">복사</button></div><pre>copy .env.example .env
+notepad .env</pre></div>
+  <p class="tight">메모장이 열리면 <b>= 뒤에</b> 값을 붙여넣으세요. 다섯 줄입니다.</p>
+  <div class="env-box">
+    <div class="env-row"><span class="env-k">NAVER_AD_API_KEY=</span><span class="env-v">검색광고 · 액세스 라이선스 (0100000... 로 시작하는 긴 값)</span></div>
+    <div class="env-row"><span class="env-k">NAVER_AD_SECRET_KEY=</span><span class="env-v">검색광고 · 비밀키 (AQAAAAA... 로 시작, 끝의 == 까지 전부)</span></div>
+    <div class="env-row"><span class="env-k">NAVER_AD_CUSTOMER_ID=</span><span class="env-v">검색광고 · 숫자만 6~8자리</span></div>
+    <div class="env-row"><span class="env-k">NAVER_CLIENT_ID=</span><span class="env-v">개발자센터 · Client ID (짧은 영숫자)</span></div>
+    <div class="env-row"><span class="env-k">NAVER_CLIENT_SECRET=</span><span class="env-v">개발자센터 · Client Secret</span></div>
+  </div>
+  <div class="warn"><b>= 앞뒤에 띄어쓰기를 넣지 마세요.</b> 따옴표도 붙이지 마세요.<br>
+  올바른 예 → <code>NAVER_AD_CUSTOMER_ID=1234567</code></div>
+  <p class="tight">다 채웠으면 <b>Ctrl + S</b> 로 저장하고 메모장을 닫습니다.</p>
+  <div class="ok">파일 위치는 <code>package.json</code> 이 있는 <b>바로 그 폴더</b>여야 합니다.
+  위 방법대로 하셨다면 자동으로 맞습니다.</div>
+</section>
+
+<section class="step">
+  <div class="num">5</div>
+  <h2>열쇠가 맞는지 점검</h2>
+  <p class="why">키워드를 전부 돌리기 전에, 키가 제대로 들어갔는지만 확인합니다. 키워드 1개만 조회하니 부담 없습니다.</p>
+  <div class="term"><div class="term-bar"><span>명령 프롬프트</span><button class="copy">복사</button></div><pre>node scripts/naver-keywords.mjs --check</pre></div>
+  <div class="ok">이렇게 나오면 성공입니다.
+  <div class="tree" style="margin-top:8px;margin-bottom:0"><b>✅ 인증 성공 — 연관키워드 12개 수신</b>
+   예: 환절기 — PC 940 / 모바일 7300</div></div>
+  <div class="warn"><b>화면에 키 값은 찍히지 않습니다.</b> 글자 수만 나오니, 결과를 그대로 복사해서 보내주셔도 안전합니다.</div>
+</section>
+
+<section class="step">
+  <div class="num">6</div>
+  <h2>전체 조회</h2>
+  <p class="why">5단계가 통과했을 때만 실행하세요. 키워드 70개를 조회합니다. 1~2분 걸립니다.</p>
+  <div class="term"><div class="term-bar"><span>명령 프롬프트</span><button class="copy">복사</button></div><pre>node scripts/naver-keywords.mjs --keywords content/calendar/keywords.txt --with-competition</pre></div>
+  <div class="ok">끝나면 이 두 파일이 생깁니다.
+  <div class="tree" style="margin-top:8px;margin-bottom:0">content\calendar\<b>keyword-report.csv</b>   ← 엑셀로 열림
+content\calendar\<b>keyword-report.json</b></div></div>
+  <p>이 <b>CSV 파일을 저에게 보내주시면</b> 검색량 기준으로 발행 계획을 다시 짜겠습니다.</p>
+</section>
+
+<section class="trouble">
+  <h2>막혔을 때</h2>
+  <div class="q"><b>검은 창이 어디 있는지 모르겠어요</b>
+  <p>Windows 키 + R → <code>cmd</code> → 엔터. 또는 시작 메뉴에서 "명령 프롬프트"를 검색하세요.</p></div>
+  <div class="q"><b>붙여넣기가 안 돼요</b>
+  <p>검은 창에서는 Ctrl+V 대신 <b>마우스 오른쪽 클릭</b>을 하면 붙여넣어집니다.</p></div>
+  <div class="q"><b>지정된 경로를 찾을 수 없습니다</b>
+  <p>폴더 위치가 어긋난 겁니다. <code>cd %USERPROFILE%\Documents\seonggeul-content-hub</code> 를 치고 다시 시도하세요.</p></div>
+  <div class="q"><b>.env 를 만들었는데 못 찾는대요</b>
+  <p><code>dir .env*</code> 로 확인하세요. <code>.env.txt</code> 로 보이면 <code>ren .env.txt .env</code> 를 치세요.</p></div>
+  <div class="q"><b>그 밖의 오류</b>
+  <p>검은 창에 나온 글자를 <b>그대로 복사해서</b> 보내주세요. 키 값은 찍히지 않으니 안전합니다.</p></div>
+</section>
+</div>
+
+<script>
+for (const btn of document.querySelectorAll(".copy")) {
+  btn.addEventListener("click", async () => {
+    const text = btn.closest(".term").querySelector("pre").textContent;
+    try { await navigator.clipboard.writeText(text); }
+    catch {
+      const ta = document.createElement("textarea");
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy"); } catch {}
+      ta.remove();
+    }
+    btn.textContent = "복사됨"; btn.classList.add("done");
+    setTimeout(() => { btn.textContent = "복사"; btn.classList.remove("done"); }, 1600);
+  });
+}
+</script>
