@@ -1,21 +1,49 @@
 # CLAUDE.md
 
-생활정보 콘텐츠 원고를 쓰고, 네이버 블로그에 예약발행하는 저장소.
+성글벙글 콘텐츠의 **단일 저장소**. 글쓰기 규칙, 원고, 발행 자동화, 여러 대의 컴퓨터를
+잇는 워크스페이스 도구가 모두 여기 있다.
 
-## 저장소 구조
+## 저장소 지도
 
 ```
-content/posts/   원고. <날짜>-<슬러그>.md (사람이 읽는 원고) + .json (스크립트 입력)
-scripts/         발행 자동화
+memory/CLAUDE.md   브랜드 글쓰기 규칙 정본 ([0]~[11]). 각 PC 의 ~/.claude/CLAUDE.md 가 된다
+CLAUDE.md          ← 이 문서. 저장소 운영 + 생활정보 원고 실무 기준
+content/posts/     원고. <날짜>-<슬러그>.md (정본) + .json (스크립트 입력)
+content/calendar/  발행 캘린더 아티팩트 소스, 키워드 목록
+content/board/     원고 작업판 아티팩트 소스
+scripts/           발행·검수 자동화(.mjs) + 워크스페이스 동기화 도구(.py)
+launchers/         윈도우 더블클릭 실행기
+standards/         운영 기준 문서
+work/              2026-08 작업물 아카이브 (원고·카드뉴스). 과거 기록이며 갱신하지 않는다
+docs/SETUP.md      새 컴퓨터 설치 가이드
 ```
 
-원고는 항상 **`.md` 와 `.json` 한 쌍**으로 둔다. `.md` 가 정본이고, `.json` 은 거기서 생성한 스크립트 입력이다.
-
-`.json` 은 직접 고치지 않는다. `.md` 를 고친 뒤 변환한다:
+원고는 항상 **`.md` 와 `.json` 한 쌍**으로 둔다. `.md` 가 정본이고, `.json` 은 거기서 생성한
+스크립트 입력이다. `.json` 은 직접 고치지 않는다. `.md` 를 고친 뒤 변환한다:
 
 ```bash
 node scripts/build-post.mjs content/posts/<원고>.md
 ```
+
+## 규칙 문서의 우선순위
+
+규칙은 두 문서로 나뉜다. **충돌하면 아래 순서로 따른다.**
+
+1. **이 문서(`CLAUDE.md`)** — 생활정보 원고의 실무 기준. 검사기(`lint-post.mjs`)가 강제하는
+   수치는 전부 여기에 있고, 이게 최종이다.
+2. **`memory/CLAUDE.md`** — 브랜드 전반 규칙(페르소나·광고심의·출처·발행 양식).
+   글 종류를 가리지 않고 적용되며, 위와 겹치지 않는 모든 항목의 정본이다.
+
+즉 **분량·키워드 횟수처럼 검사기가 세는 값은 이 문서가 우선**이고, 말투·금지표현·발행
+양식처럼 검사기가 세지 않는 것은 `memory/CLAUDE.md` 가 우선이다.
+
+## 작업물을 어디에 두는가
+
+**원고와 산출물은 이 저장소에 둔다.** `content/` 아래에 커밋한다.
+검사기와 발행 스크립트가 저장소 경로를 기준으로 동작하므로, 저장소 밖에 두면 검증이 돌지 않는다.
+
+Google Drive 워크스페이스(`ClaudeWorkspace/`)는 **규칙 메모리 동기화와 PC 간 연속성** 용도로만
+쓴다. 원고의 정본 위치가 아니다. 자세한 것은 아래 "여러 대의 컴퓨터에서 이어서 작업하기" 참고.
 
 ## 실행 환경에 대한 중요한 전제
 
@@ -297,3 +325,45 @@ CDP attach 자체는 로컬 크로미움을 디버깅 포트로 띄워 확인할
 ## 브랜치
 
 작업 브랜치는 `claude/*`. `main` 에 직접 푸시하지 않는다.
+
+## 여러 대의 컴퓨터에서 이어서 작업하기
+
+집·회사·노트북에서 같은 규칙 메모리로 작업하기 위해 Google Drive 워크스페이스를 쓴다.
+`memory/CLAUDE.md` 가 각 PC 의 `~/.claude/CLAUDE.md` 로 배포된다.
+
+설치는 컴퓨터마다 한 번씩, 모두 같은 방법이다. 자세한 절차는 `docs/SETUP.md`.
+
+**Windows** — `내 드라이브\ClaudeWorkspace\connect.cmd` 더블클릭
+**macOS / Linux** — `python3 "<내 드라이브>/ClaudeWorkspace/connect.py"`
+
+```bash
+workspace.py status   # 지금 상태
+workspace.py sync     # 받아오고 백업
+workspace.py doctor   # 문제 진단
+```
+
+경로는 컴퓨터마다 다르므로(Windows `G:\내 드라이브\...`, macOS `~/Library/CloudStorage/...`)
+하드코딩하지 않고 `workspace.py status` 로 확인한다.
+
+### 지킬 것
+
+1. **한 번에 한 컴퓨터에서만** 작업한다.
+2. 작업을 마치면 Drive 트레이 아이콘이 **"최신 상태"** 가 된 뒤 컴퓨터를 끈다.
+3. 다른 컴퓨터에서 시작할 때도 동기화가 끝난 뒤 Claude 를 연다.
+
+어겨서 충돌이 나도 데이터는 지워지지 않는다. `memory/.conflicts/` 에 사본이 남고
+`workspace.py resolve` 로 고를 수 있다.
+
+### 하지 않을 것
+
+- `node_modules`, `.venv`, `build`, `dist` 를 Drive 안에 두지 않는다.
+  동기화 충돌과 속도 저하의 주원인이다. `workspace.py detach <경로>` 로 빼낸다.
+- 자격증명을 Drive 에 올리지 않는다. `.credentials.json`, `.env`, API 키가 담긴 파일은
+  동기화 제외 목록에 있다. 이 목록을 임의로 풀지 않는다.
+- 같은 파일을 두 컴퓨터에서 동시에 열지 않는다.
+
+### 메모리를 고쳤을 때
+
+각 PC 의 `~/.claude/CLAUDE.md` 를 고친 변경은 Drive 를 통해 전파된다. 세션 종료 시 자동
+백업되지만, 확실히 하려면 `workspace.py push` 를 실행한다.
+저장소의 정본까지 바꾸려면 `memory/CLAUDE.md` 를 직접 고치고 커밋한다.

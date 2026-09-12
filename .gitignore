@@ -1,4 +1,31 @@
+# --- 의존성 / 빌드 산출물 ---
 node_modules/
-.env
+.venv/
+venv/
+dist/
+build/
 out/
 dumps/
+
+# --- 파이썬 ---
+__pycache__/
+*.py[cod]
+
+# --- API 키 (절대 커밋 금지) ---
+.env
+.env.local
+
+# --- 워크스페이스 도구가 만드는 로컬 상태 (컴퓨터마다 다름) ---
+.claude-workspace.json
+.claude-ws-cache/
+.drive-local
+.drive-sync.log
+
+# --- 개인 설정 오버라이드 ---
+.claude/settings.local.json
+
+# --- OS / 드라이브 앱 부산물 ---
+.DS_Store
+desktop.ini
+Icon?
+Thumbs.db
