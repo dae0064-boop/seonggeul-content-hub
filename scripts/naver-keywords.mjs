@@ -60,6 +60,7 @@ function parseArgs(argv) {
       case '--gap':      out.gap = Number(next()); break;
       case '--limit':    out.limit = Number(next()); break;
       case '--with-competition': out.comp = true; break;
+      case '--check':    out.check = true; break;
       case '--help':     out.help = true; break;
       default:
         if (a.startsWith('--')) throw new Error(`알 수 없는 옵션: ${a}`);
@@ -80,6 +81,7 @@ const USAGE = `
   --keywords <파일>     한 줄에 키워드 하나. # 로 시작하면 주석
   --out <접두사>        결과 저장 경로 (기본 content/calendar/keyword-report)
   --with-competition    블로그 문서수까지 조회해 경쟁도/기회점수 계산
+  --check               자격증명만 점검하고 끝낸다 (키워드 1개만 호출)
   --limit <N>           앞에서 N개만 조회
   --gap <ms>            호출 간격 (기본 350)
   --host <url>          API 호스트 재정의 (로컬 목업 테스트용)
@@ -150,12 +152,90 @@ const csvCell = (v) => {
   return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
 };
 
+
+// ---------------------------------------------------------------- 점검
+async function runCheck(args) {
+  const adHost = args.host || AD_HOST;
+  const openHost = args.host || OPEN_HOST;
+  console.log('═'.repeat(58));
+  console.log(' 자격증명 점검');
+  console.log('═'.repeat(58));
+
+  const show = (name) => {
+    const v = process.env[name];
+    // 값 자체는 절대 찍지 않는다. 존재 여부와 길이만.
+    console.log(`  ${v ? '✅' : '❌'} ${name.padEnd(22)} ${v ? `설정됨 (${v.length}자)` : '없음'}`);
+    return !!v;
+  };
+
+  console.log('\n검색광고 API — 월간검색수 (필수)');
+  const ad = ['NAVER_AD_API_KEY', 'NAVER_AD_SECRET_KEY', 'NAVER_AD_CUSTOMER_ID'].map(show).every(Boolean);
+
+  console.log('\n검색 API — 문서수 (선택)');
+  const open = ['NAVER_CLIENT_ID', 'NAVER_CLIENT_SECRET'].map(show).every(Boolean);
+
+  if (!ad) {
+    console.log('\n❌ 검색광고 키가 없어 호출을 건너뜁니다. .env 를 확인하세요.');
+    process.exitCode = 1;
+    return;
+  }
+
+  const cid = process.env.NAVER_AD_CUSTOMER_ID;
+  if (!/^\d{5,10}$/.test(cid)) {
+    console.log(`\n  ⚠ CUSTOMER_ID 가 숫자가 아닙니다: "${cid}". 6~8자리 숫자여야 합니다.`);
+  }
+
+  console.log('\n검색광고 API 호출 중... (키워드 1개)');
+  try {
+    const j = await keywordTool(['환절기'], adHost);
+    const n = (j.keywordList || []).length;
+    console.log(`  ✅ 인증 성공 — 연관키워드 ${n}개 수신`);
+    const first = (j.keywordList || [])[0];
+    if (first) {
+      const pc = toCount(first.monthlyPcQcCnt), mo = toCount(first.monthlyMobileQcCnt);
+      console.log(`     예: ${first.relKeyword} — PC ${pc.n} / 모바일 ${mo.n}`);
+    }
+  } catch (e) {
+    console.log(`  ❌ 실패`);
+    console.log('     ' + e.message.split('\n').join('\n     '));
+    const m = /keywordstool (\d+)/.exec(e.message);
+    if (m) {
+      const hint = {
+        '401': '라이선스 또는 비밀키가 틀렸습니다. 공백이나 줄바꿈이 섞이지 않았는지 확인하세요.',
+        '403': 'CUSTOMER_ID 가 라이선스와 짝이 맞지 않습니다.',
+        '404': '경로가 잘못됐습니다. --host 를 건드리지 않았는지 확인하세요.',
+      }[m[1]];
+      if (hint) console.log(`     → ${hint}`);
+    }
+    process.exitCode = 1;
+    return;
+  }
+
+  if (open) {
+    console.log('\n검색 API 호출 중...');
+    try {
+      const t = await blogTotal('환절기', openHost);
+      console.log(`  ✅ 인증 성공 — 문서수 ${t?.toLocaleString?.() ?? t}`);
+    } catch (e) {
+      console.log(`  ❌ 실패: ${e.message}`);
+      console.log('     → --with-competition 없이 돌리면 검색량은 정상적으로 나옵니다.');
+    }
+  } else {
+    console.log('\n검색 API 키가 없어 건너뜁니다 (--with-competition 사용 불가).');
+  }
+
+  console.log('\n다음 단계:');
+  console.log('  node scripts/naver-keywords.mjs --keywords content/calendar/keywords.txt' + (open ? ' --with-competition' : ''));
+}
+
 // ---------------------------------------------------------------- main
 async function main() {
   const args = parseArgs(process.argv);
   if (args.help) { console.log(USAGE); return; }
 
   loadEnv();
+
+  if (args.check) return runCheck(args);
 
   let keywords = args.inline;
   if (args.file) {
