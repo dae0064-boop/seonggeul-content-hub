@@ -71,9 +71,6 @@ SECONDARY_SOURCE_HINTS = [
     "namu.wiki", "wikipedia.org", "velog.io", "medium.com",
 ]
 
-# 규칙 [3] 필수 해시태그
-REQUIRED_TAGS = ["#설계사한다", "#한다블로그"]
-
 # 분량 기준은 scripts/lint-post.mjs 와 같은 값을 쓴다. 한쪽만 고치지 말 것.
 MIN_CHARS = 2300
 MAX_CHARS = 2500
@@ -248,18 +245,15 @@ def check_sources(body: str, meta: dict, rep: Report) -> None:
 
 
 def check_tags(body: str, rep: Report) -> None:
+    # 고정 필수 태그는 두지 않는다. 개수만 센다.
     tags = re.findall(r"#[^\s#]+", body)
     uniq = list(dict.fromkeys(tags))
-    for req in REQUIRED_TAGS:
-        if req not in uniq:
-            rep.error(f"필수 해시태그 누락: {req}")
-    extra = [t for t in uniq if t not in REQUIRED_TAGS]
     if not tags:
         rep.error("해시태그가 없습니다.")
-    elif len(extra) < TARGET_TAGS:
-        rep.warn(f"내용 맞춤 해시태그 {len(extra)}개 — {TARGET_TAGS}개 권장")
+    elif len(uniq) < TARGET_TAGS:
+        rep.warn(f"해시태그 {len(uniq)}개 — {TARGET_TAGS}개 이상 권장")
     else:
-        rep.ok(f"해시태그 {len(uniq)}개 (필수 포함)")
+        rep.ok(f"해시태그 {len(uniq)}개")
 
 
 def check_title(meta: dict, rep: Report) -> None:
