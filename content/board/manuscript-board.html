@@ -31,95 +31,151 @@
 }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.65;-webkit-font-smoothing:antialiased}
-.wrap{max-width:980px;margin:0 auto;padding-inline:18px;padding-block:36px 72px}
-header{border-bottom:2px solid var(--ink);padding-bottom:16px}
-.htop{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:flex-end;justify-content:space-between}
-h1{font-size:clamp(24px,4.2vw,34px);font-weight:700;margin:0;letter-spacing:-.02em}
+.wrap{max-width:860px;margin:0 auto;padding-inline:18px;padding-block:34px 70px}
+header{border-bottom:2px solid var(--ink);padding-bottom:15px}
+.htop{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:flex-end;justify-content:space-between}
+h1{font-size:clamp(23px,4.2vw,32px);font-weight:700;margin:0;letter-spacing:-.02em}
 .sub{color:var(--ink2);font-size:13.5px;margin-top:6px;max-width:56ch}
-.meta{font-family:var(--mono);font-size:11.5px;color:var(--ink2);text-align:right;line-height:1.8;font-variant-numeric:tabular-nums}
-.meta b{color:var(--ink);font-weight:500}
-.bar{display:flex;height:7px;border-radius:4px;overflow:hidden;margin-top:16px;background:var(--line2)}
-.bar i{display:block;transition:width .3s}
-.tally{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:9px;font-size:12.5px;color:var(--ink2)}
-.tally span{display:inline-flex;align-items:center;gap:6px}
-.sw{width:10px;height:10px;border-radius:2px}
+.meta{font-family:var(--mono);font-size:11.5px;color:var(--ink2);text-align:right;line-height:1.8}
 
-.card{background:var(--card);border:1px solid var(--line);border-radius:6px;margin-top:14px;overflow:hidden}
+.card{background:var(--card);border:1px solid var(--line);border-radius:6px;margin-top:16px;overflow:hidden}
 .card.todo{border-left:4px solid var(--todo)}
 .card.doing{border-left:4px solid var(--doing)}
 .card.done{border-left:4px solid var(--done)}
-.chead{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:start;padding:14px 16px}
-.idx{font-family:var(--mono);font-size:12px;color:var(--ink3);padding-top:4px}
-.ctitle{font-size:16.5px;font-weight:500;line-height:1.45;margin:0;letter-spacing:-.01em}
-.kv{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:7px;font-size:12px;color:var(--ink2);font-variant-numeric:tabular-nums}
+.chead{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start;padding:15px 16px 12px}
+.ctitle{font-size:17px;font-weight:500;line-height:1.45;margin:0;letter-spacing:-.01em}
+.kv{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:8px;font-size:12px;color:var(--ink2);font-variant-numeric:tabular-nums}
 .kv b{font-weight:500;color:var(--ink)}
 .kv code{font-family:var(--mono);font-size:11.5px}
-.pill{border:0;cursor:pointer;font-family:var(--sans);font-size:12px;font-weight:500;padding:6px 13px;border-radius:20px;white-space:nowrap}
+.pill{border:0;cursor:pointer;font-family:var(--sans);font-size:12px;font-weight:500;padding:6px 14px;border-radius:20px;white-space:nowrap}
 .pill:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 .pill.todo{background:var(--todo-bg);color:var(--todo)}
 .pill.doing{background:var(--doing-bg);color:var(--doing)}
 .pill.done{background:var(--done-bg);color:var(--done)}
 
-.actions{display:flex;flex-wrap:wrap;gap:7px;padding:0 16px 14px}
+.actions{display:flex;flex-wrap:wrap;gap:7px;padding:0 16px 15px}
 .btn{background:var(--card2);border:1px solid var(--line);color:var(--ink);font-family:var(--sans);
-  font-size:12.5px;padding:6px 12px;border-radius:4px;cursor:pointer}
+  font-size:12.5px;padding:7px 13px;border-radius:4px;cursor:pointer;white-space:nowrap}
 .btn:hover{border-color:var(--ink3)}
 .btn:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
-.btn.ok{background:var(--done-bg);border-color:var(--done);color:var(--done)}
-.btn[disabled]{opacity:.4;cursor:not-allowed}
+.btn.pri{background:var(--ink);border-color:var(--ink);color:var(--bg);font-weight:500}
+.btn.ok{background:var(--done-bg)!important;border-color:var(--done)!important;color:var(--done)!important}
+.hint{padding:0 16px 14px;font-size:12px;color:var(--ink3);line-height:1.6}
 
 .panel{border-top:1px solid var(--line2);padding:16px;background:var(--card2)}
-.ptitle{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin:0 0 10px}
+.ptitle{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin:0 0 11px}
 pre.ms{margin:0;white-space:pre-wrap;word-break:break-word;font-family:var(--sans);font-size:14px;line-height:1.85;
-  background:var(--card);border:1px solid var(--line);border-radius:4px;padding:15px;max-height:560px;overflow:auto}
+  background:var(--card);border:1px solid var(--line);border-radius:4px;padding:16px;max-height:520px;overflow:auto}
 pre.ms .im{display:block;background:var(--doing-bg);color:var(--doing);border-radius:3px;padding:4px 9px;
   margin:14px 0;font-family:var(--mono);font-size:12px}
-pre.ms .rd{color:var(--todo);font-weight:500}
-pre.ms .yl{background:var(--doing-bg);color:var(--doing);border-radius:2px;padding:0 3px}
-pre.ms .qt{display:block;font-weight:700;border-left:3px solid var(--ink3);padding-left:10px;margin:20px 0 8px}
+pre.ms .rd{color:#e03127;font-weight:500}
+pre.ms .yl{background:#ffe400;color:#1b1e24;border-radius:2px;padding:0 3px}
+pre.ms .qt{display:block;font-weight:700;border-left:3px solid var(--ink3);padding-left:11px;margin:22px 0 9px}
 
-ol.imgs{list-style:none;counter-reset:im;margin:0;padding:0}
-ol.imgs li{counter-increment:im;display:grid;grid-template-columns:30px 1fr;gap:11px;padding:10px 0;border-bottom:1px solid var(--line2)}
-ol.imgs li:last-child{border-bottom:0}
-ol.imgs li::before{content:counter(im);font-family:var(--mono);font-size:11px;color:#fff;background:var(--ink3);
-  width:22px;height:22px;border-radius:50%;display:grid;place-items:center;margin-top:2px}
-.it{font-size:14px;font-weight:500}
-.is{font-size:12.5px;color:var(--ink2);margin-top:3px;line-height:1.6}
-ul.ol{margin:0;padding-left:18px}
-ul.ol li{font-size:13.5px;color:var(--ink2);padding:2px 0}
-.tagline{font-size:12px;color:var(--ink2);margin-top:10px;line-height:1.7;word-break:keep-all}
+.im-item{border:1px solid var(--line);border-radius:5px;background:var(--card);padding:13px 14px;margin-bottom:9px}
+.im-top{display:flex;gap:10px;align-items:flex-start}
+.im-n{font-family:var(--mono);font-size:11px;color:#fff;background:var(--ink3);
+  width:23px;height:23px;border-radius:50%;display:grid;place-items:center;flex:none;margin-top:1px}
+.im-t{font-size:14px;font-weight:500}
+.im-note{font-size:12.5px;color:var(--ink2);margin-top:3px;line-height:1.6}
+.im-p{font-family:var(--mono);font-size:11.5px;line-height:1.65;color:var(--ink2);background:var(--card2);
+  border:1px solid var(--line2);border-radius:4px;padding:9px 11px;margin:9px 0 8px;word-break:break-word}
+.im-act{display:flex;gap:6px;flex-wrap:wrap}
+.tagline{font-size:12px;color:var(--ink2);line-height:1.8;word-break:keep-all;background:var(--card);
+  border:1px solid var(--line);border-radius:4px;padding:11px 13px}
 [hidden]{display:none!important}
-.note{margin-top:30px;border-top:1px solid var(--line);padding-top:14px;font-size:12.5px;color:var(--ink3);line-height:1.7}
-@media(max-width:560px){
-  .chead{grid-template-columns:1fr auto;gap:9px}
-  .idx{display:none}
-  .meta{text-align:left}
-}
+.note{margin-top:26px;border-top:1px solid var(--line);padding-top:14px;font-size:12.5px;color:var(--ink3);line-height:1.75}
+.note b{color:var(--ink2)}
+@media(max-width:560px){ .meta{text-align:left} .btn{font-size:12px;padding:7px 11px} }
 </style>
 
-<script id="state" type="application/json">[{"id": "p1", "status": "done", "title": "에어컨 청소 안 하고 덮으면 내년에 생기는 일", "main": "에어컨 청소", "subs": ["에어컨 커버", "에어컨 필터", "실외기 커버"], "vol": "31,440", "chars": 3200, "mainN": 10, "tags": "에어컨청소, 에어컨커버, 에어컨필터청소, 실외기커버, 에어컨정리, 에어컨보관, 환절기살림, 가을대청소, 계절가전정리, 곰팡이냄새, 송풍운전, 자취살림, 신혼살림, 살림꿀팁, 생활정보", "body": "안녕하세요\n매일매일 좋은 날을 나누는 성글벙글입니다😊\n찬바람이 불기 시작하면 에어컨 리모컨을\n자연스럽게 내려놓게 되더라구요.\n\n저도 작년 이맘때 커버만 씌워두고\n겨울을 났는데, 올해 6월에 켜자마자\n쿰쿰한 냄새가 확 올라왔어요.\n\n그때 알았습니다.\n에어컨 청소는 꺼낼 때가 아니라\n넣을 때 하는 거였더라구요.\n\n[이미지 1] 커버 씌운 에어컨 전체 컷 (썸네일용)\n\n에어컨을 덮어두는 것과\n말려서 덮어두는 것은\n결과가 완전히 다릅니다.\n\n인용구(소제목) 작년 가을에 제가 한 실수\n\n작년 9월, 선선해지길래 먼지만 막으면\n되겠지 싶어 비닐 커버를 씌워뒀어요.\n에어컨 청소는 내년 봄에 하면 된다고\n생각했거든요. 어차피 안 쓰는데\n급할 게 없다고 여겼습니다.\n\n그런데 올해 6월, 더워서 켰더니\n바람보다 냄새가 먼저 나오더라구요.\n앞판을 열고 에어컨 필터를 빼봤는데\n까맣게 곰팡이가 올라와 있었어요.\n\n결국 업체를 불렀고, 반나절이 걸렸습니다.\n작년 가을에 한 시간만 썼으면\n안 겪을 일이었어요.\n\n[이미지 2] 곰팡이 낀 필터 근접 컷 (비포)\n\n인용구(소제목) 문제는 청소가 아니라 순서였어요\n\n여기서 결론부터 말씀드릴게요.\n[빨간글씨]에어컨 청소를 안 해서 생긴 일이\n아니었어요. 말리지 않고 덮어서\n생긴 일이었습니다.[/빨간글씨]\n\n여름 내내 찬 바람을 만든 에어컨 안쪽에는\n물기가 맺혀 있어요. 찬물을 따른 컵 겉면에\n물방울이 생기는 것과 같은 원리예요.\n\n[노란배경]그 물기를 그대로 두고 덮으면\n습기가 갇힙니다.[/노란배경]\n거기에 여름 내내 쌓인 먼지까지 있으면\n곰팡이가 자라기 좋은 조건이 만들어져요.\n\n그래서 에어컨 청소는 쓰고 난 직후인\n지금 하시는 편이 효과가 좋습니다.\n봄으로 미루면 이미 자란 곰팡이를\n걷어내는 일이 되더라구요.\n\n인용구(소제목) 미루면 냄새만 문제가 아니에요\n\n곰팡이 냄새는 눈에 보이는 문제고,\n사실 조용히 손해 보는 부분이 더 있어요.\n에어컨 필터에 먼지가 두껍게 쌓이면\n바람이 잘 나오지 않습니다.\n\n같은 온도로 맞춰놔도 더 오래 돌아가야 하니까\n전기요금이 올라가는 구조예요.\n[노란배경]에어컨 청소를 미루면\n결국 돈으로 돌아옵니다.[/노란배경]\n\n알레르기가 있으시다면 한 가지 더\n신경 쓰셔야 할 부분이 있어요.\n에어컨 바람에 곰팡이 포자가 같이 실려\n나올 수 있어서, 환절기에 기침이 잦아진다면\n한 번쯤 점검해 보시는 게 좋아요.\n\n다만 증상의 원인을 에어컨 하나로\n단정할 수는 없으니, 오래 간다면\n진료를 받아보시는 편이 낫습니다.\n\n[이미지 3] 송풍 모드 켜진 리모컨 화면\n\n인용구(소제목) 언제 하는 게 좋을까요\n\n냉방을 마지막으로 쓰고 일주일 안에\n하시는 걸 권해드려요.\n속에 물기가 남아 있을 때 말려야\n의미가 있거든요. 이미 마른 뒤에는\n곰팡이도 같이 자리를 잡은 다음입니다.\n\n[노란배경]9월 중순에서 10월 초,\n이때가 딱 좋더라구요.[/노란배경]\n너무 늦으면 에어컨 청소가 두 배로\n힘들어지고, 혼자 하기 어려운 상태가 돼요.\n\n인용구(소제목) 순서대로 하면 한 시간이면 돼요\n\n첫째, 송풍으로 속을 말립니다.\n냉방을 끄고 바람만 도는 모드로\n충분히 돌려주세요.\n\n리모컨에 건조나 클린 표시가 있으면\n그 기능을 쓰셔도 됩니다.\n기종마다 이름이 조금씩 다르더라구요.\n\n[이미지 4] 앞판 열어 필터 빼내는 장면\n\n둘째, 에어컨 필터를 빼서 씻습니다.\n앞판을 열면 그물망처럼 생긴 판이\n양쪽에 걸려 있어요.\n\n밖에서 먼지를 한 번 털어낸 다음\n미지근한 물로 헹구면 됩니다.\n세제는 따로 쓰지 않아도 괜찮아요.\n\n뜨거운 물은 피해주세요.\n필터가 휘어지면 제자리에 안 들어갑니다.\n\n[이미지 5] 물에 헹구는 필터 (애프터)\n\n셋째, 겉면과 바람 나오는 곳을 닦습니다.\n마른 걸레로 먼지를 걷어낸 뒤\n물기를 꼭 짠 걸레로 한 번 더 닦아요.\n\n바람이 나오는 날개 쪽에 먼지가\n많이 끼어 있더라구요.\n면봉을 쓰면 안쪽까지 닿습니다.\n\n[이미지 6] 그늘에서 말리는 필터\n\n넷째, 전원을 뽑고 덮습니다.\n에어컨 필터까지 완전히 마른 것을\n확인한 다음에 덮어주세요.\n\n플러그를 뽑아두면 겨울 내내 조금씩\n나가는 대기전력도 함께 줄어듭니다.\n덮기 전에 리모컨 건전지도 빼두시면\n좋아요. 오래 두면 액이 새서\n접점이 상하는 경우가 있더라구요.\n\n인용구(소제목) 이건 되고, 이건 안 됩니다\n\n되는 경우부터 말씀드릴게요.\n[노란배경]송풍으로 말린 뒤 천으로 된\n에어컨 커버를 씌우는 방식이에요.[/노란배경]\n\n먼지는 막아주면서 습기는 빠져나갑니다.\n전용 에어컨 커버가 없으시면\n얇은 이불보를 덮어두셔도 충분해요.\n\n안 되는 경우는 제가 작년에 한 방식입니다.\n[노란배경]젖은 상태에서 비닐 커버로\n꽉 덮어버리는 것이에요.[/노란배경]\n\n습기가 빠져나갈 곳이 없으니\n그 안에서 곰팡이가 자랍니다.\n실외기 커버도 같은 이야기예요.\n밀폐형 실외기 커버로 감싸면\n오히려 안에 습기가 갇힙니다.\n\n실외기는 처음부터 비바람을 맞도록\n만들어진 물건이라, 굳이 감싸지 않으셔도\n괜찮더라구요.\n\n벽걸이형은 커버를 씌우기 애매한 경우가\n많은데, 억지로 씌우기보다 위쪽 먼지만\n주기적으로 털어주셔도 충분합니다.\n\n[이미지 7] 천 커버 vs 비닐 커버 비교 컷\n\n인용구(소제목) 덮기 전에 확인할 다섯 가지\n\n첫째, 에어컨 필터가 속까지 말랐는지\n확인하세요. 겉만 만져보면 속습니다.\n둘째, 에어컨 커버 소재가 천인지\n비닐인지 확인합니다.\n사이즈는 넉넉한 쪽이 오히려 나아요.\n\n셋째, 플러그를 뽑았는지 봅니다.\n대기전력도 같이 줄어듭니다.\n넷째, 실외기 위에 낙엽이나 물건이\n올려져 있지 않은지 확인하세요.\n실외기 커버는 씌우지 않으셔도 됩니다.\n\n다섯째, 리모컨 건전지를 뺐는지\n마지막으로 한 번 더 봅니다.\n\n[이미지 8] 체크리스트 다섯 줄 카드 이미지\n\n인용구(소제목) 많이 궁금해하시는 것들\n\n에어컨 필터만 씻어도 되는지 물으시는데,\n필터는 직접 하실 수 있는 범위가 맞아요.\n\n다만 안쪽 열교환기나 송풍팬은 분해해야\n손이 닿습니다. 냄새가 심하거나 곰팡이가\n눈에 보일 정도라면 전문 에어컨 청소를\n부르시는 편이 안전해요.\n\n에어컨 커버를 꼭 씌워야 하는지도\n자주 여쭤보십니다.\n안 씌워도 큰 문제가 생기지는 않아요.\n먼지 관리 차원이라, 씌우신다면\n소재만 천으로 골라주시면 됩니다.\n\n실외기 커버는 앞서 말씀드린 대로\n씌우지 않으시는 쪽을 권해드려요.\n윗면에 쌓인 낙엽만 치워주시면 됩니다.\n\n전문 청소를 몇 년에 한 번 해야 하는지는\n쓰는 환경에 따라 달라서 딱 잘라\n말씀드리기 어려워요.\n\n평소에 에어컨 필터 관리를 해두시면\n주기는 자연스럽게 길어집니다.\n냄새나 곰팡이가 보일 때가 부르실 때예요.\n\n[이미지 9] 자주 묻는 질문 요약 카드\n\n인용구(소제목) 내년 봄에 꺼내실 때는\n\n에어컨 커버를 걷고 바로 켜지 마세요.\n창문을 열어둔 상태에서 송풍부터\n돌려 안쪽 공기를 빼내주세요.\n\n그다음 냉방으로 바꾸면\n첫 바람부터 깨끗합니다.\n가을에 에어컨 청소를 제대로 해두면\n봄에 할 일이 이만큼 줄어들더라구요.\n저는 올해 그걸 몸으로 배웠어요.\n\n인용구(소제목) 오늘 정리하면\n\n[빨간글씨]송풍으로 말리기 →\n에어컨 필터 세척 후 완전 건조 →\n겉면 닦기 →\n전원 뽑고 천 커버 →\n실외기 커버는 씌우지 않기[/빨간글씨]\n\n순서를 바꾸면 소용이 없어요.\n말리는 단계가 언제나 먼저입니다.\n올해는 이 순서대로 해봤는데,\n작년처럼 반나절이 아니라\n한 시간이면 끝나더라구요.\n\n내년 6월에 켰을 때 냄새 없이\n시원한 바람이 나오면, 오늘 들인\n한 시간은 충분히 값을 하는 셈이에요.\n\n다만 기종마다 구조가 조금씩 다르니,\n분해가 필요한 부분은 제조사\n사용설명서를 함께 확인해 주세요.\n\n[이미지 10] 정리 끝난 에어컨 + 천 커버 (애프터)\n\n에어컨 청소라고 하면 거창하게 느껴지는데,\n막상 해보면 말리고 닦는 게 전부더라구요.\n오늘은 커버를 꺼내기 전에\n송풍 버튼부터 눌러보는 것만으로도\n좋은 시작이 될 것 같아요.\n\n좋아요·공감과 이웃추가 부탁드려요💙\n이상 성글벙글의 계절가전 정리 포스팅이었습니다😎", "images": [{"t": "커버 씌운 에어컨 전체 컷", "s": "썸네일로 쓸 대표 사진. 에어컨이 화면 중앙, 방 분위기가 살짝 보이게 한 발 물러서서. 자연광 드는 낮에 찍고 플래시는 끄세요. 커버 주름은 손으로 펴고 찍습니다."}, {"t": "곰팡이 낀 필터 (비포)", "s": "필터를 빼서 바닥이나 신문지 위에 두고 바로 위에서. 검은 점이 보이도록 밝은 배경에 올려놓으세요. 너무 클로즈업하면 뭔지 모르니 필터 전체가 들어오게."}, {"t": "송풍 모드 리모컨 화면", "s": "리모컨 액정이 잘 보이게 손에 들고. 화면 글자에 초점 맞추고 배경은 흐리게. 액정이 반사되면 각도를 살짝 틀어주세요."}, {"t": "앞판 열어 필터 빼는 장면", "s": "손이 같이 나오게 찍으면 '따라 하는 느낌'이 살아요. 앞판을 연 상태에서 필터를 반쯤 빼낸 순간. 한 손으로 찍기 어려우면 삼각대나 거치대 사용."}, {"t": "물에 헹구는 필터", "s": "싱크대나 욕실에서 물줄기가 보이게. 물이 흐르는 순간을 찍어야 생동감이 있어요. 2번 사진과 같은 각도로 찍으면 비포·애프터 대비가 선명해집니다."}, {"t": "그늘에서 말리는 필터", "s": "베란다나 그늘진 곳에 세워둔 상태. 햇볕이 직접 닿지 않는 자리라는 게 보이게 배경을 함께. 물기 없이 마른 상태로."}, {"t": "천 커버 vs 비닐 커버 비교", "s": "두 커버를 나란히 놓고 위에서. 왼쪽 천 / 오른쪽 비닐 식으로 고정하고, 어느 쪽이 어느 쪽인지 나중에 텍스트로 표시하기 좋게 여백을 두세요."}, {"t": "체크리스트 카드", "s": "사진이 아니라 만드는 이미지. 본문 체크포인트 5줄을 그대로 옮겨 카드로. 글자는 크게, 배경은 단색. 미리캔버스나 캔바로 10분이면 됩니다."}, {"t": "Q&A 요약 카드", "s": "Q만 5개 뽑아서 목록 카드로. 답은 넣지 마세요. 본문을 읽게 만드는 역할입니다. 8번 카드와 같은 서식으로 통일하세요."}, {"t": "정리 끝난 에어컨 (애프터)", "s": "1번과 같은 자리, 같은 각도에서. 천 커버가 단정하게 씌워진 상태. 같은 구도여야 비포·애프터가 성립합니다. 1번 찍을 때 위치를 기억해두세요."}]}, {"id": "p2", "status": "todo", "title": "선풍기 청소하고 날개 분리하는 순서", "main": "선풍기 청소", "subs": ["선풍기 날개", "선풍기 보관", "선풍기 커버"], "vol": "미측정", "chars": 0, "mainN": 0, "tags": "선풍기청소, 선풍기날개분리, 선풍기보관, 선풍기커버, 계절가전정리, 가을대청소, 살림꿀팁", "outline": ["후킹 — 날개 안 빼고 닦다가 생긴 일", "사례 — 작년에 그냥 넣어뒀더니", "결론 — 문제는 날개가 아니라 안전망", "분리 순서 4단계", "되는 경우 / 안 되는 경우", "보관 전 체크포인트 5개", "Q&A 5개", "정리"], "images": ["선풍기 전체 (썸네일)", "안전망 고정 클립 위치", "날개 고정 너트 방향", "분리한 날개 세척", "말리는 중", "안전망 닦기", "조립 순서", "보관 상태", "체크리스트 카드", "Q&A 카드"]}, {"id": "p3", "status": "todo", "title": "여름이불 세탁하고 압축 보관하는 법", "main": "여름이불 세탁", "subs": ["이불 압축팩", "이불 보관", "이불 건조"], "vol": "10 미만", "chars": 0, "mainN": 0, "tags": "여름이불세탁, 이불압축팩, 이불보관법, 이불건조, 계절이불정리, 옷장정리, 살림꿀팁", "outline": ["후킹 — 내년에 꺼냈더니 냄새", "사례", "결론 — 세탁보다 건조", "세탁 순서", "압축팩 되는 경우 / 안 되는 경우", "보관 전 체크포인트", "Q&A", "정리"], "images": ["개어둔 여름이불 (썸네일)", "세탁기 코스 화면", "건조 중인 이불", "압축팩 공기 빼기", "여유 남긴 압축팩", "솜 눌린 비교", "방충제 배치", "보관장 정리", "체크리스트 카드", "Q&A 카드"]}, {"id": "p4", "status": "todo", "title": "옷장 정리, 간절기에 바꾸는 순서", "main": "옷장 정리", "subs": ["간절기 옷장", "옷장 습기", "옷 보관"], "vol": "2,550", "chars": 0, "mainN": 0, "tags": "옷장정리, 간절기옷장, 옷장습기제거, 옷보관법, 계절옷정리, 가을대청소, 살림꿀팁", "outline": ["후킹 — 매년 같은 자리에서 막힘", "사례", "결론 — 순서가 문제", "정리 순서 4단계", "버릴 옷 기준 / 남길 옷 기준", "체크포인트", "Q&A", "정리"], "images": ["정리 전 옷장 (비포)", "꺼낸 여름옷 분류", "보관할 옷 개기", "습기제거제 위치", "행거 배치", "서랍 세로 수납", "정리 후 (애프터)", "계절 라벨", "체크리스트 카드", "Q&A 카드"]}, {"id": "p5", "status": "todo", "title": "곰팡이 제거, 장마 끝나고 해야 하는 곳", "main": "곰팡이 제거", "subs": ["욕실 곰팡이", "벽지 곰팡이", "곰팡이 예방"], "vol": "미측정", "chars": 0, "mainN": 0, "tags": "곰팡이제거, 욕실곰팡이, 벽지곰팡이, 곰팡이예방, 장마철살림, 습기제거, 가을대청소, 살림꿀팁", "outline": ["후킹 — 장마 끝났다고 끝난 게 아님", "사례", "결론 — 보이는 건 일부", "위치별 제거법", "해도 되는 것 / 하면 안 되는 것", "체크포인트", "Q&A", "정리"], "images": ["곰팡이 생긴 실리콘 (비포)", "도구 준비", "약품 도포", "방치 시간 타이머", "닦아낸 후 (애프터)", "창틀 고무패킹", "벽지 뒤 확인", "환기 중인 욕실", "체크리스트 카드", "Q&A 카드"]}]</script>
+<script id="state" type="application/json">[
+ {
+  "id": "p1",
+  "status": "done",
+  "title": "에어컨 청소 안 하고 덮으면 내년에 생기는 일",
+  "main": "에어컨 청소",
+  "subs": [
+   "에어컨 커버",
+   "에어컨 필터",
+   "실외기 커버"
+  ],
+  "vol": "31,440",
+  "chars": 2327,
+  "mainN": 10,
+  "tags": "에어컨청소, 에어컨커버, 에어컨필터청소, 실외기커버, 에어컨정리, 에어컨보관, 환절기살림, 가을대청소, 계절가전정리, 곰팡이냄새, 송풍운전, 자취살림, 신혼살림, 살림꿀팁, 생활정보",
+  "body": "안녕하세요\n매일매일 좋은 날을 나누는 성글벙글입니다😊\n찬바람이 불기 시작하면 에어컨 리모컨을\n자연스럽게 내려놓게 되더라구요.\n저도 작년에 그랬어요.\n\n커버만 씌워두고 겨울을 났는데,\n올해 6월에 켜자마자 쿰쿰한 냄새가\n확 올라왔습니다.\n\n그때 알았어요. 에어컨 청소는\n꺼낼 때가 아니라 넣을 때\n하는 거였더라구요.\n\n한 해에 한 번, 넣기 전에만\n제대로 해두면 되는 일이었어요.\n\n[이미지 1] 커버 씌운 에어컨 전체 컷 (썸네일용)\n\n인용구(소제목) 작년 가을에 제가 한 실수\n\n작년 9월, 먼지만 막으면 되겠지 싶어\n비닐 커버를 씌워뒀어요.\n어차피 안 쓰는데 급할 게 없다고 여겼습니다.\n\n그런데 6월에 켰더니 바람보다\n냄새가 먼저 나오더라구요.\n앞판을 열고 에어컨 필터를 빼봤습니다.\n\n까맣게 곰팡이가 올라와 있었어요.\n결국 업체를 불렀고 반나절이 걸렸는데,\n작년에 한 시간만 썼으면 안 겪을 일이었어요.\n\n[이미지 2] 곰팡이 낀 필터 근접 컷 (비포)\n\n인용구(소제목) 문제는 청소가 아니라 순서였어요\n\n결론부터 말씀드릴게요.\n[빨간글씨]에어컨 청소를 안 해서 생긴 일이\n아니라, 말리지 않고 덮어서\n생긴 일이었습니다.[/빨간글씨]\n\n여름 내내 찬 바람을 만든 에어컨 안쪽에는\n물기가 맺혀 있어요. 찬물을 따른 컵 겉면에\n물방울이 생기는 것과 같은 원리예요.\n\n[노란배경]그 물기를 그대로 두고 덮으면\n습기가 갇힙니다.[/노란배경]\n거기에 여름 내내 쌓인 먼지까지 있으면\n곰팡이가 자라기 좋은 조건이 돼요.\n그래서 에어컨 청소는 지금이 좋습니다.\n\n봄으로 미루면 이미 자란 곰팡이를\n걷어내는 일이 되더라구요.\n에어컨 청소는 타이밍이 절반입니다.\n\n냉방을 끝내고 일주일 안에\n하시길 권해드려요. 속에 물기가\n남아 있을 때 말려야 의미가 있거든요.\n\n[이미지 3] 송풍 모드 켜진 리모컨 화면\n\n인용구(소제목) 에어컨 청소 순서, 한 시간이면 돼요\n\n첫째, 송풍으로 속을 말립니다.\n냉방을 끄고 바람만 도는 모드로\n충분히 돌려주세요.\n\n리모컨에 건조나 클린 표시가 있으면\n그 기능을 쓰셔도 됩니다.\n기종마다 이름이 조금씩 다르더라구요.\n\n[이미지 4] 앞판 열어 필터 빼내는 장면\n\n둘째, 에어컨 필터를 빼서 씻습니다.\n먼지를 한 번 털어낸 다음\n미지근한 물로 헹구면 돼요.\n\n세제는 따로 쓰지 않아도 괜찮고,\n뜨거운 물은 피해주세요.\n필터가 휘어지면 제자리에 안 들어갑니다.\n\n[이미지 5] 물에 헹구는 필터 (애프터)\n\n셋째, 겉면과 바람 나오는 곳을 닦습니다.\n마른 걸레로 먼지를 걷어낸 뒤\n물기를 짠 걸레로 한 번 더 닦아요.\n\n바람이 나오는 날개 쪽에 먼지가\n많이 끼어 있더라구요.\n면봉을 쓰면 안쪽까지 닿습니다.\n\n[이미지 6] 그늘에서 말리는 필터\n\n넷째, 전원을 뽑고 덮습니다.\n에어컨 필터까지 완전히 마른 것을\n확인한 다음에 덮어주세요.\n\n플러그를 뽑아두면 겨울 내내\n조금씩 나가는 대기전력도 줄어들고,\n리모컨 건전지도 빼두시면 좋아요.\n\n오래 두면 액이 새서 접점이\n상하는 경우가 있더라구요.\n여기까지가 에어컨 청소의 전부입니다.\n\n인용구(소제목) 이건 되고, 이건 안 됩니다\n\n되는 경우부터 말씀드릴게요.\n[노란배경]송풍으로 말린 뒤 천으로 된\n에어컨 커버를 씌우는 방식이에요.[/노란배경]\n\n먼지는 막아주면서 습기는 빠져나갑니다.\n전용 에어컨 커버가 없으시면\n얇은 이불보를 덮어두셔도 충분해요.\n\n안 되는 경우는 제가 작년에 한 방식입니다.\n[노란배경]젖은 상태에서 비닐 커버로\n꽉 덮어버리는 것이에요.[/노란배경]\n\n실외기 커버도 같은 이야기예요.\n밀폐형 실외기 커버로 감싸면\n오히려 안에 습기가 갇힙니다.\n\n실외기는 처음부터 비바람을 맞도록\n만들어진 물건이라, 실외기 커버를\n굳이 씌우지 않으셔도 괜찮더라구요.\n\n[이미지 7] 천 커버 vs 비닐 커버 비교 컷\n\n인용구(소제목) 덮기 전에 확인할 다섯 가지\n\n첫째, 에어컨 필터가 속까지 말랐는지\n확인하세요. 겉만 만져보면 속습니다.\n둘째, 에어컨 커버 소재가 천인지\n비닐인지 봅니다. 사이즈는 넉넉한 쪽이\n오히려 나아요.\n\n셋째, 플러그를 뽑았는지 확인합니다.\n넷째, 실외기 위에 낙엽이나 물건이\n올려져 있지 않은지 봅니다.\n\n다섯째, 리모컨 건전지를 뺐는지\n마지막으로 한 번 더 확인하세요.\n\n[이미지 8] 체크리스트 다섯 줄 카드 이미지\n\n인용구(소제목) 많이 궁금해하시는 것들\n\n에어컨 필터만 씻어도 되는지 물으시는데,\n필터는 직접 하실 수 있는 범위가 맞아요.\n다만 안쪽 열교환기나 송풍팬은 분해해야\n손이 닿습니다. 냄새가 심하다면\n전문 에어컨 청소를 부르시는 편이 안전해요.\n\n에어컨 커버를 꼭 씌워야 하는지도\n자주 여쭤보시는데, 안 씌워도\n큰 문제가 생기지는 않아요.\n\n먼지 관리 차원이라 에어컨 커버를\n씌우신다면 소재만 천으로 골라주세요.\n실외기 커버는 씌우지 않는 쪽을 권합니다.\n\n전문 청소 주기는 쓰는 환경에 따라 달라서\n딱 잘라 말씀드리기 어려워요.\n평소 관리를 해두시면 주기는 길어집니다.\n\n[이미지 9] 자주 묻는 질문 요약 카드\n\n인용구(소제목) 오늘 정리하면\n\n[빨간글씨]송풍으로 말리기 →\n에어컨 필터 세척 후 완전 건조 →\n겉면 닦기 → 전원 뽑고 천 커버 →\n실외기 커버는 씌우지 않기[/빨간글씨]\n\n순서를 바꾸면 소용이 없어요.\n말리는 단계가 언제나 먼저입니다.\n올해는 이 순서대로 에어컨 청소를 했는데\n작년처럼 반나절이 아니라\n한 시간이면 끝나더라구요.\n\n다만 기종마다 구조가 조금씩 다르니,\n분해가 필요한 부분은 제조사\n사용설명서를 함께 확인해 주세요.\n\n[이미지 10] 정리 끝난 에어컨 + 천 커버 (애프터)\n\n에어컨 청소라고 하면 거창하게 느껴지는데\n막상 해보면 말리고 닦는 게 전부더라구요.\n내년 6월에 켰을 때 냄새 없이\n시원한 바람이 나오면, 오늘 들인\n한 시간은 값을 하는 셈이에요.\n\n오늘은 커버를 꺼내기 전에\n송풍 버튼부터 눌러보는 것으로\n시작해 보세요.\n\n좋아요·공감과 이웃추가 부탁드려요💙\n이상 성글벙글의 계절가전 정리 포스팅이었습니다😎",
+  "images": [
+   {
+    "t": "커버 씌운 에어컨 (썸네일)",
+    "n": "썸네일용 대표 컷. 한 발 물러서서 방이 살짝 보이게.",
+    "p": "A wall-mounted air conditioner covered with a soft beige fabric cover, in a clean minimal Korean apartment living room, warm natural daylight from a side window, light wood floor, photorealistic interior photography, eye level, 4:3"
+   },
+   {
+    "t": "곰팡이 낀 필터 (비포)",
+    "n": "필터 전체가 들어오게. 밝은 바닥이나 신문지 위에서 위에서 아래로.",
+    "p": "Close-up of a dirty air conditioner mesh filter covered with grey dust and small black mold spots, placed flat on a white surface, top-down view, harsh realistic detail, documentary photography, natural light"
+   },
+   {
+    "t": "송풍 모드 리모컨 화면",
+    "n": "액정 글자에 초점. 반사되면 각도를 살짝 틀기.",
+    "p": "A hand holding a white air conditioner remote control, LCD screen clearly showing a fan mode icon, shallow depth of field, blurred living room background, soft indoor lighting, photorealistic, close-up"
+   },
+   {
+    "t": "앞판 열어 필터 빼는 장면",
+    "n": "손이 같이 나오면 따라 하는 느낌이 살아요.",
+    "p": "Hands opening the front panel of a white wall-mounted air conditioner and sliding out the mesh filter halfway, Korean apartment interior, natural daylight, photorealistic, slightly low angle"
+   },
+   {
+    "t": "물에 헹구는 필터",
+    "n": "물줄기가 보이는 순간. 2번과 같은 각도로 찍으면 대비가 선명해져요.",
+    "p": "An air conditioner mesh filter being rinsed under running water in a clean white bathroom sink, visible water stream and droplets, bright even lighting, photorealistic close-up, top-down view"
+   },
+   {
+    "t": "그늘에서 말리는 필터",
+    "n": "햇볕이 직접 닿지 않는 자리라는 게 보이게.",
+    "p": "A clean air conditioner filter standing upright to dry on a shaded apartment veranda, soft diffused light, no direct sunlight, tiled floor, calm minimal composition, photorealistic"
+   },
+   {
+    "t": "천 커버 vs 비닐 커버",
+    "n": "왼쪽 천 / 오른쪽 비닐로 고정. 나중에 글자 넣을 여백 두기.",
+    "p": "Top-down comparison shot of two air conditioner covers laid flat side by side on a light wood floor, left one breathable beige fabric, right one clear plastic vinyl, even soft lighting, clean minimal styling, photorealistic"
+   },
+   {
+    "t": "체크리스트 카드",
+    "n": "사진이 아니라 만드는 이미지. 본문 체크포인트 5줄을 큰 글씨로.",
+    "p": "Minimal flat design checklist card, five empty text lines with small check marks, soft beige background, generous white space, clean modern sans-serif layout, no text, vertical card format"
+   },
+   {
+    "t": "자주 묻는 질문 카드",
+    "n": "Q만 뽑아서 목록으로. 답은 넣지 않기. 8번과 같은 서식으로.",
+    "p": "Minimal flat design FAQ card layout, four question blocks with subtle question mark icons, soft beige background, clean modern typography layout, no text, vertical card format"
+   },
+   {
+    "t": "정리 끝난 에어컨 (애프터)",
+    "n": "1번과 같은 자리, 같은 각도. 같은 구도여야 비포·애프터가 성립해요.",
+    "p": "A wall-mounted air conditioner neatly covered with a smooth beige fabric cover, tidy minimal Korean living room, same eye-level angle and framing as a wider establishing shot, warm natural daylight, photorealistic, 4:3"
+   }
+  ]
+ }
+]</script>
 
 <div class="wrap">
   <header>
     <div class="htop">
       <div>
         <h1>원고 작업판</h1>
-        <p class="sub">오늘 쓸 5개. 상태를 눌러 미완료 → 작성중 → 완료로 바꾸면 저장돼요.</p>
+        <p class="sub">상태를 누르면 미완료 → 작성중 → 완료로 바뀌고 저장돼요.</p>
       </div>
       <div class="meta" id="meta"></div>
     </div>
-    <div class="bar" id="bar"></div>
-    <div class="tally">
-      <span><i class="sw" style="background:var(--todo)"></i>미완료</span>
-      <span><i class="sw" style="background:var(--doing)"></i>작성중</span>
-      <span><i class="sw" style="background:var(--done)"></i>작성완료</span>
-    </div>
   </header>
-
   <main id="list"></main>
-
-  <p class="note">클러스터 = 여름·가을 전환 살림. 5개를 서로 링크하면 한 덩어리가 됩니다.<br>
-  원고에 <b>[이미지 N]</b> 자리를 표시해 뒀어요. 사진을 넣은 뒤 그 줄은 지우시면 됩니다.</p>
+  <p class="note">
+    <b>네이버용 서식 복사</b>를 누르면 빨간 글씨와 노란 형광펜이 <b>서식 그대로</b> 붙여넣어집니다.
+    에디터 본문을 클릭하고 Ctrl+V 하세요.<br>
+    <b>[이미지 N]</b> 줄은 사진 넣을 자리 표시예요. 사진을 올린 뒤 그 줄은 지우시면 됩니다.
+  </p>
 </div>
 
 <script>
@@ -127,16 +183,14 @@ const PRISTINE = "<!doctype html>\n" + document.documentElement.outerHTML;
 const S = JSON.parse(document.getElementById("state").textContent);
 const NEXT = {todo:"doing", doing:"done", done:"todo"};
 const LABEL = {todo:"미완료", doing:"작성중", done:"작성완료"};
+const RED = "#e03127", YEL = "#ffe400";
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
-/* 인용구·이미지 줄은 CSS 여백이 따로 있으므로 앞뒤 빈 줄을 겹치지 않게 정리한다. */
 const tidy = t => t
-  .replace(/\n{2,}(?=\[이미지)/g, "\n")
-  .replace(/(^\[이미지.*$)\n{2,}/gm, "$1\n")
-  .replace(/\n{2,}(?=인용구\(소제목\))/g, "\n")
-  .replace(/(^인용구\(소제목\).*$)\n{2,}/gm, "$1\n");
+  .replace(/\n{2,}(?=\[이미지)/g, "\n").replace(/(^\[이미지.*$)\n{2,}/gm, "$1\n")
+  .replace(/\n{2,}(?=인용구\(소제목\))/g, "\n").replace(/(^인용구\(소제목\).*$)\n{2,}/gm, "$1\n");
 
-/* 원고를 화면용으로 칠한다. 원본 텍스트는 건드리지 않는다. */
+/* 화면 표시용 */
 function paint(t){
   return esc(tidy(t))
     .replace(/^\[이미지\s*(\d+)\]\s*(.*)$/gm, '<span class="im">📷 이미지 $1 — $2</span>')
@@ -144,58 +198,135 @@ function paint(t){
     .replace(/\[빨간글씨\]([\s\S]*?)\[\/빨간글씨\]/g, '<span class="rd">$1</span>')
     .replace(/\[노란배경\]([\s\S]*?)\[\/노란배경\]/g, '<span class="yl">$1</span>');
 }
-const stripImages = t => t.split("\n").filter(l => !/^\[이미지\s*\d+\]/.test(l.trim())).join("\n").replace(/\n{3,}/g,"\n\n");
 
-async function copy(text, btn){
+/* 네이버 에디터에 붙여넣을 HTML. 인라인 style 이라야 서식이 살아서 들어간다.
+   tidy() 는 화면 표시용이다. 여기서 쓰면 인용구·이미지 줄이 앞 문단에 붙어버린다. */
+function toNaverHtml(t, keepImg){
+  const parts = [];
+  for (const block of t.trim().split(/\n\s*\n/)) {
+    const first = block.split("\n")[0];
+    if (/^\[이미지\s*\d+\]/.test(first)) {
+      if (keepImg) parts.push(`<p><span style="color:#999999;">${esc(first)}</span></p>`);
+      continue;
+    }
+    if (first.startsWith("인용구(소제목)")) {
+      parts.push(`<blockquote><p><b>${esc(first.replace(/^인용구\(소제목\)\s*/, ""))}</b></p></blockquote>`);
+      continue;
+    }
+    let h = esc(block)
+      .replace(/\[빨간글씨\]([\s\S]*?)\[\/빨간글씨\]/g, `<span style="color:${RED};">$1</span>`)
+      .replace(/\[노란배경\]([\s\S]*?)\[\/노란배경\]/g, `<span style="background-color:${YEL};">$1</span>`)
+      .replace(/\n/g, "<br>");
+    parts.push(`<p>${h}</p>`);
+  }
+  return parts.join("\n");
+}
+
+/* 서식 없이 텍스트만 */
+function toPlain(t, keepImg){
+  return tidy(t).split("\n")
+    .filter(l => keepImg || !/^\[이미지\s*\d+\]/.test(l.trim()))
+    .map(l => l.replace(/^인용구\(소제목\)\s*/, "").replace(/\[\/?빨간글씨\]/g, "").replace(/\[\/?노란배경\]/g, ""))
+    .join("\n").replace(/\n{3,}/g, "\n\n").trim();
+}
+
+function flash(btn, msg){
+  const was = btn.dataset.label || btn.textContent;
+  btn.dataset.label = was;
+  btn.textContent = msg || "복사됐어요";
+  btn.classList.add("ok");
+  setTimeout(() => { btn.textContent = was; btn.classList.remove("ok"); }, 1600);
+}
+
+async function copyRich(html, plain, btn){
+  let done = false;
+  try {
+    if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write) {
+      await navigator.clipboard.write([new ClipboardItem({
+        "text/html":  new Blob([html],  {type: "text/html"}),
+        "text/plain": new Blob([plain], {type: "text/plain"}),
+      })]);
+      done = true;
+    }
+  } catch { /* 아래 방식으로 다시 시도 */ }
+  if (!done) {
+    // 보이지 않는 편집영역을 선택해 복사하면 서식이 함께 실린다
+    const d = document.createElement("div");
+    d.contentEditable = "true";
+    d.innerHTML = html;
+    d.style.cssText = "position:fixed;left:-9999px;top:0;white-space:pre-wrap;";
+    document.body.appendChild(d);
+    const r = document.createRange(); r.selectNodeContents(d);
+    const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+    try { document.execCommand("copy"); } catch {}
+    sel.removeAllRanges(); d.remove();
+  }
+  flash(btn);
+}
+
+async function copyText(text, btn){
   try { await navigator.clipboard.writeText(text); }
-  catch { const ta=document.createElement("textarea"); ta.value=text; document.body.appendChild(ta); ta.select();
-          try{document.execCommand("copy");}catch{} ta.remove(); }
-  const was = btn.textContent;
-  btn.textContent = "복사됨"; btn.classList.add("ok");
-  setTimeout(()=>{ btn.textContent = was; btn.classList.remove("ok"); }, 1500);
+  catch {
+    const ta = document.createElement("textarea");
+    ta.value = text; ta.style.cssText = "position:fixed;left:-9999px";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); } catch {}
+    ta.remove();
+  }
+  flash(btn);
 }
 
 function render(){
-  const n = {todo:0, doing:0, done:0};
-  S.forEach(p => n[p.status]++);
+  const p = S[0];
   document.getElementById("meta").innerHTML =
-    `작성완료 <b>${n.done} / ${S.length}</b><br>클러스터 <b>여름·가을 전환 살림</b>`;
-  document.getElementById("bar").innerHTML = ["done","doing","todo"]
-    .map(k => `<i style="width:${n[k]/S.length*100}%;background:var(--${k})"></i>`).join("");
+    `오늘 <b>${S.filter(x=>x.status==="done").length} / ${S.length}</b> 완료<br>클러스터 여름·가을 전환 살림`;
 
   document.getElementById("list").innerHTML = S.map((p,i) => `
    <article class="card ${p.status}">
     <div class="chead">
-      <span class="idx">${String(i+1).padStart(2,"0")}</span>
       <div>
         <h2 class="ctitle">${esc(p.title)}</h2>
         <div class="kv">
-          <span>메인 <b>${esc(p.main)}</b></span>
+          <span>메인 <b>${esc(p.main)}</b> ${p.mainN}회</span>
           <span>검색량 <b>${esc(p.vol)}</b></span>
-          ${p.chars ? `<span>본문 <b>${p.chars}자</b></span><span>키워드 <b>${p.mainN}회</b></span>` : ""}
+          <span>본문 <b>${p.chars}자</b></span>
         </div>
         <div class="kv"><span>서브 <code>${p.subs.map(esc).join(" · ")}</code></span></div>
       </div>
       <button class="pill ${p.status}" data-act="cycle" data-i="${i}">${LABEL[p.status]}</button>
     </div>
     <div class="actions">
-      ${p.body ? `
-       <button class="btn" data-act="toggle" data-i="${i}" data-t="ms">원고 보기</button>
-       <button class="btn" data-act="copy-clean" data-i="${i}">본문만 복사</button>
-       <button class="btn" data-act="copy-full" data-i="${i}">이미지 표시 포함 복사</button>` : ""}
-      <button class="btn" data-act="toggle" data-i="${i}" data-t="img">이미지 10장 스크립트</button>
-      ${p.tags ? `<button class="btn" data-act="copy-tags" data-i="${i}">태그 복사</button>` : ""}
+      <button class="btn pri" data-act="copy-rich" data-i="${i}">네이버용 서식 복사</button>
+      <button class="btn" data-act="copy-plain" data-i="${i}">텍스트만 복사</button>
+      <button class="btn" data-act="copy-tags" data-i="${i}">태그 복사</button>
+      <button class="btn" data-act="toggle" data-i="${i}" data-t="ms">원고 보기</button>
+      <button class="btn" data-act="toggle" data-i="${i}" data-t="img">이미지 프롬프트 10장</button>
     </div>
-    ${p.body ? `<div class="panel" id="ms${i}" hidden>
-      <p class="ptitle">원고 전문</p><pre class="ms">${paint(p.body)}</pre></div>` : ""}
-    ${!p.body && p.outline ? `<div class="panel"><p class="ptitle">구성안</p>
-      <ul class="ol">${p.outline.map(o=>`<li>${esc(o)}</li>`).join("")}</ul></div>` : ""}
+    <p class="hint">서식 복사는 빨간 글씨·노란 형광펜이 그대로 들어가요. 이미지 자리 표시는 회색 글씨로 같이 붙습니다.</p>
+
+    <div class="panel" id="ms${i}" hidden>
+      <p class="ptitle">원고 전문</p>
+      <pre class="ms">${paint(p.body)}</pre>
+    </div>
+
     <div class="panel" id="img${i}" hidden>
-      <p class="ptitle">이미지 10장 촬영 스크립트</p>
-      <ol class="imgs">${p.images.map(im => typeof im === "string"
-        ? `<li><div><div class="it">${esc(im)}</div></div></li>`
-        : `<li><div><div class="it">${esc(im.t)}</div><div class="is">${esc(im.s)}</div></div></li>`).join("")}</ol>
-      ${p.tags ? `<p class="tagline"><b>태그</b> ${esc(p.tags)}</p>` : ""}
+      <p class="ptitle">이미지 프롬프트 — 한 장씩 복사해서 쓰세요</p>
+      ${p.images.map((im,j) => `
+        <div class="im-item">
+          <div class="im-top">
+            <span class="im-n">${j+1}</span>
+            <div style="flex:1">
+              <div class="im-t">${esc(im.t)}</div>
+              <div class="im-note">${esc(im.n)}</div>
+            </div>
+          </div>
+          <div class="im-p">${esc(im.p)}</div>
+          <div class="im-act">
+            <button class="btn" data-act="copy-prompt" data-i="${i}" data-j="${j}">프롬프트 복사</button>
+          </div>
+        </div>`).join("")}
+      <p class="ptitle" style="margin-top:16px">해시태그 15개</p>
+      <div class="tagline">${esc(p.tags)}</div>
     </div>
    </article>`).join("");
 }
@@ -207,30 +338,28 @@ async function save(){
   try {
     const api = await claude.use("artifact");
     if (!api) return;
-    const doc = PRISTINE.replace(/(<script id="state"[^>]*>)[\s\S]*?(<\/script>)/,
-      (m,a,b) => a + JSON.stringify(S).replace(/<\//g,"<\\/") + b);
-    await api.publish(doc);
-  } catch (e) { /* conflict 는 모든 창이 최신본으로 새로고침되므로 재시도하지 않는다 */ }
+    await api.publish(PRISTINE.replace(/(<script id="state"[^>]*>)[\s\S]*?(<\/script>)/,
+      (m,a,b) => a + JSON.stringify(S).replace(/<\//g, "<\\/") + b));
+  } catch { /* conflict 면 모든 창이 최신본으로 새로고침된다 */ }
   finally { saving = false; }
 }
 
 document.addEventListener("click", e => {
   const b = e.target.closest("[data-act]");
   if (!b) return;
-  const i = +b.dataset.i, p = S[i];
+  const p = S[+b.dataset.i];
   switch (b.dataset.act) {
-    case "cycle":      p.status = NEXT[p.status]; render(); save(); break;
+    case "cycle": p.status = NEXT[p.status]; render(); save(); break;
     case "toggle": {
-      const el = document.getElementById(b.dataset.t + i);
+      const el = document.getElementById(b.dataset.t + b.dataset.i);
       el.hidden = !el.hidden;
-      b.textContent = el.hidden
-        ? (b.dataset.t === "ms" ? "원고 보기" : "이미지 10장 스크립트")
-        : "접기";
+      b.textContent = el.hidden ? (b.dataset.t === "ms" ? "원고 보기" : "이미지 프롬프트 10장") : "접기";
       break;
     }
-    case "copy-clean": copy(stripImages(p.body), b); break;
-    case "copy-full":  copy(p.body, b); break;
-    case "copy-tags":  copy(p.tags, b); break;
+    case "copy-rich":   copyRich(toNaverHtml(p.body, true), toPlain(p.body, true), b); break;
+    case "copy-plain":  copyText(toPlain(p.body, true), b); break;
+    case "copy-tags":   copyText(p.tags, b); break;
+    case "copy-prompt": copyText(p.images[+b.dataset.j].p, b); break;
   }
 });
 

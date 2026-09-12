@@ -12,8 +12,8 @@ import { parsePost, flatLines } from './lib/parse-post.mjs';
 const MAX_LINE = 30;          // 한 줄 최대 글자수(공백 포함)
 const AVG_LINE = [17, 23];    // 평균 줄 길이 권장 구간
 const MIN_BLOCK_LINES = 2.6;  // 덩어리당 평균 줄 수 하한 (너무 잘게 쪼개지 않기)
-const MIN_CHARS = 2800;       // 본문 최소 (공백 포함)
-const MAX_CHARS = 3400;       // 본문 최대
+const MIN_CHARS = 2300;       // 본문 최소 (공백 포함)
+const MAX_CHARS = 2500;       // 본문 최대
 const MIN_MAIN = 10;          // 메인 키워드 최소 등장 횟수
 const MIN_SUB = 5;            // 서브 키워드 각각 최소 등장 횟수
 const MIN_TAGS = 15;          // 해시태그 최소 개수
