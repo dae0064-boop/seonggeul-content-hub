@@ -4,15 +4,18 @@
 
 | 무엇 | 어디 |
 |---|---|
-| 글쓰기 규칙 정본 | `memory/CLAUDE.md` — 각 PC 의 `~/.claude/CLAUDE.md` 가 됩니다 |
-| 저장소 운영 · 생활정보 실무 기준 | `CLAUDE.md` |
+| 길잡이 — 어디서 무엇을 읽나 | `CLAUDE.md` |
+| 브랜드 기준(말투·금지표현·출처) | `memory/CLAUDE.md` — 각 PC 의 `~/.claude/CLAUDE.md` 가 됩니다 |
+| 원고 작성 실무 기준 | `.claude/skills/write-post/` — 원고를 쓸 때 자동으로 로드됩니다 |
+| 보험 글 규칙 (현재 중단) | `standards/보험글-규칙.md` |
 | 원고 | `content/posts/` — `.md`(정본) + `.json`(스크립트 입력) 한 쌍 |
 | 발행 캘린더 · 작업판 | `content/calendar/`, `content/board/` (아티팩트 소스) |
 | 발행 · 검수 자동화 | `scripts/*.mjs` |
 | 여러 PC 워크스페이스 도구 | `scripts/*.py`, `launchers/`, `docs/SETUP.md` |
 | 2026-08 작업물 아카이브 | `work/` — 과거 기록이며 갱신하지 않습니다 |
 
-새 세션을 시작할 때는 `CLAUDE.md` 부터 읽으면 됩니다.
+새 세션을 시작할 때는 `CLAUDE.md` 부터 읽으면 됩니다. 규칙은 한 곳에만 두었으니
+같은 내용을 여러 문서에서 찾을 필요가 없습니다.
 
 ---
 
