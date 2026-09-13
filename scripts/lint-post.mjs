@@ -1,8 +1,12 @@
 #!/usr/bin/env node
 /**
- * 원고 검사기 — 모바일 가독성 규칙을 자동으로 확인한다.
+ * 원고 검사기 — 발행 여부를 정하는 유일한 게이트.
  *
  *   node scripts/lint-post.mjs content/posts/*.md
+ *   node scripts/lint-post.mjs --full content/posts/<원고>.md   # 측정값 표까지
+ *
+ * 출력은 "행 번호 · 무엇 · 현재값 → 목표값" 한 줄로 짧게 낸다.
+ * 원고 전문을 다시 읽지 않고 그 자리만 고칠 수 있어야 한다.
  */
 import fs from 'node:fs';
 import { parsePost, flatLines } from './lib/parse-post.mjs';
@@ -17,20 +21,29 @@ const MAX_CHARS = 2500;       // 본문 최대
 const MIN_MAIN = 10;          // 메인 키워드 최소 등장 횟수
 const MIN_SUB = 5;            // 서브 키워드 각각 최소 등장 횟수
 const MIN_TAGS = 15;          // 해시태그 최소 개수
+const TITLE_LEN = [20, 30];   // 제목 길이 권장 구간 (공백 포함)
+const IMAGES = [8, 10];       // 이미지 자리 권장 장수
+const MAX_EMPHASIS = 0.15;    // 강조(빨강+노랑) 줄 비율 상한
 
-// 단정적 우위 표현 — 쓰면 안 된다
-const BAN = ['무조건', '100%', '단언컨대', '절대로', '손실 없음', '공짜'];
+// 단정적·과장 표현 — 쓰면 안 된다 (memory/CLAUDE.md "금지 표현")
+const BAN = ['무조건', '100%', '단언컨대', '절대로', '손실 없음', '공짜', '반드시'];
+// 문맥에 따라 괜찮을 수 있어 경고만 한다 ("가장 먼저" 처럼 순서를 뜻하는 경우)
+const WARN_WORDS = ['최고', '최저', '제일', '가장', '확실히'];
 
 // 고정 인사말 — 모든 글이 이걸로 열고 닫는다
 const OPEN = ['안녕하세요', '매일매일 좋은 날을 나누는 성글벙글입니다😊'];
 const CLOSE_1 = '좋아요·공감과 이웃추가 부탁드려요💙';
 const CLOSE_RE = /^이상 성글벙글의 .+ 포스팅이었습니다😎$/;
-// 문맥에 따라 괜찮을 수 있어 경고만 한다 ("가장 먼저" 처럼 순서를 뜻하는 경우)
-const WARN_WORDS = ['최고', '최저', '제일', '가장', '확실히', '반드시'];
+// 닫는 인사 앞에 오는 출처·기준일
+const SOURCE_RE = /기준으로 (정리|작성)했습니다/;
+// 번호를 붙인 소제목 — "1단계 ·", "2. ", "(3)" 처럼 시작하는 것
+const NUMBERED_RE = /^[(\[]?\d+[)\].·]?\s*(단계)?[\s.·)]/;
 
-const files = process.argv.slice(2);
+const args = process.argv.slice(2);
+const full = args.includes('--full');
+const files = args.filter((a) => !a.startsWith('--'));
 if (!files.length) {
-  console.error('사용법: node scripts/lint-post.mjs <원고.md> [...]');
+  console.error('사용법: node scripts/lint-post.mjs [--full] <원고.md> [...]');
   process.exit(1);
 }
 
@@ -42,25 +55,44 @@ for (const file of files) {
   const images = post.blocks.filter((b) => b.type === 'image');
   const texts = lines.map((l) => l.t);
   const chars = texts.join('').length;
+  const body = texts.join('');
   const errors = [];
   const notes = [];
+  const err = (where, msg) => errors.push({ where, msg });
+  const note = (where, msg) => notes.push({ where, msg });
 
-  if (!post.title) errors.push('title 이 없습니다.');
-  if (!post.mainKeyword) errors.push('main_keyword 가 없습니다.');
-  if (post.title.length > 30) notes.push(`제목이 깁니다 (${post.title.length}자). 모바일에서 잘릴 수 있습니다.`);
+  // --- front matter
+  if (!post.title) err('앞머리', 'title 이 없습니다');
+  if (!post.mainKeyword) err('앞머리', 'main_keyword 가 없습니다');
+  if (post.title && post.mainKeyword) {
+    const t = post.title.replace(/\s/g, ''), k = post.mainKeyword.replace(/\s/g, '');
+    if (!t.startsWith(k)) err('제목', `메인 키워드로 시작하지 않습니다: "${post.title}"`);
+  }
+  if (post.title && (post.title.length < TITLE_LEN[0] || post.title.length > TITLE_LEN[1]))
+    note('제목', `${post.title.length}자 → ${TITLE_LEN[0]}~${TITLE_LEN[1]}자`);
+  if (post.tags.length < MIN_TAGS)
+    err('태그', `${post.tags.length}개 → ${MIN_TAGS}개 이상`);
 
+  // --- 파서가 잡은 표기 오류
+  for (const w of post.warnings) err(w.ln ? `${w.ln}행` : '본문', w.msg);
 
-  lines.forEach((l, i) => {
-    if (l.t.length > MAX_LINE) errors.push(`${MAX_LINE}자 초과 (${l.t.length}자): "${l.t}"`);
-  });
+  // --- 줄 단위
+  for (const l of lines) {
+    if (l.t.length > MAX_LINE)
+      err(`${l.ln}행`, `${l.t.length}자 → ${MAX_LINE}자 이하: "${l.t}"`);
+    for (const w of BAN) if (l.t.includes(w)) err(`${l.ln}행`, `금지 표현 "${w}"`);
+    for (const w of WARN_WORDS)
+      if (l.t.includes(w)) note(`${l.ln}행`, `"${w}" — 우위를 단정하는 뜻이면 고치세요`);
+  }
 
-  const body = texts.join('');
-  for (const w of BAN) if (body.includes(w)) errors.push(`단정적 표현 사용: "${w}"`);
-  for (const w of WARN_WORDS) if (body.includes(w)) notes.push(`"${w}" — 우위를 단정하는 뜻이면 고치세요.`);
-  for (const w of post.warnings) errors.push(w);
+  // --- 소제목
+  for (const q of post.blocks.filter((b) => b.type === 'quote')) {
+    if (NUMBERED_RE.test(q.lines[0].t))
+      err(`${q.ln}행`, `소제목에 번호를 붙이지 않습니다: "${q.lines[0].t}"`);
+  }
 
-  // 키워드 세기: 띄어쓰기 차이를 흡수하려고 양쪽 공백을 제거하고 센다
-  const flat = (post.title + texts.join('')).replace(/\s/g, '');
+  // --- 분량·키워드 (띄어쓰기 차이를 흡수하려고 양쪽 공백을 제거하고 센다)
+  const flat = (post.title + body).replace(/\s/g, '');
   const countOf = (kw) => {
     const k = kw.replace(/\s/g, '');
     if (!k) return 0;
@@ -71,66 +103,66 @@ for (const file of files) {
   const mainN = countOf(post.mainKeyword);
   const subN = post.subKeywords.map((k) => [k, countOf(k)]);
 
-  if (chars < MIN_CHARS) errors.push(`본문이 짧습니다: ${chars}자 (최소 ${MIN_CHARS})`);
-  if (chars > MAX_CHARS) errors.push(`본문이 깁니다: ${chars}자 (최대 ${MAX_CHARS})`);
+  if (chars < MIN_CHARS) err('본문', `${chars}자 → ${MIN_CHARS}자 이상`);
+  if (chars > MAX_CHARS) err('본문', `${chars}자 → ${MAX_CHARS}자 이하`);
   if (post.mainKeyword && mainN < MIN_MAIN)
-    errors.push(`메인 키워드 "${post.mainKeyword}" ${mainN}회 — ${MIN_MAIN}회 이상 필요`);
+    err('메인 키워드', `"${post.mainKeyword}" ${mainN}회 → ${MIN_MAIN}회 이상`);
   for (const [k, n] of subN)
-    if (n < MIN_SUB) errors.push(`서브 키워드 "${k}" ${n}회 — ${MIN_SUB}회 이상 필요`);
+    if (n < MIN_SUB) err('서브 키워드', `"${k}" ${n}회 → ${MIN_SUB}회 이상`);
 
-  // 제목은 메인 키워드로 시작해야 한다 (타깃 키워드를 첫 어절에)
-  if (post.mainKeyword) {
-    const t = post.title.replace(/\s/g, ''), k = post.mainKeyword.replace(/\s/g, '');
-    if (!t.startsWith(k)) errors.push(`제목이 메인 키워드로 시작하지 않습니다: "${post.title}"`);
-  }
-  if (post.tags.length < MIN_TAGS) errors.push(`해시태그 ${post.tags.length}개 — ${MIN_TAGS}개 이상 필요`);
-
-  if (images.length && images.length !== 10)
-    notes.push(`이미지 자리 ${images.length}개 — 10개 기준입니다.`);
-
-  // 고정 인사말
+  // --- 고정 인사말
   if (texts[0] !== OPEN[0] || texts[1] !== OPEN[1])
-    errors.push(`오프닝이 고정 문구와 다릅니다. "${OPEN[0]} / ${OPEN[1]}" 로 시작해야 합니다.`);
+    err('1~2행', `오프닝이 고정 문구와 달라요 → "${OPEN[0]} / ${OPEN[1]}"`);
   if (texts[texts.length - 2] !== CLOSE_1 || !CLOSE_RE.test(texts[texts.length - 1]))
-    errors.push(`클로징이 고정 문구와 다릅니다. "${CLOSE_1} / 이상 성글벙글의 OO 포스팅이었습니다😎" 로 끝나야 합니다.`);
+    err('마지막', `클로징이 고정 문구와 달라요 → "${CLOSE_1} / 이상 성글벙글의 OO 포스팅이었습니다😎"`);
+  if (!SOURCE_RE.test(body))
+    note('마지막', '닫는 인사 앞 출처·기준일이 없습니다 ("~를 (연월일) 기준으로 정리했습니다")');
 
-  // 덩어리를 너무 잘게 쪼개면 글이 툭툭 끊긴다
+  // --- 덩어리·가독성
   const textBlocks = post.blocks.filter((b) => b.type !== 'image');
   const perBlock = lines.length / textBlocks.length;
   if (perBlock < MIN_BLOCK_LINES)
-    errors.push(`덩어리가 잘게 쪼개졌습니다: 덩어리당 ${perBlock.toFixed(1)}줄 (최소 ${MIN_BLOCK_LINES})`);
+    err('전체', `덩어리당 ${perBlock.toFixed(1)}줄 → ${MIN_BLOCK_LINES}줄 이상 (잘게 쪼개짐)`);
   const avgLine = texts.reduce((a, t) => a + t.length, 0) / texts.length;
   if (avgLine < AVG_LINE[0] || avgLine > AVG_LINE[1])
-    notes.push(`평균 줄 길이 ${avgLine.toFixed(1)}자 — 권장 ${AVG_LINE[0]}~${AVG_LINE[1]}자`);
+    note('전체', `평균 줄 길이 ${avgLine.toFixed(1)}자 → ${AVG_LINE[0]}~${AVG_LINE[1]}자`);
 
-  const quotes = post.blocks.filter((b) => b.type === 'quote').length;
-  const red = lines.filter((l) => l.s === 'red').length;
-  const yellow = lines.filter((l) => l.s === 'yellow').length;
-  const avg = (texts.reduce((a, t) => a + t.length, 0) / texts.length).toFixed(1);
-  const max = Math.max(...texts.map((t) => t.length));
-
-  console.log(`\n${file}`);
-  console.log(`  제목        : ${post.title} (${post.title.length}자)`);
-  const range = chars < MIN_CHARS ? '짧음' : chars > MAX_CHARS ? '김' : 'OK';
-  console.log(`  본문        : ${chars}자 (기준 ${MIN_CHARS}~${MAX_CHARS}) ${range}`);
-  console.log(`  메인 키워드 : "${post.mainKeyword}" ${mainN}회 (최소 ${MIN_MAIN})`);
-  if (subN.length) console.log(`  서브 키워드 : ${subN.map(([k, n]) => `${k} ${n}회`).join(' / ')}`);
-  console.log(`  줄/덩어리   : ${lines.length}줄 / ${post.blocks.length}덩어리`);
-  console.log(`  줄 길이     : 평균 ${avg}자 (권장 ${AVG_LINE[0]}~${AVG_LINE[1]}), 최장 ${max}자 (한도 ${MAX_LINE})`);
-  console.log(`  덩어리당    : ${perBlock.toFixed(1)}줄 (최소 ${MIN_BLOCK_LINES})`);
-  console.log(`  인용구      : ${quotes}개`);
-  console.log(`  이미지 자리 : ${images.length}개`);
-  console.log(`  강조        : 빨강 ${red}줄 / 노랑 ${yellow}줄`);
-  console.log(`  태그        : ${post.tags.join(', ') || '(없음)'}`);
-
-  for (const n of notes) console.log(`  · ${n}`);
-  if (errors.length) {
-    failed++;
-    console.log(`  ❌ ${errors.length}건`);
-    for (const e of errors) console.log(`     - ${e}`);
-  } else {
-    console.log('  ✅ 통과');
+  // --- 이미지·강조
+  if (images.length && (images.length < IMAGES[0] || images.length > IMAGES[1]))
+    note('이미지', `${images.length}개 → ${IMAGES[0]}~${IMAGES[1]}개`);
+  const red = lines.filter((l) => l.s === 'red');
+  const yellow = lines.filter((l) => l.s === 'yellow');
+  const ratio = (red.length + yellow.length) / lines.length;
+  if (ratio > MAX_EMPHASIS)
+    note('강조', `${(ratio * 100).toFixed(0)}% → ${MAX_EMPHASIS * 100}% 이하 (다 칠하면 강조가 안 보인다)`);
+  if (red.length) {
+    const idx = red.map((r) => lines.indexOf(r));
+    const third = lines.length / 3;
+    if (idx[0] > third || idx[idx.length - 1] < third * 2)
+      note('강조', '빨간글씨는 글의 처음(문제)과 끝(결론)에 걸어 둔다');
   }
+
+  // --- 출력
+  if (full) {
+    const max = Math.max(...texts.map((t) => t.length));
+    console.log(`\n${file}`);
+    console.log(`  제목        : ${post.title} (${post.title.length}자)`);
+    console.log(`  본문        : ${chars}자 (기준 ${MIN_CHARS}~${MAX_CHARS})`);
+    console.log(`  메인 키워드 : "${post.mainKeyword}" ${mainN}회 (최소 ${MIN_MAIN})`);
+    if (subN.length) console.log(`  서브 키워드 : ${subN.map(([k, n]) => `${k} ${n}회`).join(' / ')}`);
+    console.log(`  줄/덩어리   : ${lines.length}줄 / ${post.blocks.length}덩어리 (덩어리당 ${perBlock.toFixed(1)}줄)`);
+    console.log(`  줄 길이     : 평균 ${avgLine.toFixed(1)}자 (권장 ${AVG_LINE[0]}~${AVG_LINE[1]}), 최장 ${max}자 (한도 ${MAX_LINE})`);
+    console.log(`  인용구      : ${post.blocks.filter((b) => b.type === 'quote').length}개`);
+    console.log(`  이미지 자리 : ${images.length}개`);
+    console.log(`  강조        : 빨강 ${red.length}줄 / 노랑 ${yellow.length}줄`);
+    console.log(`  태그        : ${post.tags.join(', ') || '(없음)'}`);
+  } else {
+    const head = errors.length ? `❌ ${errors.length}건` : '✅ 통과';
+    console.log(`${file}  ${head}  ${chars}자 · 메인 ${mainN}회 · ${lines.length}줄 · 평균 ${avgLine.toFixed(1)}자 · 태그 ${post.tags.length}개`);
+  }
+  for (const e of errors) console.log(`   ${e.where}  ${e.msg}`);
+  for (const n of notes) console.log(`   · ${n.where}  ${n.msg}`);
+  if (errors.length) failed++;
 }
 
 process.exit(failed ? 1 : 0);

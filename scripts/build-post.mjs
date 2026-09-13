@@ -6,7 +6,7 @@
  *   node scripts/build-post.mjs content/posts/*.md
  */
 import fs from 'node:fs';
-import { parsePost } from './lib/parse-post.mjs';
+import { parsePost, stripLineNumbers } from './lib/parse-post.mjs';
 
 const files = process.argv.slice(2);
 if (!files.length) {
@@ -17,7 +17,7 @@ if (!files.length) {
 for (const file of files) {
   if (!file.endsWith('.md')) { console.error(`건너뜀(.md 아님): ${file}`); continue; }
   const post = parsePost(fs.readFileSync(file, 'utf8'));
-  for (const w of post.warnings) console.warn(`⚠ ${file}: ${w}`);
+  for (const w of post.warnings) console.warn(`⚠ ${file}:${w.ln || '?'} ${w.msg}`);
 
   const out = file.replace(/\.md$/, '.json');
   const json = {
@@ -25,7 +25,7 @@ for (const file of files) {
     title: post.title,
     category: post.category,
     tags: post.tags,
-    blocks: post.blocks,
+    blocks: stripLineNumbers(post.blocks),
   };
   fs.writeFileSync(out, JSON.stringify(json, null, 2) + '\n');
   const lines = post.blocks.reduce((a, b) => a + b.lines.length, 0);
