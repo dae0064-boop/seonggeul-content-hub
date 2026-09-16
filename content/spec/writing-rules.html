@@ -1,0 +1,288 @@
+<title>성글벙글 원고 규칙</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@500;700&family=Noto+Sans+KR:wght@300;400;500;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  --paper:#f1f2f4; --card:#fff; --card2:#f8f9fa;
+  --ink:#15191e; --ink2:#59616a; --ink3:#8d959d;
+  --line:#dde1e6; --line2:#eceff2;
+  --auto:#156b47; --auto-bg:#e3f1ea;
+  --human:#7a6520; --human-bg:#f6f0dc;
+  --red:#cc0000; --blue:#0b4da2; --yellow:#ffe97a;
+  --serif:"Hahmlet",Georgia,serif;
+  --sans:"Noto Sans KR",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#13161a; --card:#1b1f25; --card2:#181c21;
+  --ink:#e8ebee; --ink2:#a0a8b1; --ink3:#727a83;
+  --line:#2c323a; --line2:#232830;
+  --auto:#5bc493; --auto-bg:#12301f;
+  --human:#d9bb5e; --human-bg:#2f2814;
+  --red:#ff6b5e; --blue:#6aa6e8; --yellow:#ffe97a;
+}}
+:root[data-theme="dark"]{
+  --paper:#13161a; --card:#1b1f25; --card2:#181c21;
+  --ink:#e8ebee; --ink2:#a0a8b1; --ink3:#727a83;
+  --line:#2c323a; --line2:#232830;
+  --auto:#5bc493; --auto-bg:#12301f;
+  --human:#d9bb5e; --human-bg:#2f2814;
+  --red:#ff6b5e; --blue:#6aa6e8; --yellow:#ffe97a;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:820px;margin:0 auto;padding-inline:20px;padding-block:40px 80px}
+
+header{border-bottom:3px double var(--ink);padding-bottom:18px}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(26px,5vw,38px);margin:0;letter-spacing:-.02em}
+.lede{color:var(--ink2);font-size:14.5px;margin-top:10px;max-width:60ch}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:16px;font-size:12.5px;color:var(--ink2);align-items:center}
+
+.tag{font-family:var(--mono);font-size:10.5px;font-weight:600;padding:2px 7px;border-radius:3px;white-space:nowrap;letter-spacing:.02em}
+.t-auto{background:var(--auto-bg);color:var(--auto)}
+.t-human{background:var(--human-bg);color:var(--human)}
+
+/* 숫자 요약 */
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(146px,1fr));gap:1px;margin-top:22px;
+  background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.num{background:var(--card);padding:15px 16px}
+.num b{font-family:var(--mono);font-size:18px;font-weight:600;display:block;font-variant-numeric:tabular-nums;letter-spacing:-.03em;white-space:nowrap}
+.num span{font-size:11.5px;color:var(--ink3);display:block;margin-top:3px}
+
+h2{font-family:var(--serif);font-weight:700;font-size:20px;margin:44px 0 4px;letter-spacing:-.01em}
+h2 + .sub{color:var(--ink2);font-size:13.5px;margin:0 0 16px}
+
+.rules{border:1px solid var(--line);border-radius:4px;background:var(--card);overflow:hidden}
+.rule{display:grid;grid-template-columns:1fr auto;gap:10px 16px;padding:14px 17px;border-bottom:1px solid var(--line2);align-items:start}
+.rule:last-child{border-bottom:0}
+.rule .what{font-size:14.5px;font-weight:400}
+.rule .what em{font-style:normal;font-family:var(--mono);font-size:13px;font-weight:600;color:var(--ink)}
+.rule .why{font-size:12.5px;color:var(--ink2);margin-top:4px;line-height:1.6}
+
+/* 강조 색 */
+.marks{display:grid;gap:10px;margin-top:4px}
+.mark{border:1px solid var(--line);border-left:5px solid;border-radius:4px;background:var(--card);padding:13px 16px}
+.mark.r{border-left-color:var(--red)} .mark.b{border-left-color:var(--blue)} .mark.y{border-left-color:#e8c93d}
+.mark .role{font-size:14.5px;font-weight:500}
+.mark .role code{font-family:var(--mono);font-size:12.5px;color:var(--ink2);font-weight:400;margin-left:6px}
+.mark .ex{font-size:14px;margin-top:8px;line-height:1.6}
+.ex .r{color:var(--red);font-weight:700}
+.ex .b{color:var(--blue);font-weight:700}
+.ex .y{background:var(--yellow);color:#15191e;font-weight:700;padding:1px 4px;border-radius:2px}
+.mark .cnt{font-family:var(--mono);font-size:11.5px;color:var(--ink3);margin-top:7px}
+
+/* 고정 문구 */
+pre.fix{margin:0;font-family:var(--sans);font-size:14.5px;line-height:1.85;white-space:pre-wrap;
+  background:var(--card);border:1px solid var(--line);border-radius:4px;padding:15px 17px}
+pre.fix b{font-weight:700}
+.note{font-size:12.5px;color:var(--ink2);margin-top:9px;line-height:1.65}
+
+/* 구조 순서 */
+ol.flow{list-style:none;counter-reset:f;margin:0;padding:0;border:1px solid var(--line);border-radius:4px;background:var(--card);overflow:hidden}
+ol.flow li{counter-increment:f;display:grid;grid-template-columns:30px 1fr;gap:14px;padding:12px 17px;border-bottom:1px solid var(--line2);align-items:baseline}
+ol.flow li:last-child{border-bottom:0}
+ol.flow li::before{content:counter(f,decimal-leading-zero);font-family:var(--mono);font-size:11px;color:var(--ink3);font-variant-numeric:tabular-nums}
+ol.flow .step{font-size:14.5px;font-weight:500}
+ol.flow .det{font-size:12.5px;color:var(--ink2);margin-top:2px;line-height:1.6}
+ol.flow li.fixed .step{color:var(--ink2)}
+
+/* 이미지 10 */
+.imgs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.img{border:1px solid var(--line);border-radius:4px;background:var(--card);padding:10px 12px;display:flex;gap:9px;align-items:flex-start}
+.img .no{font-family:var(--mono);font-size:11px;color:var(--ink3);flex:none;padding-top:2px;font-variant-numeric:tabular-nums}
+.img .nm{font-size:13px;line-height:1.45}
+.img .src{font-family:var(--mono);font-size:10px;margin-top:4px;display:inline-block;padding:1px 5px;border-radius:2px}
+.s-ai{background:var(--auto-bg);color:var(--auto)}
+.s-card{background:var(--human-bg);color:var(--human)}
+
+.ban{display:flex;flex-wrap:wrap;gap:7px;margin-top:2px}
+.ban span{font-family:var(--mono);font-size:12.5px;padding:4px 10px;border-radius:3px;border:1px solid var(--line);
+  background:var(--card);color:var(--ink2);text-decoration:line-through}
+
+.cmd{font-family:var(--mono);font-size:12.5px;background:var(--ink);color:var(--paper);
+  padding:12px 15px;border-radius:4px;overflow-x:auto;white-space:pre;line-height:1.7}
+
+footer{margin-top:48px;border-top:1px solid var(--line);padding-top:16px;font-size:12.5px;color:var(--ink3);line-height:1.7}
+footer code{font-family:var(--mono);font-size:12px;color:var(--ink2)}
+@media(max-width:520px){ .rule{grid-template-columns:1fr} }
+</style>
+
+<div class="wrap">
+<header>
+  <h1>원고 규칙</h1>
+  <p class="lede">네이버 블로그 글 하나를 쓸 때 지키는 기준을 한 장에 모았습니다.
+  숫자로 정한 것은 검사기가 자동으로 막고, 판단이 필요한 것은 사람이 봅니다.</p>
+  <div class="legend">
+    <span class="tag t-auto">검사기</span> 어기면 발행 전에 막힙니다
+    <span class="tag t-human">사람</span> 쓰면서 판단합니다
+  </div>
+</header>
+
+<div class="nums">
+  <div class="num"><b>2,100~2,350</b><span>본문 (공백 제외)</span></div>
+  <div class="num"><b>10~12</b><span>강조 구간</span></div>
+  <div class="num"><b>10회 ↑</b><span>메인 키워드</span></div>
+  <div class="num"><b>5회 ↑</b><span>서브 키워드 각각</span></div>
+  <div class="num"><b>10장</b><span>이미지</span></div>
+  <div class="num"><b>15개 ↑</b><span>해시태그</span></div>
+</div>
+
+<h2>분량과 키워드</h2>
+<p class="sub">글자수는 <b>공백 제외</b>로 셉니다. 공백 포함으로는 2,800자쯤 됩니다.</p>
+<div class="rules">
+  <div class="rule">
+    <div><div class="what">본문 <em>2,100~2,350자</em></div>
+    <div class="why">공백 제외 기준. 2,200자를 가운데로 봅니다.</div></div>
+    <span class="tag t-auto">검사기</span>
+  </div>
+  <div class="rule">
+    <div><div class="what">메인 키워드 <em>10회 이상</em></div>
+    <div class="why">억지로 끼워 넣지 않습니다. 소제목·Q&amp;A·정리에 나눠 배치하면 자연히 채워집니다.</div></div>
+    <span class="tag t-auto">검사기</span>
+  </div>
+  <div class="rule">
+    <div><div class="what">서브 키워드 <em>각각 5회 이상</em></div>
+    <div class="why">5회를 자연스럽게 채울 수 있는 것으로 <b>3개만</b> 고릅니다.</div></div>
+    <span class="tag t-auto">검사기</span>
+  </div>
+  <div class="rule">
+    <div><div class="what">제목은 메인 키워드로 시작</div>
+    <div class="why">타깃 키워드가 첫 어절이어야 합니다. 30자를 넘으면 모바일에서 잘립니다.</div></div>
+    <span class="tag t-auto">검사기</span>
+  </div>
+  <div class="rule">
+    <div><div class="what">해시태그 <em>15개 이상</em></div>
+    <div class="why">내용에 맞춰 답니다.</div></div>
+    <span class="tag t-auto">검사기</span>
+  </div>
+  <div class="rule">
+    <div><div class="what">대형 경쟁 키워드는 버립니다</div>
+    <div class="why">공식 기관이 상단을 독점하면 검색량이 커도 못 이깁니다.
+    근로장려금 787,700(국세청), 전입신고 73,500(정부24) 같은 것들.
+    <b>787,700의 0%보다 3,000의 30%가 큽니다.</b></div></div>
+    <span class="tag t-human">사람</span>
+  </div>
+</div>
+
+<h2>문단과 줄바꿈</h2>
+<p class="sub">기준은 실제 발행글 실측치입니다 — 평균 줄 19.8자 / 최장 29자 / 덩어리당 3.4줄.</p>
+<div class="rules">
+  <div class="rule">
+    <div><div class="what">한 줄 <em>최대 30자</em>, 평균 21~27자</div>
+    <div class="why">모바일 한 줄에 들어갈 길이면 굳이 끊지 않습니다.
+    글자수를 채우려고 끊으면 문장이 토막 나 오히려 읽기 나빠집니다.</div></div>
+    <span class="tag t-auto">검사기</span>
+  </div>
+  <div class="rule">
+    <div><div class="what">덩어리당 <em>2.2줄 이상</em></div>
+    <div class="why">3~4줄이 한 덩어리, 사이에 빈 줄. 1~2줄로 잘게 쪼개면 툭툭 끊겨 읽힙니다.</div></div>
+    <span class="tag t-auto">검사기</span>
+  </div>
+  <div class="rule">
+    <div><div class="what">끊는 자리는 의미 단위</div>
+    <div class="why">쉼표, 접속, 호흡이 끊기는 곳에서 자릅니다. 글자수로 자르지 않습니다.</div></div>
+    <span class="tag t-human">사람</span>
+  </div>
+  <div class="rule">
+    <div><div class="what">소제목은 인용구, 번호 없이</div>
+    <div class="why">"1단계 · 송풍으로 말리기"가 아니라 "작년 가을에 제가 한 실수"처럼
+    서술형이나 질문형으로 씁니다.</div></div>
+    <span class="tag t-human">사람</span>
+  </div>
+</div>
+
+<h2>강조 — 색마다 역할이 있다</h2>
+<p class="sub">색을 장식으로 쓰지 않습니다. <b>문장의 역할이 색을 정합니다.</b>
+한 색으로 다 칠하면 강조가 배경이 됩니다.</p>
+<div class="marks">
+  <div class="mark r">
+    <div class="role">문제 · 경고 <code>[빨간글씨] #cc0000</code></div>
+    <div class="ex"><span class="r">에어컨 청소를 안 해서 생긴 일이 아니라, 말리지 않고 덮어서 생긴 일이었습니다.</span></div>
+    <div class="cnt">이러면 이렇게 된다 · 되면 안 되는 경우 · 2~3구간</div>
+  </div>
+  <div class="mark b">
+    <div class="role">행동 · 방법 <code>[파란글씨] #0b4da2</code></div>
+    <div class="ex"><span class="b">결론부터 말씀드리면, 에어컨은 청소보다 말리는 게 먼저예요.</span></div>
+    <div class="cnt">하면 되는 것 · 순서 · 판단 기준 · 마지막 정리 요약 · 5~6구간</div>
+  </div>
+  <div class="mark y">
+    <div class="role">기억할 원리 <code>[노란배경] #ffe97a</code></div>
+    <div class="ex"><span class="y">그 물기를 그대로 두고 덮으면 습기가 갇힙니다.</span></div>
+    <div class="cnt">아껴서 씁니다 · 전체의 절반을 넘으면 안 됩니다 · 3~4구간</div>
+  </div>
+</div>
+<p class="note">세 가지 모두 <b>굵게</b> 씁니다. 여러 줄에 걸친 강조 하나는 1구간으로 셉니다.
+검사기가 합계 10~12구간인지, 노랑이 절반을 넘지 않는지, 파랑이 빠지지 않았는지 봅니다.</p>
+
+<h2>글 구조</h2>
+<p class="sub">사례 중심 두괄식. 결론을 먼저 던지고 "왜 그런지"를 궁금하게 만듭니다.</p>
+<ol class="flow">
+  <li class="fixed"><div><div class="step">고정 인사</div><div class="det">두 줄, 토씨 하나 바꾸지 않습니다</div></div></li>
+  <li><div><div class="step">예고</div><div class="det">오늘은 (주제) 포스팅 내용에 대해 설명드리겠습니다</div></div></li>
+  <li><div><div class="step">결론</div><div class="det">예고 바로 뒤에 한 줄. 파란글씨로 겁니다</div></div></li>
+  <li><div><div class="step">도입</div><div class="det">내 이야기로 잇습니다. 독자와 같은 자리에서 시작합니다</div></div></li>
+  <li><div><div class="step">사례</div><div class="det">익명화. 타겟과 정확히 일치하는 한 사람</div></div></li>
+  <li><div><div class="step">정보</div><div class="det">단계나 방법을 간략하게</div></div></li>
+  <li><div><div class="step">비교</div><div class="det">되는 경우 / 안 되는 경우</div></div></li>
+  <li><div><div class="step">체크포인트</div><div class="det">독자가 자기 상황에서 확인할 것</div></div></li>
+  <li><div><div class="step">Q&amp;A</div><div class="det">많이 묻는 3~5개</div></div></li>
+  <li><div><div class="step">정리</div><div class="det">도입 사례를 긍정적 결과로 재해석하며 닫습니다</div></div></li>
+  <li><div><div class="step">출처</div><div class="det">기관 · 자료명 · 기준일</div></div></li>
+  <li class="fixed"><div><div class="step">고정 인사</div><div class="det">두 줄</div></div></li>
+</ol>
+
+<h2>고정 인사말</h2>
+<p class="sub">모든 글이 이 두 줄로 열고 닫습니다. <b>OO 자리에만</b> 글 성격을 넣습니다.</p>
+<pre class="fix">안녕하세요
+매일매일 좋은 날을 나누는 성글벙글입니다😊
+
+오늘은 <b>(주제)</b> 포스팅 내용에 대해
+설명드리겠습니다.</pre>
+<p class="note">예고만 하면 독자는 아직 "그래서 뭔데?"를 얻지 못한 상태입니다.
+바로 뒤에 <b>결론 한 줄</b>을 파란글씨로 붙여야 두괄식이 완성됩니다.</p>
+<pre class="fix" style="margin-top:14px">좋아요·공감과 이웃추가 부탁드려요💙
+이상 성글벙글의 <b>OO</b> 포스팅이었습니다😎</pre>
+<p class="note">닫는 인사 <b>바로 앞</b>에는 출처와 기준일을 적습니다.
+검사기가 여는 두 줄, 예고 문구, 닫는 두 줄을 모두 확인합니다.</p>
+
+<h2>이미지 10장</h2>
+<p class="sub">원고에 <code style="font-family:var(--mono);font-size:12.5px">[이미지 1]</code> ~
+<code style="font-family:var(--mono);font-size:12.5px">[이미지 10]</code> 으로 자리를 표시합니다.
+사진을 넣은 뒤 그 줄은 지웁니다.</p>
+<div class="imgs">
+  <div class="img"><span class="no">01</span><div><div class="nm">대표 컷 (썸네일)</div><span class="src s-ai">AI</span></div></div>
+  <div class="img"><span class="no">02</span><div><div class="nm">문제 상황 (비포)</div><span class="src s-ai">AI</span></div></div>
+  <div class="img"><span class="no">03</span><div><div class="nm">준비 · 시작</div><span class="src s-ai">AI</span></div></div>
+  <div class="img"><span class="no">04</span><div><div class="nm">과정 1</div><span class="src s-ai">AI</span></div></div>
+  <div class="img"><span class="no">05</span><div><div class="nm">과정 2</div><span class="src s-ai">AI</span></div></div>
+  <div class="img"><span class="no">06</span><div><div class="nm">과정 3</div><span class="src s-ai">AI</span></div></div>
+  <div class="img"><span class="no">07</span><div><div class="nm">비교 컷</div><span class="src s-ai">AI</span></div></div>
+  <div class="img"><span class="no">08</span><div><div class="nm">체크리스트 카드</div><span class="src s-card">카드</span></div></div>
+  <div class="img"><span class="no">09</span><div><div class="nm">Q&amp;A 카드</div><span class="src s-card">카드</span></div></div>
+  <div class="img"><span class="no">10</span><div><div class="nm">결과 (애프터)</div><span class="src s-ai">AI</span></div></div>
+</div>
+<p class="note"><b>8·9번은 AI로 만들지 않습니다.</b> 이미지 생성 모델이 한글을 제대로 쓰지 못해
+글자가 깨지거나 빈 카드가 나옵니다. 이 둘은 <code>cards.html</code> 로 따로 뽑습니다.<br>
+<b>1번과 10번은 같은 자리, 같은 각도</b>여야 비포·애프터가 성립합니다.</p>
+
+<h2>쓰지 않는 표현</h2>
+<p class="sub">단정적 우위 표현은 검사기가 막습니다.</p>
+<div class="ban">
+  <span>무조건</span><span>100%</span><span>단언컨대</span><span>절대로</span><span>손실 없음</span><span>공짜</span>
+</div>
+<p class="note">최고 · 최저 · 제일 · 가장 은 경고만 띄웁니다. "가장 먼저"처럼 순서를 뜻하면 괜찮고,
+우위를 단정하는 뜻이면 고칩니다.<br><br>
+그 밖에 지키는 것 — 무조건 좋다/나쁘다로 나누지 않고, 공포심으로 행동을 유도하지 않고,
+근거 없는 수치를 지어내지 않고, 모르는 것을 아는 척하지 않습니다.
+수치와 제도는 <b>1차 원문</b>으로 확인하고, 2차 가공 뉴스나 타 블로그는 인용하지 않습니다.</p>
+
+<h2>검사</h2>
+<p class="sub">원고를 쓴 뒤 반드시 돌립니다. 통과하지 못하면 발행하지 않습니다.</p>
+<div class="cmd">node scripts/lint-post.mjs content/posts/&lt;원고&gt;.md</div>
+
+<footer>
+이 규칙은 <code>CLAUDE.md</code> 에 기록되어 있고, 숫자 기준은 <code>scripts/lint-post.mjs</code> 가 강제합니다.<br>
+기준을 바꾸려면 두 곳을 함께 고칩니다. 문서만 고치면 검사기가 옛 기준으로 막습니다.
+</footer>
+</div>
