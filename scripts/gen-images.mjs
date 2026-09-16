@@ -37,6 +37,7 @@ function parseArgs(argv) {
       case '--host':    out.host = next(); break;   // 목 서버 테스트용
       case '--gap':     out.gap = Number(next()); break;
       case '--force':   out.force = true; break;
+      case '--include-cards': out.cards = true; break;
       case '--dry-run': out.dry = true; break;
       case '--yes':     out.yes = true; break;
       case '--help':    out.help = true; break;
@@ -116,6 +117,9 @@ async function main() {
   const jobs = post.images
     .map((im, i) => ({ ...im, n: i + 1, note: im.n, file: path.join(outDir, `${String(i + 1).padStart(2, '0')}.png`) }))
     .filter((j) => !args.only || args.only.includes(j.n))
+    // 글자가 들어가는 카드는 AI 가 한글을 못 써서 빈 그림이 나온다.
+    // content/images/cards.html 로 따로 뽑으므로 여기서 건너뛴다.
+    .filter((j) => args.cards || !j.card)
     .filter((j) => args.force || !fs.existsSync(j.file));
   const skipped = post.images.length - jobs.length - (args.only ? post.images.length - args.only.length : 0);
 
@@ -124,7 +128,9 @@ async function main() {
   console.log('='.repeat(58));
   console.log(`  모델   : ${args.model} / ${args.quality} / ${args.size}`);
   console.log(`  저장   : ${outDir}`);
+  const cards = post.images.filter((im) => im.card).length;
   console.log(`  만들 것: ${jobs.length}장${skipped > 0 ? `  (이미 있어 건너뜀 ${skipped}장)` : ''}`);
+  if (cards && !args.cards) console.log(`  글자 카드 ${cards}장은 제외 — cards.html 로 뽑습니다 (AI 는 한글을 못 씁니다)`);
   console.log(`  예상   : $${(jobs.length * unit).toFixed(3)}  (약 ${won(jobs.length * unit)}원)`);
   console.log('  ※ 단가는 추정치입니다. 실제 청구액은 OpenAI 사용량 페이지에서 확인하세요.');
 

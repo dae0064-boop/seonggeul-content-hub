@@ -52,13 +52,15 @@
    },
    {
     "t": "체크리스트 카드",
-    "n": "사진이 아니라 만드는 이미지. 본문 체크포인트 5줄을 큰 글씨로.",
-    "p": "Minimal flat design checklist card, five empty text lines with small check marks, soft beige background, generous white space, clean modern sans-serif layout, no text, vertical card format"
+    "n": "글자가 들어가는 카드. AI 생성 대상이 아니라 cards.html 로 뽑는다.",
+    "p": "Minimal flat design checklist card, five empty text lines with small check marks, soft beige background, generous white space, clean modern sans-serif layout, no text, vertical card format",
+    "card": true
    },
    {
     "t": "자주 묻는 질문 카드",
-    "n": "Q만 뽑아서 목록으로. 답은 넣지 않기. 8번과 같은 서식으로.",
-    "p": "Minimal flat design FAQ card layout, four question blocks with subtle question mark icons, soft beige background, clean modern typography layout, no text, vertical card format"
+    "n": "글자가 들어가는 카드. AI 생성 대상이 아니라 cards.html 로 뽑는다.",
+    "p": "Minimal flat design FAQ card layout, four question blocks with subtle question mark icons, soft beige background, clean modern typography layout, no text, vertical card format",
+    "card": true
    },
    {
     "t": "정리 끝난 에어컨 (애프터)",
