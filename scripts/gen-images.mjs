@@ -95,17 +95,22 @@ async function generate(prompt, args) {
 async function main() {
   const args = parseArgs(process.argv);
   if (args.help) { console.log(USAGE); return; }
-  if (!args.post) throw new Error('--post 가 필요합니다. --help 참고.');
 
   if (!fs.existsSync(BOARD)) throw new Error(`${BOARD} 가 없습니다.`);
   const posts = JSON.parse(fs.readFileSync(BOARD, 'utf8'));
-  const post = posts.find((p) => p.id === args.post || (p.slug || '').includes(args.post))
-            || posts.find((p) => p.title.includes(args.post))
-            || (posts.length === 1 ? posts[0] : null);
-  if (!post) throw new Error(`글을 찾지 못했습니다: ${args.post}\n있는 글: ${posts.map((p) => p.id).join(', ')}`);
+  // --post 를 생략해도 글이 하나뿐이면 그걸 쓴다. 매번 슬러그를 치게 할 이유가 없다.
+  const post = args.post
+    ? (posts.find((p) => p.id === args.post || (p.slug || '').includes(args.post))
+       || posts.find((p) => p.title.includes(args.post)))
+    : (posts.length === 1 ? posts[0] : null);
+  if (!post) {
+    throw new Error(args.post
+      ? `글을 찾지 못했습니다: ${args.post}\n있는 글: ${posts.map((p) => p.id).join(', ')}`
+      : `글이 ${posts.length}개라 --post 로 골라야 합니다.\n있는 글: ${posts.map((p) => p.id).join(', ')}`);
+  }
   if (!post.images?.length) throw new Error(`"${post.title}" 에 이미지 프롬프트가 없습니다.`);
 
-  const outDir = args.out || path.join('content/images', args.post);
+  const outDir = args.out || path.join('content/images', post.slug || post.id);
   const unit = PRICE[args.quality] ?? PRICE.low;
 
   const jobs = post.images
