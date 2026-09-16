@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# 윈도우 배치 파일은 CRLF 를 유지한다. LF 로 바뀌면 실행이 깨질 수 있다.
+*.bat text eol=crlf
