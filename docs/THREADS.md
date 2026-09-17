@@ -22,17 +22,96 @@ GitHub Actions 가 정해진 시간에 깨어나 돌리므로 **내 컴퓨터가
 
 ### 1. 스레드 앱 만들고 토큰 받기
 
-[Meta 개발자 콘솔](https://developers.facebook.com/apps) 에서:
+> Meta 개발자 콘솔 화면은 자주 바뀐다. 아래 흐름은 맞지만 **버튼 이름은 다를 수 있다.**
+> 막히면 화면에 보이는 것을 기준으로 같은 뜻의 항목을 찾는다.
 
-1. 앱 만들기 → 용도에서 **Threads API** 를 고른다
-2. 권한(스코프)에 네 가지를 넣는다
-   - `threads_basic` — 내 계정과 글 읽기
-   - `threads_content_publish` — 글 올리기
-   - `threads_read_replies` — 댓글 읽기
-   - `threads_manage_replies` — 답글 달기
-3. 내 스레드 계정을 연결하고 **장기(long-lived) 액세스 토큰**을 받는다
+#### 토큰이 두 종류다
 
-받은 토큰은 60일짜리다. 아래 토큰 갱신 워크플로가 만료 전에 알아서 늘려준다.
+| | 수명 | 쓰임 |
+|---|---|---|
+| 단기(short-lived) | 1시간 | 로그인 직후 받는 것. 저장하지 않는다 |
+| **장기(long-lived)** | **60일** | 이걸 Secrets 에 넣는다 |
+
+`스레드 토큰 갱신` 워크플로가 매달 두 번 갱신해 60일을 계속 뒤로 민다.
+갱신은 **발급 24시간 뒤부터 만료 전까지**만 된다.
+
+**60일을 한 번이라도 넘기면 영구 만료다.** 갱신으로 되살릴 수 없고 처음부터 다시 받아야 한다.
+자동 갱신을 꺼두거나 PAT 없이 운영하다 깜빡하는 것이 가장 흔한 사고다.
+
+#### 1-1. 앱 만들기
+
+[developers.facebook.com/apps](https://developers.facebook.com/apps) → **앱 만들기** →
+용도(use case)에서 **Threads API** 를 고른다. 여기서 다른 것을 고르면 Threads 설정 화면이 나오지 않는다.
+
+#### 1-2. 내 스레드 계정 연결
+
+앱 대시보드의 **Threads API → 설정** 에서 스레드 계정을 연결한다.
+계정이 붙지 않으면 **앱 역할(App Roles)** 에 본인 계정을 관리자나 테스터로 넣고,
+스레드 앱에서 초대를 수락한다.
+
+**앱 심사(App Review)는 필요 없다.** 앱이 개발 모드일 때는 앱에 역할이 있는 계정
+(관리자·개발자·테스터)에 대해 API 가 동작한다. 내 계정 하나만 쓰므로 그 조건을 이미 만족한다.
+심사는 남의 계정까지 다루는 서비스를 만들 때 필요하다.
+
+#### 1-3. 권한 네 가지
+
+하나라도 빠지면 그 동작만 조용히 막힌다.
+
+| 권한 | 없으면 |
+|---|---|
+| `threads_basic` | 전부 안 된다. 토큰 갱신에도 이 권한이 필요하다 |
+| `threads_content_publish` | 글이 올라가지 않는다 |
+| `threads_read_replies` | 댓글을 읽지 못한다 |
+| `threads_manage_replies` | 답글을 달지 못한다 |
+
+#### 1-4. 토큰 받기 — 방법 A (먼저 시도한다)
+
+Threads API 설정 화면의 **액세스 토큰 생성** 버튼을 쓴다. 계정을 고르고 누르면 토큰이 나온다.
+내 계정 하나만 쓸 때는 이게 가장 빠르고, OAuth 를 직접 구현할 필요가 없다.
+
+나온 토큰이 단기(1시간)라고 적혀 있으면 아래 B-4 의 교환만 추가로 한다.
+
+#### 1-5. 토큰 받기 — 방법 B (A 가 없을 때)
+
+**B-1.** 앱 설정에 **리디렉션 URI** 를 등록한다. 받아줄 서버가 없어도 되고 `https://localhost/`
+면 충분하다 — 인증 후 주소창에 붙는 `code` 만 복사하면 되기 때문이다.
+
+**B-2.** 브라우저로 승인한다.
+
+```
+https://threads.net/oauth/authorize
+  ?client_id=<앱ID>
+  &redirect_uri=<등록한 URI>
+  &scope=threads_basic,threads_content_publish,threads_read_replies,threads_manage_replies
+  &response_type=code
+```
+
+주소창이 `<등록한 URI>?code=AQB...#_` 로 바뀐다. **끝의 `#_` 를 빼고** `code` 값을 복사한다.
+
+**B-3.** 코드를 단기 토큰으로 바꾼다. `client_secret` 은 앱 기본 설정에 있다.
+
+```bash
+curl -X POST https://graph.threads.net/oauth/access_token \
+  -F client_id=<앱ID> \
+  -F client_secret=<앱시크릿> \
+  -F grant_type=authorization_code \
+  -F redirect_uri=<등록한 URI> \
+  -F code=<복사한 코드>
+```
+
+**B-4.** 단기를 장기(60일)로 교환한다.
+
+```bash
+curl -G https://graph.threads.net/access_token \
+  -d grant_type=th_exchange_token \
+  -d client_secret=<앱시크릿> \
+  -d access_token=<B-3 의 단기 토큰>
+```
+
+응답의 `access_token` 이 쓸 값이고 `expires_in` 이 5184000(60일)쯤 나온다.
+
+> 토큰을 화면에 띄운 채로 두지 않는다. 복사해서 바로 Secrets 에 넣고 창을 닫는다.
+> 셸 히스토리에 남는 것이 걸리면 명령 앞에 공백을 하나 두고 친다.
 
 ### 2. Anthropic API 키 받기
 
@@ -179,9 +258,13 @@ node scripts/threads/publish.mjs --from 초안.txt
 
 토큰이 만료돼 자동 갱신이 실패하면 이슈가 열린다. 그때는:
 
-1. [Meta 개발자 콘솔](https://developers.facebook.com/apps) 에서 장기 토큰을 새로 받는다
+1. 위 **1-4 / 1-5** 대로 장기 토큰을 새로 받는다. 앱과 권한은 그대로 두면 되고,
+   토큰만 다시 받으면 된다
 2. 저장소 Settings → Secrets → `THREADS_ACCESS_TOKEN` 을 새 값으로 바꾼다
 3. Actions 탭에서 **스레드 점검** 을 돌려 `[정상]` 인지 확인한다
+
+만료된 토큰은 갱신되지 않는다. `refresh_access_token` 이 실패하는 이유는 대개 셋이다 —
+발급한 지 24시간이 안 됐거나, 이미 60일이 지났거나, `threads_basic` 권한이 빠졌거나.
 
 ## 잘 안 될 때
 
