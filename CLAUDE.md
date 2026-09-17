@@ -14,7 +14,7 @@ content/board/     원고 작업판 아티팩트 소스
 content/threads/   스레드 말투 규칙(voice.md) + 글감(topics.txt)
 scripts/           발행·검수 자동화(.mjs) + 워크스페이스 동기화 도구(.py)
 scripts/threads/   스레드 자동 발행·댓글 답변
-.github/workflows/ 스레드 자동화 스케줄 (GitHub Actions)
+.github/workflows/ 스레드 자동화 스케줄 + PR 검사 (GitHub Actions)
 launchers/         윈도우 더블클릭 실행기
 standards/         운영 기준 문서
 work/              2026-08 작업물 아카이브 (원고·카드뉴스). 과거 기록이며 갱신하지 않는다
@@ -308,6 +308,9 @@ Q&A          많이 묻는 3~5개
   넓히는 것은 사용자가 정할 일이다.
 - 멈춤 스위치는 셋이다: 저장소 Variable `THREADS_PAUSED`, `content/threads/PAUSE` 파일,
   워크플로 Disable.
+- PR 마다 `검사` 워크플로가 문법·워크플로 YAML·`threads:selftest` 를 돌린다.
+  원고 검사는 **그 PR 에서 바뀐 `.md` 만** 본다. 저장소에 남은 옛 초안까지 걸면
+  손대지도 않은 글 때문에 빨개진다. 이 범위를 넓히지 않는다.
 
 네이버와 마찬가지로 **클라우드 세션에서는 `graph.threads.net` 이 차단된다.**
 스크립트를 고쳐 커밋할 수는 있어도 실제 발행은 확인할 수 없다.
