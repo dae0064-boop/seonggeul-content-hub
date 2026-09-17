@@ -3,10 +3,17 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "생활정보 콘텐츠 원고 관리 + 네이버 블로그 예약발행 자동화",
+  "description": "생활정보 콘텐츠 원고 관리 + 네이버 블로그 예약발행 + 스레드 자동화",
   "scripts": {
     "publish": "node scripts/publish-naver.mjs",
-    "publish:dry": "node scripts/publish-naver.mjs --dry-run --dump"
+    "publish:dry": "node scripts/publish-naver.mjs --dry-run --dump",
+    "threads:selftest": "node scripts/threads/selftest.mjs",
+    "threads:doctor": "node scripts/threads/doctor.mjs",
+    "threads:compose": "node scripts/threads/compose.mjs",
+    "threads:publish": "node scripts/threads/publish.mjs",
+    "threads:publish:dry": "node scripts/threads/publish.mjs --dry-run",
+    "threads:replies": "node scripts/threads/replies.mjs",
+    "threads:replies:dry": "node scripts/threads/replies.mjs --dry-run"
   },
   "dependencies": {
     "playwright": "^1.47.0"
