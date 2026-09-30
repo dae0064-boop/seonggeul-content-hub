@@ -85,8 +85,9 @@ for (const file of files) {
   }
   if (post.tags.length < MIN_TAGS) errors.push(`해시태그 ${post.tags.length}개 — ${MIN_TAGS}개 이상 필요`);
 
-  if (images.length && images.length !== 10)
-    notes.push(`이미지 자리 ${images.length}개 — 10개 기준입니다.`);
+  // standards/이미지-기준.md — 한 글에 8장 (대표 1 + 본문 7)
+  if (images.length && images.length !== 8)
+    notes.push(`이미지 자리 ${images.length}개 — 8개 기준입니다.`);
 
   // 고정 인사말
   if (texts[0] !== OPEN[0] || texts[1] !== OPEN[1])
