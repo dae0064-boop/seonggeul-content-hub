@@ -40,15 +40,16 @@ function fail(msg, hint) {
 
 console.log("\nOpenAI API 키 확인\n");
 
-if (!existsSync(ENV_PATH)) {
-  fail(".env 파일이 없어요", "저장소 폴더에서 .env.example 을 복사해 .env 로 만드세요");
-}
-ok(".env 파일 있음");
-
-const key = (process.env.OPENAI_API_KEY || loadEnv().OPENAI_API_KEY || "").trim();
+// 윈도우는 launchers/openai-key.cmd 가 사용자 환경 변수에 넣는다. 그땐 .env 가 없어도 된다.
+const fromEnvVar = (process.env.OPENAI_API_KEY || "").trim();
+const key = fromEnvVar || (loadEnv().OPENAI_API_KEY || "").trim();
 if (!key) {
-  fail("OPENAI_API_KEY 가 비어 있어요", ".env 맨 아래에 OPENAI_API_KEY=sk-... 한 줄을 넣고 저장하세요");
+  fail(
+    "OPENAI_API_KEY 를 찾지 못했어요",
+    "윈도우: launchers/openai-key.cmd 더블클릭 / 그 밖: .env 에 OPENAI_API_KEY=sk-... 한 줄 추가",
+  );
 }
+ok(fromEnvVar ? "환경 변수에서 키 찾음" : ".env 에서 키 찾음");
 if (/\s/.test(key)) {
   fail("키 안에 띄어쓰기가 들어 있어요", "= 뒤에 키만 붙여넣고 공백을 지우세요");
 }
