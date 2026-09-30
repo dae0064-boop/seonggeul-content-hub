@@ -1,0 +1,27 @@
+{
+  "_설명": "성글벙글 블로그 이미지 스타일 정본. 실행기(post-images.ps1)가 이 파일을 그대로 읽는다. 사람용 설명은 standards/이미지-기준.md",
+  "version": "2026-09-30",
+  "model": "gpt-image-2",
+  "quality": "low",
+  "size": "1024x1024",
+  "style": "Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel.",
+  "palette": "Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55).",
+  "rules": "Korean people and Korean everyday settings. Friendly, calm expressions. No syringes, no needles, no blood, no one in pain, nothing scary. Do not include any text, letters, numbers, logos or watermarks in the image.",
+  "thumbnail_space": "Keep the top third of the image as plain empty cream background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds.",
+  "characters": {
+    "할머니": "the Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan",
+    "할아버지": "the Seonggeul grandpa: a Korean man in his late 70s, short gray hair, mint green vest over a white shirt",
+    "자녀": "the Seonggeul adult child: a Korean woman in her 40s, shoulder-length brown bob hair, soft sky blue shirt",
+    "성글이": "Seonggeul, the blog host: a Korean woman in her 30s, round face, dark hair in a low bun, cream sweater with a mint scarf"
+  },
+  "title": {
+    "font": "Malgun Gothic",
+    "color": "#4A3A30",
+    "outline": "#FFFFFF",
+    "max_font_px": 104,
+    "min_font_px": 56,
+    "area_top_ratio": 0.05,
+    "area_height_ratio": 0.30,
+    "side_margin_px": 70
+  }
+}
