@@ -24,6 +24,7 @@ function Run($argsList) {
 }
 
 $posts = Get-ChildItem "content\posts\$Date-*.json" | Sort-Object Name
+$Only = @($Only | ForEach-Object { $_ -split ',' } | ForEach-Object { $_.Trim() } | Where-Object { $_ })
 if ($Only.Count) { $posts = $posts | Where-Object { $s = $_.BaseName.Substring(11); $Only -contains $s } }
 if (-not $posts) { Say "원고가 없어요: content\posts\$Date-*.json" 'Red'; exit 1 }
 Say "원고 $($posts.Count)편: $(( $posts | ForEach-Object { $_.BaseName.Substring(11) }) -join ', ')" 'Cyan'
