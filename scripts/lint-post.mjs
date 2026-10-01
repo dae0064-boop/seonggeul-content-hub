@@ -16,7 +16,8 @@ const MIN_CHARS = 2300;       // 본문 최소 (공백 포함)
 const MAX_CHARS = 2500;       // 본문 최대
 const MIN_MAIN = 10;          // 메인 키워드 최소 등장 횟수
 const MIN_SUB = 5;            // 서브 키워드 각각 최소 등장 횟수
-const MIN_TAGS = 15;          // 해시태그 최소 개수
+const MIN_TAGS = 15;          // 해시태그 최소 개수 (주제 태그)
+const FIXED_TAGS = ['서이추', '이웃추가', '서이추환영']; // 모든 글 끝에 붙이는 태그 (사용자 지시 2026-10-01)
 const MARKS = { red: [3, 5], blue: [6, 10], yellow: [3, 5] }; // 강조 색별 권장 개수 (한 편 기준)
 
 // 단정적 우위 표현 — 쓰면 안 된다
@@ -92,7 +93,10 @@ for (const file of files) {
     const t = post.title.replace(/\s/g, ''), k = post.mainKeyword.replace(/\s/g, '');
     if (!t.startsWith(k)) errors.push(`제목이 메인 키워드로 시작하지 않습니다: "${post.title}"`);
   }
-  if (post.tags.length < MIN_TAGS) errors.push(`해시태그 ${post.tags.length}개 — ${MIN_TAGS}개 이상 필요`);
+  const topicTags = post.tags.filter((t) => !FIXED_TAGS.includes(t));
+  if (topicTags.length < MIN_TAGS) errors.push(`주제 해시태그 ${topicTags.length}개 — ${MIN_TAGS}개 이상 필요`);
+  const noFixed = FIXED_TAGS.filter((t) => !post.tags.includes(t));
+  if (noFixed.length) errors.push(`고정 해시태그 빠짐: ${noFixed.join(', ')} — 주제 태그 뒤에 붙이세요`);
 
   // standards/이미지-기준.md — 한 글에 8장 (대표 1 + 본문 7)
   if (images.length && images.length !== 8)

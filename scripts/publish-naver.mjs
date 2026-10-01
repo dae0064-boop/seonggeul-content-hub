@@ -685,7 +685,9 @@ function bodyHtml(post) {
   const parts = [];
   post.blocks.forEach((b, i) => {
     // 이미지 위아래에는 빈 줄을 두지 않는다 (사용자 지시 2026-10-01: 글과 그림이 붙어 이어지게)
-    if (i && b.type !== 'image' && post.blocks[i - 1].type !== 'image') parts.push('<p><br></p>');
+    // 소제목(인용구) 바로 아래에도 두지 않는다 — 인용구 아래 빈 줄이 한 칸씩 생겼다 (사용자 지시 2026-10-01)
+    const prev = i ? post.blocks[i - 1].type : null;
+    if (i && b.type !== 'image' && prev !== 'image' && prev !== 'quote') parts.push('<p><br></p>');
     if (b.type === 'image') { parts.push(`<p>${escHtml(imageLabel(b))}</p>`); return; }
     for (const l of b.lines) {
       const segs = l.segs || [{ t: l.t, s: l.s }];
@@ -998,6 +1000,15 @@ async function main() {
         }
       }
       if (quotes.length) await dump(page, 'quotes');
+      if (quotes.length) {
+        // 인용구 바로 아래에 빈 줄이 남았는지 센다 (남으면 다음 수정의 근거로 쓴다)
+        const gaps = await editor.evaluate(() => [...document.querySelectorAll('.se-component.se-quotation')].filter((q) => {
+          const next = q.nextElementSibling;
+          const p = next && next.classList.contains('se-text') && next.querySelector('.se-text-paragraph');
+          return !!p && !p.textContent.replace(/\u200b/g, '').trim();
+        }).length).catch(() => -1);
+        log(`인용구 아래 빈 줄: ${gaps < 0 ? '확인 못 함' : `${gaps}곳`}`);
+      }
     }
 
     // ---- 이미지 넣기
