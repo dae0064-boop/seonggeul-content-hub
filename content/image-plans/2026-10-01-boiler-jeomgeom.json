@@ -105,36 +105,17 @@
     {
       "n": 8,
       "file": "08.png",
-      "title": "관리사무소에 배기통 점검을 부탁하는 모습",
-      "note": "Q&A 쉼표 컷",
-      "prompt": "In a Korean apartment hallway, the host's younger sibling talks with a friendly building maintenance staff member in a navy uniform holding a toolbox, pointing toward the balcony boiler room. The host's younger sibling: a Korean woman in her late 20s, short black ponytail, oatmeal hoodie. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about checking a home gas boiler safely before turning on the heating in autumn. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
-      "shot": "(유지)"
-    },
-    {
-      "n": 9,
-      "file": "09.png",
       "title": "난방이 들어온 따뜻한 거실의 가족",
       "note": "정리 — 따뜻해진 집",
       "prompt": "A family sits together on a warm heated floor in a cozy Korean living room with blankets and a warm lamp; through the open balcony door a wall-mounted gas boiler is visible, softly glowing. The Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan. The Seonggeul grandpa: a Korean man in his late 70s, short gray hair, mint green vest over a white shirt. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about checking a home gas boiler safely before turning on the heating in autumn. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
       "shot": "(유지)"
-    },
-    {
-      "n": 10,
-      "file": "10.png",
-      "title": "따뜻한 불이 켜진 가을밤 아파트",
-      "note": "마무리 — 바깥 풍경 (사람 없음)",
-      "prompt": "Camera and composition: wide exterior shot from the street at dusk. A Korean apartment building on an autumn evening with warm golden light in many windows, small exhaust pipes visible on the balconies, autumn ginkgo trees in front. No people at all in this image. Background color: deep soft blue evening sky. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. The scene must clearly and immediately read as being about checking a home gas boiler safely before turning on the heating in autumn. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
-      "shot": "wide exterior shot from the street at dusk",
-      "bg": "deep soft blue evening sky",
-      "regen": "2026-10-01 구도 겹침으로 다시"
     }
   ],
-  "note": "2026-10-01 사용자 지시: 주제가 확실히 보이는 그림, 대표사진은 제목·주제 글씨, 본문은 필요할 때 글씨",
+  "note": "2026-10-01 사용자 지시: 주제가 확실히 보이는 그림, 대표사진은 제목·주제 글씨, 본문은 필요할 때 글씨 / 2026-10-01 8장으로 줄임: 옛 8번(관리사무소)·10번(가을밤 아파트) 뺌, 옛 9번 → 8번",
   "regen_2026_10_01": [
     2,
     4,
     5,
-    6,
-    10
+    6
   ]
 }
