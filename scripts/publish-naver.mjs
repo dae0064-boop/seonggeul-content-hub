@@ -50,6 +50,7 @@ function parseArgs(argv) {
       case '--publish-now': out.publishNow = true; break;
       case '--url':         out.url = next(); break;
       case '--dump':        out.dump = true; break;
+      case '--no-tags':     out.tags = false; break;
       case '--help':        out.help = true; break;
       default:
         if (a.startsWith('--')) throw new Error(`알 수 없는 옵션: ${a}`);
@@ -74,7 +75,9 @@ const USAGE = `
   --no-quote         소제목을 인용구로 바꾸지 않는다 (기본은 인용구 4번 '라인&따옴표')
   --quote-style <s>  인용구 모양: default(1) quotation_line(2) quotation_bubble(3)
                      quotation_underline(4, 기본) quotation_postit(5) quotation_corner(6)
-  --save-draft       에디터 "저장"(임시저장)만 누르고 끝낸다. 발행 패널은 열지 않는다
+  --save-draft       에디터 "저장"(임시저장)을 누르고 끝낸다. 태그가 있으면 발행 패널을 열어
+                     태그만 넣고 닫은 뒤 저장한다 (발행 확인 버튼은 누르지 않는다)
+  --no-tags          --save-draft 에서 태그를 넣지 않는다
   --dry-run          발행 패널까지 열어 카테고리·태그를 넣고, 발행 버튼은 누르지 않는다
   --at "Y-M-D H:M"   (--dry-run 과 함께) 예약 시각을 채워 둔다
   --publish-now      실제 발행 버튼까지 누른다. 사람이 그 자리에서 결정했을 때만 쓴다
@@ -196,6 +199,49 @@ const swatchSelectors = (hex) => [
   `[class*="palette"] button[title="${hex}" i]`,
   `[data-value="${hex}" i]`,
 ];
+// 툴바의 "발행" — 발행 패널을 여는 버튼. 실제 발행은 패널 안의 확인 버튼(confirm_btn)이 한다.
+const PUBLISH_OPEN = ['button[class*="publish_btn"]', 'button:has-text("발행")'];
+const PUBLISH_LAYER_CLOSE = [
+  '[class*="layer_publish"] button[class*="close"]',
+  '[class*="publish_layer"] button[class*="close"]',
+  'button[class*="btn_close"]',
+  'button[aria-label*="닫기"]',
+  'button:has-text("닫기")',
+];
+const TAG_INPUT = ['input#tag-input', '[class*="tag_input"] input', 'input[placeholder*="태그"]'];
+
+/**
+ * 발행 패널의 태그 칸에 태그를 하나씩 넣는다.
+ * Enter 를 누르기 전에 커서가 태그 칸에 있는지 매번 확인한다 — 다른 곳(발행 확인 버튼)에
+ * 커서가 있으면 Enter 가 발행을 눌러 버린다.
+ */
+async function enterTags(page, editor, tags) {
+  const { loc } = await findAnywhere(page, editor, TAG_INPUT, { timeout: 5000 });
+  let n = 0;
+  for (const t of tags) {
+    await loc.click();
+    const focused = await loc.evaluate((el) => el === el.ownerDocument.activeElement);
+    if (!focused) throw new Error(`커서가 태그 칸에 없어 멈췄습니다 (${n}/${tags.length}개 입력)`);
+    await page.keyboard.insertText(t.replace(/^#/, ''));
+    await page.keyboard.press('Enter');
+    await sleep(200);
+    n++;
+  }
+  log(`태그 ${n}개 입력`);
+}
+
+/** 발행 패널을 닫는다. 닫기 버튼이 없으면 Esc. */
+async function closePublishLayer(page, editor) {
+  try {
+    await findAnywhere(page, editor, PUBLISH_LAYER_CLOSE, { timeout: 2500 }).then((r) => r.loc.click());
+    log('발행 패널 닫음');
+  } catch {
+    await page.keyboard.press('Escape');
+    log('발행 패널 닫음 (Esc)');
+  }
+  await sleep(800);
+}
+
 const TOOLBAR = {
   red: [
     'button.se-font-color-toolbar-button',
@@ -1008,6 +1054,22 @@ async function main() {
       }
     }
 
+    if (args.saveDraft && args.tags !== false && post.tags?.length) {
+      // 태그 칸은 발행 패널 안에만 있다. 패널을 열어 태그만 넣고 닫는다. 발행 확인 버튼은 누르지 않는다.
+      step(`7-1. 태그 ${post.tags.length}개 (발행 패널을 열어 태그만 넣고 닫습니다)`);
+      try {
+        await clickFirst(page, PUBLISH_OPEN, { timeout: 6000 })
+          .catch(() => clickFirst(editor, PUBLISH_OPEN));
+        await sleep(1500);
+        await dump(page, 'tag-layer');
+        await enterTags(page, editor, post.tags);
+        await dump(page, 'tag-filled');
+      } catch (e) {
+        warn(`태그 입력 실패 — 저장 후 수동으로 넣으세요. (${e.message})`);
+      }
+      await closePublishLayer(page, editor);
+    }
+
     if (args.saveDraft) {
       step('8. 임시저장 (발행 버튼은 누르지 않습니다)');
       const { loc, sel } = await findAnywhere(page, editor, TOOLBAR.save, { timeout: 6000 });
@@ -1019,9 +1081,9 @@ async function main() {
       await dump(page, 'saved');
       console.log('\n✅ 임시저장 완료 — 발행하지 않았습니다.');
       log('네이버 글쓰기 화면 오른쪽 위 "저장" 옆 숫자를 누르면 임시저장 목록에서 볼 수 있어요.');
-      log('카테고리·태그는 발행 단계에서 넣습니다:');
-      if (post.category) log(`  카테고리: ${post.category}`);
-      if (post.tags?.length) log(`  태그: ${post.tags.join(', ')}`);
+      if (post.category) log(`카테고리는 발행할 때 고르세요: ${post.category}`);
+      if (post.tags?.length) log(`태그: ${post.tags.join(', ')}`);
+      log('임시저장 글을 다시 열었을 때 태그가 없으면 발행 패널에서 위 태그를 넣어 주세요.');
       return;
     }
 
@@ -1031,8 +1093,8 @@ async function main() {
     }
 
     step('8. 발행 설정 열기');
-    await clickFirst(page, ['button[class*="publish_btn"]', 'button:has-text("발행")'], { timeout: 6000 })
-      .catch(() => clickFirst(editor, ['button[class*="publish_btn"]', 'button:has-text("발행")']));
+    await clickFirst(page, PUBLISH_OPEN, { timeout: 6000 })
+      .catch(() => clickFirst(editor, PUBLISH_OPEN));
     await sleep(1500);
     await dump(page, 'publish-layer');
 
@@ -1047,17 +1109,8 @@ async function main() {
 
     if (post.tags?.length) {
       step('10. 태그 입력');
-      try {
-        const { loc } = await findAnywhere(page, editor,
-          ['input#tag-input', '[class*="tag_input"] input', 'input[placeholder*="태그"]'], { timeout: 5000 });
-        await loc.click();
-        for (const t of post.tags) {
-          await page.keyboard.insertText(t);
-          await page.keyboard.press('Enter');
-          await sleep(200);
-        }
-        log(`${post.tags.length}개 입력`);
-      } catch { warn('태그 입력 실패 — 수동으로 넣으세요.'); }
+      try { await enterTags(page, editor, post.tags); }
+      catch (e) { warn(`태그 입력 실패 — 수동으로 넣으세요. (${e.message})`); }
     }
 
     if (at) {
