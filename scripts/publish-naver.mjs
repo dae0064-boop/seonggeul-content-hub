@@ -68,8 +68,7 @@ const USAGE = `
   --post <파일>      글 JSON (필수). build-post.mjs 로 .md 에서 생성한다.
   --images <폴더>    [이미지 N] 자리에 <폴더>/NN.png 를 넣는다 (post-images.mjs 결과 폴더)
   --color            빨간글씨/노란배경을 입력 후에 따로 입힌다. 실패한 줄은 목록으로 알려준다
-  --quote            소제목을 인용구로 만드는 시도 (실험용, 기본 끔 — 끄면 목록으로 알려준다)
-  --format           --color + --quote
+  --format           --color 와 같음 (예전 이름)
   --save-draft       에디터 "저장"(임시저장)만 누르고 끝낸다. 발행 패널은 열지 않는다
   --dry-run          발행 패널까지 열어 카테고리·태그를 넣고, 발행 버튼은 누르지 않는다
   --at "Y-M-D H:M"   (--dry-run 과 함께) 예약 시각을 채워 둔다
@@ -77,8 +76,7 @@ const USAGE = `
   --dump             단계별 스크린샷/HTML 을 dumps/ 에 저장
   --blog-id <id>     글쓰기 주소에 쓸 블로그 아이디 (생략하면 GoBlogWrite 주소)
   --cdp <url>        CDP 주소 (기본 http://localhost:9222)
-  --linebreak soft   덩어리 안에서 Shift+Enter (기본) | hard = 그냥 Enter
-  --slow <ms>        줄 입력 간 지연 (기본 60)
+  --slow <ms>        붙여넣기가 안 될 때 키보드 입력 간 지연 (기본 60)
   --url <url>        글쓰기 URL 재정의 (로컬 목업 테스트용)
 
 --save-draft / --dry-run / --publish-now 중 아무것도 없으면 본문만 채우고 멈춘다.
@@ -419,6 +417,141 @@ async function insertImageAt(page, editor, label, file) {
   return { ok: false, why: '업로드가 40초 안에 끝나지 않음 (화면 확인 필요)' };
 }
 
+
+// ---------------------------------------------------------------- 본문 넣기
+/** 굵게/기울임/밑줄/취소선이 켜져 있으면 끈다. 켜진 채로 쓰면 글 전체에 그 서식이 붙는다. */
+async function resetToggles(editor) {
+  for (const name of ['bold', 'italic', 'underline', 'strikethrough']) {
+    try {
+      const btn = editor.locator(`button[data-name="${name}"].se-is-selected`).first();
+      if (await btn.count() && await btn.isVisible()) {
+        await btn.click();
+        log(`켜져 있던 서식 끔: ${name}`);
+        await sleep(150);
+      }
+    } catch { /* 버튼 없음 */ }
+  }
+}
+
+/** 원고에서 본문에 들어가야 할 줄 목록 (이미지 자리는 표시 줄) */
+function expectedLines(post) {
+  const out = [];
+  for (const b of post.blocks) {
+    if (b.type === 'image') out.push(imageLabel(b));
+    else for (const l of b.lines) out.push(l.t);
+  }
+  return out;
+}
+
+const escHtml = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+/** 원고 → 붙여넣을 HTML. 줄마다 문단 하나, 덩어리 사이엔 빈 문단. 색은 미리 입혀 둔다. */
+function bodyHtml(post) {
+  const parts = [];
+  post.blocks.forEach((b, i) => {
+    if (i) parts.push('<p><br></p>');
+    if (b.type === 'image') { parts.push(`<p>${escHtml(imageLabel(b))}</p>`); return; }
+    for (const l of b.lines) {
+      const t = escHtml(l.t);
+      if (l.s === 'red') parts.push(`<p><span style="color:${COLORS.red.hex}">${t}</span></p>`);
+      else if (l.s === 'yellow') parts.push(`<p><span style="background-color:${COLORS.yellow.hex}">${t}</span></p>`);
+      else parts.push(`<p>${t}</p>`);
+    }
+  });
+  return parts.join('');
+}
+const bodyText = (post) => post.blocks.map((b) => b.type === 'image' ? imageLabel(b) : b.lines.map((l) => l.t).join('\n')).join('\n\n');
+
+const bodyCharCount = (editor) => editor.evaluate(() => {
+  const ps = [...document.querySelectorAll('.se-main-container .se-text-paragraph')].filter((p) => !p.closest('.se-documentTitle'));
+  return ps.map((p) => p.textContent).join('').replace(/​/g, '').trim().length;
+});
+
+/**
+ * 본문을 붙여넣는다. 한 줄씩 키보드로 치면 에디터가 문단을 새로 만드는 사이에 글자를 먹는다
+ * (2026-10-01 실제로 119줄 중 16줄이 사라졌다). 그래서 한 번에 붙여넣는다.
+ *   1) 클립보드에 HTML 을 넣고 Ctrl+V   2) 안 되면 붙여넣기 이벤트를 직접 보낸다
+ *   3) 둘 다 안 되면 예전 방식(키보드)으로, 문단마다 천천히 친다
+ */
+async function pasteBody(page, editor, post, args) {
+  const html = bodyHtml(post), text = bodyText(post);
+
+  // 1) 시스템 클립보드 + Ctrl+V
+  try {
+    await page.context().grantPermissions(['clipboard-read', 'clipboard-write'], { origin: 'https://blog.naver.com' }).catch(() => {});
+    await page.bringToFront().catch(() => {});
+    const wrote = await editor.evaluate(async ({ html, text }) => {
+      try {
+        await navigator.clipboard.write([new ClipboardItem({
+          'text/html': new Blob([html], { type: 'text/html' }),
+          'text/plain': new Blob([text], { type: 'text/plain' }),
+        })]);
+        return true;
+      } catch (e) { return String(e); }
+    }, { html, text });
+    if (wrote === true) {
+      await page.keyboard.press('Control+V');
+      await sleep(1500);
+      if ((await bodyCharCount(editor)) > 50) return '클립보드 붙여넣기 (이 PC 의 클립보드 내용이 원고로 바뀌었어요)';
+    } else {
+      log(`클립보드 쓰기 안 됨: ${String(wrote).slice(0, 80)}`);
+    }
+  } catch (e) { log(`클립보드 방식 실패: ${e.message.split('\n')[0]}`); }
+
+  // 2) 붙여넣기 이벤트 직접 보내기
+  const dispatched = await editor.evaluate(({ html, text }) => {
+    const target = document.activeElement && document.activeElement.isContentEditable
+      ? document.activeElement
+      : (getSelection().anchorNode?.parentElement?.closest('[contenteditable]') || document.querySelector('.se-main-container [contenteditable]'));
+    if (!target) return false;
+    const dt = new DataTransfer();
+    dt.setData('text/html', html);
+    dt.setData('text/plain', text);
+    target.dispatchEvent(new ClipboardEvent('paste', { clipboardData: dt, bubbles: true, cancelable: true }));
+    return true;
+  }, { html, text });
+  if (dispatched) {
+    await sleep(1500);
+    if ((await bodyCharCount(editor)) > 50) return '붙여넣기 이벤트';
+  }
+
+  // 3) 키보드 — 문단마다 기다리며 천천히
+  warn('붙여넣기가 안 돼서 키보드로 천천히 입력합니다 (몇 분 걸려요).');
+  for (let bi = 0; bi < post.blocks.length; bi++) {
+    const block = post.blocks[bi];
+    const lines = block.type === 'image' ? [{ t: imageLabel(block) }] : block.lines;
+    for (let li = 0; li < lines.length; li++) {
+      await page.keyboard.insertText(lines[li].t);
+      await sleep(Math.max(args.slow || 0, 120));
+      if (li < lines.length - 1) { await page.keyboard.press('Enter'); await sleep(250); }
+    }
+    if (bi < post.blocks.length - 1) {
+      await page.keyboard.press('Enter'); await sleep(250);
+      await page.keyboard.press('Enter'); await sleep(250);
+    }
+  }
+  return '키보드 입력 (느린 모드)';
+}
+
+/** 에디터 본문이 원고와 같은지 본다. 빠진 줄과 취소선 개수를 돌려준다. */
+async function verifyBody(editor, expected) {
+  const got = await editor.evaluate(() => {
+    const ps = [...document.querySelectorAll('.se-main-container .se-text-paragraph')].filter((p) => !p.closest('.se-documentTitle'));
+    return {
+      lines: ps.map((p) => p.textContent.replace(/​/g, '').trim()).filter(Boolean),
+      strike: document.querySelectorAll('.se-main-container strike, .se-main-container s, .se-main-container [style*="line-through"]').length,
+    };
+  });
+  const pool = new Map();
+  got.lines.forEach((l) => pool.set(l, (pool.get(l) || 0) + 1));
+  const missing = [];
+  for (const e of expected) {
+    const k = pool.get(e) || 0;
+    if (k > 0) pool.set(e, k - 1); else missing.push(e);
+  }
+  return { found: expected.length - missing.length, missing, strike: got.strike };
+}
+
 // ---------------------------------------------------------------- main
 async function main() {
   const args = parseArgs(process.argv);
@@ -465,7 +598,7 @@ async function main() {
   console.log('═'.repeat(58));
   log(`글    : ${post.title}`);
   log(`본문  : ${textBlocks.length}덩어리 / ${allLines.length}줄 / ${allLines.map(l => l.t).join('').length}자`);
-  log(`인용구: ${post.blocks.filter(b => b.type === 'quote').length}개 ${args.quote ? '(자동 시도)' : '(수동 — 목록 출력)'}`);
+  log(`인용구: ${post.blocks.filter(b => b.type === 'quote').length}개 (수동 — 목록 출력. 소제목은 인용구로 직접 바꿔 주세요)`);
   log(`강조  : ${styled.length}줄 ${args.color ? '(입력 후 자동 적용)' : '(수동 — 목록 출력)'}`);
   log(`이미지: ${imageBlocks.length}자리 / 파일 ${args.images ? `${imageFiles.size}개 준비됨` : '넣지 않음 (표시 줄만)'}`);
   log(`모드  : ${mode}`);
@@ -507,10 +640,14 @@ async function main() {
     await dump(page, 'write-page');
 
     step('3. 팝업 정리');
+    // 주의: 'button:has-text("취소")' 처럼 넓게 잡으면 툴바의 "취소선" 버튼이 잡힌다
+    // (2026-10-01 실제로 그렇게 눌려서 본문 전체에 취소선이 그어졌다). 팝업 안에서만 찾는다.
     try {
-      const { loc } = await findFirst(editor,
-        ['.se-popup-button-cancel', '[class*="popup"] button:has-text("취소")', 'button:has-text("취소")'],
-        { timeout: 3000 });
+      const { loc } = await findFirst(editor, [
+        '.se-popup-container .se-popup-button-cancel',
+        '.se-popup-alert .se-popup-button-cancel',
+        '[class*="se-popup"] button:text-is("취소")',
+      ], { timeout: 3000 });
       await loc.click();
       log('작성 중이던 글 불러오기 팝업 → 취소 (새 글로 시작)');
       await sleep(600);
@@ -527,56 +664,34 @@ async function main() {
       '.se-placeholder:has-text("제목")',
     ]);
     await sleep(300);
+    await resetToggles(editor);
     await page.keyboard.insertText(post.title);
     log(post.title);
 
-    step('5. 본문 입력 (글자만)');
+    step('5. 본문 넣기 (글자만, 붙여넣기 방식)');
     await clickFirst(editor, [
       '.se-component.se-text:not(.se-documentTitle) .se-text-paragraph',
       '.se-main-container .se-text-paragraph',
       '.se-placeholder:has-text("내용")',
     ]);
     await sleep(300);
+    await resetToggles(editor);
 
-    let done = 0;
-    for (let bi = 0; bi < post.blocks.length; bi++) {
-      const block = post.blocks[bi];
-
-      if (block.type === 'image') {
-        await page.keyboard.insertText(imageLabel(block));
-      } else if (block.type === 'quote') {
-        const text = block.lines[0].t;
-        let quoted = false;
-        if (args.quote) {
-          try {
-            await clickFirst(editor, TOOLBAR.quote, { timeout: 2500 });
-            await sleep(400);
-            quoted = true;
-          } catch { /* 아래 목록으로 */ }
-        }
-        if (!quoted) manual.push(`인용구 → "${text}"`);
-        await page.keyboard.insertText(text);
-        done++;
-      } else {
-        for (let li = 0; li < block.lines.length; li++) {
-          const line = block.lines[li];
-          await page.keyboard.insertText(line.t);
-          done++;
-          if (li < block.lines.length - 1) {
-            if (args.linebreak === 'soft') await page.keyboard.press('Shift+Enter');
-            else await page.keyboard.press('Enter');
-          }
-          if (args.slow) await sleep(args.slow);
-        }
-      }
-
-      if (bi < post.blocks.length - 1) {
-        await page.keyboard.press('Enter');
-        await page.keyboard.press('Enter');
-      }
-    }
-    log(`${done}줄 입력 완료`);
+    for (const b of post.blocks) if (b.type === 'quote') manual.push(`인용구 → "${b.lines[0].t}"`);
+    const expected = expectedLines(post);
+    const how = await pasteBody(page, editor, post, args);
+    log(`방식: ${how}`);
+    await sleep(800);
     await dump(page, 'body-text');
+
+    const check = await verifyBody(editor, expected);
+    log(`본문 확인: ${check.found}/${expected.length}줄 · 취소선 ${check.strike}곳`);
+    if (check.missing.length || check.strike) {
+      console.log('\n  빠지거나 달라진 줄:');
+      check.missing.slice(0, 20).forEach((m) => console.log(`    - ${m}`));
+      if (check.strike) console.log(`    - 취소선이 그어진 글자 ${check.strike}곳`);
+      throw new Error('본문이 원고와 다르게 들어갔습니다. 저장하지 않고 멈춥니다 (탭은 열어둡니다. 저장하지 말고 닫아주세요).');
+    }
 
     // ---- 색 입히기 (입력이 전부 끝난 뒤)
     const seen = new Map();
