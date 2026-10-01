@@ -12,6 +12,7 @@ import { parsePost, flatLines } from './lib/parse-post.mjs';
 const MAX_LINE = 30;          // 한 줄 최대 글자수(공백 포함)
 const AVG_LINE = [21, 27];    // 평균 줄 길이 권장 구간
 const MIN_BLOCK_LINES = 2.2;  // 덩어리당 평균 줄 수 하한
+const MAX_BLOCK = 4;          // 한 덩어리 최대 줄 수. 넘으면 2·2·3 이나 4·3 으로 끊는다 (사용자 지시 2026-10-01)
 const MIN_CHARS = 2300;       // 본문 최소 (공백 포함)
 const MAX_CHARS = 2500;       // 본문 최대
 const MIN_MAIN = 10;          // 메인 키워드 최소 등장 횟수
@@ -111,6 +112,8 @@ for (const file of files) {
   // 덩어리를 너무 잘게 쪼개면 글이 툭툭 끊긴다
   const textBlocks = post.blocks.filter((b) => b.type !== 'image');
   const perBlock = lines.length / textBlocks.length;
+  for (const b of textBlocks) if (b.lines.length > MAX_BLOCK)
+    errors.push(`덩어리가 ${b.lines.length}줄 — ${MAX_BLOCK}줄 이하로 끊으세요 (2·2·3, 4·3 처럼): "${b.lines[0].t}"`);
   if (perBlock < MIN_BLOCK_LINES)
     errors.push(`덩어리가 잘게 쪼개졌습니다: 덩어리당 ${perBlock.toFixed(1)}줄 (최소 ${MIN_BLOCK_LINES})`);
   const avgLine = texts.reduce((a, t) => a + t.length, 0) / texts.length;
