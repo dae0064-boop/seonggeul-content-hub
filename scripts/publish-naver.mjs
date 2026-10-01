@@ -28,7 +28,7 @@ import path from 'node:path';
 
 // ---------------------------------------------------------------- args
 function parseArgs(argv) {
-  const out = { cdp: 'http://localhost:9222', slow: 60, linebreak: 'soft' };
+  const out = { cdp: 'http://localhost:9222', slow: 60, linebreak: 'soft', quote: true, quoteStyle: 'quotation_underline' };
   for (let i = 2; i < argv.length; i++) {
     const a = argv[i];
     const next = () => argv[++i];
@@ -42,6 +42,8 @@ function parseArgs(argv) {
       case '--images':      out.images = next(); break;
       case '--color':       out.color = true; break;
       case '--quote':       out.quote = true; break;
+      case '--no-quote':    out.quote = false; break;
+      case '--quote-style': out.quoteStyle = next(); break;
       case '--format':      out.color = true; out.quote = true; break;
       case '--save-draft':  out.saveDraft = true; break;
       case '--dry-run':     out.dryRun = true; break;
@@ -69,6 +71,9 @@ const USAGE = `
   --images <폴더>    [이미지 N] 자리에 <폴더>/NN.png 를 넣는다 (post-images.mjs 결과 폴더)
   --color            빨간글씨/노란배경을 입력 후에 따로 입힌다. 실패한 줄은 목록으로 알려준다
   --format           --color 와 같음 (예전 이름)
+  --no-quote         소제목을 인용구로 바꾸지 않는다 (기본은 인용구 4번 '라인&따옴표')
+  --quote-style <s>  인용구 모양: default(1) quotation_line(2) quotation_bubble(3)
+                     quotation_underline(4, 기본) quotation_postit(5) quotation_corner(6)
   --save-draft       에디터 "저장"(임시저장)만 누르고 끝낸다. 발행 패널은 열지 않는다
   --dry-run          발행 패널까지 열어 카테고리·태그를 넣고, 발행 버튼은 누르지 않는다
   --at "Y-M-D H:M"   (--dry-run 과 함께) 예약 시각을 채워 둔다
@@ -240,7 +245,7 @@ function domOp({ op, text, nth, rgb, prop }) {
       nodes.push({ n, start: full.length });
       full += n.nodeValue;
     }
-    const clean = full.replace(/​/g, ' ');
+    const clean = full.replace(/\u200b/g, ' ');
     let from = 0, idx;
     while ((idx = clean.indexOf(text, from)) !== -1) {
       const end = idx + text.length;
@@ -289,11 +294,19 @@ function domOp({ op, text, nth, rgb, prop }) {
   return { found: false, present: false, styled: false, count: k };
 }
 
+/** text 와 똑같은 줄이 본문(인용구 밖)에 몇 개 있는지 */
+function domCount(text) {
+  const root = document.querySelector('.se-main-container') || document.querySelector('.se-content') || document.body;
+  return [...root.querySelectorAll('.se-text-paragraph')]
+    .filter((p) => !p.closest('.se-documentTitle') && !p.closest('.se-quotation'))
+    .filter((p) => p.textContent.replace(/\u200b/g, '').trim() === text).length;
+}
+
 const locateText = (editor, text, nth) => editor.evaluate(domOp, { op: 'locate', text, nth });
 const selectTextByRange = (editor, text, nth) => editor.evaluate(domOp, { op: 'select', text, nth });
 const checkStyled = (editor, text, nth, color) =>
   editor.evaluate(domOp, { op: 'check', text, nth, rgb: color.rgb, prop: color.prop });
-const currentSelection = (editor) => editor.evaluate(() => String(getSelection()).replace(/​/g, '').trim());
+const currentSelection = (editor) => editor.evaluate(() => String(getSelection()).replace(/\u200b/g, '').trim());
 
 /** 화면에서 마우스로 text 구간을 끌어 선택한다. 빗나가면 DOM 선택으로 한 번 더. */
 async function selectText(page, editor, text, nth) {
@@ -363,6 +376,87 @@ async function applyColor(page, editor, text, nth, style) {
   }
   if (!after.styled) return { ok: false, why: '눌렀지만 색이 들어가지 않음' };
   return { ok: true };
+}
+
+/**
+ * 소제목 줄을 지우고 그 자리에 인용구(기본 4번 '라인&따옴표')를 넣어 같은 글을 쓴다.
+ * 툴바 인용구 버튼 옆 ▼ 로 모양을 고른다. 모양 이름(2026-10 에디터 기준):
+ *   default=1 따옴표, quotation_line=2 버티컬 라인, quotation_bubble=3 말풍선,
+ *   quotation_underline=4 라인&따옴표, quotation_postit=5 포스트잇, quotation_corner=6 프레임
+ */
+async function insertQuoteAt(page, editor, text, style) {
+  const ids = () => editor.evaluate(() => [...document.querySelectorAll('.se-component.se-quotation')].map((e) => e.id || e.dataset.compid || ''));
+  const before = await ids();
+
+  const sel = await selectText(page, editor, text, 0);
+  if (!sel.ok) return { ok: false, why: `소제목 줄을 찾지 못함 — ${sel.why}` };
+  const countBefore = await editor.evaluate(domCount, text);
+  await page.keyboard.press('Backspace');
+  await sleep(300);
+  if ((await editor.evaluate(domCount, text)) >= countBefore) {
+    await selectTextByRange(editor, text, 0);
+    await editor.evaluate(() => document.execCommand('delete'));
+    await sleep(300);
+    if ((await editor.evaluate(domCount, text)) >= countBefore) return { ok: false, why: '소제목 줄이 지워지지 않음 (그대로 둠)' };
+  }
+
+  const restore = async () => { await page.keyboard.insertText(text).catch(() => {}); };
+  try {
+    await clickFirst(editor, [
+      'button.se-document-toolbar-select-option-button[data-name="quotation"]',
+      'button[data-name="quotation"][aria-haspopup="true"]',
+    ], { timeout: 3000 });
+    await sleep(400);
+    await clickFirst(editor, [
+      `button[data-name="quotation"][data-value="${style}"]`,
+      `[data-value="${style}"]`,
+      `button[class*="-${style}"]`,
+      `button[class*="${style}"]`,
+    ], { timeout: 3000 });
+  } catch (e) {
+    await page.keyboard.press('Escape').catch(() => {});
+    await restore();
+    return { ok: false, why: `인용구 모양 메뉴를 찾지 못함 — ${e.message.split('\n')[0]}` };
+  }
+
+  // 새 인용구가 생겼는지
+  let newId = null;
+  for (let i = 0; i < 20 && !newId; i++) {
+    await sleep(250);
+    const now = await ids();
+    newId = now.find((x) => !before.includes(x)) || (now.length > before.length ? now[now.length - 1] : null);
+  }
+  if (!newId) { await restore(); return { ok: false, why: '인용구가 만들어지지 않음' }; }
+
+  // 커서가 새 인용구 안에 있는지 보고, 아니면 그 안을 눌러 넣는다
+  const inside = await editor.evaluate((id) => {
+    const n = getSelection().anchorNode;
+    const el = n && (n.nodeType === 1 ? n : n.parentElement);
+    const comp = el && el.closest('.se-component');
+    return !!comp && (comp.id === id || comp.dataset.compid === id);
+  }, newId);
+  if (!inside) {
+    const target = editor.locator(`[id="${newId}"] .se-text-paragraph, [data-compid="${newId}"] .se-text-paragraph`).first();
+    try { await target.click(); await sleep(300); } catch { /* 아래에서 확인 */ }
+    const nowInside = await editor.evaluate((id) => {
+      const n = getSelection().anchorNode; const el = n && (n.nodeType === 1 ? n : n.parentElement);
+      const comp = el && el.closest('.se-component'); return !!comp && (comp.id === id || comp.dataset.compid === id);
+    }, newId);
+    if (!nowInside) return { ok: false, why: '새 인용구 안으로 커서가 들어가지 않음 — 빈 인용구 안에 소제목을 직접 써 주세요', lost: text };
+  }
+  await page.keyboard.insertText(text);
+  await sleep(300);
+
+  const got = await editor.evaluate((id) => {
+    const el = document.getElementById(id) || document.querySelector(`[data-compid="${id}"]`);
+    return el ? { text: el.textContent.replace(/\u200b/g, ''), cls: el.className } : null;
+  }, newId);
+  if (!got || !got.text.includes(text)) {
+    await page.keyboard.press('Control+z').catch(() => {}); // 엉뚱한 곳에 들어간 글을 되돌린다
+    return { ok: false, why: '인용구에 글이 들어가지 않음 (되돌림 — 화면 확인 필요)', lost: text };
+  }
+  await collapseSelection(page, editor);
+  return { ok: true, styled: got.cls.includes(style) };
 }
 
 /** "[이미지 N] 설명" 표시 줄을 지우고 그 자리에 그림 파일을 넣는다. */
@@ -449,7 +543,8 @@ const escHtml = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>
 function bodyHtml(post) {
   const parts = [];
   post.blocks.forEach((b, i) => {
-    if (i) parts.push('<p><br></p>');
+    // 이미지 위아래에는 빈 줄을 두지 않는다 (사용자 지시 2026-10-01: 글과 그림이 붙어 이어지게)
+    if (i && b.type !== 'image' && post.blocks[i - 1].type !== 'image') parts.push('<p><br></p>');
     if (b.type === 'image') { parts.push(`<p>${escHtml(imageLabel(b))}</p>`); return; }
     for (const l of b.lines) {
       const t = escHtml(l.t);
@@ -460,11 +555,11 @@ function bodyHtml(post) {
   });
   return parts.join('');
 }
-const bodyText = (post) => post.blocks.map((b) => b.type === 'image' ? imageLabel(b) : b.lines.map((l) => l.t).join('\n')).join('\n\n');
+const bodyText = (post) => post.blocks.map((b) => b.type === 'image' ? imageLabel(b) : b.lines.map((l) => l.t).join('\n')).join('\n\n'); // 붙여넣기 실패 시 참고용
 
 const bodyCharCount = (editor) => editor.evaluate(() => {
   const ps = [...(document.querySelector('.se-main-container') || document.querySelector('.se-content') || document.body).querySelectorAll('.se-text-paragraph')].filter((p) => !p.closest('.se-documentTitle'));
-  return ps.map((p) => p.textContent).join('').replace(/​/g, '').trim().length;
+  return ps.map((p) => p.textContent).join('').replace(/\u200b/g, '').trim().length;
 });
 
 /** 붙여넣은 글이 화면에 나타날 때까지 최대 10초 기다린다 */
@@ -542,12 +637,14 @@ async function pasteBody(page, editor, post, args) {
   return '키보드 입력 (느린 모드)';
 }
 
+const verifyBodyAll = (editor, want) => verifyBody(editor, want, { dupCheck: false });
+
 /** 에디터 본문이 원고와 같은지 본다. 빠진 줄과 취소선 개수를 돌려준다. */
-async function verifyBody(editor, expected) {
+async function verifyBody(editor, expected, { dupCheck = true } = {}) {
   const got = await editor.evaluate(() => {
     const ps = [...(document.querySelector('.se-main-container') || document.querySelector('.se-content') || document.body).querySelectorAll('.se-text-paragraph')].filter((p) => !p.closest('.se-documentTitle'));
     return {
-      lines: ps.map((p) => p.textContent.replace(/​/g, '').trim()).filter(Boolean),
+      lines: ps.map((p) => p.textContent.replace(/\u200b/g, '').trim()).filter(Boolean),
       strike: ps.reduce((n, p) => n + p.querySelectorAll('strike, s, [style*="line-through"]').length, 0),
     };
   });
@@ -558,7 +655,7 @@ async function verifyBody(editor, expected) {
     const k = pool.get(e) || 0;
     if (k > 0) pool.set(e, k - 1); else missing.push(e);
   }
-  if (got.lines.length > expected.length + 5) missing.push(`(본문이 ${got.lines.length}줄로 원고 ${expected.length}줄보다 많음 — 두 번 들어간 것 같음)`);
+  if (dupCheck && got.lines.length > expected.length + 5) missing.push(`(본문이 ${got.lines.length}줄로 원고 ${expected.length}줄보다 많음 — 두 번 들어간 것 같음)`);
   return { found: expected.length - missing.length, missing, strike: got.strike };
 }
 
@@ -608,7 +705,7 @@ async function main() {
   console.log('═'.repeat(58));
   log(`글    : ${post.title}`);
   log(`본문  : ${textBlocks.length}덩어리 / ${allLines.length}줄 / ${allLines.map(l => l.t).join('').length}자`);
-  log(`인용구: ${post.blocks.filter(b => b.type === 'quote').length}개 (수동 — 목록 출력. 소제목은 인용구로 직접 바꿔 주세요)`);
+  log(`인용구: ${post.blocks.filter(b => b.type === 'quote').length}개 ${args.quote ? `(자동 — 인용구 ${args.quoteStyle})` : '(수동 — 목록 출력)'}`);
   log(`강조  : ${styled.length}줄 ${args.color ? '(입력 후 자동 적용)' : '(수동 — 목록 출력)'}`);
   log(`이미지: ${imageBlocks.length}자리 / 파일 ${args.images ? `${imageFiles.size}개 준비됨` : '넣지 않음 (표시 줄만)'}`);
   log(`모드  : ${mode}`);
@@ -633,7 +730,7 @@ async function main() {
   const page = await context.newPage();
   page.setDefaultTimeout(20000);
   const manual = [];
-  const report = { color: { ok: 0, fail: 0 }, image: { ok: 0, fail: 0 } };
+  const report = { color: { ok: 0, fail: 0 }, image: { ok: 0, fail: 0 }, quote: { ok: 0, fail: 0 } };
 
   try {
     step('2. 글쓰기 페이지 열기');
@@ -687,7 +784,7 @@ async function main() {
     await sleep(300);
     await resetToggles(editor);
 
-    for (const b of post.blocks) if (b.type === 'quote') manual.push(`인용구 → "${b.lines[0].t}"`);
+    if (!args.quote) for (const b of post.blocks) if (b.type === 'quote') manual.push(`인용구 → "${b.lines[0].t}"`);
     const expected = expectedLines(post);
     const how = await pasteBody(page, editor, post, args);
     log(`방식: ${how}`);
@@ -724,6 +821,23 @@ async function main() {
     }
     if (args.color) await dump(page, 'colors');
 
+    // ---- 소제목 → 인용구
+    if (args.quote) {
+      const quotes = post.blocks.filter((b) => b.type === 'quote').map((b) => b.lines[0].t);
+      if (quotes.length) step(`6-2. 소제목을 인용구로 (${quotes.length}개, 모양 ${args.quoteStyle})`);
+      for (const q of quotes) {
+        const r = await insertQuoteAt(page, editor, q, args.quoteStyle);
+        if (r.ok) { report.quote.ok++; log(`✓ 인용구: ${q}${r.styled ? '' : ' (모양 확인 필요)'}`); }
+        else {
+          report.quote.fail++;
+          warn(`인용구 실패 (${r.why}): ${q}`);
+          manual.push(`인용구 → "${q}"  [${r.why}]`);
+          if (report.quote.ok === 0 && report.quote.fail === 1) await dump(page, 'quote-fail');
+        }
+      }
+      if (quotes.length) await dump(page, 'quotes');
+    }
+
     // ---- 이미지 넣기
     for (const b of imageBlocks) {
       const label = imageLabel(b);
@@ -744,6 +858,18 @@ async function main() {
     if (args.images) await dump(page, 'images');
 
     printManual(manual, report, args);
+
+    // ---- 저장 전 마지막 확인: 원고 글이 다 있는지 (이미지 표시 줄은 그림으로 바뀌었으니 뺀다)
+    {
+      const inserted = new Set(imageBlocks.filter((b) => imageFiles.has(b.n)).map(imageLabel));
+      const want = expectedLines(post).filter((l) => !inserted.has(l));
+      const fin = await verifyBodyAll(editor, want);
+      log(`최종 확인: ${fin.found}/${want.length}줄 · 취소선 ${fin.strike}곳`);
+      if (fin.missing.length || fin.strike) {
+        fin.missing.slice(0, 20).forEach((m) => console.log(`    - ${m}`));
+        throw new Error('마지막 확인에서 원고와 다른 부분이 나왔습니다. 저장하지 않고 멈춥니다.');
+      }
+    }
 
     if (args.saveDraft) {
       step('8. 임시저장 (발행 버튼은 누르지 않습니다)');
@@ -848,6 +974,7 @@ function printManual(manual, report, args) {
   console.log('\n' + '─'.repeat(58));
   if (args.color) console.log(` 색 입히기   : 성공 ${report.color.ok} / 실패 ${report.color.fail}`);
   if (args.images) console.log(` 이미지 넣기 : 성공 ${report.image.ok} / 실패 ${report.image.fail}`);
+  if (args.quote) console.log(` 인용구      : 성공 ${report.quote.ok} / 실패 ${report.quote.fail}`);
   if (args.color || args.images) console.log(` 선택 방식   : 마우스 ${stats.select['마우스']} / DOM ${stats.select.DOM}`);
   if (!manual.length) { console.log(' 손으로 할 것: 없음'); console.log('─'.repeat(58)); return; }
   console.log(` 손으로 할 것 (${manual.length}건)`);

@@ -59,6 +59,14 @@ for (const file of files) {
   for (const w of WARN_WORDS) if (body.includes(w)) notes.push(`"${w}" — 우위를 단정하는 뜻이면 고치세요.`);
   for (const w of post.warnings) errors.push(w);
 
+  // Q&A 형식 (2026-10-01 사용자 지시): 인용구 소제목 아래 "Q1: 질문" / "A1: 답변" 3쌍
+  {
+    const all = post.blocks.flatMap((b) => b.lines.map((l) => l.t));
+    const qs = all.filter((t) => /^Q\d+:/.test(t)).length;
+    const as = all.filter((t) => /^A\d+:/.test(t)).length;
+    if (qs !== 3 || as !== 3) errors.push(`Q&A 는 "Q1: 질문" / "A1: 답변" 형식으로 3쌍이어야 합니다 (지금 Q ${qs}개 / A ${as}개)`);
+  }
+
   // 키워드 세기: 띄어쓰기 차이를 흡수하려고 양쪽 공백을 제거하고 센다
   const flat = (post.title + texts.join('')).replace(/\s/g, '');
   const countOf = (kw) => {
