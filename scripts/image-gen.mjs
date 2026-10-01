@@ -11,6 +11,8 @@
  *   --size    1024x1024 | 1536x1024(가로) | 1024x1536(세로)
  *   --n       장수 (기본 1)
  *   --out     저장 폴더 (기본 content/images/<오늘>)
+ *   --name    파일 이름 (확장자 빼고). 주면 시각 대신 이 이름으로 저장한다
+ *   --raw     그림 글자 금지 문장을 덧붙이지 않는다 (프롬프트에 이미 들어 있을 때)
  *
  * 그림에 글자를 넣지 말라는 문장을 항상 덧붙인다. 싼 모델은 한글이 깨진다.
  * 제목 글씨가 필요하면 그림을 만든 뒤 따로 얹는다.
@@ -53,6 +55,8 @@ const { values: opt, positionals } = parseArgs({
     size: { type: "string", default: "1024x1024" },
     n: { type: "string", default: "1" },
     out: { type: "string" },
+    name: { type: "string" },
+    raw: { type: "boolean" },
     help: { type: "boolean", short: "h" },
   },
 });
@@ -81,7 +85,7 @@ const res = await fetch(`${API_BASE}/images/generations`, {
   headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
   body: JSON.stringify({
     model,
-    prompt: `${positionals.join(" ")}\n\n${NO_TEXT}`,
+    prompt: opt.raw ? positionals.join(" ") : `${positionals.join(" ")}\n\n${NO_TEXT}`,
     size: opt.size,
     quality: opt.quality,
     n,
@@ -102,7 +106,8 @@ mkdirSync(outDir, { recursive: true });
 const stamp = new Date().toISOString().replace(/[-:]/g, "").slice(9, 15);
 data.forEach((d, i) => {
   if (!d.b64_json) die("응답에 이미지가 없어요");
-  const file = join(outDir, `${stamp}${data.length > 1 ? `-${i + 1}` : ""}.png`);
+  const base = opt.name ? opt.name.replace(/[\\/:*?"<>|]/g, "_") : stamp;
+  const file = join(outDir, `${base}${data.length > 1 ? `-${i + 1}` : ""}.png`);
   writeFileSync(file, Buffer.from(d.b64_json, "base64"));
   console.log(`✅ ${file}`);
 });

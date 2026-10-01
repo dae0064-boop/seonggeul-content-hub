@@ -14,7 +14,9 @@
     "threads:publish": "node scripts/threads/publish.mjs",
     "threads:publish:dry": "node scripts/threads/publish.mjs --dry-run",
     "threads:replies": "node scripts/threads/replies.mjs",
-    "threads:replies:dry": "node scripts/threads/replies.mjs --dry-run"
+    "threads:replies:dry": "node scripts/threads/replies.mjs --dry-run",
+    "draft": "node scripts/publish-naver.mjs --color --save-draft --dump",
+    "images": "node scripts/post-images.mjs"
   },
   "dependencies": {
     "playwright": "^1.47.0"

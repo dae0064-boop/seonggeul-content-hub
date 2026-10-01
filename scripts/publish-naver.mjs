@@ -1,14 +1,25 @@
 #!/usr/bin/env node
 /**
- * 네이버 블로그 글 작성 + 예약발행 자동화
+ * 네이버 블로그 글 작성 → 임시저장 (또는 예약발행 준비) 자동화
  *
- * 이미 로그인된 크롬에 CDP로 attach 하므로 재로그인/캡차가 없다.
+ * 이미 로그인된 크롬(디버깅 포트 9222)에 CDP로 attach 하므로 재로그인/캡차가 없다.
  *
- *   node scripts/publish-naver.mjs --post <파일.json> --blog-id <아이디> [--at "Y-M-D H:M"]
+ *   node scripts/publish-naver.mjs --post <파일.json> --save-draft --images <폴더> --color --dump
  *
- * 서식(인용구/글자색/배경색)은 에디터 툴바를 조작해야 해서 선택자가 쉽게 깨진다.
- * 기본값은 "본문만 입력 + 서식 체크리스트 출력"이고, --format 을 주면 자동 서식을 시도한다.
- * 서식 적용에 실패해도 본문은 그대로 남고, 어느 줄을 수동으로 칠해야 하는지 알려준다.
+ * 순서
+ *   1) 제목 → 본문을 "글자만" 먼저 전부 입력한다.
+ *      [이미지 N] 자리는 "[이미지 N] 설명" 한 줄로 표시해 둔다.
+ *   2) --color : 입력이 끝난 뒤 빨간글씨/노란배경 줄을 하나씩 찾아 마우스로 정확히 선택하고 색을 입힌다.
+ *   3) --images: "[이미지 N]" 표시 줄을 찾아 지우고 그 자리에 <폴더>/NN.png 를 넣는다.
+ *   4) --save-draft: 에디터의 "저장" 버튼만 누른다. "발행" 패널은 열지도 않는다.
+ *
+ * 글자색이 깨지던 이유 (2026-09 테스트에서 본 증상)
+ *   색을 입힌 직후 선택 영역이 그대로 남아 있었고, 그 상태에서 다음 줄을 입력하니
+ *   선택된 글자가 새 글자로 덮어써졌다 → "칠하려던 글자가 사라지고 뒷글이 그 색을 입는" 현상.
+ *   그래서 색은 본문 입력이 전부 끝난 뒤에 따로 입히고(뒤에 입력할 글이 없다),
+ *   입힐 때마다 글자가 그대로 있는지 확인하고, 사라졌으면 Ctrl+Z 로 되돌린 뒤 수동 목록에 넣는다.
+ *
+ * 실제 발행은 --publish-now 를 사람이 직접 붙였을 때만 한다. 기본은 아무것도 발행하지 않는다.
  */
 
 import { chromium } from 'playwright';
@@ -22,17 +33,22 @@ function parseArgs(argv) {
     const a = argv[i];
     const next = () => argv[++i];
     switch (a) {
-      case '--post':      out.post = next(); break;
-      case '--blog-id':   out.blogId = next(); break;
-      case '--at':        out.at = next(); break;
-      case '--cdp':       out.cdp = next(); break;
-      case '--slow':      out.slow = Number(next()); break;
-      case '--linebreak': out.linebreak = next(); break;
-      case '--format':    out.format = true; break;
-      case '--dry-run':   out.dryRun = true; break;
-      case '--url':       out.url = next(); break;
-      case '--dump':      out.dump = true; break;
-      case '--help':      out.help = true; break;
+      case '--post':        out.post = next(); break;
+      case '--blog-id':     out.blogId = next(); break;
+      case '--at':          out.at = next(); break;
+      case '--cdp':         out.cdp = next(); break;
+      case '--slow':        out.slow = Number(next()); break;
+      case '--linebreak':   out.linebreak = next(); break;
+      case '--images':      out.images = next(); break;
+      case '--color':       out.color = true; break;
+      case '--quote':       out.quote = true; break;
+      case '--format':      out.color = true; out.quote = true; break;
+      case '--save-draft':  out.saveDraft = true; break;
+      case '--dry-run':     out.dryRun = true; break;
+      case '--publish-now': out.publishNow = true; break;
+      case '--url':         out.url = next(); break;
+      case '--dump':        out.dump = true; break;
+      case '--help':        out.help = true; break;
       default:
         if (a.startsWith('--')) throw new Error(`알 수 없는 옵션: ${a}`);
     }
@@ -41,24 +57,31 @@ function parseArgs(argv) {
 }
 
 const USAGE = `
-네이버 블로그 예약발행 자동화
+네이버 블로그 글 작성 자동화 (기본: 임시저장까지만)
 
   node scripts/publish-naver.mjs \\
-    --post content/posts/2026-09-11-yeoreum-ibul.json \\
-    --blog-id 내블로그아이디 \\
-    --dry-run --dump
+    --post content/posts/2026-10-01-dokgam-75.json \\
+    --images content/images/2026-10-01-dokgam-75 \\
+    --color --save-draft --dump
 
 옵션
-  --post <파일>      발행할 글 JSON (필수). build-post.mjs 로 .md 에서 생성한다.
-  --blog-id <id>     네이버 블로그 아이디 (필수)
-  --at "Y-M-D H:M"   예약 발행 시각. 생략하면 예약 설정을 건드리지 않는다.
-  --format           인용구/글자색/배경색 자동 적용 시도 (기본: 끔)
-  --linebreak soft   덩어리 안에서 Shift+Enter (기본) | hard = 그냥 Enter
-  --dry-run          최종 발행 직전에 멈춤
+  --post <파일>      글 JSON (필수). build-post.mjs 로 .md 에서 생성한다.
+  --images <폴더>    [이미지 N] 자리에 <폴더>/NN.png 를 넣는다 (post-images.mjs 결과 폴더)
+  --color            빨간글씨/노란배경을 입력 후에 따로 입힌다. 실패한 줄은 목록으로 알려준다
+  --quote            소제목을 인용구로 만드는 시도 (실험용, 기본 끔 — 끄면 목록으로 알려준다)
+  --format           --color + --quote
+  --save-draft       에디터 "저장"(임시저장)만 누르고 끝낸다. 발행 패널은 열지 않는다
+  --dry-run          발행 패널까지 열어 카테고리·태그를 넣고, 발행 버튼은 누르지 않는다
+  --at "Y-M-D H:M"   (--dry-run 과 함께) 예약 시각을 채워 둔다
+  --publish-now      실제 발행 버튼까지 누른다. 사람이 그 자리에서 결정했을 때만 쓴다
   --dump             단계별 스크린샷/HTML 을 dumps/ 에 저장
+  --blog-id <id>     글쓰기 주소에 쓸 블로그 아이디 (생략하면 GoBlogWrite 주소)
   --cdp <url>        CDP 주소 (기본 http://localhost:9222)
+  --linebreak soft   덩어리 안에서 Shift+Enter (기본) | hard = 그냥 Enter
+  --slow <ms>        줄 입력 간 지연 (기본 60)
   --url <url>        글쓰기 URL 재정의 (로컬 목업 테스트용)
-  --slow <ms>        동작 간 지연 (기본 60)
+
+--save-draft / --dry-run / --publish-now 중 아무것도 없으면 본문만 채우고 멈춘다.
 `;
 
 // ---------------------------------------------------------------- utils
@@ -68,12 +91,19 @@ const warn = (...m) => console.log('  ⚠', ...m);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 let dumpDir = null, dumpSeq = 0;
+const stats = { select: { 마우스: 0, DOM: 0 } };
 async function dump(page, label) {
   if (!dumpDir) return;
   const base = path.join(dumpDir, `${String(++dumpSeq).padStart(2, '0')}-${label}`);
   try {
     await page.screenshot({ path: `${base}.png`, fullPage: true });
     fs.writeFileSync(`${base}.html`, await page.content());
+    for (const f of page.frames()) {
+      if (f === page.mainFrame()) continue;
+      if (f.name() === 'mainFrame' || /PostWrite|postwrite/i.test(f.url())) {
+        fs.writeFileSync(`${base}.frame.html`, await f.content());
+      }
+    }
     log(`덤프: ${base}.{png,html}`);
   } catch (e) { warn(`덤프 실패(${label}): ${e.message}`); }
 }
@@ -99,6 +129,16 @@ async function clickFirst(scope, selectors, opts) {
   return loc;
 }
 
+/** 페이지와 에디터 프레임 양쪽에서 찾는다. 네이버는 주소에 따라 iframe 이 있거나 없다. */
+async function findAnywhere(page, editor, selectors, opts) {
+  const scopes = editor === page.mainFrame() ? [page] : [editor, page];
+  let lastErr;
+  for (const s of scopes) {
+    try { return await findFirst(s, selectors, opts); } catch (e) { lastErr = e; }
+  }
+  throw lastErr;
+}
+
 async function resolveEditorFrame(page, timeout = 30000) {
   const probes = ['.se-content', '.se-main-container', '[class*="se-documentTitle"]'];
   const deadline = Date.now() + timeout;
@@ -107,7 +147,7 @@ async function resolveEditorFrame(page, timeout = 30000) {
       for (const p of probes) {
         try {
           if (await frame.locator(p).first().isVisible({ timeout: 200 })) {
-            log(`에디터 프레임 감지 (${p})`);
+            log(`에디터 프레임 감지 (${p}${frame === page.mainFrame() ? '' : `, iframe ${frame.name() || frame.url().slice(0, 60)}`})`);
             return frame;
           }
         } catch { /* 프레임 전환 중 */ }
@@ -116,6 +156,14 @@ async function resolveEditorFrame(page, timeout = 30000) {
     await sleep(400);
   }
   throw new Error('에디터 프레임을 찾지 못했습니다. --dump 로 화면을 확인하세요.');
+}
+
+/** 프레임 안 좌표 → 페이지 좌표 보정값 */
+async function frameOffset(page, frame) {
+  if (frame === page.mainFrame()) return { x: 0, y: 0 };
+  const el = await frame.frameElement();
+  const box = await el.boundingBox();
+  return box ? { x: box.x, y: box.y } : { x: 0, y: 0 };
 }
 
 function parseAt(at) {
@@ -128,46 +176,258 @@ function parseAt(at) {
   return { date, ymd: `${m[1]}-${p(m[2])}-${p(m[3])}`, hh: p(m[4]), mm: m[5] };
 }
 
-// ---------------------------------------------------------------- 서식
+const imageLabel = (block) => `[이미지 ${block.n}] ${block.lines[0]?.t || ''}`.trim();
+
+// ---------------------------------------------------------------- 툴바 / 서식
+// 규칙 [11] 색상: 빨강 #ff0010 (글자색), 연한 노랑 #fff8b2 (배경색)
+const COLORS = {
+  red:    { hex: '#ff0010', rgb: [255, 0, 16],    prop: 'color',           name: '빨간글씨' },
+  yellow: { hex: '#fff8b2', rgb: [255, 248, 178], prop: 'backgroundColor', name: '노란배경' },
+};
+const swatchSelectors = (hex) => [
+  `button.se-color-palette[title="${hex}"]`,
+  `button.se-color-palette[data-color="${hex}"]`,
+  `.se-color-palette[title="${hex}" i]`,
+  `[class*="palette"] button[title="${hex}" i]`,
+  `[data-value="${hex}" i]`,
+];
 const TOOLBAR = {
-  quote: ['button[data-name="quotation"]', '[class*="quotation"]', 'button[title*="인용구"]'],
-  red: {
-    button: ['button[data-name="font-color"]', '[class*="color_text"]', 'button[title*="글자색"]'],
-    swatch: ['[data-value="#ff0000"]', 'button[title*="빨강"]', '[class*="palette"] [style*="rgb(255, 0, 0)"]'],
-  },
-  yellow: {
-    button: ['button[data-name="background-color"]', '[class*="color_background"]', 'button[title*="배경색"]'],
-    swatch: ['[data-value="#ffe400"]', 'button[title*="노랑"]', '[class*="palette"] [style*="rgb(255, 228, 0)"]'],
-  },
+  red: [
+    'button.se-font-color-toolbar-button',
+    'button[data-name="font-color"]',
+    'button[class*="font-color"]',
+    'button[title*="글자색"]',
+  ],
+  yellow: [
+    'button.se-background-color-toolbar-button',
+    'button[data-name="background-color"]',
+    'button[class*="background-color"]',
+    'button[title*="배경색"]',
+  ],
+  quote: [
+    'button.se-insert-quotation-default-toolbar-button',
+    'button[data-name="quotation"]',
+    'button[title*="인용구"]',
+  ],
+  image: [
+    'button.se-image-toolbar-button',
+    'button[data-name="image"]',
+    'button[title*="사진"]',
+  ],
+  save: [
+    'button[class*="save_btn"]',
+    'button:text-is("저장")',
+    'button:has-text("저장"):not(:has-text("발행"))',
+  ],
+  helpClose: ['.se-help-panel-close-button', 'button[class*="help"][class*="close"]'],
 };
 
-/** 방금 입력한 줄을 선택해 색을 입힌다. 실패해도 예외를 던지지 않는다. */
-async function applyStyle(page, editor, style, manual, text) {
-  const spec = TOOLBAR[style];
-  try {
-    await page.keyboard.down('Shift');
-    await page.keyboard.press('Home');
-    await page.keyboard.up('Shift');
-    await sleep(150);
-    await clickFirst(editor, spec.button, { timeout: 2500 });
-    await sleep(400);
-    await clickFirst(editor, spec.swatch, { timeout: 2500 });
-    await sleep(250);
-    await page.keyboard.press('End');
-    return true;
-  } catch {
-    await page.keyboard.press('End').catch(() => {});
-    manual.push(`${style === 'red' ? '빨간글씨' : '노란배경'} → "${text}"`);
-    return false;
+/**
+ * 에디터 본문 DOM 작업을 한 곳에서 한다 (프레임 안에서 실행된다).
+ *   op 'locate' : text 의 nth 번째 위치를 찾아 화면 좌표(rects)를 돌려준다
+ *   op 'select' : 그 구간을 DOM 선택 영역으로 지정한다
+ *   op 'check'  : 그 구간이 남아 있는지, 원하는 색(prop=rgb)을 입었는지
+ * 한 줄 전체가 같아야 맞은 것으로 본다(앞뒤가 줄 경계). 다른 줄 속의 같은 문구는 세지 않는다.
+ */
+function domOp({ op, text, nth, rgb, prop }) {
+  const root = document.querySelector('.se-main-container') || document.querySelector('.se-content') || document.body;
+  const paras = [...root.querySelectorAll('.se-text-paragraph')].filter((p) => !p.closest('.se-documentTitle'));
+  let k = 0;
+  for (const p of paras) {
+    const nodes = []; let full = '';
+    const w = document.createTreeWalker(p, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
+    let n;
+    while ((n = w.nextNode())) {
+      if (n.nodeType === 1) { if (n.tagName === 'BR' || ((n.tagName === 'DIV' || n.tagName === 'P') && full)) full += '\n'; continue; }
+      nodes.push({ n, start: full.length });
+      full += n.nodeValue;
+    }
+    const clean = full.replace(/​/g, ' ');
+    let from = 0, idx;
+    while ((idx = clean.indexOf(text, from)) !== -1) {
+      const end = idx + text.length;
+      from = end;
+      const b0 = idx === 0 || clean[idx - 1] === '\n' || !clean.slice(0, idx).trim();
+      const b1 = end === clean.length || clean[end] === '\n' || !clean.slice(end).replace(/\n/g, '').trim();
+      if (!b0 || !b1) continue;
+      if (k++ !== nth) continue;
+
+      const at = (pos, isEnd) => {
+        for (let i = nodes.length - 1; i >= 0; i--) {
+          const x = nodes[i];
+          if (isEnd ? pos > x.start : pos >= x.start) return [x.n, Math.min(pos - x.start, x.n.nodeValue.length)];
+        }
+        return [nodes[0].n, 0];
+      };
+      const range = document.createRange();
+      range.setStart(...at(idx, false));
+      range.setEnd(...at(end, true));
+
+      if (op === 'locate') {
+        p.scrollIntoView({ block: 'center' });
+        const rects = [...range.getClientRects()].filter((r) => r.width > 0)
+          .map((r) => ({ left: r.left, top: r.top, right: r.right, bottom: r.bottom }));
+        return { found: true, rects };
+      }
+      if (op === 'select') {
+        const host = p.closest('[contenteditable="true"], [contenteditable=""]') || p;
+        if (host.focus) host.focus({ preventScroll: true });
+        const sel = getSelection(); sel.removeAllRanges(); sel.addRange(range);
+        document.dispatchEvent(new Event('selectionchange'));
+        return { found: true };
+      }
+      // check
+      const want = `rgb(${rgb.join(', ')})`;
+      const inside = nodes.filter((x) => x.start < end && x.start + x.n.nodeValue.length > idx && x.n.nodeValue.trim());
+      const styled = inside.length > 0 && inside.every((x) => {
+        for (let e = x.n.parentElement; e && e !== p.parentElement; e = e.parentElement) {
+          if (getComputedStyle(e)[prop] === want) return true;
+        }
+        return false;
+      });
+      return { found: true, present: true, styled };
+    }
   }
+  return { found: false, present: false, styled: false, count: k };
+}
+
+const locateText = (editor, text, nth) => editor.evaluate(domOp, { op: 'locate', text, nth });
+const selectTextByRange = (editor, text, nth) => editor.evaluate(domOp, { op: 'select', text, nth });
+const checkStyled = (editor, text, nth, color) =>
+  editor.evaluate(domOp, { op: 'check', text, nth, rgb: color.rgb, prop: color.prop });
+const currentSelection = (editor) => editor.evaluate(() => String(getSelection()).replace(/​/g, '').trim());
+
+/** 화면에서 마우스로 text 구간을 끌어 선택한다. 빗나가면 DOM 선택으로 한 번 더. */
+async function selectText(page, editor, text, nth) {
+  const loc = await locateText(editor, text, nth);
+  if (!loc.found || !loc.rects?.length) return { ok: false, why: `본문에서 글자를 찾지 못함 (같은 줄 ${loc.count ?? 0}개)` };
+  await sleep(200);
+  const again = await locateText(editor, text, nth); // 스크롤이 끝난 뒤 좌표를 다시 잰다
+  const off = await frameOffset(page, editor);
+  const first = again.rects[0], last = again.rects[again.rects.length - 1];
+  await page.mouse.move(off.x + first.left + 0.5, off.y + (first.top + first.bottom) / 2);
+  await page.mouse.down();
+  await page.mouse.move(off.x + last.right - 0.5, off.y + (last.top + last.bottom) / 2, { steps: 12 });
+  await page.mouse.up();
+  await sleep(250);
+  let sel = await currentSelection(editor);
+  let how = "마우스";
+  if (sel !== text) {
+    await selectTextByRange(editor, text, nth);
+    await sleep(200);
+    sel = await currentSelection(editor);
+    how = 'DOM';
+  }
+  if (sel !== text) return { ok: false, why: `선택이 빗나감 (선택된 글: "${sel.slice(0, 40)}")` };
+  stats.select[how]++;
+  return { ok: true, how };
+}
+
+async function collapseSelection(page, editor) {
+  await editor.evaluate(() => { const s = getSelection(); if (s.rangeCount) s.collapseToEnd(); }).catch(() => {});
+  await page.keyboard.press('Escape').catch(() => {});
+}
+
+/** 한 줄에 색을 입힌다. 성공 여부를 돌려주고, 글자가 사라지면 되돌린다. */
+async function applyColor(page, editor, text, nth, style) {
+  const color = COLORS[style];
+  const before = await checkStyled(editor, text, nth, color);
+  if (!before.present) return { ok: false, why: '본문에서 글자를 찾지 못함' };
+  if (before.styled) return { ok: true, already: true };
+
+  const sel = await selectText(page, editor, text, nth);
+  if (!sel.ok) return sel;
+
+  try {
+    await clickFirst(editor, TOOLBAR[style], { timeout: 3000 });
+    await sleep(400);
+    // 팔레트를 열었을 때 선택이 풀렸으면 여기서 멈춘다 (글자를 잃지 않기 위해)
+    if ((await currentSelection(editor)) !== text) {
+      await page.keyboard.press('Escape').catch(() => {});
+      return { ok: false, why: '팔레트를 여는 순간 선택이 풀림' };
+    }
+    await clickFirst(editor, swatchSelectors(color.hex), { timeout: 3000 });
+    await sleep(350);
+  } catch (e) {
+    await page.keyboard.press('Escape').catch(() => {});
+    return { ok: false, why: `툴바/팔레트를 찾지 못함 — ${e.message.split('\n')[0]}` };
+  }
+
+  await collapseSelection(page, editor);
+  await sleep(200);
+  const after = await checkStyled(editor, text, nth, color);
+  if (!after.present) {
+    warn(`글자가 사라졌습니다 → Ctrl+Z 로 되돌립니다: "${text}"`);
+    await page.keyboard.press('Control+z');
+    await sleep(500);
+    const back = await checkStyled(editor, text, nth, color);
+    return { ok: false, why: back.present ? '글자가 사라져 되돌림' : '글자가 사라졌고 되돌리기도 실패 — 직접 확인 필요', lost: !back.present };
+  }
+  if (!after.styled) return { ok: false, why: '눌렀지만 색이 들어가지 않음' };
+  return { ok: true };
+}
+
+/** "[이미지 N] 설명" 표시 줄을 지우고 그 자리에 그림 파일을 넣는다. */
+async function insertImageAt(page, editor, label, file) {
+  const count = () => editor.locator('.se-component.se-image, .se-module-image').count();
+  const before = await count();
+
+  const sel = await selectText(page, editor, label, 0);
+  if (!sel.ok) return { ok: false, why: `표시 줄을 찾지 못함 — ${sel.why}` };
+  await page.keyboard.press('Backspace');
+  await sleep(300);
+  let leftover = false;
+  if ((await locateText(editor, label, 0)).found) {
+    // 키 입력이 안 먹었으면 선택을 다시 잡고 에디터 명령으로 지운다
+    await selectTextByRange(editor, label, 0);
+    await editor.evaluate(() => document.execCommand('delete'));
+    await sleep(300);
+    leftover = (await locateText(editor, label, 0)).found;
+    if (leftover) warn(`표시 줄이 지워지지 않았습니다 — 그림은 그 아래에 넣고 표시 줄은 손으로 지우세요.`);
+  }
+
+  let chosen = false;
+  try {
+    const btn = await findFirst(editor, TOOLBAR.image, { timeout: 4000 });
+    const [chooser] = await Promise.all([
+      page.waitForEvent('filechooser', { timeout: 8000 }),
+      btn.loc.click(),
+    ]);
+    await chooser.setFiles(file);
+    chosen = true;
+  } catch (e) {
+    // 파일 선택 창을 못 잡으면 숨은 input[type=file] 에 직접 넣어 본다
+    try {
+      const input = editor.locator('input[type="file"]').first();
+      if (await input.count()) { await input.setInputFiles(file); chosen = true; }
+    } catch { /* 아래에서 실패 처리 */ }
+    if (!chosen) {
+      await page.keyboard.insertText(label); // 표시 줄을 되살린다
+      return { ok: false, why: `사진 버튼/파일 선택 실패 — ${e.message.split('\n')[0]}` };
+    }
+  }
+
+  const deadline = Date.now() + 40000;
+  while (Date.now() < deadline) {
+    if ((await count()) > before) {
+      await sleep(800);
+      await collapseSelection(page, editor);
+      return { ok: true, leftover };
+    }
+    await sleep(500);
+  }
+  return { ok: false, why: '업로드가 40초 안에 끝나지 않음 (화면 확인 필요)' };
 }
 
 // ---------------------------------------------------------------- main
 async function main() {
   const args = parseArgs(process.argv);
   if (args.help) { console.log(USAGE); return; }
-  if (!args.post)   throw new Error('--post 가 필요합니다. --help 참고.');
-  if (!args.blogId) throw new Error('--blog-id 가 필요합니다. --help 참고.');
+  if (!args.post) throw new Error('--post 가 필요합니다. --help 참고.');
+  if ([args.saveDraft, args.dryRun, args.publishNow].filter(Boolean).length > 1) {
+    throw new Error('--save-draft / --dry-run / --publish-now 는 하나만 쓰세요.');
+  }
+  if (args.at && !args.dryRun && !args.publishNow) throw new Error('--at 은 --dry-run 또는 --publish-now 와 함께만 씁니다.');
 
   const post = JSON.parse(fs.readFileSync(args.post, 'utf8'));
   if (!post.title || !Array.isArray(post.blocks)) {
@@ -176,23 +436,43 @@ async function main() {
   const at = args.at ? parseAt(args.at) : null;
   if (at && at.date.getTime() < Date.now()) throw new Error(`예약 시각이 과거입니다: ${args.at}`);
 
+  // 이미지 파일 미리 확인
+  const imageBlocks = post.blocks.filter((b) => b.type === 'image');
+  const imageFiles = new Map();
+  if (args.images) {
+    if (!fs.existsSync(args.images)) throw new Error(`이미지 폴더가 없습니다: ${args.images}\n먼저 post-images.mjs 로 만드세요.`);
+    for (const b of imageBlocks) {
+      const f = path.resolve(args.images, `${String(b.n).padStart(2, '0')}.png`);
+      if (fs.existsSync(f)) imageFiles.set(b.n, f);
+    }
+  }
+
   if (args.dump) {
     dumpDir = path.join('dumps', new Date().toISOString().replace(/[:.]/g, '-'));
     fs.mkdirSync(dumpDir, { recursive: true });
   }
 
-  const allLines = post.blocks.flatMap((b) => b.lines);
+  const textBlocks = post.blocks.filter((b) => b.type !== 'image');
+  const allLines = textBlocks.flatMap((b) => b.lines);
   const styled = allLines.filter((l) => l.s);
+  const mode = args.saveDraft ? '임시저장 (발행 안 함)'
+    : args.dryRun ? 'DRY-RUN (발행 패널까지, 발행 안 함)'
+    : args.publishNow ? '⚠ 실제 발행'
+    : '본문만 채우고 멈춤';
 
   console.log('═'.repeat(58));
-  console.log(' 네이버 블로그 발행');
+  console.log(' 네이버 블로그 글 작성');
   console.log('═'.repeat(58));
   log(`글    : ${post.title}`);
-  log(`본문  : ${post.blocks.length}덩어리 / ${allLines.length}줄 / ${allLines.map(l => l.t).join('').length}자`);
-  log(`인용구: ${post.blocks.filter(b => b.type === 'quote').length}개`);
-  log(`강조  : ${styled.length}줄 ${args.format ? '(자동 적용 시도)' : '(수동 — 체크리스트 출력)'}`);
-  log(`예약  : ${at ? `${at.ymd} ${at.hh}:${at.mm}` : '설정 안 함'}`);
-  log(`모드  : ${args.dryRun ? 'DRY-RUN (최종 발행 안 함)' : '실제 발행'}`);
+  log(`본문  : ${textBlocks.length}덩어리 / ${allLines.length}줄 / ${allLines.map(l => l.t).join('').length}자`);
+  log(`인용구: ${post.blocks.filter(b => b.type === 'quote').length}개 ${args.quote ? '(자동 시도)' : '(수동 — 목록 출력)'}`);
+  log(`강조  : ${styled.length}줄 ${args.color ? '(입력 후 자동 적용)' : '(수동 — 목록 출력)'}`);
+  log(`이미지: ${imageBlocks.length}자리 / 파일 ${args.images ? `${imageFiles.size}개 준비됨` : '넣지 않음 (표시 줄만)'}`);
+  log(`모드  : ${mode}`);
+  if (args.images && imageFiles.size < imageBlocks.length) {
+    const miss = imageBlocks.filter((b) => !imageFiles.has(b.n)).map((b) => b.n);
+    warn(`그림 파일이 없는 자리: ${miss.join(', ')} → 표시 줄로 남깁니다.`);
+  }
 
   step('1. 실행 중인 크롬에 연결');
   let browser;
@@ -200,7 +480,7 @@ async function main() {
     browser = await chromium.connectOverCDP(args.cdp);
   } catch (e) {
     throw new Error(
-      `${args.cdp} 에 연결하지 못했습니다.\n크롬을 디버깅 포트로 띄웠는지 확인하세요 (README 1단계).\n원인: ${e.message}`
+      `${args.cdp} 에 연결하지 못했습니다.\n자동화용 크롬(9222)이 켜져 있는지 확인하세요.\n원인: ${e.message}`
     );
   }
   const context = browser.contexts()[0];
@@ -210,29 +490,35 @@ async function main() {
   const page = await context.newPage();
   page.setDefaultTimeout(20000);
   const manual = [];
+  const report = { color: { ok: 0, fail: 0 }, image: { ok: 0, fail: 0 } };
 
   try {
     step('2. 글쓰기 페이지 열기');
-    const writeUrl = args.url || `https://blog.naver.com/${args.blogId}/postwrite`;
+    const writeUrl = args.url
+      || (args.blogId ? `https://blog.naver.com/${args.blogId}/postwrite` : 'https://blog.naver.com/GoBlogWrite.naver');
     await page.goto(writeUrl, { waitUntil: 'domcontentloaded' });
-    await sleep(args.url ? 500 : 2500);
-    if (!args.url && /nid\.naver\.com|login/.test(page.url())) {
-      throw new Error(`로그인 페이지로 이동했습니다. attach 한 크롬이 로그인된 프로필인지 확인하세요.\n현재 URL: ${page.url()}`);
+    await sleep(args.url ? 500 : 3000);
+    if (!args.url && /nid\.naver\.com|nidlogin/.test(page.url())) {
+      throw new Error(`로그인 페이지로 이동했습니다. 9222 크롬 창에서 네이버에 로그인돼 있는지 확인하세요.\n현재 URL: ${page.url()}`);
     }
     log(`URL: ${page.url()}`);
-    await dump(page, 'write-page');
 
     const editor = await resolveEditorFrame(page);
+    await dump(page, 'write-page');
 
-    step('3. 이전 작성글 팝업 확인');
+    step('3. 팝업 정리');
     try {
       const { loc } = await findFirst(editor,
-        ['button:has-text("취소")', '.se-popup-button-cancel', '[class*="popup"] button:has-text("취소")'],
+        ['.se-popup-button-cancel', '[class*="popup"] button:has-text("취소")', 'button:has-text("취소")'],
         { timeout: 3000 });
       await loc.click();
-      log('불러오기 팝업 → 취소');
+      log('작성 중이던 글 불러오기 팝업 → 취소 (새 글로 시작)');
       await sleep(600);
-    } catch { log('팝업 없음 (정상)'); }
+    } catch { log('불러오기 팝업 없음'); }
+    try {
+      await clickFirst(editor, TOOLBAR.helpClose, { timeout: 1500 });
+      log('도움말 패널 닫음');
+    } catch { /* 없음 */ }
 
     step('4. 제목 입력');
     await clickFirst(editor, [
@@ -243,9 +529,8 @@ async function main() {
     await sleep(300);
     await page.keyboard.insertText(post.title);
     log(post.title);
-    await dump(page, 'title');
 
-    step('5. 본문 입력');
+    step('5. 본문 입력 (글자만)');
     await clickFirst(editor, [
       '.se-component.se-text:not(.se-documentTitle) .se-text-paragraph',
       '.se-main-container .se-text-paragraph',
@@ -257,35 +542,29 @@ async function main() {
     for (let bi = 0; bi < post.blocks.length; bi++) {
       const block = post.blocks[bi];
 
-      if (block.type === 'quote') {
+      if (block.type === 'image') {
+        await page.keyboard.insertText(imageLabel(block));
+      } else if (block.type === 'quote') {
         const text = block.lines[0].t;
-        if (args.format) {
+        let quoted = false;
+        if (args.quote) {
           try {
             await clickFirst(editor, TOOLBAR.quote, { timeout: 2500 });
             await sleep(400);
-          } catch { manual.push(`인용구 → "${text}"`); }
-        } else {
-          manual.push(`인용구 → "${text}"`);
+            quoted = true;
+          } catch { /* 아래 목록으로 */ }
         }
+        if (!quoted) manual.push(`인용구 → "${text}"`);
         await page.keyboard.insertText(text);
         done++;
       } else {
         for (let li = 0; li < block.lines.length; li++) {
           const line = block.lines[li];
           await page.keyboard.insertText(line.t);
-          if (line.s) {
-            if (args.format) await applyStyle(page, editor, line.s, manual, line.t);
-            else manual.push(`${line.s === 'red' ? '빨간글씨' : '노란배경'} → "${line.t}"`);
-          }
           done++;
           if (li < block.lines.length - 1) {
-            if (args.linebreak === 'soft') {
-              await page.keyboard.down('Shift');
-              await page.keyboard.press('Enter');
-              await page.keyboard.up('Shift');
-            } else {
-              await page.keyboard.press('Enter');
-            }
+            if (args.linebreak === 'soft') await page.keyboard.press('Shift+Enter');
+            else await page.keyboard.press('Enter');
           }
           if (args.slow) await sleep(args.slow);
         }
@@ -297,30 +576,91 @@ async function main() {
       }
     }
     log(`${done}줄 입력 완료`);
-    await dump(page, 'body');
+    await dump(page, 'body-text');
 
-    step('6. 발행 설정 열기');
-    try {
-      await clickFirst(page, ['button:has-text("발행")', '[class*="publish_btn"]'], { timeout: 6000 });
-    } catch {
-      await clickFirst(editor, ['button:has-text("발행")', '[class*="publish_btn"]']);
+    // ---- 색 입히기 (입력이 전부 끝난 뒤)
+    const seen = new Map();
+    const nthOf = (t) => { const k = seen.get(t) || 0; seen.set(t, k + 1); return k; };
+    for (const line of allLines) {
+      // 같은 글이 강조 없이 앞에 나올 수도 있으니 모든 줄을 순서대로 센다
+      const nth = nthOf(line.t);
+      if (!line.s) continue;
+      const name = COLORS[line.s].name;
+      if (!args.color) { manual.push(`${name} → "${line.t}"`); continue; }
+      if (report.color.ok + report.color.fail === 0) step(`6. 강조 색 입히기 (${styled.length}줄)`);
+      const r = await applyColor(page, editor, line.t, nth, line.s);
+      if (r.ok) { report.color.ok++; log(`✓ ${name}: ${line.t}`); }
+      else {
+        report.color.fail++;
+        warn(`${name} 실패 (${r.why}): ${line.t}`);
+        manual.push(`${name} → "${line.t}"  [${r.why}]`);
+        if (r.lost) throw new Error(`글자가 사라졌습니다: "${line.t}". 저장하지 않고 멈춥니다. 화면을 확인하세요.`);
+      }
     }
+    if (args.color) await dump(page, 'colors');
+
+    // ---- 이미지 넣기
+    for (const b of imageBlocks) {
+      const label = imageLabel(b);
+      const file = imageFiles.get(b.n);
+      if (!file) { manual.push(`이미지 ${b.n} → "${label}" 자리에 직접 넣기`); continue; }
+      if (report.image.ok + report.image.fail === 0) step(`7. 이미지 넣기 (${imageFiles.size}장)`);
+      const r = await insertImageAt(page, editor, label, file);
+      if (r.ok) {
+        report.image.ok++; log(`✓ 이미지 ${b.n}: ${path.basename(file)}`);
+        if (r.leftover) manual.push(`이미지 ${b.n} 위의 표시 줄 "${label}" 지우기`);
+      }
+      else {
+        report.image.fail++;
+        warn(`이미지 ${b.n} 실패 (${r.why})`);
+        manual.push(`이미지 ${b.n} → "${label}" 자리에 ${path.basename(file)} 직접 넣기  [${r.why}]`);
+      }
+    }
+    if (args.images) await dump(page, 'images');
+
+    printManual(manual, report, args);
+
+    if (args.saveDraft) {
+      step('8. 임시저장 (발행 버튼은 누르지 않습니다)');
+      const { loc, sel } = await findAnywhere(page, editor, TOOLBAR.save, { timeout: 6000 });
+      const label = (await loc.innerText().catch(() => '')).trim();
+      if (/발행/.test(label)) throw new Error(`저장 버튼 대신 발행 버튼이 잡혔습니다 ("${label}"). 멈춥니다.`);
+      await loc.click();
+      log(`클릭: ${sel} ("${label || '저장'}")`);
+      await sleep(2500);
+      await dump(page, 'saved');
+      console.log('\n✅ 임시저장 완료 — 발행하지 않았습니다.');
+      log('네이버 글쓰기 화면 오른쪽 위 "저장" 옆 숫자를 누르면 임시저장 목록에서 볼 수 있어요.');
+      log('카테고리·태그는 발행 단계에서 넣습니다:');
+      if (post.category) log(`  카테고리: ${post.category}`);
+      if (post.tags?.length) log(`  태그: ${post.tags.join(', ')}`);
+      return;
+    }
+
+    if (!args.dryRun && !args.publishNow) {
+      console.log('\n✅ 본문 입력까지 했습니다. 저장·발행은 하지 않았습니다 (탭은 열어둡니다).');
+      return;
+    }
+
+    step('8. 발행 설정 열기');
+    await clickFirst(page, ['button[class*="publish_btn"]', 'button:has-text("발행")'], { timeout: 6000 })
+      .catch(() => clickFirst(editor, ['button[class*="publish_btn"]', 'button:has-text("발행")']));
     await sleep(1500);
     await dump(page, 'publish-layer');
 
     if (post.category) {
-      step(`7. 카테고리: ${post.category}`);
+      step(`9. 카테고리: ${post.category}`);
       try {
-        await clickFirst(page, ['[class*="selectbox_button"]', 'button:has-text("카테고리")'], { timeout: 4000 });
+        await findAnywhere(page, editor, ['button[class*="selectbox_button"]', 'button:has-text("카테고리")'], { timeout: 4000 }).then((r) => r.loc.click());
         await sleep(500);
-        await clickFirst(page, [`label:has-text("${post.category}")`, `span:has-text("${post.category}")`], { timeout: 4000 });
+        await findAnywhere(page, editor, [`label:has-text("${post.category}")`, `span:has-text("${post.category}")`], { timeout: 4000 }).then((r) => r.loc.click());
       } catch { warn('카테고리 자동 선택 실패 — 수동으로 지정하세요.'); }
     }
 
     if (post.tags?.length) {
-      step('8. 태그 입력');
+      step('10. 태그 입력');
       try {
-        const { loc } = await findFirst(page,
+        const { loc } = await findAnywhere(page, editor,
           ['input#tag-input', '[class*="tag_input"] input', 'input[placeholder*="태그"]'], { timeout: 5000 });
         await loc.click();
         for (const t of post.tags) {
@@ -333,61 +673,61 @@ async function main() {
     }
 
     if (at) {
-      step(`9. 예약 설정: ${at.ymd} ${at.hh}:${at.mm}`);
+      step(`11. 예약 설정: ${at.ymd} ${at.hh}:${at.mm}`);
+      warn('예약 날짜/시각 자동 입력은 아직 검증 전입니다. 화면에서 꼭 확인하세요.');
       try {
-        await clickFirst(page, ['label:has-text("예약")', 'input[type="radio"][value="RESERVE"]'], { timeout: 5000 });
+        await findAnywhere(page, editor, ['label[for="radio_time2"]', 'label:has-text("예약")'], { timeout: 5000 }).then((r) => r.loc.click());
         await sleep(800);
-        const { loc } = await findFirst(page,
-          ['input[class*="input_date"]', 'input[placeholder*="날짜"]'], { timeout: 4000 });
-        await loc.fill(at.ymd);
         for (const [label, value, sels] of [
-          ['시', at.hh, ['select[class*="hour"]', '.hour_option select']],
-          ['분', at.mm, ['select[class*="minute"]', '.minute_option select']],
+          ['시', at.hh, ['select[class*="hour_option"]', 'select[class*="hour"]']],
+          ['분', String(Math.floor(+at.mm / 10) * 10).padStart(2, '0'), ['select[class*="minute_option"]', 'select[class*="minute"]']],
         ]) {
           try {
-            const r = await findFirst(page, sels, { timeout: 3000 });
+            const r = await findAnywhere(page, editor, sels, { timeout: 3000 });
             await r.loc.selectOption(value);
             log(`${label}: ${value}`);
           } catch { warn(`${label} 선택 실패 — 수동으로 ${value} 지정하세요.`); }
         }
+        warn(`날짜(${at.ymd})는 달력에서 직접 고르세요.`);
       } catch { warn('예약 UI 자동 설정 실패 — 수동으로 지정하세요.'); }
       await dump(page, 'schedule');
     }
 
-    if (manual.length) {
-      console.log('\n' + '─'.repeat(58));
-      console.log(' 수동으로 입혀야 할 서식 ' + `(${manual.length}건)`);
-      console.log('─'.repeat(58));
-      manual.forEach((m, i) => console.log(`  ${String(i + 1).padStart(2)}. ${m}`));
-      console.log('\n  해당 줄을 드래그해서 툴바로 지정하면 됩니다.');
-    }
-
-    step('10. 최종 발행');
-    if (args.dryRun) {
-      log('DRY-RUN — 최종 발행 버튼을 누르지 않고 멈춥니다.');
-      log('브라우저에서 내용을 확인하세요. 탭은 열어둡니다.');
-      log('문제 없으면 --dry-run 을 빼고 다시 실행하세요.');
+    if (!args.publishNow) {
+      log('DRY-RUN — 발행 버튼을 누르지 않고 멈춥니다. 탭은 열어둡니다.');
       await dump(page, 'dry-run-final');
       console.log('\n✅ DRY-RUN 완료');
       return;
     }
-    await clickFirst(page, ['[class*="confirm_btn"]', 'button:has-text("발행"):visible', '.btn_apply']);
+
+    step('12. 최종 발행 (--publish-now)');
+    await findAnywhere(page, editor, ['button[class*="confirm_btn"]'], { timeout: 5000 }).then((r) => r.loc.click());
     await sleep(3000);
     await dump(page, 'published');
     console.log(`\n✅ 완료 — ${at ? `${at.ymd} ${at.hh}:${at.mm} 예약됨` : '발행됨'}`);
-    log(`확인: https://blog.naver.com/${args.blogId}`);
 
   } catch (e) {
     console.error('\n❌ 실패:', e.message);
     await dump(page, 'error').catch(() => {});
     console.error(dumpDir
-      ? `\n👉 ${dumpDir} 안의 파일을 보내주시면 선택자를 고치겠습니다.`
+      ? `\n👉 ${dumpDir} 안의 파일을 보여주시면 선택자를 고치겠습니다.`
       : '\n👉 --dump 를 붙여 다시 실행하면 dumps/ 에 화면과 HTML이 남습니다.');
     process.exitCode = 1;
   } finally {
-    // attach 한 브라우저는 사용자 것이다. 종료하지 않고 연결만 해제한다.
+    // attach 한 브라우저는 사용자 것이다. 종료하지 않고 연결만 해제한다. 탭도 닫지 않는다.
     await browser.close().catch(() => {});
   }
+}
+
+function printManual(manual, report, args) {
+  console.log('\n' + '─'.repeat(58));
+  if (args.color) console.log(` 색 입히기   : 성공 ${report.color.ok} / 실패 ${report.color.fail}`);
+  if (args.images) console.log(` 이미지 넣기 : 성공 ${report.image.ok} / 실패 ${report.image.fail}`);
+  if (args.color || args.images) console.log(` 선택 방식   : 마우스 ${stats.select['마우스']} / DOM ${stats.select.DOM}`);
+  if (!manual.length) { console.log(' 손으로 할 것: 없음'); console.log('─'.repeat(58)); return; }
+  console.log(` 손으로 할 것 (${manual.length}건)`);
+  console.log('─'.repeat(58));
+  manual.forEach((m, i) => console.log(`  ${String(i + 1).padStart(2)}. ${m}`));
 }
 
 main().catch((e) => { console.error('❌', e.message); process.exit(1); });
