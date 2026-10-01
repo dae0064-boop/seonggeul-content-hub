@@ -123,6 +123,15 @@ for (const file of files) {
         notes.push(`제목 키워드 비율 ${Math.round(titleKw.ratio * 100)}% — 권장 ${TITLE_KW[0] * 100}~${TITLE_KW[1] * 100}%`);
     }
   }
+  // 예약발행 시각: 파일 날짜와 같은 날, 10분 단위 (draft-day -Reserve 가 이 값으로 예약한다)
+  if (post.publishAt) {
+    const m = /^(\d{4}-\d{2}-\d{2}) (\d{2}):(\d{2})$/.exec(post.publishAt);
+    if (!m) errors.push(`publish_at 형식이 잘못됐습니다: "${post.publishAt}" (예: 2026-10-02 09:00)`);
+    else {
+      if (m[1] !== dated) errors.push(`publish_at 날짜(${m[1]})가 파일 날짜(${dated})와 다릅니다`);
+      if (+m[3] % 10) errors.push(`publish_at 은 10분 단위여야 합니다 (네이버 예약): ${post.publishAt}`);
+    }
+  }
   const topicTags = post.tags.filter((t) => !FIXED_TAGS.includes(t));
   if (topicTags.length < MIN_TAGS) errors.push(`주제 해시태그 ${topicTags.length}개 — ${MIN_TAGS}개 이상 필요`);
   const noFixed = FIXED_TAGS.filter((t) => !post.tags.includes(t));
@@ -180,6 +189,7 @@ for (const file of files) {
   console.log(`  이미지 자리 : ${images.length}개`);
   console.log(`  강조        : 빨강 ${red}곳 / 파랑 ${blue}곳 / 노랑 ${yellow}곳`);
   console.log(`  태그        : ${post.tags.join(', ') || '(없음)'}`);
+  if (post.publishAt) console.log(`  예약발행    : ${post.publishAt}`);
 
   for (const n of notes) console.log(`  · ${n}`);
   if (errors.length) {
