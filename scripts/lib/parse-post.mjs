@@ -17,11 +17,15 @@
  *
  *   [빨간글씨]강조되는 줄[/빨간글씨]
  *   [노란배경]배경색 들어가는 줄[/노란배경]
+ *   75세 이상은 [파란글씨]10월 12일[/파란글씨]부터예요   ← 줄 안의 낱말만 칠할 수도 있다
  *
  * 강조 태그는 줄 경계를 넘어갈 수 있다(여러 줄을 한 번에 감싸는 경우).
+ * 결과: 줄 전체가 한 색이면 { t, s }, 일부만 칠했으면 { t, segs: [{ t, s? }] }.
+ * post.marks 에 색별 표시 개수(여러 줄을 감싼 태그도 1곳)를 담는다.
  */
 
-const STYLE = { 빨간글씨: 'red', 노란배경: 'yellow' };
+const STYLE = { 빨간글씨: 'red', 노란배경: 'yellow', 파란글씨: 'blue' };
+const TAG_RE = /\[(\/?)(빨간글씨|노란배경|파란글씨)\]/g;
 const QUOTE_PREFIX = '인용구(소제목)';
 
 export function parsePost(raw) {
@@ -40,6 +44,7 @@ export function parsePost(raw) {
   const blocks = [];
   const warnings = [];
   let carry = null; // 줄을 넘어 이어지는 강조
+  const marks = { red: 0, yellow: 0, blue: 0 };
 
   for (const chunk of body.trim().split(/\r?\n\s*\r?\n/)) {
     const lines = chunk.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
@@ -62,17 +67,29 @@ export function parsePost(raw) {
 
     const out = [];
     for (const line of lines) {
-      const opens  = [...line.matchAll(/\[(빨간글씨|노란배경)\]/g)];
-      const closes = [...line.matchAll(/\[\/(빨간글씨|노란배경)\]/g)];
+      const segs = [];
+      let last = 0, m;
+      TAG_RE.lastIndex = 0;
+      while ((m = TAG_RE.exec(line))) {
+        if (m.index > last) segs.push({ t: line.slice(last, m.index), s: carry ? STYLE[carry] : null });
+        if (m[1]) carry = null;
+        else { carry = m[2]; marks[STYLE[m[2]]]++; }
+        last = m.index + m[0].length;
+      }
+      if (last < line.length) segs.push({ t: line.slice(last), s: carry ? STYLE[carry] : null });
 
-      const applied = opens.length ? opens[0][1] : carry;
-
-      if (opens.length && !closes.length) carry = opens[opens.length - 1][1];
-      else if (closes.length) carry = null;
-
-      const t = line.replace(/\[\/?(빨간글씨|노란배경)\]/g, '').trim();
+      const t = segs.map((x) => x.t).join('').trim();
       if (!t) continue;
-      out.push(applied ? { t, s: STYLE[applied] } : { t });
+      // 앞뒤 공백만 있는 조각은 정리
+      const real = segs.filter((x) => x.t.trim());
+      const styles = new Set(real.map((x) => x.s));
+      if (styles.size === 1 && real[0].s) out.push({ t, s: real[0].s });
+      else if ([...styles].some(Boolean)) {
+        const clean = segs.filter((x) => x.t).map((x) => (x.s ? { t: x.t, s: x.s } : { t: x.t }));
+        clean[0].t = clean[0].t.replace(/^\s+/, '');
+        clean[clean.length - 1].t = clean[clean.length - 1].t.replace(/\s+$/, '');
+        out.push({ t, segs: clean.filter((x) => x.t) });
+      } else out.push({ t });
     }
     if (out.length) blocks.push({ type: 'p', lines: out });
   }
@@ -86,6 +103,7 @@ export function parsePost(raw) {
     mainKeyword: meta.main_keyword || '',
     subKeywords: meta.sub_keywords ? meta.sub_keywords.split(',').map((s) => s.trim()).filter(Boolean) : [],
     blocks,
+    marks,
     warnings,
   };
 }

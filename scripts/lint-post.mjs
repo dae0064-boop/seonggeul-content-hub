@@ -17,6 +17,7 @@ const MAX_CHARS = 2500;       // 본문 최대
 const MIN_MAIN = 10;          // 메인 키워드 최소 등장 횟수
 const MIN_SUB = 5;            // 서브 키워드 각각 최소 등장 횟수
 const MIN_TAGS = 15;          // 해시태그 최소 개수
+const MARKS = { red: [3, 5], blue: [6, 10], yellow: [3, 5] }; // 강조 색별 권장 개수 (한 편 기준)
 
 // 단정적 우위 표현 — 쓰면 안 된다
 const BAN = ['무조건', '100%', '단언컨대', '절대로', '손실 없음', '공짜'];
@@ -113,8 +114,14 @@ for (const file of files) {
     notes.push(`평균 줄 길이 ${avgLine.toFixed(1)}자 — 권장 ${AVG_LINE[0]}~${AVG_LINE[1]}자`);
 
   const quotes = post.blocks.filter((b) => b.type === 'quote').length;
-  const red = lines.filter((l) => l.s === 'red').length;
-  const yellow = lines.filter((l) => l.s === 'yellow').length;
+  // 강조 색 개수 (2026-10-01 사용자 지시): 색마다 역할이 있다
+  //   빨강 = 결론·주의(처음과 끝), 파랑 = 날짜·나이·기관명·숫자 같은 사실, 노랑 배경 = 꼭 기억할 한 문장
+  const marks = post.marks || { red: 0, yellow: 0, blue: 0 };
+  const { red, yellow, blue } = marks;
+  for (const [name, n, [lo, hi]] of [['빨간글씨', red, MARKS.red], ['파란글씨', blue, MARKS.blue], ['노란배경', yellow, MARKS.yellow]]) {
+    if (n < lo) errors.push(`${name} ${n}곳 — ${lo}곳 이상 필요 (권장 ${lo}~${hi})`);
+    else if (n > hi) notes.push(`${name} ${n}곳 — 권장 ${lo}~${hi}곳보다 많아요. 다 칠하면 강조가 안 보입니다`);
+  }
   const avg = (texts.reduce((a, t) => a + t.length, 0) / texts.length).toFixed(1);
   const max = Math.max(...texts.map((t) => t.length));
 
@@ -129,7 +136,7 @@ for (const file of files) {
   console.log(`  덩어리당    : ${perBlock.toFixed(1)}줄 (최소 ${MIN_BLOCK_LINES})`);
   console.log(`  인용구      : ${quotes}개`);
   console.log(`  이미지 자리 : ${images.length}개`);
-  console.log(`  강조        : 빨강 ${red}줄 / 노랑 ${yellow}줄`);
+  console.log(`  강조        : 빨강 ${red}곳 / 파랑 ${blue}곳 / 노랑 ${yellow}곳`);
   console.log(`  태그        : ${post.tags.join(', ') || '(없음)'}`);
 
   for (const n of notes) console.log(`  · ${n}`);

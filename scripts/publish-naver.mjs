@@ -187,6 +187,7 @@ const imageLabel = (block) => `[이미지 ${block.n}]`;
 const COLORS = {
   red:    { hex: '#ff0010', rgb: [255, 0, 16],    prop: 'color',           name: '빨간글씨' },
   yellow: { hex: '#fff8b2', rgb: [255, 248, 178], prop: 'backgroundColor', name: '노란배경' },
+  blue:   { hex: '#0b4da2', rgb: [11, 77, 162],   prop: 'color',           name: '파란글씨' },
 };
 const swatchSelectors = (hex) => [
   `button.se-color-palette[title="${hex}"]`,
@@ -594,6 +595,42 @@ function expectedLines(post) {
   return out;
 }
 
+/** 색 하나를 입힌 글 조각 (붙여넣기용 HTML) */
+function styledSpan(text, style) {
+  const t = escHtml(text);
+  if (!style) return t;
+  const c = COLORS[style];
+  return `<span style="${c.prop === 'color' ? 'color' : 'background-color'}:${c.hex}">${t}</span>`;
+}
+
+/** 줄 일부만 칠한 경우: nth 번째 그 줄에서 각 조각이 제 색을 입었는지 본다 */
+function segCheckInPage({ text, nth, segs, colors }) {
+  const root = document.querySelector('.se-main-container') || document.querySelector('.se-content') || document.body;
+  const ps = [...root.querySelectorAll('.se-text-paragraph')].filter((p) => !p.closest('.se-documentTitle'))
+    .filter((p) => p.textContent.replace(/\u200b/g, '').trim() === text);
+  const p = ps[nth];
+  if (!p) return { present: false, bad: [] };
+  const nodes = []; let full = '';
+  const w = document.createTreeWalker(p, NodeFilter.SHOW_TEXT); let n;
+  while ((n = w.nextNode())) { const v = n.nodeValue.replace(/\u200b/g, ''); nodes.push({ n, start: full.length, len: v.length }); full += v; }
+  const lead = full.length - full.trimStart().length;
+  const bad = [];
+  let pos = lead;
+  for (const g of segs) {
+    const start = pos, end = pos + g.t.length; pos = end;
+    if (!g.s) continue;
+    const c = colors[g.s];
+    const want = `rgb(${c.rgb.join(', ')})`;
+    const cover = nodes.filter((x) => x.start < end && x.start + x.len > start && x.n.nodeValue.trim());
+    const ok = cover.length && cover.every((x) => {
+      for (let e = x.n.parentElement; e && e !== p.parentElement; e = e.parentElement) if (getComputedStyle(e)[c.prop] === want) return true;
+      return false;
+    });
+    if (!ok) bad.push(g.t);
+  }
+  return { present: true, bad };
+}
+
 const escHtml = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 /** 원고 → 붙여넣을 HTML. 줄마다 문단 하나, 덩어리 사이엔 빈 문단. 색은 미리 입혀 둔다. */
@@ -604,10 +641,8 @@ function bodyHtml(post) {
     if (i && b.type !== 'image' && post.blocks[i - 1].type !== 'image') parts.push('<p><br></p>');
     if (b.type === 'image') { parts.push(`<p>${escHtml(imageLabel(b))}</p>`); return; }
     for (const l of b.lines) {
-      const t = escHtml(l.t);
-      if (l.s === 'red') parts.push(`<p><span style="color:${COLORS.red.hex}">${t}</span></p>`);
-      else if (l.s === 'yellow') parts.push(`<p><span style="background-color:${COLORS.yellow.hex}">${t}</span></p>`);
-      else parts.push(`<p>${t}</p>`);
+      const segs = l.segs || [{ t: l.t, s: l.s }];
+      parts.push(`<p>${segs.map((g) => styledSpan(g.t, g.s)).join('')}</p>`);
     }
   });
   return parts.join('');
@@ -751,7 +786,7 @@ async function main() {
 
   const textBlocks = post.blocks.filter((b) => b.type !== 'image');
   const allLines = textBlocks.flatMap((b) => b.lines);
-  const styled = allLines.filter((l) => l.s);
+  const styled = allLines.filter((l) => l.s || l.segs);
   const mode = args.saveDraft ? '임시저장 (발행 안 함)'
     : args.dryRun ? 'DRY-RUN (발행 패널까지, 발행 안 함)'
     : args.publishNow ? '⚠ 실제 발행'
@@ -863,10 +898,19 @@ async function main() {
     for (const line of allLines) {
       // 같은 글이 강조 없이 앞에 나올 수도 있으니 모든 줄을 순서대로 센다
       const nth = nthOf(line.t);
+      if (line.segs) {
+        // 낱말 단위 색은 붙여넣기로 들어간다. 여기서는 확인만 하고, 빠졌으면 손으로 칠할 목록에 넣는다
+        const r = await editor.evaluate(segCheckInPage, { text: line.t, nth, segs: line.segs, colors: COLORS });
+        for (const g of line.segs.filter((x) => x.s)) {
+          if (r.present && !r.bad.includes(g.t)) report.color.ok++;
+          else { report.color.fail++; manual.push(`${COLORS[g.s].name} → "${g.t}" (줄: ${line.t})`); }
+        }
+        continue;
+      }
       if (!line.s) continue;
       const name = COLORS[line.s].name;
       if (!args.color) { manual.push(`${name} → "${line.t}"`); continue; }
-      if (report.color.ok + report.color.fail === 0) step(`6. 강조 색 입히기 (${styled.length}줄)`);
+      if (report.color.ok + report.color.fail === 0) step(`6. 강조 색 확인·입히기 (${styled.length}줄)`);
       const snapC = await snapshot(editor);
       const r = await applyColor(page, editor, line.t, nth, line.s);
       const lostC = lostLines(snapC, await snapshot(editor));
