@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "생활정보 콘텐츠 원고 관리 + 네이버 블로그 예약발행 + 스레드 자동화",
+  "description": "생활정보 콘텐츠 원고 관리 + 네이버 블로그 예약발행 + 티스토리 임시저장 + 스레드 자동화",
   "scripts": {
     "publish": "node scripts/publish-naver.mjs",
     "publish:dry": "node scripts/publish-naver.mjs --dry-run --dump",
@@ -16,7 +16,10 @@
     "threads:replies": "node scripts/threads/replies.mjs",
     "threads:replies:dry": "node scripts/threads/replies.mjs --dry-run",
     "draft": "node scripts/publish-naver.mjs --color --save-draft --dump",
-    "images": "node scripts/post-images.mjs"
+    "images": "node scripts/post-images.mjs",
+    "tistory:build": "node scripts/build-tistory.mjs",
+    "tistory:lint": "node scripts/lint-tistory.mjs",
+    "tistory:draft": "node scripts/publish-tistory.mjs --save-draft --dump"
   },
   "dependencies": {
     "playwright": "^1.47.0"
