@@ -6,33 +6,40 @@
     {
       "n": 1,
       "file": "01.png",
-      "title": "소금구이 대하가 가득한 가을 식탁 (대표사진)",
-      "note": "대표 — 제목 글씨",
-      "prompt": "A pan of large prawns salt-grilled on a thick bed of coarse salt, shells turning bright orange, with long antennae, on a wooden table with a few orange autumn leaves and small dipping sauce dishes. Keep the top third of the image as plain empty cream background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about Korean autumn big prawns (daeha) in season, choosing, trimming and salt-grilling them. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "title": "소금 위 대하 소금구이 한 마리 (대표사진)",
+      "note": "대표 — 음식 단독 (사람 없음)",
+      "prompt": "Camera and composition: close-up hero shot at a low angle, one subject. One large salt-grilled prawn with long antennae, shell glowing bright orange, resting on a mound of coarse sea salt on a small round dark plate, a lemon wedge and a few maple leaves beside it. No people at all in this image. Background color: warm apricot. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. The scene must clearly and immediately read as being about Korean autumn big prawns (daeha) in season, choosing, trimming, storing and salt-grilling them. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
       "quality": "medium",
       "overlay": {
         "kind": "thumb",
         "tag": "9~10월이 제철",
         "title": "대하 제철\n언제까지 맛있나요?"
-      }
+      },
+      "shot": "close-up hero shot at a low angle, one subject",
+      "bg": "warm apricot",
+      "regen": "2026-10-01 구도 겹침으로 다시"
     },
     {
       "n": 2,
       "file": "02.png",
       "title": "수산시장에서 새우 두 마리를 비교하는 성글이",
       "note": "사례 — 시장에서 배운 구별법",
-      "prompt": "At a lively Korean seafood market stall with tanks and ice trays of prawns, a friendly vendor in rubber apron holds up two prawns side by side while the blog host looks closely and curiously. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about Korean autumn big prawns (daeha) in season, choosing, trimming and salt-grilling them. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only."
+      "prompt": "At a lively Korean seafood market stall with tanks and ice trays of prawns, a friendly vendor in rubber apron holds up two prawns side by side while the blog host looks closely and curiously. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about Korean autumn big prawns (daeha) in season, choosing, trimming and salt-grilling them. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "(유지)"
     },
     {
       "n": 3,
       "file": "03.png",
-      "title": "가을 달력 옆 얼음 위의 싱싱한 대하",
-      "note": "결론 — 9~10월 제철",
-      "prompt": "Fresh large prawns on crushed ice in a market tray, a blank autumn calendar page with two months circled in apricot standing behind, maple leaves around. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about Korean autumn big prawns (daeha) in season, choosing, trimming and salt-grilling them. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "title": "새벽 서해 포구에 들어온 대하잡이 배",
+      "note": "결론 — 9~10월 제철 (바깥 풍경)",
+      "prompt": "Camera and composition: wide landscape shot of a harbor. A small Korean west-coast fishing harbor at dawn with two colorful fishing boats docked, crates of fresh prawns on the pier, seagulls, autumn hills in the distance. No people at all in this image. Background color: pale sky blue dawn sky. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. The scene must clearly and immediately read as being about Korean autumn big prawns (daeha) in season, choosing, trimming, storing and salt-grilling them. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
       "overlay": {
         "kind": "label",
         "text": "대하 제철 · 9~10월이 한가운데"
-      }
+      },
+      "shot": "wide landscape shot of a harbor",
+      "bg": "pale sky blue dawn sky",
+      "regen": "2026-10-01 구도 겹침으로 다시"
     },
     {
       "n": 4,
@@ -52,7 +59,8 @@
             "수염·뿔 짧다"
           ]
         ]
-      }
+      },
+      "shot": "(유지)"
     },
     {
       "n": 5,
@@ -63,29 +71,46 @@
       "overlay": {
         "kind": "label",
         "text": "수염 · 뿔 · 다리 끝 자르고 내장 빼기"
-      }
+      },
+      "shot": "(유지)"
     },
     {
       "n": 6,
       "file": "06.png",
-      "title": "굵은소금 위에서 주황빛으로 익는 대하",
-      "note": "대하 소금구이",
-      "prompt": "Large prawns turning orange as they cook on a thick bed of coarse salt in a pan with a glass lid, gentle steam rising, on a home stove. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about Korean autumn big prawns (daeha) in season, choosing, trimming and salt-grilling them. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only."
+      "title": "팬 위 소금구이를 위에서 내려다본 모습",
+      "note": "대하 소금구이 (사람 없음)",
+      "prompt": "Camera and composition: top-down overhead view. Seen straight from above: a round pan with a thick bed of coarse salt and six prawns arranged in a circle turning orange, the glass lid set aside, a pair of tongs. No people at all in this image. Background color: soft mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. The scene must clearly and immediately read as being about Korean autumn big prawns (daeha) in season, choosing, trimming, storing and salt-grilling them. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "top-down overhead view",
+      "bg": "soft mint",
+      "regen": "2026-10-01 구도 겹침으로 다시"
     },
     {
       "n": 7,
       "file": "07.png",
-      "title": "가족이 둘러앉아 대하 소금구이를 먹는 저녁",
-      "note": "Q&A 쉼표 컷",
-      "prompt": "A family sits around a dining table sharing a big plate of salt-grilled prawns, peeling shells and smiling. The Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan. The Seonggeul grandpa: a Korean man in his late 70s, short gray hair, mint green vest over a white shirt. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about Korean autumn big prawns (daeha) in season, choosing, trimming and salt-grilling them. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only."
+      "title": "주방에서 구운 대하 껍질을 까는 성글이",
+      "note": "Q&A 쉼표 컷 — 혼자",
+      "prompt": "Camera and composition: medium shot from the side at a kitchen counter. The blog host stands at a home kitchen counter peeling a salt-grilled prawn with both hands, smiling, a small bowl of shells beside him. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Only the person or people described here appear; no other people, no children, no extra family members. Background color: cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. The scene must clearly and immediately read as being about Korean autumn big prawns (daeha) in season, choosing, trimming, storing and salt-grilling them. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot from the side at a kitchen counter",
+      "bg": "cream",
+      "regen": "2026-10-01 구도 겹침으로 다시"
     },
     {
       "n": 8,
       "file": "08.png",
-      "title": "껍질만 남은 접시와 수산시장 봉투",
-      "note": "정리",
-      "prompt": "An autumn evening table with an empty plate, a few orange prawn shells, a small seafood market bag and a warm lamp glowing. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about Korean autumn big prawns (daeha) in season, choosing, trimming and salt-grilling them. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only."
+      "title": "한 번 먹을 만큼 나눠 냉동하는 손질한 대하",
+      "note": "정리 — 보관 (사람 없음)",
+      "prompt": "Camera and composition: three-quarter view of an open freezer drawer. Trimmed raw prawns portioned into small clear zip bags lined up neatly in an open freezer drawer, a little frost, a tray with two more bags ready. No people at all in this image. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. The scene must clearly and immediately read as being about Korean autumn big prawns (daeha) in season, choosing, trimming, storing and salt-grilling them. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "three-quarter view of an open freezer drawer",
+      "bg": "soft sky blue",
+      "regen": "2026-10-01 구도 겹침으로 다시"
     }
   ],
-  "note": "2026-10-01 사용자 지시: 주제가 확실히 보이는 그림, 대표사진은 제목·주제 글씨, 본문은 필요할 때 글씨"
+  "note": "2026-10-01 사용자 지시: 주제가 확실히 보이는 그림, 대표사진은 제목·주제 글씨, 본문은 필요할 때 글씨",
+  "regen_2026_10_01": [
+    1,
+    3,
+    6,
+    7,
+    8
+  ]
 }

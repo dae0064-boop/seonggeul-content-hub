@@ -53,20 +53,20 @@ function html(imgDataUrl, size, o) {
     img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
     .thumb{position:absolute;left:0;right:0;top:${S * 0.05}px;height:${S * 0.3}px;display:flex;flex-direction:column;
       align-items:center;justify-content:center;gap:${S * 0.018}px;padding:0 ${S * 0.06}px;text-align:center}
-    .title{font-weight:800;line-height:1.22;letter-spacing:-0.02em;
+    .title{font-weight:800;line-height:1.22;letter-spacing:-0.02em;white-space:nowrap;
       text-shadow:0 0 ${S * 0.006}px #fff,0 0 ${S * 0.006}px #fff,0 0 ${S * 0.012}px #fff,0 0 ${S * 0.02}px #fff;
       -webkit-text-stroke:${S * 0.003}px #fff;paint-order:stroke fill}
     .tag{font-weight:700;font-size:${S * 0.036}px;background:${STYLE.red};color:#fff;border-radius:999px;
       padding:${S * 0.01}px ${S * 0.03}px;box-shadow:0 ${S * 0.004}px ${S * 0.012}px rgba(0,0,0,.12)}
     .label{position:absolute;left:${S * 0.05}px;right:${S * 0.05}px;text-align:center;font-weight:800;
-      font-size:${S * 0.05}px;line-height:1.3;background:rgba(255,255,255,.92);border-radius:${S * 0.03}px;
+      font-size:${S * 0.05}px;line-height:1.3;white-space:nowrap;overflow:hidden;background:rgba(255,255,255,.92);border-radius:${S * 0.03}px;
       padding:${S * 0.022}px ${S * 0.03}px;box-shadow:0 ${S * 0.006}px ${S * 0.02}px rgba(0,0,0,.12)}
     .label.bottom{bottom:${S * 0.05}px}.label.top{top:${S * 0.05}px}
     .steps{position:absolute;left:${S * 0.04}px;right:${S * 0.04}px;bottom:${S * 0.045}px;display:flex;gap:${S * 0.02}px}
     .step{flex:1;border-radius:${S * 0.028}px;padding:${S * 0.02}px ${S * 0.01}px;text-align:center;
       box-shadow:0 ${S * 0.006}px ${S * 0.018}px rgba(0,0,0,.14);border:${S * 0.004}px solid rgba(255,255,255,.9)}
-    .step .a{font-weight:700;font-size:${S * 0.036}px}
-    .step .b{font-weight:800;font-size:${S * 0.05}px;margin-top:${S * 0.004}px}
+    .step .a{font-weight:700;font-size:${S * 0.036}px;white-space:nowrap;overflow:hidden}
+    .step .b{font-weight:800;font-size:${S * 0.05}px;margin-top:${S * 0.004}px;white-space:nowrap;overflow:hidden}
   </style><body><img src="${imgDataUrl}">${layer}</body>`;
 }
 
@@ -92,6 +92,16 @@ export async function renderOverlays(jobs) {
       const data = `data:image/png;base64,${fs.readFileSync(j.src).toString('base64')}`;
       await page.setContent(html(data, size, j.overlay), { waitUntil: 'load' });
       await page.evaluate(() => document.fonts.ready);
+      // 글씨가 칸을 넘으면 넘지 않을 때까지 줄인다 (줄바꿈으로 "챙기나 / 요?" 처럼 끊기지 않게)
+      await page.evaluate(() => {
+        for (const el of document.querySelectorAll('.title, .label, .step .a, .step .b')) {
+          const isTitle = el.classList.contains('title');
+          const over = () => isTitle ? el.scrollWidth > el.parentElement.clientWidth * 0.92 : el.scrollWidth > el.clientWidth + 1;
+          let fs = parseFloat(getComputedStyle(el).fontSize);
+          let guard = 40;
+          while (over() && fs > 12 && guard--) { fs *= 0.95; el.style.fontSize = fs + 'px'; }
+        }
+      });
       await page.screenshot({ path: j.dest, type: 'png' });
       await page.close();
     }

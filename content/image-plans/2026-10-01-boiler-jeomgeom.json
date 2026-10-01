@@ -14,14 +14,18 @@
         "kind": "thumb",
         "tag": "난방 켜기 전 5분",
         "title": "보일러 점검\n첫 가동 전 다섯 가지"
-      }
+      },
+      "shot": "(유지)"
     },
     {
       "n": 2,
       "file": "02.png",
-      "title": "보일러실 환기구 앞에 짐이 쌓인 동생 집",
-      "note": "사례 — 환기구를 막은 짐",
-      "prompt": "The host's younger sibling looks surprised in a small balcony boiler room where cardboard boxes are piled up in front of a round wall vent next to a wall-mounted gas boiler. The host's younger sibling: a Korean woman in her late 20s, short black ponytail, oatmeal hoodie. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about checking a home gas boiler safely before turning on the heating in autumn. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only."
+      "title": "보일러실 환기구를 막은 짐 상자들",
+      "note": "사례 — 막힌 환기구 (사람 없음)",
+      "prompt": "Camera and composition: wide shot from the doorway looking into a small balcony utility room. Cardboard boxes and a folded laundry rack are piled up right in front of a round wall ventilation grille in a small Korean balcony utility room; a wall-mounted gas boiler is only partly visible at the edge. No people at all in this image. Background color: soft mint wall. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. The scene must clearly and immediately read as being about checking a home gas boiler safely before turning on the heating in autumn. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide shot from the doorway looking into a small balcony utility room",
+      "bg": "soft mint wall",
+      "regen": "2026-10-01 구도 겹침으로 다시"
     },
     {
       "n": 3,
@@ -32,36 +36,46 @@
       "overlay": {
         "kind": "label",
         "text": "배기통 처짐 · 꺾임 · 이음새 확인"
-      }
+      },
+      "shot": "(유지)"
     },
     {
       "n": 4,
       "file": "04.png",
-      "title": "막힌 것 없이 열린 보일러실 환기구",
-      "note": "정보 — 환기구",
-      "prompt": "A clean, open ventilation grille on the wall of a small boiler room beside a wall-mounted gas boiler, with gentle curved lines showing fresh air flowing in, the floor in front cleared. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about checking a home gas boiler safely before turning on the heating in autumn. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "title": "환기구 그릴 클로즈업과 들어오는 바람",
+      "note": "정보 — 환기구 (사람 없음)",
+      "prompt": "Camera and composition: macro close-up straight-on, the vent fills most of the frame. A clean round ventilation grille on a wall with gentle curved clay lines and tiny leaves showing fresh outside air flowing in freely; nothing blocks it. No people at all in this image. Background color: soft sky blue wall. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. The scene must clearly and immediately read as being about checking a home gas boiler safely before turning on the heating in autumn. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
       "overlay": {
         "kind": "label",
         "text": "환기구는 추워도 막지 않기"
-      }
+      },
+      "shot": "macro close-up straight-on, the vent fills most of the frame",
+      "bg": "soft sky blue wall",
+      "regen": "2026-10-01 구도 겹침으로 다시"
     },
     {
       "n": 5,
       "file": "05.png",
-      "title": "보일러실 벽에 달린 일산화탄소 경보기",
-      "note": "정보 — 경보기",
-      "prompt": "A small round white carbon monoxide alarm with a test button mounted on the wall of a boiler room next to a wall-mounted gas boiler, a hand pressing the test button, a small sound wave icon. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about checking a home gas boiler safely before turning on the heating in autumn. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "title": "손바닥 위 일산화탄소 경보기 시험 버튼",
+      "note": "정보 — 경보기 (사람 얼굴 없음)",
+      "prompt": "Camera and composition: close-up of one hand from the side, object centered. A hand holds a small round white carbon monoxide alarm and presses its test button with a thumb; small sound-wave rings come out of it. No people at all in this image. Background color: warm apricot. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. The scene must clearly and immediately read as being about checking a home gas boiler safely before turning on the heating in autumn. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
       "overlay": {
         "kind": "label",
         "text": "일산화탄소 경보기 · 버튼 눌러 확인"
-      }
+      },
+      "shot": "close-up of one hand from the side, object centered",
+      "bg": "warm apricot",
+      "regen": "2026-10-01 구도 겹침으로 다시"
     },
     {
       "n": 6,
       "file": "06.png",
-      "title": "켠 뒤 보일러 표시등과 소리를 살피는 성글이",
-      "note": "정보 — 켠 뒤 확인",
-      "prompt": "The blog host stands in front of a wall-mounted gas boiler that has just been turned on, a small indicator light glowing, leaning his ear slightly to listen, calm expression. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about checking a home gas boiler safely before turning on the heating in autumn. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only."
+      "title": "바닥 난방이 고르게 퍼지는 집 단면",
+      "note": "정보 — 켠 뒤 방마다 따뜻한지 (사람 없음)",
+      "prompt": "Camera and composition: cutaway cross-section diorama of a small Korean apartment seen from the front. A miniature cutaway of a two-room Korean apartment showing warm apricot-glowing heating pipes running evenly under every room floor, with a small wall-mounted gas boiler in the balcony utility room connected to them. No people at all in this image. Background color: cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. The scene must clearly and immediately read as being about checking a home gas boiler safely before turning on the heating in autumn. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "cutaway cross-section diorama of a small Korean apartment seen from the front",
+      "bg": "cream",
+      "regen": "2026-10-01 구도 겹침으로 다시"
     },
     {
       "n": 7,
@@ -85,29 +99,42 @@
             "작동 확인"
           ]
         ]
-      }
+      },
+      "shot": "(유지)"
     },
     {
       "n": 8,
       "file": "08.png",
       "title": "관리사무소에 배기통 점검을 부탁하는 모습",
       "note": "Q&A 쉼표 컷",
-      "prompt": "In a Korean apartment hallway, the host's younger sibling talks with a friendly building maintenance staff member in a navy uniform holding a toolbox, pointing toward the balcony boiler room. The host's younger sibling: a Korean woman in her late 20s, short black ponytail, oatmeal hoodie. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about checking a home gas boiler safely before turning on the heating in autumn. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only."
+      "prompt": "In a Korean apartment hallway, the host's younger sibling talks with a friendly building maintenance staff member in a navy uniform holding a toolbox, pointing toward the balcony boiler room. The host's younger sibling: a Korean woman in her late 20s, short black ponytail, oatmeal hoodie. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about checking a home gas boiler safely before turning on the heating in autumn. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "(유지)"
     },
     {
       "n": 9,
       "file": "09.png",
       "title": "난방이 들어온 따뜻한 거실의 가족",
       "note": "정리 — 따뜻해진 집",
-      "prompt": "A family sits together on a warm heated floor in a cozy Korean living room with blankets and a warm lamp; through the open balcony door a wall-mounted gas boiler is visible, softly glowing. The Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan. The Seonggeul grandpa: a Korean man in his late 70s, short gray hair, mint green vest over a white shirt. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about checking a home gas boiler safely before turning on the heating in autumn. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only."
+      "prompt": "A family sits together on a warm heated floor in a cozy Korean living room with blankets and a warm lamp; through the open balcony door a wall-mounted gas boiler is visible, softly glowing. The Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan. The Seonggeul grandpa: a Korean man in his late 70s, short gray hair, mint green vest over a white shirt. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about checking a home gas boiler safely before turning on the heating in autumn. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "(유지)"
     },
     {
       "n": 10,
       "file": "10.png",
-      "title": "보일러 리모컨으로 첫 난방을 켜는 손",
-      "note": "마무리 컷",
-      "prompt": "Close-up of a hand pressing the round power button on a small wall-mounted heating controller, its screen glowing softly and blank, a cozy home blurred behind. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about checking a home gas boiler safely before turning on the heating in autumn. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only."
+      "title": "따뜻한 불이 켜진 가을밤 아파트",
+      "note": "마무리 — 바깥 풍경 (사람 없음)",
+      "prompt": "Camera and composition: wide exterior shot from the street at dusk. A Korean apartment building on an autumn evening with warm golden light in many windows, small exhaust pipes visible on the balconies, autumn ginkgo trees in front. No people at all in this image. Background color: deep soft blue evening sky. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. The scene must clearly and immediately read as being about checking a home gas boiler safely before turning on the heating in autumn. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide exterior shot from the street at dusk",
+      "bg": "deep soft blue evening sky",
+      "regen": "2026-10-01 구도 겹침으로 다시"
     }
   ],
-  "note": "2026-10-01 사용자 지시: 주제가 확실히 보이는 그림, 대표사진은 제목·주제 글씨, 본문은 필요할 때 글씨"
+  "note": "2026-10-01 사용자 지시: 주제가 확실히 보이는 그림, 대표사진은 제목·주제 글씨, 본문은 필요할 때 글씨",
+  "regen_2026_10_01": [
+    2,
+    4,
+    5,
+    6,
+    10
+  ]
 }
