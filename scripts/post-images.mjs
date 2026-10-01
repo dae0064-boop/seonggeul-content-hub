@@ -13,12 +13,16 @@
  * 결과: content/images/<슬러그>/01.png, 02.png ...
  * 이 폴더를 publish-naver.mjs --images 에 그대로 넘기면 [이미지 N] 자리에 들어간다.
  * 이미 만든 파일은 건너뛴다. 돈이 두 번 나가지 않게 하기 위해서다.
+ *
+ * 글씨: 계획서에 overlay 가 있으면 그림은 NN.raw.png 로 받고, 글씨를 얹은 결과를 NN.png 로 둔다.
+ *   --overlay-only  그림은 다시 만들지 않고 글씨만 다시 얹는다 (돈 안 듦. 문구를 고쳤을 때)
  */
 import { readFileSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
 import { parseArgs } from "node:util";
+import { renderOverlays } from "./lib/overlay.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -27,6 +31,7 @@ const { values: opt, positionals } = parseArgs({
   options: {
     only: { type: "string" },
     force: { type: "boolean" },
+    "overlay-only": { type: "boolean" },
     quality: { type: "string", default: "low" },
     size: { type: "string", default: "1024x1024" },
     help: { type: "boolean", short: "h" },
@@ -52,26 +57,47 @@ console.log(`🖼  ${plan.slug} — ${todo.length}장`);
 console.log(`   저장 위치: ${outDir}\n`);
 
 let made = 0, skipped = 0, failed = [];
+const overlayJobs = [];
 for (const im of todo) {
   const name = im.file ? im.file.replace(/\.png$/i, "") : String(im.n).padStart(2, "0");
   const target = join(outDir, `${name}.png`);
+  const raw = im.overlay ? join(outDir, `${name}.raw.png`) : target;
+
+  if (opt["overlay-only"]) {
+    if (im.overlay && existsSync(raw)) overlayJobs.push({ n: im.n, src: raw, dest: target, overlay: im.overlay });
+    continue;
+  }
   if (existsSync(target) && !opt.force) {
     console.log(`⏭  ${name}.png 이미 있음 — ${im.title}`);
     skipped++;
     continue;
   }
-  console.log(`\n[${im.n}/${plan.images.length}] ${im.title}`);
-  const r = spawnSync(process.execPath, [
-    join(ROOT, "scripts", "image-gen.mjs"),
-    im.prompt,
-    "--raw",
-    "--out", outDir,
-    "--name", name,
-    "--quality", opt.quality,
-    "--size", opt.size,
-  ], { stdio: "inherit" });
-  if (r.status === 0 && existsSync(target)) made++;
-  else failed.push(im.n);
+  if (!(im.overlay && existsSync(raw) && !opt.force)) {
+    console.log(`\n[${im.n}/${plan.images.length}] ${im.title}`);
+    const r = spawnSync(process.execPath, [
+      join(ROOT, "scripts", "image-gen.mjs"),
+      im.prompt,
+      "--raw",
+      "--out", outDir,
+      "--name", im.overlay ? `${name}.raw` : name,
+      "--quality", im.quality || opt.quality,
+      "--size", opt.size,
+    ], { stdio: "inherit" });
+    if (r.status !== 0 || !existsSync(raw)) { failed.push(im.n); continue; }
+    made++;
+  }
+  if (im.overlay) overlayJobs.push({ n: im.n, src: raw, dest: target, overlay: im.overlay });
+}
+
+if (overlayJobs.length) {
+  console.log(`\n✍  글씨 얹는 중 (${overlayJobs.length}장)...`);
+  try {
+    await renderOverlays(overlayJobs);
+    overlayJobs.forEach((j) => console.log(`✅ ${j.dest}`));
+  } catch (e) {
+    console.log(`❌ 글씨 얹기 실패: ${e.message}`);
+    overlayJobs.forEach((j) => failed.push(j.n));
+  }
 }
 
 console.log("\n" + "─".repeat(50));
