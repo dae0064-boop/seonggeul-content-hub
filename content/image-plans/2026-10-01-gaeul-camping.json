@@ -6,58 +6,77 @@
     {
       "n": 1,
       "file": "01.png",
-      "title": "노을 진 캠핑장, 담요를 덮고 앉은 사람들 (대표사진)",
-      "note": "대표사진. 위쪽 3분의 1은 비워 제목 자리",
-      "prompt": "At a campsite at sunset, the blog host sits wrapped in a blanket in front of a small tent, autumn trees behind. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. Friendly, calm expressions. No syringes, no needles, no blood, no one in pain, nothing scary. Do not include any text, letters, numbers, logos or watermarks in the image. Keep the top third of the image as plain empty cream background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds."
+      "title": "노을 진 가을 캠핑장, 담요 두른 성글이 (대표사진)",
+      "note": "대표 — 제목 글씨",
+      "prompt": "At an autumn campsite at sunset with red and yellow trees, the blog host sits wrapped in a thick blanket in front of a small tent, a warm mug in hand, a thick sleeping mat and sleeping bag visible inside the tent. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Keep the top third of the image as plain empty cream background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about autumn camping in chilly weather and the extra gear needed to stay warm. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "quality": "medium",
+      "overlay": {
+        "kind": "thumb",
+        "tag": "밤 기온 꼭 확인하세요",
+        "title": "가을 캠핑 추위\n준비물 뭘 더 챙기나요?"
+      }
     },
     {
       "n": 2,
       "file": "02.png",
-      "title": "텐트 안 얇은 침낭 속에서 웅크린 모습",
-      "note": "사례 — 추웠던 첫 가을 밤",
-      "prompt": "Inside a small tent at night, a figure curled up in a thin sleeping bag, looking cold, cool blue tones. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. Friendly, calm expressions. No syringes, no needles, no blood, no one in pain, nothing scary. Do not include any text, letters, numbers, logos or watermarks in the image."
+      "title": "얇은 침낭 속에서 추위에 웅크린 밤",
+      "note": "사례 — 추웠던 첫 밤",
+      "prompt": "Inside a small tent at night, the blog host is curled up in a thin summer sleeping bag on a thin mat, cool blue tones, frosty breath puffs, looking chilly but cute rather than in pain. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about autumn camping in chilly weather and the extra gear needed to stay warm. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only."
     },
     {
       "n": 3,
       "file": "03.png",
-      "title": "두꺼운 매트를 두 겹 깐 텐트 바닥",
-      "note": "결론 — 매트 두 겹",
-      "prompt": "The floor of a tent with two thick sleeping mats layered on top of each other, cozy and tidy. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. Friendly, calm expressions. No syringes, no needles, no blood, no one in pain, nothing scary. Do not include any text, letters, numbers, logos or watermarks in the image."
+      "title": "텐트 바닥에 두 겹으로 깐 매트",
+      "note": "결론 — 바닥 냉기 막기",
+      "prompt": "Cross-section view of a tent floor with two layers of sleeping mats: a foam mat at the bottom and an inflatable mat on top, small wavy blue lines of cold blocked below, a cozy sleeping bag on top. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about autumn camping in chilly weather and the extra gear needed to stay warm. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "매트는 두 겹 · 바닥 냉기부터 막기"
+      }
     },
     {
       "n": 4,
       "file": "04.png",
       "title": "침낭 안에 담요를 겹쳐 넣는 손",
       "note": "침낭 보온",
-      "prompt": "Hands tucking a soft blanket inside a sleeping bag. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. Friendly, calm expressions. No syringes, no needles, no blood, no one in pain, nothing scary. Do not include any text, letters, numbers, logos or watermarks in the image."
+      "prompt": "Hands tucking a soft fleece blanket inside a thick mummy sleeping bag, pulling the hood drawstring, inside a tent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about autumn camping in chilly weather and the extra gear needed to stay warm. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only."
     },
     {
       "n": 5,
       "file": "05.png",
-      "title": "캠핑 의자 위에 겹쳐 놓인 옷과 머플러",
+      "title": "캠핑 의자 위 겹쳐 입을 옷과 수면 양말",
       "note": "옷 겹쳐 입기",
-      "prompt": "A camping chair with layered clothes, a knit scarf and fluffy socks folded on it. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. Friendly, calm expressions. No syringes, no needles, no blood, no one in pain, nothing scary. Do not include any text, letters, numbers, logos or watermarks in the image."
+      "prompt": "A camping chair at a campsite with layered clothes neatly stacked: a thin base layer, a fleece, a down jacket, a knit scarf and fluffy sleeping socks. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about autumn camping in chilly weather and the extra gear needed to stay warm. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "얇게 여러 겹 · 잘 때 입을 옷은 따로"
+      }
     },
     {
       "n": 6,
       "file": "06.png",
-      "title": "텐트 천장에 매달린 작은 경보기",
-      "note": "안전 — 일산화탄소 경보기",
-      "prompt": "A small round alarm device hanging from the top of a tent ceiling, simple and friendly. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. Friendly, calm expressions. No syringes, no needles, no blood, no one in pain, nothing scary. Do not include any text, letters, numbers, logos or watermarks in the image."
+      "title": "텐트 천장에 단 일산화탄소 경보기",
+      "note": "안전 — 난방은 텐트 밖",
+      "prompt": "Inside a tent, a small round carbon monoxide alarm hangs from the top of the tent ceiling; through the open tent door a small heater and campfire are kept outside. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about autumn camping in chilly weather and the extra gear needed to stay warm. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "난방은 텐트 밖 · 경보기는 텐트 위쪽"
+      }
     },
     {
       "n": 7,
       "file": "07.png",
-      "title": "모닥불 앞에서 따뜻한 차를 나눠 마시는 두 사람",
+      "title": "모닥불 앞에서 따뜻한 차를 나누는 두 사람",
       "note": "Q&A 쉼표 컷",
-      "prompt": "The blog host and a friend sit by a small campfire outside the tent sharing warm drinks from mugs. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. Friendly, calm expressions. No syringes, no needles, no blood, no one in pain, nothing scary. Do not include any text, letters, numbers, logos or watermarks in the image."
+      "prompt": "The blog host and his friend sit by a small campfire outside the tent in the autumn evening, wrapped in blankets, sharing warm drinks. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. The host's friend: a Korean man in his 30s, curly brown hair, olive fleece jacket. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about autumn camping in chilly weather and the extra gear needed to stay warm. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only."
     },
     {
       "n": 8,
       "file": "08.png",
-      "title": "아침 햇살 속 텐트 앞에서 기지개 켜는 모습",
+      "title": "아침 햇살 속 텐트 앞에서 기지개 켜는 성글이",
       "note": "정리 — 푹 잔 아침",
-      "prompt": "Morning sunlight at a campsite, the blog host stretching happily in front of the tent. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. Friendly, calm expressions. No syringes, no needles, no blood, no one in pain, nothing scary. Do not include any text, letters, numbers, logos or watermarks in the image."
+      "prompt": "Morning sunlight at an autumn campsite with colorful leaves, the blog host stretching happily in front of the tent, a thick sleeping bag airing on a chair. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly and immediately read as being about autumn camping in chilly weather and the extra gear needed to stay warm. Topic-specific objects, tools and places are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only."
     }
-  ]
+  ],
+  "note": "2026-10-01 사용자 지시: 주제가 확실히 보이는 그림, 대표사진은 제목·주제 글씨, 본문은 필요할 때 글씨"
 }
