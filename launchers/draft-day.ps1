@@ -2,17 +2,19 @@
 #   powershell -ExecutionPolicy Bypass -File launchers\draft-day.ps1 -Date 2026-10-01
 #   -Only dokgam-75,daeha-jecheol   일부 글만
 #   -SkipImages                     이미지 단계 건너뛰기
+#   -ImagesOnly                     이미지만 만들고 네이버는 건드리지 않기 (다른 글 임시저장과 동시에 돌려도 됨)
 # 한 편이 실패하면 그 글은 저장하지 않는다. 첫 글부터 실패하면 나머지는 돌리지 않는다(같은 이유로 또 실패하기 때문).
 param(
   [string]$Date = (Get-Date -Format 'yyyy-MM-dd'),
   [string[]]$Only = @(),
-  [switch]$SkipImages
+  [switch]$SkipImages,
+  [switch]$ImagesOnly
 )
 $ErrorActionPreference = 'Continue'
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 Set-Location (Join-Path $PSScriptRoot '..')
 New-Item -ItemType Directory -Force -Path dumps | Out-Null
-$log = "dumps\day-$Date.log"
+$log = "dumps\day-$Date$(if ($ImagesOnly) { '-images' }).log"
 "=== $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') 시작" | Out-File $log -Encoding utf8
 
 function Say($s, $c = 'Gray') { Write-Host $s -ForegroundColor $c; $s | Out-File $log -Append -Encoding utf8 }
@@ -36,6 +38,8 @@ if (-not $SkipImages) {
     if ($code -ne 0) { Say "  이미지 일부 실패 — 이 글은 빈 자리를 표시 줄로 남깁니다" 'Yellow' }
   }
 }
+
+if ($ImagesOnly) { Say "`n이미지만 만들었어요. 네이버는 건드리지 않았어요." 'Green'; exit 0 }
 
 # 2) 자동화용 크롬
 function CdpUp { try { Invoke-RestMethod http://localhost:9222/json/version -TimeoutSec 3 | Out-Null; $true } catch { $false } }
