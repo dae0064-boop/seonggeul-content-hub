@@ -463,9 +463,19 @@ function bodyHtml(post) {
 const bodyText = (post) => post.blocks.map((b) => b.type === 'image' ? imageLabel(b) : b.lines.map((l) => l.t).join('\n')).join('\n\n');
 
 const bodyCharCount = (editor) => editor.evaluate(() => {
-  const ps = [...document.querySelectorAll('.se-main-container .se-text-paragraph')].filter((p) => !p.closest('.se-documentTitle'));
+  const ps = [...(document.querySelector('.se-main-container') || document.querySelector('.se-content') || document.body).querySelectorAll('.se-text-paragraph')].filter((p) => !p.closest('.se-documentTitle'));
   return ps.map((p) => p.textContent).join('').replace(/​/g, '').trim().length;
 });
+
+/** 붙여넣은 글이 화면에 나타날 때까지 최대 10초 기다린다 */
+async function waitForBody(editor, ms = 10000) {
+  const end = Date.now() + ms;
+  while (Date.now() < end) {
+    if ((await bodyCharCount(editor)) > 50) { await sleep(1000); return true; }
+    await sleep(400);
+  }
+  return false;
+}
 
 /**
  * 본문을 붙여넣는다. 한 줄씩 키보드로 치면 에디터가 문단을 새로 만드는 사이에 글자를 먹는다
@@ -491,8 +501,7 @@ async function pasteBody(page, editor, post, args) {
     }, { html, text });
     if (wrote === true) {
       await page.keyboard.press('Control+V');
-      await sleep(1500);
-      if ((await bodyCharCount(editor)) > 50) return '클립보드 붙여넣기 (이 PC 의 클립보드 내용이 원고로 바뀌었어요)';
+      if (await waitForBody(editor)) return '클립보드 붙여넣기 (이 PC 의 클립보드 내용이 원고로 바뀌었어요)';
     } else {
       log(`클립보드 쓰기 안 됨: ${String(wrote).slice(0, 80)}`);
     }
@@ -502,7 +511,7 @@ async function pasteBody(page, editor, post, args) {
   const dispatched = await editor.evaluate(({ html, text }) => {
     const target = document.activeElement && document.activeElement.isContentEditable
       ? document.activeElement
-      : (getSelection().anchorNode?.parentElement?.closest('[contenteditable]') || document.querySelector('.se-main-container [contenteditable]'));
+      : (getSelection().anchorNode?.parentElement?.closest('[contenteditable]') || document.querySelector('[contenteditable="true"]'));
     if (!target) return false;
     const dt = new DataTransfer();
     dt.setData('text/html', html);
@@ -510,9 +519,9 @@ async function pasteBody(page, editor, post, args) {
     target.dispatchEvent(new ClipboardEvent('paste', { clipboardData: dt, bubbles: true, cancelable: true }));
     return true;
   }, { html, text });
-  if (dispatched) {
-    await sleep(1500);
-    if ((await bodyCharCount(editor)) > 50) return '붙여넣기 이벤트';
+  if (dispatched && await waitForBody(editor)) return '붙여넣기 이벤트';
+  if ((await bodyCharCount(editor)) > 0) {
+    throw new Error('붙여넣기 결과를 확인하지 못했는데 본문에 글자가 생겼습니다. 두 번 들어가지 않게 여기서 멈춥니다.');
   }
 
   // 3) 키보드 — 문단마다 기다리며 천천히
@@ -536,10 +545,10 @@ async function pasteBody(page, editor, post, args) {
 /** 에디터 본문이 원고와 같은지 본다. 빠진 줄과 취소선 개수를 돌려준다. */
 async function verifyBody(editor, expected) {
   const got = await editor.evaluate(() => {
-    const ps = [...document.querySelectorAll('.se-main-container .se-text-paragraph')].filter((p) => !p.closest('.se-documentTitle'));
+    const ps = [...(document.querySelector('.se-main-container') || document.querySelector('.se-content') || document.body).querySelectorAll('.se-text-paragraph')].filter((p) => !p.closest('.se-documentTitle'));
     return {
       lines: ps.map((p) => p.textContent.replace(/​/g, '').trim()).filter(Boolean),
-      strike: document.querySelectorAll('.se-main-container strike, .se-main-container s, .se-main-container [style*="line-through"]').length,
+      strike: ps.reduce((n, p) => n + p.querySelectorAll('strike, s, [style*="line-through"]').length, 0),
     };
   });
   const pool = new Map();
@@ -549,6 +558,7 @@ async function verifyBody(editor, expected) {
     const k = pool.get(e) || 0;
     if (k > 0) pool.set(e, k - 1); else missing.push(e);
   }
+  if (got.lines.length > expected.length + 5) missing.push(`(본문이 ${got.lines.length}줄로 원고 ${expected.length}줄보다 많음 — 두 번 들어간 것 같음)`);
   return { found: expected.length - missing.length, missing, strike: got.strike };
 }
 
