@@ -179,7 +179,8 @@ function parseAt(at) {
   return { date, ymd: `${m[1]}-${p(m[2])}-${p(m[3])}`, hh: p(m[4]), mm: m[5] };
 }
 
-const imageLabel = (block) => `[이미지 ${block.n}] ${block.lines[0]?.t || ''}`.trim();
+// 표시 줄은 짧게 "[이미지 N]" 만 쓴다. 길면 화면에서 두 줄로 접혀 키보드로 한 줄 선택이 안 된다.
+const imageLabel = (block) => `[이미지 ${block.n}]`;
 
 // ---------------------------------------------------------------- 툴바 / 서식
 // 규칙 [11] 색상: 빨강 #ff0010 (글자색), 연한 노랑 #fff8b2 (배경색)
@@ -460,23 +461,76 @@ async function insertQuoteAt(page, editor, text, style) {
 }
 
 /** "[이미지 N] 설명" 표시 줄을 지우고 그 자리에 그림 파일을 넣는다. */
+// ---------------------------------------------------------------- 본문 지킴이
+const PLACEHOLDERS = new Set(['사진 설명을 입력하세요.', '출처 입력', '내용을 입력하세요.']);
+/** 본문(인용구 포함)의 글 줄 목록 */
+const snapshot = (editor) => editor.evaluate(() => {
+  const root = document.querySelector('.se-main-container') || document.querySelector('.se-content') || document.body;
+  return [...root.querySelectorAll('.se-text-paragraph')].filter((p) => !p.closest('.se-documentTitle'))
+    .map((p) => p.textContent.replace(/​/g, '').trim()).filter(Boolean);
+});
+/** before 에서 removed 만 빠졌는지. 다른 줄이 사라졌으면 그 줄들을 돌려준다 */
+function lostLines(before, after, removed = []) {
+  const pool = new Map();
+  after.filter((t) => !PLACEHOLDERS.has(t)).forEach((t) => pool.set(t, (pool.get(t) || 0) + 1));
+  const skip = new Map(); removed.forEach((t) => skip.set(t, (skip.get(t) || 0) + 1));
+  const lost = [];
+  for (const t of before) {
+    if (PLACEHOLDERS.has(t)) continue;
+    if ((skip.get(t) || 0) > 0) { skip.set(t, skip.get(t) - 1); continue; }
+    const k = pool.get(t) || 0;
+    if (k > 0) pool.set(t, k - 1); else lost.push(t);
+  }
+  return lost;
+}
+/** 다른 줄이 사라졌으면 Ctrl+Z 로 되돌려 본다 (최대 4번). 되돌렸으면 true */
+async function undoUntilRestored(page, editor, before) {
+  for (let i = 0; i < 4; i++) {
+    await page.keyboard.press('Control+z');
+    await sleep(500);
+    if (!lostLines(before, await snapshot(editor)).length) return true;
+  }
+  return false;
+}
+
+/** 에디터 커서를 text 줄의 끝에 둔다. 진짜 마우스 클릭이라 에디터가 커서 위치를 정확히 안다. */
+async function caretAtEnd(page, editor, text) {
+  const loc = await locateText(editor, text, 0);
+  if (!loc.found || !loc.rects?.length) return false;
+  await sleep(200);
+  const again = await locateText(editor, text, 0);
+  const off = await frameOffset(page, editor);
+  const last = again.rects[again.rects.length - 1];
+  await page.mouse.click(off.x + last.right - 1, off.y + (last.top + last.bottom) / 2);
+  await sleep(250);
+  await page.keyboard.press('End');
+  await sleep(150);
+  return true;
+}
+
+/**
+ * "[이미지 N]" 표시 줄을 지우고 그 자리에 그림 파일을 넣는다.
+ * 2026-10-01: 화면 밖에서 만든 선택(DOM 선택)으로 지우니 에디터가 다른 범위를 지워 20줄이 사라졌다.
+ * 이제 마우스로 줄 끝을 누르고 Shift+Home → Backspace 로, 에디터가 직접 아는 선택만 쓴다.
+ * 매 단계 다른 줄이 사라지지 않았는지 보고, 사라졌으면 되돌린 뒤 실패로 멈춘다.
+ */
 async function insertImageAt(page, editor, label, file) {
   const count = () => editor.locator('.se-component.se-image, .se-module-image').count();
   const before = await count();
+  const snap0 = await snapshot(editor);
 
-  const sel = await selectText(page, editor, label, 0);
-  if (!sel.ok) return { ok: false, why: `표시 줄을 찾지 못함 — ${sel.why}` };
+  if (!(await caretAtEnd(page, editor, label))) return { ok: false, why: '표시 줄을 찾지 못함' };
+  await page.keyboard.press('Shift+Home');
+  await sleep(200);
   await page.keyboard.press('Backspace');
-  await sleep(300);
-  let leftover = false;
-  if ((await locateText(editor, label, 0)).found) {
-    // 키 입력이 안 먹었으면 선택을 다시 잡고 에디터 명령으로 지운다
-    await selectTextByRange(editor, label, 0);
-    await editor.evaluate(() => document.execCommand('delete'));
-    await sleep(300);
-    leftover = (await locateText(editor, label, 0)).found;
-    if (leftover) warn(`표시 줄이 지워지지 않았습니다 — 그림은 그 아래에 넣고 표시 줄은 손으로 지우세요.`);
+  await sleep(400);
+  let snap1 = await snapshot(editor);
+  let lost = lostLines(snap0, snap1, [label]);
+  if (lost.length) {
+    const back = await undoUntilRestored(page, editor, snap0);
+    return { ok: false, why: `표시 줄을 지우다 다른 글 ${lost.length}줄이 같이 지워져 ${back ? '되돌림' : '되돌리지 못함'}`, lost: back ? null : lost };
   }
+  if (snap1.includes(label)) return { ok: false, why: '표시 줄이 지워지지 않음 (그대로 둠)' };
 
   let chosen = false;
   try {
@@ -488,7 +542,6 @@ async function insertImageAt(page, editor, label, file) {
     await chooser.setFiles(file);
     chosen = true;
   } catch (e) {
-    // 파일 선택 창을 못 잡으면 숨은 input[type=file] 에 직접 넣어 본다
     try {
       const input = editor.locator('input[type="file"]').first();
       if (await input.count()) { await input.setInputFiles(file); chosen = true; }
@@ -502,9 +555,13 @@ async function insertImageAt(page, editor, label, file) {
   const deadline = Date.now() + 40000;
   while (Date.now() < deadline) {
     if ((await count()) > before) {
-      await sleep(800);
-      await collapseSelection(page, editor);
-      return { ok: true, leftover };
+      await sleep(1000);
+      lost = lostLines(snap1, await snapshot(editor));
+      if (lost.length) {
+        const back = await undoUntilRestored(page, editor, snap1);
+        return { ok: false, why: `그림을 넣으며 다른 글 ${lost.length}줄이 사라져 ${back ? '되돌림' : '되돌리지 못함'}`, lost: back ? null : lost };
+      }
+      return { ok: true };
     }
     await sleep(500);
   }
@@ -810,7 +867,14 @@ async function main() {
       const name = COLORS[line.s].name;
       if (!args.color) { manual.push(`${name} → "${line.t}"`); continue; }
       if (report.color.ok + report.color.fail === 0) step(`6. 강조 색 입히기 (${styled.length}줄)`);
+      const snapC = await snapshot(editor);
       const r = await applyColor(page, editor, line.t, nth, line.s);
+      const lostC = lostLines(snapC, await snapshot(editor));
+      if (lostC.length) {
+        const back = await undoUntilRestored(page, editor, snapC);
+        if (!back) throw new Error(`색을 입히다 글이 사라졌고 되돌리지 못했습니다: ${lostC.slice(0, 3).join(' / ')}. 저장하지 않고 멈춥니다.`);
+        r.ok = false; r.why = `다른 글 ${lostC.length}줄이 같이 바뀌어 되돌림`;
+      }
       if (r.ok) { report.color.ok++; log(`✓ ${name}: ${line.t}`); }
       else {
         report.color.fail++;
@@ -826,7 +890,14 @@ async function main() {
       const quotes = post.blocks.filter((b) => b.type === 'quote').map((b) => b.lines[0].t);
       if (quotes.length) step(`6-2. 소제목을 인용구로 (${quotes.length}개, 모양 ${args.quoteStyle})`);
       for (const q of quotes) {
+        const snapQ = await snapshot(editor);
         const r = await insertQuoteAt(page, editor, q, args.quoteStyle);
+        const lostQ = lostLines(snapQ, await snapshot(editor));
+        if (lostQ.length) {
+          const back = await undoUntilRestored(page, editor, snapQ);
+          if (!back) throw new Error(`인용구를 넣다 글이 사라졌고 되돌리지 못했습니다: ${lostQ.slice(0, 3).join(' / ')}. 저장하지 않고 멈춥니다.`);
+          r.ok = false; r.why = `다른 글 ${lostQ.length}줄이 같이 지워져 되돌림`;
+        }
         if (r.ok) { report.quote.ok++; log(`✓ 인용구: ${q}${r.styled ? '' : ' (모양 확인 필요)'}`); }
         else {
           report.quote.fail++;
@@ -852,6 +923,7 @@ async function main() {
       else {
         report.image.fail++;
         warn(`이미지 ${b.n} 실패 (${r.why})`);
+        if (r.lost) throw new Error(`이미지를 넣다가 글이 사라졌고 되돌리지 못했습니다: ${r.lost.slice(0, 3).join(' / ')}. 저장하지 않고 멈춥니다.`);
         manual.push(`이미지 ${b.n} → "${label}" 자리에 ${path.basename(file)} 직접 넣기  [${r.why}]`);
       }
     }
