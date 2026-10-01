@@ -13,8 +13,12 @@ const MAX_LINE = 30;          // 한 줄 최대 글자수(공백 포함)
 const AVG_LINE = [21, 27];    // 평균 줄 길이 권장 구간
 const MIN_BLOCK_LINES = 2.2;  // 덩어리당 평균 줄 수 하한
 const MAX_BLOCK = 4;          // 한 덩어리 최대 줄 수. 넘으면 2·2·3 이나 4·3 으로 끊는다 (사용자 지시 2026-10-01)
-const MIN_CHARS = 2300;       // 본문 최소 (공백 포함)
+const MIN_CHARS = 2300;       // 본문 최소 (공백 포함) — 2026-10-01 발행분까지
 const MAX_CHARS = 2500;       // 본문 최대
+// 2026-10-02 발행분부터 (사용자 지시 10/1): 공백 제외로 세고, 제목에 서브 키워드를 넣는다
+const NEW_RULES_FROM = '2026-10-02';
+const NS_CHARS = [2100, 2300]; // 본문 공백 제외 글자수
+const TITLE_KW = [0.5, 0.6];   // 제목에서 메인·서브 키워드가 차지하는 비율 (공백 제외)
 const MIN_MAIN = 10;          // 메인 키워드 최소 등장 횟수
 const MIN_SUB = 5;            // 서브 키워드 각각 최소 등장 횟수
 const MIN_TAGS = 15;          // 해시태그 최소 개수 (주제 태그)
@@ -45,12 +49,15 @@ for (const file of files) {
   const images = post.blocks.filter((b) => b.type === 'image');
   const texts = lines.map((l) => l.t);
   const chars = texts.join('').length;
+  const charsNS = texts.join('').replace(/\s/g, '').length;
+  const dated = (/(\d{4}-\d{2}-\d{2})/.exec(file.split(/[\\/]/).pop()) || [])[1] || '9999-99-99';
+  const newRules = dated >= NEW_RULES_FROM;
   const errors = [];
   const notes = [];
 
   if (!post.title) errors.push('title 이 없습니다.');
   if (!post.mainKeyword) errors.push('main_keyword 가 없습니다.');
-  if (post.title.length > 30) notes.push(`제목이 깁니다 (${post.title.length}자). 모바일에서 잘릴 수 있습니다.`);
+  if (post.title.length > (newRules ? 40 : 30)) notes.push(`제목이 깁니다 (${post.title.length}자). 모바일에서 잘릴 수 있습니다.`);
 
 
   lines.forEach((l, i) => {
@@ -82,8 +89,13 @@ for (const file of files) {
   const mainN = countOf(post.mainKeyword);
   const subN = post.subKeywords.map((k) => [k, countOf(k)]);
 
-  if (chars < MIN_CHARS) errors.push(`본문이 짧습니다: ${chars}자 (최소 ${MIN_CHARS})`);
-  if (chars > MAX_CHARS) errors.push(`본문이 깁니다: ${chars}자 (최대 ${MAX_CHARS})`);
+  if (newRules) {
+    if (charsNS < NS_CHARS[0]) errors.push(`본문이 짧습니다: 공백 제외 ${charsNS}자 (최소 ${NS_CHARS[0]})`);
+    if (charsNS > NS_CHARS[1]) errors.push(`본문이 깁니다: 공백 제외 ${charsNS}자 (최대 ${NS_CHARS[1]})`);
+  } else {
+    if (chars < MIN_CHARS) errors.push(`본문이 짧습니다: ${chars}자 (최소 ${MIN_CHARS})`);
+    if (chars > MAX_CHARS) errors.push(`본문이 깁니다: ${chars}자 (최대 ${MAX_CHARS})`);
+  }
   if (post.mainKeyword && mainN < MIN_MAIN)
     errors.push(`메인 키워드 "${post.mainKeyword}" ${mainN}회 — ${MIN_MAIN}회 이상 필요`);
   for (const [k, n] of subN)
@@ -93,6 +105,23 @@ for (const file of files) {
   if (post.mainKeyword) {
     const t = post.title.replace(/\s/g, ''), k = post.mainKeyword.replace(/\s/g, '');
     if (!t.startsWith(k)) errors.push(`제목이 메인 키워드로 시작하지 않습니다: "${post.title}"`);
+  }
+  // 제목 키워드 비율: 제목(공백 제외) 글자 중 메인·서브 키워드가 덮는 비율
+  let titleKw = null;
+  {
+    const t = post.title.replace(/\s/g, '');
+    const cover = new Array(t.length).fill(false);
+    for (const kw of [post.mainKeyword, ...post.subKeywords]) {
+      const k = (kw || '').replace(/\s/g, ''); if (!k) continue;
+      for (let i = t.indexOf(k); i !== -1; i = t.indexOf(k, i + 1)) for (let j = i; j < i + k.length; j++) cover[j] = true;
+    }
+    const subsIn = post.subKeywords.filter((kw) => t.includes(kw.replace(/\s/g, '')));
+    titleKw = { ratio: t.length ? cover.filter(Boolean).length / t.length : 0, subs: subsIn };
+    if (newRules) {
+      if (!subsIn.length) errors.push(`제목에 서브 키워드가 없습니다 — 1~2개 넣으세요: "${post.title}"`);
+      if (titleKw.ratio < TITLE_KW[0] || titleKw.ratio > TITLE_KW[1])
+        notes.push(`제목 키워드 비율 ${Math.round(titleKw.ratio * 100)}% — 권장 ${TITLE_KW[0] * 100}~${TITLE_KW[1] * 100}%`);
+    }
   }
   const topicTags = post.tags.filter((t) => !FIXED_TAGS.includes(t));
   if (topicTags.length < MIN_TAGS) errors.push(`주제 해시태그 ${topicTags.length}개 — ${MIN_TAGS}개 이상 필요`);
@@ -134,8 +163,14 @@ for (const file of files) {
 
   console.log(`\n${file}`);
   console.log(`  제목        : ${post.title} (${post.title.length}자)`);
-  const range = chars < MIN_CHARS ? '짧음' : chars > MAX_CHARS ? '김' : 'OK';
-  console.log(`  본문        : ${chars}자 (기준 ${MIN_CHARS}~${MAX_CHARS}) ${range}`);
+  if (newRules) {
+    const range = charsNS < NS_CHARS[0] ? '짧음' : charsNS > NS_CHARS[1] ? '김' : 'OK';
+    console.log(`  본문        : 공백 제외 ${charsNS}자 (기준 ${NS_CHARS[0]}~${NS_CHARS[1]}) ${range} · 공백 포함 ${chars}자`);
+    console.log(`  제목 키워드 : ${Math.round(titleKw.ratio * 100)}% (권장 ${TITLE_KW[0] * 100}~${TITLE_KW[1] * 100}%) · 서브 ${titleKw.subs.join(', ') || '없음'}`);
+  } else {
+    const range = chars < MIN_CHARS ? '짧음' : chars > MAX_CHARS ? '김' : 'OK';
+    console.log(`  본문        : ${chars}자 (기준 ${MIN_CHARS}~${MAX_CHARS}) ${range} · 공백 제외 ${charsNS}자`);
+  }
   console.log(`  메인 키워드 : "${post.mainKeyword}" ${mainN}회 (최소 ${MIN_MAIN})`);
   if (subN.length) console.log(`  서브 키워드 : ${subN.map(([k, n]) => `${k} ${n}회`).join(' / ')}`);
   console.log(`  줄/덩어리   : ${lines.length}줄 / ${post.blocks.length}덩어리`);
