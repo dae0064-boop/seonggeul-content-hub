@@ -141,6 +141,31 @@ for (const file of files) {
   if (images.length && images.length !== 8)
     notes.push(`이미지 자리 ${images.length}개 — 8개 기준입니다.`);
 
+  // 아직 채우지 않은 자리 (matjip-draft.mjs 가 남긴다). 이미지 설명 줄까지 본다
+  {
+    const raw = post.blocks.flatMap((b) => b.lines.map((l) => l.t)).join('\n');
+    const holes = raw.match(/\[채우기:[^\]]*\]/g) || [];
+    if (holes.length) errors.push(`채우지 않은 자리 ${holes.length}곳: ${holes.slice(0, 3).join(' / ')}${holes.length > 3 ? ' …' : ''}`);
+  }
+
+  // 맛집 후기 (category: 맛집) — CLAUDE.md "맛집 원고"
+  if (post.category === '맛집') {
+    const m = post.meta || {};
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(m.visited || '')) errors.push('맛집 글은 visited: 방문일(YYYY-MM-DD)이 필요합니다');
+    else if (m.visited > dated) errors.push(`방문일(${m.visited})이 발행일(${dated})보다 늦습니다`);
+    if (!m.sponsored) errors.push('맛집 글은 sponsored: 를 적어야 합니다 (없음 / 제공받은 내용)');
+    else if (m.sponsored !== '없음') {
+      // 공정위 추천·보증 심사지침 — 대가를 받았으면 첫 소제목 전에 밝힌다
+      const head = [];
+      for (const b of post.blocks) { if (b.type === 'quote') break; if (b.type === 'p') head.push(...b.lines.map((l) => l.t)); }
+      if (!/제공받|협찬|원고료|광고/.test(head.join(''))) errors.push('협찬 글인데 첫 소제목 전에 "제공받아 작성" 같은 표기가 없습니다');
+      if (post.tags.includes('내돈내산')) errors.push('협찬 글에 #내돈내산 태그가 있습니다');
+    }
+    for (const w of ['주소', '영업시간']) if (!body.includes(w)) errors.push(`맛집 글에 ${w} 정보가 없습니다`);
+    if (!body.includes('직접 방문')) errors.push('출처 줄에 "직접 방문한 내용" 과 방문일을 적으세요');
+    for (const w of ['인생맛집', '역대급', '존맛', 'JMT', '미쳤', '꼭 가야']) if (body.includes(w)) notes.push(`"${w}" — 과장 표현입니다. 메모에 적은 느낌 그대로 쓰세요.`);
+  }
+
   // 고정 인사말
   if (texts[0] !== OPEN[0] || texts[1] !== OPEN[1])
     errors.push(`오프닝이 고정 문구와 다릅니다. "${OPEN[0]} / ${OPEN[1]}" 로 시작해야 합니다.`);

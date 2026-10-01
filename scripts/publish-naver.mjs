@@ -70,7 +70,7 @@ const USAGE = `
 
 옵션
   --post <파일>      글 JSON (필수). build-post.mjs 로 .md 에서 생성한다.
-  --images <폴더>    [이미지 N] 자리에 <폴더>/NN.png 를 넣는다 (post-images.mjs 결과 폴더)
+  --images <폴더>    [이미지 N] 자리에 <폴더>/NN.png(.jpg) 를 넣는다 (post-images.mjs·matjip-photos.mjs 결과 폴더)
   --color            빨간글씨/노란배경을 입력 후에 따로 입힌다. 실패한 줄은 목록으로 알려준다
   --format           --color 와 같음 (예전 이름)
   --no-quote         소제목을 인용구로 바꾸지 않는다 (기본은 인용구 4번 '라인&따옴표')
@@ -925,8 +925,9 @@ async function main() {
   if (args.images) {
     if (!fs.existsSync(args.images)) throw new Error(`이미지 폴더가 없습니다: ${args.images}\n먼저 post-images.mjs 로 만드세요.`);
     for (const b of imageBlocks) {
-      const f = path.resolve(args.images, `${String(b.n).padStart(2, '0')}.png`);
-      if (fs.existsSync(f)) imageFiles.set(b.n, f);
+      // AI 그림은 NN.png, 맛집 후기의 직접 찍은 사진(matjip-photos.mjs)은 NN.jpg 일 수 있다
+      const f = ['png', 'jpg', 'jpeg', 'webp'].map((e) => path.resolve(args.images, `${String(b.n).padStart(2, '0')}.${e}`)).find((x) => fs.existsSync(x));
+      if (f) imageFiles.set(b.n, f);
     }
   }
 

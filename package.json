@@ -16,7 +16,9 @@
     "threads:replies": "node scripts/threads/replies.mjs",
     "threads:replies:dry": "node scripts/threads/replies.mjs --dry-run",
     "draft": "node scripts/publish-naver.mjs --color --save-draft --dump",
-    "images": "node scripts/post-images.mjs"
+    "images": "node scripts/post-images.mjs",
+    "matjip:draft": "node scripts/matjip-draft.mjs",
+    "matjip:photos": "node scripts/matjip-photos.mjs"
   },
   "dependencies": {
     "playwright": "^1.47.0"
