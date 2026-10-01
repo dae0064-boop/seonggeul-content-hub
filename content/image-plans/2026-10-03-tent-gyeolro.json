@@ -1,0 +1,98 @@
+{
+  "slug": "2026-10-03-tent-gyeolro",
+  "title": "텐트 결로, 가을밤 캠핑에서 환기로 줄이는 법",
+  "source": "10/3 원고 (정기 작업)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "새벽 이슬 맺힌 텐트와 단풍 숲 (대표사진)",
+      "note": "대표",
+      "prompt": "Camera and composition: wide shot at eye level of a campsite at dawn. A small dome tent in an autumn forest campsite at dawn, tiny dew drops glistening on the fly, red and orange maple trees around, light mist. No people at all in this image. Background color: pale dawn lavender. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "quality": "medium",
+      "overlay": {
+        "kind": "thumb",
+        "tag": "가을밤 캠핑 아침",
+        "title": "텐트 결로\n환기로 줄이는 법"
+      },
+      "shot": "wide shot at eye level of a campsite at dawn",
+      "bg": "pale dawn lavender"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "텐트 천장 안쪽에 맺힌 물방울 클로즈업",
+      "note": "사례 — 비가 샌 줄 알았던 아침",
+      "prompt": "Camera and composition: close-up looking up at the inside of a tent ceiling. Looking up from inside a tent at the ceiling covered with small water droplets, one drop about to fall toward a sleeping bag below. No people at all in this image. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up looking up at the inside of a tent ceiling",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "텐트 단면에 그려진 따뜻한 공기와 차가운 바깥 공기",
+      "note": "결론 — 습기와 온도 차",
+      "prompt": "Camera and composition: side cross-section diagram of a double-wall tent. A clay cross-section of a tent showing warm apricot air swirls inside rising toward a cold blue outer layer, tiny droplets forming where they meet, a sleeping figure shape inside. No people at all in this image. Background color: warm cream. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "안쪽 습기 + 차가운 천 = 결로"
+      },
+      "shot": "side cross-section diagram of a double-wall tent",
+      "bg": "warm cream"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "텐트 위쪽 벤틸레이터를 열어 둔 모습",
+      "note": "정보 — 벤틸레이터",
+      "prompt": "Camera and composition: close-up of a tent's roof vent from outside. The roof vent flap of a tent propped open with a small stick, soft clay airflow lines rising out of it into the night sky with stars. No people at all in this image. Background color: deep soft navy night. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "추워도 벤틸레이터는 열어 두기"
+      },
+      "shot": "close-up of a tent's roof vent from outside",
+      "bg": "deep soft navy night"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "스트링을 팽팽하게 당겨 팩을 박는 손",
+      "note": "정보 — 플라이와 이너 띄우기",
+      "prompt": "Camera and composition: low ground-level close-up. Two hands pull a guy line taut and press a tent peg into the soil at an angle, the tent wall standing tight in the background. No people at all in this image. Background color: warm brown soil. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "low ground-level close-up",
+      "bg": "warm brown soil"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "텐트 아래 바닥보다 작게 깐 그라운드시트",
+      "note": "정보 — 바닥 습기",
+      "prompt": "Camera and composition: top-down view of a campsite pitch. Seen from above: a ground sheet laid on grass slightly smaller than the outline of the tent floor drawn above it, the edges tucked in, no part sticking out. No people at all in this image. Background color: soft mint grass. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "그라운드시트는 바닥보다 작게"
+      },
+      "shot": "top-down view of a campsite pitch",
+      "bg": "soft mint grass"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "아침 햇볕에 플라이를 걸어 말리는 모습",
+      "note": "철수 — 말리기",
+      "prompt": "Camera and composition: medium shot of a clothesline between two trees. A tent fly hung inside-out over a rope between two trees in bright morning sunlight, tiny sparkles of drying droplets, a camping chair nearby. No people at all in this image. Background color: bright morning apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot of a clothesline between two trees",
+      "bg": "bright morning apricot"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "잘 말린 텐트를 접어 가방에 넣는 가족",
+      "note": "정리 — 보송한 철수",
+      "prompt": "Camera and composition: medium-wide shot at a campsite. A family folds a dry tent together on a picnic mat and slides it into its carry bag, smiling, autumn leaves around. The Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan. The Seonggeul grandpa: a Korean man in his late 70s, short gray hair, mint green vest over a white shirt. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Only the person or people described here appear; no other people. Background color: golden autumn. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium-wide shot at a campsite",
+      "bg": "golden autumn"
+    }
+  ]
+}
