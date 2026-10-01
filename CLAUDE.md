@@ -324,6 +324,14 @@ Q&A          많이 묻는 3~5개
   그림은 `content/image-plans/<슬러그>.json` (원고 작업판 프롬프트 그대로) →
   `node scripts/post-images.mjs <계획서>` → `content/images/<슬러그>/` 로 만든다.
 
+### 실행 결과 받기
+
+클라우드 세션은 사용자 PC 의 `dumps/`·`content/images/` 를 볼 수 없다. `launchers/draft-day.cmd` 가 끝나면
+`launchers/share-run.ps1` 이 실행 기록(.log)과 이번 실행의 화면 스크린샷·이미지(작게 줄인 JPG)를
+**Google Drive `내 드라이브/ClaudeWorkspace/run-logs/<날짜_시각>/`** 에 올린다. Claude 는 Drive 커넥터로 읽는다.
+수동으로는 `launchers/share-run.cmd`. **GitHub 에는 올리지 않는다** — 저장소가 공개이고 스크린샷에
+네이버 편집 화면이 찍힌다. HTML 덤프와 `.env` 는 올리지 않는다.
+
 ## 스레드 자동화
 
 **지금 멈춰 있다.** 예약 워크플로를 전부 걷어냈다 (2026-09-20). 스크립트는 남아 있지만
