@@ -187,7 +187,7 @@ const imageLabel = (block) => `[이미지 ${block.n}]`;
 const COLORS = {
   red:    { hex: '#ff0010', rgb: [255, 0, 16],    prop: 'color',           name: '빨간글씨' },
   yellow: { hex: '#fff8b2', rgb: [255, 248, 178], prop: 'backgroundColor', name: '노란배경' },
-  blue:   { hex: '#0b4da2', rgb: [11, 77, 162],   prop: 'color',           name: '파란글씨' },
+  blue:   { hex: '#0078cb', rgb: [0, 120, 203],   prop: 'color',           name: '파란글씨' },
 };
 const swatchSelectors = (hex) => [
   `button.se-color-palette[title="${hex}"]`,
@@ -600,7 +600,8 @@ function styledSpan(text, style) {
   const t = escHtml(text);
   if (!style) return t;
   const c = COLORS[style];
-  return `<span style="${c.prop === 'color' ? 'color' : 'background-color'}:${c.hex}">${t}</span>`;
+  // 강조는 세 색 모두 굵게 (사용자 지시 2026-10-01)
+  return `<b><span style="${c.prop === 'color' ? 'color' : 'background-color'}:${c.hex}">${t}</span></b>`;
 }
 
 /** 줄 일부만 칠한 경우: nth 번째 그 줄에서 각 조각이 제 색을 입었는지 본다 */
@@ -972,6 +973,26 @@ async function main() {
       }
     }
     if (args.images) await dump(page, 'images');
+
+
+    // ---- 강조 글씨가 굵게 들어갔는지 (빨강·파랑·노랑 배경 모두)
+    {
+      const notBold = await editor.evaluate((colors) => {
+        const root = document.querySelector('.se-main-container') || document.querySelector('.se-content') || document.body;
+        const wants = Object.values(colors).map((c) => [c.prop, `rgb(${c.rgb.join(', ')})`]);
+        const out = [];
+        for (const el of root.querySelectorAll('span')) {
+          if (el.closest('.se-documentTitle') || !el.textContent.trim()) continue;
+          const cs = getComputedStyle(el);
+          if (!wants.some(([prop, v]) => cs[prop] === v)) continue;
+          if (el.querySelector('span')) continue; // 가장 안쪽 글자만 본다
+          if (!(parseInt(cs.fontWeight, 10) >= 600)) out.push(el.textContent.trim());
+        }
+        return [...new Set(out)];
+      }, COLORS);
+      log(`굵게 확인: 굵게 안 된 강조 ${notBold.length}곳`);
+      notBold.forEach((t) => manual.push(`굵게 → "${t}"`));
+    }
 
     printManual(manual, report, args);
 
