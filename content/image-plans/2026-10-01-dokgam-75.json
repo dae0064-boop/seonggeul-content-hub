@@ -12,7 +12,7 @@
       "quality": "medium",
       "overlay": {
         "kind": "thumb",
-        "tag": "2026~2027 어르신 무료접종",
+        "tag": "2026년 어르신 독감 무료접종",
         "title": "독감 무료접종\n75세 이상 언제부터?"
       }
     },
@@ -40,7 +40,7 @@
       "file": "04.png",
       "title": "나이별로 계단처럼 선 세 장의 달력과 어르신들",
       "note": "비교 — 나이별 시작일 표 얹기",
-      "prompt": "Three blank clay calendar pages standing side by side like rising steps in apricot, mint and sky blue. In front of each page stands a small smiling elderly figure with a round bandage on the upper arm. A green cross clinic sign in the soft background. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly read as being about the seasonal flu vaccination for seniors. Medical details such as a nurse, a small vaccine shot in the upper arm, vaccine vials, a round bandage, a thermometer and a neighborhood clinic with a green cross are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only.",
+      "prompt": "Three blank clay calendar pages standing side by side like rising steps, from left to right in pink, mint and sky blue. In front of each page, at the bottom edge of that page, stands exactly one small smiling elderly figure with a round bandage on the upper arm: a grandma in front of the pink page on the left, and a grandpa in front of each of the mint and sky blue pages on the right. All three figures are the same size, stand at the same height on the same floor line, face forward in the same pose, and are each centered on their own page; the grandma lines up exactly like the two grandpas. A green cross clinic sign in the soft background. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly read as being about the seasonal flu vaccination for seniors. Medical details such as a nurse, a small vaccine shot in the upper arm, vaccine vials, a round bandage, a thermometer and a neighborhood clinic with a green cross are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only.",
       "overlay": {
         "kind": "steps",
         "items": [
@@ -57,7 +57,8 @@
             "10월 19일"
           ]
         ]
-      }
+      },
+      "regen": "2026-10-01 할머니 위치를 할아버지들과 같게 (사용자 지시)"
     },
     {
       "n": 5,
@@ -67,7 +68,7 @@
       "prompt": "In front of a small friendly neighborhood clinic with a green cross sign and a blank banner with a syringe-and-shield icon, the adult child and the grandma look at a smartphone map together and smile, autumn trees nearby. The Seonggeul adult child: a Korean woman in her 40s, shoulder-length brown bob hair, soft sky blue shirt. The Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly read as being about the seasonal flu vaccination for seniors. Medical details such as a nurse, a small vaccine shot in the upper arm, vaccine vials, a round bandage, a thermometer and a neighborhood clinic with a green cross are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only.",
       "overlay": {
         "kind": "label",
-        "text": "가까운 위탁의료기관 · 보건소 어디서나",
+        "text": "가까운 위탁의료기관\n보건소 어디서나",
         "pos": "bottom"
       }
     },
@@ -98,5 +99,5 @@
       "prompt": "The grandma and the adult child walk out of a bright neighborhood clinic with a green cross sign on an autumn day, both smiling; the grandma proudly points to a small round bandage on her upper arm. Yellow ginkgo leaves on the ground. The Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan. The Seonggeul adult child: a Korean woman in her 40s, shoulder-length brown bob hair, soft sky blue shirt. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean people and Korean everyday settings. The scene must clearly read as being about the seasonal flu vaccination for seniors. Medical details such as a nurse, a small vaccine shot in the upper arm, vaccine vials, a round bandage, a thermometer and a neighborhood clinic with a green cross are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only."
     }
   ],
-  "note": "2026-10-01 사용자 지시: 독감이 확실히 보이는 그림, 대표사진은 제목·주제 글씨, 본문은 필요할 때 글씨"
+  "note": "2026-10-01 사용자 지시: 독감이 확실히 보이는 그림, 대표사진은 제목·주제 글씨, 본문은 필요할 때 글씨 / 2026-10-01 수정: 1번 꼬리표 문구, 4번 할머니 위치 다시, 5번 문구 두 줄"
 }
