@@ -1,12 +1,12 @@
 {
   "_설명": "성글벙글 블로그 이미지 스타일 정본. 실행기(post-images.ps1)가 이 파일을 그대로 읽는다. 사람용 설명은 standards/이미지-기준.md",
-  "version": "2026-10-01",
+  "version": "2026-10-01b",
   "model": "gpt-image-2",
   "quality": "low",
   "size": "1024x1024",
   "style": "Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel.",
   "palette": "Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55).",
-  "rules": "Korean people and Korean everyday settings. The scene must clearly read as being about the post's topic. Topic-specific details (medical, tools, places) are welcome. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only.",
+  "rules": "Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only.",
   "thumbnail_space": "Keep the top third of the image as plain empty cream background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds.",
   "characters": {
     "할머니": "the Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan",
@@ -24,5 +24,6 @@
     "area_height_ratio": 0.3,
     "side_margin_px": 70
   },
-  "text_overlay": "글씨는 그림 모델이 쓰지 않는다. 계획서 overlay 로 scripts/lib/overlay.mjs 가 맑은 고딕으로 얹는다. 대표사진은 kind=thumb(제목+주제 꼬리표), 본문은 필요할 때 label/steps."
+  "text_overlay": "글씨는 그림 모델이 쓰지 않는다. 계획서 overlay 로 scripts/lib/overlay.mjs 가 맑은 고딕으로 얹는다. 대표사진은 kind=thumb(제목+주제 꼬리표), 본문은 필요할 때 label/steps.",
+  "variety": "한 글의 8장은 모두 다른 장면이다: 장소·주인공(사물/사람)·구도·배경색이 서로 겹치지 않게, 각 장면은 그 자리 문단 내용에 맞춘다. 같은 그림에 글씨만 바꿔 얹지 않는다. (2026-10-01 사용자 지시)"
 }
