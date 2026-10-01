@@ -25,6 +25,7 @@ for (const file of files) {
     title: post.title,
     category: post.category,
     tags: post.tags,
+    publishAt: post.publishAt || undefined,
     blocks: post.blocks,
   };
   fs.writeFileSync(out, JSON.stringify(json, null, 2) + '\n');
