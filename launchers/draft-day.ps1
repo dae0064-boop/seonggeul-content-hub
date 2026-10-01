@@ -3,13 +3,17 @@
 #   -Only dokgam-75,daeha-jecheol   일부 글만
 #   -SkipImages                     이미지 단계 건너뛰기
 #   -ImagesOnly                     이미지만 만들고 네이버는 건드리지 않기 (다른 글 임시저장과 동시에 돌려도 됨)
+
+#   -NoShare                        끝나고 결과를 Google Drive 로 올리지 않기
 # 한 편이 실패하면 그 글은 저장하지 않는다. 첫 글부터 실패하면 나머지는 돌리지 않는다(같은 이유로 또 실패하기 때문).
 param(
   [string]$Date = (Get-Date -Format 'yyyy-MM-dd'),
   [string[]]$Only = @(),
   [switch]$SkipImages,
-  [switch]$ImagesOnly
+  [switch]$ImagesOnly,
+  [switch]$NoShare
 )
+$started = Get-Date
 $ErrorActionPreference = 'Continue'
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 Set-Location (Join-Path $PSScriptRoot '..')
@@ -18,6 +22,11 @@ $log = "dumps\day-$Date$(if ($ImagesOnly) { '-images' }).log"
 "=== $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') 시작" | Out-File $log -Encoding utf8
 
 function Say($s, $c = 'Gray') { Write-Host $s -ForegroundColor $c; $s | Out-File $log -Append -Encoding utf8 }
+# 끝나면 결과를 Google Drive 로 올려 Claude 가 읽게 한다 (-NoShare 로 끈다)
+function Share {
+  if ($NoShare) { return }
+  & (Join-Path $PSScriptRoot 'share-run.ps1') -Date $Date -Since $started
+}
 function Run($argsList) {
   & node @argsList 2>&1 | ForEach-Object { $l = $_.ToString(); Write-Host $l; $l | Out-File $log -Append -Encoding utf8 }
   return $LASTEXITCODE
@@ -26,7 +35,7 @@ function Run($argsList) {
 $posts = Get-ChildItem "content\posts\$Date-*.json" | Sort-Object Name
 $Only = @($Only | ForEach-Object { $_ -split ',' } | ForEach-Object { $_.Trim() } | Where-Object { $_ })
 if ($Only.Count) { $posts = $posts | Where-Object { $s = $_.BaseName.Substring(11); $Only -contains $s } }
-if (-not $posts) { Say "원고가 없어요: content\posts\$Date-*.json" 'Red'; exit 1 }
+if (-not $posts) { Say "원고가 없어요: content\posts\$Date-*.json" 'Red'; Share; exit 1 }
 Say "원고 $($posts.Count)편: $(( $posts | ForEach-Object { $_.BaseName.Substring(11) }) -join ', ')" 'Cyan'
 
 # 1) 이미지
@@ -40,7 +49,7 @@ if (-not $SkipImages) {
   }
 }
 
-if ($ImagesOnly) { Say "`n이미지만 만들었어요. 네이버는 건드리지 않았어요." 'Green'; exit 0 }
+if ($ImagesOnly) { Say "`n이미지만 만들었어요. 네이버는 건드리지 않았어요." 'Green'; Share; exit 0 }
 
 # 2) 자동화용 크롬
 function CdpUp { try { Invoke-RestMethod http://localhost:9222/json/version -TimeoutSec 3 | Out-Null; $true } catch { $false } }
@@ -51,7 +60,7 @@ if (-not (CdpUp)) {
   Start-Process $chrome -ArgumentList '--remote-debugging-port=9222', "--user-data-dir=$env:LOCALAPPDATA\seonggeul-chrome", '--no-first-run', 'about:blank'
   Start-Sleep 6
 }
-if (-not (CdpUp)) { Say '자동화용 크롬을 켜지 못했어요. 자동화크롬-켜기.cmd 를 먼저 실행해 주세요.' 'Red'; exit 1 }
+if (-not (CdpUp)) { Say '자동화용 크롬을 켜지 못했어요. 자동화크롬-켜기.cmd 를 먼저 실행해 주세요.' 'Red'; Share; exit 1 }
 
 # 3) 네이버 임시저장 (한 편씩)
 $result = @()
@@ -73,3 +82,4 @@ foreach ($p in $posts) {
 Say "`n==================== 결과 ====================" 'Cyan'
 $result | Format-Table -AutoSize | Out-String | ForEach-Object { Say $_ }
 Say '발행은 하지 않았어요. 네이버 글쓰기 화면의 "저장" 옆 숫자 → 임시저장 목록에서 확인하세요.' 'Green'
+Share
