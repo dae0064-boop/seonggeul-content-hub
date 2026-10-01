@@ -62,7 +62,7 @@ if (-not (CdpUp)) {
   Start-Process $chrome -ArgumentList '--remote-debugging-port=9222', "--user-data-dir=$env:LOCALAPPDATA\seonggeul-chrome", '--no-first-run', 'about:blank'
   Start-Sleep 6
 }
-if (-not (CdpUp)) { Say '자동화용 크롬을 켜지 못했어요. 자동화크롬-켜기.cmd 를 먼저 실행해 주세요.' 'Red'; Share; exit 1 }
+if (-not (CdpUp)) { Say '자동화용 크롬을 켜지 못했어요. launchers\chrome-login.cmd 를 먼저 실행해 주세요.' 'Red'; Share; exit 1 }
 
 # 3) 네이버 임시저장 (한 편씩)
 $result = @()
