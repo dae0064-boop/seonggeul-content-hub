@@ -128,6 +128,10 @@ node scripts/threads/insurance-set.mjs content/threads/insurance/sets/<날짜>.m
 python3 scripts/threads/insurance-word.py <묶음.md> <사진.jpg> <저장 폴더>
 ```
 
-- 고정 사진은 Google Drive `내 드라이브/ClaudeWorkspace/보험글-사진/` 에 있다.
+- **저장 위치: Google Drive `내 드라이브/ClaudeWorkspace/보험글/<묶음 날짜>/`** (2026-10-02 사용자 요청).
+  PC 에서 `launchers/insurance-word.cmd` 를 더블클릭하거나 `launchers/sync.cmd` 를 돌리면 저장소의 모든 묶음을
+  Word 로 만들어 이 폴더에 넣는다. 이미 있는 Word 는 원고나 사진이 바뀌었을 때만 다시 만든다 (`-Force` 면 전부).
+  클라우드 세션은 Drive 에 Word 를 직접 올리지 못한다(파일이 커서) — 대화로 전달하고, 저장은 PC 실행기가 한다.
+- 고정 사진은 Google Drive `내 드라이브/ClaudeWorkspace/보험글-사진/` 에서 가장 최근 사진을 쓴다.
 - 사진에 설계사 이름·등록번호가 있으므로 **사진과 Word 파일은 저장소에 커밋하지 않는다.**
 - 배너의 심의필 번호는 아직 자리표시(`제26-00-0000호`)다. 실제 번호를 받은 사진으로 바꾸기 전에는 올리지 않는다.
