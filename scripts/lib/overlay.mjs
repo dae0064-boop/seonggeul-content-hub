@@ -7,12 +7,27 @@
  * 자동화용 크롬(9222)과는 별개로 뜨고, 끝나면 바로 닫힌다.
  *
  * overlay 종류 (계획서 images[].overlay)
- *   { kind: "thumb", title: "줄1\n줄2", tag: "작은 주제 꼬리표" }   대표사진 — 위쪽 3분의 1에 제목
+ *   { kind: "thumb", title: "줄1\n줄2" }   대표사진 — 위쪽 3분의 1에 제목
+ *       2026-10-02 사용자 선택 "① 둥근 글씨 + 형광펜": 주아체로 크게, 첫 줄(메인 키워드)에 노란 형광펜.
+ *       글꼴은 scripts/lib/fonts 에 넣어 둔 것을 쓴다 (PC 마다 깔린 글꼴이 달라도 똑같이 나온다).
+ *       한 줄이 길면 글씨가 줄어든다 — 한 줄 10자 안쪽으로 쓴다. tag(숫자 꼬리표)는 그리지 않는다.
  *   { kind: "label", text: "한 줄 문구", pos: "bottom" | "top" }    본문 — 띠 하나
  *   { kind: "steps", items: [["75세 이상", "10월 12일"], ...] }      본문 — 아래쪽 칸 나눔 표
  */
 import fs from 'node:fs';
 import { chromium } from 'playwright';
+
+// 대표사진 제목 글꼴: 주아체(둥근 글씨, SIL OFL — scripts/lib/fonts/Jua-OFL.txt).
+// 파일이 없으면 맑은 고딕으로 그린다 (그림은 나오되 덜 눈에 띈다)
+const JUA = new URL('./fonts/Jua-Regular.ttf', import.meta.url);
+let juaCache;
+const juaFace = () => {
+  if (juaCache === undefined) {
+    try { juaCache = `@font-face{font-family:"Jua";src:url(data:font/ttf;base64,${fs.readFileSync(JUA).toString('base64')}) format("truetype")}`; }
+    catch { juaCache = ''; }
+  }
+  return juaCache;
+};
 
 const STYLE = {
   font: '"Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans CJK KR","Noto Sans KR",sans-serif',
@@ -30,13 +45,17 @@ const lines = (s) => String(s).split('\n').map(esc).join('<br>');
 function html(imgDataUrl, size, o) {
   const S = size;
   let layer = '';
+  let face = '';
+  let thumbFamily = STYLE.font;
   if (o.kind === 'thumb') {
-    const n = String(o.title).split('\n').length;
-    const fs1 = Math.round(S * (n > 2 ? 0.078 : 0.094));
+    const tl = String(o.title).split('\n');
+    const fs1 = Math.round(S * (tl.length > 2 ? 0.105 : 0.15));
+    face = juaFace();
+    if (face) thumbFamily = `"Jua",${STYLE.font}`;
+    // 줄마다 따로 그려서 줄마다 칸에 맞게 줄인다. 첫 줄 = 메인 키워드 = 형광펜
     layer = `
       <div class="thumb">
-        ${o.tag ? `<div class="tag">${esc(o.tag)}</div>` : ''}
-        <div class="title" style="font-size:${fs1}px">${lines(o.title)}</div>
+        ${tl.map((t, i) => `<div class="title${i === 0 ? ' key' : ''}" style="font-size:${fs1}px">${esc(t)}</div>`).join('')}
       </div>`;
   } else if (o.kind === 'label') {
     layer = `<div class="label ${o.pos === 'top' ? 'top' : 'bottom'}">${lines(o.text)}</div>`;
@@ -48,16 +67,17 @@ function html(imgDataUrl, size, o) {
       </div>`).join('')}</div>`;
   }
   return `<!doctype html><meta charset="utf-8"><style>
+    ${face}
     *{margin:0;box-sizing:border-box}
     body{width:${S}px;height:${S}px;position:relative;overflow:hidden;font-family:${STYLE.font};color:${STYLE.ink}}
     img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-    .thumb{position:absolute;left:0;right:0;top:${S * 0.05}px;height:${S * 0.3}px;display:flex;flex-direction:column;
-      align-items:center;justify-content:center;gap:${S * 0.018}px;padding:0 ${S * 0.06}px;text-align:center}
-    .title{font-weight:800;line-height:1.22;letter-spacing:-0.02em;white-space:nowrap;
-      text-shadow:0 0 ${S * 0.006}px #fff,0 0 ${S * 0.006}px #fff,0 0 ${S * 0.012}px #fff,0 0 ${S * 0.02}px #fff;
-      -webkit-text-stroke:${S * 0.003}px #fff;paint-order:stroke fill}
-    .tag{font-weight:700;font-size:${S * 0.036}px;background:${STYLE.red};color:#fff;border-radius:999px;
-      padding:${S * 0.01}px ${S * 0.03}px;box-shadow:0 ${S * 0.004}px ${S * 0.012}px rgba(0,0,0,.12)}
+    .thumb{position:absolute;left:0;right:0;top:${S * 0.02}px;height:${S * 0.34}px;display:flex;flex-direction:column;
+      align-items:center;justify-content:center;padding:0 ${S * 0.04}px;text-align:center;z-index:1}
+    .title{font-family:${thumbFamily};font-weight:${face ? 400 : 800};line-height:1.16;white-space:nowrap;
+      position:relative;z-index:1;color:#3A2A22;
+      -webkit-text-stroke:${S * 0.022}px #fff;paint-order:stroke fill}
+    .title.key:before{content:"";position:absolute;left:-${S * 0.015}px;right:-${S * 0.015}px;bottom:8%;height:48%;
+      background:#FFE14D;border-radius:${S * 0.012}px;z-index:-1}
     .label{position:absolute;left:${S * 0.05}px;right:${S * 0.05}px;text-align:center;font-weight:800;
       font-size:${S * 0.05}px;line-height:1.3;white-space:nowrap;overflow:hidden;background:rgba(255,255,255,.92);border-radius:${S * 0.03}px;
       padding:${S * 0.022}px ${S * 0.03}px;box-shadow:0 ${S * 0.006}px ${S * 0.02}px rgba(0,0,0,.12)}
@@ -75,6 +95,8 @@ async function launch() {
     () => chromium.launch({ channel: 'chrome', headless: true }),
     () => chromium.launch({ channel: 'msedge', headless: true }),
     () => chromium.launch({ headless: true }),
+    // 크롬이 없는 환경(클라우드 컨테이너 등)에서 미리보기를 낼 때: OVERLAY_CHROME=<크롬 실행 파일>
+    () => chromium.launch({ headless: true, executablePath: process.env.OVERLAY_CHROME, args: ['--no-sandbox'] }),
   ];
   let last;
   for (const t of tries) { try { return await t(); } catch (e) { last = e; } }
@@ -96,7 +118,7 @@ export async function renderOverlays(jobs) {
       await page.evaluate(() => {
         for (const el of document.querySelectorAll('.title, .label, .step .a, .step .b')) {
           const isTitle = el.classList.contains('title');
-          const over = () => isTitle ? el.scrollWidth > el.parentElement.clientWidth * 0.92 : el.scrollWidth > el.clientWidth + 1;
+          const over = () => isTitle ? el.scrollWidth > el.parentElement.clientWidth * 0.9 : el.scrollWidth > el.clientWidth + 1;
           let fs = parseFloat(getComputedStyle(el).fontSize);
           let guard = 40;
           while (over() && fs > 12 && guard--) { fs *= 0.95; el.style.fontSize = fs + 'px'; }

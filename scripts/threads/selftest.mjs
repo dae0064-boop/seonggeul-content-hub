@@ -156,6 +156,22 @@ process.env.THREADS_PAUSED = 'true';
 check('멈추면 발행하지 않는다', (await publish.run({})).skipped === 'paused');
 check('멈추면 댓글도 안 단다', (await replies.run({})).skipped === 'paused');
 
+console.log('\n▶ 보험 심의글 묶음');
+const ins = await import('./insurance-set.mjs');
+const fs = await import('node:fs');
+const sample = fs.readFileSync(new URL('../../content/threads/insurance/sets/2026-10-02.md', import.meta.url), 'utf8');
+const okSet = ins.parseSet(sample);
+check('저장소의 첫 묶음이 통과한다', ins.checkSet(okSet).ok, ins.checkSet(okSet).errors.join(' / '));
+const twinRole = ins.parseSet(sample.replace('역할: 숨은권리', '역할: 오해풀기'));
+check('역할이 겹치면 막는다', ins.checkSet(twinRole).errors.some((e) => e.includes('겹칩니다')));
+const salesy = ins.parseSet(sample.replace('내 실손이 몇 개인지부터', '지금 가입하세요. 내 실손이 몇 개인지부터'));
+check('가입 권유를 막는다', ins.checkSet(salesy).errors.some((e) => e.includes('가입 권유')));
+check('지난 묶음과 같은 글감을 막는다', !ins.checkSet(okSet, [okSet]).ok);
+const longLine = ins.parseSet(sample.replace('내 실손이 몇 개인지부터', '내 실손이 몇 개인지부터 증권을 하나하나 펼쳐서 꼼꼼하게'));
+check('한 줄이 길면 막는다 (모바일 접힘)', ins.checkSet(longLine).errors.some((e) => e.includes('자 이하로 끊습니다')));
+const four = ins.parseSet(sample.split(/^## 5$/m)[0]);
+check('5편이 아니면 막는다', ins.checkSet(four).errors.some((e) => e.includes('4편')));
+
 server.close();
 console.log(failed ? `\n${failed}개 실패했습니다.\n` : '\n전부 통과했습니다.\n');
 process.exit(failed ? 1 : 0);

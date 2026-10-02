@@ -13,6 +13,10 @@ const MAX_LINE = 30;          // 한 줄 최대 글자수(공백 포함)
 const AVG_LINE = [21, 27];    // 평균 줄 길이 권장 구간
 const MIN_BLOCK_LINES = 2.2;  // 덩어리당 평균 줄 수 하한
 const MAX_BLOCK = 4;          // 한 덩어리 최대 줄 수. 넘으면 2·2·3 이나 4·3 으로 끊는다 (사용자 지시 2026-10-01)
+// 소제목 바로 아래 덩어리는 3줄까지 (사용자 지시 2026-10-02). 발행하면 소제목과 첫 덩어리가 빈 줄 없이
+// 붙어서, 소제목 + 4줄이 5줄짜리 덩어리로 보인다. 넘으면 문장이 끝나는 자리에서 1·3 이나 2·2 로 끊는다.
+const MAX_AFTER_QUOTE = 3;
+const AFTER_QUOTE_FROM = '2026-10-02';
 const MIN_CHARS = 2300;       // 본문 최소 (공백 포함) — 2026-10-01 발행분까지
 const MAX_CHARS = 2500;       // 본문 최대
 // 2026-10-02 발행분부터 (사용자 지시 10/1): 공백 제외로 세고, 제목에 서브 키워드를 넣는다
@@ -149,9 +153,20 @@ for (const file of files) {
 
   // 덩어리를 너무 잘게 쪼개면 글이 툭툭 끊긴다
   const textBlocks = post.blocks.filter((b) => b.type !== 'image');
-  const perBlock = lines.length / textBlocks.length;
+  // 평균은 본문 덩어리만으로 낸다. 소제목(한 줄)을 덩어리로 세면 소제목이 많은 글이 잘게 쪼갠 글처럼 보인다
+  const bodyBlocks = textBlocks.filter((b) => b.type !== 'quote');
+  const perBlock = bodyBlocks.reduce((a, b) => a + b.lines.length, 0) / (bodyBlocks.length || 1);
   for (const b of textBlocks) if (b.lines.length > MAX_BLOCK)
     errors.push(`덩어리가 ${b.lines.length}줄 — ${MAX_BLOCK}줄 이하로 끊으세요 (2·2·3, 4·3 처럼): "${b.lines[0].t}"`);
+  if (dated >= AFTER_QUOTE_FROM) {
+    post.blocks.forEach((b, i) => {
+      // 소제목 → (이미지) → 본문 순서여도 그림이 사이에 끼면 붙어 보이지 않으므로 바로 다음 덩어리만 본다
+      if (b.type !== 'quote') return;
+      const next = post.blocks[i + 1];
+      if (next && next.type === 'p' && next.lines.length > MAX_AFTER_QUOTE)
+        errors.push(`소제목 바로 아래 덩어리가 ${next.lines.length}줄 — ${MAX_AFTER_QUOTE}줄 이하로 끊으세요 (소제목과 붙어 보입니다, 1·3 이나 2·2 로): "${next.lines[0].t}"`);
+    });
+  }
   if (perBlock < MIN_BLOCK_LINES)
     errors.push(`덩어리가 잘게 쪼개졌습니다: 덩어리당 ${perBlock.toFixed(1)}줄 (최소 ${MIN_BLOCK_LINES})`);
   const avgLine = texts.reduce((a, t) => a + t.length, 0) / texts.length;

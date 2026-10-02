@@ -269,14 +269,7 @@ async function reservePublish(page, editor, post, at) {
   await sleep(1500);
   await dump(page, 'publish-layer');
 
-  if (post.category) {
-    try {
-      await findAnywhere(page, editor, ['button[class*="selectbox_button"]', 'button:has-text("카테고리")'], { timeout: 4000 }).then((r) => r.loc.click());
-      await sleep(500);
-      await findAnywhere(page, editor, [`label:has-text("${post.category}")`, `span:has-text("${post.category}")`], { timeout: 4000 }).then((r) => r.loc.click());
-      log(`카테고리: ${post.category}`);
-    } catch { warn(`카테고리 자동 선택 실패 — 기본 카테고리로 예약됩니다 (${post.category})`); }
-  }
+  if (post.category) await pickCategory(page, editor, post.category);
   if (post.tags?.length) {
     try { await enterTags(page, editor, post.tags); }
     catch (e) { warn(`태그 입력 실패 (${e.message}) — 예약 후 글 수정에서 넣어 주세요.`); }
@@ -524,17 +517,17 @@ async function insertQuoteAt(page, editor, text, style) {
   const ids = () => editor.evaluate(() => [...document.querySelectorAll('.se-component.se-quotation')].map((e) => e.id || e.dataset.compid || ''));
   const before = await ids();
 
-  const sel = await selectText(page, editor, text, 0);
-  if (!sel.ok) return { ok: false, why: `소제목 줄을 찾지 못함 — ${sel.why}` };
+  // 화면 밖에서 만든 선택(DOM 선택)으로 지우면 에디터가 다른 범위를 지울 수 있다
+  // (2026-10-01: 첫 소제목에서 6줄이 같이 지워졌다가 되돌려짐). 이미지와 같은 방식으로,
+  // 마우스로 줄 끝을 누르고 Shift+Home → Backspace 로 지운다.
   const countBefore = await editor.evaluate(domCount, text);
+  if (!countBefore) return { ok: false, why: '소제목 줄을 찾지 못함' };
+  if (!(await caretAtEnd(page, editor, text))) return { ok: false, why: '소제목 줄을 찾지 못함' };
+  await page.keyboard.press('Shift+Home');
+  await sleep(200);
   await page.keyboard.press('Backspace');
-  await sleep(300);
-  if ((await editor.evaluate(domCount, text)) >= countBefore) {
-    await selectTextByRange(editor, text, 0);
-    await editor.evaluate(() => document.execCommand('delete'));
-    await sleep(300);
-    if ((await editor.evaluate(domCount, text)) >= countBefore) return { ok: false, why: '소제목 줄이 지워지지 않음 (그대로 둠)' };
-  }
+  await sleep(350);
+  if ((await editor.evaluate(domCount, text)) >= countBefore) return { ok: false, why: '소제목 줄이 지워지지 않음 (그대로 둠)' };
 
   const restore = async () => { await page.keyboard.insertText(text).catch(() => {}); };
   try {
@@ -593,6 +586,149 @@ async function insertQuoteAt(page, editor, text, style) {
   }
   await collapseSelection(page, editor);
   return { ok: true, styled: got.cls.includes(style) };
+}
+
+/**
+ * 발행 패널에서 카테고리를 고른다. 이름이 정확히 같은 항목만 누른다 —
+ * '일상'을 찾다 본문의 "…성글벙글의 일상 포스팅" 글자를 눌러 패널이 닫힌 적이 있다 (2026-10-02).
+ * 고른 뒤 패널이 닫혔으면 다시 연다. 실패해도 멈추지 않는다 (기본 카테고리로 간다).
+ */
+async function pickCategory(page, editor, category) {
+  const exact = [
+    `[class*="option"] label:text-is("${category}")`,
+    `[class*="category"] label:text-is("${category}")`,
+    `[class*="option"] span:text-is("${category}")`,
+    `[class*="category"] span:text-is("${category}")`,
+  ];
+  // 발행 패널은 글쓰기 iframe 안에 열린다. 바깥 페이지만 찾아서 10/2 에 5편 모두 실패했다 → 두 곳 다 찾는다
+  try {
+    await findAnywhere(page, editor, ['button[class*="selectbox_button"]', 'button:has-text("카테고리")'], { timeout: 3000 }).then((r) => r.loc.click());
+    await sleep(500);
+    await findAnywhere(page, editor, exact, { timeout: 3000 }).then((r) => r.loc.click());
+    log(`카테고리: ${category}`);
+  } catch {
+    warn(`카테고리 자동 선택 실패 — 기본 카테고리로 갑니다 (${category})`);
+    // 다음에 고칠 수 있게 카테고리 근처 요소를 기록한다 (HTML 덤프는 Drive 로 올리지 않으므로 로그에 남긴다)
+    for (const [name, scope] of [['page', page], ['editor', editor]]) {
+      const found = await scope.evaluate((cat) => {
+        const out = [];
+        for (const el of document.querySelectorAll('button, label, span, a, li, div')) {
+          const t = (el.textContent || '').replace(/\s+/g, ' ').trim();
+          const cls = typeof el.className === 'string' ? el.className : '';
+          const hit = (t === cat || t.startsWith('카테고리')) && t.length < 40 && el.children.length < 4;
+          if (hit || /category|selectbox/i.test(cls)) out.push(`${el.tagName.toLowerCase()}.${cls.split(' ').slice(0, 2).join('.')} "${t.slice(0, 30)}"`);
+          if (out.length >= 15) break;
+        }
+        return out;
+      }, category).catch(() => []);
+      log(`  진단(${name}): ${found.length ? found.join(' | ') : '없음'}`);
+    }
+    await page.keyboard.press('Escape').catch(() => {});
+  }
+  await sleep(400);
+  const open = await findAnywhere(page, editor, RESERVE_RADIO, { timeout: 1500 }).then(() => true).catch(() => false);
+  if (!open) {
+    warn('발행 패널이 닫혀 다시 엽니다');
+    await clickFirst(page, PUBLISH_OPEN, { timeout: 4000 }).catch(() => clickFirst(editor, PUBLISH_OPEN).catch(() => {}));
+    await sleep(1200);
+  }
+}
+
+/** 인용구 바로 아래 빈 문단의 화면 위치. 없으면 null */
+function blankAfterQuote(i) {
+  const q = [...document.querySelectorAll('.se-component.se-quotation')][i];
+  const next = q && q.nextElementSibling;
+  if (!next || !next.classList.contains('se-text')) return null;
+  const ps = [...next.querySelectorAll('.se-text-paragraph')];
+  if (!ps.length || ps[0].textContent.replace(/\u200b/g, '').trim()) return null;
+  // 빈 문단 뒤에 같은 덩어리 안 글 줄이 있어야 Delete 로 당겨 붙일 수 있다
+  if (ps.length < 2) return null;
+  ps[0].scrollIntoView({ block: 'center' });
+  const r = ps[0].getBoundingClientRect();
+  return { x: r.left + 4, y: r.top + r.height / 2 };
+}
+
+/** 인용구마다 바로 아래 빈 문단을 지운다. 빈 문단에 커서를 두고 Delete — 다음 줄이 올라붙는다. */
+async function removeBlankAfterQuotes(page, editor) {
+  const n = await editor.evaluate(() => document.querySelectorAll('.se-component.se-quotation').length).catch(() => 0);
+  let removed = 0, left = 0;
+  for (let i = 0; i < n; i++) {
+    let at = await editor.evaluate(blankAfterQuote, i).catch(() => null);
+    if (!at) continue;
+    await sleep(200);
+    at = await editor.evaluate(blankAfterQuote, i).catch(() => null); // 스크롤 뒤 다시 잰다
+    if (!at) continue;
+    const before = await snapshot(editor);
+    const off = await frameOffset(page, editor);
+    await page.mouse.click(off.x + at.x, off.y + at.y);
+    await sleep(200);
+    await page.keyboard.press('Delete');
+    await sleep(350);
+    const lost = lostLines(before, await snapshot(editor));
+    const still = await editor.evaluate(blankAfterQuote, i).catch(() => null);
+    if (lost.length) {
+      const back = await undoUntilRestored(page, editor, before);
+      if (!back) throw new Error(`인용구 아래 빈 줄을 지우다 글이 사라졌고 되돌리지 못했습니다: ${lost.slice(0, 3).join(' / ')}. 저장하지 않고 멈춥니다.`);
+      left++;
+    } else if (still) left++;
+    else removed++;
+  }
+  return { removed, left };
+}
+
+/**
+ * 인용구·그림 바로 위/아래의 빈 문단 화면 위치. 없으면 null.
+ * [sel, i, side] — side 'before' 는 앞 글 덩어리의 마지막 빈 줄, 'after' 는 뒤 글 덩어리의 첫 빈 줄.
+ * 그 덩어리에 글 줄이 하나도 없으면(빈 줄 하나뿐) 지울 수 없으니 null.
+ */
+function blankBeside([sel, i, side]) {
+  const c = [...document.querySelectorAll(sel)][i];
+  const sib = c && (side === 'after' ? c.nextElementSibling : c.previousElementSibling);
+  if (!sib || !sib.classList.contains('se-text')) return null;
+  const ps = [...sib.querySelectorAll('.se-text-paragraph')];
+  if (ps.length < 2) return null;
+  const p = side === 'after' ? ps[0] : ps[ps.length - 1];
+  if (p.textContent.replace(/\u200b/g, '').trim()) return null;
+  p.scrollIntoView({ block: 'center' });
+  const r = p.getBoundingClientRect();
+  return { x: r.left + 4, y: r.top + r.height / 2 };
+}
+
+const QUOTE_SEL = '.se-component.se-quotation';
+const IMAGE_SEL = '.se-component.se-image';
+
+/**
+ * 인용구·그림 위아래 빈 줄을 지운다 (사용자 지시 2026-10-02: 그림 위·아래, 소제목 위에 빈 줄이 남는다).
+ * 위쪽 빈 줄은 Backspace(앞 줄 끝으로 붙음), 아래쪽 빈 줄은 Delete(다음 줄이 올라붙음).
+ * 지운 뒤 다른 글이 사라졌으면 되돌리고 그 자리는 그대로 둔다.
+ */
+async function removeBlanksBeside(page, editor, sel, side) {
+  const n = await editor.evaluate((s) => document.querySelectorAll(s).length, sel).catch(() => 0);
+  let removed = 0, left = 0;
+  for (let i = 0; i < n; i++) {
+    for (let tries = 0; tries < 3; tries++) { // 빈 줄이 두 줄일 수도 있다
+      let at = await editor.evaluate(blankBeside, [sel, i, side]).catch(() => null);
+      if (!at) break;
+      await sleep(200);
+      at = await editor.evaluate(blankBeside, [sel, i, side]).catch(() => null); // 스크롤 뒤 다시 잰다
+      if (!at) break;
+      const before = await snapshot(editor);
+      const off = await frameOffset(page, editor);
+      await page.mouse.click(off.x + at.x, off.y + at.y);
+      await sleep(200);
+      await page.keyboard.press(side === 'after' ? 'Delete' : 'Backspace');
+      await sleep(350);
+      const lost = lostLines(before, await snapshot(editor));
+      if (lost.length) {
+        const back = await undoUntilRestored(page, editor, before);
+        if (!back) throw new Error(`빈 줄을 지우다 글이 사라졌고 되돌리지 못했습니다: ${lost.slice(0, 3).join(' / ')}. 저장하지 않고 멈춥니다.`);
+        left++;
+        break;
+      }
+      removed++;
+    }
+  }
+  return { removed, left };
 }
 
 /** "[이미지 N] 설명" 표시 줄을 지우고 그 자리에 그림 파일을 넣는다. */
@@ -773,9 +909,9 @@ function bodyHtml(post) {
   const parts = [];
   post.blocks.forEach((b, i) => {
     // 이미지 위아래에는 빈 줄을 두지 않는다 (사용자 지시 2026-10-01: 글과 그림이 붙어 이어지게)
-    // 소제목(인용구) 바로 아래에도 두지 않는다 — 인용구 아래 빈 줄이 한 칸씩 생겼다 (사용자 지시 2026-10-01)
-    const prev = i ? post.blocks[i - 1].type : null;
-    if (i && b.type !== 'image' && prev !== 'image' && prev !== 'quote') parts.push('<p><br></p>');
+    // 소제목 아래 빈 문단은 붙여 넣을 때는 둔다. 빼고 넣었더니 인용구로 바꿀 때 다음 줄이 같이 지워졌다
+    // (2026-10-02 실행: 인용구 10개 중 9개 실패). 인용구를 다 만든 뒤 removeBlankAfterQuotes 가 지운다.
+    if (i && b.type !== 'image' && post.blocks[i - 1].type !== 'image') parts.push('<p><br></p>');
     if (b.type === 'image') { parts.push(`<p>${escHtml(imageLabel(b))}</p>`); return; }
     for (const l of b.lines) {
       const segs = l.segs || [{ t: l.t, s: l.s }];
@@ -1103,14 +1239,10 @@ async function main() {
         }
       }
       if (quotes.length) await dump(page, 'quotes');
-      if (quotes.length) {
-        // 인용구 바로 아래에 빈 줄이 남았는지 센다 (남으면 다음 수정의 근거로 쓴다)
-        const gaps = await editor.evaluate(() => [...document.querySelectorAll('.se-component.se-quotation')].filter((q) => {
-          const next = q.nextElementSibling;
-          const p = next && next.classList.contains('se-text') && next.querySelector('.se-text-paragraph');
-          return !!p && !p.textContent.replace(/\u200b/g, '').trim();
-        }).length).catch(() => -1);
-        log(`인용구 아래 빈 줄: ${gaps < 0 ? '확인 못 함' : `${gaps}곳`}`);
+      if (report.quote.ok) {
+        // 인용구 바로 아래 빈 줄을 지운다 (사용자 지시 2026-10-01). 글이 하나라도 사라지면 되돌린다.
+        const r = await removeBlankAfterQuotes(page, editor);
+        log(`인용구 아래 빈 줄: ${r.removed}곳 지움${r.left ? ` · ${r.left}곳 남음 (그대로 둠)` : ''}`);
       }
     }
 
@@ -1132,6 +1264,28 @@ async function main() {
         manual.push(`이미지 ${b.n} → "${label}" 자리에 ${path.basename(file)} 직접 넣기  [${r.why}]`);
       }
     }
+    // ---- 인용구 위, 그림 위·아래 빈 줄 지우기 (사용자 지시 2026-10-02)
+    {
+      const parts = [];
+      for (const [sel, side, name] of [[QUOTE_SEL, 'before', '인용구 위'], [IMAGE_SEL, 'before', '그림 위'], [IMAGE_SEL, 'after', '그림 아래']]) {
+        const r = await removeBlanksBeside(page, editor, sel, side);
+        parts.push(`${name} ${r.removed}곳${r.left ? `(${r.left}곳 남김)` : ''}`);
+      }
+      log(`빈 줄 지움: ${parts.join(' · ')}`);
+      // 그림 주변 구조를 기록한다 (사용자가 그림 위·아래 빈 줄을 봤는데 위 단계가 0곳을 찾았다 — 원인 확인용)
+      const shape = await editor.evaluate(() => {
+        const desc = (el) => {
+          if (!el) return '없음';
+          const kind = ['se-image', 'se-quotation', 'se-text'].find((k) => el.classList.contains(k)) || (el.className || '').toString().split(' ').slice(0, 2).join('.');
+          if (kind !== 'se-text') return kind;
+          const ps = [...el.querySelectorAll('.se-text-paragraph')].map((p) => (p.textContent.replace(/\u200b/g, '').trim() ? '글' : '빈'));
+          return `text[${ps.length > 4 ? [...ps.slice(0, 2), '…', ...ps.slice(-2)].join(',') : ps.join(',')}]`;
+        };
+        return [...document.querySelectorAll('.se-component.se-image')].slice(0, 3)
+          .map((im, i) => `그림${i + 1}: ${desc(im.previousElementSibling)} → 그림 → ${desc(im.nextElementSibling)}`);
+      }).catch(() => []);
+      shape.forEach((l) => log(`  구조 ${l}`));
+    }
     if (args.images) await dump(page, 'images');
 
 
@@ -1141,12 +1295,20 @@ async function main() {
         const root = document.querySelector('.se-main-container') || document.querySelector('.se-content') || document.body;
         const wants = Object.values(colors).map((c) => [c.prop, `rgb(${c.rgb.join(', ')})`]);
         const out = [];
-        for (const el of root.querySelectorAll('span')) {
-          if (el.closest('.se-documentTitle') || !el.textContent.trim()) continue;
-          const cs = getComputedStyle(el);
-          if (!wants.some(([prop, v]) => cs[prop] === v)) continue;
-          if (el.querySelector('span')) continue; // 가장 안쪽 글자만 본다
-          if (!(parseInt(cs.fontWeight, 10) >= 600)) out.push(el.textContent.trim());
+        // 글자(텍스트 노드) 기준으로 본다. 네이버는 <span style="color"><b>글자</b></span> 로 넣는다
+        const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        let n;
+        while ((n = w.nextNode())) {
+          const t = n.nodeValue.replace(/\u200b/g, '').trim();
+          const el = n.parentElement;
+          if (!t || !el || el.closest('.se-documentTitle') || !el.closest('.se-text-paragraph')) continue;
+          const p = el.closest('.se-text-paragraph');
+          let colored = false;
+          for (let e = el; e && e !== p.parentElement; e = e.parentElement) {
+            const cs = getComputedStyle(e);
+            if (wants.some(([prop, v]) => cs[prop] === v)) { colored = true; break; }
+          }
+          if (colored && !(parseInt(getComputedStyle(el).fontWeight, 10) >= 600)) out.push(t);
         }
         return [...new Set(out)];
       }, COLORS);
@@ -1222,11 +1384,7 @@ async function main() {
 
     if (post.category) {
       step(`9. 카테고리: ${post.category}`);
-      try {
-        await findAnywhere(page, editor, ['button[class*="selectbox_button"]', 'button:has-text("카테고리")'], { timeout: 4000 }).then((r) => r.loc.click());
-        await sleep(500);
-        await findAnywhere(page, editor, [`label:has-text("${post.category}")`, `span:has-text("${post.category}")`], { timeout: 4000 }).then((r) => r.loc.click());
-      } catch { warn('카테고리 자동 선택 실패 — 수동으로 지정하세요.'); }
+      await pickCategory(page, editor, post.category);
     }
 
     if (post.tags?.length) {

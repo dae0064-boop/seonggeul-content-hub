@@ -1,6 +1,6 @@
 {
   "_설명": "성글벙글 블로그 이미지 스타일 정본. 실행기(post-images.ps1)가 이 파일을 그대로 읽는다. 사람용 설명은 standards/이미지-기준.md",
-  "version": "2026-10-01b",
+  "version": "2026-10-02",
   "model": "gpt-image-2",
   "quality": "low",
   "size": "1024x1024",
@@ -15,15 +15,16 @@
     "성글이": "Seonggeul, the blog host: a Korean woman in her 30s, round face, dark hair in a low bun, cream sweater with a mint scarf"
   },
   "title": {
-    "font": "Malgun Gothic",
+    "font": "Jua (주아체, 둥근 글씨) — scripts/lib/fonts/Jua-Regular.ttf",
     "color": "#4A3A30",
     "outline": "#FFFFFF",
-    "max_font_px": 104,
+    "max_font_px": 154,
     "min_font_px": 56,
-    "area_top_ratio": 0.05,
-    "area_height_ratio": 0.3,
-    "side_margin_px": 70
+    "area_top_ratio": 0.02,
+    "area_height_ratio": 0.34,
+    "side_margin_px": 70,
+    "style": "① 둥근 글씨 + 형광펜: 두 줄, 진갈색 글씨에 흰 테두리, 첫 줄에 노란 형광펜(#FFE45C). 주제 꼬리표(tag)는 쓰지 않는다 (2026-10-02 사용자 선택) 글씨는 시안 크기(한 줄 150px 안팎)로 키우고, 한 줄 10자 안쪽으로 쓴다."
   },
-  "text_overlay": "글씨는 그림 모델이 쓰지 않는다. 계획서 overlay 로 scripts/lib/overlay.mjs 가 맑은 고딕으로 얹는다. 대표사진은 kind=thumb(제목+주제 꼬리표), 본문은 필요할 때 label/steps.",
+  "text_overlay": "글씨는 그림 모델이 쓰지 않는다. 계획서 overlay 로 scripts/lib/overlay.mjs 가 맑은 고딕으로 얹는다. 대표사진은 kind=thumb(주아체 제목 두 줄, 꼬리표 없음), 본문은 필요할 때 label/steps.",
   "variety": "한 글의 8장은 모두 다른 장면이다: 장소·주인공(사물/사람)·구도·배경색이 서로 겹치지 않게, 각 장면은 그 자리 문단 내용에 맞춘다. 같은 그림에 글씨만 바꿔 얹지 않는다. (2026-10-01 사용자 지시)"
 }
