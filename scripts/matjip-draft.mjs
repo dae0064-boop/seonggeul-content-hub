@@ -163,11 +163,13 @@ const checks = [...(need('웨이팅') ? [`웨이팅: ${need('웨이팅')}`] : []
 push(...blocks(checks.length ? checks.flatMap(wrap) : [todo('웨이팅·팁 — 메모에 없음')]));
 push(img('곁들임 메뉴'));
 
-push(`인용구(소제목) ${mainKw} Q&A`);
-const qa = (n, q, a, what) => `Q${n}: ${q}\n${wrap(`A${n}: ${a || todo(what)}`).join('\n')}`;
-push(qa(1, `${shop} 주차 되나요?`, need('주차'), '주차'));
-push(qa(2, '웨이팅이나 예약은요?', [need('웨이팅'), need('예약')].filter(Boolean).join(', '), '웨이팅·예약'));
-push(qa(3, '쉬는 날은 언제예요?', need('휴무') && `${need('휴무')}이에요. 영업시간은 ${need('영업시간') || todo('영업시간')}이었어요.`, '휴무'));
+// 맛집 글은 Q&A 형식 대신 소제목 아래 이야기로 풀어 쓴다 (2026-10-02 사용자 지시)
+push(`인용구(소제목) ${shop} 주차·예약·쉬는 날`);
+push(...blocks([
+  ...wrap(`주차는 ${need('주차') || todo('주차')}`),
+  ...wrap(`예약은 ${need('예약') || todo('예약')}`),
+  ...wrap(`쉬는 날은 ${need('휴무') || todo('휴무')}`),
+]));
 push(img('계산대·영수증 또는 가게 앞'));
 while (imgN < Math.max(8, photos.length)) push(img('사진 설명'));
 

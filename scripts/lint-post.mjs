@@ -74,7 +74,10 @@ for (const file of files) {
     const all = post.blocks.flatMap((b) => b.lines.map((l) => l.t));
     const qs = all.filter((t) => /^Q\d+:/.test(t)).length;
     const as = all.filter((t) => /^A\d+:/.test(t)).length;
-    if (qs !== 3 || as !== 3) errors.push(`Q&A 는 "Q1: 질문" / "A1: 답변" 형식으로 3쌍이어야 합니다 (지금 Q ${qs}개 / A ${as}개)`);
+    // 맛집 글은 Q&A 를 두지 않고 그 내용을 인용구 소제목 아래 이야기로 풀어 쓴다 (2026-10-02 사용자 지시)
+    if (['맛집', '맛집정보'].includes(post.category)) {
+      if (qs || as) errors.push(`맛집 글에는 Q&A 형식을 쓰지 않습니다 — 인용구 소제목 아래 문장으로 풀어 쓰세요 (지금 Q ${qs}개 / A ${as}개)`);
+    } else if (qs !== 3 || as !== 3) errors.push(`Q&A 는 "Q1: 질문" / "A1: 답변" 형식으로 3쌍이어야 합니다 (지금 Q ${qs}개 / A ${as}개)`);
   }
 
   // 키워드 세기: 띄어쓰기 차이를 흡수하려고 양쪽 공백을 제거하고 센다
