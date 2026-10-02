@@ -660,6 +660,61 @@ async function removeBlankAfterQuotes(page, editor) {
   return { removed, left };
 }
 
+/**
+ * 인용구·그림 바로 위/아래의 빈 문단 화면 위치. 없으면 null.
+ * [sel, i, side] — side 'before' 는 앞 글 덩어리의 마지막 빈 줄, 'after' 는 뒤 글 덩어리의 첫 빈 줄.
+ * 그 덩어리에 글 줄이 하나도 없으면(빈 줄 하나뿐) 지울 수 없으니 null.
+ */
+function blankBeside([sel, i, side]) {
+  const c = [...document.querySelectorAll(sel)][i];
+  const sib = c && (side === 'after' ? c.nextElementSibling : c.previousElementSibling);
+  if (!sib || !sib.classList.contains('se-text')) return null;
+  const ps = [...sib.querySelectorAll('.se-text-paragraph')];
+  if (ps.length < 2) return null;
+  const p = side === 'after' ? ps[0] : ps[ps.length - 1];
+  if (p.textContent.replace(/\u200b/g, '').trim()) return null;
+  p.scrollIntoView({ block: 'center' });
+  const r = p.getBoundingClientRect();
+  return { x: r.left + 4, y: r.top + r.height / 2 };
+}
+
+const QUOTE_SEL = '.se-component.se-quotation';
+const IMAGE_SEL = '.se-component.se-image';
+
+/**
+ * 인용구·그림 위아래 빈 줄을 지운다 (사용자 지시 2026-10-02: 그림 위·아래, 소제목 위에 빈 줄이 남는다).
+ * 위쪽 빈 줄은 Backspace(앞 줄 끝으로 붙음), 아래쪽 빈 줄은 Delete(다음 줄이 올라붙음).
+ * 지운 뒤 다른 글이 사라졌으면 되돌리고 그 자리는 그대로 둔다.
+ */
+async function removeBlanksBeside(page, editor, sel, side) {
+  const n = await editor.evaluate((s) => document.querySelectorAll(s).length, sel).catch(() => 0);
+  let removed = 0, left = 0;
+  for (let i = 0; i < n; i++) {
+    for (let tries = 0; tries < 3; tries++) { // 빈 줄이 두 줄일 수도 있다
+      let at = await editor.evaluate(blankBeside, [sel, i, side]).catch(() => null);
+      if (!at) break;
+      await sleep(200);
+      at = await editor.evaluate(blankBeside, [sel, i, side]).catch(() => null); // 스크롤 뒤 다시 잰다
+      if (!at) break;
+      const before = await snapshot(editor);
+      const off = await frameOffset(page, editor);
+      await page.mouse.click(off.x + at.x, off.y + at.y);
+      await sleep(200);
+      await page.keyboard.press(side === 'after' ? 'Delete' : 'Backspace');
+      await sleep(350);
+      const lost = lostLines(before, await snapshot(editor));
+      if (lost.length) {
+        const back = await undoUntilRestored(page, editor, before);
+        if (!back) throw new Error(`빈 줄을 지우다 글이 사라졌고 되돌리지 못했습니다: ${lost.slice(0, 3).join(' / ')}. 저장하지 않고 멈춥니다.`);
+        left++;
+        break;
+      }
+      removed++;
+    }
+  }
+  return { removed, left };
+}
+
 /** "[이미지 N] 설명" 표시 줄을 지우고 그 자리에 그림 파일을 넣는다. */
 // ---------------------------------------------------------------- 본문 지킴이
 const PLACEHOLDERS = new Set(['사진 설명을 입력하세요.', '출처 입력', '내용을 입력하세요.']);
@@ -1192,6 +1247,15 @@ async function main() {
         if (r.lost) throw new Error(`이미지를 넣다가 글이 사라졌고 되돌리지 못했습니다: ${r.lost.slice(0, 3).join(' / ')}. 저장하지 않고 멈춥니다.`);
         manual.push(`이미지 ${b.n} → "${label}" 자리에 ${path.basename(file)} 직접 넣기  [${r.why}]`);
       }
+    }
+    // ---- 인용구 위, 그림 위·아래 빈 줄 지우기 (사용자 지시 2026-10-02)
+    {
+      const parts = [];
+      for (const [sel, side, name] of [[QUOTE_SEL, 'before', '인용구 위'], [IMAGE_SEL, 'before', '그림 위'], [IMAGE_SEL, 'after', '그림 아래']]) {
+        const r = await removeBlanksBeside(page, editor, sel, side);
+        parts.push(`${name} ${r.removed}곳${r.left ? `(${r.left}곳 남김)` : ''}`);
+      }
+      log(`빈 줄 지움: ${parts.join(' · ')}`);
     }
     if (args.images) await dump(page, 'images');
 
