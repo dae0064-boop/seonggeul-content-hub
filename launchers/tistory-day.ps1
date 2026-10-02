@@ -3,6 +3,10 @@
 #   -DryRun     임시저장 + 발행 패널을 열어 화면을 기록만 하고 닫는다 (예약발행을 만들 자료)
 #   -Only hasan-mureup   일부 글만
 #   -NoShare    끝나고 결과를 Google Drive 로 올리지 않기
+#   -SkipImages 그림을 만들지 않고, 이미 만들어 둔 그림만 넣는다
+#
+# 그림: 글마다 content\image-plans\<글>.json 으로 content\images\<글>\ 에 그림을 만들고(이미 있으면 건너뜀, 돈 두 번 안 나감)
+# 발행 스크립트가 [이미지 N] 자리에 올려 넣는다. 네이버와 같은 그림 도구·같은 OpenAI 키를 쓴다.
 #
 # 블로그 주소(<이름>.tistory.com)는 처음 한 번 물어보고 사용자 환경 변수 TISTORY_BLOG 에 저장한다.
 # 자동화용 크롬(9222)에 티스토리(카카오) 로그인이 되어 있어야 한다 — launchers\chrome-login.cmd
@@ -10,7 +14,8 @@ param(
   [string]$Date = (Get-Date -Format 'yyyy-MM-dd'),
   [string[]]$Only = @(),
   [switch]$DryRun,
-  [switch]$NoShare
+  [switch]$NoShare,
+  [switch]$SkipImages
 )
 $started = Get-Date
 $ErrorActionPreference = 'Continue'
@@ -81,7 +86,14 @@ foreach ($m in $mds) {
     continue
   }
   Run @('scripts/build-tistory.mjs', $m.FullName) | Out-Null
-  $code = Run @('scripts/publish-tistory.mjs', '--post', ($m.FullName -replace '\.md$', '.json'), $mode, '--dump')
+  $plan = "content\image-plans\$slug.json"
+  if (-not $SkipImages -and (Test-Path $plan)) {
+    Say "  그림 만들기: $plan" 'Cyan'
+    if ((Run @('scripts/post-images.mjs', $plan)) -ne 0) { Say '  그림 일부 실패 — 못 만든 자리는 표시 글자로 남깁니다' 'Yellow' }
+  } elseif (-not (Test-Path $plan)) { Say "  이미지 계획서 없음 — 그림 없이 넣습니다: $plan" 'Yellow' }
+  $pubArgs = @('scripts/publish-tistory.mjs', '--post', ($m.FullName -replace '\.md$', '.json'), $mode, '--dump')
+  if (Test-Path "content\images\$slug") { $pubArgs += @('--images', "content\images\$slug") }
+  $code = Run $pubArgs
   $msg = if ($code -eq 0) { if ($DryRun) { '임시저장 + 발행 패널 기록' } else { '임시저장 완료' } } else { '실패 — 저장 안 함' }
   $result += [pscustomobject]@{ 글 = $slug; 결과 = $msg }
   if ($code -ne 0 -and $i -eq 1 -and @($mds).Count -gt 1) {

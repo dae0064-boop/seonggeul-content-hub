@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * 티스토리 글 작성 → 임시저장 자동화 (1단계)
+ * 티스토리 글 작성(사진 포함) → 임시저장 자동화
  *
  * 티스토리 Open API 는 2024년 2월에 종료됐다 (memory/decisions.md). 남은 길은 브라우저 자동화뿐이라
  * 네이버와 같이 이미 로그인된 크롬(디버깅 포트 9222)에 CDP 로 attach 한다.
@@ -18,7 +18,11 @@
  * 아직 하지 않는 것 (실제 화면 덤프를 보고 붙인다)
  *   - 예약발행: 발행 패널의 날짜·시각 칸 구조를 아직 모른다. --dry-run 덤프를 받은 뒤 만든다.
  *     네이버처럼 '다시 읽어 확인 → 안 되면 임시저장' 규칙으로 만든다.
- *   - 사진: [이미지 N] 자리는 표시 문단으로 남긴다.
+ *
+ * 사진 (--images <폴더>, 2026-10-03 사용자 지시 — 테스트부터 사진까지)
+ *   빈 본문에 <폴더>/NN.png 를 1번부터 한 장씩 올린다 → 티스토리가 그림마다 [##_Image|…_##] 코드를 만든다
+ *   → HTML 모드로 바꿔 그 코드를 순서대로 읽는다 → 원고의 [이미지 N] 자리에 코드를 끼워 넣고 본문 전체를 덮어쓴다.
+ *   커서 위치를 맞출 필요가 없어서 순서가 틀어지지 않는다. 올리지 못한 그림 자리는 표시 문단으로 남기고 목록으로 알린다.
  *
  * 실제 발행은 --publish-now 를 사람이 그 자리에서 붙였을 때만 한다. 기본은 아무것도 발행하지 않는다.
  * attach 한 브라우저는 사용자 것이다. 종료하지 않는다.
@@ -45,6 +49,7 @@ function parseArgs(argv) {
       case '--reserve':     out.reserve = true; break;
       case '--no-tags':     out.tags = false; break;
       case '--url':         out.url = next(); break;
+      case '--images':      out.images = next(); break;
       case '--dump':        out.dump = true; break;
       case '--help':        out.help = true; break;
       default:
@@ -72,6 +77,7 @@ const USAGE = `
   --no-tags          태그를 넣지 않는다
   --dump             단계별 스크린샷/HTML 을 dumps/ 에 저장
   --cdp <url>        CDP 주소 (기본 http://localhost:9222)
+  --images <폴더>    [이미지 N] 자리에 <폴더>/NN.png 를 올려 넣는다 (post-images.mjs 결과 폴더)
   --url <url>        글쓰기 URL 재정의 (로컬 목업 테스트용)
 
 --save-draft / --dry-run / --publish-now 중 아무것도 없으면 본문만 채우고 멈춘다.
@@ -123,6 +129,10 @@ const SEL = {
   modeBtn:   ['#editor-mode-layer-btn-open', 'button:has-text("기본모드")'],
   modeHtml:  ['#editor-mode-html', '[id*="mode-html"]', 'span:has-text("HTML")'],
   codeMirror:['.CodeMirror'],
+  modeOk:    ['.mce-window button:has-text("확인")', '[role="dialog"] button:has-text("확인")', '.layer_btn button:has-text("확인")', 'button.btn_ok', 'button:has-text("확인")'],
+  fileInput: ['input[type="file"][accept*="image"]', 'input#attach-image[type="file"]', 'input[type="file"]'],
+  attachBtn: ['#mceu_0-open', 'button[aria-label="첨부"]', 'button:has-text("첨부")'],
+  attachPhoto:['#attach-image', 'li:has-text("사진")', 'button:has-text("사진")'],
   category:  ['button#category-btn', 'button:has-text("카테고리")'],
   tagInput:  ['input#tagText', 'input[placeholder*="태그"]'],
   draft:     ['a.btn-draft', 'button.btn-draft', '.btn-draft .action', 'button:has-text("임시저장")', 'a:has-text("임시저장")'],
@@ -152,12 +162,60 @@ async function bodyByTinymce(page, html) {
 }
 
 /** HTML 모드로 바꿔 코드 편집기(CodeMirror)에 넣는다. 전환 확인창은 dialog 핸들러가 수락한다. */
-async function bodyByHtmlMode(page, html) {
+async function toHtmlMode(page) {
+  if (await page.evaluate(() => { const e = document.querySelector('.CodeMirror'); return !!(e && e.offsetParent); })) return;
   await clickFirst(page, SEL.modeBtn, { timeout: 5000 });
   await sleep(500);
   await clickFirst(page, SEL.modeHtml, { timeout: 5000 });
-  await sleep(1500);
+  await sleep(800);
+  // 모드 전환 경고가 화면 안 레이어로 뜨면 '확인' (브라우저 확인창이면 dialog 핸들러가 수락한다)
+  await clickFirst(page, SEL.modeOk, { timeout: 1500 }).catch(() => {});
+  await sleep(800);
   await findFirst(page, SEL.codeMirror, { timeout: 8000 });
+}
+
+const IMAGE_CODE = /\[##_Image\|[\s\S]*?_##\]/g;
+
+/** 지금 본문에 들어 있는 그림 수 (기본 에디터의 <img> 또는 HTML 모드의 [##_Image] 코드) */
+const countImages = (page) => page.evaluate(() => {
+  const cm = document.querySelector('.CodeMirror');
+  if (cm && cm.offsetParent && cm.CodeMirror) return (cm.CodeMirror.getValue().match(/\[##_Image\|/g) || []).length;
+  const ed = window.tinymce && (window.tinymce.activeEditor || window.tinymce.editors?.[0]);
+  const body = ed?.getBody?.();
+  if (!body) return 0;
+  const imgs = body.querySelectorAll('img, figure[data-ke-type="image"]').length;
+  const codes = (body.textContent.match(/\[##_Image\|/g) || []).length;
+  return Math.max(imgs, codes);
+});
+
+/** 그림 한 장 올리기: 숨은 파일 칸에 바로 넣고, 안 되면 첨부 → 사진 버튼으로 파일 선택창을 띄운다. 들어갔는지 그림 수로 확인 */
+async function uploadOne(page, file) {
+  const before = await countImages(page);
+  let sent = false;
+  for (const sel of SEL.fileInput) {
+    const loc = page.locator(sel).first();
+    if (await loc.count().catch(() => 0)) {
+      try { await loc.setInputFiles(file); sent = true; break; } catch { /* 다음 후보 */ }
+    }
+  }
+  if (!sent) {
+    await clickFirst(page, SEL.attachBtn, { timeout: 4000 });
+    const [chooser] = await Promise.all([
+      page.waitForEvent('filechooser', { timeout: 8000 }),
+      clickFirst(page, SEL.attachPhoto, { timeout: 4000 }),
+    ]);
+    await chooser.setFiles(file);
+  }
+  const deadline = Date.now() + 40000;
+  while (Date.now() < deadline) {
+    if ((await countImages(page)) > before) return true;
+    await sleep(500);
+  }
+  return false;
+}
+
+async function bodyByHtmlMode(page, html) {
+  await toHtmlMode(page);
   return page.evaluate((h) => {
     const cm = document.querySelector('.CodeMirror')?.CodeMirror;
     if (!cm) return { ok: false, why: 'CodeMirror 없음' };
@@ -173,7 +231,13 @@ async function readBack(page) {
     const cm = document.querySelector('.CodeMirror')?.CodeMirror;
     const visibleCm = cm && document.querySelector('.CodeMirror').offsetParent !== null;
     let root;
-    if (visibleCm) { root = document.createElement('div'); root.innerHTML = cm.getValue(); }
+    let images = 0;
+    if (visibleCm) {
+      const v = cm.getValue();
+      images = (v.match(/\[##_Image\|/g) || []).length;
+      root = document.createElement('div');
+      root.innerHTML = v.replace(/\[##_Image\|[\s\S]*?_##\]/g, '');
+    }
     else {
       const ed = window.tinymce && (window.tinymce.activeEditor || window.tinymce.editors?.[0]);
       root = ed?.getBody?.();
@@ -181,6 +245,7 @@ async function readBack(page) {
     if (!root) return null;
     return {
       via: visibleCm ? 'html' : 'tinymce',
+      images,
       text: root.textContent || '',
       h2: [...root.querySelectorAll('h2')].map((e) => e.textContent.trim()),
       tables: root.querySelectorAll('table').length,
@@ -190,8 +255,9 @@ async function readBack(page) {
   });
 }
 
-function checkBody(got, post, want) {
+function checkBody(got, post, want, imagesWant = 0) {
   if (!got) return '에디터 본문을 읽지 못함';
+  if (got.images < imagesWant) return `그림 ${got.images}장 (올린 것 ${imagesWant}장)`;
   const count = (re) => (post.html.match(re) || []).length;
   const h2Want = count(/<h2[\s>]/g);
   const tWant = count(/<table[\s>]/g);
@@ -261,7 +327,19 @@ async function main() {
     throw new Error(`${args.post}: title·html·blocks 가 필요합니다. build-tistory.mjs 로 생성하세요.`);
   }
   // 기대 글자 수 = 에디터가 보여 줄 글자 (HTML 의 태그를 걷어 낸 것)
-  const want = squash(post.html.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&nbsp;/g, ' '));
+  const textOf = (h) => squash(h.replace(IMAGE_CODE, '').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&nbsp;/g, ' '));
+  let finalHtml = post.html;
+  let want = textOf(finalHtml);
+  // 그림 파일 미리 확인
+  const imageBlocks = post.blocks.filter((b) => b.type === 'image');
+  const imageFiles = [];
+  if (args.images) {
+    if (!fs.existsSync(args.images)) throw new Error(`이미지 폴더가 없습니다: ${args.images}\n먼저 post-images.mjs 로 만드세요.`);
+    for (const b of imageBlocks) {
+      const f = path.resolve(args.images, `${String(b.n).padStart(2, '0')}.png`);
+      if (fs.existsSync(f)) imageFiles.push({ n: b.n, file: f });
+    }
+  }
 
   if (args.dump) {
     dumpDir = path.join('dumps', new Date().toISOString().replace(/[:.]/g, '-'));
@@ -278,7 +356,7 @@ async function main() {
   log(`글    : ${post.title}`);
   log(`블로그: ${args.url || `${args.blog}.tistory.com`}`);
   log(`본문  : ${post.blocks.length}블록 / 공백 제외 ${want.length}자`);
-  log(`이미지: ${post.blocks.filter((b) => b.type === 'image').length}자리 (표시 문단으로 남김 — 사진은 손으로)`);
+  log(`이미지: ${imageBlocks.length}자리 / ${args.images ? `파일 ${imageFiles.length}장 준비됨` : '넣지 않음 (표시 문단으로 남김)'}`);
   log(`모드  : ${mode}`);
 
   step('1. 실행 중인 크롬에 연결');
@@ -314,20 +392,50 @@ async function main() {
     if (gotTitle !== post.title) throw new Error(`제목이 다르게 들어갔습니다: "${gotTitle}"`);
     log(post.title);
 
+    // 4-0. 사진: 빈 본문에 한 장씩 올리고, HTML 모드에서 코드를 읽어 원고 자리에 끼운다
+    let uploaded = [];
+    const missingImages = [];
+    if (imageFiles.length) {
+      step(`4-0. 사진 ${imageFiles.length}장 올리기`);
+      await findFirst(page, SEL.editorIfr, { timeout: 15000 }).catch(() => {});
+      for (const im of imageFiles) {
+        const ok = await uploadOne(page, im.file).catch((e) => { warn(`${im.n}번 올리기 실패: ${e.message.split('\n')[0]}`); return false; });
+        if (ok) { uploaded.push(im); log(`${im.n}번 올림`); } else missingImages.push(im.n);
+        if (!ok) break; // 한 장이 안 되면 뒤 장도 같은 이유로 안 된다 — 순서가 틀어지지 않게 멈춘다
+      }
+      await dump(page, 'images-uploaded');
+      if (uploaded.length) {
+        await toHtmlMode(page);
+        const codes = await page.evaluate(() => (document.querySelector('.CodeMirror').CodeMirror.getValue().match(/\[##_Image\|[\s\S]*?_##\]/g) || []));
+        if (codes.length !== uploaded.length) {
+          warn(`그림 코드 ${codes.length}개 / 올린 그림 ${uploaded.length}장 — 수가 달라 사진은 넣지 않고 글만 넣습니다.`);
+          missingImages.push(...uploaded.map((u) => u.n)); uploaded = [];
+        } else {
+          uploaded.forEach((u, i) => {
+            const re = new RegExp(`<p data-ke-size="size16">\\[이미지 ${u.n}\\][^<]*</p>`);
+            finalHtml = finalHtml.replace(re, `<p data-ke-size="size16">${codes[i]}</p>`);
+          });
+          want = textOf(finalHtml);
+          args.body = 'html'; // 그림 코드는 HTML 모드에서만 그대로 들어간다
+        }
+      }
+      for (const b of imageBlocks) if (!imageFiles.some((f) => f.n === b.n) && !missingImages.includes(b.n)) missingImages.push(b.n);
+    }
+
     step('4. 본문 (HTML 통째로)');
     let problem = 'not tried';
     if (args.body !== 'html') {
       await findFirst(page, SEL.editorIfr, { timeout: 15000 }).catch(() => {});
-      const r = await bodyByTinymce(page, post.html);
+      const r = await bodyByTinymce(page, finalHtml);
       await sleep(800);
-      problem = r.ok ? checkBody(await readBack(page), post, want.length) : r.why;
+      problem = r.ok ? checkBody(await readBack(page), post, want.length, uploaded.length) : r.why;
       if (problem) warn(`기본 에디터로 넣기 실패: ${problem}`);
       else log('기본 에디터(TinyMCE)로 넣음');
     }
     if (problem && args.body !== 'tinymce') {
-      const r = await bodyByHtmlMode(page, post.html).catch((e) => ({ ok: false, why: e.message.split('\n')[0] }));
+      const r = await bodyByHtmlMode(page, finalHtml).catch((e) => ({ ok: false, why: e.message.split('\n')[0] }));
       await sleep(800);
-      problem = r.ok ? checkBody(await readBack(page), post, want.length) : r.why;
+      problem = r.ok ? checkBody(await readBack(page), post, want.length, uploaded.length) : r.why;
       if (problem) warn(`HTML 모드로 넣기 실패: ${problem}`);
       else log('HTML 모드로 넣음');
     }
@@ -337,7 +445,8 @@ async function main() {
         + `손으로 하려면 HTML 모드에 ${args.post.replace(/\.json$/, '.html')} 내용을 붙여넣으세요.`);
     }
     const back = await readBack(page);
-    log(`확인: H2 ${back.h2.length}개 · 표 ${back.tables}개 · ${squash(back.text).length}자 (${back.via})`);
+    log(`확인: H2 ${back.h2.length}개 · 색 강조 ${back.styled}곳 · 그림 ${back.images}장 · ${squash(back.text).length}자 (${back.via})`);
+    if (missingImages.length) warn(`사진을 넣지 못한 자리: ${[...new Set(missingImages)].sort((a, b) => a - b).join(', ')}번 — 표시 문단으로 남겼어요.`);
 
     step('5. 카테고리·태그');
     if (post.category) {
