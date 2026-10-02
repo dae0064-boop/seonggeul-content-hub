@@ -22,6 +22,8 @@ docs/SETUP.md      새 컴퓨터 설치 가이드
 docs/THREADS.md    스레드 자동화 설치·운영 가이드
 docs/OPEN-ISSUES.md 아직 정하지 못한 것들. 규칙을 손대기 전에 읽는다
 docs/STATUS.md     진행 상황. 작업을 시작할 때 먼저 읽고, 끝낼 때 갱신한다
+assets/fonts/      대표사진 글꼴 (Jua, Black Han Sans — SIL OFL)
+content/calendar/title-keywords/  제목용 키워드 조회 결과 (검색량). 제목·키워드를 정할 때 본다
 ```
 
 원고는 항상 **`.md` 와 `.json` 한 쌍**으로 둔다. `.md` 가 정본이고, `.json` 은 거기서 생성한
@@ -357,6 +359,8 @@ PC 쪽 등록·해제는 `launchers/auto-setup.cmd` (`-Remove` 로 끔). 예약�
   색을 입힌 직후 선택 영역이 남은 채 다음 줄을 입력하면 선택된 글자가 덮어써진다 — 2026-09 테스트에서
   "칠하려던 글자가 사라지고 뒷글이 그 색을 입던" 원인이다. 색을 입힐 때마다 글자가 남았는지 확인하고,
   사라졌으면 Ctrl+Z 로 되돌린 뒤 멈춘다.
+- 대표사진 글씨: **두 줄, 한 줄 10자 안쪽, 첫 줄 = 메인 키워드. 숫자 꼬리표는 넣지 않는다** (2026-10-02 사용자 지시).
+  둥근 글씨 + 첫 줄 노란 형광펜으로 크게 얹는다. 자세한 건 `standards/이미지-기준.md` "대표사진 제목".
 - 이미지: `[이미지 N] 설명` 표시 줄을 먼저 넣어 두고, 나중에 그 줄을 지운 자리에 `NN.png` 를 넣는다.
   그림은 `content/image-plans/<슬러그>.json` (원고 작업판 프롬프트 그대로) →
   `node scripts/post-images.mjs <계획서>` → `content/images/<슬러그>/` 로 만든다.

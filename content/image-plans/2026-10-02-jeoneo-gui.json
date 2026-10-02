@@ -1,6 +1,6 @@
 {
   "slug": "2026-10-02-jeoneo-gui",
-  "title": "전어구이 집에서 냄새 덜 나게, 손질부터 에어프라이어까지",
+  "title": "전어구이 하는법·먹는법, 에어프라이어로 냄새 덜 나게 굽기",
   "source": "10/2 원고 (클라우드 작성)",
   "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md)",
   "images": [
@@ -13,8 +13,7 @@
       "quality": "medium",
       "overlay": {
         "kind": "thumb",
-        "tag": "가을 제철 전어",
-        "title": "전어구이\n집에서 냄새 덜 나게"
+        "title": "전어구이 하는법\n냄새 덜 나게 굽기"
       },
       "shot": "close-up hero shot at a low angle",
       "bg": "warm apricot"
