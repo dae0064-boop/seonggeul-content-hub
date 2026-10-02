@@ -1,11 +1,11 @@
 ﻿# 매일 아침 예약발행 작업을 Windows 작업 스케줄러에 등록한다 (한 번만 실행하면 된다).
-#   launchers\auto-setup.cmd              등록 (매일 07:30)
-#   launchers\auto-setup.cmd -At 07:00    시각 바꾸기
+#   launchers\auto-setup.cmd              등록 (매일 09:00)
+#   launchers\auto-setup.cmd -At 09:15    시각 바꾸기 (노트북)
 #   launchers\auto-setup.cmd -Remove      끄기
 # 작업은 launchers\auto-day.cmd 를 부른다: 최신 원고 받기 → 이미지 → 원고의 publish_at 시각으로 예약발행.
 # 원고는 클라우드 Claude 가 전날 21시에 써서 main 에 올린다.
 param(
-  [string]$At = '07:30',
+  [string]$At = '09:00',
   [switch]$Remove
 )
 $ErrorActionPreference = 'Stop'
