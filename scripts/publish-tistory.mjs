@@ -184,17 +184,22 @@ async function readBack(page) {
       text: root.textContent || '',
       h2: [...root.querySelectorAll('h2')].map((e) => e.textContent.trim()),
       tables: root.querySelectorAll('table').length,
+      // 색·배경을 입힌 글자 (에디터가 style 을 지우면 강조가 사라진다)
+      styled: [...root.querySelectorAll('span[style]')].filter((e) => /color/i.test(e.getAttribute('style'))).length,
     };
   });
 }
 
 function checkBody(got, post, want) {
   if (!got) return '에디터 본문을 읽지 못함';
-  const h2Want = post.blocks.filter((b) => b.type === 'h2').length;
-  const tWant = post.blocks.filter((b) => b.type === 'table').length;
+  const count = (re) => (post.html.match(re) || []).length;
+  const h2Want = count(/<h2[\s>]/g);
+  const tWant = count(/<table[\s>]/g);
+  const sWant = count(/<span style="[^"]*color/g);
   const ratio = squash(got.text).length / want;
   if (got.h2.length !== h2Want) return `H2 ${got.h2.length}개 (원고 ${h2Want}개)`;
   if (got.tables !== tWant) return `표 ${got.tables}개 (원고 ${tWant}개)`;
+  if (got.styled < sWant) return `색 강조 ${got.styled}곳 (원고 ${sWant}곳) — 에디터가 색을 지웠다`;
   if (ratio < 0.97 || ratio > 1.05) return `글자 수가 원고의 ${Math.round(ratio * 100)}%`;
   return '';
 }
@@ -256,7 +261,7 @@ async function main() {
     throw new Error(`${args.post}: title·html·blocks 가 필요합니다. build-tistory.mjs 로 생성하세요.`);
   }
   // 기대 글자 수 = 에디터가 보여 줄 글자 (HTML 의 태그를 걷어 낸 것)
-  const want = squash(post.html.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"'));
+  const want = squash(post.html.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&nbsp;/g, ' '));
 
   if (args.dump) {
     dumpDir = path.join('dumps', new Date().toISOString().replace(/[:.]/g, '-'));
