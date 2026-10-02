@@ -1,0 +1,123 @@
+{
+  "slug": "2026-10-02-siwol-otcharim",
+  "title": "10월 옷차림 기온별로, 일교차 큰 날 겹쳐 입는 가을 옷 고르는 법",
+  "source": "10/2 추가 원고 (옛 13·15시 예약 삭제 후 채움)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "옷걸이에 나란히 걸린 가디건과 바람막이, 얇은 니트 (대표사진)",
+      "note": "대표",
+      "prompt": "Camera and composition: straight-on shot of a clothing rack. A wooden clothing rack with a cardigan, a light windbreaker, a thin knit sweater and a trench coat hanging in a row, a small potted plant beside, no people. No people at all in this image. Background color: warm cream. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "quality": "medium",
+      "overlay": {
+        "kind": "thumb",
+        "title": "10월 옷차림\n기온별로 고르기"
+      },
+      "shot": "straight-on shot of a clothing rack",
+      "bg": "warm cream"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "아침엔 두꺼운 옷, 낮엔 그 옷을 팔에 걸고 땀을 닦는 성글이",
+      "note": "사례 — 낮엔 덥다",
+      "prompt": "Camera and composition: medium shot on a sunny city sidewalk. The blog host walks on a sunny sidewalk at noon carrying a thick jacket over one arm and wiping his forehead with a handkerchief, smiling sheepishly. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Only the person or people described here appear; no other people. Background color: bright sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot on a sunny city sidewalk",
+      "bg": "bright sky blue"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "반팔 티셔츠, 셔츠, 가디건을 세 겹으로 겹친 옷 단면 모형",
+      "note": "결론 — 겹쳐 입기",
+      "prompt": "Camera and composition: side cross-section diagram. A clay cross-section showing three thin clothing layers, a T-shirt, a shirt and a cardigan, with tiny warm air bubbles between the layers. No people at all in this image. Background color: soft apricot. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "얇게 두세 겹 겹쳐 입기"
+      },
+      "shot": "side cross-section diagram",
+      "bg": "soft apricot"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "온도계 눈금 옆에 기온별로 놓인 옷 세 벌",
+      "note": "기온별",
+      "prompt": "Camera and composition: flat lay on a light table. A tall clay thermometer on the left, and three outfits laid out beside it from top to bottom: a long-sleeve shirt with a cardigan, a knit with a windbreaker, and a light padded jacket. No people at all in this image. Background color: pale lavender. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "steps",
+        "items": [
+          [
+            "20도 안팎",
+            "가디건"
+          ],
+          [
+            "15도 안팎",
+            "바람막이"
+          ],
+          [
+            "10도 아래",
+            "경량패딩"
+          ]
+        ]
+      },
+      "shot": "flat lay on a light table",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "휴대폰 날씨 앱의 시간대별 기온 그래프를 보는 손",
+      "note": "일교차 확인",
+      "prompt": "Camera and composition: close-up of a smartphone screen. A hand holds a smartphone showing a simple weather app with a curved line graph and sun and moon icons, no readable numbers, morning light from a window. No people at all in this image. Background color: soft mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up of a smartphone screen",
+      "bg": "soft mint"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "옷장 앞쪽에 가을 옷을 정리해 거는 모습",
+      "note": "가을 옷 꺼내기",
+      "prompt": "Camera and composition: three-quarter view of an open wardrobe. An open wardrobe with autumn layers hung at the front and summer clothes pushed to the back, a hand hanging a cardigan. No people at all in this image. Background color: warm wood brown. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "three-quarter view of an open wardrobe",
+      "bg": "warm wood brown"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "현관 옷걸이에 걸린 겉옷과 작은 접이식 바람막이",
+      "note": "체크포인트",
+      "prompt": "Camera and composition: eye-level shot of an entryway coat hook. An entryway with a coat hook holding a light jacket, a small folded windbreaker pouch on the shoe cabinet, a pair of sneakers below. No people at all in this image. Background color: soft butter yellow. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "steps",
+        "items": [
+          [
+            "최저·최고",
+            "같이 보기"
+          ],
+          [
+            "겹쳐",
+            "입기"
+          ],
+          [
+            "겉옷",
+            "챙기기"
+          ]
+        ]
+      },
+      "shot": "eye-level shot of an entryway coat hook",
+      "bg": "soft butter yellow"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "가을 공원을 겹쳐 입은 옷차림으로 산책하는 가족",
+      "note": "정리",
+      "prompt": "Camera and composition: wide shot in a park in late afternoon. A family in layered autumn outfits strolls through a park with yellow ginkgo trees, one person carrying a cardigan over the arm. The Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan. The Seonggeul grandpa: a Korean man in his late 70s, short gray hair, mint green vest over a white shirt. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Only the person or people described here appear; no other people. Background color: golden autumn. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide shot in a park in late afternoon",
+      "bg": "golden autumn"
+    }
+  ]
+}
