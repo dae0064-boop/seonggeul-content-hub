@@ -7,32 +7,27 @@
  * 자동화용 크롬(9222)과는 별개로 뜨고, 끝나면 바로 닫힌다.
  *
  * overlay 종류 (계획서 images[].overlay)
- *   { kind: "thumb", title: "줄1\n줄2", style: "round" | "bold" }   대표사진 — 위쪽 3분의 1에 제목
- *       첫 줄(메인 키워드)에 노란 형광펜을 긋는다. round = 둥근 글씨(Jua, 기본), bold = 굵은 글씨(Black Han Sans).
- *       글꼴은 assets/fonts 에 넣어 둔 것을 쓴다 (PC 마다 깔린 글꼴이 달라도 똑같이 나온다).
- *       한 줄이 길면 글씨가 줄어든다 — 한 줄 10자 안쪽으로 쓴다. tag(숫자 꼬리표)는 그리지 않는다 (2026-10-02 사용자 지시).
+ *   { kind: "thumb", title: "줄1\n줄2" }   대표사진 — 위쪽 3분의 1에 제목
+ *       2026-10-02 사용자 선택 "① 둥근 글씨 + 형광펜": 주아체로 크게, 첫 줄(메인 키워드)에 노란 형광펜.
+ *       글꼴은 scripts/lib/fonts 에 넣어 둔 것을 쓴다 (PC 마다 깔린 글꼴이 달라도 똑같이 나온다).
+ *       한 줄이 길면 글씨가 줄어든다 — 한 줄 10자 안쪽으로 쓴다. tag(숫자 꼬리표)는 그리지 않는다.
  *   { kind: "label", text: "한 줄 문구", pos: "bottom" | "top" }    본문 — 띠 하나
  *   { kind: "steps", items: [["75세 이상", "10월 12일"], ...] }      본문 — 아래쪽 칸 나눔 표
  */
 import fs from 'node:fs';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 
-const FONT_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..', 'assets', 'fonts');
-// 대표사진 글꼴. 파일이 없으면 맑은 고딕으로 그린다 (그림은 나오되 덜 눈에 띈다)
-const THUMB_FONTS = { round: ['SgRound', 'Jua-Regular.ttf'], bold: ['SgBold', 'BlackHanSans-Regular.ttf'] };
-const fontFaceCache = {};
-function thumbFont(style) {
-  const [family, file] = THUMB_FONTS[style] || THUMB_FONTS.round;
-  if (!(family in fontFaceCache)) {
-    const p = path.join(FONT_DIR, file);
-    fontFaceCache[family] = fs.existsSync(p)
-      ? `@font-face{font-family:"${family}";src:url(data:font/ttf;base64,${fs.readFileSync(p).toString('base64')})}`
-      : '';
+// 대표사진 제목 글꼴: 주아체(둥근 글씨, SIL OFL — scripts/lib/fonts/Jua-OFL.txt).
+// 파일이 없으면 맑은 고딕으로 그린다 (그림은 나오되 덜 눈에 띈다)
+const JUA = new URL('./fonts/Jua-Regular.ttf', import.meta.url);
+let juaCache;
+const juaFace = () => {
+  if (juaCache === undefined) {
+    try { juaCache = `@font-face{font-family:"Jua";src:url(data:font/ttf;base64,${fs.readFileSync(JUA).toString('base64')}) format("truetype")}`; }
+    catch { juaCache = ''; }
   }
-  return { family, face: fontFaceCache[family] };
-}
+  return juaCache;
+};
 
 const STYLE = {
   font: '"Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans CJK KR","Noto Sans KR",sans-serif',
@@ -55,9 +50,8 @@ function html(imgDataUrl, size, o) {
   if (o.kind === 'thumb') {
     const tl = String(o.title).split('\n');
     const fs1 = Math.round(S * (tl.length > 2 ? 0.105 : 0.15));
-    const f = thumbFont(o.style);
-    face = f.face;
-    if (f.face) thumbFamily = `"${f.family}",${STYLE.font}`;
+    face = juaFace();
+    if (face) thumbFamily = `"Jua",${STYLE.font}`;
     // 줄마다 따로 그려서 줄마다 칸에 맞게 줄인다. 첫 줄 = 메인 키워드 = 형광펜
     layer = `
       <div class="thumb">

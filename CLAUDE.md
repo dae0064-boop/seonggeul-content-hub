@@ -22,7 +22,6 @@ docs/SETUP.md      새 컴퓨터 설치 가이드
 docs/THREADS.md    스레드 자동화 설치·운영 가이드
 docs/OPEN-ISSUES.md 아직 정하지 못한 것들. 규칙을 손대기 전에 읽는다
 docs/STATUS.md     진행 상황. 작업을 시작할 때 먼저 읽고, 끝낼 때 갱신한다
-assets/fonts/      대표사진 글꼴 (Jua, Black Han Sans — SIL OFL)
 content/calendar/title-keywords/  제목용 키워드 조회 결과 (검색량). 제목·키워드를 정할 때 본다
 ```
 
