@@ -387,7 +387,7 @@ Q&A          많이 묻는 3~5개
 
 | 언제 | 어디서 | 무엇 |
 |---|---|---|
-| 전날 21시 | 클라우드 Claude (Routine) | 다음 날 원고 5편 + 이미지 계획서 작성, 검사기 통과, `publish_at` 11:00·13:00·15:00·17:00·19:00 (캘린더 순서), PR → `main` |
+| 전날 21시 | 클라우드 Claude (Routine) | 다음 날 원고 5편 + 이미지 계획서 작성, 검사기 통과, `publish_at` 11:00·13:00·15:00·17:00·19:00 (캘린더 순서), PR → `main`. **티스토리 1편도 같은 PR 에** (2026-10-02 사용자 결정 — 5편 중 정보성 글 하나와 같은 묶음, 다른 메인 키워드. `docs/TISTORY.md` 형식, `lint-tistory` 통과, `publish_at` 없음) |
 | 당일 09:00 | 사용자 PC (작업 스케줄러 `SeonggeulDailyReserve`) | `launchers/auto-day.cmd` → `git pull` → 이미지 생성 → 5편 예약발행 → 결과를 Drive `run-logs` 로 |
 
 PC 쪽 등록·해제는 `launchers/auto-setup.cmd` (`-Remove` 로 끔). 예약된 글은 네이버에서 발행 전까지 취소·수정할 수 있다.
