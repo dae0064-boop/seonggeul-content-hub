@@ -1,6 +1,6 @@
 ---
 title: 고속도로 휴게소 음식 대표 메뉴와 식사 시간, 연휴에 덜 기다리는 방법
-category: 생활정보
+category: 맛집
 main_keyword: 고속도로 휴게소 음식
 sub_keywords: 식사 시간, 대표 메뉴, 포장
 publish_at: 2026-10-03 17:00
