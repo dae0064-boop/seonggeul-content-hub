@@ -31,6 +31,7 @@ export const MAX_LINE = 24;
 // 딱딱하지 않게 — 문맥에 맞는 이모지 2~3개 (2026-10-02 사용자 지시)
 export const MIN_EMOJI = 2;
 export const MAX_EMOJI = 3;
+export const MAX_PLANNER = 3;
 
 // memory/CLAUDE.md [4] [6] 중 보험 글에만 붙는 것. 안전장치(guard)에 없는 것만 둔다
 const INSURANCE_BANNED = [
@@ -148,8 +149,14 @@ export function checkSet(set, previous = []) {
     }
     if (!p.출처) errors.push(`${tag}: 출처 칸이 없습니다. 숫자가 없으면 "출처: 없음" 이라고 적습니다.`);
     if (/안\s*함/.test(p.원문확인 || '')) notes.push(`${tag}: 출처 원문을 아직 열어 보지 않았습니다. 올리기 전에 링크를 열어 확인합니다.`);
+    // 마침표만 이어지면 딱딱하다 — 느낌표·말줄임표를 섞는다 (2026-10-02 사용자 지시)
+    if (!/[!…~]/.test(p.body)) notes.push(`${tag}: 느낌표·말줄임표가 하나도 없습니다. 말끝을 상황에 맞게 섞어 주세요.`);
     if (/보장/.test(p.body)) notes.push(`${tag}: "보장" — 약속하는 말이 아니라 이름씨(보장 내용·범위)로 쓰였는지 확인.`);
   }
+
+  // "친근한 설계사에게 물어보세요" 는 문맥이 맞는 글에만, 한 묶음에 3편까지 (2026-10-02 사용자 지시)
+  const planner = posts.filter((p) => /설계사에게/.test(p.body)).map((p) => p.no);
+  if (planner.length > MAX_PLANNER) errors.push(`"친근한 설계사에게 물어보세요" 가 ${planner.length}편(${planner.join('·')}번)입니다. 한 묶음에 ${MAX_PLANNER}편까지.`);
 
   if (!set.meta.심의필) notes.push('심의필 칸이 비었습니다. 소속 회사 광고심의가 필요한 글이면 받은 뒤 적어 둡니다.');
 
