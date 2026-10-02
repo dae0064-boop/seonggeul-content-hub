@@ -8,6 +8,8 @@ git pull -q
 REM Threads insurance posts: save new Word files to Drive (fast, before the blog run)
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0insurance-word.ps1"
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0draft-day.ps1" -Reserve %*
+REM 내 블로그 통계(유입 검색어·글별 조회수)를 읽기만 하고 Drive 로 올린다
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0blog-stats.ps1"
 REM 다른 블로그 살펴보기 요청이 있으면 (content\research\blog-snapshot.txt) 읽기만 하고 Drive 로 올린다
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0blog-snapshot.ps1"
 REM 예전에 등록한 PC 라도 "다시 시도" 시각이 생기게 한다 (한 번만 바뀐다)
