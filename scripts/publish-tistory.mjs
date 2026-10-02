@@ -293,6 +293,7 @@ async function pickCategory(page, name) {
     const names = await page.evaluate(() => [...document.querySelectorAll('#category-list [role="option"], #category-list li')].map((e) => e.innerText.trim()).filter(Boolean).slice(0, 20)).catch(() => []);
     await page.keyboard.press('Escape').catch(() => {});
     await btn.click().catch(() => {});
+    if (names.length <= 1 && /없음/.test(names[0] || '')) throw new Error(`블로그에 카테고리가 아직 없어요 — 티스토리 관리 > 카테고리에서 "${name}" 을 만들면 다음부터 자동으로 골라요`);
     throw new Error(`"${name}" 카테고리를 찾지 못함${names.length ? ` (블로그 카테고리: ${names.join(', ')})` : ''}`);
   }
   await sleep(400);
@@ -303,7 +304,8 @@ async function pickCategory(page, name) {
 async function enterTags(page, tags) {
   const { loc } = await findFirst(page, SEL.tagInput, { timeout: 4000 });
   for (const t of tags) {
-    await loc.click({ timeout: 5000 });
+    await loc.scrollIntoViewIfNeeded().catch(() => {});
+    await loc.click({ timeout: 5000 }).catch(() => loc.focus());
     // 커서가 태그 칸에 있을 때만 Enter 를 누른다 (다른 버튼이 눌릴 여지를 없앤다)
     const focused = await loc.evaluate((el) => document.activeElement === el);
     if (!focused) throw new Error('태그 칸에 커서가 없습니다');
@@ -410,6 +412,17 @@ async function main() {
     if (gotTitle !== post.title) throw new Error(`제목이 다르게 들어갔습니다: "${gotTitle}"`);
     log(post.title);
 
+    step('3-1. 카테고리·태그 (본문보다 먼저 — HTML 모드에서는 태그 칸이 가려진다)');
+    if (post.category) {
+      try { await pickCategory(page, post.category); log(`카테고리: ${post.category}`); }
+      catch (e) { warn(`카테고리 선택 실패 (${e.message.split('\n')[0]}) — 저장 후 직접 고르세요.`); }
+    }
+    if (args.tags && post.tags?.length) {
+      try { await enterTags(page, post.tags); }
+      catch (e) { warn(`태그 입력 실패 (${e.message.split('\n')[0]}) — 저장 후 직접 넣으세요.`); }
+    }
+    await dump(page, 'filled');
+
     // 4-0. 사진: 빈 본문에 한 장씩 올리고, HTML 모드에서 코드를 읽어 원고 자리에 끼운다
     let uploaded = [];
     const missingImages = [];
@@ -466,16 +479,6 @@ async function main() {
     log(`확인: H2 ${back.h2.length}개 · 색 강조 ${back.styled}곳 · 그림 ${back.images}장 · ${squash(back.text).length}자 (${back.via})`);
     if (missingImages.length) warn(`사진을 넣지 못한 자리: ${[...new Set(missingImages)].sort((a, b) => a - b).join(', ')}번 — 표시 문단으로 남겼어요.`);
 
-    step('5. 카테고리·태그');
-    if (post.category) {
-      try { await pickCategory(page, post.category); log(`카테고리: ${post.category}`); }
-      catch (e) { warn(`카테고리 선택 실패 (${e.message.split('\n')[0]}) — 저장 후 직접 고르세요.`); }
-    }
-    if (args.tags && post.tags?.length) {
-      try { await enterTags(page, post.tags); }
-      catch (e) { warn(`태그 입력 실패 (${e.message.split('\n')[0]}) — 저장 후 직접 넣으세요.`); }
-    }
-    await dump(page, 'filled');
 
     if (!args.saveDraft && !args.dryRun && !args.publishNow) {
       console.log('\n✅ 본문까지 넣었습니다. 저장·발행은 하지 않았습니다 (탭은 열어둡니다).');
