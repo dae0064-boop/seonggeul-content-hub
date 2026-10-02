@@ -24,9 +24,10 @@ export const TYPES = [
 // 지난 묶음의 글감과 이만큼 비슷하면 같은 글감으로 본다
 const TOPIC_DUP = 0.5;
 
-// 모바일 스레드에서 '더 보기'로 접히지 않는 틀 (rules.md "한 편의 모양", 사용자 원문 237자·14줄·최장 23자)
-export const MAX_CHARS = 250;
-export const MAX_LINES = 16;
+// 모바일 스레드 틀 (rules.md "한 편의 모양", 사용자 원문 237자·14줄·최장 23자).
+// 짧은 글감은 짧게, 설명이 더 필요한 글감은 300자·19줄까지 늘려도 된다 (2026-10-03 사용자 지시)
+export const MAX_CHARS = 300;
+export const MAX_LINES = 19;
 export const MAX_LINE = 24;
 // 딱딱하지 않게 — 문맥에 맞는 이모지 2~3개 (2026-10-02 사용자 지시)
 export const MIN_EMOJI = 2;
@@ -137,6 +138,8 @@ export function checkSet(set, previous = []) {
       errors.push(`${tag}: 이모지가 ${emoji}개 — ${MIN_EMOJI}~${MAX_EMOJI}개로 문맥에 맞게 넣습니다.`);
     }
     if (/#[^\s#]+/.test(p.body)) errors.push(`${tag}: 해시태그는 달지 않습니다.`);
+    // 노란 하트는 쓰지 않는다 (2026-10-03 사용자 지시)
+    if (/💛/u.test(p.body)) errors.push(`${tag}: 노란 하트(💛)는 쓰지 않습니다. 🙂😊🙏 같은 다른 이모지로 바꿉니다.`);
 
     for (const { re, why } of INSURANCE_BANNED) {
       const m = p.body.match(re);
