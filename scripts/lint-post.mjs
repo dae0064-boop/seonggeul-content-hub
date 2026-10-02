@@ -166,6 +166,28 @@ for (const file of files) {
     for (const w of ['인생맛집', '역대급', '존맛', 'JMT', '미쳤', '꼭 가야']) if (body.includes(w)) notes.push(`"${w}" — 과장 표현입니다. 메모에 적은 느낌 그대로 쓰세요.`);
   }
 
+  // 맛집 정보글 (category: 맛집정보) — 가 보지 않고 공개 정보로 정리한 "방문 전 정보". CLAUDE.md "맛집 정보글"
+  if (post.category === '맛집정보') {
+    const m = post.meta || {};
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(m.checked || '')) errors.push('맛집 정보글은 checked: 정보 확인일(YYYY-MM-DD)이 필요합니다');
+    else if (m.checked > dated) errors.push(`정보 확인일(${m.checked})이 발행일(${dated})보다 늦습니다`);
+    if (!m.sources) errors.push('맛집 정보글은 sources: 확인한 출처(가게 공식 사이트·SNS·지도 URL)를 적어야 합니다');
+    if (!m.sponsored) errors.push('맛집 정보글은 sponsored: 를 적어야 합니다 (없음 / 제공받은 내용)');
+    else if (m.sponsored !== '없음') {
+      const head = [];
+      for (const b of post.blocks) { if (b.type === 'quote') break; if (b.type === 'p') head.push(...b.lines.map((l) => l.t)); }
+      if (!/제공받|협찬|원고료|광고/.test(head.join(''))) errors.push('협찬 글인데 첫 소제목 전에 "제공받아 작성" 같은 표기가 없습니다');
+    }
+    if (post.tags.includes('내돈내산')) errors.push('가 보지 않은 글에 #내돈내산 태그가 있습니다');
+    for (const w of ['주소', '영업시간']) if (!body.includes(w)) errors.push(`맛집 정보글에 ${w} 정보가 없습니다`);
+    if (!body.includes('방문 전')) errors.push('"방문 전에 가게에 확인해 보세요" 안내가 없습니다 (공개 정보는 바뀔 수 있다)');
+    if (body.includes('직접 방문')) errors.push('맛집 정보글에 "직접 방문" 이 있습니다 — 가 보지 않은 글입니다');
+    // 다녀온 것처럼 읽히는 말 — 가 보지 않은 글에 쓰면 독자를 속인다
+    for (const w of ['다녀왔', '다녀온', '먹어 보니', '먹어보니', '먹어 봤', '먹어봤', '맛있었', '맛있더라', '방문했', '가 봤', '가봤', '웨이팅했', '기다렸'])
+      if (body.includes(w)) errors.push(`"${w}" — 다녀온 것처럼 읽힙니다. 가게가 안내하는 내용으로 바꾸세요`);
+    for (const w of ['인생맛집', '역대급', '존맛', 'JMT', '미쳤', '꼭 가야']) if (body.includes(w)) notes.push(`"${w}" — 과장 표현입니다.`);
+  }
+
   // 고정 인사말
   if (texts[0] !== OPEN[0] || texts[1] !== OPEN[1])
     errors.push(`오프닝이 고정 문구와 다릅니다. "${OPEN[0]} / ${OPEN[1]}" 로 시작해야 합니다.`);

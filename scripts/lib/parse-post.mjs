@@ -9,7 +9,8 @@
  *   category: 생활정보
  *   tags: 태그1, 태그2
  *   publish_at: 2026-10-02 09:00   ← 예약발행 시각 (draft-day -Reserve 가 쓴다)
- *   visited / sponsored            ← 맛집 글만 (category: 맛집). post.meta 로 읽는다
+ *   visited / sponsored            ← 맛집 후기만 (category: 맛집). post.meta 로 읽는다
+ *   checked / sources / sponsored  ← 맛집 정보글만 (category: 맛집정보)
  *   ---
  *
  *   본문 줄1
