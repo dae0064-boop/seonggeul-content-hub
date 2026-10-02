@@ -11,18 +11,7 @@ $ErrorActionPreference = 'Continue'
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 Set-Location (Join-Path $PSScriptRoot '..')
 
-function Find-MyDrive {
-  if ($env:CLAUDE_DRIVE_ROOT -and (Test-Path $env:CLAUDE_DRIVE_ROOT)) { return $env:CLAUDE_DRIVE_ROOT }
-  $names = @('내 드라이브', 'My Drive')
-  $bases = @([char[]]'GHIJKLMNOPQRSTUVWXYZDEF' | ForEach-Object { "$($_):\" }) + @($env:USERPROFILE, (Join-Path $env:USERPROFILE 'Google Drive'))
-  foreach ($b in $bases) {
-    foreach ($n in $names) {
-      $p = Join-Path $b $n
-      if (Test-Path (Join-Path $p 'ClaudeWorkspace')) { return $p }
-    }
-  }
-  return $null
-}
+. (Join-Path $PSScriptRoot 'lib-drive.ps1')
 
 Add-Type -AssemblyName System.Drawing
 function Save-Small($src, $dest, [int]$maxW) {

@@ -3,16 +3,19 @@
 **어느 PC·어느 대화에서든 작업을 시작할 때 이 파일부터 읽고, 끝낼 때 갱신한다.**
 기준은 GitHub `main` 하나다. 여기 적힌 것과 다른 브랜치·다른 PC 의 상태가 다르면 `main` 이 맞다.
 
-마지막 갱신: 2026-10-02 11:10 (사무실 PC 연결 대화 — 노트북 연결 대화의 10:40 갱신을 합침)
+마지막 갱신: 2026-10-02 12:00 (노트북 연결 대화 — 정기 작업 담당)
 
 ## PC 역할
 
-| PC | 역할 | 저장소 위치 |
-|---|---|---|
-| 사무실 PC | **발행 담당** — 매일 07:30 이미지 생성 + 예약발행 (`SeonggeulDailyReserve`) | `C:\Users\dae00\seonggeul-content-hub` |
-| 노트북 | 원고 확인·수정용. **자동 예약발행을 걸지 않는다** | `C:\Users\user\Documents\seonggeul-content-hub` |
+| PC | 역할 | 저장소 위치 | 자동 실행 |
+|---|---|---|---|
+| 사무실 PC | 발행 가능 | `C:\Users\dae00\seonggeul-content-hub` | 07:30 (`auto-setup.cmd`) |
+| 노트북 | 발행 가능 | `C:\Users\user\Documents\seonggeul-content-hub` | 07:45 (`auto-setup.cmd -At 07:45`) |
 
-예약발행을 두 PC 에 모두 걸면 같은 글이 두 번 예약된다. 발행 담당은 한 대만 둔다 (2026-10-02 사용자 결정).
+**어느 PC 에서든 발행한다** (2026-10-02 사용자 결정 — 오전의 "사무실 PC 한 대"를 바꿈).
+겹침은 Drive `ClaudeWorkspace/run-locks/<날짜>/` 표시로 막는다: 먼저 시작한 PC 가 하고, 늦게 온 PC 는 쉬거나
+남은 글만 한다 (`CLAUDE.md` 자동화 규칙). 두 PC 모두 Google Drive 가 연결돼 있어야 한다.
+노트북 작업 스케줄러는 지금 07:30 으로 등록돼 있다 → `auto-setup.cmd -At 07:45` 로 다시 등록해야 한다.
 
 ## 지금 상태
 
@@ -85,10 +88,11 @@
 - [ ] 10/2 17시 글 예약 (다시 돌리거나 네이버에서 직접 예약 + 태그)
 - [ ] 10/2 11·13·15시 글 소제목 인용구 (발행 전 수정할지 결정)
 - [ ] 사무실 PC: `main` 으로 맞추고 `launchers\auto-setup.cmd` 로 07:30 자동 실행 등록
-- [ ] 노트북: 자동 실행이 등록돼 있으면 `launchers\auto-setup.cmd -Remove`
+- [ ] 노트북: `launchers\auto-setup.cmd -At 07:45` 로 다시 등록 (지금 07:30)
 - [ ] 고친 인용구·카테고리 코드를 실제 네이버에서 한 편으로 확인
 
 ## 최근에 바뀐 것
+- 2026-10-02 12:00: 두 PC 모두 발행 — Drive `run-locks` 로 겹침 막기 (`draft-day.ps1 -Reserve`), `launchers/lib-drive.ps1`
 - 2026-10-02 11:00: 대표사진 글씨를 시안 크기로 키움 (`scripts/lib/overlay.mjs`), 10/2 계획서 문구 변경, 키워드 조회 결과를 `content/calendar/title-keywords/` 에 저장
 - 2026-10-02 10:50: 10/2 원고 5편 제목·키워드·덩어리 수정, 검사기에 "소제목 바로 아래 3줄" 추가, 덩어리 평균은 소제목을 빼고 셈, `scripts/title-keywords.mjs` 추가
 - 2026-10-02: 대표사진 제목을 ① 둥근 글씨(주아체) + 첫 줄 형광펜으로 (사용자 선택). 꼬리표 없음. 10/3 이미지부터 적용
