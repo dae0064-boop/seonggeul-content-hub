@@ -53,6 +53,15 @@ if (!files.length) {
 
 let failed = 0;
 
+// 2026-10-03 원고부터 카테고리를 검사한다. 제목·메인 키워드로 정한다.
+const CATEGORY_FROM = '2026-10-03';
+function expectedCategory(post) {
+  const t = `${post.title} ${post.mainKeyword}`;
+  if (/보험/.test(t)) return '생활보장';
+  if (/맛집|카페|식당|음식|메뉴|디저트|빵집|브런치/.test(t)) return '맛집';
+  return '생활정보';
+}
+
 for (const file of files) {
   const post = parsePost(fs.readFileSync(file, 'utf8'));
   const lines = flatLines(post).filter((l) => l.block !== 'image');
@@ -69,6 +78,11 @@ for (const file of files) {
 
   if (!post.title) errors.push('title 이 없습니다.');
   if (!post.mainKeyword) errors.push('main_keyword 가 없습니다.');
+  // 네이버 카테고리 (2026-10-02 사용자 지시): 보험 → 생활보장, 음식·카페·맛집 → 맛집, 나머지는 생활정보.
+  if (!tistory && dated >= CATEGORY_FROM) {
+    const want = expectedCategory(post);
+    if (post.category !== want) errors.push(`category 는 "${want}" 여야 합니다 (지금 "${post.category || '없음'}") — 보험은 생활보장, 음식·카페·맛집은 맛집, 나머지는 생활정보`);
+  }
   if (post.title.length > (newRules ? 40 : 30)) notes.push(`제목이 깁니다 (${post.title.length}자). 모바일에서 잘릴 수 있습니다.`);
 
 
