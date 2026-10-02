@@ -173,6 +173,8 @@ const noEmoji = ins.parseSet(sample.replace(/\p{Extended_Pictographic}\uFE0F?/gu
 check('이모지가 없으면 막는다 (2~3개)', ins.checkSet(noEmoji).errors.some((e) => e.includes('이모지가 0개')));
 const tooManyPlanner = ins.parseSet(sample.replace(/(봐 주세요 ✅|확인해 보세요 📋|훑어봐 주세요 🙏|찾아보세요 🔍)$/gm, '친근한 설계사에게 물어보세요'));
 check('설계사 문구가 4편 이상이면 막는다', ins.checkSet(tooManyPlanner).errors.some((e) => e.includes('설계사')));
+const heart = ins.parseSet(sample.replace('먼저 확인해 보세요 📋', '먼저 확인해 보세요 💛'));
+check('노란 하트는 막는다', ins.checkSet(heart).errors.some((e) => e.includes('노란 하트')));
 const four = ins.parseSet(sample.split(/^## 5$/m)[0]);
 check('5편·10편이 아니면 막는다', ins.checkSet(four).errors.some((e) => e.includes('4편')));
 
