@@ -124,8 +124,8 @@ node scripts/threads/insurance-set.mjs content/threads/insurance/sets/<날짜>.m
 
 ## Word 로 저장하기 (2026-10-02 사용자 요청)
 
-한 편 = Word 파일 하나. 본문 밑에 **고정 사진**(심의 고지 배너, 모든 글에 같은 사진)을 붙이고,
-그 아래 회색 "작업 메모(올리지 않음)"에 출처·원문 확인 여부를 적는다.
+한 편 = Word 파일 하나. 본문 밑에 **고정 사진**(심의 고지 배너, 모든 글에 같은 사진)만 붙인다.
+사진 아래에는 아무것도 넣지 않는다 (2026-10-02 사용자 지시 — 작업 메모를 뺐다). 출처·원문 확인 여부는 묶음 파일에만 둔다.
 
 ```bash
 python3 scripts/threads/insurance-word.py <묶음.md> <사진.jpg> <저장 폴더>

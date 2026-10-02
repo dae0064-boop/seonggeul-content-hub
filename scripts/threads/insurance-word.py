@@ -8,6 +8,8 @@
   사람이 Drive 에서 고친 Word 를 덮어쓰지 않고, 원고나 사진이 바뀌었을 때만 다시 만든다.
 
 결과: <저장 폴더>/<날짜>_<번호>_<글감 앞부분>.docx  (5개)
+본문과 사진만 넣는다. 사진 아래에는 아무것도 두지 않는다 (2026-10-02 사용자 지시).
+출처·원문 확인 여부는 묶음 파일(content/threads/insurance/sets/)에만 남긴다.
 
 사진에는 설계사 이름·등록번호가 들어 있다. 사진과 만든 Word 파일은 저장소에 커밋하지 않는다
 (저장소가 공개다). Google Drive ClaudeWorkspace/보험글/<날짜>/ 에 둔다.
@@ -85,16 +87,6 @@ def build(post, meta, photo, out_dir):
     para(doc, '')
     doc.add_picture(str(photo), width=sec.page_width - sec.left_margin - sec.right_margin)
 
-    # 작업 메모 — 올리지 않는다. 심의 제출·출처 확인용
-    para(doc, '')
-    grey = (0x80, 0x80, 0x80)
-    para(doc, '── 작업 메모 (올리지 않음) ──', 9, grey, bold=True)
-    para(doc, f"{meta.get('date', '')} 묶음 {post['no']}번 · {post.get('역할', '')} · {post.get('보험', '')}", 9, grey)
-    para(doc, f"글감: {post.get('글감', '')}", 9, grey)
-    para(doc, f"출처: {post.get('출처', '')}", 9, grey)
-    para(doc, f"출처 원문 확인: {post.get('원문확인', '')}", 9, grey)
-    para(doc, f"글자 수: {len(post['body'])}자", 9, grey)
-
     path = Path(out_dir) / out_name(post, meta)
     doc.save(path)
     return path
@@ -109,7 +101,8 @@ def main():
     src, photo, out_dir = args
     Path(out_dir).mkdir(parents=True, exist_ok=True)
     meta, posts = parse_set(Path(src).read_text(encoding='utf-8'))
-    newest_input = max(Path(src).stat().st_mtime, Path(photo).stat().st_mtime)
+    # 원고·사진·이 스크립트 중 하나라도 바뀌면 다시 만든다 (Word 모양을 바꾸면 기존 파일도 새 모양으로)
+    newest_input = max(Path(src).stat().st_mtime, Path(photo).stat().st_mtime, Path(__file__).stat().st_mtime)
     for post in posts:
         target = Path(out_dir) / out_name(post, meta)
         if skip_fresh and target.exists() and target.stat().st_mtime >= newest_input:
