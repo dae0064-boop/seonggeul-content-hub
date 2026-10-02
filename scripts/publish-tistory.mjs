@@ -162,12 +162,20 @@ async function bodyByTinymce(page, html) {
 }
 
 /** HTML 모드로 바꿔 코드 편집기(CodeMirror)에 넣는다. 전환 확인창은 dialog 핸들러가 수락한다. */
+// 모드 전환 확인창은 우리가 HTML 모드로 바꿀 때만 수락한다.
+// 2026-10-03 첫 실제 테스트: 본문을 넣은 뒤 카테고리·태그 단계에서 '작성 모드를 변경하시겠습니까?' 가 떠서 수락했더니
+// 기본 모드로 돌아가며 글이 다 사라지고 사진만 남은 채 임시저장됐다. 그 뒤로는 거절한다.
+let allowModeSwitch = false;
+
 async function toHtmlMode(page) {
   if (await page.evaluate(() => { const e = document.querySelector('.CodeMirror'); return !!(e && e.offsetParent); })) return;
-  await clickFirst(page, SEL.modeBtn, { timeout: 5000 });
-  await sleep(500);
-  await clickFirst(page, SEL.modeHtml, { timeout: 5000 });
-  await sleep(800);
+  allowModeSwitch = true;
+  try {
+    await clickFirst(page, SEL.modeBtn, { timeout: 5000 });
+    await sleep(500);
+    await clickFirst(page, SEL.modeHtml, { timeout: 5000 });
+    await sleep(800);
+  } finally { allowModeSwitch = false; }
   // 모드 전환 경고가 화면 안 레이어로 뜨면 '확인' (브라우저 확인창이면 dialog 핸들러가 수락한다)
   await clickFirst(page, SEL.modeOk, { timeout: 1500 }).catch(() => {});
   await sleep(800);
@@ -274,12 +282,19 @@ function checkBody(got, post, want, imagesWant = 0) {
 async function pickCategory(page, name) {
   const btn = await clickFirst(page, SEL.category, { timeout: 4000 });
   await sleep(500);
-  await clickFirst(page, [
-    `#category-list [role="option"]:has-text("${name}")`,
-    `[role="option"]:has-text("${name}")`,
-    `.mce-menu-item:has-text("${name}")`,
-    `#category-list span:text-is("${name}")`,
-  ], { timeout: 4000 });
+  try {
+    await clickFirst(page, [
+      `#category-list [role="option"]:has-text("${name}")`,
+      `#category-list span:text-is("${name}")`,
+      `#category-list :text-is("${name}")`,
+    ], { timeout: 4000 });
+  } catch (e) {
+    // 목록을 열어 둔 채 다음 단계로 가면 다른 버튼이 눌린다 — 닫고 나간다
+    const names = await page.evaluate(() => [...document.querySelectorAll('#category-list [role="option"], #category-list li')].map((e) => e.innerText.trim()).filter(Boolean).slice(0, 20)).catch(() => []);
+    await page.keyboard.press('Escape').catch(() => {});
+    await btn.click().catch(() => {});
+    throw new Error(`"${name}" 카테고리를 찾지 못함${names.length ? ` (블로그 카테고리: ${names.join(', ')})` : ''}`);
+  }
   await sleep(400);
   const label = (await btn.innerText().catch(() => '')).trim();
   if (!label.includes(name)) throw new Error(`카테고리 버튼이 "${label}" 로 남음`);
@@ -288,7 +303,7 @@ async function pickCategory(page, name) {
 async function enterTags(page, tags) {
   const { loc } = await findFirst(page, SEL.tagInput, { timeout: 4000 });
   for (const t of tags) {
-    await loc.click();
+    await loc.click({ timeout: 5000 });
     // 커서가 태그 칸에 있을 때만 Enter 를 누른다 (다른 버튼이 눌릴 여지를 없앤다)
     const focused = await loc.evaluate((el) => document.activeElement === el);
     if (!focused) throw new Error('태그 칸에 커서가 없습니다');
@@ -371,7 +386,10 @@ async function main() {
   // 확인창 처리: 모드 전환은 수락, "작성 중인 글을 이어서?" 같은 나머지는 거절(새 글로 시작)
   page.on('dialog', async (d) => {
     const msg = d.message().replace(/\s+/g, ' ').slice(0, 80);
-    if (d.type() === 'confirm' && /HTML|모드|전환/.test(msg)) { log(`확인창 수락: ${msg}`); await d.accept().catch(() => {}); }
+    if (d.type() === 'confirm' && /HTML|모드|전환/.test(msg)) {
+      if (allowModeSwitch) { allowModeSwitch = false; log(`확인창 수락: ${msg}`); await d.accept().catch(() => {}); }
+      else { warn(`모드 전환 확인창을 거절했어요 (본문을 지키려고): ${msg}`); await d.dismiss().catch(() => {}); }
+    }
     else { log(`확인창 거절: [${d.type()}] ${msg}`); await d.dismiss().catch(() => {}); }
   });
 
@@ -462,6 +480,14 @@ async function main() {
     if (!args.saveDraft && !args.dryRun && !args.publishNow) {
       console.log('\n✅ 본문까지 넣었습니다. 저장·발행은 하지 않았습니다 (탭은 열어둡니다).');
       return;
+    }
+
+    // 저장 직전 마지막 확인: 카테고리·태그를 넣는 사이에 본문이 바뀌지 않았는지 다시 읽는다
+    const beforeSave = await readBack(page);
+    const lost = checkBody(beforeSave, post, want.length, uploaded.length);
+    if (lost) {
+      await dump(page, 'body-changed');
+      throw new Error(`저장 직전에 본문이 달라져 저장하지 않습니다 (${lost}). 글쓰기 탭은 그대로 두었어요.`);
     }
 
     step('6. 임시저장');
