@@ -517,17 +517,17 @@ async function insertQuoteAt(page, editor, text, style) {
   const ids = () => editor.evaluate(() => [...document.querySelectorAll('.se-component.se-quotation')].map((e) => e.id || e.dataset.compid || ''));
   const before = await ids();
 
-  const sel = await selectText(page, editor, text, 0);
-  if (!sel.ok) return { ok: false, why: `소제목 줄을 찾지 못함 — ${sel.why}` };
+  // 화면 밖에서 만든 선택(DOM 선택)으로 지우면 에디터가 다른 범위를 지울 수 있다
+  // (2026-10-01: 첫 소제목에서 6줄이 같이 지워졌다가 되돌려짐). 이미지와 같은 방식으로,
+  // 마우스로 줄 끝을 누르고 Shift+Home → Backspace 로 지운다.
   const countBefore = await editor.evaluate(domCount, text);
+  if (!countBefore) return { ok: false, why: '소제목 줄을 찾지 못함' };
+  if (!(await caretAtEnd(page, editor, text))) return { ok: false, why: '소제목 줄을 찾지 못함' };
+  await page.keyboard.press('Shift+Home');
+  await sleep(200);
   await page.keyboard.press('Backspace');
-  await sleep(300);
-  if ((await editor.evaluate(domCount, text)) >= countBefore) {
-    await selectTextByRange(editor, text, 0);
-    await editor.evaluate(() => document.execCommand('delete'));
-    await sleep(300);
-    if ((await editor.evaluate(domCount, text)) >= countBefore) return { ok: false, why: '소제목 줄이 지워지지 않음 (그대로 둠)' };
-  }
+  await sleep(350);
+  if ((await editor.evaluate(domCount, text)) >= countBefore) return { ok: false, why: '소제목 줄이 지워지지 않음 (그대로 둠)' };
 
   const restore = async () => { await page.keyboard.insertText(text).catch(() => {}); };
   try {
@@ -1202,12 +1202,20 @@ async function main() {
         const root = document.querySelector('.se-main-container') || document.querySelector('.se-content') || document.body;
         const wants = Object.values(colors).map((c) => [c.prop, `rgb(${c.rgb.join(', ')})`]);
         const out = [];
-        for (const el of root.querySelectorAll('span')) {
-          if (el.closest('.se-documentTitle') || !el.textContent.trim()) continue;
-          const cs = getComputedStyle(el);
-          if (!wants.some(([prop, v]) => cs[prop] === v)) continue;
-          if (el.querySelector('span')) continue; // 가장 안쪽 글자만 본다
-          if (!(parseInt(cs.fontWeight, 10) >= 600)) out.push(el.textContent.trim());
+        // 글자(텍스트 노드) 기준으로 본다. 네이버는 <span style="color"><b>글자</b></span> 로 넣는다
+        const w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+        let n;
+        while ((n = w.nextNode())) {
+          const t = n.nodeValue.replace(/\u200b/g, '').trim();
+          const el = n.parentElement;
+          if (!t || !el || el.closest('.se-documentTitle') || !el.closest('.se-text-paragraph')) continue;
+          const p = el.closest('.se-text-paragraph');
+          let colored = false;
+          for (let e = el; e && e !== p.parentElement; e = e.parentElement) {
+            const cs = getComputedStyle(e);
+            if (wants.some(([prop, v]) => cs[prop] === v)) { colored = true; break; }
+          }
+          if (colored && !(parseInt(getComputedStyle(el).fontWeight, 10) >= 600)) out.push(t);
         }
         return [...new Set(out)];
       }, COLORS);
