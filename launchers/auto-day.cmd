@@ -6,3 +6,5 @@ cd /d "%~dp0.."
 git checkout -q main
 git pull -q
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0draft-day.ps1" -Reserve %*
+REM 예전에 등록한 PC 라도 "다시 시도" 시각이 생기게 한다 (한 번만 바뀐다)
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0ensure-retry.ps1"
