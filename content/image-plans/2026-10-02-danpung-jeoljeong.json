@@ -1,0 +1,127 @@
+{
+  "slug": "2026-10-02-danpung-jeoljeong",
+  "title": "단풍 절정 시기 2026, 설악산 단풍·내장산 단풍 언제 가면 좋을까",
+  "source": "10/2 추가 원고 (이미 나간 09·11시 글 대신)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "붉은 단풍이 절정인 산 능선 (대표사진)",
+      "note": "대표",
+      "prompt": "Camera and composition: wide landscape shot of layered mountains. Layered mountain ridges covered in vivid red, orange and yellow autumn foliage, a small stone path winding up, no people. No people at all in this image. Background color: clear autumn sky blue. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "quality": "medium",
+      "overlay": {
+        "kind": "thumb",
+        "title": "단풍 절정 시기\n올해는 언제 갈까"
+      },
+      "shot": "wide landscape shot of layered mountains",
+      "bg": "clear autumn sky blue"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "아직 초록인 산 앞에서 달력을 보는 성글이",
+      "note": "사례 — 작년 날짜로 간 날",
+      "prompt": "Camera and composition: medium shot at a trailhead. The blog host stands at a trailhead holding a small blank pocket calendar, looking up at a mountain that is still mostly green with only a few touches of orange, puzzled smile. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Only the person or people described here appear; no other people. Background color: soft mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot at a trailhead",
+      "bg": "soft mint"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "한반도 모양 위로 위에서 아래로 번지는 단풍 색",
+      "note": "결론 — 북에서 남으로",
+      "prompt": "Camera and composition: top-down view of a clay relief map. A simple clay relief map shaped like the Korean peninsula, autumn colors spreading from deep red in the north to green in the south with soft arrows pointing downward, no text. No people at all in this image. Background color: warm cream. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "10월 초 강원 북부 → 10월 하순 전국"
+      },
+      "shot": "top-down view of a clay relief map",
+      "bg": "warm cream"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "이른 아침 설악산 계곡 단풍길을 걷는 등산객",
+      "note": "설악산 단풍",
+      "prompt": "Camera and composition: low-angle shot along a rocky valley trail. Two small hikers walk along a rocky valley trail beside a clear stream under bright red maple trees in soft early morning mist, granite peaks behind. No people at all in this image. Background color: pale dawn lavender. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "설악산 단풍 절정 · 10월 20일 무렵"
+      },
+      "shot": "low-angle shot along a rocky valley trail",
+      "bg": "pale dawn lavender"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "지도 위 산 모형마다 다른 색으로 물든 단풍",
+      "note": "산마다 다른 날짜",
+      "prompt": "Camera and composition: three-quarter view of a tabletop diorama. On a table, several small clay mountain models in a row, the first fully red, the middle ones orange, the last still mostly green, little flag pins without text on top. No people at all in this image. Background color: soft butter yellow. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "steps",
+        "items": [
+          [
+            "설악산",
+            "10월 20일"
+          ],
+          [
+            "속리산",
+            "10월 28일"
+          ],
+          [
+            "내장산",
+            "11월 4일"
+          ]
+        ]
+      },
+      "shot": "three-quarter view of a tabletop diorama",
+      "bg": "soft butter yellow"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "작은 애기단풍 잎이 터널처럼 덮인 산책길",
+      "note": "내장산 단풍",
+      "prompt": "Camera and composition: eye-level shot down a tree tunnel path. A gentle walking path under a tunnel of small delicate red maple leaves, an old wooden bridge over a pond ahead, fallen leaves on the ground. No people at all in this image. Background color: deep soft coral. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "eye-level shot down a tree tunnel path",
+      "bg": "deep soft coral"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "단풍 나들이 준비물이 놓인 배낭 옆 벤치",
+      "note": "체크포인트",
+      "prompt": "Camera and composition: flat lay on a wooden bench. On a wooden bench: an open small backpack, a folded light jacket, a thermos, walking shoes and a phone showing a simple map icon, maple leaves scattered. No people at all in this image. Background color: warm wood brown. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "steps",
+        "items": [
+          [
+            "예측일",
+            "확인"
+          ],
+          [
+            "평일",
+            "고르기"
+          ],
+          [
+            "2~3일 전",
+            "다시 확인"
+          ]
+        ]
+      },
+      "shot": "flat lay on a wooden bench",
+      "bg": "warm wood brown"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "붉은 단풍 아래 벤치에서 쉬는 가족",
+      "note": "정리 — 여유로운 단풍 구경",
+      "prompt": "Camera and composition: wide shot in a park at golden hour. A family sits on a park bench under a large red maple tree in warm late-afternoon light, sharing a thermos, leaves drifting down. The Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan. The Seonggeul grandpa: a Korean man in his late 70s, short gray hair, mint green vest over a white shirt. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Only the person or people described here appear; no other people. Background color: golden autumn amber. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide shot in a park at golden hour",
+      "bg": "golden autumn amber"
+    }
+  ]
+}
