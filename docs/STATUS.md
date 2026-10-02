@@ -25,6 +25,10 @@
 > 스레드 보험글도 "스레드 심의글" 대화가 맡는다 (10/3 사용자) — 21:41 Routine 을 그 대화로 옮겼다 (`trig_01CnHwYQ2gV8V5QKFT8LX46T`).
 > 티스토리 22:37 원고 Routine 은 원래 "티스토리 자동화" 대화에 붙어 있다. 아침 PC 의 auto-day.cmd(보험글 Word 저장 포함)는 그대로.
 
+### 운영 방식 (10/3 사용자 결정)
+- **아침 10:47 확인 = 판단까지**: 전날 조회수·유입 경로·유입 검색어·글별 조회수를 보고 앞날 캘린더·키워드 후보를 직접 고쳐 PR. `content/research/stats-log.md` 에 매일 한 줄.
+- **일요일 자율**: 토요일 밤에 일요일 원고 5편도 미리 쓴다. 일요일에 PC 가 안 켜져 발행 안 된 원고는 일요일 밤에 다음 날짜로 옮겨 쓴다.
+
 ### 키워드 검색량 자동 조회 (10/3 사용자 승인)
 - `content/calendar/keyword-queue.txt`(10/5~10/8 후보 채움) → 아침 PC `launchers/keyword-volume.ps1` → Drive `ClaudeWorkspace/keyword-volume/<날짜>/`
   → 밤 원고 Routine 이 `content/calendar/title-keywords/` 로 옮기고 메인 키워드 선택. 검사기: 2026-10-06 원고부터 메인 키워드 월 100 미만 불통과.
