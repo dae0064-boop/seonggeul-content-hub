@@ -31,10 +31,8 @@ if (!id) { console.log('사용법: node scripts/blog-stats.mjs <내 블로그 �
 const PAGES = [
   ['today', `https://admin.blog.naver.com/${id}/stat/today`],
   ['visit', `https://admin.blog.naver.com/${id}/stat/visit`],
-  ['search-keyword', `https://admin.blog.naver.com/${id}/stat/referer/search`],
   ['referer', `https://admin.blog.naver.com/${id}/stat/referer`],
-  ['post-rank', `https://admin.blog.naver.com/${id}/stat/rank/cv`],
-  ['post-rank-like', `https://admin.blog.naver.com/${id}/stat/rank/like`],
+  // 순위·이웃 등 나머지 화면은 첫 화면의 통계 메뉴 링크로 연다 (2026-10-03 첫 실행: 짐작한 순위 주소는 없는 주소였다)
 ];
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const log = (s) => console.log(s);
@@ -61,7 +59,7 @@ async function main() {
   try {
     const seen = new Set();
     const queue = [...PAGES];
-    for (let n = 1; queue.length && n <= 14; n++) {
+    for (let n = 1; queue.length && n <= 30; n++) {
       const [name, url] = queue.shift();
       if (seen.has(url)) { n--; continue; }
       seen.add(url);
@@ -75,13 +73,28 @@ async function main() {
         const base = `${String(n).padStart(2, '0')}-${name}`;
         fs.writeFileSync(path.join(OUT, `${base}.txt`), `${page.url()}\n\n${text}`);
         await page.screenshot({ path: path.join(OUT, `${base}.jpg`), type: 'jpeg', quality: 55, fullPage: true }).catch(() => {});
+        // 유입분석 화면이면 '검색 유입' 탭을 눌러 유입 검색어 표를 한 번 더 남긴다 (읽기만 — 탭 전환)
+        if (name === 'referer') {
+          for (const fr of page.frames()) {
+            const tab = fr.getByText('검색 유입', { exact: true }).first();
+            if (await tab.count().catch(() => 0)) {
+              await tab.click().catch(() => {});
+              await sleep(3000);
+              const t2 = await fr.evaluate(() => document.body?.innerText || '').catch(() => '');
+              fs.writeFileSync(path.join(OUT, `${base}-search.txt`), t2);
+              await page.screenshot({ path: path.join(OUT, `${base}-search.jpg`), type: 'jpeg', quality: 55, fullPage: true }).catch(() => {});
+              log(`  ${base}-search: ${t2.length}자`);
+              break;
+            }
+          }
+        }
         const login = /nid\.naver\.com|로그인/.test(page.url());
         index.pages.push({ name, url, landed: page.url(), chars: text.length, login });
         log(`  ${base}: ${text.length}자${login ? ' — 로그인 화면으로 갔어요 (네이버 로그인 풀림)' : ''}`);
         if (login) break;
         // 첫 화면에서 통계 메뉴 링크를 모아, 위 목록에 없던 화면도 연다
         if (n === 1) {
-          const links = await page.evaluate(() => [...document.querySelectorAll('a[href*="/stat/"]')].map((a) => [a.textContent.trim().slice(0, 20), a.href]));
+          const links = await page.evaluate(() => [...document.querySelectorAll('a[href*="/stat/"]')].map((a) => [a.textContent.trim().slice(0, 20), a.href]).filter(([t, h]) => t && !/download|help|notice/i.test(h)));
           for (const [t, h] of links) if (!seen.has(h) && !queue.some((q) => q[1] === h)) queue.push([`menu-${t.replace(/[^\p{L}\p{N}]+/gu, '_')}`, h]);
         }
       } catch (e) { log(`  ${name} 읽지 못함: ${e.message.split('\n')[0]}`); index.pages.push({ name, url, error: e.message.split('\n')[0] }); }
