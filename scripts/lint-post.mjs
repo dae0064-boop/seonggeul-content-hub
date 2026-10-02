@@ -69,8 +69,8 @@ const CATEGORY_FROM = '2026-10-03';
 function allowedCategories(post) {
   const t = `${post.title} ${post.mainKeyword}`;
   if (/보험/.test(t)) return ['생활보장'];
-  if (/맛집|카페|식당|음식|메뉴|디저트|빵집|브런치/.test(t)) return ['맛집'];
-  return ['생활정보', '맛집'];
+  if (/맛집|카페|식당|음식|메뉴|디저트|빵집|브런치/.test(t)) return ['맛집·카페'];
+  return ['생활정보', '맛집·카페'];
 }
 // 블로그 보험 글은 광고 심의가 필요 없는 비상업 정보글만 (2026-10-02 사용자 결정). 모든 블로그 원고에 적용한다.
 const COMMERCIAL = [
@@ -100,7 +100,7 @@ for (const file of files) {
   // 네이버 카테고리 (2026-10-02 사용자 지시): 보험 → 생활보장, 음식·카페·맛집 → 맛집, 나머지는 생활정보.
   if (!tistory && dated >= CATEGORY_FROM) {
     const ok = allowedCategories(post);
-    if (!ok.includes(post.category)) errors.push(`category 는 "${ok.join('" 또는 "')}" 여야 합니다 (지금 "${post.category || '없음'}") — 보험은 생활보장, 음식·카페·맛집은 맛집, 나머지는 생활정보`);
+    if (!ok.includes(post.category)) errors.push(`category 는 "${ok.join('" 또는 "')}" 여야 합니다 (지금 "${post.category || '없음'}") — 보험은 생활보장, 음식·카페·맛집은 맛집·카페, 나머지는 생활정보`);
     const all = `${post.title}\n${texts.join('\n')}`;
     for (const [re, name] of COMMERCIAL) {
       const m = re.exec(all);
