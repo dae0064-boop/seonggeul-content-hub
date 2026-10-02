@@ -53,6 +53,28 @@ if (!files.length) {
 
 let failed = 0;
 
+// 메인 키워드 월간 검색량 (2026-10-03 사용자 승인 — 키워드를 실제 검색량으로 고른다).
+// content/calendar/title-keywords/*.txt (PC 가 조회해 Drive 로 올린 결과를 Routine 이 옮겨 둔 것)에서 찾는다.
+// 2026-10-06 원고부터: 100 미만이면 불통과, 자료가 없으면 알림.
+const VOLUME_FROM = '2026-10-06';
+const MIN_VOLUME = 100;
+let VOLUMES = null;
+function volumeOf(kw) {
+  if (!VOLUMES) {
+    VOLUMES = new Map();
+    const dir = 'content/calendar/title-keywords';
+    for (const f of fs.existsSync(dir) ? fs.readdirSync(dir).filter((x) => x.endsWith('.txt')) : []) {
+      for (const line of fs.readFileSync(`${dir}/${f}`, 'utf8').split(/\r?\n/)) {
+        const m = /^\s*(\d+)\s+(.+?)\s+\[/.exec(line);
+        if (!m) continue;
+        const k = m[2].replace(/\s+/g, ''), v = +m[1];
+        if (!VOLUMES.has(k) || VOLUMES.get(k) < v) VOLUMES.set(k, v);
+      }
+    }
+  }
+  return VOLUMES.get(kw.replace(/\s+/g, ''));
+}
+
 // 2026-10-03 원고부터 카테고리를 검사한다. 제목·메인 키워드로 정한다.
 // 보험 → 생활보장 (반드시), 음식·카페·맛집 말이 있으면 → 맛집 (반드시), 그 밖은 생활정보 (요리·제철 글은 맛집도 허용).
 // 글 모양 돌려 쓰기 (2026-10-02 사용자 승인 — 하루 5편이 모두 같은 틀이면 "찍어 낸 글"로 보인다).
@@ -106,6 +128,12 @@ for (const file of files) {
       const m = re.exec(all);
       if (m) errors.push(`상업적으로 보이는 표현(${name}): "${m[0]}" — 블로그 글은 심의가 필요 없는 정보글로만 씁니다`);
     }
+  }
+  if (!tistory && dated >= VOLUME_FROM && post.mainKeyword) {
+    const v = volumeOf(post.mainKeyword);
+    if (v == null) notes.push(`메인 키워드 "${post.mainKeyword}" 검색량 자료가 없어요 — keyword-queue.txt 에 넣어 조회해 두세요`);
+    else if (v < MIN_VOLUME) errors.push(`메인 키워드 "${post.mainKeyword}" 월 검색량 ${v} — ${MIN_VOLUME} 이상인 말로 바꾸세요 (1,000~10,000 우선)`);
+    else notes.push(`메인 키워드 "${post.mainKeyword}" 월 검색량 ${v.toLocaleString()}`);
   }
   if (post.title.length > (newRules ? 40 : 30)) notes.push(`제목이 깁니다 (${post.title.length}자). 모바일에서 잘릴 수 있습니다.`);
 
