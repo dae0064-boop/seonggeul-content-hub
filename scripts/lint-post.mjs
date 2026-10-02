@@ -54,14 +54,23 @@ if (!files.length) {
 let failed = 0;
 
 // 2026-10-03 원고부터 카테고리를 검사한다. 제목·메인 키워드로 정한다.
+// 보험 → 생활보장 (반드시), 음식·카페·맛집 말이 있으면 → 맛집 (반드시), 그 밖은 생활정보 (요리·제철 글은 맛집도 허용).
 const CATEGORY_FROM = '2026-10-03';
-function expectedCategory(post) {
+function allowedCategories(post) {
   const t = `${post.title} ${post.mainKeyword}`;
-  if (/보험/.test(t)) return '생활보장';
-  if (/맛집|카페|식당|음식|메뉴|디저트|빵집|브런치/.test(t)) return '맛집';
-  return '생활정보';
+  if (/보험/.test(t)) return ['생활보장'];
+  if (/맛집|카페|식당|음식|메뉴|디저트|빵집|브런치/.test(t)) return ['맛집'];
+  return ['생활정보', '맛집'];
 }
-
+// 블로그 보험 글은 광고 심의가 필요 없는 비상업 정보글만 (2026-10-02 사용자 결정). 모든 블로그 원고에 적용한다.
+const COMMERCIAL = [
+  [/상담\s*(해\s*드|신청|문의|가능|예약)|무료\s*(상담|분석|진단|점검)|보험\s*(상담|점검)\s*받/, '상담 권유'],
+  [/연락\s*(주세요|주시면|부탁|드릴게)|문의\s*(주세요|주시면|남겨)|카톡|카카오톡|오픈\s*채팅|DM|쪽지\s*(주|보내)|댓글\s*(남겨|주시)면\s*(알려|상담|연락|보내)/, '연락 권유'],
+  [/가입\s*(하세요|해\s*보세요|을\s*권|을\s*추천|하시길)|갈아타(세요|시길|는\s*게\s*좋)|해지\s*(하세요|하시길)/, '가입·해지 권유'],
+  [/(삼성|한화|교보|흥국|동양|미래에셋|신한|KB|케이비|NH|농협|DB|디비|현대|메리츠|롯데|라이나|AIA|메트라이프|처브|ABL|푸본|KDB|하나|IBK|DGB|BNK|MG|캐롯)\s*(생명|손해|손보|화재|해상|라이프|보험)/, '보험사 이름'],
+  [/보험료[^\n]{0,12}\d[\d,]*\s*(원|만\s*원)|월\s*\d[\d,]*\s*원(대|짜리)?\s*(보험|으로\s*가입)/, '보험료 금액'],
+  [/설계사(입니다|예요|로\s*일하|로\s*활동)|010-?\d{3,4}-?\d{4}/, '설계사 신분·연락처'],
+];
 for (const file of files) {
   const post = parsePost(fs.readFileSync(file, 'utf8'));
   const lines = flatLines(post).filter((l) => l.block !== 'image');
@@ -80,8 +89,13 @@ for (const file of files) {
   if (!post.mainKeyword) errors.push('main_keyword 가 없습니다.');
   // 네이버 카테고리 (2026-10-02 사용자 지시): 보험 → 생활보장, 음식·카페·맛집 → 맛집, 나머지는 생활정보.
   if (!tistory && dated >= CATEGORY_FROM) {
-    const want = expectedCategory(post);
-    if (post.category !== want) errors.push(`category 는 "${want}" 여야 합니다 (지금 "${post.category || '없음'}") — 보험은 생활보장, 음식·카페·맛집은 맛집, 나머지는 생활정보`);
+    const ok = allowedCategories(post);
+    if (!ok.includes(post.category)) errors.push(`category 는 "${ok.join('" 또는 "')}" 여야 합니다 (지금 "${post.category || '없음'}") — 보험은 생활보장, 음식·카페·맛집은 맛집, 나머지는 생활정보`);
+    const all = `${post.title}\n${texts.join('\n')}`;
+    for (const [re, name] of COMMERCIAL) {
+      const m = re.exec(all);
+      if (m) errors.push(`상업적으로 보이는 표현(${name}): "${m[0]}" — 블로그 글은 심의가 필요 없는 정보글로만 씁니다`);
+    }
   }
   if (post.title.length > (newRules ? 40 : 30)) notes.push(`제목이 깁니다 (${post.title.length}자). 모바일에서 잘릴 수 있습니다.`);
 
