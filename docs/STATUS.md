@@ -20,6 +20,10 @@
 
 ## 지금 상태
 
+### 원고 작업실 (10/2)
+- 사용자 요청으로 "원고 작업판" → **"원고 작업실"** 로 이름을 바꿨다. 주소 https://claude.ai/artifact/BtKcrqzhB4w4mw7JdzD7JT (소스 `content/board/manuscript-board.html`).
+- 사용자 지시: **블로그에 예약발행을 마친 글은 작업실에서 지운다.** 10/1 글 5편을 지웠고, 지우기 직전 상태는 `content/board/archive/2026-10-01-board.json` 에 남겼다.
+
 ### 스레드 보험 심의글 (10/2 새로 시작)
 - 사용자 요청: 스레드에 보험 심의글을 **항상 5편씩, 겹치지 않게**. 블로그 보험 글 중단은 그대로.
 - 규칙 `content/threads/insurance/rules.md`, 글감 `topics.txt`, 첫 묶음 `sets/2026-10-02.md` (검사 통과).

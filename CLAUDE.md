@@ -10,7 +10,7 @@ memory/CLAUDE.md   브랜드 글쓰기 규칙 정본 ([0]~[11]). 각 PC 의 ~/.c
 CLAUDE.md          ← 이 문서. 저장소 운영 + 생활정보 원고 실무 기준
 content/posts/     원고. <날짜>-<슬러그>.md (정본) + .json (스크립트 입력)
 content/calendar/  발행 캘린더 아티팩트 소스, 키워드 목록
-content/board/     원고 작업판 아티팩트 소스
+content/board/     원고 작업실 아티팩트 소스 (예약발행을 마친 글은 비우고 archive/ 에 남긴다)
 content/threads/   스레드 말투 규칙(voice.md) + 글감(topics.txt)
 content/threads/insurance/  스레드 보험 심의글 — 규칙(rules.md)·글감·5편 묶음(sets/)
 scripts/           발행·검수 자동화(.mjs) + 워크스페이스 동기화 도구(.py)
@@ -404,7 +404,7 @@ Drive 를 못 찾으면 겹침을 막을 수 없다고 알리고 그대로 진�
 - 대표사진 글씨: **두 줄, 한 줄 10자 안쪽, 첫 줄 = 메인 키워드. 숫자 꼬리표는 넣지 않는다** (2026-10-02 사용자 지시).
   둥근 글씨 + 첫 줄 노란 형광펜으로 크게 얹는다. 자세한 건 `standards/이미지-기준.md` "대표사진 제목".
 - 이미지: `[이미지 N] 설명` 표시 줄을 먼저 넣어 두고, 나중에 그 줄을 지운 자리에 `NN.png` 를 넣는다.
-  그림은 `content/image-plans/<슬러그>.json` (원고 작업판 프롬프트 그대로) →
+  그림은 `content/image-plans/<슬러그>.json` (원고 작업실 프롬프트 그대로) →
   `node scripts/post-images.mjs <계획서>` → `content/images/<슬러그>/` 로 만든다.
 
 ### 실행 결과 받기
