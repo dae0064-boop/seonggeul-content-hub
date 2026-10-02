@@ -167,6 +167,8 @@ check('역할이 겹치면 막는다', ins.checkSet(twinRole).errors.some((e) =>
 const salesy = ins.parseSet(sample.replace('내 실손이 몇 개인지부터', '지금 가입하세요. 내 실손이 몇 개인지부터'));
 check('가입 권유를 막는다', ins.checkSet(salesy).errors.some((e) => e.includes('가입 권유')));
 check('지난 묶음과 같은 글감을 막는다', !ins.checkSet(okSet, [okSet]).ok);
+const longLine = ins.parseSet(sample.replace('내 실손이 몇 개인지부터', '내 실손이 몇 개인지부터 증권을 하나하나 펼쳐서 꼼꼼하게'));
+check('한 줄이 길면 막는다 (모바일 접힘)', ins.checkSet(longLine).errors.some((e) => e.includes('자 이하로 끊습니다')));
 const four = ins.parseSet(sample.split(/^## 5$/m)[0]);
 check('5편이 아니면 막는다', ins.checkSet(four).errors.some((e) => e.includes('4편')));
 
