@@ -17,12 +17,13 @@ echo.
 echo [3/4] 이 PC 의 자동 예약발행
 schtasks /query /tn SeonggeulDailyReserve >nul 2>&1 && (echo   켜져 있어요 ^(발행 담당 PC^)) || (echo   꺼져 있어요 ^(확인·수정용 PC^))
 echo.
-echo [4/4] 보험글 Word 를 Drive 보험글 폴더에 저장
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0insurance-word.ps1"
-echo.
 echo ============================================================
 powershell -NoProfile -Command "Get-Content -Encoding UTF8 docs\STATUS.md | Select-Object -First 40"
 echo ============================================================
+echo.
+REM Insurance Word step runs last so its result line stays visible at the bottom
+echo [4/4] 보험글 Word 를 Drive 보험글 폴더에 저장
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0insurance-word.ps1"
 echo.
 echo 최신 상태예요. 이제 Claude 에게 "이어서 진행해줘" 라고 하면 됩니다.
 pause
