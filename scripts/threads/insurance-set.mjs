@@ -27,6 +27,9 @@ const TOPIC_DUP = 0.5;
 export const MAX_CHARS = 250;
 export const MAX_LINES = 16;
 export const MAX_LINE = 24;
+// 딱딱하지 않게 — 문맥에 맞는 이모지 2~3개 (2026-10-02 사용자 지시)
+export const MIN_EMOJI = 2;
+export const MAX_EMOJI = 3;
 
 // memory/CLAUDE.md [4] [6] 중 보험 글에만 붙는 것. 안전장치(guard)에 없는 것만 둔다
 const INSURANCE_BANNED = [
@@ -121,7 +124,13 @@ export function checkSet(set, previous = []) {
       if (l.length > MAX_LINE) errors.push(`${tag}: ${k + 1}번째 줄이 ${l.length}자 — ${MAX_LINE}자 이하로 끊습니다: "${l}"`);
     });
     if (lines.some((l) => !l.trim())) errors.push(`${tag}: 빈 줄이 있습니다. 줄바꿈만으로 이어 씁니다.`);
-    if (!/\?$/.test(lines[0].trim())) errors.push(`${tag}: 첫 줄(제목)은 물음표로 끝나는 질문으로 씁니다.`);
+    // 제목 끝에 이모지 하나는 붙어도 된다: "…될까? 🤔"
+    const title = lines[0].trim().replace(/[\s\p{Extended_Pictographic}\uFE0F\u200D]+$/u, '');
+    if (!/\?$/.test(title)) errors.push(`${tag}: 첫 줄(제목)은 물음표로 끝나는 질문으로 씁니다.`);
+    const emoji = (p.body.match(/\p{Extended_Pictographic}/gu) || []).length;
+    if (emoji < MIN_EMOJI || emoji > MAX_EMOJI) {
+      errors.push(`${tag}: 이모지가 ${emoji}개 — ${MIN_EMOJI}~${MAX_EMOJI}개로 문맥에 맞게 넣습니다.`);
+    }
     if (/#[^\s#]+/.test(p.body)) errors.push(`${tag}: 해시태그는 달지 않습니다.`);
 
     for (const { re, why } of INSURANCE_BANNED) {
