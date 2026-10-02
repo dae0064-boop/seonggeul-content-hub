@@ -72,7 +72,10 @@ if ($Reserve) {
       Release; exit 0
     }
   } else {
-    Say 'Google Drive(내 드라이브\ClaudeWorkspace)를 찾지 못해 다른 PC 와 겹치는지 확인할 수 없어요. 그대로 진행합니다.' 'Yellow'
+    Say 'Google Drive(내 드라이브\ClaudeWorkspace)를 찾지 못해 다른 PC 와 겹치는지 확인할 수 없어요. 이 PC 안에만 표시를 남기고 진행합니다.' 'Yellow'
+    # 같은 PC 의 두 번째 실행(다시 시도)이 이미 한 글을 또 올리지 않게, 이 PC 안에 표시를 남긴다
+    $lockDir = Join-Path (Get-Location) "dumps\run-locks\$Date"
+    New-Item -ItemType Directory -Force -Path $lockDir | Out-Null
   }
 }
 
