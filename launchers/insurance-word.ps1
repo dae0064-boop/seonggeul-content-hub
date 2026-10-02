@@ -1,4 +1,4 @@
-﻿# 스레드 보험 심의글을 한 편씩 Word 로 만들어 Google Drive 의 ClaudeWorkspace\보험글\<날짜>\ 에 저장한다.
+﻿# 스레드 보험 심의글을 한 편씩 Word 로 만들어 Google Drive 의 ClaudeWorkspace\보험글\ 에 "스레드 N편.docx" 로 저장한다.
 #   powershell -ExecutionPolicy Bypass -File launchers\insurance-word.ps1           새로 생기거나 바뀐 것만
 #   powershell -ExecutionPolicy Bypass -File launchers\insurance-word.ps1 -Force    전부 다시
 # 고정 사진은 ClaudeWorkspace\보험글-사진\ 에서 가장 최근 사진을 쓴다. 사진을 바꾸면 Word 도 다시 만든다.
@@ -35,15 +35,13 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 $outRoot = Join-Path $drive 'ClaudeWorkspace\보험글'
-$sets = Get-ChildItem 'content\threads\insurance\sets\*.md' | Sort-Object Name
-$made = 0
-foreach ($s in $sets) {
-  $out = Join-Path $outRoot $s.BaseName
-  $pyArgs = @('scripts\threads\insurance-word.py', $s.FullName, $photo.FullName, $out)
-  if (-not $Force) { $pyArgs += '--skip-fresh' }
-  $lines = & python @pyArgs
-  foreach ($l in $lines) { if ($l -like '만듦*') { $made++ } }
-}
+# 한 폴더에 "스레드 1편.docx, 스레드 2편.docx ..." 로 이어서 저장한다 (2026-10-02 사용자 지시)
+$sets = Get-ChildItem 'content\threads\insurance\sets\*.md' | Sort-Object Name | ForEach-Object { $_.FullName }
+$pyArgs = @('scripts\threads\insurance-word.py', $photo.FullName, $outRoot) + $sets
+if (-not $Force) { $pyArgs += '--skip-fresh' }
+$lines = & python @pyArgs
+$made = @($lines | Where-Object { $_ -like '만듦*' }).Count
+$total = @($lines | Where-Object { $_ -like '만듦*' -or $_ -like '그대로 둠*' }).Count
 Write-Host ""
-Write-Host "Word 저장 완료: 새로 만든 것 $made 개 (사진: $($photo.Name))" -ForegroundColor Green
-Write-Host "위치: 내 드라이브\ClaudeWorkspace\보험글\<날짜> 폴더"
+Write-Host "Word 저장 완료: 전체 $total 편 중 새로 만든 것 $made 개 (사진: $($photo.Name))" -ForegroundColor Green
+Write-Host "위치: 내 드라이브\ClaudeWorkspace\보험글 (스레드 1편 ~ 스레드 $total편)"

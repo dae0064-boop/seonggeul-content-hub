@@ -172,7 +172,7 @@ check('한 줄이 길면 막는다 (모바일 접힘)', ins.checkSet(longLine).e
 const noEmoji = ins.parseSet(sample.replace(/\p{Extended_Pictographic}\uFE0F?/gu, ''));
 check('이모지가 없으면 막는다 (2~3개)', ins.checkSet(noEmoji).errors.some((e) => e.includes('이모지가 0개')));
 const four = ins.parseSet(sample.split(/^## 5$/m)[0]);
-check('5편이 아니면 막는다', ins.checkSet(four).errors.some((e) => e.includes('4편')));
+check('5편·10편이 아니면 막는다', ins.checkSet(four).errors.some((e) => e.includes('4편')));
 
 server.close();
 console.log(failed ? `\n${failed}개 실패했습니다.\n` : '\n전부 통과했습니다.\n');
