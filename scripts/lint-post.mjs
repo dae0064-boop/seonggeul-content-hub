@@ -39,9 +39,15 @@ const CLOSE_RE = /^이상 성글벙글의 .+ 포스팅이었습니다😎$/;
 // 문맥에 따라 괜찮을 수 있어 경고만 한다 ("가장 먼저" 처럼 순서를 뜻하는 경우)
 const WARN_WORDS = ['최고', '최저', '제일', '가장', '확실히', '반드시'];
 
-const files = process.argv.slice(2);
+// 티스토리 원고도 네이버와 같은 서식 기준으로 본다 (2026-10-02 사용자 지시 — 줄바꿈·색·인용구·해요체·인사말 동일).
+// 다른 점은 둘: 닫는 인사의 '이웃추가' 대신 '구독'(티스토리에는 이웃이 없다), 고정 태그(서이추 등)를 붙이지 않는다.
+// --tistory 를 붙이거나 content/tistory/ 아래 파일이면 티스토리로 본다. 네이버와 겹침 검사는 lint-tistory.mjs 가 한다.
+const TISTORY_CLOSE_1 = '좋아요·공감과 구독 부탁드려요💙';
+const argv = process.argv.slice(2);
+const forceTistory = argv.includes('--tistory');
+const files = argv.filter((a) => a !== '--tistory');
 if (!files.length) {
-  console.error('사용법: node scripts/lint-post.mjs <원고.md> [...]');
+  console.error('사용법: node scripts/lint-post.mjs [--tistory] <원고.md> [...]');
   process.exit(1);
 }
 
@@ -56,6 +62,8 @@ for (const file of files) {
   const charsNS = texts.join('').replace(/\s/g, '').length;
   const dated = (/(\d{4}-\d{2}-\d{2})/.exec(file.split(/[\\/]/).pop()) || [])[1] || '9999-99-99';
   const newRules = dated >= NEW_RULES_FROM;
+  const tistory = forceTistory || /(^|[\\/])content[\\/]tistory[\\/]/.test(file);
+  const close1 = tistory ? TISTORY_CLOSE_1 : CLOSE_1;
   const errors = [];
   const notes = [];
 
@@ -138,8 +146,13 @@ for (const file of files) {
   }
   const topicTags = post.tags.filter((t) => !FIXED_TAGS.includes(t));
   if (topicTags.length < MIN_TAGS) errors.push(`주제 해시태그 ${topicTags.length}개 — ${MIN_TAGS}개 이상 필요`);
-  const noFixed = FIXED_TAGS.filter((t) => !post.tags.includes(t));
-  if (noFixed.length) errors.push(`고정 해시태그 빠짐: ${noFixed.join(', ')} — 주제 태그 뒤에 붙이세요`);
+  if (tistory) {
+    const fixedIn = FIXED_TAGS.filter((t) => post.tags.includes(t));
+    if (fixedIn.length) errors.push(`티스토리에는 네이버 고정 태그를 붙이지 않습니다: ${fixedIn.join(', ')}`);
+  } else {
+    const noFixed = FIXED_TAGS.filter((t) => !post.tags.includes(t));
+    if (noFixed.length) errors.push(`고정 해시태그 빠짐: ${noFixed.join(', ')} — 주제 태그 뒤에 붙이세요`);
+  }
 
   // standards/이미지-기준.md — 한 글에 8장 (대표 1 + 본문 7)
   if (images.length && images.length !== 8)
@@ -148,8 +161,8 @@ for (const file of files) {
   // 고정 인사말
   if (texts[0] !== OPEN[0] || texts[1] !== OPEN[1])
     errors.push(`오프닝이 고정 문구와 다릅니다. "${OPEN[0]} / ${OPEN[1]}" 로 시작해야 합니다.`);
-  if (texts[texts.length - 2] !== CLOSE_1 || !CLOSE_RE.test(texts[texts.length - 1]))
-    errors.push(`클로징이 고정 문구와 다릅니다. "${CLOSE_1} / 이상 성글벙글의 OO 포스팅이었습니다😎" 로 끝나야 합니다.`);
+  if (texts[texts.length - 2] !== close1 || !CLOSE_RE.test(texts[texts.length - 1]))
+    errors.push(`클로징이 고정 문구와 다릅니다. "${close1} / 이상 성글벙글의 OO 포스팅이었습니다😎" 로 끝나야 합니다.`);
 
   // 덩어리를 너무 잘게 쪼개면 글이 툭툭 끊긴다
   const textBlocks = post.blocks.filter((b) => b.type !== 'image');
@@ -185,7 +198,7 @@ for (const file of files) {
   const avg = (texts.reduce((a, t) => a + t.length, 0) / texts.length).toFixed(1);
   const max = Math.max(...texts.map((t) => t.length));
 
-  console.log(`\n${file}`);
+  console.log(`\n${file}${tistory ? '  [티스토리]' : ''}`);
   console.log(`  제목        : ${post.title} (${post.title.length}자)`);
   if (newRules) {
     const range = charsNS < NS_CHARS[0] ? '짧음' : charsNS > NS_CHARS[1] ? '김' : 'OK';
