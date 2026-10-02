@@ -23,6 +23,11 @@ export const TYPES = [
 // 지난 묶음의 글감과 이만큼 비슷하면 같은 글감으로 본다
 const TOPIC_DUP = 0.5;
 
+// 모바일 스레드에서 '더 보기'로 접히지 않는 틀 (rules.md "한 편의 모양", 사용자 원문 237자·14줄·최장 23자)
+export const MAX_CHARS = 250;
+export const MAX_LINES = 16;
+export const MAX_LINE = 24;
+
 // memory/CLAUDE.md [4] [6] 중 보험 글에만 붙는 것. 안전장치(guard)에 없는 것만 둔다
 const INSURANCE_BANNED = [
   { re: /하루\s*[0-9,]+\s*원|커피\s*한\s*잔\s*값/, why: '일 단위 보험료 강조' },
@@ -108,6 +113,16 @@ export function checkSet(set, previous = []) {
     for (const e of v.errors) errors.push(`${tag}: ${e}`);
     for (const n of v.notes) notes.push(`${tag}: ${n}`);
     earlier.push(p.body);
+
+    const lines = p.body.split('\n');
+    if (p.body.length > MAX_CHARS) errors.push(`${tag}: ${p.body.length}자 — ${MAX_CHARS}자 이하로 줄입니다 (모바일에서 접힘).`);
+    if (lines.length > MAX_LINES) errors.push(`${tag}: ${lines.length}줄 — ${MAX_LINES}줄 이하로 줄입니다.`);
+    lines.forEach((l, k) => {
+      if (l.length > MAX_LINE) errors.push(`${tag}: ${k + 1}번째 줄이 ${l.length}자 — ${MAX_LINE}자 이하로 끊습니다: "${l}"`);
+    });
+    if (lines.some((l) => !l.trim())) errors.push(`${tag}: 빈 줄이 있습니다. 줄바꿈만으로 이어 씁니다.`);
+    if (!/\?$/.test(lines[0].trim())) errors.push(`${tag}: 첫 줄(제목)은 물음표로 끝나는 질문으로 씁니다.`);
+    if (/#[^\s#]+/.test(p.body)) errors.push(`${tag}: 해시태그는 달지 않습니다.`);
 
     for (const { re, why } of INSURANCE_BANNED) {
       const m = p.body.match(re);
