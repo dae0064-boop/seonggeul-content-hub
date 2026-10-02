@@ -11,6 +11,7 @@
     "threads:selftest": "node scripts/threads/selftest.mjs",
     "threads:doctor": "node scripts/threads/doctor.mjs",
     "threads:compose": "node scripts/threads/compose.mjs",
+    "threads:insurance": "node scripts/threads/insurance-set.mjs",
     "threads:publish": "node scripts/threads/publish.mjs",
     "threads:publish:dry": "node scripts/threads/publish.mjs --dry-run",
     "threads:replies": "node scripts/threads/replies.mjs",
