@@ -14,6 +14,14 @@
 import fs from 'node:fs';
 import { chromium } from 'playwright';
 
+// 대표사진 제목 글꼴: 주아체(둥근 글씨, SIL OFL — scripts/lib/fonts/Jua-OFL.txt).
+// PC 에 깔려 있지 않아도 되게 저장소에 함께 둔다. 2026-10-02 사용자 선택: "① 둥근 글씨 + 형광펜".
+const JUA = new URL('./fonts/Jua-Regular.ttf', import.meta.url);
+const juaFace = () => {
+  try { return `@font-face{font-family:"Jua";src:url(data:font/ttf;base64,${fs.readFileSync(JUA).toString('base64')}) format("truetype")}`; }
+  catch { return ''; }
+};
+
 const STYLE = {
   font: '"Malgun Gothic","맑은 고딕","Apple SD Gothic Neo","Noto Sans CJK KR","Noto Sans KR",sans-serif',
   ink: '#4A3A30',
@@ -31,12 +39,12 @@ function html(imgDataUrl, size, o) {
   const S = size;
   let layer = '';
   if (o.kind === 'thumb') {
-    const n = String(o.title).split('\n').length;
-    const fs1 = Math.round(S * (n > 2 ? 0.078 : 0.094));
+    const rows = String(o.title).split('\n');
+    const fs1 = Math.round(S * (rows.length > 2 ? 0.085 : 0.108));
+    // ① 둥근 글씨 + 형광펜: 첫 줄(키워드)에 노란 형광펜, 꼬리표는 쓰지 않는다
     layer = `
-      <div class="thumb">
-        ${o.tag ? `<div class="tag">${esc(o.tag)}</div>` : ''}
-        <div class="title" style="font-size:${fs1}px">${lines(o.title)}</div>
+      <div class="thumb round">
+        ${rows.map((r, i) => `<div class="title" style="font-size:${fs1}px"><span class="${i === 0 ? 'hl' : ''}">${esc(r)}</span></div>`).join('')}
       </div>`;
   } else if (o.kind === 'label') {
     layer = `<div class="label ${o.pos === 'top' ? 'top' : 'bottom'}">${lines(o.text)}</div>`;
@@ -48,6 +56,7 @@ function html(imgDataUrl, size, o) {
       </div>`).join('')}</div>`;
   }
   return `<!doctype html><meta charset="utf-8"><style>
+    ${o.kind === 'thumb' ? juaFace() : ''}
     *{margin:0;box-sizing:border-box}
     body{width:${S}px;height:${S}px;position:relative;overflow:hidden;font-family:${STYLE.font};color:${STYLE.ink}}
     img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -56,6 +65,9 @@ function html(imgDataUrl, size, o) {
     .title{font-weight:800;line-height:1.22;letter-spacing:-0.02em;white-space:nowrap;
       text-shadow:0 0 ${S * 0.006}px #fff,0 0 ${S * 0.006}px #fff,0 0 ${S * 0.012}px #fff,0 0 ${S * 0.02}px #fff;
       -webkit-text-stroke:${S * 0.003}px #fff;paint-order:stroke fill}
+    .thumb.round{gap:${S * 0.006}px}
+    .thumb.round .title{font-family:"Jua",${STYLE.font};font-weight:400;line-height:1.18;letter-spacing:0}
+    .thumb.round .hl{background:linear-gradient(transparent 58%, #FFE45C 58%, #FFE45C 92%, transparent 92%);padding:0 ${S * 0.01}px}
     .tag{font-weight:700;font-size:${S * 0.036}px;background:${STYLE.red};color:#fff;border-radius:999px;
       padding:${S * 0.01}px ${S * 0.03}px;box-shadow:0 ${S * 0.004}px ${S * 0.012}px rgba(0,0,0,.12)}
     .label{position:absolute;left:${S * 0.05}px;right:${S * 0.05}px;text-align:center;font-weight:800;
