@@ -1,0 +1,2 @@
+# 내 네이버 블로그 아이디 — 아침 자동 실행이 통계를 읽어 Drive ClaudeWorkspace/blog-stats/ 로 올린다
+seongdaeeyo
