@@ -1,7 +1,7 @@
 @echo off
 chcp 65001 >nul
 title 성글벙글 - 보험글 Word 만들어 Drive 에 저장
-REM 더블클릭하면 최신 원고를 받아 보험글을 한 편씩 Word 로 만들어 Drive 보험글 폴더에 넣는다.
+REM Insurance posts to Word files in Google Drive (ClaudeWorkspace)
 cd /d "%~dp0.."
 echo.
 echo [1/2] 최신 원고 받는 중...
