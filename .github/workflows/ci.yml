@@ -91,3 +91,20 @@ jobs:
           fi
           node scripts/threads/insurance-set.mjs "${changed[@]}"
         shell: bash
+
+      - name: 바뀐 티스토리 원고 검사
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          if [ -z "$BASE_SHA" ]; then
+            echo "PR 이 아니라 비교 대상이 없습니다. 건너뜁니다."
+            exit 0
+          fi
+          mapfile -t changed < <(git diff --name-only --diff-filter=d "$BASE_SHA" HEAD -- 'content/tistory/*.md')
+          if [ ${#changed[@]} -eq 0 ]; then
+            echo "바뀐 티스토리 원고가 없습니다."
+            exit 0
+          fi
+          printf '검사할 원고: %s\n' "${changed[@]}"
+          node scripts/lint-tistory.mjs "${changed[@]}"
+        shell: bash
