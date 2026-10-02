@@ -55,6 +55,16 @@ let failed = 0;
 
 // 2026-10-03 원고부터 카테고리를 검사한다. 제목·메인 키워드로 정한다.
 // 보험 → 생활보장 (반드시), 음식·카페·맛집 말이 있으면 → 맛집 (반드시), 그 밖은 생활정보 (요리·제철 글은 맛집도 허용).
+// 글 모양 돌려 쓰기 (2026-10-02 사용자 승인 — 하루 5편이 모두 같은 틀이면 "찍어 낸 글"로 보인다).
+// 2026-10-05 원고부터 프런트매터 format 이 필요하고, 같은 날 원고끼리 같은 모양은 2편까지, 모양은 3가지 이상.
+const FORMAT_FROM = '2026-10-05';
+const FORMATS = {
+  기본: { qa: [3], need: [] },
+  순서형: { qa: [0, 3], need: [[/^[①②③④⑤⑥⑦⑧]/, 4, '①②③④ 로 시작하는 단계 줄']] },
+  체크리스트형: { qa: [0, 3], need: [[/^✔/, 5, '✔ 로 시작하는 확인 줄']] },
+  비교형: { qa: [0, 3], need: [[/^⭕/, 2, '⭕ 로 시작하는 줄 (되는 경우)'], [/^❌/, 2, '❌ 로 시작하는 줄 (안 되는 경우)']] },
+  질문형: { qa: [5], need: [] },
+};
 const CATEGORY_FROM = '2026-10-03';
 function allowedCategories(post) {
   const t = `${post.title} ${post.mainKeyword}`;
@@ -109,12 +119,30 @@ for (const file of files) {
   for (const w of WARN_WORDS) if (body.includes(w)) notes.push(`"${w}" — 우위를 단정하는 뜻이면 고치세요.`);
   for (const w of post.warnings) errors.push(w);
 
-  // Q&A 형식 (2026-10-01 사용자 지시): 인용구 소제목 아래 "Q1: 질문" / "A1: 답변" 3쌍
+  // Q&A 형식 (2026-10-01 사용자 지시): 인용구 소제목 아래 "Q1: 질문" / "A1: 답변" 3쌍. 글 모양에 따라 0·3·5쌍.
   {
     const all = post.blocks.flatMap((b) => b.lines.map((l) => l.t));
     const qs = all.filter((t) => /^Q\d+:/.test(t)).length;
     const as = all.filter((t) => /^A\d+:/.test(t)).length;
-    if (qs !== 3 || as !== 3) errors.push(`Q&A 는 "Q1: 질문" / "A1: 답변" 형식으로 3쌍이어야 합니다 (지금 Q ${qs}개 / A ${as}개)`);
+    const useFormat = !tistory && dated >= FORMAT_FROM;
+    const fmt = useFormat ? FORMATS[post.format] : FORMATS.기본;
+    if (useFormat && !fmt) errors.push(`format 이 없거나 모르는 값입니다 ("${post.format}") — ${Object.keys(FORMATS).join(' / ')} 중 하나`);
+    if (fmt) {
+      if (qs !== as || !fmt.qa.includes(qs)) errors.push(`Q&A 는 "Q1: 질문" / "A1: 답변" 형식으로 ${fmt.qa.join(' 또는 ')}쌍이어야 합니다 (${post.format || '기본'}, 지금 Q ${qs}개 / A ${as}개)`);
+      for (const [re, min, what] of fmt.need) {
+        const n = all.filter((t) => re.test(t.replace(/^\[[^\]]+\]/, ''))).length;
+        if (n < min) errors.push(`${post.format}: ${what}이 ${min}개 이상 필요합니다 (지금 ${n}개)`);
+      }
+    }
+    // 같은 날 원고끼리 모양이 겹치지 않게
+    if (useFormat && fmt) {
+      const dir = file.replace(/[^\\/]+$/, '') || './';
+      const sib = fs.readdirSync(dir).filter((f) => f.startsWith(dated) && f.endsWith('.md'));
+      const fmts = sib.map((f) => { try { return parsePost(fs.readFileSync(dir + f, 'utf8')).format; } catch { return ''; } });
+      const same = fmts.filter((x) => x === post.format).length;
+      if (same > 2) errors.push(`같은 날(${dated}) "${post.format}" 모양이 ${same}편 — 2편까지만 (모양을 돌려 쓰세요)`);
+      if (sib.length >= 5 && new Set(fmts.filter(Boolean)).size < 3) notes.push(`같은 날 글 모양이 ${new Set(fmts).size}가지뿐이에요 — 3가지 이상 섞으세요`);
+    }
   }
 
   // 키워드 세기: 띄어쓰기 차이를 흡수하려고 양쪽 공백을 제거하고 센다

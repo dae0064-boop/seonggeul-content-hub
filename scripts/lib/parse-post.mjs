@@ -104,6 +104,7 @@ export function parsePost(raw) {
     mainKeyword: meta.main_keyword || '',
     subKeywords: meta.sub_keywords ? meta.sub_keywords.split(',').map((s) => s.trim()).filter(Boolean) : [],
     publishAt: meta.publish_at || '',
+    format: (meta.format || '').trim(),
     blocks,
     marks,
     warnings,
