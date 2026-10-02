@@ -85,6 +85,8 @@
   미리보기(휴대폰 폭) https://claude.ai/artifact/9CquibGLHxgozeWom8Ycbs
 - **10/2 사용자 요청으로 매일 22:37 티스토리 원고 5편 Routine 을 걸었다** (`trig_01JupVoPSXJQppjgiwKkFUsY`, 티스토리 작업실 대화).
   첫 실행 10/3 밤 → 10/4 원고. 그날 네이버 5편과 한 편씩 짝. 발행·사진은 아직 자동 아님.
+- **10/3 사진 넣기 추가** (사용자 지시 — 테스트부터 사진까지): `tistory-test`/`tistory-day` 가 계획서로 그림을 만들고
+  `publish-tistory --images` 가 올려 `[이미지 N]` 자리에 끼운다. 가짜 에디터에서만 확인, 실제 티스토리 화면은 첫 테스트에서 확인.
   티스토리 발행 스크립트는 아직 사진을 넣지 못한다(자리 글자로 남김). 첫 서식 시험 원고(하산 무릎)는 지웠다.
 - 발행은 아직 자동이 아니다. PC 에서 `launchers/tistory-test.cmd`(처음 한 번, 발행 패널 기록) → 확인 →
   예약발행 추가 → 며칠 뒤 `auto-day` 에 넣는다. 그 전까지는 `tistory-day.cmd` 로 임시저장만.
