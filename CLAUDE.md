@@ -403,7 +403,8 @@ Q&A          많이 묻는 3~5개
 | 언제 | 어디서 | 무엇 |
 |---|---|---|
 | 전날 21시 | 클라우드 Claude (Routine) | 다음 날 원고 5편 + 이미지 계획서 작성, 검사기 통과, `publish_at` 11:00·13:00·15:00·17:00·19:00 (캘린더 순서), PR → `main`. 티스토리는 이 작업에 넣지 않는다 (2026-10-02 사용자 결정 — 티스토리 작업실 대화에서 따로 지시한다) |
-| 당일 09:00 | 사용자 PC (작업 스케줄러 `SeonggeulDailyReserve`) | `launchers/auto-day.cmd` → `git pull` → 이미지 생성 → 5편 예약발행 → 결과를 Drive `run-logs` 로 |
+| 전날 21:41 (일~금) | 클라우드 Claude (Routine "스레드 보험글 10편") | 다음 날(월~토) 스레드 보험 심의글 10편 `content/threads/insurance/sets/<날짜>.md` 작성, 검사기 통과, PR → `main`. 일요일 치는 쓰지 않는다 (2026-10-02 사용자 결정) |
+| 당일 09:00 | 사용자 PC (작업 스케줄러 `SeonggeulDailyReserve`) | `launchers/auto-day.cmd` → `git pull` → **보험글 Word 저장 (Drive `보험글/스레드 N편.docx`)** → 이미지 생성 → 5편 예약발행 → 결과를 Drive `run-logs` 로 |
 | 당일 10:10 | 같은 작업의 두 번째 시각 (첫 실행 70분 뒤, 노트북은 10:25) | 첫 실행에서 저장 못 한 글만 다시 (`.done` 표시가 있는 글은 건너뜀). 2026-10-02 이전 등록 PC 는 `ensure-retry.ps1` 이 다음 실행 때 이 시각을 저절로 더한다 |
 | 당일 10:47 | 클라우드 Claude (Routine) | Drive `run-logs` 읽고 결과 보고. 스크립트 문제면 고쳐서 PR → `main` |
 | 매월 28일 21:23 | 클라우드 Claude (Routine) | 다음 달 발행 캘린더 작성·검증·재발행 |
@@ -469,7 +470,8 @@ Drive 를 못 찾으면 겹침을 막을 수 없다고 알리고 그대로 진�
 
 **스레드 보험 심의글** (2026-10-02 사용자 요청) 은 손으로 올리는 별도 흐름이다. 항상 10편 한 묶음(2026-10-04 묶음까지는 5편),
 역할·보험 종류·지난 묶음이 겹치지 않게 쓴다. 정본은 `content/threads/insurance/rules.md`, 검사는
-`node scripts/threads/insurance-set.mjs <묶음>`. Word 는 Drive `보험글/스레드 N편.docx` 로 저장된다. 위 자동 발행과는 연결돼 있지 않다.
+`node scripts/threads/insurance-set.mjs <묶음>`. Word 는 Drive `보험글/스레드 N편.docx` 로 저장된다.
+매일 자동: 전날 밤 클라우드 Routine 이 10편을 쓰고, 아침 `auto-day.cmd` 가 Word 를 저장한다 (위 "매일 자동으로 도는 것"). 스레드에 올리는 것은 사람이 한다.
 
 **블로그 규칙을 스레드에 그대로 적용하지 않는다.** 2,300자·해시태그 15개·고정 인사말·
 `[빨간글씨]` 는 네이버 원고 기준이다. 스레드는 500자짜리 다른 매체이고, 그 기준은
