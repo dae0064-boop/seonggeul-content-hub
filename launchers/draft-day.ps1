@@ -121,6 +121,19 @@ if (-not (CdpUp)) { Say '자동화용 크롬을 켜지 못했어요. launchers\c
 # 3) 네이버 임시저장 (한 편씩)
 $result = @()
 $i = 0
+# PC 가 늦게 켜진 날 (2026-10-02 사용자: 사무실 PC 는 밤에 끄고 아침에 아무 PC 나 켠다):
+# 예약 시각이 이미 지났거나 30분 안쪽이면 오늘 안에서 뒤로 미룬다. 앞 글과는 60분 이상 띄운다.
+# 23시를 넘기게 되면 미루지 않는다 (그 글은 예약하지 않고 임시저장으로 남는다).
+$lastAt = $null
+function NextSlot([datetime]$want) {
+  $earliest = (Get-Date).AddMinutes(30)
+  $earliest = $earliest.Date.AddHours($earliest.Hour).AddMinutes([math]::Ceiling($earliest.Minute / 10) * 10)
+  $t = $want
+  if ($t -lt $earliest) { $t = $earliest }
+  if ($script:lastAt -and $t -lt $script:lastAt.AddMinutes(60)) { $t = $script:lastAt.AddMinutes(60) }
+  if ($t.Date -ne $want.Date -or $t.Hour -ge 23) { return $want }
+  return $t
+}
 foreach ($p in $posts) {
   $i++
   $slug = $p.BaseName
@@ -130,7 +143,18 @@ foreach ($p in $posts) {
     $when = (Get-Content $p.FullName -Raw -Encoding UTF8 | ConvertFrom-Json).publishAt
     if ($when) { $mode = '--reserve' } else { Say '  publish_at 이 없어 임시저장만 합니다' 'Yellow' }
   }
-  $code = Run @('scripts/publish-naver.mjs', '--post', $p.FullName, '--images', "content\images\$slug", '--color', $mode, '--dump')
+  $atArgs = @()
+  if ($mode -eq '--reserve') {
+    $want = [datetime]::ParseExact($when, 'yyyy-MM-dd HH:mm', $null)
+    $slot = NextSlot $want
+    if ($slot -ne $want) {
+      Say "  PC 가 늦게 켜져서 예약 시각을 $($want.ToString('HH:mm')) → $($slot.ToString('HH:mm')) 로 미룹니다" 'Yellow'
+      $when = $slot.ToString('yyyy-MM-dd HH:mm')
+      $atArgs = @('--at', $when)
+    }
+    $script:lastAt = $slot
+  }
+  $code = Run (@('scripts/publish-naver.mjs', '--post', $p.FullName, '--images', "content\images\$slug", '--color', $mode, '--dump') + $atArgs)
   $ok = ($code -eq 0 -or $code -eq 2)
   $msg = if ($code -eq 0 -and $mode -eq '--reserve') { "예약발행 $when" } elseif ($code -eq 0) { '임시저장 완료' } elseif ($code -eq 2) { '임시저장만 (예약 확인 실패)' } else { '실패 — 저장 안 함' }
   $result += [pscustomobject]@{ 글 = $slug; 결과 = $msg }
