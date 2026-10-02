@@ -5,7 +5,7 @@
  * 티스토리 Open API 는 2024년 2월에 종료됐다 (memory/decisions.md). 남은 길은 브라우저 자동화뿐이라
  * 네이버와 같이 이미 로그인된 크롬(디버깅 포트 9222)에 CDP 로 attach 한다.
  *
- *   node scripts/publish-tistory.mjs --post content/tistory/2026-10-02-deungsan-stick.json --save-draft --dump
+ *   node scripts/publish-tistory.mjs --post content/tistory/2026-10-02-hasan-mureup.json --save-draft --dump
  *
  * 순서
  *   1) <블로그>.tistory.com/manage/newpost 를 연다
@@ -58,7 +58,7 @@ const USAGE = `
 티스토리 글 작성 자동화 (기본: 임시저장까지만)
 
   node scripts/publish-tistory.mjs \\
-    --post content/tistory/2026-10-02-deungsan-stick.json --save-draft --dump
+    --post content/tistory/2026-10-02-hasan-mureup.json --save-draft --dump
 
 옵션
   --post <파일>      글 JSON (필수). build-tistory.mjs 로 .md 에서 생성한다.

@@ -8,8 +8,12 @@
  *   standards/발행-운영기준.md  티스토리: 강제 줄바꿈 금지, 문단 2~3문장, H2·H3 구조, 표, 1,500자+
  *   memory/CLAUDE.md [8]         경어체(~합니다), Summary Box 필수, 유사문서 회피 최우선, 해시태그 10개
  *
- * 유사문서 검사: source_post 의 네이버 원고와 10글자 조각이 얼마나 겹치는지 센다.
- * 같은 글을 양쪽에 올리면 둘 다 손해를 본다. 사실(수치·기관명)은 같아도 문장은 새로 쓴다.
+ * 유사문서 검사 (2026-10-02 사용자 지시: 티스토리는 네이버와 다른 내용·다른 제목으로 간다)
+ *   content/posts/ 의 네이버 원고 전부와 견준다.
+ *   - 메인 키워드: 네이버 글의 메인 키워드와 같거나, 제목에 그 키워드가 그대로 들어 있으면 불통과
+ *   - 제목: 글자 2개 조각 유사도(Dice) 0.4 이상이면 불통과
+ *   - 본문: 10글자 조각이 15% 이상 겹치면 불통과
+ *   source_post 는 같은 묶음(클러스터)의 네이버 글을 적는 칸일 뿐, 그 글을 고쳐 쓰라는 뜻이 아니다.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -22,7 +26,8 @@ const MAX_TAGS = 10;
 const MAX_SENTENCES = 5;      // 문단당. 넘으면 오류 (6줄 이상 문단 금지)
 const SOFT_SENTENCES = 3;     // 넘으면 알림 (권장 2~3문장)
 const HAEYO_MAX = 0.1;        // 평서문 중 ~요. 로 끝나는 비율 상한 (경어체로 바꾼다)
-const OVERLAP = { err: 0.25, note: 0.12 }; // 네이버 원본과 겹치는 10글자 조각 비율
+const OVERLAP = { err: 0.15, note: 0.08 }; // 네이버 글과 겹치는 본문 10글자 조각 비율
+const TITLE_SIM = { err: 0.4, note: 0.25 }; // 네이버 제목과의 글자 2개 조각 유사도(Dice)
 const MIN_MAIN = 4;           // 구글은 반복을 세지 않는다. 너무 적은 것만 잡는다
 
 const BAN = ['무조건', '100%', '단언컨대', '절대로', '손실 없음', '공짜'];
@@ -43,6 +48,23 @@ if (!files.length) {
 const count = (text, kw) => (kw ? text.split(kw).length - 1 : 0);
 const norm = (s) => s.replace(/[\s.,!?·~'"“”‘’()\[\]:;\-–—*|#>]/g, '');
 const sentences = (s) => s.split(/(?<=[.!?])\s+/).map((x) => x.trim()).filter(Boolean);
+
+function dice(a, b) {
+  const A = shingles(norm(a), 2), B = shingles(norm(b), 2);
+  if (!A.size || !B.size) return 0;
+  let hit = 0;
+  for (const x of A) if (B.has(x)) hit++;
+  return (2 * hit) / (A.size + B.size);
+}
+
+// 네이버 원고 전부 (한 번만 읽는다)
+const NAVER = fs.existsSync(path.join('content', 'posts'))
+  ? fs.readdirSync(path.join('content', 'posts')).filter((f) => f.endsWith('.md')).map((f) => {
+    const p = parsePost(fs.readFileSync(path.join('content', 'posts', f), 'utf8'));
+    const text = norm(flatLines(p).filter((l) => l.block !== 'image').map((l) => l.t).join(''));
+    return { slug: f.replace(/\.md$/, ''), title: p.title, main: p.mainKeyword, grams: shingles(text) };
+  })
+  : [];
 
 function shingles(s, n = 10) {
   const set = new Set();
@@ -110,32 +132,35 @@ for (const file of files) {
   if (post.mainKeyword && main < MIN_MAIN) errors.push(`메인 키워드 "${post.mainKeyword}" ${main}회 (${MIN_MAIN}회 이상).`);
   const subs = post.subKeywords.map((k) => `${k} ${count(all, k)}`).join(', ');
 
-  // 유사문서: 네이버 원본과 겹침
-  let overlap = null;
-  if (!post.sourcePost) notes.push('source_post 가 없어 네이버 원본과 겹침을 검사하지 못했습니다.');
-  else {
-    const src = path.join('content', 'posts', `${post.sourcePost}.md`);
-    if (!fs.existsSync(src)) errors.push(`source_post 원고가 없습니다: ${src}`);
-    else {
-      const naver = parsePost(fs.readFileSync(src, 'utf8'));
-      const nText = norm(flatLines(naver).filter((l) => l.block !== 'image').map((l) => l.t).join(''));
-      const mine = shingles(norm(all));
-      const theirs = shingles(nText);
-      let hit = 0;
-      for (const s of mine) if (theirs.has(s)) hit++;
-      overlap = mine.size ? hit / mine.size : 0;
-      const pct = `${Math.round(overlap * 100)}%`;
-      if (overlap >= OVERLAP.err) errors.push(`네이버 원본과 ${pct} 겹칩니다 (${Math.round(OVERLAP.err * 100)}% 미만). 문장 구조를 새로 씁니다.`);
-      else if (overlap >= OVERLAP.note) notes.push(`네이버 원본과 ${pct} 겹칩니다. 더 낮출 수 있으면 좋습니다.`);
+  // 유사문서: 네이버 글 전부와 견준다 — 키워드·제목·본문이 모두 달라야 한다
+  if (post.sourcePost && !NAVER.some((n) => n.slug === post.sourcePost)) errors.push(`source_post 원고가 없습니다: content/posts/${post.sourcePost}.md`);
+  const mine = shingles(norm(all));
+  let worst = { body: 0, bodyOf: '', title: 0, titleOf: '' };
+  for (const n of NAVER) {
+    if (n.main && post.mainKeyword && norm(n.main) === norm(post.mainKeyword)) {
+      errors.push(`메인 키워드가 네이버 글과 같습니다 ("${n.main}", ${n.slug}). 다른 키워드를 잡습니다.`);
+    } else if (n.main && norm(post.title).includes(norm(n.main))) {
+      errors.push(`제목에 네이버 글의 메인 키워드 "${n.main}" 가 그대로 들어 있습니다 (${n.slug}).`);
     }
+    const t = dice(post.title, n.title);
+    if (t > worst.title) worst = { ...worst, title: t, titleOf: n.slug };
+    let hit = 0;
+    for (const g of mine) if (n.grams.has(g)) hit++;
+    const b = mine.size ? hit / mine.size : 0;
+    if (b > worst.body) worst = { ...worst, body: b, bodyOf: n.slug };
   }
+  const pct = (x) => `${Math.round(x * 100)}%`;
+  if (worst.title >= TITLE_SIM.err) errors.push(`제목이 네이버 글(${worst.titleOf})과 ${pct(worst.title)} 비슷합니다 (${pct(TITLE_SIM.err)} 미만).`);
+  else if (worst.title >= TITLE_SIM.note) notes.push(`제목이 네이버 글(${worst.titleOf})과 ${pct(worst.title)} 비슷합니다.`);
+  if (worst.body >= OVERLAP.err) errors.push(`본문이 네이버 글(${worst.bodyOf})과 ${pct(worst.body)} 겹칩니다 (${pct(OVERLAP.err)} 미만). 다른 내용으로 씁니다.`);
+  else if (worst.body >= OVERLAP.note) notes.push(`본문이 네이버 글(${worst.bodyOf})과 ${pct(worst.body)} 겹칩니다.`);
 
   const ok = !errors.length;
   if (!ok) failed++;
   console.log(`\n${ok ? '✅' : '❌'} ${file}`);
   console.log(`   ${post.type || '유형 미지정'} · 공백 제외 ${charsNS}자 · H2 ${by('h2').length} · H3 ${by('h3').length} · 표 ${by('table').length} · 태그 ${post.tags.length}`);
   console.log(`   키워드: ${post.mainKeyword} ${main}${subs ? ` / ${subs}` : ''} · 경어체 ${decl.length - haeyo.length}/${decl.length}`
-    + (overlap !== null ? ` · 네이버 원본 겹침 ${Math.round(overlap * 100)}%` : ''));
+    + ` · 네이버 대비 제목 ${pct(worst.title)} / 본문 ${pct(worst.body)}`);
   for (const e of errors) console.log(`   ✗ ${e}`);
   for (const n of notes) console.log(`   · ${n}`);
 }

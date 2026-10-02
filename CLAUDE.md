@@ -9,7 +9,7 @@
 memory/CLAUDE.md   브랜드 글쓰기 규칙 정본 ([0]~[11]). 각 PC 의 ~/.claude/CLAUDE.md 가 된다
 CLAUDE.md          ← 이 문서. 저장소 운영 + 생활정보 원고 실무 기준
 content/posts/     원고. <날짜>-<슬러그>.md (정본) + .json (스크립트 입력)
-content/tistory/   티스토리 파생 원고. .md (정본) + .json·.html (생성물)
+content/tistory/   티스토리 원고 (네이버와 다른 키워드·제목). .md (정본) + .json·.html (생성물)
 content/calendar/  발행 캘린더 아티팩트 소스, 키워드 목록
 content/board/     원고 작업판 아티팩트 소스
 content/threads/   스레드 말투 규칙(voice.md) + 글감(topics.txt)
@@ -362,9 +362,11 @@ PC 쪽 등록·해제는 `launchers/auto-setup.cmd` (`-Remove` 로 끔). 예약�
 
 - 티스토리 Open API 는 2024-02 에 종료됐다. 네이버와 같은 크롬(9222)에 CDP 로 붙는 방식뿐이다.
   클라우드 세션에서는 `tistory.com`·`kakao.com` 이 막혀 있다. 돌려보지 않고 "저장했습니다"라고 보고하지 않는다.
-- **네이버 원고를 그대로 올리지 않는다.** `content/tistory/` 에 `~합니다` 체·H2/표·요약 상자로 새로 쓴
-  파생 원고를 두고, `source_post` 로 바탕 원고를 적는다. 게이트는 `scripts/lint-tistory.mjs` 이고,
-  네이버 원본과 10글자 조각 겹침 25% 이상이면 불통과다. 네이버 검사기(`lint-post.mjs`) 기준을 여기 적용하지 않는다.
+- **네이버와 다른 내용·다른 제목으로 쓴다** (2026-10-02 사용자 지시 — 같으면 유사문서에 걸린다).
+  네이버 글을 고쳐 쓰지 않고 같은 묶음의 **다른 메인 키워드**를 잡아 `~합니다` 체·H2/표·요약 상자로 쓴다.
+  게이트는 `scripts/lint-tistory.mjs` 이고, `content/posts/` 의 네이버 글 전부와 견줘 메인 키워드가 같거나,
+  제목 유사도 40% 이상이거나, 본문 10글자 조각 겹침 15% 이상이면 불통과다.
+  네이버 검사기(`lint-post.mjs`) 기준을 여기 적용하지 않는다.
 - `publish-tistory.mjs` 는 본문을 넣은 뒤 H2·표·글자 수를 다시 읽어 맞지 않으면 저장하지 않는다.
   이 확인을 빼거나 경고로 낮추지 않는다.
 - **켜는 순서를 지킨다** — `tistory-test.cmd`(임시저장 + 발행 패널 기록) → 결과 확인 → 예약발행 추가 →

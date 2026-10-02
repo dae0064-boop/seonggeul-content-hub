@@ -1,7 +1,7 @@
 ﻿# 하루치 티스토리 원고를 임시저장한다. 발행은 하지 않는다.
 #   powershell -ExecutionPolicy Bypass -File launchers\tistory-day.ps1 -Date 2026-10-02
 #   -DryRun     임시저장 + 발행 패널을 열어 화면을 기록만 하고 닫는다 (예약발행을 만들 자료)
-#   -Only deungsan-stick   일부 글만
+#   -Only hasan-mureup   일부 글만
 #   -NoShare    끝나고 결과를 Google Drive 로 올리지 않기
 #
 # 블로그 주소(<이름>.tistory.com)는 처음 한 번 물어보고 사용자 환경 변수 TISTORY_BLOG 에 저장한다.
