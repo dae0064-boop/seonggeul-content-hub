@@ -2,7 +2,10 @@
 """
 스레드 보험 심의글 묶음을 한 편씩 Word(.docx) 로 만든다. 본문 밑에 고정 사진(심의 고지 배너)을 붙인다.
 
-  python3 scripts/threads/insurance-word.py <묶음.md> <사진.jpg> <저장 폴더>
+  python3 scripts/threads/insurance-word.py <묶음.md> <사진.jpg> <저장 폴더> [--skip-fresh]
+
+--skip-fresh: 이미 있는 Word 가 묶음 파일·사진보다 새것이면 건너뛴다 (PC 실행기가 쓴다).
+  사람이 Drive 에서 고친 Word 를 덮어쓰지 않고, 원고나 사진이 바뀌었을 때만 다시 만든다.
 
 결과: <저장 폴더>/<날짜>_<번호>_<글감 앞부분>.docx  (5개)
 
@@ -64,6 +67,12 @@ def para(doc, text, size=11, color=None, bold=False, after=0):
     return p
 
 
+def out_name(post, meta):
+    short = re.sub(r'[\\/:*?"<>|?()\'‘’—,·]', '', post.get('글감', ''))
+    short = re.sub(r'\s+', ' ', short).strip()[:20].strip()
+    return f"{meta.get('date', 'set')}_{post['no']}_{short}.docx"
+
+
 def build(post, meta, photo, out_dir):
     doc = Document()
     sec = doc.sections[0]
@@ -86,23 +95,27 @@ def build(post, meta, photo, out_dir):
     para(doc, f"출처 원문 확인: {post.get('원문확인', '')}", 9, grey)
     para(doc, f"글자 수: {len(post['body'])}자", 9, grey)
 
-    short = re.sub(r'[\\/:*?"<>|?()\'‘’—,·]', '', post.get('글감', ''))
-    short = re.sub(r'\s+', ' ', short).strip()[:20].strip()
-    name = f"{meta.get('date', 'set')}_{post['no']}_{short}.docx"
-    path = Path(out_dir) / name
+    path = Path(out_dir) / out_name(post, meta)
     doc.save(path)
     return path
 
 
 def main():
-    if len(sys.argv) != 4:
+    args = [a for a in sys.argv[1:] if not a.startswith('--')]
+    skip_fresh = '--skip-fresh' in sys.argv
+    if len(args) != 3:
         print(__doc__)
         sys.exit(1)
-    src, photo, out_dir = sys.argv[1:]
+    src, photo, out_dir = args
     Path(out_dir).mkdir(parents=True, exist_ok=True)
     meta, posts = parse_set(Path(src).read_text(encoding='utf-8'))
+    newest_input = max(Path(src).stat().st_mtime, Path(photo).stat().st_mtime)
     for post in posts:
-        print(build(post, meta, photo, out_dir))
+        target = Path(out_dir) / out_name(post, meta)
+        if skip_fresh and target.exists() and target.stat().st_mtime >= newest_input:
+            print(f'그대로 둠: {target.name}')
+            continue
+        print(f'만듦: {build(post, meta, photo, out_dir).name}')
 
 
 if __name__ == '__main__':
