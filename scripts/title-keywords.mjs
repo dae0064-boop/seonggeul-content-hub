@@ -7,6 +7,7 @@
  *
  *   node scripts/title-keywords.mjs --date 2026-10-03            그날 원고들의 main_keyword
  *   node scripts/title-keywords.mjs "대하 제철" "가을 캠핑"       직접 지정
+ *   node scripts/title-keywords.mjs --file 후보.txt              한 줄에 키워드 하나
  *
  * 하는 일 (키워드마다)
  *   1) 네이버 자동완성 (키 필요 없음)
@@ -60,6 +61,7 @@ function parseArgs(argv) {
     const a = argv[i], next = () => argv[++i];
     if (a === '--date') out.dates.push(next());
     else if (a === '--out') out.out = next();
+    else if (a === '--file') out.file = next();       // 한 줄에 키워드 하나 (# 은 주석)
     else if (a === '--max') out.max = Number(next());
     else if (a === '--ad-host') out.adHost = next();     // 목 서버 테스트용
     else if (a === '--ac-url') out.acUrl = next();       // 목 서버 테스트용
@@ -143,7 +145,7 @@ function postsOf(date) {
 // ---------------------------------------------------------------- main
 async function main() {
   const args = parseArgs(process.argv);
-  if (args.help || (!args.dates.length && !args.keywords.length)) {
+  if (args.help || (!args.dates.length && !args.keywords.length && !args.file)) {
     console.log(fs.readFileSync(new URL(import.meta.url), 'utf8').match(/\/\*\*([\s\S]*?)\*\//)[1].replace(/^ \* ?/gm, ''));
     return;
   }
@@ -155,6 +157,12 @@ async function main() {
 
   const targets = [];
   for (const d of args.dates) for (const p of postsOf(d)) if (p.main) targets.push(p);
+  if (args.file) {
+    for (const l of fs.readFileSync(args.file, 'utf8').replace(/^\uFEFF/, '').split(/\r?\n/)) {
+      const k = l.trim();
+      if (k && !k.startsWith('#')) args.keywords.push(k);
+    }
+  }
   for (const k of args.keywords) targets.push({ slug: '', title: '', main: k, subs: [] });
   if (!targets.length) throw new Error('조회할 메인 키워드가 없습니다.');
 
