@@ -8,6 +8,7 @@
  *   sub_keywords: 서브1, 서브2
  *   category: 생활정보
  *   tags: 태그1, 태그2
+ *   publish_at: 2026-10-02 09:00   ← 예약발행 시각 (draft-day -Reserve 가 쓴다)
  *   ---
  *
  *   본문 줄1
@@ -102,6 +103,7 @@ export function parsePost(raw) {
     tags: meta.tags ? meta.tags.split(',').map((s) => s.trim()).filter(Boolean) : [],
     mainKeyword: meta.main_keyword || '',
     subKeywords: meta.sub_keywords ? meta.sub_keywords.split(',').map((s) => s.trim()).filter(Boolean) : [],
+    publishAt: meta.publish_at || '',
     blocks,
     marks,
     warnings,

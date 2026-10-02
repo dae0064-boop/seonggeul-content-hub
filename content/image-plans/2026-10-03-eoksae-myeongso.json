@@ -1,0 +1,111 @@
+{
+  "slug": "2026-10-03-eoksae-myeongso",
+  "title": "억새 명소 언제 가야 예쁠까, 억새 절정 시기와 하늘공원 억새축제",
+  "source": "10/3 원고 (정기 작업)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "노을 속 은빛으로 흔들리는 억새 언덕 (대표사진)",
+      "note": "대표",
+      "prompt": "Camera and composition: wide landscape shot at sunset, backlit. A gentle hill covered with silver pampas grass glowing gold and silver against a low sunset, plumes swaying in the wind, no people. No people at all in this image. Background color: sunset apricot. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "quality": "medium",
+      "overlay": {
+        "kind": "thumb",
+        "tag": "10월 중순~11월 초",
+        "title": "억새 명소\n언제 가야 예쁠까?"
+      },
+      "shot": "wide landscape shot at sunset, backlit",
+      "bg": "sunset apricot"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "아직 덜 핀 붉은빛 억새와 고개를 갸웃하는 성글이",
+      "note": "사례 — 너무 일찍 간 날",
+      "prompt": "Camera and composition: medium shot on a field path. The blog host stands on a path beside reddish-brown, not-yet-fluffy pampas grass, tilting his head with a puzzled smile. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Only the person or people described here appear; no other people. Background color: soft mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot on a field path",
+      "bg": "soft mint"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "10월 달력 위에 놓인 억새 한 줄기",
+      "note": "결론 — 절정 시기",
+      "prompt": "Camera and composition: top-down close-up on a desk. A single fluffy silver pampas grass stem lying across a blank clay wall calendar page with the middle-to-late weeks softly highlighted. No people at all in this image. Background color: warm cream. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "억새 절정 · 10월 중순~11월 초"
+      },
+      "shot": "top-down close-up on a desk",
+      "bg": "warm cream"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "하늘공원 언덕으로 이어지는 나무 계단과 억새",
+      "note": "정보 — 하늘공원",
+      "prompt": "Camera and composition: low-angle shot up a long wooden staircase. A long zigzag wooden staircase climbing a grassy hill toward a field of silver pampas grass at the top, city buildings faint in the distance. No people at all in this image. Background color: clear sky blue. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "서울억새축제 · 10월 18일~24일"
+      },
+      "shot": "low-angle shot up a long wooden staircase",
+      "bg": "clear sky blue"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "능선을 따라 억새가 펼쳐진 산 정상과 등산객",
+      "note": "정보 — 지방 명소",
+      "prompt": "Camera and composition: wide aerial-like view of a mountain ridge. A mountain ridge covered with silver pampas grass with a narrow trail and two small hikers walking along it, layered blue mountains beyond. No people at all in this image. Background color: pale lavender haze. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide aerial-like view of a mountain ridge",
+      "bg": "pale lavender haze"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "역광 속 억새 사이로 휴대폰 사진을 찍는 손",
+      "note": "사진 요령",
+      "prompt": "Camera and composition: over-the-shoulder close-up facing the low sun. A hand holds a smartphone up to photograph glowing backlit pampas plumes, the low sun flaring softly behind them. No people at all in this image. Background color: golden hour amber. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "over-the-shoulder close-up facing the low sun",
+      "bg": "golden hour amber"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "억새 명소 나들이 준비물이 놓인 돗자리",
+      "note": "준비물",
+      "prompt": "Camera and composition: top-down flat lay on a picnic mat. On a picnic mat: comfortable sneakers, a light windbreaker, a water bottle, a thermos, a small camera and a folded map. No people at all in this image. Background color: soft butter yellow. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "steps",
+        "items": [
+          [
+            "절정 소식",
+            "먼저 확인"
+          ],
+          [
+            "축제 일정",
+            "교통 통제"
+          ],
+          [
+            "해 질 무렵",
+            "도착"
+          ]
+        ]
+      },
+      "shot": "top-down flat lay on a picnic mat",
+      "bg": "soft butter yellow"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "억새길을 걸으며 웃는 가족의 뒷모습",
+      "note": "정리 — 은빛 산책",
+      "prompt": "Camera and composition: back view on a path through tall grass. A family walks away down a narrow path between tall silver pampas grass, the child skipping ahead, all seen from behind. The Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan. The Seonggeul grandpa: a Korean man in his late 70s, short gray hair, mint green vest over a white shirt. Seonggeul, the blog host: a Korean man in his 30s, round friendly face, short neat black hair, cream sweater with a mint scarf. Only the person or people described here appear; no other people. Background color: warm wood brown dusk. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "back view on a path through tall grass",
+      "bg": "warm wood brown dusk"
+    }
+  ]
+}

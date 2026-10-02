@@ -48,8 +48,10 @@ function parseArgs(argv) {
       case '--save-draft':  out.saveDraft = true; break;
       case '--dry-run':     out.dryRun = true; break;
       case '--publish-now': out.publishNow = true; break;
+      case '--reserve':     out.reserve = true; break;
       case '--url':         out.url = next(); break;
       case '--dump':        out.dump = true; break;
+      case '--no-tags':     out.tags = false; break;
       case '--help':        out.help = true; break;
       default:
         if (a.startsWith('--')) throw new Error(`알 수 없는 옵션: ${a}`);
@@ -74,10 +76,16 @@ const USAGE = `
   --no-quote         소제목을 인용구로 바꾸지 않는다 (기본은 인용구 4번 '라인&따옴표')
   --quote-style <s>  인용구 모양: default(1) quotation_line(2) quotation_bubble(3)
                      quotation_underline(4, 기본) quotation_postit(5) quotation_corner(6)
-  --save-draft       에디터 "저장"(임시저장)만 누르고 끝낸다. 발행 패널은 열지 않는다
+  --save-draft       에디터 "저장"(임시저장)을 누르고 끝낸다. 태그가 있으면 발행 패널을 열어
+                     태그만 넣고 닫은 뒤 저장한다 (발행 확인 버튼은 누르지 않는다)
+  --no-tags          --save-draft 에서 태그를 넣지 않는다
   --dry-run          발행 패널까지 열어 카테고리·태그를 넣고, 발행 버튼은 누르지 않는다
   --at "Y-M-D H:M"   (--dry-run 과 함께) 예약 시각을 채워 둔다
   --publish-now      실제 발행 버튼까지 누른다. 사람이 그 자리에서 결정했을 때만 쓴다
+  --reserve          예약발행. 먼저 임시저장한 뒤 발행 패널에서 '예약'을 고르고 시각을 넣고,
+                     예약·날짜·시·분이 맞게 들어갔는지 다시 읽어 확인한 다음에만 발행을 누른다.
+                     하나라도 확인되지 않으면 누르지 않고 임시저장으로 남긴다 (종료 코드 2).
+                     시각은 --at 이나 원고의 publish_at. 오늘 날짜, 지금부터 20분 뒤 이후만 받는다
   --dump             단계별 스크린샷/HTML 을 dumps/ 에 저장
   --blog-id <id>     글쓰기 주소에 쓸 블로그 아이디 (생략하면 GoBlogWrite 주소)
   --cdp <url>        CDP 주소 (기본 http://localhost:9222)
@@ -196,6 +204,125 @@ const swatchSelectors = (hex) => [
   `[class*="palette"] button[title="${hex}" i]`,
   `[data-value="${hex}" i]`,
 ];
+// 툴바의 "발행" — 발행 패널을 여는 버튼. 실제 발행은 패널 안의 확인 버튼(confirm_btn)이 한다.
+const PUBLISH_OPEN = ['button[class*="publish_btn"]', 'button:has-text("발행")'];
+const PUBLISH_LAYER_CLOSE = [
+  '[class*="layer_publish"] button[class*="close"]',
+  '[class*="publish_layer"] button[class*="close"]',
+  'button[class*="btn_close"]',
+  'button[aria-label*="닫기"]',
+  'button:has-text("닫기")',
+];
+const TAG_INPUT = ['input#tag-input', '[class*="tag_input"] input', 'input[placeholder*="태그"]'];
+
+/**
+ * 발행 패널의 태그 칸에 태그를 하나씩 넣는다.
+ * Enter 를 누르기 전에 커서가 태그 칸에 있는지 매번 확인한다 — 다른 곳(발행 확인 버튼)에
+ * 커서가 있으면 Enter 가 발행을 눌러 버린다.
+ */
+async function enterTags(page, editor, tags) {
+  const { loc } = await findAnywhere(page, editor, TAG_INPUT, { timeout: 5000 });
+  let n = 0;
+  for (const t of tags) {
+    await loc.click();
+    const focused = await loc.evaluate((el) => el === el.ownerDocument.activeElement);
+    if (!focused) throw new Error(`커서가 태그 칸에 없어 멈췄습니다 (${n}/${tags.length}개 입력)`);
+    await page.keyboard.insertText(t.replace(/^#/, ''));
+    await page.keyboard.press('Enter');
+    await sleep(200);
+    n++;
+  }
+  log(`태그 ${n}개 입력`);
+}
+
+/** 발행 패널을 닫는다. 닫기 버튼이 없으면 Esc. */
+async function closePublishLayer(page, editor) {
+  try {
+    await findAnywhere(page, editor, PUBLISH_LAYER_CLOSE, { timeout: 2500 }).then((r) => r.loc.click());
+    log('발행 패널 닫음');
+  } catch {
+    await page.keyboard.press('Escape');
+    log('발행 패널 닫음 (Esc)');
+  }
+  await sleep(800);
+}
+
+const RESERVE_LEAD_MIN = 20;  // 지금부터 이 분 안쪽 시각은 예약하지 않는다
+const RESERVE_RADIO = ['label[for="radio_time2"]', 'input#radio_time2 + label', 'label:has-text("예약")'];
+const RESERVE_RADIO_INPUT = ['input#radio_time2', 'input[type="radio"][value="pre"]', 'input[type="radio"][id*="time2"]'];
+const RESERVE_HOUR = ['select[class*="hour_option"]', 'select[class*="hour"]'];
+const RESERVE_MIN = ['select[class*="minute_option"]', 'select[class*="minute"]'];
+const RESERVE_DATE = ['input[class*="input_date"]', '[class*="date_area"] input', 'input[class*="date"]', 'button[class*="date"]', '[class*="date_area"]'];
+const PUBLISH_CONFIRM = ['button[class*="confirm_btn"]'];
+
+/**
+ * 발행 패널에서 예약발행한다. 순서: 패널 열기 → 카테고리 → 태그 → '예약' → 시·분 → 다시 읽어 확인 → 발행.
+ * 예약 라디오가 켜졌는지, 날짜가 오늘인지, 시·분이 맞는지 하나라도 확인되지 않으면 발행을 누르지 않는다.
+ * (확인 없이 누르면 '현재' 발행이 돼 버린다 — 되돌릴 수 없다.)
+ */
+async function reservePublish(page, editor, post, at) {
+  const fail = async (why) => { await dump(page, 'reserve-stop'); await closePublishLayer(page, editor); return { ok: false, why }; };
+  step(`9. 예약발행 준비: ${at.ymd} ${at.hh}:${at.mm}`);
+  try {
+    await clickFirst(page, PUBLISH_OPEN, { timeout: 6000 }).catch(() => clickFirst(editor, PUBLISH_OPEN));
+  } catch (e) { return { ok: false, why: `발행 패널을 열지 못함 — ${e.message.split('\n')[0]}` }; }
+  await sleep(1500);
+  await dump(page, 'publish-layer');
+
+  if (post.category) await pickCategory(page, editor, post.category);
+  if (post.tags?.length) {
+    try { await enterTags(page, editor, post.tags); }
+    catch (e) { warn(`태그 입력 실패 (${e.message}) — 예약 후 글 수정에서 넣어 주세요.`); }
+  }
+
+  // 예약 라디오
+  try {
+    await findAnywhere(page, editor, RESERVE_RADIO, { timeout: 5000 }).then((r) => r.loc.click());
+  } catch { return fail("'예약' 버튼을 찾지 못함"); }
+  await sleep(800);
+  const radioOn = await findAnywhere(page, editor, RESERVE_RADIO_INPUT, { timeout: 2000 })
+    .then((r) => r.loc.isChecked()).catch(() => false);
+  if (!radioOn) return fail("'예약'이 선택됐는지 확인하지 못함");
+
+  // 시·분
+  const want = { 시: at.hh, 분: at.mm };
+  for (const [label, sels] of [['시', RESERVE_HOUR], ['분', RESERVE_MIN]]) {
+    try {
+      const r = await findAnywhere(page, editor, sels, { timeout: 3000 });
+      await r.loc.selectOption(want[label]).catch(() => r.loc.selectOption(String(+want[label])));
+      await sleep(300);
+      const got = await r.loc.inputValue();
+      if (String(+got) !== String(+want[label])) return fail(`${label}이 ${want[label]} 대신 ${got} 로 들어감`);
+      log(`${label}: ${got}`);
+    } catch (e) { return fail(`${label} 칸을 찾지 못함 — ${e.message.split('\n')[0]}`); }
+  }
+
+  // 날짜: 기본값이 오늘이어야 한다. 화면 글자에서 연·월·일 숫자를 읽어 맞춰 본다
+  const [y, mo, d] = at.ymd.split('-').map(Number);
+  let dateText = '';
+  try {
+    const r = await findAnywhere(page, editor, RESERVE_DATE, { timeout: 3000 });
+    dateText = (await r.loc.inputValue().catch(() => '')) || (await r.loc.innerText().catch(() => ''));
+  } catch { /* 아래에서 실패 처리 */ }
+  const nums = (dateText.match(/\d+/g) || []).map(Number);
+  const seq = `,${nums.join(',')},`;
+  const dateOk = seq.includes(`,${y},${mo},${d},`) || seq.includes(`,${y % 100},${mo},${d},`);
+  if (!dateOk) return fail(`예약 날짜를 확인하지 못함 (화면: "${dateText.trim().slice(0, 30)}")`);
+  log(`날짜: ${dateText.trim()}`);
+  await dump(page, 'reserve-ready');
+
+  step('10. 예약발행 (예약·날짜·시·분 확인됨)');
+  try {
+    await findAnywhere(page, editor, PUBLISH_CONFIRM, { timeout: 5000 }).then((r) => r.loc.click());
+  } catch { return fail('발행 확인 버튼을 찾지 못함'); }
+  await sleep(3500);
+  await dump(page, 'reserved');
+  // 에디터를 벗어났으면(글 목록·글 보기로 이동) 예약이 들어간 것으로 본다
+  const left = !/PostWriteForm|postwrite|Redirect=Write/i.test(page.url());
+  if (!left) warn(`발행을 눌렀지만 화면이 그대로예요 (${page.url().slice(0, 80)}). 예약 목록에서 꼭 확인하세요.`);
+  return { ok: true, confirmed: left };
+}
+
 const TOOLBAR = {
   red: [
     'button.se-font-color-toolbar-button',
@@ -461,6 +588,78 @@ async function insertQuoteAt(page, editor, text, style) {
   return { ok: true, styled: got.cls.includes(style) };
 }
 
+/**
+ * 발행 패널에서 카테고리를 고른다. 이름이 정확히 같은 항목만 누른다 —
+ * '일상'을 찾다 본문의 "…성글벙글의 일상 포스팅" 글자를 눌러 패널이 닫힌 적이 있다 (2026-10-02).
+ * 고른 뒤 패널이 닫혔으면 다시 연다. 실패해도 멈추지 않는다 (기본 카테고리로 간다).
+ */
+async function pickCategory(page, editor, category) {
+  const exact = [
+    `[class*="option"] label:text-is("${category}")`,
+    `[class*="category"] label:text-is("${category}")`,
+    `[class*="option"] span:text-is("${category}")`,
+    `[class*="category"] span:text-is("${category}")`,
+  ];
+  try {
+    await findFirst(page, ['button[class*="selectbox_button"]', 'button:has-text("카테고리")'], { timeout: 4000 }).then((r) => r.loc.click());
+    await sleep(500);
+    await findFirst(page, exact, { timeout: 4000 }).then((r) => r.loc.click());
+    log(`카테고리: ${category}`);
+  } catch {
+    warn(`카테고리 자동 선택 실패 — 기본 카테고리로 갑니다 (${category})`);
+    await page.keyboard.press('Escape').catch(() => {});
+  }
+  await sleep(400);
+  const open = await findAnywhere(page, editor, RESERVE_RADIO, { timeout: 1500 }).then(() => true).catch(() => false);
+  if (!open) {
+    warn('발행 패널이 닫혀 다시 엽니다');
+    await clickFirst(page, PUBLISH_OPEN, { timeout: 4000 }).catch(() => clickFirst(editor, PUBLISH_OPEN).catch(() => {}));
+    await sleep(1200);
+  }
+}
+
+/** 인용구 바로 아래 빈 문단의 화면 위치. 없으면 null */
+function blankAfterQuote(i) {
+  const q = [...document.querySelectorAll('.se-component.se-quotation')][i];
+  const next = q && q.nextElementSibling;
+  if (!next || !next.classList.contains('se-text')) return null;
+  const ps = [...next.querySelectorAll('.se-text-paragraph')];
+  if (!ps.length || ps[0].textContent.replace(/\u200b/g, '').trim()) return null;
+  // 빈 문단 뒤에 같은 덩어리 안 글 줄이 있어야 Delete 로 당겨 붙일 수 있다
+  if (ps.length < 2) return null;
+  ps[0].scrollIntoView({ block: 'center' });
+  const r = ps[0].getBoundingClientRect();
+  return { x: r.left + 4, y: r.top + r.height / 2 };
+}
+
+/** 인용구마다 바로 아래 빈 문단을 지운다. 빈 문단에 커서를 두고 Delete — 다음 줄이 올라붙는다. */
+async function removeBlankAfterQuotes(page, editor) {
+  const n = await editor.evaluate(() => document.querySelectorAll('.se-component.se-quotation').length).catch(() => 0);
+  let removed = 0, left = 0;
+  for (let i = 0; i < n; i++) {
+    let at = await editor.evaluate(blankAfterQuote, i).catch(() => null);
+    if (!at) continue;
+    await sleep(200);
+    at = await editor.evaluate(blankAfterQuote, i).catch(() => null); // 스크롤 뒤 다시 잰다
+    if (!at) continue;
+    const before = await snapshot(editor);
+    const off = await frameOffset(page, editor);
+    await page.mouse.click(off.x + at.x, off.y + at.y);
+    await sleep(200);
+    await page.keyboard.press('Delete');
+    await sleep(350);
+    const lost = lostLines(before, await snapshot(editor));
+    const still = await editor.evaluate(blankAfterQuote, i).catch(() => null);
+    if (lost.length) {
+      const back = await undoUntilRestored(page, editor, before);
+      if (!back) throw new Error(`인용구 아래 빈 줄을 지우다 글이 사라졌고 되돌리지 못했습니다: ${lost.slice(0, 3).join(' / ')}. 저장하지 않고 멈춥니다.`);
+      left++;
+    } else if (still) left++;
+    else removed++;
+  }
+  return { removed, left };
+}
+
 /** "[이미지 N] 설명" 표시 줄을 지우고 그 자리에 그림 파일을 넣는다. */
 // ---------------------------------------------------------------- 본문 지킴이
 const PLACEHOLDERS = new Set(['사진 설명을 입력하세요.', '출처 입력', '내용을 입력하세요.']);
@@ -639,6 +838,8 @@ function bodyHtml(post) {
   const parts = [];
   post.blocks.forEach((b, i) => {
     // 이미지 위아래에는 빈 줄을 두지 않는다 (사용자 지시 2026-10-01: 글과 그림이 붙어 이어지게)
+    // 소제목 아래 빈 문단은 붙여 넣을 때는 둔다. 빼고 넣었더니 인용구로 바꿀 때 다음 줄이 같이 지워졌다
+    // (2026-10-02 실행: 인용구 10개 중 9개 실패). 인용구를 다 만든 뒤 removeBlankAfterQuotes 가 지운다.
     if (i && b.type !== 'image' && post.blocks[i - 1].type !== 'image') parts.push('<p><br></p>');
     if (b.type === 'image') { parts.push(`<p>${escHtml(imageLabel(b))}</p>`); return; }
     for (const l of b.lines) {
@@ -757,17 +958,31 @@ async function main() {
   const args = parseArgs(process.argv);
   if (args.help) { console.log(USAGE); return; }
   if (!args.post) throw new Error('--post 가 필요합니다. --help 참고.');
-  if ([args.saveDraft, args.dryRun, args.publishNow].filter(Boolean).length > 1) {
-    throw new Error('--save-draft / --dry-run / --publish-now 는 하나만 쓰세요.');
+  if ([args.saveDraft, args.dryRun, args.publishNow, args.reserve].filter(Boolean).length > 1) {
+    throw new Error('--save-draft / --dry-run / --publish-now / --reserve 는 하나만 쓰세요.');
   }
-  if (args.at && !args.dryRun && !args.publishNow) throw new Error('--at 은 --dry-run 또는 --publish-now 와 함께만 씁니다.');
+  if (args.at && !args.dryRun && !args.publishNow && !args.reserve) throw new Error('--at 은 --dry-run, --publish-now, --reserve 와 함께만 씁니다.');
 
   const post = JSON.parse(fs.readFileSync(args.post, 'utf8'));
   if (!post.title || !Array.isArray(post.blocks)) {
     throw new Error(`${args.post}: title 과 blocks 가 필요합니다. build-post.mjs 로 생성하세요.`);
   }
+  if (args.reserve && !args.at) args.at = post.publishAt;
+  if (args.reserve && !args.at) throw new Error('--reserve 에는 예약 시각이 필요합니다 (--at 또는 원고의 publish_at).');
   const at = args.at ? parseAt(args.at) : null;
-  if (at && at.date.getTime() < Date.now()) throw new Error(`예약 시각이 과거입니다: ${args.at}`);
+  if (args.reserve) {
+    // 자동 예약은 같은 날짜, 20분 뒤 이후, 10분 단위만 한다 — 네이버 예약 날짜 기본값이 오늘이라 달력을 건드리지 않는다.
+    // 조건이 안 맞으면 멈추지 않고 임시저장으로 바꿔 글은 남긴다 (PC 가 늦게 켜진 날 등).
+    const now = new Date();
+    const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+    const why = at.ymd !== today ? `예약 날짜(${at.ymd})가 오늘(${today})이 아님`
+      : at.date.getTime() - Date.now() < RESERVE_LEAD_MIN * 60000 ? `예약 시각(${args.at})까지 ${RESERVE_LEAD_MIN}분이 안 남음`
+      : +at.mm % 10 ? `네이버 예약은 10분 단위 (${args.at})` : '';
+    if (why) {
+      warn(`${why} — 예약하지 않고 임시저장만 합니다.`);
+      args.reserve = false; args.saveDraft = true; args.reserveSkipped = why;
+    }
+  } else if (at && at.date.getTime() < Date.now()) throw new Error(`예약 시각이 과거입니다: ${args.at}`);
 
   // 이미지 파일 미리 확인
   const imageBlocks = post.blocks.filter((b) => b.type === 'image');
@@ -788,7 +1003,8 @@ async function main() {
   const textBlocks = post.blocks.filter((b) => b.type !== 'image');
   const allLines = textBlocks.flatMap((b) => b.lines);
   const styled = allLines.filter((l) => l.s || l.segs);
-  const mode = args.saveDraft ? '임시저장 (발행 안 함)'
+  const mode = args.reserve ? `예약발행 (${at.ymd} ${at.hh}:${at.mm}, 확인 후에만)`
+    : args.saveDraft ? '임시저장 (발행 안 함)'
     : args.dryRun ? 'DRY-RUN (발행 패널까지, 발행 안 함)'
     : args.publishNow ? '⚠ 실제 발행'
     : '본문만 채우고 멈춤';
@@ -952,6 +1168,11 @@ async function main() {
         }
       }
       if (quotes.length) await dump(page, 'quotes');
+      if (report.quote.ok) {
+        // 인용구 바로 아래 빈 줄을 지운다 (사용자 지시 2026-10-01). 글이 하나라도 사라지면 되돌린다.
+        const r = await removeBlankAfterQuotes(page, editor);
+        log(`인용구 아래 빈 줄: ${r.removed}곳 지움${r.left ? ` · ${r.left}곳 남음 (그대로 둠)` : ''}`);
+      }
     }
 
     // ---- 이미지 넣기
@@ -1016,8 +1237,24 @@ async function main() {
       }
     }
 
-    if (args.saveDraft) {
-      step('8. 임시저장 (발행 버튼은 누르지 않습니다)');
+    if (args.saveDraft && !args.reserve && args.tags !== false && post.tags?.length) {
+      // 태그 칸은 발행 패널 안에만 있다. 패널을 열어 태그만 넣고 닫는다. 발행 확인 버튼은 누르지 않는다.
+      step(`7-1. 태그 ${post.tags.length}개 (발행 패널을 열어 태그만 넣고 닫습니다)`);
+      try {
+        await clickFirst(page, PUBLISH_OPEN, { timeout: 6000 })
+          .catch(() => clickFirst(editor, PUBLISH_OPEN));
+        await sleep(1500);
+        await dump(page, 'tag-layer');
+        await enterTags(page, editor, post.tags);
+        await dump(page, 'tag-filled');
+      } catch (e) {
+        warn(`태그 입력 실패 — 저장 후 수동으로 넣으세요. (${e.message})`);
+      }
+      await closePublishLayer(page, editor);
+    }
+
+    if (args.saveDraft || args.reserve) {
+      step(args.reserve ? '8. 임시저장 (예약 전에 먼저 저장해 둡니다)' : '8. 임시저장 (발행 버튼은 누르지 않습니다)');
       const { loc, sel } = await findAnywhere(page, editor, TOOLBAR.save, { timeout: 6000 });
       const label = (await loc.innerText().catch(() => '')).trim();
       if (/발행/.test(label)) throw new Error(`저장 버튼 대신 발행 버튼이 잡혔습니다 ("${label}"). 멈춥니다.`);
@@ -1025,11 +1262,19 @@ async function main() {
       log(`클릭: ${sel} ("${label || '저장'}")`);
       await sleep(2500);
       await dump(page, 'saved');
+      if (args.reserve) {
+        const r = await reservePublish(page, editor, post, at);
+        if (r.ok) { console.log(`\n✅ 예약발행 완료 — ${at.ymd} ${at.hh}:${at.mm}`); return; }
+        console.log(`\n⚠ 예약하지 않았습니다 (${r.why}). 글은 임시저장에 남아 있어요.`);
+        process.exitCode = 2;
+        return;
+      }
       console.log('\n✅ 임시저장 완료 — 발행하지 않았습니다.');
+      if (args.reserveSkipped) { console.log(`   (예약하지 않은 이유: ${args.reserveSkipped})`); process.exitCode = 2; }
       log('네이버 글쓰기 화면 오른쪽 위 "저장" 옆 숫자를 누르면 임시저장 목록에서 볼 수 있어요.');
-      log('카테고리·태그는 발행 단계에서 넣습니다:');
-      if (post.category) log(`  카테고리: ${post.category}`);
-      if (post.tags?.length) log(`  태그: ${post.tags.join(', ')}`);
+      if (post.category) log(`카테고리는 발행할 때 고르세요: ${post.category}`);
+      if (post.tags?.length) log(`태그: ${post.tags.join(', ')}`);
+      log('임시저장 글을 다시 열었을 때 태그가 없으면 발행 패널에서 위 태그를 넣어 주세요.');
       return;
     }
 
@@ -1039,33 +1284,20 @@ async function main() {
     }
 
     step('8. 발행 설정 열기');
-    await clickFirst(page, ['button[class*="publish_btn"]', 'button:has-text("발행")'], { timeout: 6000 })
-      .catch(() => clickFirst(editor, ['button[class*="publish_btn"]', 'button:has-text("발행")']));
+    await clickFirst(page, PUBLISH_OPEN, { timeout: 6000 })
+      .catch(() => clickFirst(editor, PUBLISH_OPEN));
     await sleep(1500);
     await dump(page, 'publish-layer');
 
     if (post.category) {
       step(`9. 카테고리: ${post.category}`);
-      try {
-        await findAnywhere(page, editor, ['button[class*="selectbox_button"]', 'button:has-text("카테고리")'], { timeout: 4000 }).then((r) => r.loc.click());
-        await sleep(500);
-        await findAnywhere(page, editor, [`label:has-text("${post.category}")`, `span:has-text("${post.category}")`], { timeout: 4000 }).then((r) => r.loc.click());
-      } catch { warn('카테고리 자동 선택 실패 — 수동으로 지정하세요.'); }
+      await pickCategory(page, editor, post.category);
     }
 
     if (post.tags?.length) {
       step('10. 태그 입력');
-      try {
-        const { loc } = await findAnywhere(page, editor,
-          ['input#tag-input', '[class*="tag_input"] input', 'input[placeholder*="태그"]'], { timeout: 5000 });
-        await loc.click();
-        for (const t of post.tags) {
-          await page.keyboard.insertText(t);
-          await page.keyboard.press('Enter');
-          await sleep(200);
-        }
-        log(`${post.tags.length}개 입력`);
-      } catch { warn('태그 입력 실패 — 수동으로 넣으세요.'); }
+      try { await enterTags(page, editor, post.tags); }
+      catch (e) { warn(`태그 입력 실패 — 수동으로 넣으세요. (${e.message})`); }
     }
 
     if (at) {
