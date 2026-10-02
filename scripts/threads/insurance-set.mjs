@@ -13,7 +13,8 @@ import { ROOT, isMain } from './config.mjs';
 import { guard, similarity } from './guard.mjs';
 
 export const SETS_DIR = path.join(ROOT, 'content', 'threads', 'insurance', 'sets');
-export const SET_SIZE = 5;
+// 2026-10-04 묶음까지는 5편, 그 뒤로는 10편씩 (2026-10-02 사용자 지시). 역할은 묶음 크기/5 번씩 쓴다
+export const SET_SIZES = [5, 10];
 export const ROLES = ['오해풀기', '숨은권리', '증권한줄', '생활장면', '마음이야기'];
 export const TYPES = [
   '실손', '자동차', '운전자', '진단비', '배상책임', '종신·정기',
@@ -82,7 +83,8 @@ export function checkSet(set, previous = []) {
   const notes = [];
   const { posts } = set;
 
-  if (posts.length !== SET_SIZE) errors.push(`글이 ${posts.length}편입니다. 한 묶음은 ${SET_SIZE}편입니다.`);
+  if (!SET_SIZES.includes(posts.length)) errors.push(`글이 ${posts.length}편입니다. 한 묶음은 10편입니다 (옛 묶음은 5편).`);
+  const perRole = Math.max(1, Math.round(posts.length / ROLES.length));
 
   // ---- 역할·보험 종류가 묶음 안에서 겹치지 않는가
   const seen = { 역할: new Map(), 보험: new Map() };
@@ -90,10 +92,12 @@ export function checkSet(set, previous = []) {
     if (!ROLES.includes(p.역할)) errors.push(`${p.no}번: 역할 "${p.역할 || ''}" 이 없습니다. (${ROLES.join(' / ')})`);
     if (!TYPES.includes(p.보험)) errors.push(`${p.no}번: 보험 종류 "${p.보험 || ''}" 이 목록에 없습니다. (${TYPES.join(' / ')})`);
     if (!p.글감) errors.push(`${p.no}번: 글감이 비었습니다.`);
-    for (const key of ['역할', '보험']) {
+    // 보험 종류는 묶음 안에서 한 번씩, 역할은 묶음 크기/5 번씩 (5편이면 한 번, 10편이면 두 번)
+    for (const [key, limit] of [['역할', perRole], ['보험', 1]]) {
       if (!p[key]) continue;
-      if (seen[key].has(p[key])) errors.push(`${p.no}번: ${key} "${p[key]}" 가 ${seen[key].get(p[key])}번과 겹칩니다.`);
-      else seen[key].set(p[key], p.no);
+      const used = seen[key].get(p[key]) || [];
+      if (used.length >= limit) errors.push(`${p.no}번: ${key} "${p[key]}" 가 ${used.join('·')}번과 겹칩니다.`);
+      seen[key].set(p[key], [...used, p.no]);
     }
   }
 

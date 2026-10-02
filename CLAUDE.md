@@ -13,7 +13,7 @@ content/tistory/   티스토리 원고 (네이버와 다른 키워드·제목). 
 content/calendar/  발행 캘린더 아티팩트 소스, 키워드 목록
 content/board/     원고 작업실 아티팩트 소스 (예약발행을 마친 글은 비우고 archive/ 에 남긴다)
 content/threads/   스레드 말투 규칙(voice.md) + 글감(topics.txt)
-content/threads/insurance/  스레드 보험 심의글 — 규칙(rules.md)·글감·5편 묶음(sets/)
+content/threads/insurance/  스레드 보험 심의글 — 규칙(rules.md)·글감·10편 묶음(sets/)
 scripts/           발행·검수 자동화(.mjs) + 워크스페이스 동기화 도구(.py)
 scripts/threads/   스레드 자동 발행·댓글 답변
 .github/workflows/ 스레드 자동화 스케줄 + PR 검사 (GitHub Actions)
@@ -465,9 +465,9 @@ Drive 를 못 찾으면 겹침을 막을 수 없다고 알리고 그대로 진�
 
 아래는 다시 켤 때를 위한 설명이다. 설치 절차는 `docs/THREADS.md` 에 있다.
 
-**스레드 보험 심의글** (2026-10-02 사용자 요청) 은 손으로 올리는 별도 흐름이다. 항상 5편 한 묶음,
+**스레드 보험 심의글** (2026-10-02 사용자 요청) 은 손으로 올리는 별도 흐름이다. 항상 10편 한 묶음(2026-10-04 묶음까지는 5편),
 역할·보험 종류·지난 묶음이 겹치지 않게 쓴다. 정본은 `content/threads/insurance/rules.md`, 검사는
-`node scripts/threads/insurance-set.mjs <묶음>`. 위 자동 발행과는 연결돼 있지 않다.
+`node scripts/threads/insurance-set.mjs <묶음>`. Word 는 Drive `보험글/스레드 N편.docx` 로 저장된다. 위 자동 발행과는 연결돼 있지 않다.
 
 **블로그 규칙을 스레드에 그대로 적용하지 않는다.** 2,300자·해시태그 15개·고정 인사말·
 `[빨간글씨]` 는 네이버 원고 기준이다. 스레드는 500자짜리 다른 매체이고, 그 기준은
