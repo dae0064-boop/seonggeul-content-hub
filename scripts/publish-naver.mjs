@@ -600,13 +600,29 @@ async function pickCategory(page, editor, category) {
     `[class*="option"] span:text-is("${category}")`,
     `[class*="category"] span:text-is("${category}")`,
   ];
+  // 발행 패널은 글쓰기 iframe 안에 열린다. 바깥 페이지만 찾아서 10/2 에 5편 모두 실패했다 → 두 곳 다 찾는다
   try {
-    await findFirst(page, ['button[class*="selectbox_button"]', 'button:has-text("카테고리")'], { timeout: 4000 }).then((r) => r.loc.click());
+    await findAnywhere(page, editor, ['button[class*="selectbox_button"]', 'button:has-text("카테고리")'], { timeout: 3000 }).then((r) => r.loc.click());
     await sleep(500);
-    await findFirst(page, exact, { timeout: 4000 }).then((r) => r.loc.click());
+    await findAnywhere(page, editor, exact, { timeout: 3000 }).then((r) => r.loc.click());
     log(`카테고리: ${category}`);
   } catch {
     warn(`카테고리 자동 선택 실패 — 기본 카테고리로 갑니다 (${category})`);
+    // 다음에 고칠 수 있게 카테고리 근처 요소를 기록한다 (HTML 덤프는 Drive 로 올리지 않으므로 로그에 남긴다)
+    for (const [name, scope] of [['page', page], ['editor', editor]]) {
+      const found = await scope.evaluate((cat) => {
+        const out = [];
+        for (const el of document.querySelectorAll('button, label, span, a, li, div')) {
+          const t = (el.textContent || '').replace(/\s+/g, ' ').trim();
+          const cls = typeof el.className === 'string' ? el.className : '';
+          const hit = (t === cat || t.startsWith('카테고리')) && t.length < 40 && el.children.length < 4;
+          if (hit || /category|selectbox/i.test(cls)) out.push(`${el.tagName.toLowerCase()}.${cls.split(' ').slice(0, 2).join('.')} "${t.slice(0, 30)}"`);
+          if (out.length >= 15) break;
+        }
+        return out;
+      }, category).catch(() => []);
+      log(`  진단(${name}): ${found.length ? found.join(' | ') : '없음'}`);
+    }
     await page.keyboard.press('Escape').catch(() => {});
   }
   await sleep(400);
@@ -1256,6 +1272,19 @@ async function main() {
         parts.push(`${name} ${r.removed}곳${r.left ? `(${r.left}곳 남김)` : ''}`);
       }
       log(`빈 줄 지움: ${parts.join(' · ')}`);
+      // 그림 주변 구조를 기록한다 (사용자가 그림 위·아래 빈 줄을 봤는데 위 단계가 0곳을 찾았다 — 원인 확인용)
+      const shape = await editor.evaluate(() => {
+        const desc = (el) => {
+          if (!el) return '없음';
+          const kind = ['se-image', 'se-quotation', 'se-text'].find((k) => el.classList.contains(k)) || (el.className || '').toString().split(' ').slice(0, 2).join('.');
+          if (kind !== 'se-text') return kind;
+          const ps = [...el.querySelectorAll('.se-text-paragraph')].map((p) => (p.textContent.replace(/\u200b/g, '').trim() ? '글' : '빈'));
+          return `text[${ps.length > 4 ? [...ps.slice(0, 2), '…', ...ps.slice(-2)].join(',') : ps.join(',')}]`;
+        };
+        return [...document.querySelectorAll('.se-component.se-image')].slice(0, 3)
+          .map((im, i) => `그림${i + 1}: ${desc(im.previousElementSibling)} → 그림 → ${desc(im.nextElementSibling)}`);
+      }).catch(() => []);
+      shape.forEach((l) => log(`  구조 ${l}`));
     }
     if (args.images) await dump(page, 'images');
 
