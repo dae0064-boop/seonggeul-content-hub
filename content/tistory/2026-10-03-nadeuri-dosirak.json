@@ -1,0 +1,874 @@
+{
+  "slug": "2026-10-03-nadeuri-dosirak",
+  "title": "나들이 도시락, 김밥 싸는 순서와 보냉백·아이스팩 넣는 법",
+  "category": "생활정보",
+  "tags": [
+    "나들이도시락",
+    "가을나들이도시락",
+    "소풍도시락",
+    "도시락싸기",
+    "김밥싸는법",
+    "도시락상하지않게",
+    "보냉백",
+    "아이스팩",
+    "가을소풍",
+    "가족나들이",
+    "피크닉도시락",
+    "도시락보관",
+    "주말나들이",
+    "살림꿀팁",
+    "생활정보"
+  ],
+  "publishAt": "2026-10-03 19:00",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘은 나들이 도시락을 포스팅으로 알아볼게요."
+        },
+        {
+          "t": "가을 꽃구경이나 공원 소풍을 앞두고 계신다면"
+        },
+        {
+          "t": "이 글을 끝까지 읽어 보세요."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "가을 공원 돗자리 위에 펼친 김밥 도시락 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "나들이 도시락, 가을이면 괜찮을까요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "가을은 선선해서 도시락이 잘 안 상한다고"
+        },
+        {
+          "t": "생각하는 분이 많더라구요."
+        },
+        {
+          "t": "그런데 가을 한낮은 생각보다 따뜻해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 아침에 싼 김밥을"
+        },
+        {
+          "t": "가방에 넣은 채 햇볕 아래 몇 시간 두면"
+        },
+        {
+          "t": "점심때쯤엔 맛이 변해 있을 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "날이 선선해도 한낮 햇볕 아래 도시락은",
+          "s": "red"
+        },
+        {
+          "t": "금방 상할 수 있어요.",
+          "s": "red"
+        },
+        {
+          "t": "그래서 싸는 순서부터 챙기는 게 좋아요."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "햇볕 아래 벤치에 놓인 도시락 가방"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "결론은 식혀서 싸고 차게 들고 가기"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "결론부터 말씀드리면"
+        },
+        {
+          "t": "나들이 도시락은 충분히 식혀서 싸고",
+          "s": "yellow"
+        },
+        {
+          "t": "보냉백에 아이스팩과 함께 넣는 게 기본이에요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "세균은 따뜻하고 축축한 곳에서 잘 늘어나요."
+        },
+        {
+          "t": "뜨거운 밥을 바로 담아 뚜껑을 닫으면"
+        },
+        {
+          "t": "안에 김이 맺혀 물기가 생겨요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그 물기와 남은 열이 도시락 안을"
+        },
+        {
+          "t": "세균이 늘기 좋은 상태로 만들어요."
+        },
+        {
+          "t": "식혀서 싸는 게 첫 단계인 이유예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "도시락통도 미리 깨끗이 씻어 말려 두세요."
+        },
+        {
+          "t": "물기가 남은 통에 담으면"
+        },
+        {
+          "t": "아무리 식혀서 싸도 소용이 줄어요."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "쟁반에 펼쳐 한 김 식히는 밥과 반찬"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "김밥은 이렇게 싸 주세요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "김밥 밥은 넓은 그릇에 펼쳐서 식혀요.",
+          "segs": [
+            {
+              "t": "김밥 밥은 "
+            },
+            {
+              "t": "넓은 그릇",
+              "s": "blue"
+            },
+            {
+              "t": "에 펼쳐서 식혀요."
+            }
+          ]
+        },
+        {
+          "t": "뜨거운 밥에 재료를 올리면"
+        },
+        {
+          "t": "속 재료까지 미지근하게 데워져요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "시금치나 당근처럼 데치거나 볶은 재료도"
+        },
+        {
+          "t": "물기를 꼭 짜고 완전히 식힌 뒤 넣어요."
+        },
+        {
+          "t": "물기가 남은 재료는 김밥을 빨리 상하게 해요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "마요네즈를 넣은 참치처럼 쉽게 상하는 속은",
+          "segs": [
+            {
+              "t": "마요네즈",
+              "s": "blue"
+            },
+            {
+              "t": "를 넣은 참치처럼 쉽게 상하는 속은"
+            }
+          ]
+        },
+        {
+          "t": "나들이 김밥에서는 빼는 분이 많아요."
+        },
+        {
+          "t": "꼭 넣고 싶다면 가장 먼저 드세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "다 싼 김밥은 썰지 않은 채로 두었다가"
+        },
+        {
+          "t": "먹기 직전에 써는 방법도 있어요. 칼도 챙겨요."
+        },
+        {
+          "t": "자른 면이 공기에 덜 닿아 마르지 않아요."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "도마 위에서 물기를 꼭 짠 김밥 재료"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "반찬과 과일은 따로 담아요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "반찬은 국물이 없는 것으로 골라요."
+        },
+        {
+          "t": "나물무침이나 국물 많은 조림은"
+        },
+        {
+          "t": "도시락 안에서 쉽게 물러져요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "달걀말이나 구운 고기처럼"
+        },
+        {
+          "t": "속까지 충분히 익힌 반찬이 좋아요.",
+          "segs": [
+            {
+              "t": "속까지 "
+            },
+            {
+              "t": "충분히 익힌",
+              "s": "blue"
+            },
+            {
+              "t": " 반찬이 좋아요."
+            }
+          ]
+        },
+        {
+          "t": "덜 익은 재료는 나들이 도시락에 넣지 않아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "과일은 씻은 뒤 물기를 닦아"
+        },
+        {
+          "t": "밥과 다른 통에 담아 주세요."
+        },
+        {
+          "t": "깎은 과일은 무르기 쉬우니 먹기 전에 깎아도 좋아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "손으로 집어 먹는 도시락이라면"
+        },
+        {
+          "t": "물티슈나 손 소독제도 함께 챙겨요."
+        },
+        {
+          "t": "먹기 전에 손부터 닦는 게 좋아요."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 5,
+      "lines": [
+        {
+          "t": "칸이 나뉜 통에 따로 담은 반찬과 과일"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "보냉백과 아이스팩 넣는 법"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "도시락을 다 쌌다면 보냉백에 넣어요."
+        },
+        {
+          "t": "아이스팩은 도시락 위에 올려 두면",
+          "segs": [
+            {
+              "t": "아이스팩은 도시락 "
+            },
+            {
+              "t": "위",
+              "s": "blue"
+            },
+            {
+              "t": "에 올려 두면"
+            }
+          ]
+        },
+        {
+          "t": "찬 기운이 아래로 내려가 고루 시원해져요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "아이스팩은 위아래로 하나씩 넣으면",
+          "s": "yellow"
+        },
+        {
+          "t": "보냉백 안이 더 오래 시원해요.",
+          "s": "yellow"
+        },
+        {
+          "t": "얼린 생수병을 아이스팩 대신 쓰는 분도 많아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보냉백은 햇볕이 드는 곳 대신"
+        },
+        {
+          "t": "그늘이나 돗자리 그림자 쪽에 두세요."
+        },
+        {
+          "t": "지퍼는 꺼낼 때만 열고 바로 닫아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보냉백이 없다면 두꺼운 가방에"
+        },
+        {
+          "t": "수건으로 도시락과 아이스팩을 함께 감싸요."
+        },
+        {
+          "t": "조금이라도 찬 기운을 오래 붙잡아 줘요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "차 트렁크처럼 뜨거워지는 곳에",
+          "s": "red"
+        },
+        {
+          "t": "도시락을 오래 두는 건 피하세요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 6,
+      "lines": [
+        {
+          "t": "보냉백 안 도시락 위에 아이스팩을 올리는 손"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "아이와 함께라면 더 챙겨요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "아이 도시락은 한입에 먹기 좋게"
+        },
+        {
+          "t": "작게 만들어 주면 흘리는 게 줄어요."
+        },
+        {
+          "t": "꼬마김밥이나 작은 주먹밥이 편해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "놀다가 배고플 때 바로 먹을 수 있게"
+        },
+        {
+          "t": "간식은 따로 작은 통에 나눠 담아요."
+        },
+        {
+          "t": "그래야 도시락 통을 여러 번 열지 않아요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "나들이 도시락, 언제 먹을까요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "나들이 도시락은 싼 뒤 되도록"
+        },
+        {
+          "t": "빨리 먹는 게 좋아요."
+        },
+        {
+          "t": "몇 시간씩 미뤄 두지 않는 게 기본이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "먹다 남은 음식은 아깝더라도"
+        },
+        {
+          "t": "집에 다시 들고 와서 먹지 않는 게 좋아요."
+        },
+        {
+          "t": "들고 다니는 동안 온도가 여러 번 바뀌었거든요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "맛이나 냄새가 조금이라도 이상하면",
+          "s": "yellow"
+        },
+        {
+          "t": "아깝더라도 먹지 않는 게 안전해요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "나들이 도시락 체크포인트"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "출발 전에 이것만 확인해 보세요."
+        },
+        {
+          "t": "밥과 재료를 충분히 식힌 뒤 쌌는지,"
+        },
+        {
+          "t": "물기 있는 반찬은 빼거나 따로 담았는지요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보냉백과 아이스팩, 물티슈를 챙겼는지,"
+        },
+        {
+          "t": "먹을 시간을 대략 정해 뒀는지도 봐요."
+        },
+        {
+          "t": "도시락은 그늘에 둘 자리를 먼저 찾아 두면 좋아요."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 7,
+      "lines": [
+        {
+          "t": "현관 앞에 놓인 보냉백과 돗자리, 물티슈"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "김밥 말고 이런 메뉴도 좋아요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "나들이 도시락이 꼭 김밥일 필요는 없어요."
+        },
+        {
+          "t": "주먹밥은 손에 들고 먹기 편하고"
+        },
+        {
+          "t": "속 재료를 바꾸기도 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "샌드위치는 마른 재료 위주로 넣어요.",
+          "segs": [
+            {
+              "t": "샌드위치는 "
+            },
+            {
+              "t": "마른 재료",
+              "s": "blue"
+            },
+            {
+              "t": " 위주로 넣어요."
+            }
+          ]
+        },
+        {
+          "t": "토마토나 오이처럼 물이 나오는 채소는"
+        },
+        {
+          "t": "따로 담았다가 먹기 직전에 끼우면 좋아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "삶은 달걀이나 구운 고구마처럼"
+        },
+        {
+          "t": "껍질째 들고 가는 간식도 든든해요."
+        },
+        {
+          "t": "껍질을 까는 손이 깨끗한지만 확인해 주세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "돌아와서 도시락통도 챙겨요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "집에 돌아오면 도시락통부터 꺼내요."
+        },
+        {
+          "t": "가방 안에 하루 더 두면 냄새가 배고"
+        },
+        {
+          "t": "고무 패킹 틈에 물기가 남기 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "뚜껑의 고무 패킹은 빼서 따로 씻고",
+          "segs": [
+            {
+              "t": "뚜껑의 "
+            },
+            {
+              "t": "고무 패킹",
+              "s": "blue"
+            },
+            {
+              "t": "은 빼서 따로 씻고"
+            }
+          ]
+        },
+        {
+          "t": "완전히 말린 뒤 다시 끼워 주세요."
+        },
+        {
+          "t": "보냉백 안쪽도 닦아서 열어 둔 채 말려요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "아이스팩은 겉을 닦아 다시 얼려 두면"
+        },
+        {
+          "t": "다음 나들이 도시락 때 바로 쓸 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "나들이 도시락 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "나들이 도시락에 많이 묻는 세 가지예요."
+        },
+        {
+          "t": "Q1: 김밥을 전날 밤에 싸 둬도 되나요?"
+        },
+        {
+          "t": "A1: 냉장고에 두면 밥이 딱딱해지기 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "재료는 전날 손질해 두고"
+        },
+        {
+          "t": "김밥은 아침에 싸는 쪽이 맛도 좋고 마음도 편해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 아이스팩이 없으면 어떻게 하나요?"
+        },
+        {
+          "t": "A2: 생수병이나 팩 음료를 얼려 넣어도 돼요."
+        },
+        {
+          "t": "녹으면 시원한 물로 마실 수 있어 편해요."
+        },
+        {
+          "t": "물이 맺히니 수건으로 한 번 감싸 넣어 주세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q3: 볶음밥이나 유부초밥은 괜찮을까요?"
+        },
+        {
+          "t": "A3: 기름진 밥도 식혀서 싸는 건 똑같아요."
+        },
+        {
+          "t": "유부초밥은 물기를 꼭 짜고 보냉백에 넣어 주세요."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 8,
+      "lines": [
+        {
+          "t": "공원 그늘에서 도시락을 열고 웃는 성글이"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "나들이 도시락 한눈에 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "나들이 도시락은 식혀서 싸고, 물기를 빼고,",
+          "s": "red"
+        },
+        {
+          "t": "보냉백과 아이스팩으로 차게 들고 가는 거예요.",
+          "s": "red"
+        },
+        {
+          "t": "김밥은 쉽게 상하는 속을 빼면 한결 든든해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분 댁 나들이 도시락엔"
+        },
+        {
+          "t": "어떤 메뉴가 꼭 들어가나요?"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이번 주말 나들이 전엔 냉동실에"
+        },
+        {
+          "t": "아이스팩부터 넣어 두세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "도시락이 상하는 속도는 날씨와 보관에 따라 달라요."
+        },
+        {
+          "t": "오늘 정리한 방법은 출발점으로 삼고,"
+        },
+        {
+          "t": "먹기 전 맛과 냄새를 꼭 확인해 주세요."
+        },
+        {
+          "t": "(2026년 10월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "이상 성글벙글의 살림 정보 포스팅이었습니다😎"
+        }
+      ]
+    }
+  ],
+  "html": "<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘은 나들이 도시락을 포스팅으로 알아볼게요.<br>가을 꽃구경이나 공원 소풍을 앞두고 계신다면<br>이 글을 끝까지 읽어 보세요.</p>\n<p data-ke-size=\"size16\">[이미지 1] 가을 공원 돗자리 위에 펼친 김밥 도시락 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>나들이 도시락, 가을이면 괜찮을까요</h2>\n<p data-ke-size=\"size16\">가을은 선선해서 도시락이 잘 안 상한다고<br>생각하는 분이 많더라구요.<br>그런데 가을 한낮은 생각보다 따뜻해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 아침에 싼 김밥을<br>가방에 넣은 채 햇볕 아래 몇 시간 두면<br>점심때쯤엔 맛이 변해 있을 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>날이 선선해도 한낮 햇볕 아래 도시락은</b></span><br><span style=\"color: #ff0010;\"><b>금방 상할 수 있어요.</b></span><br>그래서 싸는 순서부터 챙기는 게 좋아요.</p>\n<p data-ke-size=\"size16\">[이미지 2] 햇볕 아래 벤치에 놓인 도시락 가방</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>결론은 식혀서 싸고 차게 들고 가기</h2>\n<p data-ke-size=\"size16\">결론부터 말씀드리면<br><span style=\"background-color: #fff8b2;\"><b>나들이 도시락은 충분히 식혀서 싸고</b></span><br><span style=\"background-color: #fff8b2;\"><b>보냉백에 아이스팩과 함께 넣는 게 기본이에요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">세균은 따뜻하고 축축한 곳에서 잘 늘어나요.<br>뜨거운 밥을 바로 담아 뚜껑을 닫으면<br>안에 김이 맺혀 물기가 생겨요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그 물기와 남은 열이 도시락 안을<br>세균이 늘기 좋은 상태로 만들어요.<br>식혀서 싸는 게 첫 단계인 이유예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">도시락통도 미리 깨끗이 씻어 말려 두세요.<br>물기가 남은 통에 담으면<br>아무리 식혀서 싸도 소용이 줄어요.</p>\n<p data-ke-size=\"size16\">[이미지 3] 쟁반에 펼쳐 한 김 식히는 밥과 반찬</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>김밥은 이렇게 싸 주세요</h2>\n<p data-ke-size=\"size16\">김밥 밥은 <span style=\"color: #0078cb;\"><b>넓은 그릇</b></span>에 펼쳐서 식혀요.<br>뜨거운 밥에 재료를 올리면<br>속 재료까지 미지근하게 데워져요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">시금치나 당근처럼 데치거나 볶은 재료도<br>물기를 꼭 짜고 완전히 식힌 뒤 넣어요.<br><span style=\"color: #ff0010;\"><b>물기가 남은 재료는 김밥을 빨리 상하게 해요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #0078cb;\"><b>마요네즈</b></span>를 넣은 참치처럼 쉽게 상하는 속은<br>나들이 김밥에서는 빼는 분이 많아요.<br>꼭 넣고 싶다면 가장 먼저 드세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">다 싼 김밥은 썰지 않은 채로 두었다가<br>먹기 직전에 써는 방법도 있어요. 칼도 챙겨요.<br>자른 면이 공기에 덜 닿아 마르지 않아요.</p>\n<p data-ke-size=\"size16\">[이미지 4] 도마 위에서 물기를 꼭 짠 김밥 재료</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>반찬과 과일은 따로 담아요</h2>\n<p data-ke-size=\"size16\">반찬은 국물이 없는 것으로 골라요.<br>나물무침이나 국물 많은 조림은<br>도시락 안에서 쉽게 물러져요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">달걀말이나 구운 고기처럼<br>속까지 <span style=\"color: #0078cb;\"><b>충분히 익힌</b></span> 반찬이 좋아요.<br>덜 익은 재료는 나들이 도시락에 넣지 않아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">과일은 씻은 뒤 물기를 닦아<br>밥과 다른 통에 담아 주세요.<br>깎은 과일은 무르기 쉬우니 먹기 전에 깎아도 좋아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">손으로 집어 먹는 도시락이라면<br>물티슈나 손 소독제도 함께 챙겨요.<br>먹기 전에 손부터 닦는 게 좋아요.</p>\n<p data-ke-size=\"size16\">[이미지 5] 칸이 나뉜 통에 따로 담은 반찬과 과일</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>보냉백과 아이스팩 넣는 법</h2>\n<p data-ke-size=\"size16\">도시락을 다 쌌다면 보냉백에 넣어요.<br>아이스팩은 도시락 <span style=\"color: #0078cb;\"><b>위</b></span>에 올려 두면<br>찬 기운이 아래로 내려가 고루 시원해져요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #fff8b2;\"><b>아이스팩은 위아래로 하나씩 넣으면</b></span><br><span style=\"background-color: #fff8b2;\"><b>보냉백 안이 더 오래 시원해요.</b></span><br>얼린 생수병을 아이스팩 대신 쓰는 분도 많아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">보냉백은 햇볕이 드는 곳 대신<br>그늘이나 돗자리 그림자 쪽에 두세요.<br>지퍼는 꺼낼 때만 열고 바로 닫아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">보냉백이 없다면 두꺼운 가방에<br>수건으로 도시락과 아이스팩을 함께 감싸요.<br>조금이라도 찬 기운을 오래 붙잡아 줘요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>차 트렁크처럼 뜨거워지는 곳에</b></span><br><span style=\"color: #ff0010;\"><b>도시락을 오래 두는 건 피하세요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 6] 보냉백 안 도시락 위에 아이스팩을 올리는 손</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>아이와 함께라면 더 챙겨요</h2>\n<p data-ke-size=\"size16\">아이 도시락은 한입에 먹기 좋게<br>작게 만들어 주면 흘리는 게 줄어요.<br>꼬마김밥이나 작은 주먹밥이 편해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">놀다가 배고플 때 바로 먹을 수 있게<br>간식은 따로 작은 통에 나눠 담아요.<br>그래야 도시락 통을 여러 번 열지 않아요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>나들이 도시락, 언제 먹을까요</h2>\n<p data-ke-size=\"size16\">나들이 도시락은 싼 뒤 되도록<br>빨리 먹는 게 좋아요.<br>몇 시간씩 미뤄 두지 않는 게 기본이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">먹다 남은 음식은 아깝더라도<br>집에 다시 들고 와서 먹지 않는 게 좋아요.<br>들고 다니는 동안 온도가 여러 번 바뀌었거든요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #fff8b2;\"><b>맛이나 냄새가 조금이라도 이상하면</b></span><br><span style=\"background-color: #fff8b2;\"><b>아깝더라도 먹지 않는 게 안전해요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>나들이 도시락 체크포인트</h2>\n<p data-ke-size=\"size16\">출발 전에 이것만 확인해 보세요.<br>밥과 재료를 충분히 식힌 뒤 쌌는지,<br>물기 있는 반찬은 빼거나 따로 담았는지요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">보냉백과 아이스팩, 물티슈를 챙겼는지,<br>먹을 시간을 대략 정해 뒀는지도 봐요.<br>도시락은 그늘에 둘 자리를 먼저 찾아 두면 좋아요.</p>\n<p data-ke-size=\"size16\">[이미지 7] 현관 앞에 놓인 보냉백과 돗자리, 물티슈</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>김밥 말고 이런 메뉴도 좋아요</h2>\n<p data-ke-size=\"size16\">나들이 도시락이 꼭 김밥일 필요는 없어요.<br>주먹밥은 손에 들고 먹기 편하고<br>속 재료를 바꾸기도 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">샌드위치는 <span style=\"color: #0078cb;\"><b>마른 재료</b></span> 위주로 넣어요.<br>토마토나 오이처럼 물이 나오는 채소는<br>따로 담았다가 먹기 직전에 끼우면 좋아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">삶은 달걀이나 구운 고구마처럼<br>껍질째 들고 가는 간식도 든든해요.<br>껍질을 까는 손이 깨끗한지만 확인해 주세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>돌아와서 도시락통도 챙겨요</h2>\n<p data-ke-size=\"size16\">집에 돌아오면 도시락통부터 꺼내요.<br>가방 안에 하루 더 두면 냄새가 배고<br>고무 패킹 틈에 물기가 남기 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">뚜껑의 <span style=\"color: #0078cb;\"><b>고무 패킹</b></span>은 빼서 따로 씻고<br>완전히 말린 뒤 다시 끼워 주세요.<br>보냉백 안쪽도 닦아서 열어 둔 채 말려요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">아이스팩은 겉을 닦아 다시 얼려 두면<br>다음 나들이 도시락 때 바로 쓸 수 있어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>나들이 도시락 Q&amp;A</h2>\n<p data-ke-size=\"size16\">나들이 도시락에 많이 묻는 세 가지예요.<br>Q1: 김밥을 전날 밤에 싸 둬도 되나요?<br>A1: 냉장고에 두면 밥이 딱딱해지기 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">재료는 전날 손질해 두고<br>김밥은 아침에 싸는 쪽이 맛도 좋고 마음도 편해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 아이스팩이 없으면 어떻게 하나요?<br>A2: 생수병이나 팩 음료를 얼려 넣어도 돼요.<br>녹으면 시원한 물로 마실 수 있어 편해요.<br>물이 맺히니 수건으로 한 번 감싸 넣어 주세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q3: 볶음밥이나 유부초밥은 괜찮을까요?<br>A3: 기름진 밥도 식혀서 싸는 건 똑같아요.<br>유부초밥은 물기를 꼭 짜고 보냉백에 넣어 주세요.</p>\n<p data-ke-size=\"size16\">[이미지 8] 공원 그늘에서 도시락을 열고 웃는 성글이</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>나들이 도시락 한눈에 정리</h2>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>나들이 도시락은 식혀서 싸고, 물기를 빼고,</b></span><br><span style=\"color: #ff0010;\"><b>보냉백과 아이스팩으로 차게 들고 가는 거예요.</b></span><br>김밥은 쉽게 상하는 속을 빼면 한결 든든해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분 댁 나들이 도시락엔<br>어떤 메뉴가 꼭 들어가나요?</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이번 주말 나들이 전엔 냉동실에<br>아이스팩부터 넣어 두세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">도시락이 상하는 속도는 날씨와 보관에 따라 달라요.<br>오늘 정리한 방법은 출발점으로 삼고,<br>먹기 전 맛과 냄새를 꼭 확인해 주세요.<br>(2026년 10월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>이상 성글벙글의 살림 정보 포스팅이었습니다😎</p>"
+}
