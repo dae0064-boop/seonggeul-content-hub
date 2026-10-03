@@ -1,0 +1,90 @@
+{
+  "slug": "2026-10-04-hwabun-gyeoulnagi",
+  "title": "관엽식물 겨울나기, 베란다 화분 들여놓는 시기와 겨울 물주기 요령",
+  "source": "10/4(일) 원고 (토요일 미리 작성)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "창가 선반에 나란히 놓인 초록 화분들 (대표사진)",
+      "prompt": "Camera and composition: wide shot of a sunny window. Several green potted foliage plants such as a rubber plant and a table palm lined up on a shelf by a bright window. No people at all in this image. Background color: soft mint. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "note": "대표",
+      "quality": "medium",
+      "overlay": {
+        "kind": "thumb",
+        "title": "관엽식물 겨울나기\n들여놓는 시기"
+      },
+      "shot": "wide shot of a sunny window",
+      "bg": "soft mint"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "쌀쌀한 베란다에서 잎이 살짝 처진 화분",
+      "prompt": "Camera and composition: eye-level shot of a chilly balcony. A potted plant on a cool apartment balcony at dusk with a few slightly drooping leaves, cool blue air. No people at all in this image. Background color: pale steel blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "eye-level shot of a chilly balcony",
+      "bg": "pale steel blue"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "휴대폰 날씨 화면과 창가의 화분",
+      "prompt": "Camera and composition: close-up of a phone and a plant. A smartphone lying next to a potted plant on a windowsill, the screen showing only a simple weather icon with a thermometer. No people at all in this image. Background color: warm cream. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "밤 기온 10도 전에 들이기"
+      },
+      "shot": "close-up of a phone and a plant",
+      "bg": "warm cream"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "화분 잎 뒷면을 젖은 천으로 닦는 손",
+      "prompt": "Camera and composition: close-up of hands and leaves. Hands wiping the underside of a large green leaf with a damp cloth. Background color: light butter yellow. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "벌레부터 살피고 들이기"
+      },
+      "shot": "close-up of hands and leaves",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "바퀴 달린 받침 위 화분을 거실 안쪽으로 옮기는 모습",
+      "prompt": "Camera and composition: wide shot of a living room. A potted plant on a wheeled plant caddy being rolled from the window toward the inside of a cozy living room. No faces shown. Background color: pale peach. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "저녁엔 창가에서 안쪽으로"
+      },
+      "shot": "wide shot of a living room",
+      "bg": "pale peach"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "손가락으로 화분 흙의 마른 정도를 확인하는 모습",
+      "prompt": "Camera and composition: extreme close-up of soil. A fingertip pressed into the soil of a pot to check if it is dry. Background color: soft lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "extreme close-up of soil",
+      "bg": "soft lavender"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "창가와 거실 안쪽을 오가는 화분 동선 그림",
+      "prompt": "Camera and composition: top-down simple room diagram. A cute top-down room layout showing a pot near the window by day and moved inward by night, with little sun and moon icons. No people at all in this image. Background color: pale sage. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "top-down simple room diagram",
+      "bg": "pale sage"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "거실 선반에 자리 잡은 화분과 햇살",
+      "prompt": "Camera and composition: medium shot of a living room shelf. Healthy green plants resting on a wooden shelf in a warm living room, soft morning sunlight. No people at all in this image. Background color: dusty rose. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot of a living room shelf",
+      "bg": "dusty rose"
+    }
+  ]
+}

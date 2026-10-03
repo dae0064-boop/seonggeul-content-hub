@@ -255,9 +255,52 @@ const RESERVE_MIN = ['select[class*="minute_option"]', 'select[class*="minute"]'
 const RESERVE_DATE = ['input[class*="input_date"]', '[class*="date_area"] input', 'input[class*="date"]', 'button[class*="date"]', '[class*="date_area"]'];
 const PUBLISH_CONFIRM = ['button[class*="confirm_btn"]'];
 
+const RESERVE_MAX_DAYS = 7;  // 오늘부터 이 날수 안쪽 날짜만 예약한다
+const DATEPICKER_DAY = [
+  '.ui-datepicker-calendar td:not(.ui-datepicker-other-month):not(.ui-state-disabled) a',
+  '.ui-datepicker-calendar td:not(.ui-datepicker-other-month):not(.ui-state-disabled) button',
+  '[class*="calendar"] td:not([class*="disable"]):not([class*="other"]) button',
+  '[class*="calendar"] td:not([class*="disable"]):not([class*="other"]) a',
+  '[class*="datepicker"] td:not([class*="disable"]):not([class*="other"]) a',
+];
+const DATEPICKER_NEXT = ['.ui-datepicker-next', 'a[title*="다음"]', 'button[class*="next"]', 'button[aria-label*="다음"]'];
+
+const ymdOf = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+const isToday = (at) => at.ymd === ymdOf(new Date());
+
+/** 예약 날짜 칸을 눌러 달력을 열고, at 의 날짜(일)를 누른다. 다음 달이면 '다음' 을 한 번 누른다. */
+async function pickReserveDate(page, editor, at) {
+  const [, mo, d] = at.ymd.split('-').map(Number);
+  try {
+    const r = await findAnywhere(page, editor, RESERVE_DATE, { timeout: 3000 });
+    await r.loc.click();
+  } catch { return { ok: false, why: '날짜 칸을 찾지 못함' }; }
+  await sleep(800);
+  if (mo !== new Date().getMonth() + 1) {
+    try { await findAnywhere(page, editor, DATEPICKER_NEXT, { timeout: 2500 }).then((r) => r.loc.click()); await sleep(600); }
+    catch { return { ok: false, why: "달력의 '다음 달' 버튼을 찾지 못함" }; }
+  }
+  for (const scope of editor === page.mainFrame() ? [page] : [editor, page]) {
+    for (const sel of DATEPICKER_DAY) {
+      const cells = scope.locator(sel);
+      const n = await cells.count().catch(() => 0);
+      for (let i = 0; i < n; i++) {
+        const c = cells.nth(i);
+        const t = (await c.innerText().catch(() => '')).trim();
+        if (t !== String(d) || !(await c.isVisible().catch(() => false))) continue;
+        await c.click();
+        await sleep(800);
+        return { ok: true };
+      }
+    }
+  }
+  await dump(page, 'reserve-datepicker');
+  return { ok: false, why: `달력에서 ${d}일 칸을 찾지 못함` };
+}
+
 /**
  * 발행 패널에서 예약발행한다. 순서: 패널 열기 → 카테고리 → 태그 → '예약' → 시·분 → 다시 읽어 확인 → 발행.
- * 예약 라디오가 켜졌는지, 날짜가 오늘인지, 시·분이 맞는지 하나라도 확인되지 않으면 발행을 누르지 않는다.
+ * 예약 라디오가 켜졌는지, 날짜가 원고의 날짜인지, 시·분이 맞는지 하나라도 확인되지 않으면 발행을 누르지 않는다.
  * (확인 없이 누르면 '현재' 발행이 돼 버린다 — 되돌릴 수 없다.)
  */
 async function reservePublish(page, editor, post, at) {
@@ -284,6 +327,14 @@ async function reservePublish(page, editor, post, at) {
     .then((r) => r.loc.isChecked()).catch(() => false);
   if (!radioOn) return fail("'예약'이 선택됐는지 확인하지 못함");
 
+  // 날짜: 오늘이 아니면(다음 날 예약, 2026-10-03 사용자 요청) 달력에서 그날을 고른다.
+  // 고른 결과는 아래 "다시 읽어 확인"에서 연·월·일로 맞춰 본다 — 틀리면 발행을 누르지 않는다.
+  if (!isToday(at)) {
+    const picked = await pickReserveDate(page, editor, at);
+    if (!picked.ok) return fail(`예약 날짜(${at.ymd})를 달력에서 고르지 못함 — ${picked.why}`);
+    log(`달력에서 ${at.ymd} 선택`);
+  }
+
   // 시·분
   const want = { 시: at.hh, 분: at.mm };
   for (const [label, sels] of [['시', RESERVE_HOUR], ['분', RESERVE_MIN]]) {
@@ -297,7 +348,7 @@ async function reservePublish(page, editor, post, at) {
     } catch (e) { return fail(`${label} 칸을 찾지 못함 — ${e.message.split('\n')[0]}`); }
   }
 
-  // 날짜: 기본값이 오늘이어야 한다. 화면 글자에서 연·월·일 숫자를 읽어 맞춰 본다
+  // 날짜 확인: 화면 글자에서 연·월·일 숫자를 읽어 원고 날짜와 맞춰 본다
   const [y, mo, d] = at.ymd.split('-').map(Number);
   let dateText = '';
   try {
@@ -1044,11 +1095,13 @@ async function main() {
   if (args.reserve && !args.at) throw new Error('--reserve 에는 예약 시각이 필요합니다 (--at 또는 원고의 publish_at).');
   const at = args.at ? parseAt(args.at) : null;
   if (args.reserve) {
-    // 자동 예약은 같은 날짜, 20분 뒤 이후, 10분 단위만 한다 — 네이버 예약 날짜 기본값이 오늘이라 달력을 건드리지 않는다.
+    // 자동 예약은 오늘~7일 안쪽 날짜, 20분 뒤 이후, 10분 단위만 한다. 오늘이 아니면 달력에서 날짜를 고르고
+    // (2026-10-03 사용자 요청 — 전날 밤에 다음 날 글을 예약), 고른 날짜를 다시 읽어 맞지 않으면 누르지 않는다.
     // 조건이 안 맞으면 멈추지 않고 임시저장으로 바꿔 글은 남긴다 (PC 가 늦게 켜진 날 등).
-    const now = new Date();
-    const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-    const why = at.ymd !== today ? `예약 날짜(${at.ymd})가 오늘(${today})이 아님`
+    const today = ymdOf(new Date());
+    const daysAhead = Math.round((new Date(`${at.ymd}T00:00:00`) - new Date(`${today}T00:00:00`)) / 86400000);
+    const why = daysAhead < 0 ? `예약 날짜(${at.ymd})가 오늘(${today})보다 앞`
+      : daysAhead > RESERVE_MAX_DAYS ? `예약 날짜(${at.ymd})가 ${RESERVE_MAX_DAYS}일보다 멀다`
       : at.date.getTime() - Date.now() < RESERVE_LEAD_MIN * 60000 ? `예약 시각(${args.at})까지 ${RESERVE_LEAD_MIN}분이 안 남음`
       : +at.mm % 10 ? `네이버 예약은 10분 단위 (${args.at})` : '';
     if (why) {
