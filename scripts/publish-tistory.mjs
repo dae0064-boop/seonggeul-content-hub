@@ -461,6 +461,12 @@ async function main() {
       if (fs.existsSync(f)) imageFiles.push({ n: b.n, file: f });
     }
   }
+  // 그림 8장은 지킨다 (2026-10-03 사용자 지시 — 그림이 빠진 채 '[이미지 N]' 글자로 예약됐다). 하나라도 없으면 예약하지 않는다
+  if (args.reserve) {
+    const have = new Set(imageFiles.map((x) => x.n));
+    const lack = imageBlocks.filter((b) => !have.has(b.n)).map((b) => b.n);
+    if (lack.length) throw new Error(`그림 ${lack.join(', ')}번 파일이 없어 예약하지 않습니다 (그림을 모두 넣어야 예약). 먼저 post-images.mjs 로 만드세요.`);
+  }
 
   if (args.dump) {
     dumpDir = path.join('dumps', new Date().toISOString().replace(/[:.]/g, '-'));
@@ -636,6 +642,12 @@ async function main() {
     log(`버튼  : ${layer.buttons.join(' | ')}`);
     log(`입력칸: ${layer.inputs.join(' | ') || '없음'}`);
 
+    if (args.reserve && missingImages.length) {
+      await clickFirst(page, SEL.layerClose, { timeout: 4000 }).catch(() => {});
+      console.log(`\n⚠ 예약하지 않았습니다 (사진 ${[...new Set(missingImages)].join(', ')}번을 올리지 못함 — 그림을 모두 넣어야 예약). 글은 임시저장에 남아 있어요.`);
+      process.exitCode = 2;
+      return;
+    }
     if (args.reserve) {
       const r = await reservePublish(page, at);
       if (r.ok) { console.log(`\n✅ 예약발행 완료 — ${at.text}${r.confirmed ? '' : ' (화면이 그대로라 예약 목록에서 꼭 확인하세요)'}`); return; }

@@ -1168,6 +1168,11 @@ async function main() {
       if (fs.existsSync(f)) imageFiles.set(b.n, f);
     }
   }
+  // 그림 8장은 지킨다 (2026-10-03 사용자 지시). 하나라도 없으면 예약하지 않는다
+  if (args.reserve) {
+    const lack = imageBlocks.filter((b) => !imageFiles.has(b.n)).map((b) => b.n);
+    if (lack.length) throw new Error(`그림 ${lack.join(', ')}번 파일이 없어 예약하지 않습니다 (그림을 모두 넣어야 예약). 먼저 post-images.mjs 로 만드세요.`);
+  }
 
   if (args.dump) {
     dumpDir = path.join('dumps', new Date().toISOString().replace(/[:.]/g, '-'));
