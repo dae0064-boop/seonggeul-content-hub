@@ -191,7 +191,10 @@ foreach ($p in $posts) {
   $msg = if ($code -eq 0 -and $mode -eq '--reserve') { "예약발행 $when" } elseif ($code -eq 0) { '임시저장 완료' } elseif ($code -eq 2) { '임시저장만 (예약 확인 실패)' } else { '실패 — 저장 안 함' }
   $result += [pscustomobject]@{ 글 = $slug; 결과 = $msg }
   # 저장까지 된 글(예약·임시저장)은 표시를 남겨 다른 PC 가 다시 올리지 않게 한다. 저장 안 된 실패는 남기지 않는다
-  if ($lockDir -and $ok) { "$me $(Get-Date -Format 'HH:mm') $msg" | Out-File (Join-Path $lockDir "$slug.done") -Encoding utf8 }
+  # 다음 날 글을 전날 밤에 돌린 경우(reserve-tomorrow), 예약이 안 되고 임시저장만 됐으면 표시를 남기지 않는다 —
+  # 그날 아침 실행이 다시 예약하도록 (2026-10-03)
+  $markOk = $ok -and -not ($code -eq 2 -and $Date -ne (Get-Date -Format 'yyyy-MM-dd'))
+  if ($lockDir -and $markOk) { "$me $(Get-Date -Format 'HH:mm') $msg" | Out-File (Join-Path $lockDir "$slug.done") -Encoding utf8 }
   if ($lockDir) { "$me $(Get-Date -Format s)" | Out-File (Join-Path $lockDir "running-$me.lock") -Encoding utf8 }
   if (-not $ok -and $i -eq 1 -and $posts.Count -gt 1) {
     Say '첫 글이 실패해서 나머지는 돌리지 않았어요 (같은 이유로 또 실패할 가능성이 커요).' 'Yellow'
