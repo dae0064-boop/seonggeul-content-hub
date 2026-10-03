@@ -54,6 +54,7 @@ if (-not $blog) {
 $env:TISTORY_BLOG = $blog
 
 # 원고: .md 가 정본이므로 먼저 검사하고 .json 을 다시 만든다
+Say '티스토리 준비 중...' 'Cyan'
 $mds = Get-ChildItem "content\tistory\$Date-*.md" -ErrorAction SilentlyContinue | Sort-Object Name
 if (-not $mds -and -not $Reserve -and -not $PSBoundParameters.ContainsKey('Date')) {
   # 날짜를 지정하지 않았고 오늘 원고가 없으면 가장 최근 날짜 원고로 한다 (처음 시험할 때)
@@ -88,6 +89,7 @@ if ($Reserve) {
   if ($other) { Say "다른 PC 가 티스토리를 진행 중이에요. 이 PC 는 쉽니다." 'Yellow'; exit 0 }
   "$me $(Get-Date -Format s)" | Out-File (Join-Path $lockDir "running-tistory-$me.lock") -Encoding utf8
   if ($drive) {
+    Say '다른 PC 와 겹치지 않게 1분 기다리는 중... (창이 멈춘 게 아니에요)' 'Cyan'
     Start-Sleep 60
     $other = OtherRunning
     $mine = Get-Item (Join-Path $lockDir "running-tistory-$me.lock")
