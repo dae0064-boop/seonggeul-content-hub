@@ -125,14 +125,15 @@ if (-not (CdpUp)) { Say '자동화용 크롬을 켜지 못했어요. launchers\c
 $mode = if ($DryRun) { '--dry-run' } else { '--save-draft' }
 $result = @()
 $i = 0
-# PC 가 늦게 켜진 날: 예약 시각이 지났거나 30분 안쪽이면 오늘 안에서 뒤로 미룬다 (앞 글과 60분 이상, 23시 전까지) — draft-day 와 같은 규칙
+# PC 가 늦게 켜진 날: 예약 시각이 지났거나 30분 안쪽이면 오늘 안에서 뒤로 미룬다 (앞 글과 30분 이상, 23시 전까지) — draft-day 와 같은 규칙
 $lastAt = $null
 function NextSlot([datetime]$want) {
   $earliest = (Get-Date).AddMinutes(30)
   $earliest = $earliest.Date.AddHours($earliest.Hour).AddMinutes([math]::Ceiling($earliest.Minute / 10) * 10)
   $t = $want
   if ($t -lt $earliest) { $t = $earliest }
-  if ($script:lastAt -and $t -lt $script:lastAt.AddMinutes(60)) { $t = $script:lastAt.AddMinutes(60) }
+  # 앞 글과 30분 이상 (2026-10-03 사용자 지시 — 늦은 날은 30분 간격으로 빠르게)
+  if ($script:lastAt -and $t -lt $script:lastAt.AddMinutes(30)) { $t = $script:lastAt.AddMinutes(30) }
   if ($t.Date -ne $want.Date -or $t.Hour -ge 23) { return $want }
   return $t
 }
