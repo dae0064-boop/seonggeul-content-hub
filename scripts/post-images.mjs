@@ -74,16 +74,26 @@ for (const im of todo) {
   }
   if (!(im.overlay && existsSync(raw) && !opt.force)) {
     console.log(`\n[${im.n}/${plan.images.length}] ${im.title}`);
-    const r = spawnSync(process.execPath, [
-      join(ROOT, "scripts", "image-gen.mjs"),
-      im.prompt,
-      "--raw",
-      "--out", outDir,
-      "--name", im.overlay ? `${name}.raw` : name,
-      "--quality", im.quality || opt.quality,
-      "--size", opt.size,
-    ], { stdio: "inherit" });
-    if (r.status !== 0 || !existsSync(raw)) { failed.push(im.n); continue; }
+    // 그림 API 는 1분에 5장까지다 (2026-10-03 HTTP 429 로 한 글에 7장까지 빠짐). 실패하면 기다렸다 다시 한다
+    let ok = false;
+    for (let attempt = 0; attempt < 4 && !ok; attempt++) {
+      if (attempt) {
+        const wait = 20 * attempt;
+        console.log(`   ⏳ ${wait}초 기다렸다 다시 해 봅니다 (${attempt + 1}/4)`);
+        await new Promise((res) => setTimeout(res, wait * 1000));
+      }
+      const r = spawnSync(process.execPath, [
+        join(ROOT, "scripts", "image-gen.mjs"),
+        im.prompt,
+        "--raw",
+        "--out", outDir,
+        "--name", im.overlay ? `${name}.raw` : name,
+        "--quality", im.quality || opt.quality,
+        "--size", opt.size,
+      ], { stdio: "inherit" });
+      ok = r.status === 0 && existsSync(raw);
+    }
+    if (!ok) { failed.push(im.n); continue; }
     made++;
   }
   if (im.overlay) overlayJobs.push({ n: im.n, src: raw, dest: target, overlay: im.overlay });

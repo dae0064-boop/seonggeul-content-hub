@@ -148,7 +148,15 @@ foreach ($m in $mds) {
   $plan = "content\image-plans\$slug.json"
   if (-not $SkipImages -and (Test-Path $plan)) {
     Say "  그림 만들기: $plan" 'Cyan'
-    if ((Run @('scripts/post-images.mjs', $plan)) -ne 0) { Say '  그림 일부 실패 — 못 만든 자리는 표시 글자로 남깁니다' 'Yellow' }
+    if ((Run @('scripts/post-images.mjs', $plan)) -ne 0) {
+      # 예약하면 '[이미지 N] 설명' 글자가 그대로 발행된다 (2026-10-03). 넣지 않고 .done 도 남기지 않아 다음 실행이 다시 한다
+      if ($Reserve) {
+        Say '  그림 일부를 만들지 못해 이 글은 넣지 않아요 — 다음 실행(다시 시도 시각)에서 남은 그림부터 다시 합니다' 'Yellow'
+        $result += [pscustomobject]@{ 글 = $slug; 결과 = '그림 실패 — 넣지 않음 (다음 실행에서 다시)' }
+        continue
+      }
+      Say '  그림 일부 실패 — 못 만든 자리는 표시 글자로 남깁니다' 'Yellow'
+    }
   } elseif (-not (Test-Path $plan)) { Say "  이미지 계획서 없음 — 그림 없이 넣습니다: $plan" 'Yellow' }
   $postMode = $mode; $atArgs = @(); $when = ''
   if ($Reserve) {
