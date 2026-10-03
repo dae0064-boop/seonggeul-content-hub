@@ -268,6 +268,40 @@ const DATEPICKER_NEXT = ['.ui-datepicker-next', 'a[title*="다음"]', 'button[cl
 const ymdOf = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
 const isToday = (at) => at.ymd === ymdOf(new Date());
 
+/**
+ * (페이지 안에서 실행) 보이는 "YYYY년 M월" 머리글을 찾아 그 달력 안에서 글자가 정확히 d 인 칸에 표시를 단다.
+ * 흐린(지난·다른 달·막힌) 칸은 고르지 않는다. 고른 칸에 data-sg-pick="1" 을 붙인다.
+ */
+function markDatepickerDay({ y, mo, d }) {
+  document.querySelectorAll('[data-sg-pick]').forEach((e) => e.removeAttribute('data-sg-pick'));
+  const visible = (e) => { const r = e.getBoundingClientRect(); const cs = getComputedStyle(e); return r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && cs.display !== 'none'; };
+  const head = new RegExp(`^\\s*${y}\\s*년\\s*0?${mo}\\s*월\\s*$`);
+  const heads = [...document.querySelectorAll('body *')].filter((e) => visible(e) && head.test(e.textContent || '') && ![...e.children].some((c) => head.test(c.textContent || '')));
+  if (!heads.length) return { ok: false, why: `"${y}년 ${mo}월" 머리글이 보이지 않음` };
+  const bad = /disab|other|prev|next|out|dim|inactive|not-?allow/i;
+  for (const h of heads) {
+    // 머리글에서 위로 올라가며 숫자 칸이 28개 이상 든 상자를 달력으로 본다
+    let box = h.parentElement;
+    const leaves = (root) => [...root.querySelectorAll('*')].filter((e) => !e.children.length && /^\d{1,2}$/.test((e.textContent || '').trim()));
+    while (box && leaves(box).length < 28) box = box.parentElement;
+    if (!box) continue;
+    const cands = leaves(box).filter((e) => {
+      if ((e.textContent || '').trim() !== String(d) || !visible(e)) return false;
+      for (let x = e; x && x !== box; x = x.parentElement) {
+        if (bad.test(typeof x.className === 'string' ? x.className : '') || x.getAttribute('aria-disabled') === 'true' || x.hasAttribute('disabled')) return false;
+      }
+      return true;
+    });
+    if (!cands.length) continue;
+    // 같은 숫자가 둘 보이면(앞뒤 달이 흐리게 안 칠해진 달력) 앞쪽 날짜는 첫째, 뒤쪽 날짜는 마지막 칸 — 틀려도 아래 날짜 확인이 막는다
+    const pick = d <= 14 ? cands[0] : cands[cands.length - 1];
+    const t = pick.closest('a,button,td') || pick;
+    t.setAttribute('data-sg-pick', '1');
+    return { ok: true, desc: `${t.tagName.toLowerCase()}.${(typeof t.className === 'string' ? t.className : '').slice(0, 40)} "${d}"` };
+  }
+  return { ok: false, why: `달력에서 ${d}일 칸을 하나로 정하지 못함` };
+}
+
 /** 예약 날짜 칸을 눌러 달력을 열고, at 의 날짜(일)를 누른다. 다음 달이면 '다음' 을 한 번 누른다. */
 async function pickReserveDate(page, editor, at) {
   const [, mo, d] = at.ymd.split('-').map(Number);
@@ -279,6 +313,20 @@ async function pickReserveDate(page, editor, at) {
   if (mo !== new Date().getMonth() + 1) {
     try { await findAnywhere(page, editor, DATEPICKER_NEXT, { timeout: 2500 }).then((r) => r.loc.click()); await sleep(600); }
     catch { return { ok: false, why: "달력의 '다음 달' 버튼을 찾지 못함" }; }
+  }
+  // 2026-10-03 첫 실행: 클래스로 찾는 칸이 없었다(화면엔 "2026년 10월" 달력과 숫자 칸이 보임).
+  // 그래서 화면 글자로 찾는다 — "YYYY년 M월" 머리글이 보이는 달력 안에서, 글자가 정확히 그 날짜인 칸을 누른다.
+  const [y] = at.ymd.split('-').map(Number);
+  for (const scope of editor === page.mainFrame() ? [page] : [editor, page]) {
+    const found = await scope.evaluate(markDatepickerDay, { y, mo, d }).catch((e) => ({ ok: false, why: e.message }));
+    if (!found.ok) continue;
+    const cell = scope.locator('[data-sg-pick="1"]').first();
+    try {
+      await cell.click({ timeout: 3000 });
+      await sleep(800);
+      log(`달력 칸 누름: ${found.desc}`);
+      return { ok: true };
+    } catch (e) { return { ok: false, why: `날짜 칸을 누르지 못함 — ${e.message.split('\n')[0]}` }; }
   }
   for (const scope of editor === page.mainFrame() ? [page] : [editor, page]) {
     for (const sel of DATEPICKER_DAY) {

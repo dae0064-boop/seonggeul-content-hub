@@ -80,19 +80,27 @@ const today = new Date().toISOString().slice(0, 10);
 const outDir = resolve(opt.out || join(ROOT, "content", "images", today));
 
 console.log(`🎨 ${model} / ${opt.quality} / ${opt.size} × ${n}`);
-const res = await fetch(`${API_BASE}/images/generations`, {
-  method: "POST",
-  headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-  body: JSON.stringify({
-    model,
-    prompt: opt.raw ? positionals.join(" ") : `${positionals.join(" ")}\n\n${NO_TEXT}`,
-    size: opt.size,
-    quality: opt.quality,
-    n,
-  }),
-}).catch((e) => die(`OpenAI 에 접속하지 못했어요 (${e.cause?.code || e.message})`));
-
-const text = await res.text();
+// 1분당 장수 한도(429)에 걸리면 기다렸다 다시 보낸다 (2026-10-03 — 5편 40장을 한꺼번에 만들다 절반이 429 로 빠졌다)
+const body = JSON.stringify({
+  model,
+  prompt: opt.raw ? positionals.join(" ") : `${positionals.join(" ")}\n\n${NO_TEXT}`,
+  size: opt.size,
+  quality: opt.quality,
+  n,
+});
+let res, text;
+for (let attempt = 1; ; attempt++) {
+  res = await fetch(`${API_BASE}/images/generations`, {
+    method: "POST",
+    headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+    body,
+  }).catch((e) => die(`OpenAI 에 접속하지 못했어요 (${e.cause?.code || e.message})`));
+  text = await res.text();
+  if (res.status !== 429 || attempt >= 8 || /quota|billing/i.test(text)) break;
+  const sec = Math.min(90, Math.ceil(Number((/try again in ([\d.]+)s/i.exec(text) || [])[1]) || 20) + 3);
+  console.log(`⏳ 1분당 한도에 걸려 ${sec}초 기다렸다 다시 보내요 (${attempt}/7)`);
+  await new Promise((r) => setTimeout(r, sec * 1000));
+}
 if (!res.ok) {
   let msg = text.slice(0, 300);
   try { msg = JSON.parse(text).error.message; } catch {}
