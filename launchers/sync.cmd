@@ -6,6 +6,8 @@ cd /d "%~dp0.."
 echo.
 echo [1/4] 최신 내용 받는 중...
 git fetch -q origin || (echo   인터넷이나 GitHub 연결을 확인해 주세요. & pause & exit /b 1)
+REM Generated .json/.html are rebuilt on this PC. Drop local copies so pull never stops (2026-10-03).
+git checkout -q -- "content/posts/*.json" "content/tistory/*.json" "content/tistory/*.html" 2>nul
 git checkout -q main || (echo   이 PC 에서 고친 파일이 있어 main 으로 바꾸지 못했어요. 이 창을 캡처해서 Claude 에게 보여주세요. & pause & exit /b 1)
 git pull -q --ff-only || (echo   받아오지 못했어요. 이 창을 캡처해서 Claude 에게 보여주세요. & pause & exit /b 1)
 echo   완료
