@@ -34,7 +34,8 @@
 3. 티스토리 관리 화면 → 임시저장 목록에서 글을 열어 본다 — 제목·줄바꿈·색 강조·인용구 소제목·태그·카테고리가 맞는지.
 4. 실행 기록과 스크린샷이 Drive `ClaudeWorkspace/run-logs/` 에 올라간다. Claude 에게 확인을 부탁하면
    그 기록으로 선택자를 고치고 예약발행을 붙인다.
-5. 며칠 임시저장이 문제없이 돌면 그때 `auto-day.cmd` 에 티스토리 단계를 넣는다.
+5. 2026-10-03 사용자 지시로 `auto-day.cmd` 에 티스토리 예약발행(`tistory-day.ps1 -Reserve`)을 넣었다.
+   아침 자동 실행을 놓쳤으면 `launchers\tistory-reserve.cmd` 를 더블클릭하면 같은 일을 한다.
 
 ## 원고 — 네이버와 같은 지침 (2026-10-02 사용자 지시)
 
@@ -105,5 +106,6 @@ node scripts/publish-tistory.mjs --post content/tistory/<원고>.json --save-dra
 
 **2026-10-02 사용자 결정: 네이버처럼 매일 밤 5편.** 1편(`2026-10-03-chimnang-ondo`)으로 원고·이미지 구성을 확인한 뒤,
 매일 **22:37** Routine(티스토리 작업실 대화, `trig_01JupVoPSXJQppjgiwKkFUsY`)이 다음 날 5편 + 이미지 계획서를 써서 main 에 올린다.
-20:53 네이버 작업이 올린 그날 5편과 한 편씩 짝을 짓는다. 발행은 아직 PC 에서 `tistory-day.cmd` 로 임시저장까지.
+20:53 네이버 작업이 올린 그날 5편과 한 편씩 짝을 짓는다. `publish_at` 은 짝 네이버 글 + 30분 (11:30·13:30·15:30·17:30·19:30).
+다음 날 아침 `auto-day.cmd` 가 네이버 다음에 `tistory-day.ps1 -Reserve` 로 그 시각에 예약한다 (2026-10-03 사용자 지시).
 `standards/발행-운영기준.md` 의 "새 블로그는 1주차 1편부터" 권고는 참고로 남긴다 — 정하는 것은 사용자다.
