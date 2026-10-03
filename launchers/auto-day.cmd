@@ -3,6 +3,8 @@ chcp 65001 >nul
 REM 작업 스케줄러가 매일 아침 부르는 실행기. 사람이 누를 키가 없으므로 pause 를 두지 않는다.
 REM 최신 원고를 받고, 오늘 원고 전부 이미지 → 예약발행(publish_at 시각)까지 한다.
 cd /d "%~dp0.."
+REM Generated .json/.html are rebuilt on this PC. Drop local copies so pull never stops (2026-10-03).
+git checkout -q -- "content/posts/*.json" "content/tistory/*.json" "content/tistory/*.html" 2>nul
 git checkout -q main
 git pull -q
 REM Threads insurance posts: save new Word files to Drive (fast, before the blog run)
