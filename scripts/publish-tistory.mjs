@@ -287,21 +287,27 @@ async function pickCategory(page, name) {
 
 async function enterTags(page, tags) {
   await findFirst(page, SEL.tagInput, { timeout: 4000 });
+  const inTag = () => page.evaluate(() => { const a = document.activeElement; return !!a && (a.id === 'tagText' || /태그/.test(a.placeholder || '')); });
+  const tagLoc = page.locator(SEL.tagInput.join(', ')).first();
   for (const t of tags) {
-    // 클릭이 가려져 실패하는 일이 있어(2026-10-03 실제 테스트) DOM 에서 바로 포커스를 준다
-    const focused = await page.evaluate(() => {
+    // 1) DOM 포커스 → 2) 칸을 직접 눌러 포커스 (2026-10-03 실제 실행: DOM 포커스만으로는 커서가 들어가지 않았다)
+    await page.evaluate(() => {
       const el = document.querySelector('input#tagText') || document.querySelector('input[placeholder*="태그"]');
-      if (!el) return false;
-      el.scrollIntoView({ block: 'center' });
-      el.focus();
-      return document.activeElement === el;
+      if (el) { el.scrollIntoView({ block: 'center' }); el.focus(); }
     });
-    // 커서가 태그 칸에 있을 때만 Enter 를 누른다 (다른 버튼이 눌릴 여지를 없앤다)
-    if (!focused) throw new Error('태그 칸에 커서가 없습니다');
-    await page.keyboard.type(t, { delay: 20 });
-    const still = await page.evaluate(() => { const a = document.activeElement; return !!a && (a.id === 'tagText' || /태그/.test(a.placeholder || '')); });
-    if (!still) throw new Error('입력 중에 커서가 태그 칸을 벗어났습니다');
-    await page.keyboard.press('Enter');
+    if (!(await inTag())) await tagLoc.click({ force: true, timeout: 3000 }).catch(() => {});
+    if (!(await inTag())) {
+      const why = await page.evaluate(() => {
+        const el = document.querySelector('input#tagText') || document.querySelector('input[placeholder*="태그"]');
+        const a = document.activeElement;
+        return `보임 ${!!el?.offsetParent} · 막힘 ${!!el?.disabled} · 커서 위치 ${a ? a.tagName + (a.id ? '#' + a.id : '') : '없음'}`;
+      });
+      throw new Error(`태그 칸에 커서가 없습니다 (${why})`);
+    }
+    // 커서가 태그 칸에 있을 때만 Enter 를 누른다 (다른 버튼이 눌릴 여지를 없앤다). 글자·Enter 모두 그 칸에 직접 보낸다
+    await tagLoc.fill(t);
+    if (!(await inTag()) || (await tagLoc.inputValue().catch(() => '')) !== t) throw new Error('입력 중에 커서가 태그 칸을 벗어났습니다');
+    await tagLoc.press('Enter');
     await sleep(250);
   }
   const area = await page.evaluate(() => {
@@ -346,10 +352,26 @@ async function reservePublish(page, at) {
   await dump(page, 'reserve-open');
 
   const hint = (f) => `${f.id} ${f.name} ${f.cls} ${f.ph}`.toLowerCase();
-  const dateF = pool.find((f) => /\d{4}\D{1,3}\d{1,2}\D{1,3}\d{1,2}/.test(f.value) || /date|day|날짜/.test(hint(f)));
-  const hourF = pool.find((f) => /hour|시/.test(hint(f)) && !/minute|min|분/.test(hint(f)));
-  const minF = pool.find((f) => /minute|min|분/.test(hint(f)));
-  if (!dateF || !hourF || !minF) return { ok: false, why: `예약 날짜·시·분 칸을 알아보지 못함 (날짜 ${!!dateF} / 시 ${!!hourF} / 분 ${!!minF}) — 로그의 '예약 칸' 줄로 고칩니다` };
+  const isHour = (f) => /hour|시/.test(hint(f)) && !/minute|min|분/.test(hint(f));
+  const isMin = (f) => /minute|min|분/.test(hint(f));
+  const hourF = pool.find(isHour);
+  const minF = pool.find(isMin);
+  // 날짜 칸: 시·분 칸은 빼고 찾는다. 티스토리는 #dateHour·#dateMinute 두 칸뿐이고 날짜는 글자로만 보인다 (2026-10-03 실제 화면)
+  const dateF = pool.find((f) => !isHour(f) && !isMin(f) && (/\d{4}\D{1,3}\d{1,2}\D{1,3}\d{1,2}/.test(f.value) || /date|day|날짜/.test(hint(f))));
+  if (!hourF || !minF) return { ok: false, why: `예약 시·분 칸을 알아보지 못함 (시 ${!!hourF} / 분 ${!!minF}) — 로그의 '예약 칸' 줄로 고칩니다` };
+  // 날짜를 칸이 아닌 글자로 보여 주는 화면: 시 칸에서 위로 올라가며 'YYYY.MM.DD' 같은 글자를 찾는다
+  const dateText = async () => page.evaluate((hi) => {
+    const pat = /(\d{4})\s*[.\-\/년]\s*(\d{1,2})\s*[.\-\/월]\s*(\d{1,2})/;
+    let el = document.querySelector(`[data-sg-field="${hi}"]`);
+    for (let k = 0; el && k < 6; k++, el = el.parentElement) {
+      const txt = [el.innerText || '', ...[...el.querySelectorAll('input')].map((x) => x.value || '')].join(' ');
+      const m = pat.exec(txt);
+      if (m) return { found: m[0], around: txt.replace(/\s+/g, ' ').slice(0, 160) };
+    }
+    let top = document.querySelector(`[data-sg-field="${hi}"]`);
+    while (top && top.parentElement && (top.innerText || '').trim().length < 20) top = top.parentElement;
+    return { found: '', around: (top?.innerText || '').replace(/\s+/g, ' ').slice(0, 200) };
+  }, hourF.i);
 
   const loc = (f) => page.locator(`[data-sg-field="${f.i}"]`).first(); // 마지막으로 읽은 칸 번호 (after)
   // 시·분 넣기 (select 면 고르고, 입력칸이면 지우고 친다)
@@ -363,8 +385,14 @@ async function reservePublish(page, at) {
   }
   // 날짜: 오늘이어야 한다. 비었거나 다르면 입력칸일 때만 직접 넣는다 (달력은 건드리지 않는다)
   const ymdOk = (txt) => { const n = (txt.match(/\d+/g) || []).map(Number); const q = `,${n.join(',')},`; return q.includes(`,${at.y},${at.mo},${at.d},`) || q.includes(`,${at.y % 100},${at.mo},${at.d},`); };
-  let dateVal = await loc(dateF).inputValue().catch(() => '');
-  if (!ymdOk(dateVal) && !dateF.ro && dateF.tag === 'input') {
+  let dateVal = '';
+  if (dateF) dateVal = await loc(dateF).inputValue().catch(() => '');
+  else {
+    const d = await dateText();
+    dateVal = d.found;
+    log(`날짜 글자: "${d.found}"${d.found ? '' : ` (못 찾음 — 주변 글자: ${d.around})`}`);
+  }
+  if (dateF && !ymdOk(dateVal) && !dateF.ro && dateF.tag === 'input') {
     const sep = (dateF.value.match(/\d{4}(\D+)\d/) || [, '-'])[1];
     await loc(dateF).fill(`${at.y}${sep}${String(at.mo).padStart(2, '0')}${sep}${String(at.d).padStart(2, '0')}`).catch(() => {});
     dateVal = await loc(dateF).inputValue().catch(() => '');
@@ -489,14 +517,15 @@ async function main() {
     if (gotTitle !== post.title) throw new Error(`제목이 다르게 들어갔습니다: "${gotTitle}"`);
     log(post.title);
 
+    let tagsDone = false;
     step('3-1. 카테고리·태그 (본문보다 먼저)');
     if (post.category) {
       try { await pickCategory(page, post.category); log(`카테고리: ${post.category}`); }
       catch (e) { warn(`카테고리 선택 실패 (${e.message.split('\n')[0]}) — 저장 후 직접 고르세요.`); }
     }
     if (args.tags && post.tags?.length) {
-      try { await enterTags(page, post.tags); }
-      catch (e) { warn(`태그 입력 실패 (${e.message.split('\n')[0]}) — 저장 후 직접 넣으세요.`); }
+      try { await enterTags(page, post.tags); tagsDone = true; }
+      catch (e) { warn(`태그 입력 실패 (${e.message.split('\n')[0]}) — 본문을 넣은 뒤 한 번 더 해 봅니다.`); }
     }
     await dump(page, 'filled');
 
@@ -550,6 +579,13 @@ async function main() {
     if (!args.saveDraft && !args.dryRun && !args.publishNow && !args.reserve) {
       console.log('\n✅ 본문까지 넣었습니다. 저장·발행은 하지 않았습니다 (탭은 열어둡니다).');
       return;
+    }
+
+    // 태그를 처음에 넣지 못했으면 한 번 더 (본문 확인은 바로 아래에서 다시 한다)
+    if (args.tags && post.tags?.length && !tagsDone) {
+      step('5. 태그 다시 넣기');
+      try { await enterTags(page, post.tags); }
+      catch (e) { warn(`태그 입력 실패 (${e.message.split('\n')[0]}) — 저장 후 직접 넣으세요.`); }
     }
 
     // 저장 직전 마지막 확인: 카테고리·태그를 넣는 사이에 본문이 바뀌지 않았는지 다시 읽는다

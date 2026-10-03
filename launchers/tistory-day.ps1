@@ -6,6 +6,7 @@
 #   -SkipImages 그림을 만들지 않고, 이미 만들어 둔 그림만 넣는다
 #   -Reserve    원고 publish_at 시각으로 예약발행 (확인 안 되면 임시저장만). auto-day.cmd 가 네이버 다음에 부른다.
 #               네이버(11·13·15·17·19시)와 30분 텀 — 티스토리 원고는 11:30·13:30·15:30·17:30·19:30 (2026-10-03 사용자 지시)
+#   -RetryDrafts  예약 확인에 실패해 임시저장만 된 글은 다시 예약해 본다 (tistory-reserve.cmd 가 붙인다)
 #               두 PC 겹침은 네이버와 같은 Drive run-locks\<날짜>\ 에 tistory-<글>.done 표시로 막는다
 #
 # 그림: 글마다 content\image-plans\<글>.json 으로 content\images\<글>\ 에 그림을 만들고(이미 있으면 건너뜀, 돈 두 번 안 나감)
@@ -19,7 +20,8 @@ param(
   [switch]$DryRun,
   [switch]$NoShare,
   [switch]$SkipImages,
-  [switch]$Reserve
+  [switch]$Reserve,
+  [switch]$RetryDrafts
 )
 $started = Get-Date
 $ErrorActionPreference = 'Continue'
@@ -99,7 +101,9 @@ if ($Reserve) {
   }
   $mds = @($mds | Where-Object {
     $done = Join-Path $lockDir "tistory-$($_.BaseName).done"
-    if (Test-Path $done) { Say "  건너뜀 (이미 처리됨): $($_.BaseName)" 'Yellow'; $false } else { $true }
+    if (-not (Test-Path $done)) { $true }
+    elseif ($RetryDrafts -and ((Get-Content $done -Raw -Encoding UTF8) -match '예약 확인 실패')) { Say "  다시 예약해 봅니다 (지난번엔 임시저장만 됨): $($_.BaseName)" 'Yellow'; $true }
+    else { Say "  건너뜀 (이미 처리됨): $($_.BaseName)" 'Yellow'; $false }
   })
   if (-not $mds) { Say '오늘 티스토리 글은 모두 처리됐어요.' 'Green'; Release; exit 0 }
   # publish_at 순서대로
