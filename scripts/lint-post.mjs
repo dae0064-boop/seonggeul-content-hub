@@ -20,6 +20,7 @@ const AFTER_QUOTE_FROM = '2026-10-02';
 // 그림은 소제목(인용구) 바로 아래에만 둔다 (사용자 지시 2026-10-03 — 소제목 → 그림 → 글, 일정한 패턴이 깔끔하다).
 // 대표사진(이미지 1)은 도입 뒤 첫 소제목 앞이라 뺀다. 소제목마다 그림이 있어야 하는 것은 아니다.
 const IMAGE_UNDER_QUOTE_FROM = '2026-10-05';
+const MAX_QUOTES = 9; // 2026-10-05 원고부터 (2026-10-03 사용자 지시)
 const MIN_CHARS = 2300;       // 본문 최소 (공백 포함) — 2026-10-01 발행분까지
 const MAX_CHARS = 2500;       // 본문 최대
 // 2026-10-02 발행분부터 (사용자 지시 10/1): 공백 제외로 세고, 제목에 서브 키워드를 넣는다
@@ -277,6 +278,8 @@ for (const file of files) {
     const quotes = post.blocks.filter((b) => b.type === 'quote').length;
     const under = post.blocks.filter((b, i) => b.type === 'image' && b.n !== 1 && post.blocks[i - 1]?.type === 'quote').length;
     if (quotes - under > 3) notes.push(`그림 없는 소제목이 ${quotes - under}개예요 — 소제목 수를 그림 수(7)에 가깝게 맞추면 패턴이 더 고르게 보여요`);
+    // 인용구 소제목이 너무 많다 (2026-10-03 사용자 지시 — 10~12개에서 2~3개 빼기). 그림 7 + Q&A + 정리 = 9개까지
+    if (quotes > MAX_QUOTES) errors.push(`인용구(소제목)가 ${quotes}개 — ${MAX_QUOTES}개 이하로 줄이세요 (그림 7개 자리 + Q&A + 정리). 그림 없는 소제목은 앞 덩어리와 합칩니다`);
   }
   if (perBlock < MIN_BLOCK_LINES)
     errors.push(`덩어리가 잘게 쪼개졌습니다: 덩어리당 ${perBlock.toFixed(1)}줄 (최소 ${MIN_BLOCK_LINES})`);
