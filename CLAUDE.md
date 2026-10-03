@@ -16,6 +16,7 @@ content/threads/   스레드 말투 규칙(voice.md) + 글감(topics.txt)
 content/threads/insurance/  스레드 보험 심의글 — 규칙(rules.md)·글감·10편 묶음(sets/)
 scripts/           발행·검수 자동화(.mjs) + 워크스페이스 동기화 도구(.py)
 scripts/threads/   스레드 자동 발행·댓글 답변
+routines/          클라우드 자동 작업(Routine) 지시문 정본. 지시를 바꿀 땐 이 파일을 고친다
 .github/workflows/ 스레드 자동화 스케줄 + PR 검사 (GitHub Actions)
 launchers/         윈도우 더블클릭 실행기
 standards/         운영 기준 문서
@@ -433,13 +434,18 @@ Q&A          많이 묻는 3~5개
 
 | 언제 | 어디서 | 무엇 |
 |---|---|---|
-| 전날 21시 | 클라우드 Claude (Routine) | 다음 날 원고 5편 + 이미지 계획서 작성, 검사기 통과, `publish_at` 11:00·13:00·15:00·17:00·19:00 (캘린더 순서), PR → `main`. 티스토리는 이 작업에 넣지 않는다 (2026-10-02 사용자 결정 — 티스토리 작업실 대화에서 따로 지시한다) |
-| 전날 21:41 (일~금) | 클라우드 Claude (Routine "스레드 보험글 10편") | 다음 날(월~토) 스레드 보험 심의글 10편 `content/threads/insurance/sets/<날짜>.md` 작성, 검사기 통과, PR → `main`. 일요일 치는 쓰지 않는다 (2026-10-02 사용자 결정) |
-| 전날 22:37 | 클라우드 Claude (Routine, 티스토리 작업실 대화) | 다음 날 **티스토리** 원고 5편 + 이미지 계획서 — 그날 네이버 5편과 짝(같은 묶음, 다른 메인 키워드), `lint-tistory` 통과, `publish_at` 11:30·13:30·15:30·17:30·19:30 (네이버와 30분 텀, 2026-10-03 사용자 지시), PR → `main` |
+| 전날 20:53 | 클라우드 Claude (Routine, `routines/naver-daily.md`) | 다음 날 원고 5편 + 이미지 계획서 작성, 검사기 통과, `publish_at` 11:00·13:00·15:00·17:00·19:00 (캘린더 순서), PR → `main`. 티스토리는 이 작업에 넣지 않는다 (2026-10-02 사용자 결정 — 티스토리는 22:37 작업이 따로 한다) |
+| 전날 21:41 (일~금) | 클라우드 Claude (Routine, `routines/threads-insurance-daily.md`) | 다음 날(월~토) 스레드 보험 심의글 10편 `content/threads/insurance/sets/<날짜>.md` 작성, 검사기 통과, PR → `main`. 일요일 치는 쓰지 않는다 (2026-10-02 사용자 결정) |
+| 전날 22:37 | 클라우드 Claude (Routine, `routines/tistory-daily.md`) | 다음 날 **티스토리** 원고 5편 + 이미지 계획서 — 그날 네이버 5편과 짝(같은 묶음, 다른 메인 키워드), `lint-tistory` 통과, `publish_at` 11:30·13:30·15:30·17:30·19:30 (네이버와 30분 텀, 2026-10-03 사용자 지시), PR → `main` |
 | 당일 09:00 | 사용자 PC (작업 스케줄러 `SeonggeulDailyReserve`) | `launchers/auto-day.cmd` → `git pull` → **보험글 Word 저장 (Drive `보험글/스레드 N편.docx`)** → 이미지 생성 → 5편 예약발행 → **티스토리 5편 그림·예약발행 (`tistory-day.ps1 -Reserve`, 2026-10-03~)** → 결과를 Drive `run-logs` 로 |
 | 당일 10:10 | 같은 작업의 두 번째 시각 (첫 실행 70분 뒤, 노트북은 10:25) | 첫 실행에서 저장 못 한 글만 다시 (`.done` 표시가 있는 글은 건너뜀). 2026-10-02 이전 등록 PC 는 `ensure-retry.ps1` 이 다음 실행 때 이 시각을 저절로 더한다 |
-| 당일 10:47 | 클라우드 Claude (Routine) | Drive `run-logs` 읽고 결과 보고. 스크립트 문제면 고쳐서 PR → `main` |
-| 매월 28일 21:23 | 클라우드 Claude (Routine) | 다음 달 발행 캘린더 작성·검증·재발행 |
+| 당일 10:47 | 클라우드 Claude (Routine, `routines/morning-check.md`) | Drive `run-logs` 읽고 결과 보고. 스크립트 문제면 고쳐서 PR → `main` |
+| 매월 28일 21:23 | 클라우드 Claude (Routine, `routines/monthly-calendar.md`) | 다음 달 발행 캘린더 작성·검증·재발행 |
+
+**클라우드 작업은 매번 새 대화에서 돈다** (2026-10-03 사용자 결정 — 긴 대화에 이어 붙여 돌려 사용량이 빨리 닳았다).
+Routine 은 모두 "⚙ 자동 작업 출발점" 대화에 걸려 있고, 그 대화는 시각마다 새 작업 대화를 만들어 `routines/<작업>.md` 를 넘기기만 한다.
+작업 대화는 이전 대화를 기억하지 못하므로 **결정한 것은 반드시 `docs/STATUS.md`·CLAUDE.md 에 적는다.** 작업 대화는 다 보고 지워도 되지만
+출발점 대화는 지우지 않는다. 지시를 바꿀 때는 Routine 설정이 아니라 `routines/*.md` 를 고친다. 자세한 것은 `routines/README.md`.
 
 **일요일은 자율** (2026-10-03 사용자 결정 — 업무 시간에 따라 일요일에도 PC 를 켤 수 있다).
 토요일 밤 원고 Routine 이 **일요일 원고 5편도 미리 써 둔다** (캘린더 뒷날 글감을 당기거나 새 살림 글감). PC 가 켜지면 평일처럼 예약발행되고,

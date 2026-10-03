@@ -105,7 +105,7 @@ node scripts/publish-tistory.mjs --post content/tistory/<원고>.json --save-dra
 ## 하루 편성
 
 **2026-10-02 사용자 결정: 네이버처럼 매일 밤 5편.** 1편(`2026-10-03-chimnang-ondo`)으로 원고·이미지 구성을 확인한 뒤,
-매일 **22:37** Routine(티스토리 작업실 대화, `trig_01JupVoPSXJQppjgiwKkFUsY`)이 다음 날 5편 + 이미지 계획서를 써서 main 에 올린다.
+매일 **22:37** Routine(지시문 `routines/tistory-daily.md`, 매번 새 대화)이 다음 날 5편 + 이미지 계획서를 써서 main 에 올린다.
 20:53 네이버 작업이 올린 그날 5편과 한 편씩 짝을 짓는다. `publish_at` 은 짝 네이버 글 + 30분 (11:30·13:30·15:30·17:30·19:30).
 다음 날 아침 `auto-day.cmd` 가 네이버 다음에 `tistory-day.ps1 -Reserve` 로 그 시각에 예약한다 (2026-10-03 사용자 지시).
 `standards/발행-운영기준.md` 의 "새 블로그는 1주차 1편부터" 권고는 참고로 남긴다 — 정하는 것은 사용자다.
