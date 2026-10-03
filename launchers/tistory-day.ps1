@@ -4,6 +4,9 @@
 #   -Only hasan-mureup   일부 글만
 #   -NoShare    끝나고 결과를 Google Drive 로 올리지 않기
 #   -SkipImages 그림을 만들지 않고, 이미 만들어 둔 그림만 넣는다
+#   -Reserve    원고 publish_at 시각으로 예약발행 (확인 안 되면 임시저장만). auto-day.cmd 가 네이버 다음에 부른다.
+#               네이버(11·13·15·17·19시)와 30분 텀 — 티스토리 원고는 11:30·13:30·15:30·17:30·19:30 (2026-10-03 사용자 지시)
+#               두 PC 겹침은 네이버와 같은 Drive run-locks\<날짜>\ 에 tistory-<글>.done 표시로 막는다
 #
 # 그림: 글마다 content\image-plans\<글>.json 으로 content\images\<글>\ 에 그림을 만들고(이미 있으면 건너뜀, 돈 두 번 안 나감)
 # 발행 스크립트가 [이미지 N] 자리에 올려 넣는다. 네이버와 같은 그림 도구·같은 OpenAI 키를 쓴다.
@@ -15,7 +18,8 @@ param(
   [string[]]$Only = @(),
   [switch]$DryRun,
   [switch]$NoShare,
-  [switch]$SkipImages
+  [switch]$SkipImages,
+  [switch]$Reserve
 )
 $started = Get-Date
 $ErrorActionPreference = 'Continue'
@@ -36,6 +40,8 @@ function Run($argsList) {
 # 블로그 이름
 $blog = $env:TISTORY_BLOG
 if (-not $blog) { $blog = [Environment]::GetEnvironmentVariable('TISTORY_BLOG', 'User') }
+# 아침 자동 실행(-Reserve)에서는 사람이 답할 수 없으니 묻지 않는다. 블로그 주소는 공개 정보라 기본값으로 둔다 (2026-10-03 첫 테스트에서 확인)
+if (-not $blog -and $Reserve) { $blog = 'seongdaeeyo' }
 if (-not $blog) {
   Write-Host ''
   Write-Host '  티스토리 블로그 주소의 앞부분을 적어 주세요.' -ForegroundColor Cyan
@@ -49,7 +55,7 @@ $env:TISTORY_BLOG = $blog
 
 # 원고: .md 가 정본이므로 먼저 검사하고 .json 을 다시 만든다
 $mds = Get-ChildItem "content\tistory\$Date-*.md" -ErrorAction SilentlyContinue | Sort-Object Name
-if (-not $mds -and -not $PSBoundParameters.ContainsKey('Date')) {
+if (-not $mds -and -not $Reserve -and -not $PSBoundParameters.ContainsKey('Date')) {
   # 날짜를 지정하지 않았고 오늘 원고가 없으면 가장 최근 날짜 원고로 한다 (처음 시험할 때)
   $latest = Get-ChildItem 'content\tistory\*.md' -ErrorAction SilentlyContinue | Sort-Object Name | Select-Object -Last 1
   if ($latest) {
@@ -60,7 +66,43 @@ if (-not $mds -and -not $PSBoundParameters.ContainsKey('Date')) {
 }
 $Only = @($Only | ForEach-Object { $_ -split ',' } | ForEach-Object { $_.Trim() } | Where-Object { $_ })
 if ($Only.Count) { $mds = $mds | Where-Object { $Only -contains $_.BaseName.Substring(11) } }
-if (-not $mds) { Say "티스토리 원고가 없어요: content\tistory\$Date-*.md" 'Yellow'; Share; exit 0 }
+if (-not $mds) { Say "티스토리 원고가 없어요: content\tistory\$Date-*.md" 'Yellow'; if (-not $Reserve) { Share }; exit 0 }
+
+# ---- 두 PC 겹침 막기 (예약할 때만). draft-day.ps1 과 같은 방식, 표시 이름만 tistory-
+$me = $env:COMPUTERNAME
+$lockDir = $null
+function Release { if ($lockDir) { Remove-Item (Join-Path $lockDir "running-tistory-$me.lock") -ErrorAction SilentlyContinue } }
+function OtherRunning {
+  if (-not $lockDir) { return $null }
+  Get-ChildItem $lockDir -Filter 'running-tistory-*.lock' -ErrorAction SilentlyContinue |
+    Where-Object { $_.Name -ne "running-tistory-$me.lock" -and ((Get-Date) - $_.LastWriteTime).TotalHours -lt 3 } |
+    Sort-Object LastWriteTime | Select-Object -First 1
+}
+if ($Reserve) {
+  . (Join-Path $PSScriptRoot 'lib-drive.ps1')
+  $drive = Find-MyDrive
+  if ($drive) { $lockDir = Join-Path $drive "ClaudeWorkspace\run-locks\$Date" }
+  else { Say 'Google Drive 를 찾지 못해 다른 PC 와 겹치는지 확인할 수 없어요. 이 PC 안에만 표시를 남기고 진행합니다.' 'Yellow'; $lockDir = Join-Path (Get-Location) "dumps\run-locks\$Date" }
+  New-Item -ItemType Directory -Force -Path $lockDir | Out-Null
+  $other = OtherRunning
+  if ($other) { Say "다른 PC 가 티스토리를 진행 중이에요. 이 PC 는 쉽니다." 'Yellow'; exit 0 }
+  "$me $(Get-Date -Format s)" | Out-File (Join-Path $lockDir "running-tistory-$me.lock") -Encoding utf8
+  if ($drive) {
+    Start-Sleep 60
+    $other = OtherRunning
+    $mine = Get-Item (Join-Path $lockDir "running-tistory-$me.lock")
+    if ($other -and ($other.LastWriteTime -lt $mine.LastWriteTime -or ($other.LastWriteTime -eq $mine.LastWriteTime -and $other.Name -lt $mine.Name))) {
+      Say "다른 PC 가 먼저 티스토리를 시작했어요. 이 PC 는 쉽니다." 'Yellow'; Release; exit 0
+    }
+  }
+  $mds = @($mds | Where-Object {
+    $done = Join-Path $lockDir "tistory-$($_.BaseName).done"
+    if (Test-Path $done) { Say "  건너뜀 (이미 처리됨): $($_.BaseName)" 'Yellow'; $false } else { $true }
+  })
+  if (-not $mds) { Say '오늘 티스토리 글은 모두 처리됐어요.' 'Green'; Release; exit 0 }
+  # publish_at 순서대로
+  $mds = @($mds | Sort-Object @{ Expression = { ((Get-Content $_.FullName -Raw -Encoding UTF8) -split "`n" | Where-Object { $_ -match '^publish_at:' } | Select-Object -First 1) } }, Name)
+}
 Say "티스토리 원고 $(@($mds).Count)편 → $blog.tistory.com" 'Cyan'
 
 # 2) 자동화용 크롬 (draft-day.ps1 과 같은 크롬·프로필)
@@ -77,6 +119,17 @@ if (-not (CdpUp)) { Say '자동화용 크롬을 켜지 못했어요. launchers\c
 $mode = if ($DryRun) { '--dry-run' } else { '--save-draft' }
 $result = @()
 $i = 0
+# PC 가 늦게 켜진 날: 예약 시각이 지났거나 30분 안쪽이면 오늘 안에서 뒤로 미룬다 (앞 글과 60분 이상, 23시 전까지) — draft-day 와 같은 규칙
+$lastAt = $null
+function NextSlot([datetime]$want) {
+  $earliest = (Get-Date).AddMinutes(30)
+  $earliest = $earliest.Date.AddHours($earliest.Hour).AddMinutes([math]::Ceiling($earliest.Minute / 10) * 10)
+  $t = $want
+  if ($t -lt $earliest) { $t = $earliest }
+  if ($script:lastAt -and $t -lt $script:lastAt.AddMinutes(60)) { $t = $script:lastAt.AddMinutes(60) }
+  if ($t.Date -ne $want.Date -or $t.Hour -ge 23) { return $want }
+  return $t
+}
 foreach ($m in $mds) {
   $i++
   $slug = $m.BaseName
@@ -91,11 +144,25 @@ foreach ($m in $mds) {
     Say "  그림 만들기: $plan" 'Cyan'
     if ((Run @('scripts/post-images.mjs', $plan)) -ne 0) { Say '  그림 일부 실패 — 못 만든 자리는 표시 글자로 남깁니다' 'Yellow' }
   } elseif (-not (Test-Path $plan)) { Say "  이미지 계획서 없음 — 그림 없이 넣습니다: $plan" 'Yellow' }
-  $pubArgs = @('scripts/publish-tistory.mjs', '--post', ($m.FullName -replace '\.md$', '.json'), $mode, '--dump')
+  $postMode = $mode; $atArgs = @(); $when = ''
+  if ($Reserve) {
+    $when = (Get-Content ($m.FullName -replace '\.md$', '.json') -Raw -Encoding UTF8 | ConvertFrom-Json).publishAt
+    if ($when) {
+      $postMode = '--reserve'
+      $want = [datetime]::ParseExact($when, 'yyyy-MM-dd HH:mm', $null)
+      $slot = NextSlot $want
+      if ($slot -ne $want) { Say "  PC 가 늦게 켜져서 예약 시각을 $($want.ToString('HH:mm')) → $($slot.ToString('HH:mm')) 로 미룹니다" 'Yellow'; $when = $slot.ToString('yyyy-MM-dd HH:mm') }
+      $atArgs = @('--at', $when)
+      $script:lastAt = $slot
+    } else { Say '  publish_at 이 없어 임시저장만 합니다' 'Yellow' }
+  }
+  $pubArgs = @('scripts/publish-tistory.mjs', '--post', ($m.FullName -replace '\.md$', '.json'), $postMode, '--dump') + $atArgs
   if (Test-Path "content\images\$slug") { $pubArgs += @('--images', "content\images\$slug") }
   $code = Run $pubArgs
-  $msg = if ($code -eq 0) { if ($DryRun) { '임시저장 + 발행 패널 기록' } else { '임시저장 완료' } } else { '실패 — 저장 안 함' }
+  $msg = if ($code -eq 0 -and $postMode -eq '--reserve') { "예약발행 $when" } elseif ($code -eq 0) { if ($DryRun) { '임시저장 + 발행 패널 기록' } else { '임시저장 완료' } } elseif ($code -eq 2) { '임시저장만 (예약 확인 실패)' } else { '실패 — 저장 안 함' }
   $result += [pscustomobject]@{ 글 = $slug; 결과 = $msg }
+  if ($lockDir -and ($code -eq 0 -or $code -eq 2)) { "$me $(Get-Date -Format 'HH:mm') $msg" | Out-File (Join-Path $lockDir "tistory-$slug.done") -Encoding utf8 }
+  if ($lockDir) { "$me $(Get-Date -Format s)" | Out-File (Join-Path $lockDir "running-tistory-$me.lock") -Encoding utf8 }
   if ($code -ne 0 -and $i -eq 1 -and @($mds).Count -gt 1) {
     Say '첫 글이 실패해서 나머지는 돌리지 않았어요 (같은 이유로 또 실패할 가능성이 커요).' 'Yellow'
     break
@@ -105,5 +172,7 @@ foreach ($m in $mds) {
 
 Say "`n==================== 결과 ====================" 'Cyan'
 $result | Format-Table -AutoSize | Out-String | ForEach-Object { Say $_ }
-Say '발행은 하지 않았어요. 티스토리 글쓰기 화면 아래 "임시저장" 옆 숫자에서 확인하세요.' 'Green'
+if ($Reserve) { Say '예약된 글은 티스토리 관리 > 글 관리에서, 나머지는 글쓰기 화면 아래 "임시저장" 옆 숫자에서 확인하세요.' 'Green' }
+else { Say '발행은 하지 않았어요. 티스토리 글쓰기 화면 아래 "임시저장" 옆 숫자에서 확인하세요.' 'Green' }
+Release
 Share

@@ -8,6 +8,8 @@ git pull -q
 REM Threads insurance posts: save new Word files to Drive (fast, before the blog run)
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0insurance-word.ps1"
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0draft-day.ps1" -Reserve %*
+REM Tistory: same day, 30 minutes after each Naver slot (publish_at in content\tistory). Skips if no posts.
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tistory-day.ps1" -Reserve
 REM 내 블로그 통계(유입 검색어·글별 조회수)를 읽기만 하고 Drive 로 올린다
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0blog-stats.ps1"
 REM 다음 원고 키워드 후보의 월간 검색량을 조회해 Drive 로 올린다 (content\calendar\keyword-queue.txt)

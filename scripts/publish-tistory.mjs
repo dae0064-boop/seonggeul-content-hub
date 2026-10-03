@@ -16,9 +16,9 @@
  *   4) 카테고리·태그
  *   5) --save-draft: 에디터 아래 '임시저장'만 누른다
  *
- * 아직 하지 않는 것 (실제 화면 덤프를 보고 붙인다)
- *   - 예약발행: 발행 패널의 날짜·시각 칸 구조를 아직 모른다. --dry-run 덤프를 받은 뒤 만든다.
- *     네이버처럼 '다시 읽어 확인 → 안 되면 임시저장' 규칙으로 만든다.
+ * 예약발행 --reserve (2026-10-03 사용자 지시 — 네이버와 30분 텀): 아래 reservePublish 참고.
+ *   패널의 날짜·시각 칸을 실제 화면에서 아직 본 적이 없어 '예약' 전후로 새로 보이는 칸을 찾아 쓰고 로그에 남긴다.
+ *   날짜·시·분을 다시 읽어 확인되지 않으면 발행을 누르지 않는다(종료 코드 2, 글은 임시저장).
  *
  * 사진 (--images <폴더>, 2026-10-03 사용자 지시 — 테스트부터 사진까지)
  *   빈 본문에 <폴더>/NN.png 를 1번부터 한 장씩 올린다 → 기본 에디터에 생긴 그림 덩어리를 순서대로 읽는다
@@ -47,6 +47,7 @@ function parseArgs(argv) {
       case '--dry-run':     out.dryRun = true; break;
       case '--publish-now': out.publishNow = true; break;
       case '--reserve':     out.reserve = true; break;
+      case '--at':          out.at = next(); break;
       case '--no-tags':     out.tags = false; break;
       case '--url':         out.url = next(); break;
       case '--images':      out.images = next(); break;
@@ -72,7 +73,10 @@ const USAGE = `
   --dry-run          임시저장한 뒤 '완료'(발행 패널)를 열어 화면을 덤프하고, 발행하지 않고 닫는다.
                      예약발행을 만들 때 쓸 화면 자료를 남긴다 (--dump 를 함께 쓴다)
   --publish-now      공개 발행까지 누른다. 사람이 그 자리에서 결정했을 때만 쓴다
-  --reserve          아직 없다. --dry-run 덤프로 발행 패널을 확인한 뒤 만든다
+  --reserve          예약발행. 임시저장 → 발행 패널 → '공개' → '예약' → 날짜·시·분을 넣고 다시 읽어 확인한 뒤에만
+                     '발행'을 누른다. 하나라도 확인되지 않으면 누르지 않고 임시저장으로 남긴다 (종료 코드 2).
+                     시각은 --at 또는 원고 publish_at. 오늘 날짜, 지금부터 20분 뒤 이후만 받는다
+  --at "Y-M-D H:M"   예약 시각 (--reserve 와 함께)
   --no-tags          태그를 넣지 않는다
   --dump             단계별 스크린샷/HTML 을 dumps/ 에 저장
   --cdp <url>        CDP 주소 (기본 http://localhost:9222)
@@ -218,10 +222,13 @@ async function readBack(page) {
     const ed = window.tinymce && (window.tinymce.activeEditor || window.tinymce.editors?.[0]);
     if (!ed) return null;
     const root = document.createElement('div');
-    root.innerHTML = typeof ed.getContent === "function" ? ed.getContent() : ed.getBody().innerHTML; // 저장될 내용 그대로
+    // 저장될 내용 그대로. 티스토리는 저장할 때 그림을 [##_Image|…_##] 코드로 바꿔 내보낸다 (2026-10-03 실제 테스트)
+    const html = typeof ed.getContent === "function" ? ed.getContent() : ed.getBody().innerHTML;
+    const codes = (html.match(/\[##_Image\|/g) || []).length;
+    root.innerHTML = html.replace(/\[##_Image\|[\s\S]*?_##\]/g, '');
     return {
       via: 'tinymce',
-      images: root.querySelectorAll('img').length,
+      images: root.querySelectorAll('img').length + codes,
       text: root.textContent || '',
       h2: [...root.querySelectorAll('h2')].map((e) => e.textContent.trim()),
       tables: root.querySelectorAll('table').length,
@@ -269,7 +276,7 @@ async function pickCategory(page, name) {
     // 목록을 열어 둔 채 다음 단계로 가면 다른 버튼이 눌린다 — 닫고 나간다
     const names = await page.evaluate(() => [...document.querySelectorAll('#category-list [role="option"], #category-list li')].map((e) => e.innerText.trim()).filter(Boolean).slice(0, 20)).catch(() => []);
     await page.keyboard.press('Escape').catch(() => {});
-    await btn.click().catch(() => {});
+    await sleep(300);
     if (names.length <= 1 && /없음/.test(names[0] || '')) throw new Error(`블로그에 카테고리가 아직 없어요 — 티스토리 관리 > 카테고리에서 "${name}" 을 만들면 다음부터 자동으로 골라요`);
     throw new Error(`"${name}" 카테고리를 찾지 못함${names.length ? ` (블로그 카테고리: ${names.join(', ')})` : ''}`);
   }
@@ -279,15 +286,22 @@ async function pickCategory(page, name) {
 }
 
 async function enterTags(page, tags) {
-  const { loc } = await findFirst(page, SEL.tagInput, { timeout: 4000 });
+  await findFirst(page, SEL.tagInput, { timeout: 4000 });
   for (const t of tags) {
-    await loc.scrollIntoViewIfNeeded().catch(() => {});
-    await loc.click({ timeout: 5000 }).catch(() => loc.focus());
+    // 클릭이 가려져 실패하는 일이 있어(2026-10-03 실제 테스트) DOM 에서 바로 포커스를 준다
+    const focused = await page.evaluate(() => {
+      const el = document.querySelector('input#tagText') || document.querySelector('input[placeholder*="태그"]');
+      if (!el) return false;
+      el.scrollIntoView({ block: 'center' });
+      el.focus();
+      return document.activeElement === el;
+    });
     // 커서가 태그 칸에 있을 때만 Enter 를 누른다 (다른 버튼이 눌릴 여지를 없앤다)
-    const focused = await loc.evaluate((el) => document.activeElement === el);
     if (!focused) throw new Error('태그 칸에 커서가 없습니다');
-    await loc.fill(t);
-    await loc.press('Enter');
+    await page.keyboard.type(t, { delay: 20 });
+    const still = await page.evaluate(() => { const a = document.activeElement; return !!a && (a.id === 'tagText' || /태그/.test(a.placeholder || '')); });
+    if (!still) throw new Error('입력 중에 커서가 태그 칸을 벗어났습니다');
+    await page.keyboard.press('Enter');
     await sleep(250);
   }
   const area = await page.evaluate(() => {
@@ -299,17 +313,90 @@ async function enterTags(page, tags) {
   log(`태그 ${tags.length - miss.length}/${tags.length}개`);
 }
 
+// ---------------------------------------------------------------- 예약발행
+/**
+ * 발행 패널(완료를 누른 뒤)에서 예약한다. 순서: '공개' 확인 → '예약' → 날짜·시·분 → 다시 읽어 확인 → 발행.
+ * 패널의 날짜·시각 칸 이름을 아직 실제 화면에서 본 적이 없어서(2026-10-03), '예약'을 누르기 전후로 화면에 새로 보이는
+ * 칸을 찾아 쓰고, 찾은 칸을 모두 로그에 남긴다. 날짜·시·분 하나라도 맞게 읽히지 않으면 발행을 누르지 않는다
+ * — 확인 없이 누르면 '현재 발행'이 돼 되돌릴 수 없다. 이 확인을 빼거나 경고로 낮추지 않는다.
+ */
+async function reservePublish(page, at) {
+  step(`8. 예약발행 준비: ${at.text}`);
+  // 공개
+  const radio = await findFirst(page, SEL.openPublic, { timeout: 3000 }).catch(() => null);
+  if (radio && !(await radio.loc.isChecked())) await clickFirst(page, SEL.openPublicLabel, { timeout: 3000 }).catch(() => {});
+  if (!radio || !(await radio.loc.isChecked())) return { ok: false, why: "'공개'가 선택됐는지 확인하지 못함" };
+
+  const fields = () => page.evaluate(() => [...document.querySelectorAll('input:not([type="radio"]):not([type="checkbox"]):not([type="hidden"]), select')]
+    .filter((e) => e.offsetParent && e.id !== 'tagText' && e.id !== 'post-title-inp' && e.id !== 'urlPublish')
+    .map((e, i) => (e.setAttribute('data-sg-field', String(i)), { i, tag: e.tagName.toLowerCase(), id: e.id, name: e.name, cls: String(e.className || ''), value: e.value,
+      ph: e.placeholder || '', ro: !!e.readOnly, opts: e.tagName === 'SELECT' ? [...e.options].slice(0, 3).map((o) => o.value).join('/') : '',
+      key: `${e.tagName}#${e.id}.${e.name}.${e.className}` })));
+  const before = await fields();
+
+  // '예약' 버튼 (패널 안의 글자가 정확히 '예약'인 버튼)
+  try {
+    await clickFirst(page, ['button:text-is("예약")', '.layer_post button:has-text("예약")', 'label:text-is("예약")'], { timeout: 4000 });
+  } catch { return { ok: false, why: "'예약' 버튼을 찾지 못함" }; }
+  await sleep(1200);
+  const after = await fields();
+  const fresh = after.filter((f) => !before.some((b) => b.key === f.key));
+  const pool = fresh.length ? fresh : after;
+  log(`예약 칸: ${pool.map((f) => `${f.tag}${f.id ? '#' + f.id : ''}${f.name ? '[' + f.name + ']' : ''}${f.cls ? '.' + f.cls.trim().split(/\s+/).join('.') : ''}="${f.value}"${f.ph ? ' ph=' + f.ph : ''}${f.ro ? ' (읽기전용)' : ''}${f.opts ? ' 옵션:' + f.opts : ''}`).join(' | ') || '없음'}`);
+  await dump(page, 'reserve-open');
+
+  const hint = (f) => `${f.id} ${f.name} ${f.cls} ${f.ph}`.toLowerCase();
+  const dateF = pool.find((f) => /\d{4}\D{1,3}\d{1,2}\D{1,3}\d{1,2}/.test(f.value) || /date|day|날짜/.test(hint(f)));
+  const hourF = pool.find((f) => /hour|시/.test(hint(f)) && !/minute|min|분/.test(hint(f)));
+  const minF = pool.find((f) => /minute|min|분/.test(hint(f)));
+  if (!dateF || !hourF || !minF) return { ok: false, why: `예약 날짜·시·분 칸을 알아보지 못함 (날짜 ${!!dateF} / 시 ${!!hourF} / 분 ${!!minF}) — 로그의 '예약 칸' 줄로 고칩니다` };
+
+  const loc = (f) => page.locator(`[data-sg-field="${f.i}"]`).first(); // 마지막으로 읽은 칸 번호 (after)
+  // 시·분 넣기 (select 면 고르고, 입력칸이면 지우고 친다)
+  for (const [f, v, label] of [[hourF, at.hh, '시'], [minF, at.mm, '분']]) {
+    const l = loc(f);
+    try {
+      if (f.tag === 'select') await l.selectOption(v).catch(() => l.selectOption(String(+v)));
+      else { await l.fill(''); await l.type(v, { delay: 30 }); await l.press('Tab').catch(() => {}); }
+    } catch (e) { return { ok: false, why: `${label} 칸에 넣지 못함 — ${e.message.split('\n')[0]}` }; }
+    await sleep(300);
+  }
+  // 날짜: 오늘이어야 한다. 비었거나 다르면 입력칸일 때만 직접 넣는다 (달력은 건드리지 않는다)
+  const ymdOk = (txt) => { const n = (txt.match(/\d+/g) || []).map(Number); const q = `,${n.join(',')},`; return q.includes(`,${at.y},${at.mo},${at.d},`) || q.includes(`,${at.y % 100},${at.mo},${at.d},`); };
+  let dateVal = await loc(dateF).inputValue().catch(() => '');
+  if (!ymdOk(dateVal) && !dateF.ro && dateF.tag === 'input') {
+    const sep = (dateF.value.match(/\d{4}(\D+)\d/) || [, '-'])[1];
+    await loc(dateF).fill(`${at.y}${sep}${String(at.mo).padStart(2, '0')}${sep}${String(at.d).padStart(2, '0')}`).catch(() => {});
+    dateVal = await loc(dateF).inputValue().catch(() => '');
+  }
+  // 다시 읽어 확인
+  const hv = await loc(hourF).inputValue().catch(() => '');
+  const mv = await loc(minF).inputValue().catch(() => '');
+  log(`확인: 날짜 "${dateVal}" · 시 "${hv}" · 분 "${mv}"`);
+  if (!ymdOk(dateVal)) return { ok: false, why: `예약 날짜가 오늘(${at.y}-${at.mo}-${at.d})로 읽히지 않음 ("${dateVal}")` };
+  if (String(+hv) !== String(+at.hh)) return { ok: false, why: `시가 ${at.hh} 대신 "${hv}"` };
+  if (String(+mv) !== String(+at.mm)) return { ok: false, why: `분이 ${at.mm} 대신 "${mv}"` };
+  await dump(page, 'reserve-ready');
+
+  step(`9. 예약발행 (공개·예약·날짜·시·분 확인됨)`);
+  const { loc: pubBtn } = await findFirst(page, SEL.publishBtn, { timeout: 4000 }).catch(() => ({}));
+  if (!pubBtn) return { ok: false, why: '발행 버튼을 찾지 못함' };
+  const pubLabel = (await pubBtn.innerText().catch(() => '')).trim();
+  log(`발행 버튼 글자: "${pubLabel}"`);
+  if (!/발행|예약/.test(pubLabel)) return { ok: false, why: `발행 버튼 글자가 "${pubLabel}"` };
+  await pubBtn.click();
+  await sleep(3500);
+  await dump(page, 'reserved');
+  return { ok: true, confirmed: !/manage\/newpost/.test(page.url()) };
+}
+
 // ---------------------------------------------------------------- main
 async function main() {
   const args = parseArgs(process.argv);
   if (args.help) { console.log(USAGE); return; }
-  if (args.reserve) {
-    throw new Error('--reserve 는 아직 없습니다. 먼저 --dry-run --dump 로 발행 패널 화면을 남겨 주세요.\n'
-      + '그 덤프를 보고 예약 칸을 확인하는 코드를 붙입니다. 지금은 --save-draft 를 쓰세요.');
-  }
   if (!args.post) throw new Error('--post 가 필요합니다. --help 참고.');
-  if ([args.saveDraft, args.dryRun, args.publishNow].filter(Boolean).length > 1) {
-    throw new Error('--save-draft / --dry-run / --publish-now 는 하나만 쓰세요.');
+  if ([args.saveDraft, args.dryRun, args.publishNow, args.reserve].filter(Boolean).length > 1) {
+    throw new Error('--save-draft / --dry-run / --publish-now / --reserve 는 하나만 쓰세요.');
   }
   if (!args.url && !/^[a-z0-9-]+$/i.test(args.blog)) {
     throw new Error('블로그 이름이 필요합니다: --blog <이름> 또는 환경변수 TISTORY_BLOG (예: seonggeul → seonggeul.tistory.com)');
@@ -318,6 +405,19 @@ async function main() {
   const post = JSON.parse(fs.readFileSync(args.post, 'utf8'));
   if (!post.title || !post.html || !Array.isArray(post.blocks)) {
     throw new Error(`${args.post}: title·html·blocks 가 필요합니다. build-tistory.mjs 로 생성하세요.`);
+  }
+  // 예약: 오늘 날짜, 20분 뒤 이후만. 조건이 안 맞으면 멈추지 않고 임시저장으로 바꿔 글은 남긴다
+  let at = null;
+  if (args.reserve) {
+    const when = args.at || post.publishAt;
+    const m = /^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2})$/.exec(when || '');
+    const now = new Date();
+    const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+    const why = !m ? `예약 시각이 없거나 형식이 다름 ("${when || ''}")`
+      : `${m[1]}-${m[2]}-${m[3]}` !== today ? `예약 날짜(${m[1]}-${m[2]}-${m[3]})가 오늘(${today})이 아님`
+      : new Date(+m[1], +m[2] - 1, +m[3], +m[4], +m[5]).getTime() - Date.now() < 20 * 60000 ? `예약 시각(${when})까지 20분이 안 남음` : '';
+    if (why) { warn(`${why} — 예약하지 않고 임시저장만 합니다.`); args.reserve = false; args.saveDraft = true; args.reserveSkipped = why; }
+    else at = { y: +m[1], mo: +m[2], d: +m[3], hh: m[4], mm: m[5], text: when };
   }
   // 기대 글자 수 = 에디터가 보여 줄 글자 (HTML 의 태그를 걷어 낸 것)
   const textOf = (h) => squash(h.replace(IMAGE_CODE, '').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&nbsp;/g, ' '));
@@ -339,7 +439,8 @@ async function main() {
     fs.mkdirSync(dumpDir, { recursive: true });
   }
 
-  const mode = args.saveDraft ? '임시저장 (발행 안 함)'
+  const mode = args.reserve ? `예약발행 (${at.text}, 확인 후에만)`
+    : args.saveDraft ? '임시저장 (발행 안 함)'
     : args.dryRun ? 'DRY-RUN (임시저장 + 발행 패널 덤프, 발행 안 함)'
     : args.publishNow ? '⚠ 공개 발행'
     : '본문만 채우고 멈춤';
@@ -419,7 +520,10 @@ async function main() {
         } else {
           uploaded.forEach((u, i) => {
             const re = new RegExp(`<p data-ke-size="size16">\\[이미지 ${u.n}\\][^<]*</p>`);
-            finalHtml = finalHtml.replace(re, () => blocks[i]);
+            // 구글 이미지 검색용 대체텍스트: 원고 [이미지 N] 설명 (대표사진 표시는 뺀다)
+            const desc = (imageBlocks.find((b) => b.n === u.n)?.lines?.[0]?.t || '').replace(/\s*\(대표사진\)\s*$/, '').replace(/"/g, '');
+            const block = desc ? blocks[i].replace(/<img\b([^>]*?)\salt="[^"]*"/i, '<img$1').replace(/<img\b/i, `<img alt="${desc}"`) : blocks[i];
+            finalHtml = finalHtml.replace(re, () => block);
           });
           want = textOf(finalHtml.replace(/<img[^>]*>/g, ''));
         }
@@ -443,7 +547,7 @@ async function main() {
     if (missingImages.length) warn(`사진을 넣지 못한 자리: ${[...new Set(missingImages)].sort((a, b) => a - b).join(', ')}번 — 표시 문단으로 남겼어요.`);
 
 
-    if (!args.saveDraft && !args.dryRun && !args.publishNow) {
+    if (!args.saveDraft && !args.dryRun && !args.publishNow && !args.reserve) {
       console.log('\n✅ 본문까지 넣었습니다. 저장·발행은 하지 않았습니다 (탭은 열어둡니다).');
       return;
     }
@@ -467,12 +571,18 @@ async function main() {
 
     if (args.saveDraft) {
       console.log('\n✅ 임시저장 완료 — 발행하지 않았습니다.');
+      if (args.reserveSkipped) { console.log(`   (예약하지 않은 이유: ${args.reserveSkipped})`); process.exitCode = 2; }
       log('글쓰기 화면 아래 "임시저장" 옆 숫자를 누르면 목록에서 볼 수 있어요.');
       return;
     }
 
     step('7. 발행 패널 열기 (완료)');
-    await clickFirst(page, SEL.complete, { timeout: 6000 });
+    try { await clickFirst(page, SEL.complete, { timeout: 6000 }); }
+    catch (e) {
+      if (!args.reserve) throw e;
+      console.log(`\n⚠ 예약하지 않았습니다 (발행 패널을 열지 못함). 글은 임시저장에 남아 있어요.`);
+      process.exitCode = 2; return;
+    }
     await sleep(1500);
     await dump(page, 'publish-layer');
     const layer = await page.evaluate(() => {
@@ -489,6 +599,16 @@ async function main() {
     log(`라디오: ${layer.radios.join(' | ') || '없음'}`);
     log(`버튼  : ${layer.buttons.join(' | ')}`);
     log(`입력칸: ${layer.inputs.join(' | ') || '없음'}`);
+
+    if (args.reserve) {
+      const r = await reservePublish(page, at);
+      if (r.ok) { console.log(`\n✅ 예약발행 완료 — ${at.text}${r.confirmed ? '' : ' (화면이 그대로라 예약 목록에서 꼭 확인하세요)'}`); return; }
+      await dump(page, 'reserve-stop');
+      await clickFirst(page, SEL.layerClose, { timeout: 4000 }).catch(() => {});
+      console.log(`\n⚠ 예약하지 않았습니다 (${r.why}). 글은 임시저장에 남아 있어요.`);
+      process.exitCode = 2;
+      return;
+    }
 
     if (args.dryRun) {
       await clickFirst(page, SEL.layerClose, { timeout: 4000 }).catch(() => warn('발행 패널 닫기 버튼을 찾지 못했습니다. 화면에서 "취소"를 눌러 주세요.'));
