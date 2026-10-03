@@ -122,9 +122,11 @@ if (-not (CdpUp)) { Say '자동화용 크롬을 켜지 못했어요. launchers\c
 $result = @()
 $i = 0
 # PC 가 늦게 켜진 날 (2026-10-02 사용자: 사무실 PC 는 밤에 끄고 아침에 아무 PC 나 켠다):
-# 예약 시각이 이미 지났거나 곧인 글은 **12:00~19:00 사이 빈 자리에 끼워 넣는다** (2026-10-03 사용자 지시).
-# 제때 갈 수 있는 글은 원래 시각 그대로 두고, 늦은 글만 가장 이른 10분 단위 빈자리에 넣는다
-# (다른 글과 60분 이상 떨어진 자리 먼저, 없으면 30분 이상). 19시 안에 자리가 없으면 23시 전까지, 그래도 없으면 예약하지 않는다.
+# 예약 시각이 이미 지났거나 곧인 글은 **지금 이후 가장 이른 빈 자리에 끼워 넣는다**.
+# 2026-10-03 밤 사용자 지시: "오전 3개, 오후 2개로 빠르게 끝내자, 저녁 늦게 올리면 노출이 잘 안 된다"
+# (그 전엔 12~19시 사이, 다른 글과 60분 떨어진 자리부터 찾았다).
+# 제때 갈 수 있는 글은 원래 시각 그대로 두고, 늦은 글만 다른 글과 30분 이상 떨어진 가장 이른 10분 단위 자리에 넣는다.
+# 19시 안에 자리가 없으면 23시 전까지, 그래도 없으면 예약하지 않는다.
 $planned = @{}
 function Ceil10([datetime]$t) { $t.Date.AddHours($t.Hour).AddMinutes([math]::Ceiling(($t.Minute + ($t.Second -gt 0)) / 10) * 10) }
 if ($Reserve) {
@@ -145,11 +147,11 @@ if ($Reserve) {
   foreach ($it in ($items | Where-Object Late)) {
     $day = $it.Want.Date
     $best = $null
-    foreach ($win in @(@(12, 19), @(12, 23))) {
+    foreach ($win in @(@(0, 19), @(0, 23))) {
       $from = $day.AddHours($win[0]); if ($from -lt $it.Earliest) { $from = $it.Earliest }
       $to = $day.AddHours($win[1])
-      # 가장 이른 자리부터: 다른 글과 60분 이상 떨어진 첫 자리, 없으면 30분 이상 떨어진 첫 자리
-      foreach ($need in 60, 30) {
+      # 가장 이른 자리부터: 다른 글과 30분 이상 떨어진 첫 자리
+      foreach ($need in @(30)) {
         for ($t = $from; $t -le $to; $t = $t.AddMinutes(10)) {
           if ($t.Hour -ge 23) { break }
           $gap = 9999
@@ -181,7 +183,7 @@ foreach ($p in $posts) {
     $minNow = Ceil10 ((Get-Date).AddMinutes(25))
     if ($slot -lt $minNow -and $minNow.Date -eq $want.Date -and $minNow.Hour -lt 23) { $slot = $minNow }
     if ($slot -ne $want) {
-      Say "  PC 가 늦게 켜져서 예약 시각을 $($want.ToString('HH:mm')) → $($slot.ToString('HH:mm')) 로 옮깁니다 (12~19시 빈 자리)" 'Yellow'
+      Say "  PC 가 늦게 켜져서 예약 시각을 $($want.ToString('HH:mm')) → $($slot.ToString('HH:mm')) 로 옮깁니다 (가장 이른 빈 자리)" 'Yellow'
       $when = $slot.ToString('yyyy-MM-dd HH:mm')
       $atArgs = @('--at', $when)
     }
