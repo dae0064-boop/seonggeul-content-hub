@@ -17,6 +17,9 @@ const MAX_BLOCK = 4;          // 한 덩어리 최대 줄 수. 넘으면 2·2·3
 // 붙어서, 소제목 + 4줄이 5줄짜리 덩어리로 보인다. 넘으면 문장이 끝나는 자리에서 1·3 이나 2·2 로 끊는다.
 const MAX_AFTER_QUOTE = 3;
 const AFTER_QUOTE_FROM = '2026-10-02';
+// 그림은 소제목(인용구) 바로 아래에만 둔다 (사용자 지시 2026-10-03 — 소제목 → 그림 → 글, 일정한 패턴이 깔끔하다).
+// 대표사진(이미지 1)은 도입 뒤 첫 소제목 앞이라 뺀다. 소제목마다 그림이 있어야 하는 것은 아니다.
+const IMAGE_UNDER_QUOTE_FROM = '2026-10-05';
 const MIN_CHARS = 2300;       // 본문 최소 (공백 포함) — 2026-10-01 발행분까지
 const MAX_CHARS = 2500;       // 본문 최대
 // 2026-10-02 발행분부터 (사용자 지시 10/1): 공백 제외로 세고, 제목에 서브 키워드를 넣는다
@@ -263,6 +266,17 @@ for (const file of files) {
       if (next && next.type === 'p' && next.lines.length > MAX_AFTER_QUOTE)
         errors.push(`소제목 바로 아래 덩어리가 ${next.lines.length}줄 — ${MAX_AFTER_QUOTE}줄 이하로 끊으세요 (소제목과 붙어 보입니다, 1·3 이나 2·2 로): "${next.lines[0].t}"`);
     });
+  }
+  if (dated >= IMAGE_UNDER_QUOTE_FROM) {
+    post.blocks.forEach((b, i) => {
+      if (b.type !== 'image' || b.n === 1) return;
+      const prev = post.blocks[i - 1];
+      if (!prev || prev.type !== 'quote')
+        errors.push(`[이미지 ${b.n}] 은 소제목(인용구) 바로 아래에 두세요 — 소제목 → 그림 → 글 순서: "${b.lines[0].t}"`);
+    });
+    const quotes = post.blocks.filter((b) => b.type === 'quote').length;
+    const under = post.blocks.filter((b, i) => b.type === 'image' && b.n !== 1 && post.blocks[i - 1]?.type === 'quote').length;
+    if (quotes - under > 3) notes.push(`그림 없는 소제목이 ${quotes - under}개예요 — 소제목 수를 그림 수(7)에 가깝게 맞추면 패턴이 더 고르게 보여요`);
   }
   if (perBlock < MIN_BLOCK_LINES)
     errors.push(`덩어리가 잘게 쪼개졌습니다: 덩어리당 ${perBlock.toFixed(1)}줄 (최소 ${MIN_BLOCK_LINES})`);
