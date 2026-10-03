@@ -1,0 +1,93 @@
+{
+  "slug": "2026-10-03-chamulmi-yebang",
+  "title": "차멀미 예방, 앞좌석 고르기와 환기·멀미약 챙기는 순서",
+  "source": "티스토리 원고 (10/3 사용자 지시 — 15~19시 5편)",
+  "note": "8장 (대표 1 + 본문 7), 네이버와 같은 기준. 장면·구도·배경색이 서로 다르게 (standards/이미지-기준.md)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "가을 들판 사이 도로를 달리는 작은 자동차 (대표사진)",
+      "note": "대표",
+      "prompt": "Camera and composition: wide shot from a low hill. A small rounded car driving along a country road between golden autumn rice fields under a clear sky. No people visible. Background color: soft apricot sunset. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "quality": "medium",
+      "overlay": {
+        "kind": "thumb",
+        "title": "차멀미 예방\n자리와 환기"
+      },
+      "shot": "wide shot from a low hill",
+      "bg": "soft apricot sunset"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "뒷좌석에서 휴대폰을 보다 창밖으로 눈을 돌리는 아이",
+      "note": "",
+      "prompt": "Camera and composition: medium shot from inside a car. A Korean child of about eight in the back seat lowers a blank smartphone and looks out the side window, calm. Background color: warm cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot from inside a car",
+      "bg": "warm cream"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "눈과 귀의 신호가 엇갈리는 모습을 그린 단순한 그림",
+      "note": "",
+      "prompt": "Camera and composition: simple diagram style illustration. A friendly cartoon head in profile with a small eye icon and a small inner ear swirl icon, two soft arrows pointing toward the brain that do not quite meet. No people other than this simple head. Background color: soft lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "눈과 귀의 신호가 어긋나면 멀미"
+      },
+      "shot": "simple diagram style illustration",
+      "bg": "soft lavender"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "승용차 좌석 배치를 위에서 내려다본 그림",
+      "note": "",
+      "prompt": "Camera and composition: top-down view of a car interior. A small car seen from above with the roof removed, showing front seats and back seats; the front passenger seat and back middle seat glow softly in mint. No people at all in this image. Background color: pale sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "앞좌석 · 뒷좌석 가운데"
+      },
+      "shot": "top-down view of a car interior",
+      "bg": "pale sky blue"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "창밖 먼 산을 바라보며 편안해진 가족",
+      "note": "",
+      "prompt": "Camera and composition: over-the-shoulder shot from the back seat. A family in a car, the Seonggeul adult child: a Korean woman in her 40s, shoulder-length brown bob hair, soft sky blue shirt and the Seonggeul grandpa: a Korean man in his late 70s, short gray hair, mint green vest over a white shirt, looking out the front and side windows toward distant mountains, relaxed. Background color: soft mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "over-the-shoulder shot from the back seat",
+      "bg": "soft mint"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "휴게소 벤치에서 바람을 쐬며 쉬는 가족",
+      "note": "",
+      "prompt": "Camera and composition: medium shot at a highway rest area. At a highway rest area bench under autumn trees, the Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan and a child sit and breathe fresh air, smiling. Background color: light peach. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot at a highway rest area",
+      "bg": "light peach"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "차 문 옆에 놓인 물병과 비닐봉지, 물티슈",
+      "note": "",
+      "prompt": "Camera and composition: close-up on a car seat. A water bottle, a folded plastic bag and a pack of wet wipes neatly placed on a car seat beside the open door. No people at all in this image. Background color: pale butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up on a car seat",
+      "bg": "pale butter yellow"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "앞좌석에서 창밖을 보며 편안하게 웃는 성글이",
+      "note": "",
+      "prompt": "Camera and composition: medium shot through the windshield. Seonggeul, the blog host: a Korean woman in her 30s, round face, dark hair in a low bun, cream sweater with a mint scarf sits in the front passenger seat looking out at the road ahead, smiling comfortably. Background color: dusty rose. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot through the windshield",
+      "bg": "dusty rose"
+    }
+  ]
+}

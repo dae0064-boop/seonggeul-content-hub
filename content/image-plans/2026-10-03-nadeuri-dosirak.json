@@ -1,0 +1,97 @@
+{
+  "slug": "2026-10-03-nadeuri-dosirak",
+  "title": "나들이 도시락, 김밥 싸는 순서와 보냉백·아이스팩 넣는 법",
+  "source": "티스토리 원고 (10/3 사용자 지시 — 15~19시 5편)",
+  "note": "8장 (대표 1 + 본문 7), 네이버와 같은 기준. 장면·구도·배경색이 서로 다르게 (standards/이미지-기준.md)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "가을 공원 돗자리 위에 펼친 김밥 도시락 (대표사진)",
+      "note": "대표",
+      "prompt": "Camera and composition: high angle wide shot. A picnic mat on autumn park grass with an open lunch box of sliced gimbap, fruit box, and a soft cooler bag. No people at all in this image. Background color: soft apricot sunset. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "quality": "medium",
+      "overlay": {
+        "kind": "thumb",
+        "title": "나들이 도시락\n상하지 않게"
+      },
+      "shot": "high angle wide shot",
+      "bg": "soft apricot sunset"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "햇볕 아래 벤치에 놓인 도시락 가방",
+      "note": "",
+      "prompt": "Camera and composition: medium shot of a park bench. A lunch bag sitting alone on a park bench in bright sunshine, small sun rays above it. No people at all in this image. Background color: warm cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot of a park bench",
+      "bg": "warm cream"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "쟁반에 펼쳐 한 김 식히는 밥과 반찬",
+      "note": "",
+      "prompt": "Camera and composition: close-up from above on a kitchen counter. Freshly cooked rice spread out on a wide tray and side dishes on plates, gentle steam rising as they cool. No people at all in this image. Background color: pale sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "충분히 식혀서 싸기"
+      },
+      "shot": "close-up from above on a kitchen counter",
+      "bg": "pale sky blue"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "도마 위에서 물기를 꼭 짠 김밥 재료",
+      "note": "",
+      "prompt": "Camera and composition: close-up of hands on a cutting board. the Seonggeul adult child: a Korean woman in her 40s, shoulder-length brown bob hair, soft sky blue shirt squeezes water out of blanched spinach above a cutting board with carrot strips and egg strips laid out. Background color: soft lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "물기는 꼭 짜기"
+      },
+      "shot": "close-up of hands on a cutting board",
+      "bg": "soft lavender"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "칸이 나뉜 통에 따로 담은 반찬과 과일",
+      "note": "",
+      "prompt": "Camera and composition: top-down view of containers. A divided lunch container with rolled omelet and grilled meat, and a separate small box of washed grapes and apple slices. No people at all in this image. Background color: soft mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "top-down view of containers",
+      "bg": "soft mint"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "보냉백 안 도시락 위에 아이스팩을 올리는 손",
+      "note": "",
+      "prompt": "Camera and composition: close-up of hands and an open cooler bag. Hands placing a blue ice pack on top of lunch boxes inside an open soft cooler bag. Background color: light peach. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "아이스팩은 위아래로"
+      },
+      "shot": "close-up of hands and an open cooler bag",
+      "bg": "light peach"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "현관 앞에 놓인 보냉백과 돗자리, 물티슈",
+      "note": "",
+      "prompt": "Camera and composition: low angle shot at a front door. A cooler bag, a rolled picnic mat and a pack of wet wipes waiting by the entryway shoe rack. No people at all in this image. Background color: pale butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "low angle shot at a front door",
+      "bg": "pale butter yellow"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "공원 그늘에서 도시락을 열고 웃는 성글이",
+      "note": "",
+      "prompt": "Camera and composition: medium shot under a tree. Seonggeul, the blog host: a Korean woman in her 30s, round face, dark hair in a low bun, cream sweater with a mint scarf sits on a picnic mat in the shade of an autumn tree, opening a lunch box and smiling. Background color: dusty rose. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot under a tree",
+      "bg": "dusty rose"
+    }
+  ]
+}
