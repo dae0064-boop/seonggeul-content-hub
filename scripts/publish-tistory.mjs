@@ -9,7 +9,8 @@
  *
  * 순서
  *   1) <블로그>.tistory.com/manage/newpost 를 연다
- *   2) 제목을 넣고, 본문은 HTML 을 통째로 넣는다 (기본 에디터의 TinyMCE → 안 되면 HTML 모드)
+ *   2) 제목·카테고리·태그를 넣고, 본문은 HTML 을 기본 에디터(TinyMCE)에 통째로 넣는다.
+ *      HTML 모드 화면은 쓰지 않는다 — 거기 넣은 글은 저장되지 않는다 (2026-10-03 실제 테스트)
  *      네이버처럼 한 줄씩 치지 않는다 — 티스토리는 HTML 을 그대로 받는다
  *   3) 들어간 본문을 다시 읽어 제목(H2)·표·글자 수가 맞는지 확인한다. 안 맞으면 저장하지 않는다
  *   4) 카테고리·태그
@@ -20,8 +21,8 @@
  *     네이버처럼 '다시 읽어 확인 → 안 되면 임시저장' 규칙으로 만든다.
  *
  * 사진 (--images <폴더>, 2026-10-03 사용자 지시 — 테스트부터 사진까지)
- *   빈 본문에 <폴더>/NN.png 를 1번부터 한 장씩 올린다 → 티스토리가 그림마다 [##_Image|…_##] 코드를 만든다
- *   → HTML 모드로 바꿔 그 코드를 순서대로 읽는다 → 원고의 [이미지 N] 자리에 코드를 끼워 넣고 본문 전체를 덮어쓴다.
+ *   빈 본문에 <폴더>/NN.png 를 1번부터 한 장씩 올린다 → 기본 에디터에 생긴 그림 덩어리를 순서대로 읽는다
+ *   → 원고의 [이미지 N] 자리에 그 덩어리를 끼워 넣고 본문 전체를 기본 에디터에 덮어쓴다.
  *   커서 위치를 맞출 필요가 없어서 순서가 틀어지지 않는다. 올리지 못한 그림 자리는 표시 문단으로 남기고 목록으로 알린다.
  *
  * 실제 발행은 --publish-now 를 사람이 그 자리에서 붙였을 때만 한다. 기본은 아무것도 발행하지 않는다.
@@ -34,7 +35,7 @@ import path from 'node:path';
 
 // ---------------------------------------------------------------- args
 function parseArgs(argv) {
-  const out = { cdp: 'http://localhost:9222', blog: process.env.TISTORY_BLOG || '', tags: true, body: 'auto' };
+  const out = { cdp: 'http://localhost:9222', blog: process.env.TISTORY_BLOG || '', tags: true };
   for (let i = 2; i < argv.length; i++) {
     const a = argv[i];
     const next = () => argv[++i];
@@ -42,7 +43,6 @@ function parseArgs(argv) {
       case '--post':        out.post = next(); break;
       case '--blog':        out.blog = next(); break;
       case '--cdp':         out.cdp = next(); break;
-      case '--body':        out.body = next(); break;
       case '--save-draft':  out.saveDraft = true; break;
       case '--dry-run':     out.dryRun = true; break;
       case '--publish-now': out.publishNow = true; break;
@@ -73,7 +73,6 @@ const USAGE = `
                      예약발행을 만들 때 쓸 화면 자료를 남긴다 (--dump 를 함께 쓴다)
   --publish-now      공개 발행까지 누른다. 사람이 그 자리에서 결정했을 때만 쓴다
   --reserve          아직 없다. --dry-run 덤프로 발행 패널을 확인한 뒤 만든다
-  --body <방식>      본문 넣는 방식: auto(기본) / tinymce / html
   --no-tags          태그를 넣지 않는다
   --dump             단계별 스크린샷/HTML 을 dumps/ 에 저장
   --cdp <url>        CDP 주소 (기본 http://localhost:9222)
@@ -155,32 +154,18 @@ async function bodyByTinymce(page, html) {
     ed.setContent(h);
     ed.undoManager?.add();
     ed.setDirty?.(true);
+    ed.nodeChanged?.();
     ed.fire?.('change');
     ed.fire?.('input');
+    ed.fire?.('keyup');
+    ed.save?.();
     return { ok: true };
   }, html);
 }
 
-/** HTML 모드로 바꿔 코드 편집기(CodeMirror)에 넣는다. 전환 확인창은 dialog 핸들러가 수락한다. */
-// 모드 전환 확인창은 우리가 HTML 모드로 바꿀 때만 수락한다.
-// 2026-10-03 첫 실제 테스트: 본문을 넣은 뒤 카테고리·태그 단계에서 '작성 모드를 변경하시겠습니까?' 가 떠서 수락했더니
-// 기본 모드로 돌아가며 글이 다 사라지고 사진만 남은 채 임시저장됐다. 그 뒤로는 거절한다.
-let allowModeSwitch = false;
-
-async function toHtmlMode(page) {
-  if (await page.evaluate(() => { const e = document.querySelector('.CodeMirror'); return !!(e && e.offsetParent); })) return;
-  allowModeSwitch = true;
-  try {
-    await clickFirst(page, SEL.modeBtn, { timeout: 5000 });
-    await sleep(500);
-    await clickFirst(page, SEL.modeHtml, { timeout: 5000 });
-    await sleep(800);
-  } finally { allowModeSwitch = false; }
-  // 모드 전환 경고가 화면 안 레이어로 뜨면 '확인' (브라우저 확인창이면 dialog 핸들러가 수락한다)
-  await clickFirst(page, SEL.modeOk, { timeout: 1500 }).catch(() => {});
-  await sleep(800);
-  await findFirst(page, SEL.codeMirror, { timeout: 8000 });
-}
+// 모드 전환 확인창('작성 모드를 변경하시겠습니까?')은 언제나 거절한다. HTML 모드로 가면 글이 저장되지 않는다.
+// (2026-10-03 첫 실제 테스트: 수락했더니 글이 사라졌고, 두 번째 테스트: HTML 화면에 넣은 글은 저장되지 않았다)
+const allowModeSwitch = false;
 
 const IMAGE_CODE = /\[##_Image\|[\s\S]*?_##\]/g;
 
@@ -222,38 +207,21 @@ async function uploadOne(page, file) {
   return false;
 }
 
-async function bodyByHtmlMode(page, html) {
-  await toHtmlMode(page);
-  return page.evaluate((h) => {
-    const cm = document.querySelector('.CodeMirror')?.CodeMirror;
-    if (!cm) return { ok: false, why: 'CodeMirror 없음' };
-    cm.setValue(h);
-    cm.save?.();
-    return { ok: true };
-  }, html);
-}
 
 /** 에디터에 실제로 들어간 것을 다시 읽는다. 어느 방식이든 같은 기준으로 확인한다. */
+// 티스토리는 저장할 때 기본 에디터(TinyMCE)의 내용을 쓴다. HTML 모드 화면(CodeMirror)에 넣은 글은 저장되지 않았다
+// (2026-10-03 두 번째 실제 테스트: HTML 화면엔 글이 다 있었는데 임시저장 글에는 사진만 남았다). 그래서 기본 에디터만 읽는다.
 async function readBack(page) {
   return page.evaluate(() => {
-    const cm = document.querySelector('.CodeMirror')?.CodeMirror;
-    const visibleCm = cm && document.querySelector('.CodeMirror').offsetParent !== null;
-    let root;
-    let images = 0;
-    if (visibleCm) {
-      const v = cm.getValue();
-      images = (v.match(/\[##_Image\|/g) || []).length;
-      root = document.createElement('div');
-      root.innerHTML = v.replace(/\[##_Image\|[\s\S]*?_##\]/g, '');
-    }
-    else {
-      const ed = window.tinymce && (window.tinymce.activeEditor || window.tinymce.editors?.[0]);
-      root = ed?.getBody?.();
-    }
-    if (!root) return null;
+    const cmEl = document.querySelector('.CodeMirror');
+    if (cmEl && cmEl.offsetParent) return { via: 'html', images: 0, text: '', h2: [], tables: 0, styled: 0, htmlMode: true };
+    const ed = window.tinymce && (window.tinymce.activeEditor || window.tinymce.editors?.[0]);
+    if (!ed) return null;
+    const root = document.createElement('div');
+    root.innerHTML = typeof ed.getContent === "function" ? ed.getContent() : ed.getBody().innerHTML; // 저장될 내용 그대로
     return {
-      via: visibleCm ? 'html' : 'tinymce',
-      images,
+      via: 'tinymce',
+      images: root.querySelectorAll('img').length,
       text: root.textContent || '',
       h2: [...root.querySelectorAll('h2')].map((e) => e.textContent.trim()),
       tables: root.querySelectorAll('table').length,
@@ -263,8 +231,17 @@ async function readBack(page) {
   });
 }
 
+/** 올린 그림이 기본 에디터에 만든 덩어리(그림을 감싼 맨 바깥 요소)를 순서대로 */
+const imageBlocksInEditor = (page) => page.evaluate(() => {
+  const ed = window.tinymce && (window.tinymce.activeEditor || window.tinymce.editors?.[0]);
+  const body = ed?.getBody?.();
+  if (!body) return [];
+  return [...body.children].filter((el) => el.querySelector('img') || el.tagName === 'IMG').map((el) => el.outerHTML);
+});
+
 function checkBody(got, post, want, imagesWant = 0) {
   if (!got) return '에디터 본문을 읽지 못함';
+  if (got.htmlMode) return 'HTML 모드 화면에 있음 — 이 상태로는 글이 저장되지 않는다';
   if (got.images < imagesWant) return `그림 ${got.images}장 (올린 것 ${imagesWant}장)`;
   const count = (re) => (post.html.match(re) || []).length;
   const h2Want = count(/<h2[\s>]/g);
@@ -337,7 +314,6 @@ async function main() {
   if (!args.url && !/^[a-z0-9-]+$/i.test(args.blog)) {
     throw new Error('블로그 이름이 필요합니다: --blog <이름> 또는 환경변수 TISTORY_BLOG (예: seonggeul → seonggeul.tistory.com)');
   }
-  if (!['auto', 'tinymce', 'html'].includes(args.body)) throw new Error(`--body 는 auto / tinymce / html: ${args.body}`);
 
   const post = JSON.parse(fs.readFileSync(args.post, 'utf8'));
   if (!post.title || !post.html || !Array.isArray(post.blocks)) {
@@ -389,7 +365,7 @@ async function main() {
   page.on('dialog', async (d) => {
     const msg = d.message().replace(/\s+/g, ' ').slice(0, 80);
     if (d.type() === 'confirm' && /HTML|모드|전환/.test(msg)) {
-      if (allowModeSwitch) { allowModeSwitch = false; log(`확인창 수락: ${msg}`); await d.accept().catch(() => {}); }
+      if (allowModeSwitch) { log(`확인창 수락: ${msg}`); await d.accept().catch(() => {}); }
       else { warn(`모드 전환 확인창을 거절했어요 (본문을 지키려고): ${msg}`); await d.dismiss().catch(() => {}); }
     }
     else { log(`확인창 거절: [${d.type()}] ${msg}`); await d.dismiss().catch(() => {}); }
@@ -412,7 +388,7 @@ async function main() {
     if (gotTitle !== post.title) throw new Error(`제목이 다르게 들어갔습니다: "${gotTitle}"`);
     log(post.title);
 
-    step('3-1. 카테고리·태그 (본문보다 먼저 — HTML 모드에서는 태그 칸이 가려진다)');
+    step('3-1. 카테고리·태그 (본문보다 먼저)');
     if (post.category) {
       try { await pickCategory(page, post.category); log(`카테고리: ${post.category}`); }
       catch (e) { warn(`카테고리 선택 실패 (${e.message.split('\n')[0]}) — 저장 후 직접 고르세요.`); }
@@ -436,40 +412,27 @@ async function main() {
       }
       await dump(page, 'images-uploaded');
       if (uploaded.length) {
-        await toHtmlMode(page);
-        const codes = await page.evaluate(() => (document.querySelector('.CodeMirror').CodeMirror.getValue().match(/\[##_Image\|[\s\S]*?_##\]/g) || []));
-        if (codes.length !== uploaded.length) {
-          warn(`그림 코드 ${codes.length}개 / 올린 그림 ${uploaded.length}장 — 수가 달라 사진은 넣지 않고 글만 넣습니다.`);
+        const blocks = await imageBlocksInEditor(page);
+        if (blocks.length !== uploaded.length) {
+          warn(`에디터의 그림 ${blocks.length}개 / 올린 그림 ${uploaded.length}장 — 수가 달라 사진은 넣지 않고 글만 넣습니다.`);
           missingImages.push(...uploaded.map((u) => u.n)); uploaded = [];
         } else {
           uploaded.forEach((u, i) => {
             const re = new RegExp(`<p data-ke-size="size16">\\[이미지 ${u.n}\\][^<]*</p>`);
-            finalHtml = finalHtml.replace(re, `<p data-ke-size="size16">${codes[i]}</p>`);
+            finalHtml = finalHtml.replace(re, () => blocks[i]);
           });
-          want = textOf(finalHtml);
-          args.body = 'html'; // 그림 코드는 HTML 모드에서만 그대로 들어간다
+          want = textOf(finalHtml.replace(/<img[^>]*>/g, ''));
         }
       }
       for (const b of imageBlocks) if (!imageFiles.some((f) => f.n === b.n) && !missingImages.includes(b.n)) missingImages.push(b.n);
     }
 
-    step('4. 본문 (HTML 통째로)');
-    let problem = 'not tried';
-    if (args.body !== 'html') {
-      await findFirst(page, SEL.editorIfr, { timeout: 15000 }).catch(() => {});
-      const r = await bodyByTinymce(page, finalHtml);
-      await sleep(800);
-      problem = r.ok ? checkBody(await readBack(page), post, want.length, uploaded.length) : r.why;
-      if (problem) warn(`기본 에디터로 넣기 실패: ${problem}`);
-      else log('기본 에디터(TinyMCE)로 넣음');
-    }
-    if (problem && args.body !== 'tinymce') {
-      const r = await bodyByHtmlMode(page, finalHtml).catch((e) => ({ ok: false, why: e.message.split('\n')[0] }));
-      await sleep(800);
-      problem = r.ok ? checkBody(await readBack(page), post, want.length, uploaded.length) : r.why;
-      if (problem) warn(`HTML 모드로 넣기 실패: ${problem}`);
-      else log('HTML 모드로 넣음');
-    }
+    step('4. 본문 (기본 에디터에 통째로)');
+    await findFirst(page, SEL.editorIfr, { timeout: 15000 }).catch(() => {});
+    const r = await bodyByTinymce(page, finalHtml);
+    await sleep(1000);
+    const problem = r.ok ? checkBody(await readBack(page), post, want.length, uploaded.length) : r.why;
+    if (!problem) log('기본 에디터(TinyMCE)로 넣음');
     await dump(page, 'body');
     if (problem) {
       throw new Error(`본문이 원고대로 들어가지 않아 저장하지 않습니다 (${problem}).\n`
