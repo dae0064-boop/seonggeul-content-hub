@@ -6,7 +6,7 @@ setlocal
 cd /d "%~dp0"
 title Tistory reserve
 if not exist "tistory-day.ps1" goto missing
-powershell -NoProfile -ExecutionPolicy Bypass -File "tistory-day.ps1" -Reserve %*
+powershell -NoProfile -ExecutionPolicy Bypass -File "tistory-day.ps1" -Reserve -RetryDrafts %*
 echo.
 pause
 exit /b 0
