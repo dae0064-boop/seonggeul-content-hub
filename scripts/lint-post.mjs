@@ -156,7 +156,8 @@ for (const file of files) {
     const all = post.blocks.flatMap((b) => b.lines.map((l) => l.t));
     const qs = all.filter((t) => /^Q\d+:/.test(t)).length;
     const as = all.filter((t) => /^A\d+:/.test(t)).length;
-    const useFormat = !tistory && dated >= FORMAT_FROM;
+    // 티스토리도 같은 글 모양 규칙을 따른다 (routines/tistory-daily.md — 2026-10-05 원고부터)
+    const useFormat = dated >= FORMAT_FROM;
     const fmt = useFormat ? FORMATS[post.format] : FORMATS.기본;
     if (useFormat && !fmt) errors.push(`format 이 없거나 모르는 값입니다 ("${post.format}") — ${Object.keys(FORMATS).join(' / ')} 중 하나`);
     if (fmt) {
