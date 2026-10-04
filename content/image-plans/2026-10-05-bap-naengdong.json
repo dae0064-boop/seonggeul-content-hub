@@ -1,0 +1,82 @@
+{
+  "slug": "2026-10-05-bap-naengdong",
+  "title": "밥 냉동 보관법, 냉동밥 소분하고 맛있게 데우는 법",
+  "source": "10/5(월) 티스토리 원고 (10/4 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 같은 날 네이버 계획서와 장면이 겹치지 않게",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "김이 오르는 갓 지은 밥과 작은 밀폐용기들 (대표사진)",
+      "prompt": "Camera and composition: three-quarter view of a kitchen counter. A bowl of freshly cooked white rice with gentle steam next to several small empty lidded containers. No people at all in this image. Background color: soft apricot. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "note": "대표",
+      "quality": "medium",
+      "overlay": {
+        "kind": "thumb",
+        "title": "밥 냉동 보관법\n따뜻할 때 소분"
+      },
+      "shot": "three-quarter view of a kitchen counter",
+      "bg": "soft apricot"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "냉장고 칸 안에 놓인 식은 밥 그릇",
+      "prompt": "Camera and composition: inside view of a refrigerator. A bowl of cold, dry-looking leftover rice sitting alone on a refrigerator shelf. No people at all in this image. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "inside view of a refrigerator",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "주걱으로 밥을 덜어 용기에 담는 손",
+      "prompt": "Camera and composition: close-up of hands. Hands using a rice paddle to scoop warm rice into a small square container. No people at all in this image. Background color: warm cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up of hands",
+      "bg": "warm cream"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "납작한 용기와 동그랗게 뭉친 밥을 나란히 놓은 모습",
+      "prompt": "Camera and composition: side-by-side comparison on a table. Left: a flat, evenly spread portion of rice in a shallow container. Right: a tightly pressed round ball of rice. Both on a wooden table. No people at all in this image. Background color: pale sage. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "납작하게 vs 꾹꾹"
+      },
+      "shot": "side-by-side comparison on a table",
+      "bg": "pale sage"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "뚜껑 달린 사각 유리 용기와 실리콘 용기가 놓인 선반",
+      "prompt": "Camera and composition: front view of a pantry shelf. Lidded square glass containers and soft silicone containers stacked neatly on a kitchen shelf. No people at all in this image. Background color: light butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "front view of a pantry shelf",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "전자레인지 앞에서 용기 뚜껑을 살짝 연 모습",
+      "prompt": "Camera and composition: eye-level view of a microwave. A microwave with its door open and a rice container inside with the lid slightly ajar, a small cup of water beside it. No people at all in this image. Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "eye-level view of a microwave",
+      "bg": "mint green"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "냉동실 서랍에 날짜 스티커를 붙인 용기들이 줄지어 있는 모습",
+      "prompt": "Camera and composition: top-down view into a freezer drawer. Rows of flat rice containers in a freezer drawer, each with a small blank sticker label. No people at all in this image. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "top-down view into a freezer drawer",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "식탁 위에서 데운 밥을 공기에 옮겨 담는 모습",
+      "prompt": "Camera and composition: medium shot at a dining table. Seonggeul, the blog host: a Korean woman in her 30s, round face, dark hair in a low bun, cream sweater with a mint scarf transferring warm reheated rice from a container into a rice bowl at a dining table set with side dishes. Background color: pale peach. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot at a dining table",
+      "bg": "pale peach"
+    }
+  ]
+}
