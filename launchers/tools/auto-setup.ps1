@@ -15,8 +15,10 @@ $ErrorActionPreference = 'Stop'
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $name = 'SeonggeulDailyReserve'
 
+$wakeName = 'SeonggeulMorningStart'
 if ($Remove) {
   Unregister-ScheduledTask -TaskName $name -Confirm:$false -ErrorAction SilentlyContinue
+  Unregister-ScheduledTask -TaskName $wakeName -Confirm:$false -ErrorAction SilentlyContinue
   Write-Host '아침 자동 예약발행을 껐어요.' -ForegroundColor Green
   exit 0
 }
@@ -27,6 +29,11 @@ powercfg /SETACVALUEINDEX SCHEME_CURRENT SUB_SLEEP RTCWAKE 1 2>$null | Out-Null
 powercfg /SETDCVALUEINDEX SCHEME_CURRENT SUB_SLEEP RTCWAKE 1 2>$null | Out-Null
 powercfg /SETACTIVE SCHEME_CURRENT 2>$null | Out-Null
 
+# -At 을 안 주면 이미 등록된 시각을 그대로 쓴다 (노트북 09:15 를 09:00 으로 덮어쓰지 않게, 2026-10-05)
+if (-not $PSBoundParameters.ContainsKey('At')) {
+  $old = Get-ScheduledTask -TaskName $name -ErrorAction SilentlyContinue
+  if ($old -and $old.Triggers.Count) { try { $At = ([datetime]$old.Triggers[0].StartBoundary).ToString('HH:mm') } catch {} }
+}
 $cmd = Join-Path (Split-Path $PSScriptRoot -Parent) 'auto-day.cmd'
 $action = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument "/c `"$cmd`"" -WorkingDirectory (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent)
 if (-not $RetryAt) { $RetryAt = ([datetime]::ParseExact($At, 'HH:mm', $null)).AddMinutes(70).ToString('HH:mm') }
@@ -45,3 +52,25 @@ Write-Host '    (완전히 꺼져 있으면 켠 뒤에 돌아요)' -ForegroundCo
 Write-Host '  · 자동화용 크롬에 네이버 로그인이 유지돼 있어야 해요.' -ForegroundColor Gray
 Write-Host '  · 끝나면 결과가 Google Drive run-logs 로 올라가요.' -ForegroundColor Gray
 Write-Host '  · 끄려면: launchers\auto-setup.cmd -Remove' -ForegroundColor Gray
+
+# 일어나서 PC 를 켜거나·잠금을 풀거나·절전에서 깨우면 바로 시작 (2026-10-05 사용자: 고정 시각보다 일찍 일어났을 때 바로).
+# tools\on-wake.ps1 이 오늘 남은 글이 있을 때만 auto-day.cmd 를 띄운다. 위 고정 시각 실행은 아무도 PC 를 안 열었을 때의 안전망.
+$wakeAction = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$(Join-Path $PSScriptRoot 'on-wake.ps1')`"" -WorkingDirectory (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent)
+$wakeTriggers = @(New-ScheduledTaskTrigger -AtLogOn -User "$env:USERDOMAIN\$env:USERNAME")
+try {
+  $cls = Get-CimClass -Namespace 'Root/Microsoft/Windows/TaskScheduler' -ClassName 'MSFT_TaskSessionStateChangeTrigger'
+  $wakeTriggers += New-CimInstance -CimClass $cls -ClientOnly -Property @{ StateChange = [uint32]8; UserId = "$env:USERDOMAIN\$env:USERNAME"; Enabled = $true }
+} catch {}
+try {
+  $ecls = Get-CimClass -Namespace 'Root/Microsoft/Windows/TaskScheduler' -ClassName 'MSFT_TaskEventTrigger'
+  $q = "<QueryList><Query Id='0' Path='System'><Select Path='System'>*[System[Provider[@Name='Microsoft-Windows-Power-Troubleshooter'] and EventID=1]]</Select></Query></QueryList>"
+  $wakeTriggers += New-CimInstance -CimClass $ecls -ClientOnly -Property @{ Subscription = $q; Enabled = $true }
+} catch {}
+$wakeSettings = New-ScheduledTaskSettingsSet -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Minutes 10) -MultipleInstances IgnoreNew
+$wakeDesc = '성글벙글: PC 를 켜거나 잠금을 풀면 오늘 남은 글 예약발행을 바로 시작'
+try { Register-ScheduledTask -TaskName $wakeName -Action $wakeAction -Trigger $wakeTriggers -Settings $wakeSettings -Principal $principal -Description $wakeDesc -Force | Out-Null }
+catch {
+  # 잠금 풀기·절전 깨기 트리거를 못 받는 PC 면 로그인 때만이라도
+  Register-ScheduledTask -TaskName $wakeName -Action $wakeAction -Trigger $wakeTriggers[0] -Settings $wakeSettings -Principal $principal -Description $wakeDesc -Force | Out-Null
+}
+Write-Host '  · 아침에 PC 를 켜거나 잠금을 풀면 그때 바로 시작해요 (오늘 남은 글이 있을 때만, 05~15시).' -ForegroundColor Gray
