@@ -143,9 +143,11 @@ async function row(page, key, labels) {
     const vis = (e) => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
     const norm = (s) => (s || '').replace(/[\s*:：]/g, '');
     const want = labels.map(norm);
-    const cands = [...form.querySelectorAll('th, td, label, dt, span, div, p, strong')]
-      .filter((e) => vis(e) && want.includes(norm(e.innerText)) && e.children.length <= 2);
     const CTRL = 'input, select, textarea, [role=combobox], [role=radio], [role=checkbox], span.radio, .check-box';
+    // 입력칸은 글자가 없어 줄 전체의 글자가 "광고제목 *" 로만 읽힌다 — 입력칸을 품은 요소는 칸 이름이 아니다
+    // (2026-10-05 11:49 등록 시도: 줄 전체를 이름으로 잡아 그 안의 제목 칸을 건너뛰었다)
+    const cands = [...form.querySelectorAll('th, td, label, dt, span, div, p, strong')]
+      .filter((e) => vis(e) && want.includes(norm(e.innerText)) && e.children.length <= 2 && !e.querySelector(CTRL));
     for (const c of cands) {
       let box = c;
       for (let up = 0; up < 5 && box && box !== form; up++) {
