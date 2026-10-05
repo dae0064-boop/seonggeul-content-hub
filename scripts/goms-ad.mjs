@@ -325,7 +325,9 @@ async function gotoForm(page) {
   await structure(page, 'ad-review');
   // 목록 화면 오른쪽 위 버튼 글자는 "등록" (사용자는 "광고등록"이라 부름 — 2026-10-05 첫 시험 structure-ad-review.txt)
   // 안전장치: "등록"은 신청서의 최종 등록 버튼과 글자가 같다. 신청서(심의점검표 탭)가 이미 보이면 누르지 않는다.
-  const formShown = async () => (await Promise.all(page.frames().map((f) => f.getByRole('button', { name: '심의점검표' }).first().isVisible().catch(() => false)))).some(Boolean);
+  // 탭은 Vuetify v-tab(role=tab)이라 button 으로 안 잡힐 수 있다 — 화면 글자로 직접 본다. 이름은 "…심의점검표"로 바뀔 수 있다.
+  const formShown = async () => (await Promise.all(page.frames().map((f) => f.evaluate(() => [...document.querySelectorAll('button, [role=tab], a')]
+    .some((b) => !!(b.offsetWidth || b.offsetHeight) && (b.innerText || '').replace(/\s/g, '').endsWith('심의점검표'))).catch(() => false)))).some(Boolean);
   if (await formShown()) throw new Stop('목록 화면에 신청서가 이미 열려 있어 "등록"을 누르지 않았어요');
   await clickText(page, ['광고등록', '광고 등록', '등록']);
   for (let i = 0; i < 20 && !(await formShown()); i++) await sleep(500);
