@@ -68,7 +68,7 @@ if (opt.help || !positionals.length) {
 
 const env = { ...loadEnv(), ...process.env };
 const key = (env.OPENAI_API_KEY || "").trim();
-if (!key) die("OPENAI_API_KEY 가 없어요. 윈도우는 launchers/openai-key.cmd, 그 밖은 .env 에 넣으세요");
+if (!key) die("OPENAI_API_KEY 가 없어요. 윈도우는 launchers/tools/openai-key.cmd, 그 밖은 .env 에 넣으세요");
 
 const model = opt.model || env.IMAGE_MODEL || "gpt-image-2";
 const n = Number(opt.n);

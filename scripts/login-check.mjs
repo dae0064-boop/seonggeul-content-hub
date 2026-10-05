@@ -5,7 +5,7 @@
  *   node scripts/login-check.mjs                 확인만
  *   node scripts/login-check.mjs --open-login    로그인이 풀린 곳만 로그인 화면 탭을 열어 둔다
  *   node scripts/login-check.mjs --shots <폴더>  실제로 네이버 글쓰기·티스토리 관리 화면을 열어 캡처를 남긴다
- *                                                (launchers/login-test.cmd → Drive run-logs 로 올려 Claude 가 확인)
+ *                                                (launchers/chrome-login.cmd → Drive run-logs 로 올려 Claude 가 확인)
  *
  * 2026-10-05 사용자: "네이버는 로그인 유지를 해도 계속 입력하라고 한다".
  * 예전 chrome-login.cmd 는 로그인돼 있어도 매번 로그인 화면을 열었다 — 이제 풀린 곳만 연다.

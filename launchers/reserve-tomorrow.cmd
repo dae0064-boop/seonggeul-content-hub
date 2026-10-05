@@ -9,7 +9,7 @@ title Naver reserve tomorrow
 git checkout -q -- "content/posts/*.json" "content/tistory/*.json" "content/tistory/*.html" 2>nul
 git checkout -q main
 git pull -q
-powershell -NoProfile -ExecutionPolicy Bypass -Command "& '%~dp0draft-day.ps1' -Reserve -Date (Get-Date).AddDays(1).ToString('yyyy-MM-dd') %*"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "& '%~dp0tools\draft-day.ps1' -Reserve -Date (Get-Date).AddDays(1).ToString('yyyy-MM-dd') %*"
 echo.
 echo  Done. Tell Claude: "done" (results are uploaded to Google Drive run-logs).
 echo.

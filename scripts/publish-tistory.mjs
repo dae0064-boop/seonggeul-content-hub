@@ -31,6 +31,7 @@
 
 import { chromium } from 'playwright';
 import { tistoryRelogin } from './lib/tistory-login.mjs';
+import { enterTags as enterTagsLib } from './lib/tistory-tags.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -138,7 +139,6 @@ const SEL = {
   attachBtn: ['#mceu_0-open', 'button[aria-label="첨부"]', 'button:has-text("첨부")'],
   attachPhoto:['#attach-image', 'li:has-text("사진")', 'button:has-text("사진")'],
   category:  ['button#category-btn', 'button:has-text("카테고리")'],
-  tagInput:  ['input#tagText', 'input[placeholder*="태그"]'],
   draft:     ['a.btn-draft', 'button.btn-draft', '.btn-draft .action', 'button:has-text("임시저장")', 'a:has-text("임시저장")'],
   complete:  ['button#publish-layer-btn', 'button:has-text("완료")'],
   layerClose:['button#publish-cancel-btn', '.layer_post button:has-text("취소")', 'button:has-text("취소")'],
@@ -304,46 +304,8 @@ async function pickCategory(page, name) {
   if (!label.includes(name)) throw new Error(`카테고리 버튼이 "${label}" 로 남음`);
 }
 
-async function enterTags(page, tags) {
-  // 화면에 보이는 태그 칸 하나만 쓴다. 2026-10-03 실제 실행: 보이는 칸은 찾았는데(findFirst 통과)
-  // querySelector 로 고른 칸은 '보임 false' 였다 — 같은 선택자에 걸리는 칸이 둘 이상이고, 보이지 않는 쪽에 포커스를 주고 있었다.
-  const { loc: tagLoc } = await findFirst(page, SEL.tagInput, { timeout: 6000 }).catch(async (e) => {
-    throw new Error(`${e.message.split('\n')[0]} (${await tagCandidates(page)})`);
-  });
-  const inTag = () => tagLoc.evaluate((el) => el === document.activeElement).catch(() => false);
-  for (const t of tags) {
-    // 1) 그 칸에 직접 포커스 → 2) 칸을 눌러 포커스
-    await tagLoc.scrollIntoViewIfNeeded({ timeout: 2000 }).catch(() => {});
-    await tagLoc.focus({ timeout: 2000 }).catch(() => {});
-    if (!(await inTag())) await tagLoc.click({ timeout: 3000 }).catch(() => {});
-    if (!(await inTag())) {
-      const a = await page.evaluate(() => { const x = document.activeElement; return x ? x.tagName + (x.id ? '#' + x.id : '') : '없음'; });
-      throw new Error(`태그 칸에 커서가 없습니다 (커서 위치 ${a} · ${await tagCandidates(page)})`);
-    }
-    // 커서가 태그 칸에 있을 때만 Enter 를 누른다 (다른 버튼이 눌릴 여지를 없앤다). 글자·Enter 모두 그 칸에 직접 보낸다
-    await tagLoc.fill(t);
-    if (!(await inTag()) || (await tagLoc.inputValue().catch(() => '')) !== t) throw new Error('입력 중에 커서가 태그 칸을 벗어났습니다');
-    await tagLoc.press('Enter');
-    await sleep(250);
-  }
-  const area = await tagLoc.evaluate((inp) => (inp.closest('[class*="tag"]')?.parentElement || document.body).innerText).catch(() => '');
-  const miss = tags.filter((t) => !area.includes(t));
-  if (miss.length) warn(`화면에서 확인되지 않은 태그: ${miss.join(', ')}`);
-  log(`태그 ${tags.length - miss.length}/${tags.length}개`);
-}
-
-/** 태그 칸 후보를 로그에 남긴다 — 실패했을 때 다음에 선택자를 고칠 근거 (HTML 덤프는 Drive 로 올라오지 않는다) */
-async function tagCandidates(page) {
-  return page.evaluate(() => {
-    const els = [...document.querySelectorAll('input, [contenteditable="true"]')]
-      .filter((e) => /tag|태그/i.test(`${e.id} ${e.name || ''} ${e.className} ${e.placeholder || ''} ${e.getAttribute('aria-label') || ''}`));
-    if (!els.length) return '태그 후보 칸 없음';
-    return els.slice(0, 6).map((e) => {
-      const r = e.getBoundingClientRect(); const cs = getComputedStyle(e);
-      return `${e.tagName.toLowerCase()}${e.id ? '#' + e.id : ''}.${String(e.className).trim().split(/\s+/).join('.')} ph=${e.placeholder || ''} 크기 ${Math.round(r.width)}x${Math.round(r.height)} display ${cs.display} visibility ${cs.visibility} 부모 ${e.parentElement?.className || ''}`;
-    }).join(' | ');
-  }).catch(() => '후보 읽기 실패');
-}
+// 태그 칸 찾기·넣기는 scripts/lib/tistory-tags.mjs (그림자 영역·다른 틀 안의 칸까지 찾는다 — 2026-10-05)
+const enterTags = (page, tags) => enterTagsLib(page, tags, { log, warn });
 
 // ---------------------------------------------------------------- 예약발행
 /**

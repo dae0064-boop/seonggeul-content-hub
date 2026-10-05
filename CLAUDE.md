@@ -11,16 +11,16 @@ CLAUDE.md          ← 이 문서. 저장소 운영 + 생활정보 원고 실무
 content/posts/     원고. <날짜>-<슬러그>.md (정본) + .json (스크립트 입력)
 content/tistory/   티스토리 원고 (네이버와 다른 키워드·제목). .md (정본) + .json·.html (생성물)
 content/calendar/  발행 캘린더 아티팩트 소스, 키워드 목록
-content/board/     원고 작업실 아티팩트 소스 (예약발행을 마친 글은 비우고 archive/ 에 남긴다)
+content/board/     원고 작업실 아티팩트 소스
+content/archive/published.tsv  발행이 끝나 지운 원고 목록 (날짜·채널·슬러그·메인 키워드·제목). 같은 키워드를 다시 쓰지 않게
 content/threads/   스레드 말투 규칙(voice.md) + 글감(topics.txt)
 content/threads/insurance/  스레드 보험 심의글 — 규칙(rules.md)·글감·10편 묶음(sets/)
 scripts/           발행·검수 자동화(.mjs) + 워크스페이스 동기화 도구(.py)
 scripts/threads/   스레드 자동 발행·댓글 답변
 routines/          클라우드 자동 작업(Routine) 지시문 정본. 지시를 바꿀 땐 이 파일을 고친다
 .github/workflows/ 스레드 자동화 스케줄 + PR 검사 (GitHub Actions)
-launchers/         윈도우 더블클릭 실행기
+launchers/         윈도우 더블클릭 실행기 5개 (READ-ME-FIRST.txt). 부품은 launchers/tools/
 standards/         운영 기준 문서
-work/              2026-08 작업물 아카이브 (원고·카드뉴스). 과거 기록이며 갱신하지 않는다
 docs/SETUP.md      새 컴퓨터 설치 가이드
 docs/THREADS.md    스레드 자동화 설치·운영 가이드
 docs/TISTORY.md    티스토리 자동화 — 원고 형식·검사 기준·처음 켜는 순서
@@ -28,6 +28,11 @@ docs/OPEN-ISSUES.md 아직 정하지 못한 것들. 규칙을 손대기 전에 �
 docs/STATUS.md     진행 상황. 작업을 시작할 때 먼저 읽고, 끝낼 때 갱신한다
 content/calendar/title-keywords/  제목용 키워드 조회 결과 (검색량). 제목·키워드를 정할 때 본다
 ```
+
+**발행이 끝난 지난 원고는 지운다** (2026-10-05 사용자 지시 — "이미 발행했고 지난 것들은 삭제", 실행기도 정리).
+아침 확인 Routine 이 `node scripts/clean-published.mjs` 로 오늘보다 앞 날짜의 `content/posts`·`content/tistory`·`content/image-plans`
+파일을 지우고 `content/archive/published.tsv` 에 한 줄씩 남긴다(본문은 git 기록에 있다). PC 의 지난 그림·화면 기록은 `launchers/tools/cleanup.ps1`
+(아침 실행 끝)이 지운다. 이듬해 재발행할 글은 git 기록에서 되살린다.
 
 원고는 항상 **`.md` 와 `.json` 한 쌍**으로 둔다. `.md` 가 정본이고, `.json` 은 거기서 생성한
 스크립트 입력이다. `.json` 은 직접 고치지 않는다. `.md` 를 고친 뒤 변환한다:
@@ -64,6 +69,8 @@ Google Drive 워크스페이스(`ClaudeWorkspace/`)는 **규칙 메모리 동기
   사람이 꼭 해야 하는 것은 셋뿐이다 — 아침에 사무실 PC 든 노트북이든 하나를 켜고 윈도우에 로그인하기,
   자동화용 크롬의 네이버 로그인 유지, 처음 한 번 작업 스케줄러 등록.
   (2026-10-02 사용자: 사무실 PC 는 밤에 끈다. 아침에 둘 중 하나를 켠다.)
+  **2026-10-05 사용자: "고정 시각보다 일찍 일어났을 때 바로"** — PC 를 켜거나(로그인)·잠금을 풀거나·절전에서 깨우면 작업 스케줄러 `SeonggeulMorningStart`
+  (`launchers/tools/on-wake.ps1`)가 05~15시, 오늘 남은 글(run-locks 에 .done 없음)이 있을 때만 바로 `auto-day.cmd` 를 띄운다. 9시 고정 실행은 안전망으로 남긴다.
   **2026-10-05 사용자 요청 "최소한으로 움직이게"**: 밤에 끄지 않고 **절전**으로 두면 작업 스케줄러가 09:00 에 깨워 돌린다(켜기·로그인 불필요).
   절전 깨우기 타이머는 `auto-setup.ps1`·`ensure-retry.ps1` 이 켠다. 새 Claude 대화는 SessionStart 훅(`scripts/session-start.sh`)이
   main 을 합치고 STATUS 를 보여 준다 — 사용자가 "시작"·"이어서"라고만 해도 STATUS 의 남은 일을 묻지 말고 바로 한다. 작업 스케줄러는 꺼져 있다 켜지면 놓친 실행을 바로 돌리고,
@@ -241,7 +248,7 @@ PC 에서 할 일을 안내할 때는 **항상 이렇게** 쓴다:
   사용자에게 키워드 조회를 돌려 달라고 하지 않는다.
   **검색량은 PC 가 매일 아침 저절로 조회한다** (2026-10-03 사용자 승인 — 짐작으로 고른 "고속도로 휴게소 음식"이 월 50 이었다).
   밤 원고 Routine 이 앞으로 2~3일치 글감 후보를 `content/calendar/keyword-queue.txt` 에 넣으면, 다음 날 아침
-  `launchers/keyword-volume.ps1`(auto-day 안)이 `title-keywords.mjs` 로 월간 검색량·연관 키워드를 조회해
+  `launchers/tools/keyword-volume.ps1`(auto-day 안)이 `title-keywords.mjs` 로 월간 검색량·연관 키워드를 조회해
   Drive `ClaudeWorkspace/keyword-volume/<날짜>/` 로 올린다. Routine 은 그 결과를 `content/calendar/title-keywords/` 에 옮기고 메인 키워드를 고른다.
   **메인 키워드는 월 1,000~10,000 을 우선, 100 미만은 쓰지 않는다** — 2026-10-06 원고부터 검사기가 막는다(자료가 없으면 알림만).
   30,000 이 넘는 큰 말은 서브로만 쓴다.
@@ -490,10 +497,10 @@ Drive 를 못 찾으면 겹침을 막을 수 없다고 알리고 그대로 진�
 
 ### 실행 결과 받기
 
-클라우드 세션은 사용자 PC 의 `dumps/`·`content/images/` 를 볼 수 없다. `launchers/draft-day.cmd` 가 끝나면
-`launchers/share-run.ps1` 이 실행 기록(.log)과 이번 실행의 화면 스크린샷·이미지(작게 줄인 JPG)를
+클라우드 세션은 사용자 PC 의 `dumps/`·`content/images/` 를 볼 수 없다. 아침 실행(`launchers/auto-day.cmd`)이 끝나면
+`launchers/tools/share-run.ps1` 이 실행 기록(.log)과 이번 실행의 화면 스크린샷·이미지(작게 줄인 JPG)를
 **Google Drive `내 드라이브/ClaudeWorkspace/run-logs/<날짜_시각>/`** 에 올린다. Claude 는 Drive 커넥터로 읽는다.
-수동으로는 `launchers/share-run.cmd`. **GitHub 에는 올리지 않는다** — 저장소가 공개이고 스크린샷에
+**GitHub 에는 올리지 않는다** — 저장소가 공개이고 스크린샷에
 네이버 편집 화면이 찍힌다. HTML 덤프와 `.env` 는 올리지 않는다.
 
 ## 티스토리 자동화

@@ -33,10 +33,27 @@
 - 사용자가 알려 준 순서: 왼쪽 "업무" → "광고심의" → "광고등록" → 운영자 "접수자와 동일" 체크 / 광고제목 `스레드 N편` / 신청구분 신규 /
   광고구분 업무광고 / 광고방법 SNS / 파일추가 `스레드 N편.docx`(Drive `ClaudeWorkspace/보험글/`) → 위쪽 "심의점검표" → 모두 "해당없음" → "등록하기" → 기본내용 맨 아래 "등록".
 - 클라우드에서는 GOMS 가 막혀 있다(403). `scripts/goms-ad.mjs` 를 PC 자동화 크롬(9222)에서 돌린다. GOMS 로그인은 사용자가 그 크롬에서 직접(비밀번호를 받거나 저장하지 않는다).
-- **지금은 시험만**: `launchers/goms-test.cmd` 더블클릭 → 11편 칸을 채우고 점검표까지 고른 뒤 멈춤("등록하기"·"등록" 안 누름) →
+- **지금은 시험만**: `launchers/goms-test.cmd` 더블클릭(부품은 `launchers/tools/goms-test.ps1`) → 11편 칸을 채우고 점검표까지 고른 뒤 멈춤("등록하기"·"등록" 안 누름) →
   캡처·칸 구조(`structure-*.txt`, HTML·입력값은 남기지 않음)를 Drive `run-logs/goms-test-<날짜_시각>-<PC>/` 로. 실제 화면은 아직 못 봤다 — 첫 시험 결과로 칸 찾는 법을 맞춘다.
 - 실제 등록은 `--submit --from 11 --to 50 --done-dir <Drive 폴더>` 로 이미 들어 있지만, 시험이 통과하고 사용자가 확인한 뒤에 켠다. 모의 화면에서 시험·등록 둘 다 확인.
 - 사용자에게 회사(준법 담당)에 자동 접속 허용 여부를 확인해 달라고 했다 — 답을 받으면 여기 적는다.
+
+### 10/5 사용자: "고정 시각보다 일찍 일어났을 때 바로 작업"
+- 작업 스케줄러 `SeonggeulMorningStart` 추가: 로그인·잠금 풀기·절전 깨기 때 `tools/on-wake.ps1` → 05~15시이고 오늘 남은 글이 있으면 바로 `auto-day.cmd`.
+  잠금을 여러 번 풀어도 60분에 한 번, 이미 돌고 있으면 안 띄운다. 9시 고정 실행은 아무도 PC 를 안 열었을 때의 안전망.
+  등록은 auto-setup.ps1 / ensure-retry.ps1(아침 실행 끝)이 한다 — `auto-setup.cmd` 를 다시 눌러도 기존 시각(노트북 09:15)을 유지한다.
+
+### 10/5 정리 (사용자: "안 쓰는 cmd 삭제, 발행이 끝난 지난 원고·이미지 관련은 앞으로 삭제, launchers 가 복잡하다")
+- **launchers 에 더블클릭 실행기 5개만**: auto-day(오늘 예약 — 아침 자동/수동), reserve-tomorrow, chrome-login(로그인 확인 + 결과 Drive 업로드, login-test 를 합침),
+  sync, auto-setup. 부품 .ps1 과 새 PC 연결용(connect·openai-key·status·update)은 `launchers/tools/`. READ-ME-FIRST.txt 에 설명.
+  지움: draft-day·tistory-day·tistory-test·tistory-reserve·share-run·insurance-word·login-test·image·flu-test .cmd (image·flu-test 는 .ps1 도).
+  tistory-reserve 의 '임시저장만 된 글 다시 예약'은 auto-day 의 tistory 단계에 `-RetryDrafts` 로 넣음.
+  auto-day.cmd 는 `git pull` 줄까지의 바이트 길이를 예전과 같게 맞췄다 — 실행 중 pull 로 파일이 바뀌어도 cmd 가 같은 위치부터 이어 읽기 때문. 앞부분을 고칠 땐 길이를 지킨다.
+  PowerShell 파서로 tools/*.ps1 14개 문법 확인 (클라우드). 실제 PC 실행은 내일 아침이 처음.
+- **지난 원고 삭제**: `scripts/clean-published.mjs` — 오늘보다 앞 날짜 content/posts·tistory·image-plans 를 지우고 `content/archive/published.tsv` 에 남김(9/11~10/4, 32편).
+  `lint-tistory` 는 이 목록의 네이버 메인 키워드와도 겹침을 본다. 아침 확인 Routine 이 매일 돌린다(`routines/morning-check.md` 5-1).
+  PC 의 지난 그림(content/images)·3일 지난 dumps·14일 지난 Drive run-logs/run-locks 는 `tools/cleanup.ps1`(auto-day 끝).
+  `work/`(2026-08 아카이브)·`content/board/archive/`·`content/images/cards.html` 도 지움. 모두 git 기록에서 되살릴 수 있다.
 
 ### 10/5 사용자 요청: "클로드를 실행하면 바로 작업", "최소한으로 움직이게"
 - 새 Claude 대화가 열리면 `scripts/session-start.sh`(SessionStart 훅)가 main 을 합치고 npm install, STATUS 앞부분을 보여 준다.
@@ -56,6 +73,14 @@
 - **10:52 세 번째 시험 ✅ 성공**: 네이버 글쓰기 화면 열림 + 티스토리는 버튼 → 계정 선택만으로 비밀번호 없이 관리 화면까지 다시 로그인됨 (노트북, Drive `run-logs/login-test-2026-10-05_1052-*`).
   같은 방식이 `publish-tistory.mjs` 에도 들어 있어 아침 예약 중 티스토리 로그인이 풀려도 스스로 다시 들어간다.
   노트북은 집·사무실 인터넷이 바뀌므로 네이버 로그인 때 **IP보안 OFF** 로 안내. 비밀번호 자동 입력은 하지 않는다(보안·네이버 자동입력 방지).
+
+### 10/5 티스토리 태그 칸 고침 (사용자 요청)
+- 10/5 아침 5편 모두 태그 실패. 로그: 1차는 선택자가 보이는 칸을 찾았는데 문서 검색 후보 0개·커서 확인 실패, 본문 뒤 2차는 칸이 안 보임.
+  → 태그 칸이 그림자 영역(shadow DOM) 안에 있다고 판단 (Playwright 선택자만 그 안에 들어간다).
+- `scripts/lib/tistory-tags.mjs` 로 옮겨 고침: 화면 맨 아래로 내려 칸을 그리게 하고, 모든 틀(iframe)·그림자 영역에서 찾고,
+  커서 확인을 그 칸이 속한 영역 기준으로 한다. '태그' 단추에 접혀 있으면 펼친다. 실패하면 그림자·틀까지 후보를 로그에 남긴다.
+  Enter 는 커서가 태그 칸에 있을 때만(그대로). 가짜 화면 4가지(그림자·틀·아래로 내려야 생김·접힘)에서 3/3 들어감, 발행 단추 안 눌림.
+- 실제 화면 확인은 내일 아침 실행 로그의 "태그 칸:"·"태그 N/15개" 줄로 본다. 또 실패하면 그 줄의 후보 목록으로 선택자를 고친다.
 
 ### 10/5 (월) 10:47 아침 확인 — 통계 판단 + 지난주 정리
 - 조회수: 지난주(9/28~10/4) 486 — 그 전 주(9/21~27) 257 의 약 1.9배. 날마다 45 → 80 → 110 → 148 로 오름.
