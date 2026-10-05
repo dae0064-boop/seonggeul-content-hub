@@ -19,6 +19,7 @@
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
+import { tistoryRelogin } from './lib/tistory-login.mjs';
 
 const argv = process.argv.slice(2);
 const openLogin = argv.includes('--open-login');
@@ -66,7 +67,13 @@ if (shots) {
     await page.goto(`https://${blog}.tistory.com/manage`, { waitUntil: 'domcontentloaded', timeout: 30000 });
     await page.waitForTimeout(2000);
     if (shots) await page.screenshot({ path: path.join(shots, 'tistory-manage.png') }).catch(() => {});
-    if (/auth\/login|accounts\.kakao\.com|\/login/.test(page.url())) { console.log('⚠ 티스토리(카카오) 로그인이 풀려 있어요'); need.push('tistory'); }
+    if (/auth\/login|accounts\.kakao\.com|\/login/.test(page.url())) {
+      // 카카오 로그인이 살아 있으면 "카카오계정으로 로그인" 버튼 하나로 돌아온다 (비밀번호는 넣지 않는다)
+      const re = await tistoryRelogin(page, `https://${blog}.tistory.com/manage`, (m) => console.log(`   ${m}`));
+      if (shots) await page.screenshot({ path: path.join(shots, 'tistory-after-relogin.png') }).catch(() => {});
+      if (re.ok) console.log(`✅ 티스토리 다시 로그인됨 — 버튼만 눌러 들어감 (${page.url()})`);
+      else { console.log(`⚠ 티스토리(카카오) 로그인이 풀려 있어요 — ${re.why}`); need.push('tistory'); }
+    }
     else console.log(`✅ 티스토리 로그인 유지됨 (${page.url()})`);
   } catch (e) { failed = true; console.log(`⚠ 티스토리 확인 실패: ${e.message.split('\n')[0]}`); }
   await page.close().catch(() => {});

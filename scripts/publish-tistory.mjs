@@ -30,6 +30,7 @@
  */
 
 import { chromium } from 'playwright';
+import { tistoryRelogin } from './lib/tistory-login.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -536,7 +537,9 @@ async function main() {
     await page.goto(args.url || `https://${args.blog}.tistory.com/manage/newpost/?type=post`, { waitUntil: 'domcontentloaded' });
     await sleep(args.url ? 500 : 3000);
     if (!args.url && /auth\/login|accounts\.kakao\.com|\/login/.test(page.url())) {
-      throw new Error(`로그인 화면으로 갔습니다. 9222 크롬 창에서 티스토리(카카오)에 로그인돼 있는지 확인하세요.\n현재 URL: ${page.url()}`);
+      // 2026-10-05: 카카오 로그인이 살아 있으면 버튼 하나로 돌아온다 — 사람을 부르기 전에 먼저 해 본다
+      const re = await tistoryRelogin(page, `https://${args.blog}.tistory.com/manage/newpost/?type=post`, log);
+      if (!re.ok) throw new Error(`로그인 화면으로 갔습니다. 9222 크롬 창에서 티스토리(카카오)에 로그인돼 있는지 확인하세요.\n${re.why}\n현재 URL: ${page.url()}`);
     }
     log(`URL: ${page.url()}`);
     await dump(page, 'opened');
