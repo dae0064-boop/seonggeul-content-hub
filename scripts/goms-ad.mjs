@@ -131,7 +131,11 @@ async function clickInForm(texts, { timeout = 8000, endsWith = false } = {}) {
       for (const loc of [FORM.root.getByRole('button', { name, exact: !endsWith }), FORM.root.getByRole('tab', { name, exact: !endsWith }), FORM.root.getByText(name, { exact: !endsWith })]) {
         const n = await loc.count().catch(() => 0);
         for (let i = 0; i < n; i++) {
-          if (await loc.nth(i).isVisible().catch(() => false)) { await loc.nth(i).click(); log(`  클릭(신청서): ${text}`); return; }
+          if (await loc.nth(i).isVisible().catch(() => false)) {
+            // GOMS 창의 자체 스크롤바 덮개가 마우스 클릭을 가로챌 때가 있다(14:30) — 그때는 페이지 안에서 직접 누른다
+            await loc.nth(i).click({ timeout: 3000 }).catch(() => loc.nth(i).evaluate((e) => e.click()));
+            log(`  클릭(신청서): ${text}`); return;
+          }
         }
       }
     }
@@ -325,30 +329,67 @@ async function checklist(page) {
     if (sc && sc !== document.body) { sc.scrollTop = 0; sc.dispatchEvent(new Event('scroll')); }
   });
 
-  const seen = new Map(); // 줄 번호(1-1, 2-3 …) → 체크됨
-  for (let round = 0; round < 60; round++) {
+  // GOMS 신청서 창은 자체 스크롤바(div.scroll-bar)를 쓴다 — 스크롤 값을 바꾸는 방식은 안 먹혔다(14:30 시도, 16줄에서 멈춤).
+  // 사람처럼 표 위에 마우스를 올리고 휠을 굴려 내린다. 새 줄이 두 번 연속 안 나오면 맨 아래로 본다.
+  // 표에서 지금 그려진 줄들 가운데 한 줄 위에 마우스를 두고, 보이는 줄 높이의 절반만큼만 굴린다(한 번에 많이 굴리면 줄을 건너뛴다)
+  const tableBox = async () => FORM.root.evaluate((form) => {
+    const head = [...form.querySelectorAll('th')].find((e) => (e.innerText || '').replace(/\s/g, '') === '해당없음');
+    const t = head?.closest('table'); if (!t) return null;
+    const rows = [...t.querySelectorAll('tr')].filter((tr) => !tr.querySelector('th') && tr.querySelector('input[type=checkbox]'));
+    if (!rows.length) return null;
+    const inView = (r) => r.top >= 0 && r.bottom <= window.innerHeight;
+    if (!inView(rows[0].getBoundingClientRect())) rows[0].scrollIntoView({ block: 'center' }); // 표가 화면 안에 들어오게
+    const vr = rows.map((r) => r.getBoundingClientRect()).filter((r) => r.height > 0 && r.bottom > 0 && r.top < window.innerHeight);
+    if (!vr.length) return null;
+    const mid = vr[Math.floor(vr.length / 2)];
+    const span = vr[vr.length - 1].bottom - vr[0].top;
+    return { x: mid.left + 40, y: mid.top + mid.height / 2, step: Math.max(40, Math.floor(span * 0.5)) };
+  });
+  const wheel = async () => {
+    const b = await tableBox().catch(() => null);
+    if (!b) return;
+    await page.mouse.move(b.x, b.y);
+    await page.mouse.wheel(0, b.step);
+    await sleep(250);
+  };
+  const goTop = async () => {
+    const b = await tableBox().catch(() => null);
+    if (b) { await page.mouse.move(b.x, b.y); for (let k = 0; k < 40; k++) await page.mouse.wheel(0, -600); }
+    await FORM.root.evaluate((form) => form.querySelectorAll('*').forEach((e) => { if (e.scrollTop) e.scrollTop = 0; })).catch(() => {});
+  };
+
+  const seen = new Map(); // 줄 번호(1-1, 2-3 …)
+  let still = 0;
+  for (let round = 0; round < 200 && still < 3; round++) {
     const r = await pass(true);
     if (r.error) throw new Stop('심의점검표에서 "해당없음" 열을 찾지 못했어요');
+    let fresh = 0;
     for (const row of r.rows) {
       if (row.others) throw new Stop(`심의점검표 ${row.key} 줄에 "해당없음" 말고 다른 칸이 체크돼 있어 멈췄어요`);
+      if (!seen.has(row.key)) fresh += 1;
       seen.set(row.key, true);
     }
+    still = fresh ? 0 : still + 1;
+    await wheel();
     await sleep(300);
-    if (r.atEnd || !(await scrollDown())) break;
-    await sleep(500);
   }
-  // 처음부터 끝까지 다시 훑어 안 된 줄이 없는지 확인
-  await scrollTop(); await sleep(500);
-  const missed = [];
-  for (let round = 0; round < 60; round++) {
+  log(`  심의점검표: 스크롤하며 ${seen.size}줄 체크`);
+  // 맨 위로 돌아가 끝까지 다시 훑어 빠진 줄이 없는지 확인
+  await goTop(); await sleep(600);
+  const missed = new Set(); const seen2 = new Set();
+  still = 0;
+  for (let round = 0; round < 200 && still < 3; round++) {
     const r = await pass(false);
-    for (const row of r.rows) { if (!row.on || row.others) missed.push(row.key); seen.set(row.key, true); }
-    if (r.atEnd || !(await scrollDown())) break;
-    await sleep(500);
+    let fresh = 0;
+    for (const row of r.rows) { if (!row.on || row.others) missed.add(row.key); else missed.delete(row.key); if (!seen2.has(row.key)) fresh += 1; seen2.add(row.key); }
+    still = fresh ? 0 : still + 1;
+    await wheel();
+    await sleep(300);
   }
+  for (const k of seen2) seen.set(k, true);
   await shot(page, 'checklist-filled');
   if (!seen.size) throw new Stop('심의점검표에서 "해당없음" 칸을 찾지 못했어요');
-  if (missed.length) throw new Stop(`심의점검표 ${missed.join(', ')} 줄이 체크되지 않아 멈췄어요`);
+  if (missed.size) throw new Stop(`심의점검표 ${[...missed].join(', ')} 줄이 체크되지 않아 멈췄어요`);
   log(`  심의점검표: 맨 아래까지 ${seen.size}줄 모두 "해당없음" ✓`);
 }
 
@@ -381,6 +422,32 @@ async function gotoForm(page) {
   await shot(page, 'form-open');
   await structure(page, 'form');
   return true;
+}
+
+/** GOMS 자체 알림창(브라우저 알림이 아닌 화면 속 창)을 읽고 "확인"/"예"를 누른다. 읽은 글을 돌려준다. */
+async function gomsMessages(page) {
+  const texts = [];
+  for (let k = 0; k < 3; k++) {
+    const found = await Promise.all(page.frames().map((f) => f.evaluate(() => {
+      const vis = (e) => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
+      const form = document.querySelector('[data-goms-form]');
+      const cands = [...document.querySelectorAll('[class*=modal], [class*=dialog], [class*=alert], [class*=confirm], [role=dialog]')]
+        .filter((m) => vis(m) && !(form && (m.contains(form) || form.contains(m))))
+        .filter((m) => [...m.querySelectorAll('button')].some((b) => /^(확인|예|OK)$/i.test((b.innerText || '').trim())));
+      const m = cands[cands.length - 1];
+      if (!m) return null;
+      const text = (m.innerText || '').replace(/\s+/g, ' ').replace(/(확인|취소|예|아니오)/g, ' ').trim().slice(0, 200);
+      const btn = [...m.querySelectorAll('button')].find((b) => /^(확인|예|OK)$/i.test((b.innerText || '').trim()));
+      btn.click();
+      return text;
+    }).catch(() => null)));
+    const t = found.find(Boolean);
+    if (!t) break;
+    texts.push(t);
+    log(`  GOMS 알림: ${t}`);
+    await sleep(800);
+  }
+  return texts;
 }
 
 async function formOpen() {
@@ -439,7 +506,10 @@ async function one(page, ctx, n) {
     return 'test';
   }
   await clickInForm(['등록하기', '등록']);
-  await sleep(3000);
+  await sleep(1500);
+  await gomsMessages(page);
+  await sleep(1500);
+  await gomsMessages(page);
   await shot(page, 'after-register-1');
   // GOMS 는 빠진 점검 줄을 빨간 줄(notice-emergency)로 표시하고 등록하지 않는다
   const red = await FORM.root.evaluate((f) => [...f.querySelectorAll('tr.notice-emergency')].map((tr) => (tr.children[1]?.innerText || '').trim()).filter(Boolean)).catch(() => []);
@@ -449,7 +519,10 @@ async function one(page, ctx, n) {
     await sleep(1000);
     await verifyAll(page, title);
     await clickInForm(['등록']);
-    await sleep(4000);
+    await sleep(1500);
+    await gomsMessages(page);
+    await sleep(2500);
+    await gomsMessages(page);
     await shot(page, 'after-register-2');
   }
   if (await formOpen()) throw new Stop('"등록"을 눌렀는데 신청서가 닫히지 않았어요 — GOMS 목록에서 등록됐는지 확인이 필요해요');
