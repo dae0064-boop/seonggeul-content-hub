@@ -437,28 +437,40 @@ async function gotoForm(page) {
   return true;
 }
 
-/** GOMS 자체 알림창(브라우저 알림이 아닌 화면 속 창)을 읽고 "확인"/"예"를 누른다. 읽은 글을 돌려준다. */
+/** GOMS 자체 알림창("알림 — 광고심의를 등록 하시겠습니까? [확인][취소]")을 읽고 "확인"을 누른다. 읽은 글을 돌려준다.
+ *  알림창은 신청서 영역 안에 그려지기도 한다(2026-10-05 14:45 — 신청서 밖만 찾다가 놓쳤다). 그래서 위치와 상관없이
+ *  화면 맨 위에 보이는 "확인"/"예" 버튼을 찾는다. 신청서 자체에는 "확인" 버튼이 없다. */
 async function gomsMessages(page) {
   const texts = [];
-  for (let k = 0; k < 3; k++) {
-    const found = await Promise.all(page.frames().map((f) => f.evaluate(() => {
-      const vis = (e) => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
-      const form = document.querySelector('[data-goms-form]');
-      const cands = [...document.querySelectorAll('[class*=modal], [class*=dialog], [class*=alert], [class*=confirm], [role=dialog]')]
-        .filter((m) => vis(m) && !(form && (m.contains(form) || form.contains(m))))
-        .filter((m) => [...m.querySelectorAll('button')].some((b) => /^(확인|예|OK)$/i.test((b.innerText || '').trim())));
-      const m = cands[cands.length - 1];
-      if (!m) return null;
-      const text = (m.innerText || '').replace(/\s+/g, ' ').replace(/(확인|취소|예|아니오)/g, ' ').trim().slice(0, 200);
-      const btn = [...m.querySelectorAll('button')].find((b) => /^(확인|예|OK)$/i.test((b.innerText || '').trim()));
-      btn.click();
-      return text;
-    }).catch(() => null)));
-    const t = found.find(Boolean);
-    if (!t) break;
-    texts.push(t);
-    log(`  GOMS 알림: ${t}`);
-    await sleep(800);
+  for (let k = 0; k < 4; k++) {
+    let hit = null;
+    for (const f of page.frames()) {
+      hit = await f.evaluate(() => {
+        const vis = (e) => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
+        const btns = [...document.querySelectorAll('button, a, [role=button]')]
+          .filter((b) => vis(b) && /^(확인|예|OK)$/i.test((b.innerText || '').trim()));
+        for (const b of btns.reverse()) {
+          const r = b.getBoundingClientRect();
+          const top = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+          if (!top || !(b === top || b.contains(top))) continue; // 다른 창에 가려진 버튼은 건너뛴다
+          let box = b;
+          for (let i = 0; i < 6 && box.parentElement; i++) { box = box.parentElement; if ((box.innerText || '').replace(/\s/g, '').length > 6) break; }
+          for (let i = 0; i < 3 && box.parentElement && (box.innerText || '').length < 15; i++) box = box.parentElement;
+          const text = (box.innerText || '').replace(/\s+/g, ' ').replace(/(^|\s)(확인|취소|예|아니오|OK)(?=\s|$)/g, ' ').replace(/\s+/g, ' ').replace(/^알림\s*/, '').replace(/(확인|취소|닫기)+\s*$/, '').trim().slice(0, 200);
+          return { text, x: r.left + r.width / 2, y: r.top + r.height / 2 };
+        }
+        return null;
+      }).catch(() => null);
+      if (hit) {
+        // 사람처럼 마우스로 누른다 (안 되면 페이지 안에서)
+        await page.mouse.click(hit.x, hit.y).catch(() => {});
+        break;
+      }
+    }
+    if (!hit) break;
+    texts.push(hit.text);
+    log(`  GOMS 알림: ${hit.text || '(문구 없음)'} → 확인`);
+    await sleep(1200);
   }
   return texts;
 }
@@ -471,6 +483,7 @@ async function formOpen() {
 
 /** 광고심의 목록에 이 제목이 있는지 ("조회"를 눌러 새로 읽는다). 같은 편을 두 번 등록하지 않으려고 쓴다. */
 async function listHas(page, title) {
+  await gomsMessages(page); // 남아 있는 완료 알림을 먼저 닫는다
   await clickText(page, ['조회'], { timeout: 5000 }).catch(() => {});
   await sleep(2500);
   const found = await Promise.all(page.frames().map((f) => f.evaluate((t) => [...document.querySelectorAll('td')]
@@ -520,14 +533,19 @@ async function one(page, ctx, n) {
   }
   await clickInForm(['등록하기', '등록']);
   await sleep(1500);
-  await gomsMessages(page);
-  await sleep(1500);
-  await gomsMessages(page);
+  const msgs = await gomsMessages(page); // "광고심의를 등록 하시겠습니까?" → 확인, 이어서 완료 알림 → 확인
+  await sleep(2000);
+  msgs.push(...await gomsMessages(page));
+  const bad = msgs.find((t) => /(필수|체크|선택|입력|누락|확인해|실패|오류)/.test(t) && !/하시겠습니까/.test(t));
+  if (bad && await formOpen()) throw new Stop(`GOMS 가 "${bad}" 라고 알려 등록되지 않았어요`);
   await shot(page, 'after-register-1');
   // GOMS 는 빠진 점검 줄을 빨간 줄(notice-emergency)로 표시하고 등록하지 않는다
   const red = await FORM.root.evaluate((f) => [...f.querySelectorAll('tr.notice-emergency')].map((tr) => (tr.children[1]?.innerText || '').trim()).filter(Boolean)).catch(() => []);
   if (red.length && await formOpen()) throw new Stop(`GOMS 가 점검표 ${red.join(', ')} 줄이 빠졌다고 표시해 등록되지 않았어요`);
-  if (await formOpen()) { // 점검표 저장만 되고 신청서가 남아 있으면 기본내용 맨 아래 "등록"까지
+  // "등록 하시겠습니까?"에 이미 확인을 눌렀으면 다시 등록하지 않는다 (두 번 등록 막기)
+  const confirmed = msgs.some((t) => /하시겠습니까/.test(t));
+  if (confirmed && await formOpen()) throw new Stop('등록 확인을 눌렀는데 신청서가 그대로예요 — GOMS 목록에서 등록됐는지 확인이 필요해요');
+  if (!confirmed && await formOpen()) { // 아무 알림 없이 신청서가 남아 있으면 기본내용 맨 아래 "등록"까지
     await clickInForm(['기본내용', '기본 내용']);
     await sleep(1000);
     await verifyAll(page, title);
