@@ -150,7 +150,8 @@ async function row(page, key, labels) {
       let box = c;
       for (let up = 0; up < 5 && box && box !== form; up++) {
         box = box.parentElement;
-        const ctrls = [...box.querySelectorAll(CTRL)].filter((x) => !c.contains(x));
+        // 읽기 전용 칸(접수자 정보 등)은 빼고 본다 — 11:44 시험에서 광고제목 대신 못 쓰는 칸에 쓰려다 멈췄다
+        const ctrls = [...box.querySelectorAll(CTRL)].filter((x) => !c.contains(x) && !x.readOnly && !x.disabled && (x.type === 'file' || vis(x) || x.matches('span.radio, .check-box')));
         if (!ctrls.length) continue;
         form.querySelectorAll(`[data-goms="${key}"]`).forEach((x) => x.removeAttribute('data-goms'));
         box.setAttribute('data-goms', key);
@@ -171,8 +172,10 @@ const same = (a, b) => (a || '').replace(/\s/g, '').toLowerCase() === (b || '').
 
 async function fillText(page, key, labels, value) {
   const r = await row(page, key, labels);
-  const box = r.locator('input:not([type=hidden]):not([type=checkbox]):not([type=radio]):not([type=file]), textarea').first();
-  await box.fill(value);
+  const box = r.locator(`[data-goms-ctrl="${key}"]`);
+  if (!(await box.evaluate((x) => /^(INPUT|TEXTAREA)$/.test(x.tagName) && !/^(checkbox|radio|file|hidden)$/.test(x.type)).catch(() => false)))
+    throw new Stop(`${labels[0]} 칸 옆에서 글 쓰는 칸을 찾지 못했어요`);
+  await box.fill(value, { timeout: 5000 }).catch((e) => { throw new Stop(`${labels[0]} 칸에 글을 넣지 못했어요 (${e.message.split('\n')[0]})`); });
   const got = await box.inputValue();
   if (got !== value) throw new Stop(`${labels[0]} 칸에 "${value}" 를 넣었는데 "${got}" 로 읽혀요`);
   log(`  ${labels[0]}: ${value} ✓`);
@@ -330,6 +333,21 @@ async function gotoForm(page) {
   return true;
 }
 
+/** 등록 직전 마지막 확인 — 하나라도 다르면 등록을 누르지 않는다. */
+async function verifyAll(page, title) {
+  const t = await (await row(page, 'title', ['광고제목', '광고 제목'])).locator('[data-goms-ctrl="title"]').inputValue();
+  if (t !== title) throw new Stop(`등록 직전 광고제목이 "${t}" 로 되어 있어 멈췄어요`);
+  for (const [key, labels, want] of [['kind', ['신청구분'], '신규'], ['type', ['광고구분'], '업무광고']]) {
+    const v = await (await row(page, key, labels)).locator(`[data-goms-ctrl="${key}"]`).evaluate((x) => x.options[x.selectedIndex]?.text || '');
+    if (!same(v, want)) throw new Stop(`등록 직전 ${labels[0]}이 "${v}" 로 되어 있어 멈췄어요`);
+  }
+  for (const [key, labels, want] of [['how', ['광고방법'], 'SNS'], ['gift', ['경품여부'], '아니오']]) {
+    if (!(await markPick(await row(page, key, labels), want, 'data-goms-pick'))) throw new Stop(`등록 직전 ${labels[0]} "${want}" 이 골라져 있지 않아 멈췄어요`);
+  }
+  if (!(await FORM.root.evaluate((f, n) => f.innerText.includes(n), `${title}.docx`))) throw new Stop('등록 직전 첨부 파일이 보이지 않아 멈췄어요');
+  log('  등록 직전 확인: 제목·신규·업무광고·SNS·경품 아니오·파일 ✓');
+}
+
 async function one(page, ctx, n) {
   const title = `스레드 ${n}편`;
   const file = path.join(fileDir, `${title}.docx`);
@@ -350,6 +368,7 @@ async function one(page, ctx, n) {
     await clickInForm(['기본내용', '기본 내용'], { timeout: 3000 }).catch(() => {});
     await sleep(1000);
     await shot(page, 'form-before-register');
+    await verifyAll(page, title);
     log('  시험이라 "등록하기"·"등록"은 누르지 않고 멈춰요.');
     return 'test';
   }
@@ -359,8 +378,7 @@ async function one(page, ctx, n) {
   await clickInForm(['기본내용', '기본 내용']); // 점검표는 신청서 안의 탭이다 — 기본내용 탭으로 돌아가 등록
   await sleep(1000);
   // 점검표 저장 뒤에도 기본내용이 그대로인지 다시 확인하고 나서 등록한다
-  const t = await (await row(page, 'title', ['광고제목', '광고 제목'])).locator('input, textarea').first().inputValue();
-  if (t !== title) throw new Stop(`등록 직전 광고제목이 "${t}" 로 바뀌어 있어 멈췄어요`);
+  await verifyAll(page, title);
   await clickInForm(['등록']); // 신청서 안의 등록만 — 목록 화면의 "등록"은 새 신청서를 연다
   await sleep(4000);
   await shot(page, 'registered');
