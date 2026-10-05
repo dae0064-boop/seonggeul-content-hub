@@ -21,6 +21,9 @@ sync.cmd              최신 내용 받기 + 보험글 Word 저장
 auto-setup.cmd        아침 자동 실행 등록 (PC 마다 처음 한 번만)
                       노트북은 auto-setup.cmd -At 09:15
 
+goms-test.cmd         GOMS 광고심의 등록 시험 (시험 중에만 — 등록은 누르지 않아요)
+                      칸을 채운 화면을 Drive 에 올려 Claude 가 확인해요.
+
 
 tools 폴더            위 실행기가 쓰는 부품이에요. 열거나 누를 필요 없어요.
                       (새 PC 를 연결할 때 쓰는 connect.cmd·openai-key.cmd 도 여기 있어요)
