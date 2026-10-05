@@ -102,7 +102,7 @@ async function markForm(page) {
       const vis = (e) => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
       const txt = (e) => (e.innerText || '').replace(/\s/g, '');
       document.querySelectorAll('[data-goms-form]').forEach((x) => x.removeAttribute('data-goms-form'));
-      const tab = [...document.querySelectorAll('button, [role=tab], a')].find((b) => vis(b) && txt(b) === '심의점검표');
+      const tab = [...document.querySelectorAll('button, [role=tab], a')].find((b) => vis(b) && txt(b).endsWith('심의점검표'));
       if (!tab) return false;
       const hasBtn = (box, t) => [...box.querySelectorAll('button, a, [role=button]')].some((b) => vis(b) && txt(b) === t);
       let box = tab; let best = null;
@@ -121,11 +121,13 @@ async function markForm(page) {
 }
 
 /** 신청서 안에서만 글자가 정확히 같은 버튼(탭)을 누른다. */
-async function clickInForm(texts, { timeout = 8000 } = {}) {
+async function clickInForm(texts, { timeout = 8000, endsWith = false } = {}) {
   const deadline = Date.now() + timeout;
   while (Date.now() < deadline) {
     for (const text of texts) {
-      for (const loc of [FORM.root.getByRole('button', { name: text, exact: true }), FORM.root.getByRole('tab', { name: text, exact: true }), FORM.root.getByText(text, { exact: true })]) {
+      // endsWith: 광고구분을 고르면 탭 이름이 "심의점검표" → "업무광고 심의점검표" 로 바뀐다 (2026-10-05 14:03 등록 시도)
+      const name = endsWith ? new RegExp(`${text}\\s*$`) : text;
+      for (const loc of [FORM.root.getByRole('button', { name, exact: !endsWith }), FORM.root.getByRole('tab', { name, exact: !endsWith }), FORM.root.getByText(name, { exact: !endsWith })]) {
         const n = await loc.count().catch(() => 0);
         for (let i = 0; i < n; i++) {
           if (await loc.nth(i).isVisible().catch(() => false)) { await loc.nth(i).click(); log(`  클릭(신청서): ${text}`); return; }
@@ -270,7 +272,7 @@ async function attach(page, file) {
 
 /** 심의점검표 탭을 열고 모든 항목을 "해당없음"으로. */
 async function checklist(page) {
-  await clickInForm(['심의점검표', '심의 점검표']);
+  await clickInForm(['심의점검표', '심의 점검표'], { endsWith: true });
   await sleep(2000);
   await shot(page, 'checklist-open');
   await structure(page, 'checklist');
@@ -323,7 +325,7 @@ async function gotoForm(page) {
   await structure(page, 'ad-review');
   // 목록 화면 오른쪽 위 버튼 글자는 "등록" (사용자는 "광고등록"이라 부름 — 2026-10-05 첫 시험 structure-ad-review.txt)
   // 안전장치: "등록"은 신청서의 최종 등록 버튼과 글자가 같다. 신청서(심의점검표 탭)가 이미 보이면 누르지 않는다.
-  const formShown = async () => (await Promise.all(page.frames().map((f) => f.getByText('심의점검표', { exact: true }).first().isVisible().catch(() => false)))).some(Boolean);
+  const formShown = async () => (await Promise.all(page.frames().map((f) => f.getByRole('button', { name: '심의점검표' }).first().isVisible().catch(() => false)))).some(Boolean);
   if (await formShown()) throw new Stop('목록 화면에 신청서가 이미 열려 있어 "등록"을 누르지 않았어요');
   await clickText(page, ['광고등록', '광고 등록', '등록']);
   for (let i = 0; i < 20 && !(await formShown()); i++) await sleep(500);
