@@ -92,37 +92,79 @@ async function clickText(page, texts, { timeout = 10000, scopePage } = {}) {
   throw new Stop(`"${texts.join('" / "')}" 를 화면에서 찾지 못했어요`);
 }
 
-/** 칸 이름(예: 광고제목)이 있는 줄을 찾아 data-goms 표시를 붙이고 그 줄의 locator 를 돌려준다. */
-async function row(page, key, labels) {
+// 신청서는 목록 화면 위에 뜨는 창이다 (2026-10-05 실제 화면 structure-form.txt). 목록 화면에도 "등록" 버튼과
+// 신청구분·광고방법·광고구분 칸이 그대로 보이므로, 신청서 영역에 data-goms-form 표시를 붙이고 모든 동작을 그 안에서만 한다.
+let FORM = null; // { frame, root }
+
+async function markForm(page) {
   for (const f of page.frames()) {
-    const ok = await f.evaluate(({ key, labels }) => {
+    const ok = await f.evaluate(() => {
       const vis = (e) => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
-      const norm = (s) => (s || '').replace(/[\s*:：]/g, '');
-      const want = labels.map(norm);
-      const cands = [...document.querySelectorAll('th, td, label, dt, span, div, p, strong')]
-        .filter((e) => vis(e) && want.includes(norm(e.innerText)) && e.children.length <= 2);
-      // 목록 화면 검색칸에도 같은 이름(신청구분·광고방법·광고구분)이 있다 — 나중에 열린 등록 화면이 DOM 뒤쪽에 오므로 뒤에서부터 본다
-      for (const c of cands.reverse()) {
-        let box = c;
-        for (let up = 0; up < 5 && box; up++) {
-          box = box.parentElement;
-          if (!box) break;
-          const ctrls = [...box.querySelectorAll('input, select, textarea, [role=combobox], [role=radio], [role=checkbox]')].filter((x) => !c.contains(x));
-          // 목록 화면 검색칸(첫 항목이 "전체"인 목록)은 등록 칸이 아니다
-          if (ctrls.some((x) => x.tagName === 'SELECT' && /^전체$/.test((x.options[0]?.text || '').trim()))) break;
-          if (ctrls.length) { document.querySelectorAll(`[data-goms="${key}"]`).forEach((x) => x.removeAttribute('data-goms')); box.setAttribute('data-goms', key);
-            // 신청구분·광고구분처럼 한 줄에 칸이 둘이면 이름 바로 뒤의 칸을 쓴다 (2026-10-05 등록 화면 캡처)
-            const next = ctrls.find((x) => c.compareDocumentPosition(x) & Node.DOCUMENT_POSITION_FOLLOWING) || ctrls[0];
-            document.querySelectorAll(`[data-goms-ctrl="${key}"]`).forEach((x) => x.removeAttribute('data-goms-ctrl'));
-            next.setAttribute('data-goms-ctrl', key);
-            return true; }
+      const txt = (e) => (e.innerText || '').replace(/\s/g, '');
+      document.querySelectorAll('[data-goms-form]').forEach((x) => x.removeAttribute('data-goms-form'));
+      const tab = [...document.querySelectorAll('button, [role=tab], a')].find((b) => vis(b) && txt(b) === '심의점검표');
+      if (!tab) return false;
+      const hasBtn = (box, t) => [...box.querySelectorAll('button, a, [role=button]')].some((b) => vis(b) && txt(b) === t);
+      let box = tab; let best = null;
+      while (box.parentElement && box.parentElement !== document.body) {
+        box = box.parentElement;
+        if (hasBtn(box, '조회')) break; // 목록 화면까지 올라가면 멈춘다
+        if (hasBtn(box, '등록') || hasBtn(box, '닫기')) best = box;
+      }
+      if (!best) return false;
+      best.setAttribute('data-goms-form', '1');
+      return true;
+    }).catch(() => false);
+    if (ok) { FORM = { frame: f, root: f.locator('[data-goms-form="1"]') }; return true; }
+  }
+  return false;
+}
+
+/** 신청서 안에서만 글자가 정확히 같은 버튼(탭)을 누른다. */
+async function clickInForm(texts, { timeout = 8000 } = {}) {
+  const deadline = Date.now() + timeout;
+  while (Date.now() < deadline) {
+    for (const text of texts) {
+      for (const loc of [FORM.root.getByRole('button', { name: text, exact: true }), FORM.root.getByRole('tab', { name: text, exact: true }), FORM.root.getByText(text, { exact: true })]) {
+        const n = await loc.count().catch(() => 0);
+        for (let i = 0; i < n; i++) {
+          if (await loc.nth(i).isVisible().catch(() => false)) { await loc.nth(i).click(); log(`  클릭(신청서): ${text}`); return; }
         }
       }
-      return false;
-    }, { key, labels }).catch(() => false);
-    if (ok) return f.locator(`[data-goms="${key}"]`);
+    }
+    await sleep(300);
   }
-  throw new Stop(`"${labels[0]}" 칸을 찾지 못했어요`);
+  throw new Stop(`신청서에서 "${texts.join('" / "')}" 버튼을 찾지 못했어요`);
+}
+
+/** 신청서 안에서 칸 이름(예: 광고제목 *)이 있는 줄을 찾아 표시를 붙인다. 이름 바로 뒤의 입력칸에도 표시. */
+async function row(page, key, labels) {
+  const ok = await FORM.root.evaluate((form, { key, labels }) => {
+    const vis = (e) => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
+    const norm = (s) => (s || '').replace(/[\s*:：]/g, '');
+    const want = labels.map(norm);
+    const cands = [...form.querySelectorAll('th, td, label, dt, span, div, p, strong')]
+      .filter((e) => vis(e) && want.includes(norm(e.innerText)) && e.children.length <= 2);
+    const CTRL = 'input, select, textarea, [role=combobox], [role=radio], [role=checkbox], span.radio, .check-box';
+    for (const c of cands) {
+      let box = c;
+      for (let up = 0; up < 5 && box && box !== form; up++) {
+        box = box.parentElement;
+        const ctrls = [...box.querySelectorAll(CTRL)].filter((x) => !c.contains(x));
+        if (!ctrls.length) continue;
+        form.querySelectorAll(`[data-goms="${key}"]`).forEach((x) => x.removeAttribute('data-goms'));
+        box.setAttribute('data-goms', key);
+        // 신청구분·광고구분처럼 한 줄에 칸이 둘이면 이름 바로 뒤의 칸을 쓴다
+        const next = ctrls.find((x) => c.compareDocumentPosition(x) & Node.DOCUMENT_POSITION_FOLLOWING) || ctrls[0];
+        form.querySelectorAll(`[data-goms-ctrl="${key}"]`).forEach((x) => x.removeAttribute('data-goms-ctrl'));
+        next.setAttribute('data-goms-ctrl', key);
+        return true;
+      }
+    }
+    return false;
+  }, { key, labels }).catch(() => false);
+  if (!ok) throw new Stop(`신청서에서 "${labels[0]}" 칸을 찾지 못했어요`);
+  return FORM.root.locator(`[data-goms="${key}"]`);
 }
 
 const same = (a, b) => (a || '').replace(/\s/g, '').toLowerCase() === (b || '').replace(/\s/g, '').toLowerCase();
@@ -136,131 +178,128 @@ async function fillText(page, key, labels, value) {
   log(`  ${labels[0]}: ${value} ✓`);
 }
 
-/** 고르는 칸: 진짜 select → 라디오 → 꾸민 목록 순서로 시도하고, 고른 값을 다시 읽어 확인한다. */
+// GOMS 의 동그라미·네모 칸은 진짜 input 이 아니다: 안 고른 칸은 <span class="radio">, 고른 칸은 <svg> 로 그려진다
+// (2026-10-05 structure-form.txt — 기본값 "손보"만 svg). 글자(span)를 품은 칸 묶음을 눌러 고르고, svg 로 확인한다.
+const PICKED = (item) => !!(item.querySelector('svg') || item.querySelector('input:checked') ||
+  /(^|\s)(checked|active|on|selected)(\s|$)/.test(item.className || '') || item.getAttribute('aria-checked') === 'true');
+
+/** 신청서 안의 꾸민 동그라미/네모 칸 하나에 표시를 붙인다 (글자가 정확히 같은 것). */
+async function markPick(scopeLoc, option, attr) {
+  return scopeLoc.evaluate((box, { option, attr, PICKED }) => {
+    const picked = new Function('item', `return (${PICKED})(item)`);
+    const vis = (e) => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
+    const norm = (s) => (s || '').replace(/\s/g, '').toLowerCase();
+    box.querySelectorAll(`[${attr}]`).forEach((x) => x.removeAttribute(attr));
+    const leaf = [...box.querySelectorAll('span, label, div, p')].find((e) => vis(e) && norm(e.innerText) === norm(option) && e.children.length === 0);
+    if (!leaf) return null;
+    let item = leaf.parentElement; // 칸 그림(span.radio / svg / input)과 글자를 같이 품은 가장 가까운 묶음
+    for (let i = 0; i < 3 && item && !item.querySelector('span.radio, .check-box, svg, input'); i++) item = item.parentElement;
+    // 가장 가까운 묶음이 여러 칸을 품으면(무리 전체) 어느 칸인지 알 수 없다 — 고르지 않는다
+    if (!item || item.querySelectorAll('span.radio, .check-box, svg, input').length > 2) return null;
+    item.setAttribute(attr, '1');
+    return picked(item);
+  }, { option, attr, PICKED: PICKED.toString() });
+}
+
+/** 꾸민 칸 누르기: 칸 묶음(글자 포함)을 누르고, 안 골라지면 칸 그림에 직접 클릭 이벤트를 보낸다 (그림이 0px 일 수 있다). */
+async function clickPick(item, isOn) {
+  await item.click().catch(() => {});
+  await sleep(300);
+  if (await isOn()) return;
+  await item.evaluate((x) => (x.querySelector('span.radio, .check-box, input') || x).click());
+  await sleep(300);
+}
+
+async function pickCustom(scopeLoc, option, label) {
+  const before = await markPick(scopeLoc, option, 'data-goms-pick');
+  if (before === null) throw new Stop(`${label} 에 "${option}" 칸이 없어요`);
+  const item = scopeLoc.locator('[data-goms-pick="1"]');
+  if (!before) await clickPick(item, async () => !!(await markPick(scopeLoc, option, 'data-goms-pick')));
+  const after = await markPick(scopeLoc, option, 'data-goms-pick');
+  if (!after) throw new Stop(`${label} "${option}" 을 눌렀는데 골라진 표시가 안 보여요`);
+}
+
+/** 고르는 칸: 진짜 select → 꾸민 동그라미 순서. 고른 값을 다시 읽어 확인한다. */
 async function choose(page, key, labels, option) {
   const r = await row(page, key, labels);
   const ctrl = r.locator(`[data-goms-ctrl="${key}"]`);
-  const sel = ctrl;
   if (await ctrl.evaluate((x) => x.tagName === 'SELECT').catch(() => false)) {
-    const texts = await sel.locator('option').allInnerTexts();
-    const pick = texts.find((t) => same(t, option)) || texts.find((t) => t.replace(/\s/g, '').toLowerCase().includes(option.toLowerCase()));
+    const texts = await ctrl.locator('option').allInnerTexts();
+    const pick = texts.find((t) => same(t, option));
     if (!pick) throw new Stop(`${labels[0]} 목록에 "${option}" 이 없어요 (목록: ${texts.join(', ')})`);
-    await sel.selectOption({ label: pick });
-    const now = await sel.evaluate((s) => s.options[s.selectedIndex]?.text || '');
+    await ctrl.selectOption({ label: pick });
+    const now = await ctrl.evaluate((s) => s.options[s.selectedIndex]?.text || '');
     if (!same(now, pick)) throw new Stop(`${labels[0]} 를 "${pick}" 로 골랐는데 "${now}" 로 읽혀요`);
     log(`  ${labels[0]}: ${pick} ✓ (목록)`);
     return;
   }
-  const radios = r.locator('input[type=radio]');
-  if (await radios.count()) {
-    const ok = await r.evaluate((box, option) => {
-      const norm = (s) => (s || '').replace(/\s/g, '').toLowerCase();
-      for (const x of box.querySelectorAll('input[type=radio]')) {
-        const lab = (x.id && box.querySelector(`label[for="${x.id}"]`)) || x.closest('label') || x.parentElement;
-        const txt = norm(lab?.innerText) || norm(x.nextSibling?.textContent) || norm(x.value);
-        if (txt === norm(option) || norm(x.value) === norm(option)) { x.setAttribute('data-goms-pick', '1'); return true; }
-      }
-      return false;
-    }, option);
-    if (!ok) throw new Stop(`${labels[0]} 에 "${option}" 고르는 칸이 없어요`);
-    const pickLoc = r.locator('[data-goms-pick="1"]');
-    await pickLoc.check({ force: true });
-    if (!(await pickLoc.isChecked())) throw new Stop(`${labels[0]} "${option}" 이 골라지지 않았어요`);
-    log(`  ${labels[0]}: ${option} ✓ (라디오)`);
-    return;
-  }
-  // 꾸민 목록: 칸을 눌러 펼치고 글자로 고른다
-  await r.locator('[role=combobox], input, [class*=select]').first().click();
-  await sleep(500);
-  await clickText(page, [option, option.toUpperCase(), option.toLowerCase()], { timeout: 4000 });
-  await sleep(300);
-  const shown = (await r.innerText().catch(() => '')) + ' ' + (await r.locator('input').first().inputValue().catch(() => ''));
-  if (!shown.replace(/\s/g, '').toLowerCase().includes(option.toLowerCase())) throw new Stop(`${labels[0]} 를 "${option}" 로 골랐는데 화면에 안 보여요`);
-  log(`  ${labels[0]}: ${option} ✓ (펼침 목록)`);
+  await pickCustom(r, option, labels[0]);
+  log(`  ${labels[0]}: ${option} ✓`);
 }
 
-/** "접수자와 동일" 체크칸을 켠다. */
-async function checkSame(page) {
-  for (const f of page.frames()) {
-    const ok = await f.evaluate(() => {
-      const vis = (e) => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
-      for (const x of document.querySelectorAll('input[type=checkbox]')) {
-        const lab = (x.id && document.querySelector(`label[for="${x.id}"]`)) || x.closest('label') || x.parentElement;
-        if (/접수자와\s*동일/.test(lab?.innerText || '') && (vis(x) || vis(lab))) { x.setAttribute('data-goms-same', '1'); return true; }
-      }
-      return false;
-    }).catch(() => false);
-    if (!ok) continue;
-    const box = f.locator('[data-goms-same="1"]');
-    if (!(await box.isChecked())) await box.check({ force: true }).catch(async () => { await box.click({ force: true }); });
-    if (!(await box.isChecked())) throw new Stop('"접수자와 동일" 이 체크되지 않았어요');
-    log('  운영자: 접수자와 동일 ✓');
-    return;
-  }
-  throw new Stop('"접수자와 동일" 체크칸을 찾지 못했어요');
+/** "접수자와 동일" 네모칸을 켠다. */
+async function checkSame() {
+  const before = await markPick(FORM.root, '접수자와 동일', 'data-goms-same');
+  if (before === null) throw new Stop('"접수자와 동일" 체크칸을 찾지 못했어요');
+  const item = FORM.root.locator('[data-goms-same="1"]');
+  const isOn = async () => item.evaluate((x) => { const i = x.querySelector('input[type=checkbox]'); return i ? i.checked : !!x.querySelector('svg'); });
+  if (!(await isOn())) await clickPick(item, isOn);
+  if (!(await isOn())) throw new Stop('"접수자와 동일" 을 눌렀는데 체크되지 않았어요');
+  log('  운영자: 접수자와 동일 ✓');
 }
 
 async function attach(page, file) {
   const name = path.basename(file);
-  let done = false;
-  for (const f of page.frames()) {
-    const inp = f.locator('input[type=file]');
-    if (await inp.count()) { await inp.first().setInputFiles(file); done = true; break; }
-  }
-  if (!done) { // 파일 칸이 없으면 "파일추가" 버튼이 파일 고르는 창을 연다
+  const inp = FORM.root.locator('input[type=file]');
+  if (await inp.count()) await inp.first().setInputFiles(file);
+  else { // 파일 칸이 없으면 "파일추가" 버튼이 파일 고르는 창을 연다
     const chooser = page.waitForEvent('filechooser', { timeout: 10000 });
-    await clickText(page, ['파일추가', '파일 추가', '파일선택', '찾아보기']);
+    await clickInForm(['파일추가', '파일 추가']);
     await (await chooser).setFiles(file);
   }
   await sleep(2000);
-  const seen = await Promise.all(page.frames().map((f) => f.evaluate((n) => document.body?.innerText.includes(n) ||
-    [...document.querySelectorAll('input[type=file]')].some((x) => [...(x.files || [])].some((y) => y.name === n)), name).catch(() => false)));
-  if (!seen.some(Boolean)) throw new Stop(`파일을 넣었는데 화면에 "${name}" 이 보이지 않아요`);
+  const seen = await FORM.root.evaluate((form, n) => form.innerText.includes(n), name).catch(() => false);
+  if (!seen) throw new Stop(`파일을 넣었는데 신청서 첨부 목록에 "${name}" 이 보이지 않아요`);
   log(`  파일: ${name} ✓`);
 }
 
-/** 심의점검표를 열고 모든 항목을 "해당없음"으로. 팝업 창이면 그 창을 돌려준다. */
-async function checklist(page, ctx) {
-  const popup = ctx.waitForEvent('page', { timeout: 5000 }).catch(() => null);
-  await clickText(page, ['심의점검표', '심의 점검표']);
-  const pop = await popup;
-  const scope = pop || page;
-  if (pop) await pop.waitForLoadState('domcontentloaded').catch(() => {});
+/** 심의점검표 탭을 열고 모든 항목을 "해당없음"으로. */
+async function checklist(page) {
+  await clickInForm(['심의점검표', '심의 점검표']);
   await sleep(2000);
-  await shot(scope, 'checklist-open');
-  await structure(scope, 'checklist');
-  // "모두 해당없음" 같은 한 번에 고르는 버튼이 있으면 그것부터
-  try { await clickText(page, ['모두 해당없음', '전체 해당없음', '일괄 해당없음', '모두해당없음', '전체해당없음'], { timeout: 2000, scopePage: scope }); } catch { /* 하나씩 고른다 */ }
-  let total = 0; let picked = 0;
-  for (const f of scope.frames()) {
-    const n = await f.evaluate(() => {
-      const norm = (s) => (s || '').replace(/\s/g, '');
-      const groups = new Map();
-      for (const x of document.querySelectorAll('input[type=radio], input[type=checkbox]')) {
-        const lab = (x.id && document.querySelector(`label[for="${x.id}"]`)) || x.closest('label') || x.parentElement;
-        const txt = norm(lab?.innerText) || norm(x.nextSibling?.textContent) || norm(x.value);
-        if (txt === '해당없음') { x.setAttribute('data-goms-na', '1'); groups.set(x.name || x.id || Math.random(), x); }
-      }
-      for (const s of document.querySelectorAll('select')) {
-        const o = [...s.options].find((o) => norm(o.text) === '해당없음');
-        if (o) { s.value = o.value; s.dispatchEvent(new Event('change', { bubbles: true })); }
-      }
-      return document.querySelectorAll('[data-goms-na="1"]').length;
-    }).catch(() => 0);
-    if (!n) continue;
-    const boxes = f.locator('[data-goms-na="1"]');
-    for (let i = 0; i < n; i++) {
-      const b = boxes.nth(i);
-      if (!(await b.isChecked())) await b.check({ force: true }).catch(() => b.click({ force: true }));
-    }
-    total += n;
-    for (let i = 0; i < n; i++) if (await boxes.nth(i).isChecked()) picked += 1;
+  await shot(page, 'checklist-open');
+  await structure(page, 'checklist');
+  // "모두 해당없음" 같은 한 번에 고르는 버튼이 있으면 그것부터 (사용자: "모두 해당없음 클릭")
+  await clickInForm(['모두 해당없음', '전체 해당없음', '일괄 해당없음', '모두해당없음', '전체해당없음'], { timeout: 2000 }).catch(() => {});
+  await sleep(800);
+  // 항목마다 확인: "해당없음" 글자를 품은 칸 묶음이 모두 골라졌는지 (안 골라진 건 누른다)
+  const state = async () => FORM.root.evaluate((form, PICKED) => {
+    const picked = new Function('item', `return (${PICKED})(item)`);
+    const vis = (e) => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
+    const leaves = [...form.querySelectorAll('span, label, div, p, td')].filter((e) => vis(e) && (e.innerText || '').replace(/\s/g, '') === '해당없음' && e.children.length === 0);
+    const out = [];
+    leaves.forEach((leaf, i) => {
+      let item = leaf.parentElement;
+      for (let k = 0; k < 3 && item && !item.querySelector('span.radio, .check-box, svg, input'); k++) item = item.parentElement;
+      if (!item || item.querySelectorAll('span.radio, .check-box, svg, input').length > 2) return;
+      item.setAttribute('data-goms-na', String(i));
+      out.push({ i, on: picked(item) || !!item.querySelector('input:checked') });
+    });
+    return out;
+  }, PICKED.toString());
+  let st = await state();
+  if (!st.length) throw new Stop('심의점검표에서 "해당없음" 칸을 찾지 못했어요');
+  for (const { i, on } of st) {
+    if (on) continue;
+    const item = FORM.root.locator(`[data-goms-na="${i}"]`);
+    await clickPick(item, async () => item.evaluate((x, P) => new Function('item', `return (${P})(item)`)(x) || !!x.querySelector('input:checked'), PICKED.toString()));
   }
-  await shot(scope, 'checklist-filled');
-  if (!total) throw new Stop('심의점검표에서 "해당없음" 칸을 찾지 못했어요');
-  if (picked !== total) throw new Stop(`심의점검표 "해당없음" ${total}곳 중 ${picked}곳만 골라졌어요`);
-  log(`  심의점검표: 해당없음 ${picked}곳 ✓`);
-  return scope;
+  await sleep(500);
+  st = await state();
+  await shot(page, 'checklist-filled');
+  const ok = st.filter((x) => x.on).length;
+  if (ok !== st.length) throw new Stop(`심의점검표 "해당없음" ${st.length}곳 중 ${ok}곳만 골라졌어요`);
+  log(`  심의점검표: 해당없음 ${ok}곳 ✓`);
 }
 
 async function gotoForm(page) {
@@ -285,6 +324,7 @@ async function gotoForm(page) {
   for (let i = 0; i < 20 && !(await formShown()); i++) await sleep(500);
   if (!(await formShown())) throw new Stop('"등록"을 눌렀는데 신청서(심의점검표 탭)가 열리지 않았어요');
   await sleep(3000);
+  if (!(await markForm(page))) throw new Stop('신청서 영역을 가려내지 못했어요');
   await shot(page, 'form-open');
   await structure(page, 'form');
   return true;
@@ -296,8 +336,8 @@ async function one(page, ctx, n) {
   if (!fs.existsSync(file)) throw new Stop(`Word 파일이 없어요: ${file}`);
   log(`\n▶ ${title}`);
   if (!(await gotoForm(page))) return 'login';
-  await checkSame(page);
-  await fillText(page, 'title', ['광고제목', '광고 제목', '제목'], title);
+  await checkSame();
+  await fillText(page, 'title', ['광고제목', '광고 제목'], title);
   await choose(page, 'kind', ['신청구분', '신청 구분'], '신규');
   await choose(page, 'type', ['광고구분', '광고 구분'], '업무광고');
   await choose(page, 'how', ['광고방법', '광고 방법', '광고매체'], 'SNS');
@@ -305,23 +345,23 @@ async function one(page, ctx, n) {
   await choose(page, 'gift', ['경품여부', '경품 여부'], '아니오');
   await attach(page, file);
   await shot(page, 'form-filled');
-  const scope = await checklist(page, ctx);
+  await checklist(page);
   if (!submit) {
-    await clickText(page, ['기본내용', '기본 내용'], { timeout: 3000 }).catch(() => {});
+    await clickInForm(['기본내용', '기본 내용'], { timeout: 3000 }).catch(() => {});
     await sleep(1000);
     await shot(page, 'form-before-register');
     log('  시험이라 "등록하기"·"등록"은 누르지 않고 멈춰요.');
     return 'test';
   }
-  await clickText(page, ['등록하기'], { scopePage: scope });
+  await clickInForm(['등록하기']);
   await sleep(2500);
   await shot(page, 'checklist-saved');
-  await clickText(page, ['기본내용', '기본 내용']); // 점검표는 같은 화면의 탭이다 — 기본내용 탭으로 돌아가 등록
+  await clickInForm(['기본내용', '기본 내용']); // 점검표는 신청서 안의 탭이다 — 기본내용 탭으로 돌아가 등록
   await sleep(1000);
   // 점검표 저장 뒤에도 기본내용이 그대로인지 다시 확인하고 나서 등록한다
-  const t = await (await row(page, 'title', ['광고제목', '광고 제목', '제목'])).locator('input, textarea').first().inputValue();
+  const t = await (await row(page, 'title', ['광고제목', '광고 제목'])).locator('input, textarea').first().inputValue();
   if (t !== title) throw new Stop(`등록 직전 광고제목이 "${t}" 로 바뀌어 있어 멈췄어요`);
-  await clickText(page, ['등록']);
+  await clickInForm(['등록']); // 신청서 안의 등록만 — 목록 화면의 "등록"은 새 신청서를 연다
   await sleep(4000);
   await shot(page, 'registered');
   return 'done';
