@@ -277,63 +277,79 @@ async function checklist(page) {
   await sleep(2000);
   await shot(page, 'checklist-open');
   await structure(page, 'checklist');
-  // "모두 해당없음" 같은 한 번에 고르는 버튼이 있으면 그것부터 (사용자: "모두 해당없음 클릭")
-  await clickInForm(['모두 해당없음', '전체 해당없음', '일괄 해당없음', '모두해당없음', '전체해당없음'], { timeout: 2000 }).catch(() => {});
-  await sleep(800);
-  // 점검표는 표다: 맨 위 "해당없음" 제목 아래로 줄마다 네모칸이 하나씩 있다 (2026-10-05 사용자 캡처).
-  // 줄에는 "해당없음" 글자가 없으므로, 제목 칸과 같은 세로줄(가로 위치)에 있는 네모칸을 모두 고른다.
-  const state = async () => FORM.root.evaluate((form) => {
+  // 점검표: 해당없음·적합·미흡·부적합 4열 표. 줄이 30개 넘는데 화면에는 18줄 정도만 그려지고 스크롤하면 나머지가 그려진다
+  // (2026-10-05 14:21 — 1-16 까지만 체크되고 1-17 부터 빨간 줄로 남음). 그래서 표 오른쪽 스크롤을 내려 가며 끝까지 체크한다.
+  // tick=true 면 보이는 줄 중 안 된 "해당없음"을 페이지 안에서 바로 누른다 (밖에서 누르면 스크롤이 움직여 줄이 다시 그려져 놓친다)
+  const pass = (tick) => FORM.root.evaluate((form, tick) => {
     const vis = (e) => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
-    const head = [...form.querySelectorAll('th, td, div, span')].find((e) => vis(e) && e.children.length === 0 && (e.innerText || '').replace(/\s/g, '') === '해당없음');
-    if (!head) return [];
-    const hr = head.getBoundingClientRect();
-    const boxes = new Set();
-    // 점검표 칸은 진짜 네모칸(input)이다 — 해당없음·적합·미흡·부적합 4열 × 약 18줄 (2026-10-05 14:17 structure-checklist.txt)
-    // 표 안쪽이 따로 스크롤되므로 화면 밖 줄도 세려고, 같은 표 안에서 '해당없음' 제목과 같은 칸 번호(열)를 쓴다.
+    const norm = (t) => (t || '').replace(/\s/g, '');
+    const head = [...form.querySelectorAll('th')].find((e) => vis(e) && norm(e.innerText) === '해당없음');
+    if (!head) return { error: 'nohead' };
+    const heads = [...head.parentElement.children];
+    const col = heads.indexOf(head);
+    const noCol = heads.findIndex((h) => /^NO\.?$/i.test(norm(h.innerText)));
     const table = head.closest('table');
-    if (table) {
-      const col = [...head.parentElement.children].indexOf(head);
-      const body = [...table.querySelectorAll('tr')].filter((tr) => !tr.contains(head));
-      // 다른 표로 나뉜 본문(머리글 고정형)이면 같은 감싸개 안의 표들을 모두 본다
-      const wrap = table.parentElement?.parentElement || table.parentElement;
-      const rows = body.length ? body : [...wrap.querySelectorAll('tr')].filter((tr) => !tr.contains(head));
-      for (const tr of rows) {
-        const cells = [...tr.children];
-        // 줄마다 열 수가 같으면 같은 번호, 아니면(앞 칸 합침) 뒤에서부터 같은 위치
-        const cell = cells.length === head.parentElement.children.length ? cells[col] : cells[cells.length - (head.parentElement.children.length - col)];
-        const inp = cell?.querySelector('input[type=checkbox]');
-        if (inp) boxes.add(inp);
-      }
+    const scope = table.parentElement?.parentElement?.parentElement || table.parentElement;
+    const rows = [...scope.querySelectorAll('tr')].filter((tr) => !tr.querySelector('th'));
+    const out = [];
+    for (const tr of rows) {
+      const cells = [...tr.children];
+      const cell = cells.length === heads.length ? cells[col] : cells[cells.length - (heads.length - col)];
+      const box = cell?.querySelector('input[type=checkbox]');
+      if (!box) continue;
+      const key = (noCol >= 0 && cells.length === heads.length ? norm(cells[noCol]?.innerText) : '') || norm(tr.innerText).slice(0, 40);
+      const others = cells.filter((c) => c !== cell).some((c) => c.querySelector('input[type=checkbox]:checked'));
+      if (tick && !box.checked && !others) box.click();
+      out.push({ key, on: box.checked, others });
     }
-    if (!boxes.size) { // 표가 아니면 가로 위치로
-      for (const x of form.querySelectorAll('input[type=checkbox]')) {
-        const r = x.getBoundingClientRect(); const cx = r.left + r.width / 2;
-        if (r.top > hr.bottom - 2 && cx > hr.left - 4 && cx < hr.right + 4) boxes.add(x);
-      }
-    }
-    return [...boxes].map((b, i) => { b.setAttribute('data-goms-na', String(i)); return { i, on: b.checked }; });
-  });
-  let st = await state();
-  if (!st.length) throw new Stop('심의점검표에서 "해당없음" 칸을 찾지 못했어요');
-  for (const { i, on } of st) {
-    if (on) continue;
-    const box = FORM.root.locator(`[data-goms-na="${i}"]`);
-    await box.check({ force: true, timeout: 5000 }).catch(() => box.evaluate((x) => x.click()));
-    if (!(await box.isChecked().catch(() => false))) await box.evaluate((x) => { if (!x.checked) x.click(); });
-  }
-  await sleep(500);
-  st = await state();
-  await shot(page, 'checklist-filled');
-  const ok = st.filter((x) => x.on).length;
-  // 같은 줄의 다른 열(적합·미흡·부적합)이 켜졌으면 멈춘다
-  const others = await FORM.root.evaluate((form) => {
+    // 표를 품은 스크롤 영역 (표 안쪽 → 신청서 창 순서로, 실제로 스크롤되는 첫 번째)
+    let sc = rows[0] || table;
+    while (sc && sc !== document.body && !(sc.scrollHeight > sc.clientHeight + 5 && /(auto|scroll)/.test(getComputedStyle(sc).overflowY))) sc = sc.parentElement;
+    const atEnd = !sc || sc === document.body || sc.scrollTop + sc.clientHeight >= sc.scrollHeight - 5;
+    return { rows: out, atEnd, hasScroll: !!sc && sc !== document.body };
+  }, tick);
+  const scrollDown = () => FORM.root.evaluate((form) => {
     const head = [...form.querySelectorAll('th')].find((e) => (e.innerText || '').replace(/\s/g, '') === '해당없음');
-    const table = head?.closest('table'); if (!table) return 0;
-    return [...table.querySelectorAll('input[type=checkbox]:checked')].filter((x) => !x.hasAttribute('data-goms-na')).length;
-  }).catch(() => 0);
-  if (others) throw new Stop(`심의점검표에서 "해당없음" 말고 다른 칸 ${others}곳이 체크돼 있어 멈췄어요`);
-  if (ok !== st.length) throw new Stop(`심의점검표 "해당없음" ${st.length}곳 중 ${ok}곳만 골라졌어요`);
-  log(`  심의점검표: 해당없음 ${ok}곳 ✓`);
+    let sc = head?.closest('table')?.querySelector('tbody tr') || head;
+    while (sc && sc !== document.body && !(sc.scrollHeight > sc.clientHeight + 5 && /(auto|scroll)/.test(getComputedStyle(sc).overflowY))) sc = sc.parentElement;
+    if (!sc || sc === document.body) return false;
+    const before = sc.scrollTop;
+    sc.scrollTop = before + Math.max(120, sc.clientHeight * 0.7);
+    sc.dispatchEvent(new Event('scroll'));
+    return sc.scrollTop !== before;
+  });
+  const scrollTop = () => FORM.root.evaluate((form) => {
+    const head = [...form.querySelectorAll('th')].find((e) => (e.innerText || '').replace(/\s/g, '') === '해당없음');
+    let sc = head?.closest('table')?.querySelector('tbody tr') || head;
+    while (sc && sc !== document.body && !(sc.scrollHeight > sc.clientHeight + 5 && /(auto|scroll)/.test(getComputedStyle(sc).overflowY))) sc = sc.parentElement;
+    if (sc && sc !== document.body) { sc.scrollTop = 0; sc.dispatchEvent(new Event('scroll')); }
+  });
+
+  const seen = new Map(); // 줄 번호(1-1, 2-3 …) → 체크됨
+  for (let round = 0; round < 60; round++) {
+    const r = await pass(true);
+    if (r.error) throw new Stop('심의점검표에서 "해당없음" 열을 찾지 못했어요');
+    for (const row of r.rows) {
+      if (row.others) throw new Stop(`심의점검표 ${row.key} 줄에 "해당없음" 말고 다른 칸이 체크돼 있어 멈췄어요`);
+      seen.set(row.key, true);
+    }
+    await sleep(300);
+    if (r.atEnd || !(await scrollDown())) break;
+    await sleep(500);
+  }
+  // 처음부터 끝까지 다시 훑어 안 된 줄이 없는지 확인
+  await scrollTop(); await sleep(500);
+  const missed = [];
+  for (let round = 0; round < 60; round++) {
+    const r = await pass(false);
+    for (const row of r.rows) { if (!row.on || row.others) missed.push(row.key); seen.set(row.key, true); }
+    if (r.atEnd || !(await scrollDown())) break;
+    await sleep(500);
+  }
+  await shot(page, 'checklist-filled');
+  if (!seen.size) throw new Stop('심의점검표에서 "해당없음" 칸을 찾지 못했어요');
+  if (missed.length) throw new Stop(`심의점검표 ${missed.join(', ')} 줄이 체크되지 않아 멈췄어요`);
+  log(`  심의점검표: 맨 아래까지 ${seen.size}줄 모두 "해당없음" ✓`);
 }
 
 async function gotoForm(page) {
@@ -368,7 +384,9 @@ async function gotoForm(page) {
 }
 
 async function formOpen() {
-  return FORM.root.evaluate((x) => !!(x.isConnected && (x.offsetWidth || x.offsetHeight))).catch(() => false);
+  // 신청서 창이 다시 그려지면 표시가 사라질 수 있어, 화면에 "…심의점검표" 탭이 보이는지로 판단한다
+  return (await Promise.all(FORM.frame.page().frames().map((f) => f.evaluate(() => [...document.querySelectorAll('button, [role=tab], a')]
+    .some((b) => !!(b.offsetWidth || b.offsetHeight) && (b.innerText || '').replace(/\s/g, '').endsWith('심의점검표'))).catch(() => false)))).some(Boolean);
 }
 
 /** 광고심의 목록에 이 제목이 있는지 ("조회"를 눌러 새로 읽는다). 같은 편을 두 번 등록하지 않으려고 쓴다. */
@@ -423,6 +441,9 @@ async function one(page, ctx, n) {
   await clickInForm(['등록하기', '등록']);
   await sleep(3000);
   await shot(page, 'after-register-1');
+  // GOMS 는 빠진 점검 줄을 빨간 줄(notice-emergency)로 표시하고 등록하지 않는다
+  const red = await FORM.root.evaluate((f) => [...f.querySelectorAll('tr.notice-emergency')].map((tr) => (tr.children[1]?.innerText || '').trim()).filter(Boolean)).catch(() => []);
+  if (red.length && await formOpen()) throw new Stop(`GOMS 가 점검표 ${red.join(', ')} 줄이 빠졌다고 표시해 등록되지 않았어요`);
   if (await formOpen()) { // 점검표 저장만 되고 신청서가 남아 있으면 기본내용 맨 아래 "등록"까지
     await clickInForm(['기본내용', '기본 내용']);
     await sleep(1000);
