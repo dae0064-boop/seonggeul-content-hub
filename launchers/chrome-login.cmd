@@ -23,6 +23,7 @@ echo 로그인 상태를 확인하는 중... (30초쯤)
 echo.
 node scripts\login-check.mjs --open-login
 if errorlevel 3 goto needlogin
+if errorlevel 2 goto checkfail
 if errorlevel 1 goto nochrome
 echo.
 echo 네이버·티스토리 모두 로그인돼 있어요. 할 일이 없어요. 이 창은 닫아도 돼요.
@@ -34,6 +35,11 @@ echo 크롬에 새로 열린 로그인 탭에서 로그인한 뒤, 크롬 창은
 echo 이 검은 창은 닫아도 돼요.
 pause
 exit /b 0
+:checkfail
+echo.
+echo 인터넷 문제로 화면을 열지 못해 확인하지 못했어요. 잠시 뒤 다시 실행해 주세요.
+pause
+exit /b 1
 :nochrome
 echo.
 echo 자동화용 크롬을 찾지 못했어요. 이 창을 캡처해서 Claude 에게 보여주세요.
