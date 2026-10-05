@@ -10,7 +10,7 @@
 | 발행 캘린더 · 작업판 | `content/calendar/`, `content/board/` (아티팩트 소스) |
 | 발행 · 검수 자동화 | `scripts/*.mjs` |
 | 여러 PC 워크스페이스 도구 | `scripts/*.py`, `launchers/`, `docs/SETUP.md` |
-| 2026-08 작업물 아카이브 | `work/` — 과거 기록이며 갱신하지 않습니다 |
+| 발행이 끝난 원고 목록 | `content/archive/published.tsv` — 지난 원고는 지우고 여기 한 줄씩 남깁니다 |
 
 새 세션을 시작할 때는 `CLAUDE.md` 부터 읽으면 됩니다.
 

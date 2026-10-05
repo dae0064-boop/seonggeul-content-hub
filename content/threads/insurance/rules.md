@@ -164,7 +164,7 @@ python3 scripts/threads/insurance-word.py <묶음.md> <사진.jpg> <저장 폴�
 - **저장 위치: Google Drive `내 드라이브/ClaudeWorkspace/보험글/` 한 폴더에 `스레드 1편.docx`, `스레드 2편.docx` …**
   (2026-10-02 사용자 지시 — 날짜 폴더를 없앴다). 번호는 묶음 파일 이름 순서대로 이어서 매기므로, 새 묶음은 뒤에 붙고
   앞 번호는 바뀌지 않는다. **이미 올린 묶음 파일의 이름을 바꾸거나 중간에 끼워 넣지 않는다** — 번호가 밀린다.
-  PC 에서 `launchers/insurance-word.cmd` 를 더블클릭하거나 `launchers/sync.cmd` 를 돌리면 저장된다.
+  PC 에서 `launchers/sync.cmd` 를 돌리면 저장된다 (아침 auto-day 도 저장한다).
   이미 있는 Word 는 원고·사진·실행기가 바뀌었을 때만 다시 만든다 (`-Force` 면 전부).
   클라우드 세션은 Drive 에 Word 를 직접 올리지 못한다(파일이 커서) — 저장은 PC 실행기가 한다.
 - 고정 사진은 Google Drive `내 드라이브/ClaudeWorkspace/보험글-사진/` 에서 가장 최근 사진을 쓴다.

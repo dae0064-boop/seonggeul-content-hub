@@ -1,6 +1,6 @@
 # 검색량을 조회할 키워드 후보 (한 줄에 하나, # 은 설명). 2026-10-03 사용자 승인.
 # 매일 밤 원고 Routine 이 앞으로 2~3일치 캘린더 글감의 메인 키워드 후보를 여기에 채우고,
-# 다음 날 아침 PC(launchers/keyword-volume.ps1, auto-day 안)가 네이버 검색광고 API 로 월간 검색량·연관 키워드를 조회해
+# 다음 날 아침 PC(launchers/tools/keyword-volume.ps1, auto-day 안)가 네이버 검색광고 API 로 월간 검색량·연관 키워드를 조회해
 # Drive ClaudeWorkspace/keyword-volume/<날짜>/ 로 올린다. 원고 Routine 이 그 결과를 content/calendar/title-keywords/ 에 옮겨 쓰고,
 # 메인 키워드를 고른다 (CLAUDE.md "분량과 키워드" — 월 1,000~10,000 우선, 100 미만은 쓰지 않음).
 # 조회가 끝난 키워드는 Routine 이 지운다.

@@ -40,13 +40,13 @@ function fail(msg, hint) {
 
 console.log("\nOpenAI API 키 확인\n");
 
-// 윈도우는 launchers/openai-key.cmd 가 사용자 환경 변수에 넣는다. 그땐 .env 가 없어도 된다.
+// 윈도우는 launchers/tools/openai-key.cmd 가 사용자 환경 변수에 넣는다. 그땐 .env 가 없어도 된다.
 const fromEnvVar = (process.env.OPENAI_API_KEY || "").trim();
 const key = fromEnvVar || (loadEnv().OPENAI_API_KEY || "").trim();
 if (!key) {
   fail(
     "OPENAI_API_KEY 를 찾지 못했어요",
-    "윈도우: launchers/openai-key.cmd 더블클릭 / 그 밖: .env 에 OPENAI_API_KEY=sk-... 한 줄 추가",
+    "윈도우: launchers/tools/openai-key.cmd 더블클릭 / 그 밖: .env 에 OPENAI_API_KEY=sk-... 한 줄 추가",
   );
 }
 ok(fromEnvVar ? "환경 변수에서 키 찾음" : ".env 에서 키 찾음");
