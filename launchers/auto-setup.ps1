@@ -26,7 +26,8 @@ $action = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument "/c `"$cmd`"" -Wo
 if (-not $RetryAt) { $RetryAt = ([datetime]::ParseExact($At, 'HH:mm', $null)).AddMinutes(70).ToString('HH:mm') }
 $trigger = @((New-ScheduledTaskTrigger -Daily -At $At), (New-ScheduledTaskTrigger -Daily -At $RetryAt))
 # 절전 중이면 깨워서 돌리고, 그 시각에 꺼져 있었으면 켜진 뒤 바로 돌린다. 3시간 넘게 걸리면 멈춘다.
-$settings = New-ScheduledTaskSettingsSet -WakeToRun -StartWhenAvailable -ExecutionTimeLimit (New-TimeSpan -Hours 3) -MultipleInstances IgnoreNew
+# 배터리로 켜져 있어도 돈다 (2026-10-05 — 기본값은 '전원 연결 시에만'이라 노트북 09:15 실행이 뜨지 않았다).
+$settings = New-ScheduledTaskSettingsSet -WakeToRun -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Hours 3) -MultipleInstances IgnoreNew
 # 로그인한 사용자 화면에서 돈다 (네이버에 로그인된 자동화용 크롬을 써야 하므로)
 $principal = New-ScheduledTaskPrincipal -UserId "$env:USERDOMAIN\$env:USERNAME" -LogonType Interactive -RunLevel Limited
 Register-ScheduledTask -TaskName $name -Action $action -Trigger $trigger -Settings $settings -Principal $principal `
