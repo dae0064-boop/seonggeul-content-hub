@@ -27,6 +27,18 @@
 > 사용자는 다 본 대화를 바로 지우는 편이다. 출발점 대화만 지우면 안 된다. 나눔은 그대로: 네이버·티스토리·스레드는 각자 다른 작업.
 > 아침 PC 의 auto-day.cmd(보험글 Word 저장 포함)는 그대로.
 
+### 10/5 정리 (사용자: "안 쓰는 cmd 삭제, 발행이 끝난 지난 원고·이미지 관련은 앞으로 삭제, launchers 가 복잡하다")
+- **launchers 에 더블클릭 실행기 5개만**: auto-day(오늘 예약 — 아침 자동/수동), reserve-tomorrow, chrome-login(로그인 확인 + 결과 Drive 업로드, login-test 를 합침),
+  sync, auto-setup. 부품 .ps1 과 새 PC 연결용(connect·openai-key·status·update)은 `launchers/tools/`. READ-ME-FIRST.txt 에 설명.
+  지움: draft-day·tistory-day·tistory-test·tistory-reserve·share-run·insurance-word·login-test·image·flu-test .cmd (image·flu-test 는 .ps1 도).
+  tistory-reserve 의 '임시저장만 된 글 다시 예약'은 auto-day 의 tistory 단계에 `-RetryDrafts` 로 넣음.
+  auto-day.cmd 는 `git pull` 줄까지의 바이트 길이를 예전과 같게 맞췄다 — 실행 중 pull 로 파일이 바뀌어도 cmd 가 같은 위치부터 이어 읽기 때문. 앞부분을 고칠 땐 길이를 지킨다.
+  PowerShell 파서로 tools/*.ps1 14개 문법 확인 (클라우드). 실제 PC 실행은 내일 아침이 처음.
+- **지난 원고 삭제**: `scripts/clean-published.mjs` — 오늘보다 앞 날짜 content/posts·tistory·image-plans 를 지우고 `content/archive/published.tsv` 에 남김(9/11~10/4, 32편).
+  `lint-tistory` 는 이 목록의 네이버 메인 키워드와도 겹침을 본다. 아침 확인 Routine 이 매일 돌린다(`routines/morning-check.md` 5-1).
+  PC 의 지난 그림(content/images)·3일 지난 dumps·14일 지난 Drive run-logs/run-locks 는 `tools/cleanup.ps1`(auto-day 끝).
+  `work/`(2026-08 아카이브)·`content/board/archive/`·`content/images/cards.html` 도 지움. 모두 git 기록에서 되살릴 수 있다.
+
 ### 10/5 사용자 요청: "클로드를 실행하면 바로 작업", "최소한으로 움직이게"
 - 새 Claude 대화가 열리면 `scripts/session-start.sh`(SessionStart 훅)가 main 을 합치고 npm install, STATUS 앞부분을 보여 준다.
   "시작"·"이어서" 한마디면 남은 일을 바로 한다.

@@ -58,6 +58,14 @@ const NAVER = fs.existsSync(POSTS)
     return { slug: f.replace(/\.md$/, ''), title: p.title, main: p.mainKeyword, grams: shingles(bodyText(p)) };
   })
   : [];
+// 발행이 끝나 지운 네이버 글 (scripts/clean-published.mjs 가 남긴 목록) — 메인 키워드·제목만 견준다 (2026-10-05)
+const ARCHIVE = path.join('content', 'archive', 'published.tsv');
+if (fs.existsSync(ARCHIVE)) {
+  for (const line of fs.readFileSync(ARCHIVE, 'utf8').split('\n').slice(1)) {
+    const [, channel, slug, main, title] = line.split('\t');
+    if (channel === 'naver' && slug && !NAVER.some((n) => n.slug === slug)) NAVER.push({ slug, title: title || '', main: main || '', grams: new Set() });
+  }
+}
 
 // 1) 서식 — 네이버 검사기
 const fmt = spawnSync(process.execPath, [path.join(HERE, 'lint-post.mjs'), '--tistory', ...files], { stdio: 'inherit' });

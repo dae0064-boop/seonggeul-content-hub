@@ -1,47 +1,14 @@
 @echo off
 chcp 65001 >nul
-title 성글벙글 - 자동화용 크롬 켜기 (네이버·티스토리 로그인)
-REM 자동 예약발행이 쓰는 크롬을 켜고 네이버·티스토리 로그인이 살아 있는지 본다. 풀린 곳만 로그인 화면을 연다. 로그인은 사람이 한다.
-REM 평소에는 실행할 필요가 없다 — 아침 자동 실행이 크롬을 스스로 켠다. 로그인이 풀렸다는 알림을 받았을 때만 쓴다.
-set "CHROME=C:\Program Files\Google\Chrome\Application\chrome.exe"
-if not exist "%CHROME%" set "CHROME=C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
-if not exist "%CHROME%" set "CHROME=%LOCALAPPDATA%\Google\Chrome\Application\chrome.exe"
-if not exist "%CHROME%" (
-  echo 크롬을 찾지 못했어요. 크롬을 설치한 뒤 다시 실행해 주세요.
-  pause
-  exit /b 1
-)
-REM 2026-10-05: 로그인돼 있으면 로그인 화면을 열지 않는다. 풀린 곳만 연다 (scripts\login-check.mjs).
-powershell -NoProfile -Command "try { Invoke-RestMethod http://localhost:9222/json/version -TimeoutSec 3 | Out-Null; exit 0 } catch { exit 1 }" >nul 2>&1
-if errorlevel 1 (
-  start "" "%CHROME%" --remote-debugging-port=9222 --user-data-dir="%LOCALAPPDATA%\seonggeul-chrome" --no-first-run https://www.naver.com
-  timeout /t 6 /nobreak >nul
-)
+title 성글벙글 - 로그인 확인 (네이버·티스토리)
+REM 자동 예약이 쓰는 크롬에서 네이버 글쓰기·티스토리 관리 화면을 실제로 열어 본다 (2026-10-05, login-test 를 합침).
+REM 티스토리는 카카오가 계정을 기억하면 버튼만 눌러 스스로 다시 들어간다. 풀린 곳만 로그인 탭을 열어 둔다.
+REM 결과와 캡처는 Drive ClaudeWorkspace\run-logs\login-test-* 로 올라가 Claude 가 읽는다.
+REM 평소에는 실행할 필요가 없다 — 아침 자동 실행이 크롬을 스스로 켠다.
 cd /d "%~dp0.."
+git fetch -q origin 2>nul
+git checkout -q -- "content/posts/*.json" "content/tistory/*.json" "content/tistory/*.html" 2>nul
+git pull -q --ff-only 2>nul
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\login-test.ps1" -OpenLogin
 echo.
-echo 로그인 상태를 확인하는 중... (30초쯤)
-echo.
-node scripts\login-check.mjs --open-login
-if errorlevel 3 goto needlogin
-if errorlevel 2 goto checkfail
-if errorlevel 1 goto nochrome
-echo.
-echo 네이버·티스토리 모두 로그인돼 있어요. 할 일이 없어요. 이 창은 닫아도 돼요.
 pause
-exit /b 0
-:needlogin
-echo.
-echo 크롬에 새로 열린 로그인 탭에서 로그인한 뒤, 크롬 창은 닫지 말고 그대로 두세요.
-echo 이 검은 창은 닫아도 돼요.
-pause
-exit /b 0
-:checkfail
-echo.
-echo 인터넷 문제로 화면을 열지 못해 확인하지 못했어요. 잠시 뒤 다시 실행해 주세요.
-pause
-exit /b 1
-:nochrome
-echo.
-echo 자동화용 크롬을 찾지 못했어요. 이 창을 캡처해서 Claude 에게 보여주세요.
-pause
-exit /b 1
