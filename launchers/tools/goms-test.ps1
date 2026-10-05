@@ -24,6 +24,9 @@ $stamp = Get-Date -Format 'yyyy-MM-dd_HHmm'
 $out = Join-Path $repo "dumps\$kind-$stamp"
 New-Item -ItemType Directory -Force -Path $out | Out-Null
 if ($Submit) {
+  # 등록 전에 Word 를 최신 원고로 다시 만든다 (원고를 고친 편이 옛 Word 로 올라가지 않게 — 2026-10-05 운전자보험 필수 문장 추가)
+  Write-Host '보험글 Word 를 최신 원고로 맞추는 중...'
+  & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'insurance-word.ps1') | Out-Null
   $from = Read-Host '몇 편부터 등록할까요? (그냥 Enter = 11)'; if (-not $from) { $from = '11' }
   $to = Read-Host "몇 편까지? (그냥 Enter = $from 편 하나만)"; if (-not $to) { $to = $from }
   $doneDir = Join-Path $drive 'ClaudeWorkspace\goms-done'

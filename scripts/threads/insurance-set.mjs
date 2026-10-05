@@ -34,6 +34,11 @@ export const MIN_EMOJI = 2;
 export const MAX_EMOJI = 3;
 export const MAX_PLANNER = 3;
 
+// 운전자보험 글 필수 문장 (2026-10-05 사용자 지시) — 줄바꿈·띄어쓰기는 상관없이 글자 그대로
+export const DRIVER_NOTICE = '음주, 무면허, 도주 사고는 보상에서 제외됩니다.';
+export const isDriverPost = (p) => p.보험 === '운전자' || /운전자\s*보험/.test(`${p.글감 || ''} ${p.body || ''}`);
+export const hasDriverNotice = (text) => String(text).replace(/\s/g, '').includes(DRIVER_NOTICE.replace(/\s/g, ''));
+
 // memory/CLAUDE.md [4] [6] 중 보험 글에만 붙는 것. 안전장치(guard)에 없는 것만 둔다
 const INSURANCE_BANNED = [
   { re: /하루\s*[0-9,]+\s*원|커피\s*한\s*잔\s*값/, why: '일 단위 보험료 강조' },
@@ -138,6 +143,7 @@ export function checkSet(set, previous = []) {
       errors.push(`${tag}: 이모지가 ${emoji}개 — ${MIN_EMOJI}~${MAX_EMOJI}개로 문맥에 맞게 넣습니다.`);
     }
     if (/#[^\s#]+/.test(p.body)) errors.push(`${tag}: 해시태그는 달지 않습니다.`);
+    if (isDriverPost(p) && !hasDriverNotice(p.body)) errors.push(`${tag}: 운전자보험 글에는 "${DRIVER_NOTICE}" 를 글자 그대로 넣습니다 (두 줄로 나눠도 됨).`);
     // 노란 하트는 쓰지 않는다 (2026-10-03 사용자 지시)
     if (/💛/u.test(p.body)) errors.push(`${tag}: 노란 하트(💛)는 쓰지 않습니다. 🙂😊🙏 같은 다른 이모지로 바꿉니다.`);
 

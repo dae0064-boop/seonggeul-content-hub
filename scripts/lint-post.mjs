@@ -138,6 +138,13 @@ for (const file of files) {
       if (m) errors.push(`상업적으로 보이는 표현(${name}): "${m[0]}" — 블로그 글은 심의가 필요 없는 정보글로만 씁니다`);
     }
   }
+  // 운전자보험 글 필수 문장 (2026-10-05 사용자 지시) — 네이버·티스토리 모두, 줄바꿈·띄어쓰기는 상관없이 글자 그대로
+  {
+    const NOTE = '음주, 무면허, 도주 사고는 보상에서 제외됩니다.';
+    const all = `${post.title} ${post.mainKeyword}\n${texts.join('\n')}`;
+    const plain = texts.join('').replace(/\[\/?(빨간글씨|파란글씨|노란배경)\]/g, '').replace(/\s/g, '');
+    if (/운전자\s*보험/.test(all) && !plain.includes(NOTE.replace(/\s/g, ''))) errors.push(`운전자보험 글에는 "${NOTE}" 를 글자 그대로 넣습니다`);
+  }
   if (!tistory && dated >= VOLUME_FROM && post.mainKeyword) {
     const v = volumeOf(post.mainKeyword);
     if (v == null) notes.push(`메인 키워드 "${post.mainKeyword}" 검색량 자료가 없어요 — keyword-queue.txt 에 넣어 조회해 두세요`);
