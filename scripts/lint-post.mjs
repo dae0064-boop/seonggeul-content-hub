@@ -123,6 +123,11 @@ for (const file of files) {
 
   if (!post.title) errors.push('title 이 없습니다.');
   if (!post.mainKeyword) errors.push('main_keyword 가 없습니다.');
+  // 티스토리 카테고리 (2026-10-05 사용자 지시): 생활보장·생활정보 두 개만. 보험 → 생활보장, 나머지 → 생활정보
+  if (tistory && dated >= '2026-10-06') {
+    const want = /보험/.test(`${post.title} ${post.mainKeyword}`) ? '생활보장' : '생활정보';
+    if (post.category !== want) errors.push(`티스토리 category 는 "${want}" 여야 합니다 (지금 "${post.category || '없음'}") — 티스토리는 생활보장·생활정보 두 개만 씁니다`);
+  }
   // 네이버 카테고리 (2026-10-02 사용자 지시): 보험 → 생활보장, 음식·카페·맛집 → 맛집, 나머지는 생활정보.
   if (!tistory && dated >= CATEGORY_FROM) {
     const ok = allowedCategories(post);
