@@ -38,7 +38,7 @@ fs.mkdirSync(out, { recursive: true });
 if (doneDir) fs.mkdirSync(doneDir, { recursive: true });
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const log = (m) => console.log(m);
+const log = (m) => { console.log(m); try { fs.appendFileSync(path.join(out, 'progress.txt'), m + '\n', 'utf8'); } catch { /* 기록 실패는 넘어간다 */ } };
 let shotNo = 0;
 async function shot(page, name) {
   shotNo += 1;
@@ -288,31 +288,50 @@ async function checklist(page) {
     if (!head) return [];
     const hr = head.getBoundingClientRect();
     const boxes = new Set();
-    for (const x of form.querySelectorAll('input[type=checkbox], .check-box, .check-content')) {
-      const r = (x.closest('.check-box-container, td, label') || x).getBoundingClientRect();
-      const cx = r.left + r.width / 2;
-      if (r.top < hr.bottom - 2 || cx < hr.left - 4 || cx > hr.right + 4) continue;
-      if (!vis(x) && !vis(x.closest('.check-box-container, td, label') || x)) continue;
-      boxes.add(x.closest('.check-box-container, td, label') || x);
+    // 점검표 칸은 진짜 네모칸(input)이다 — 해당없음·적합·미흡·부적합 4열 × 약 18줄 (2026-10-05 14:17 structure-checklist.txt)
+    // 표 안쪽이 따로 스크롤되므로 화면 밖 줄도 세려고, 같은 표 안에서 '해당없음' 제목과 같은 칸 번호(열)를 쓴다.
+    const table = head.closest('table');
+    if (table) {
+      const col = [...head.parentElement.children].indexOf(head);
+      const body = [...table.querySelectorAll('tr')].filter((tr) => !tr.contains(head));
+      // 다른 표로 나뉜 본문(머리글 고정형)이면 같은 감싸개 안의 표들을 모두 본다
+      const wrap = table.parentElement?.parentElement || table.parentElement;
+      const rows = body.length ? body : [...wrap.querySelectorAll('tr')].filter((tr) => !tr.contains(head));
+      for (const tr of rows) {
+        const cells = [...tr.children];
+        // 줄마다 열 수가 같으면 같은 번호, 아니면(앞 칸 합침) 뒤에서부터 같은 위치
+        const cell = cells.length === head.parentElement.children.length ? cells[col] : cells[cells.length - (head.parentElement.children.length - col)];
+        const inp = cell?.querySelector('input[type=checkbox]');
+        if (inp) boxes.add(inp);
+      }
     }
-    return [...boxes].map((b, i) => {
-      b.setAttribute('data-goms-na', String(i));
-      const inp = b.matches('input') ? b : b.querySelector('input[type=checkbox]');
-      return { i, on: inp ? inp.checked : !!b.querySelector('svg') };
-    });
+    if (!boxes.size) { // 표가 아니면 가로 위치로
+      for (const x of form.querySelectorAll('input[type=checkbox]')) {
+        const r = x.getBoundingClientRect(); const cx = r.left + r.width / 2;
+        if (r.top > hr.bottom - 2 && cx > hr.left - 4 && cx < hr.right + 4) boxes.add(x);
+      }
+    }
+    return [...boxes].map((b, i) => { b.setAttribute('data-goms-na', String(i)); return { i, on: b.checked }; });
   });
   let st = await state();
   if (!st.length) throw new Stop('심의점검표에서 "해당없음" 칸을 찾지 못했어요');
   for (const { i, on } of st) {
     if (on) continue;
-    const item = FORM.root.locator(`[data-goms-na="${i}"]`);
-    const isOn = async () => item.evaluate((b) => { const inp = b.matches('input') ? b : b.querySelector('input[type=checkbox]'); return inp ? inp.checked : !!b.querySelector('svg'); });
-    await clickPick(item, isOn);
+    const box = FORM.root.locator(`[data-goms-na="${i}"]`);
+    await box.check({ force: true, timeout: 5000 }).catch(() => box.evaluate((x) => x.click()));
+    if (!(await box.isChecked().catch(() => false))) await box.evaluate((x) => { if (!x.checked) x.click(); });
   }
   await sleep(500);
   st = await state();
   await shot(page, 'checklist-filled');
   const ok = st.filter((x) => x.on).length;
+  // 같은 줄의 다른 열(적합·미흡·부적합)이 켜졌으면 멈춘다
+  const others = await FORM.root.evaluate((form) => {
+    const head = [...form.querySelectorAll('th')].find((e) => (e.innerText || '').replace(/\s/g, '') === '해당없음');
+    const table = head?.closest('table'); if (!table) return 0;
+    return [...table.querySelectorAll('input[type=checkbox]:checked')].filter((x) => !x.hasAttribute('data-goms-na')).length;
+  }).catch(() => 0);
+  if (others) throw new Stop(`심의점검표에서 "해당없음" 말고 다른 칸 ${others}곳이 체크돼 있어 멈췄어요`);
   if (ok !== st.length) throw new Stop(`심의점검표 "해당없음" ${st.length}곳 중 ${ok}곳만 골라졌어요`);
   log(`  심의점검표: 해당없음 ${ok}곳 ✓`);
 }
