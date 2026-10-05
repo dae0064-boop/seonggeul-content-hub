@@ -3,7 +3,9 @@
 $ErrorActionPreference = 'SilentlyContinue'
 $t = Get-ScheduledTask -TaskName 'SeonggeulDailyReserve'
 if (-not $t) { exit 0 }
-if (@($t.Triggers).Count -ge 2) { exit 0 }
+# 2026-10-05: 배터리일 때도 돌게 (예전 등록은 '전원 연결 시에만' 이라 노트북 실행이 뜨지 않았다)
+$battery = $t.Settings.DisallowStartIfOnBatteries -or $t.Settings.StopIfGoingOnBatteries
+if (@($t.Triggers).Count -ge 2 -and -not $battery) { exit 0 }
 $at = ([datetime]$t.Triggers[0].StartBoundary).ToString('HH:mm')
 & (Join-Path $PSScriptRoot 'auto-setup.ps1') -At $at | Out-Null
-Write-Host "작업 스케줄러에 다시 시도 시각을 더했어요 (첫 실행 $at)."
+Write-Host "작업 스케줄러를 다시 등록했어요 (첫 실행 $at, 다시 시도 시각·배터리에서도 실행)."
