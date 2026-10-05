@@ -550,6 +550,8 @@ async function main() {
 
     let tagsDone = false;
     step('3-1. 카테고리·태그 (본문보다 먼저)');
+    // 티스토리 카테고리는 생활보장·생활정보 두 개만 쓴다 (2026-10-05 사용자 지시). 보험 글은 생활보장, 나머지(맛집·카페 포함)는 생활정보
+    if (post.category) post.category = /보험|생활보장/.test(`${post.category} ${post.title}`) ? '생활보장' : '생활정보';
     if (post.category) {
       try { await pickCategory(page, post.category); log(`카테고리: ${post.category}`); }
       catch (e) { warn(`카테고리 선택 실패 (${e.message.split('\n')[0]}) — 저장 후 직접 고르세요.`); }
