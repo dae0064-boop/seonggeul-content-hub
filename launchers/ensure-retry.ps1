@@ -3,6 +3,10 @@
 $ErrorActionPreference = 'SilentlyContinue'
 $t = Get-ScheduledTask -TaskName 'SeonggeulDailyReserve'
 if (-not $t) { exit 0 }
+# 2026-10-05: 절전에서 깨우는 타이머가 꺼져 있으면 09:00 에 깨어나지 못한다 — 매번 켜 둔다
+powercfg /SETACVALUEINDEX SCHEME_CURRENT SUB_SLEEP RTCWAKE 1 2>$null | Out-Null
+powercfg /SETDCVALUEINDEX SCHEME_CURRENT SUB_SLEEP RTCWAKE 1 2>$null | Out-Null
+powercfg /SETACTIVE SCHEME_CURRENT 2>$null | Out-Null
 # 2026-10-05: 배터리일 때도 돌게 (예전 등록은 '전원 연결 시에만' 이라 노트북 실행이 뜨지 않았다)
 $battery = $t.Settings.DisallowStartIfOnBatteries -or $t.Settings.StopIfGoingOnBatteries
 if (@($t.Triggers).Count -ge 2 -and -not $battery) { exit 0 }

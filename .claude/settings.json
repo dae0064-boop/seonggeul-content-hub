@@ -6,6 +6,16 @@
         "hooks": [
           {
             "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/scripts/session-start.sh\"",
+            "timeout": 360,
+            "statusMessage": "GitHub 최신 내용 받고 진행 상황 불러오는 중..."
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
             "command": "bash \"$CLAUDE_PROJECT_DIR/scripts/drive-sync.sh\" pull",
             "timeout": 120,
             "statusMessage": "구글 드라이브에서 작업물·메모리 불러오는 중..."
