@@ -24,6 +24,8 @@ auto-setup.cmd        아침 자동 실행 등록 (PC 마다 처음 한 번만)
 goms-test.cmd         GOMS 광고심의 등록 시험 (시험 중에만 — 등록은 누르지 않아요)
                       칸을 채운 화면을 Drive 에 올려 Claude 가 확인해요.
 
+goms-register.cmd     GOMS 광고심의 실제 등록 — 몇 편부터 몇 편까지 물어봐요 (이미 등록한 편은 건너뜀)
+
 
 tools 폴더            위 실행기가 쓰는 부품이에요. 열거나 누를 필요 없어요.
                       (새 PC 를 연결할 때 쓰는 connect.cmd·openai-key.cmd 도 여기 있어요)
