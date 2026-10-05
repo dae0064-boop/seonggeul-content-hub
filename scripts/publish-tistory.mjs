@@ -185,6 +185,24 @@ const countImages = (page) => page.evaluate(() => {
   return Math.max(imgs, codes);
 });
 
+/** 올린 그림이 서버에 다 올라갈 때까지 기다린다. 그 전에 getContent() 를 부르면 티스토리 에디터가
+ *  '이미지 업로드가 완료된 후 시도해 주세요.' 를 던진다 (2026-10-05 실제 실행: 5편 중 2편이 이 오류로 저장되지 않았다).
+ *  그림 수가 늘었다고 업로드가 끝난 것이 아니다. getContent 가 오류 없이 돌 때까지 본다. */
+async function waitUploadsDone(page, ms = 90000) {
+  const deadline = Date.now() + ms;
+  let last = '';
+  while (Date.now() < deadline) {
+    last = await page.evaluate(() => {
+      const ed = window.tinymce && (window.tinymce.activeEditor || window.tinymce.editors?.[0]);
+      if (!ed) return '';
+      try { ed.getContent(); return ''; } catch (e) { return String(e?.message || e); }
+    }).catch((e) => String(e?.message || e));
+    if (!last) return true;
+    await sleep(1000);
+  }
+  throw new Error(`그림 업로드가 ${Math.round(ms / 1000)}초 안에 끝나지 않았습니다 (${last})`);
+}
+
 /** 그림 한 장 올리기: 숨은 파일 칸에 바로 넣고, 안 되면 첨부 → 사진 버튼으로 파일 선택창을 띄운다. 들어갔는지 그림 수로 확인 */
 async function uploadOne(page, file) {
   const before = await countImages(page);
@@ -553,6 +571,7 @@ async function main() {
         if (ok) { uploaded.push(im); log(`${im.n}번 올림`); } else missingImages.push(im.n);
         if (!ok) break; // 한 장이 안 되면 뒤 장도 같은 이유로 안 된다 — 순서가 틀어지지 않게 멈춘다
       }
+      if (uploaded.length) await waitUploadsDone(page);
       await dump(page, 'images-uploaded');
       if (uploaded.length) {
         const blocks = await imageBlocksInEditor(page);
@@ -575,6 +594,7 @@ async function main() {
 
     step('4. 본문 (기본 에디터에 통째로)');
     await findFirst(page, SEL.editorIfr, { timeout: 15000 }).catch(() => {});
+    if (uploaded.length) await waitUploadsDone(page);
     const r = await bodyByTinymce(page, finalHtml);
     await sleep(1000);
     const problem = r.ok ? checkBody(await readBack(page), post, want.length, uploaded.length) : r.why;
