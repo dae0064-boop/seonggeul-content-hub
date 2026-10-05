@@ -101,12 +101,15 @@ async function row(page, key, labels) {
       const want = labels.map(norm);
       const cands = [...document.querySelectorAll('th, td, label, dt, span, div, p, strong')]
         .filter((e) => vis(e) && want.includes(norm(e.innerText)) && e.children.length <= 2);
-      for (const c of cands) {
+      // 목록 화면 검색칸에도 같은 이름(신청구분·광고방법·광고구분)이 있다 — 나중에 열린 등록 화면이 DOM 뒤쪽에 오므로 뒤에서부터 본다
+      for (const c of cands.reverse()) {
         let box = c;
         for (let up = 0; up < 5 && box; up++) {
           box = box.parentElement;
           if (!box) break;
           const ctrls = [...box.querySelectorAll('input, select, textarea, [role=combobox], [role=radio], [role=checkbox]')].filter((x) => !c.contains(x));
+          // 목록 화면 검색칸(첫 항목이 "전체"인 목록)은 등록 칸이 아니다
+          if (ctrls.some((x) => x.tagName === 'SELECT' && /^전체$/.test((x.options[0]?.text || '').trim()))) break;
           if (ctrls.length) { document.querySelectorAll(`[data-goms="${key}"]`).forEach((x) => x.removeAttribute('data-goms')); box.setAttribute('data-goms', key); return true; }
         }
       }
@@ -268,7 +271,8 @@ async function gotoForm(page) {
   await sleep(3000);
   await shot(page, 'ad-review');
   await structure(page, 'ad-review');
-  await clickText(page, ['광고등록', '광고 등록']);
+  // 목록 화면 오른쪽 위 버튼 글자는 "등록" (사용자는 "광고등록"이라 부름 — 2026-10-05 첫 시험 structure-ad-review.txt)
+  await clickText(page, ['광고등록', '광고 등록', '등록']);
   await sleep(3000);
   await shot(page, 'form-open');
   await structure(page, 'form');
