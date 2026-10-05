@@ -110,7 +110,12 @@ async function row(page, key, labels) {
           const ctrls = [...box.querySelectorAll('input, select, textarea, [role=combobox], [role=radio], [role=checkbox]')].filter((x) => !c.contains(x));
           // 목록 화면 검색칸(첫 항목이 "전체"인 목록)은 등록 칸이 아니다
           if (ctrls.some((x) => x.tagName === 'SELECT' && /^전체$/.test((x.options[0]?.text || '').trim()))) break;
-          if (ctrls.length) { document.querySelectorAll(`[data-goms="${key}"]`).forEach((x) => x.removeAttribute('data-goms')); box.setAttribute('data-goms', key); return true; }
+          if (ctrls.length) { document.querySelectorAll(`[data-goms="${key}"]`).forEach((x) => x.removeAttribute('data-goms')); box.setAttribute('data-goms', key);
+            // 신청구분·광고구분처럼 한 줄에 칸이 둘이면 이름 바로 뒤의 칸을 쓴다 (2026-10-05 등록 화면 캡처)
+            const next = ctrls.find((x) => c.compareDocumentPosition(x) & Node.DOCUMENT_POSITION_FOLLOWING) || ctrls[0];
+            document.querySelectorAll(`[data-goms-ctrl="${key}"]`).forEach((x) => x.removeAttribute('data-goms-ctrl'));
+            next.setAttribute('data-goms-ctrl', key);
+            return true; }
         }
       }
       return false;
@@ -134,8 +139,9 @@ async function fillText(page, key, labels, value) {
 /** 고르는 칸: 진짜 select → 라디오 → 꾸민 목록 순서로 시도하고, 고른 값을 다시 읽어 확인한다. */
 async function choose(page, key, labels, option) {
   const r = await row(page, key, labels);
-  const sel = r.locator('select').first();
-  if (await sel.count()) {
+  const ctrl = r.locator(`[data-goms-ctrl="${key}"]`);
+  const sel = ctrl;
+  if (await ctrl.evaluate((x) => x.tagName === 'SELECT').catch(() => false)) {
     const texts = await sel.locator('option').allInnerTexts();
     const pick = texts.find((t) => same(t, option)) || texts.find((t) => t.replace(/\s/g, '').toLowerCase().includes(option.toLowerCase()));
     if (!pick) throw new Stop(`${labels[0]} 목록에 "${option}" 이 없어요 (목록: ${texts.join(', ')})`);
@@ -272,7 +278,12 @@ async function gotoForm(page) {
   await shot(page, 'ad-review');
   await structure(page, 'ad-review');
   // 목록 화면 오른쪽 위 버튼 글자는 "등록" (사용자는 "광고등록"이라 부름 — 2026-10-05 첫 시험 structure-ad-review.txt)
+  // 안전장치: "등록"은 신청서의 최종 등록 버튼과 글자가 같다. 신청서(심의점검표 탭)가 이미 보이면 누르지 않는다.
+  const formShown = async () => (await Promise.all(page.frames().map((f) => f.getByText('심의점검표', { exact: true }).first().isVisible().catch(() => false)))).some(Boolean);
+  if (await formShown()) throw new Stop('목록 화면에 신청서가 이미 열려 있어 "등록"을 누르지 않았어요');
   await clickText(page, ['광고등록', '광고 등록', '등록']);
+  for (let i = 0; i < 20 && !(await formShown()); i++) await sleep(500);
+  if (!(await formShown())) throw new Stop('"등록"을 눌렀는데 신청서(심의점검표 탭)가 열리지 않았어요');
   await sleep(3000);
   await shot(page, 'form-open');
   await structure(page, 'form');
@@ -290,16 +301,23 @@ async function one(page, ctx, n) {
   await choose(page, 'kind', ['신청구분', '신청 구분'], '신규');
   await choose(page, 'type', ['광고구분', '광고 구분'], '업무광고');
   await choose(page, 'how', ['광고방법', '광고 방법', '광고매체'], 'SNS');
+  // 경품여부는 필수칸 — 스레드 보험 정보글은 경품이 없다 (사용자가 알려 준 순서엔 없었지만 화면에 * 표시)
+  await choose(page, 'gift', ['경품여부', '경품 여부'], '아니오');
   await attach(page, file);
   await shot(page, 'form-filled');
   const scope = await checklist(page, ctx);
   if (!submit) {
+    await clickText(page, ['기본내용', '기본 내용'], { timeout: 3000 }).catch(() => {});
+    await sleep(1000);
+    await shot(page, 'form-before-register');
     log('  시험이라 "등록하기"·"등록"은 누르지 않고 멈춰요.');
     return 'test';
   }
   await clickText(page, ['등록하기'], { scopePage: scope });
   await sleep(2500);
   await shot(page, 'checklist-saved');
+  await clickText(page, ['기본내용', '기본 내용']); // 점검표는 같은 화면의 탭이다 — 기본내용 탭으로 돌아가 등록
+  await sleep(1000);
   // 점검표 저장 뒤에도 기본내용이 그대로인지 다시 확인하고 나서 등록한다
   const t = await (await row(page, 'title', ['광고제목', '광고 제목', '제목'])).locator('input, textarea').first().inputValue();
   if (t !== title) throw new Stop(`등록 직전 광고제목이 "${t}" 로 바뀌어 있어 멈췄어요`);
