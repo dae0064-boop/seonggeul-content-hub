@@ -293,6 +293,8 @@
 - 아직 티스토리 실제 화면에서 돌려 본 적 없다. 자세한 것은 `docs/TISTORY.md`.
 
 ### 원고 작업실 (10/2)
+- **10/5 사용자 지시: 작업한 원고는 항상 원고 작업실에 넣는다** (네이버 서식 복사용). `scripts/board-add.mjs` 로 넣고 같은 주소로 게시 — 절차는 CLAUDE.md "원고 작업실".
+  지금 카드: 인천 논현동 맛집 전주명가(작성중), **전주 오브제스튜디오 촬영 후기**(`content/reviews/`, 미완료 — 주소·영업시간 확인 줄과 가격 칸을 사용자가 채워야 함).
 - 사용자 요청으로 "원고 작업판" → **"원고 작업실"** 로 이름을 바꿨다. 주소 https://claude.ai/artifact/BtKcrqzhB4w4mw7JdzD7JT (소스 `content/board/manuscript-board.html`).
 - 사용자 지시: **블로그에 예약발행을 마친 글은 작업실에서 지운다.** 10/1 글 5편을 지웠고, 지우기 직전 상태는 `content/board/archive/2026-10-01-board.json` 에 남겼다.
 

@@ -11,7 +11,8 @@ CLAUDE.md          ← 이 문서. 저장소 운영 + 생활정보 원고 실무
 content/posts/     원고. <날짜>-<슬러그>.md (정본) + .json (스크립트 입력)
 content/tistory/   티스토리 원고 (네이버와 다른 키워드·제목). .md (정본) + .json·.html (생성물)
 content/calendar/  발행 캘린더 아티팩트 소스, 키워드 목록
-content/board/     원고 작업실 아티팩트 소스
+content/board/     원고 작업실 아티팩트 소스 — 원고를 쓰면 여기 넣는다 (scripts/board-add.mjs)
+content/reviews/   직접 다녀온 방문 후기 원고 (자동 발행 대상 아님)
 content/archive/published.tsv  발행이 끝나 지운 원고 목록 (날짜·채널·슬러그·메인 키워드·제목). 같은 키워드를 다시 쓰지 않게
 content/threads/   스레드 말투 규칙(voice.md) + 글감(topics.txt)
 content/threads/insurance/  스레드 보험 심의글 — 규칙(rules.md)·글감·10편 묶음(sets/)
@@ -603,6 +604,19 @@ CDP attach 자체는 로컬 크로미움을 디버깅 포트로 띄워 확인할
 ```
 
 종료할 땐 `pkill -f "[r]emote-debugging-port=9222"` 처럼 패턴이 자기 명령줄에 매칭되지 않게 한다. 그러지 않으면 셸 자신이 죽는다.
+
+## 원고 작업실 (손으로 올리는 글)
+
+**원고를 쓰면 항상 원고 작업실에 넣는다** (2026-10-05 사용자 지시 — 작업실의 "네이버용 서식 복사"로 바로 옮긴다).
+주소 https://claude.ai/artifact/BtKcrqzhB4w4mw7JdzD7JT, 소스 `content/board/manuscript-board.html`.
+작업실은 상태(완료 표시)를 스스로 저장하므로 **살아 있는 판 위에** 더한다:
+
+1. Artifact `read` (url, `path: index.html`) 로 지금 판을 받는다 (url 만으로도 한 번 read 해 둔다)
+2. `node scripts/board-add.mjs <원고.md> --board <받은 index.html>` → 저장소 소스에 카드가 더해진다 (같은 제목이면 바꿈)
+3. 소스 파일을 같은 `url` 로 다시 게시한다. 새 주소를 만들지 않는다
+
+방문 후기(맛집·촬영 등 직접 다녀온 글)는 `content/reviews/` 에 둔다 — `content/posts/` 에 두면 아침 자동 발행이 집어 간다.
+예약발행을 마친 글은 작업실에서 지운다.
 
 ## 발행 캘린더
 
