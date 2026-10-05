@@ -6,6 +6,12 @@ setlocal
 cd /d "%~dp0"
 title Tistory reserve
 if not exist "tistory-day.ps1" goto missing
+REM Get the latest scripts first, so a fix made in the cloud is used right away (2026-10-05).
+pushd ..
+git fetch -q origin 2>nul
+git checkout -q -- "content/posts/*.json" "content/tistory/*.json" "content/tistory/*.html" 2>nul
+git pull -q --ff-only 2>nul || echo  [!] Could not get the latest files. Continuing with what is on this PC.
+popd
 powershell -NoProfile -ExecutionPolicy Bypass -File "tistory-day.ps1" -Reserve -RetryDrafts %*
 echo.
 pause
