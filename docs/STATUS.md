@@ -27,6 +27,11 @@
 > 사용자는 다 본 대화를 바로 지우는 편이다. 출발점 대화만 지우면 안 된다. 나눔은 그대로: 네이버·티스토리·스레드는 각자 다른 작업.
 > 아침 PC 의 auto-day.cmd(보험글 Word 저장 포함)는 그대로.
 
+### 10/5 사용자: "고정 시각보다 일찍 일어났을 때 바로 작업"
+- 작업 스케줄러 `SeonggeulMorningStart` 추가: 로그인·잠금 풀기·절전 깨기 때 `tools/on-wake.ps1` → 05~15시이고 오늘 남은 글이 있으면 바로 `auto-day.cmd`.
+  잠금을 여러 번 풀어도 60분에 한 번, 이미 돌고 있으면 안 띄운다. 9시 고정 실행은 아무도 PC 를 안 열었을 때의 안전망.
+  등록은 auto-setup.ps1 / ensure-retry.ps1(아침 실행 끝)이 한다 — `auto-setup.cmd` 를 다시 눌러도 기존 시각(노트북 09:15)을 유지한다.
+
 ### 10/5 정리 (사용자: "안 쓰는 cmd 삭제, 발행이 끝난 지난 원고·이미지 관련은 앞으로 삭제, launchers 가 복잡하다")
 - **launchers 에 더블클릭 실행기 5개만**: auto-day(오늘 예약 — 아침 자동/수동), reserve-tomorrow, chrome-login(로그인 확인 + 결과 Drive 업로드, login-test 를 합침),
   sync, auto-setup. 부품 .ps1 과 새 PC 연결용(connect·openai-key·status·update)은 `launchers/tools/`. READ-ME-FIRST.txt 에 설명.

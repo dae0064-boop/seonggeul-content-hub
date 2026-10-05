@@ -9,7 +9,9 @@ powercfg /SETDCVALUEINDEX SCHEME_CURRENT SUB_SLEEP RTCWAKE 1 2>$null | Out-Null
 powercfg /SETACTIVE SCHEME_CURRENT 2>$null | Out-Null
 # 2026-10-05: 배터리일 때도 돌게 (예전 등록은 '전원 연결 시에만' 이라 노트북 실행이 뜨지 않았다)
 $battery = $t.Settings.DisallowStartIfOnBatteries -or $t.Settings.StopIfGoingOnBatteries
-if (@($t.Triggers).Count -ge 2 -and -not $battery) { exit 0 }
+# 2026-10-05: 켜거나 잠금을 풀면 바로 시작하는 작업(SeonggeulMorningStart)이 없으면 다시 등록한다
+$wake = Get-ScheduledTask -TaskName 'SeonggeulMorningStart'
+if (@($t.Triggers).Count -ge 2 -and -not $battery -and $wake) { exit 0 }
 $at = ([datetime]$t.Triggers[0].StartBoundary).ToString('HH:mm')
 & (Join-Path $PSScriptRoot 'auto-setup.ps1') -At $at | Out-Null
-Write-Host "작업 스케줄러를 다시 등록했어요 (첫 실행 $at, 다시 시도 시각·배터리에서도 실행)."
+Write-Host "작업 스케줄러를 다시 등록했어요 (첫 실행 $at, 다시 시도 시각·배터리에서도 실행·켜면 바로 시작)."
