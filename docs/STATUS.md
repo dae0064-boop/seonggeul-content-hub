@@ -31,6 +31,7 @@
 - 작업 스케줄러 `SeonggeulMorningStart` 추가: 로그인·잠금 풀기·절전 깨기 때 `tools/on-wake.ps1` → 05~15시이고 오늘 남은 글이 있으면 바로 `auto-day.cmd`.
   잠금을 여러 번 풀어도 60분에 한 번, 이미 돌고 있으면 안 띄운다. 9시 고정 실행은 아무도 PC 를 안 열었을 때의 안전망.
   등록은 auto-setup.ps1 / ensure-retry.ps1(아침 실행 끝)이 한다 — `auto-setup.cmd` 를 다시 눌러도 기존 시각(노트북 09:15)을 유지한다.
+  **10/5 낮 노트북에서 사용자가 sync → auto-setup 실행** (등록 결과 화면은 클라우드에서 못 봄). 10/6 아침 확인 때 노트북 run-logs 시작 시각으로 '열자마자 시작'이 됐는지 본다.
 
 ### 10/5 정리 (사용자: "안 쓰는 cmd 삭제, 발행이 끝난 지난 원고·이미지 관련은 앞으로 삭제, launchers 가 복잡하다")
 - **launchers 에 더블클릭 실행기 5개만**: auto-day(오늘 예약 — 아침 자동/수동), reserve-tomorrow, chrome-login(로그인 확인 + 결과 Drive 업로드, login-test 를 합침),
