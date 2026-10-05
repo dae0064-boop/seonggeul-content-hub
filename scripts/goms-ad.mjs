@@ -396,8 +396,21 @@ async function checklist(page) {
 async function gotoForm(page) {
   await page.goto(HOME, { waitUntil: 'domcontentloaded', timeout: 30000 });
   await sleep(4000);
-  const login = /#\/login/.test(page.url()) || await page.locator('input[type=password]').first().isVisible().catch(() => false);
-  if (login) { await shot(page, 'login'); return false; }
+  const onLogin = async () => /#\/login/.test(page.url()) || await page.locator('input[type=password]').first().isVisible().catch(() => false);
+  if (await onLogin()) {
+    // 사용자 (2026-10-05): "LOGIN 만 누르면 들어갈 수 있어" — 크롬이 아이디·비밀번호를 채워 둔다.
+    // 비밀번호는 넣지 않는다. 크롬 자동 채움은 실제 클릭이 있어야 사이트에 전달되므로 비밀번호 칸을 한 번 누른 뒤 LOGIN.
+    await shot(page, 'login');
+    log('  GOMS 로그인 화면 — LOGIN 을 눌러요');
+    await page.locator('input[type=password]').first().click({ timeout: 5000 }).catch(() => {});
+    await sleep(500);
+    await clickText(page, ['LOGIN', 'Login', '로그인'], { timeout: 5000 }).catch(() => {});
+    for (let i = 0; i < 20 && await onLogin(); i++) await sleep(500);
+    await gomsMessages(page).catch(() => {}); // 로그인 뒤 공지 창이 뜨면 닫는다
+    if (await onLogin()) { await shot(page, 'login-failed'); return false; }
+    log('  GOMS 로그인 ✓');
+    await sleep(3000);
+  }
   await shot(page, 'home');
   await clickText(page, ['업무']);
   await sleep(1500);
@@ -552,7 +565,7 @@ for (let n = from; n <= to; n++) {
   if (submit && mark && fs.existsSync(mark)) { log(`\n▶ 스레드 ${n}편 — 이미 등록함, 건너뜀`); continue; }
   try {
     const r = await one(page, ctx, n);
-    if (r === 'login') { log('⚠ GOMS 로그인이 필요해요. 자동화용 크롬에 로그인 화면을 열어 두었어요.'); code = 3; break; }
+    if (r === 'login') { log('⚠ LOGIN 을 눌렀는데 들어가지지 않았어요. 열린 크롬 창에서 아이디·비밀번호가 채워져 있는지 확인해 주세요.'); code = 3; break; }
     if (r === 'done') {
       if (mark) fs.writeFileSync(mark, `${new Date().toISOString()}\n${dialogs.slice(-3).join('\n')}\n`, 'utf8');
       log(`  ✅ 스레드 ${n}편 등록`);

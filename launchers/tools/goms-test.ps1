@@ -35,13 +35,13 @@ if ($Submit) {
 }
 $code = $LASTEXITCODE
 $log | ForEach-Object { Write-Host $_ }
-@("PC: $env:COMPUTERNAME", "시각: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')", "종료 코드: $code (0 = 끝까지 채움, 2 = 중간에 멈춤, 3 = GOMS 로그인 필요)", '') + $log |
+@("PC: $env:COMPUTERNAME", "시각: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')", "종료 코드: $code (0 = 끝까지 채움, 2 = 중간에 멈춤, 3 = GOMS 로그인 안 됨)", '') + $log |
   Set-Content -Encoding UTF8 (Join-Path $out 'result.txt')
 $dest = Join-Path $drive "ClaudeWorkspace\run-logs\$kind-$stamp-$env:COMPUTERNAME"
 New-Item -ItemType Directory -Force -Path $dest | Out-Null
 Copy-Item (Join-Path $out '*') $dest -Force
 if ($code -eq 3) {
-  Write-Host "`nGOMS 로그인이 필요해요. 열린 크롬 창에서 GOMS 에 로그인한 뒤, goms-test 를 다시 더블클릭해 주세요." -ForegroundColor Yellow
+  Write-Host "`nLOGIN 을 눌러도 GOMS 에 들어가지지 않았어요. 열린 크롬 창에서 아이디·비밀번호가 채워져 있는지 보고 LOGIN 을 한 번 눌러 들어간 뒤, 다시 더블클릭해 주세요." -ForegroundColor Yellow
 } else {
   Write-Host "`nDrive 에 올렸어요. Claude 에게 '끝' 이라고 말해 주세요." -ForegroundColor Green
 }
