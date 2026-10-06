@@ -1,0 +1,94 @@
+{
+  "slug": "2026-10-07-jeongijangpan-setak",
+  "title": "전기장판 세탁, 세탁 표시 확인하고 열선 안 상하게 빠는 법",
+  "source": "10/7(수) 원고 (10/6 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "깨끗하게 빨아 둥글게 말아 둔 전기장판 (대표사진)",
+      "prompt": "Camera and composition: medium shot on a bedroom floor. A freshly washed electric heating mat neatly rolled up into a soft cylinder on a clean bedroom floor, a small detached temperature controller beside it. No people at all in this image. Background color: soft apricot. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "note": "대표",
+      "quality": "medium",
+      "overlay": {
+        "kind": "thumb",
+        "title": "전기장판 세탁\n열선 안 상하게"
+      },
+      "shot": "medium shot on a bedroom floor",
+      "bg": "soft apricot"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "전기장판 안쪽 열선이 비쳐 보이는 단면 모습",
+      "prompt": "Camera and composition: cutaway close-up of a mat. A cutaway view of a soft quilted electric heating mat showing thin wavy heating wires running inside the padding like gentle lines. No people at all in this image. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "cutaway close-up of a mat",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "전기장판 모서리에 달린 세탁 표시 라벨을 살피는 손",
+      "prompt": "Camera and composition: extreme close-up of a fabric tag. A hand holding up a small fabric care label sewn on the corner of an electric heating mat, the label shows only simple washing icons. No people at all in this image. Background color: warm cream. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "세탁 표시부터 확인"
+      },
+      "shot": "extreme close-up of a fabric tag",
+      "bg": "warm cream"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "전기장판에서 온도조절기 연결 부분을 분리하는 모습",
+      "prompt": "Camera and composition: close-up of a connector. Hands gently unplugging a rounded temperature controller box from the connector at the edge of an electric heating mat. No people at all in this image. Background color: pale sage. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "온도조절기 분리"
+      },
+      "shot": "close-up of a connector",
+      "bg": "pale sage"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "욕조에 미지근한 물을 받아 전기장판을 살살 누르는 모습",
+      "prompt": "Camera and composition: high-angle shot of a bathtub. A bathtub filled with lukewarm water and a few soap bubbles, hands pressing down gently on a spread-out heating mat in the water. No people at all in this image. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "high-angle shot of a bathtub",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "세탁망에 넣은 전기장판과 세탁기 울 코스 버튼",
+      "prompt": "Camera and composition: eye-level shot in a laundry corner. A front-loading washing machine with its door open and an electric heating mat folded loosely inside a big mesh laundry bag in front of it. No people at all in this image. Background color: light butter yellow. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "약한 코스·세탁망"
+      },
+      "shot": "eye-level shot in a laundry corner",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "건조대 위에 평평하게 펴서 그늘에 말리는 전기장판",
+      "prompt": "Camera and composition: wide shot on a shaded balcony. An electric heating mat laid completely flat on top of a wide drying rack in a shady, breezy apartment balcony, curtain fluttering softly. The person is Seonggeul, the blog host: a Korean woman in her 30s, round face, dark hair in a low bun, cream sweater with a mint scarf. Background color: mint green. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "그늘에 평평하게"
+      },
+      "shot": "wide shot on a shaded balcony",
+      "bg": "mint green"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "둥글게 만 전기장판을 상자에 눕혀 넣는 손",
+      "prompt": "Camera and composition: top-down view of a storage box. Hands placing a loosely rolled electric heating mat lying down inside an open cardboard storage box, a small pouch for the controller next to it. No people at all in this image. Background color: dusty rose. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "top-down view of a storage box",
+      "bg": "dusty rose"
+    }
+  ]
+}
