@@ -8,6 +8,12 @@
 // 그래서: ① 화면 맨 아래로 내려 칸을 그리게 하고 ② 모든 틀(frame)에서 찾고 ③ 커서 확인은 그 칸이 속한 영역 기준으로 한다.
 // Enter 는 커서가 태그 칸에 있는 것이 확인됐을 때만 누른다 (발행 버튼이 눌릴 여지를 없앤다). 이 확인을 빼지 않는다.
 
+// 2026-10-06 실제 실행(5편 모두 '실패'): 실패 로그의 후보 목록에 "○○ 태그 삭제" 단추가 8개 이상 보였다 — 태그는 들어가고 있었다.
+// 몇 개를 넣은 뒤 칸에서 커서가 빠지고, 다시 시도 때는 칸 자체가 안 보였다. 티스토리는 한 글에 태그를 10개까지만 받고,
+// 다 차면 입력 칸을 숨기는 것으로 본다. 그래서: 처음부터 10개까지만 넣고, 이미 들어간 태그는 건너뛰고,
+// 칸이 사라져도 들어간 태그가 보이면 성공으로 센다.
+export const TAG_MAX = 10;
+
 export const TAG_SELECTORS = [
   'input#tagText',
   'input[placeholder*="태그"]',
@@ -127,21 +133,60 @@ export async function tagCandidates(page) {
   return out.join(' || ') || '태그 후보 칸 없음 (그림자 영역·모든 틀 포함)';
 }
 
+/** 이미 들어간 태그 — 각 태그 옆의 "○○ 태그 삭제" 단추 글자에서 읽는다 (그림자 영역·모든 틀 포함) */
+export async function existingTags(page) {
+  const names = new Set();
+  for (const f of page.frames()) {
+    const found = await f.evaluate(() => {
+      const res = [];
+      const walk = (root) => {
+        for (const e of root.querySelectorAll('*')) {
+          if (e.shadowRoot) walk(e.shadowRoot);
+          const label = (e.textContent || '').trim() || e.getAttribute('aria-label') || '';
+          const m = e.children.length === 0 && label.match(/^(.+?)\s*태그\s*삭제$/);
+          if (m) res.push(m[1].trim());
+        }
+      };
+      walk(document);
+      return res;
+    }).catch(() => []);
+    for (const t of found) names.add(t);
+  }
+  return [...names];
+}
+
 /**
  * 태그를 하나씩 넣는다. 성공하면 넣은 개수, 칸을 못 찾거나 커서 확인이 안 되면 오류.
  * @param {(…m:any[])=>void} log
  * @param {(…m:any[])=>void} warn
  */
-export async function enterTags(page, tags, { log = () => {}, warn = () => {} } = {}) {
+export async function enterTags(page, allTags, { log = () => {}, warn = () => {} } = {}) {
+  const tags = allTags.slice(0, TAG_MAX);
+  if (allTags.length > TAG_MAX) log(`태그는 ${TAG_MAX}개까지만 넣습니다 (티스토리 한도) — 뺀 것: ${allTags.slice(TAG_MAX).join(', ')}`);
+  // 이미 들어간 태그(첫 시도에서 넣은 것)는 건너뛴다 — 칸이 다 차서 숨었으면 여기서 끝난다
+  const already = new Set(await existingTags(page));
+  const todo = tags.filter((t) => !already.has(t));
+  if (!todo.length) { log(`태그 ${tags.length}/${tags.length}개 (이미 들어가 있음)`); return tags.length; }
+  const filled = () => existingTags(page).then((have) => tags.filter((t) => have.includes(t)).length);
+  // 칸이 닫히거나 커서가 빠졌을 때: 이미 한도만큼 들어갔으면 성공으로 본다
+  const fullOr = async (err) => {
+    const have = await existingTags(page);
+    if (have.length >= TAG_MAX || tags.every((t) => have.includes(t))) {
+      const n = tags.filter((t) => have.includes(t)).length;
+      log(`태그 ${n}/${tags.length}개 (칸이 다 차서 닫힘 — 들어간 태그 ${have.length}개)`);
+      return n;
+    }
+    throw err;
+  };
   const hit = await findTagInput(page);
-  if (!hit) throw new Error(`태그 칸을 찾지 못했습니다 (${await tagCandidates(page)})`);
+  if (!hit) return fullOr(new Error(`태그 칸을 찾지 못했습니다 (${await tagCandidates(page)})`));
   const { loc: tagLoc, sel, frame } = hit;
   log(`태그 칸: ${sel}${frame === 'main' ? '' : ` (틀 ${frame.slice(0, 60)})`}`);
-  for (const t of tags) {
+  for (const t of todo) {
     await tagLoc.scrollIntoViewIfNeeded({ timeout: 2000 }).catch(() => {});
     await tagLoc.focus({ timeout: 2000 }).catch(() => {});
     if (!(await hasFocus(tagLoc))) await tagLoc.click({ timeout: 3000 }).catch(() => {});
-    if (!(await hasFocus(tagLoc))) throw new Error(`태그 칸에 커서가 없습니다 (커서 위치 ${await where(page)} · ${await tagCandidates(page)})`);
+    if (!(await hasFocus(tagLoc))) return fullOr(new Error(`태그 칸에 커서가 없습니다 (${await filled()}/${tags.length}개 들어감, 커서 위치 ${await where(page)} · ${await tagCandidates(page)})`));
     await tagLoc.fill(t).catch(async () => { await tagLoc.pressSequentially(t, { delay: 20 }); });
     if ((await valueOf(tagLoc)).trim() !== t) {
       // 입력 이벤트만 듣는 칸: 지우고 한 글자씩
@@ -159,7 +204,8 @@ export async function enterTags(page, tags, { log = () => {}, warn = () => {} } 
     const root = el.getRootNode();
     return `${box.innerText || box.textContent || ''} ${root instanceof ShadowRoot ? root.textContent : ''}`;
   }).catch(() => '');
-  const miss = tags.filter((t) => !area.includes(t));
+  const have = await existingTags(page);
+  const miss = tags.filter((t) => !area.includes(t) && !have.includes(t));
   if (miss.length) warn(`화면에서 확인되지 않은 태그: ${miss.join(', ')}`);
   log(`태그 ${tags.length - miss.length}/${tags.length}개`);
   return tags.length - miss.length;

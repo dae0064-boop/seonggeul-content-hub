@@ -83,7 +83,8 @@ function OtherRunning {
 }
 if ($Reserve) {
   . (Join-Path $PSScriptRoot 'lib-drive.ps1')
-  $drive = Find-MyDrive
+  $drive = Wait-MyDrive
+  if ($drive) { [void](Sync-LocalLocks $Date) }
   if ($drive) { $lockDir = Join-Path $drive "ClaudeWorkspace\run-locks\$Date" }
   else { Say 'Google Drive 를 찾지 못해 다른 PC 와 겹치는지 확인할 수 없어요. 이 PC 안에만 표시를 남기고 진행합니다.' 'Yellow'; $lockDir = Join-Path (Get-Location) "dumps\run-locks\$Date" }
   New-Item -ItemType Directory -Force -Path $lockDir | Out-Null
@@ -189,5 +190,6 @@ Say "`n==================== 결과 ====================" 'Cyan'
 $result | Format-Table -AutoSize | Out-String | ForEach-Object { Say $_ }
 if ($Reserve) { Say '예약된 글은 티스토리 관리 > 글 관리에서, 나머지는 글쓰기 화면 아래 "임시저장" 옆 숫자에서 확인하세요.' 'Green' }
 else { Say '발행은 하지 않았어요. 티스토리 글쓰기 화면 아래 "임시저장" 옆 숫자에서 확인하세요.' 'Green' }
+if ($lockDir -and $lockDir -like '*dumps\run-locks*') { [void](Sync-LocalLocks $Date) }
 Release
 Share

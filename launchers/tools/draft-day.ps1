@@ -52,8 +52,10 @@ function OtherRunning {
     Sort-Object LastWriteTime | Select-Object -First 1
 }
 if ($Reserve) {
-  $drive = Find-MyDrive
+  $drive = Wait-MyDrive
   if ($drive) {
+    $moved = Sync-LocalLocks $Date
+    if ($moved) { Say "이 PC 안에만 남아 있던 처리 표시 $moved 개를 Google Drive 로 옮겼어요." 'Gray' }
     $lockDir = Join-Path $drive "ClaudeWorkspace\run-locks\$Date"
     New-Item -ItemType Directory -Force -Path $lockDir | Out-Null
     $other = OtherRunning
@@ -209,5 +211,9 @@ Say "`n==================== 결과 ====================" 'Cyan'
 $result | Format-Table -AutoSize | Out-String | ForEach-Object { Say $_ }
 if ($Reserve) { Say '예약된 글은 블로그 글 관리의 예약 목록에서, 나머지는 임시저장 목록에서 확인하세요.' 'Green' }
 else { Say '발행은 하지 않았어요. 네이버 글쓰기 화면의 "저장" 옆 숫자 → 임시저장 목록에서 확인하세요.' 'Green' }
+if ($lockDir -and $lockDir -like '*dumps\run-locks*') {
+  $moved = Sync-LocalLocks $Date
+  if ($moved) { Say "이제 Google Drive 가 보여서 처리 표시 $moved 개를 옮겼어요 (다른 PC 가 같은 글을 다시 올리지 않게)." 'Gray' }
+}
 Share
 Release
