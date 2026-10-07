@@ -9,6 +9,7 @@
  *   category: 생활정보
  *   tags: 태그1, 태그2
  *   publish_at: 2026-10-02 09:00   ← 예약발행 시각 (draft-day -Reserve 가 쓴다)
+ *   related: 지난 글 제목 | 지난 글 제목   ← 글 끝 "함께 보면 좋은 글" (발행된 내 글 1~2편, 2026-10-07 사용자 승인)
  *   ---
  *
  *   본문 줄1
@@ -105,6 +106,7 @@ export function parsePost(raw) {
     subKeywords: meta.sub_keywords ? meta.sub_keywords.split(',').map((s) => s.trim()).filter(Boolean) : [],
     publishAt: meta.publish_at || '',
     format: (meta.format || '').trim(),
+    related: meta.related ? meta.related.split('|').map((s) => s.trim()).filter(Boolean) : [],
     blocks,
     marks,
     warnings,

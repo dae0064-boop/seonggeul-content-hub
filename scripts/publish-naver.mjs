@@ -25,6 +25,7 @@
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
+import { readMyBlogId, resolveRelated } from './lib/naver-related.mjs';
 
 // ---------------------------------------------------------------- args
 function parseArgs(argv) {
@@ -52,6 +53,7 @@ function parseArgs(argv) {
       case '--url':         out.url = next(); break;
       case '--dump':        out.dump = true; break;
       case '--no-tags':     out.tags = false; break;
+      case '--no-related':  out.related = false; break;
       case '--help':        out.help = true; break;
       default:
         if (a.startsWith('--')) throw new Error(`알 수 없는 옵션: ${a}`);
@@ -79,6 +81,7 @@ const USAGE = `
   --save-draft       에디터 "저장"(임시저장)을 누르고 끝낸다. 태그가 있으면 발행 패널을 열어
                      태그만 넣고 닫은 뒤 저장한다 (발행 확인 버튼은 누르지 않는다)
   --no-tags          --save-draft 에서 태그를 넣지 않는다
+  --no-related       원고 related(함께 보면 좋은 글)를 넣지 않는다
   --dry-run          발행 패널까지 열어 카테고리·태그를 넣고, 발행 버튼은 누르지 않는다
   --at "Y-M-D H:M"   (--dry-run 과 함께) 예약 시각을 채워 둔다
   --publish-now      실제 발행 버튼까지 누른다. 사람이 그 자리에서 결정했을 때만 쓴다
@@ -856,8 +859,8 @@ function lostLines(before, after, removed = []) {
   return lost;
 }
 /** 다른 줄이 사라졌으면 Ctrl+Z 로 되돌려 본다 (최대 4번). 되돌렸으면 true */
-async function undoUntilRestored(page, editor, before) {
-  for (let i = 0; i < 4; i++) {
+async function undoUntilRestored(page, editor, before, tries = 4) {
+  for (let i = 0; i < tries; i++) {
     await page.keyboard.press('Control+z');
     await sleep(500);
     if (!lostLines(before, await snapshot(editor)).length) return true;
@@ -940,6 +943,56 @@ async function insertImageAt(page, editor, label, file) {
   return { ok: false, why: '업로드가 40초 안에 끝나지 않음 (화면 확인 필요)' };
 }
 
+/**
+ * 글 맨 끝(닫는 인사 아래)에 "▶ 함께 보면 좋은 글" 과 내 지난 글 주소 1~2개를 넣는다 (2026-10-07 사용자 승인).
+ * 주소를 붙여 넣으면 에디터가 사진 달린 링크 카드로 바꾼다. 카드가 안 생겨도 주소 글자는 링크로 남는다.
+ * 다른 줄이 하나라도 사라지면 되돌리고 링크 없이 간다 — 이 단계 때문에 발행이 멈추지는 않는다.
+ */
+const OGLINK_SEL = '.se-component.se-oglink, .se-module-oglink';
+async function addRelatedLinks(page, editor, post, links) {
+  const lastLine = [...post.blocks].reverse().find((b) => b.type !== 'image')?.lines.slice(-1)[0]?.t;
+  if (!lastLine) return { ok: false, why: '마지막 줄을 모름' };
+  const cards = () => editor.locator(OGLINK_SEL).count();
+  const snap0 = await snapshot(editor);
+  const cards0 = await cards();
+  if (!(await caretAtEnd(page, editor, lastLine))) return { ok: false, why: '마지막 줄을 찾지 못함' };
+  await page.keyboard.press('Enter'); await sleep(250);
+  await page.keyboard.press('Enter'); await sleep(250);
+  await resetToggles(editor);
+  await page.keyboard.insertText('▶ 함께 보면 좋은 글');
+  await sleep(300);
+  let made = 0;
+  for (const l of links) {
+    await page.keyboard.press('End'); await sleep(150);
+    await page.keyboard.press('Enter'); await sleep(300);
+    const before = await cards();
+    // 주소를 붙여넣기로 넣는다 (에디터가 붙여 넣은 주소만 카드로 바꾼다)
+    const pasted = await editor.evaluate((url) => {
+      const target = document.activeElement && document.activeElement.isContentEditable
+        ? document.activeElement
+        : (getSelection().anchorNode?.parentElement?.closest('[contenteditable]') || null);
+      if (!target) return false;
+      const dt = new DataTransfer();
+      dt.setData('text/plain', url);
+      target.dispatchEvent(new ClipboardEvent('paste', { clipboardData: dt, bubbles: true, cancelable: true }));
+      return true;
+    }, l.url);
+    if (!pasted) await page.keyboard.insertText(l.url);
+    const end = Date.now() + 12000;
+    while (Date.now() < end && (await cards()) <= before) await sleep(500);
+    const card = (await cards()) > before;
+    if (!card && !(await snapshot(editor)).some((t) => t.includes(l.logNo))) await page.keyboard.insertText(l.url);
+    made++;
+    log(`${card ? '✓ 링크 카드' : '△ 주소 글자로 들어감 (카드 안 생김)'}: ${l.title}`);
+    await sleep(500);
+  }
+  const lost = lostLines(snap0, await snapshot(editor));
+  if (lost.length) {
+    const back = await undoUntilRestored(page, editor, snap0, 12);
+    return { ok: false, why: `다른 글 ${lost.length}줄이 사라져 ${back ? '되돌림' : '되돌리지 못함'}`, lost: back ? null : lost };
+  }
+  return { ok: true, made, cards: (await cards()) - cards0 };
+}
 
 // ---------------------------------------------------------------- 본문 넣기
 /** 굵게/기울임/밑줄/취소선이 켜져 있으면 끈다. 켜진 채로 쓰면 글 전체에 그 서식이 붙는다. */
@@ -1422,6 +1475,28 @@ async function main() {
       }, COLORS);
       log(`굵게 확인: 굵게 안 된 강조 ${notBold.length}곳`);
       notBold.forEach((t) => manual.push(`굵게 → "${t}"`));
+    }
+
+    // ---- 글 끝 "함께 보면 좋은 글" (원고 related, 2026-10-07 사용자 승인). 실패해도 발행은 그대로 한다
+    if (args.related !== false && post.related?.length) {
+      step(`7-2. 함께 보면 좋은 글 (${post.related.length}개)`);
+      try {
+        const blogId = args.blogId || readMyBlogId();
+        const links = await resolveRelated(post, { blogId, log });
+        if (!links.length) log('발행된 관련 글을 찾지 못해 넣지 않습니다');
+        else {
+          const r = await addRelatedLinks(page, editor, post, links);
+          if (r.ok) log(`관련 글 ${r.made}개 넣음 (카드 ${r.cards}개)`);
+          else {
+            warn(`관련 글 넣기 실패 (${r.why})`);
+            if (r.lost) throw new Error(`관련 글을 넣다가 글이 사라졌고 되돌리지 못했습니다: ${r.lost.slice(0, 3).join(' / ')}. 저장하지 않고 멈춥니다.`);
+          }
+          await dump(page, 'related');
+        }
+      } catch (e) {
+        if (/저장하지 않고 멈춥니다/.test(e.message)) throw e;
+        warn(`관련 글 단계 건너뜀 (${e.message.split('\n')[0]})`);
+      }
     }
 
     printManual(manual, report, args);
