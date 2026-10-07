@@ -106,9 +106,12 @@ const FORMATS = {
   질문형: { qa: [5], need: [] },
 };
 const CATEGORY_FROM = '2026-10-03';
-function allowedCategories(post) {
+// 2026-10-07 사용자 지시: 맛집·카페는 사용자가 직접 쓴다 → 자동 원고는 보험 → 생활보장, 나머지 전부 → 생활정보
+const TWO_CATEGORIES_FROM = '2026-10-08';
+function allowedCategories(post, dated) {
   const t = `${post.title} ${post.mainKeyword}`;
   if (/보험/.test(t)) return ['생활보장'];
+  if (dated >= TWO_CATEGORIES_FROM) return ['생활정보'];
   if (/맛집|카페|식당|음식|메뉴|디저트|빵집|브런치/.test(t)) return ['맛집·카페'];
   return ['생활정보', '맛집·카페'];
 }
@@ -152,10 +155,12 @@ for (const file of files) {
     const want = /보험/.test(`${post.title} ${post.mainKeyword}`) ? '생활보장' : '생활정보';
     if (post.category !== want) errors.push(`티스토리 category 는 "${want}" 여야 합니다 (지금 "${post.category || '없음'}") — 티스토리는 생활보장·생활정보 두 개만 씁니다`);
   }
-  // 네이버 카테고리 (2026-10-02 사용자 지시): 보험 → 생활보장, 음식·카페·맛집 → 맛집, 나머지는 생활정보.
+  // 네이버 카테고리: 보험 → 생활보장, 나머지(음식·제철 글 포함) → 생활정보 (2026-10-07 사용자 지시 — 맛집·카페는 사용자가 직접 쓴다).
+  // 2026-10-07 원고까지는 예전 기준(음식·카페·맛집 → 맛집·카페)
   if (!tistory && dated >= CATEGORY_FROM) {
-    const ok = allowedCategories(post);
-    if (!ok.includes(post.category)) errors.push(`category 는 "${ok.join('" 또는 "')}" 여야 합니다 (지금 "${post.category || '없음'}") — 보험은 생활보장, 음식·카페·맛집은 맛집·카페, 나머지는 생활정보`);
+    const ok = allowedCategories(post, dated);
+    const why = dated >= TWO_CATEGORIES_FROM ? '보험은 생활보장, 나머지는 전부 생활정보 (맛집·카페는 사용자가 직접 씁니다)' : '보험은 생활보장, 음식·카페·맛집은 맛집·카페, 나머지는 생활정보';
+    if (!ok.includes(post.category)) errors.push(`category 는 "${ok.join('" 또는 "')}" 여야 합니다 (지금 "${post.category || '없음'}") — ${why}`);
     const all = `${post.title}\n${texts.join('\n')}`;
     for (const [re, name] of COMMERCIAL) {
       const m = re.exec(all);

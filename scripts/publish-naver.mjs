@@ -696,8 +696,9 @@ async function insertQuoteAt(page, editor, text, style) {
  * 고른 뒤 패널이 닫혔으면 다시 연다. 실패해도 멈추지 않는다 (기본 카테고리로 간다).
  */
 async function pickCategory(page, editor, category) {
-  // 블로그 카테고리 실제 이름 (2026-10-03 로그: 생활보장 / 맛집·카페 / 생활정보). 예전 원고의 '맛집' 도 맞춰 준다.
-  if (category === '맛집') category = '맛집·카페';
+  // 블로그 카테고리 실제 이름 (2026-10-03 로그: 생활보장 / 맛집·카페 / 생활정보).
+  // 2026-10-07 사용자 지시: 맛집·카페는 사용자가 직접 쓴다 → 자동 발행은 보험 글 생활보장, 나머지 전부 생활정보
+  if (category === '맛집' || category === '맛집·카페') category = '생활정보';
   const exact = [
     `[class*="option"] label:text-is("${category}")`,
     `[class*="category"] label:text-is("${category}")`,
