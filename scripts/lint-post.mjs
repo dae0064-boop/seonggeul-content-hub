@@ -6,6 +6,20 @@
  */
 import fs from 'node:fs';
 import { parsePost, flatLines } from './lib/parse-post.mjs';
+import { normTitle } from './lib/naver-related.mjs';
+
+let publishedCache = null;
+function publishedNaverTitles() {
+  if (publishedCache) return publishedCache;
+  publishedCache = new Set();
+  try {
+    for (const row of fs.readFileSync('content/archive/published.tsv', 'utf8').split(/\r?\n/).slice(1)) {
+      const c = row.split('\t');
+      if (c[1] === 'naver' && c[4]) publishedCache.add(normTitle(c[4]));
+    }
+  } catch { /* 목록이 없으면 모두 못 찾음으로 나온다 */ }
+  return publishedCache;
+}
 
 // 실제 발행글(119 안심콜) 실측치에 맞춰 잡은 기준
 //   3,066자 / 평균 줄 19.8자 / 최장 29자 / 덩어리당 3.4줄
@@ -123,6 +137,16 @@ for (const file of files) {
 
   if (!post.title) errors.push('title 이 없습니다.');
   if (!post.mainKeyword) errors.push('main_keyword 가 없습니다.');
+  // 함께 보면 좋은 글 (2026-10-07 사용자 승인): 발행이 끝난 내 네이버 글 제목 1~2개. 발행 때 주소로 바뀐다
+  if (post.related.length) {
+    if (tistory) errors.push('related 는 네이버 원고에만 씁니다 (티스토리는 아직 지원하지 않음)');
+    if (post.related.length > 2) errors.push(`related 는 2개까지 (지금 ${post.related.length}개) — 정말 관련 있는 글만`);
+    const done = publishedNaverTitles();
+    for (const t of post.related) {
+      if (normTitle(t) === normTitle(post.title)) errors.push(`related 에 자기 글 제목이 있습니다: ${t}`);
+      else if (!done.has(normTitle(t))) errors.push(`related 제목이 content/archive/published.tsv 의 네이버 글에 없습니다: "${t}" — 발행이 끝난 글의 제목을 그대로 쓰세요`);
+    }
+  }
   // 티스토리 카테고리 (2026-10-05 사용자 지시): 생활보장·생활정보 두 개만. 보험 → 생활보장, 나머지 → 생활정보
   if (tistory && dated >= '2026-10-06') {
     const want = /보험/.test(`${post.title} ${post.mainKeyword}`) ? '생활보장' : '생활정보';
