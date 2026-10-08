@@ -27,7 +27,7 @@ Routine (정해진 시각)
 | 파일 | 언제 | 하는 일 |
 |---|---|---|
 | `naver-daily.md` | 매일 20:53 | 다음 날 네이버 원고 5편 |
-| `threads-insurance-daily.md` | 일~금 21:41 | 다음 날 스레드 보험글 10편 |
+| `threads-insurance-daily.md` | 일~금 21:41 | 다음 날 스레드 보험글 10편 — **⏸ 2026-10-08 부터 멈춤 (사용자가 다시 요청할 때까지)** |
 | `tistory-daily.md` | 매일 22:37 | 다음 날 티스토리 원고 5편 |
 | `morning-check.md` | 매일 10:47 | 예약 결과 확인 + 통계 판단 |
 | `monthly-calendar.md` | 매월 28일 21:23 | 다음 달 발행 캘린더 |
