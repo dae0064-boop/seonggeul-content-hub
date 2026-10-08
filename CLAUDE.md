@@ -26,6 +26,7 @@ docs/THREADS.md    스레드 자동화 설치·운영 가이드
 docs/TISTORY.md    티스토리 자동화 — 원고 형식·검사 기준·처음 켜는 순서
 docs/OPEN-ISSUES.md 아직 정하지 못한 것들. 규칙을 손대기 전에 읽는다
 docs/STATUS.md     진행 상황. 작업을 시작할 때 먼저 읽고, 끝낼 때 갱신한다
+docs/OFFICE-PC.md  다른 PC(사무실 PC)에서 이어서 작업하는 순서 — 사용자용
 content/calendar/title-keywords/  제목용 키워드 조회 결과 (검색량). 제목·키워드를 정할 때 본다
 ```
 
