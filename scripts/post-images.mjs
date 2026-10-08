@@ -32,7 +32,6 @@ const { values: opt, positionals } = parseArgs({
     only: { type: "string" },
     force: { type: "boolean" },
     "overlay-only": { type: "boolean" },
-    quality: { type: "string", default: "low" },
     size: { type: "string", default: "1024x1024" },
     help: { type: "boolean", short: "h" },
   },
@@ -48,6 +47,11 @@ if (!plan.slug || !Array.isArray(plan.images)) {
   console.error("❌ 계획서에 slug 와 images 가 필요해요");
   process.exit(1);
 }
+
+// 그림 품질은 low 하나만 쓴다 (2026-10-08 사용자 지시 — "나는 낮은 품질만 요청했어").
+// 계획서에 quality 가 적혀 있어도 따르지 않는다 (10/6~10/8 대표사진이 medium 으로 만들어져 비용이 2배가 됐다).
+const QUALITY_IGNORED = plan.images.filter((im) => im.quality && im.quality !== "low").map((im) => im.n);
+if (QUALITY_IGNORED.length) console.log(`ℹ  계획서의 quality 는 무시하고 low 로 만들어요 (${QUALITY_IGNORED.join(", ")}번)`);
 
 const outDir = join(ROOT, "content", "images", plan.slug);
 const only = opt.only ? new Set(opt.only.split(",").map(Number)) : null;
@@ -88,7 +92,7 @@ for (const im of todo) {
         "--raw",
         "--out", outDir,
         "--name", im.overlay ? `${name}.raw` : name,
-        "--quality", im.quality || opt.quality,
+        "--quality", "low",
         "--size", opt.size,
       ], { stdio: "inherit" });
       ok = r.status === 0 && existsSync(raw);
