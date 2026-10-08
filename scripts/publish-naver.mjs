@@ -947,11 +947,10 @@ async function insertImageAt(page, editor, label, file) {
 /**
  * 글 맨 끝(닫는 인사 아래)에 "▶ 함께 보면 좋은 글" 과 내 지난 글 링크 1~2개를 넣는다 (2026-10-07 사용자 승인).
  * 2026-10-08: 가짜 붙여넣기(스크립트가 만든 paste 이벤트)는 에디터가 카드로 바꾸지 않아 주소가 '글자'로만 들어갔다
- * (사용자: "링크가 글자로 붙으면 클릭도 안 된다"). 그래서 눌리는 링크가 될 때까지 세 가지를 차례로 해 본다:
+ * (사용자: "링크가 글자로 붙으면 클릭도 안 된다", "링크 카드로 넣어줘"). 그래서 카드가 될 때까지 두 가지를 차례로 해 본다:
  *   ① 진짜 붙여넣기 — 주소를 클립보드에 복사(Ctrl+C)해 두고 에디터에서 Ctrl+V → 에디터가 링크 카드로 바꾼다
  *   ② 도구 막대 '링크' 단추 → 주소 입력 → 확인 (링크 카드)
- *   ③ 글 제목을 쓰고 선택해 글자 링크를 건다
- * 셋 다 안 되면 그 줄을 지운다. 눌리는 링크가 하나도 없으면 "함께 보면 좋은 글" 제목 줄까지 지운다 — 주소 글자만 남기지 않는다.
+ * 둘 다 안 되면 그 줄을 지운다 (글자 링크로 대신하지 않는다 — 사용자는 카드를 원한다). 눌리는 링크가 하나도 없으면 "함께 보면 좋은 글" 제목 줄까지 지운다 — 주소 글자만 남기지 않는다.
  * 다른 줄이 하나라도 사라지면 되돌리고 링크 없이 간다 — 이 단계 때문에 발행이 멈추지는 않는다.
  */
 const OGLINK_SEL = '.se-component.se-oglink, .se-module-oglink';
@@ -962,10 +961,7 @@ const RELATED_SEL = {
   ogInput: ['.se-popup-oglink input', 'input.se-popup-oglink-input', '.se-popup input[placeholder*="URL"]', '.se-popup input[type="text"]'],
   ogSearch: ['.se-popup-oglink button.se-popup-oglink-button', '.se-popup-oglink button[class*="search"]'],
   ogConfirm: ['.se-popup-oglink button.se-popup-button-confirm', '.se-popup button.se-popup-button-confirm', '.se-popup-oglink button:has-text("확인")'],
-  linkButton: ['button.se-link-toolbar-button', 'button[data-name="text-link"]', 'button[data-name="link"]'],
-  linkInput: ['input.se-custom-layer-link-input', '.se-custom-layer-link input', '.se-link-layer input', 'input[placeholder*="URL"]'],
-  linkApply: ['button.se-custom-layer-link-apply-button', '.se-custom-layer-link button:has-text("확인")', '.se-link-layer button:has-text("확인")'],
-};
+  };
 /** 주소를 진짜 클립보드에 넣는다: 에디터 밖 임시 입력칸에 쓰고 Ctrl+A, Ctrl+C (진짜 키 입력이라 권한 없이 복사된다) */
 async function copyToClipboard(page, text) {
   const ok = await page.evaluate(() => {
@@ -988,10 +984,7 @@ const linksTo = (editor, logNo) => editor.evaluate((no) => {
     c.querySelector(`a[href*="${no}"]`) || (c.getAttribute('data-url') || '').includes(no) || c.textContent.includes(no)).length;
   return { anchors: a.length, cards: card };
 }, logNo);
-const clickableNow = async (editor, logNo, base) => {
-  const n = await linksTo(editor, logNo);
-  return n.cards > base.cards || n.anchors > base.anchors;
-};
+const clickableNow = async (editor, logNo, base) => (await linksTo(editor, logNo)).cards > base.cards;
 /** 지금 줄의 글자를 지운다 (빈 줄은 그대로 둔다 — 빈 줄에서 Backspace 를 누르면 윗줄이 지워질 수 있다) */
 async function clearCurrentLine(page, editor, url, logNo) {
   for (let i = 0; i < 3; i++) {
@@ -1007,7 +1000,7 @@ async function waitClickable(editor, logNo, base, ms) {
   while (Date.now() < end) { if (await clickableNow(editor, logNo, base)) return true; await sleep(500); }
   return false;
 }
-/** 링크 하나를 제목 줄 바로 아래에 넣는다. 어떤 방법으로 됐는지 돌려준다 ('카드'|'글자 링크'|null) */
+/** 링크 카드 하나를 제목 줄 바로 아래에 넣는다. 어떤 방법으로 됐는지 돌려준다 (없으면 how: null) */
 async function addOneRelated(page, editor, l) {
   const base = await linksTo(editor, l.logNo);
   // ① 진짜 붙여넣기
@@ -1019,9 +1012,8 @@ async function addOneRelated(page, editor, l) {
     await page.keyboard.press(`${MOD}+v`);
     if (await waitClickable(editor, l.logNo, base, 12000)) {
       // 카드가 생기고 주소 글자가 남았으면 지운다
-      const n = await linksTo(editor, l.logNo);
-      if (n.cards > base.cards) await clearCurrentLine(page, editor, l.url, l.logNo);
-      return { how: n.cards > base.cards ? '카드(붙여넣기)' : '글자 링크(붙여넣기)' };
+      await clearCurrentLine(page, editor, l.url, l.logNo);
+      return { how: '카드(붙여넣기)' };
     }
     await clearCurrentLine(page, editor, l.url, l.logNo);
   } else log('클립보드 복사가 안 돼 붙여넣기는 건너뜀');
@@ -1040,21 +1032,6 @@ async function addOneRelated(page, editor, l) {
   } catch (e) { log(`링크 단추로 넣기 안 됨: ${e.message.split('\n')[0]}`); }
   await page.keyboard.press('Escape').catch(() => {}); await sleep(300);
   await clearCurrentLine(page, editor, l.url, l.logNo);
-  // ③ 글 제목에 글자 링크
-  try {
-    if (!(await caretAtEnd(page, editor, RELATED_HEAD))) throw new Error('제목 줄 없음');
-    await page.keyboard.press('ArrowDown'); await sleep(200);
-    await page.keyboard.press('End'); await sleep(100);
-    await page.keyboard.insertText(l.title); await sleep(300);
-    if (!(await caretAtEnd(page, editor, l.title))) throw new Error('제목 글자를 찾지 못함');
-    await page.keyboard.press('Shift+Home'); await sleep(200);
-    await clickFirst(editor, RELATED_SEL.linkButton, { timeout: 3000 });
-    const { loc: input } = await findAnywhere(page, editor, RELATED_SEL.linkInput, { timeout: 4000 });
-    await input.fill(l.url); await sleep(200);
-    try { (await findAnywhere(page, editor, RELATED_SEL.linkApply, { timeout: 1500 })).loc.click(); } catch { await input.press('Enter'); }
-    if (await waitClickable(editor, l.logNo, base, 5000)) return { how: '글자 링크(제목)' };
-  } catch (e) { log(`글자 링크 걸기 안 됨: ${e.message.split('\n')[0]}`); }
-  await page.keyboard.press('Escape').catch(() => {}); await sleep(300);
   // 실패: 그 줄(제목 글자·주소 글자)을 지운다
   for (let i = 0; i < 3; i++) {
     const t = (await snapshot(editor)).find((x) => x === l.title || x.includes(l.logNo));
@@ -1062,7 +1039,7 @@ async function addOneRelated(page, editor, l) {
     await page.keyboard.press('Shift+Home'); await sleep(150);
     await page.keyboard.press('Backspace'); await sleep(300);
   }
-  return { how: null, why: '세 방법 모두 눌리는 링크가 안 됨' };
+  return { how: null, why: '붙여넣기·링크 단추 모두 카드가 안 생김' };
 }
 async function addRelatedLinks(page, editor, post, links) {
   const lastLine = [...post.blocks].reverse().find((b) => b.type !== 'image')?.lines.slice(-1)[0]?.t;
@@ -1078,8 +1055,8 @@ async function addRelatedLinks(page, editor, post, links) {
   // 제목 줄 바로 아래에 차례로 끼워 넣으므로 뒤에서부터 넣어야 원고 순서가 된다
   for (const l of [...links].reverse()) {
     const r = await addOneRelated(page, editor, l);
-    if (r.how) { made++; if (r.how.startsWith('카드')) cards++; log(`✓ ${r.how}: ${l.title}`); }
-    else warn(`✗ 눌리는 링크를 만들지 못해 뺐어요 (${r.why}): ${l.title}`);
+    if (r.how) { made++; cards++; log(`✓ ${r.how}: ${l.title}`); }
+    else warn(`✗ 링크 카드를 만들지 못해 뺐어요 (${r.why}): ${l.title}`);
     await sleep(500);
   }
   if (!made) {
@@ -1100,7 +1077,7 @@ async function addRelatedLinks(page, editor, post, links) {
   // 주소가 글자로만 남은 줄이 있으면 실패로 본다 (눌리지 않는 주소는 남기지 않는다)
   const plain = after.filter((t) => links.some((l) => t.includes(l.logNo)) && /https?:\/\//.test(t));
   if (plain.length) warn(`주소 글자 줄이 남았어요: ${plain.join(' / ')}`);
-  if (!made) return { ok: false, why: '눌리는 링크를 하나도 만들지 못해 "함께 보면 좋은 글"을 뺐어요' };
+  if (!made) return { ok: false, why: '링크 카드를 하나도 만들지 못해 "함께 보면 좋은 글"을 뺐어요' };
   return { ok: true, made, cards };
 }
 
@@ -1596,7 +1573,7 @@ async function main() {
         if (!links.length) log('발행된 관련 글을 찾지 못해 넣지 않습니다');
         else {
           const r = await addRelatedLinks(page, editor, post, links);
-          if (r.ok) log(`관련 글 ${r.made}개 넣음 — 모두 눌리는 링크 (카드 ${r.cards}개)`);
+          if (r.ok) log(`관련 글 ${r.made}개 넣음 — 모두 링크 카드`);
           else {
             warn(`관련 글 넣기 실패 (${r.why})`);
             if (r.lost) throw new Error(`관련 글을 넣다가 글이 사라졌고 되돌리지 못했습니다: ${r.lost.slice(0, 3).join(' / ')}. 저장하지 않고 멈춥니다.`);
