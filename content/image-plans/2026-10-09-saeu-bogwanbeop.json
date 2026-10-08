@@ -1,0 +1,89 @@
+{
+  "slug": "2026-10-09-saeu-bogwanbeop",
+  "title": "새우 보관법, 대하 냉동 전 손질과 해동하는 요령",
+  "source": "10/9(금) 티스토리 원고 (10/8 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 같은 날 네이버 계획서와 장면이 겹치지 않게",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "지퍼백에 납작하게 나눠 담긴 손질한 대하 (대표사진)",
+      "prompt": "Camera and composition: top-down view of zipper bags. Cleaned prawns laid flat in a single row inside several zipper bags on a kitchen counter. No people at all in this image. Background color: soft apricot. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "새우 보관법\n나눠서 냉동"
+      },
+      "shot": "top-down view of zipper bags",
+      "bg": "soft apricot"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "시장 봉지에서 꺼낸 생대하가 담긴 큰 볼",
+      "prompt": "Camera and composition: high-angle shot of a large bowl. A large steel bowl full of raw grey prawns just taken out of a market plastic bag. No people at all in this image. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "high-angle shot of a large bowl",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "도마 위에 머리와 몸통을 나눠 놓은 대하 줄",
+      "prompt": "Camera and composition: close-up of a cutting board. Prawn heads and prawn bodies separated into two rows on a wooden cutting board, with kitchen scissors. No people at all in this image. Background color: warm cream. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "사 온 날 바로 손질"
+      },
+      "shot": "close-up of a cutting board",
+      "bg": "warm cream"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "싱크대에서 흐르는 찬물에 새우를 헹구는 손",
+      "prompt": "Camera and composition: close-up of hands at a sink. Hands rinsing prawns quickly under running cold water in a kitchen sink colander. Only hands and forearms are visible; no faces. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up of hands at a sink",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "냉동실 선반 위에 책처럼 납작하게 눕혀 얼린 지퍼백",
+      "prompt": "Camera and composition: front view into a freezer shelf. Flat frozen zipper bags of prawns lying neatly like books on a freezer shelf, each with a blank label. No people at all in this image. Background color: pale sage. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "납작하게 · 날짜 적기"
+      },
+      "shot": "front view into a freezer shelf",
+      "bg": "pale sage"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "냉장실 칸에 접시를 받쳐 둔 냉동 새우 봉지",
+      "prompt": "Camera and composition: eye-level shot of a fridge shelf. A frozen prawn bag on a plate thawing slowly on a refrigerator shelf. No people at all in this image. Background color: light butter yellow. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "해동은 냉장실에서"
+      },
+      "shot": "eye-level shot of a fridge shelf",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "프라이팬에서 노릇하게 익어 가는 껍질 깐 새우살",
+      "prompt": "Camera and composition: three-quarter view of a frying pan. Peeled prawn meat turning golden in a frying pan on a stove. No people at all in this image. Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "three-quarter view of a frying pan",
+      "bg": "mint green"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "냉동실 문을 열고 날짜가 적힌 봉지를 꺼내는 할머니",
+      "prompt": "Camera and composition: medium shot at an open freezer. A grandma taking out a zipper bag with a blank label from an open freezer, smiling. The person is the Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan. Background color: dusty rose. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot at an open freezer",
+      "bg": "dusty rose"
+    }
+  ]
+}
