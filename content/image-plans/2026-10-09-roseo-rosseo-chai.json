@@ -1,0 +1,89 @@
+{
+  "slug": "2026-10-09-roseo-rosseo-chai",
+  "title": "로서 로써 차이, 자격과 수단으로 나눠 보는 맞춤법 구분법",
+  "source": "10/9(금) 티스토리 원고 (10/8 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 같은 날 네이버 계획서와 장면이 겹치지 않게",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "회의 책상 위 서류 옆에 놓인 만년필과 이름표 (대표사진)",
+      "prompt": "Camera and composition: medium shot of a meeting desk. A meeting room desk with a neat stack of blank documents, a fountain pen and a blank name badge on a lanyard. No people at all in this image. Background color: soft apricot. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "로서 로써 차이\n자격과 수단"
+      },
+      "shot": "medium shot of a meeting desk",
+      "bg": "soft apricot"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "회사 책상 앞에서 보고서를 쓰다 멈춘 직장인",
+      "prompt": "Camera and composition: over-the-shoulder shot at an office desk. An office worker sitting at a desk pausing while typing a report on a laptop with a blank screen, hand on chin. The person is the Seonggeul adult child: a Korean woman in her 40s, shoulder-length brown bob hair, soft sky blue shirt. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "over-the-shoulder shot at an office desk",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "나무 책상 위에 두 갈래로 나뉜 길 모형과 작은 표지판",
+      "prompt": "Camera and composition: eye-level close-up of a miniature road. A tiny clay road model on a wooden desk splitting into two paths, with a small blank signpost pointing both ways. No people at all in this image. Background color: warm cream. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "자격이면 로서, 수단이면 로써"
+      },
+      "shot": "eye-level close-up of a miniature road",
+      "bg": "warm cream"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "학부모 이름표를 목에 걸고 교문 앞에 선 사람",
+      "prompt": "Camera and composition: full shot at a school gate. A parent standing in front of a school gate wearing a blank name badge on a lanyard, smiling. The person is Seonggeul, the blog host: a Korean woman in her 30s, round face, dark hair in a low bun, cream sweater with a mint scarf. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "full shot at a school gate",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "도마 위 쌀가루 반죽 옆에 놓인 나무 밀대",
+      "prompt": "Camera and composition: top-down view of a cutting board. Rice flour dough on a wooden cutting board next to a wooden rolling pin and a small bowl of rice. No people at all in this image. Background color: pale sage. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "쌀로써 · 칼로써 = 수단"
+      },
+      "shot": "top-down view of a cutting board",
+      "bg": "pale sage"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "큰 종이에 동그라미와 엑스 표시를 붙이는 손",
+      "prompt": "Camera and composition: close-up of hands on a large paper. Hands sticking a big circle mark sticker and a big X mark sticker onto a large blank sheet of paper on a wall. Only hands and forearms are visible; no faces. Background color: light butter yellow. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "친구로서가 맞아요"
+      },
+      "shot": "close-up of hands on a large paper",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "거실 탁자에서 공책에 두 낱말을 적어 보는 할머니와 손주",
+      "prompt": "Camera and composition: three-quarter view of a living room table. A grandma and a small child sitting at a low living room table writing in a notebook together. The people are the Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan, and a small child. Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "three-quarter view of a living room table",
+      "bg": "mint green"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "노트북 화면 앞에서 문서를 고치고 미소 짓는 성글이",
+      "prompt": "Camera and composition: medium shot at a home desk by a window. A woman fixing a document on a laptop with a blank screen at a home desk by a window, smiling. The person is Seonggeul, the blog host: a Korean woman in her 30s, round face, dark hair in a low bun, cream sweater with a mint scarf. Background color: dusty rose. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot at a home desk by a window",
+      "bg": "dusty rose"
+    }
+  ]
+}
