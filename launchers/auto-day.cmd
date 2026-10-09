@@ -26,3 +26,5 @@ REM 지난 날짜 그림·화면 기록을 이 PC 에서 지운다 (2026-10-05 �
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\cleanup.ps1"
 REM 예전에 등록한 PC 라도 "다시 시도" 시각이 생기게 한다 (한 번만 바뀐다)
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\ensure-retry.ps1"
+REM 2026-10-09 사용자: 작업이 다 끝나면 묻는 창을 띄우고 10분 동안 대답이 없으면 PC 를 완전히 끈다. 남은 글이 있으면 켜 둔다
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\auto-shutdown.ps1"
