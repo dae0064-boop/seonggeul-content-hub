@@ -482,6 +482,7 @@ Q&A          많이 묻는 3~5개
 | 전날 22:37 | 클라우드 Claude (Routine, `routines/tistory-daily.md`) | 다음 날 **티스토리** 원고 5편 + 이미지 계획서 — 그날 네이버 5편과 짝(같은 묶음, 다른 메인 키워드), `lint-tistory` 통과, `publish_at` 10:30·11:40·12:50·14:00·15:10 (네이버와 30분 텀), PR → `main` |
 | 당일 09:00 | 사용자 PC (작업 스케줄러 `SeonggeulDailyReserve`) | `launchers/auto-day.cmd` → `git pull` → **보험글 Word 저장 (Drive `보험글/스레드 N편.docx`)** → 이미지 생성 → 5편 예약발행 → **티스토리 5편 그림·예약발행 (`tistory-day.ps1 -Reserve`, 2026-10-03~)** → 결과를 Drive `run-logs` 로 |
 | 당일 10:10 | 같은 작업의 두 번째 시각 (첫 실행 70분 뒤, 노트북은 10:25) | 첫 실행에서 저장 못 한 글만 다시 (`.done` 표시가 있는 글은 건너뜀). 2026-10-02 이전 등록 PC 는 `ensure-retry.ps1` 이 다음 실행 때 이 시각을 저절로 더한다 |
+| 아침 작업 끝 | 사용자 PC (`auto-day.cmd` 맨 끝, `launchers/tools/auto-shutdown.ps1`) | **2026-10-09 사용자 지시: 오늘 글(네이버·티스토리)이 모두 `.done` 이면 "10분 뒤 PC 를 끕니다 — [끄지 않기]" 창을 띄우고, 대답이 없으면 완전히 끈다** (절전 아님 — 다음 날은 사람이 켜고 로그인하면 바로 시작). 남은 글이 있으면 다시 시도를 위해 켜 둔다. 이 PC 에서 자동 끄기를 쓰지 않으려면 `dumps\no-auto-shutdown.txt` 를 만든다 |
 | 당일 10:47 | 클라우드 Claude (Routine, `routines/morning-check.md`) | Drive `run-logs` 읽고 결과 보고. 스크립트 문제면 고쳐서 PR → `main` |
 | 매월 28일 21:23 | 클라우드 Claude (Routine, `routines/monthly-calendar.md`) | 다음 달 발행 캘린더 작성·검증·재발행 |
 
