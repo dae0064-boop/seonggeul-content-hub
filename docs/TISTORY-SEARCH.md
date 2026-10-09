@@ -1,9 +1,10 @@
 # 티스토리를 검색 사이트에 등록하기 (사용자용, 처음 한 번)
 
 티스토리 손님은 대부분 **구글**에서 온다. 구글·네이버에 "내 블로그가 여기 있다"고 알려야 글을 빨리 찾아 간다.
-2026-10-09 확인: 웹 검색에서 `seonggeul.tistory.com` 글이 하나도 나오지 않았다 → 아직 등록되지 않은 것으로 본다.
+2026-10-09 확인: 웹 검색에서 `seongdaeeyo.tistory.com` 글이 하나도 나오지 않았다 (주소로도, 글 제목으로도). 이 검색 도구는 구글이 아니라 확실하지 않지만, 아직 등록되지 않은 것으로 본다.
+(처음 안내문에 주소를 `seonggeul.tistory.com` 으로 잘못 적었다 — 스크립트 도움말의 예시 주소였다. 10/9 바로잡음.)
 
-- 내 티스토리 주소: `https://seonggeul.tistory.com`
+- 내 티스토리 주소: `https://seongdaeeyo.tistory.com`
 - 걸리는 시간: 구글 10분, 네이버 10분. 컴퓨터(크롬)에서 한다. 휴대폰으로는 어렵다.
 - 등록해도 글이 검색에 뜨기까지 며칠~몇 주 걸린다. 바로 조회수가 오르지 않아도 정상이다.
 - 다음(Daum)은 티스토리와 같은 카카오 서비스라 따로 등록하지 않아도 글을 가져간다.
@@ -25,7 +26,7 @@
 4. "속성 유형 선택" 화면이 나온다. 왼쪽 **도메인** 말고 **오른쪽 "URL 접두어"** 칸을 쓴다.
 5. 오른쪽 칸에 아래 주소를 붙여 넣는다 (칸을 마우스 오른쪽 클릭 → 붙여넣기).
    ```
-   https://seonggeul.tistory.com
+   https://seongdaeeyo.tistory.com
    ```
 6. 그 아래 **계속** 버튼을 누른다.
 7. "소유권 확인" 창이 뜬다. 여러 방법 중 **HTML 태그** 를 눌러 펼친다.
@@ -42,7 +43,7 @@
 1. 크롬에서 **새 탭**(Ctrl + T)을 연다.
 2. 주소창에 붙여 넣고 Enter.
    ```
-   https://seonggeul.tistory.com/manage/plugins
+   https://seongdaeeyo.tistory.com/manage/plugins
    ```
 3. 플러그인 목록 위 검색 칸에 `구글 서치` 라고 친다.
 4. **구글 서치콘솔** 플러그인을 누른다 → **계정 연결하기**(또는 "연결") → 구글 계정 선택 → **허용** → **적용**.
@@ -53,7 +54,7 @@
 
 1. 새 탭 주소창에 붙여 넣고 Enter.
    ```
-   https://seonggeul.tistory.com/manage/design/skin/edit
+   https://seongdaeeyo.tistory.com/manage/design/skin/edit
    ```
    (안 열리면: 티스토리 관리 화면 왼쪽 메뉴 **꾸미기** → **스킨 편집** → 오른쪽 위 **html 편집**)
 2. 가운데 큰 글자 칸 맨 위쪽에서 `<head>` 라고 적힌 줄을 찾는다 (보통 위에서 3~5번째 줄).
@@ -72,7 +73,7 @@
 ### 1-4. 글 목록(사이트맵) 알려 주기
 
 1. 서치 콘솔 왼쪽 메뉴에서 **Sitemaps**(사이트맵)를 누른다.
-2. "새 사이트맵 추가" 칸에 `https://seonggeul.tistory.com/` 이 앞에 적혀 있고 뒤에 빈칸이 있다. 빈칸에 아래를 친다.
+2. "새 사이트맵 추가" 칸에 `https://seongdaeeyo.tistory.com/` 이 앞에 적혀 있고 뒤에 빈칸이 있다. 빈칸에 아래를 친다.
    ```
    sitemap.xml
    ```
@@ -99,7 +100,7 @@
 3. 위쪽 **웹마스터 도구** 를 누른다. 처음이면 약관 동의 화면이 나온다 → 동의.
 4. "사이트 등록" 칸에 아래 주소를 붙여 넣고 오른쪽 **→** (화살표) 버튼.
    ```
-   https://seonggeul.tistory.com
+   https://seongdaeeyo.tistory.com
    ```
 5. "사이트 소유확인" 화면에서 **HTML 태그** 를 고른다.
 6. `<meta name="naver-site-verification" content="...">` 한 줄이 보인다. 그 줄을 마우스로 끌어 선택하고 Ctrl + C 로 복사한다.
@@ -114,14 +115,14 @@
 ### 2-3. 네이버로 돌아가 확인
 
 1. 서치어드바이저 탭으로 돌아가 **소유확인** 버튼을 누른다.
-2. 정상: "소유확인이 완료되었습니다". 사이트 목록에 `https://seonggeul.tistory.com` 이 생긴다.
+2. 정상: "소유확인이 완료되었습니다". 사이트 목록에 `https://seongdaeeyo.tistory.com` 이 생긴다.
 3. 목록의 주소를 누른다 → 왼쪽 메뉴 **요청** → **사이트맵 제출** → 칸에 아래를 붙여 넣고 **확인**.
    ```
-   https://seonggeul.tistory.com/sitemap.xml
+   https://seongdaeeyo.tistory.com/sitemap.xml
    ```
 4. 같은 **요청** 메뉴의 **RSS 제출** → 아래를 붙여 넣고 **확인**.
    ```
-   https://seonggeul.tistory.com/rss
+   https://seongdaeeyo.tistory.com/rss
    ```
 
 ---

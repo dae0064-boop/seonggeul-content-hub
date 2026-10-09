@@ -47,7 +47,7 @@ if (-not $blog -and $Reserve) { $blog = 'seongdaeeyo' }
 if (-not $blog) {
   Write-Host ''
   Write-Host '  티스토리 블로그 주소의 앞부분을 적어 주세요.' -ForegroundColor Cyan
-  Write-Host '  예: 주소가 https://seonggeul.tistory.com 이면  seonggeul'
+  Write-Host '  예: 주소가 https://seongdaeeyo.tistory.com 이면  seongdaeeyo'
   $blog = (Read-Host '  블로그 이름').Trim()
   if ($blog -notmatch '^[A-Za-z0-9-]+$') { Say "블로그 이름이 이상해요: '$blog'" 'Red'; exit 1 }
   [Environment]::SetEnvironmentVariable('TISTORY_BLOG', $blog, 'User')
