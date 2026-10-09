@@ -976,15 +976,25 @@ async function copyToClipboard(page, text) {
   await page.keyboard.press(`${MOD}+c`); await sleep(200);
   return page.evaluate((t) => { const ta = document.getElementById('__sg_clip'); const v = ta?.value; ta?.remove(); return v === t; }, text);
 }
-/** 이 글(logNo)로 가는 눌리는 링크 수: 카드 안 링크 + 글자 링크 */
+/**
+ * 이 글(logNo)로 가는 눌리는 링크 수: 카드 안 링크 + 글자 링크.
+ * 2026-10-09: 편집 화면의 카드에는 logNo 가 담긴 a 태그·data-url 이 없어(화면엔 'blog.naver.com' 만 보임) 카드가 생겨도 못 알아봤다 →
+ * 실패로 보고 제목 줄만 지워 카드가 제목 없이 남았다(10/9 네이버 4편). 그래서 본문 안 링크 카드 '전체 수'를 세고(`all`),
+ * 한 번에 카드 하나씩 넣으므로 늘어나면 그게 방금 넣은 카드다.
+ */
 const linksTo = (editor, logNo) => editor.evaluate((no) => {
   const root = document.querySelector('.se-main-container') || document.querySelector('.se-content') || document.body;
   const a = [...root.querySelectorAll('a[href]')].filter((x) => x.href.includes(no));
-  const card = [...root.querySelectorAll('.se-component.se-oglink, .se-module-oglink')].filter((c) =>
+  const comps = [...root.querySelectorAll('.se-component')].filter((c) =>
+    /oglink/.test(c.className) || c.querySelector('[class*="oglink"]'));
+  const card = comps.filter((c) =>
     c.querySelector(`a[href*="${no}"]`) || (c.getAttribute('data-url') || '').includes(no) || c.textContent.includes(no)).length;
-  return { anchors: a.length, cards: card };
+  return { anchors: a.length, cards: card, all: comps.length };
 }, logNo);
-const clickableNow = async (editor, logNo, base) => (await linksTo(editor, logNo)).cards > base.cards;
+const clickableNow = async (editor, logNo, base) => {
+  const n = await linksTo(editor, logNo);
+  return n.cards > base.cards || n.all > base.all;
+};
 /** 지금 줄의 글자를 지운다 (빈 줄은 그대로 둔다 — 빈 줄에서 Backspace 를 누르면 윗줄이 지워질 수 있다) */
 async function clearCurrentLine(page, editor, url, logNo) {
   for (let i = 0; i < 3; i++) {
