@@ -7,6 +7,22 @@
 import fs from 'node:fs';
 import { parsePost, flatLines } from './lib/parse-post.mjs';
 import { normTitle } from './lib/naver-related.mjs';
+import { checkCard } from './lib/overlay.mjs';
+
+// 10/12 변경 묶음 (2026-10-02·10-03 사용자 결정, routines/once/2026-10-09-1012-change-bundle.md) — 2026-10-12 원고부터
+//   ① 고정 인사말 앞 첫 덩어리 = 확인된 사실 한 문장(1~2줄)
+//   ② 제목 끝 괄호에 구체 숫자·기준 "(중불 20~30분)" — 괄호 속 숫자는 본문에 있어야 한다
+//   ③ 정보 카드: 이미지 계획서 8장 중 2~3장이 kind "card", 카드 글자는 본문에 있는 말
+//   ④ 대표사진 카드 틀(frame "card"): 네이버 하루 5편 중 2편, 티스토리는 쓰지 않는다
+const BUNDLE_FROM = '2026-10-12';
+const CARDS = [2, 3];
+const FRAME_CARDS_PER_DAY = 2;
+const plain = (s) => String(s).replace(/\[\/?(빨간글씨|파란글씨|노란배경)\]/g, '').replace(/[\s①-⑧✔⭕❌·,.!?()~\-]/g, '');
+const titleBracket = (t) => /\s\(([^()]*)\)\s*$/.exec(t);
+function planOf(file) {
+  const slug = file.split(/[\\/]/).pop().replace(/\.md$/, '');
+  try { return JSON.parse(fs.readFileSync(`content/image-plans/${slug}.json`, 'utf8')); } catch { return null; }
+}
 
 let publishedCache = null;
 function publishedNaverTitles() {
@@ -180,7 +196,8 @@ for (const file of files) {
     else if (v < MIN_VOLUME) errors.push(`메인 키워드 "${post.mainKeyword}" 월 검색량 ${v} — ${MIN_VOLUME} 이상인 말로 바꾸세요 (1,000~10,000 우선)`);
     else notes.push(`메인 키워드 "${post.mainKeyword}" 월 검색량 ${v.toLocaleString()}`);
   }
-  if (post.title.length > (newRules ? 40 : 30)) notes.push(`제목이 깁니다 (${post.title.length}자). 모바일에서 잘릴 수 있습니다.`);
+  const bundle = dated >= BUNDLE_FROM;
+  if (post.title.length > (bundle ? 45 : newRules ? 40 : 30)) notes.push(`제목이 깁니다 (${post.title.length}자). 모바일에서 잘릴 수 있습니다.`);
 
 
   lines.forEach((l, i) => {
@@ -251,7 +268,9 @@ for (const file of files) {
   // 제목 키워드 비율: 제목(공백 제외) 글자 중 메인·서브 키워드가 덮는 비율
   let titleKw = null;
   {
-    const t = post.title.replace(/\s/g, '');
+    // 끝 괄호(숫자·기준)는 키워드 비율에서 뺀다 (10/12 변경 묶음)
+    const tb = titleBracket(post.title);
+    const t = (tb ? post.title.slice(0, tb.index) : post.title).replace(/\s/g, '');
     const cover = new Array(t.length).fill(false);
     for (const kw of [post.mainKeyword, ...post.subKeywords]) {
       const k = (kw || '').replace(/\s/g, ''); if (!k) continue;
@@ -288,9 +307,56 @@ for (const file of files) {
   if (images.length && images.length !== 8)
     notes.push(`이미지 자리 ${images.length}개 — 8개 기준입니다.`);
 
-  // 고정 인사말
-  if (texts[0] !== OPEN[0] || texts[1] !== OPEN[1])
+  // 고정 인사말. 2026-10-12 원고부터는 그 앞에 사실 한 문장(1~2줄) 덩어리가 먼저 온다
+  if (bundle) {
+    const [first, second] = post.blocks;
+    const greet = second?.lines.map((l) => l.t) || [];
+    if (!first || first.type !== 'p' || first.lines.length > 2 || first.lines[0].t === OPEN[0])
+      errors.push(`첫 덩어리는 고정 인사말 앞의 "확인된 사실 한 문장"(1~2줄)이어야 합니다 (2026-10-12 원고부터) — 빈 줄 다음에 "${OPEN[0]} / ${OPEN[1]}"`);
+    else if (greet.length !== 2 || greet[0] !== OPEN[0] || greet[1] !== OPEN[1])
+      errors.push(`사실 한 문장 다음 덩어리가 고정 인사말 "${OPEN[0]} / ${OPEN[1]}" 이어야 합니다`);
+    else notes.push(`첫 줄 사실: ${first.lines.map((l) => l.t).join(' ')}`);
+  } else if (texts[0] !== OPEN[0] || texts[1] !== OPEN[1])
     errors.push(`오프닝이 고정 문구와 다릅니다. "${OPEN[0]} / ${OPEN[1]}" 로 시작해야 합니다.`);
+
+  // 제목 끝 괄호에 구체 숫자·기준 (2026-10-12 원고부터). 원고에서 확인한 숫자만 — 괄호 속 숫자가 본문에 있어야 한다
+  if (bundle) {
+    const tb = titleBracket(post.title);
+    if (!tb || !/\d/.test(tb[1])) errors.push(`제목 끝에 숫자·기준을 담은 괄호를 붙입니다 (2026-10-12 원고부터, 예: "… (중불 20~30분)"): "${post.title}"`);
+    else {
+      const bodyNums = new Set((texts.join(' ').match(/\d+(\.\d+)?/g) || []));
+      const miss = (tb[1].match(/\d+(\.\d+)?/g) || []).filter((n) => !bodyNums.has(n));
+      if (miss.length) errors.push(`제목 괄호의 숫자 ${miss.join(', ')} 가 본문에 없습니다 — 본문에서 확인한 숫자만 씁니다`);
+    }
+  }
+
+  // 정보 카드·대표사진 카드 틀 (2026-10-12 원고부터) — 이미지 계획서를 본다
+  if (bundle) {
+    const plan = planOf(file);
+    if (!plan) notes.push('이미지 계획서가 아직 없어 정보 카드 검사를 건너뜁니다 — 계획서를 쓴 뒤 다시 돌리세요');
+    else {
+      const cards = plan.images.filter((im) => im.kind === 'card');
+      if (cards.length < CARDS[0] || cards.length > CARDS[1]) errors.push(`정보 카드(kind "card")는 8장 중 ${CARDS[0]}~${CARDS[1]}장 (지금 ${cards.length}장)`);
+      const bodyPlain = plain(texts.join(''));
+      for (const im of cards) {
+        if (im.n === 1) errors.push('1번(대표사진)은 정보 카드로 만들지 않습니다');
+        for (const b of checkCard(im.card)) errors.push(`${im.n}번 카드: ${b}`);
+        const items = (im.card?.items || []).flat();
+        const miss = items.filter((x) => !bodyPlain.includes(plain(x)));
+        if (miss.length) errors.push(`${im.n}번 카드 글자가 본문에 없습니다: ${miss.map((x) => `"${x}"`).join(', ')} — 카드 글자는 원고 내용과 같게`);
+      }
+      const framed = plan.images.some((im) => im.n === 1 && im.frame === 'card');
+      if (tistory && framed) errors.push('티스토리 대표사진은 지금 방식으로 둡니다 (frame "card" 는 네이버만)');
+      if (!tistory) {
+        const dir = file.replace(/[^\\/]+$/, '') || './';
+        const sib = fs.readdirSync(dir).filter((f) => f.startsWith(dated) && f.endsWith('.md'));
+        if (sib.length >= 5) {
+          const n = sib.filter((f) => planOf(dir + f)?.images?.some((im) => im.n === 1 && im.frame === 'card')).length;
+          if (n !== FRAME_CARDS_PER_DAY) errors.push(`같은 날(${dated}) 대표사진 카드 틀이 ${n}편 — 하루 ${FRAME_CARDS_PER_DAY}편(정보성 1 + 홈판 1)만 "frame": "card"`);
+        }
+      }
+    }
+  }
   if (texts[texts.length - 2] !== close1 || !CLOSE_RE.test(texts[texts.length - 1]))
     errors.push(`클로징이 고정 문구와 다릅니다. "${close1} / 이상 성글벙글의 OO 포스팅이었습니다😎" 로 끝나야 합니다.`);
 
