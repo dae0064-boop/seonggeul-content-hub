@@ -40,6 +40,18 @@ jobs:
           exit $fail
         shell: bash
 
+      # 2026-10-09: PC 끄기 스크립트의 괄호 하나 때문에 창이 아예 안 떴다 — PC 쪽 PowerShell 문법도 여기서 잡는다
+      - name: PowerShell 문법
+        run: |
+          $bad = 0
+          Get-ChildItem launchers -Recurse -Filter *.ps1 | ForEach-Object {
+            $e = $null
+            [void][System.Management.Automation.Language.Parser]::ParseFile($_.FullName, [ref]$null, [ref]$e)
+            if ($e) { $bad = 1; $e | ForEach-Object { Write-Host "문법 오류: $($_.Extent.File):$($_.Extent.StartLineNumber) $($_.Message)" } }
+          }
+          exit $bad
+        shell: pwsh
+
       - name: 워크플로 YAML
         run: |
           python3 - <<'PY'
