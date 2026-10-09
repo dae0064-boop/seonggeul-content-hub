@@ -5,7 +5,7 @@
 #   - dumps\no-auto-shutdown.txt 파일이 있음 (이 PC 만 자동 끄기를 끄는 스위치)
 # 물어보는 창: "끄지 않기"를 누르면 그대로 켜 둔다. "지금 끄기" 또는 10분 동안 아무것도 안 누르면 끈다.
 # 끌 때 /f(강제 종료)를 쓰지 않는다 — 저장하지 않은 문서가 있으면 윈도우가 먼저 묻는다.
-# -Test: 시험용 (launchers\shutdown-test.cmd). 남은 글·다른 작업 확인을 건너뛰고 1분짜리 창을 띄우며, 실제로 끄지 않는다.
+# -Test: 시험용 (launchers\shutdown-test.cmd). 남은 글·다른 작업 확인을 건너뛰고 1분짜리 창을 띄운다. 버튼·시간 초과 동작은 실제와 같다 — 정말 꺼진다 (2026-10-09 사용자: "실제로 꺼지는지도 확인").
 param([switch]$Test)
 $ErrorActionPreference = 'SilentlyContinue'
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
@@ -42,7 +42,7 @@ elseif ($left.Count) {
 Add-Type -AssemblyName System.Windows.Forms, System.Drawing
 $seconds = if ($Test) { 60 } else { 600 }
 $form = New-Object Windows.Forms.Form
-$form.Text = if ($Test) { '성글벙글 아침 작업 끝 (시험 — 실제로 끄지 않아요)' } else { '성글벙글 아침 작업 끝' }
+$form.Text = if ($Test) { '성글벙글 아침 작업 끝 (시험 — 1분)' } else { '성글벙글 아침 작업 끝' }
 $form.TopMost = $true
 $form.StartPosition = 'CenterScreen'
 $form.FormBorderStyle = 'FixedDialog'
@@ -70,8 +70,6 @@ $form.Add_Shown({ $form.Activate(); $timer.Start() })
 $answer = $form.ShowDialog()
 $timer.Stop()
 if ($answer -ne 'OK') { Write-Host 'PC 를 켜 둡니다 ([끄지 않기] 를 눌렀어요).' -ForegroundColor Green; exit 0 }
-if ($Test) {
-  $why = if ($script:remain -le 0) { '시간이 다 돼서' } else { '[지금 끄기] 를 눌러서' }
   Write-Host "[시험] $why 실제라면 여기서 30초 뒤 PC 가 꺼져요. 시험이라 끄지 않습니다." -ForegroundColor Green
   exit 0
 }
