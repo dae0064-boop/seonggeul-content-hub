@@ -27,7 +27,8 @@
  *   카드 글자는 원고 본문에 있는 말 그대로 쓴다 (lint-post 가 확인). 돈·통화기호는 쓰지 않는다.
  */
 import fs from 'node:fs';
-import { chromium } from 'playwright';
+// playwright 는 그릴 때만 불러온다 — lint-post 가 checkCard 만 쓰는데, `검사`(GitHub Actions)는 npm install 없이 돌아서
+// 맨 위에서 불러오면 원고 검사가 통째로 멈췄다 (2026-10-09 밤).
 
 // 대표사진 제목 글꼴: 주아체(둥근 글씨, SIL OFL — scripts/lib/fonts/Jua-OFL.txt).
 // 파일이 없으면 맑은 고딕으로 그린다 (그림은 나오되 덜 눈에 띈다)
@@ -252,6 +253,7 @@ export async function renderCards(jobs) {
 }
 
 async function launch() {
+  const { chromium } = await import('playwright');
   const tries = [
     () => chromium.launch({ channel: 'chrome', headless: true }),
     () => chromium.launch({ channel: 'msedge', headless: true }),
