@@ -5,17 +5,19 @@
 #   - dumps\no-auto-shutdown.txt 파일이 있음 (이 PC 만 자동 끄기를 끄는 스위치)
 # 물어보는 창: "끄지 않기"를 누르면 그대로 켜 둔다. "지금 끄기" 또는 10분 동안 아무것도 안 누르면 끈다.
 # 끌 때 /f(강제 종료)를 쓰지 않는다 — 저장하지 않은 문서가 있으면 윈도우가 먼저 묻는다.
+# -Test: 시험용 (launchers\shutdown-test.cmd). 남은 글·다른 작업 확인을 건너뛰고 1분짜리 창을 띄우며, 실제로 끄지 않는다.
+param([switch]$Test)
 $ErrorActionPreference = 'SilentlyContinue'
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo
-if (Test-Path (Join-Path $repo 'dumps\no-auto-shutdown.txt')) { Write-Host '자동 끄기 꺼 둠 (dumps\no-auto-shutdown.txt) — PC 를 켜 둡니다.'; exit 0 }
+if (-not $Test -and (Test-Path (Join-Path $repo 'dumps\no-auto-shutdown.txt'))) { Write-Host '자동 끄기 꺼 둠 (dumps\no-auto-shutdown.txt) — PC 를 켜 둡니다.'; exit 0 }
 
 # 같은 PC 에서 다른 발행 작업이 돌고 있으면 끄지 않는다 (나를 부른 auto-day.cmd 는 뺀다)
 $parent = (Get-CimInstance Win32_Process -Filter "ProcessId=$PID").ParentProcessId
 $pat = 'auto-day\.cmd|draft-day\.ps1|tistory-day\.ps1|reserve-tomorrow|post-images\.mjs|publish-naver\.mjs|publish-tistory\.mjs'
 $busy = Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -ne $PID -and $_.ProcessId -ne $parent -and $_.CommandLine -and $_.CommandLine -match $pat }
-if ($busy) { Write-Host '다른 발행 작업이 아직 돌고 있어 PC 를 끄지 않습니다.' -ForegroundColor Yellow; exit 0 }
+if ($busy -and -not $Test) { Write-Host '다른 발행 작업이 아직 돌고 있어 PC 를 끄지 않습니다.' -ForegroundColor Yellow; exit 0 }
 
 # 오늘 남은 글이 있으면 끄지 않는다 (on-wake.ps1 과 같은 셈법)
 $today = (Get-Date).ToString('yyyy-MM-dd')
@@ -30,16 +32,17 @@ foreach ($b in $tistory) {
   $d = Join-Path $lockDir "tistory-$b.done"
   if (-not (Test-Path $d) -or ((Get-Content $d -Raw -Encoding UTF8) -match '예약 확인 실패')) { $left += "tistory-$b" }
 }
-if ($left.Count) {
+if ($Test) { Write-Host "[시험] 남은 글 $($left.Count)편 — 시험이라 무시하고 창을 띄웁니다." -ForegroundColor Cyan }
+elseif ($left.Count) {
   Write-Host "아직 예약되지 않은 글이 $($left.Count)편 있어 PC 를 켜 둡니다 (다시 시도 실행이 이어서 합니다): $($left -join ', ')" -ForegroundColor Yellow
   exit 0
 }
 
 # 묻는 창 — 10분 동안 대답이 없으면 끈다. 그동안 Google Drive 가 실행 기록을 마저 올린다.
 Add-Type -AssemblyName System.Windows.Forms, System.Drawing
-$seconds = 600
+$seconds = if ($Test) { 60 } else { 600 }
 $form = New-Object Windows.Forms.Form
-$form.Text = '성글벙글 아침 작업 끝'
+$form.Text = if ($Test) { '성글벙글 아침 작업 끝 (시험 — 실제로 끄지 않아요)' } else { '성글벙글 아침 작업 끝' }
 $form.TopMost = $true
 $form.StartPosition = 'CenterScreen'
 $form.FormBorderStyle = 'FixedDialog'
@@ -67,6 +70,11 @@ $form.Add_Shown({ $form.Activate(); $timer.Start() })
 $answer = $form.ShowDialog()
 $timer.Stop()
 if ($answer -ne 'OK') { Write-Host 'PC 를 켜 둡니다 ([끄지 않기] 를 눌렀어요).' -ForegroundColor Green; exit 0 }
+if ($Test) {
+  $why = if ($script:remain -le 0) { '시간이 다 돼서' } else { '[지금 끄기] 를 눌러서' }
+  Write-Host "[시험] $why 실제라면 여기서 30초 뒤 PC 가 꺼져요. 시험이라 끄지 않습니다." -ForegroundColor Green
+  exit 0
+}
 Write-Host 'PC 를 끕니다.' -ForegroundColor Cyan
 shutdown.exe /s /t 30 /c "성글벙글 아침 작업이 끝나 30초 뒤 PC 를 끕니다. 멈추려면 윈도우 키+R 에 shutdown /a 입력."
 exit 0
