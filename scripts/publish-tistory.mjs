@@ -415,7 +415,7 @@ async function main() {
     throw new Error('--save-draft / --dry-run / --publish-now / --reserve 는 하나만 쓰세요.');
   }
   if (!args.url && !/^[a-z0-9-]+$/i.test(args.blog)) {
-    throw new Error('블로그 이름이 필요합니다: --blog <이름> 또는 환경변수 TISTORY_BLOG (예: seonggeul → seonggeul.tistory.com)');
+    throw new Error('블로그 이름이 필요합니다: --blog <이름> 또는 환경변수 TISTORY_BLOG (예: seongdaeeyo → seongdaeeyo.tistory.com)');
   }
 
   const post = JSON.parse(fs.readFileSync(args.post, 'utf8'));
