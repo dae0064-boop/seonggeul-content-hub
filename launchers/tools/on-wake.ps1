@@ -1,7 +1,7 @@
 ﻿# PC 를 켜거나(로그인)·잠금을 풀거나·절전에서 깨우면 바로 오늘 예약발행을 시작한다 (2026-10-05 사용자:
 # "고정된 시간보다 내가 일찍 일어났을 때 바로 작업이 진행됐으면"). 작업 스케줄러 'SeonggeulMorningStart' 가 부른다 (auto-setup.ps1 이 등록).
 # 아래일 때만 launchers\auto-day.cmd 를 띄운다. 아니면 조용히 끝낸다.
-#   - 05:00 ~ 14:59 사이
+#   - 05:00 ~ 20:59 사이 (2026-10-10 사용자: 늦게 켠 날도 자동 시작 — 15시까지였을 땐 저녁에 켜도 안 돌았다. 늦은 글은 draft-day·tistory-day 가 23시 전 빈자리로 옮긴다)
 #   - auto-day 가 이미 돌고 있지 않음
 #   - 오늘 원고(main 기준) 중 아직 .done 이 없는 글이 있음 (Drive run-locks\<오늘>\)
 #   - 이 PC 에서 60분 안에 띄운 적이 없음 (잠금을 여러 번 풀어도 한 번만)
@@ -9,7 +9,7 @@ $ErrorActionPreference = 'SilentlyContinue'
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo
 $now = Get-Date
-if ($now.Hour -lt 5 -or $now.Hour -ge 15) { exit 0 }
+if ($now.Hour -lt 5 -or $now.Hour -ge 21) { exit 0 }
 $busy = Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -ne $PID -and $_.CommandLine -match 'auto-day\.cmd|draft-day\.ps1|tistory-day\.ps1' }
 if ($busy) { exit 0 }
 $stamp = Join-Path $repo 'dumps\on-wake-last.txt'
