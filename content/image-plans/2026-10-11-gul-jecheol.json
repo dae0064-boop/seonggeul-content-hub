@@ -1,0 +1,89 @@
+{
+  "slug": "2026-10-11-gul-jecheol",
+  "title": "굴 제철 언제부터, 생굴과 가열조리용 굴 구분과 굴 보관법",
+  "source": "10/11(일) 원고 (10/10 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "얼음 위에 놓인 싱싱한 굴 한 접시 (대표사진)",
+      "prompt": "Camera and composition: high-angle close-up of a plate. A plate of fresh opened oysters on crushed ice with a lemon wedge. No people at all in this image. Background color: soft sky blue. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "굴 제철\n언제부터?"
+      },
+      "shot": "high-angle close-up of a plate",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "겨울 바닷가 굴 양식장 풍경",
+      "prompt": "Camera and composition: wide landscape shot of a winter sea. A calm winter coastal sea with rows of floating oyster farm buoys and a small boat in the distance. No people at all in this image. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide landscape shot of a winter sea",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "마트 진열대에서 굴 봉지 뒷면을 살펴보는 손",
+      "prompt": "Camera and composition: close-up at a supermarket shelf. A hand holding a sealed plastic pouch of shucked oysters and turning it over to look at the blank back label. No people at all in this image. Background color: light butter yellow. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "포장 표시부터 확인"
+      },
+      "shot": "close-up at a supermarket shelf",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "생굴 접시와 굴국 냄비가 나란히 놓인 식탁",
+      "prompt": "Camera and composition: top-down shot of a dining table. A plate of raw oysters on one side and a pot of hot oyster soup on the other side of a dining table, two spoons between them. No people at all in this image. Background color: mint green. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "생식용 vs 가열조리용"
+      },
+      "shot": "top-down shot of a dining table",
+      "bg": "mint green"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "김이 나는 냄비 속 굴국을 국자로 젓는 모습",
+      "prompt": "Camera and composition: close-up of a stovetop pot. A ladle stirring a steaming pot of oyster soup with radish slices on a gas stove. The person is Seonggeul, the blog host: a Korean woman in her 30s, round face, dark hair in a low bun, cream sweater with a mint scarf. Background color: soft apricot. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "속까지 충분히 익히기"
+      },
+      "shot": "close-up of a stovetop pot",
+      "bg": "soft apricot"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "수산 코너 얼음 위 굴을 고르는 어르신",
+      "prompt": "Camera and composition: medium shot at a fish market counter. An elderly woman picking oysters from a bed of ice at a seafood counter in a Korean market. The person is the Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan. Background color: dusty rose. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot at a fish market counter",
+      "bg": "dusty rose"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "냉장고 안 칸에 밀폐용기에 담긴 굴",
+      "prompt": "Camera and composition: eye-level shot inside a refrigerator. A closed glass container of oysters placed on the inner shelf of a refrigerator, away from the door. No people at all in this image. Background color: pale sage. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "eye-level shot inside a refrigerator",
+      "bg": "pale sage"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "식탁에 차려진 굴전과 굴밥",
+      "prompt": "Camera and composition: top-down shot of a family meal. A golden oyster pancake and a bowl of oyster rice served on a Korean dining table with small side dishes. No people at all in this image. Background color: warm cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "top-down shot of a family meal",
+      "bg": "warm cream"
+    }
+  ]
+}
