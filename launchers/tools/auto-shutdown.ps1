@@ -1,11 +1,13 @@
-﻿# 아침 작업이 다 끝나면 PC 를 완전히 끈다 (2026-10-09 사용자 지시: "끄기 전에 알림으로 한 번 물어보고, 10분 동안 대답이 없으면 그냥 끈다").
+﻿# 아침 작업이 다 끝나면 PC 를 절전으로 재운다 (2026-10-09 사용자 지시: "끄기 전에 알림으로 한 번 물어보고, 10분 동안 대답이 없으면 그냥 끈다").
+# 2026-10-10 사용자 지시 "앞으로 매일 화면이 자동으로 켜지고 내가 뭘 누르지 않아도 자동으로 진행" → 완전히 끄면 PC 가 스스로 켜질 수 없어
+# (10/10 아침 아무도 안 켜 하루가 밀림) 절전으로 바꿨다. 절전 중에는 작업 스케줄러가 다음 날 09:00(노트북 09:15)에 깨워 로그인 상태 그대로 auto-day 를 돌린다
+# (auto-setup.ps1 이 WakeToRun·깨우기 타이머를 켜 둔다). 노트북은 전원선을 꽂아 둬야 확실히 깨어난다.
 # auto-day.cmd 맨 끝에서 부른다. 아래일 때는 끄지 않고 조용히 끝낸다.
 #   - 오늘 원고(네이버·티스토리) 중 .done 이 없는 글이 남음 → 10:10 "다시 시도" 실행이 해야 하므로 켜 둔다
 #   - 이 PC 에서 다른 발행 작업이 아직 돎
 #   - dumps\no-auto-shutdown.txt 파일이 있음 (이 PC 만 자동 끄기를 끄는 스위치)
-# 물어보는 창: "끄지 않기"를 누르면 그대로 켜 둔다. "지금 끄기" 또는 10분 동안 아무것도 안 누르면 끈다.
-# 끌 때 /f(강제 종료)를 쓰지 않는다 — 저장하지 않은 문서가 있으면 윈도우가 먼저 묻는다.
-# -Test: 시험용 (launchers\shutdown-test.cmd). 남은 글·다른 작업 확인을 건너뛰고 1분짜리 창을 띄운다. 버튼·시간 초과 동작은 실제와 같다 — 정말 꺼진다 (2026-10-09 사용자: "실제로 꺼지는지도 확인").
+# 물어보는 창: "끄지 않기"를 누르면 그대로 켜 둔다. "지금 재우기" 또는 10분 동안 아무것도 안 누르면 절전으로 재운다.
+# -Test: 시험용 (launchers\shutdown-test.cmd). 남은 글·다른 작업 확인을 건너뛰고 1분짜리 창을 띄운다. 버튼·시간 초과 동작은 실제와 같다 — 정말 절전으로 들어간다.
 param([switch]$Test)
 $ErrorActionPreference = 'SilentlyContinue'
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
@@ -67,17 +69,17 @@ $form.MaximizeBox = $false; $form.MinimizeBox = $false
 $form.ClientSize = New-Object Drawing.Size(460, 190)
 $form.Font = New-Object Drawing.Font('Malgun Gothic', 11)
 $label = New-Object Windows.Forms.Label
-$label.SetBounds(20, 18, 420, 100)
+$label.SetBounds(20, 12, 420, 112)
 $form.Controls.Add($label)
 $off = New-Object Windows.Forms.Button
-$off.Text = '지금 끄기'; $off.SetBounds(60, 130, 150, 40); $off.DialogResult = 'OK'
+$off.Text = '지금 재우기'; $off.SetBounds(60, 130, 150, 40); $off.DialogResult = 'OK'
 $keep = New-Object Windows.Forms.Button
 $keep.Text = '끄지 않기'; $keep.SetBounds(250, 130, 150, 40); $keep.DialogResult = 'Cancel'
 $form.Controls.Add($off); $form.Controls.Add($keep)
 $form.AcceptButton = $off; $form.CancelButton = $keep
 $script:remain = $seconds
 function Show-Remain { $m = [math]::Floor($script:remain / 60); $s = $script:remain % 60
-  $label.Text = "오늘 글 예약이 모두 끝났어요.`n`n${m}분 ${s}초 뒤에 PC 를 끕니다.`nPC 를 계속 쓰시려면 [끄지 않기] 를 눌러 주세요." }
+  $label.Text = "오늘 글 예약이 모두 끝났어요.`n`n${m}분 ${s}초 뒤에 PC 를 절전으로 재웁니다.`n(내일 아침 저절로 깨어나 이어서 합니다)`nPC 를 계속 쓰시려면 [끄지 않기] 를 눌러 주세요." }
 Show-Remain
 $timer = New-Object Windows.Forms.Timer
 $timer.Interval = 1000
@@ -94,6 +96,9 @@ $answer = $form.ShowDialog()
 $ErrorActionPreference = 'SilentlyContinue'
 $timer.Stop()
 if ($answer -ne 'OK') { Log "PC 를 켜 둡니다 ([끄지 않기] 또는 창 닫기 — 응답 $answer)." 'Green'; exit 0 }
-Log "PC 를 끕니다 ($(if ($script:remain -le 0) { '10분 대답 없음' } else { '[지금 끄기]' }))." 'Cyan'
-shutdown.exe /s /t 30 /c "성글벙글 아침 작업이 끝나 30초 뒤 PC 를 끕니다. 멈추려면 윈도우 키+R 에 shutdown /a 입력."
+Log "PC 를 절전으로 재웁니다 ($(if ($script:remain -le 0) { '10분 대답 없음' } else { '[지금 재우기]' })) — 내일 아침 작업 스케줄러가 깨웁니다." 'Cyan'
+# 깨우기 타이머가 살아 있게 disableWakeEvent=$false 로 재운다 (완전히 끄면 스스로 켜지지 못한다 — 2026-10-10)
+Start-Sleep -Seconds 30   # Drive 가 실행 기록을 마저 올릴 시간
+Add-Type -AssemblyName System.Windows.Forms
+[System.Windows.Forms.Application]::SetSuspendState([System.Windows.Forms.PowerState]::Suspend, $false, $false) | Out-Null
 exit 0
