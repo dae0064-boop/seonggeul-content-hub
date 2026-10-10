@@ -169,7 +169,8 @@ foreach ($m in $mds) {
       $slot = NextSlot $want
       if ($slot -ne $want) { Say "  PC 가 늦게 켜져서 예약 시각을 $($want.ToString('HH:mm')) → $($slot.ToString('HH:mm')) 로 미룹니다" 'Yellow'; $when = $slot.ToString('yyyy-MM-dd HH:mm') }
       $atArgs = @('--at', $when)
-      $script:lastAt = $slot
+      # 자리가 없어 원래 시각으로 돌아온 글(임시저장으로 남음)은 간격 기준에서 뺀다 — 10/10 에 이 글이 기준을 12:50 으로 되돌려 다음 글이 22:20 글과 10분 간격(22:30)으로 들어갔다
+      if ($slot -gt (Get-Date).AddMinutes(20)) { $script:lastAt = $slot }
     } else { Say '  publish_at 이 없어 임시저장만 합니다' 'Yellow' }
   }
   $pubArgs = @('scripts/publish-tistory.mjs', '--post', ($m.FullName -replace '\.md$', '.json'), $postMode, '--dump') + $atArgs

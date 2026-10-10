@@ -1,0 +1,85 @@
+{
+  "slug": "2026-10-11-ppuripari-eopsaeneun-beop",
+  "title": "뿌리파리 없애는 법, 화분 흙 말리기와 노란 끈끈이 트랩 쓰는 요령",
+  "source": "10/11(일) 티스토리 원고 (10/10 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 같은 날 네이버 계획서와 장면이 겹치지 않게",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "창가 화분 위를 맴도는 작은 까만 날벌레를 바라보는 사람 (대표사진)",
+      "prompt": "Camera and composition: medium shot by a window. A person by a window watching a few tiny black gnats hovering above a potted houseplant. Background color: soft apricot. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "뿌리파리 없애는 법\n흙부터 말리기"
+      },
+      "shot": "medium shot by a window",
+      "bg": "soft apricot"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "화분 흙을 톡톡 건드리자 작은 날벌레가 날아오르는 모습",
+      "prompt": "Camera and composition: extreme close-up of potting soil. A fingertip lightly tapping the soil surface of a houseplant pot while a few tiny gnats fly up. Only hands and forearms are visible; no faces. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "extreme close-up of potting soil",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "손가락 한 마디를 흙에 꽂아 마른 정도를 확인하는 손",
+      "prompt": "Camera and composition: close-up of a plant pot. A finger pushed into potting soil up to the first knuckle to check if it is dry. Only hands and forearms are visible; no faces. Background color: warm cream. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "속까지 마르면 물 주기"
+      },
+      "shot": "close-up of a plant pot",
+      "bg": "warm cream"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "화분 받침에 고인 물을 싱크대에 따라 버리는 모습",
+      "prompt": "Camera and composition: side view at a kitchen sink. Hands pouring leftover water from a plant saucer into a kitchen sink. Only hands and forearms are visible; no faces. Background color: soft sky blue. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "받침에 고인 물 버리기"
+      },
+      "shot": "side view at a kitchen sink",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "화분 흙에 꽂힌 노란 끈끈이 카드에 작은 날벌레가 붙은 모습",
+      "prompt": "Camera and composition: close-up of a sticky trap. A yellow sticky card stuck diagonally into the soil of a potted plant, a few tiny gnats caught on it. No people at all in this image. Background color: pale sage. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up of a sticky trap",
+      "bg": "pale sage"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "흙 위에 얇게 썬 감자 조각을 올려 두고 들여다보는 손",
+      "prompt": "Camera and composition: high-angle close-up of a pot. Thin raw potato slices placed on the soil surface of a houseplant pot, a hand lifting one to look underneath. Only hands and forearms are visible; no faces. Background color: light butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "high-angle close-up of a pot",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "거실 창문을 조금 열어 두고 화분 잎을 닦는 자녀",
+      "prompt": "Camera and composition: wide shot of a living room. the Seonggeul adult child: a Korean woman in her 40s, shoulder-length brown bob hair, soft sky blue shirt wiping the leaves of a large houseplant with a cloth next to a slightly open living room window. Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide shot of a living room",
+      "bg": "mint green"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "햇살 드는 창가에서 싱그러운 몬스테라 잎을 보며 웃는 할머니",
+      "prompt": "Camera and composition: medium shot by a sunny window. the Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan smiling at a healthy monstera plant with glossy leaves by a sunny window. Background color: dusty rose. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot by a sunny window",
+      "bg": "dusty rose"
+    }
+  ]
+}

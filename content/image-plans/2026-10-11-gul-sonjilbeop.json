@@ -1,0 +1,89 @@
+{
+  "slug": "2026-10-11-gul-sonjilbeop",
+  "title": "굴 손질법, 소금물로 굴 세척하는 순서와 껍데기 골라내기",
+  "source": "10/11(일) 티스토리 원고 (10/10 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 같은 날 네이버 계획서와 장면이 겹치지 않게",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "도마 위 그릇에 담긴 탱글한 굴과 굵은소금 (대표사진)",
+      "prompt": "Camera and composition: high-angle close-up on a cutting board. A bowl of plump fresh shucked oysters and a small dish of coarse salt on a wooden cutting board. No people at all in this image. Background color: soft apricot. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "굴 손질법\n소금물에 흔들기"
+      },
+      "shot": "high-angle close-up on a cutting board",
+      "bg": "soft apricot"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "굴전 접시 앞에서 젓가락으로 작은 껍데기 조각을 집어 보이는 사람",
+      "prompt": "Camera and composition: medium shot at a dining table. A person at a dining table holding up chopsticks with a tiny piece of shell beside a plate of golden oyster pancakes. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot at a dining table",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "큰 볼에 담긴 맑은 물에 소금을 한 숟가락 넣는 손",
+      "prompt": "Camera and composition: close-up over a large bowl. A hand dropping a spoonful of coarse salt into a large bowl of clear water. Only hands and forearms are visible; no faces. Background color: warm cream. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "바닷물처럼 짭짤하게"
+      },
+      "shot": "close-up over a large bowl",
+      "bg": "warm cream"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "주방 조리대 위에 볼과 체, 굵은소금을 나란히 준비해 둔 모습",
+      "prompt": "Camera and composition: eye-level shot of a kitchen counter. A mixing bowl, a mesh strainer and a jar of coarse salt lined up neatly on a kitchen counter. No people at all in this image. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "eye-level shot of a kitchen counter",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "체에 받친 굴을 소금물 볼 안에서 살살 흔드는 손",
+      "prompt": "Camera and composition: side view over a sink. Hands gently shaking a mesh strainer full of oysters inside a bowl of salt water at a kitchen sink. Only hands and forearms are visible; no faces. Background color: pale sage. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "체째 살살 흔들기"
+      },
+      "shot": "side view over a sink",
+      "bg": "pale sage"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "하얀 접시 위에 굴을 한 알씩 옮기며 손끝으로 만져 보는 모습",
+      "prompt": "Camera and composition: top-down shot of a white plate. Fingertips moving oysters one by one onto a plain white plate, feeling their edges. Only hands and forearms are visible; no faces. Background color: light butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "top-down shot of a white plate",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "키친타월을 깐 쟁반 위에 굴을 한 겹으로 펼쳐 둔 모습",
+      "prompt": "Camera and composition: top-down shot of a tray. Cleaned oysters spread in a single layer on a tray lined with paper towels. No people at all in this image. Background color: mint green. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "물기 빼고 요리하기"
+      },
+      "shot": "top-down shot of a tray",
+      "bg": "mint green"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "주방 조리대에서 손질을 마친 굴 그릇을 들고 웃는 할아버지",
+      "prompt": "Camera and composition: three-quarter view at a kitchen counter. the Seonggeul grandpa: a Korean man in his late 70s, short gray hair, mint green vest over a white shirt holding a bowl of cleaned oysters at a kitchen counter, smiling. Background color: dusty rose. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "three-quarter view at a kitchen counter",
+      "bg": "dusty rose"
+    }
+  ]
+}
