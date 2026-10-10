@@ -1,0 +1,85 @@
+{
+  "slug": "2026-10-11-tongdori-setakgi-cheongso",
+  "title": "통돌이 세탁기 청소, 거름망부터 비우고 세탁조 클리너 넣는 순서 정리",
+  "source": "10/11(일) 티스토리 원고 (10/10 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 같은 날 네이버 계획서와 장면이 겹치지 않게",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "뚜껑을 연 통돌이 세탁기 앞에서 고무장갑을 끼는 사람 (대표사진)",
+      "prompt": "Camera and composition: full shot in a small laundry room. A person putting on pink rubber gloves in front of an open top-loading washing machine with its lid up. Background color: soft apricot. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "통돌이 세탁기 청소\n거름망부터"
+      },
+      "shot": "full shot in a small laundry room",
+      "bg": "soft apricot"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "빨래 바구니 속 어두운 니트에 붙은 하얀 보풀",
+      "prompt": "Camera and composition: extreme close-up of a dark sweater. A dark knit sweater lying in a laundry basket with small white lint specks stuck on it. No people at all in this image. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "extreme close-up of a dark sweater",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "세탁기 옆 선반에 놓인 세탁조 클리너 상자와 계량컵",
+      "prompt": "Camera and composition: eye-level shot of a shelf beside a washer. A plain box of washing machine tub cleaner and a small measuring cup on a shelf next to a top-loading washer. No people at all in this image. Background color: warm cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "eye-level shot of a shelf beside a washer",
+      "bg": "warm cream"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "세탁조 안쪽 벽에서 길쭉한 거름망을 위로 당겨 빼는 손",
+      "prompt": "Camera and composition: close-up looking down into a washer tub. Hands pulling a long mesh lint filter upward off the inner wall of a top-loading washer tub. Only hands and forearms are visible; no faces. Background color: soft sky blue. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "거름망 먼저 비우기"
+      },
+      "shot": "close-up looking down into a washer tub",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "물이 가득 찬 세탁조 위로 하얀 가루를 고루 뿌리는 손",
+      "prompt": "Camera and composition: high-angle shot over a water-filled tub. A hand sprinkling white powder evenly over a top-loading washer tub filled with water. Only hands and forearms are visible; no faces. Background color: pale sage. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "2~4시간 불리기"
+      },
+      "shot": "high-angle shot over a water-filled tub",
+      "bg": "pale sage"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "헹굼을 마친 세탁조 안쪽 벽을 마른 수건으로 닦는 손",
+      "prompt": "Camera and composition: close-up inside an empty washer tub. A hand wiping the inside wall of an empty top-loading washer tub with a dry towel. Only hands and forearms are visible; no faces. Background color: light butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up inside an empty washer tub",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "베란다 건조대에 바로 널린 빨래와 뚜껑이 열린 세탁기",
+      "prompt": "Camera and composition: wide shot of a bright balcony. Freshly washed laundry hanging on a drying rack on a sunny Korean apartment balcony, a top-loading washer with its lid open in the corner. No people at all in this image. Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide shot of a bright balcony",
+      "bg": "mint green"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "깨끗해진 수건을 개며 웃는 할머니",
+      "prompt": "Camera and composition: medium shot on a living room floor. the Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan folding clean fluffy towels on the living room floor, smiling. Background color: dusty rose. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot on a living room floor",
+      "bg": "dusty rose"
+    }
+  ]
+}
