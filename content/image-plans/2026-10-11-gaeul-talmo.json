@@ -1,0 +1,89 @@
+{
+  "slug": "2026-10-11-gaeul-talmo",
+  "title": "가을 탈모, 머리카락 많이 빠질 때 두피 관리 요령",
+  "source": "10/11(일) 원고 (10/10 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "창가에서 빗으로 머리를 빗는 모습 (대표사진)",
+      "prompt": "Camera and composition: medium shot by a window. A woman calmly combing her hair with a wooden brush next to a sunny window. The person is Seonggeul, the blog host: a Korean woman in her 30s, round face, dark hair in a low bun, cream sweater with a mint scarf. Background color: soft apricot. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "가을 탈모\n왜 늘까?"
+      },
+      "shot": "medium shot by a window",
+      "bg": "soft apricot"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "낙엽이 떨어지는 가을 공원 길",
+      "prompt": "Camera and composition: wide shot of an autumn park path. A quiet park path covered with falling yellow and orange leaves, a bench on the side. No people at all in this image. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide shot of an autumn park path",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "욕실 배수구 거름망을 들여다보는 사람",
+      "prompt": "Camera and composition: high-angle close-up in a bathroom. A person looking down at a bathroom floor drain strainer after washing hair, relaxed expression. The person is the Seonggeul adult child: a Korean woman in her 40s, shoulder-length brown bob hair, soft sky blue shirt. Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "high-angle close-up in a bathroom",
+      "bg": "mint green"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "거울 앞에서 가르마를 살펴보는 중년 여성",
+      "prompt": "Camera and composition: over-the-shoulder shot at a mirror. A middle-aged woman looking at her hair parting in a bathroom mirror with a calm face. The person is the Seonggeul adult child: a Korean woman in her 40s, shoulder-length brown bob hair, soft sky blue shirt. Background color: soft sky blue. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "계절 영향 vs 진료"
+      },
+      "shot": "over-the-shoulder shot at a mirror",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "수건으로 머리를 감싼 채 드라이기를 드는 손",
+      "prompt": "Camera and composition: close-up from the side. A person with hair wrapped in a towel holding a hair dryer at a distance, warm air shown as soft curves. No people at all in this image. Background color: light butter yellow. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "두피 먼저 말리기"
+      },
+      "shot": "close-up from the side",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "식탁 위 골고루 차린 집밥 한 상",
+      "prompt": "Camera and composition: top-down shot of a dining table. A balanced Korean home meal with rice, fish, egg roll, tofu and vegetable side dishes. No people at all in this image. Background color: pale sage. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "top-down shot of a dining table",
+      "bg": "pale sage"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "소파에 앉아 휴대폰으로 메모를 보는 사람",
+      "prompt": "Camera and composition: medium shot on a sofa. An elderly man sitting on a sofa reading a memo on his smartphone, a cup of tea beside him. The person is the Seonggeul grandpa: a Korean man in his late 70s, short gray hair, mint green vest over a white shirt. Background color: dusty rose. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot on a sofa",
+      "bg": "dusty rose"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "달력에 작은 표시를 하는 손",
+      "prompt": "Camera and composition: close-up of a wall calendar. A hand making a small check mark on a blank wall calendar with a pencil. No people at all in this image. Background color: warm cream. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "몇 주 기록해 보기"
+      },
+      "shot": "close-up of a wall calendar",
+      "bg": "warm cream"
+    }
+  ]
+}
