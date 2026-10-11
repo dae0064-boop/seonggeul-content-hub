@@ -1,0 +1,110 @@
+{
+  "slug": "2026-10-12-gyul-goreuneun-beop",
+  "title": "귤 고르는 법, 맛있는 귤 찾을 때 귤 껍질과 꼭지 보는 법 (확인할 것 5가지)",
+  "source": "10/12(월) 티스토리 원고 (10/11 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 정보 카드 2장은 로컬 합성(비용 0). 같은 날 네이버 계획서와 장면 겹치지 않게",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "과일 매대 앞에서 귤 한 알을 들어 보는 성글이 (대표사진)",
+      "prompt": "Camera and composition: medium shot at a fruit stand. Seonggeuli, a woman in her 30s with a round face and dark hair tied in a low bun, wearing a cream sweater and a mint scarf at a fruit stand in a Korean supermarket holding up one mandarin orange in her palm and looking at it with a smile, piles of mandarins in front of her. Background color: pale sky blue. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "귤 고르는 법\n맛있는 귤은?"
+      },
+      "shot": "medium shot at a fruit stand",
+      "bg": "pale sky blue"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "크기가 서로 다른 귤 다섯 알이 한 줄로 놓인 나무 쟁반",
+      "prompt": "Camera and composition: side view at table height. Five mandarin oranges of clearly different sizes lined up in a row on a wooden tray, from small to very large. No people at all in this image. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "side view at table height",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "두 손바닥 위에 귤을 하나씩 올려 무게를 견주는 장면",
+      "prompt": "Camera and composition: close-up of two open hands. Two open hands each holding one mandarin orange as if comparing their weight. No face shown. Background color: light butter yellow. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "들어 보고 눌러 보기"
+      },
+      "shot": "close-up of two open hands",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "귤 크기와 껍질로 고르는 법을 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "이런 귤을 골라요",
+        "heads": [
+          "골라요",
+          "피해요"
+        ],
+        "items": [
+          [
+            "크지 않은 귤",
+            "지나치게 큰 귤"
+          ],
+          [
+            "크기에 비해 묵직한 귤",
+            "들었을 때 가벼운 귤"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "껍질이 얇은 귤을 반쯤 벗겨 속살이 보이는 모습",
+      "prompt": "Camera and composition: macro close-up on a plate. A mandarin orange half peeled with a thin peel curling away, showing juicy segments, on a small white plate. No people at all in this image. Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "macro close-up on a plate",
+      "bg": "mint green"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "꼭지가 달린 귤과 배꼽 쪽 귤을 나란히 놓은 접시",
+      "prompt": "Camera and composition: top-down view of a plate. Two mandarin oranges on a round plate, one showing its small firm green stem on top and the other turned upside down showing its deep orange bottom. No people at all in this image. Background color: soft apricot. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "꼭지와 배꼽도 보기"
+      },
+      "shot": "top-down view of a plate",
+      "bg": "soft apricot"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "귤 고르는 법 다섯 가지를 정리한 확인 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "귤 고르는 법 5가지",
+        "items": [
+          "크기가 크지 않은 귤인가",
+          "들었을 때 묵직한가",
+          "귤 껍질이 얇고 붙어 있는가",
+          "꼭지를 눌러도 들어가지 않는가",
+          "배꼽이 진한 담홍색인가"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "현관 바닥에서 택배 귤 상자를 열어 보는 할아버지",
+      "prompt": "Camera and composition: medium shot at an apartment entrance. a Korean grandfather in his late 70s with short gray hair, a mint green vest over a white shirt crouching on the entrance floor of an apartment opening a delivered cardboard box full of mandarin oranges, smiling. Background color: dusty rose. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot at an apartment entrance",
+      "bg": "dusty rose"
+    }
+  ]
+}
