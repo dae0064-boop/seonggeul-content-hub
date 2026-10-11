@@ -1,0 +1,101 @@
+{
+  "slug": "2026-10-12-gyeollo-bangji",
+  "title": "결로 방지, 겨울 오기 전 창문 결로와 곰팡이 막는 환기 (하루 2회 이상)",
+  "source": "10/12(월) 원고 (10/11 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 정보 카드 2장은 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "김 서린 거실 창문을 바라보는 할아버지 (대표사진)",
+      "prompt": "Camera and composition: medium shot from behind a person at a window. a grandfather in his late 70s with short gray hair, a white shirt and a mint vest standing calmly and looking at a living room window fogged with small water droplets on the glass. Background color: soft sky blue. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "결로 방지\n겨울 전 할 일"
+      },
+      "shot": "medium shot from behind a person at a window",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "바깥은 눈 내리고 안은 따뜻한 아파트 단면 풍경",
+      "prompt": "Camera and composition: cutaway diorama view of an apartment. A cutaway miniature apartment unit with warm lights inside and gentle snow falling outside the windows. No people at all in this image. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "cutaway diorama view of an apartment",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "활짝 열린 베란다 창으로 바람이 드나드는 거실",
+      "prompt": "Camera and composition: wide shot of a living room. A living room with the balcony sliding windows wide open and light curtains gently blowing in the breeze. No people at all in this image. Background color: mint green. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "습기는 밖으로 내보내기"
+      },
+      "shot": "wide shot of a living room",
+      "bg": "mint green"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "결로가 잘 생기는 집인지 확인하는 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "결로 잘 생기는 집",
+        "items": [
+          "햇빛이 잘 안 드는 방이 있다",
+          "겨울에 실내 온도를 높게 둔다",
+          "가구를 벽에 딱 붙여 두었다",
+          "방 안에서 빨래를 말린다",
+          "환기를 거의 하지 않는다"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "아침 햇살 속에 창문을 여는 성글이",
+      "prompt": "Camera and composition: eye-level medium shot at a bedroom window. Seonggeuli, a woman in her 30s with a round face and hair tied low, wearing a cream sweater and a mint scarf opening a bedroom window wide in soft morning sunlight. Background color: light butter yellow. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "overlay": {
+        "kind": "label",
+        "text": "하루 2회 이상 환기"
+      },
+      "shot": "eye-level medium shot at a bedroom window",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "창문 결로 생겼을 때 할 일을 순서대로 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "창문 결로 생겼을 때",
+        "items": [
+          "물방울은 바로 닦아 내기",
+          "선풍기로 창틀 말리기",
+          "제습기나 환기로 습기 빼기"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "벽에서 살짝 떨어뜨려 놓은 옷장과 그 뒤 빈 공간",
+      "prompt": "Camera and composition: three-quarter view of a bedroom wall. A wooden wardrobe placed slightly away from a plain wall, leaving a visible gap behind it. No people at all in this image. Background color: soft apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "three-quarter view of a bedroom wall",
+      "bg": "soft apricot"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "거실 창가에 놓인 작은 제습기와 습도계",
+      "prompt": "Camera and composition: low-angle close-up by a window. A small compact dehumidifier and a little round hygrometer with a blank dial on the floor by a living room window. No people at all in this image. Background color: dusty rose. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "low-angle close-up by a window",
+      "bg": "dusty rose"
+    }
+  ]
+}
