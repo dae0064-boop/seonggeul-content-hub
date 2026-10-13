@@ -26,10 +26,11 @@ import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
 import { readMyBlogId, resolveRelated } from './lib/naver-related.mjs';
+import { leadBlock } from './lib/parse-post.mjs';
 
 // ---------------------------------------------------------------- args
 function parseArgs(argv) {
-  const out = { cdp: 'http://localhost:9222', slow: 60, linebreak: 'soft', quote: true, quoteStyle: 'quotation_underline' };
+  const out = { cdp: 'http://localhost:9222', slow: 60, linebreak: 'soft', quote: true, quoteStyle: 'quotation_underline', leadQuoteStyle: 'default' };
   for (let i = 2; i < argv.length; i++) {
     const a = argv[i];
     const next = () => argv[++i];
@@ -45,6 +46,7 @@ function parseArgs(argv) {
       case '--quote':       out.quote = true; break;
       case '--no-quote':    out.quote = false; break;
       case '--quote-style': out.quoteStyle = next(); break;
+      case '--lead-quote-style': out.leadQuoteStyle = next(); break;
       case '--format':      out.color = true; out.quote = true; break;
       case '--save-draft':  out.saveDraft = true; break;
       case '--dry-run':     out.dryRun = true; break;
@@ -78,6 +80,8 @@ const USAGE = `
   --no-quote         소제목을 인용구로 바꾸지 않는다 (기본은 인용구 4번 '라인&따옴표')
   --quote-style <s>  인용구 모양: default(1) quotation_line(2) quotation_bubble(3)
                      quotation_underline(4, 기본) quotation_postit(5) quotation_corner(6)
+  --lead-quote-style <s>  인사말 앞 사실 한 문장을 넣는 인용구 모양 (기본 default = 1번 따옴표).
+                     두 줄은 한 문단으로 이어 넣는다 — 인용구 글씨가 커서 모바일에서 저절로 두 줄이 된다
   --save-draft       에디터 "저장"(임시저장)을 누르고 끝낸다. 태그가 있으면 발행 패널을 열어
                      태그만 넣고 닫은 뒤 저장한다 (발행 확인 버튼은 누르지 않는다)
   --no-tags          --save-draft 에서 태그를 넣지 않는다
@@ -1289,6 +1293,10 @@ async function main() {
   if (!post.title || !Array.isArray(post.blocks)) {
     throw new Error(`${args.post}: title 과 blocks 가 필요합니다. build-post.mjs 로 생성하세요.`);
   }
+  // 인사말 앞 사실 한 문장 → 인용구 1번 (2026-10-13 사용자 지시). 두 줄을 한 문단으로 이어 붙여 넣고,
+  // 소제목과 같은 방법(insertQuoteAt)으로 인용구로 바꾼다. 실패해도 글자는 남고 발행은 멈추지 않는다
+  const lead = args.quote ? leadBlock(post.blocks) : null;
+  if (lead) lead.lines = [{ t: lead.lines.map((l) => l.t).join(' ') }];
   if (args.reserve && !args.at) args.at = post.publishAt;
   if (args.reserve && !args.at) throw new Error('--reserve 에는 예약 시각이 필요합니다 (--at 또는 원고의 publish_at).');
   const at = args.at ? parseAt(args.at) : null;
@@ -1477,11 +1485,12 @@ async function main() {
 
     // ---- 소제목 → 인용구
     if (args.quote) {
-      const quotes = post.blocks.filter((b) => b.type === 'quote').map((b) => b.lines[0].t);
-      if (quotes.length) step(`6-2. 소제목을 인용구로 (${quotes.length}개, 모양 ${args.quoteStyle})`);
-      for (const q of quotes) {
+      const quotes = post.blocks.filter((b) => b.type === 'quote').map((b) => ({ q: b.lines[0].t, style: args.quoteStyle }));
+      if (lead) quotes.unshift({ q: lead.lines[0].t, style: args.leadQuoteStyle, lead: true });
+      if (quotes.length) step(`6-2. 소제목을 인용구로 (${quotes.length}개, 모양 ${args.quoteStyle}${lead ? ` · 첫 문장 ${args.leadQuoteStyle}` : ''})`);
+      for (const { q, style } of quotes) {
         const snapQ = await snapshot(editor);
-        const r = await insertQuoteAt(page, editor, q, args.quoteStyle);
+        const r = await insertQuoteAt(page, editor, q, style);
         const lostQ = lostLines(snapQ, await snapshot(editor));
         if (lostQ.length) {
           const back = await undoUntilRestored(page, editor, snapQ);

@@ -17,6 +17,10 @@ import { checkCard } from './lib/overlay.mjs';
 const BUNDLE_FROM = '2026-10-12';
 const CARDS = [2, 3];
 const FRAME_CARDS_PER_DAY = 2;
+// 첫 인용구 키워드 (2026-10-13 사용자 지시) — 2026-10-15 원고부터.
+// 인사말 앞 사실 한 문장은 발행 때 인용구 1번으로 들어간다. 그 안에 제목·메인·서브 키워드와 다른, 같은 주제의 검색어
+// (lead_keyword)를 넣어 노출되는 검색어를 넓힌다. 예: 제목 "도시락 싸는 법" → 인용구 "어린이집 점심 도시락은 …"
+const LEAD_KW_FROM = '2026-10-15';
 const plain = (s) => String(s).replace(/\[\/?(빨간글씨|파란글씨|노란배경)\]/g, '').replace(/[\s①-⑧✔⭕❌·,.!?()~\-]/g, '');
 const titleBracket = (t) => /\s\(([^()]*)\)\s*$/.exec(t);
 function planOf(file) {
@@ -315,7 +319,25 @@ for (const file of files) {
       errors.push(`첫 덩어리는 고정 인사말 앞의 "확인된 사실 한 문장"(1~2줄)이어야 합니다 (2026-10-12 원고부터) — 빈 줄 다음에 "${OPEN[0]} / ${OPEN[1]}"`);
     else if (greet.length !== 2 || greet[0] !== OPEN[0] || greet[1] !== OPEN[1])
       errors.push(`사실 한 문장 다음 덩어리가 고정 인사말 "${OPEN[0]} / ${OPEN[1]}" 이어야 합니다`);
-    else notes.push(`첫 줄 사실: ${first.lines.map((l) => l.t).join(' ')}`);
+    else {
+      const lead = first.lines.map((l) => l.t).join(' ');
+      notes.push(`첫 줄 사실(발행 때 인용구): ${lead}`);
+      if (dated >= LEAD_KW_FROM) {
+        const sq = (x) => x.replace(/\s+/g, '');
+        const lk = post.leadKeyword;
+        if (first.lines.some((l) => l.s || l.segs)) errors.push('첫 인용구(사실 한 문장)에는 색 강조를 넣지 않습니다');
+        if (!lk) errors.push(`프런트매터에 lead_keyword 가 없습니다 (${LEAD_KW_FROM} 원고부터) — 첫 인용구에 넣을, 제목·메인·서브와 다른 같은 주제 검색어`);
+        else {
+          if (!sq(lead).includes(sq(lk))) errors.push(`첫 인용구에 lead_keyword "${lk}" 가 없습니다: "${lead}"`);
+          const taken = [post.mainKeyword, ...post.subKeywords].filter(Boolean).map(sq);
+          const clash = taken.filter((k) => k.includes(sq(lk)) || sq(lk).includes(k));
+          if (clash.length) errors.push(`lead_keyword "${lk}" 가 메인·서브 키워드와 겹칩니다 — 같은 주제의 다른 검색어로`);
+          else if (sq(post.title).includes(sq(lk))) errors.push(`lead_keyword "${lk}" 가 제목에 이미 있습니다 — 제목에 없는 검색어로`);
+          const v = volumeOf(lk);
+          notes.push(v == null ? `첫 인용구 키워드 "${lk}" 검색량 자료 없음 — keyword-queue.txt 에 넣어 두세요` : `첫 인용구 키워드 "${lk}" 월 검색량 ${v.toLocaleString()}`);
+        }
+      }
+    }
   } else if (texts[0] !== OPEN[0] || texts[1] !== OPEN[1])
     errors.push(`오프닝이 고정 문구와 다릅니다. "${OPEN[0]} / ${OPEN[1]}" 로 시작해야 합니다.`);
 
