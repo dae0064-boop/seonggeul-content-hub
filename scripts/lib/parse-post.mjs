@@ -10,6 +10,7 @@
  *   tags: 태그1, 태그2
  *   publish_at: 2026-10-02 09:00   ← 예약발행 시각 (draft-day -Reserve 가 쓴다)
  *   related: 지난 글 제목 | 지난 글 제목   ← 글 끝 "함께 보면 좋은 글" (발행된 내 글 1~2편, 2026-10-07 사용자 승인)
+ *   lead_keyword: 첫 인용구 키워드        ← 고정 인사말 앞 첫 인용구에 넣는, 제목과 다른 주제 키워드 (2026-10-15 원고부터)
  *   ---
  *
  *   본문 줄1
@@ -107,10 +108,21 @@ export function parsePost(raw) {
     publishAt: meta.publish_at || '',
     format: (meta.format || '').trim(),
     related: meta.related ? meta.related.split('|').map((s) => s.trim()).filter(Boolean) : [],
+    leadKeyword: (meta.lead_keyword || '').trim(),
     blocks,
     marks,
     warnings,
   };
+}
+
+/**
+ * 고정 인사말 앞 첫 덩어리(사실 한 문장, 2026-10-12 원고부터). 발행할 때 인용구 1번(따옴표)으로 넣는다
+ * (2026-10-13 사용자 지시 — 글자만 두지 말고 인용구로). 없으면 null. .json 의 blocks 에도 그대로 쓴다.
+ */
+export const OPEN_GREETING = '안녕하세요';
+export function leadBlock(blocks) {
+  const [a, b] = blocks || [];
+  return a?.type === 'p' && a.lines.length <= 2 && a.lines[0]?.t !== OPEN_GREETING && b?.type === 'p' && b.lines[0]?.t === OPEN_GREETING ? a : null;
 }
 
 /** 자동화 스크립트가 실제로 입력할 텍스트 줄만 평평하게 뽑는다. */
