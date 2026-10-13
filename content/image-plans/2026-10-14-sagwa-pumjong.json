@@ -1,0 +1,93 @@
+{
+  "slug": "2026-10-14-sagwa-pumjong",
+  "title": "사과 품종, 홍로와 부사 맛 차이와 사과 제철 언제일까 (부사 11월부터)",
+  "source": "10/14(수) 원고 (10/13 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "과일 가게 진열대 앞에서 빨간 사과를 고르는 할머니 (대표사진)",
+      "prompt": "Camera and composition: medium shot at a fruit shop. a grandmother in her late 70s with short white curly hair, round glasses and an apricot cardigan picking a red apple from a fruit shop display stand with a gentle smile. Background color: soft sky blue. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "사과 품종\n홍로 vs 부사"
+      },
+      "shot": "medium shot at a fruit shop",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "나무 상자에 담긴 서로 다른 색의 사과들",
+      "prompt": "Camera and composition: close-up of a wooden crate. A wooden crate holding apples of different colors: deep red, bright red and yellow. No people at all in this image. Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up of a wooden crate",
+      "bg": "mint green"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "가을 햇살 아래 사과가 달린 과수원 나무",
+      "prompt": "Camera and composition: wide shot of an orchard. An apple tree heavy with red apples in a sunny autumn orchard. No people at all in this image. Background color: light butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide shot of an orchard",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "추석 상차림 옆에 놓인 둥근 빨간 사과 한 바구니",
+      "prompt": "Camera and composition: medium shot of a holiday table. A basket of round red apples next to a traditional Korean holiday food table. No people at all in this image. Background color: soft apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot of a holiday table",
+      "bg": "soft apricot"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "겨울 거실 탁자 위에 놓인 사과 접시와 과도",
+      "prompt": "Camera and composition: top-down shot of a living room table. A plate of apples and a small fruit knife on a living room table with a cozy winter blanket nearby. No people at all in this image. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "top-down shot of a living room table",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "홍로와 부사의 차이를 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "홍로 부사 차이",
+        "items": [
+          "홍로는 9월 상·중순에 익어요",
+          "부사는 11월부터 본격적으로",
+          "홍로는 단맛이 강하고",
+          "부사는 단맛과 신맛이 함께"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "사과 고르는 법을 정리한 확인 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "사과 고르는 법",
+        "items": [
+          "들었을 때 묵직한 사과",
+          "눌렀을 때 단단한 사과",
+          "꼭지가 마르지 않은 사과",
+          "전체 색이 고른 사과"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "아침 식탁에서 사과를 깎는 자녀의 손",
+      "prompt": "Camera and composition: extreme close-up of hands. The hands of a woman in her 40s with a shoulder-length brown bob, wearing a sky-blue shirt peeling an apple in one long spiral at a breakfast table. Background color: dusty rose. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "extreme close-up of hands",
+      "bg": "dusty rose"
+    }
+  ]
+}
