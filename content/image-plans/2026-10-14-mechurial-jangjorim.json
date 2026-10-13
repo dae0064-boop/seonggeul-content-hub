@@ -1,0 +1,96 @@
+{
+  "slug": "2026-10-14-mechurial-jangjorim",
+  "title": "메추리알 장조림 만드는 법, 메추리알 삶기와 껍질 잘 까는 요령 (끓는 물 5분)",
+  "source": "10/14(수) 티스토리 원고 (10/13 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 정보 카드 2장은 로컬 합성(비용 0). 같은 날 네이버 계획서와 장면 겹치지 않게",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "주방 식탁에서 메추리알 장조림 냄비를 내려놓는 성글이 (대표사진)",
+      "prompt": "Camera and composition: medium shot at a kitchen table. Seonggeuli, a woman in her 30s with a round face and dark hair tied in a low bun, wearing a cream sweater and a mint scarf placing a small pot filled with glossy brown braised quail eggs onto a wooden kitchen table, smiling. Background color: pale sky blue. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot at a kitchen table",
+      "bg": "pale sky blue",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "메추리알 장조림\n껍질 쉽게 까기"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "하얀 그릇에 수북이 담긴 얼룩무늬 메추리알",
+      "prompt": "Camera and composition: close-up of a bowl. A white bowl heaped with small speckled raw quail eggs on a linen cloth. No people at all in this image. Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up of a bowl",
+      "bg": "mint green"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "메추리알 삶기 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "메추리알 삶기 순서",
+        "items": [
+          "냉장고에서 미리 꺼내 두기",
+          "물이 끓으면 알을 살살 넣기",
+          "끓는 물에서 5분 안팎 삶기",
+          "바로 찬물에 담가 식히기"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "뚜껑 덮은 밀폐용기를 양손으로 흔드는 자녀",
+      "prompt": "Camera and composition: medium shot at a kitchen sink. the Seonggeul adult child, a Korean woman in her 40s with a shoulder-length brown bob and a soft sky blue shirt standing at a kitchen sink, shaking a closed clear plastic container with small boiled eggs and a little water inside, playful smile. Background color: light butter yellow. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot at a kitchen sink",
+      "bg": "light butter yellow",
+      "overlay": {
+        "kind": "label",
+        "text": "찬물에 식힌 뒤 흔들어 까기"
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "장조림 양념 재료를 정리한 확인 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "장조림 양념 출발점",
+        "items": [
+          "간장과 물은 1대 3 정도",
+          "설탕이나 올리고당 조금",
+          "마늘과 대파로 향 내기"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "뚜껑을 반쯤 연 냄비에서 간장 양념이 보글보글 끓는 모습",
+      "prompt": "Camera and composition: side view of a simmering pot. A wide shallow pot with its lid half open, glossy soy sauce broth gently bubbling with peeled quail eggs and a few garlic cloves, soft steam rising. No people at all in this image. Background color: soft apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "side view of a simmering pot",
+      "bg": "soft apricot"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "주방 선반 위 작은 유리 통 세 개에 나눠 담긴 장조림",
+      "prompt": "Camera and composition: front view of a kitchen shelf. Three small glass containers with closed lids, each holding braised quail eggs in brown broth, lined up on a white kitchen shelf. No people at all in this image. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "front view of a kitchen shelf",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "소풍 돗자리 위에서 도시락 뚜껑을 열고 웃는 아이",
+      "prompt": "Camera and composition: wide shot of a picnic mat in a park. A Korean child about seven years old sitting on a picnic mat under an autumn tree, opening a lunchbox with small brown braised eggs and rice, delighted. Background color: dusty rose. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide shot of a picnic mat in a park",
+      "bg": "dusty rose"
+    }
+  ]
+}

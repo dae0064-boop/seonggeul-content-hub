@@ -1,0 +1,97 @@
+{
+  "slug": "2026-10-14-cheongpomuk-muchim",
+  "title": "청포묵 무침, 탕평채처럼 맛있게 무치는 법과 청포묵 데치기 (끓는 물 1분)",
+  "source": "10/14(수) 티스토리 원고 (10/13 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 정보 카드 2장은 로컬 합성(비용 0). 같은 날 네이버 계획서와 장면 겹치지 않게",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "넓은 접시에 담긴 알록달록한 청포묵 무침을 내려놓는 할머니 (대표사진)",
+      "prompt": "Camera and composition: medium shot at a dining table. the Seonggeul grandma, a Korean woman in her late 70s with short white curly hair, round glasses and an apricot knit cardigan placing a wide plate of translucent white mung bean jelly strips mixed with green parsley, yellow egg strips and black seaweed flakes onto a table, smiling. Background color: pale sky blue. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot at a dining table",
+      "bg": "pale sky blue",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "청포묵 무침\n탕평채처럼 쉽게"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "녹두 알갱이가 담긴 나무 됫박과 옆에 놓인 하얀 녹두묵",
+      "prompt": "Camera and composition: low-angle still life. A small wooden measuring box full of green mung beans next to a translucent white block of mung bean jelly on a cloth. No people at all in this image. Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "low-angle still life",
+      "bg": "mint green"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "체에 밭쳐 김이 오르는 투명한 청포묵 채",
+      "prompt": "Camera and composition: close-up of a strainer over a bowl. A metal strainer resting on a bowl, holding freshly blanched translucent mung bean jelly strips with gentle steam rising. No people at all in this image. Background color: light butter yellow. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up of a strainer over a bowl",
+      "bg": "light butter yellow",
+      "overlay": {
+        "kind": "label",
+        "text": "투명해지면 바로 건지기"
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "청포묵 무침 재료를 정리한 확인 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "청포묵 무침 재료",
+        "items": [
+          "데쳐서 굵게 채 썬 청포묵",
+          "데친 숙주와 미나리",
+          "볶은 소고기와 달걀지단",
+          "구워서 부순 김"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "탕평채처럼 무치는 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "탕평채처럼 무치는 순서",
+        "items": [
+          "청포묵 데치기 후 채 썰기",
+          "숙주와 미나리 살짝 데치기",
+          "소고기 볶고 지단 부치기",
+          "양념에 살살 버무리기"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "주방 조리대에서 참기름과 깨소금을 볼에 넣어 양념을 섞는 자녀",
+      "prompt": "Camera and composition: three-quarter view at a kitchen counter. the Seonggeul adult child, a Korean woman in her 40s with a shoulder-length brown bob and a soft sky blue shirt at a kitchen counter tilting a small sesame oil bottle over a mixing bowl, a jar of sesame seeds beside it. Background color: soft apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "three-quarter view at a kitchen counter",
+      "bg": "soft apricot"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "뚜껑 덮인 유리 밀폐용기에 물에 잠긴 묵 한 모",
+      "prompt": "Camera and composition: eye-level close-up of a container. A clear glass container with a lid holding a block of white mung bean jelly fully submerged in water, on a refrigerator door shelf. No people at all in this image. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "eye-level close-up of a container",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "잔칫상 한쪽에 놓인 탕평채 접시와 수저",
+      "prompt": "Camera and composition: top-down view of a festive table. A low Korean festive table with a plate of colorful mung bean jelly salad, a pair of spoon and chopsticks, and a few small side dishes around it. No people at all in this image. Background color: dusty rose. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "top-down view of a festive table",
+      "bg": "dusty rose"
+    }
+  ]
+}
