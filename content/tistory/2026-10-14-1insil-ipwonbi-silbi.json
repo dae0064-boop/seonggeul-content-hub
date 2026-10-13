@@ -1,0 +1,838 @@
+{
+  "slug": "2026-10-14-1insil-ipwonbi-silbi",
+  "title": "1인실 입원비 실비, 실손보험 상급병실료 차액은 얼마나 나올까 (차액 50%)",
+  "category": "생활보장",
+  "tags": [
+    "1인실입원비실비",
+    "상급병실료차액",
+    "기준병실",
+    "2인실입원비",
+    "1인실입원비",
+    "입원비실비",
+    "실손보험",
+    "실비보험",
+    "실손보험청구",
+    "상급병실",
+    "입원비",
+    "병실료",
+    "실손약관",
+    "의료비",
+    "생활보장"
+  ],
+  "publishAt": "2026-10-14 11:40",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "입원할 때 1인실을 쓰면 기준병실과의 병실료 차이를"
+        },
+        {
+          "t": "실손에서 절반만 보상하는 약관이 많아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘은 1인실 입원비 실비가 어디까지 나오는지,"
+        },
+        {
+          "t": "상급병실료 차액을 어떻게 보는지"
+        },
+        {
+          "t": "포스팅으로 알아볼게요."
+        },
+        {
+          "t": "입원을 앞두고 있다면 끝까지 읽어 보세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "입원 날짜가 잡히면 병원에서"
+        },
+        {
+          "t": "\"1인실 쓰시겠어요?\" 하고 묻는 경우가 있어요."
+        },
+        {
+          "t": "이맘때 그 자리에서 실비가 될지 몰라"
+        },
+        {
+          "t": "망설이는 분들이 많아요."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "병원 입원 수속 창구 앞에서 서류를 받아 든 자녀 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "1인실 입원비 실비, 먼저 알아 둘 것"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "햇살이 드는 깔끔한 1인 병실 침대와 창가 의자"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "1인실 입원비 실비를 볼 때는"
+        },
+        {
+          "t": "병실료를 두 부분으로 나눠서 봐요."
+        },
+        {
+          "t": "기준병실 값과, 그보다 비싼 만큼의 차이예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여기서 기준병실보다 더 내는 몫을"
+        },
+        {
+          "t": "상급병실료 차액이라고 불러요."
+        },
+        {
+          "t": "흔히 병실 차액이라고 줄여 말하기도 해요."
+        },
+        {
+          "t": "1인실은 이 차액이 생기는 대표적인 병실이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "병원 영수증에도 이 둘이 따로 적혀요."
+        },
+        {
+          "t": "그래서 영수증만 잘 읽어도"
+        },
+        {
+          "t": "내가 낸 돈이 어디에 들어갔는지 보여요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "1인실 비용 전부가 실비로 나오는 게 아니라",
+          "s": "red"
+        },
+        {
+          "t": "상급병실료 차액의 일부만 보상하는 구조예요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "기준병실은 몇 인실일까요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "여러 침대가 나란히 놓인 다인실 병실 풍경"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "기준병실은 건강보험이 기본으로 적용되는"
+        },
+        {
+          "t": "병실을 말해요."
+        },
+        {
+          "t": "병원마다 조금씩 다르지만 보통 다인실이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "2018년 7월부터 상급종합병원과 종합병원의",
+          "segs": [
+            {
+              "t": "2018년 7월",
+              "s": "blue"
+            },
+            {
+              "t": "부터 상급종합병원과 종합병원의"
+            }
+          ]
+        },
+        {
+          "t": "2인실·3인실에 건강보험이 적용됐고,"
+        },
+        {
+          "t": "2019년 7월에는 병원급까지 넓어졌어요.",
+          "segs": [
+            {
+              "t": "2019년 7월",
+              "s": "blue"
+            },
+            {
+              "t": "에는 병원급까지 넓어졌어요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 요즘은 2인실 입원비도"
+        },
+        {
+          "t": "건강보험이 적용되는 곳이 많아요."
+        },
+        {
+          "t": "1인실은 대부분 건강보험이 안 되는",
+          "s": "yellow"
+        },
+        {
+          "t": "비급여 병실이라는 점이 핵심이에요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "상급병실료 차액, 약관은 이렇게 봐요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "상급병실료 차액 보상 방식을 정리한 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "많은 실손 약관은 상급병실료 차액을"
+        },
+        {
+          "t": "이런 방식으로 보상한다고 적고 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "① 기준병실과의 병실료 차이 계산"
+        },
+        {
+          "t": "② 그 차액에서 절반을 빼고 보상"
+        },
+        {
+          "t": "③ 입원 일수로 나눠 하루 평균 계산"
+        },
+        {
+          "t": "④ 하루 평균 한도까지만 보상"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 하루 차액이 20만 원이라면"
+        },
+        {
+          "t": "절반인 10만 원이 보상 대상이 돼요."
+        },
+        {
+          "t": "차액이 그보다 크면 1일 평균 10만 원에서 멈춰요.",
+          "segs": [
+            {
+              "t": "차액이 그보다 크면 "
+            },
+            {
+              "t": "1일 평균 10만 원",
+              "s": "blue"
+            },
+            {
+              "t": "에서 멈춰요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "1인실 입원비 실비는 차액의 50%,",
+          "segs": [
+            {
+              "t": "1인실 입원비 실비는 차액의 ",
+              "s": "yellow"
+            },
+            {
+              "t": "50%",
+              "s": "blue"
+            },
+            {
+              "t": ","
+            }
+          ]
+        },
+        {
+          "t": "하루 평균 한도까지로 생각하면 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "1인실 입원비 실비 되는 경우와 어려운 경우"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 5,
+      "lines": [
+        {
+          "t": "1인실 입원비 실비 되는 경우와 어려운 경우를 비교한 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "같은 1인실이라도 상황에 따라"
+        },
+        {
+          "t": "보상이 달라질 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "⭕ 치료 목적의 입원에서 쓴 1인실"
+        },
+        {
+          "t": "⭕ 약관에 상급병실료 차액 보장이 있을 때"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "❌ 치료 목적이 아닌 입원"
+        },
+        {
+          "t": "❌ 미용·성형처럼 보장하지 않는 진료"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "차액 보상은 가입 시기와 약관에 따라"
+        },
+        {
+          "t": "기준이 다를 수 있어요."
+        },
+        {
+          "t": "오래된 실손이나 새로 나온 실손은",
+          "s": "red"
+        },
+        {
+          "t": "같은 기준이 아닐 수 있어 약관부터 봐요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "특히 2009년 10월 표준화 전에 든 실손은",
+          "segs": [
+            {
+              "t": "특히 "
+            },
+            {
+              "t": "2009년 10월",
+              "s": "blue"
+            },
+            {
+              "t": " 표준화 전에 든 실손은"
+            }
+          ]
+        },
+        {
+          "t": "보험사마다 약관이 달랐어요."
+        },
+        {
+          "t": "그 시기에 가입했다면 상급병실료 차액을"
+        },
+        {
+          "t": "어떻게 보는지 증권을 따로 확인해요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "2인실 입원비는 어떻게 될까요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 6,
+      "lines": [
+        {
+          "t": "커튼으로 나뉜 2인 병실에서 책을 읽는 할머니"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "2인실 입원비는 건강보험이 적용되는 병원이면"
+        },
+        {
+          "t": "1인실과 계산 방식이 달라요."
+        },
+        {
+          "t": "건강보험이 된 뒤 내가 낸 몫을 보게 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "다만 2인실이라도 건강보험이 안 되는"
+        },
+        {
+          "t": "병원이나 경우라면"
+        },
+        {
+          "t": "상급병실료 차액으로 보게 될 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 2인실 입원비도"
+        },
+        {
+          "t": "영수증에 급여인지 비급여인지"
+        },
+        {
+          "t": "적힌 칸부터 확인하는 게 좋아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "1인실과 2인실 사이에서 고민된다면"
+        },
+        {
+          "t": "하루 차이가 얼마인지 먼저 물어보고,"
+        },
+        {
+          "t": "입원 기간을 곱해 보면 감이 와요."
+        },
+        {
+          "t": "몸이 회복되면 다인실로 옮기는 방법도 있어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "1인실 입원비 실비 청구 전 체크할 것"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 7,
+      "lines": [
+        {
+          "t": "베란다 작은 테이블에서 입원 영수증과 세부내역서를 펼친 노부부"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "1인실 입원비 실비를 청구할 때는"
+        },
+        {
+          "t": "진료비 영수증과 세부내역서를 함께 챙겨요."
+        },
+        {
+          "t": "병실료 줄에 상급병실료 차액이 따로 적혀 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "입원 일수가 길면 하루 평균으로 나누니"
+        },
+        {
+          "t": "며칠은 1인실, 며칠은 다인실을 썼다면"
+        },
+        {
+          "t": "전체 기간으로 계산된다는 점도 알아 둬요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "기준병실이 꽉 차서 어쩔 수 없이"
+        },
+        {
+          "t": "1인실을 먼저 쓰는 경우도 있어요."
+        },
+        {
+          "t": "이럴 땐 다인실로 옮길 수 있는 날을"
+        },
+        {
+          "t": "원무과에 물어 두면 좋아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "입원 전에 병원 수납 창구에서",
+          "s": "yellow"
+        },
+        {
+          "t": "기준병실과 1인실 값을 함께 물어봐요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "입원 전에 원무과에 물어볼 것"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "입원 전에 원무과에 몇 가지만 물어 두면"
+        },
+        {
+          "t": "1인실 입원비 실비를 미리 셈할 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이 병원의 기준병실이 몇 인실인지,"
+        },
+        {
+          "t": "1인실과 기준병실 하루 값이 얼마인지,"
+        },
+        {
+          "t": "다인실 자리가 언제 나는지 물어봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "들은 내용은 휴대폰 메모에 적어 두고"
+        },
+        {
+          "t": "퇴원할 때 받은 영수증과 견줘 보면"
+        },
+        {
+          "t": "상급병실료 차액이 맞게 적혔는지 보여요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "1인실 입원비 실비 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 8,
+      "lines": [
+        {
+          "t": "병원 휴게 공간 소파에 앉아 휴대폰을 보는 할아버지"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "1인실 입원비 실비에 많이 묻는 세 가지예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 1인실을 쓰면 병실료 전부 돌려받나요?"
+        },
+        {
+          "t": "A1: 대부분은 아니에요."
+        },
+        {
+          "t": "상급병실료 차액의 일부를 보상하는 약관이 많아"
+        },
+        {
+          "t": "나머지는 내가 부담하게 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 2인실 입원비도 차액 계산을 하나요?"
+        },
+        {
+          "t": "A2: 건강보험이 적용되는 2인실이면"
+        },
+        {
+          "t": "본인부담금 기준으로 보게 돼요."
+        },
+        {
+          "t": "병원마다 다르니 영수증을 확인해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q3: 기준병실은 어디서 확인하나요?"
+        },
+        {
+          "t": "A3: 입원하는 병원 원무과에서"
+        },
+        {
+          "t": "기준병실이 몇 인실인지 물어보면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "병원마다 기준병실이 다를 수 있어서"
+        },
+        {
+          "t": "병원을 옮겼다면 다시 물어보는 게 좋아요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "1인실 입원비 실비 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "1인실 입원비 실비는 병실료 전부가 아니라"
+        },
+        {
+          "t": "상급병실료 차액의 50%를",
+          "segs": [
+            {
+              "t": "상급병실료 차액의 "
+            },
+            {
+              "t": "50%",
+              "s": "blue"
+            },
+            {
+              "t": "를"
+            }
+          ]
+        },
+        {
+          "t": "하루 평균 10만 원 한도로 보는 약관이 많아요.",
+          "segs": [
+            {
+              "t": "하루 평균 10만 원",
+              "s": "blue"
+            },
+            {
+              "t": " 한도로 보는 약관이 많아요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "기준병실과 차액을 나눠 보는 게 시작이고,"
+        },
+        {
+          "t": "2인실 입원비는 건강보험 적용부터 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "1인실이 좋다, 나쁘다로 나눌 일은 아니에요."
+        },
+        {
+          "t": "몸 상태와 가족 사정에 따라 필요한 때가 있고,"
+        },
+        {
+          "t": "그때 내 몫이 얼마인지 알면 덜 당황해요."
+        },
+        {
+          "t": "가족과 미리 이야기해 두면 결정도 쉬워져요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보장 여부와 한도는 가입 시기와 약관에 따라 달라서",
+          "s": "red"
+        },
+        {
+          "t": "내 증권·약관에서 꼭 다시 확인해 보세요.",
+          "s": "red"
+        },
+        {
+          "t": "치료와 입원 방법은 주치의와 상의해 정해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘 내용은 보건복지부의 2·3인실 건강보험"
+        },
+        {
+          "t": "적용 발표와 실손의료보험 약관에서"
+        },
+        {
+          "t": "확인한 정보를 바탕으로 정리했어요."
+        },
+        {
+          "t": "(2026년 10월 기준이라 이후 달라질 수 있어요)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "이상 성글벙글의 생활보장 포스팅이었습니다😎"
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">입원할 때 1인실을 쓰면 기준병실과의 병실료 차이를<br>실손에서 절반만 보상하는 약관이 많아요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘은 1인실 입원비 실비가 어디까지 나오는지,<br>상급병실료 차액을 어떻게 보는지<br>포스팅으로 알아볼게요.<br>입원을 앞두고 있다면 끝까지 읽어 보세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">입원 날짜가 잡히면 병원에서<br>&quot;1인실 쓰시겠어요?&quot; 하고 묻는 경우가 있어요.<br>이맘때 그 자리에서 실비가 될지 몰라<br>망설이는 분들이 많아요.</p>\n<p data-ke-size=\"size16\">[이미지 1] 병원 입원 수속 창구 앞에서 서류를 받아 든 자녀 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>1인실 입원비 실비, 먼저 알아 둘 것</h2>\n<p data-ke-size=\"size16\">[이미지 2] 햇살이 드는 깔끔한 1인 병실 침대와 창가 의자</p>\n<p data-ke-size=\"size16\">1인실 입원비 실비를 볼 때는<br>병실료를 두 부분으로 나눠서 봐요.<br>기준병실 값과, 그보다 비싼 만큼의 차이예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여기서 기준병실보다 더 내는 몫을<br>상급병실료 차액이라고 불러요.<br>흔히 병실 차액이라고 줄여 말하기도 해요.<br>1인실은 이 차액이 생기는 대표적인 병실이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">병원 영수증에도 이 둘이 따로 적혀요.<br>그래서 영수증만 잘 읽어도<br>내가 낸 돈이 어디에 들어갔는지 보여요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>1인실 비용 전부가 실비로 나오는 게 아니라</b></span><br><span style=\"color: #ff0010;\"><b>상급병실료 차액의 일부만 보상하는 구조예요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>기준병실은 몇 인실일까요</h2>\n<p data-ke-size=\"size16\">[이미지 3] 여러 침대가 나란히 놓인 다인실 병실 풍경</p>\n<p data-ke-size=\"size16\">기준병실은 건강보험이 기본으로 적용되는<br>병실을 말해요.<br>병원마다 조금씩 다르지만 보통 다인실이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #0078cb;\"><b>2018년 7월</b></span>부터 상급종합병원과 종합병원의<br>2인실·3인실에 건강보험이 적용됐고,<br><span style=\"color: #0078cb;\"><b>2019년 7월</b></span>에는 병원급까지 넓어졌어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그래서 요즘은 2인실 입원비도<br>건강보험이 적용되는 곳이 많아요.<br><span style=\"background-color: #fff8b2;\"><b>1인실은 대부분 건강보험이 안 되는</b></span><br><span style=\"background-color: #fff8b2;\"><b>비급여 병실이라는 점이 핵심이에요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>상급병실료 차액, 약관은 이렇게 봐요</h2>\n<p data-ke-size=\"size16\">[이미지 4] 상급병실료 차액 보상 방식을 정리한 카드</p>\n<p data-ke-size=\"size16\">많은 실손 약관은 상급병실료 차액을<br>이런 방식으로 보상한다고 적고 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">① 기준병실과의 병실료 차이 계산<br>② 그 차액에서 절반을 빼고 보상<br>③ 입원 일수로 나눠 하루 평균 계산<br>④ 하루 평균 한도까지만 보상</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 하루 차액이 20만 원이라면<br>절반인 10만 원이 보상 대상이 돼요.<br>차액이 그보다 크면 <span style=\"color: #0078cb;\"><b>1일 평균 10만 원</b></span>에서 멈춰요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #fff8b2;\"><b>1인실 입원비 실비는 차액의 </b></span><span style=\"color: #0078cb;\"><b>50%</b></span>,<br>하루 평균 한도까지로 생각하면 쉬워요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>1인실 입원비 실비 되는 경우와 어려운 경우</h2>\n<p data-ke-size=\"size16\">[이미지 5] 1인실 입원비 실비 되는 경우와 어려운 경우를 비교한 카드</p>\n<p data-ke-size=\"size16\">같은 1인실이라도 상황에 따라<br>보상이 달라질 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">⭕ 치료 목적의 입원에서 쓴 1인실<br>⭕ 약관에 상급병실료 차액 보장이 있을 때</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">❌ 치료 목적이 아닌 입원<br>❌ 미용·성형처럼 보장하지 않는 진료</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">차액 보상은 가입 시기와 약관에 따라<br>기준이 다를 수 있어요.<br><span style=\"color: #ff0010;\"><b>오래된 실손이나 새로 나온 실손은</b></span><br><span style=\"color: #ff0010;\"><b>같은 기준이 아닐 수 있어 약관부터 봐요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">특히 <span style=\"color: #0078cb;\"><b>2009년 10월</b></span> 표준화 전에 든 실손은<br>보험사마다 약관이 달랐어요.<br>그 시기에 가입했다면 상급병실료 차액을<br>어떻게 보는지 증권을 따로 확인해요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>2인실 입원비는 어떻게 될까요</h2>\n<p data-ke-size=\"size16\">[이미지 6] 커튼으로 나뉜 2인 병실에서 책을 읽는 할머니</p>\n<p data-ke-size=\"size16\">2인실 입원비는 건강보험이 적용되는 병원이면<br>1인실과 계산 방식이 달라요.<br>건강보험이 된 뒤 내가 낸 몫을 보게 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">다만 2인실이라도 건강보험이 안 되는<br>병원이나 경우라면<br>상급병실료 차액으로 보게 될 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그래서 2인실 입원비도<br>영수증에 급여인지 비급여인지<br>적힌 칸부터 확인하는 게 좋아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">1인실과 2인실 사이에서 고민된다면<br>하루 차이가 얼마인지 먼저 물어보고,<br>입원 기간을 곱해 보면 감이 와요.<br>몸이 회복되면 다인실로 옮기는 방법도 있어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>1인실 입원비 실비 청구 전 체크할 것</h2>\n<p data-ke-size=\"size16\">[이미지 7] 베란다 작은 테이블에서 입원 영수증과 세부내역서를 펼친 노부부</p>\n<p data-ke-size=\"size16\">1인실 입원비 실비를 청구할 때는<br>진료비 영수증과 세부내역서를 함께 챙겨요.<br>병실료 줄에 상급병실료 차액이 따로 적혀 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">입원 일수가 길면 하루 평균으로 나누니<br>며칠은 1인실, 며칠은 다인실을 썼다면<br>전체 기간으로 계산된다는 점도 알아 둬요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">기준병실이 꽉 차서 어쩔 수 없이<br>1인실을 먼저 쓰는 경우도 있어요.<br>이럴 땐 다인실로 옮길 수 있는 날을<br>원무과에 물어 두면 좋아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #fff8b2;\"><b>입원 전에 병원 수납 창구에서</b></span><br><span style=\"background-color: #fff8b2;\"><b>기준병실과 1인실 값을 함께 물어봐요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>입원 전에 원무과에 물어볼 것</h2>\n<p data-ke-size=\"size16\">입원 전에 원무과에 몇 가지만 물어 두면<br>1인실 입원비 실비를 미리 셈할 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이 병원의 기준병실이 몇 인실인지,<br>1인실과 기준병실 하루 값이 얼마인지,<br>다인실 자리가 언제 나는지 물어봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">들은 내용은 휴대폰 메모에 적어 두고<br>퇴원할 때 받은 영수증과 견줘 보면<br>상급병실료 차액이 맞게 적혔는지 보여요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>1인실 입원비 실비 Q&amp;A</h2>\n<p data-ke-size=\"size16\">[이미지 8] 병원 휴게 공간 소파에 앉아 휴대폰을 보는 할아버지</p>\n<p data-ke-size=\"size16\">1인실 입원비 실비에 많이 묻는 세 가지예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 1인실을 쓰면 병실료 전부 돌려받나요?<br>A1: 대부분은 아니에요.<br>상급병실료 차액의 일부를 보상하는 약관이 많아<br>나머지는 내가 부담하게 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 2인실 입원비도 차액 계산을 하나요?<br>A2: 건강보험이 적용되는 2인실이면<br>본인부담금 기준으로 보게 돼요.<br>병원마다 다르니 영수증을 확인해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q3: 기준병실은 어디서 확인하나요?<br>A3: 입원하는 병원 원무과에서<br>기준병실이 몇 인실인지 물어보면 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">병원마다 기준병실이 다를 수 있어서<br>병원을 옮겼다면 다시 물어보는 게 좋아요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>1인실 입원비 실비 정리</h2>\n<p data-ke-size=\"size16\">1인실 입원비 실비는 병실료 전부가 아니라<br>상급병실료 차액의 <span style=\"color: #0078cb;\"><b>50%</b></span>를<br><span style=\"color: #0078cb;\"><b>하루 평균 10만 원</b></span> 한도로 보는 약관이 많아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">기준병실과 차액을 나눠 보는 게 시작이고,<br>2인실 입원비는 건강보험 적용부터 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">1인실이 좋다, 나쁘다로 나눌 일은 아니에요.<br>몸 상태와 가족 사정에 따라 필요한 때가 있고,<br>그때 내 몫이 얼마인지 알면 덜 당황해요.<br>가족과 미리 이야기해 두면 결정도 쉬워져요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>보장 여부와 한도는 가입 시기와 약관에 따라 달라서</b></span><br><span style=\"color: #ff0010;\"><b>내 증권·약관에서 꼭 다시 확인해 보세요.</b></span><br>치료와 입원 방법은 주치의와 상의해 정해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘 내용은 보건복지부의 2·3인실 건강보험<br>적용 발표와 실손의료보험 약관에서<br>확인한 정보를 바탕으로 정리했어요.<br>(2026년 10월 기준이라 이후 달라질 수 있어요)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>이상 성글벙글의 생활보장 포스팅이었습니다😎</p>"
+}

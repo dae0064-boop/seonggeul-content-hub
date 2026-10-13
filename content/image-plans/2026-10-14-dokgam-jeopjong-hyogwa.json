@@ -1,0 +1,97 @@
+{
+  "slug": "2026-10-14-dokgam-jeopjong-hyogwa",
+  "title": "독감 예방접종 효과, 항체 형성까지 얼마나 걸릴까 (접종 2주 뒤)",
+  "source": "10/14(수) 티스토리 원고 (10/13 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 정보 카드 2장은 로컬 합성(비용 0). 같은 날 네이버 계획서와 장면 겹치지 않게",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "동네 의원 앞 가을 길에서 접종을 마치고 웃는 할머니 (대표사진)",
+      "prompt": "Camera and composition: medium shot on an autumn street in front of a small clinic. the Seonggeul grandma, a Korean woman in her late 70s with short white curly hair, round glasses and an apricot knit cardigan standing on a sidewalk in front of a small neighborhood clinic with a green cross sign, a small round bandage on her upper arm, smiling, yellow ginkgo leaves on the ground. Background color: pale sky blue. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot on an autumn street in front of a small clinic",
+      "bg": "pale sky blue",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "독감 예방접종 효과\n언제부터 생길까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "달력 앞에서 두 주 뒤 날짜에 동그라미를 치는 자녀",
+      "prompt": "Camera and composition: over-the-shoulder shot at a wall calendar. the Seonggeul adult child, a Korean woman in her 40s with a shoulder-length brown bob and a soft sky blue shirt standing at a blank wall calendar in a kitchen, drawing a circle on one square with a marker, calm smile. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "over-the-shoulder shot at a wall calendar",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "독감 예방접종 효과가 생기고 이어지는 흐름을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "독감 예방접종 효과 흐름",
+        "items": [
+          "접종하고 2주쯤 항체 형성",
+          "보통 6개월 안팎 효과 이어짐",
+          "해가 바뀌면 다시 접종"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "가을 창가 식탁에 놓인 작년 달력과 올해 달력",
+      "prompt": "Camera and composition: close-up still life on a window-side table. Two blank desk calendars, one faded and one fresh, standing side by side on a small wooden table by a window with autumn light. No people at all in this image. Background color: light butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up still life on a window-side table",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "은행잎이 떨어진 보도에서 손을 잡고 걷는 노부부",
+      "prompt": "Camera and composition: wide shot of a tree-lined sidewalk. the Seonggeul grandma, a Korean woman in her late 70s with short white curly hair, round glasses and an apricot knit cardigan and the Seonggeul grandpa, a Korean man in his late 70s with short gray hair, a mint green vest over a white shirt walking hand in hand along a sidewalk covered with yellow ginkgo leaves, wearing light jackets. Background color: soft apricot. Keep the bottom quarter of the image fairly plain and uncluttered so a caption can be placed there later. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide shot of a tree-lined sidewalk",
+      "bg": "soft apricot",
+      "overlay": {
+        "kind": "label",
+        "text": "유행 전 10~12월 접종"
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "햇살 드는 침실 침대에서 담요를 덮고 따뜻한 차를 마시는 할아버지",
+      "prompt": "Camera and composition: medium shot in a sunny bedroom. the Seonggeul grandpa, a Korean man in his late 70s with short gray hair, a mint green vest over a white shirt sitting up in bed in a sunny Korean bedroom, a soft blanket over his legs, holding a warm mug of tea, relaxed. Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot in a sunny bedroom",
+      "bg": "mint green"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "독감 예방접종 효과를 지키는 생활 습관을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "함께 챙길 생활 습관",
+        "items": [
+          "외출 뒤 비누로 손 씻기",
+          "기침은 옷소매로 가리기",
+          "실내 자주 환기하기",
+          "잠을 충분히 자기",
+          "사람 많은 곳은 짧게 머물기"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "단풍 든 둘레길을 함께 걷는 가족",
+      "prompt": "Camera and composition: wide shot of an autumn trail. the Seonggeul adult child, a Korean woman in her 40s with a shoulder-length brown bob and a soft sky blue shirt and Seonggeuli, a woman in her 30s with a round face and dark hair tied in a low bun, wearing a cream sweater and a mint scarf walking together on a gentle forest trail with red and orange autumn trees, cheerful. Background color: dusty rose. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide shot of an autumn trail",
+      "bg": "dusty rose"
+    }
+  ]
+}
