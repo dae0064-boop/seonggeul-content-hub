@@ -1,0 +1,100 @@
+{
+  "slug": "2026-10-14-mri-silbi",
+  "title": "MRI 실비, 비급여 MRI 실손보험 특약 확인할 것 (2017년 4월)",
+  "source": "10/14(수) 원고 (10/13 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "병원 영상검사실 앞 복도 의자에 앉아 순서를 기다리는 자녀 (대표사진)",
+      "prompt": "Camera and composition: medium shot of a hospital corridor. a woman in her 40s with a shoulder-length brown bob, wearing a sky-blue shirt sitting on a chair in a calm hospital corridor outside an imaging room door, waiting with a relaxed smile. Background color: soft sky blue. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "MRI 실비\n급여부터 봐요"
+      },
+      "shot": "medium shot of a hospital corridor",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "커다란 MRI 검사 기계가 놓인 밝은 검사실",
+      "prompt": "Camera and composition: wide shot of a bright exam room. A large round MRI scanner machine with a padded bed in a bright clean hospital exam room. No people at all in this image. Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide shot of a bright exam room",
+      "bg": "mint green"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "거실 탁자 위에 펼친 진료비 영수증과 돋보기",
+      "prompt": "Camera and composition: top-down shot of a living room table. Blank medical receipts spread on a living room table with a magnifying glass on top, the papers showing only simple lines. No people at all in this image. Background color: light butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "top-down shot of a living room table",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "서랍에서 꺼낸 오래된 보험 서류 봉투와 새 증권",
+      "prompt": "Camera and composition: close-up of an open drawer. An old paper envelope and a new folder of blank insurance papers being taken out of an open wooden drawer. No people at all in this image. Background color: soft apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up of an open drawer",
+      "bg": "soft apricot"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "소파에 기대 앉아 눈을 감고 쉬는 할아버지",
+      "prompt": "Camera and composition: medium shot on a sofa. a grandfather in his late 70s with short gray hair, wearing a mint green vest over a white shirt leaning back on a sofa with eyes closed, resting peacefully with a soft cushion. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot on a sofa",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "MRI 실비 되는 경우와 따져 볼 경우를 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "MRI 실비 비교",
+        "items": [
+          [
+            "건강보험이 된 MRI",
+            "특약이 없는 실손"
+          ],
+          [
+            "특약 있는 실손",
+            "검진 목적 MRI"
+          ]
+        ],
+        "heads": [
+          "되는 경우",
+          "따져 볼 경우"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "MRI 실비청구 전에 챙길 것을 정리한 확인 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "MRI 실비청구 전 확인",
+        "items": [
+          "급여·비급여 칸",
+          "세부내역서의 MRI 항목 이름",
+          "증권의 가입 날짜와 특약 목록"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "식탁 위에 놓인 휴대폰과 보험 서류 클립",
+      "prompt": "Camera and composition: close-up of a dining table corner. A smartphone with a blank screen and a few blank papers held by a paper clip on a dining table. No people at all in this image. Background color: dusty rose. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up of a dining table corner",
+      "bg": "dusty rose"
+    }
+  ]
+}
