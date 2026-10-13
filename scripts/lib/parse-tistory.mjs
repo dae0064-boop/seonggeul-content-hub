@@ -10,8 +10,9 @@
  *   [빨간글씨] [파란글씨]      → 글자색 + 굵게 (#ff0010 / #0078cb)
  *   [노란배경]                 → 배경색 + 굵게 (#fff8b2)
  *   [이미지 N] 설명            → 표시 문단으로 남긴다 (사진 넣기는 아직 손으로)
+ *   인사말 앞 사실 한 문장     → 티스토리 인용구 1번(<blockquote data-ke-style="style1">) — 2026-10-13 사용자 지시
  */
-import { parsePost } from './parse-post.mjs';
+import { parsePost, leadBlock } from './parse-post.mjs';
 
 export { parsePost };
 
@@ -37,9 +38,14 @@ function lineHtml(l) {
 export function toHtml(post) {
   const out = [];
   let prev = null;
+  const lead = leadBlock(post.blocks);
   for (const b of post.blocks) {
     const tight = b.type === 'quote' || b.type === 'image' || prev === 'quote' || prev === 'image';
     if (prev && !tight) out.push(BLANK);
+    if (b === lead) {
+      out.push(`<blockquote data-ke-style="style1">${b.lines.map(lineHtml).join('<br>')}</blockquote>`);
+      prev = 'quote'; continue;
+    }
     if (b.type === 'quote') {
       out.push(`<h2 data-ke-size="size26" style="${QUOTE_H2}"><span style="${QUOTE_MARK}">“</span>${esc(b.lines[0].t)}</h2>`);
     } else if (b.type === 'image') {
