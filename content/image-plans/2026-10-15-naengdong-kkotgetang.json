@@ -1,0 +1,93 @@
+{
+  "slug": "2026-10-15-naengdong-kkotgetang",
+  "title": "냉동꽃게탕 끓이는법, 꽃게탕 양념과 비린내 없이 끓이는 순서 (중불 10~15분)",
+  "source": "10/15(목) 원고 (10/14 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "김이 오르는 뚝배기 꽃게탕을 식탁에 내려놓는 할머니 (대표사진)",
+      "prompt": "Camera and composition: medium shot at a dining table. the Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan setting down a steaming earthenware pot of red spicy blue crab stew on a dining table. Background color: soft sky blue. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot at a dining table",
+      "bg": "soft sky blue",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "냉동꽃게탕\n언 채로 끓여요"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "마트 냉동 진열대에 놓인 손질 꽃게 봉지",
+      "prompt": "Camera and composition: eye-level shot of a freezer case. Clear bags of frozen cut blue crabs neatly lined up in a supermarket freezer display case, labels blank. No people at all in this image. Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "eye-level shot of a freezer case",
+      "bg": "mint green"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "도마 위에 가지런히 놓인 언 꽃게와 대파",
+      "prompt": "Camera and composition: top-down shot of a cutting board. Two frosty frozen blue crabs and a green onion lying neatly on a wooden cutting board. No people at all in this image. Background color: light butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "top-down shot of a cutting board",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "싱크대에서 솔로 꽃게 등딱지를 문지르는 자녀",
+      "prompt": "Camera and composition: over-the-shoulder shot at a sink. the Seonggeul adult child: a Korean woman in her 40s, shoulder-length brown bob hair, soft sky blue shirt scrubbing the shell of a blue crab with a small brush under running water at a kitchen sink. Background color: soft apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "over-the-shoulder shot at a sink",
+      "bg": "soft apricot"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "꽃게탕 양념 비율을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "꽃게탕 양념 (물 1리터)",
+        "items": [
+          "된장 반 큰술",
+          "고추장 1큰술",
+          "고춧가루 1큰술",
+          "다진 마늘 1큰술"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "꽃게탕 끓이는 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "꽃게탕 끓이는 순서",
+        "items": [
+          "무를 물에 넣고 먼저 끓여",
+          "양념을 풀고 언 꽃게를 넣어요",
+          "중불로 줄여 10~15분",
+          "대파와 쑥갓은 불 끄기 직전에"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "국자로 국물 위 거품을 걷어 내는 성글이",
+      "prompt": "Camera and composition: close side view of a stove. Seonggeul, the blog host: a Korean woman in her 30s, round face, dark hair in a low bun, cream sweater with a mint scarf skimming foam off the top of a bubbling pot of crab stew with a ladle on a gas stove. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close side view of a stove",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "냉장고 냉동실 칸에 정리된 꽃게 봉지들",
+      "prompt": "Camera and composition: front view of an open freezer drawer. An open home freezer drawer with small bags of frozen crab pieces stacked neatly in rows. No people at all in this image. Background color: warm beige. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "front view of an open freezer drawer",
+      "bg": "warm beige"
+    }
+  ]
+}
