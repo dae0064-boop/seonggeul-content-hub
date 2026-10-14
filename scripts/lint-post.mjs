@@ -94,8 +94,10 @@ let failed = 0;
 // 메인 키워드 월간 검색량 (2026-10-03 사용자 승인 — 키워드를 실제 검색량으로 고른다).
 // content/calendar/title-keywords/*.txt (PC 가 조회해 Drive 로 올린 결과를 Routine 이 옮겨 둔 것)에서 찾는다.
 // 2026-10-06 원고부터: 100 미만이면 불통과, 자료가 없으면 알림.
+// 2026-10-15 원고부터 500 미만 불통과 (2026-10-14 사용자 승인 — 280·340·490 같은 작은 말이 검색 유입을 못 만들었다).
 const VOLUME_FROM = '2026-10-06';
-const MIN_VOLUME = 100;
+const MIN_VOLUME_STEPS = [['2026-10-15', 500], [VOLUME_FROM, 100]];
+const minVolume = (dated) => MIN_VOLUME_STEPS.find(([from]) => dated >= from)[1];
 let VOLUMES = null;
 function volumeOf(kw) {
   if (!VOLUMES) {
@@ -197,7 +199,7 @@ for (const file of files) {
   if (!tistory && dated >= VOLUME_FROM && post.mainKeyword) {
     const v = volumeOf(post.mainKeyword);
     if (v == null) notes.push(`메인 키워드 "${post.mainKeyword}" 검색량 자료가 없어요 — keyword-queue.txt 에 넣어 조회해 두세요`);
-    else if (v < MIN_VOLUME) errors.push(`메인 키워드 "${post.mainKeyword}" 월 검색량 ${v} — ${MIN_VOLUME} 이상인 말로 바꾸세요 (1,000~10,000 우선)`);
+    else if (v < minVolume(dated)) errors.push(`메인 키워드 "${post.mainKeyword}" 월 검색량 ${v} — ${minVolume(dated)} 이상인 말로 바꾸세요 (1,000~10,000 우선)`);
     else notes.push(`메인 키워드 "${post.mainKeyword}" 월 검색량 ${v.toLocaleString()}`);
   }
   const bundle = dated >= BUNDLE_FROM;
