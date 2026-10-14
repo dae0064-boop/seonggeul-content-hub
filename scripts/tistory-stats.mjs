@@ -15,6 +15,7 @@
  *   api-*.json            통계 화면이 받은 데이터
  *   public.json           공개 주소 확인 — ads.txt, robots.txt, sitemap.xml, 첫 화면의 애드센스 코드(ca-pub-)·사이트 확인 태그
  *   google-site.txt/.jpg  구글에서 site:<블로그>.tistory.com 검색 결과 (색인된 글이 있는지)
+ *   serp-NN.txt           티스토리 글감 후보(content/calendar/tistory-queue.txt)의 구글 1페이지 — 상위 10개 주소·함께 묻는 질문
  *   index.json            무엇을 열었고 무엇이 남았는지
  */
 import { chromium } from 'playwright';
@@ -26,6 +27,8 @@ const opt = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] :
 const blog = argv.find((a, i) => !a.startsWith('--') && !['--out', '--cdp'].includes(argv[i - 1]));
 const OUT = opt('--out', `dumps/tistory-stats/${new Date().toISOString().slice(0, 10)}`);
 const CDP = opt('--cdp', 'http://localhost:9222');
+const SERP_QUEUE = opt('--serp-queue', 'content/calendar/tistory-queue.txt');
+const SERP_MAX = 8;
 if (!blog || argv.includes('--help')) {
   console.log('사용법: node scripts/tistory-stats.mjs <티스토리 아이디> [--out 폴더]   (읽기만 한다)');
   process.exit(blog ? 0 : 1);
@@ -133,6 +136,35 @@ async function main() {
       index.google = { links: hits, captcha: /sorry\/index|unusual traffic|로봇이 아닙니다/i.test(page.url() + t) };
       log(`  구글 site: 검색 — 우리 글 링크 ${hits}개${index.google.captcha ? ' (구글 확인 화면이 떠서 못 셈)' : ''}`);
     } catch (e) { index.google = { error: e.message.split('\n')[0] }; }
+
+    // 4) 구글 상단 확인 — 티스토리 글감 후보마다 구글 1페이지에 누가 있는지 (2026-10-14 사용자: 티스토리는 구글 상단 노출이 목표)
+    //    content/calendar/tistory-queue.txt (한 줄에 하나, # 은 설명). 하루 SERP_MAX 개까지, 사이에 쉬어 구글 확인 화면을 피한다.
+    const queue2 = fs.existsSync(SERP_QUEUE) ? fs.readFileSync(SERP_QUEUE, 'utf8').split(/\r?\n/).map((l) => l.replace(/#.*$/, '').trim()).filter(Boolean) : [];
+    index.serp = [];
+    for (const [i, q] of queue2.slice(0, SERP_MAX).entries()) {
+      try {
+        await sleep(8000 + Math.floor(Math.random() * 7000));
+        await page.goto(`https://www.google.com/search?q=${encodeURIComponent(q)}&hl=ko&gl=kr`, { waitUntil: 'domcontentloaded', timeout: 30000 });
+        await sleep(2500);
+        const r = await page.evaluate(() => {
+          const res = [];
+          for (const h of document.querySelectorAll('a h3')) {
+            const a = h.closest('a');
+            if (a?.href && !/google\./.test(new URL(a.href).hostname)) res.push({ title: h.innerText.trim().slice(0, 80), url: a.href.slice(0, 200) });
+          }
+          return { res: res.slice(0, 10), text: document.body?.innerText || '' };
+        });
+        const captcha = /sorry\/index|unusual traffic|로봇이 아닙니다/i.test(page.url() + r.text);
+        if (captcha) { index.serp.push({ q, captcha: true }); log(`  구글 "${q}": 확인 화면이 떠서 멈춤`); break; }
+        const hosts = r.res.map((x) => new URL(x.url).hostname);
+        const personal = hosts.filter((h) => /tistory\.com|blog\.naver\.com|brunch\.co\.kr|velog\.io|blogspot\.|wordpress\./.test(h)).length;
+        // '함께 묻는 질문'·'관련 검색어'는 글자 그대로 남긴다 (화면 모양이 자주 바뀐다)
+        const paa = (r.text.match(/(다른 사람들도 질문함|함께 묻는 질문|관련 검색어)[\s\S]{0,900}/) || [''])[0];
+        fs.writeFileSync(path.join(OUT, `serp-${String(i + 1).padStart(2, '0')}.txt`), `${q}\n\n${r.res.map((x, k) => `${k + 1}. ${x.title} — ${x.url}`).join('\n')}\n\n${paa}`);
+        index.serp.push({ q, top: hosts, personal, ours: hosts.filter((h) => h.startsWith(`${blog}.`)).length });
+        log(`  구글 "${q}": 상위 ${hosts.length}개 중 개인 블로그 ${personal}개`);
+      } catch (e) { index.serp.push({ q, error: e.message.split('\n')[0] }); }
+    }
   } finally {
     fs.writeFileSync(path.join(OUT, 'index.json'), JSON.stringify(index, null, 1));
     await page.close().catch(() => {});
