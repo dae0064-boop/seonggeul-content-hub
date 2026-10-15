@@ -1,0 +1,840 @@
+{
+  "slug": "2026-10-16-kakaotalk-daehwa-baekeop",
+  "title": "카카오톡 대화 백업 방법, 톡클라우드 없이 새 폰으로 옮기는 순서 (14일 안에)",
+  "category": "생활정보",
+  "tags": [
+    "카카오톡대화백업방법",
+    "대화임시백업",
+    "백업비밀번호",
+    "톡클라우드",
+    "휴대폰기기변경",
+    "카카오톡백업",
+    "카톡백업",
+    "카톡복원",
+    "카카오톡복원",
+    "카카오톡대화복원",
+    "새폰카톡",
+    "카톡옮기기",
+    "스마트폰사용법",
+    "앱사용법",
+    "생활정보"
+  ],
+  "publishAt": "2026-10-16 15:30",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "휴대폰 기기변경 전에 해 둔 카카오톡 무료 백업은"
+        },
+        {
+          "t": "백업한 때부터 14일 안에만 새 폰에서 복원돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘은 카카오톡 대화 백업 방법을"
+        },
+        {
+          "t": "새 폰에서 복원하는 순서까지 이어서"
+        },
+        {
+          "t": "포스팅으로 알아볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "결론부터 말하면 설정의 백업 메뉴에서"
+        },
+        {
+          "t": "대화 임시 백업을 누르고 비밀번호를 정하면 끝이에요."
+        },
+        {
+          "t": "대신 사진과 동영상은 여기에 들어가지 않아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "새 폰을 받는 날 그 자리에서 급하게"
+        },
+        {
+          "t": "카톡부터 옮기려다 대화를 잃는 분들이 많아요."
+        },
+        {
+          "t": "백업은 쓰던 옛 폰을 손에서 놓기 전에 해 둬야 해요."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "새 휴대폰 상자와 쓰던 휴대폰을 나란히 놓고 미소 짓는 자녀 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "카카오톡 대화 백업 방법은 두 가지"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "카페 창가 자리에서 휴대폰 두 대를 손에 든 손님"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "카카오 고객센터가 안내하는",
+          "segs": [
+            {
+              "t": "카카오 고객센터",
+              "s": "blue"
+            },
+            {
+              "t": "가 안내하는"
+            }
+          ]
+        },
+        {
+          "t": "카카오톡 대화 백업 방법은 두 가지예요.",
+          "segs": [
+            {
+              "t": "카카오톡 대화 백업 방법은 "
+            },
+            {
+              "t": "두 가지",
+              "s": "blue"
+            },
+            {
+              "t": "예요."
+            }
+          ]
+        },
+        {
+          "t": "대화만 무료로 담는 길과 톡클라우드예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "대화 임시 백업은 글자로 된 대화만"
+        },
+        {
+          "t": "카카오 서버에 잠시 맡겨 두는 방식이에요."
+        },
+        {
+          "t": "돈이 들지 않는 대신 담기는 범위가 좁아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "톡클라우드는 따로 신청하는 서비스로"
+        },
+        {
+          "t": "대화와 사진·동영상까지 함께 담아 둬요."
+        },
+        {
+          "t": "톡클라우드로 백업한 대화는",
+          "s": "yellow"
+        },
+        {
+          "t": "14일 같은 복원 기한에 묶이지 않아요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "대화 임시 백업 4단계"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "카카오톡 대화 임시 백업 4단계를 정리한 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "화면 글자는 앱 버전에 따라 조금 달라요."
+        },
+        {
+          "t": "고객센터에 나온 카카오톡 대화 백업 방법은"
+        },
+        {
+          "t": "4단계로 이렇게 이어져요.",
+          "segs": [
+            {
+              "t": "4단계",
+              "s": "blue"
+            },
+            {
+              "t": "로 이렇게 이어져요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "① 카카오톡 더보기에서 설정 누르기"
+        },
+        {
+          "t": "② 백업 메뉴에서 대화 임시 백업"
+        },
+        {
+          "t": "③ 백업 비밀번호 정해 두기"
+        },
+        {
+          "t": "④ 끝나면 백업 일시와 기한 확인"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예전 버전에서는 설정 안의 채팅 메뉴에"
+        },
+        {
+          "t": "대화 백업이 들어 있었어요."
+        },
+        {
+          "t": "백업 메뉴가 안 보이면 채팅 쪽을 찾아보고,"
+        },
+        {
+          "t": "그래도 없으면 앱을 최신으로 올린 뒤 다시 열어 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "백업이 도는 동안 앱을 끄거나",
+          "s": "red"
+        },
+        {
+          "t": "다른 앱으로 넘어가지 않는 게 좋아요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "백업 비밀번호는 찾을 수 없어요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "식탁에서 작은 수첩에 무언가를 적는 할머니"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "백업 비밀번호는 잊어버리면",
+          "s": "red"
+        },
+        {
+          "t": "찾을 방법이 없어 대화를 되살릴 수 없어요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "카카오계정 비밀번호와는 따로 정하는 번호라"
+        },
+        {
+          "t": "둘을 헷갈리는 일이 많아요."
+        },
+        {
+          "t": "종이에 적어 새 폰을 받을 때까지 지니고 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "가족 폰을 대신 바꿔 드릴 때도 마찬가지예요."
+        },
+        {
+          "t": "부모님이 정한 백업 비밀번호를 그 자리에서"
+        },
+        {
+          "t": "함께 적어 두면 복원할 때 막히지 않아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "백업 비밀번호는 복원하는 그 순간 한 번",
+          "s": "yellow"
+        },
+        {
+          "t": "꼭 필요하다는 것만 기억하면 돼요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "무료 백업에 담기지 않는 것"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 5,
+      "lines": [
+        {
+          "t": "대화 임시 백업에 담기지 않는 것을 정리한 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "대화 임시 백업은 글자 대화만 담아요."
+        },
+        {
+          "t": "아래 네 가지는 빠지니 따로 챙겨요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 사진·동영상 같은 미디어"
+        },
+        {
+          "t": "✔ 4,000자가 넘는 긴 메시지",
+          "segs": [
+            {
+              "t": "✔ "
+            },
+            {
+              "t": "4,000자",
+              "s": "blue"
+            },
+            {
+              "t": "가 넘는 긴 메시지"
+            }
+          ]
+        },
+        {
+          "t": "✔ 비밀채팅 대화"
+        },
+        {
+          "t": "✔ 오픈채팅 대화"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "아끼는 사진은 대화방에 모인 사진을 열어"
+        },
+        {
+          "t": "휴대폰 앨범으로 미리 저장해 두면 돼요."
+        },
+        {
+          "t": "이 일까지 해 두면 옛 폰을 정리해도 마음이 편해요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "새 폰에서 복원하는 순서"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 6,
+      "lines": [
+        {
+          "t": "거실 소파에 앉아 새 휴대폰을 켜 보는 할아버지"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "새 폰에 카카오톡을 깔고"
+        },
+        {
+          "t": "쓰던 카카오계정으로 로그인한 뒤"
+        },
+        {
+          "t": "전화번호 인증을 받아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "백업 이력이 있으면 복원 화면이 바로 떠요."
+        },
+        {
+          "t": "백업 일시와 운영체제를 확인하고"
+        },
+        {
+          "t": "복원하기를 누른 뒤 백업 비밀번호를 넣어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "새 카카오계정 만들기를 누르면",
+          "s": "red"
+        },
+        {
+          "t": "옛 대화를 복원할 수 없게 돼요.",
+          "s": "red"
+        },
+        {
+          "t": "처음 화면에서 꼭 쓰던 계정으로 들어가요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "복원이 끝나고 대화방이 다 보일 때까지는"
+        },
+        {
+          "t": "옛 폰을 초기화하지 않고 그대로 두는 게 좋아요."
+        },
+        {
+          "t": "혹시 문제가 생겨도 다시 백업할 수 있거든요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "복원이 끝나면 자주 쓰는 대화방 몇 개를 열어"
+        },
+        {
+          "t": "최근 대화까지 들어왔는지 훑어봐요."
+        },
+        {
+          "t": "빠진 게 없으면 그때 옛 폰을 정리해요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "14일, 언제부터 세나요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 7,
+      "lines": [
+        {
+          "t": "벽에 걸린 달력 아래에서 날짜를 손가락으로 짚는 자녀"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "복원 기한은 백업을 끝낸 날짜와 시각부터",
+          "segs": [
+            {
+              "t": "복원 기한은 백업을 끝낸 "
+            },
+            {
+              "t": "날짜와 시각",
+              "s": "blue"
+            },
+            {
+              "t": "부터"
+            }
+          ]
+        },
+        {
+          "t": "14일이에요.",
+          "segs": [
+            {
+              "t": "14일",
+              "s": "blue"
+            },
+            {
+              "t": "이에요."
+            }
+          ]
+        },
+        {
+          "t": "기한이 지나면 백업 데이터가 자동으로 지워져요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "남은 기한은 설정의 백업 메뉴 안"
+        },
+        {
+          "t": "대화 임시 백업 화면에서 볼 수 있어요."
+        },
+        {
+          "t": "새 폰 배송이 늦어진다면 이 날짜부터 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "기한이 지나 백업이 지워졌더라도"
+        },
+        {
+          "t": "옛 폰이 아직 손에 있다면 걱정할 필요는 없어요."
+        },
+        {
+          "t": "그 폰에서 다시 백업하고 새 폰에서 복원하면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "새 폰을 받기 하루 이틀 전에",
+          "s": "yellow"
+        },
+        {
+          "t": "대화 임시 백업을 하면 기한이 넉넉해요.",
+          "s": "yellow"
+        },
+        {
+          "t": "너무 일찍 하면 그 뒤 대화는 빠지니 다시 해 줘요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "톡클라우드가 맞는 경우, 아닌 경우"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "어떤 카카오톡 대화 백업 방법이 맞는지는"
+        },
+        {
+          "t": "무엇을 남기고 싶은지에 따라 갈려요."
+        },
+        {
+          "t": "아래를 보고 내 경우를 골라 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "대화 글자만 새 폰으로 옮기면 충분하고"
+        },
+        {
+          "t": "바꾸는 날짜가 정해져 있다면"
+        },
+        {
+          "t": "돈이 들지 않는 대화 임시 백업으로 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "가족 사진이 대화방에 많이 쌓여 있거나"
+        },
+        {
+          "t": "기한 없이 오래 보관하고 싶다면"
+        },
+        {
+          "t": "톡클라우드 쪽이 맞을 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "톡클라우드 이용 조건과 요금은 바뀔 수 있어",
+          "s": "yellow"
+        },
+        {
+          "t": "신청 화면의 안내를 그때 다시 읽어 봐요.",
+          "s": "yellow"
+        },
+        {
+          "t": "꼭 필요한지 모르겠다면 무료 백업부터 해 둬도 돼요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "카카오톡 대화 백업 방법 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 8,
+      "lines": [
+        {
+          "t": "공원 산책길 벤치에서 휴대폰을 보며 웃는 부부"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "새 폰을 앞두고 자주 나오는 질문이에요."
+        },
+        {
+          "t": "카카오톡 대화 백업 방법에 많이 묻는 세 가지예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 아이폰에서 갤럭시로 바꿔도 되나요?"
+        },
+        {
+          "t": "A1: 복원 화면에 백업한 폰의 운영체제가 나와요."
+        },
+        {
+          "t": "기종을 바꿀 때는 화면 안내가 다를 수 있어"
+        },
+        {
+          "t": "카카오 고객센터 도움말을 한 번 더 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 탈퇴했다 다시 가입해도 복원되나요?"
+        },
+        {
+          "t": "A2: 카카오톡이나 카카오계정을 탈퇴하면"
+        },
+        {
+          "t": "백업이 있어도 복원할 수 없어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q3: 백업을 여러 번 해도 되나요?"
+        },
+        {
+          "t": "A3: 다시 하면 새 백업으로 바뀌어요."
+        },
+        {
+          "t": "기한도 마지막 백업 때부터 다시 14일로 봐요.",
+          "segs": [
+            {
+              "t": "기한도 마지막 백업 때부터 다시 "
+            },
+            {
+              "t": "14일",
+              "s": "blue"
+            },
+            {
+              "t": "로 봐요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분은 카톡 대화를 옮길 때"
+        },
+        {
+          "t": "글자만 옮기세요, 사진까지 옮기세요?"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "카카오톡 대화 백업 방법 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "카카오톡 대화 백업 방법은 설정 → 백업 →"
+        },
+        {
+          "t": "대화 임시 백업, 비밀번호 정하기가 전부예요."
+        },
+        {
+          "t": "복원은 쓰던 계정으로 14일 안에 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "사진·동영상과 비밀채팅은 무료 백업에 없으니",
+          "s": "red"
+        },
+        {
+          "t": "옛 폰을 정리하기 전에 따로 챙겨 두세요.",
+          "s": "red"
+        },
+        {
+          "t": "사진까지 오래 두려면 톡클라우드를 따져 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "새 폰이 오기 전에 미리 연습해 두면 마음이 편해요."
+        },
+        {
+          "t": "오늘 내 카톡 설정을 열어"
+        },
+        {
+          "t": "백업 메뉴가 어디 있는지 먼저 눌러 보세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘 내용은 카카오 고객센터의"
+        },
+        {
+          "t": "대화 백업·복원 도움말에서"
+        },
+        {
+          "t": "확인한 정보를 바탕으로 정리했어요."
+        },
+        {
+          "t": "(2026년 10월 기준이라 이후 달라질 수 있어요)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "이상 성글벙글의 생활정보 포스팅이었습니다😎"
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">휴대폰 기기변경 전에 해 둔 카카오톡 무료 백업은<br>백업한 때부터 14일 안에만 새 폰에서 복원돼요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘은 카카오톡 대화 백업 방법을<br>새 폰에서 복원하는 순서까지 이어서<br>포스팅으로 알아볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">결론부터 말하면 설정의 백업 메뉴에서<br>대화 임시 백업을 누르고 비밀번호를 정하면 끝이에요.<br>대신 사진과 동영상은 여기에 들어가지 않아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">새 폰을 받는 날 그 자리에서 급하게<br>카톡부터 옮기려다 대화를 잃는 분들이 많아요.<br>백업은 쓰던 옛 폰을 손에서 놓기 전에 해 둬야 해요.</p>\n<p data-ke-size=\"size16\">[이미지 1] 새 휴대폰 상자와 쓰던 휴대폰을 나란히 놓고 미소 짓는 자녀 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>카카오톡 대화 백업 방법은 두 가지</h2>\n<p data-ke-size=\"size16\">[이미지 2] 카페 창가 자리에서 휴대폰 두 대를 손에 든 손님</p>\n<p data-ke-size=\"size16\"><span style=\"color: #0078cb;\"><b>카카오 고객센터</b></span>가 안내하는<br>카카오톡 대화 백업 방법은 <span style=\"color: #0078cb;\"><b>두 가지</b></span>예요.<br>대화만 무료로 담는 길과 톡클라우드예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">대화 임시 백업은 글자로 된 대화만<br>카카오 서버에 잠시 맡겨 두는 방식이에요.<br>돈이 들지 않는 대신 담기는 범위가 좁아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">톡클라우드는 따로 신청하는 서비스로<br>대화와 사진·동영상까지 함께 담아 둬요.<br><span style=\"background-color: #fff8b2;\"><b>톡클라우드로 백업한 대화는</b></span><br><span style=\"background-color: #fff8b2;\"><b>14일 같은 복원 기한에 묶이지 않아요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>대화 임시 백업 4단계</h2>\n<p data-ke-size=\"size16\">[이미지 3] 카카오톡 대화 임시 백업 4단계를 정리한 카드</p>\n<p data-ke-size=\"size16\">화면 글자는 앱 버전에 따라 조금 달라요.<br>고객센터에 나온 카카오톡 대화 백업 방법은<br><span style=\"color: #0078cb;\"><b>4단계</b></span>로 이렇게 이어져요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">① 카카오톡 더보기에서 설정 누르기<br>② 백업 메뉴에서 대화 임시 백업<br>③ 백업 비밀번호 정해 두기<br>④ 끝나면 백업 일시와 기한 확인</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예전 버전에서는 설정 안의 채팅 메뉴에<br>대화 백업이 들어 있었어요.<br>백업 메뉴가 안 보이면 채팅 쪽을 찾아보고,<br>그래도 없으면 앱을 최신으로 올린 뒤 다시 열어 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>백업이 도는 동안 앱을 끄거나</b></span><br><span style=\"color: #ff0010;\"><b>다른 앱으로 넘어가지 않는 게 좋아요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>백업 비밀번호는 찾을 수 없어요</h2>\n<p data-ke-size=\"size16\">[이미지 4] 식탁에서 작은 수첩에 무언가를 적는 할머니</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>백업 비밀번호는 잊어버리면</b></span><br><span style=\"color: #ff0010;\"><b>찾을 방법이 없어 대화를 되살릴 수 없어요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">카카오계정 비밀번호와는 따로 정하는 번호라<br>둘을 헷갈리는 일이 많아요.<br>종이에 적어 새 폰을 받을 때까지 지니고 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">가족 폰을 대신 바꿔 드릴 때도 마찬가지예요.<br>부모님이 정한 백업 비밀번호를 그 자리에서<br>함께 적어 두면 복원할 때 막히지 않아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #fff8b2;\"><b>백업 비밀번호는 복원하는 그 순간 한 번</b></span><br><span style=\"background-color: #fff8b2;\"><b>꼭 필요하다는 것만 기억하면 돼요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>무료 백업에 담기지 않는 것</h2>\n<p data-ke-size=\"size16\">[이미지 5] 대화 임시 백업에 담기지 않는 것을 정리한 카드</p>\n<p data-ke-size=\"size16\">대화 임시 백업은 글자 대화만 담아요.<br>아래 네 가지는 빠지니 따로 챙겨요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">✔ 사진·동영상 같은 미디어<br>✔ <span style=\"color: #0078cb;\"><b>4,000자</b></span>가 넘는 긴 메시지<br>✔ 비밀채팅 대화<br>✔ 오픈채팅 대화</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">아끼는 사진은 대화방에 모인 사진을 열어<br>휴대폰 앨범으로 미리 저장해 두면 돼요.<br>이 일까지 해 두면 옛 폰을 정리해도 마음이 편해요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>새 폰에서 복원하는 순서</h2>\n<p data-ke-size=\"size16\">[이미지 6] 거실 소파에 앉아 새 휴대폰을 켜 보는 할아버지</p>\n<p data-ke-size=\"size16\">새 폰에 카카오톡을 깔고<br>쓰던 카카오계정으로 로그인한 뒤<br>전화번호 인증을 받아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">백업 이력이 있으면 복원 화면이 바로 떠요.<br>백업 일시와 운영체제를 확인하고<br>복원하기를 누른 뒤 백업 비밀번호를 넣어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>새 카카오계정 만들기를 누르면</b></span><br><span style=\"color: #ff0010;\"><b>옛 대화를 복원할 수 없게 돼요.</b></span><br>처음 화면에서 꼭 쓰던 계정으로 들어가요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">복원이 끝나고 대화방이 다 보일 때까지는<br>옛 폰을 초기화하지 않고 그대로 두는 게 좋아요.<br>혹시 문제가 생겨도 다시 백업할 수 있거든요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">복원이 끝나면 자주 쓰는 대화방 몇 개를 열어<br>최근 대화까지 들어왔는지 훑어봐요.<br>빠진 게 없으면 그때 옛 폰을 정리해요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>14일, 언제부터 세나요</h2>\n<p data-ke-size=\"size16\">[이미지 7] 벽에 걸린 달력 아래에서 날짜를 손가락으로 짚는 자녀</p>\n<p data-ke-size=\"size16\">복원 기한은 백업을 끝낸 <span style=\"color: #0078cb;\"><b>날짜와 시각</b></span>부터<br><span style=\"color: #0078cb;\"><b>14일</b></span>이에요.<br>기한이 지나면 백업 데이터가 자동으로 지워져요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">남은 기한은 설정의 백업 메뉴 안<br>대화 임시 백업 화면에서 볼 수 있어요.<br>새 폰 배송이 늦어진다면 이 날짜부터 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">기한이 지나 백업이 지워졌더라도<br>옛 폰이 아직 손에 있다면 걱정할 필요는 없어요.<br>그 폰에서 다시 백업하고 새 폰에서 복원하면 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #fff8b2;\"><b>새 폰을 받기 하루 이틀 전에</b></span><br><span style=\"background-color: #fff8b2;\"><b>대화 임시 백업을 하면 기한이 넉넉해요.</b></span><br>너무 일찍 하면 그 뒤 대화는 빠지니 다시 해 줘요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>톡클라우드가 맞는 경우, 아닌 경우</h2>\n<p data-ke-size=\"size16\">어떤 카카오톡 대화 백업 방법이 맞는지는<br>무엇을 남기고 싶은지에 따라 갈려요.<br>아래를 보고 내 경우를 골라 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">대화 글자만 새 폰으로 옮기면 충분하고<br>바꾸는 날짜가 정해져 있다면<br>돈이 들지 않는 대화 임시 백업으로 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">가족 사진이 대화방에 많이 쌓여 있거나<br>기한 없이 오래 보관하고 싶다면<br>톡클라우드 쪽이 맞을 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #fff8b2;\"><b>톡클라우드 이용 조건과 요금은 바뀔 수 있어</b></span><br><span style=\"background-color: #fff8b2;\"><b>신청 화면의 안내를 그때 다시 읽어 봐요.</b></span><br>꼭 필요한지 모르겠다면 무료 백업부터 해 둬도 돼요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>카카오톡 대화 백업 방법 Q&amp;A</h2>\n<p data-ke-size=\"size16\">[이미지 8] 공원 산책길 벤치에서 휴대폰을 보며 웃는 부부</p>\n<p data-ke-size=\"size16\">새 폰을 앞두고 자주 나오는 질문이에요.<br>카카오톡 대화 백업 방법에 많이 묻는 세 가지예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 아이폰에서 갤럭시로 바꿔도 되나요?<br>A1: 복원 화면에 백업한 폰의 운영체제가 나와요.<br>기종을 바꿀 때는 화면 안내가 다를 수 있어<br>카카오 고객센터 도움말을 한 번 더 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 탈퇴했다 다시 가입해도 복원되나요?<br>A2: 카카오톡이나 카카오계정을 탈퇴하면<br>백업이 있어도 복원할 수 없어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q3: 백업을 여러 번 해도 되나요?<br>A3: 다시 하면 새 백업으로 바뀌어요.<br>기한도 마지막 백업 때부터 다시 <span style=\"color: #0078cb;\"><b>14일</b></span>로 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분은 카톡 대화를 옮길 때<br>글자만 옮기세요, 사진까지 옮기세요?</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>카카오톡 대화 백업 방법 정리</h2>\n<p data-ke-size=\"size16\">카카오톡 대화 백업 방법은 설정 → 백업 →<br>대화 임시 백업, 비밀번호 정하기가 전부예요.<br>복원은 쓰던 계정으로 14일 안에 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>사진·동영상과 비밀채팅은 무료 백업에 없으니</b></span><br><span style=\"color: #ff0010;\"><b>옛 폰을 정리하기 전에 따로 챙겨 두세요.</b></span><br>사진까지 오래 두려면 톡클라우드를 따져 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">새 폰이 오기 전에 미리 연습해 두면 마음이 편해요.<br>오늘 내 카톡 설정을 열어<br>백업 메뉴가 어디 있는지 먼저 눌러 보세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘 내용은 카카오 고객센터의<br>대화 백업·복원 도움말에서<br>확인한 정보를 바탕으로 정리했어요.<br>(2026년 10월 기준이라 이후 달라질 수 있어요)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>이상 성글벙글의 생활정보 포스팅이었습니다😎</p>"
+}
