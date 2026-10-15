@@ -1,0 +1,92 @@
+{
+  "slug": "2026-10-16-deungbon-internet-balgeup",
+  "title": "주민등록등본 인터넷 발급, 정부24에서 무료로 뽑는 순서 (4단계)",
+  "source": "10/16(금) 티스토리 원고 (10/15 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 정보 카드는 로컬 합성(비용 0). 휴대폰·PC 화면은 비워 둔다(가짜 메뉴 글자 금지)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "거실 탁자에서 노트북을 열고 서류를 준비하는 자녀 (대표사진)",
+      "prompt": "Camera and composition: medium shot at a living room table. the Seonggeul adult child: a Korean woman in her 40s, shoulder-length brown bob hair, soft sky blue shirt sitting at a low living room table opening a laptop next to a neat stack of blank papers, smiling Background color: soft sky blue. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot at a living room table",
+      "bg": "soft sky blue",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "등본 인터넷 발급\n무료로 4단계"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "햇살 드는 서재 책상 위에 놓인 노트북과 빈 종이 묶음",
+      "prompt": "Camera and composition: wide shot of a study desk. A sunny study desk with a closed laptop and a small stack of blank white paper beside a pen holder No people at all in this image. Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide shot of a study desk",
+      "bg": "mint green"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "휴대폰을 손에 들고 인증 알림을 기다리는 할아버지",
+      "prompt": "Camera and composition: close-up of hands and phone. the Seonggeul grandpa: a Korean man in his late 70s, short gray hair, mint green vest over a white shirt holding a smartphone with a blank screen in both hands, waiting calmly for a notification Background color: light butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up of hands and phone",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "주민등록등본 인터넷 발급 4단계를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "등본 인터넷 발급 4단계",
+        "items": [
+          "검색창에 주민등록표 등본 입력",
+          "발급하기 누르고 간편인증",
+          "발급 형태 고르기",
+          "출력하거나 PDF로 저장"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "등본 표시 항목을 고를 때 기준을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "등본 표시 항목 고르기",
+        "items": [
+          "과거 주소 변동",
+          "세대 구성 사유",
+          "주민등록번호 뒷자리"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "두 장의 빈 서류를 나란히 놓고 비교하는 할머니",
+      "prompt": "Camera and composition: waist-up shot at a dining table. the Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan comparing two blank sheets of paper laid side by side on a dining table Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "waist-up shot at a dining table",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "동네 주민센터 앞 벤치에 앉아 서류 봉투를 든 자녀",
+      "prompt": "Camera and composition: full shot outside a community center. the Seonggeul adult child: a Korean woman in her 40s, shoulder-length brown bob hair, soft sky blue shirt sitting on a bench in front of a small Korean community service center building holding a plain document envelope Background color: warm beige. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "full shot outside a community center",
+      "bg": "warm beige"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "프린터 옆에서 갓 나온 종이를 집어 드는 손",
+      "prompt": "Camera and composition: close-up of a printer. A hand picking up a freshly printed blank sheet of paper from a small home printer No people at all in this image. Background color: soft apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up of a printer",
+      "bg": "soft apricot"
+    }
+  ]
+}

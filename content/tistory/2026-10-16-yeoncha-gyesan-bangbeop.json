@@ -1,0 +1,803 @@
+{
+  "slug": "2026-10-16-yeoncha-gyesan-bangbeop",
+  "title": "연차 계산 방법, 1년 미만 연차와 근속연수별 일수 (최대 25일)",
+  "category": "생활정보",
+  "tags": [
+    "연차계산방법",
+    "1년미만연차",
+    "연차일수",
+    "연차발생기준",
+    "월차",
+    "연차계산",
+    "연차휴가",
+    "연차유급휴가",
+    "근로기준법60조",
+    "입사1년차연차",
+    "근속연수연차",
+    "연차소멸",
+    "회계연도연차",
+    "직장인정보",
+    "생활정보"
+  ],
+  "publishAt": "2026-10-16 17:30",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "흔히 월차라고 부르는 입사 첫해 휴가는"
+        },
+        {
+          "t": "한 달을 빠짐없이 나오면 하루씩, 최대 11일 생겨요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘은 연차 계산 방법을 입사 첫해부터"
+        },
+        {
+          "t": "오래 다닌 경우까지 숫자로 나눠"
+        },
+        {
+          "t": "포스팅으로 알아볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "결론부터 말하면 연차 일수는 세 구간으로 봐요."
+        },
+        {
+          "t": "첫해는 한 달마다 1일, 1년을 채우면 15일,"
+        },
+        {
+          "t": "그다음부터는 2년마다 1일씩 늘어 최대 25일이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "연말이 다가오면 남은 휴가를 세어 보다가"
+        },
+        {
+          "t": "내 연차가 맞게 들어왔는지 궁금해지는 분들이 많아요."
+        },
+        {
+          "t": "회사 안내문만 보고 넘기기 쉬워 정리해 봤어요."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "사무실 책상에서 탁상 달력을 넘기며 휴가 날짜를 세는 자녀 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "연차 계산 방법, 법에서 정한 기준부터"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "햇살 드는 회사 로비 창가에 놓인 화분과 빈 의자"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "연차는 근로기준법 제60조에 정해져 있어요.",
+          "segs": [
+            {
+              "t": "연차는 "
+            },
+            {
+              "t": "근로기준법 제60조",
+              "s": "blue"
+            },
+            {
+              "t": "에 정해져 있어요."
+            }
+          ]
+        },
+        {
+          "t": "회사마다 제멋대로 정하는 게 아니라"
+        },
+        {
+          "t": "법이 정한 일수보다 적게 줄 수 없어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "다만 이 조항은 상시 5명 이상이 일하는",
+          "segs": [
+            {
+              "t": "다만 이 조항은 상시 "
+            },
+            {
+              "t": "5명 이상",
+              "s": "blue"
+            },
+            {
+              "t": "이 일하는"
+            }
+          ]
+        },
+        {
+          "t": "사업장에 적용돼요."
+        },
+        {
+          "t": "5명 미만 사업장은 법정 연차가 없어",
+          "s": "red"
+        },
+        {
+          "t": "회사 규칙이나 근로계약서를 따로 봐야 해요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "1년 미만 연차는 한 달에 하루"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "회사 탕비실에서 커피를 내리며 웃는 신입 직원"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "입사하고 1년이 안 됐을 때 생기는 휴가가"
+        },
+        {
+          "t": "1년 미만 연차예요."
+        },
+        {
+          "t": "한 달을 결근 없이 나오면 다음 달에 1일이 생겨요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 3월 2일에 입사해 결근 없이 다녔다면"
+        },
+        {
+          "t": "4월 2일에 1일, 5월 2일에 또 1일이 생겨요."
+        },
+        {
+          "t": "지각이나 조퇴는 결근과 다르게 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이렇게 쌓이면 첫해에 최대 11일이 돼요.",
+          "segs": [
+            {
+              "t": "이렇게 쌓이면 첫해에 최대 "
+            },
+            {
+              "t": "11일",
+              "s": "blue"
+            },
+            {
+              "t": "이 돼요."
+            }
+          ]
+        },
+        {
+          "t": "11번째 달까지 개근하면 11일이고,"
+        },
+        {
+          "t": "12번째 달은 1년을 채운 연차로 넘어가요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "1년 미만 연차는 입사일부터 1년 안에 써야 하고,",
+          "s": "yellow"
+        },
+        {
+          "t": "그 뒤에는 남은 날이 사라질 수 있어요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "1년을 채우면 연차 일수 15일"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "연차 발생 기준을 세 구간으로 정리한 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "1년 동안 출근해야 할 날의 80% 이상을 나오면",
+          "segs": [
+            {
+              "t": "1년 동안 출근해야 할 날의 "
+            },
+            {
+              "t": "80%",
+              "s": "blue"
+            },
+            {
+              "t": " 이상을 나오면"
+            }
+          ]
+        },
+        {
+          "t": "그다음 해에 쓸 연차 일수 15일이 생겨요.",
+          "segs": [
+            {
+              "t": "그다음 해에 쓸 연차 일수 "
+            },
+            {
+              "t": "15일",
+              "s": "blue"
+            },
+            {
+              "t": "이 생겨요."
+            }
+          ]
+        },
+        {
+          "t": "이게 가장 많이 묻는 연차 발생 기준이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "80%를 채우지 못했다면 15일은 생기지 않아요."
+        },
+        {
+          "t": "대신 그해에 한 달을 개근한 달마다"
+        },
+        {
+          "t": "1일씩은 그대로 생겨요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예전에는 첫해에 쓴 날을 이듬해 15일에서 뺐어요."
+        },
+        {
+          "t": "2018년 5월 29일부터 이 규정이 없어져서",
+          "segs": [
+            {
+              "t": "2018년 5월 29일",
+              "s": "blue"
+            },
+            {
+              "t": "부터 이 규정이 없어져서"
+            }
+          ]
+        },
+        {
+          "t": "첫 2년 동안 모두 합쳐 최대 26일을 쓸 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "근속연수별 연차 일수, 2년마다 1일"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 5,
+      "lines": [
+        {
+          "t": "근속연수별 연차 일수를 정리한 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "3년 이상 다니면 처음 1년을 넘긴 해부터"
+        },
+        {
+          "t": "2년마다 하루씩 연차가 더해져요."
+        },
+        {
+          "t": "연차 계산 방법을 식으로 쓰면 이래요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "15일 + (근속연수 − 1) ÷ 2 의 몫"
+        },
+        {
+          "t": "근속 3년이면 16일, 근속 5년이면 17일,"
+        },
+        {
+          "t": "근속 10년이면 19일이 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "아무리 오래 다녀도 연차 일수는",
+          "s": "yellow"
+        },
+        {
+          "t": "더한 날까지 모두 합쳐 25일을 넘지 않아요.",
+          "segs": [
+            {
+              "t": "더한 날까지 모두 합쳐 ",
+              "s": "yellow"
+            },
+            {
+              "t": "25일",
+              "s": "blue"
+            },
+            {
+              "t": "을 넘지 않아요."
+            }
+          ]
+        },
+        {
+          "t": "근속 21년이 되면 이 한도에 닿아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "나누기에서 나머지는 버리고 몫만 써요."
+        },
+        {
+          "t": "근속 4년이면 (4 − 1) ÷ 2 의 몫이 1이라"
+        },
+        {
+          "t": "16일로, 근속 3년과 같은 일수가 나와요."
+        },
+        {
+          "t": "그래서 연차가 늘어나는 해는 홀수 해예요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "연차 발생 기준이 회사마다 다르게 보이는 이유"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 6,
+      "lines": [
+        {
+          "t": "회의실 테이블에 서류철을 펼쳐 놓고 이야기하는 동료 둘"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "법이 정한 연차 발생 기준은 입사한 날이에요."
+        },
+        {
+          "t": "그런데 직원이 많은 회사는 계산을 쉽게 하려고"
+        },
+        {
+          "t": "매년 1월 1일에 한꺼번에 주기도 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이렇게 회계연도로 주면 연차 발생 기준이 달라져"
+        },
+        {
+          "t": "입사 첫해와 그다음 해의 연차 일수가 다르게 보여요."
+        },
+        {
+          "t": "퇴사할 때 입사일 기준보다 적게 받았다면",
+          "s": "yellow"
+        },
+        {
+          "t": "그 차이를 정산하는 게 원칙이에요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 회사 기준표와 내 입사일 기준을"
+        },
+        {
+          "t": "한 번씩 나란히 놓고 연차 계산 방법을 견줘 보면"
+        },
+        {
+          "t": "어디서 차이가 나는지 바로 보여요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "연차 계산 방법, 직접 확인할 것"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 7,
+      "lines": [
+        {
+          "t": "집 거실 탁자에서 공책에 숫자를 적어 보는 직장인"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "내 연차를 확인할 때는 이 세 가지를 봐요."
+        },
+        {
+          "t": "입사일, 지난 1년 출근율, 회사가 쓰는 기준일이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "입사일에서 오늘까지 몇 년이 지났는지 세고,"
+        },
+        {
+          "t": "1년 미만이면 개근한 달 수를 세요."
+        },
+        {
+          "t": "1년이 넘었다면 위의 식에 근속연수를 넣어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "쓰지 않은 연차는 1년이 지나면 사라질 수 있으니",
+          "s": "red"
+        },
+        {
+          "t": "남은 날과 쓸 수 있는 기한을 함께 확인해요.",
+          "s": "red"
+        },
+        {
+          "t": "내 연차 발생 기준이 입사일인지도 같이 적어 둬요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "남은 연차, 수당으로 받을 수 있을까"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "쓰지 못하고 기한이 지난 연차는"
+        },
+        {
+          "t": "그만큼을 돈으로 받는 연차수당이 원칙이에요."
+        },
+        {
+          "t": "퇴사할 때 남은 연차도 같은 방식으로 정산해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "다만 회사가 법에 정한 절차대로"
+        },
+        {
+          "t": "남은 연차를 쓰라고 미리 알리고"
+        },
+        {
+          "t": "쓸 날짜를 정하라고 요청했는데도 쓰지 않았다면"
+        },
+        {
+          "t": "수당을 주지 않아도 되는 경우가 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이 절차를 연차 사용 촉진이라고 불러요."
+        },
+        {
+          "t": "회사에서 연차 사용 안내 문서를 받았다면",
+          "s": "yellow"
+        },
+        {
+          "t": "날짜를 정해 실제로 쉬는 쪽이 손해가 없어요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "연차 계산 방법 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 8,
+      "lines": [
+        {
+          "t": "공원 산책길을 가벼운 차림으로 걷는 직장인 부부"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "연차 계산 방법에 많이 묻는 세 가지예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 딱 1년 일하고 그만두면 15일도 생기나요?"
+        },
+        {
+          "t": "A1: 2021년 대법원 판결 이후로는",
+          "segs": [
+            {
+              "t": "A1: "
+            },
+            {
+              "t": "2021년",
+              "s": "blue"
+            },
+            {
+              "t": " 대법원 판결 이후로는"
+            }
+          ]
+        },
+        {
+          "t": "1년만 일하고 끝나면 15일은 생기지 않고"
+        },
+        {
+          "t": "1년 미만 연차 최대 11일까지로 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 육아휴직 기간은 출근율에서 빠지나요?"
+        },
+        {
+          "t": "A2: 법에서 출근한 것으로 보는 기간이 따로 있어요."
+        },
+        {
+          "t": "일하다 다쳐 쉰 기간, 출산전후휴가,"
+        },
+        {
+          "t": "육아휴직 기간은 출근한 날로 세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q3: 연차 일수를 회사가 더 줄 수도 있나요?"
+        },
+        {
+          "t": "A3: 네, 법은 최소 기준이에요."
+        },
+        {
+          "t": "회사 규칙으로 더 많이 주는 것은 괜찮아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "반대로 법보다 적게 정한 규칙은"
+        },
+        {
+          "t": "그 부분만큼 효력이 없고 법에 정한 기준을 따라요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분 회사는 입사일 기준인가요,"
+        },
+        {
+          "t": "1월 1일 기준인가요? 댓글로 알려 주세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "연차 계산 방법 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "연차 계산 방법은 첫해 한 달에 1일(최대 11일),"
+        },
+        {
+          "t": "1년 80% 출근이면 15일, 3년부터 2년마다 1일,"
+        },
+        {
+          "t": "모두 합쳐 25일까지로 기억하면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "1년 미만 연차와 연차 발생 기준은"
+        },
+        {
+          "t": "입사일과 출근율로 정해지니"
+        },
+        {
+          "t": "오늘 내 입사일부터 달력에 적어 보세요."
+        },
+        {
+          "t": "올해 남은 연차가 며칠인지도 함께 세어 보고요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "근무 형태나 계약에 따라 달라지는 경우가 있어",
+          "s": "red"
+        },
+        {
+          "t": "정확한 판단은 고용노동부나 노무사와 상의해 확인해요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘 내용은 근로기준법 제60조와"
+        },
+        {
+          "t": "고용노동부의 연차휴가 안내에서"
+        },
+        {
+          "t": "확인한 정보를 바탕으로 정리했어요."
+        },
+        {
+          "t": "(2026년 10월 기준이라 이후 달라질 수 있어요)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "이상 성글벙글의 생활정보 포스팅이었습니다😎"
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">흔히 월차라고 부르는 입사 첫해 휴가는<br>한 달을 빠짐없이 나오면 하루씩, 최대 11일 생겨요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘은 연차 계산 방법을 입사 첫해부터<br>오래 다닌 경우까지 숫자로 나눠<br>포스팅으로 알아볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">결론부터 말하면 연차 일수는 세 구간으로 봐요.<br>첫해는 한 달마다 1일, 1년을 채우면 15일,<br>그다음부터는 2년마다 1일씩 늘어 최대 25일이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">연말이 다가오면 남은 휴가를 세어 보다가<br>내 연차가 맞게 들어왔는지 궁금해지는 분들이 많아요.<br>회사 안내문만 보고 넘기기 쉬워 정리해 봤어요.</p>\n<p data-ke-size=\"size16\">[이미지 1] 사무실 책상에서 탁상 달력을 넘기며 휴가 날짜를 세는 자녀 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>연차 계산 방법, 법에서 정한 기준부터</h2>\n<p data-ke-size=\"size16\">[이미지 2] 햇살 드는 회사 로비 창가에 놓인 화분과 빈 의자</p>\n<p data-ke-size=\"size16\">연차는 <span style=\"color: #0078cb;\"><b>근로기준법 제60조</b></span>에 정해져 있어요.<br>회사마다 제멋대로 정하는 게 아니라<br>법이 정한 일수보다 적게 줄 수 없어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">다만 이 조항은 상시 <span style=\"color: #0078cb;\"><b>5명 이상</b></span>이 일하는<br>사업장에 적용돼요.<br><span style=\"color: #ff0010;\"><b>5명 미만 사업장은 법정 연차가 없어</b></span><br><span style=\"color: #ff0010;\"><b>회사 규칙이나 근로계약서를 따로 봐야 해요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>1년 미만 연차는 한 달에 하루</h2>\n<p data-ke-size=\"size16\">[이미지 3] 회사 탕비실에서 커피를 내리며 웃는 신입 직원</p>\n<p data-ke-size=\"size16\">입사하고 1년이 안 됐을 때 생기는 휴가가<br>1년 미만 연차예요.<br>한 달을 결근 없이 나오면 다음 달에 1일이 생겨요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 3월 2일에 입사해 결근 없이 다녔다면<br>4월 2일에 1일, 5월 2일에 또 1일이 생겨요.<br>지각이나 조퇴는 결근과 다르게 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이렇게 쌓이면 첫해에 최대 <span style=\"color: #0078cb;\"><b>11일</b></span>이 돼요.<br>11번째 달까지 개근하면 11일이고,<br>12번째 달은 1년을 채운 연차로 넘어가요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #fff8b2;\"><b>1년 미만 연차는 입사일부터 1년 안에 써야 하고,</b></span><br><span style=\"background-color: #fff8b2;\"><b>그 뒤에는 남은 날이 사라질 수 있어요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>1년을 채우면 연차 일수 15일</h2>\n<p data-ke-size=\"size16\">[이미지 4] 연차 발생 기준을 세 구간으로 정리한 카드</p>\n<p data-ke-size=\"size16\">1년 동안 출근해야 할 날의 <span style=\"color: #0078cb;\"><b>80%</b></span> 이상을 나오면<br>그다음 해에 쓸 연차 일수 <span style=\"color: #0078cb;\"><b>15일</b></span>이 생겨요.<br>이게 가장 많이 묻는 연차 발생 기준이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">80%를 채우지 못했다면 15일은 생기지 않아요.<br>대신 그해에 한 달을 개근한 달마다<br>1일씩은 그대로 생겨요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예전에는 첫해에 쓴 날을 이듬해 15일에서 뺐어요.<br><span style=\"color: #0078cb;\"><b>2018년 5월 29일</b></span>부터 이 규정이 없어져서<br>첫 2년 동안 모두 합쳐 최대 26일을 쓸 수 있어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>근속연수별 연차 일수, 2년마다 1일</h2>\n<p data-ke-size=\"size16\">[이미지 5] 근속연수별 연차 일수를 정리한 카드</p>\n<p data-ke-size=\"size16\">3년 이상 다니면 처음 1년을 넘긴 해부터<br>2년마다 하루씩 연차가 더해져요.<br>연차 계산 방법을 식으로 쓰면 이래요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">15일 + (근속연수 − 1) ÷ 2 의 몫<br>근속 3년이면 16일, 근속 5년이면 17일,<br>근속 10년이면 19일이 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #fff8b2;\"><b>아무리 오래 다녀도 연차 일수는</b></span><br><span style=\"background-color: #fff8b2;\"><b>더한 날까지 모두 합쳐 </b></span><span style=\"color: #0078cb;\"><b>25일</b></span>을 넘지 않아요.<br>근속 21년이 되면 이 한도에 닿아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">나누기에서 나머지는 버리고 몫만 써요.<br>근속 4년이면 (4 − 1) ÷ 2 의 몫이 1이라<br>16일로, 근속 3년과 같은 일수가 나와요.<br>그래서 연차가 늘어나는 해는 홀수 해예요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>연차 발생 기준이 회사마다 다르게 보이는 이유</h2>\n<p data-ke-size=\"size16\">[이미지 6] 회의실 테이블에 서류철을 펼쳐 놓고 이야기하는 동료 둘</p>\n<p data-ke-size=\"size16\">법이 정한 연차 발생 기준은 입사한 날이에요.<br>그런데 직원이 많은 회사는 계산을 쉽게 하려고<br>매년 1월 1일에 한꺼번에 주기도 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이렇게 회계연도로 주면 연차 발생 기준이 달라져<br>입사 첫해와 그다음 해의 연차 일수가 다르게 보여요.<br><span style=\"background-color: #fff8b2;\"><b>퇴사할 때 입사일 기준보다 적게 받았다면</b></span><br><span style=\"background-color: #fff8b2;\"><b>그 차이를 정산하는 게 원칙이에요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그래서 회사 기준표와 내 입사일 기준을<br>한 번씩 나란히 놓고 연차 계산 방법을 견줘 보면<br>어디서 차이가 나는지 바로 보여요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>연차 계산 방법, 직접 확인할 것</h2>\n<p data-ke-size=\"size16\">[이미지 7] 집 거실 탁자에서 공책에 숫자를 적어 보는 직장인</p>\n<p data-ke-size=\"size16\">내 연차를 확인할 때는 이 세 가지를 봐요.<br>입사일, 지난 1년 출근율, 회사가 쓰는 기준일이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">입사일에서 오늘까지 몇 년이 지났는지 세고,<br>1년 미만이면 개근한 달 수를 세요.<br>1년이 넘었다면 위의 식에 근속연수를 넣어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>쓰지 않은 연차는 1년이 지나면 사라질 수 있으니</b></span><br><span style=\"color: #ff0010;\"><b>남은 날과 쓸 수 있는 기한을 함께 확인해요.</b></span><br>내 연차 발생 기준이 입사일인지도 같이 적어 둬요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>남은 연차, 수당으로 받을 수 있을까</h2>\n<p data-ke-size=\"size16\">쓰지 못하고 기한이 지난 연차는<br>그만큼을 돈으로 받는 연차수당이 원칙이에요.<br>퇴사할 때 남은 연차도 같은 방식으로 정산해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">다만 회사가 법에 정한 절차대로<br>남은 연차를 쓰라고 미리 알리고<br>쓸 날짜를 정하라고 요청했는데도 쓰지 않았다면<br>수당을 주지 않아도 되는 경우가 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이 절차를 연차 사용 촉진이라고 불러요.<br><span style=\"background-color: #fff8b2;\"><b>회사에서 연차 사용 안내 문서를 받았다면</b></span><br><span style=\"background-color: #fff8b2;\"><b>날짜를 정해 실제로 쉬는 쪽이 손해가 없어요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>연차 계산 방법 Q&amp;A</h2>\n<p data-ke-size=\"size16\">[이미지 8] 공원 산책길을 가벼운 차림으로 걷는 직장인 부부</p>\n<p data-ke-size=\"size16\">연차 계산 방법에 많이 묻는 세 가지예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 딱 1년 일하고 그만두면 15일도 생기나요?<br>A1: <span style=\"color: #0078cb;\"><b>2021년</b></span> 대법원 판결 이후로는<br>1년만 일하고 끝나면 15일은 생기지 않고<br>1년 미만 연차 최대 11일까지로 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 육아휴직 기간은 출근율에서 빠지나요?<br>A2: 법에서 출근한 것으로 보는 기간이 따로 있어요.<br>일하다 다쳐 쉰 기간, 출산전후휴가,<br>육아휴직 기간은 출근한 날로 세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q3: 연차 일수를 회사가 더 줄 수도 있나요?<br>A3: 네, 법은 최소 기준이에요.<br>회사 규칙으로 더 많이 주는 것은 괜찮아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">반대로 법보다 적게 정한 규칙은<br>그 부분만큼 효력이 없고 법에 정한 기준을 따라요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분 회사는 입사일 기준인가요,<br>1월 1일 기준인가요? 댓글로 알려 주세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>연차 계산 방법 정리</h2>\n<p data-ke-size=\"size16\">연차 계산 방법은 첫해 한 달에 1일(최대 11일),<br>1년 80% 출근이면 15일, 3년부터 2년마다 1일,<br>모두 합쳐 25일까지로 기억하면 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">1년 미만 연차와 연차 발생 기준은<br>입사일과 출근율로 정해지니<br>오늘 내 입사일부터 달력에 적어 보세요.<br>올해 남은 연차가 며칠인지도 함께 세어 보고요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>근무 형태나 계약에 따라 달라지는 경우가 있어</b></span><br><span style=\"color: #ff0010;\"><b>정확한 판단은 고용노동부나 노무사와 상의해 확인해요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘 내용은 근로기준법 제60조와<br>고용노동부의 연차휴가 안내에서<br>확인한 정보를 바탕으로 정리했어요.<br>(2026년 10월 기준이라 이후 달라질 수 있어요)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>이상 성글벙글의 생활정보 포스팅이었습니다😎</p>"
+}

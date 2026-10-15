@@ -1,0 +1,846 @@
+{
+  "slug": "2026-10-16-deungbon-internet-balgeup",
+  "title": "주민등록등본 인터넷 발급, 정부24에서 무료로 뽑는 순서 (4단계)",
+  "category": "생활정보",
+  "tags": [
+    "주민등록등본인터넷발급",
+    "정부24",
+    "간편인증",
+    "주민등록초본",
+    "등본무료발급",
+    "주민등록등본",
+    "등본발급",
+    "초본발급",
+    "등본PDF",
+    "무인민원발급기",
+    "주민센터",
+    "서류발급",
+    "생활서류",
+    "민원서류",
+    "생활정보"
+  ],
+  "publishAt": "2026-10-16 10:30",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "등본 무료 발급은 본인이 인터넷으로 신청할 때 돼요."
+        },
+        {
+          "t": "주민센터 창구는 한 통에 400원이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘은 주민등록등본 인터넷 발급을"
+        },
+        {
+          "t": "처음 하는 분도 따라 할 수 있게"
+        },
+        {
+          "t": "순서대로 포스팅으로 알아볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "결론부터 말하면 정부24에서"
+        },
+        {
+          "t": "간편인증 한 번이면 집에서 바로 뽑혀요."
+        },
+        {
+          "t": "프린터가 없어도 파일로 저장할 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "전세 계약이나 회사 제출처럼"
+        },
+        {
+          "t": "갑자기 등본 한 통이 급하게 필요한 날이 있어요."
+        },
+        {
+          "t": "이럴 때 동네 주민센터 문 여는 시간을"
+        },
+        {
+          "t": "기다리는 분들이 많더라구요."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "거실 탁자에서 노트북을 열고 서류를 준비하는 자녀 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "주민등록등본 인터넷 발급, 어디서 하나요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "햇살 드는 서재 책상 위에 놓인 노트북과 빈 종이 묶음"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "주민등록등본 인터넷 발급은"
+        },
+        {
+          "t": "행정안전부가 운영하는 정부24에서 해요.",
+          "segs": [
+            {
+              "t": "행정안전부",
+              "s": "blue"
+            },
+            {
+              "t": "가 운영하는 정부24에서 해요."
+            }
+          ]
+        },
+        {
+          "t": "컴퓨터 누리집과 휴대폰 앱 두 곳 모두 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "컴퓨터로 하면 바로 프린터로 뽑기 좋고,"
+        },
+        {
+          "t": "휴대폰으로 하면 파일로 저장해"
+        },
+        {
+          "t": "문자나 메일로 보내기가 편해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "수수료는 창구마다 달라요."
+        },
+        {
+          "t": "주민센터 창구는 한 통에 400원,",
+          "segs": [
+            {
+              "t": "주민센터 창구",
+              "s": "blue"
+            },
+            {
+              "t": "는 한 통에 "
+            },
+            {
+              "t": "400원",
+              "s": "blue"
+            },
+            {
+              "t": ","
+            }
+          ]
+        },
+        {
+          "t": "무인민원발급기는 200원이에요.",
+          "segs": [
+            {
+              "t": "무인민원발급기",
+              "s": "blue"
+            },
+            {
+              "t": "는 "
+            },
+            {
+              "t": "200원",
+              "s": "blue"
+            },
+            {
+              "t": "이에요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "본인이나 같은 세대원이 정부24로 신청하면",
+          "s": "yellow"
+        },
+        {
+          "t": "수수료 없이 무료로 받을 수 있어요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러 통이 필요해도 한 통씩 다시 뽑으면 되니"
+        },
+        {
+          "t": "창구에서 줄 서서 기다릴 일이 없어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "정부24 간편인증, 준비할 것"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "휴대폰을 손에 들고 인증 알림을 기다리는 할아버지"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "로그인 없이도 신청은 되지만"
+        },
+        {
+          "t": "본인 확인은 꼭 거쳐야 해요."
+        },
+        {
+          "t": "이때 쓰는 게 간편인증이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "간편인증은 평소 쓰는 휴대폰 인증 앱으로"
+        },
+        {
+          "t": "본인 확인을 하는 방식이에요."
+        },
+        {
+          "t": "공동인증서나 금융인증서도 쓸 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "인증 요청을 보내면 휴대폰에 알림이 와요."
+        },
+        {
+          "t": "알림을 눌러 확인하고 컴퓨터로 돌아와"
+        },
+        {
+          "t": "확인 버튼을 누르면 본인 확인이 끝나요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "온라인에서는 남의 등본을 대신 신청할 수 없어요.",
+          "s": "red"
+        },
+        {
+          "t": "가족 것이 필요하면 같은 세대원이"
+        },
+        {
+          "t": "자기 이름으로 인증해 신청해요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "주민등록등본 인터넷 발급 4단계"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "주민등록등본 인터넷 발급 4단계를 정리한 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "화면 글자는 앱 버전에 따라"
+        },
+        {
+          "t": "조금 다를 수 있지만 흐름은 같아요."
+        },
+        {
+          "t": "주민등록등본 인터넷 발급은 이렇게 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "① 검색창에 주민등록표 등본 입력"
+        },
+        {
+          "t": "② 발급하기 누르고 간편인증"
+        },
+        {
+          "t": "③ 표시할 내용과 발급 형태 고르기"
+        },
+        {
+          "t": "④ 신청 뒤 출력하거나 PDF로 저장"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "처음이라면 4단계 가운데 3단계에서",
+          "segs": [
+            {
+              "t": "처음이라면 "
+            },
+            {
+              "t": "4단계",
+              "s": "blue"
+            },
+            {
+              "t": " 가운데 3단계에서"
+            }
+          ]
+        },
+        {
+          "t": "가장 오래 머물게 돼요."
+        },
+        {
+          "t": "아래에서 무엇을 고르면 되는지 따로 정리했어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "4단계만 지나면 바로 내려받을 수 있어",
+          "s": "yellow"
+        },
+        {
+          "t": "주민센터에 다녀오는 시간보다 훨씬 짧아요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "등본에 무엇을 표시할까요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 5,
+      "lines": [
+        {
+          "t": "등본 표시 항목을 고를 때 기준을 정리한 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "3단계에서 표시할 내용을 고르는 화면이 나와요."
+        },
+        {
+          "t": "과거 주소 변동, 세대 구성 사유 같은 항목이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "주민등록번호 뒷자리는 처음에 가려진 상태예요."
+        },
+        {
+          "t": "뒷자리는 제출처가 13자리 전부를",
+          "segs": [
+            {
+              "t": "뒷자리는 제출처가 ",
+              "s": "red"
+            },
+            {
+              "t": "13자리",
+              "s": "blue"
+            },
+            {
+              "t": " 전부를"
+            }
+          ]
+        },
+        {
+          "t": "보이게 해 달라고 할 때만 표시해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "필요한 것보다 많이 표시하면",
+          "s": "yellow"
+        },
+        {
+          "t": "내 개인정보가 그만큼 더 나가게 돼요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "어떤 항목이 필요한지 모르겠다면"
+        },
+        {
+          "t": "서류를 받을 곳에 먼저 물어보는 게 좋아요."
+        },
+        {
+          "t": "다시 뽑아도 무료라 부담은 없어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "주민등록초본과 등본, 무엇이 다를까"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 6,
+      "lines": [
+        {
+          "t": "두 장의 빈 서류를 나란히 놓고 비교하는 할머니"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "주민등록초본은 나 한 사람의"
+        },
+        {
+          "t": "주소 변동 기록이 중심이에요."
+        },
+        {
+          "t": "등본은 우리 세대 전체가 함께 나와요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 가족 관계나 세대원을 보여 줄 땐"
+        },
+        {
+          "t": "등본, 이사 다닌 기록을 보여 줄 땐"
+        },
+        {
+          "t": "주민등록초본을 내는 경우가 많아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "주민등록초본도 정부24에서"
+        },
+        {
+          "t": "같은 방식으로 간편인증 뒤 무료로 받아요."
+        },
+        {
+          "t": "검색창에 주민등록초본이라고 치면 바로 나와요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "등본을 내야 하는데 주민등록초본을 내면"
+        },
+        {
+          "t": "서류를 다시 내야 하는 일이 생겨요."
+        },
+        {
+          "t": "제출처가 둘 중 무엇을 원하는지 꼭 확인해요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "주민등록등본 인터넷 발급이 안 될 때"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 7,
+      "lines": [
+        {
+          "t": "동네 주민센터 앞 벤치에 앉아 서류 봉투를 든 자녀"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "인터넷으로 안 되는 경우도 있어요."
+        },
+        {
+          "t": "세상을 떠난 가족 명의의 등본은"
+        },
+        {
+          "t": "온라인이나 무인민원발급기로 받을 수 없어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이럴 땐 신분증을 챙겨"
+        },
+        {
+          "t": "가까운 주민센터 창구로 가야 해요."
+        },
+        {
+          "t": "필요한 서류를 전화로 미리 물어보면"
+        },
+        {
+          "t": "한 번 방문으로 끝낼 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "휴대폰 인증이 계속 실패한다면"
+        },
+        {
+          "t": "인증 앱이 최신인지, 이름과 번호를"
+        },
+        {
+          "t": "정확히 넣었는지부터 살펴봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "간편인증이 어렵다면 공동인증서로 바꿔"
+        },
+        {
+          "t": "다시 해 보는 것도 방법이에요."
+        },
+        {
+          "t": "그래도 안 되면 무인민원발급기를 찾아가요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "뽑은 등본, 파일로 보낼 때 볼 것"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "컴퓨터에서는 출력 창에서 프린터 대신"
+        },
+        {
+          "t": "PDF 저장을 고르면 파일로 남길 수 있어요."
+        },
+        {
+          "t": "파일 이름에 날짜를 넣어 두면 찾기 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "휴대폰 앱에서는 전자문서지갑에 담아"
+        },
+        {
+          "t": "제출처로 바로 보내는 방법도 있어요."
+        },
+        {
+          "t": "받는 곳이 이 방식을 받는지 먼저 물어봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "뒷자리가 보이는 등본 파일은",
+          "s": "red"
+        },
+        {
+          "t": "보낸 뒤 휴대폰과 컴퓨터에서 지워 두세요.",
+          "s": "red"
+        },
+        {
+          "t": "단체 대화방에 올리는 일도 피하는 게 좋아요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "주민등록등본 인터넷 발급 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 8,
+      "lines": [
+        {
+          "t": "프린터 옆에서 갓 나온 종이를 집어 드는 손"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "주민등록등본 인터넷 발급에 많이 묻는 세 가지예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 프린터가 없으면 어떻게 하나요?"
+        },
+        {
+          "t": "A1: 출력 화면에서 PDF로 저장해 두면 돼요.",
+          "segs": [
+            {
+              "t": "A1: 출력 화면에서 "
+            },
+            {
+              "t": "PDF",
+              "s": "blue"
+            },
+            {
+              "t": "로 저장해 두면 돼요."
+            }
+          ]
+        },
+        {
+          "t": "휴대폰 앱에서는 전자문서지갑으로"
+        },
+        {
+          "t": "제출처에 바로 보낼 수도 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 주말에도 주민등록등본 인터넷 발급이 되나요?"
+        },
+        {
+          "t": "A2: 정부24는 주말에도 신청할 수 있어요."
+        },
+        {
+          "t": "점검 시간에는 잠시 멈출 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q3: 정부24 등본도 효력이 같나요?"
+        },
+        {
+          "t": "A3: 위조 방지 장치가 들어간 정식 서류예요."
+        },
+        {
+          "t": "다만 발급일 기준을 따지는 곳이 있어"
+        },
+        {
+          "t": "제출 날짜에 맞춰 뽑는 게 좋아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분은 등본을 주로 종이로 내세요,"
+        },
+        {
+          "t": "파일로 보내세요? 댓글로 알려 주세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "주민등록등본 인터넷 발급 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "주민등록등본 인터넷 발급은"
+        },
+        {
+          "t": "정부24에서 간편인증 뒤 4단계면 끝나요."
+        },
+        {
+          "t": "본인이 신청하면 무료예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "뒷자리 표시와 과거 주소는 제출처가",
+          "s": "red"
+        },
+        {
+          "t": "원하는 만큼만 넣는 게 안전해요.",
+          "s": "red"
+        },
+        {
+          "t": "주민등록초본이 필요한지도 함께 물어보고요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "급할 때 헤매지 않으려면"
+        },
+        {
+          "t": "오늘 휴대폰에 정부24 앱이 있는지,"
+        },
+        {
+          "t": "간편인증 앱이 깔려 있는지 먼저 확인해 보세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘 내용은 정부24 민원 안내와"
+        },
+        {
+          "t": "지자체 주민등록표 발급 안내에서"
+        },
+        {
+          "t": "확인한 정보를 바탕으로 정리했어요."
+        },
+        {
+          "t": "(2026년 10월 기준이라 이후 달라질 수 있어요)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "이상 성글벙글의 생활정보 포스팅이었습니다😎"
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">등본 무료 발급은 본인이 인터넷으로 신청할 때 돼요.<br>주민센터 창구는 한 통에 400원이에요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘은 주민등록등본 인터넷 발급을<br>처음 하는 분도 따라 할 수 있게<br>순서대로 포스팅으로 알아볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">결론부터 말하면 정부24에서<br>간편인증 한 번이면 집에서 바로 뽑혀요.<br>프린터가 없어도 파일로 저장할 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">전세 계약이나 회사 제출처럼<br>갑자기 등본 한 통이 급하게 필요한 날이 있어요.<br>이럴 때 동네 주민센터 문 여는 시간을<br>기다리는 분들이 많더라구요.</p>\n<p data-ke-size=\"size16\">[이미지 1] 거실 탁자에서 노트북을 열고 서류를 준비하는 자녀 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>주민등록등본 인터넷 발급, 어디서 하나요</h2>\n<p data-ke-size=\"size16\">[이미지 2] 햇살 드는 서재 책상 위에 놓인 노트북과 빈 종이 묶음</p>\n<p data-ke-size=\"size16\">주민등록등본 인터넷 발급은<br><span style=\"color: #0078cb;\"><b>행정안전부</b></span>가 운영하는 정부24에서 해요.<br>컴퓨터 누리집과 휴대폰 앱 두 곳 모두 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">컴퓨터로 하면 바로 프린터로 뽑기 좋고,<br>휴대폰으로 하면 파일로 저장해<br>문자나 메일로 보내기가 편해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">수수료는 창구마다 달라요.<br><span style=\"color: #0078cb;\"><b>주민센터 창구</b></span>는 한 통에 <span style=\"color: #0078cb;\"><b>400원</b></span>,<br><span style=\"color: #0078cb;\"><b>무인민원발급기</b></span>는 <span style=\"color: #0078cb;\"><b>200원</b></span>이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #fff8b2;\"><b>본인이나 같은 세대원이 정부24로 신청하면</b></span><br><span style=\"background-color: #fff8b2;\"><b>수수료 없이 무료로 받을 수 있어요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러 통이 필요해도 한 통씩 다시 뽑으면 되니<br>창구에서 줄 서서 기다릴 일이 없어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>정부24 간편인증, 준비할 것</h2>\n<p data-ke-size=\"size16\">[이미지 3] 휴대폰을 손에 들고 인증 알림을 기다리는 할아버지</p>\n<p data-ke-size=\"size16\">로그인 없이도 신청은 되지만<br>본인 확인은 꼭 거쳐야 해요.<br>이때 쓰는 게 간편인증이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">간편인증은 평소 쓰는 휴대폰 인증 앱으로<br>본인 확인을 하는 방식이에요.<br>공동인증서나 금융인증서도 쓸 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">인증 요청을 보내면 휴대폰에 알림이 와요.<br>알림을 눌러 확인하고 컴퓨터로 돌아와<br>확인 버튼을 누르면 본인 확인이 끝나요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>온라인에서는 남의 등본을 대신 신청할 수 없어요.</b></span><br>가족 것이 필요하면 같은 세대원이<br>자기 이름으로 인증해 신청해요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>주민등록등본 인터넷 발급 4단계</h2>\n<p data-ke-size=\"size16\">[이미지 4] 주민등록등본 인터넷 발급 4단계를 정리한 카드</p>\n<p data-ke-size=\"size16\">화면 글자는 앱 버전에 따라<br>조금 다를 수 있지만 흐름은 같아요.<br>주민등록등본 인터넷 발급은 이렇게 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">① 검색창에 주민등록표 등본 입력<br>② 발급하기 누르고 간편인증<br>③ 표시할 내용과 발급 형태 고르기<br>④ 신청 뒤 출력하거나 PDF로 저장</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">처음이라면 <span style=\"color: #0078cb;\"><b>4단계</b></span> 가운데 3단계에서<br>가장 오래 머물게 돼요.<br>아래에서 무엇을 고르면 되는지 따로 정리했어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #fff8b2;\"><b>4단계만 지나면 바로 내려받을 수 있어</b></span><br><span style=\"background-color: #fff8b2;\"><b>주민센터에 다녀오는 시간보다 훨씬 짧아요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>등본에 무엇을 표시할까요</h2>\n<p data-ke-size=\"size16\">[이미지 5] 등본 표시 항목을 고를 때 기준을 정리한 카드</p>\n<p data-ke-size=\"size16\">3단계에서 표시할 내용을 고르는 화면이 나와요.<br>과거 주소 변동, 세대 구성 사유 같은 항목이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">주민등록번호 뒷자리는 처음에 가려진 상태예요.<br><span style=\"color: #ff0010;\"><b>뒷자리는 제출처가 </b></span><span style=\"color: #0078cb;\"><b>13자리</b></span> 전부를<br>보이게 해 달라고 할 때만 표시해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #fff8b2;\"><b>필요한 것보다 많이 표시하면</b></span><br><span style=\"background-color: #fff8b2;\"><b>내 개인정보가 그만큼 더 나가게 돼요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">어떤 항목이 필요한지 모르겠다면<br>서류를 받을 곳에 먼저 물어보는 게 좋아요.<br>다시 뽑아도 무료라 부담은 없어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>주민등록초본과 등본, 무엇이 다를까</h2>\n<p data-ke-size=\"size16\">[이미지 6] 두 장의 빈 서류를 나란히 놓고 비교하는 할머니</p>\n<p data-ke-size=\"size16\">주민등록초본은 나 한 사람의<br>주소 변동 기록이 중심이에요.<br>등본은 우리 세대 전체가 함께 나와요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그래서 가족 관계나 세대원을 보여 줄 땐<br>등본, 이사 다닌 기록을 보여 줄 땐<br>주민등록초본을 내는 경우가 많아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">주민등록초본도 정부24에서<br>같은 방식으로 간편인증 뒤 무료로 받아요.<br>검색창에 주민등록초본이라고 치면 바로 나와요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">등본을 내야 하는데 주민등록초본을 내면<br>서류를 다시 내야 하는 일이 생겨요.<br>제출처가 둘 중 무엇을 원하는지 꼭 확인해요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>주민등록등본 인터넷 발급이 안 될 때</h2>\n<p data-ke-size=\"size16\">[이미지 7] 동네 주민센터 앞 벤치에 앉아 서류 봉투를 든 자녀</p>\n<p data-ke-size=\"size16\">인터넷으로 안 되는 경우도 있어요.<br>세상을 떠난 가족 명의의 등본은<br>온라인이나 무인민원발급기로 받을 수 없어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이럴 땐 신분증을 챙겨<br>가까운 주민센터 창구로 가야 해요.<br>필요한 서류를 전화로 미리 물어보면<br>한 번 방문으로 끝낼 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">휴대폰 인증이 계속 실패한다면<br>인증 앱이 최신인지, 이름과 번호를<br>정확히 넣었는지부터 살펴봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">간편인증이 어렵다면 공동인증서로 바꿔<br>다시 해 보는 것도 방법이에요.<br>그래도 안 되면 무인민원발급기를 찾아가요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>뽑은 등본, 파일로 보낼 때 볼 것</h2>\n<p data-ke-size=\"size16\">컴퓨터에서는 출력 창에서 프린터 대신<br>PDF 저장을 고르면 파일로 남길 수 있어요.<br>파일 이름에 날짜를 넣어 두면 찾기 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">휴대폰 앱에서는 전자문서지갑에 담아<br>제출처로 바로 보내는 방법도 있어요.<br>받는 곳이 이 방식을 받는지 먼저 물어봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>뒷자리가 보이는 등본 파일은</b></span><br><span style=\"color: #ff0010;\"><b>보낸 뒤 휴대폰과 컴퓨터에서 지워 두세요.</b></span><br>단체 대화방에 올리는 일도 피하는 게 좋아요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>주민등록등본 인터넷 발급 Q&amp;A</h2>\n<p data-ke-size=\"size16\">[이미지 8] 프린터 옆에서 갓 나온 종이를 집어 드는 손</p>\n<p data-ke-size=\"size16\">주민등록등본 인터넷 발급에 많이 묻는 세 가지예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 프린터가 없으면 어떻게 하나요?<br>A1: 출력 화면에서 <span style=\"color: #0078cb;\"><b>PDF</b></span>로 저장해 두면 돼요.<br>휴대폰 앱에서는 전자문서지갑으로<br>제출처에 바로 보낼 수도 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 주말에도 주민등록등본 인터넷 발급이 되나요?<br>A2: 정부24는 주말에도 신청할 수 있어요.<br>점검 시간에는 잠시 멈출 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q3: 정부24 등본도 효력이 같나요?<br>A3: 위조 방지 장치가 들어간 정식 서류예요.<br>다만 발급일 기준을 따지는 곳이 있어<br>제출 날짜에 맞춰 뽑는 게 좋아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분은 등본을 주로 종이로 내세요,<br>파일로 보내세요? 댓글로 알려 주세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>주민등록등본 인터넷 발급 정리</h2>\n<p data-ke-size=\"size16\">주민등록등본 인터넷 발급은<br>정부24에서 간편인증 뒤 4단계면 끝나요.<br>본인이 신청하면 무료예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>뒷자리 표시와 과거 주소는 제출처가</b></span><br><span style=\"color: #ff0010;\"><b>원하는 만큼만 넣는 게 안전해요.</b></span><br>주민등록초본이 필요한지도 함께 물어보고요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">급할 때 헤매지 않으려면<br>오늘 휴대폰에 정부24 앱이 있는지,<br>간편인증 앱이 깔려 있는지 먼저 확인해 보세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘 내용은 정부24 민원 안내와<br>지자체 주민등록표 발급 안내에서<br>확인한 정보를 바탕으로 정리했어요.<br>(2026년 10월 기준이라 이후 달라질 수 있어요)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>이상 성글벙글의 생활정보 포스팅이었습니다😎</p>"
+}
