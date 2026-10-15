@@ -21,6 +21,7 @@
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
+import { tistoryRelogin, onLoginPage } from './lib/tistory-login.mjs';
 
 const argv = process.argv.slice(2);
 const opt = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : d; };
@@ -105,6 +106,13 @@ async function main() {
       try {
         await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
         await sleep(4000);
+        // 2026-10-15: 첫 실행에서 관리 화면이 로그인 화면으로 갔다 — 티스토리 세션만 끊긴 것이면
+        // publish-tistory 처럼 "카카오계정으로 로그인" 버튼 하나로 돌아온다 (비밀번호는 넣지 않는다)
+        if (onLoginPage(page) && !index.relogin) {
+          const re = await tistoryRelogin(page, url, log);
+          index.relogin = re.ok ? 'ok' : re.why;
+          if (re.ok) { await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 }).catch(() => {}); await sleep(4000); }
+        }
         const texts = [];
         for (const fr of page.frames()) texts.push(await fr.evaluate(() => document.body?.innerText || '').catch(() => ''));
         const text = texts.filter(Boolean).join('\n\n----- frame -----\n\n');
