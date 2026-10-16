@@ -11,6 +11,7 @@
  *   publish_at: 2026-10-02 09:00   ← 예약발행 시각 (draft-day -Reserve 가 쓴다)
  *   related: 지난 글 제목 | 지난 글 제목   ← 글 끝 "함께 보면 좋은 글" (발행된 내 글 1~2편, 2026-10-07 사용자 승인)
  *   lead_keyword: 첫 인용구 키워드        ← 고정 인사말 앞 첫 인용구에 넣는, 제목과 다른 주제 키워드 (2026-10-15 원고부터)
+ *   source_url: https://… | https://…    ← 출처 ①(기관 자료) 글의 원문 주소 1~2개. 발행 때 출처 줄 아래 링크 카드 (2026-10-19 원고부터)
  *   ---
  *
  *   본문 줄1
@@ -109,6 +110,7 @@ export function parsePost(raw) {
     format: (meta.format || '').trim(),
     related: meta.related ? meta.related.split('|').map((s) => s.trim()).filter(Boolean) : [],
     leadKeyword: (meta.lead_keyword || '').trim(),
+    sourceUrls: meta.source_url ? meta.source_url.split('|').map((s) => s.trim()).filter(Boolean) : [],
     blocks,
     marks,
     warnings,
