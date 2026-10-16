@@ -56,6 +56,7 @@ function parseArgs(argv) {
       case '--dump':        out.dump = true; break;
       case '--no-tags':     out.tags = false; break;
       case '--no-related':  out.related = false; break;
+      case '--no-source-link': out.sourceLink = false; break;
       case '--help':        out.help = true; break;
       default:
         if (a.startsWith('--')) throw new Error(`알 수 없는 옵션: ${a}`);
@@ -86,6 +87,7 @@ const USAGE = `
                      태그만 넣고 닫은 뒤 저장한다 (발행 확인 버튼은 누르지 않는다)
   --no-tags          --save-draft 에서 태그를 넣지 않는다
   --no-related       원고 related(함께 보면 좋은 글)를 넣지 않는다
+  --no-source-link   원고 source_url(출처 원문 링크 카드)을 넣지 않는다
   --dry-run          발행 패널까지 열어 카테고리·태그를 넣고, 발행 버튼은 누르지 않는다
   --at "Y-M-D H:M"   (--dry-run 과 함께) 예약 시각을 채워 둔다
   --publish-now      실제 발행 버튼까지 누른다. 사람이 그 자리에서 결정했을 때만 쓴다
@@ -1095,6 +1097,66 @@ async function addRelatedLinks(page, editor, post, links) {
   return { ok: true, made, cards };
 }
 
+/**
+ * 출처 ① 글의 원문 주소를 출처 줄("(2026년 10월 기준…)") 바로 아래에 링크 카드로 넣는다 (2026-10-19 원고부터 — STATUS "시험 순서" 출처 원문 링크).
+ * 함께 보면 좋은 글과 같은 방법(진짜 붙여넣기 → 링크 단추)이고, 카드가 안 되면 그 줄을 지운다 — 주소 글자만 남기지 않는다 (2026-10-08 사용자 지시).
+ * 다른 줄이 사라지면 되돌린다. 이 단계 때문에 발행이 멈추지는 않는다.
+ */
+function sourceAnchor(post) {
+  const b = post.blocks.find((x) => x.type !== 'image' && x.lines.some((l) => /확인한 정보를 바탕으로/.test(l.t)));
+  return b?.lines.slice(-1)[0]?.t || null;
+}
+async function addOneSource(page, editor, anchor, url) {
+  const base = await linksTo(editor, url);
+  const copied = await copyToClipboard(page, url).catch(() => false);
+  if (!(await caretAtEnd(page, editor, anchor))) return { how: null, why: '출처 줄을 찾지 못함' };
+  await page.keyboard.press('Enter'); await sleep(300);
+  await resetToggles(editor);
+  if (copied) {
+    await page.keyboard.press(`${MOD}+v`);
+    if (await waitClickable(editor, url, base, 12000)) { await clearCurrentLine(page, editor, url, url); return { how: '카드(붙여넣기)' }; }
+    await clearCurrentLine(page, editor, url, url);
+  } else log('클립보드 복사가 안 돼 붙여넣기는 건너뜀');
+  try {
+    if (!(await caretAtEnd(page, editor, anchor))) throw new Error('출처 줄 없음');
+    await page.keyboard.press('ArrowDown'); await sleep(200);
+    await clickFirst(editor, RELATED_SEL.ogButton, { timeout: 3000 });
+    const { loc: input } = await findAnywhere(page, editor, RELATED_SEL.ogInput, { timeout: 4000 });
+    await input.fill(url); await sleep(200);
+    await input.press('Enter'); await sleep(1500);
+    try { (await findAnywhere(page, editor, RELATED_SEL.ogSearch, { timeout: 800 })).loc.click(); await sleep(1500); } catch { /* Enter 로 검색됨 */ }
+    const { loc: ok } = await findAnywhere(page, editor, RELATED_SEL.ogConfirm, { timeout: 8000 });
+    await ok.click();
+    if (await waitClickable(editor, url, base, 8000)) return { how: '카드(링크 단추)' };
+  } catch (e) { log(`링크 단추로 넣기 안 됨: ${e.message.split('\n')[0]}`); }
+  await page.keyboard.press('Escape').catch(() => {}); await sleep(300);
+  await clearCurrentLine(page, editor, url, url);
+  return { how: null, why: '붙여넣기·링크 단추 모두 카드가 안 생김' };
+}
+async function addSourceLinks(page, editor, post) {
+  const anchor = sourceAnchor(post);
+  if (!anchor) return { ok: false, why: '출처 ① 줄이 원고에 없음' };
+  const snap0 = await snapshot(editor);
+  let made = 0;
+  // 출처 줄 바로 아래에 차례로 끼워 넣으므로 뒤에서부터 넣어야 원고 순서가 된다
+  for (const url of [...post.sourceUrls].reverse()) {
+    const r = await addOneSource(page, editor, anchor, url);
+    if (r.how) { made++; log(`✓ ${r.how}: ${url}`); }
+    else warn(`✗ 출처 링크 카드를 만들지 못해 뺐어요 (${r.why}): ${url}`);
+    await sleep(500);
+  }
+  const after = await snapshot(editor);
+  const lost = lostLines(snap0, after);
+  if (lost.length) {
+    const back = await undoUntilRestored(page, editor, snap0, 30);
+    return { ok: false, why: `다른 글 ${lost.length}줄이 사라져 ${back ? '되돌림' : '되돌리지 못함'}`, lost: back ? null : lost };
+  }
+  const plain = after.filter((t) => post.sourceUrls.some((u) => t.includes(u)));
+  if (plain.length) warn(`출처 주소 글자 줄이 남았어요: ${plain.join(' / ')}`);
+  if (!made) return { ok: false, why: '출처 링크 카드를 하나도 만들지 못함' };
+  return { ok: true, made };
+}
+
 // ---------------------------------------------------------------- 본문 넣기
 /** 굵게/기울임/밑줄/취소선이 켜져 있으면 끈다. 켜진 채로 쓰면 글 전체에 그 서식이 붙는다. */
 async function resetToggles(editor) {
@@ -1581,6 +1643,23 @@ async function main() {
       }, COLORS);
       log(`굵게 확인: 굵게 안 된 강조 ${notBold.length}곳`);
       notBold.forEach((t) => manual.push(`굵게 → "${t}"`));
+    }
+
+    // ---- 출처 원문 링크 카드 (원고 source_url, 2026-10-19 원고부터). 실패해도 발행은 그대로 한다
+    if (args.sourceLink !== false && post.sourceUrls?.length) {
+      step(`7-2a. 출처 원문 링크 (${post.sourceUrls.length}개)`);
+      try {
+        const r = await addSourceLinks(page, editor, post);
+        if (r.ok) log(`출처 링크 ${r.made}개 넣음 — 모두 링크 카드`);
+        else {
+          warn(`출처 링크 넣기 실패 (${r.why})`);
+          if (r.lost) throw new Error(`출처 링크를 넣다가 글이 사라졌고 되돌리지 못했습니다: ${r.lost.slice(0, 3).join(' / ')}. 저장하지 않고 멈춥니다.`);
+        }
+        await dump(page, 'source-link');
+      } catch (e) {
+        if (/저장하지 않고 멈춥니다/.test(e.message)) throw e;
+        warn(`출처 링크 단계 건너뜀 (${e.message.split('\n')[0]})`);
+      }
     }
 
     // ---- 글 끝 "함께 보면 좋은 글" (원고 related, 2026-10-07 사용자 승인). 실패해도 발행은 그대로 한다

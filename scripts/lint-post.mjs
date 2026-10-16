@@ -21,6 +21,12 @@ const FRAME_CARDS_PER_DAY = 2;
 // 인사말 앞 사실 한 문장은 발행 때 인용구 1번으로 들어간다. 그 안에 제목·메인·서브 키워드와 다른, 같은 주제의 검색어
 // (lead_keyword)를 넣어 노출되는 검색어를 넓힌다. 예: 제목 "도시락 싸는 법" → 인용구 "어린이집 점심 도시락은 …"
 const LEAD_KW_FROM = '2026-10-15';
+// 출처 원문 링크 (2026-10-02 사용자 결정 "시험 순서" 10/19~) — 2026-10-19 네이버 원고부터.
+// 출처 ①(기관 자료) 글은 프런트매터 source_url 에 실제로 확인한 1차 원문 주소 1~2개. 발행 때 출처 줄 아래 링크 카드로 들어간다.
+// 출처 ②(생활 노하우) 글에는 달지 않는다. 블로그·카페·뉴스·영상 주소는 1차 원문이 아니다.
+const SOURCE_URL_FROM = '2026-10-19';
+const SOURCE_ONE = /확인한 정보를 바탕으로/;
+const NOT_PRIMARY = /(^|\.)(blog\.naver\.com|m\.blog\.naver\.com|cafe\.naver\.com|post\.naver\.com|n\.news\.naver\.com|news\.naver\.com|tistory\.com|brunch\.co\.kr|youtube\.com|youtu\.be|namu\.wiki|wikipedia\.org|instagram\.com|threads\.net|search\.naver\.com|google\.com|daum\.net)$/i;
 const plain = (s) => String(s).replace(/\[\/?(빨간글씨|파란글씨|노란배경)\]/g, '').replace(/[\s①-⑧✔⭕❌·,.!?()~\-]/g, '');
 const titleBracket = (t) => /\s\(([^()]*)\)\s*$/.exec(t);
 function planOf(file) {
@@ -171,6 +177,22 @@ for (const file of files) {
       if (normTitle(t) === normTitle(post.title)) errors.push(`related 에 자기 글 제목이 있습니다: ${t}`);
       else if (!done.has(normTitle(t))) errors.push(`related 제목이 content/archive/published.tsv 의 네이버 글에 없습니다: "${t}" — 발행이 끝난 글의 제목을 그대로 쓰세요`);
     }
+  }
+  // 출처 원문 링크 (2026-10-19 원고부터, 네이버)
+  {
+    const srcOne = texts.some((t) => SOURCE_ONE.test(t));
+    if (post.sourceUrls.length && tistory) errors.push('source_url 은 네이버 원고에만 씁니다 (티스토리는 아직 지원하지 않음)');
+    else if (post.sourceUrls.length && !srcOne) errors.push('source_url 은 출처 ①(기관 자료 — "…에서 확인한 정보를 바탕으로 정리했어요") 글에만 답니다');
+    else if (!tistory && srcOne && dated >= SOURCE_URL_FROM && !post.sourceUrls.length)
+      errors.push(`출처 ① 글은 프런트매터 source_url 에 실제로 확인한 원문 주소 1~2개를 적습니다 (${SOURCE_URL_FROM} 원고부터) — 확인한 원문 주소가 없으면 그 기관 이름을 출처로 쓰지 않습니다`);
+    if (post.sourceUrls.length > 2) errors.push(`source_url 은 2개까지 (지금 ${post.sourceUrls.length}개)`);
+    for (const u of post.sourceUrls) {
+      let url = null;
+      try { url = new URL(u); } catch { /* 아래에서 잡는다 */ }
+      if (!url || url.protocol !== 'https:' && url.protocol !== 'http:') errors.push(`source_url 이 주소 형식이 아닙니다: ${u}`);
+      else if (NOT_PRIMARY.test(url.hostname)) errors.push(`source_url 은 1차 원문(기관·법령·학술지) 주소여야 합니다 — 블로그·카페·뉴스·영상·검색 주소 안 됨: ${u}`);
+    }
+    if (post.sourceUrls.length) notes.push(`출처 원문 링크(발행 때 출처 줄 아래 카드): ${post.sourceUrls.join(' , ')}`);
   }
   // 티스토리 카테고리 (2026-10-05 사용자 지시): 생활보장·생활정보 두 개만. 보험 → 생활보장, 나머지 → 생활정보
   if (tistory && dated >= '2026-10-06') {
