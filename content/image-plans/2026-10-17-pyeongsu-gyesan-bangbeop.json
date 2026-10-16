@@ -1,0 +1,92 @@
+{
+  "slug": "2026-10-17-pyeongsu-gyesan-bangbeop",
+  "title": "평수 계산 방법, 제곱미터 평 변환으로 84㎡ 몇 평일까 (0.3025 곱하기)",
+  "source": "10/17(토) 티스토리 원고 (10/16 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 정보 카드는 로컬 합성(비용 0). 휴대폰·PC 화면은 비워 둔다(가짜 메뉴 글자 금지)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "새집 빈 거실 바닥에 앉아 줄자를 펼쳐 보는 성글이 (대표사진)",
+      "prompt": "Camera and composition: medium shot in an empty living room. Seonggeul, the blog host: a Korean woman in her 30s, round face, dark hair in a low bun, cream sweater with a mint scarf sitting on the floor of an empty new living room stretching out a tape measure Background color: soft sky blue. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot in an empty living room",
+      "bg": "soft sky blue",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "평수 계산 방법\n곱하기 0.3025"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "평수 계산 방법을 단계로 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "평수 계산 방법",
+        "items": [
+          "제곱미터에 0.3025 곱하기",
+          "평에 3.3058 곱하기",
+          "소수 첫째 자리에서 반올림하기"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "가구점 매장에서 소파 앞에 서서 줄자를 대 보는 신혼부부",
+      "prompt": "Camera and composition: full shot in a furniture store. A young Korean newlywed couple measuring a sofa with a tape measure in a furniture store Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "full shot in a furniture store",
+      "bg": "mint green"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "동네 부동산 사무소 앞 게시판을 들여다보는 중년 남성",
+      "prompt": "Camera and composition: waist-up shot outside a real estate office. A Korean man in his 50s in a gray jacket looking at a blank notice board in front of a neighborhood real estate office Background color: light butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "waist-up shot outside a real estate office",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "아파트 면적 종류를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "아파트 면적 종류",
+        "items": [
+          "전용면적은 우리 집 실내",
+          "공급면적은 복도까지 포함",
+          "계약면적은 주차장까지 포함",
+          "발코니는 서비스면적"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "아파트 놀이터 옆 산책로를 걷는 가족",
+      "prompt": "Camera and composition: wide shot of an apartment park path. A Korean family with a child walking along a path next to an apartment playground Background color: soft apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide shot of an apartment park path",
+      "bg": "soft apricot"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "주방 식탁에서 계산기와 메모지를 놓고 숫자를 적는 직장인",
+      "prompt": "Camera and composition: close-up at a kitchen table. A Korean office worker in her 30s writing on a blank memo pad next to a calculator with a blank display at a kitchen table Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up at a kitchen table",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "햇살 드는 빈 방 창가 바닥에 놓인 접이식 줄자와 이삿짐 상자",
+      "prompt": "Camera and composition: low-angle shot of an empty room floor. A folded tape measure and stacked moving boxes on the floor of an empty sunlit room by the window No people at all in this image. Background color: warm beige. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "low-angle shot of an empty room floor",
+      "bg": "warm beige"
+    }
+  ]
+}
