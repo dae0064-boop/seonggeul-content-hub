@@ -1,0 +1,92 @@
+{
+  "slug": "2026-10-17-sanjeong-teukrye-sincheong",
+  "title": "산정특례 신청 언제까지 할까, 산정특례 소급과 실손보험 (30일 이내)",
+  "source": "10/17(토) 티스토리 원고 (10/16 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 정보 카드는 로컬 합성(비용 0). 휴대폰·PC 화면은 비워 둔다(가짜 메뉴 글자 금지)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "병원 로비 의자에 앉아 서류 봉투를 들고 있는 성글이 (대표사진)",
+      "prompt": "Camera and composition: medium shot in a hospital lobby. Seonggeul, the blog host: a Korean woman in her 30s, round face, dark hair in a low bun, cream sweater with a mint scarf sitting on a chair in a calm hospital lobby holding a plain document envelope Background color: soft sky blue. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot in a hospital lobby",
+      "bg": "soft sky blue",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "산정특례 신청\n30일 안에"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "햇살 드는 병원 복도 창가에 놓인 빈 휠체어와 화분",
+      "prompt": "Camera and composition: wide shot of a hospital corridor. A sunny hospital corridor window corner with an empty wheelchair and a potted plant No people at all in this image. Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide shot of a hospital corridor",
+      "bg": "mint green"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "질환별 산정특례 본인부담을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "질환별 본인부담",
+        "items": [
+          "암은 급여 진료비의 5%",
+          "희귀·중증난치질환은 10%",
+          "암의 적용 기간은 5년"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "산정특례 신청 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "산정특례 신청 순서",
+        "items": [
+          "담당 의사가 등록 신청서 작성",
+          "병원에서 공단으로 대신 등록",
+          "공단 등록 확인",
+          "진료비에 적용"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "거실 탁자에서 가족이 함께 병원 서류를 정리하는 모습",
+      "prompt": "Camera and composition: high-angle shot over a living room table. A Korean family of three adults sorting blank hospital papers into folders together at a living room table Background color: light butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "high-angle shot over a living room table",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "카페 창가 자리에서 영수증을 모아 클립으로 묶는 중년 여성",
+      "prompt": "Camera and composition: waist-up shot at a cafe window seat. A Korean woman in her 50s at a cafe window seat clipping a stack of blank receipts together Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "waist-up shot at a cafe window seat",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "주방 냉장고 문에 붙은 달력에 날짜를 표시하는 할아버지",
+      "prompt": "Camera and composition: medium shot by a kitchen fridge. the Seonggeul grandpa: a Korean man in his late 70s, short gray hair, mint green vest over a white shirt marking a day with a pen on a blank calendar stuck to the fridge door Background color: soft apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot by a kitchen fridge",
+      "bg": "soft apricot"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "공원 산책길을 천천히 함께 걷는 노부부",
+      "prompt": "Camera and composition: full shot on a park path from behind. An elderly Korean couple walking slowly side by side along an autumn park path Background color: warm beige. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "full shot on a park path from behind",
+      "bg": "warm beige"
+    }
+  ]
+}
