@@ -27,6 +27,7 @@ docs/TISTORY.md    티스토리 자동화 — 원고 형식·검사 기준·처�
 docs/TISTORY-SEARCH.md 티스토리를 구글·네이버 검색에 등록하는 순서 — 사용자용
 docs/OPEN-ISSUES.md 아직 정하지 못한 것들. 규칙을 손대기 전에 읽는다
 docs/STATUS.md     진행 상황. 작업을 시작할 때 먼저 읽고, 끝낼 때 갱신한다
+docs/이웃활동.md   하루 10분 이웃 활동(공감·댓글) 순서 — 사용자용
 docs/OFFICE-PC.md  다른 PC(사무실 PC)에서 이어서 작업하는 순서 — 사용자용
 content/calendar/title-keywords/  제목용 키워드 조회 결과 (검색량). 제목·키워드를 정할 때 본다
 ```
