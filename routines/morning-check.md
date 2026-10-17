@@ -36,6 +36,9 @@
 3-1. **티스토리 상태 (매일, 2026-10-14 사용자 요청)**: Drive `ClaudeWorkspace/tistory-stats/<오늘>/` 의 public.json(애드센스 코드·ads.txt·sitemap),
    관리 화면 글자(방문·유입·검색어·수익/애드센스), google-site.txt(구글 색인 글 수)를 본다. stats-log.md 아래 "티스토리" 표에 한 줄
    (방문·구글/다음 유입·색인 글 수·애드센스 상태). 읽히지 않은 화면은 scripts/tistory-stats.mjs 를 고친다.
+   **수익 (2026-10-17 사용자 — 티스토리 목표 ① 조회수 ② 수익)**: 티스토리 로그의 "쿠팡 링크 확인"·"rel=\"sponsored\" 를 에디터가 지웠어요" 줄을 본다
+   (지웠으면 publish-tistory.mjs 가 링크를 넣는 방식을 고친다). 애드센스가 승인 전이면 그대로 두고, 승인되면 사용자에게 자동 광고 켜기를 한 번 안내한다.
+   `content/affiliate/coupang-wanted.txt` 에 5줄 이상 쌓이면 사용자에게 "데스크톱 앱에서 쿠팡 링크 만들기"를 한 번 안내한다(README 순서).
    바꾼 것은 content/calendar/publish-calendar.html·keyword-queue.txt·STATUS 를 고쳐 PR → 검사 → merge
    (캘린더 아티팩트 재발행은 월간 작업이 한다 — 여기선 소스만). 이미 써 둔 내일 원고는 손대지 않는다.
    하루 숫자가 작으면 단정하지 말고 흐름으로만 본다.

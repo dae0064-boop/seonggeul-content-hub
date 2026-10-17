@@ -11,8 +11,10 @@
  *   [노란배경]                 → 배경색 + 굵게 (#fff8b2)
  *   [이미지 N] 설명            → 표시 문단으로 남긴다 (사진 넣기는 아직 손으로)
  *   인사말 앞 사실 한 문장     → 티스토리 인용구 1번(<blockquote data-ke-style="style1">) — 2026-10-13 사용자 지시
+ *   [쿠팡 링크]                → opts.coupang 이 있으면 rel="sponsored" 링크 한 줄 (구글: 제휴 링크는 sponsored 로 표시)
  */
 import { parsePost, leadBlock } from './parse-post.mjs';
+import { isMarker } from './coupang.mjs';
 
 export { parsePost };
 
@@ -34,17 +36,22 @@ function lineHtml(l) {
   return styled(l.t, l.s);
 }
 
-/** post: parsePost() 결과 */
-export function toHtml(post) {
+/** post: parsePost() 결과. opts.blocks 로 바꾼 덩어리, opts.coupang = { url, label } (scripts/lib/coupang.mjs) */
+export function toHtml(post, opts = {}) {
   const out = [];
   let prev = null;
-  const lead = leadBlock(post.blocks);
-  for (const b of post.blocks) {
+  const blocks = opts.blocks || post.blocks;
+  const lead = leadBlock(blocks);
+  for (const b of blocks) {
     const tight = b.type === 'quote' || b.type === 'image' || prev === 'quote' || prev === 'image';
     if (prev && !tight) out.push(BLANK);
     if (b === lead) {
       out.push(`<blockquote data-ke-style="style1">${b.lines.map(lineHtml).join('<br>')}</blockquote>`);
       prev = 'quote'; continue;
+    }
+    if (opts.coupang && isMarker(b)) {
+      out.push(`<p data-ke-size="size16"><a href="${esc(opts.coupang.url)}" target="_blank" rel="sponsored noopener"><b>▶ 쿠팡에서 ${esc(opts.coupang.label)} 보기</b></a></p>`);
+      prev = b.type; continue;
     }
     if (b.type === 'quote') {
       out.push(`<h2 data-ke-size="size26" style="${QUOTE_H2}"><span style="${QUOTE_MARK}">“</span>${esc(b.lines[0].t)}</h2>`);

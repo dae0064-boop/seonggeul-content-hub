@@ -22,6 +22,7 @@ import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { parsePost, flatLines } from './lib/parse-post.mjs';
+import { DISCLOSURE, MARKER, isDisclosure, isMarker, loadLinks } from './lib/coupang.mjs';
 
 const OVERLAP = { err: 0.15, note: 0.08 };   // 네이버 글과 겹치는 본문 10글자 조각 비율
 const TITLE_SIM = { err: 0.4, note: 0.25 };  // 네이버 제목과의 글자 2개 조각 유사도(Dice)
@@ -98,6 +99,28 @@ for (const file of files) {
     const b = mine.size ? hit / mine.size : 0;
     if (b > worst.body) worst = { ...worst, body: b, bodyOf: n.slug };
   }
+  // 3) 쿠팡 파트너스 글 (2026-10-17 사용자 결정 — 티스토리 수익 칸, content/affiliate/README.md)
+  {
+    const iDis = post.blocks.findIndex(isDisclosure);
+    const nMark = post.blocks.filter(isMarker).length;
+    const iGreet = post.blocks.findIndex((b) => b.type === 'p' && b.lines[0]?.t.trim() === '안녕하세요');
+    if (post.coupang) {
+      if (post.category === '생활보장') errors.push('보험(생활보장) 글에는 쿠팡 링크를 넣지 않습니다.');
+      if (iDis < 0) errors.push(`대가성 문구 두 줄을 고정 인사말 바로 다음 덩어리로 그대로 씁니다:\n     ${DISCLOSURE.join('\n     ')}`);
+      else if (iGreet >= 0 && iDis !== iGreet + 1) errors.push('대가성 문구는 고정 인사말 바로 다음 덩어리에 둡니다.');
+      if (nMark !== 1) errors.push(`"${MARKER}" 한 줄짜리 덩어리를 정리 부분에 하나만 둡니다 (지금 ${nMark}개).`);
+      if (!loadLinks().has(post.coupang)) notes.push(`coupang: "${post.coupang}" 링크가 content/affiliate/coupang-links.tsv 에 없어요 — 이대로면 발행 때 쿠팡 부분이 빠진 보통 글로 나갑니다. 목록에 있는 키워드를 고르세요.`);
+      const day = path.basename(file).slice(0, 10);
+      const others = fs.readdirSync(path.dirname(file)).filter((f) => f.startsWith(day) && f.endsWith('.md') && f !== path.basename(file))
+        .filter((f) => /^coupang:\s*\S/m.test(fs.readFileSync(path.join(path.dirname(file), f), 'utf8')));
+      if (others.length) errors.push(`쿠팡 글은 하루 1편까지예요 (같은 날: ${others.join(', ')})`);
+    } else if (iDis >= 0 || nMark) {
+      errors.push('대가성 문구나 [쿠팡 링크] 가 있는데 프런트매터 coupang: 이 없습니다.');
+    }
+    if (/link\.coupang\.com|coupang\.com\//.test(raw.replace(/^---[\s\S]*?---/, ''))) errors.push('본문에 쿠팡 주소를 직접 쓰지 않습니다 — [쿠팡 링크] 자리만 두면 발행 때 들어갑니다.');
+    if (post.coupang) notes.push(`쿠팡 글: ${post.coupang}${loadLinks().get(post.coupang) ? ' (링크 있음)' : ''}`);
+  }
+
   const pct = (x) => `${Math.round(x * 100)}%`;
   if (worst.title >= TITLE_SIM.err) errors.push(`제목이 네이버 글(${worst.titleOf})과 ${pct(worst.title)} 비슷합니다 (${pct(TITLE_SIM.err)} 미만).`);
   else if (worst.title >= TITLE_SIM.note) notes.push(`제목이 네이버 글(${worst.titleOf})과 ${pct(worst.title)} 비슷합니다.`);
