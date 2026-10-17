@@ -178,6 +178,8 @@ for (const file of files) {
       else if (!done.has(normTitle(t))) errors.push(`related 제목이 content/archive/published.tsv 의 네이버 글에 없습니다: "${t}" — 발행이 끝난 글의 제목을 그대로 쓰세요`);
     }
   }
+  // 제휴 링크 채널 (2026-10-17 사용자 결정): 네이버 = 브랜드커넥트, 쿠팡 파트너스 = 티스토리만
+  if (!tistory && (post.coupang || /쿠팡\s*파트너스|\[쿠팡 링크\]|coupang\.com/.test(texts.join("\n")))) errors.push('네이버 원고에는 쿠팡 링크를 넣지 않습니다 (쿠팡 파트너스는 티스토리만 — content/affiliate/README.md)');
   // 출처 원문 링크 (2026-10-19 원고부터, 네이버)
   {
     const srcOne = texts.some((t) => SOURCE_ONE.test(t));

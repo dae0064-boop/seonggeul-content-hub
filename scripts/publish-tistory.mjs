@@ -253,6 +253,7 @@ async function readBack(page) {
       tables: root.querySelectorAll('table').length,
       // 색·배경을 입힌 글자 (에디터가 style 을 지우면 강조가 사라진다)
       styled: [...root.querySelectorAll('span[style]')].filter((e) => /color/i.test(e.getAttribute('style'))).length,
+      links: [...root.querySelectorAll('a[href]')].map((e) => ({ href: e.getAttribute('href'), rel: e.getAttribute('rel') || '' })),
     };
   });
 }
@@ -278,6 +279,8 @@ function checkBody(got, post, want, imagesWant = 0) {
   if (got.tables !== tWant) return `표 ${got.tables}개 (원고 ${tWant}개)`;
   if (got.styled < sWant) return `색 강조 ${got.styled}곳 (원고 ${sWant}곳) — 에디터가 색을 지웠다`;
   if (ratio < 0.97 || ratio > 1.05) return `글자 수가 원고의 ${Math.round(ratio * 100)}%`;
+  // 쿠팡 파트너스 글: 링크가 에디터에 그대로 남았는지 (빠지면 대가성 문구만 있는 글이 된다)
+  if (post.coupangUrl && !(got.links || []).some((l) => l.href === post.coupangUrl)) return `쿠팡 링크가 본문에 없음 (${post.coupangUrl})`;
   return '';
 }
 
@@ -573,6 +576,12 @@ async function main() {
     }
     const back = await readBack(page);
     log(`확인: H2 ${back.h2.length}개 · 색 강조 ${back.styled}곳 · 그림 ${back.images}장 · ${squash(back.text).length}자 (${back.via})`);
+    if (post.coupangUrl) {
+      const l = (back.links || []).find((x) => x.href === post.coupangUrl);
+      // 구글은 제휴 링크에 rel="sponsored" 를 달라고 한다. 에디터가 지우면 기록만 남긴다 (아침 확인이 보고 고친다)
+      if (l && !/sponsored|nofollow/.test(l.rel)) warn(`쿠팡 링크의 rel="sponsored" 를 에디터가 지웠어요 (rel="${l.rel}")`);
+      else if (l) log(`쿠팡 링크 확인: ${l.href} (rel="${l.rel}")`);
+    }
     if (missingImages.length) warn(`사진을 넣지 못한 자리: ${[...new Set(missingImages)].sort((a, b) => a - b).join(', ')}번 — 표시 문단으로 남겼어요.`);
 
 

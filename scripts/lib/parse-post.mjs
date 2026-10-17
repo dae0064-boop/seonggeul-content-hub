@@ -110,6 +110,7 @@ export function parsePost(raw) {
     format: (meta.format || '').trim(),
     related: meta.related ? meta.related.split('|').map((s) => s.trim()).filter(Boolean) : [],
     leadKeyword: (meta.lead_keyword || '').trim(),
+    coupang: (meta.coupang || '').trim(),   // 티스토리 쿠팡 파트너스 글 — 상품 키워드 (content/affiliate/coupang-links.tsv)
     sourceUrls: meta.source_url ? meta.source_url.split('|').map((s) => s.trim()).filter(Boolean) : [],
     blocks,
     marks,

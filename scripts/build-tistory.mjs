@@ -9,6 +9,7 @@
  */
 import fs from 'node:fs';
 import { parsePost, toHtml } from './lib/parse-tistory.mjs';
+import { applyCoupang, loadLinks } from './lib/coupang.mjs';
 
 const files = process.argv.slice(2);
 if (!files.length) {
@@ -16,18 +17,24 @@ if (!files.length) {
   process.exit(1);
 }
 
+const links = loadLinks();
 for (const file of files) {
   if (!file.endsWith('.md')) { console.error(`건너뜀(.md 아님): ${file}`); continue; }
   const post = parsePost(fs.readFileSync(file, 'utf8'));
   for (const w of post.warnings) console.warn(`⚠ ${file}: ${w}`);
 
-  const html = toHtml(post);
+  // 쿠팡 파트너스 글: 링크 목록에 있으면 링크를 넣고, 없으면 대가성 문구·링크 자리를 뺀다 (scripts/lib/coupang.mjs)
+  const cp = applyCoupang(post, links);
+  if (cp.note) console.log(`  ${file}: ${cp.note}`);
+  post.blocks = cp.blocks;
+  const html = toHtml(post, { coupang: cp.link });
   const json = {
     slug: file.split(/[\\/]/).pop().replace(/\.md$/, ''),
     title: post.title,
     category: post.category,
     tags: post.tags,
     publishAt: post.publishAt || undefined,
+    coupangUrl: cp.link?.url || undefined,
     blocks: post.blocks,
     html,
   };
