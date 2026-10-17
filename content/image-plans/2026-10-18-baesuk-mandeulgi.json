@@ -1,0 +1,101 @@
+{
+  "slug": "2026-10-18-baesuk-mandeulgi",
+  "title": "배숙 만들기, 통후추 넣는 배숙과 아기 배숙은 뭐가 다를까 (12개월)",
+  "source": "10/18(일) 원고 (10/17 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "김이 오르는 냄비 앞에서 국자로 배숙을 뜨는 성글이 (대표사진)",
+      "prompt": "Camera and composition: medium shot at a kitchen stove. Seonggeul, the blog host: a Korean woman in her 30s, round face, dark hair in a low bun, cream sweater with a mint scarf ladling warm pear dessert soup with pear pieces from a steaming pot on the stove Background color: soft sky blue. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot at a kitchen stove",
+      "bg": "soft sky blue",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "배숙 만들기\n무엇을 넣을까?"
+      },
+      "frame": "card"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "하얀 그릇에 담긴 따뜻한 배숙 한 그릇과 수저",
+      "prompt": "Camera and composition: close-up of a bowl on a table. A white ceramic bowl of warm Korean pear dessert soup with soft translucent pear pieces and a spoon beside it No people at all in this image. Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up of a bowl on a table",
+      "bg": "mint green"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "나무 도마 위에 놓인 배와 생강, 통후추, 대추",
+      "prompt": "Camera and composition: top-down shot of a cutting board. A round Korean pear, a knob of ginger, a few black peppercorns and red jujubes arranged on a wooden cutting board No people at all in this image. Background color: light butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "top-down shot of a cutting board",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "어른용 배숙과 아기 배숙을 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "배숙 이렇게 · 이건 피해요",
+        "items": [
+          [
+            "배에 통후추를 박고",
+            "아기 배숙에 꿀 넣기"
+          ],
+          [
+            "통후추를 빼고",
+            "통후추를 박은 채로"
+          ]
+        ],
+        "heads": [
+          "이렇게 해요",
+          "이건 피해요"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "배 조각에 통후추를 하나씩 꽂는 손",
+      "prompt": "Camera and composition: extreme close-up of hands. Hands pressing black peppercorns one by one into the back of a peeled pear wedge, no faces shown Background color: soft apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "extreme close-up of hands",
+      "bg": "soft apricot"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "작은 냄비에 배와 대추를 넣고 끓이는 장면",
+      "prompt": "Camera and composition: side view of a small pot on a stove. A small saucepan simmering on low heat with diced pear and red jujubes in clear water, gentle steam rising No people at all in this image. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "side view of a small pot on a stove",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "배숙 보관 때 확인할 것을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "배숙 보관",
+        "items": [
+          "완전히 식힌 뒤 냉장고에 넣기",
+          "먹을 만큼만 덜어서 데우기",
+          "아기 배숙은 따로 소량씩 담기"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "겨울 창가 탁자 위에 놓인 배숙 두 그릇과 담요",
+      "prompt": "Camera and composition: wide shot of a cozy window corner. the Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan and the Seonggeul adult child: a Korean woman in her 40s, shoulder-length brown bob hair, soft sky blue shirt sitting at a small table by a frosty window sharing two bowls of warm pear dessert soup, a soft blanket over their knees Background color: warm beige. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide shot of a cozy window corner",
+      "bg": "warm beige"
+    }
+  ]
+}
