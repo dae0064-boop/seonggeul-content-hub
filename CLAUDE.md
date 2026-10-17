@@ -12,6 +12,7 @@ content/posts/     원고. <날짜>-<슬러그>.md (정본) + .json (스크립�
 content/tistory/   티스토리 원고 (네이버와 다른 키워드·제목). .md (정본) + .json·.html (생성물)
 content/calendar/  발행 캘린더 아티팩트 소스, 키워드 목록
 content/board/     원고 작업실 아티팩트 소스
+content/affiliate/ 제휴 링크 원고 — 네이버=브랜드커넥트, 티스토리=쿠팡 파트너스. 손으로 올림, 자동 발행 대상 아님 (README.md)
 content/archive/published.tsv  발행이 끝나 지운 원고 목록 (날짜·채널·슬러그·메인 키워드·제목). 같은 키워드를 다시 쓰지 않게
 content/threads/   스레드 말투 규칙(voice.md) + 글감(topics.txt)
 content/threads/insurance/  스레드 보험 심의글 — 규칙(rules.md)·글감·10편 묶음(sets/)
