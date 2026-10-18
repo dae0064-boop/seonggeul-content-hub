@@ -1,5 +1,5 @@
 {
-  "slug": "2026-10-18-baesuk-mandeulgi",
+  "slug": "2026-10-19-baesuk-mandeulgi",
   "title": "배숙 만들기, 통후추 넣는 배숙과 아기 배숙은 뭐가 다를까 (12개월)",
   "source": "10/18(일) 원고 (10/17 밤 Routine)",
   "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 정보 카드는 로컬 합성(비용 0)",
@@ -15,8 +15,7 @@
       "overlay": {
         "kind": "thumb",
         "title": "배숙 만들기\n무엇을 넣을까?"
-      },
-      "frame": "card"
+      }
     },
     {
       "n": 2,
