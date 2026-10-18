@@ -17,6 +17,13 @@ import { checkCard } from './lib/overlay.mjs';
 const BUNDLE_FROM = '2026-10-12';
 const CARDS = [2, 3];
 const FRAME_CARDS_PER_DAY = 2;
+// 한 주 시험 (2026-10-18 사용자 승인 — "조회수가 무조건 1순위", 10/19~10/25 원고, 10/25 일요일에 결과를 보고 의논) — 네이버만.
+//   ① 대표사진 카드 틀 시험을 일찍 끝낸다: 모두 지금 방식(frame "card" 없음). 홈판에 걸린 글은 모두 지금 방식이었다
+//   ② 정보 카드는 8장 중 1~2장
+//   ③ 제목 = 메인 키워드 + 그 말을 친 사람의 질문 하나 + (숫자). 서브 키워드를 제목에 늘어놓지 않는다 (비율 50~60% 규칙을 쉰다)
+const WEEK_TEST_FROM = '2026-10-19';
+const CARDS_WEEK_TEST = [1, 2];
+const TITLE_QUESTION = /(\?|까요?|[나가]요)$/;
 // 첫 인용구 키워드 (2026-10-13 사용자 지시) — 2026-10-15 원고부터.
 // 인사말 앞 사실 한 문장은 발행 때 인용구 1번으로 들어간다. 그 안에 제목·메인·서브 키워드와 다른, 같은 주제의 검색어
 // (lead_keyword)를 넣어 노출되는 검색어를 넓힌다. 예: 제목 "도시락 싸는 법" → 인용구 "어린이집 점심 도시락은 …"
@@ -308,7 +315,11 @@ for (const file of files) {
     }
     const subsIn = post.subKeywords.filter((kw) => t.includes(kw.replace(/\s/g, '')));
     titleKw = { ratio: t.length ? cover.filter(Boolean).length / t.length : 0, subs: subsIn };
-    if (newRules) {
+    if (!tistory && dated >= WEEK_TEST_FROM) {
+      const head = (tb ? post.title.slice(0, tb.index) : post.title).trim();
+      if (!TITLE_QUESTION.test(head)) errors.push(`제목은 "메인 키워드, 질문 (숫자)" 모양으로 — 괄호 앞이 질문(…나요/…까/…?)으로 끝나야 합니다: "${post.title}"`);
+      if (subsIn.length > 1) notes.push(`제목에 서브 키워드가 ${subsIn.length}개 — 키워드를 늘어놓지 말고 질문 하나로`);
+    } else if (newRules) {
       if (!subsIn.length) errors.push(`제목에 서브 키워드가 없습니다 — 1~2개 넣으세요: "${post.title}"`);
       if (titleKw.ratio < TITLE_KW[0] || titleKw.ratio > TITLE_KW[1])
         notes.push(`제목 키워드 비율 ${Math.round(titleKw.ratio * 100)}% — 권장 ${TITLE_KW[0] * 100}~${TITLE_KW[1] * 100}%`);
@@ -384,7 +395,8 @@ for (const file of files) {
     if (!plan) notes.push('이미지 계획서가 아직 없어 정보 카드 검사를 건너뜁니다 — 계획서를 쓴 뒤 다시 돌리세요');
     else {
       const cards = plan.images.filter((im) => im.kind === 'card');
-      if (cards.length < CARDS[0] || cards.length > CARDS[1]) errors.push(`정보 카드(kind "card")는 8장 중 ${CARDS[0]}~${CARDS[1]}장 (지금 ${cards.length}장)`);
+      const want = !tistory && dated >= WEEK_TEST_FROM ? CARDS_WEEK_TEST : CARDS;
+      if (cards.length < want[0] || cards.length > want[1]) errors.push(`정보 카드(kind "card")는 8장 중 ${want[0]}~${want[1]}장 (지금 ${cards.length}장)`);
       const bodyPlain = plain(texts.join(''));
       for (const im of cards) {
         if (im.n === 1) errors.push('1번(대표사진)은 정보 카드로 만들지 않습니다');
@@ -395,7 +407,9 @@ for (const file of files) {
       }
       const framed = plan.images.some((im) => im.n === 1 && im.frame === 'card');
       if (tistory && framed) errors.push('티스토리 대표사진은 지금 방식으로 둡니다 (frame "card" 는 네이버만)');
-      if (!tistory) {
+      if (!tistory && dated >= WEEK_TEST_FROM) {
+        if (framed) errors.push('대표사진 카드 틀 시험은 끝났습니다 (2026-10-18) — 1번에 "frame": "card" 를 빼고 지금 방식으로');
+      } else if (!tistory) {
         const dir = file.replace(/[^\\/]+$/, '') || './';
         const sib = fs.readdirSync(dir).filter((f) => f.startsWith(dated) && f.endsWith('.md'));
         if (sib.length >= 5) {
@@ -460,7 +474,7 @@ for (const file of files) {
   if (newRules) {
     const range = charsNS < NS_CHARS[0] ? '짧음' : charsNS > NS_CHARS[1] ? '김' : 'OK';
     console.log(`  본문        : 공백 제외 ${charsNS}자 (기준 ${NS_CHARS[0]}~${NS_CHARS[1]}) ${range} · 공백 포함 ${chars}자`);
-    console.log(`  제목 키워드 : ${Math.round(titleKw.ratio * 100)}% (권장 ${TITLE_KW[0] * 100}~${TITLE_KW[1] * 100}%) · 서브 ${titleKw.subs.join(', ') || '없음'}`);
+    console.log(`  제목 키워드 : ${Math.round(titleKw.ratio * 100)}% (${!tistory && dated >= WEEK_TEST_FROM ? '비율 규칙 쉼 — 10/19 시험' : `권장 ${TITLE_KW[0] * 100}~${TITLE_KW[1] * 100}%`}) · 서브 ${titleKw.subs.join(', ') || '없음'}`);
   } else {
     const range = chars < MIN_CHARS ? '짧음' : chars > MAX_CHARS ? '김' : 'OK';
     console.log(`  본문        : ${chars}자 (기준 ${MIN_CHARS}~${MAX_CHARS}) ${range} · 공백 제외 ${charsNS}자`);
