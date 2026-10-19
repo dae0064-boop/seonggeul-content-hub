@@ -39,7 +39,7 @@
      전날 발행 5편 중 상위 20 에 든 글·공감 평균(blog-snapshot 의 seongdaeeyo).
      **2026-10-25(일) 아침에는 `routines/once/2026-10-25-weekly-test-report.md` 를 함께 한다** (PC 가 안 켜져도 Drive 에 있는 자료로).
      **2026-10-23(금) 아침에는 `routines/once/2026-10-23-login-key-check.md` 를 함께 한다** (사용자가 목요일까지 한 티스토리 로그인·네이버 검색 키 확인).
-     10/20~10/22 아침에는 발행 안 된 `content/tistory/2026-10-19-*` 를 clean-published 로 지우지 않는다(10/23 으로 옮겨 쓴다 — tistory-daily ⏸ 상자).
+     티스토리 로그인이 풀린 동안 발행 안 된 `content/tistory/*` 원고는 clean-published 로 지우지 않는다(로그인 뒤 순서대로 옮겨 쓴다 — tistory-daily 맨 위 상자).
      티스토리 로그인·검색 API 401 은 사용자가 목요일까지 하기로 했으니 그 전에는 다시 안내하지 않는다.
      **2026-11-02(월) 아침에는 `routines/once/2026-11-02-old-posts-review.md` 를 함께 한다** (옛 글 정리 후보 목록 — 보여 주기만, 지우지 않는다).
    - **이기는 글감 (10/20 원고부터, 2026-10-19 사용자 — 생활정보 4 + 생활보장 1, `routines/naver-daily.md` 맨 위 ⚡ 상자)**:

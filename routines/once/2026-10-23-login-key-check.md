@@ -4,10 +4,10 @@
 10:47 아침 확인 Routine(`routines/morning-check.md`)이 그날 할 일에 더해 이것을 한다.
 
 ## 1. 티스토리 로그인
-- Drive `run-logs` 오늘 `day-2026-10-23-tistory.log`: 5편 저장·예약 줄이 있으면 성공 → STATUS 에 적고 끝.
-  (10/23 원고는 10/19 글 5편을 옮긴 것 — tistory-daily ⏸ 상자.)
+- Drive `run-logs` 오늘 `day-2026-10-23-tistory.log`: 5편 저장·예약 줄이 있으면 성공 → STATUS 에 적는다.
+  밀린 원고(10/19~10/22 중 .done 없는 것)는 그날 밤 tistory-daily 가 오래된 것부터 옮겨 쓴다 — 몇 편이 남았는지 STATUS 에.
 - 카카오 비밀번호 화면·로그인 화면 줄이 그대로면: 사용자에게 `launchers/chrome-login.cmd` 순서를 다시 짧게(번호 단계, CLAUDE.md "PC 작업 안내").
-  10/23 글은 지우지 않고 다음 날로 옮긴다. 저장된 계정을 눌러도 비밀번호를 묻는 일이 또 생기면 scripts/publish-tistory.mjs·tistory-stats.mjs 의 로그인 단계를 고친다.
+  원고는 지우지 않는다(로그인 뒤 옮겨 쓴다). 저장된 계정을 눌러도 비밀번호를 묻는 일이 또 생기면 scripts/publish-tistory.mjs·tistory-stats.mjs 의 로그인 단계를 고친다.
 
 ## 2. 네이버 검색 키 (경쟁 확인)
 - Drive `keyword-volume/2026-10-23/title-keywords-*.txt` 에 `◆ 상위 10편:` 줄이 있으면 성공. `검색 API 401` 이면 실패.
