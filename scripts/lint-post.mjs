@@ -29,7 +29,7 @@ const TITLE_QUESTION = /(\?|까요?|[나가]요)$/;
 //      (우리 조회의 큰 몫은 살림 글 홈판이라 지키고, 생활보장 쪽을 나란히 시험한다)
 //   ② 사무실에서 같이 운영하는 한다팀장 블로그와 같은 메인 키워드는 쓰지 않는다 (두 블로그가 서로 자리를 뺏는다)
 //      목록: content/research/hande-keywords.txt (아침 확인이 Drive blog-snapshot 의 rich_grandmom 제목에서 채운다)
-//   ③ 그림: 생활보장 5장 (대표 1 + 본문 4 — 한다팀장도 5장), 살림 홈판형 8장 그대로 (홈판에 걸린 글은 모두 8장). 정보 카드 1~2장
+//   ③ 그림은 생활보장·살림 모두 8장 그대로 (같은 날 사용자 — "그대로 8장씩 진행"). 정보 카드 1~2장
 const TOPIC_SHIFT_FROM = '2026-10-20';
 const SHIFT_SPLIT = { 생활보장: 3, 생활정보: 2 };
 function handeKeywords() {
@@ -359,10 +359,10 @@ for (const file of files) {
     if (noFixed.length) errors.push(`고정 해시태그 빠짐: ${noFixed.join(', ')} — 주제 태그 뒤에 붙이세요`);
   }
 
-  // standards/이미지-기준.md — 한 글에 8장 (대표 1 + 본문 7). 네이버는 2026-10-20 원고부터 5장 (대표 1 + 본문 4)
-  const imgWant = !tistory && dated >= TOPIC_SHIFT_FROM && post.category === '생활보장' ? 5 : 8;
+  // standards/이미지-기준.md — 한 글에 8장 (대표 1 + 본문 7). 네이버는 2026-10-20 원고부터 빠지면 막는다
+  const imgWant = 8;
   if (images.length && images.length !== imgWant)
-    (!tistory && dated >= TOPIC_SHIFT_FROM ? errors : notes).push(`이미지 자리 ${images.length}개 — ${imgWant}개 기준입니다${!tistory && dated >= TOPIC_SHIFT_FROM ? ' (생활보장 5장, 살림 8장)' : ''}.`);
+    (!tistory && dated >= TOPIC_SHIFT_FROM ? errors : notes).push(`이미지 자리 ${images.length}개 — ${imgWant}개 기준입니다.`);
   // 하루 배분: 생활보장 3 + 생활정보 2 (2026-10-20 네이버 원고부터)
   if (!tistory && dated >= TOPIC_SHIFT_FROM) {
     const dir = file.replace(/[^\\/]+$/, '') || './';
