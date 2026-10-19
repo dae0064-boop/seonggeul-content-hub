@@ -24,6 +24,18 @@ const FRAME_CARDS_PER_DAY = 2;
 const WEEK_TEST_FROM = '2026-10-19';
 const CARDS_WEEK_TEST = [1, 2];
 const TITLE_QUESTION = /(\?|까요?|[나가]요)$/;
+// 주제 전환 (2026-10-19 사용자 대화 — 한다팀장 600~700 과 차이가 너무 크다, "보험·국가정책·복지로 결을 맞추자") — 2026-10-20 네이버 원고부터.
+//   ① 5편 모두 부모님 세대 의료비·돌봄·복지 제도 → 카테고리는 모두 생활보장
+//   ② 사무실에서 같이 운영하는 한다팀장 블로그와 같은 메인 키워드는 쓰지 않는다 (두 블로그가 서로 자리를 뺏는다)
+//      목록: content/research/hande-keywords.txt (아침 확인이 Drive blog-snapshot 의 rich_grandmom 제목에서 채운다)
+//   ③ 그림은 5장 (대표 1 + 본문 4) — 8장에서 줄여 비용을 아낀다. 정보 카드 1~2장은 그대로
+const TOPIC_SHIFT_FROM = '2026-10-20';
+function handeKeywords() {
+  try {
+    return fs.readFileSync('content/research/hande-keywords.txt', 'utf8').split(/\r?\n/)
+      .map((l) => l.replace(/#.*/, '').replace(/\s+/g, '')).filter(Boolean);
+  } catch { return []; }
+}
 // 첫 인용구 키워드 (2026-10-13 사용자 지시) — 2026-10-15 원고부터.
 // 인사말 앞 사실 한 문장은 발행 때 인용구 1번으로 들어간다. 그 안에 제목·메인·서브 키워드와 다른, 같은 주제의 검색어
 // (lead_keyword)를 넣어 노출되는 검색어를 넓힌다. 예: 제목 "도시락 싸는 법" → 인용구 "어린이집 점심 도시락은 …"
@@ -144,6 +156,7 @@ const CATEGORY_FROM = '2026-10-03';
 // 2026-10-07 사용자 지시: 맛집·카페는 사용자가 직접 쓴다 → 자동 원고는 보험 → 생활보장, 나머지 전부 → 생활정보
 const TWO_CATEGORIES_FROM = '2026-10-08';
 function allowedCategories(post, dated) {
+  if (dated >= TOPIC_SHIFT_FROM) return ['생활보장'];
   const t = `${post.title} ${post.mainKeyword}`;
   if (/보험/.test(t)) return ['생활보장'];
   if (dated >= TWO_CATEGORIES_FROM) return ['생활정보'];
@@ -212,7 +225,7 @@ for (const file of files) {
   // 2026-10-07 원고까지는 예전 기준(음식·카페·맛집 → 맛집·카페)
   if (!tistory && dated >= CATEGORY_FROM) {
     const ok = allowedCategories(post, dated);
-    const why = dated >= TWO_CATEGORIES_FROM ? '보험은 생활보장, 나머지는 전부 생활정보 (맛집·카페는 사용자가 직접 씁니다)' : '보험은 생활보장, 음식·카페·맛집은 맛집·카페, 나머지는 생활정보';
+    const why = dated >= TOPIC_SHIFT_FROM ? `${TOPIC_SHIFT_FROM} 원고부터 5편 모두 의료비·돌봄·복지 제도 글이라 생활보장` : dated >= TWO_CATEGORIES_FROM ? '보험은 생활보장, 나머지는 전부 생활정보 (맛집·카페는 사용자가 직접 씁니다)' : '보험은 생활보장, 음식·카페·맛집은 맛집·카페, 나머지는 생활정보';
     if (!ok.includes(post.category)) errors.push(`category 는 "${ok.join('" 또는 "')}" 여야 합니다 (지금 "${post.category || '없음'}") — ${why}`);
     const all = `${post.title}\n${texts.join('\n')}`;
     for (const [re, name] of COMMERCIAL) {
@@ -344,9 +357,16 @@ for (const file of files) {
     if (noFixed.length) errors.push(`고정 해시태그 빠짐: ${noFixed.join(', ')} — 주제 태그 뒤에 붙이세요`);
   }
 
-  // standards/이미지-기준.md — 한 글에 8장 (대표 1 + 본문 7)
-  if (images.length && images.length !== 8)
-    notes.push(`이미지 자리 ${images.length}개 — 8개 기준입니다.`);
+  // standards/이미지-기준.md — 한 글에 8장 (대표 1 + 본문 7). 네이버는 2026-10-20 원고부터 5장 (대표 1 + 본문 4)
+  const imgWant = !tistory && dated >= TOPIC_SHIFT_FROM ? 5 : 8;
+  if (images.length && images.length !== imgWant)
+    (imgWant === 5 ? errors : notes).push(`이미지 자리 ${images.length}개 — ${imgWant}개 기준입니다.`);
+  // 한다팀장 블로그와 같은 메인 키워드 금지 (2026-10-20 네이버 원고부터)
+  if (!tistory && dated >= TOPIC_SHIFT_FROM && post.mainKeyword) {
+    const mk = post.mainKeyword.replace(/\s+/g, '');
+    const hit = handeKeywords().find((k) => k === mk);
+    if (hit) errors.push(`메인 키워드 "${post.mainKeyword}" 는 한다팀장 블로그가 이미 쓴 말입니다 (content/research/hande-keywords.txt) — 같은 묶음의 다른 질문으로`);
+  }
 
   // 고정 인사말. 2026-10-12 원고부터는 그 앞에 사실 한 문장(1~2줄) 덩어리가 먼저 온다
   if (bundle) {
@@ -396,7 +416,7 @@ for (const file of files) {
     else {
       const cards = plan.images.filter((im) => im.kind === 'card');
       const want = !tistory && dated >= WEEK_TEST_FROM ? CARDS_WEEK_TEST : CARDS;
-      if (cards.length < want[0] || cards.length > want[1]) errors.push(`정보 카드(kind "card")는 8장 중 ${want[0]}~${want[1]}장 (지금 ${cards.length}장)`);
+      if (cards.length < want[0] || cards.length > want[1]) errors.push(`정보 카드(kind "card")는 ${plan.images.length}장 중 ${want[0]}~${want[1]}장 (지금 ${cards.length}장)`);
       const bodyPlain = plain(texts.join(''));
       for (const im of cards) {
         if (im.n === 1) errors.push('1번(대표사진)은 정보 카드로 만들지 않습니다');

@@ -38,6 +38,9 @@
      월요일 운영 점검(4)도 이 세 가지는 건드리지 않는다. 매일 STATUS "한 주 시험 기록" 에 한 줄: 날짜·조회수·홈판 %(건수)·검색 유입·
      전날 발행 5편 중 상위 20 에 든 글·공감 평균(blog-snapshot 의 seongdaeeyo).
      **2026-10-25(일) 아침에는 `routines/once/2026-10-25-weekly-test-report.md` 를 함께 한다** (PC 가 안 켜져도 Drive 에 있는 자료로).
+   - **주제 전환 (10/20 원고부터, 2026-10-19 사용자 대화 — 5편 모두 부모님 세대 의료비·돌봄·복지 제도, `routines/naver-daily.md` 맨 위 ⚡ 상자)**:
+     한 주 시험 기록 줄에 "주제 전환 글 중 상위 20 에 든 글·그 글의 검색어"를 더 적는다. 3일 동안 주제를 되돌리지 않는다.
+     **2026-10-22(목) 아침에는 `routines/once/2026-10-22-topic-shift-check.md` 를 함께 한다** (1차 판정, 사용자에게 짧게 보고).
 3-1. **티스토리 상태 (매일, 2026-10-14 사용자 요청)**: Drive `ClaudeWorkspace/tistory-stats/<오늘>/` 의 public.json(애드센스 코드·ads.txt·sitemap),
    관리 화면 글자(방문·유입·검색어·수익/애드센스), google-site.txt(구글 색인 글 수)를 본다. stats-log.md 아래 "티스토리" 표에 한 줄
    (방문·구글/다음 유입·색인 글 수·애드센스 상태). 읽히지 않은 화면은 scripts/tistory-stats.mjs 를 고친다.
@@ -55,6 +58,8 @@
 5. **비교 블로그** (2026-10-14 다시 켬 — 위 사용자 지시): `content/research/blog-snapshot.txt` 에 rich_grandmom(한다팀장)을 두어
    아침 실행이 Drive `research/blog-snapshot/<날짜>/rich_grandmom/` 에 최근 글 목록(제목·시각·분류·공감·댓글)을 남긴다.
    월요일 점검에서 우리 글과 견준다 — 주제 폭, 제목 모양, 공감·댓글, 발행 시각. 그 블로그 글을 베끼지 않는다.
+   **매일** 그 summary.md 의 제목에서 쉼표 앞 말(메인 키워드)을 `content/research/hande-keywords.txt` 에 없으면 더한다 (2026-10-20 네이버 원고부터
+   같은 메인 키워드를 검사기가 막는다 — 같은 사무실 블로그끼리 자리를 뺏지 않게).
 5-1. **지난 원고 지우기** (2026-10-05 사용자 지시): `node scripts/clean-published.mjs` — 오늘보다 앞 날짜의 원고·이미지 계획서를 지우고
    `content/archive/published.tsv` 에 남긴다. 어제 글이 예약·발행됐는지 1번에서 확인한 뒤 같은 PR 에 넣는다.
    어제 글 중 실패해 발행 안 된 글이 있으면 그 글은 지우지 말고(--before 를 그 날짜로) 사용자에게 알린다.
