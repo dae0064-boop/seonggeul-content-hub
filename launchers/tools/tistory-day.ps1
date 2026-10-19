@@ -192,5 +192,13 @@ $result | Format-Table -AutoSize | Out-String | ForEach-Object { Say $_ }
 if ($Reserve) { Say '예약된 글은 티스토리 관리 > 글 관리에서, 나머지는 글쓰기 화면 아래 "임시저장" 옆 숫자에서 확인하세요.' 'Green' }
 else { Say '발행은 하지 않았어요. 티스토리 글쓰기 화면 아래 "임시저장" 옆 숫자에서 확인하세요.' 'Green' }
 if ($lockDir -and $lockDir -like '*dumps\run-locks*') { [void](Sync-LocalLocks $Date) }
+# 예약이 안 된 글이 있으면 화면에 알림 창 (2026-10-19 사용자 — 10/19 카카오 로그인이 풀려 0편이었는데 바로 알리지 못했다)
+if ($Reserve -and -not $DryRun) {
+  $bad = @($result | Where-Object { $_.결과 -notlike '예약발행*' })
+  if ($bad.Count) {
+    $why = if (Select-String -Path $log -Pattern '로그인 화면으로 갔습니다|카카오 비밀번호' -Quiet) { "카카오 로그인이 풀렸어요.`n launchers 폴더의 chrome-login.cmd 를 더블클릭해 로그인한 뒤`n auto-day.cmd 를 다시 더블클릭해 주세요." } else { '다음 다시 시도 시각에 한 번 더 해 봐요. 그래도 안 되면 아침 확인이 고칩니다.' }
+    & (Join-Path $PSScriptRoot 'alert.ps1') -Title '성글벙글 - 티스토리 예약 안 됨' -Message "오늘 티스토리 글 $(@($mds).Count)편 중 $($bad.Count)편이 예약되지 않았어요.`n`n$why"
+  }
+}
 Release
 Share

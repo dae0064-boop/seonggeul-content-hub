@@ -215,5 +215,13 @@ if ($lockDir -and $lockDir -like '*dumps\run-locks*') {
   $moved = Sync-LocalLocks $Date
   if ($moved) { Say "이제 Google Drive 가 보여서 처리 표시 $moved 개를 옮겼어요 (다른 PC 가 같은 글을 다시 올리지 않게)." 'Gray' }
 }
+# 예약이 안 된 글이 있으면 화면에 알림 창 (2026-10-19 사용자 — "안 됐으면 말을 했었어야지")
+if ($Reserve) {
+  $bad = @($result | Where-Object { $_.결과 -notlike '예약발행*' })
+  if ($bad.Count) {
+    $why = if (Select-String -Path $log -Pattern '로그인 페이지로 이동' -Quiet) { "네이버 로그인이 풀렸을 수 있어요.`n launchers 폴더의 chrome-login.cmd 를 더블클릭해 로그인한 뒤`n auto-day.cmd 를 다시 더블클릭해 주세요." } else { '다음 다시 시도 시각에 한 번 더 해 봐요. 그래도 안 되면 아침 확인이 고칩니다.' }
+    & (Join-Path $PSScriptRoot 'alert.ps1') -Title '성글벙글 - 네이버 예약 안 됨' -Message "오늘 네이버 글 $($bad.Count)편이 예약되지 않았어요.`n`n$why"
+  }
+}
 Share
 Release
