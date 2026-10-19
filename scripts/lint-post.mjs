@@ -25,13 +25,17 @@ const WEEK_TEST_FROM = '2026-10-19';
 const CARDS_WEEK_TEST = [1, 2];
 const TITLE_QUESTION = /(\?|까요?|[나가]요)$/;
 // 주제 전환 (2026-10-19 사용자 대화 — 한다팀장 600~700 과 차이가 너무 크다, "보험·국가정책·복지로 결을 맞추자") — 2026-10-20 네이버 원고부터.
-//   ① 하루 5편 = 생활보장 3편(부모님 세대 의료비·돌봄·복지 제도) + 살림 홈판형 2편(생활정보) — 같은 날 사용자 승인 "3+2 로 진행"
-//      (우리 조회의 큰 몫은 살림 글 홈판이라 지키고, 생활보장 쪽을 나란히 시험한다)
+//   ① 하루 5편 = 생활정보 4편 + 생활보장 1편 — 같은 날 저녁 사용자 최종 결정 "생활정보로 꾸준히 밀고 가자"
+//      (3+2·5편 모두 생활보장 안은 버림. 생활보장 1편은 보험 정보글 또는 부모님 세대 의료비·돌봄 제도)
 //   ② 사무실에서 같이 운영하는 한다팀장 블로그와 같은 메인 키워드는 쓰지 않는다 (두 블로그가 서로 자리를 뺏는다)
 //      목록: content/research/hande-keywords.txt (아침 확인이 Drive blog-snapshot 의 rich_grandmom 제목에서 채운다)
 //   ③ 그림은 생활보장·살림 모두 8장 그대로 (같은 날 사용자 — "그대로 8장씩 진행"). 정보 카드 1~2장
 const TOPIC_SHIFT_FROM = '2026-10-20';
-const SHIFT_SPLIT = { 생활보장: 3, 생활정보: 2 };
+const SHIFT_SPLIT = { 생활정보: 4, 생활보장: 1 };
+// 메인 키워드 상한 (같은 날 우리 자료 분석 — 10/6~10/17 메인 12,000 넘는 말 7개(밤 찌는 시간 18,470·전어 제철 24,750·굴 제철 18,200·
+// 드럼세탁기 청소 13,070·에어프라이어 고구마 14,710·생밤 보관법 26,520·에어컨 청소 28,170)는 검색 유입이 거의 없었다 — 최적화 블로그가 차지한 말.
+// 유입이 꾸준했던 말은 1,000~10,000 (은행 까는법 1,350·고등어 제철 2,410·귤 보관법 4,990·되 돼 구분 8,780·초파리 없애는 법 10,580)
+const MAIN_MAX = 12000;
 function handeKeywords() {
   try {
     return fs.readFileSync('content/research/hande-keywords.txt', 'utf8').split(/\r?\n/)
@@ -159,7 +163,7 @@ const CATEGORY_FROM = '2026-10-03';
 const TWO_CATEGORIES_FROM = '2026-10-08';
 function allowedCategories(post, dated) {
   const t = `${post.title} ${post.mainKeyword}`;
-  if (dated >= TOPIC_SHIFT_FROM) return /보험/.test(t) ? ['생활보장'] : ['생활보장', '생활정보'];
+  if (dated >= TOPIC_SHIFT_FROM) return /보험/.test(t) ? ['생활보장'] : ['생활정보', '생활보장'];
   if (/보험/.test(t)) return ['생활보장'];
   if (dated >= TWO_CATEGORIES_FROM) return ['생활정보'];
   if (/맛집|카페|식당|음식|메뉴|디저트|빵집|브런치/.test(t)) return ['맛집·카페'];
@@ -227,7 +231,7 @@ for (const file of files) {
   // 2026-10-07 원고까지는 예전 기준(음식·카페·맛집 → 맛집·카페)
   if (!tistory && dated >= CATEGORY_FROM) {
     const ok = allowedCategories(post, dated);
-    const why = dated >= TOPIC_SHIFT_FROM ? '의료비·돌봄·복지 제도(보험 포함)는 생활보장, 살림 홈판형은 생활정보' : dated >= TWO_CATEGORIES_FROM ? '보험은 생활보장, 나머지는 전부 생활정보 (맛집·카페는 사용자가 직접 씁니다)' : '보험은 생활보장, 음식·카페·맛집은 맛집·카페, 나머지는 생활정보';
+    const why = dated >= TOPIC_SHIFT_FROM ? '보험·의료비·돌봄 제도 글은 생활보장, 살림 글은 생활정보' : dated >= TWO_CATEGORIES_FROM ? '보험은 생활보장, 나머지는 전부 생활정보 (맛집·카페는 사용자가 직접 씁니다)' : '보험은 생활보장, 음식·카페·맛집은 맛집·카페, 나머지는 생활정보';
     if (!ok.includes(post.category)) errors.push(`category 는 "${ok.join('" 또는 "')}" 여야 합니다 (지금 "${post.category || '없음'}") — ${why}`);
     const all = `${post.title}\n${texts.join('\n')}`;
     for (const [re, name] of COMMERCIAL) {
@@ -246,6 +250,7 @@ for (const file of files) {
     const v = volumeOf(post.mainKeyword);
     if (v == null) notes.push(`메인 키워드 "${post.mainKeyword}" 검색량 자료가 없어요 — keyword-queue.txt 에 넣어 조회해 두세요`);
     else if (v < minVolume(dated)) errors.push(`메인 키워드 "${post.mainKeyword}" 월 검색량 ${v} — ${minVolume(dated)} 이상인 말로 바꾸세요 (1,000~10,000 우선)`);
+    else if (dated >= TOPIC_SHIFT_FROM && v > MAIN_MAX) errors.push(`메인 키워드 "${post.mainKeyword}" 월 검색량 ${v.toLocaleString()} — ${MAIN_MAX.toLocaleString()} 넘는 말은 최적화 블로그가 차지해 우리 글이 유입을 못 받았습니다. 서브로 쓰고, 메인은 그 말의 자동완성·연관 중 1,000~10,000 인 구체적인 말로`);
     else notes.push(`메인 키워드 "${post.mainKeyword}" 월 검색량 ${v.toLocaleString()}`);
   }
   const bundle = dated >= BUNDLE_FROM;
@@ -371,7 +376,7 @@ for (const file of files) {
       const cats = sib.map((f) => { try { return parsePost(fs.readFileSync(dir + f, 'utf8')).category; } catch { return ''; } });
       for (const [c, n] of Object.entries(SHIFT_SPLIT)) {
         const got = cats.filter((x) => x === c).length;
-        if (got !== n) errors.push(`같은 날(${dated}) ${c} ${got}편 — 하루 생활보장 ${SHIFT_SPLIT.생활보장} + 생활정보(살림 홈판형) ${SHIFT_SPLIT.생활정보} (2026-10-19 사용자 승인)`);
+        if (got !== n) errors.push(`같은 날(${dated}) ${c} ${got}편 — 하루 생활정보 ${SHIFT_SPLIT.생활정보} + 생활보장 ${SHIFT_SPLIT.생활보장} (2026-10-19 사용자 결정)`);
       }
     }
   }

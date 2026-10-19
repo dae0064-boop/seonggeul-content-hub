@@ -14,6 +14,8 @@
  *   2) 검색광고 API 연관 키워드 + 월간 검색량 (.env 의 NAVER_AD_* 필요. 없으면 건너뜀)
  *   3) 자동완성 후보의 검색량 조회
  *   4) 블로그 글 수 (NAVER_CLIENT_ID/SECRET 이 있을 때만) — 많을수록 경쟁이 세다
+ *   5) 메인 키워드의 블로그 검색 상위 10편 나이 (같은 키) — 2026-10-19 사용자 "최적화 블로그에 밀리지 않는 주제".
+ *      상위가 오래된 글(1년 넘음)로 차 있으면 새 글이 들어갈 틈이 있고, 30일 안 글로 차 있으면 지금 경쟁이 세다.
  *
  * 결과: dumps/title-keywords-<이름>.json 과 .txt (dumps/ 는 git 에 올라가지 않는다)
  * 클라우드 세션에서는 naver.com 이 막혀 돌지 않는다. 사용자 PC 에서 돌린다.
@@ -118,9 +120,24 @@ async function blogTotal(query, host) {
   const res = await fetch(`${host}/v1/search/blog.json?query=${encodeURIComponent(query)}&display=1`, {
     headers: { 'X-Naver-Client-Id': process.env.NAVER_CLIENT_ID, 'X-Naver-Client-Secret': process.env.NAVER_CLIENT_SECRET },
   });
-  if (!res.ok) throw new Error(`검색 API ${res.status}`);
+  if (!res.ok) throw new Error(`검색 API ${res.status}${res.status === 401 ? ' — 네이버 개발자센터 앱에 \'검색\' API 가 없거나 키가 틀렸어요 (docs/KEYWORD-API.md)' : ''}`);
   return (await res.json()).total ?? null;
 }
+/** 블로그 검색 상위 10편의 나이. 네이버 블로그 탭 순서와 꼭 같지는 않지만 경쟁 정도를 가늠한다 */
+async function blogTop(query, host, today = new Date()) {
+  const res = await fetch(`${host}/v1/search/blog.json?query=${encodeURIComponent(query)}&display=10&sort=sim`, {
+    headers: { 'X-Naver-Client-Id': process.env.NAVER_CLIENT_ID, 'X-Naver-Client-Secret': process.env.NAVER_CLIENT_SECRET },
+  });
+  if (!res.ok) throw new Error(`검색 API ${res.status}`);
+  const items = (await res.json()).items || [];
+  const ages = items.map((it) => {
+    const m = /^(\d{4})(\d{2})(\d{2})$/.exec(String(it.postdate || ''));
+    return m ? Math.floor((today - new Date(`${m[1]}-${m[2]}-${m[3]}T00:00:00`)) / 86400000) : null;
+  }).filter((x) => x != null);
+  const blogs = new Set(items.map((it) => it.bloggerlink).filter(Boolean));
+  return { n: items.length, old: ages.filter((a) => a > 365).length, fresh: ages.filter((a) => a <= 30).length, newest: ages.length ? Math.min(...ages) : null, blogs: blogs.size };
+}
+const topLine = (t) => `상위 ${t.n}편: 1년 넘은 글 ${t.old}편 · 30일 안 글 ${t.fresh}편 · 블로그 ${t.blogs}곳${t.newest != null ? ` · 가장 최근 ${t.newest}일 전` : ''}`;
 /** 10 미만은 "< 10" 문자열로 온다 */
 function toCount(v) {
   if (typeof v === 'number') return v;
@@ -228,6 +245,7 @@ async function main() {
     entry.candidates = entry.candidates.slice(0, args.max + 1 + t.subs.length);
 
     if (hasOpen) {
+      try { entry.top = await blogTop(t.main, openHost); console.log(`   ◆ ${topLine(entry.top)}`); } catch (e) { entry.notes.push(e.message); }
       for (const c of entry.candidates.slice(0, 12)) {
         try { c.blogs = await blogTotal(c.keyword, openHost); } catch (e) { entry.notes.push(e.message); break; }
         await sleep(120);
@@ -247,6 +265,7 @@ async function main() {
   fs.writeFileSync(`${base}.json`, JSON.stringify({ generatedAt: new Date().toISOString(), hasAd, hasOpen, report }, null, 2));
   const txt = report.map((e) => [
     `■ ${e.main}${e.title ? `  — 지금 제목: ${e.title}` : ''}`,
+    ...(e.top ? [`  ◆ ${topLine(e.top)}`] : []),
     ...e.candidates.map((c) => `  ${String(c.total ?? '-').padStart(7)}  ${c.keyword}  [${c.source}]${c.blogs != null ? `  글 ${c.blogs}` : ''}`),
     ...e.notes.map((n) => `  ! ${n}`),
   ].join('\n')).join('\n\n');
