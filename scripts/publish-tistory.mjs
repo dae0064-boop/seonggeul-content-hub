@@ -307,6 +307,37 @@ async function pickCategory(page, name) {
   if (!label.includes(name)) throw new Error(`카테고리 버튼이 "${label}" 로 남음`);
 }
 
+// 블로그에 카테고리가 없으면 관리 > 카테고리에서 만든다 (2026-10-20 — '생활보장'이 10/10 부터 없어 보험 글이 카테고리 없이 나갔다.
+// 사용자에게 여러 번 안내했지만 저장되지 않았다). 새 탭에서 하고 닫는다. 지금 쓰는 글의 목록에는 바로 안 보이므로 다음 글부터 골라진다.
+// 화면을 실제로 본 적이 없는 단계라 글자 기반 후보로 찾고, 단계마다 덤프를 남긴다. 실패해도 발행은 멈추지 않는다.
+async function ensureCategory(context, blog, name) {
+  const page = await context.newPage();
+  try {
+    await page.goto(`https://${blog}.tistory.com/manage/category`, { waitUntil: 'domcontentloaded' });
+    await sleep(2500);
+    if ((await page.innerText('body').catch(() => '')).includes(name)) return '이미 있음';
+    await clickFirst(page, ['button:has-text("카테고리 추가")', 'a:has-text("카테고리 추가")', ':text("카테고리 추가")'], { timeout: 8000 });
+    await sleep(800);
+    const inp = await findFirst(page, ['input[placeholder*="카테고리"]:visible', '.wrap_add input[type="text"]', 'input.tf_g:visible', 'input[type="text"]:visible'], { timeout: 5000 });
+    await inp.loc.fill(name);
+    await sleep(300);
+    await clickFirst(page, ['button:has-text("확인")', 'button.btn_confirm', 'button:has-text("추가")'], { timeout: 4000 });
+    await sleep(800);
+    await dump(page, 'category-added');
+    await clickFirst(page, ['button:has-text("변경사항 저장")', 'button:has-text("변경 사항 저장")', 'button.btn_save'], { timeout: 5000 });
+    await sleep(2500);
+    await page.reload({ waitUntil: 'domcontentloaded' });
+    await sleep(2500);
+    if (!(await page.innerText('body').catch(() => '')).includes(name)) throw new Error('저장 뒤 다시 읽었는데 목록에 없음');
+    return '만듦';
+  } catch (e) {
+    await dump(page, 'category-add-failed');
+    throw e;
+  } finally {
+    await page.close().catch(() => {});
+  }
+}
+
 // 태그 칸 찾기·넣기는 scripts/lib/tistory-tags.mjs (그림자 영역·다른 틀 안의 칸까지 찾는다 — 2026-10-05)
 const enterTags = (page, tags) => enterTagsLib(page, tags, { log, warn });
 
@@ -522,7 +553,14 @@ async function main() {
     if (post.category) post.category = /보험|생활보장/.test(`${post.category} ${post.title}`) ? '생활보장' : '생활정보';
     if (post.category) {
       try { await pickCategory(page, post.category); log(`카테고리: ${post.category}`); }
-      catch (e) { warn(`카테고리 선택 실패 (${e.message.split('\n')[0]}) — 저장 후 직접 고르세요.`); }
+      catch (e) {
+        warn(`카테고리 선택 실패 (${e.message.split('\n')[0]}) — 저장 후 직접 고르세요.`);
+        if (/찾지 못함|아직 없어요/.test(e.message) && !args.url) {
+          try { log(`카테고리 "${post.category}" 만들기: ${await ensureCategory(context, args.blog, post.category)} — 다음 글부터 골라져요`); }
+          catch (e2) { warn(`카테고리 "${post.category}" 를 만들지 못함 (${e2.message.split('\n')[0]})`); }
+          await page.bringToFront().catch(() => {});
+        }
+      }
     }
     if (args.tags && post.tags?.length) {
       try { await enterTags(page, post.tags); tagsDone = true; }
