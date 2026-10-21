@@ -1,0 +1,85 @@
+{
+  "slug": "2026-10-22-pyogobeoseot-sonjil",
+  "title": "표고버섯 손질, 물에 씻으면 향이 빠질까요 (냉장 5~7일)",
+  "source": "10/22(목) 원고 (10/21 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "갓이 도톰한 표고버섯 바구니를 든 성글이 (대표사진)",
+      "prompt": "Camera and composition: medium shot in a cozy kitchen. Seonggeul, the blog host: a Korean woman in her 30s, round face, dark hair in a low bun, cream sweater with a mint scarf holding a woven basket full of plump shiitake mushrooms with a warm smile Background color: pale peach. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot in a cozy kitchen",
+      "bg": "pale peach",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "표고버섯 손질\n씻어도 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "나무 쟁반 위에 갓이 동그란 생표고버섯 몇 송이",
+      "prompt": "Camera and composition: close-up of a wooden tray. A few fresh round shiitake mushrooms with thick brown caps resting on a wooden tray No people at all in this image. Background color: soft sage green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up of a wooden tray",
+      "bg": "soft sage green"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "좋은 표고버섯 고르는 기준을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "좋은 표고버섯 고르기",
+        "items": [
+          "갓이 두껍고 도톰한 것",
+          "주름이 하얗고 깨끗한 것",
+          "기둥이 굵고 짧은 것",
+          "겉이 끈적이지 않고 보송한 것"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "젖은 키친타월로 표고버섯 갓을 닦는 손",
+      "prompt": "Camera and composition: close-up of hands on a counter. Hands gently wiping the cap of a shiitake mushroom with a damp paper towel No people at all in this image. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up of hands on a counter",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "도마 위에 결대로 찢어 둔 표고버섯 기둥",
+      "prompt": "Camera and composition: top-down view of a cutting board. Shiitake mushroom stems torn into thin strips piled on a cutting board No people at all in this image. Background color: light butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "top-down view of a cutting board",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "갓에 별 모양 칼집을 낸 표고버섯과 얇게 썬 표고",
+      "prompt": "Camera and composition: angled close-up of a plate. A shiitake mushroom with a star-shaped cut on its cap next to thin mushroom slices on a small plate No people at all in this image. Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "angled close-up of a plate",
+      "bg": "mint green"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "냉장고 채소칸에 키친타월로 감싼 표고버섯이 담긴 모습",
+      "prompt": "Camera and composition: front view of an open fridge drawer. Shiitake mushrooms wrapped loosely in paper towels inside a refrigerator vegetable drawer No people at all in this image. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "front view of an open fridge drawer",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "저녁 식탁 위 표고버섯 볶음 한 접시",
+      "prompt": "Camera and composition: eye-level view of a dinner table. A plate of stir-fried shiitake mushrooms on a warm dinner table with a bowl of rice No people at all in this image. Background color: blush pink. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "eye-level view of a dinner table",
+      "bg": "blush pink"
+    }
+  ]
+}
