@@ -307,6 +307,23 @@ async function pickCategory(page, name) {
   if (!label.includes(name)) throw new Error(`카테고리 버튼이 "${label}" 로 남음`);
 }
 
+// 관리 화면 버튼은 위쪽 고정 머리줄에 가려 보통 클릭이 30초 동안 막힐 수 있다 (2026-10-21 '카테고리 추가' — Timeout 30000ms).
+// 짧게 보통 클릭 → 강제 클릭 → 화면 안에서 직접 click() 순서로 누른다.
+async function clickHard(scope, selectors, opts) {
+  const { loc, sel } = await findFirst(scope, selectors, opts);
+  await loc.evaluate((el) => el.scrollIntoView({ block: 'center' })).catch(() => {});
+  const tries = [
+    ['보통', () => loc.click({ timeout: 4000 })],
+    ['강제', () => loc.click({ timeout: 4000, force: true })],
+    ['직접', () => loc.evaluate((el) => el.click())],
+  ];
+  let last;
+  for (const [how, fn] of tries) {
+    try { await fn(); log(`클릭(${how}): ${sel}`); return loc; } catch (e) { last = e; }
+  }
+  throw last;
+}
+
 // 블로그에 카테고리가 없으면 관리 > 카테고리에서 만든다 (2026-10-20 — '생활보장'이 10/10 부터 없어 보험 글이 카테고리 없이 나갔다.
 // 사용자에게 여러 번 안내했지만 저장되지 않았다). 새 탭에서 하고 닫는다. 지금 쓰는 글의 목록에는 바로 안 보이므로 다음 글부터 골라진다.
 // 화면을 실제로 본 적이 없는 단계라 글자 기반 후보로 찾고, 단계마다 덤프를 남긴다. 실패해도 발행은 멈추지 않는다.
@@ -316,15 +333,15 @@ async function ensureCategory(context, blog, name) {
     await page.goto(`https://${blog}.tistory.com/manage/category`, { waitUntil: 'domcontentloaded' });
     await sleep(2500);
     if ((await page.innerText('body').catch(() => '')).includes(name)) return '이미 있음';
-    await clickFirst(page, ['button:has-text("카테고리 추가")', 'a:has-text("카테고리 추가")', ':text("카테고리 추가")'], { timeout: 8000 });
+    await clickHard(page, ['button:has-text("카테고리 추가")', 'a:has-text("카테고리 추가")', ':text("카테고리 추가")'], { timeout: 8000 });
     await sleep(800);
     const inp = await findFirst(page, ['input[placeholder*="카테고리"]:visible', '.wrap_add input[type="text"]', 'input.tf_g:visible', 'input[type="text"]:visible'], { timeout: 5000 });
     await inp.loc.fill(name);
     await sleep(300);
-    await clickFirst(page, ['button:has-text("확인")', 'button.btn_confirm', 'button:has-text("추가")'], { timeout: 4000 });
+    await clickHard(page, ['button:has-text("확인")', 'button.btn_confirm', 'button:has-text("추가")'], { timeout: 4000 });
     await sleep(800);
     await dump(page, 'category-added');
-    await clickFirst(page, ['button:has-text("변경사항 저장")', 'button:has-text("변경 사항 저장")', 'button.btn_save'], { timeout: 5000 });
+    await clickHard(page, ['button:has-text("변경사항 저장")', 'button:has-text("변경 사항 저장")', 'button.btn_save'], { timeout: 5000 });
     await sleep(2500);
     await page.reload({ waitUntil: 'domcontentloaded' });
     await sleep(2500);
