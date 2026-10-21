@@ -1,0 +1,848 @@
+{
+  "slug": "2026-10-22-yeoncha-sudang-gyesan",
+  "title": "연차수당 계산, 미사용 연차는 돈으로 얼마나 받을까 (시급 × 8시간 × 일수)",
+  "category": "생활정보",
+  "tags": [
+    "연차수당계산",
+    "통상임금",
+    "미사용연차",
+    "퇴사",
+    "안쓴연차돈으로",
+    "연차수당",
+    "연차수당지급",
+    "연차휴가",
+    "퇴사연차",
+    "연차소멸",
+    "근로기준법",
+    "직장인",
+    "월급계산",
+    "생활계산",
+    "생활정보"
+  ],
+  "publishAt": "2026-10-22 21:30",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안 쓴 연차 돈으로 받는 금액은"
+        },
+        {
+          "t": "하루 8시간 일할 때의 통상임금이 기준이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘은 연차수당 계산을"
+        },
+        {
+          "t": "공식과 실제 숫자로 해 보는 법을"
+        },
+        {
+          "t": "포스팅으로 알아볼게요."
+        },
+        {
+          "t": "퇴사할 때 놓치기 쉬운 날짜도 함께 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "결론부터 말하면 공식은 하나예요."
+        },
+        {
+          "t": "시급 × 8시간 × 남은 연차 일수",
+          "s": "yellow"
+        },
+        {
+          "t": "월급이면 시급을 먼저 구하면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "다만 1년을 딱 채우고 퇴사하면",
+          "s": "red"
+        },
+        {
+          "t": "15일이 아니라 11일분만 받을 수 있어요.",
+          "s": "red"
+        },
+        {
+          "t": "아래 질문 순서대로 하나씩 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "회사 휴게실 창가에서 계산기와 메모를 든 성글이 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "연차수당 계산, 공식은 어떻게 될까요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "연차수당 계산 순서를 정리한 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 연차수당은 어떤 임금으로 계산하나요?"
+        },
+        {
+          "t": "A1: 보통 통상임금으로 계산해요."
+        },
+        {
+          "t": "매달 정해서 주는 기본급과 고정 수당이"
+        },
+        {
+          "t": "통상임금에 들어가요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "연차수당 계산은 세 단계예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "① 월 통상임금을 209로 나누기"
+        },
+        {
+          "t": "② 시급에 8시간 곱하기"
+        },
+        {
+          "t": "③ 남은 연차 일수 곱하기"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "첫 단계에서 시급이, 둘째 단계에서 일급이 나와요."
+        },
+        {
+          "t": "마지막에 일수를 곱하면 받을 금액이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "209시간은 주 40시간 일하고",
+          "segs": [
+            {
+              "t": "209시간",
+              "s": "blue"
+            },
+            {
+              "t": "은 주 40시간 일하고"
+            }
+          ]
+        },
+        {
+          "t": "주휴시간을 더한 한 달 기준 시간이에요."
+        },
+        {
+          "t": "회사 규칙에 따라 평균임금으로 주는 곳도 있어요."
+        },
+        {
+          "t": "취업규칙에서 어느 쪽인지 먼저 봐 두세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "월급 250만 원이면 얼마일까요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "거실 소파에서 급여명세서를 들여다보는 30대 남성"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 월 통상임금이 250만 원이면 얼마예요?"
+        },
+        {
+          "t": "A2: 250만 원을 209로 나누면"
+        },
+        {
+          "t": "시급은 약 11,962원이에요."
+        },
+        {
+          "t": "여기에 8시간을 곱하면 일급은 약 95,694원이에요.",
+          "segs": [
+            {
+              "t": "여기에 8시간을 곱하면 일급은 약 "
+            },
+            {
+              "t": "95,694원",
+              "s": "blue"
+            },
+            {
+              "t": "이에요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "미사용 연차가 5일 남았다면"
+        },
+        {
+          "t": "95,694원에 5를 곱해 약 47만 8천 원이에요.",
+          "segs": [
+            {
+              "t": "95,694원에 5를 곱해 약 "
+            },
+            {
+              "t": "47만 8천 원",
+              "s": "blue"
+            },
+            {
+              "t": "이에요."
+            }
+          ]
+        },
+        {
+          "t": "10일이면 약 95만 7천 원이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "최저임금을 받는다면 시급 10,320원에",
+          "segs": [
+            {
+              "t": "최저임금을 받는다면 시급 "
+            },
+            {
+              "t": "10,320원",
+              "s": "blue"
+            },
+            {
+              "t": "에"
+            }
+          ]
+        },
+        {
+          "t": "8시간을 곱해 일급 82,560원이에요."
+        },
+        {
+          "t": "남은 연차 10일이면 825,600원이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "월 통상임금이 300만 원이라면"
+        },
+        {
+          "t": "시급은 약 14,354원,"
+        },
+        {
+          "t": "일급은 약 114,833원이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "미사용 연차 3일이면 약 34만 4천 원이에요."
+        },
+        {
+          "t": "원 단위 끝자리는 회사마다 버리거나 올려서"
+        },
+        {
+          "t": "몇 원씩 차이가 날 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "미사용 연차는 며칠인지부터 세요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "연차 일수 정하는 기준을 정리한 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q3: 내 연차는 1년에 며칠이에요?"
+        },
+        {
+          "t": "A3: 1년 동안 80% 이상 나왔다면 15일이에요."
+        },
+        {
+          "t": "1년이 안 됐다면 한 달 개근마다 1일씩 생겨요."
+        },
+        {
+          "t": "그래서 첫해에는 최대 11일까지 쌓여요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 첫해는 개근한 달마다 1일"
+        },
+        {
+          "t": "✔ 80% 출근하면 1년에 15일"
+        },
+        {
+          "t": "✔ 3년차부터 2년마다 1일 더"
+        },
+        {
+          "t": "✔ 최대 25일까지"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "연차수당 계산은 이 일수에서",
+          "s": "yellow"
+        },
+        {
+          "t": "이미 쓴 날을 빼고 시작해요.",
+          "s": "yellow"
+        },
+        {
+          "t": "반차를 썼다면 0.5일로 빼고 남은 일수를 세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "1년 딱 채우고 퇴사하면 어떻게 될까요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 5,
+      "lines": [
+        {
+          "t": "사무실 책상에서 꽃다발을 받고 웃는 40대 여성"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q4: 1년 계약 마치고 퇴사하면 15일 받나요?"
+        },
+        {
+          "t": "A4: 아니에요. 2021년 대법원 판결로"
+        },
+        {
+          "t": "딱 1년 일하고 나가면 15일은 생기지 않아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "15일은 1년을 채운 다음 날 생기는 연차예요."
+        },
+        {
+          "t": "그래서 그날까지 일하지 않으면"
+        },
+        {
+          "t": "1년 미만 몫인 최대 11일만 남아요.",
+          "segs": [
+            {
+              "t": "1년 미만 몫인 최대 "
+            },
+            {
+              "t": "11일",
+              "s": "blue"
+            },
+            {
+              "t": "만 남아요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "월 통상임금 250만 원으로 보면"
+        },
+        {
+          "t": "11일분은 약 105만 원,"
+        },
+        {
+          "t": "15일분은 약 143만 원이에요."
+        },
+        {
+          "t": "차이가 40만 원 가까이 나요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "퇴사 날짜를 하루 차이로 정하면",
+          "s": "red"
+        },
+        {
+          "t": "받을 수 있는 미사용 연차가 크게 달라져요.",
+          "s": "red"
+        },
+        {
+          "t": "퇴사 날짜를 정하기 전에 꼭 셈해 보세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "연차수당을 못 받는 경우도 있을까요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 6,
+      "lines": [
+        {
+          "t": "동네 작은 가게 계산대 앞에서 일하는 50대 남성"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q5: 회사가 연차수당을 안 줘도 되는 때가 있나요?"
+        },
+        {
+          "t": "A5: 회사가 법에 정한 연차 사용 촉진을"
+        },
+        {
+          "t": "제대로 했다면 줄 의무가 없어질 수 있어요."
+        },
+        {
+          "t": "쓰라고 알렸는데 쓰지 않은 경우예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "상시 근로자가 5인 미만인 사업장도 달라요.",
+          "segs": [
+            {
+              "t": "상시 근로자가 "
+            },
+            {
+              "t": "5인 미만",
+              "s": "blue"
+            },
+            {
+              "t": "인 사업장도 달라요."
+            }
+          ]
+        },
+        {
+          "t": "연차휴가 규정이 적용되지 않아"
+        },
+        {
+          "t": "연차수당 계산 자체가 없을 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "내 회사가 어디에 해당하는지 먼저 알아야",
+          "s": "yellow"
+        },
+        {
+          "t": "받을 수 있는지 판단할 수 있어요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "퇴사할 때 연차수당은 언제 들어오나요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 7,
+      "lines": [
+        {
+          "t": "집 부엌 식탁에서 통장을 확인하며 미소 짓는 20대 여성"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "퇴사하면 회사는 남은 임금을"
+        },
+        {
+          "t": "원칙적으로 14일 안에 줘야 해요.",
+          "segs": [
+            {
+              "t": "원칙적으로 "
+            },
+            {
+              "t": "14일",
+              "s": "blue"
+            },
+            {
+              "t": " 안에 줘야 해요."
+            }
+          ]
+        },
+        {
+          "t": "미사용 연차 수당도 여기에 들어가요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "받지 못했다면 임금을 청구할 수 있는 기간은"
+        },
+        {
+          "t": "3년이에요.",
+          "segs": [
+            {
+              "t": "3년",
+              "s": "blue"
+            },
+            {
+              "t": "이에요."
+            }
+          ]
+        },
+        {
+          "t": "너무 늦기 전에 회사에 먼저 물어보세요."
+        },
+        {
+          "t": "그래도 해결이 안 되면 고용노동부에 상담해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "수당은 근로소득이라 세금을 떼고 들어와요."
+        },
+        {
+          "t": "그래서 계산한 금액보다"
+        },
+        {
+          "t": "통장에 들어온 돈이 조금 적을 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "연차수당 계산에서 자주 틀리는 곳"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "첫째, 통장에 들어온 돈으로 시급을 구하는 실수예요."
+        },
+        {
+          "t": "세금 떼기 전 금액으로 구해야 하고,"
+        },
+        {
+          "t": "식대처럼 고정으로 주는 수당이 들어가는지도 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "둘째, 209시간을 그대로 쓰지 않아도 되는 경우예요."
+        },
+        {
+          "t": "주 40시간보다 적게 일하는 단시간 근로자는"
+        },
+        {
+          "t": "일하는 시간에 맞춘 기준으로 바꿔 계산해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "셋째, 하루 소정근로시간을 8시간으로 박는 실수예요."
+        },
+        {
+          "t": "하루 6시간 일하기로 했다면"
+        },
+        {
+          "t": "연차수당 계산도 6시간으로 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "연차수당 계산은 내 계약서의 근무 시간부터",
+          "s": "yellow"
+        },
+        {
+          "t": "확인해야 정확해요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "쓰지 않은 연차는 언제 사라질까요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "연차는 보통 생긴 뒤 1년 안에 쓰지 않으면"
+        },
+        {
+          "t": "휴가로는 쓸 수 없게 사라져요."
+        },
+        {
+          "t": "대신 그 몫을 연차수당으로 받게 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 다니는 중에도"
+        },
+        {
+          "t": "연차가 사라지는 때에 맞춰 수당이 나와요."
+        },
+        {
+          "t": "퇴사할 때만 받는 돈이 아니에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "남은 연차를 미루기만 하면",
+          "s": "red"
+        },
+        {
+          "t": "쉬지도 못하고 촉진 절차로 수당도 못 받을 수 있어요.",
+          "s": "red"
+        },
+        {
+          "t": "쓸 수 있을 때 계획을 세워 쓰는 게 먼저예요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "연차수당 계산 정리"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 8,
+      "lines": [
+        {
+          "t": "공원 산책로에서 가방을 메고 걸어가는 30대 여성"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분은 남은 연차가 며칠쯤 되세요?"
+        },
+        {
+          "t": "5일 미만, 5~10일, 그 이상 중 하나로 남겨요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "연차수당 계산은 시급 × 8시간 × 남은 일수예요.",
+          "s": "red"
+        },
+        {
+          "t": "월급이면 통상임금을 209로 나눠 시급을 구해요."
+        },
+        {
+          "t": "1년만 일하고 퇴사하면 최대 11일분이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "지금 급여명세서에서 통상임금에 들어가는 항목을 더해"
+        },
+        {
+          "t": "내 일급부터 구해 보세요."
+        },
+        {
+          "t": "남은 연차 일수는 회사 인사 시스템에서 확인해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘 내용은 근로기준법과 고용노동부 안내,"
+        },
+        {
+          "t": "대법원 판결 보도에서"
+        },
+        {
+          "t": "확인한 정보를 바탕으로 정리했어요."
+        },
+        {
+          "t": "(2026년 10월 기준이라 이후 달라질 수 있어요)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "받을 금액은 회사 규칙과 근무 형태마다 달라"
+        },
+        {
+          "t": "노무사나 고용노동부 상담으로 꼭 다시 확인해 주세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "이상 성글벙글의 생활정보 포스팅이었습니다😎"
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">안 쓴 연차 돈으로 받는 금액은<br>하루 8시간 일할 때의 통상임금이 기준이에요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘은 연차수당 계산을<br>공식과 실제 숫자로 해 보는 법을<br>포스팅으로 알아볼게요.<br>퇴사할 때 놓치기 쉬운 날짜도 함께 볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">결론부터 말하면 공식은 하나예요.<br><span style=\"background-color: #fff8b2;\"><b>시급 × 8시간 × 남은 연차 일수</b></span><br>월급이면 시급을 먼저 구하면 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>다만 1년을 딱 채우고 퇴사하면</b></span><br><span style=\"color: #ff0010;\"><b>15일이 아니라 11일분만 받을 수 있어요.</b></span><br>아래 질문 순서대로 하나씩 볼게요.</p>\n<p data-ke-size=\"size16\">[이미지 1] 회사 휴게실 창가에서 계산기와 메모를 든 성글이 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>연차수당 계산, 공식은 어떻게 될까요</h2>\n<p data-ke-size=\"size16\">[이미지 2] 연차수당 계산 순서를 정리한 카드</p>\n<p data-ke-size=\"size16\">Q1: 연차수당은 어떤 임금으로 계산하나요?<br>A1: 보통 통상임금으로 계산해요.<br>매달 정해서 주는 기본급과 고정 수당이<br>통상임금에 들어가요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">연차수당 계산은 세 단계예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">① 월 통상임금을 209로 나누기<br>② 시급에 8시간 곱하기<br>③ 남은 연차 일수 곱하기</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">첫 단계에서 시급이, 둘째 단계에서 일급이 나와요.<br>마지막에 일수를 곱하면 받을 금액이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #0078cb;\"><b>209시간</b></span>은 주 40시간 일하고<br>주휴시간을 더한 한 달 기준 시간이에요.<br>회사 규칙에 따라 평균임금으로 주는 곳도 있어요.<br>취업규칙에서 어느 쪽인지 먼저 봐 두세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>월급 250만 원이면 얼마일까요</h2>\n<p data-ke-size=\"size16\">[이미지 3] 거실 소파에서 급여명세서를 들여다보는 30대 남성</p>\n<p data-ke-size=\"size16\">Q2: 월 통상임금이 250만 원이면 얼마예요?<br>A2: 250만 원을 209로 나누면<br>시급은 약 11,962원이에요.<br>여기에 8시간을 곱하면 일급은 약 <span style=\"color: #0078cb;\"><b>95,694원</b></span>이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">미사용 연차가 5일 남았다면<br>95,694원에 5를 곱해 약 <span style=\"color: #0078cb;\"><b>47만 8천 원</b></span>이에요.<br>10일이면 약 95만 7천 원이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">최저임금을 받는다면 시급 <span style=\"color: #0078cb;\"><b>10,320원</b></span>에<br>8시간을 곱해 일급 82,560원이에요.<br>남은 연차 10일이면 825,600원이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">월 통상임금이 300만 원이라면<br>시급은 약 14,354원,<br>일급은 약 114,833원이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">미사용 연차 3일이면 약 34만 4천 원이에요.<br>원 단위 끝자리는 회사마다 버리거나 올려서<br>몇 원씩 차이가 날 수 있어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>미사용 연차는 며칠인지부터 세요</h2>\n<p data-ke-size=\"size16\">[이미지 4] 연차 일수 정하는 기준을 정리한 카드</p>\n<p data-ke-size=\"size16\">Q3: 내 연차는 1년에 며칠이에요?<br>A3: 1년 동안 80% 이상 나왔다면 15일이에요.<br>1년이 안 됐다면 한 달 개근마다 1일씩 생겨요.<br>그래서 첫해에는 최대 11일까지 쌓여요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">✔ 첫해는 개근한 달마다 1일<br>✔ 80% 출근하면 1년에 15일<br>✔ 3년차부터 2년마다 1일 더<br>✔ 최대 25일까지</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #fff8b2;\"><b>연차수당 계산은 이 일수에서</b></span><br><span style=\"background-color: #fff8b2;\"><b>이미 쓴 날을 빼고 시작해요.</b></span><br>반차를 썼다면 0.5일로 빼고 남은 일수를 세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>1년 딱 채우고 퇴사하면 어떻게 될까요</h2>\n<p data-ke-size=\"size16\">[이미지 5] 사무실 책상에서 꽃다발을 받고 웃는 40대 여성</p>\n<p data-ke-size=\"size16\">Q4: 1년 계약 마치고 퇴사하면 15일 받나요?<br>A4: 아니에요. 2021년 대법원 판결로<br>딱 1년 일하고 나가면 15일은 생기지 않아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">15일은 1년을 채운 다음 날 생기는 연차예요.<br>그래서 그날까지 일하지 않으면<br>1년 미만 몫인 최대 <span style=\"color: #0078cb;\"><b>11일</b></span>만 남아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">월 통상임금 250만 원으로 보면<br>11일분은 약 105만 원,<br>15일분은 약 143만 원이에요.<br>차이가 40만 원 가까이 나요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>퇴사 날짜를 하루 차이로 정하면</b></span><br><span style=\"color: #ff0010;\"><b>받을 수 있는 미사용 연차가 크게 달라져요.</b></span><br>퇴사 날짜를 정하기 전에 꼭 셈해 보세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>연차수당을 못 받는 경우도 있을까요</h2>\n<p data-ke-size=\"size16\">[이미지 6] 동네 작은 가게 계산대 앞에서 일하는 50대 남성</p>\n<p data-ke-size=\"size16\">Q5: 회사가 연차수당을 안 줘도 되는 때가 있나요?<br>A5: 회사가 법에 정한 연차 사용 촉진을<br>제대로 했다면 줄 의무가 없어질 수 있어요.<br>쓰라고 알렸는데 쓰지 않은 경우예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">상시 근로자가 <span style=\"color: #0078cb;\"><b>5인 미만</b></span>인 사업장도 달라요.<br>연차휴가 규정이 적용되지 않아<br>연차수당 계산 자체가 없을 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #fff8b2;\"><b>내 회사가 어디에 해당하는지 먼저 알아야</b></span><br><span style=\"background-color: #fff8b2;\"><b>받을 수 있는지 판단할 수 있어요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>퇴사할 때 연차수당은 언제 들어오나요</h2>\n<p data-ke-size=\"size16\">[이미지 7] 집 부엌 식탁에서 통장을 확인하며 미소 짓는 20대 여성</p>\n<p data-ke-size=\"size16\">퇴사하면 회사는 남은 임금을<br>원칙적으로 <span style=\"color: #0078cb;\"><b>14일</b></span> 안에 줘야 해요.<br>미사용 연차 수당도 여기에 들어가요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">받지 못했다면 임금을 청구할 수 있는 기간은<br><span style=\"color: #0078cb;\"><b>3년</b></span>이에요.<br>너무 늦기 전에 회사에 먼저 물어보세요.<br>그래도 해결이 안 되면 고용노동부에 상담해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">수당은 근로소득이라 세금을 떼고 들어와요.<br>그래서 계산한 금액보다<br>통장에 들어온 돈이 조금 적을 수 있어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>연차수당 계산에서 자주 틀리는 곳</h2>\n<p data-ke-size=\"size16\">첫째, 통장에 들어온 돈으로 시급을 구하는 실수예요.<br>세금 떼기 전 금액으로 구해야 하고,<br>식대처럼 고정으로 주는 수당이 들어가는지도 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">둘째, 209시간을 그대로 쓰지 않아도 되는 경우예요.<br>주 40시간보다 적게 일하는 단시간 근로자는<br>일하는 시간에 맞춘 기준으로 바꿔 계산해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">셋째, 하루 소정근로시간을 8시간으로 박는 실수예요.<br>하루 6시간 일하기로 했다면<br>연차수당 계산도 6시간으로 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #fff8b2;\"><b>연차수당 계산은 내 계약서의 근무 시간부터</b></span><br><span style=\"background-color: #fff8b2;\"><b>확인해야 정확해요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>쓰지 않은 연차는 언제 사라질까요</h2>\n<p data-ke-size=\"size16\">연차는 보통 생긴 뒤 1년 안에 쓰지 않으면<br>휴가로는 쓸 수 없게 사라져요.<br>대신 그 몫을 연차수당으로 받게 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그래서 다니는 중에도<br>연차가 사라지는 때에 맞춰 수당이 나와요.<br>퇴사할 때만 받는 돈이 아니에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>남은 연차를 미루기만 하면</b></span><br><span style=\"color: #ff0010;\"><b>쉬지도 못하고 촉진 절차로 수당도 못 받을 수 있어요.</b></span><br>쓸 수 있을 때 계획을 세워 쓰는 게 먼저예요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>연차수당 계산 정리</h2>\n<p data-ke-size=\"size16\">[이미지 8] 공원 산책로에서 가방을 메고 걸어가는 30대 여성</p>\n<p data-ke-size=\"size16\">여러분은 남은 연차가 며칠쯤 되세요?<br>5일 미만, 5~10일, 그 이상 중 하나로 남겨요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>연차수당 계산은 시급 × 8시간 × 남은 일수예요.</b></span><br>월급이면 통상임금을 209로 나눠 시급을 구해요.<br>1년만 일하고 퇴사하면 최대 11일분이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">지금 급여명세서에서 통상임금에 들어가는 항목을 더해<br>내 일급부터 구해 보세요.<br>남은 연차 일수는 회사 인사 시스템에서 확인해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘 내용은 근로기준법과 고용노동부 안내,<br>대법원 판결 보도에서<br>확인한 정보를 바탕으로 정리했어요.<br>(2026년 10월 기준이라 이후 달라질 수 있어요)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">받을 금액은 회사 규칙과 근무 형태마다 달라<br>노무사나 고용노동부 상담으로 꼭 다시 확인해 주세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>이상 성글벙글의 생활정보 포스팅이었습니다😎</p>"
+}
