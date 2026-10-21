@@ -1,0 +1,84 @@
+{
+  "slug": "2026-10-22-juganbohosenteo-biyong",
+  "title": "주간보호센터 비용, 부모님이 다니시면 한 달에 얼마 드나요 (본인부담 15%)",
+  "source": "10/22(목) 원고 (10/21 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "햇살 드는 거실에서 어머니 손을 잡고 웃는 성글이 (대표사진)",
+      "prompt": "Camera and composition: medium shot in a sunny living room. Seonggeul, the blog host: a Korean woman in her 30s, round face, dark hair in a low bun, cream sweater with a mint scarf holding her elderly mother's hand on a sofa, both smiling warmly; the mother is a Korean woman in her late 70s with short white curly hair and round glasses Background color: pale peach. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot in a sunny living room",
+      "bg": "pale peach",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "주간보호센터 비용\n한 달 얼마?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "낮은 테이블에 색연필과 그림 종이가 놓인 센터 활동실",
+      "prompt": "Camera and composition: top-down view of a low activity table. Colored pencils and blank drawing papers laid out on a low wooden activity table in a bright day care room No people at all in this image. Background color: light butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "top-down view of a low activity table",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "아침에 작은 승합차에 오르는 할아버지의 뒷모습",
+      "prompt": "Camera and composition: back view outdoors in the morning. the Seonggeul grandpa: a Korean man in his late 70s, short gray hair, mint green vest over a white shirt getting into a small white van parked in front of an apartment entrance, seen from behind, waving goodbye Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "back view outdoors in the morning",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "주간보호센터 비용 구성을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "장기요양 본인부담금",
+        "items": [
+          "일반: 재가급여 비용의 15%",
+          "감경 대상: 이보다 낮은 비율",
+          "기초생활수급자: 본인부담 없음"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "벽걸이 달력에 동그라미가 그려진 거실 벽",
+      "prompt": "Camera and composition: eye-level view of a living room wall. A wall calendar with several hand-drawn circles hanging on a living room wall above a small cabinet No people at all in this image. Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "eye-level view of a living room wall",
+      "bg": "mint green"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "식판에 밥과 반찬이 담긴 점심 식탁",
+      "prompt": "Camera and composition: angled close-up of a lunch table. A compartment lunch tray with rice, soup and side dishes on a clean dining table No people at all in this image. Background color: blush pink. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "angled close-up of a lunch table",
+      "bg": "blush pink"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "센터 현관 앞에서 안내문을 읽는 중년 딸",
+      "prompt": "Camera and composition: medium shot at a building entrance. the Seonggeul adult child: a Korean woman in her 40s, shoulder-length brown bob hair, soft sky blue shirt reading a blank notice board at the entrance of a day care center with a calm face Background color: soft sage green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot at a building entrance",
+      "bg": "soft sage green"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "저녁 무렵 현관에서 어머니를 맞이하는 아들",
+      "prompt": "Camera and composition: wide shot of a home entryway at dusk. A Korean man in his 40s with short black hair and a navy sweater welcoming his elderly mother at the front door in warm evening light; the mother has short white curly hair and round glasses No people at all in this image. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide shot of a home entryway at dusk",
+      "bg": "pale lavender"
+    }
+  ]
+}
