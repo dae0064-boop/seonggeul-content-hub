@@ -83,6 +83,7 @@ console.log(`🖼  ${plan.slug} — ${todo.length}장`);
 console.log(`   저장 위치: ${outDir}\n`);
 
 let made = 0, skipped = 0, failed = [];
+let noCredit = false; // OpenAI 크레딧이 바닥나면(image-gen 종료 코드 3) 남은 그림은 부르지 않는다
 const overlayJobs = [];
 const cardJobs = [];
 for (const im of todo) {
@@ -107,6 +108,7 @@ for (const im of todo) {
     continue;
   }
   if (!(im.overlay && existsSync(raw) && !opt.force)) {
+    if (noCredit) { failed.push(im.n); continue; }
     console.log(`\n[${im.n}/${plan.images.length}] ${im.title}`);
     // 그림 API 는 1분에 5장까지다 (2026-10-03 HTTP 429 로 한 글에 7장까지 빠짐). 실패하면 기다렸다 다시 한다
     let ok = false;
@@ -126,6 +128,7 @@ for (const im of todo) {
         "--size", opt.size,
       ], { stdio: "inherit" });
       ok = r.status === 0 && existsSync(raw);
+      if (r.status === 3) { noCredit = true; break; } // 크레딧 없음 — 다시 해도 안 된다
     }
     if (!ok) { failed.push(im.n); continue; }
     made++;
@@ -160,6 +163,7 @@ console.log("\n" + "─".repeat(50));
 console.log(`새로 만듦 ${made}장 / 건너뜀 ${skipped}장 / 실패 ${failed.length}장`);
 if (failed.length) {
   console.log(`실패한 번호: ${failed.join(", ")}`);
+  if (noCredit) console.log("❌ OpenAI 크레딧 없음 — platform.openai.com 에서 충전해야 그림을 만들 수 있어요");
   console.log(`다시: node scripts/post-images.mjs ${positionals[0]} --only ${failed.join(",")}`);
   process.exit(1);
 }

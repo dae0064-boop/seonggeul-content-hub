@@ -1581,7 +1581,9 @@ async function main() {
       const file = imageFiles.get(b.n);
       if (!file) { manual.push(`이미지 ${b.n} → "${label}" 자리에 직접 넣기`); continue; }
       if (report.image.ok + report.image.fail === 0) step(`7. 이미지 넣기 (${imageFiles.size}장)`);
-      const r = await insertImageAt(page, editor, label, file);
+      let r = await insertImageAt(page, editor, label, file);
+      // 사진 버튼·파일 창이 한 번 늦게 뜨는 일이 있다 (2026-10-22 — filechooser 8초 초과로 그림 3이 빠진 채 예약됨). 한 번 더 해 본다
+      if (!r.ok && !r.lost) { log(`이미지 ${b.n} 한 번 더 넣어 봅니다 (${r.why})`); await sleep(2000); r = await insertImageAt(page, editor, label, file); }
       if (r.ok) {
         report.image.ok++; log(`✓ 이미지 ${b.n}: ${path.basename(file)}`);
         if (r.leftover) manual.push(`이미지 ${b.n} 위의 표시 줄 "${label}" 지우기`);
@@ -1723,6 +1725,12 @@ async function main() {
       log(`클릭: ${sel} ("${label || '저장'}")`);
       await sleep(2500);
       await dump(page, 'saved');
+      // 그림 8장은 지킨다 (2026-10-03 사용자 지시) — 파일이 있어도 넣다가 빠졌으면 예약하지 않는다 (2026-10-22 그림 3 빠진 채 예약됨)
+      if (args.reserve && report.image.fail > 0) {
+        console.log(`\n⚠ 그림 ${report.image.fail}장을 넣지 못해 예약하지 않았습니다. 글은 임시저장에 남아 있어요.`);
+        process.exitCode = 2;
+        return;
+      }
       if (args.reserve) {
         const r = await reservePublish(page, editor, post, at);
         if (r.ok) { console.log(`\n✅ 예약발행 완료 — ${at.ymd} ${at.hh}:${at.mm}`); return; }

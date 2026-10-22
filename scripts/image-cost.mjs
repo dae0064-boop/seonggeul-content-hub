@@ -18,18 +18,21 @@ const KRW = krwAt >= 0 ? Number(args.splice(krwAt, 2)[1]) : 1500;
 if (!args.length) { console.log("사용법: node scripts/image-cost.mjs <로그 파일>... [--krw 1500]"); process.exit(1); }
 
 const byQuality = {};
-let inTok = 0, outTok = 0, count = 0;
+// 토큰 줄이 붙은 것만 만들어진 그림으로 센다 — 실패한 요청(HTTP 429 등)은 돈이 들지 않는다 (2026-10-22 크레딧 소진 날 시도 194번이 194장으로 잡혔다)
+let inTok = 0, outTok = 0, count = 0, tries = 0, noCredit = 0;
 for (const f of args) {
   let q = null;
   for (const line of readFileSync(f, "utf8").split(/\r?\n/)) {
     const m = line.match(/🎨\s*\S+\s*\/\s*(\w+)\s*\//);
-    if (m) { q = m[1]; byQuality[q] = (byQuality[q] || 0) + 1; count++; continue; }
+    if (m) { q = m[1]; tries++; continue; }
+    if (/no credits remaining|크레딧이 없어요/i.test(line)) noCredit++;
     const t = line.match(/토큰:\s*입력\s*(\d+)\s*\/\s*출력\s*(\d+)/);
-    if (t && q) { inTok += +t[1]; outTok += +t[2]; q = null; }
+    if (t && q) { inTok += +t[1]; outTok += +t[2]; byQuality[q] = (byQuality[q] || 0) + 1; count++; q = null; }
   }
 }
 const usd = inTok * 5e-6 + outTok * 30e-6;
 console.log(`그림 ${count}장 — ${Object.entries(byQuality).map(([k, v]) => `${k} ${v}`).join(", ") || "없음"}`);
+if (tries > count) console.log(`만들지 못한 요청 ${tries - count}번 (비용 없음)${noCredit ? ` — ⚠ OpenAI 크레딧 없음 ${noCredit}번` : ""}`);
 console.log(`토큰: 입력 ${inTok} / 출력 ${outTok}`);
 console.log(`비용: $${usd.toFixed(3)} (약 ${Math.round(usd * KRW).toLocaleString("ko-KR")}원, 1달러 ${KRW}원)`);
 const bad = Object.keys(byQuality).filter((k) => k !== "low");
