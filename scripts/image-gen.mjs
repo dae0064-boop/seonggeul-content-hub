@@ -106,6 +106,8 @@ if (!res.ok) {
   try { msg = JSON.parse(text).error.message; } catch {}
   if (res.status === 401) die("키가 맞지 않아요 (401)");
   if (/verif/i.test(msg)) die(`${model} 은 OpenAI 조직 인증이 필요해요 — ${msg}`);
+  // 크레딧이 바닥나면 기다려도 안 된다 (2026-10-22 — 글마다 4번씩 다시 해 1시간 넘게 걸림). 종료 코드 3 으로 알린다
+  if (/no credits|quota|billing/i.test(msg)) { console.error(`❌ HTTP ${res.status} — ${msg}`); console.error("❌ OpenAI 크레딧이 없어요 — 충전 전에는 그림을 만들 수 없어요"); process.exit(3); }
   die(`HTTP ${res.status} — ${msg}`);
 }
 
