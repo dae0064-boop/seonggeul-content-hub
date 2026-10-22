@@ -1,0 +1,86 @@
+{
+  "slug": "2026-10-23-bokjiyonggu-pummok",
+  "title": "복지용구 품목, 부모님 댁에 전동침대도 빌릴 수 있나요 (연 160만 원 한도)",
+  "source": "10/23(금) 원고 (10/22 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "햇살 드는 부모님 댁 거실에서 보행기를 살펴보는 성글이 (대표사진)",
+      "prompt": "Camera and composition: medium shot in a sunny living room of an older couple's apartment. Seonggeul, the blog host: a Korean woman in her 30s, round face, dark hair in a low bun, cream sweater with a mint scarf checking the handles of a simple rolling walker and smiling Background color: pale peach. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot in a sunny living room of an older couple's apartment",
+      "bg": "pale peach",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "복지용구 품목\n뭘 빌릴까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "거실 한쪽에 놓인 성인용 보행기와 지팡이 걸이",
+      "prompt": "Camera and composition: wide shot of a living room corner. A simple four-wheeled rolling walker and a walking cane stand placed in a tidy living room corner No people at all in this image. Background color: soft sage green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide shot of a living room corner",
+      "bg": "soft sage green"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "복지용구 구입 품목을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "복지용구 구입 품목",
+        "items": [
+          "이동변기",
+          "목욕의자",
+          "성인용보행기",
+          "안전손잡이",
+          "욕창예방방석"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "창가 쪽에 놓인 높이 조절 침대가 있는 안방",
+      "prompt": "Camera and composition: eye-level view of a bedroom by a window. A height-adjustable care bed with side rails and a cream blanket placed by a window in a cozy bedroom No people at all in this image. Background color: light butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "eye-level view of a bedroom by a window",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "병실 창가의 빈 침대와 접어 둔 담요",
+      "prompt": "Camera and composition: three-quarter view of a hospital room. An empty hospital bed with a neatly folded blanket next to a bright window No people at all in this image. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "three-quarter view of a hospital room",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "식탁 위 계산기와 빈 메모지, 펜 한 자루",
+      "prompt": "Camera and composition: top-down view of a dining table. A calculator, a blank memo pad and a pen on a wooden dining table No people at all in this image. Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "top-down view of a dining table",
+      "bg": "mint green"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "욕실 벽에 새로 단 안전손잡이와 미끄럼 없는 바닥",
+      "prompt": "Camera and composition: front view of a bathroom wall. A sturdy grab bar mounted on a tiled bathroom wall beside a shower chair on a non-slip floor mat No people at all in this image. Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "front view of a bathroom wall",
+      "bg": "pale lavender"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "저녁 햇살 드는 현관에서 보행기를 밀며 웃는 할머니",
+      "prompt": "Camera and composition: medium shot at a home entryway at dusk. A Korean woman in her late 70s with short white curly hair and round glasses, pushing a rolling walker at the front entryway and smiling in warm evening light Background color: blush pink. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot at a home entryway at dusk",
+      "bg": "blush pink"
+    }
+  ]
+}
