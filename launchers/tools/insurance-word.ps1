@@ -25,8 +25,9 @@ if (-not $photo) {
 
 python --version *> $null
 if ($LASTEXITCODE -ne 0) {
-  Write-Host "이 PC 에 Python 이 없어요. launchers\tools\connect.cmd 를 먼저 실행해 주세요." -ForegroundColor Yellow
-  exit 1
+  # 스레드 보험글은 2026-10-08 부터 멈춰 있어 발행과 상관없다 — 노란 경고로 사용자를 놀라게 하지 않는다 (2026-10-23)
+  Write-Host "보험글 Word 저장은 건너뜁니다 (이 PC 에 Python 없음 — 네이버·티스토리 발행과는 상관없어요)." -ForegroundColor Gray
+  exit 0
 }
 python -c "import docx" *> $null
 if ($LASTEXITCODE -ne 0) {
