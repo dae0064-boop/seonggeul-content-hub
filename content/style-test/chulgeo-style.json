@@ -1,0 +1,36 @@
+{
+  "slug": "style-test-chulgeo",
+  "note": "2026-10-23 사용자 요청 — 철거 블로그 그림을 3D 느낌으로 할지 실사 느낌으로 할지 고르려고 만든 시험 5장. 발행용 아님. launchers/style-test.cmd 가 만든다 (low, 약 $0.03)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01-3d-clay-bathroom.png",
+      "title": "3D 클레이 — 타일을 뜯어낸 아파트 욕실 철거 현장 (지금 블로그 그림체)",
+      "prompt": "Camera and composition: eye-level wide view of a small Korean apartment bathroom in the middle of interior demolition. Old wall tiles partly removed showing bare cement wall, the bathtub and toilet already taken out, a neat pile of broken tile pieces on a protective floor sheet, a sledgehammer, a crowbar and a yellow safety helmet resting on a step stool, dust sacks tied and lined up by the door. No people at all in this image. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), warm grey, apricot (#F2B8A0), soft sky blue (#A9C8E8), warm brown (#8A6A55). Do not draw any written words, letters or numbers anywhere in the image; signs, labels and papers stay blank."
+    },
+    {
+      "n": 2,
+      "file": "02-photo-bathroom.png",
+      "title": "실사 — 1번과 같은 욕실 철거 현장",
+      "prompt": "Camera and composition: eye-level wide view of a small Korean apartment bathroom in the middle of interior demolition. Old wall tiles partly removed showing bare cement wall, the bathtub and toilet already taken out, a neat pile of broken tile pieces on a protective floor sheet, a sledgehammer, a crowbar and a yellow safety helmet resting on a step stool, dust sacks tied and lined up by the door. No people at all in this image. Realistic documentary photograph taken with a full-frame camera, 24mm lens, natural daylight from a small window mixed with a work lamp, true-to-life textures of cement, dust and ceramic, slight film grain, honest on-site look, not staged. Do not draw any written words, letters or numbers anywhere in the image; signs, labels and papers stay blank."
+    },
+    {
+      "n": 3,
+      "file": "03-3d-isometric-before-after.png",
+      "title": "3D 미니어처 — 철거 전·후를 반씩 보여 주는 방 단면 (정보형 3D)",
+      "prompt": "Camera and composition: isometric cutaway view of one small Korean apartment room split down the middle. The left half shows the room before demolition with old wooden flooring, built-in wardrobe and wallpaper; the right half shows the same room after demolition, stripped to clean bare concrete floor and walls, with debris bagged in neat sacks in the corner. A thin clean dividing line between the two halves. No people at all in this image. Clean 3D isometric miniature render, soft global illumination, smooth matte materials, subtle shadows, tidy and informative look, light neutral background. Use mainly these colors: warm beige, light grey concrete, muted navy accents, white. Do not draw any written words, letters, numbers or arrows with labels anywhere in the image."
+    },
+    {
+      "n": 4,
+      "file": "04-photo-empty-store.png",
+      "title": "실사 — 철거·원상복구가 끝난 텅 빈 상가",
+      "prompt": "Camera and composition: wide eye-level view from the entrance of an empty ground-floor commercial space in Korea after demolition and restoration to its original state. Smooth bare concrete floor swept clean, plain white walls, exposed ceiling with neatly capped wiring, large glass storefront letting in bright daylight, nothing left inside except a broom leaning against the wall. No people at all in this image. Realistic architectural photograph, full-frame camera, 16mm wide lens, bright natural daylight, accurate colors, sharp focus, clean and trustworthy mood. Do not draw any written words, letters or numbers anywhere in the image; the glass and walls stay blank."
+    },
+    {
+      "n": 5,
+      "file": "05-photo-worker-sorting.png",
+      "title": "실사 — 안전모·마스크를 쓴 작업자가 폐기물을 나눠 담는 모습 (얼굴 안 보임)",
+      "prompt": "Camera and composition: medium shot from behind and slightly to the side of one demolition worker in a Korean apartment hallway under renovation, wearing a white safety helmet, dust mask, work gloves and a plain grey work jacket, carefully sorting debris into separate heavy-duty sacks: wood pieces in one, broken tiles in another, metal pipes in a third. The worker's face is not visible. Floor covered with protective sheet. Realistic documentary photograph, full-frame camera, 35mm lens, natural indoor light, true-to-life textures, calm and careful working mood, safety-focused. Do not draw any written words, letters, numbers or logos anywhere in the image; the jacket, helmet and sacks are plain."
+    }
+  ]
+}
