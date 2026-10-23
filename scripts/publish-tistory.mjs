@@ -309,13 +309,16 @@ async function pickCategory(page, name) {
 
 // 관리 화면 버튼은 위쪽 고정 머리줄에 가려 보통 클릭이 30초 동안 막힐 수 있다 (2026-10-21 '카테고리 추가' — Timeout 30000ms).
 // 짧게 보통 클릭 → 강제 클릭 → 화면 안에서 직접 click() 순서로 누른다.
-async function clickHard(scope, selectors, opts) {
+// domFirst: 화면 안 직접 click() 을 먼저 한다. 관리 > 카테고리 화면은 글이 짧아 더 내려가지 않아 '카테고리 추가'가
+// 고정 머리줄 바로 밑에 남고, 강제 클릭(마우스 좌표)은 머리줄을 눌렀다 (2026-10-23 덤프 — 클릭 '성공' 뒤에도 입력칸이 안 열림).
+async function clickHard(scope, selectors, opts = {}) {
   const { loc, sel } = await findFirst(scope, selectors, opts);
   await loc.evaluate((el) => el.scrollIntoView({ block: 'center' })).catch(() => {});
-  const tries = [
+  const direct = ['직접', () => loc.evaluate((el) => el.click())];
+  const tries = opts.domFirst ? [direct] : [
     ['보통', () => loc.click({ timeout: 4000 })],
     ['강제', () => loc.click({ timeout: 4000, force: true })],
-    ['직접', () => loc.evaluate((el) => el.click())],
+    direct,
   ];
   let last;
   for (const [how, fn] of tries) {
@@ -333,15 +336,26 @@ async function ensureCategory(context, blog, name) {
     await page.goto(`https://${blog}.tistory.com/manage/category`, { waitUntil: 'domcontentloaded' });
     await sleep(2500);
     if ((await page.innerText('body').catch(() => '')).includes(name)) return '이미 있음';
-    await clickHard(page, ['button:has-text("카테고리 추가")', 'a:has-text("카테고리 추가")', ':text("카테고리 추가")'], { timeout: 8000 });
-    await sleep(800);
-    const inp = await findFirst(page, ['input[placeholder*="카테고리"]:visible', '.wrap_add input[type="text"]', 'input.tf_g:visible', 'input[type="text"]:visible'], { timeout: 5000 });
+    // 글자 칸 표시: 누르기 전부터 있던 칸(맨 위 블로그 검색창 등)은 쓰지 않는다 — 2026-10-23 엔 검색창에 "생활보장"이 들어갔다
+    const markInputs = (tag) => page.evaluate((t) => {
+      let n = 0;
+      for (const e of document.querySelectorAll('input[type="text"], input:not([type])')) {
+        if (!e.hasAttribute('data-sg-old')) { e.setAttribute(t, '1'); n++; }
+      }
+      return n;
+    }, tag);
+    await markInputs('data-sg-old');
+    await clickHard(page, ['button:has-text("카테고리 추가")', 'a:has-text("카테고리 추가")', ':text("카테고리 추가")'], { timeout: 8000, domFirst: true });
+    await sleep(1000);
+    const inp = await findFirst(page, ['input[placeholder*="카테고리"]:not([data-sg-old])', '.wrap_add input:not([data-sg-old])',
+      'input[type="text"]:not([data-sg-old]):not([placeholder*="검색"])', 'input:not([type]):not([data-sg-old]):not([placeholder*="검색"])'], { timeout: 5000 })
+      .catch(() => { throw new Error("'카테고리 추가'를 눌렀지만 새 이름 칸이 열리지 않음"); });
     await inp.loc.fill(name);
     await sleep(300);
-    await clickHard(page, ['button:has-text("확인")', 'button.btn_confirm', 'button:has-text("추가")'], { timeout: 4000 });
+    await clickHard(page, ['button:has-text("확인")', 'button.btn_confirm', 'button:has-text("추가")'], { timeout: 4000, domFirst: true });
     await sleep(800);
     await dump(page, 'category-added');
-    await clickHard(page, ['button:has-text("변경사항 저장")', 'button:has-text("변경 사항 저장")', 'button.btn_save'], { timeout: 5000 });
+    await clickHard(page, ['button:has-text("변경사항 저장")', 'button:has-text("변경 사항 저장")', 'button.btn_save'], { timeout: 5000, domFirst: true });
     await sleep(2500);
     await page.reload({ waitUntil: 'domcontentloaded' });
     await sleep(2500);
