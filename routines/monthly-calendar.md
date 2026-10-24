@@ -4,7 +4,7 @@
 
 0. `routines/README.md` 의 "공통 시작"을 먼저 한다.
 1. 읽는다: CLAUDE.md("최종 목표", "무엇을 버리는가", 하루 배분 80:20, 연간 골격, 클러스터 운영), memory/CLAUDE.md 맨 위,
-   content/calendar/ARTIFACT.md, docs/STATUS.md, **content/calendar/ideas.md**(나중에 넣을 글감 — 다음 달에 해당하는 항목은
+   docs/STATUS.md, **content/calendar/ideas.md**(나중에 넣을 글감 — 다음 달에 해당하는 항목은
    검색이 꾸준한지 확인한 뒤 넣고, 넣은 항목은 파일에서 "넣음"으로 옮긴다).
    Drive `ClaudeWorkspace/blog-stats/` 와 content/research/stats-log.md 에 통계가 있으면 유입이 잘 된 주제·검색어를 참고한다.
 2. 다음 달 매일(일요일 제외 — 일요일 원고는 밤 원고 작업이 캘린더 뒷날 글감을 당겨 쓴다) 5개 글감 = **살림·생활 노하우 4 + 생활보장(보험) 1**:
@@ -22,6 +22,6 @@
    사용자에게 키워드 조회나 확인을 부탁하지 않는다.
 4. content/calendar/publish-calendar.html 의 W·ANCHORS·헤더(계획 기간, 작성 기준일, 다음 개정)와 "바뀐 점"을 바꾸고,
    브라우저로 한 번 렌더해 오류가 없는지 본다.
-5. Artifact 도구로 같은 주소에 재발행한다(content/calendar/ARTIFACT.md 의 주소, 먼저 action read).
+5. 아티팩트는 올리지 않는다 (2026-10-24 사용자 — 캘린더 아티팩트를 지움. 정본은 저장소 파일 하나).
    docs/STATUS.md 갱신, 커밋 → PR → `검사` 통과 → merge.
-6. 사용자에게 짧게: 다음 달 주제 흐름(주차별 한 줄), ideas.md 에서 넣은 글감, 캘린더 링크.
+6. 사용자에게 짧게: 다음 달 주제 흐름(주차별 한 줄), ideas.md 에서 넣은 글감.
