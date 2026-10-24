@@ -2,7 +2,7 @@
 chcp 65001 >nul
 title Style test
 REM Style tests (not for publishing). Runs every plan in content\style-test\*.json, low quality.
-REM 2026-10-23 demolition blog 5 styles (about $0.03), 2026-10-24 care photo style 2 images (about $0.01).
+REM 2026-10-23 demolition blog 5 styles (about $0.03), 2026-10-24 care photo 2 + life photo 2 images (about $0.02).
 REM Images already made are skipped (no double cost). Result is copied to Drive ClaudeWorkspace\style-test\ and opened.
 cd /d "%~dp0.."
 git fetch -q origin 2>nul
