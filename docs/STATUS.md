@@ -27,6 +27,10 @@
 > 사용자는 다 본 대화를 바로 지우는 편이다. 출발점 대화만 지우면 안 된다. 나눔은 그대로: 네이버·티스토리·스레드는 각자 다른 작업.
 > 아침 PC 의 auto-day.cmd(보험글 Word 저장 포함)는 그대로.
 
+### 10/24 (토) 사용자 — "좋아 실사 이미지" · "실사로 생활정보도 2장만 만들어 봐"
+- 그림 비용 확인: gpt-image-2 / low / 1024 — 10/23 65장 $0.45(장당 약 10원). gpt-image-1-mini($0.005)는 곧 없어진다는 이야기가 있어 바꾸지 않음.
+- `content/style-test/life-photo-test.json` 2장(귤 상자 대표사진 + 고무패킹 닦는 손). 같은 style-test.cmd 로 생활보장 2장과 함께 만들어진다(약 $0.02). 보고 살림 글도 실사풍으로 할지 사용자가 정한다 — 그 전엔 살림 글은 클레이.
+
 ### 10/24 (토) 사용자 — "실사풍으로 어떻게 나오는지 2장만 테스트로 만들어 와 봐"
 - 클라우드는 OpenAI 가 막혀(프록시 403, 키도 PC 에만) 여기서 못 만든다 → `content/style-test/care-photo-test.json`(대표사진 1 + 본문 장면 1, style_care, low 약 $0.01).
 - `launchers/style-test.cmd` 가 `content/style-test/*.json` 을 모두 돌리게 고침(이미 만든 철거 5장은 건너뜀 — 돈 안 듦). 결과는 Drive `ClaudeWorkspace/style-test/` 에 복사되고 폴더가 열린다.
