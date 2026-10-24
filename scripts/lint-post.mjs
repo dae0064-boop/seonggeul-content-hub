@@ -32,6 +32,12 @@ const TITLE_QUESTION = /(\?|까요?|[나가]요)$/;
 //   ③ 그림은 생활보장·살림 모두 8장 그대로 (같은 날 사용자 — "그대로 8장씩 진행"). 정보 카드 1~2장
 const TOPIC_SHIFT_FROM = '2026-10-20';
 const SHIFT_SPLIT = { 생활정보: 4, 생활보장: 1 };
+// 2026-10-24 사용자 결정 — "생활보장 쪽으로 몰아서" (우리 자료: 10/12 이후 생활보장 글 25% 가 조회 상위 20, 생활정보 15%).
+//   ① 2026-10-26 원고부터 하루 생활정보 3 + 생활보장 2 (한 주 시험, 11/1 아침 확인이 판정)
+//   ② 생활정보 3편 중 2편은 홈판형(slot: 홈판) — 제목을 "키워드, 질문 (숫자)" 대신 공감형으로. 홈판에 걸린 글(억새·관엽식물·식단·소풍 도시락·귤)은 모두 괄호 없는 제목이었다
+const SPLIT2_FROM = '2026-10-26';
+const SPLIT2 = { 생활정보: 3, 생활보장: 2 };
+const HOMEFEED_PER_DAY = 2;
 // 메인 키워드 상한 (같은 날 우리 자료 분석 — 10/6~10/17 메인 12,000 넘는 말 7개(밤 찌는 시간 18,470·전어 제철 24,750·굴 제철 18,200·
 // 드럼세탁기 청소 13,070·에어프라이어 고구마 14,710·생밤 보관법 26,520·에어컨 청소 28,170)는 검색 유입이 거의 없었다 — 최적화 블로그가 차지한 말.
 // 유입이 꾸준했던 말은 1,000~10,000 (은행 까는법 1,350·고등어 제철 2,410·귤 보관법 4,990·되 돼 구분 8,780·초파리 없애는 법 10,580)
@@ -335,7 +341,10 @@ for (const file of files) {
     }
     const subsIn = post.subKeywords.filter((kw) => t.includes(kw.replace(/\s/g, '')));
     titleKw = { ratio: t.length ? cover.filter(Boolean).length / t.length : 0, subs: subsIn };
-    if (!tistory && dated >= WEEK_TEST_FROM) {
+    const homefeedSlot = !tistory && dated >= SPLIT2_FROM && post.slot === '홈판';
+    if (homefeedSlot) {
+      if (tb) notes.push(`홈판형(slot: 홈판) 제목은 괄호 숫자 없이 공감형으로 씁니다: "${post.title}"`);
+    } else if (!tistory && dated >= WEEK_TEST_FROM) {
       const head = (tb ? post.title.slice(0, tb.index) : post.title).trim();
       if (!TITLE_QUESTION.test(head)) errors.push(`제목은 "메인 키워드, 질문 (숫자)" 모양으로 — 괄호 앞이 질문(…나요/…까/…?)으로 끝나야 합니다: "${post.title}"`);
       if (subsIn.length > 1) notes.push(`제목에 서브 키워드가 ${subsIn.length}개 — 키워드를 늘어놓지 말고 질문 하나로`);
@@ -373,10 +382,18 @@ for (const file of files) {
     const dir = file.replace(/[^\\/]+$/, '') || './';
     const sib = fs.readdirSync(dir).filter((f) => f.startsWith(dated) && f.endsWith('.md'));
     if (sib.length >= 5) {
-      const cats = sib.map((f) => { try { return parsePost(fs.readFileSync(dir + f, 'utf8')).category; } catch { return ''; } });
-      for (const [c, n] of Object.entries(SHIFT_SPLIT)) {
+      const sibs = sib.map((f) => { try { return parsePost(fs.readFileSync(dir + f, 'utf8')); } catch { return {}; } });
+      const cats = sibs.map((p) => p.category || '');
+      const split = dated >= SPLIT2_FROM ? SPLIT2 : SHIFT_SPLIT;
+      const why = dated >= SPLIT2_FROM ? '2026-10-24 사용자 결정' : '2026-10-19 사용자 결정';
+      for (const [c, n] of Object.entries(split)) {
         const got = cats.filter((x) => x === c).length;
-        if (got !== n) errors.push(`같은 날(${dated}) ${c} ${got}편 — 하루 생활정보 ${SHIFT_SPLIT.생활정보} + 생활보장 ${SHIFT_SPLIT.생활보장} (2026-10-19 사용자 결정)`);
+        if (got !== n) errors.push(`같은 날(${dated}) ${c} ${got}편 — 하루 생활정보 ${split.생활정보} + 생활보장 ${split.생활보장} (${why})`);
+      }
+      if (dated >= SPLIT2_FROM) {
+        const hf = sibs.filter((p) => p.slot === '홈판');
+        if (hf.length !== HOMEFEED_PER_DAY) errors.push(`같은 날(${dated}) 홈판형(slot: 홈판) ${hf.length}편 — 하루 ${HOMEFEED_PER_DAY}편 (생활정보 글에)`);
+        if (hf.some((p) => p.category !== '생활정보')) errors.push(`홈판형(slot: 홈판)은 생활정보 글에만 붙입니다`);
       }
     }
   }
@@ -418,7 +435,7 @@ for (const file of files) {
     errors.push(`오프닝이 고정 문구와 다릅니다. "${OPEN[0]} / ${OPEN[1]}" 로 시작해야 합니다.`);
 
   // 제목 끝 괄호에 구체 숫자·기준 (2026-10-12 원고부터). 원고에서 확인한 숫자만 — 괄호 속 숫자가 본문에 있어야 한다
-  if (bundle) {
+  if (bundle && !(!tistory && dated >= SPLIT2_FROM && post.slot === '홈판')) {
     const tb = titleBracket(post.title);
     if (!tb || !/\d/.test(tb[1])) errors.push(`제목 끝에 숫자·기준을 담은 괄호를 붙입니다 (2026-10-12 원고부터, 예: "… (중불 20~30분)"): "${post.title}"`);
     else {
