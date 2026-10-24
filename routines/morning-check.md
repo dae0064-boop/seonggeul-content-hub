@@ -64,8 +64,8 @@
 5. **비교 블로그** (2026-10-14 다시 켬 — 위 사용자 지시): `content/research/blog-snapshot.txt` 에 rich_grandmom(한다팀장)을 두어
    아침 실행이 Drive `research/blog-snapshot/<날짜>/rich_grandmom/` 에 최근 글 목록(제목·시각·분류·공감·댓글)을 남긴다.
    월요일 점검에서 우리 글과 견준다 — 주제 폭, 제목 모양, 공감·댓글, 발행 시각. 그 블로그 글을 베끼지 않는다.
-   **매일** 그 summary.md 의 제목에서 쉼표 앞 말(메인 키워드)을 `content/research/hande-keywords.txt` 에 없으면 더한다 (2026-10-20 네이버 원고부터
-   같은 메인 키워드를 검사기가 막는다 — 같은 사무실 블로그끼리 자리를 뺏지 않게).
+   한다팀장 메인 키워드 목록(`content/research/hande-keywords.txt`)은 **더 채우지 않는다** — 2026-10-26 원고부터 같은 말 금지를 풀었다
+   (2026-10-24 사용자 "겹쳐도 의미 없어"). 대신 그쪽 상위 글의 주제를 우리 생활보장 글감 후보(keyword-queue)로 참고한다(베끼지 않는다).
 5-1. **지난 원고 지우기** (2026-10-05 사용자 지시): `node scripts/clean-published.mjs` — 오늘보다 앞 날짜의 원고·이미지 계획서를 지우고
    `content/archive/published.tsv` 에 남긴다. 어제 글이 예약·발행됐는지 1번에서 확인한 뒤 같은 PR 에 넣는다.
    어제 글 중 실패해 발행 안 된 글이 있으면 그 글은 지우지 말고(--before 를 그 날짜로) 사용자에게 알린다.

@@ -400,8 +400,9 @@ for (const file of files) {
       }
     }
   }
-  // 한다팀장 블로그와 같은 메인 키워드 금지 (2026-10-20 네이버 원고부터)
-  if (!tistory && dated >= TOPIC_SHIFT_FROM && post.mainKeyword) {
+  // 한다팀장 블로그와 같은 메인 키워드 금지 (2026-10-20 ~ 10-25 네이버 원고). 2026-10-26 원고부터 푼다 —
+  // 2026-10-24 사용자: "같은 주제로 써도 돼. 각자 개인 능력으로 하는 블로그라 겹쳐도 의미 없어"
+  if (!tistory && dated >= TOPIC_SHIFT_FROM && dated < SPLIT2_FROM && post.mainKeyword) {
     const mk = post.mainKeyword.replace(/\s+/g, '');
     const hit = handeKeywords().find((k) => k === mk);
     if (hit) errors.push(`메인 키워드 "${post.mainKeyword}" 는 한다팀장 블로그가 이미 쓴 말입니다 (content/research/hande-keywords.txt) — 같은 묶음의 다른 질문으로`);
