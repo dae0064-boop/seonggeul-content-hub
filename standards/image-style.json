@@ -10,7 +10,7 @@
   "palette_care": "Natural colors of the real scene. No pastel clay look.",
   "style_life": "Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition.",
   "palette_life": "Natural colors of the real scene. No pastel clay look.",
-  "style_care_note": "그림체 바꾸는 날 (2026-10-24 사용자): 생활보장 글은 클레이로 30편까지 → 2026-10-29 네이버 원고부터 style_care·palette_care. 생활정보 글은 150편까지 클레이 → 2026-11-05 네이버 원고부터 style_life·palette_life. 정보 카드·대표사진 글씨는 그대로. lint-post REAL_FROM 이 확인한다. 실제 기관·상표로 보이는 것은 그리지 않는다.",
+  "style_care_note": "그림체 바꾸는 날 (2026-10-24 사용자): 생활보장 글은 클레이로 30편까지 → 31번째(예상 2026-10-29 네이버 원고)부터 style_care·palette_care. 생활정보 글은 150편까지 클레이 → 151번째(예상 2026-11-01 원고)부터 style_life·palette_life. 정보 카드·대표사진 글씨는 그대로. lint-post REAL_AFTER·COUNT_OFFSET 이 편수로 확인한다. 실제 기관·상표로 보이는 것은 그리지 않는다.",
   "rules": "Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only.",
   "thumbnail_space": "Keep the top third of the image as plain empty cream background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds.",
   "characters": {
