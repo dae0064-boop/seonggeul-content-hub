@@ -38,9 +38,30 @@ const SHIFT_SPLIT = { 생활정보: 4, 생활보장: 1 };
 const SPLIT2_FROM = '2026-10-26';
 const SPLIT2 = { 생활정보: 2, 생활보장: 3 };   // 2026-10-24 같은 날 다시 — 사용자 "생활보장 3편, 생활정보 2편으로" (처음엔 3+2 반대)
 // 그림체 바꾸는 날 (2026-10-24 사용자 — "생활보장은 클레이로 30편까지, 31편부터 실사풍 / 생활정보는 지금 126편, 150편이 되면 실사풍").
-// 편수로 날짜를 셌다: 생활보장 10/24 까지 20편(저장소 기록) + 10/25 1편 + 하루 3편 → 10/28 에 30편 → 10/29 원고부터 실사풍.
-// 생활정보 10/24 까지 126편(사용자 블로그 기준) + 10/25 4편 + 하루 2편 → 11/4 에 150편 → 11/5 원고부터 실사풍.
-const REAL_FROM = { 생활보장: '2026-10-29', 생활정보: '2026-11-05' };
+// 실제 편수로 센다: 이 글이 그 카테고리 몇 번째 네이버 글인가 = 더할 수(OFFSET) + published.tsv 의 같은 카테고리 줄 + content/posts 에서 이 글보다 앞선(날짜·publish_at) 같은 카테고리 글 + 1.
+// OFFSET: 생활정보는 사용자가 본 블로그 숫자 126편(10/24 예약분까지)과 저장소 기록 93편의 차이 33(사용자가 직접 올린 글 등). 생활보장은 저장소 기록 20편 = 블로그.
+// 예상 날짜: 생활보장 31번째 = 10/29 원고, 생활정보 151번째 = 11/5 원고 (하루 3·2편 기준).
+const REAL_AFTER = { 생활보장: 30, 생활정보: 150 };
+const COUNT_OFFSET = { 생활보장: 0, 생활정보: 33 };
+function categoryOrdinal(file, post, dated) {
+  let n = COUNT_OFFSET[post.category] || 0;
+  try {
+    for (const row of fs.readFileSync('content/archive/published.tsv', 'utf8').split(/\r?\n/).slice(1)) {
+      const c = row.split('\t');
+      if (c[1] === 'naver' && c[5] === post.category) n++;
+    }
+  } catch { /* 목록이 없으면 0 */ }
+  const dir = file.replace(/[^\\/]+$/, '') || './';
+  const me = `${dated} ${post.publishAt || ''}`;
+  for (const f of fs.readdirSync(dir).filter((x) => /^\d{4}-\d{2}-\d{2}-.+\.md$/.test(x))) {
+    if (dir + f === file || f === file.split(/[\\/]/).pop()) continue;
+    try {
+      const p = parsePost(fs.readFileSync(dir + f, 'utf8'));
+      if (p.category === post.category && `${f.slice(0, 10)} ${p.publishAt || ''}` < me) n++;
+    } catch { /* 깨진 원고는 세지 않는다 */ }
+  }
+  return n + 1;
+}
 const HOMEFEED_PER_DAY = 2;
 // 메인 키워드 상한 (같은 날 우리 자료 분석 — 10/6~10/17 메인 12,000 넘는 말 7개(밤 찌는 시간 18,470·전어 제철 24,750·굴 제철 18,200·
 // 드럼세탁기 청소 13,070·에어프라이어 고구마 14,710·생밤 보관법 26,520·에어컨 청소 28,170)는 검색 유입이 거의 없었다 — 최적화 블로그가 차지한 말.
@@ -404,16 +425,18 @@ for (const file of files) {
       }
     }
   }
-  // 그림체: 클레이 3D → 실사풍 (REAL_FROM). 정보 카드(kind: card)는 보지 않는다
-  if (!tistory && dated >= SPLIT2_FROM && REAL_FROM[post.category]) {
+  // 그림체: 클레이 3D → 실사풍 (카테고리 편수 REAL_AFTER 를 넘은 글부터). 정보 카드(kind: card)는 보지 않는다
+  if (!tistory && dated >= SPLIT2_FROM && REAL_AFTER[post.category]) {
     const plan = planOf(file);
     if (plan && Array.isArray(plan.images)) {
-      const real = dated >= REAL_FROM[post.category];
+      const nth = categoryOrdinal(file, post, dated);
+      const real = nth > REAL_AFTER[post.category];
+      notes.push(`${post.category} ${nth}번째 네이버 글 → 그림 ${real ? '실사풍' : '클레이 3D'} (${REAL_AFTER[post.category]}편까지 클레이)`);
       const scenes = plan.images.filter((im) => im.kind !== 'card' && im.prompt);
       const clay = scenes.filter((im) => /clay|plasticine/i.test(im.prompt)).map((im) => im.n);
-      if (real && clay.length) errors.push(`${post.category} 글은 ${REAL_FROM[post.category]} 원고부터 실사풍입니다 — 이미지 계획서 ${clay.join(', ')}번에 clay 문구가 있습니다 (standards/image-style.json ${post.category === '생활보장' ? 'style_care' : 'style_life'})`);
+      if (real && clay.length) errors.push(`${post.category} ${nth}번째 글이라 실사풍입니다 — 이미지 계획서 ${clay.join(', ')}번에 clay 문구가 있습니다 (standards/image-style.json ${post.category === '생활보장' ? 'style_care' : 'style_life'})`);
       const notClay = scenes.filter((im) => !/clay|plasticine/i.test(im.prompt)).map((im) => im.n);
-      if (!real && notClay.length) errors.push(`${post.category} 글은 ${REAL_FROM[post.category]} 원고 전까지 클레이 3D 입니다 — 이미지 계획서 ${notClay.join(', ')}번에 clay 문구가 없습니다 (standards/image-style.json style)`);
+      if (!real && notClay.length) errors.push(`${post.category} ${nth}번째 글이라 아직 클레이 3D 입니다(${REAL_AFTER[post.category]}편까지) — 이미지 계획서 ${notClay.join(', ')}번에 clay 문구가 없습니다 (standards/image-style.json style)`);
     }
   }
   // 한다팀장 블로그와 같은 메인 키워드 금지 (2026-10-20 ~ 10-25 네이버 원고). 2026-10-26 원고부터 푼다 —

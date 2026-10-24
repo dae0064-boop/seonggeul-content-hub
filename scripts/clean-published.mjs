@@ -8,7 +8,8 @@
  *
  * 지우는 것: content/posts/<날짜>-*.{md,json}, content/tistory/<날짜>-*.{md,json,html},
  *            content/image-plans/<날짜>-*.json
- * 지우기 전에 한 줄씩 content/archive/published.tsv 에 남긴다 (날짜·채널·슬러그·메인 키워드·제목).
+ * 지우기 전에 한 줄씩 content/archive/published.tsv 에 남긴다 (날짜·채널·슬러그·메인 키워드·제목·카테고리).
+ * 카테고리 열은 2026-10-24 더함 — lint-post 가 카테고리별 편수로 그림체(클레이 → 실사풍)를 정한다.
  * 이 목록은 같은 메인 키워드를 다시 쓰지 않게 하는 데 쓴다 (lint-tistory.mjs).
  * 원고 본문이 필요하면 git 기록에서 되살릴 수 있다: git log --all -- content/posts/<슬러그>.md
  *
@@ -26,7 +27,7 @@ const before = bi >= 0 ? argv[bi + 1]
 if (!/^\d{4}-\d{2}-\d{2}$/.test(before)) { console.error(`날짜 형식이 이상합니다: ${before}`); process.exit(1); }
 
 const INDEX = path.join('content', 'archive', 'published.tsv');
-const HEAD = 'date\tchannel\tslug\tmain_keyword\ttitle\n';
+const HEAD = 'date\tchannel\tslug\tmain_keyword\ttitle\tcategory\n';
 const seen = new Set(fs.existsSync(INDEX)
   ? fs.readFileSync(INDEX, 'utf8').split('\n').slice(1).filter(Boolean).map((l) => l.split('\t')[2]) : []);
 const rows = [];
@@ -45,7 +46,7 @@ for (const [dir, channel, exts] of [
       let p = {};
       try { p = parsePost(fs.readFileSync(path.join(dir, f), 'utf8')); } catch { /* 앞머리가 깨져도 지우기는 한다 */ }
       const clean = (s) => String(s || '').replace(/[\t\n]/g, ' ').trim();
-      rows.push([slug.slice(0, 10), channel, slug, clean(p.mainKeyword), clean(p.title)].join('\t'));
+      rows.push([slug.slice(0, 10), channel, slug, clean(p.mainKeyword), clean(p.title), clean(p.category)].join('\t'));
       seen.add(slug);
     }
     for (const e of exts) rm(path.join(dir, slug + e));
