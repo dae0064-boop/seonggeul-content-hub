@@ -347,8 +347,10 @@ async function ensureCategory(context, blog, name) {
     await markInputs('data-sg-old');
     await clickHard(page, ['button:has-text("카테고리 추가")', 'a:has-text("카테고리 추가")', ':text("카테고리 추가")'], { timeout: 8000, domFirst: true });
     await sleep(1000);
-    const inp = await findFirst(page, ['input[placeholder*="카테고리"]:not([data-sg-old])', '.wrap_add input:not([data-sg-old])',
-      'input[type="text"]:not([data-sg-old]):not([placeholder*="검색"])', 'input:not([type]):not([data-sg-old]):not([placeholder*="검색"])'], { timeout: 5000 })
+    // 글자 칸만 (2026-10-24 — '.wrap_add input' 이 type="button" 을 잡아 fill 이 실패했다)
+    const TXT = ['[type="text"]', ':not([type])'];
+    const inp = await findFirst(page, [...TXT.map((t) => `input${t}[placeholder*="카테고리"]:not([data-sg-old])`), ...TXT.map((t) => `.wrap_add input${t}:not([data-sg-old])`),
+      ...TXT.map((t) => `input${t}:not([data-sg-old]):not([placeholder*="검색"])`)], { timeout: 5000 })
       .catch(() => { throw new Error("'카테고리 추가'를 눌렀지만 새 이름 칸이 열리지 않음"); });
     await inp.loc.fill(name);
     await sleep(300);
