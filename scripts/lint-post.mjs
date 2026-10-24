@@ -42,6 +42,9 @@ const HOMEFEED_PER_DAY = 2;
 // 드럼세탁기 청소 13,070·에어프라이어 고구마 14,710·생밤 보관법 26,520·에어컨 청소 28,170)는 검색 유입이 거의 없었다 — 최적화 블로그가 차지한 말.
 // 유입이 꾸준했던 말은 1,000~10,000 (은행 까는법 1,350·고등어 제철 2,410·귤 보관법 4,990·되 돼 구분 8,780·초파리 없애는 법 10,580)
 const MAIN_MAX = 12000;
+// 생활보장 글은 2026-10-26 원고부터 30,000 까지 (2026-10-24 한다팀장 비교 — 그쪽은 본인부담상한제 18,410·사망신고·CT비용 같은 제도 이름 큰 말을 메인으로 써서 잘 된다.
+// 12,000 상한은 살림 큰 말(레시피·조리 시간) 자료에서 나온 것이라 의료비·돌봄 제도 말에는 근거가 없다. 우리 생활보장 메인은 복지용구 품목 40 처럼 너무 작았다)
+const MAIN_MAX_CARE = 30000;
 function handeKeywords() {
   try {
     return fs.readFileSync('content/research/hande-keywords.txt', 'utf8').split(/\r?\n/)
@@ -256,7 +259,7 @@ for (const file of files) {
     const v = volumeOf(post.mainKeyword);
     if (v == null) notes.push(`메인 키워드 "${post.mainKeyword}" 검색량 자료가 없어요 — keyword-queue.txt 에 넣어 조회해 두세요`);
     else if (v < minVolume(dated)) errors.push(`메인 키워드 "${post.mainKeyword}" 월 검색량 ${v} — ${minVolume(dated)} 이상인 말로 바꾸세요 (1,000~10,000 우선)`);
-    else if (dated >= TOPIC_SHIFT_FROM && v > MAIN_MAX) errors.push(`메인 키워드 "${post.mainKeyword}" 월 검색량 ${v.toLocaleString()} — ${MAIN_MAX.toLocaleString()} 넘는 말은 최적화 블로그가 차지해 우리 글이 유입을 못 받았습니다. 서브로 쓰고, 메인은 그 말의 자동완성·연관 중 1,000~10,000 인 구체적인 말로`);
+    else if (dated >= TOPIC_SHIFT_FROM && v > (!tistory && dated >= SPLIT2_FROM && post.category === '생활보장' ? MAIN_MAX_CARE : MAIN_MAX)) errors.push(`메인 키워드 "${post.mainKeyword}" 월 검색량 ${v.toLocaleString()} — ${(!tistory && dated >= SPLIT2_FROM && post.category === '생활보장' ? MAIN_MAX_CARE : MAIN_MAX).toLocaleString()} 넘는 말은 최적화 블로그가 차지해 우리 글이 유입을 못 받았습니다. 서브로 쓰고, 메인은 그 말의 자동완성·연관 중 1,000~10,000 인 구체적인 말로`);
     else notes.push(`메인 키워드 "${post.mainKeyword}" 월 검색량 ${v.toLocaleString()}`);
   }
   const bundle = dated >= BUNDLE_FROM;
