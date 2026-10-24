@@ -12,6 +12,7 @@
  *   related: 지난 글 제목 | 지난 글 제목   ← 글 끝 "함께 보면 좋은 글" (발행된 내 글 1~2편, 2026-10-07 사용자 승인)
  *   lead_keyword: 첫 인용구 키워드        ← 고정 인사말 앞 첫 인용구에 넣는, 제목과 다른 주제 키워드 (2026-10-15 원고부터)
  *   source_url: https://… | https://…    ← 출처 ①(기관 자료) 글의 원문 주소 1~2개. 발행 때 출처 줄 아래 링크 카드 (2026-10-19 원고부터)
+ *   slot: 홈판                            ← 하루 2편 홈판형 글 표시. 제목을 공감형으로 쓴다 (2026-10-26 원고부터)
  *   ---
  *
  *   본문 줄1
@@ -110,6 +111,7 @@ export function parsePost(raw) {
     format: (meta.format || '').trim(),
     related: meta.related ? meta.related.split('|').map((s) => s.trim()).filter(Boolean) : [],
     leadKeyword: (meta.lead_keyword || '').trim(),
+    slot: (meta.slot || '').trim(),
     coupang: (meta.coupang || '').trim(),   // 티스토리 쿠팡 파트너스 글 — 상품 키워드 (content/affiliate/coupang-links.tsv)
     sourceUrls: meta.source_url ? meta.source_url.split('|').map((s) => s.trim()).filter(Boolean) : [],
     blocks,
