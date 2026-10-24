@@ -8,7 +8,9 @@
   "palette": "Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55).",
   "style_care": "Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition.",
   "palette_care": "Natural colors of the real scene. No pastel clay look.",
-  "style_care_note": "2026-10-26 네이버 원고부터 생활보장(의료비·돌봄·건강) 글 8장 중 그림 장면(정보 카드 빼고)은 style 대신 style_care·palette_care 를 쓴다 (2026-10-24 Claude 판단 — 한다팀장 비교, 이미지-기준.md '생활보장 글은 실사풍'). 생활정보 글은 style(클레이) 그대로. 실제 사람·기관을 흉내 내지 않는다(병원 이름·로고·제복 글자 없음).",
+  "style_life": "Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition.",
+  "palette_life": "Natural colors of the real scene. No pastel clay look.",
+  "style_care_note": "그림체 바꾸는 날 (2026-10-24 사용자): 생활보장 글은 클레이로 30편까지 → 2026-10-29 네이버 원고부터 style_care·palette_care. 생활정보 글은 150편까지 클레이 → 2026-11-05 네이버 원고부터 style_life·palette_life. 정보 카드·대표사진 글씨는 그대로. lint-post REAL_FROM 이 확인한다. 실제 기관·상표로 보이는 것은 그리지 않는다.",
   "rules": "Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only.",
   "thumbnail_space": "Keep the top third of the image as plain empty cream background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds.",
   "characters": {

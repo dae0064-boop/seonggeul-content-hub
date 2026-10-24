@@ -36,7 +36,11 @@ const SHIFT_SPLIT = { 생활정보: 4, 생활보장: 1 };
 //   ① 2026-10-26 원고부터 하루 생활정보 3 + 생활보장 2 (한 주 시험, 11/1 아침 확인이 판정)
 //   ② 생활정보 3편 중 2편은 홈판형(slot: 홈판) — 제목을 "키워드, 질문 (숫자)" 대신 공감형으로. 홈판에 걸린 글(억새·관엽식물·식단·소풍 도시락·귤)은 모두 괄호 없는 제목이었다
 const SPLIT2_FROM = '2026-10-26';
-const SPLIT2 = { 생활정보: 3, 생활보장: 2 };
+const SPLIT2 = { 생활정보: 2, 생활보장: 3 };   // 2026-10-24 같은 날 다시 — 사용자 "생활보장 3편, 생활정보 2편으로" (처음엔 3+2 반대)
+// 그림체 바꾸는 날 (2026-10-24 사용자 — "생활보장은 클레이로 30편까지, 31편부터 실사풍 / 생활정보는 지금 126편, 150편이 되면 실사풍").
+// 편수로 날짜를 셌다: 생활보장 10/24 까지 20편(저장소 기록) + 10/25 1편 + 하루 3편 → 10/28 에 30편 → 10/29 원고부터 실사풍.
+// 생활정보 10/24 까지 126편(사용자 블로그 기준) + 10/25 4편 + 하루 2편 → 11/4 에 150편 → 11/5 원고부터 실사풍.
+const REAL_FROM = { 생활보장: '2026-10-29', 생활정보: '2026-11-05' };
 const HOMEFEED_PER_DAY = 2;
 // 메인 키워드 상한 (같은 날 우리 자료 분석 — 10/6~10/17 메인 12,000 넘는 말 7개(밤 찌는 시간 18,470·전어 제철 24,750·굴 제철 18,200·
 // 드럼세탁기 청소 13,070·에어프라이어 고구마 14,710·생밤 보관법 26,520·에어컨 청소 28,170)는 검색 유입이 거의 없었다 — 최적화 블로그가 차지한 말.
@@ -398,6 +402,18 @@ for (const file of files) {
         if (hf.length !== HOMEFEED_PER_DAY) errors.push(`같은 날(${dated}) 홈판형(slot: 홈판) ${hf.length}편 — 하루 ${HOMEFEED_PER_DAY}편 (생활정보 글에)`);
         if (hf.some((p) => p.category !== '생활정보')) errors.push(`홈판형(slot: 홈판)은 생활정보 글에만 붙입니다`);
       }
+    }
+  }
+  // 그림체: 클레이 3D → 실사풍 (REAL_FROM). 정보 카드(kind: card)는 보지 않는다
+  if (!tistory && dated >= SPLIT2_FROM && REAL_FROM[post.category]) {
+    const plan = planOf(file);
+    if (plan && Array.isArray(plan.images)) {
+      const real = dated >= REAL_FROM[post.category];
+      const scenes = plan.images.filter((im) => im.kind !== 'card' && im.prompt);
+      const clay = scenes.filter((im) => /clay|plasticine/i.test(im.prompt)).map((im) => im.n);
+      if (real && clay.length) errors.push(`${post.category} 글은 ${REAL_FROM[post.category]} 원고부터 실사풍입니다 — 이미지 계획서 ${clay.join(', ')}번에 clay 문구가 있습니다 (standards/image-style.json ${post.category === '생활보장' ? 'style_care' : 'style_life'})`);
+      const notClay = scenes.filter((im) => !/clay|plasticine/i.test(im.prompt)).map((im) => im.n);
+      if (!real && notClay.length) errors.push(`${post.category} 글은 ${REAL_FROM[post.category]} 원고 전까지 클레이 3D 입니다 — 이미지 계획서 ${notClay.join(', ')}번에 clay 문구가 없습니다 (standards/image-style.json style)`);
     }
   }
   // 한다팀장 블로그와 같은 메인 키워드 금지 (2026-10-20 ~ 10-25 네이버 원고). 2026-10-26 원고부터 푼다 —
