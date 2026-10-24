@@ -1,0 +1,22 @@
+{
+  "slug": "style-test-care-photo",
+  "note": "2026-10-24 사용자 요청 — 생활보장 글 실사풍(style_care)이 어떻게 나오는지 2장 시험. 발행용이 아님. launchers/style-test.cmd 가 만든다 (low 품질, 약 $0.01)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01-care-thumb.png",
+      "title": "대표사진 시험 — 거실 식탁에서 어머니와 서류를 보는 40대 딸 (제목 글씨 얹음)",
+      "prompt": "Camera and composition: medium shot at eye level in a bright Korean apartment living room with a wooden dining table by the window. A Korean woman in her 40s with shoulder-length brown hair in a soft blue shirt sits beside her mother, a Korean woman in her late 70s with short gray curly hair in a beige cardigan; they look together at a few blank paper documents on the table and the daughter gently points at one page, both with calm small smiles. Keep the top third of the image as plain soft out-of-focus wall with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. No pastel clay look. Korean everyday settings. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, screens, papers and uniforms stay blank. No hospital names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "장기요양등급\n신청 순서"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02-care-scene.png",
+      "title": "본문 장면 시험 — 병원 수납 창구에서 영수증을 받는 50대 남성",
+      "prompt": "Camera and composition: medium shot from the side at a clean Korean hospital payment counter. A Korean man in his 50s with short black hair and a navy jacket receives a blank paper receipt from a staff member behind the counter whose face is out of frame; soft daylight from large windows, a few chairs blurred in the background. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. No pastel clay look. Korean everyday settings. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, screens, papers and uniforms stay blank. No hospital names or brand marks."
+    }
+  ]
+}
