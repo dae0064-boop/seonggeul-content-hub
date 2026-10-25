@@ -41,8 +41,9 @@ const SPLIT2 = { 생활정보: 2, 생활보장: 3 };   // 2026-10-24 같은 날 
 // 실제 편수로 센다: 이 글이 그 카테고리 몇 번째 네이버 글인가 = 더할 수(OFFSET) + published.tsv 의 같은 카테고리 줄 + content/posts 에서 이 글보다 앞선(날짜·publish_at) 같은 카테고리 글 + 1.
 // OFFSET: 2026-10-24 10:40 사용자가 보낸 블로그 카테고리 화면 — "생활정보 125개의 글"·"생활보장 19개의 글" (발행된 글만, 10/24 10:00 세탁기 배수구 글까지).
 //   저장소 기록은 같은 때 생활보장 19(맞음)·생활정보 90 → 생활정보 차이 35 (자동화 전 옛 글·사용자가 직접 올린 글). 앞서 말로 들은 126·131 로 33·41 을 썼다가 화면 숫자로 고침.
-// 예상 날짜: 생활보장 31번째 = 10/29 원고, 생활정보 151번째 = 11/4 원고 (하루 3·2편 기준).
-const REAL_AFTER = { 생활보장: 30, 생활정보: 150 };
+// 예상 날짜: 생활보장 31번째 = 10/29 원고 (하루 3편 기준).
+// 생활정보는 클레이 3D 그대로 (2026-10-25 사용자 "3D 로 쭉 밀고 가는 게 낫다던데" → Claude 추천: 홈판에 걸린 글이 모두 클레이라 151번째 전환을 뺌).
+const REAL_AFTER = { 생활보장: 30, 생활정보: Infinity };
 const COUNT_OFFSET = { 생활보장: 0, 생활정보: 35 };
 function categoryOrdinal(file, post, dated) {
   let n = COUNT_OFFSET[post.category] || 0;
@@ -432,12 +433,12 @@ for (const file of files) {
     if (plan && Array.isArray(plan.images)) {
       const nth = categoryOrdinal(file, post, dated);
       const real = nth > REAL_AFTER[post.category];
-      notes.push(`${post.category} ${nth}번째 네이버 글 → 그림 ${real ? '실사풍' : '클레이 3D'} (${REAL_AFTER[post.category]}편까지 클레이)`);
+      notes.push(`${post.category} ${nth}번째 네이버 글 → 그림 ${real ? '실사풍' : '클레이 3D'} (${Number.isFinite(REAL_AFTER[post.category]) ? REAL_AFTER[post.category] + '편까지 클레이' : '계속 클레이'})`);
       const scenes = plan.images.filter((im) => im.kind !== 'card' && im.prompt);
       const clay = scenes.filter((im) => /clay|plasticine/i.test(im.prompt)).map((im) => im.n);
       if (real && clay.length) errors.push(`${post.category} ${nth}번째 글이라 실사풍입니다 — 이미지 계획서 ${clay.join(', ')}번에 clay 문구가 있습니다 (standards/image-style.json ${post.category === '생활보장' ? 'style_care' : 'style_life'})`);
       const notClay = scenes.filter((im) => !/clay|plasticine/i.test(im.prompt)).map((im) => im.n);
-      if (!real && notClay.length) errors.push(`${post.category} ${nth}번째 글이라 아직 클레이 3D 입니다(${REAL_AFTER[post.category]}편까지) — 이미지 계획서 ${notClay.join(', ')}번에 clay 문구가 없습니다 (standards/image-style.json style)`);
+      if (!real && notClay.length) errors.push(`${post.category} ${nth}번째 글이라 ${Number.isFinite(REAL_AFTER[post.category]) ? `아직 클레이 3D 입니다(${REAL_AFTER[post.category]}편까지)` : '클레이 3D 입니다'} — 이미지 계획서 ${notClay.join(', ')}번에 clay 문구가 없습니다 (standards/image-style.json style)`);
     }
   }
   // 한다팀장 블로그와 같은 메인 키워드 금지 (2026-10-20 ~ 10-25 네이버 원고). 2026-10-26 원고부터 푼다 —
