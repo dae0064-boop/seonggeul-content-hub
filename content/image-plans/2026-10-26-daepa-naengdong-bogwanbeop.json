@@ -1,0 +1,92 @@
+{
+  "slug": "2026-10-26-daepa-naengdong-bogwanbeop",
+  "title": "대파 냉동 보관법, 냉동 대파 붙지 않게 얼리는 순서 (4단계)",
+  "source": "10/26(월) 티스토리 원고 (10/25 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 정보 카드는 로컬 합성(비용 0). 휴대폰·PC 화면은 비워 둔다(가짜 메뉴 글자 금지)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "부엌 조리대에서 대파 한 단을 손질하는 성글이 (대표사진)",
+      "prompt": "Camera and composition: medium shot at a kitchen counter. Seonggeul, the blog host: a Korean woman in her 30s, round face, dark hair in a low bun, cream sweater with a mint scarf at a kitchen counter trimming the roots of a bundle of long Korean green onions on a cutting board Background color: pale lavender. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot at a kitchen counter",
+      "bg": "pale lavender",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "대파 냉동\n붙지 않게"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "싱크대 옆 채반 위에서 씻은 대파의 물기가 빠지는 장면",
+      "prompt": "Camera and composition: close-up of a draining rack. Freshly washed long Korean green onions standing upright in a dish draining rack next to a sink, water drops falling off, a folded kitchen towel beside them Background color: light butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up of a draining rack",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "신문지를 깐 식탁에서 대파 뿌리와 겉잎을 정리하는 60대 여성",
+      "prompt": "Camera and composition: top-down shot of a dining table. A Korean woman in her 60s in an apricot cardigan peeling off the wilted outer layers of green onions over newspaper spread on a dining table Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "top-down shot of a dining table",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "대파 냉동 보관법 4단계를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "대파 냉동 보관법 4단계",
+        "items": [
+          "흐르는 물에 씻어요",
+          "물기를 완전히 말려요",
+          "쓸 요리에 맞춰 썰어요",
+          "한 번 쓸 양씩 나눠 담아요"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "요리별 대파 썰기를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "요리별 대파 썰기",
+        "items": [
+          "송송 썰기는 국, 찌개",
+          "어슷 썰기는 찌개와 볶음에",
+          "길게 토막 내기는 육수 낼 때"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "쟁반 위에 송송 썬 대파를 한 겹으로 펼쳐 냉동실에 넣는 40대 남성",
+      "prompt": "Camera and composition: side shot at an open freezer. A Korean man in his 40s in a white t-shirt sliding a tray with thinly sliced green onion rings spread in a single layer into an open freezer Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "side shot at an open freezer",
+      "bg": "mint green"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "김이 오르는 찌개 냄비에 냉동 대파를 바로 넣는 30대 여성",
+      "prompt": "Camera and composition: close-up over a stove pot. A Korean woman in her 30s in a striped shirt dropping a handful of frozen sliced green onions straight into a steaming stew pot on the stove Background color: warm beige. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up over a stove pot",
+      "bg": "warm beige"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "정리된 냉동실 서랍에서 대파 봉지를 꺼내며 웃는 50대 여성",
+      "prompt": "Camera and composition: medium shot at a freezer drawer. A Korean woman in her 50s in a mint apron smiling as she pulls a neatly labeled flat bag of frozen green onions from a tidy freezer drawer Background color: soft peach pink. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot at a freezer drawer",
+      "bg": "soft peach pink"
+    }
+  ]
+}
