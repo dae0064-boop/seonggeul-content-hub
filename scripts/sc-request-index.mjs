@@ -24,6 +24,14 @@ if (argv.includes('--help')) { console.log('사용법: node scripts/sc-request-i
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const log = (s) => console.log(s);
 const today = new Date().toISOString().slice(0, 10);
+// 2026-10-26 첫 실행: 서치 콘솔 검사 화면은 열린 뒤 스스로 한 번 더 이동해 'Execution context was destroyed'·'interrupted by another navigation' 으로
+// 처음 3편이 모두 실패했다. → 이동 중이면 잠깐 기다렸다 다시 읽고, 다음 글로 가기 전 빈 화면으로 이동을 끊는다.
+const readText = async (page) => {
+  for (let i = 0; i < 8; i++) {
+    try { return await page.evaluate(() => document.body?.innerText || ''); } catch { await sleep(1500); }
+  }
+  return '';
+};
 
 // state: 주소<TAB>결과<TAB>날짜 — 결과 = requested | indexed
 const done = new Map();
@@ -49,11 +57,13 @@ async function main() {
       if (report.requested.length >= MAX) break;
       const n = u.split('/').pop();
       try {
-        await page.goto(`https://search.google.com/search-console/inspect?resource_id=${encodeURIComponent(SITE)}&id=${encodeURIComponent(u)}&hl=ko`, { waitUntil: 'domcontentloaded', timeout: 30000 });
+        await page.goto('about:blank').catch(() => {});
+        await page.goto(`https://search.google.com/search-console/inspect?resource_id=${encodeURIComponent(SITE)}&id=${encodeURIComponent(u)}&hl=ko`, { waitUntil: 'commit', timeout: 30000 }).catch((e) => { if (!/interrupted|ERR_ABORTED/.test(e.message)) throw e; });
+        await page.waitForLoadState('domcontentloaded', { timeout: 30000 }).catch(() => {});
         if (/accounts\.google\.com/.test(page.url())) { report.stop = 'login'; log('  구글 로그인 화면 — 자동화 크롬이 구글에 로그인 안 됨'); break; }
         // 검사 결과가 뜰 때까지 (최대 60초)
         let t = '';
-        for (let i = 0; i < 30; i++) { await sleep(2000); t = await page.evaluate(() => document.body?.innerText || ''); if (/Google에 등록되어 있|색인이 생성되지 않|할당량/.test(t)) break; }
+        for (let i = 0; i < 30; i++) { await sleep(2000); t = await readText(page); if (/Google에 등록되어 있|색인이 생성되지 않|할당량/.test(t)) break; }
         if (/할당량/.test(t)) { report.stop = 'quota'; log('  오늘 할당량이 끝났어요'); break; }
         if (/URL이 Google에 등록되어 있음/.test(t) && !/등록되어 있지 않음/.test(t)) { note(u, 'indexed'); report.indexed.push(u); log(`  /${n} 이미 색인됨`); continue; }
         const btn = page.getByText('색인 생성 요청', { exact: true }).first();
@@ -61,14 +71,18 @@ async function main() {
         await btn.click({ timeout: 10000 });
         // 실제 URL 테스트 1~2분 → '색인 생성 요청됨' 또는 할당량 문구
         let r = '';
-        for (let i = 0; i < 75; i++) { await sleep(2000); r = await page.evaluate(() => document.body?.innerText || ''); if (/색인 생성 요청됨|할당량|문제가 발생/.test(r)) break; }
+        for (let i = 0; i < 75; i++) { await sleep(2000); r = await readText(page); if (/색인 생성 요청됨|할당량|문제가 발생/.test(r)) break; }
         if (/할당량/.test(r)) { report.stop = 'quota'; log('  오늘 할당량이 끝났어요'); break; }
         if (/색인 생성 요청됨/.test(r)) { note(u, 'requested'); report.requested.push(u); log(`  /${n} 색인 생성 요청됨`); }
         else { report.failed.push({ u, why: 'no-confirm' }); await page.screenshot({ path: path.join(OUT, `fail-${n}.jpg`), type: 'jpeg', quality: 55 }).catch(() => {}); fs.writeFileSync(path.join(OUT, `fail-${n}.txt`), r); log(`  /${n} 요청 결과를 확인 못 함`); }
         // 결과 창 닫기
         for (const name of ['확인', '닫기']) { const b = page.getByRole('button', { name, exact: true }).first(); if (await b.count()) { await b.click({ timeout: 5000 }).catch(() => {}); break; } }
         await sleep(3000);
-      } catch (e) { report.failed.push({ u, why: e.message.split('\n')[0] }); log(`  /${n} 실패: ${e.message.split('\n')[0]}`); }
+      } catch (e) {
+        report.failed.push({ u, why: e.message.split('\n')[0] }); log(`  /${n} 실패: ${e.message.split('\n')[0]}`);
+        await page.screenshot({ path: path.join(OUT, `fail-${n}.jpg`), type: 'jpeg', quality: 55 }).catch(() => {});
+        fs.writeFileSync(path.join(OUT, `fail-${n}.txt`), `${page.url()}\n\n${await readText(page)}`);
+      }
       if (report.failed.length >= 3 && !report.requested.length) { report.stop = 'failing'; log('  처음 3편이 모두 실패해 멈춤 — 화면 기록을 Claude 가 본다'); break; }
     }
     report.left = posts.filter((u) => !done.has(u)).length;
