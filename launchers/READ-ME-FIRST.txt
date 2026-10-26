@@ -36,6 +36,12 @@ goms-test.cmd         GOMS 광고심의 등록 시험 (시험 중에만 — 등�
 
 goms-register.cmd     GOMS 광고심의 실제 등록 — 몇 편부터 몇 편까지 물어봐요 (이미 등록한 편은 건너뜀)
 
+goms-revise-test.cmd  GOMS 반려 재심사 시험 — 반려 사유를 읽고 Word 에 문구를 넣은 뒤,
+                      첫 편의 첨부파일 네모칸 체크까지만 해요 (삭제·수정은 누르지 않아요)
+
+goms-revise.cmd       GOMS 반려 재심사 실제 — 반려된 스레드 글마다 사유 문구를 넣은 Word 로
+                      파일삭제 → 파일추가 → 수정까지 해요
+
 
 tools 폴더            위 실행기가 쓰는 부품이에요. 열거나 누를 필요 없어요.
                       (새 PC 를 연결할 때 쓰는 connect.cmd·openai-key.cmd 도 여기 있어요)

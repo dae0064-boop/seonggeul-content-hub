@@ -40,6 +40,9 @@ $outRoot = Join-Path $drive 'ClaudeWorkspace\보험글'
 $sets = Get-ChildItem 'content\threads\insurance\sets\*.md' | Sort-Object Name | ForEach-Object { $_.FullName }
 $pyArgs = @('scripts\threads\insurance-word.py', $photo.FullName, $outRoot) + $sets
 if (-not $Force) { $pyArgs += '--skip-fresh' }
+# GOMS 심의 수정요구 문구 (goms-revise 가 채움) — 다시 만들어도 반려 때 넣은 문구가 빠지지 않게 늘 같이 넘긴다
+$fixes = Join-Path $drive 'ClaudeWorkspace\goms-fixes.tsv'
+if (Test-Path $fixes) { $pyArgs += @('--fixes', $fixes) }
 $lines = & python @pyArgs
 $made = @($lines | Where-Object { $_ -like '만듦*' }).Count
 $total = @($lines | Where-Object { $_ -like '만듦*' -or $_ -like '그대로 둠*' }).Count

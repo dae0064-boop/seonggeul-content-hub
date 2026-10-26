@@ -10,6 +10,10 @@
 사진 아래에는 아무것도 두지 않는다. 출처·원문 확인 여부는 묶음 파일(content/threads/insurance/sets/)에만 남긴다.
 
 --skip-fresh: 이미 있는 Word 가 원고·사진·이 스크립트보다 새것이면 건너뛴다 (PC 실행기가 쓴다).
+--fixes <tsv>: GOMS 심의에서 수정요구로 받은 문구 (줄마다 "번호<TAB>문구<TAB>날짜", Drive ClaudeWorkspace/goms-fixes.tsv).
+  그 편의 본문 아래·사진 위에 빨간 글씨로 덧붙인다 (2026-10-26 사용자 — 반려된 글에 문구를 넣어 다시 올린다.
+  협회 가이드라인: 경고문구는 색상 등을 달리해 넣는다). 본문에 이미 같은 문장이 있으면 다시 넣지 않는다.
+  --check <번호>: 그 편 Word 에 tsv 의 문구가 모두 들어 있는지만 본다 (종료 코드 0 = 있음, 1 = 없음). GOMS 재심사 직전 확인용.
 
 사진에는 설계사 이름·등록번호가 들어 있다. 사진과 Word 는 저장소에 커밋하지 않는다(공개 저장소).
 Google Drive ClaudeWorkspace/보험글/ 에 둔다.
@@ -69,11 +73,31 @@ def para(doc, text, size=11, color=None, bold=False, after=0):
     return p
 
 
+RED = (0xFF, 0x00, 0x10)
+
+
+def norm(t):
+    return re.sub(r'\s', '', t)
+
+
+def load_fixes(path):
+    """번호 → 덧붙일 문구 목록 (같은 문구는 한 번만)."""
+    fixes = {}
+    if path and Path(path).exists():
+        for line in Path(path).read_text(encoding='utf-8-sig').splitlines():
+            parts = line.split('\t')
+            if len(parts) >= 2 and parts[0].strip().isdigit() and parts[1].strip():
+                lst = fixes.setdefault(int(parts[0]), [])
+                if norm(parts[1]) not in map(norm, lst):
+                    lst.append(parts[1].strip())
+    return fixes
+
+
 def out_name(number):
     return f'스레드 {number}편.docx'
 
 
-def build(post, number, photo, out_dir):
+def build(post, number, photo, out_dir, extra=()):
     doc = Document()
     sec = doc.sections[0]
     sec.left_margin = sec.right_margin = Cm(2)
@@ -81,6 +105,13 @@ def build(post, number, photo, out_dir):
     # 본문 — 스레드에 그대로 붙여 넣을 글. 빈 줄은 빈 문단으로 둔다
     for line in post['body'].split('\n'):
         para(doc, line)
+
+    # 심의 수정요구 문구 — 본문에 이미 있는 문장은 빼고, 빨간 글씨로 본문 아래에
+    extra = [t for t in extra if norm(t) not in norm(post['body'])]
+    if extra:
+        para(doc, '')
+        for t in extra:
+            para(doc, t, size=10, color=RED)
 
     para(doc, '')
     doc.add_picture(str(photo), width=sec.page_width - sec.left_margin - sec.right_margin)
@@ -90,9 +121,34 @@ def build(post, number, photo, out_dir):
     return path
 
 
+def opt(name):
+    if name in sys.argv:
+        i = sys.argv.index(name)
+        if i + 1 < len(sys.argv):
+            return sys.argv[i + 1]
+    return None
+
+
+def check(docx_path, phrases):
+    text = norm('\n'.join(p.text for p in Document(docx_path).paragraphs))
+    missing = [t for t in phrases if norm(t) not in text]
+    for t in missing:
+        print(f'없음: {t}')
+    return not missing
+
+
 def main():
-    args = [a for a in sys.argv[1:] if not a.startswith('--')]
+    fixes_path, check_no = opt('--fixes'), opt('--check')
+    args = [a for i, a in enumerate(sys.argv[1:], 1) if not a.startswith('--') and not (sys.argv[i - 1] in ('--fixes', '--check'))]
     skip_fresh = '--skip-fresh' in sys.argv
+    fixes = load_fixes(fixes_path)
+    if check_no:
+        # python3 insurance-word.py <저장 폴더> --fixes <tsv> --check <번호>
+        target = Path(args[0]) / out_name(int(check_no))
+        phrases = fixes.get(int(check_no), [])
+        ok = bool(phrases) and target.exists() and check(target, phrases)
+        print(f'확인: {target.name} {"문구 있음" if ok else "문구 없음"}')
+        sys.exit(0 if ok else 1)
     if len(args) < 3:
         print(__doc__)
         sys.exit(1)
@@ -106,10 +162,12 @@ def main():
         for post in sorted(posts, key=lambda p: p['no']):
             number += 1
             target = Path(out_dir) / out_name(number)
-            if skip_fresh and target.exists() and target.stat().st_mtime >= newest_input:
+            # 수정요구 문구가 있는 편은 tsv 가 바뀌어도 다시 만든다
+            newest = max(newest_input, Path(fixes_path).stat().st_mtime) if number in fixes else newest_input
+            if skip_fresh and target.exists() and target.stat().st_mtime >= newest:
                 print(f'그대로 둠: {target.name}')
                 continue
-            print(f'만듦: {build(post, number, photo, out_dir).name}')
+            print(f'만듦: {build(post, number, photo, out_dir, fixes.get(number, [])).name}')
 
 
 if __name__ == '__main__':
