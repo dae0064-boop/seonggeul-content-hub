@@ -2,7 +2,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;700;800&family=Nanum+Gothic:wght@400;700&family=Nanum+Myeongjo:wght@400&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* 레이아웃: 왼쪽 위 복사 순서 막대(따라 붙음) + 가운데 네이버 글 미리보기(항상 흰 종이, 실제 발행 모양 그대로) */
 :root{
@@ -49,13 +49,15 @@ aside{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);display:grid
 
 /* 네이버 글 미리보기 */
 .paper{word-break:keep-all;background:var(--n-paper);color:var(--n-ink);border:1px solid var(--line);border-radius:8px;min-width:0;
-  padding:clamp(18px,4vw,44px) clamp(16px,5vw,64px);font-size:15px;line-height:1.85}
+  padding:clamp(18px,4vw,44px) clamp(16px,5vw,64px);font:15px/1.85 "Nanum Gothic","나눔고딕",var(--sans)}
 .paper .ttl{font-size:clamp(19px,2.6vw,24px);font-weight:700;line-height:1.45;padding-bottom:18px;margin-bottom:22px;border-bottom:1px solid #e6e6e6;text-wrap:balance}
 .paper p{margin:0;min-height:1.85em}
-.se-quotation{margin:26px 0 10px;text-align:center}
-.se-quotation blockquote{margin:0;padding:0}
-.se-quotation .se-quote::before{content:"\201C";display:block;font:700 34px/1 Georgia,serif;color:#000;margin-bottom:6px}
-.se-quotation .se-quote p{font-size:17px;font-weight:700;display:inline-block;padding:0 4px 10px;border-bottom:2px solid #000}
+/* 네이버 인용구 4번 '라인&따옴표' — 실제 편집 화면(run-logs 05-images.jpg)에서 본 모양:
+   왼쪽 정렬, 위에 작은 회색 따옴표, 명조체 보통 굵기, 아래에 본문 너비 회색 줄 */
+.se-quotation{margin:28px 0 14px;text-align:left}
+.se-quotation blockquote{margin:0;padding:0 0 14px;border-bottom:1px solid #999999}
+.se-quotation .se-quote::before{content:"\201C";display:block;font:700 30px/1 Georgia,serif;color:#999999;height:22px;margin-bottom:8px}
+.se-quotation .se-quote p{font:400 19px/1.6 "Nanum Myeongjo","나눔명조",serif;color:#000000}
 .ph{margin:10px 0;display:grid;gap:6px}
 .ph img{display:block;width:100%;max-width:100%;height:auto;border-radius:2px}
 .ph-bar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
@@ -135,7 +137,7 @@ const P = inner => `<p style="color:${C.ink};">${inner}</p>`;
 const BLANK = `<p style="color:${C.ink};"><br></p>`;
 /* 네이버 SE 인용구 4번(quotation_underline) 모양의 마크업. 네이버가 이 모양을 못 알아보면
    blockquote 만 보고 기본 인용구로 바꾼다 — 그때는 4단계 안내대로 모양만 고른다. */
-const QUOTE = t => `<div class="se-component se-quotation se-l-quotation_underline"><div class="se-component-content"><div class="se-section se-section-quotation se-l-quotation_underline"><blockquote class="se-quotation-container"><div class="se-module se-module-text se-quote"><p class="se-text-paragraph se-text-paragraph-align-center" style="color:${C.ink};text-align:center;"><span style="color:${C.ink};font-weight:bold;">${esc(t)}</span></p></div></blockquote></div></div></div>`;
+const QUOTE = t => `<div class="se-component se-quotation se-l-quotation_underline"><div class="se-component-content"><div class="se-section se-section-quotation se-l-quotation_underline"><blockquote class="se-quotation-container"><div class="se-module se-module-text se-quote"><p class="se-text-paragraph se-text-paragraph-align-left" style="color:${C.ink};"><span style="color:${C.ink};">${esc(t)}</span></p></div></blockquote></div></div></div>`;
 
 /* mode: "copy" = 네이버로 붙여 넣을 HTML, "view" = 화면 미리보기(사진·지도 상자 포함) */
 function build(mode){
