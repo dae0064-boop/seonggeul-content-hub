@@ -17,6 +17,8 @@
  *   대표사진 모양 look (2026-10-26 사용자 — "더 눈에 띄는 방식" 시험. 없으면 위 ① 둥근 글씨 + 형광펜):
  *     look "band"  사진 위쪽에 진한 남색 그러데이션 띠 + 굵은 고딕 흰 글씨, 메인 키워드(첫 줄)는 노란 글씨
  *     look "frame" 사진 둘레에 진한 남색 테두리 + 위쪽 흰 글상자에 남색 굵은 글씨, 첫 줄에 노란 형광펜
+ *     theme "forest" 등 (standards/image-style.json thumb_themes) — 띠·테두리 색과 첫 줄 글씨 색. 없으면 남색
+ *     font "jua" (둥근 글씨) | "ptd" (굵은 고딕, 기본) — 2026-10-26 사용자: 대표사진마다 색·글씨가 같아 보이지 않게
  *
  * 대표사진 카드 틀 (2026-10-09 대표사진 시험 결론 — 10/12 원고부터 네이버 하루 2편):
  *   계획서 1번에 "frame": "card" → 진한 남색 카드 + 가운데 사진 칸(1번 그림 그대로) + 위 질문형 제목 두 줄
@@ -170,32 +172,45 @@ const ptdFace = () => {
   return ptdCache;
 };
 
+let themesCache;
+function thumbTheme(name) {
+  if (themesCache === undefined) {
+    try { themesCache = JSON.parse(fs.readFileSync(new URL('../../standards/image-style.json', import.meta.url), 'utf8')).thumb_themes || {}; }
+    catch { themesCache = {}; }
+  }
+  const t = themesCache[name] || {};
+  return { band: t.band || NAVY.bg, key: t.key || NAVY.yellow };
+}
+const rgba = (hex, a) => { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${a})`; };
+
 function lookThumbHtml(imgDataUrl, S, o) {
   const tl = String(o.title).split('\n');
-  const face = ptdFace();
-  const fam = face ? `"PTD",${STYLE.font}` : STYLE.font;
+  const th = thumbTheme(o.theme);
+  const jua = o.font === 'jua' && juaFace();
+  const face = jua || ptdFace();
+  const fam = jua ? `"Jua",${STYLE.font}` : face ? `"PTD",${STYLE.font}` : STYLE.font;
   const band = o.look === 'band';
   const b = band ? 0 : S * 0.045;   // frame: 테두리 두께
   const fs1 = Math.round(S * (tl.length > 2 ? 0.095 : 0.125));
   return `<!doctype html><meta charset="utf-8"><style>
     ${face}
     *{margin:0;box-sizing:border-box}
-    body{width:${S}px;height:${S}px;position:relative;overflow:hidden;background:${NAVY.bg};font-family:${fam}}
+    body{width:${S}px;height:${S}px;position:relative;overflow:hidden;background:${th.band};font-family:${fam}}
     .ph{position:absolute;inset:${b}px;overflow:hidden;border-radius:${band ? 0 : S * 0.02}px}
     .ph img{width:100%;height:100%;object-fit:cover;display:block}
     .shade{position:absolute;left:0;right:0;top:0;height:${S * 0.46}px;
-      background:linear-gradient(to bottom,rgba(16,28,56,.92) 0%,rgba(16,28,56,.82) 55%,rgba(16,28,56,0) 100%)}
+      background:linear-gradient(to bottom,${rgba(th.band, 0.93)} 0%,${rgba(th.band, 0.84)} 55%,${rgba(th.band, 0)} 100%)}
     .wrap{position:absolute;left:${S * 0.06}px;right:${S * 0.06}px;top:${band ? S * 0.035 : S * 0.085}px;height:${band ? S * 0.31 : S * 0.29}px;
       display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
     .box{background:rgba(255,255,255,.95);border-radius:${S * 0.03}px;padding:${S * 0.025}px ${S * 0.05}px;
       box-shadow:0 ${S * 0.008}px ${S * 0.03}px rgba(0,0,0,.18);display:flex;flex-direction:column;align-items:center;max-width:100%}
-    .title{font-family:${fam};font-weight:800;font-size:${fs1}px;line-height:1.2;white-space:nowrap;letter-spacing:-.02em;position:relative;z-index:1}
+    .title{font-family:${fam};font-weight:${jua ? 400 : 800};font-size:${fs1}px;line-height:1.2;white-space:nowrap;letter-spacing:${jua ? 0 : '-.02em'};position:relative;z-index:1}
     .band .title{color:#fff;text-shadow:0 ${S * 0.004}px ${S * 0.012}px rgba(0,0,0,.35)}
-    .band .title.key{color:${NAVY.yellow}}
-    .frame .title{color:${NAVY.bg}}
+    .band .title.key{color:${th.key}}
+    .frame .title{color:${th.band}}
     .frame .title.key span{position:relative}
     .frame .title.key span:before{content:"";position:absolute;left:-${S * 0.01}px;right:-${S * 0.01}px;bottom:6%;height:42%;
-      background:${NAVY.yellow};border-radius:${S * 0.008}px;z-index:-1}
+      background:${th.key};border-radius:${S * 0.008}px;z-index:-1}
   </style><body class="${band ? 'band' : 'frame'}">
     <div class="ph"><img src="${imgDataUrl}">${band ? '<div class="shade"></div>' : ''}</div>
     <div class="wrap">${band
