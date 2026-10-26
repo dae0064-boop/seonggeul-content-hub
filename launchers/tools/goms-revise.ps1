@@ -27,6 +27,8 @@ $stamp = Get-Date -Format 'yyyy-MM-dd_HHmm'
 $out = Join-Path $repo "dumps\goms-revise-$stamp"
 New-Item -ItemType Directory -Force -Path $out | Out-Null
 
+# 실제 GOMS 에서 파일삭제·수정을 처음 돌릴 때는 한 편만 올려 확인한다 (2026-10-26) — 시작할 때 한 번만 묻는다
+if ($Submit) { $lim = Read-Host '몇 편 다시 올릴까요? (그냥 Enter = 1편, 모두는 0)'; if (-not $lim) { $lim = '1' } }
 Write-Host '1/3 GOMS 반려 건의 심의결과를 읽는 중 (한 편에 30초쯤)...'
 $log = @(& node scripts\goms-ad.mjs --file-dir $fileDir --revise --scan --fixes $fixes --out "$out\scan" 2>&1 | ForEach-Object { "$_" })
 $code = $LASTEXITCODE
@@ -37,7 +39,10 @@ if ($code -eq 0) {
   $log += & node scripts\threads\word-fix.mjs --dir $fileDir --fixes $fixes 2>&1 | ForEach-Object { "$_" }
   Write-Host $(if ($Submit) { '3/3 고친 Word 로 다시 올리는 중 (한 편에 1분쯤)...' } else { '3/3 시험 — 첫 편의 첨부파일 네모칸 체크까지만 해요 (삭제·수정은 누르지 않아요)...' })
   $nodeArgs = @('scripts\goms-ad.mjs', '--file-dir', $fileDir, '--revise', '--fixes', $fixes, '--done-dir', $doneDir, '--out', "$out\revise")
-  if ($Submit) { $nodeArgs += '--submit' }
+  if ($Submit) {
+    $nodeArgs += '--submit'
+    $nodeArgs += @('--limit', $lim)
+  }
   $log += & node @nodeArgs 2>&1 | ForEach-Object { "$_" }
   $code = $LASTEXITCODE
 }
