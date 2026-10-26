@@ -35,9 +35,10 @@ const readText = async (page) => {
   return '';
 };
 
-// state: 주소<TAB>결과<TAB>날짜 — 결과 = requested | indexed
+// state: 주소<TAB>결과<TAB>날짜 — 결과 = requested | indexed2
+// 10/26 첫 판의 'indexed' 는 앞 글 결과를 잘못 읽었을 수 있어(크롤링됨-색인 안 됨 /78~/86 이 '이미 색인'으로 나옴) 믿지 않고 다시 검사한다.
 const done = new Map();
-if (fs.existsSync(STATE)) for (const l of fs.readFileSync(STATE, 'utf8').split(/\r?\n/)) { const [u, r] = l.split('\t'); if (u) done.set(u, r); }
+if (fs.existsSync(STATE)) for (const l of fs.readFileSync(STATE, 'utf8').split(/\r?\n/)) { const [u, r] = l.split('\t'); if (u && r !== 'indexed') done.set(u, r); }
 const note = (u, r) => { done.set(u, r); fs.mkdirSync(path.dirname(STATE), { recursive: true }); fs.appendFileSync(STATE, `${u}\t${r}\t${today}\n`); };
 
 // 2026-10-26 두 번째 실행도 실패(사용자 "계속 오류 뜨는 거 같아, 다시 구성해봐") → 글마다 검사 주소를 새로 여는 방식을 버리고,
@@ -83,6 +84,7 @@ async function main() {
     if (!(await searchBox(page))) { report.stop = 'no-search-box'; say("맨 위 'URL 검사' 칸을 못 찾음 — 화면 기록을 Claude 가 본다"); await shot('start'); return; }
     await shot('start');
 
+    let streak = 0;
     for (const u of todo) {
       if (report.requested.length >= MAX) break;
       const n = u.split('/').pop();
@@ -95,18 +97,31 @@ async function main() {
         await box.fill('');
         await box.fill(u);
         await box.press('Enter');
-        // 이 글의 검사 결과가 뜰 때까지 (최대 90초) — 앞 글 결과를 잘못 읽지 않게 화면에 이 주소가 있는지도 본다
-        let t = '';
-        for (let i = 0; i < 45; i++) { await sleep(2000); t = await readText(page); if (RESULT.test(t) && t.includes(u.replace('https://', ''))) break; }
+        // 이 글의 검사 결과가 뜰 때까지 (최대 90초) — 화면에서 이 주소 아래쪽 첫 판정 줄만 읽는다(앞 글 결과를 잘못 읽지 않게)
+        const key = u.replace('https://', '');
+        const keyRe = new RegExp(`${key.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&')}(?=\\s|$)`, 'g');
+        let t = '', verdict = '';
+        for (let i = 0; i < 45; i++) {
+          await sleep(2000); t = await readText(page);
+          if (/할당량|quota/i.test(t)) break;
+          // 주소 뒤가 공백·줄끝인 자리만 (/1 이 /10 에 걸리지 않게), 그중 마지막 자리 아래 600자 안의 첫 판정
+          const hits = [...t.matchAll(keyRe)];
+          const at = hits.length ? hits.at(-1).index : -1;
+          const m = at >= 0 && t.slice(at, at + 600).match(/URL이 Google에 등록되어 있(?:지 않음|지만|음)|URL is (?:not )?on Google/);
+          if (m) { verdict = m[0]; break; }
+        }
         if (/할당량|quota/i.test(t)) { report.stop = 'quota'; say('오늘 할당량이 끝났어요'); break; }
-        if (!RESULT.test(t)) { report.failed.push({ u, why: 'no-result' }); say(`/${n} 검사 결과가 안 뜸`); await shot(`fail-${n}`); }
-        else if (/URL이 Google에 등록되어 있(음|지만)|URL is on Google/.test(t) && !/등록되어 있지 않음|URL is not on Google/.test(t)) {
-          note(u, 'indexed'); report.indexed.push(u); say(`/${n} 이미 색인됨`);
+        if (!verdict) { report.failed.push({ u, why: 'no-result' }); say(`/${n} 검사 결과가 안 뜸`); await shot(`fail-${n}`); }
+        else if (!/않음|not on/.test(verdict)) {
+          note(u, 'indexed2'); report.indexed.push(u); say(`/${n} 이미 색인됨 (${verdict})`);
         } else {
-          const btn = page.getByText(/^(색인 생성 요청|REQUEST INDEXING|Request indexing)$/).first();
-          if (!(await btn.count())) { report.failed.push({ u, why: 'no-button' }); say(`/${n} 요청 단추를 못 찾음`); await shot(`fail-${n}`); }
+          // 10/26 두 번째 판: 첫 글 뒤로는 '색인 생성 요청' 글자가 숨은 창 안에도 남아 첫 번째(숨은 것)를 누르려다 10초 초과 — 보이는 것만 누른다
+          const all = page.getByText(/^(색인 생성 요청|REQUEST INDEXING|Request indexing)$/);
+          let btn = null;
+          for (let k = (await all.count()) - 1; k >= 0; k--) { const c = all.nth(k); if (await c.isVisible().catch(() => false)) { btn = c; break; } }
+          if (!btn) { report.failed.push({ u, why: 'no-button' }); say(`/${n} 요청 단추를 못 찾음`); await shot(`fail-${n}`); }
           else {
-            await btn.click({ timeout: 10000 });
+            await btn.click({ timeout: 10000 }).catch(async () => { await btn.evaluate((el) => el.click()); });
             // 실제 URL 테스트 1~2분 → '색인 생성 요청됨' 또는 할당량 문구 (최대 3분)
             let r = '';
             for (let i = 0; i < 90; i++) { await sleep(2000); r = await readText(page); if (/색인 생성 요청됨|Indexing requested|할당량|quota|문제가 발생|went wrong/i.test(r)) break; }
@@ -122,7 +137,8 @@ async function main() {
         await shot(`fail-${n}`);
       }
       save();
-      if (report.failed.length >= 3 && !report.requested.length && !report.indexed.length) { report.stop = 'failing'; say('처음 3편이 모두 실패해 멈춤 — 화면 기록을 Claude 가 본다'); break; }
+      streak = report.failed.at(-1)?.u === u ? streak + 1 : 0;
+      if (streak >= 4) { report.stop = 'failing'; say('4편 연달아 실패해 멈춤 — 화면 기록을 Claude 가 본다'); break; }
     }
     report.left = posts.filter((u) => !done.has(u)).length;
   } catch (e) {
