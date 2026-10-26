@@ -60,6 +60,7 @@
   사이트맵 글(/숫자)을 오래된 것부터 URL 검사 → '등록되어 있지 않음'이면 '색인 생성 요청' → '요청됨' 확인 → 하루 10편·할당량 문구에서 멈춤. 요청·이미 색인 주소는 Drive `ClaudeWorkspace/index-requests/requested.tsv`(두 PC 공유), 날마다 `index-requests/<날짜>/sc-request.json`.
   auto-day 에 tistory-stats 다음으로 넣음 + `launchers/index-request.cmd`(지금 바로). 약 9~10일이면 끝난다. 첫 실행은 화면 확인 전 — 실패하면 fail-N.txt/.jpg 로 고친다.
   **첫 실행(11:25) 0편 — 처음 3편 모두 실패**: 검사 화면이 열린 뒤 스스로 한 번 더 이동해 읽는 중 끊김('Execution context was destroyed'·'interrupted by another navigation'). → 빈 화면 거쳐 열기 + 이동 중이면 기다렸다 다시 읽기 + 실패 화면 남기기로 고침.
+  **두 번째 실행도 실패(기록조차 안 남음) → 다시 짬**: 글마다 검사 주소를 새로 여는 방식을 버리고 서치 콘솔을 한 번 연 뒤 맨 위 'URL 검사' 칸에 주소 입력 + Enter(사람과 같은 방법). 기록(sc-request.json·log.txt·start/fail 화면)은 Drive `index-requests/<날짜>/` 에 글마다 바로 씀. 가짜 화면 시험: 요청 2·이미 색인 1 ✅.
   요청해도 색인은 보장되지 않는다(구글 판단). 아침 확인이 sc-request.json(요청 수·남은 글·멈춘 이유)을 본다.
   → 사용자에게 할 일 없음. 아침 확인이 매일 sc-2 의 색인됨 수·'크롤링됨' 수를 stats-log 티스토리 칸에 적고, 크롤링됨이 늘면 어떤 글인지 본다(얇은 글·겹치는 질문 → tistory-daily 가치 기준).
 
