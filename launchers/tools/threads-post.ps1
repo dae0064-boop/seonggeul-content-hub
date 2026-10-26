@@ -12,7 +12,8 @@ $drive = Find-MyDrive
 if (-not $drive) { Write-Host 'Google Drive(내 드라이브\ClaudeWorkspace)를 찾지 못했어요. Drive 가 켜져 있는지 확인해 주세요.' -ForegroundColor Yellow; exit 1 }
 # 키는 Windows 사용자 환경 변수에 있다 (threads-key.cmd). 작업 스케줄러로 뜬 창에도 보이게 직접 읽어 넘긴다.
 if (-not $env:THREADS_ACCESS_TOKEN) { $env:THREADS_ACCESS_TOKEN = [Environment]::GetEnvironmentVariable('THREADS_ACCESS_TOKEN', 'User') }
-$nodeArgs = @('scripts\threads\insurance-post.mjs', '--word-dir', (Join-Path $drive 'ClaudeWorkspace\보험글'), '--approved', (Join-Path $drive 'ClaudeWorkspace\goms-approved.tsv'), '--fixes', (Join-Path $drive 'ClaudeWorkspace\goms-fixes.tsv'))
+$nodeArgs = @('scripts\threads\insurance-post.mjs', '--word-dir', (Join-Path $drive 'ClaudeWorkspace\보험글'), '--approved', (Join-Path $drive 'ClaudeWorkspace\goms-approved.tsv'), '--fixes', (Join-Path $drive 'ClaudeWorkspace\goms-fixes.tsv'), '--posted', (Join-Path $drive 'ClaudeWorkspace\run-logs\threads\posted.tsv'))
+New-Item -ItemType Directory -Force -Path (Join-Path $drive 'ClaudeWorkspace\run-logs\threads') | Out-Null
 if (-not $Test) { $nodeArgs += '--post' }
 $log = @(& node @nodeArgs 2>&1 | ForEach-Object { "$_" })
 $code = $LASTEXITCODE

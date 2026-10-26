@@ -216,5 +216,9 @@ python3 scripts/threads/insurance-word.py <묶음.md> <사진.jpg> <저장 폴�
 - 올렸는지는 상태 파일 없이 내 스레드 최근 글의 첫 두 줄로 본다 (두 PC 가 함께 돌아도 두 번 올리지 않게, 올리기 직전에 한 번 더 본다).
 - 연결 키는 PC 마다 `launchers/threads-key.cmd` 로 Windows 사용자 환경 변수 `THREADS_ACCESS_TOKEN` 에 넣는다 (저장소·Drive 에 두지 않는다). 60일짜리다.
 - 멈춤: `content/threads/PAUSE` 파일 또는 `launchers/threads-setup.cmd -Remove`. 시험(올리지 않음): `launchers/threads-post-test.cmd`.
-- 기록: Drive `ClaudeWorkspace/run-logs/threads/<날짜>.log`.
+- 기록: Drive `ClaudeWorkspace/run-logs/threads/<날짜>.log`, 게시한 편은 `run-logs/threads/posted.tsv` 에 한 줄씩(시각·편·심의필·첫 줄·1/2·2/2 주소).
+- **일정표**: https://claude.ai/artifact/1CBQRqSNcjmK8424fo96fb (원본 `content/threads/insurance/schedule/`) — 게시 완료·다음 게시(하루 5칸)·편별 상태.
+  아침 확인이 매일 `schedule-data.mjs` 로 data.json 을 바꿔 올린다 (`routines/morning-check.md` 5-2).
+- **매일 반복** (2026-10-26 사용자): ① 승인 편 5편 게시 ② GOMS 10편 등록 ③ 승인 난 편 심의필 번호 읽기 → 다음 날 게시 준비.
+  같은 글감은 다시 쓰지 않는다(topics.txt `# 사용`, 검사기 겹침, 쓰기 전 지난 묶음 훑기). 하루 5편 게시는 꼭 — 승인 재고가 10편 밑이면 아침 확인이 경고한다.
 - 배너에는 설계사 이름·등록번호가 있지만 스레드에 어차피 공개로 올라가는 사진이라 저장소(공개)에 둔다 (2026-10-26 사용자 승인).

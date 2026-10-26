@@ -120,6 +120,11 @@ export function threadsApi(token) {
       return callPaged(EP.myThreads(me.id), { fields: FIELDS.post, limit, since }, 3);
     },
 
+    /** 글 하나의 주소·시각 (게시 기록용) */
+    async getPost(id) {
+      return call('GET', `/${id}`, { fields: FIELDS.post });
+    },
+
     /** 내가 단 답글(다른 글·내 글 아래). 나눠 올린 보험글의 2/2 가 붙었는지 볼 때 쓴다 */
     async myReplies({ limit = 50 } = {}) {
       const me = await this.me();
