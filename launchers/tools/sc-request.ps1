@@ -24,12 +24,8 @@ if ((Test-Path $dayMark) -and -not $Force) {
   try { $j = Get-Content $dayMark -Raw -Encoding UTF8 | ConvertFrom-Json } catch { $j = $null }
   if ($j -and ($j.requested.Count -gt 0 -or $j.stop -eq 'quota' -or $j.left -eq 0)) { Write-Host '[색인 생성 요청] 오늘은 이미 했어요.'; exit 0 }
 }
-$out = "dumps\sc-request\$date"
+# 기록은 Drive 에 바로 쓴다 — 글 하나마다 갱신되어, 도중에 창을 닫아도 Claude 가 어디까지 됐는지 본다 (2026-10-26)
+$out = if ($drive) { Join-Path $drive "ClaudeWorkspace\index-requests\$date" } else { "dumps\sc-request\$date" }
 Write-Host "`n[색인 생성 요청] 구글 서치 콘솔 — 하루 10편까지 (1편에 1~2분)" -ForegroundColor Cyan
 & node scripts/sc-request-index.mjs --state $state --out $out --max 10 2>&1 | ForEach-Object { Write-Host $_ }
-if ($drive -and (Test-Path $out)) {
-  $dest = Join-Path $drive "ClaudeWorkspace\index-requests\$date"
-  New-Item -ItemType Directory -Force -Path $dest | Out-Null
-  Copy-Item -Path (Join-Path $out '*') -Destination $dest -Recurse -Force
-  Write-Host "Drive 로 올렸어요: $dest" -ForegroundColor Green
-}
+Write-Host "기록: $out" -ForegroundColor Green
