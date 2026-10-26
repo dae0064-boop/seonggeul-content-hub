@@ -26,6 +26,7 @@ import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
 import { readMyBlogId, resolveRelated } from './lib/naver-related.mjs';
+import { applyBrandconnect, DISCLOSURE as SHOP_DISCLOSURE } from './lib/brandconnect.mjs';
 import { leadBlock } from './lib/parse-post.mjs';
 
 // ---------------------------------------------------------------- args
@@ -1157,6 +1158,36 @@ async function addSourceLinks(page, editor, post) {
   return { ok: true, made };
 }
 
+/**
+ * 쇼핑 커넥트 글(원고 brandconnect:, 2026-10-26 사용자): "▶ 네이버쇼핑에서 ○○ 보기" 줄 바로 아래에 상품 링크 카드를 넣는다.
+ * 출처 링크와 같은 방법(진짜 붙여넣기 → 링크 단추). 카드가 안 되면 그 줄과 대가성 문구를 지워 보통 글로 남긴다 —
+ * 링크 없는 글에 "수수료를 제공받습니다"만 남지 않게. 다른 줄이 사라지면 되돌린다. 이 단계 때문에 발행이 멈추지는 않는다.
+ */
+async function deleteLine(page, editor, text) {
+  if (!(await caretAtEnd(page, editor, text))) return false;
+  await page.keyboard.press('Shift+Home'); await sleep(150);
+  await page.keyboard.press('Backspace'); await sleep(300);
+  return !(await snapshot(editor)).includes(text);
+}
+async function addShopLink(page, editor, shop) {
+  const snap0 = await snapshot(editor);
+  const r = await addOneSource(page, editor, shop.anchor, shop.link.url);
+  if (r.how) {
+    const lost = lostLines(snap0, await snapshot(editor));
+    if (!lost.length) return { ok: true, how: r.how };
+    const back = await undoUntilRestored(page, editor, snap0, 30);
+    return { ok: false, why: `다른 글 ${lost.length}줄이 사라져 ${back ? '되돌림' : '되돌리지 못함'}`, lost: back ? null : lost, removed: [] };
+  }
+  const removed = [];
+  for (const t of [shop.anchor, ...SHOP_DISCLOSURE]) if (await deleteLine(page, editor, t)) removed.push(t);
+  const lost = lostLines(snap0, await snapshot(editor), removed);
+  if (lost.length) {
+    const back = await undoUntilRestored(page, editor, snap0, 30);
+    return { ok: false, why: `${r.why} — 줄을 지우다 다른 글 ${lost.length}줄이 사라져 ${back ? '되돌림' : '되돌리지 못함'}`, lost: back ? null : lost, removed: back ? [] : removed };
+  }
+  return { ok: false, why: r.why, removed };
+}
+
 // ---------------------------------------------------------------- 본문 넣기
 /** 굵게/기울임/밑줄/취소선이 켜져 있으면 끈다. 켜진 채로 쓰면 글 전체에 그 서식이 붙는다. */
 async function resetToggles(editor) {
@@ -1355,6 +1386,10 @@ async function main() {
   if (!post.title || !Array.isArray(post.blocks)) {
     throw new Error(`${args.post}: title 과 blocks 가 필요합니다. build-post.mjs 로 생성하세요.`);
   }
+  // 쇼핑 커넥트 링크는 발행할 때 목록(content/affiliate/brandconnect-links.tsv)에서 찾는다. 없으면 대가성 문구·링크 자리를 빼고 낸다
+  const shop = applyBrandconnect(post);
+  post.blocks = shop.blocks;
+  if (shop.note) log(shop.note);
   // 인사말 앞 사실 한 문장 → 인용구 1번 (2026-10-13 사용자 지시). 두 줄을 한 문단으로 이어 붙여 넣고,
   // 소제목과 같은 방법(insertQuoteAt)으로 인용구로 바꾼다. 실패해도 글자는 남고 발행은 멈추지 않는다
   const lead = args.quote ? leadBlock(post.blocks) : null;
@@ -1661,6 +1696,27 @@ async function main() {
       } catch (e) {
         if (/저장하지 않고 멈춥니다/.test(e.message)) throw e;
         warn(`출처 링크 단계 건너뜀 (${e.message.split('\n')[0]})`);
+      }
+    }
+
+    // ---- 쇼핑 커넥트 상품 링크 카드 (원고 brandconnect:, 2026-10-26 사용자). 실패하면 링크 줄·대가성 문구를 지우고 그대로 발행한다
+    if (shop.link) {
+      step(`7-2b. 쇼핑 커넥트 링크 (${post.brandconnect})`);
+      try {
+        const r = await addShopLink(page, editor, shop);
+        if (r.ok) log(`쇼핑 링크 넣음 — ${r.how}`);
+        else {
+          warn(`쇼핑 링크 넣기 실패 (${r.why}) — 링크 줄·대가성 문구를 지우고 보통 글로 냅니다`);
+          if (r.lost) throw new Error(`쇼핑 링크를 넣다가 글이 사라졌고 되돌리지 못했습니다: ${r.lost.slice(0, 3).join(' / ')}. 저장하지 않고 멈춥니다.`);
+          // 지운 줄은 마지막 확인에서 찾지 않는다
+          const gone = new Set(r.removed);
+          post.blocks = post.blocks.map((b) => (b.type === 'image' ? b : { ...b, lines: b.lines.filter((l) => !gone.has(l.t)) }))
+            .filter((b) => b.type === 'image' || b.lines.length);
+        }
+        await dump(page, 'shop-link');
+      } catch (e) {
+        if (/저장하지 않고 멈춥니다/.test(e.message)) throw e;
+        warn(`쇼핑 링크 단계 건너뜀 (${e.message.split('\n')[0]})`);
       }
     }
 

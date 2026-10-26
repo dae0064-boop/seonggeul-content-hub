@@ -62,6 +62,9 @@
    **수익 (2026-10-17 사용자 — 티스토리 목표 ① 조회수 ② 수익)**: 티스토리 로그의 "쿠팡 링크 확인"·"rel=\"sponsored\" 를 에디터가 지웠어요" 줄을 본다
    (지웠으면 publish-tistory.mjs 가 링크를 넣는 방식을 고친다). 애드센스가 승인 전이면 그대로 두고, 승인되면 사용자에게 자동 광고 켜기를 한 번 안내한다.
    `content/affiliate/coupang-wanted.txt` 에 5줄 이상 쌓이면 사용자에게 "데스크톱 앱에서 쿠팡 링크 만들기"를 한 번 안내한다(README 순서).
+   **네이버 쇼핑 커넥트 (2026-10-26~)**: 네이버 로그의 "쇼핑 링크 넣음"·"쇼핑 링크 넣기 실패" 줄을 본다(실패가 이틀 이어지면 publish-naver.mjs 를 고친다).
+   `content/affiliate/brandconnect-wanted.txt` 에 상품이 있으면 사용자에게 "쇼핑 커넥트에서 ○○ 링크 복사해 대화에 붙여 주세요"를 한 번 안내한다(README 순서).
+   2주 점검에서 쇼핑 글과 같은 날 다른 생활정보 글의 조회수를 견줘, 쇼핑 글이 눈에 띄게 낮으면 사용자에게 알리고 빈도를 줄인다.
    바꾼 것은 content/calendar/publish-calendar.html·keyword-queue.txt·STATUS 를 고쳐 PR → 검사 → merge
    이미 써 둔 내일 원고는 손대지 않는다.
    하루 숫자가 작으면 단정하지 말고 흐름으로만 본다.
