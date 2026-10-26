@@ -13,11 +13,14 @@
   `coupang:` 키워드를 달아 `content/tistory/` 에 쓰고, 아침 PC 의 build-tistory 가 `coupang-links.tsv` 의 링크를 `rel="sponsored"` 로 넣는다.
   사람 손은 링크 목록을 채울 때만 든다 (아래).
 
-## 쇼핑 커넥트 링크 목록 채우기 (사용자 — 1~2분, 링크 하나에)
-1. 크롬에서 `brandconnect.naver.com` → 쇼핑 커넥트 → 상품 검색에 `brandconnect-wanted.txt` 의 상품 이름(예: 핫팩)을 친다.
-2. 많이 팔리고 후기가 많은 상품 하나를 골라 **링크 복사**를 누른다.
-3. Claude 대화에 "핫팩 링크: (붙여넣기)" 처럼 보낸다 → Claude 가 `brandconnect-links.tsv` 에 `키워드<TAB>링크<TAB>보여 줄 글자` 로 적고
-   `brandconnect-wanted.txt` 에서 지운 뒤 main 에 합친다. 다음 날 아침 발행부터 그 키워드 글에 들어간다.
+## 쇼핑 커넥트 링크 목록 채우기 (자동 — 2026-10-26 사용자 "나에게 링크를 만들라고 하지 말아줘")
+1. 아침 PC 의 `draft-day.ps1 -Reserve` 가 크롬을 켠 뒤 발행 전에 `launchers/tools/brandconnect-links.ps1` → `scripts/brandconnect-links.mjs` 를 부른다.
+   앞으로 나갈 원고의 `brandconnect:` 키워드부터, 그다음 `brandconnect-wanted.txt` 순으로 하루 2개까지.
+2. 쇼핑 커넥트에서 상품을 검색해 리뷰 많은순(없으면 판매순)으로 놓고, 후기·구매 수가 가장 큰 상품의 링크 버튼을 눌러 주소를 읽는다.
+   구매·결제·신청·동의·설정·삭제 같은 버튼은 누르지 않는다.
+3. 만든 링크는 `dumps/brandconnect-links.local.tsv`(이 PC — 같은 아침 발행이 바로 씀)와 Drive `ClaudeWorkspace/brandconnect/`(다른 PC·아침 확인)에 남는다.
+4. 아침 확인 Routine 이 Drive 결과를 `brandconnect-links.tsv` 에 옮기고 `brandconnect-wanted.txt` 에서 지운 뒤 main 에 합친다.
+   실패하면 화면 기록을 보고 스크립트를 고친다 (`routines/morning-check.md`).
 
 ## 네이버 브랜드커넥트 글 손으로 올리는 순서 (예전 방식 — 자동 원고에 맞지 않는 글만)
 1. 클라우드 대화에서 원고를 쓰고 검사기를 통과시킨다 — 네이버 `node scripts/lint-post.mjs content/affiliate/<원고>.md`.
