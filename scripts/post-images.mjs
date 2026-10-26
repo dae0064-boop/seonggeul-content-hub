@@ -63,12 +63,13 @@ const outDir = join(ROOT, "content", "images", plan.slug);
 
 // 카드 틀 대표사진에 넣을 메인 키워드·분류 — 같은 슬러그 원고에서 읽는다
 let postMeta = null;
-for (const d of ["posts", "tistory"]) {
+for (const d of ["posts", "tistory", "chulgeo/posts"]) {
   const md = join(ROOT, "content", d, `${plan.slug}.md`);
   if (existsSync(md)) { postMeta = parsePost(readFileSync(md, "utf8")); break; }
 }
+// 그림 속 블로그 이름: 계획서 brand (철거 블로그 = "다와이철거", 2026-10-26). 없으면 성글벙글
 const overlayOf = (im) => im.overlay && (im.frame === "card"
-  ? { ...im.overlay, frame: "card", key: im.overlay.key || postMeta?.mainKeyword || "", category: im.overlay.category || postMeta?.category || "생활정보" }
+  ? { ...im.overlay, frame: "card", brand: plan.brand, key: im.overlay.key || postMeta?.mainKeyword || "", category: im.overlay.category || postMeta?.category || "생활정보" }
   : im.overlay);
 
 // 정보 카드는 먼저 내용을 확인한다 (돈·통화기호, 줄 수, 글자 수)
@@ -91,7 +92,7 @@ for (const im of todo) {
     const name = im.file ? im.file.replace(/\.png$/i, "") : String(im.n).padStart(2, "0");
     const target = join(outDir, `${name}.png`);
     if (existsSync(target) && !opt.force && !opt["overlay-only"]) { console.log(`⏭  ${name}.png 이미 있음 — ${im.title}`); skipped++; }
-    else cardJobs.push({ n: im.n, dest: target, card: im.card });
+    else cardJobs.push({ n: im.n, dest: target, card: { ...im.card, brand: plan.brand } });
     continue;
   }
   const name = im.file ? im.file.replace(/\.png$/i, "") : String(im.n).padStart(2, "0");

@@ -1,0 +1,76 @@
+{
+  "slug": "2026-10-27-siheung-yoksil-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "세면대와 변기를 떼어 내고 타일만 남은 아파트 욕실 (대표사진)",
+      "scene": "eye-level view through the open door of a Korean apartment bathroom where the sink and toilet have been removed, old white wall tiles still in place, capped pipe openings on the wall, soft light from a small window.",
+      "prompt": "Camera and composition: eye-level view through the open door of a Korean apartment bathroom where the sink and toilet have been removed, old white wall tiles still in place, capped pipe openings on the wall, soft light from a small window. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "시흥 욕실 철거\n부분 철거 순서"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "욕실 문 앞 거실 바닥에 길게 깔아 둔 보양 시트",
+      "scene": "low angle view of a Korean apartment living room floor with a long strip of grey protective sheet taped from the front door to the bathroom door.",
+      "prompt": "Camera and composition: low angle view of a Korean apartment living room floor with a long strip of grey protective sheet taped from the front door to the bathroom door. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "타일이 남은 벽면과 타일을 걷어 낸 벽면 비교",
+      "scene": "split view of a bathroom wall: on the left side old beige tiles still attached, on the right side the tiles removed showing rough grey cement and adhesive marks.",
+      "prompt": "Camera and composition: split view of a bathroom wall: on the left side old beige tiles still attached, on the right side the tiles removed showing rough grey cement and adhesive marks. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "욕실 부분 철거 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "욕실 부분 철거 순서",
+        "items": [
+          "거실·현관 보양",
+          "수전·세면대·변기 떼기",
+          "욕조·장·천장재 철거",
+          "벽·바닥 타일 철거",
+          "반출과 바닥 정리"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "아파트 복도 현관문 앞에 놓아 둔 공구 가방과 안전모",
+      "scene": "a Korean apartment hallway outside a front door with a closed canvas tool bag and a yellow safety helmet set neatly on the floor beside the door.",
+      "prompt": "Camera and composition: a Korean apartment hallway outside a front door with a closed canvas tool bag and a yellow safety helmet set neatly on the floor beside the door. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "묶어 둔 타일 조각 마대가 쌓인 아파트 엘리베이터 앞",
+      "scene": "in front of a Korean apartment elevator, several tied white woven sacks filled with broken tile pieces stacked neatly on a protective floor sheet.",
+      "prompt": "Camera and composition: in front of a Korean apartment elevator, several tied white woven sacks filled with broken tile pieces stacked neatly on a protective floor sheet. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "타일을 걷어 내고 깨끗하게 쓸어 둔 욕실 바닥",
+      "scene": "close view of a bathroom floor after the tiles were removed, bare cement surface swept clean, a broom and dustpan resting at the doorway.",
+      "prompt": "Camera and composition: close view of a bathroom floor after the tiles were removed, bare cement surface swept clean, a broom and dustpan resting at the doorway. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "새 공사를 기다리는 빈 욕실 입구와 거실 쪽 보양재",
+      "scene": "view from a Korean apartment living room toward an empty bathroom doorway, grey protective sheets on the floor, calm and clean, waiting for new construction.",
+      "prompt": "Camera and composition: view from a Korean apartment living room toward an empty bathroom doorway, grey protective sheets on the floor, calm and clean, waiting for new construction. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

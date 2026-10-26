@@ -1,0 +1,26 @@
+# 다와이철거 다음 날 원고 5편 (매일 19:43)
+
+2026-10-26 사용자 요청: "철거관련 내용과 업체명·연락처·업무경력을 토대로 기존 블로그 말고 다른 블로그로 하루에 5개씩 홍보".
+성글벙글(살림 블로그)과 **완전히 따로**다. 성글벙글 규칙(CLAUDE.md 글쓰기 규칙, memory/CLAUDE.md, lint-post.mjs)은 쓰지 않는다.
+
+0. `routines/README.md` "공통 시작"을 한다. 그다음 **`content/chulgeo/README.md` 를 처음부터 끝까지 읽는다** (규칙 정본 — 업체 정보, 쓰면 안 되는 말, 글 모양, 그림).
+1. 내일 날짜(Asia/Seoul)를 D 라 한다. main 에 `content/chulgeo/posts/D-*.md` 가 이미 5편 있으면 검사기만 돌리고 짧게 알린 뒤 끝낸다.
+2. 밀린 원고: `content/chulgeo/posts/` 에 D 보다 앞 날짜 원고가 있으면 PC 가 아직 못 올린 것일 수 있다 (Drive `ClaudeWorkspace/run-locks/chulgeo/<슬러그>.done` 이 없는 글).
+   그런 글이 5편 이상이면 새로 쓰지 않는다 — 아침 PC 가 밀린 것부터 하루 5편씩 올린다. 사용자에게 "철거 블로그 로그인(chulgeo-login.cmd)이 됐는지" 한 줄로 알린다.
+   5편 미만이면 5 − (밀린 편수) 편만 쓴다.
+   `.done` 이 있는 지난 원고(.md·.json·그림 계획서)는 지우고 `content/chulgeo/published.tsv` 에 `날짜<TAB>슬러그<TAB>메인 키워드<TAB>제목` 한 줄씩 남긴다 (본문은 git 기록에 있다).
+   검사기는 posts 폴더와 published.tsv 의 메인 키워드와 겹치지 않는지 본다.
+3. 글감: `content/chulgeo/topics.txt` 의 안 쓴 줄에서 고른다. 하루 섞기(README 3): 지역 4곳 이상, 방문 견적 지역(서울·인천·시흥) 3편 이상, 주거 2 · 상가/원상복구 2 · 폐기물/특수 1 안팎.
+   모자라면 같은 형식으로 보탠다. 쓴 줄 앞에 `# 사용 D ` 를 붙인다.
+   키워드는 WebSearch 로 "그 말로 검색했을 때 블로그 글이 나오는지(지역 철거 업체 블로그가 상위에 있는지)" 정도만 확인한다 — 사용자에게 조회를 부탁하지 않는다.
+4. 원고 `content/chulgeo/posts/D-<영문 슬러그>.md` — README 3 의 모양 그대로. 견본은 가장 최근 원고.
+   publish_at 은 D 의 11:00 · 13:00 · 16:00 · 18:00 · 20:00 (글마다 하나씩).
+   - 받은 업체 정보만 쓴다. 금액·무료·추가금 없음·후기·면허·보험·카카오톡은 쓰지 않는다 (받지 못했다). 관리사무소 신고·동의서는 대행하지 않는다.
+   - 수원·안산·안양 글은 "사진 상담부터". 방문 견적은 서울·인천·시흥만.
+   - 실제 있었던 현장처럼 지어내지 않는다. 법령·안전 수치는 1차 원문으로 확인한 것만.
+   - 같은 날·지난 글과 같은 문장을 쓰지 않는다 (검사기가 겹침 20% 넘으면 막는다). 도입·강점 문단도 글마다 다른 말로.
+5. 그림 계획서 `content/chulgeo/image-plans/<같은 슬러그>.json` — 장면(scene)만 영어로 짧게, 1번은 overlay thumb(두 줄, 한 줄 10자 안쪽), 정보 카드 0~3장(kind card).
+   `node scripts/chulgeo/plan.mjs <계획서>` 로 title·prompt 를 채운다. 8장 모두 다른 장소·구도.
+6. `node scripts/build-post.mjs content/chulgeo/posts/D-*.md` → `node scripts/chulgeo/lint.mjs content/chulgeo/posts/D-*.md` 가 모두 ✅ 일 때까지 고친다.
+7. `docs/STATUS.md` 의 "다와이철거" 항목에 한 줄(날짜, 5편 메인 키워드) 갱신. 커밋 → PR → `검사` 통과 → merge.
+8. 사용자에게 짧게: 내일 5편 제목·예약 시각, 밀린 원고가 있으면 그 수, PR 링크. 네이버·OpenAI 에 접속하지 않고 "발행했다/예약했다"고 말하지 않는다.

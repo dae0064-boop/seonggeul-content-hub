@@ -8,7 +8,9 @@ $ErrorActionPreference = 'SilentlyContinue'
 Set-Location (Join-Path $PSScriptRoot '..\..')
 $today = (Get-Date).ToString('yyyy-MM-dd')
 $n = 0
-Get-ChildItem 'content\images' -Directory | Where-Object { $_.Name -match '^(\d{4}-\d{2}-\d{2})-' -and $Matches[1] -lt $today } |
+# 다와이철거(2026-10-26): 아직 저장소에 남은 철거 원고(못 올려 다음 날로 밀린 글)의 그림은 지우지 않는다 — 다시 만들면 돈이 든다
+$keep = @(Get-ChildItem 'content\chulgeo\posts\*.md' -ErrorAction SilentlyContinue | ForEach-Object { $_.BaseName })
+Get-ChildItem 'content\images' -Directory | Where-Object { $_.Name -match '^(\d{4}-\d{2}-\d{2})-' -and $Matches[1] -lt $today -and $keep -notcontains $_.Name } |
   ForEach-Object { Remove-Item $_.FullName -Recurse -Force; $n++ }
 $cut = (Get-Date).AddDays(-3)
 Get-ChildItem 'dumps' | Where-Object { $_.LastWriteTime -lt $cut } | ForEach-Object { Remove-Item $_.FullName -Recurse -Force; $n++ }
