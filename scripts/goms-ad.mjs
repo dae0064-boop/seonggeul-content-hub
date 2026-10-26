@@ -796,11 +796,43 @@ async function fileRows(name) {
   }, name);
 }
 
+// 첨부파일 표의 네모칸은 파일 이름 줄(tr) 안에 없다 — 표 머리의 "전체 선택"(input.g-table-default-all-check)과
+// 줄 네모칸이 따로 그려진다 (2026-10-26 13:24 실행 structure-revise-29.txt). 다른 탭(점검표)의 네모칸은 숨어 있으니
+// 상세 창에서 보이는 네모칸만 본다. 파일이 하나뿐인 것은 앞에서 확인했다.
+const BOXES = (f) => {
+  const vis = (e) => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
+  const all = [...f.querySelectorAll('input[type=checkbox]')].filter(vis);
+  return { head: all.filter((i) => /all-check/.test(i.className || '')), rows: all.filter((i) => !/all-check/.test(i.className || '')) };
+};
+
 async function fileChecked() {
-  return FORM.root.locator('[data-goms-file="1"]').evaluate((tr) => {
-    const i = tr.querySelector('input[type=checkbox]');
-    return i ? i.checked : !!tr.querySelector('svg');
-  }).catch(() => false);
+  return FORM.root.evaluate((f, src) => {
+    const { head, rows } = new Function(`return (${src})`)()(f);
+    return rows.some((i) => i.checked) || head.some((i) => i.checked);
+  }, BOXES.toString()).catch(() => false);
+}
+
+/** 첨부파일 네모칸 켜기 — 진짜 마우스로 누르고, 안 되면 표 머리 "전체 선택"(파일이 하나뿐이라 같은 뜻). */
+async function checkFileBox(page) {
+  const spots = await FORM.root.evaluate((f, src) => {
+    const { head, rows } = new Function(`return (${src})`)()(f);
+    const at = (i) => { const r = i.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2, w: r.width }; };
+    return { rows: rows.map(at), head: head.map(at) };
+  }, BOXES.toString()).catch(() => ({ rows: [], head: [] }));
+  log(`  첨부파일 네모칸: 줄 ${spots.rows.length}개, 전체 선택 ${spots.head.length}개`);
+  for (const p of [...spots.rows, ...spots.head]) {
+    if (!p.w) continue;
+    await page.mouse.click(p.x, p.y);
+    await sleep(600);
+    if (await fileChecked()) return true;
+  }
+  // 마우스가 안 먹으면(덮개 등) 페이지 안에서 직접 누른다
+  await FORM.root.evaluate((f, src) => {
+    const { head, rows } = new Function(`return (${src})`)()(f);
+    (rows[0] || head[0])?.click();
+  }, BOXES.toString()).catch(() => {});
+  await sleep(600);
+  return fileChecked();
 }
 
 /** 2단계: 한 편 다시 올리기 — 등록 탭 → 네모칸 → 파일삭제 → 파일추가 → 수정. */
@@ -821,14 +853,7 @@ async function reviseOne(page, row) {
   if (!names.length) throw new Stop('첨부파일 표에서 파일을 찾지 못했어요');
   if (names.length > 1 || names[0].replace(/\s/g, '') !== `${title}.docx`.replace(/\s/g, ''))
     throw new Stop(`첨부파일이 예상과 달라 멈췄어요 (보이는 파일: ${names.join(', ')})`);
-  const box = FORM.root.locator('[data-goms-file="1"]');
-  if (!(await fileChecked())) {
-    const cb = box.locator('input[type=checkbox]');
-    if (await cb.count()) await cb.first().click({ timeout: 3000 }).catch(() => cb.first().evaluate((x) => x.click()));
-    else await box.locator('td').first().click();
-    await sleep(500);
-  }
-  if (!(await fileChecked())) throw new Stop(`"${title}.docx" 네모칸을 눌렀는데 체크되지 않았어요`);
+  if (!(await fileChecked()) && !(await checkFileBox(page))) throw new Stop(`"${title}.docx" 네모칸을 눌렀는데 체크되지 않았어요`);
   log(`  첨부파일 "${title}.docx" 체크 ✓`);
   await shot(page, `revise-${n}-checked`);
   if (!submit) { log('  시험이라 "파일삭제"·"수정"은 누르지 않고 멈춰요.'); return 'test'; }
