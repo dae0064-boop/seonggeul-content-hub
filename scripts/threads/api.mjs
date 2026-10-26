@@ -157,6 +157,28 @@ export function threadsApi(token) {
       return published;
     },
 
+    /**
+     * 사진 한 장 + 글을 올린다 (2026-10-26 — 보험 심의글 + 심의필 배너). imageUrl 은 공개 주소여야 한다.
+     * 사진 컨테이너는 스레드가 사진을 받아 가는 동안 IN_PROGRESS 라 FINISHED 가 될 때까지 기다린 뒤 발행한다.
+     */
+    async postImage(text, imageUrl) {
+      const me = await this.me();
+      const container = await call('POST', EP.createContainer(me.id), { media_type: 'IMAGE', image_url: imageUrl, text });
+      if (!container?.id) throw new Error(`컨테이너 생성 응답에 id 가 없습니다: ${JSON.stringify(container)}`);
+      let status = '';
+      for (let i = 0; i < 24; i++) {
+        await sleep(i ? 5000 : cfg.publishDelayMs);
+        const c = await call('GET', `/${container.id}`, { fields: 'status,error_message' });
+        status = c.status || '';
+        if (status === 'FINISHED') break;
+        if (status === 'ERROR' || status === 'EXPIRED') throw new Error(`사진을 받아 가지 못했습니다 (${status}: ${c.error_message || '이유 없음'})`);
+      }
+      if (status !== 'FINISHED') throw new Error(`2분을 기다려도 사진 준비가 끝나지 않았습니다 (${status || '상태 없음'})`);
+      const published = await call('POST', EP.publish(me.id), { creation_id: container.id });
+      if (!published?.id) throw new Error(`발행 응답에 id 가 없습니다: ${JSON.stringify(published)}`);
+      return call('GET', `/${published.id}`, { fields: FIELDS.post });
+    },
+
     /** 댓글 숨기기 */
     async hideReply(replyId, hide = true) {
       return call('POST', EP.manageReply(replyId), { hide: hide ? 'true' : 'false' });

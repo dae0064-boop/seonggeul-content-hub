@@ -192,5 +192,24 @@ python3 scripts/threads/insurance-word.py <묶음.md> <사진.jpg> <저장 폴�
   이미 있는 Word 는 원고·사진·실행기가 바뀌었을 때만 다시 만든다 (`-Force` 면 전부).
   클라우드 세션은 Drive 에 Word 를 직접 올리지 못한다(파일이 커서) — 저장은 PC 실행기가 한다.
 - 고정 사진은 Google Drive `내 드라이브/ClaudeWorkspace/보험글-사진/` 에서 가장 최근 사진을 쓴다.
-- 사진에 설계사 이름·등록번호가 있으므로 **사진과 Word 파일은 저장소에 커밋하지 않는다.**
-- 배너의 심의필 번호는 아직 자리표시(`제26-00-0000호`)다. 실제 번호를 받은 사진으로 바꾸기 전에는 올리지 않는다.
+- **Word 파일은 저장소에 커밋하지 않는다.** 배너 사진은 2026-10-26 부터 저장소에 둔다(아래 — 스레드가 공개 주소로만 사진을 받는다).
+- Word 속 배너는 자리표시(`제26-00-0000호`) 그대로다. 스레드에 올릴 때는 그 편의 번호를 넣은 배너를 따로 붙인다(아래).
+
+## 스레드에 올리기 (2026-10-26 사용자 지시)
+
+"스레드 1편부터 스레드에 게시" — 심의 **적격**을 받은 편만, **1편부터 번호 순서대로**, 그 편의 **준법심의필번호·유효기간을 넣은 배너**와 함께 올린다.
+같은 날 결정: **하루 4편(08:30·12:30·18:30·21:30) + 일상글**, 배너는 저장소에, 사무실 PC·노트북 둘 다(노트북은 5분 뒤).
+
+| 단계 | 어디서 | 무엇 |
+|---|---|---|
+| ① 심의필 번호 읽기 | PC 아침 auto-day 끝 (`launchers/tools/goms-approved.ps1`, 바로 돌릴 땐 `launchers/goms-approved.cmd`) | GOMS 목록 승인완료 「스레드 N편」의 심의결과 탭 → Drive `ClaudeWorkspace/goms-approved.tsv` (`번호 · 제26-10-0209호 · 시작 · 끝 · 적격 · 읽은 날`) |
+| ② 배너 만들기 | 클라우드 아침 확인 (`routines/morning-check.md` 5-2) | `scripts/threads/banner.py` → `content/threads/insurance/banners/thread-N.jpg` (base.jpg 맨 아래 줄만 바꿈, Pretendard Bold) → PR → main |
+| ③ 올리기 | PC 작업 스케줄러 `SeonggeulThreadsPost` (`launchers/tools/threads-post.ps1` → `scripts/threads/insurance-post.mjs --post`) | 한 번에 한 편: 적격·유효기간 안·Word 있음·배너 공개 주소 열림·아직 안 올림·오늘 4편 미만·마지막 보험글 40분 넘음 → 사진 + 글 |
+
+- **글은 심의받은 Word 에서 그대로 읽는다** (사진 문단 앞까지, 반려 뒤 넣은 빨간 문구 포함). 묶음 파일(.md)을 고쳐도 올라가는 글은 바뀌지 않는다 —
+  고쳐야 하면 Word 를 다시 만들고 GOMS 에 다시 심의받는다.
+- 올렸는지는 상태 파일 없이 내 스레드 최근 글의 첫 두 줄로 본다 (두 PC 가 함께 돌아도 두 번 올리지 않게, 올리기 직전에 한 번 더 본다).
+- 연결 키는 PC 마다 `launchers/threads-key.cmd` 로 Windows 사용자 환경 변수 `THREADS_ACCESS_TOKEN` 에 넣는다 (저장소·Drive 에 두지 않는다). 60일짜리다.
+- 멈춤: `content/threads/PAUSE` 파일 또는 `launchers/threads-setup.cmd -Remove`. 시험(올리지 않음): `launchers/threads-post-test.cmd`.
+- 기록: Drive `ClaudeWorkspace/run-logs/threads/<날짜>.log`.
+- 배너에는 설계사 이름·등록번호가 있지만 스레드에 어차피 공개로 올라가는 사진이라 저장소(공개)에 둔다 (2026-10-26 사용자 승인).
