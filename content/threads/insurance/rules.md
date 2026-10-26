@@ -205,6 +205,7 @@ python3 scripts/threads/insurance-word.py <묶음.md> <사진.jpg> <저장 폴�
 
 | 단계 | 어디서 | 무엇 |
 |---|---|---|
+| ⓪ 쓰기·등록 | 밤 Routine(`routines/threads-insurance-daily.md`, 매일 21:41) → 아침 PC Word 저장(`insurance-word.ps1`, Python 없으면 `word-make.mjs`) → **GOMS 자동 등록 하루 10편**(`goms-register-auto.ps1` — 번호 순서, 약관 참조 문구를 검은 글씨로 미리 넣음, 두 PC 겹침은 Drive `goms-done/registering.lock`) | 2026-10-26 사용자: "하루 10편씩 만들어서 광고 등록". 반려 9건 중 8건이 약관 참조 문구 요구라 미리 넣는다 |
 | ① 심의필 번호 읽기 | PC 아침 auto-day 끝 (`launchers/tools/goms-approved.ps1`, 바로 돌릴 땐 `launchers/goms-approved.cmd`) | GOMS 목록 승인완료 「스레드 N편」의 심의결과 탭 → Drive `ClaudeWorkspace/goms-approved.tsv` (`번호 · 제26-10-0209호 · 시작 · 끝 · 적격 · 읽은 날`) |
 | ② 배너 만들기 | 클라우드 아침 확인 (`routines/morning-check.md` 5-2) | `scripts/threads/banner.py` → `content/threads/insurance/banners/thread-N.jpg` (base.jpg 맨 아래 줄만 바꿈, Pretendard Bold) → PR → main |
 | ②-1 심의필 Word | PC (`goms-approved.ps1` 끝, `scripts/threads/word-banner.mjs`) | 저장소 배너로 Word 속 배너 사진만 바꿔 Drive `ClaudeWorkspace/보험글-심의필/스레드 N편.docx` (원본 `보험글/` 은 그대로 — GOMS 재심사용) |
