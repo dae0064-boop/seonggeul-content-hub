@@ -21,7 +21,11 @@ export const DISCLOSURE = [
 ];
 export const MARKER = '[쇼핑 링크]';
 export const anchorText = (label) => `▶ 네이버쇼핑에서 ${label} 보기`;
-export const LINKS_FILE = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..', 'content', 'affiliate', 'brandconnect-links.tsv');
+const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
+export const LINKS_FILE = path.join(ROOT, 'content', 'affiliate', 'brandconnect-links.tsv');
+// 아침 PC 가 쇼핑 커넥트에서 저절로 만든 링크 (scripts/brandconnect-links.mjs). 저장소 밖(dumps)이라 git pull 을 막지 않고,
+// 같은 아침 발행이 바로 쓴다. 아침 확인이 Drive 결과를 보고 LINKS_FILE 로 옮긴다
+export const LOCAL_LINKS_FILE = path.join(ROOT, 'dumps', 'brandconnect-links.local.tsv');
 // 쇼핑 커넥트가 만들어 준 네이버 주소만 받는다 (naver.me 단축 주소 또는 *.naver.com). 다른 단축 주소로 감추지 않는다
 export const LINK_RE = /^https:\/\/(naver\.me|([a-z0-9-]+\.)*naver\.com)\/[A-Za-z0-9/_\-?=&.%]+$/;
 export const LINK_IN_TEXT = /naver\.me\/|brandconnect\.naver\.com|smartstore\.naver\.com|brand\.naver\.com/;
@@ -31,13 +35,15 @@ export const isDisclosure = (b) => b.type === 'p' && blockText(b).join('\n') ===
 export const isMarker = (b) => b.type === 'p' && blockText(b).join('\n') === MARKER;
 
 /** brandconnect-links.tsv → Map(키워드 → { url, label }). 줄 형식: 키워드<TAB>링크<TAB>보여 줄 글자. # 은 주석 */
-export function loadLinks(file = LINKS_FILE) {
+export function loadLinks(files = [LINKS_FILE, LOCAL_LINKS_FILE]) {
   const map = new Map();
-  if (!fs.existsSync(file)) return map;
-  for (const raw of fs.readFileSync(file, 'utf8').split(/\r?\n/)) {
-    if (!raw.trim() || raw.trim().startsWith('#')) continue;
-    const [kw, url, label] = raw.split('\t').map((s) => (s || '').trim());
-    if (kw && LINK_RE.test(url || '')) map.set(kw, { url, label: label || kw });
+  for (const file of [].concat(files)) {
+    if (!fs.existsSync(file)) continue;
+    for (const raw of fs.readFileSync(file, 'utf8').split(/\r?\n/)) {
+      if (!raw.trim() || raw.trim().startsWith('#')) continue;
+      const [kw, url, label] = raw.split('\t').map((s) => (s || '').trim());
+      if (kw && LINK_RE.test(url || '') && !map.has(kw)) map.set(kw, { url, label: label || kw });
+    }
   }
   return map;
 }
