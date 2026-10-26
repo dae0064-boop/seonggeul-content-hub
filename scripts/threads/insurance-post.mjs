@@ -141,6 +141,7 @@ async function main() {
   const [first, second] = split(next.text);
   step(`다음: 스레드 ${next.n}편 (${next.a.no}, ${next.a.start} ~ ${next.a.end})`);
   console.log(['   ── 1/2 ──', ...first.split('\n').map((l) => `   │ ${l}`), '   ── 2/2 (+ 심의필 배너) ──', ...second.split('\n').map((l) => `   │ ${l}`)].join('\n'));
+  if (!second) { log('글이 짧아 둘로 나눌 수 없어요 — 올리지 않아요'); return 2; }
   if (norm(first + second) !== norm(next.text)) { log('나눈 글을 합치니 Word 글과 달라요 — 올리지 않아요'); return 2; }
   for (const [i, t] of [[1, first], [2, second]]) if ([...t].length > 500) { log(`${i}/2 가 ${[...t].length}자라 스레드 한도(500자)를 넘어요 — 올리지 않아요`); return 2; }
   if (!(await opens(url))) {
@@ -170,25 +171,65 @@ async function main() {
   }
 }
 
+const ENDS = (l) => /(요|다|죠|까|고요|[?!.~…]|\p{Extended_Pictographic}[\uFE0F\u200D]*|\)|”)\s*$/u.test(l.trim());
+
 /**
- * 글을 두 개로 나눈다 — 글자 수가 절반에 가장 가까운 줄 끝에서, 문장이 끝나는 줄(…요/다/죠/?/!/./이모지)을 먼저 고른다.
- * 앞쪽은 2줄 이상. 빈 줄로 나뉜 수정 문구(반려 뒤 넣은 빨간 문구)는 뒤쪽에 남는다.
+ * 줄을 2~4줄 덩어리로 묶는다 (2026-10-26 사용자 — "유도리 있게 2~4줄 사이로 끊어서, 너무 딱딱 붙어 있으면 의미가 없다").
+ * 글자는 그대로 두고 덩어리 사이에 빈 줄만 넣는다. 끊는 자리는 문장이 끝나는 줄 뒤.
+ * 첫 세 줄(제목 · “따옴표 말” · 공감 한 줄)은 한 덩어리. Word 에 이미 있는 빈 줄(수정 문구 앞)은 그대로 끊는다.
+ */
+export function blocks(text) {
+  const all = text.split('\n').map((l) => l.trimEnd());
+  // Word 의 빈 줄로 먼저 나눈 뒤, 조각마다 다시 묶는다
+  const parts = [];
+  let cur = [];
+  for (const l of all) { if (l.trim()) cur.push(l); else if (cur.length) { parts.push(cur); cur = []; } }
+  if (cur.length) parts.push(cur);
+  const out = [];
+  parts.forEach((lines, pi) => {
+    let start = 0;
+    if (pi === 0 && lines.length > 4 && /^[“"]/.test((lines[1] || '').trim())) { out.push(lines.slice(0, 3)); start = 3; }
+    out.push(...group(lines.slice(start)));
+  });
+  return out;
+}
+
+/** 줄 묶기 — 덩어리 크기 3·4 를 좋아하고 2 도 되며, 문장 중간에서 끊으면 벌점. 같은 점수면 먼저 끊는 쪽. */
+function group(lines) {
+  const n = lines.length;
+  if (n <= 4) return n ? [lines] : [];
+  const sizeCost = (k) => ({ 1: 10, 2: 1, 3: 0, 4: 0.3, 5: 6 })[k] ?? 20;
+  const cutCost = (i) => (i === n - 1 || ENDS(lines[i]) ? 0 : /,\s*$/.test(lines[i]) ? 3 : 8);
+  const best = new Array(n + 1).fill(Infinity), prev = new Array(n + 1).fill(-1);
+  best[0] = 0;
+  for (let j = 1; j <= n; j++) {
+    for (let i = Math.max(0, j - 6); i < j; i++) {
+      const c = best[i] + sizeCost(j - i) + cutCost(j - 1);
+      if (c < best[j] - 1e-9) { best[j] = c; prev[j] = i; }
+    }
+  }
+  const cuts = [];
+  for (let j = n; j > 0; j = prev[j]) cuts.unshift([prev[j], j]);
+  return cuts.map(([i, j]) => lines.slice(i, j));
+}
+
+/**
+ * 글을 두 개로 나눈다 — 덩어리 경계 중 글자 수 절반에 가장 가까운 곳. 1/2·2/2 모두 덩어리 사이에 빈 줄이 들어간다.
+ * 빈 줄로 나뉜 수정 문구(반려 뒤 넣은 빨간 문구)는 뒤쪽에 남는다.
  */
 export function split(text) {
-  const lines = text.split('\n');
-  const total = [...text.replace(/\s/g, '')].length;
-  const ends = (l) => /(요|다|죠|까|[?!.~]|\p{Extended_Pictographic}|\)|”)\s*$/u.test(l.trim());
-  let best = -1, bestScore = Infinity, acc = 0;
-  for (let i = 0; i < lines.length - 1; i++) {
-    acc += [...lines[i].replace(/\s/g, '')].length;
-    if (i < 1 || !lines[i].trim()) continue;
-    const score = Math.abs(acc - total / 2) + (ends(lines[i]) ? 0 : 1000);
-    if (score < bestScore) { bestScore = score; best = i; }
+  const bs = blocks(text);
+  const len = (b) => [...b.join('').replace(/\s/g, '')].length;
+  const total = bs.reduce((a, b) => a + len(b), 0);
+  let best = 1, bestScore = Infinity, acc = 0;
+  for (let k = 1; k < bs.length; k++) {
+    acc += len(bs[k - 1]);
+    const score = Math.abs(acc - total / 2);
+    if (score < bestScore) { bestScore = score; best = k; }
   }
-  if (best < 0) best = Math.floor(lines.length / 2) - 1;
-  const first = lines.slice(0, best + 1).join('\n').trim();
-  const second = lines.slice(best + 1).join('\n').trim();
-  return [first, second];
+  const join = (arr) => arr.map((b) => b.join('\n')).join('\n\n');
+  if (bs.length < 2) return [join(bs), ''];
+  return [join(bs.slice(0, best)), join(bs.slice(best))];
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) process.exitCode = await main().catch((e) => { console.error(`❌ ${e.message}`); return 2; });
