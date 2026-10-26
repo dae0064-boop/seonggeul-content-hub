@@ -679,6 +679,11 @@ async function visibleRows(page) {
   return { rows, total };
 }
 
+/** 그 편 줄이 지금 표에 그려져 있는지. */
+async function rowVisible(page, title) {
+  return (await visibleRows(page)).rows.some((r) => r.title.replace(/\s/g, '') === title.replace(/\s/g, ''));
+}
+
 /** 목록을 새로 읽어 「스레드 N편」 줄과 칸 글자를 돌려준다 — 표를 끝까지 내려 가며 모은다. */
 async function listRows(page) {
   await gomsMessages(page);
@@ -696,6 +701,7 @@ async function listRows(page) {
   }
   await scrollList(page, 'top'); await sleep(500);
   const rows = [...seen.values()];
+  rows.total = total;
   if (total != null && total > rows.length) log(`  ⚠ 목록 ${total}건 중 ${rows.length}건만 읽혔어요 (표를 끝까지 내려도 더 안 나와요)`);
   else log(`  목록 ${rows.length}건 읽음`);
   return rows;
@@ -907,17 +913,19 @@ async function setTitleFilter(page, text) {
  */
 async function findMissing(page, rows, have) {
   const seen = new Set(rows.map((r) => numOf(r.title)));
-  let max = 0;
-  try { for (const f of fs.readdirSync(fileDir)) { const m = f.match(/^스레드\s*(\d+)\s*편\.docx$/); if (m) max = Math.max(max, Number(m[1])); } } catch { /* 폴더 없음 */ }
+  // GOMS 에 올린 편만 — 목록에 보인 가장 큰 번호까지 (Word 는 80편까지 있어도 심의 신청은 30편까지, 2026-10-26 14:45)
+  const max = Math.max(0, ...seen, ...have);
+  const need = rows.total != null ? rows.total - rows.length : Infinity;
   const missing = [];
   for (let n = 1; n <= max; n++) if (!seen.has(n) && !have.has(n)) missing.push(n);
-  if (!missing.length) return [];
+  if (!missing.length || need <= 0) return [];
   log(`  목록에 안 보인 편을 제목으로 하나씩 찾아요: ${missing.join(', ')}편`);
   const found = [];
   for (const n of missing) {
     if (!(await setTitleFilter(page, `스레드 ${n}편`))) { log('  ⚠ 제목 칸을 찾지 못해 더 찾지 않아요'); break; }
     const hit = (await listRows(page)).find((r) => numOf(r.title) === n && r.cells.includes('승인완료'));
     if (hit) found.push(hit);
+    if (found.length >= need) break;
   }
   await setTitleFilter(page, '');
   log(`  제목으로 찾은 승인완료: ${found.map((r) => r.title).join(', ') || '없음'}`);
@@ -940,15 +948,25 @@ async function runApproved(page) {
     log(`\n▶ ${row.title} (승인완료) — 심의필 번호 읽기`);
     // 목록 표에 사내준법심의필번호·유효기간·심의결과 칸이 있다 (2026-10-26 structure-ad-review.txt) — 있으면 상세 창을 열지 않는다
     const b = row.byName || {};
-    let a = { result: b['심의결과'] || '', no: b['사내준법심의필번호'] || '', period: b['유효기간'] || '' };
-    if (!a.no || !/\d{4}[-.]\d{2}[-.]\d{2}.*\d{4}[-.]\d{2}[-.]\d{2}/.test(a.period) || !a.result) {
+    // 칸 이름과 칸 수가 안 맞으면(14:45 실제 GOMS) 글자 모양으로 찾는다: 번호 26-10-0209, 기간 날짜 둘, 결과 적격 등
+    const byShape = (re) => row.cells.find((c) => re.test(c)) || '';
+    let a = {
+      result: b['심의결과'] || byShape(/^(적격|조건부승인|부적격|수정요구|해당사항없음)$/),
+      no: b['사내준법심의필번호'] || byShape(/^제?\s*\d{2}-\d{2}-\d{3,5}\s*호?$/),
+      period: b['유효기간'] || byShape(/\d{4}[-.\/]\d{2}[-.\/]\d{2}.*\d{4}[-.\/]\d{2}[-.\/]\d{2}/),
+    };
+    if (!a.no || !/\d{4}[-./]\d{2}[-./]\d{2}.*\d{4}[-./]\d{2}[-./]\d{2}/.test(a.period) || !a.result) {
+      log(`  목록 칸에서 못 읽어 상세 창을 열어요 (칸: ${row.cells.join(' | ')})`);
+      // 제목 조회로 찾은 편은 목록에 안 보인다 — 제목 칸에 넣고 다시 조회한 뒤 연다
+      if (!(await rowVisible(page, row.title))) { await setTitleFilter(page, row.title); await listRows(page); }
       await openDetail(page, row.title);
       a = await readApproval(page);
       await shot(page, `approved-${n}`);
       await closeDetail(page);
+      await setTitleFilter(page, '');
     } else log('  (목록 칸에서 읽음)');
     const no = (a.no.match(/제?\s*(\d{2}-\d{2}-\d{3,5})\s*호?/) || [])[1];
-    const dates = (a.period.match(/\d{4}[-.]\d{2}[-.]\d{2}/g) || []).map((d) => d.replace(/\./g, '-'));
+    const dates = (a.period.match(/\d{4}[-./]\d{2}[-./]\d{2}/g) || []).map((d) => d.replace(/[./]/g, '-'));
     log(`  심의결과: ${a.result || '(못 읽음)'} · 준법심의필번호: ${a.no || '(못 읽음)'} · 유효기간: ${a.period || '(못 읽음)'}`);
     if (!no || dates.length < 2) { log('  ⚠ 번호나 유효기간을 읽지 못해 적지 않았어요 (다음 실행에서 다시 봐요)'); continue; }
     fs.appendFileSync(approvedOut, `${n}\t제${no}호\t${dates[0]}\t${dates[1]}\t${a.result}\t${today}\n`, 'utf8');
