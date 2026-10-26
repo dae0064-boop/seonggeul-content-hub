@@ -188,7 +188,10 @@ async function makeOne(ctx, kw) {
     const rel = cards.filter((c) => c.text.replace(/\s/g, '').includes(kw.replace(/\s/g, '')));
     const pool = rel.length ? rel : cards;
     const best = [...pool].sort((a, b) => b.review - a.review || b.sales - a.sales)[0];
-    r.product = best.text.split('\n').map((s) => s.trim()).filter((s) => s.length > 3 && !LINK_BTN.test(s))[0] || '';
+    // 카드 글자에서 상품 이름 줄만 (수수료·판매가·할인율·숫자·버튼 줄을 빼고 가장 긴 줄) — 10/26 첫 실행에서 "수수료 5%" 가 이름으로 잡혔다
+    r.product = best.text.split('\n').map((s) => s.trim())
+      .filter((s) => s.length > 3 && !LINK_BTN.test(s) && !/^(수수료|판매가|할인|리뷰|링크|[\d,.%원\s]+$)/.test(s))
+      .sort((a, b) => b.length - a.length)[0] || '';
     r.review = best.review; r.sales = best.sales;
     log(`  고른 상품: ${r.product} (후기 ${best.review}, 구매 ${best.sales}, ${r.sort})`);
     if (DRY) { r.why = '--dry-run: 링크 버튼은 누르지 않음'; return r; }
