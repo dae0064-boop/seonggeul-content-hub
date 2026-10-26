@@ -33,7 +33,7 @@
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
-import { execFileSync } from 'node:child_process';
+import { readFixes as readWordFixes, missingIn } from './threads/word-fix.mjs';
 
 const argv = process.argv.slice(2);
 const arg = (name, def = '') => { const i = argv.indexOf(name); return i >= 0 ? argv[i + 1] : def; };
@@ -772,12 +772,11 @@ async function scanRejected(page, targets) {
   }
 }
 
-/** 고친 Word 에 문구가 다 들어 있는지 (insurance-word.py --check). */
+/** 고친 Word 에 문구가 다 들어 있는지 — Python 없이 Word 를 직접 읽는다 (사무실 PC 에 Python 이 없다, 2026-10-26). */
 function wordHasFix(n) {
-  try {
-    execFileSync(process.env.PYTHON || 'python', ['scripts/threads/insurance-word.py', fileDir, '--fixes', fixesPath, '--check', String(n)], { stdio: 'pipe' });
-    return true;
-  } catch { return false; }
+  const ph = readWordFixes(fixesPath).get(n) || [];
+  const file = path.join(fileDir, `스레드 ${n}편.docx`);
+  try { return ph.length > 0 && fs.existsSync(file) && missingIn(file, ph).length === 0; } catch { return false; }
 }
 
 /** 등록 탭 첨부파일 표에서 파일 이름들을 읽고, name 줄에 표시를 붙인다. */
