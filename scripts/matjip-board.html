@@ -44,6 +44,12 @@ aside{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);display:grid
 .btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .btn.pri{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:700}
 .btn.ok{background:var(--ok-bg)!important;border-color:var(--ok)!important;color:var(--ok)!important}
+.more{font-size:12.5px;color:var(--ink2)}
+.more summary{cursor:pointer;font-weight:500;color:var(--ink)}
+.more p{margin:6px 0}
+.secs{display:grid;gap:6px}
+.btn.sec{display:flex;gap:8px;align-items:baseline;text-align:left;font-size:12.5px;padding:7px 10px}
+.sec-n{font-family:var(--mono);font-size:11px;color:var(--accent);flex:none}
 .legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;color:var(--ink2)}
 .sw{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px;border:1px solid var(--line)}
 
@@ -87,6 +93,11 @@ aside{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);display:grid
       <div class="step-h"><span class="step-n">2</span><span class="step-t">본문</span></div>
       <button class="btn pri" id="b-body">본문 서식 그대로 복사</button>
       <p>본문을 한 번 클릭하고 Ctrl+V(휴대폰은 길게 눌러 붙여넣기). 색 글씨와 소제목 인용구가 함께 들어가요.</p>
+      <details class="more">
+        <summary>붙이다가 중간에 끊기면 · 부분별 복사</summary>
+        <p>끊긴 곳 다음 부분부터 하나씩 눌러 차례로 붙여 넣어요.</p>
+        <div class="secs" id="secs"></div>
+      </details>
       <div class="legend">
         <span><i class="sw" style="background:var(--n-red)"></i>결론·주의</span>
         <span><i class="sw" style="background:var(--n-blue)"></i>숫자·시간</span>
@@ -126,15 +137,39 @@ const styleOf = k => k === "빨간글씨" ? `color:${C.red};font-weight:bold;`
 /* 한 줄 안의 색 표시를 span 으로. 여러 줄에 걸친 표시는 carry 로 다음 줄에 이어 준다. */
 function inline(line, carry){
   let out = "", cur = carry, last = 0, m;
-  const put = t => { if (t) out += cur ? `<span style="${styleOf(cur)}">${esc(t)}</span>` : esc(t); };
+  const put = t => { if (t) out += cur ? `<b><span style="${styleOf(cur)}">${esc(t)}</span></b>` : esc(t); };
   TAG.lastIndex = 0;
   while ((m = TAG.exec(line))) { put(line.slice(last, m.index)); cur = m[1] ? null : m[2]; last = TAG.lastIndex; }
   put(line.slice(last));
   return {html: out, carry: cur};
 }
 
-const P = inner => `<p style="color:${C.ink};">${inner}</p>`;
-const BLANK = `<p style="color:${C.ink};"><br></p>`;
+const PC = `class="se-text-paragraph se-text-paragraph-align-left" style="color:${C.ink};"`;
+const P = inner => `<p ${PC}>${inner}</p>`;
+const BLANK = `<p ${PC}><br></p>`;
+const MUTE = inner => `<p class="se-text-paragraph se-text-paragraph-align-left" style="color:${C.mute};">${inner}</p>`;
+/* 네이버 에디터가 자기 글을 복사할 때 쓰는 모양(se-component)으로 감싼다.
+   2026-10-26 첫 시험: 인용구만 se-component 이고 나머지가 맨 <p> 였더니 인용구 4번은 들어갔지만 중간에 끊겼다.
+   → 글 묶음도 모두 se-text 컴포넌트로 감싸 에디터가 한 문서로 읽게 한다. */
+const SETEXT = inner => `<div class="se-component se-text se-l-default"><div class="se-component-content"><div class="se-section se-section-text se-l-default"><div class="se-module se-module-text">${inner}</div></div></div></div>`;
+const isQuote = x => x.startsWith('<div class="se-component se-quotation');
+function seDoc(parts){
+  const out = []; let buf = [];
+  const flush = () => { while (buf.length && buf[buf.length - 1] === BLANK) buf.pop(); if (buf.length) out.push(SETEXT(buf.join(""))); buf = []; };
+  for (const x of parts) { if (isQuote(x)) { flush(); out.push(x); } else buf.push(x); }
+  flush();
+  return out.join("\n");
+}
+/* 소제목마다 나눈 덩어리 — 통째 붙여넣기가 끊기면 이것을 차례로 붙인다 */
+function sections(){
+  const parts = build("parts"), secs = []; let cur = {name: "처음 (인사·대표 사진)", parts: []};
+  for (const x of parts) {
+    if (isQuote(x)) { if (cur.parts.length) secs.push(cur); cur = {name: x.replace(/<[^>]+>/g, ""), parts: [x]}; }
+    else cur.parts.push(x);
+  }
+  if (cur.parts.length) secs.push(cur);
+  return secs;
+}
 /* 네이버 SE 인용구 4번(quotation_underline) 모양의 마크업. 네이버가 이 모양을 못 알아보면
    blockquote 만 보고 기본 인용구로 바꾼다 — 그때는 4단계 안내대로 모양만 고른다. */
 const QUOTE = t => `<div class="se-component se-quotation se-l-quotation_underline"><div class="se-component-content"><div class="se-section se-section-quotation se-l-quotation_underline"><blockquote class="se-quotation-container"><div class="se-module se-module-text se-quote"><p class="se-text-paragraph se-text-paragraph-align-left" style="color:${C.ink};"><span style="color:${C.ink};">${esc(t)}</span></p></div></blockquote></div></div></div>`;
@@ -153,14 +188,14 @@ function build(mode){
       if ((m = line.match(/^\[사진\s*(\d+)\]\s*(.*)$/))) {
         flush();
         const n = +m[1], ph = D.photos[n - 1];
-        if (mode === "copy") parts.push(`<p style="color:${C.mute};">[사진 ${n} 자리] ${esc(m[2])}</p>`);
+        if (mode !== "view") parts.push(MUTE(`[사진 ${n} 자리] ${esc(m[2])}`));
         else parts.push(`<figure class="ph"><img src="${ph ? ph.src : ""}" alt="${esc(m[2])}" loading="lazy">
           <div class="ph-bar"><button class="btn" data-ph="${n}">사진 ${n} 복사</button><span class="ph-cap">${esc(m[2])}</span></div></figure>`);
         continue;
       }
       if ((m = line.match(/^\[지도\]\s*(.*)$/))) {
         flush();
-        parts.push(mode === "copy" ? `<p style="color:${C.mute};">[지도 자리] ${esc(m[1])}</p>`
+        parts.push(mode !== "view" ? MUTE(`[지도 자리] ${esc(m[1])}`)
           : `<div class="map">📍 지도 자리 · ${esc(m[1])}</div>`);
         continue;
       }
@@ -170,9 +205,11 @@ function build(mode){
     flush();
   }
   // 소제목·사진·지도 위에는 빈 줄을 두지 않는다 (CLAUDE.md — 발행 스크립트와 같은 모양)
-  const special = x => x && (x.startsWith('<div class="se-component') || x.startsWith("<figure") || x.startsWith('<div class="map"') || x.startsWith(`<p style="color:${C.mute};">`));
+  const special = x => x && (x.startsWith('<div class="se-component') || x.startsWith("<figure") || x.startsWith('<div class="map"') || x.includes(`color:${C.mute};`));
   const tidy = parts.filter((x, i) => !(x === BLANK && special(parts[i + 1])));
   while (tidy.length && tidy[tidy.length - 1] === BLANK) tidy.pop();
+  if (mode === "parts") return tidy;
+  if (mode === "copy") return seDoc(tidy);
   return tidy.join("\n");
 }
 
@@ -257,6 +294,14 @@ document.getElementById("paper").innerHTML =
 document.getElementById("b-title").onclick = e => copyText(D.title, e.currentTarget);
 document.getElementById("b-tags").onclick = e => copyText(D.tags, e.currentTarget);
 document.getElementById("b-body").onclick = e => copyRich(build("copy"), plain(), e.currentTarget);
+const SECS = sections();
+document.getElementById("secs").innerHTML = SECS.map((x, i) =>
+  `<button class="btn sec" data-sec="${i}"><span class="sec-n">${i + 1}</span>${esc(x.name)}</button>`).join("");
+document.getElementById("secs").addEventListener("click", e => {
+  const b = e.target.closest("[data-sec]"); if (!b) return;
+  const sec = SECS[+b.dataset.sec];
+  copyRich(seDoc(sec.parts), sec.parts.map(x => x.replace(/<[^>]+>/g, "")).join("\n"), b);
+});
 document.addEventListener("click", e => {
   const b = e.target.closest("[data-ph]");
   if (b) copyPhoto(+b.dataset.ph, b);
