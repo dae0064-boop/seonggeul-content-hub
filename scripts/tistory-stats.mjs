@@ -87,6 +87,44 @@ const urlKind = (u) => {
   return 'other';
 };
 
+// 2026-10-26 사용자 "보류된 글 확인해줘" — 사유 줄을 눌러(화면 이동만) 어떤 글인지 주소를 읽고, 그 글의 제목·분량을 잰다.
+// 사유 표의 줄을 누르는 것은 보고서 안의 이동이다 — 유효성 검사·삭제 같은 단추는 누르지 않는다.
+const REASONS = [['crawled', '크롤링됨 - 현재 색인이 생성되지 않음'], ['discovered', '발견됨 - 현재 색인이 생성되지 않음']];
+async function drillReasons(page, url, n) {
+  const out = {};
+  for (const [key, label] of REASONS) {
+    try {
+      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+      await sleep(6000);
+      const row = page.getByText(label, { exact: true }).first();
+      if (!(await row.count())) { out[key] = { found: false }; continue; }
+      await row.click({ timeout: 10000 });
+      await sleep(7000);
+      const t = await page.evaluate(() => document.body?.innerText || '');
+      fs.writeFileSync(path.join(OUT, `sc-${n}-${key}.txt`), `${label}\n${page.url()}\n\n${t}`);
+      await page.screenshot({ path: path.join(OUT, `sc-${n}-${key}.jpg`), type: 'jpeg', quality: 55, fullPage: true }).catch(() => {});
+      const urls = [...new Set(t.match(/https?:\/\/(?:seongdaeeyo\.com|seongdaeeyo\.tistory\.com)\/[^\s"'<>]*/g) || [])];
+      const posts = [];
+      for (const u of urls.slice(0, 10)) {
+        try {
+          const r = await page.goto(u, { waitUntil: 'domcontentloaded', timeout: 30000 });
+          await sleep(1500);
+          const info = await page.evaluate(() => {
+            const el = document.querySelector('.tt_article_useless_p_margin, .contents_style, .entry-content, article') || document.body;
+            const meta = (q) => document.querySelector(q)?.getAttribute('content') || null;
+            return { title: meta('meta[property="og:title"]') || document.title, published: meta('meta[property="article:published_time"]'),
+              chars: (el.innerText || '').replace(/\s/g, '').length, imgs: el.querySelectorAll('img').length };
+          });
+          posts.push({ url: u, status: r?.status() ?? null, ...info });
+        } catch (e) { posts.push({ url: u, error: e.message.split('\n')[0] }); }
+      }
+      out[key] = { found: true, urls, posts };
+      log(`  서치 콘솔 '${label}': 주소 ${urls.length}개`);
+    } catch (e) { out[key] = { error: e.message.split('\n')[0] }; }
+  }
+  return out;
+}
+
 async function indexCheck(page, ctx) {
   const DOMAIN = 'https://seongdaeeyo.com';
   const res = { at: new Date().toISOString() };
@@ -141,6 +179,7 @@ async function indexCheck(page, ctx) {
         if (INDEX_ONLY) await (await ctx.newPage()).goto('https://search.google.com/search-console?hl=ko').catch(() => {});
         break;
       }
+      if (res.searchConsole.at(-1).hasReasons) res.searchConsole.at(-1).drill = await drillReasons(page, url, i + 1);
     } catch (e) { res.searchConsole.push({ property: p, error: e.message.split('\n')[0] }); }
   }
   fs.writeFileSync(path.join(OUT, 'index-check.json'), JSON.stringify(res, null, 1));
