@@ -59,6 +59,9 @@
 3-1. **티스토리 상태 (매일, 2026-10-14 사용자 요청)**: Drive `ClaudeWorkspace/tistory-stats/<오늘>/` 의 public.json(애드센스 코드·ads.txt·sitemap),
    관리 화면 글자(방문·유입·검색어·수익/애드센스), google-site.txt(구글 색인 글 수)를 본다. stats-log.md 아래 "티스토리" 표에 한 줄
    (방문·구글/다음 유입·색인 글 수·애드센스 상태). 읽히지 않은 화면은 scripts/tistory-stats.mjs 를 고친다.
+   **index-check.json·sc-N.txt (2026-10-27~)**: 서치 콘솔 '페이지가 색인이 생성되지 않는 이유' 표와 사이트맵 진단(seongdaeeyo.com 이 열리는지·tistory.com 으로 넘어가는지, 글 주소 noindex·canonical).
+   카테고리·태그·/m/·'대체 페이지'·'발견됨/크롤링됨 - 현재 색인 생성되지 않음'은 정상 또는 기다릴 일 — 사용자에게 넘기지 않는다. 글 주소에 noindex·404·엉뚱한 canonical,
+   또는 사이트맵이 다른 도메인 주소라 '리디렉션' 사유가 늘면 원인과 손볼 것을 알린다. sc 가 로그인 화면이면 한 번만 "index-check.cmd 더블클릭 → 열린 탭에서 구글 로그인"을 안내한다.
    **수익 (2026-10-17 사용자 — 티스토리 목표 ① 조회수 ② 수익)**: 티스토리 로그의 "쿠팡 링크 확인"·"rel=\"sponsored\" 를 에디터가 지웠어요" 줄을 본다
    (지웠으면 publish-tistory.mjs 가 링크를 넣는 방식을 고친다). 애드센스가 승인 전이면 그대로 두고, 승인되면 사용자에게 자동 광고 켜기를 한 번 안내한다.
    `content/affiliate/coupang-wanted.txt` 에 5줄 이상 쌓이면 사용자에게 "데스크톱 앱에서 쿠팡 링크 만들기"를 한 번 안내한다(README 순서).
