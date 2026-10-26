@@ -16,7 +16,11 @@
  *   public.json           공개 주소 확인 — ads.txt, robots.txt, sitemap.xml, 첫 화면의 애드센스 코드(ca-pub-)·사이트 확인 태그
  *   google-site.txt/.jpg  구글에서 site:<블로그>.tistory.com 검색 결과 (색인된 글이 있는지)
  *   serp-NN.txt           티스토리 글감 후보(content/calendar/tistory-queue.txt)의 구글 1페이지 — 상위 10개 주소·함께 묻는 질문
+ *   index-check.json      색인 진단 — seongdaeeyo.com 이 열리는지·넘어가는지, 사이트맵 주소 갈래(글·목록·/m/)와 글 주소 상태(noindex·canonical)
+ *   sc-N.txt / .jpg       서치 콘솔 '페이지'(색인 생성) 보고서 — 자동화용 크롬이 구글에 로그인돼 있을 때만 읽힌다
  *   index.json            무엇을 열었고 무엇이 남았는지
+ *
+ *   --index-only          색인 진단만 한다 (launchers/index-check.cmd, 2026-10-26)
  */
 import { chromium } from 'playwright';
 import fs from 'node:fs';
@@ -25,11 +29,12 @@ import { tistoryRelogin, onLoginPage } from './lib/tistory-login.mjs';
 
 const argv = process.argv.slice(2);
 const opt = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : d; };
-const blog = argv.find((a, i) => !a.startsWith('--') && !['--out', '--cdp'].includes(argv[i - 1]));
+const blog = argv.find((a, i) => !a.startsWith('--') && !['--out', '--cdp', '--serp-queue'].includes(argv[i - 1]));
 const OUT = opt('--out', `dumps/tistory-stats/${new Date().toISOString().slice(0, 10)}`);
 const CDP = opt('--cdp', 'http://localhost:9222');
 const SERP_QUEUE = opt('--serp-queue', 'content/calendar/tistory-queue.txt');
 const SERP_MAX = 8;
+const INDEX_ONLY = argv.includes('--index-only');  // launchers/index-check.cmd — 색인 진단만 (지금 바로 볼 때)
 if (!blog || argv.includes('--help')) {
   console.log('사용법: node scripts/tistory-stats.mjs <티스토리 아이디> [--out 폴더]   (읽기만 한다)');
   process.exit(blog ? 0 : 1);
@@ -72,6 +77,77 @@ async function publicCheck(page) {
   return out;
 }
 
+// 사이트맵 주소를 갈래로 나눈다 — 글(/숫자, /entry/)만 색인되면 되고 카테고리·태그·/m/ 은 빠져도 정상
+const urlKind = (u) => {
+  const p = new URL(u).pathname;
+  if (p === '/' || p === '') return 'home';
+  if (/^\/m\//.test(p)) return 'mobile';
+  if (/^\/(category|tag|guestbook|notice)/.test(p)) return 'list';
+  if (/^\/(\d+|entry\/)/.test(p)) return 'post';
+  return 'other';
+};
+
+async function indexCheck(page, ctx) {
+  const DOMAIN = 'https://seongdaeeyo.com';
+  const res = { at: new Date().toISOString() };
+  // ① 개인 도메인이 열리는지, 티스토리 주소와 어느 쪽으로 넘어가는지 (넘김을 따라가지 않고 본다)
+  const head = async (u) => {
+    try {
+      const r = await page.request.get(u, { timeout: 20000, maxRedirects: 0 });
+      const h = r.headers();
+      const out = { status: r.status(), location: h.location || null };
+      if (r.status() === 200 && /html/.test(h['content-type'] || '')) {
+        const html = await r.text();
+        out.noindex = /<meta[^>]+name=["']robots["'][^>]+noindex/i.test(html) || /noindex/i.test(h['x-robots-tag'] || '');
+        out.canonical = (html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)/i) || [])[1] || null;
+      }
+      return out;
+    } catch (e) { return { error: e.message.split('\n')[0] }; }
+  };
+  res.domain = { home: await head(`${DOMAIN}/`), sitemap: await head(`${DOMAIN}/sitemap.xml`), tistoryHome: await head(`${BASE}/`) };
+  // ② 사이트맵 안 주소를 갈래별로 세고, 글 주소 몇 개를 열어 상태·넘김·noindex·canonical 을 본다
+  for (const sm of [`${DOMAIN}/sitemap.xml`, `${BASE}/sitemap.xml`]) {
+    try {
+      const r = await page.request.get(sm, { timeout: 20000 });
+      const locs = [...(await r.text()).matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim());
+      const kinds = {};
+      for (const u of locs) { const k = urlKind(u); kinds[k] = (kinds[k] || 0) + 1; }
+      const hosts = [...new Set(locs.map((u) => new URL(u).host))];
+      const samples = [];
+      for (const u of [...locs.filter((u) => urlKind(u) === 'post').slice(0, 8), ...locs.filter((u) => urlKind(u) !== 'post').slice(0, 4)]) {
+        samples.push({ url: u, kind: urlKind(u), ...(await head(u)) });
+      }
+      res[sm] = { status: r.status(), finalUrl: r.url(), total: locs.length, hosts, kinds, samples };
+    } catch (e) { res[sm] = { error: e.message.split('\n')[0] }; }
+  }
+  // ③ 서치 콘솔 '페이지' 보고서 — 자동화용 크롬이 구글에 로그인돼 있으면 사유 표가 읽힌다. 화면 이동만, 아무것도 누르지 않는다.
+  //    속성 종류(도메인·URL 접두어)를 몰라서 셋 다 열어 본다.
+  const props = ['sc-domain:seongdaeeyo.com', `${DOMAIN}/`, `${BASE}/`];
+  res.searchConsole = [];
+  for (const [i, p] of props.entries()) {
+    const url = `https://search.google.com/search-console/index?resource_id=${encodeURIComponent(p)}&hl=ko`;
+    try {
+      await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
+      await sleep(7000);
+      const t = await page.evaluate(() => document.body?.innerText || '');
+      const f = `sc-${i + 1}`;
+      fs.writeFileSync(path.join(OUT, `${f}.txt`), `${p}\n${page.url()}\n\n${t}`);
+      await page.screenshot({ path: path.join(OUT, `${f}.jpg`), type: 'jpeg', quality: 55, fullPage: true }).catch(() => {});
+      const login = /accounts\.google\.com/.test(page.url());
+      res.searchConsole.push({ property: p, file: f, login, chars: t.length, hasReasons: /색인이 생성되지 않는 이유|Why pages aren/.test(t) });
+      log(`  서치 콘솔 ${p}: ${login ? '구글 로그인 화면 (자동화 크롬이 구글에 로그인 안 됨)' : `${t.length}자`}`);
+      if (login) {
+        // 사람이 로그인할 수 있게 서치 콘솔 탭 하나를 열어 두고 끝낸다 (index-check.cmd 를 다시 누르면 읽힌다)
+        if (INDEX_ONLY) await (await ctx.newPage()).goto('https://search.google.com/search-console?hl=ko').catch(() => {});
+        break;
+      }
+    } catch (e) { res.searchConsole.push({ property: p, error: e.message.split('\n')[0] }); }
+  }
+  fs.writeFileSync(path.join(OUT, 'index-check.json'), JSON.stringify(res, null, 1));
+  log(`  색인 진단: seongdaeeyo.com ${res.domain.home.status ?? res.domain.home.error}${res.domain.home.location ? ` → ${res.domain.home.location}` : ''}`);
+  return { domain: res.domain.home.status ?? 'error', sc: res.searchConsole.map((s) => s.login ? 'login' : s.hasReasons ? 'ok' : 'read') };
+}
+
 async function main() {
   fs.mkdirSync(OUT, { recursive: true });
   let browser;
@@ -91,6 +167,7 @@ async function main() {
     } catch { /* 본문 없음 */ }
   });
   try {
+    if (INDEX_ONLY) { index.indexCheck = await indexCheck(page, ctx); log(`✅ 색인 진단 저장: ${OUT}`); return; }
     // 1) 공개 주소 확인 (로그인 필요 없음)
     const pub = await publicCheck(page);
     fs.writeFileSync(path.join(OUT, 'public.json'), JSON.stringify(pub, null, 1));
@@ -173,12 +250,16 @@ async function main() {
         log(`  구글 "${q}": 상위 ${hosts.length}개 중 개인 블로그 ${personal}개`);
       } catch (e) { index.serp.push({ q, error: e.message.split('\n')[0] }); }
     }
+
+    // 5) 색인 진단 (2026-10-26 사용자 — 구글 메일 "새로운 이유로 인해 seongdaeeyo.com 사이트맵 페이지의 색인이 생성되지 않습니다",
+    //    "너무 어려워, 너가 들어가서 확인해봐"). 클라우드는 못 들어가므로 여기서 읽기만 해 index-check.json·sc-*.txt 로 남긴다.
+    try { index.indexCheck = await indexCheck(page, ctx); } catch (e) { index.indexCheck = { error: e.message.split('\n')[0] }; }
   } finally {
     fs.writeFileSync(path.join(OUT, 'index.json'), JSON.stringify(index, null, 1));
-    await page.close().catch(() => {});
+    await Promise.race([page.close().catch(() => {}), sleep(5000)]);
     // 사용자의 브라우저는 닫지 않는다 — 연결만 끊는다
   }
   log(`✅ 저장: ${OUT} (화면 ${index.pages.length}, 데이터 ${index.apis.length})`);
   process.exit(0);
 }
-main();
+main().then(() => process.exit(0));
