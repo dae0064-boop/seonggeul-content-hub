@@ -10,7 +10,7 @@ import { normTitle } from './lib/naver-related.mjs';
 import { checkCard } from './lib/overlay.mjs';
 import * as BC from './lib/brandconnect.mjs';
 
-// 10/12 변경 묶음 (2026-10-02·10-03 사용자 결정, routines/once/2026-10-09-1012-change-bundle.md) — 2026-10-12 원고부터
+// 10/12 변경 묶음 (2026-10-02·10-03 사용자 결정) — 2026-10-12 원고부터
 //   ① 고정 인사말 앞 첫 덩어리 = 확인된 사실 한 문장(1~2줄)
 //   ② 제목 끝 괄호에 구체 숫자·기준 "(중불 20~30분)" — 괄호 속 숫자는 본문에 있어야 한다
 //   ③ 정보 카드: 이미지 계획서 8장 중 2~3장이 kind "card", 카드 글자는 본문에 있는 말
