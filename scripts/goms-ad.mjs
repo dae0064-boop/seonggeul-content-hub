@@ -874,6 +874,56 @@ async function readApproval(page) {
   });
 }
 
+/** 목록 위 "제목" 칸에 글자를 넣는다 (빈 글자면 지운다). 칸을 못 찾으면 false. */
+async function setTitleFilter(page, text) {
+  for (const f of page.frames()) {
+    const ok = await f.evaluate(() => {
+      const vis = (e) => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
+      document.querySelectorAll('[data-goms-title]').forEach((x) => x.removeAttribute('data-goms-title'));
+      const labels = [...document.querySelectorAll('th, td, label, span, div, p, strong')]
+        .filter((e) => vis(e) && (e.innerText || '').replace(/\s/g, '') === '제목' && !e.querySelector('input'));
+      for (const c of labels) {
+        let box = c;
+        for (let up = 0; up < 4 && box; up++) {
+          box = box.parentElement;
+          const inp = [...box.querySelectorAll('input[type=text], input:not([type])')]
+            .find((x) => vis(x) && (c.compareDocumentPosition(x) & Node.DOCUMENT_POSITION_FOLLOWING));
+          if (inp) { inp.setAttribute('data-goms-title', '1'); return true; }
+        }
+      }
+      return false;
+    }).catch(() => false);
+    if (!ok) continue;
+    const inp = f.locator('[data-goms-title="1"]');
+    await inp.fill(text);
+    return (await inp.inputValue()) === text;
+  }
+  return false;
+}
+
+/**
+ * 목록 표가 보이는 줄만 그리고 내려도 더 안 나올 때 (2026-10-26 14:39 실제 GOMS — 승인완료 21건 중 14줄),
+ * 빠진 편을 제목 칸에 "스레드 N편" 을 넣고 하나씩 조회해 찾는다. Word 가 있는 번호만 본다.
+ */
+async function findMissing(page, rows, have) {
+  const seen = new Set(rows.map((r) => numOf(r.title)));
+  let max = 0;
+  try { for (const f of fs.readdirSync(fileDir)) { const m = f.match(/^스레드\s*(\d+)\s*편\.docx$/); if (m) max = Math.max(max, Number(m[1])); } } catch { /* 폴더 없음 */ }
+  const missing = [];
+  for (let n = 1; n <= max; n++) if (!seen.has(n) && !have.has(n)) missing.push(n);
+  if (!missing.length) return [];
+  log(`  목록에 안 보인 편을 제목으로 하나씩 찾아요: ${missing.join(', ')}편`);
+  const found = [];
+  for (const n of missing) {
+    if (!(await setTitleFilter(page, `스레드 ${n}편`))) { log('  ⚠ 제목 칸을 찾지 못해 더 찾지 않아요'); break; }
+    const hit = (await listRows(page)).find((r) => numOf(r.title) === n && r.cells.includes('승인완료'));
+    if (hit) found.push(hit);
+  }
+  await setTitleFilter(page, '');
+  log(`  제목으로 찾은 승인완료: ${found.map((r) => r.title).join(', ') || '없음'}`);
+  return found;
+}
+
 /** 승인완료 「스레드 N편」의 심의필번호·유효기간을 goms-approved.tsv 에 적는다. */
 async function runApproved(page) {
   if (!approvedOut) throw new Stop('--approved-out 파일 위치가 없어요');
@@ -881,6 +931,7 @@ async function runApproved(page) {
   await filterStatus(page, '승인완료');
   const rows = (await listRows(page)).filter((r) => r.cells.includes('승인완료'));
   const have = readApproved();
+  rows.push(...(await findMissing(page, rows, have)));
   const targets = rows.filter((r) => !have.has(numOf(r.title))).sort((a, b) => numOf(a.title) - numOf(b.title));
   log(`목록 승인완료 ${rows.length}건 중 새로 읽을 것 ${targets.length}건: ${targets.map((r) => r.title).join(', ') || '없음'}`);
   const today = new Date().toISOString().slice(0, 10);
