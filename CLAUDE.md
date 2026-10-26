@@ -11,7 +11,6 @@ CLAUDE.md          ← 이 문서. 저장소 운영 + 생활정보 원고 실무
 content/posts/     원고. <날짜>-<슬러그>.md (정본) + .json (스크립트 입력)
 content/tistory/   티스토리 원고 (네이버와 다른 키워드·제목). .md (정본) + .json·.html (생성물)
 content/calendar/  발행 캘린더(publish-calendar.html — 밤 원고 작업이 글감을 꺼내는 정본), 키워드 목록
-content/board/     원고 작업실 아티팩트 소스
 content/affiliate/ 제휴 링크 — 네이버=쇼핑 커넥트(brandconnect-links.tsv, 2026-10-26~ 자동 하루 1편), 티스토리=쿠팡 파트너스 (README.md)
 content/archive/published.tsv  발행이 끝나 지운 원고 목록 (날짜·채널·슬러그·메인 키워드·제목). 같은 키워드를 다시 쓰지 않게
 content/matjip/    맛집 후기 (사용자 사진 5~10장 → 원고는 Claude 가 전부, 지도·발행은 사용자). README.md = 규칙, template.md = 빈 틀, posts/ = 원고

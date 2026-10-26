@@ -27,6 +27,12 @@
 > 사용자는 다 본 대화를 바로 지우는 편이다. 출발점 대화만 지우면 안 된다. 나눔은 그대로: 네이버·티스토리·스레드는 각자 다른 작업.
 > 아침 PC 의 auto-day.cmd(보험글 Word 저장 포함)는 그대로.
 
+### 10/26 (월) 저녁 — 🧹 안 쓰는 파일 정리 (사용자 — "안쓰는 파일 삭제해줘")
+- 지움: 날짜가 지나 끝난 1회 작업 7개(`routines/once/` 10-08·10-09·10-11·10-16·10-23 두 개·10-25), 캘린더 아티팩트 안내(`content/calendar/ARTIFACT.md` — 10/24 아티팩트 지움), 원고 작업실 아티팩트 소스(`content/board/` — 비어 있었음),
+  옛 설치 안내(`content/guide/setup-guide.html`, `docs/legacy-drive-sync.md`, `docs/윈도우-설치.md` — 지금은 `docs/SETUP.md`), 8월 세션 기록(`memory/sessions/`), 쿠팡 폴더에 남은 지난 원고 사본(`content/affiliate/2026-10-20-…`).
+- 남김: 아직 날짜가 안 온 1회 작업(10-27·11-01·11-02), 훅이 쓰는 `drive-sync.sh`, 손으로 쓰는 보조 도구(`naver-keywords`·`research`·`cardnews`·`check_post.py` 등), 스레드 토큰 갱신.
+- 지운 파일을 가리키던 문장(morning-check·naver-daily·README·CLAUDE.md 지도·lint 주석·전략 문서) 정리. 오늘 원고 lint 그대로 통과.
+
 ### 10/26 (월) 저녁 — 🧹 시험용 실행기·시험 그림 정리 (사용자 — "필요없는 cmd 다 삭제, 테스트 이미지들도 다 삭제")
 - 지운 실행기 7개: `test-post`·`shop-link-test`·`shutdown-test`·`style-test`·`goms-test`·`goms-revise-test`·`threads-post-test` (.cmd). 실제로 쓰는 실행기(`goms-register`·`goms-revise`·`threads-post-now`·`chulgeo-day` 등)는 그대로. `goms-test.ps1` 은 `goms-register.cmd` 가 쓰므로 남김.
 - 시험 그림: 설계도 `content/style-test/*.json` 6개 지움, Drive `ClaudeWorkspace/style-test` 폴더 휴지통으로. PC 의 `content\images\style-test-*` 와 Drive 폴더는 아침 `cleanup.ps1` 이 다음 실행 때 지운다.
