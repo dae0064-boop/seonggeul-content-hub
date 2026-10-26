@@ -12,6 +12,8 @@ $n = 0
 $keep = @(Get-ChildItem 'content\chulgeo\posts\*.md' -ErrorAction SilentlyContinue | ForEach-Object { $_.BaseName })
 Get-ChildItem 'content\images' -Directory | Where-Object { $_.Name -match '^(\d{4}-\d{2}-\d{2})-' -and $Matches[1] -lt $today -and $keep -notcontains $_.Name } |
   ForEach-Object { Remove-Item $_.FullName -Recurse -Force; $n++ }
+# 시험 그림(2026-10-26 사용자 — "테스트 이미지들도 다 삭제"): 실행기 style-test.cmd 와 함께 없앴다
+Get-ChildItem 'content\images' -Directory -Filter 'style-test-*' | ForEach-Object { Remove-Item $_.FullName -Recurse -Force; $n++ }
 $cut = (Get-Date).AddDays(-3)
 Get-ChildItem 'dumps' | Where-Object { $_.LastWriteTime -lt $cut } | ForEach-Object { Remove-Item $_.FullName -Recurse -Force; $n++ }
 . (Join-Path $PSScriptRoot 'lib-drive.ps1')
@@ -23,6 +25,8 @@ if ($drive) {
       Where-Object { $_.Name -match '(\d{4}-\d{2}-\d{2})' -and $Matches[1] -lt $old } |
       ForEach-Object { Remove-Item $_.FullName -Recurse -Force; $n++ }
   }
+  $st = Join-Path $drive 'ClaudeWorkspace\style-test'
+  if (Test-Path $st) { Remove-Item $st -Recurse -Force; $n++ }
 }
 Write-Host "지난 그림·기록 정리: $n 개 지움"
 exit 0

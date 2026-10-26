@@ -148,7 +148,7 @@ node scripts/threads/insurance-set.mjs content/threads/insurance/sets/<날짜>.m
 ### 반려(수정요구) 재심사 (2026-10-26 사용자 요청)
 
 GOMS 에서 반려된 글은 심의결과 탭의 심의의견대로 문구를 넣어 같은 신청 건에 파일만 바꿔 다시 올린다.
-PC 에서 `launchers/goms-revise.cmd` (시험은 `goms-revise-test.cmd`). 순서는 `scripts/goms-ad.mjs` 머리말.
+PC 에서 `launchers/goms-revise.cmd`. 순서는 `scripts/goms-ad.mjs` 머리말.
 
 - 넣을 문구는 심의의견의 화살표 줄("→ '…'", ">…")을 **글자 그대로** 쓴다. 화살표 줄이 없으면 아는 사유(운전자보험 음주 문장, 약관 참조 문장)만
   저절로 넣고, 그 밖의 사유는 올리지 않고 Drive `run-logs/goms-revise-*/scan/reason-스레드 N편.txt` 로 남긴다 — Claude 가 보고 원고를 고친다.
@@ -215,6 +215,6 @@ python3 scripts/threads/insurance-word.py <묶음.md> <사진.jpg> <저장 폴�
   고쳐야 하면 Word 를 다시 만들고 GOMS 에 다시 심의받는다.
 - 올렸는지는 상태 파일 없이 내 스레드 최근 글의 첫 두 줄로 본다 (두 PC 가 함께 돌아도 두 번 올리지 않게, 올리기 직전에 한 번 더 본다).
 - 연결 키는 PC 마다 `launchers/threads-key.cmd` 로 Windows 사용자 환경 변수 `THREADS_ACCESS_TOKEN` 에 넣는다 (저장소·Drive 에 두지 않는다). 60일짜리다.
-- 멈춤: `content/threads/PAUSE` 파일 또는 `launchers/threads-setup.cmd -Remove`. 시험(올리지 않음): `launchers/threads-post-test.cmd`.
+- 멈춤: `content/threads/PAUSE` 파일 또는 `launchers/threads-setup.cmd -Remove`.
 - 기록: Drive `ClaudeWorkspace/run-logs/threads/<날짜>.log`.
 - 배너에는 설계사 이름·등록번호가 있지만 스레드에 어차피 공개로 올라가는 사진이라 저장소(공개)에 둔다 (2026-10-26 사용자 승인).
