@@ -1,0 +1,103 @@
+{
+  "slug": "2026-10-27-kkanmaneul-bogwanbeop",
+  "title": "깐마늘 보관법, 김장철 한 봉지 사 온 날 냉장과 냉동 어디에 둘까",
+  "source": "10/27(화) 원고 (10/26 밤 Routine 2차)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 10/27 원고부터 style_v2·대표사진 테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "주방 조리대 앞에서 소매를 걷고 마늘 봉지를 든 40대 남성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame, face placed slightly below the center so the top fifth of the image is softly blurred background (a title band goes there). The person looks thoughtful or curious (finger on chin, looking at a paper or the key object), not scared, sad or in pain. The related scene stays softly blurred in the background. A Korean man in his 40s with short black hair and a trimmed beard, wearing a red apron over a cream shirt with sleeves rolled up, holding a clear bag of peeled garlic cloves at a kitchen counter; a blurred kitchen behind him. Facial expression: determined, nodding, sleeves rolled up. Color theme: olive green and warm cream tones with a red accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up, eye level, face and shoulders",
+      "bg": "olive green and warm cream tones with a red accent",
+      "note": "대표",
+      "thumb_theme": "olive",
+      "thumb_person": "40대 남성",
+      "thumb_mood": "결심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "olive",
+        "font": "jua",
+        "title": "깐마늘 보관법\n얼마나 갈까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "나무 도마 위에 소복이 쌓인 하얀 깐마늘",
+      "prompt": "Camera and composition: top-down view on a cutting board. A small heap of white peeled garlic cloves on a wooden cutting board Background color: soft sage green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "top-down view on a cutting board",
+      "bg": "soft sage green"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "깐마늘 냉장 보관이 되는 경우와 안 되는 경우를 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "깐마늘 냉장 보관",
+        "heads": [
+          "되는 경우",
+          "안 되는 경우"
+        ],
+        "items": [
+          [
+            "물기를 완전히 뺐어요",
+            "물기가 남은 채"
+          ],
+          [
+            "밀폐용기에 담아",
+            "봉지째 냉장고 문칸에"
+          ],
+          [
+            "닷새 안에 다 쓸 양",
+            "한 달 넘게 두고"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "지퍼백에 얇고 평평하게 펴 담은 다진 마늘",
+      "prompt": "Camera and composition: close-up on a kitchen counter. Minced garlic spread thin and flat inside a clear zipper bag, pressed into small squares Background color: pale butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up on a kitchen counter",
+      "bg": "pale butter yellow"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "작은 유리 밀폐용기에 담긴 다진 마늘과 숟가락",
+      "prompt": "Camera and composition: eye-level close shot on a dining table. A small glass airtight container of minced garlic with a little spoon beside it Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "eye-level close shot on a dining table",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "식용유가 담긴 유리병 옆에 놓인 깐마늘 한 줌",
+      "prompt": "Camera and composition: close-up on a kitchen shelf. A glass jar of cooking oil next to a handful of peeled garlic cloves on a plate Background color: warm apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up on a kitchen shelf",
+      "bg": "warm apricot"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "냉장고 문에 붙인 메모지에 날짜를 적는 손",
+      "prompt": "Camera and composition: close-up of a hand at a refrigerator door. A hand writing on a blank sticky note attached to a refrigerator door, no visible writing Background color: lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of a hand at a refrigerator door",
+      "bg": "lavender"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "김장 양념 그릇 옆에 마늘이 담긴 작은 그릇이 놓인 식탁",
+      "prompt": "Camera and composition: wide shot of a dining table. A kimchi seasoning bowl and a small bowl of garlic set on a cozy dining table with cabbage leaves Background color: blush pink. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a dining table",
+      "bg": "blush pink"
+    }
+  ]
+}
