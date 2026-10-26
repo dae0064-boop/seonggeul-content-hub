@@ -88,6 +88,7 @@ const LEAD_KW_FROM = '2026-10-15';
 // 출처 ②(생활 노하우) 글에는 달지 않는다. 블로그·카페·뉴스·영상 주소는 1차 원문이 아니다.
 const SOURCE_URL_FROM = '2026-10-19';
 const SOURCE_ONE = /확인한 정보를 바탕으로/;
+const FILE_DOWNLOAD = /(flDownload|fileDown|[Dd]ownload\.do|\.(pdf|hwpx?|docx?|xlsx?|zip)(\?|$))/i;
 const NOT_PRIMARY = /(^|\.)(blog\.naver\.com|m\.blog\.naver\.com|cafe\.naver\.com|post\.naver\.com|n\.news\.naver\.com|news\.naver\.com|tistory\.com|brunch\.co\.kr|youtube\.com|youtu\.be|namu\.wiki|wikipedia\.org|instagram\.com|threads\.net|search\.naver\.com|google\.com|daum\.net)$/i;
 const plain = (s) => String(s).replace(/\[\/?(빨간글씨|파란글씨|노란배경)\]/g, '').replace(/[\s①-⑧✔⭕❌·,.!?()~\-]/g, '');
 const titleBracket = (t) => /\s\(([^()]*)\)\s*$/.exec(t);
@@ -277,6 +278,9 @@ for (const file of files) {
       try { url = new URL(u); } catch { /* 아래에서 잡는다 */ }
       if (!url || url.protocol !== 'https:' && url.protocol !== 'http:') errors.push(`source_url 이 주소 형식이 아닙니다: ${u}`);
       else if (NOT_PRIMARY.test(url.hostname)) errors.push(`source_url 은 1차 원문(기관·법령·학술지) 주소여야 합니다 — 블로그·카페·뉴스·영상·검색 주소 안 됨: ${u}`);
+      // 파일 내려받기 주소는 링크 카드가 안 만들어져 발행 때 빠진다 (2026-10-26 law.go.kr flDownload.do 2편 모두 빠짐)
+      else if (dated >= '2026-10-27' && FILE_DOWNLOAD.test(url.pathname + url.search))
+        errors.push(`source_url 에 파일 내려받기 주소(PDF·HWP·flDownload)는 링크 카드가 안 만들어져 빠집니다 — 그 자료를 보여 주는 웹 화면 주소(법령 본문·보도자료 화면)로 바꾸세요: ${u}`);
     }
     if (post.sourceUrls.length) notes.push(`출처 원문 링크(발행 때 출처 줄 아래 카드): ${post.sourceUrls.join(' , ')}`);
   }
