@@ -33,6 +33,8 @@
 - 만든 것: `scripts/goms-ad.mjs --revise [--scan|--submit]`, `launchers/goms-revise-test.cmd`(체크까지만)·`goms-revise.cmd`(실제), `tools/goms-revise.ps1`.
   사유 문구 → Drive `ClaudeWorkspace/goms-fixes.tsv` → `insurance-word.py --fixes` 가 본문 아래 빨간 글씨로 넣음(다시 만들어도 유지). 모의 화면으로 끝까지 시험 통과, **실제 GOMS 는 아직 한 번도 안 돌림**.
 - 아직 못 본 것: 실제 "수정" 버튼·확인 창 글자, 파일삭제 확인 창, 수정 뒤 목록 상태 글자(반려 → ?), 다음 쪽·지난달(조회기준일 기본 이번 달) 반려 건.
+- 첫 시험(13:02 사무실 PC): 로그인·목록 OK, 반려 5건 찾음, 29편에서 멈춤 — **줄을 한 번 누르면 선택만 됨(두 번 눌러야 열림)**, 목록은 보이는 14줄만 그려짐.
+  GOMS 화면 안내: "반려 이후 등록자가 수정하면 파란색" → 수정해도 승인상태는 '반려', 빨간 줄(`tr.notice-emergency`)만 빠짐. → 두 번 클릭·승인상태 '반려'로 조회·빨간 줄만 대상/수정 뒤 빨간 줄 빠짐으로 확인하게 고침.
   → **다음: 사용자가 PC 에서 `goms-revise-test.cmd` → Drive `run-logs/goms-revise-*` 확인 → 맞으면 `goms-revise.cmd`.** 화살표 줄 없는 처음 보는 사유는 올리지 않고 `scan/reason-*.txt` 로 남는다.
 
 ### 10/26 (월) 오후 — 🧱 다와이철거 홍보 블로그 새로 시작 (사용자 — "철거는 실사 사진으로, 네이버 홍보용으로 하나 만들어서, 기존 블로그 말고 다른 블로그로 하루에 5개씩")
