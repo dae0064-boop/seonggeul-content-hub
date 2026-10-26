@@ -7,7 +7,7 @@
 | 글쓰기 규칙 정본 | `memory/CLAUDE.md` — 각 PC 의 `~/.claude/CLAUDE.md` 가 됩니다 |
 | 저장소 운영 · 생활정보 실무 기준 | `CLAUDE.md` |
 | 원고 | `content/posts/` — `.md`(정본) + `.json`(스크립트 입력) 한 쌍 |
-| 발행 캘린더 · 작업판 | `content/calendar/`, `content/board/` (아티팩트 소스) |
+| 발행 캘린더 | `content/calendar/` |
 | 발행 · 검수 자동화 | `scripts/*.mjs` |
 | 여러 PC 워크스페이스 도구 | `scripts/*.py`, `launchers/`, `docs/SETUP.md` |
 | 발행이 끝난 원고 목록 | `content/archive/published.tsv` — 지난 원고는 지우고 여기 한 줄씩 남깁니다 |

@@ -10,7 +10,7 @@ import { normTitle } from './lib/naver-related.mjs';
 import { checkCard } from './lib/overlay.mjs';
 import * as BC from './lib/brandconnect.mjs';
 
-// 10/12 변경 묶음 (2026-10-02·10-03 사용자 결정, routines/once/2026-10-09-1012-change-bundle.md) — 2026-10-12 원고부터
+// 10/12 변경 묶음 (2026-10-02·10-03 사용자 결정) — 2026-10-12 원고부터
 //   ① 고정 인사말 앞 첫 덩어리 = 확인된 사실 한 문장(1~2줄)
 //   ② 제목 끝 괄호에 구체 숫자·기준 "(중불 20~30분)" — 괄호 속 숫자는 본문에 있어야 한다
 //   ③ 정보 카드: 이미지 계획서 8장 중 2~3장이 kind "card", 카드 글자는 본문에 있는 말
@@ -48,6 +48,10 @@ const SPLIT3_FROM = '2026-10-27';
 const SPLIT3 = { 생활정보: 1, 생활보장: 4 };
 const DAY_TOTAL3 = 5;
 const HOMEFEED3 = 1;
+// 2026-10-26 사용자 다시 — "10월 말까지는 하루 10편(생활보장 7 + 생활정보 3), 11월 1일부터 생활보장 4 + 생활정보 1 총 5편". 10편 날은 홈판형 2편, 같은 모양 3편까지.
+const TEN_UNTIL = '2026-10-31';
+const SPLIT_TEN = { 생활정보: 3, 생활보장: 7 };
+const isTen = (d) => d >= SPLIT3_FROM && d <= TEN_UNTIL;
 // 그림체 바꾸는 날 (2026-10-24 사용자 — "생활보장은 클레이로 30편까지, 31편부터 실사풍 / 생활정보는 지금 126편, 150편이 되면 실사풍". 같은 날 다시 센 숫자: 생활보장 19·생활정보 131).
 // 실제 편수로 센다: 이 글이 그 카테고리 몇 번째 네이버 글인가 = 더할 수(OFFSET) + published.tsv 의 같은 카테고리 줄 + content/posts 에서 이 글보다 앞선(날짜·publish_at) 같은 카테고리 글 + 1.
 // OFFSET: 2026-10-24 10:40 사용자가 보낸 블로그 카테고리 화면 — "생활정보 125개의 글"·"생활보장 19개의 글" (발행된 글만, 10/24 10:00 세탁기 배수구 글까지).
@@ -373,7 +377,8 @@ for (const file of files) {
       const sib = daySibs(dir, dated);
       const fmts = sib.map((f) => { try { return parsePost(fs.readFileSync(dir + f, 'utf8')).format; } catch { return ''; } });
       const same = fmts.filter((x) => x === post.format).length;
-      if (same > 2) errors.push(`같은 날(${dated}) "${post.format}" 모양이 ${same}편 — 2편까지만 (모양을 돌려 쓰세요)`);
+      const maxSame = isTen(dated) ? 3 : 2;
+      if (same > maxSame) errors.push(`같은 날(${dated}) "${post.format}" 모양이 ${same}편 — ${maxSame}편까지만 (모양을 돌려 쓰세요)`);
       if (sib.length >= 5 && new Set(fmts.filter(Boolean)).size < 3) notes.push(`같은 날 글 모양이 ${new Set(fmts).size}가지뿐이에요 — 3가지 이상 섞으세요`);
     }
   }
@@ -461,11 +466,11 @@ for (const file of files) {
     const dir = file.replace(/[^\\/]+$/, '') || './';
     const sib = daySibs(dir, dated);
     const split3 = dated >= SPLIT3_FROM;
-    const full = split3 ? DAY_TOTAL3 : 5;
+    const full = isTen(dated) ? 10 : split3 ? DAY_TOTAL3 : 5;
     if (sib.length >= (split3 ? 1 : 5)) {
       const sibs = sib.map((f) => { try { return parsePost(fs.readFileSync(dir + f, 'utf8')); } catch { return {}; } });
       const cats = sibs.map((p) => p.category || '');
-      const split = split3 ? SPLIT3 : dated >= SPLIT2_FROM ? SPLIT2 : SHIFT_SPLIT;
+      const split = isTen(dated) ? SPLIT_TEN : split3 ? SPLIT3 : dated >= SPLIT2_FROM ? SPLIT2 : SHIFT_SPLIT;
       const why = split3 ? '2026-10-26 사용자 결정' : dated >= SPLIT2_FROM ? '2026-10-24 사용자 결정' : '2026-10-19 사용자 결정';
       const done = sib.length >= full;
       if (split3 && sib.length > full) errors.push(`같은 날(${dated}) 네이버 원고 ${sib.length}편 — 하루 ${full}편까지 (${why})`);
@@ -475,7 +480,7 @@ for (const file of files) {
       }
       if (dated >= SPLIT2_FROM) {
         const hf = sibs.filter((p) => p.slot === '홈판');
-        const hfWant = split3 ? HOMEFEED3 : HOMEFEED_PER_DAY;
+        const hfWant = isTen(dated) ? 2 : split3 ? HOMEFEED3 : HOMEFEED_PER_DAY;
         if (done ? hf.length !== hfWant : hf.length > hfWant) errors.push(`같은 날(${dated}) 홈판형(slot: 홈판) ${hf.length}편 — 하루 ${hfWant}편 (생활정보 글에)`);
         if (hf.some((p) => p.category !== '생활정보')) errors.push(`홈판형(slot: 홈판)은 생활정보 글에만 붙입니다`);
       }
@@ -532,6 +537,7 @@ for (const file of files) {
         const dir = file.replace(/[^\\/]+$/, '') || './';
         const prev = new Date(Date.parse(dated) - 864e5).toISOString().slice(0, 10);
         const me = file.split(/[\\/]/).pop();
+        const moodSame = [];
         for (const f of [...daySibs(dir, dated), ...daySibs(dir, prev)]) {
           if (f === me) continue;
           const o1 = planOf(dir + f)?.images?.find((im) => im.n === 1);
@@ -542,11 +548,13 @@ for (const file of files) {
           if (same) {
             if (o1.thumb_theme && o1.thumb_theme === t.thumb_theme) errors.push(`같은 날 ${f} 와 대표사진 테마(${t.thumb_theme})가 같습니다`);
             if (o1.thumb_person && o1.thumb_person === t.thumb_person) errors.push(`같은 날 ${f} 와 대표사진 사람(${t.thumb_person})이 같습니다`);
-            if (o1.thumb_mood && o1.thumb_mood === t.thumb_mood) errors.push(`같은 날 ${f} 와 대표사진 표정(${t.thumb_mood})이 같습니다`);
+            if (o1.thumb_mood && o1.thumb_mood === t.thumb_mood) moodSame.push(f);
           } else if (pa && pa === (post.publishAt || '').slice(11) && o1.thumb_theme === t.thumb_theme) {
             errors.push(`전날 같은 시각 글 ${f} 와 대표사진 테마(${t.thumb_theme})가 같습니다`);
           }
         }
+        // 표정은 7가지라 10편 날은 같은 표정 2편까지 (5편 날은 모두 다르게)
+        if (moodSame.length >= (isTen(dated) ? 2 : 1)) errors.push(`같은 날 ${moodSame.join(', ')} 와 대표사진 표정(${t.thumb_mood})이 같습니다 — ${isTen(dated) ? '10편 날은 같은 표정 2편까지' : '모두 다르게'}`);
       }
       const flat = plan.images.filter((im) => im.kind !== 'card' && im.prompt && !/saturated/i.test(im.prompt)).map((im) => im.n);
       if (flat.length) errors.push(`그림 ${flat.join(', ')}번에 style_v2(파스텔보다 진한 색) 문구가 없습니다 — standards/image-style.json style_v2·palette_v2`);

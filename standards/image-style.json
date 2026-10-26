@@ -76,6 +76,16 @@
       "band": "#7A2E1D",
       "key": "#FFE7A0",
       "scene": "terracotta and warm beige tones with a teal accent"
+    },
+    "olive": {
+      "band": "#3F4F1F",
+      "key": "#FFE08A",
+      "scene": "olive green and warm cream tones with a red accent"
+    },
+    "rose": {
+      "band": "#7A2848",
+      "key": "#FFD6A5",
+      "scene": "dusty rose and white tones with a green accent"
     }
   },
   "thumb_moods": {
@@ -87,5 +97,5 @@
     "결심": "determined, nodding, sleeves rolled up",
     "설명": "explaining with one hand open toward the viewer"
   },
-  "thumb_variety_note": "2026-10-26 사용자 — '메인화면이 같은 색감·같은 캐릭터라 눈에 안 띈다. 상황별로 사람·색감·표정·글자를 다양하게'. 2026-10-27 네이버 원고부터 대표사진(1번)은 고정 캐릭터(characters)를 쓰지 않고 글 상황에 맞는 사람(나이·성별·옷)을 새로 정한다. 계획서 1번에 thumb_theme(위 8개 중)·thumb_person(예: 60대 남성)·thumb_mood(위 7개 중)를 적고, 같은 날 네이버 글끼리 셋 다 겹치지 않게 + 전날 같은 시각 글과 테마가 겹치지 않게(lint-post). 프롬프트에 테마 scene 문구와 표정 문구를 넣는다. overlay 에 theme(같은 값)·font(jua|ptd — 하루 두 가지 섞기)."
+  "thumb_variety_note": "2026-10-26 사용자 — '메인화면이 같은 색감·같은 캐릭터라 눈에 안 띈다. 상황별로 사람·색감·표정·글자를 다양하게'. 2026-10-27 네이버 원고부터 대표사진(1번)은 고정 캐릭터(characters)를 쓰지 않고 글 상황에 맞는 사람(나이·성별·옷)을 새로 정한다. 계획서 1번에 thumb_theme(위 10개 중)·thumb_person(예: 60대 남성)·thumb_mood(위 7개 중)를 적고, 같은 날 네이버 글끼리 테마·사람은 겹치지 않게, 표정은 5편 날 모두 다르게·10편 날(10/27~10/31) 같은 표정 2편까지 + 전날 같은 시각 글과 테마가 겹치지 않게(lint-post). 프롬프트에 테마 scene 문구와 표정 문구를 넣는다. overlay 에 theme(같은 값)·font(jua|ptd — 하루 두 가지 섞기)."
 }
