@@ -120,6 +120,12 @@ export function threadsApi(token) {
       return callPaged(EP.myThreads(me.id), { fields: FIELDS.post, limit, since }, 3);
     },
 
+    /** 내가 단 답글(다른 글·내 글 아래). 나눠 올린 보험글의 2/2 가 붙었는지 볼 때 쓴다 */
+    async myReplies({ limit = 50 } = {}) {
+      const me = await this.me();
+      return callPaged(`/${me.id}/replies`, { fields: 'id,text,media_type,timestamp,replied_to,root_post', limit }, 2);
+    },
+
     /** 한국시간 오늘 내가 발행한 글 수 — 하루 상한 계산에 쓴다 */
     async countPostsSince(unixSeconds) {
       const posts = await this.myPosts({ limit: 50, since: unixSeconds });
@@ -161,9 +167,9 @@ export function threadsApi(token) {
      * 사진 한 장 + 글을 올린다 (2026-10-26 — 보험 심의글 + 심의필 배너). imageUrl 은 공개 주소여야 한다.
      * 사진 컨테이너는 스레드가 사진을 받아 가는 동안 IN_PROGRESS 라 FINISHED 가 될 때까지 기다린 뒤 발행한다.
      */
-    async postImage(text, imageUrl) {
+    async postImage(text, imageUrl, { replyToId } = {}) {
       const me = await this.me();
-      const container = await call('POST', EP.createContainer(me.id), { media_type: 'IMAGE', image_url: imageUrl, text });
+      const container = await call('POST', EP.createContainer(me.id), { media_type: 'IMAGE', image_url: imageUrl, text, reply_to_id: replyToId });
       if (!container?.id) throw new Error(`컨테이너 생성 응답에 id 가 없습니다: ${JSON.stringify(container)}`);
       let status = '';
       for (let i = 0; i < 24; i++) {
