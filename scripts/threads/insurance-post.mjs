@@ -3,7 +3,8 @@
  * 스레드 보험 심의글 올리기 — 심의 '적격' 받은 편을 1편부터 차례로, 그 편의 심의필 배너를 붙여 올린다.
  *
  * 2026-10-26 사용자: "스레드 1편부터 스레드에 게시", 배너 맨 아래 줄에 그 편의 준법심의필번호·유효기간을 넣어서.
- * 같은 날 결정: 하루 4편(08:30·12:30·18:30·21:30) + 일상글, 배너는 저장소(공개)에, 사무실 PC·노트북 둘 다.
+ * 같은 날 결정: 배너는 저장소(공개)에, 사무실 PC·노트북 둘 다. 같은 날 저녁 바꿈 — **하루 5편(2026-10-27~),
+ * 한 편을 두 개로 나눠 올린다: 1/2 = 글 앞 절반, 2/2 = 뒤 절반 + 심의필 배너 (1/2 아래 답글로 이어 붙임)** ("글이 기니까").
  *
  *   node scripts/threads/insurance-post.mjs --word-dir <Drive 보험글> --approved <goms-approved.tsv>          시험: 올릴 글만 보여 줌
  *   node scripts/threads/insurance-post.mjs --word-dir <Drive 보험글> --approved <goms-approved.tsv> --post   실제로 한 편 올림
@@ -14,12 +15,14 @@
  *   - 글은 심의받은 Word(Drive 보험글/스레드 N편.docx)에서 사진 앞까지 그대로 읽는다 — 원고(sets/*.md)가 아니라 Word 가 정본
  *   - 배너(저장소 main 의 content/threads/insurance/banners/thread-N.jpg)가 공개 주소에서 열린다
  *   - 이미 올린 편이 아니다 — 상태 파일 없이 내 스레드 최근 글을 되읽어 본다 (두 PC 가 함께 돌아도 두 번 올리지 않게)
- *   - 오늘(한국시간) 사진 글이 하루 상한(기본 4)보다 적고, 마지막 사진 글이 40분보다 오래됐다 (노트북은 사무실 PC 5분 뒤에 돈다)
+ *   - 오늘(한국시간) 올린 보험글이 하루 상한(기본 5)보다 적고, 마지막 보험글이 40분보다 오래됐다 (노트북은 사무실 PC 5분 뒤에 돈다)
+ *   - 1/2 만 올라가고 2/2 가 빠진 편이 있으면 새 편보다 그 2/2 를 먼저 붙인다
  *
  * 종료 코드: 0 = 올림 또는 올릴 것 없음, 1 = 설정 문제(토큰·파일), 2 = 올리다 실패
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { loadEnv, pausedReason, kstDayStartUnix, kstStamp, log, step, warn } from './config.mjs';
 import { threadsApi } from './api.mjs';
 import { wordText } from './word-fix.mjs';
@@ -29,7 +32,8 @@ const arg = (n, d = '') => { const i = argv.indexOf(n); return i >= 0 ? argv[i +
 const doPost = argv.includes('--post');
 const wordDir = arg('--word-dir');
 const approvedTsv = arg('--approved');
-const maxPerDay = Number(arg('--max-per-day', process.env.THREADS_INSURANCE_PER_DAY || '4'));
+const fixesTsv = arg('--fixes'); // 반려(수정요구)된 편 번호 — 순서 확인에 쓴다
+const maxPerDay = Number(arg('--max-per-day', process.env.THREADS_INSURANCE_PER_DAY || '5'));
 const gapMin = Number(arg('--gap-min', '40'));
 const RAW = process.env.THREADS_BANNER_BASE
   || 'https://raw.githubusercontent.com/dae0064-boop/seonggeul-content-hub/main/content/threads/insurance/banners';
@@ -78,32 +82,67 @@ async function main() {
   log(`심의 적격·유효기간 안: ${ready.length}편 (${ready.map((r) => r.n).join(', ') || '없음'})`);
   if (!ready.length) return 0;
 
-  // 2) 내 스레드를 되읽어 이미 올린 편·오늘 올린 수를 본다
+  // 2) 내 스레드를 되읽어 이미 올린 편·오늘 올린 수를 본다 (1/2 는 첫 두 줄이 Word 첫 두 줄과 같다)
   const api = threadsApi(token);
   const me = await api.me();
   const posts = await api.myPosts({ limit: 100 });
-  const postedHeads = new Set(posts.map((p) => head(p.text || '')));
+  const byHead = new Map(ready.map((r) => [head(r.text), r]));
+  const ours = posts.filter((p) => byHead.has(head(p.text || '')));
   const dayStart = kstDayStartUnix();
-  const images = posts.filter((p) => p.media_type === 'IMAGE');
-  const todayImages = images.filter((p) => Date.parse(p.timestamp) / 1000 >= dayStart);
-  const last = images.map((p) => Date.parse(p.timestamp)).sort((a, b) => b - a)[0];
-  log(`계정 @${me.username} · 최근 글 ${posts.length}개 · 오늘 사진 글 ${todayImages.length}/${maxPerDay}`);
+  const todayOurs = ours.filter((p) => Date.parse(p.timestamp) / 1000 >= dayStart);
+  const last = ours.map((p) => Date.parse(p.timestamp)).sort((a, b) => b - a)[0];
+  log(`계정 @${me.username} · 최근 글 ${posts.length}개 · 오늘 보험글 ${todayOurs.length}/${maxPerDay}`);
 
+  // 2-1) 1/2 만 올라간 편 — 2/2(사진 답글)를 먼저 붙인다
+  const recent = ours.filter((p) => Date.now() - Date.parse(p.timestamp) < 3 * 86400000);
+  if (recent.length) {
+    const replies = await api.myReplies({ limit: 50 }).catch(() => null);
+    if (replies) {
+      for (const p of recent) {
+        const has = replies.some((r) => (r.replied_to?.id === p.id || r.root_post?.id === p.id) && r.media_type === 'IMAGE');
+        if (has) continue;
+        const r = byHead.get(head(p.text || ''));
+        if (!r) continue;
+        const [, second] = split(r.text);
+        warn(`스레드 ${r.n}편: 1/2 만 올라가 있어요 — 2/2 를 붙여요`);
+        if (!doPost) { log('시험이라 붙이지 않아요'); return 0; }
+        const url = `${RAW}/thread-${r.n}.jpg`;
+        if (!(await opens(url))) { log(`배너가 아직 공개 주소에 없어요: ${url}`); return 0; }
+        try {
+          const q = await api.postImage(second, url, { replyToId: p.id });
+          log(`✅ 2/2 붙임: 스레드 ${r.n}편 → ${q.permalink || q.id}`);
+          return 0;
+        } catch (e) { log(`❌ 2/2 를 붙이지 못했어요: ${e.message}`); return 2; }
+      }
+    } else warn('내 답글 목록을 읽지 못해 2/2 빠진 편은 이번에 확인하지 못했어요');
+  }
+
+  const postedHeads = new Set(ours.map((p) => head(p.text || '')));
   const todo = ready.filter((r) => !postedHeads.has(head(r.text)));
   log(`아직 안 올린 편: ${todo.map((r) => r.n).join(', ') || '없음'}`);
   if (!todo.length) { log('올릴 편이 없어요 — 다음 승인을 기다려요'); return 0; }
-  if (todayImages.length >= maxPerDay) { log(`오늘 ${maxPerDay}편을 다 올렸어요 — 내일 이어서`); return 0; }
+  if (todayOurs.length >= maxPerDay) { log(`오늘 ${maxPerDay}편을 다 올렸어요 — 내일 이어서`); return 0; }
   if (last && Date.now() - last < gapMin * 60000) {
     log(`마지막 보험글이 ${Math.round((Date.now() - last) / 60000)}분 전이라 이번엔 쉬어요 (다른 PC 가 막 올렸을 수 있어요)`);
     return 0;
   }
 
-  // 3) 다음 편 — 글 길이·배너 주소 확인
+  // 3) 다음 편 — 앞 번호 중 심의 결과를 아직 못 읽은 편이 있으면 기다린다 (1편부터 차례로 — 2026-10-26 사용자)
   const next = todo[0];
+  const rejected = new Set();
+  if (fixesTsv && fs.existsSync(fixesTsv)) for (const l of fs.readFileSync(fixesTsv, 'utf8').split(/\r?\n/)) { const k = Number((l.split('\t')[0] || '').trim()); if (k) rejected.add(k); }
+  const unknown = [];
+  for (let k = 1; k < next.n; k++) if (!approved.has(k) && !rejected.has(k) && fs.existsSync(path.join(wordDir, `스레드 ${k}편.docx`))) unknown.push(k);
+  if (unknown.length) {
+    log(`${unknown.join(', ')}편의 심의 결과를 아직 못 읽었어요 — ${next.n}편을 먼저 올리지 않고 기다려요 (goms-approved 를 다시 돌리면 풀려요)`);
+    return 0;
+  }
   const url = `${RAW}/thread-${next.n}.jpg`;
+  const [first, second] = split(next.text);
   step(`다음: 스레드 ${next.n}편 (${next.a.no}, ${next.a.start} ~ ${next.a.end})`);
-  console.log(next.text.split('\n').map((l) => `   │ ${l}`).join('\n'));
-  if ([...next.text].length > 500) { log(`글이 ${[...next.text].length}자라 스레드 한도(500자)를 넘어요 — 올리지 않아요`); return 2; }
+  console.log(['   ── 1/2 ──', ...first.split('\n').map((l) => `   │ ${l}`), '   ── 2/2 (+ 심의필 배너) ──', ...second.split('\n').map((l) => `   │ ${l}`)].join('\n'));
+  if (norm(first + second) !== norm(next.text)) { log('나눈 글을 합치니 Word 글과 달라요 — 올리지 않아요'); return 2; }
+  for (const [i, t] of [[1, first], [2, second]]) if ([...t].length > 500) { log(`${i}/2 가 ${[...t].length}자라 스레드 한도(500자)를 넘어요 — 올리지 않아요`); return 2; }
   if (!(await opens(url))) {
     log(`배너가 아직 공개 주소에 없어요: ${url}`);
     log('Claude 가 아침 확인 때 배너를 만들어 넣어요 — 그 뒤 다음 시각에 올라가요');
@@ -116,14 +155,40 @@ async function main() {
   const again = await api.myPosts({ limit: 25, since: dayStart - 86400 });
   if (again.some((p) => head(p.text || '') === head(next.text))) { log('방금 다른 PC 가 이 편을 올렸어요 — 올리지 않아요'); return 0; }
 
+  let p1;
   try {
-    const p = await api.postImage(next.text, url);
-    log(`✅ 올림: 스레드 ${next.n}편 → ${p.permalink || p.id}`);
+    p1 = await api.postText(first);
+    log(`✅ 1/2 올림: 스레드 ${next.n}편 (${p1.id})`);
+  } catch (e) { log(`❌ 1/2 를 올리지 못했어요: ${e.message}`); return 2; }
+  try {
+    const p2 = await api.postImage(second, url, { replyToId: p1.id });
+    log(`✅ 2/2 올림 (배너 포함): ${p2.permalink || p2.id}`);
     return 0;
   } catch (e) {
-    log(`❌ 올리지 못했어요: ${e.message}`);
+    log(`❌ 2/2 를 올리지 못했어요: ${e.message} — 다음 실행이 2/2 를 먼저 붙여요`);
     return 2;
   }
 }
 
-process.exitCode = await main().catch((e) => { console.error(`❌ ${e.message}`); return 2; });
+/**
+ * 글을 두 개로 나눈다 — 글자 수가 절반에 가장 가까운 줄 끝에서, 문장이 끝나는 줄(…요/다/죠/?/!/./이모지)을 먼저 고른다.
+ * 앞쪽은 2줄 이상. 빈 줄로 나뉜 수정 문구(반려 뒤 넣은 빨간 문구)는 뒤쪽에 남는다.
+ */
+export function split(text) {
+  const lines = text.split('\n');
+  const total = [...text.replace(/\s/g, '')].length;
+  const ends = (l) => /(요|다|죠|까|[?!.~]|\p{Extended_Pictographic}|\)|”)\s*$/u.test(l.trim());
+  let best = -1, bestScore = Infinity, acc = 0;
+  for (let i = 0; i < lines.length - 1; i++) {
+    acc += [...lines[i].replace(/\s/g, '')].length;
+    if (i < 1 || !lines[i].trim()) continue;
+    const score = Math.abs(acc - total / 2) + (ends(lines[i]) ? 0 : 1000);
+    if (score < bestScore) { bestScore = score; best = i; }
+  }
+  if (best < 0) best = Math.floor(lines.length / 2) - 1;
+  const first = lines.slice(0, best + 1).join('\n').trim();
+  const second = lines.slice(best + 1).join('\n').trim();
+  return [first, second];
+}
+
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) process.exitCode = await main().catch((e) => { console.error(`❌ ${e.message}`); return 2; });

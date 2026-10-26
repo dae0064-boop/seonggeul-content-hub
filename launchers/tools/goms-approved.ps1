@@ -26,6 +26,8 @@ New-Item -ItemType Directory -Force -Path $out | Out-Null
 Write-Host 'GOMS 승인완료 편의 심의필 번호를 읽는 중 (새로 읽는 편마다 20초쯤)...'
 $log = @(& node scripts\goms-ad.mjs --file-dir $fileDir --approved --approved-out $tsv --out $out 2>&1 | ForEach-Object { "$_" })
 $code = $LASTEXITCODE
+# 심의필 번호를 넣은 배너로 Word 를 따로 저장한다 (Drive 보험글-심의필\스레드 N편.docx) — 배너는 저장소에 있는 편만
+$log += @(& node scripts\threads\word-banner.mjs --word-dir $fileDir --out-dir (Join-Path $drive 'ClaudeWorkspace\보험글-심의필') 2>&1 | ForEach-Object { "$_" })
 $log | ForEach-Object { Write-Host $_ }
 @("PC: $env:COMPUTERNAME", "시각: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')", "종료 코드: $code (0 = 끝까지, 2 = 중간에 멈춤, 3 = GOMS 로그인 안 됨)", '') + $log |
   Set-Content -Encoding UTF8 (Join-Path $out 'result.txt')
