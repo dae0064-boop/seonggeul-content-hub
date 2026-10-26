@@ -7,7 +7,7 @@
 #   - 이 PC 에서 다른 발행 작업이 아직 돎
 #   - dumps\no-auto-shutdown.txt 파일이 있음 (이 PC 만 자동 끄기를 끄는 스위치)
 # 물어보는 창: "끄지 않기"를 누르면 그대로 켜 둔다. "지금 재우기" 또는 10분 동안 아무것도 안 누르면 절전으로 재운다.
-# -Test: 시험용 (launchers\shutdown-test.cmd). 남은 글·다른 작업 확인을 건너뛰고 1분짜리 창을 띄운다. 버튼·시간 초과 동작은 실제와 같다 — 정말 절전으로 들어간다.
+# -Test: 시험용 (실행기는 2026-10-26 지움). 남은 글·다른 작업 확인을 건너뛰고 1분짜리 창을 띄운다. 버튼·시간 초과 동작은 실제와 같다 — 정말 절전으로 들어간다.
 param([switch]$Test)
 $ErrorActionPreference = 'SilentlyContinue'
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
