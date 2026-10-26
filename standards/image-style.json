@@ -6,13 +6,17 @@
   "size": "1024x1024",
   "style": "Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel.",
   "palette": "Use mainly these colors: cream (#F6EFE3) background, apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55).",
+  "style_v2": "Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood.",
+  "palette_v2": "Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object.",
+  "v2_note": "2026-10-27 네이버 원고부터 (2026-10-26 사용자 — 시험 그림 close4-02 '이 느낌으로'): 네이버 그림 장면은 style_v2·palette_v2, 대표사진(1번)은 thumbnail_closeup + overlay look band + 둘째 줄 질문. 티스토리는 style·palette 그대로. 실사풍(style_care·style_life)은 쓰지 않는다 — 생활보장도 클레이.",
   "style_care": "Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition.",
   "palette_care": "Natural colors of the real scene. No pastel clay look.",
   "style_life": "Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition.",
   "palette_life": "Natural colors of the real scene. No pastel clay look.",
-  "style_care_note": "그림체 바꾸는 날 (2026-10-24 사용자): 생활보장 글은 클레이로 30편까지 → 31번째(예상 2026-10-29 네이버 원고)부터 style_care·palette_care. 생활정보 글은 150편까지 클레이 → 151번째(예상 2026-11-04 원고)부터 style_life·palette_life. 정보 카드·대표사진 글씨는 그대로. lint-post REAL_AFTER·COUNT_OFFSET 이 편수로 확인한다. 실제 기관·상표로 보이는 것은 그리지 않는다.",
-  "rules": "Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm, relaxed and smiling; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only.",
+  "style_care_note": "2026-10-26 사용자: 생활보장도 클레이 3D 그대로 (31번째 실사풍 전환 취소, 생활정보 151번째 전환은 10/25 에 취소). style_care·style_life 는 남겨만 둔다.",
+  "rules": "Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only.",
   "thumbnail_space": "Keep the top third of the image as plain empty cream background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds.",
+  "thumbnail_closeup": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame, face placed slightly below the center so the top fifth of the image is softly blurred background (a title band goes there). The person looks thoughtful or curious (finger on chin, looking at a paper or the key object), not scared, sad or in pain. The related scene stays softly blurred in the background.",
   "characters": {
     "할머니": "the Seonggeul grandma: a Korean woman in her late 70s, short white curly hair, round glasses, apricot knit cardigan",
     "할아버지": "the Seonggeul grandpa: a Korean man in his late 70s, short gray hair, mint green vest over a white shirt",
@@ -31,5 +35,57 @@
     "style": "① 둥근 글씨 + 형광펜: 두 줄, 진갈색 글씨에 흰 테두리, 첫 줄에 노란 형광펜(#FFE45C). 주제 꼬리표(tag)는 쓰지 않는다 (2026-10-02 사용자 선택) 글씨는 시안 크기(한 줄 150px 안팎)로 키우고, 한 줄 10자 안쪽으로 쓴다."
   },
   "text_overlay": "글씨는 그림 모델이 쓰지 않는다. 계획서 overlay 로 scripts/lib/overlay.mjs 가 맑은 고딕으로 얹는다. 대표사진은 kind=thumb(주아체 제목 두 줄, 꼬리표 없음), 본문은 필요할 때 label/steps.",
-  "variety": "한 글의 8장은 모두 다른 장면이다: 장소·주인공(사물/사람)·구도·배경색이 서로 겹치지 않게, 각 장면은 그 자리 문단 내용에 맞춘다. 같은 그림에 글씨만 바꿔 얹지 않는다. (2026-10-01 사용자 지시)"
+  "variety": "한 글의 8장은 모두 다른 장면이다: 장소·주인공(사물/사람)·구도·배경색이 서로 겹치지 않게, 각 장면은 그 자리 문단 내용에 맞춘다. 같은 그림에 글씨만 바꿔 얹지 않는다. (2026-10-01 사용자 지시)",
+  "thumb_themes": {
+    "navy": {
+      "band": "#17243F",
+      "key": "#FFD84D",
+      "scene": "cool blue and white tones with a coral-red accent"
+    },
+    "forest": {
+      "band": "#1F4D3A",
+      "key": "#FFE08A",
+      "scene": "deep green plants and warm wood tones with a mustard-yellow accent"
+    },
+    "burgundy": {
+      "band": "#5A1F2B",
+      "key": "#FFD3A8",
+      "scene": "warm burgundy and cream tones with a soft gold accent"
+    },
+    "cobalt": {
+      "band": "#1E3A8A",
+      "key": "#FDE047",
+      "scene": "bright cobalt blue and white tones with an orange accent"
+    },
+    "teal": {
+      "band": "#0F4C5C",
+      "key": "#FFB86B",
+      "scene": "teal and sand tones with an orange accent"
+    },
+    "plum": {
+      "band": "#4B2C5E",
+      "key": "#FFD84D",
+      "scene": "lavender and plum tones with a yellow accent"
+    },
+    "charcoal": {
+      "band": "#2B2B2B",
+      "key": "#FF8A65",
+      "scene": "neutral gray and white tones with a coral accent"
+    },
+    "brick": {
+      "band": "#7A2E1D",
+      "key": "#FFE7A0",
+      "scene": "terracotta and warm beige tones with a teal accent"
+    }
+  },
+  "thumb_moods": {
+    "생각": "thoughtful, finger on chin",
+    "궁금": "curious, head slightly tilted",
+    "놀람": "pleasantly surprised, eyebrows up, not scared",
+    "안심": "relieved gentle smile",
+    "반가움": "bright happy smile",
+    "결심": "determined, nodding, sleeves rolled up",
+    "설명": "explaining with one hand open toward the viewer"
+  },
+  "thumb_variety_note": "2026-10-26 사용자 — '메인화면이 같은 색감·같은 캐릭터라 눈에 안 띈다. 상황별로 사람·색감·표정·글자를 다양하게'. 2026-10-27 네이버 원고부터 대표사진(1번)은 고정 캐릭터(characters)를 쓰지 않고 글 상황에 맞는 사람(나이·성별·옷)을 새로 정한다. 계획서 1번에 thumb_theme(위 8개 중)·thumb_person(예: 60대 남성)·thumb_mood(위 7개 중)를 적고, 같은 날 네이버 글끼리 셋 다 겹치지 않게 + 전날 같은 시각 글과 테마가 겹치지 않게(lint-post). 프롬프트에 테마 scene 문구와 표정 문구를 넣는다. overlay 에 theme(같은 값)·font(jua|ptd — 하루 두 가지 섞기)."
 }
