@@ -25,8 +25,12 @@ if (-not $photo) {
 
 python --version *> $null
 if ($LASTEXITCODE -ne 0) {
-  # 스레드 보험글은 2026-10-08 부터 멈춰 있어 발행과 상관없다 — 노란 경고로 사용자를 놀라게 하지 않는다 (2026-10-23)
-  Write-Host "보험글 Word 저장은 건너뜁니다 (이 PC 에 Python 없음 — 네이버·티스토리 발행과는 상관없어요)." -ForegroundColor Gray
+  # Python 이 없는 PC(사무실 PC) — Node 로 없는 Word 만 만든다 (2026-10-26, 하루 10편 다시 시작). 이미 있는 Word 는 건드리지 않는다.
+  $outRoot = Join-Path $drive 'ClaudeWorkspace\보험글'
+  $lines = @(& node scripts\threads\word-make.mjs --out $outRoot 2>&1 | ForEach-Object { "$_" })
+  $fixes = Join-Path $drive 'ClaudeWorkspace\goms-fixes.tsv'
+  if (Test-Path $fixes) { $lines += @(& node scripts\threads\word-fix.mjs --dir $outRoot --fixes $fixes 2>&1 | ForEach-Object { "$_" }) }
+  $lines | Where-Object { $_ -like '만듦*' -or $_ -like '보험글 Word*' -or $_ -like '⚠*' } | ForEach-Object { Write-Host $_ }
   exit 0
 }
 python -c "import docx" *> $null

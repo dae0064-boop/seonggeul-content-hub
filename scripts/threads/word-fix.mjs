@@ -93,13 +93,16 @@ function writeZip(entries, changed) {
   return Buffer.concat([...parts, cd, end]);
 }
 
+export { readZip, writeZip, content };
+/** GOMS 심의 의견으로 가장 많이 요구된 문구 (goms-ad.mjs YAKGWAN 과 같은 글자). */
+export const NOTICE = '보험사 상품별로 상이할 수 있으므로, 세부사항은 반드시 해당 약관을 참조하시기바랍니다';
 const norm = (t) => t.replace(/\s/g, '');
 const unxml = (t) => t.replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&amp;/g, '&');
 const esc = (t) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const docText = (xml) => unxml([...xml.matchAll(/<w:t(?:\s[^>]*)?>([^<]*)<\/w:t>/g)].map((m) => m[1]).join(''));
 
 const FONT = '맑은 고딕';
-const redPara = (t) => `<w:p><w:pPr><w:spacing w:after="0" w:line="336" w:lineRule="auto"/></w:pPr><w:r><w:rPr><w:rFonts w:ascii="${FONT}" w:hAnsi="${FONT}" w:eastAsia="${FONT}"/><w:color w:val="FF0010"/><w:sz w:val="20"/></w:rPr><w:t xml:space="preserve">${esc(t)}</w:t></w:r></w:p>`;
+const redPara = (t, color = 'FF0010') => `<w:p><w:pPr><w:spacing w:after="0" w:line="336" w:lineRule="auto"/></w:pPr><w:r><w:rPr><w:rFonts w:ascii="${FONT}" w:hAnsi="${FONT}" w:eastAsia="${FONT}"/><w:color w:val="${color}"/><w:sz w:val="20"/></w:rPr><w:t xml:space="preserve">${esc(t)}</w:t></w:r></w:p>`;
 const emptyPara = '<w:p><w:pPr><w:spacing w:after="0" w:line="336" w:lineRule="auto"/></w:pPr></w:p>';
 
 export function readFixes(tsv) {
@@ -157,7 +160,7 @@ export function missingIn(file, phrases) {
 }
 
 /** 빠진 문구를 배너 사진 문단 앞에 빨간 글씨로 넣는다. 넣은 개수를 돌려준다. */
-export function addPhrases(file, phrases) {
+export function addPhrases(file, phrases, { color = 'FF0010' } = {}) {
   const buf = fs.readFileSync(file);
   const entries = readZip(buf);
   const doc = entries.find((e) => e.name === 'word/document.xml');
@@ -171,7 +174,7 @@ export function addPhrases(file, phrases) {
   const pic = paras.filter((m) => m[0].includes('<w:drawing')).pop();
   const at = pic ? pic.index : xml.lastIndexOf('<w:sectPr');
   if (at < 0) throw new Error('넣을 자리를 찾지 못함');
-  const block = add.map(redPara).join('') + emptyPara;
+  const block = add.map((t) => redPara(t, color)).join('') + emptyPara;
   const out = xml.slice(0, at) + block + xml.slice(at);
   const tmp = `${file}.tmp`;
   fs.writeFileSync(tmp, writeZip(entries, new Map([['word/document.xml', Buffer.from(out, 'utf8')]])));
@@ -185,6 +188,18 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const argv = process.argv.slice(2);
   const arg = (n) => { const i = argv.indexOf(n); return i >= 0 ? argv[i + 1] : ''; };
   const dir = arg('--dir'); const fixes = readFixes(arg('--fixes')); const check = arg('--check');
+  const notice = arg('--notice');
+  if (dir && notice) {
+    // 새로 심의 신청하는 편에 약관 참조 문구를 미리 넣는다 (2026-10-26 — 반려 9건 중 8건이 이 문구 요구). 검은 글씨, 이미 있으면 그대로.
+    let bad = 0;
+    for (const n of notice.split(',').map(Number).filter(Boolean)) {
+      const f = path.join(dir, `스레드 ${n}편.docx`);
+      if (!fs.existsSync(f)) { console.log(`⚠ 스레드 ${n}편.docx 가 없어요`); bad++; continue; }
+      try { const k = addPhrases(f, [NOTICE], { color: '000000' }); console.log(k ? `약관 문구 넣음: 스레드 ${n}편` : `그대로 둠: 스레드 ${n}편 (이미 있음)`); }
+      catch (e) { console.log(`⚠ 스레드 ${n}편 문구 넣지 못함: ${e.message}`); bad++; }
+    }
+    process.exit(bad ? 2 : 0);
+  }
   if (!dir) { console.log('사용법: node scripts/threads/word-fix.mjs --dir <보험글 폴더> --fixes <tsv> [--check N]'); process.exit(1); }
   const file = (n) => path.join(dir, `스레드 ${n}편.docx`);
   if (check) {
