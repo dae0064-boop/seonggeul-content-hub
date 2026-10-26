@@ -8,6 +8,7 @@ import fs from 'node:fs';
 import { parsePost, flatLines } from './lib/parse-post.mjs';
 import { normTitle } from './lib/naver-related.mjs';
 import { checkCard } from './lib/overlay.mjs';
+import * as BC from './lib/brandconnect.mjs';
 
 // 10/12 변경 묶음 (2026-10-02·10-03 사용자 결정, routines/once/2026-10-09-1012-change-bundle.md) — 2026-10-12 원고부터
 //   ① 고정 인사말 앞 첫 덩어리 = 확인된 사실 한 문장(1~2줄)
@@ -242,6 +243,27 @@ for (const file of files) {
   }
   // 제휴 링크 채널 (2026-10-17 사용자 결정): 네이버 = 브랜드커넥트, 쿠팡 파트너스 = 티스토리만
   if (!tistory && (post.coupang || /쿠팡\s*파트너스|\[쿠팡 링크\]|coupang\.com/.test(texts.join("\n")))) errors.push('네이버 원고에는 쿠팡 링크를 넣지 않습니다 (쿠팡 파트너스는 티스토리만 — content/affiliate/README.md)');
+  // 네이버 쇼핑 커넥트 (2026-10-26 사용자): 생활정보 글 하루 1편까지, 대가성 문구는 고정 인사말 바로 다음, [쇼핑 링크] 한 곳
+  {
+    const hasDisc = post.blocks.some(BC.isDisclosure), markers = post.blocks.filter(BC.isMarker).length;
+    if (BC.LINK_IN_TEXT.test(texts.join('\n'))) errors.push('본문에 쇼핑 커넥트 주소를 직접 쓰지 않습니다 — [쇼핑 링크] 자리만 두면 발행 때 링크 카드로 들어갑니다');
+    if (post.brandconnect || hasDisc || markers) {
+      if (tistory) errors.push('쇼핑 커넥트(brandconnect)는 네이버 원고에만 씁니다 (티스토리는 쿠팡 파트너스 — content/affiliate/README.md)');
+      else if (!post.brandconnect) errors.push(`대가성 문구나 ${BC.MARKER} 가 있는데 프런트매터 brandconnect: 가 없습니다`);
+      else {
+        if (post.category === '생활보장' || /보험/.test(`${post.title} ${post.mainKeyword}`)) errors.push('생활보장(보험·의료비·돌봄) 글에는 쇼핑 링크를 넣지 않습니다');
+        const gi = post.blocks.findIndex((b) => b.type === 'p' && b.lines[0]?.t === OPEN[0] && b.lines[1]?.t === OPEN[1]);
+        if (!(gi >= 0 && BC.isDisclosure(post.blocks[gi + 1] || {}))) errors.push(`고정 인사말 바로 다음 덩어리에 대가성 문구 두 줄을 그대로: "${BC.DISCLOSURE.join(' / ')}"`);
+        if (markers !== 1) errors.push(`${BC.MARKER} 한 줄짜리 덩어리가 정확히 1곳 있어야 합니다 (지금 ${markers}곳) — 정리 소제목 아래 끝쪽`);
+        const dir = file.replace(/[^\\/]+$/, '') || './', me = file.split(/[\\/]/).pop();
+        const same = fs.readdirSync(dir).filter((f) => f !== me && f.startsWith(dated) && f.endsWith('.md'))
+          .filter((f) => /^brandconnect:\s*\S/m.test(fs.readFileSync(dir + f, 'utf8')));
+        if (same.length) errors.push(`쇼핑 커넥트 글은 하루 1편까지 — 같은 날 ${same.join(', ')}`);
+        const l = BC.loadLinks().get(post.brandconnect);
+        notes.push(`쇼핑 커넥트 글: ${post.brandconnect} ${l ? '(링크 있음)' : '— 링크가 content/affiliate/brandconnect-links.tsv 에 아직 없음. 발행 때도 없으면 쇼핑 부분을 빼고 보통 글로 나갑니다'}`);
+      }
+    }
+  }
   // 출처 원문 링크 (2026-10-19 원고부터, 네이버)
   {
     const srcOne = texts.some((t) => SOURCE_ONE.test(t));

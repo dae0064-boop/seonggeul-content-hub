@@ -28,6 +28,7 @@ for (const file of files) {
     publishAt: post.publishAt || undefined,
     related: post.related.length ? post.related : undefined,
     sourceUrls: post.sourceUrls.length ? post.sourceUrls : undefined,
+    brandconnect: post.brandconnect || undefined,   // 링크는 발행할 때 찾는다 (scripts/lib/brandconnect.mjs)
     blocks: post.blocks,
   };
   fs.writeFileSync(out, JSON.stringify(json, null, 2) + '\n');
