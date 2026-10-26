@@ -24,6 +24,11 @@
  *       시험(기본): 첫 편의 네모칸 체크까지만 하고 멈춘다. --submit 이면 반려 건을 모두 다시 올린다.
  *       올리기 전에 새 Word 에 그 문구가 들어 있는지 확인하고(없으면 그 편은 건너뜀), 수정 뒤 목록이 반려에서 바뀌었는지 본다.
  *
+ *   node scripts/goms-ad.mjs --file-dir <보험글 폴더> --approved --approved-out <goms-approved.tsv> --out <폴더>
+ *       승인 결과 읽기 (2026-10-26 사용자 — 스레드에 올릴 때 배너에 편마다 준법심의필번호·유효기간을 넣는다):
+ *       목록에서 승인상태 "승인완료" 인 「스레드 N편」을 열어 심의결과 탭의 심의결과·준법심의필번호·유효기간을 읽고
+ *       <approved-out> 에 "번호<TAB>심의필번호<TAB>시작일<TAB>끝일<TAB>심의결과<TAB>읽은 날" 로 적는다. 이미 적은 편은 다시 열지 않는다. 아무것도 바꾸지 않는다.
+ *
  * - 자동화용 크롬(9222)에 붙는다. 크롬은 끄지 않는다. GOMS 로그인은 사람이 그 크롬에서 직접 한다.
  * - 칸을 채운 뒤 다시 읽어 맞지 않으면 등록을 누르지 않는다. 이 확인을 경고로 낮추지 않는다.
  * - 화면 HTML 은 남기지 않는다(개인정보). 칸 이름·버튼 글자만 structure-*.txt 로 남긴다.
@@ -39,6 +44,8 @@ const argv = process.argv.slice(2);
 const arg = (name, def = '') => { const i = argv.indexOf(name); return i >= 0 ? argv[i + 1] : def; };
 const submit = argv.includes('--submit');
 const revise = argv.includes('--revise');
+const approved = argv.includes('--approved');
+const approvedOut = arg('--approved-out');
 const scan = argv.includes('--scan');
 const fixesPath = arg('--fixes');
 const fileDir = arg('--file-dir');
@@ -772,6 +779,73 @@ async function scanRejected(page, targets) {
   }
 }
 
+/** 승인 결과 표(goms-approved.tsv)에 이미 적은 편 번호. */
+function readApproved() {
+  const have = new Set();
+  if (approvedOut && fs.existsSync(approvedOut)) {
+    for (const line of fs.readFileSync(approvedOut, 'utf8').replace(/^﻿/, '').split(/\r?\n/)) {
+      const n = (line.split('\t')[0] || '').trim();
+      if (/^\d+$/.test(n)) have.add(Number(n));
+    }
+  }
+  return have;
+}
+
+/** 심의결과 탭에서 칸 이름(준법심의필번호·유효기간 등) 옆 입력칸 글자를 읽는다. */
+async function readApproval(page) {
+  await clickInForm(['심의결과']);
+  await sleep(1500);
+  return FORM.root.evaluate((f) => {
+    const vis = (e) => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
+    const norm = (s) => (s || '').replace(/[\s*:：]/g, '');
+    // 칸 이름 바로 뒤의 입력칸만 읽는다 — "심의결과"는 탭 이름과 같고, 유효기간 줄에는 심의결과일 칸도 있다 (2026-10-26 모의 시험)
+    const valueOf = (label, count = 1) => {
+      const cands = [...f.querySelectorAll('th, td, label, dt, span, div, p, strong')]
+        .filter((e) => vis(e) && norm(e.innerText) === label && e.children.length <= 2 && !e.querySelector('input, textarea')
+          && !e.closest('[role=tab], [role=tablist], button, a'));
+      for (const c of cands) {
+        let box = c;
+        for (let up = 0; up < 4 && box && box !== f; up++) {
+          box = box.parentElement;
+          const vals = [...box.querySelectorAll('input, textarea')]
+            .filter((x) => vis(x) && x.type !== 'radio' && x.type !== 'checkbox' && (c.compareDocumentPosition(x) & Node.DOCUMENT_POSITION_FOLLOWING))
+            .slice(0, count).map((x) => (x.value || '').trim());
+          if (vals.length) return vals.filter(Boolean).join(' ~ ');
+        }
+      }
+      return '';
+    };
+    return { result: valueOf('심의결과'), no: valueOf('준법심의필번호'), period: valueOf('유효기간', 2) };
+  });
+}
+
+/** 승인완료 「스레드 N편」의 심의필번호·유효기간을 goms-approved.tsv 에 적는다. */
+async function runApproved(page) {
+  if (!approvedOut) throw new Stop('--approved-out 파일 위치가 없어요');
+  if (!(await openList(page))) return 3;
+  await filterStatus(page, '승인완료');
+  const rows = (await listRows(page)).filter((r) => r.cells.includes('승인완료'));
+  const have = readApproved();
+  const targets = rows.filter((r) => !have.has(numOf(r.title))).sort((a, b) => numOf(a.title) - numOf(b.title));
+  log(`목록 승인완료 ${rows.length}건 중 새로 읽을 것 ${targets.length}건: ${targets.map((r) => r.title).join(', ') || '없음'}`);
+  const today = new Date().toISOString().slice(0, 10);
+  for (const row of targets) {
+    const n = numOf(row.title);
+    log(`\n▶ ${row.title} (승인완료) — 심의필 번호 읽기`);
+    await openDetail(page, row.title);
+    const a = await readApproval(page);
+    await shot(page, `approved-${n}`);
+    await closeDetail(page);
+    const no = (a.no.match(/제?\s*(\d{2}-\d{2}-\d{3,5})\s*호?/) || [])[1];
+    const dates = (a.period.match(/\d{4}[-.]\d{2}[-.]\d{2}/g) || []).map((d) => d.replace(/\./g, '-'));
+    log(`  심의결과: ${a.result || '(못 읽음)'} · 준법심의필번호: ${a.no || '(못 읽음)'} · 유효기간: ${a.period || '(못 읽음)'}`);
+    if (!no || dates.length < 2) { log('  ⚠ 번호나 유효기간을 읽지 못해 적지 않았어요 (다음 실행에서 다시 봐요)'); continue; }
+    fs.appendFileSync(approvedOut, `${n}\t제${no}호\t${dates[0]}\t${dates[1]}\t${a.result}\t${today}\n`, 'utf8');
+    log(`  적음: 스레드 ${n}편 제${no}호 (${dates[0]} ~ ${dates[1]})`);
+  }
+  return 0;
+}
+
 /** 고친 Word 에 문구가 다 들어 있는지 — Python 없이 Word 를 직접 읽는다 (사무실 PC 에 Python 이 없다, 2026-10-26). */
 function wordHasFix(n) {
   const ph = readWordFixes(fixesPath).get(n) || [];
@@ -925,7 +999,17 @@ page.on('dialog', onDialog);
 ctx.on('page', (p) => p.on('dialog', onDialog));
 
 let code = 0;
-if (revise) {
+if (approved) {
+  log('승인 결과 읽기: 승인완료 편의 준법심의필번호·유효기간 (아무것도 바꾸지 않음)');
+  try { code = await runApproved(page); if (code === 3) log('⚠ LOGIN 을 눌렀는데 들어가지지 않았어요. 열린 크롬 창에서 아이디·비밀번호가 채워져 있는지 확인해 주세요.'); }
+  catch (e) {
+    await shot(page, 'stopped');
+    await structure(page, 'stopped').catch(() => {});
+    if (!(e instanceof Stop)) fs.writeFileSync(path.join(out, 'error-detail.txt'), String(e.stack || e.message), 'utf8');
+    log(`  ❌ 멈춤 — ${e instanceof Stop ? e.message : '화면이 예상과 달라 멈췄어요 (자세한 내용은 기록 파일에)'}`);
+    code = 2;
+  }
+} else if (revise) {
   log(scan ? '반려 재심사 1단계: 사유 읽기 (아무것도 바꾸지 않음)' : submit ? '반려 재심사: 고친 Word 로 다시 올리기' : '반려 재심사 시험: 네모칸 체크까지만');
   try { code = await runRevise(page); if (code === 3) log('⚠ LOGIN 을 눌렀는데 들어가지지 않았어요. 열린 크롬 창에서 아이디·비밀번호가 채워져 있는지 확인해 주세요.'); }
   catch (e) {
@@ -936,7 +1020,7 @@ if (revise) {
     code = 2;
   }
 } else log(submit ? `실제 등록: 스레드 ${from}편 ~ ${to}편` : `시험: 스레드 ${from}편 (등록은 누르지 않음)`);
-for (let n = from; !revise && n <= to; n++) {
+for (let n = from; !revise && !approved && n <= to; n++) {
   const mark = doneDir && path.join(doneDir, `스레드 ${n}편.done`);
   if (submit && mark && fs.existsSync(mark)) { log(`\n▶ 스레드 ${n}편 — 이미 등록함, 건너뜀`); continue; }
   try {

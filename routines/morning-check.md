@@ -97,6 +97,11 @@
 5-1. **지난 원고 지우기** (2026-10-05 사용자 지시): `node scripts/clean-published.mjs` — 오늘보다 앞 날짜의 원고·이미지 계획서를 지우고
    `content/archive/published.tsv` 에 남긴다. 어제 글이 예약·발행됐는지 1번에서 확인한 뒤 같은 PR 에 넣는다.
    어제 글 중 실패해 발행 안 된 글이 있으면 그 글은 지우지 말고(--before 를 그 날짜로) 사용자에게 알린다.
+5-2. **스레드 보험글 배너** (2026-10-26 사용자 — 심의 적격 편을 1편부터 하루 4편, 편마다 심의필 번호를 넣은 배너와 함께):
+   Drive `ClaudeWorkspace/goms-approved.tsv`(아침 PC 의 `goms-approved.ps1` 이 GOMS 승인완료 편을 읽어 적는다)를 받아
+   `python3 scripts/threads/banner.py <받은 tsv>` → 새로 생긴 `content/threads/insurance/banners/thread-N.jpg`·`made.tsv` 를 같은 PR 에 넣는다.
+   PC 는 main 의 공개 주소로 배너를 받아 가므로 **PR 이 main 에 합쳐져야** 그 편이 올라간다. tsv 는 저장소에 넣지 않는다.
+   Drive `ClaudeWorkspace/run-logs/threads/<어제·오늘>.log` 에서 올린 편·❌·"배너가 아직 공개 주소에 없어요"를 보고, 문제가 있으면 보고 첫 줄(6)에 쓴다.
 6. **안 된 글이 한 편이라도 있으면 보고 맨 첫 줄**에 "⚠ 오늘 ○○ N편 예약 안 됨 — 이유 / 사람이 할 일 한 줄"을 쓴다 (2026-10-19 사용자:
    "티스토리가 안 됐으면 말을 했었어야지" — 10/19 카카오 로그인 풀림이 보고 중간에 묻혔다). 그 뒤에 나머지. `PushNotification` 도구가 있으면 같은 한 줄을 휴대폰 알림으로도 보낸다.
    PC 쪽은 draft-day·tistory-day 가 예약 안 된 글이 있으면 화면에 알림 창을 띄운다(`launchers/tools/alert.ps1`).

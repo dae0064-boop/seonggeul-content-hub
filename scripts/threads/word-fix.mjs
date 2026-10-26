@@ -115,6 +115,23 @@ export function readFixes(tsv) {
   return map;
 }
 
+/**
+ * 심의받은 Word 의 글 — 사진 문단 앞까지 문단마다 한 줄 (스레드에 올릴 글 그대로, 2026-10-26).
+ * 본문 + 아래 빈 줄 + 빨간 수정 문구 순서는 insurance-word.py · addPhrases 가 만든 그대로다. 끝 빈 줄은 뗀다.
+ */
+export function wordText(file) {
+  const xml = content(readZip(fs.readFileSync(file)).find((e) => e.name === 'word/document.xml')).toString('utf8');
+  const body = xml.slice(xml.indexOf('<w:body'));
+  const lines = [];
+  for (const m of body.matchAll(/<w:p[ >][\s\S]*?<\/w:p>|<w:p\/>/g)) {
+    if (m[0].includes('<w:drawing') || m[0].includes('<w:pict')) break;
+    lines.push(docText(m[0]));
+  }
+  while (lines.length && !lines[lines.length - 1].trim()) lines.pop();
+  while (lines.length && !lines[0].trim()) lines.shift();
+  return lines.join('\n');
+}
+
 /** Word 에 빠진 문구 목록. */
 export function missingIn(file, phrases) {
   const xml = content(readZip(fs.readFileSync(file)).find((e) => e.name === 'word/document.xml')).toString('utf8');
