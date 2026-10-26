@@ -14,6 +14,16 @@
  *   node scripts/goms-ad.mjs ... --submit --from 11 --to 50 --done-dir <폴더>
  *       실제 등록. 한 편씩 차례로, 끝난 편은 <done-dir>/스레드 N편.done 을 남겨 다시 하지 않는다.
  *
+ *   node scripts/goms-ad.mjs --file-dir <보험글 폴더> --revise --scan --fixes <goms-fixes.tsv> --out <폴더>
+ *       반려 재심사 1단계 (2026-10-26 사용자 요청): 목록에서 승인상태 "반려" 인 「스레드 N편」을 하나씩 열어 심의결과 탭의
+ *       심의의견을 읽고, 넣으라는 문구("→ '…'" / ">…" 줄)를 <fixes> 에 "번호<TAB>문구<TAB>날짜" 로 적는다. 아무것도 지우거나 올리지 않는다.
+ *       문구를 못 찾은 사유는 reason-스레드 N편.txt 로만 남긴다 (Claude 가 보고 고친다).
+ *   (그다음 insurance-word.ps1 이 <fixes> 문구를 본문 아래 빨간 글씨로 넣어 Word 를 다시 만든다)
+ *   node scripts/goms-ad.mjs --file-dir <보험글 폴더> --revise [--submit] --fixes <tsv> --done-dir <폴더> --out <폴더>
+ *       반려 재심사 2단계 — 사용자가 알려 준 순서: 상세정보 "등록" 탭 → 첨부파일 네모칸 체크 → 파일삭제 → 파일추가(고친 Word) → 수정.
+ *       시험(기본): 첫 편의 네모칸 체크까지만 하고 멈춘다. --submit 이면 반려 건을 모두 다시 올린다.
+ *       올리기 전에 새 Word 에 그 문구가 들어 있는지 확인하고(없으면 그 편은 건너뜀), 수정 뒤 목록이 반려에서 바뀌었는지 본다.
+ *
  * - 자동화용 크롬(9222)에 붙는다. 크롬은 끄지 않는다. GOMS 로그인은 사람이 그 크롬에서 직접 한다.
  * - 칸을 채운 뒤 다시 읽어 맞지 않으면 등록을 누르지 않는다. 이 확인을 경고로 낮추지 않는다.
  * - 화면 HTML 은 남기지 않는다(개인정보). 칸 이름·버튼 글자만 structure-*.txt 로 남긴다.
@@ -23,10 +33,14 @@
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
+import { execFileSync } from 'node:child_process';
 
 const argv = process.argv.slice(2);
 const arg = (name, def = '') => { const i = argv.indexOf(name); return i >= 0 ? argv[i + 1] : def; };
 const submit = argv.includes('--submit');
+const revise = argv.includes('--revise');
+const scan = argv.includes('--scan');
+const fixesPath = arg('--fixes');
 const fileDir = arg('--file-dir');
 const out = arg('--out', path.join('dumps', `goms-${Date.now()}`));
 const doneDir = arg('--done-dir');
@@ -393,7 +407,8 @@ async function checklist(page) {
   log(`  심의점검표: 맨 아래까지 ${seen.size}줄 모두 "해당없음" ✓`);
 }
 
-async function gotoForm(page) {
+/** GOMS 첫 화면 → (로그인) → 업무 → 광고심의 목록. 로그인이 안 되면 false. */
+async function openList(page) {
   await page.goto(HOME, { waitUntil: 'domcontentloaded', timeout: 30000 });
   await sleep(4000);
   const onLogin = async () => /#\/login/.test(page.url()) || await page.locator('input[type=password]').first().isVisible().catch(() => false);
@@ -420,6 +435,11 @@ async function gotoForm(page) {
   await sleep(3000);
   await shot(page, 'ad-review');
   await structure(page, 'ad-review');
+  return true;
+}
+
+async function gotoForm(page) {
+  if (!(await openList(page))) return false;
   // 목록 화면 오른쪽 위 버튼 글자는 "등록" (사용자는 "광고등록"이라 부름 — 2026-10-05 첫 시험 structure-ad-review.txt)
   // 안전장치: "등록"은 신청서의 최종 등록 버튼과 글자가 같다. 신청서(심의점검표 탭)가 이미 보이면 누르지 않는다.
   // 탭은 Vuetify v-tab(role=tab)이라 button 으로 안 잡힐 수 있다 — 화면 글자로 직접 본다. 이름은 "…심의점검표"로 바뀔 수 있다.
@@ -562,6 +582,268 @@ async function one(page, ctx, n) {
   return 'done';
 }
 
+// ───────── 반려 재심사 (2026-10-26 사용자 요청) ─────────
+// 목록: 승인상태 "반려", 심의결과 "수정요구" 줄이 빨갛게 보인다. 줄을 누르면 "광고심의 상세정보 : 반려" 창이 뜨고
+// 탭은 등록 / 심의점검표 / 심의결과. 심의결과 탭의 심의의견 칸에 고칠 내용이 있다 (예: "→ '보험사 상품별로 … 바랍니다'").
+const DRIVER = '음주, 무면허, 도주 사고는 보상에서 제외됩니다.';
+const YAKGWAN = '보험사 상품별로 상이할 수 있으므로, 세부사항은 반드시 해당 약관을 참조하시기바랍니다';
+
+/** 심의의견에서 넣으라는 문구를 뽑는다. "→ '…'", ">…" 처럼 화살표로 시작하는 줄의 글을 그대로 쓴다 (따옴표만 뗀다). */
+function phrasesFrom(opinion) {
+  const out = [];
+  for (const raw of opinion.split(/\r?\n/)) {
+    const m = raw.match(/^\s*(?:→|->|=>|>|▶|☞)\s*(.+)$/);
+    if (!m) continue;
+    const t = m[1].trim().replace(/^["'“”‘’`]+|["'“”‘’`]+$/g, '').trim();
+    if (t.length >= 8 && !out.includes(t)) out.push(t);
+  }
+  if (!out.length) { // 화살표 줄이 없으면 이미 아는 사유만 (협회 가이드라인 문구 그대로)
+    if (/음주|뺑소니|무면허|도주/.test(opinion)) out.push(DRIVER);
+    else if (/약관/.test(opinion)) out.push(YAKGWAN);
+  }
+  return out;
+}
+
+function readFixes() {
+  const map = new Map();
+  if (fixesPath && fs.existsSync(fixesPath)) {
+    for (const line of fs.readFileSync(fixesPath, 'utf8').replace(/^﻿/, '').split(/\r?\n/)) {
+      const [n, t] = line.split('\t');
+      if (/^\d+$/.test((n || '').trim()) && (t || '').trim()) {
+        const k = Number(n);
+        if (!map.has(k)) map.set(k, []);
+        map.get(k).push(t.trim());
+      }
+    }
+  }
+  return map;
+}
+
+/** 목록을 새로 읽어 「스레드 N편」 줄과 칸 글자를 돌려준다. */
+async function listRows(page) {
+  await gomsMessages(page);
+  await clickText(page, ['조회'], { timeout: 5000 }).catch(() => {});
+  await sleep(2500);
+  const rows = []; let total = null;
+  for (const f of page.frames()) {
+    const r = await f.evaluate(() => {
+      const out = [];
+      for (const tr of document.querySelectorAll('tr')) {
+        const cells = [...tr.children].map((td) => (td.innerText || '').replace(/\s+/g, ' ').trim());
+        const title = cells.find((c) => /^스레드\s*\d+\s*편$/.test(c));
+        if (title) out.push({ title: title.replace(/\s+/g, ' '), cells });
+      }
+      const m = (document.body.innerText || '').match(/전체\s*조회\s*건수\s*[:：]?\s*(\d+)/);
+      return { out, total: m ? Number(m[1]) : null };
+    }).catch(() => null);
+    if (r) { rows.push(...r.out); if (r.total != null) total = r.total; }
+  }
+  if (total != null && total > rows.length) log(`  ⚠ 목록 ${total}건 중 ${rows.length}건만 읽혔어요 (다음 쪽은 아직 못 봐요)`);
+  return rows;
+}
+const isRejected = (row) => row.cells.includes('반려');
+const numOf = (title) => Number(title.match(/(\d+)/)[1]);
+
+async function detailOpen(page) {
+  return (await Promise.all(page.frames().map((f) => f.evaluate(() => [...document.querySelectorAll('*')]
+    .some((e) => !!(e.offsetWidth || e.offsetHeight) && e.children.length <= 2 && /^광고심의\s*상세정보/.test((e.innerText || '').trim()))).catch(() => false)))).some(Boolean);
+}
+
+/** "광고심의 상세정보" 창 영역에 표시를 붙여 FORM 으로 쓴다 (목록 화면 버튼을 잘못 누르지 않게). */
+async function markDetail(page) {
+  for (const f of page.frames()) {
+    const ok = await f.evaluate(() => {
+      const vis = (e) => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
+      const txt = (e) => (e.innerText || '').replace(/\s/g, '');
+      document.querySelectorAll('[data-goms-form]').forEach((x) => x.removeAttribute('data-goms-form'));
+      const heads = [...document.querySelectorAll('*')].filter((e) => vis(e) && e.children.length <= 2 && /^광고심의상세정보/.test(txt(e)));
+      heads.sort((a, b) => txt(a).length - txt(b).length);
+      if (!heads.length) return false;
+      let box = heads[0];
+      while (box.parentElement && box.parentElement !== document.body) {
+        box = box.parentElement;
+        const names = [...box.querySelectorAll('[role=tab], button, a')].filter(vis).map(txt);
+        if (names.includes('심의결과') && names.includes('닫기')) { box.setAttribute('data-goms-form', '1'); return true; }
+      }
+      return false;
+    }).catch(() => false);
+    if (ok) { FORM = { frame: f, root: f.locator('[data-goms-form="1"]') }; return true; }
+  }
+  return false;
+}
+
+async function openDetail(page, title) {
+  if (await detailOpen(page)) throw new Stop('상세정보 창이 이미 열려 있어 다른 줄을 누르지 않았어요');
+  await clickText(page, [title], { timeout: 8000 });
+  for (let i = 0; i < 20 && !(await detailOpen(page)); i++) await sleep(500);
+  if (!(await detailOpen(page))) throw new Stop(`목록에서 "${title}" 을 눌렀는데 상세정보 창이 열리지 않았어요`);
+  await sleep(1500);
+  if (!(await markDetail(page))) throw new Stop('상세정보 창 영역을 가려내지 못했어요');
+  // 다른 편이 열리면 안 된다 — 창 안 광고제목 칸으로 확인
+  const t = await FORM.root.evaluate((f) => [...f.querySelectorAll('input')].map((i) => i.value).find((v) => /^스레드\s*\d+\s*편$/.test((v || '').trim())) || '').catch(() => '');
+  if (t && t.replace(/\s/g, '') !== title.replace(/\s/g, '')) throw new Stop(`"${title}" 을 눌렀는데 "${t}" 창이 열렸어요`);
+}
+
+async function closeDetail(page) {
+  if (!(await detailOpen(page))) return;
+  await clickInForm(['닫기']).catch(() => {});
+  await sleep(1500);
+  await gomsMessages(page);
+}
+
+/** 심의결과 탭의 심의결과·심의의견 글을 읽는다. */
+async function readReason(page) {
+  await clickInForm(['심의결과']);
+  await sleep(1500);
+  return FORM.root.evaluate((f) => {
+    const vals = [...f.querySelectorAll('textarea')].map((t) => t.value || t.innerText || '').filter((v) => v.trim());
+    const result = [...f.querySelectorAll('input')].map((i) => (i.value || '').trim()).find((v) => /^(수정요구|적격|부적격|조건부승인|해당사항없음)$/.test(v)) || '';
+    return { result, opinion: vals.join('\n').trim() || (f.innerText || '').trim().slice(0, 1500) };
+  });
+}
+
+/** 1단계: 반려 건마다 사유를 읽어 goms-fixes.tsv 에 넣을 문구를 적는다. */
+async function scanRejected(page, targets) {
+  const known = readFixes();
+  const added = [];
+  for (const row of targets) {
+    const n = numOf(row.title);
+    log(`\n▶ ${row.title} (반려) — 사유 읽기`);
+    await openDetail(page, row.title);
+    const { result, opinion } = await readReason(page);
+    await shot(page, `reason-${n}`);
+    fs.writeFileSync(path.join(out, `reason-스레드 ${n}편.txt`), `심의결과: ${result}\n심의의견:\n${opinion}\n`, 'utf8');
+    log(`  심의결과: ${result || '(못 읽음)'}`);
+    for (const l of opinion.split(/\r?\n/).filter(Boolean)) log(`  심의의견: ${l}`);
+    const ph = phrasesFrom(opinion);
+    if (!ph.length) log('  ⚠ 넣을 문구를 찾지 못했어요 — 이 편은 다시 올리지 않고 사유만 남겨요 (Claude 가 보고 고칠게요)');
+    for (const t of ph) {
+      const have = (known.get(n) || []).some((x) => x.replace(/\s/g, '') === t.replace(/\s/g, ''));
+      if (!have) {
+        added.push(`${n}\t${t}\t${new Date().toISOString().slice(0, 10)}`);
+        if (!known.has(n)) known.set(n, []);
+        known.get(n).push(t);
+      }
+      log(`  넣을 문구: ${t}${have ? ' (이미 적어 둠)' : ''}`);
+    }
+    await closeDetail(page);
+  }
+  if (added.length) {
+    if (!fixesPath) throw new Stop('--fixes 파일 위치가 없어 문구를 적지 못했어요');
+    fs.appendFileSync(fixesPath, added.join('\n') + '\n', 'utf8');
+    log(`\n문구 ${added.length}개를 ${path.basename(fixesPath)} 에 적었어요`);
+  }
+}
+
+/** 고친 Word 에 문구가 다 들어 있는지 (insurance-word.py --check). */
+function wordHasFix(n) {
+  try {
+    execFileSync(process.env.PYTHON || 'python', ['scripts/threads/insurance-word.py', fileDir, '--fixes', fixesPath, '--check', String(n)], { stdio: 'pipe' });
+    return true;
+  } catch { return false; }
+}
+
+/** 등록 탭 첨부파일 표에서 파일 이름들을 읽고, name 줄에 표시를 붙인다. */
+async function fileRows(name) {
+  return FORM.root.evaluate((f, name) => {
+    const vis = (e) => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
+    f.querySelectorAll('[data-goms-file]').forEach((x) => x.removeAttribute('data-goms-file'));
+    const names = [];
+    for (const tr of f.querySelectorAll('tr')) {
+      if (!vis(tr)) continue;
+      const cell = [...tr.children].map((td) => (td.innerText || '').trim()).find((t) => /\.(docx?|pdf|hwp|jpe?g|png)$/i.test(t));
+      if (!cell) continue;
+      names.push(cell);
+      if (cell.replace(/\s/g, '') === name.replace(/\s/g, '')) tr.setAttribute('data-goms-file', '1');
+    }
+    return names;
+  }, name);
+}
+
+async function fileChecked() {
+  return FORM.root.locator('[data-goms-file="1"]').evaluate((tr) => {
+    const i = tr.querySelector('input[type=checkbox]');
+    return i ? i.checked : !!tr.querySelector('svg');
+  }).catch(() => false);
+}
+
+/** 2단계: 한 편 다시 올리기 — 등록 탭 → 네모칸 → 파일삭제 → 파일추가 → 수정. */
+async function reviseOne(page, row) {
+  const n = numOf(row.title);
+  const title = `스레드 ${n}편`;
+  const file = path.join(fileDir, `${title}.docx`);
+  log(`\n▶ ${title} (반려) — 다시 올리기`);
+  if (!fs.existsSync(file)) throw new Stop(`Word 파일이 없어요: ${file}`);
+  if (!wordHasFix(n)) { log('  ⚠ 새 Word 에 넣을 문구가 아직 없어 건너뛰어요 (사유를 Claude 가 보고 고친 뒤 다시)'); return 'skip'; }
+  log('  새 Word 에 수정 문구 들어감 ✓');
+  await openDetail(page, title);
+  await clickInForm(['등록']); // 상세정보 창의 "등록" 탭 (창 안에만 동작)
+  await sleep(1500);
+  await shot(page, `revise-${n}-open`);
+  await structure(page, `revise-${n}`);
+  const names = await fileRows(`${title}.docx`);
+  if (!names.length) throw new Stop('첨부파일 표에서 파일을 찾지 못했어요');
+  if (names.length > 1 || names[0].replace(/\s/g, '') !== `${title}.docx`.replace(/\s/g, ''))
+    throw new Stop(`첨부파일이 예상과 달라 멈췄어요 (보이는 파일: ${names.join(', ')})`);
+  const box = FORM.root.locator('[data-goms-file="1"]');
+  if (!(await fileChecked())) {
+    const cb = box.locator('input[type=checkbox]');
+    if (await cb.count()) await cb.first().click({ timeout: 3000 }).catch(() => cb.first().evaluate((x) => x.click()));
+    else await box.locator('td').first().click();
+    await sleep(500);
+  }
+  if (!(await fileChecked())) throw new Stop(`"${title}.docx" 네모칸을 눌렀는데 체크되지 않았어요`);
+  log(`  첨부파일 "${title}.docx" 체크 ✓`);
+  await shot(page, `revise-${n}-checked`);
+  if (!submit) { log('  시험이라 "파일삭제"·"수정"은 누르지 않고 멈춰요.'); return 'test'; }
+
+  await clickInForm(['파일삭제', '파일 삭제']);
+  await sleep(1200);
+  await gomsMessages(page); // "삭제하시겠습니까?" 같은 확인
+  await sleep(1200);
+  if ((await fileRows(`${title}.docx`)).length) throw new Stop('"파일삭제"를 눌렀는데 옛 파일이 그대로 있어요 (수정은 누르지 않았어요)');
+  log('  옛 파일 삭제 ✓');
+  await attach(page, file);
+  const after = await fileRows(`${title}.docx`);
+  if (after.length !== 1) throw new Stop(`새 파일을 넣은 뒤 첨부파일이 ${after.length}개예요 (수정은 누르지 않았어요)`);
+  await shot(page, `revise-${n}-attached`);
+  await clickInForm(['수정']);
+  await sleep(1500);
+  const msgs = await gomsMessages(page);
+  await sleep(2000);
+  msgs.push(...await gomsMessages(page));
+  await shot(page, `revise-${n}-after`);
+  const bad = msgs.find((t) => /(필수|체크|선택|입력|누락|확인해|실패|오류)/.test(t) && !/하시겠습니까/.test(t));
+  if (bad) throw new Stop(`GOMS 가 "${bad}" 라고 알렸어요 — GOMS 목록에서 확인이 필요해요`);
+  // "수정"은 한 번만 누른다 — 창이 남아 있으면 닫고 목록으로 확인한다
+  await closeDetail(page);
+  const now = (await listRows(page)).find((r) => r.title.replace(/\s/g, '') === title.replace(/\s/g, ''));
+  if (!now) throw new Stop(`수정 뒤 목록에서 "${title}" 이 보이지 않아요 — GOMS 목록에서 확인이 필요해요`);
+  if (isRejected(now)) throw new Stop(`"수정"을 눌렀는데 목록이 아직 반려예요 — GOMS 에서 직접 확인이 필요해요 (다시 누르지 않았어요)`);
+  log(`  목록 상태: ${now.cells.filter((c) => /반려|승인|접수|심의|요청|대기/.test(c)).join(' / ') || now.cells.join(' | ')} ✓`);
+  return 'done';
+}
+
+async function runRevise(page) {
+  if (!(await openList(page))) return 3;
+  const rows = await listRows(page);
+  let targets = rows.filter(isRejected);
+  const only = arg('--only');
+  if (only) targets = targets.filter((r) => numOf(r.title) === Number(only));
+  log(`목록 ${rows.length}건 중 반려 ${targets.length}건: ${targets.map((r) => r.title).join(', ') || '없음'}`);
+  if (!targets.length) return 0;
+  if (scan) { await scanRejected(page, targets); return 0; }
+  for (const row of targets) {
+    const r = await reviseOne(page, row);
+    if (r === 'test') break; // 시험은 한 편만, 창을 열어 둔다
+    if (r === 'done') {
+      if (doneDir) fs.writeFileSync(path.join(doneDir, `${row.title}.revised-${new Date().toISOString().slice(0, 10)}`), `${new Date().toISOString()}\n`, 'utf8');
+      log(`  ✅ ${row.title} 다시 올림`);
+    }
+  }
+  return 0;
+}
+
 let browser;
 try { browser = await chromium.connectOverCDP(cdp, { timeout: 15000 }); }
 catch (e) { log('❌ 자동화용 크롬에 연결하지 못했어요. 크롬 창이 켜져 있는지 확인해 주세요.'); process.exit(1); }
@@ -576,9 +858,19 @@ const onDialog = async (d) => {
 page.on('dialog', onDialog);
 ctx.on('page', (p) => p.on('dialog', onDialog));
 
-log(submit ? `실제 등록: 스레드 ${from}편 ~ ${to}편` : `시험: 스레드 ${from}편 (등록은 누르지 않음)`);
 let code = 0;
-for (let n = from; n <= to; n++) {
+if (revise) {
+  log(scan ? '반려 재심사 1단계: 사유 읽기 (아무것도 바꾸지 않음)' : submit ? '반려 재심사: 고친 Word 로 다시 올리기' : '반려 재심사 시험: 네모칸 체크까지만');
+  try { code = await runRevise(page); if (code === 3) log('⚠ LOGIN 을 눌렀는데 들어가지지 않았어요. 열린 크롬 창에서 아이디·비밀번호가 채워져 있는지 확인해 주세요.'); }
+  catch (e) {
+    await shot(page, 'stopped');
+    await structure(page, 'stopped').catch(() => {});
+    if (!(e instanceof Stop)) fs.writeFileSync(path.join(out, 'error-detail.txt'), String(e.stack || e.message), 'utf8');
+    log(`  ❌ 멈춤 — ${e instanceof Stop ? e.message : '화면이 예상과 달라 멈췄어요 (자세한 내용은 기록 파일에)'}`);
+    code = 2;
+  }
+} else log(submit ? `실제 등록: 스레드 ${from}편 ~ ${to}편` : `시험: 스레드 ${from}편 (등록은 누르지 않음)`);
+for (let n = from; !revise && n <= to; n++) {
   const mark = doneDir && path.join(doneDir, `스레드 ${n}편.done`);
   if (submit && mark && fs.existsSync(mark)) { log(`\n▶ 스레드 ${n}편 — 이미 등록함, 건너뜀`); continue; }
   try {
