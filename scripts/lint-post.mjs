@@ -15,6 +15,10 @@ import * as BC from './lib/brandconnect.mjs';
 //   ② 제목 끝 괄호에 구체 숫자·기준 "(중불 20~30분)" — 괄호 속 숫자는 본문에 있어야 한다
 //   ③ 정보 카드: 이미지 계획서 8장 중 2~3장이 kind "card", 카드 글자는 본문에 있는 말
 //   ④ 대표사진 카드 틀(frame "card"): 네이버 하루 5편 중 2편, 티스토리는 쓰지 않는다
+// 같은 날 원고 목록 — 하루 5편 밖의 추가 글(프런트매터 extra:, 사용자가 따로 부탁한 시험 글)은 하루 배분·모양·쇼핑 1편 검사에 넣지 않는다
+function daySibs(dir, dated) {
+  return fs.readdirSync(dir).filter((f) => f.startsWith(dated) && f.endsWith('.md') && !/^extra:\s*\S/m.test(fs.readFileSync(dir + f, 'utf8').split(/^---\s*$/m)[1] || ''));
+}
 const BUNDLE_FROM = '2026-10-12';
 const CARDS = [2, 3];
 const FRAME_CARDS_PER_DAY = 2;
@@ -256,7 +260,7 @@ for (const file of files) {
         if (!(gi >= 0 && BC.isDisclosure(post.blocks[gi + 1] || {}))) errors.push(`고정 인사말 바로 다음 덩어리에 대가성 문구 두 줄을 그대로: "${BC.DISCLOSURE.join(' / ')}"`);
         if (markers !== 1) errors.push(`${BC.MARKER} 한 줄짜리 덩어리가 정확히 1곳 있어야 합니다 (지금 ${markers}곳) — 정리 소제목 아래 끝쪽`);
         const dir = file.replace(/[^\\/]+$/, '') || './', me = file.split(/[\\/]/).pop();
-        const same = fs.readdirSync(dir).filter((f) => f !== me && f.startsWith(dated) && f.endsWith('.md'))
+        const same = daySibs(dir, dated).filter((f) => f !== me)
           .filter((f) => /^brandconnect:\s*\S/m.test(fs.readFileSync(dir + f, 'utf8')));
         if (same.length) errors.push(`쇼핑 커넥트 글은 하루 1편까지 — 같은 날 ${same.join(', ')}`);
         const l = BC.loadLinks().get(post.brandconnect);
@@ -343,7 +347,7 @@ for (const file of files) {
     // 같은 날 원고끼리 모양이 겹치지 않게
     if (useFormat && fmt) {
       const dir = file.replace(/[^\\/]+$/, '') || './';
-      const sib = fs.readdirSync(dir).filter((f) => f.startsWith(dated) && f.endsWith('.md'));
+      const sib = daySibs(dir, dated);
       const fmts = sib.map((f) => { try { return parsePost(fs.readFileSync(dir + f, 'utf8')).format; } catch { return ''; } });
       const same = fmts.filter((x) => x === post.format).length;
       if (same > 2) errors.push(`같은 날(${dated}) "${post.format}" 모양이 ${same}편 — 2편까지만 (모양을 돌려 쓰세요)`);
@@ -432,7 +436,7 @@ for (const file of files) {
   // 하루 배분: 생활보장 3 + 생활정보 2 (2026-10-20 네이버 원고부터)
   if (!tistory && dated >= TOPIC_SHIFT_FROM) {
     const dir = file.replace(/[^\\/]+$/, '') || './';
-    const sib = fs.readdirSync(dir).filter((f) => f.startsWith(dated) && f.endsWith('.md'));
+    const sib = daySibs(dir, dated);
     if (sib.length >= 5) {
       const sibs = sib.map((f) => { try { return parsePost(fs.readFileSync(dir + f, 'utf8')); } catch { return {}; } });
       const cats = sibs.map((p) => p.category || '');
@@ -534,7 +538,7 @@ for (const file of files) {
         if (framed) errors.push('대표사진 카드 틀 시험은 끝났습니다 (2026-10-18) — 1번에 "frame": "card" 를 빼고 지금 방식으로');
       } else if (!tistory) {
         const dir = file.replace(/[^\\/]+$/, '') || './';
-        const sib = fs.readdirSync(dir).filter((f) => f.startsWith(dated) && f.endsWith('.md'));
+        const sib = daySibs(dir, dated);
         if (sib.length >= 5) {
           const n = sib.filter((f) => planOf(dir + f)?.images?.some((im) => im.n === 1 && im.frame === 'card')).length;
           if (n !== FRAME_CARDS_PER_DAY) errors.push(`같은 날(${dated}) 대표사진 카드 틀이 ${n}편 — 하루 ${FRAME_CARDS_PER_DAY}편(정보성 1 + 홈판 1)만 "frame": "card"`);
