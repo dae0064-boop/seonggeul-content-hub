@@ -585,6 +585,10 @@ async function one(page, ctx, n) {
 // ───────── 반려 재심사 (2026-10-26 사용자 요청) ─────────
 // 목록: 승인상태 "반려", 심의결과 "수정요구" 줄이 빨갛게 보인다. 줄을 누르면 "광고심의 상세정보 : 반려" 창이 뜨고
 // 탭은 등록 / 심의점검표 / 심의결과. 심의결과 탭의 심의의견 칸에 고칠 내용이 있다 (예: "→ '보험사 상품별로 … 바랍니다'").
+// 2026-10-26 첫 실행에서 알게 된 것: 줄을 한 번 누르면 선택만 된다(tr.g-table-selected-row) — 두 번 눌러야 창이 열린다.
+// 목록은 보이는 14줄만 그려진다 → 승인상태 칸을 "반려"로 골라 조회한다. 화면 안내: "반려 승인상태시 빨간색으로 표기되며,
+// 반려 이후 등록자가 광고심의 내용 수정시 파란색으로 변경" — 수정해도 승인상태는 "반려" 그대로이고 빨간 줄(tr.notice-emergency)만 빠진다.
+// 그래서 빨간 줄만 다시 올릴 대상으로 보고, 수정 뒤에는 빨간 줄이 빠졌는지로 확인한다 (두 번 올리지 않게).
 const DRIVER = '음주, 무면허, 도주 사고는 보상에서 제외됩니다.';
 const YAKGWAN = '보험사 상품별로 상이할 수 있으므로, 세부사항은 반드시 해당 약관을 참조하시기바랍니다';
 
@@ -631,7 +635,7 @@ async function listRows(page) {
       for (const tr of document.querySelectorAll('tr')) {
         const cells = [...tr.children].map((td) => (td.innerText || '').replace(/\s+/g, ' ').trim());
         const title = cells.find((c) => /^스레드\s*\d+\s*편$/.test(c));
-        if (title) out.push({ title: title.replace(/\s+/g, ' '), cells });
+        if (title) out.push({ title: title.replace(/\s+/g, ' '), cells, red: /notice-emergency/.test(tr.className || '') });
       }
       const m = (document.body.innerText || '').match(/전체\s*조회\s*건수\s*[:：]?\s*(\d+)/);
       return { out, total: m ? Number(m[1]) : null };
@@ -642,6 +646,30 @@ async function listRows(page) {
   return rows;
 }
 const isRejected = (row) => row.cells.includes('반려');
+const needsFix = (row) => isRejected(row) && row.red; // 파란 줄 = 이미 고쳐 올림
+
+/** 목록 위 "승인상태" 칸(선택 목록: 전체·심의대기·반려·승인완료·승인취소)을 고른다. 못 고르면 false (전체로 본다). */
+async function filterStatus(page, label) {
+  for (const f of page.frames()) {
+    const ok = await f.evaluate((label) => {
+      document.querySelectorAll('[data-goms-status]').forEach((x) => x.removeAttribute('data-goms-status'));
+      const sel = [...document.querySelectorAll('select')].find((s) => {
+        const t = [...s.options].map((o) => o.text.trim());
+        return t.includes('반려') && t.includes('승인완료');
+      });
+      if (!sel) return false;
+      sel.setAttribute('data-goms-status', '1');
+      return true;
+    }, label).catch(() => false);
+    if (!ok) continue;
+    const sel = f.locator('[data-goms-status="1"]');
+    await sel.selectOption({ label });
+    const now = await sel.evaluate((x) => x.options[x.selectedIndex]?.text.trim() || '');
+    if (now === label) { log(`  승인상태: ${label} ✓`); return true; }
+  }
+  log(`  ⚠ 승인상태 칸을 "${label}" 로 고르지 못해 전체 목록에서 찾아요`);
+  return false;
+}
 const numOf = (title) => Number(title.match(/(\d+)/)[1]);
 
 async function detailOpen(page) {
@@ -674,7 +702,16 @@ async function markDetail(page) {
 
 async function openDetail(page, title) {
   if (await detailOpen(page)) throw new Stop('상세정보 창이 이미 열려 있어 다른 줄을 누르지 않았어요');
-  await clickText(page, [title], { timeout: 8000 });
+  // 한 번 누르면 줄 선택만 된다 — 두 번 누른다 (2026-10-26 첫 실행)
+  let cell = null;
+  for (const f of page.frames()) {
+    const loc = f.locator('td').filter({ hasText: new RegExp(`^\\s*${title.replace(/\s+/g, '\\s*')}\\s*$`) });
+    if (await loc.count().catch(() => 0)) { cell = loc.first(); break; }
+  }
+  if (!cell) throw new Stop(`목록에서 "${title}" 칸을 찾지 못했어요`);
+  await cell.scrollIntoViewIfNeeded().catch(() => {});
+  await cell.dblclick({ timeout: 5000 }).catch(() => cell.evaluate((e) => e.dispatchEvent(new MouseEvent('dblclick', { bubbles: true }))));
+  log(`  두 번 클릭: ${title}`);
   for (let i = 0; i < 20 && !(await detailOpen(page)); i++) await sleep(500);
   if (!(await detailOpen(page))) throw new Stop(`목록에서 "${title}" 을 눌렀는데 상세정보 창이 열리지 않았어요`);
   await sleep(1500);
@@ -819,15 +856,18 @@ async function reviseOne(page, row) {
   await closeDetail(page);
   const now = (await listRows(page)).find((r) => r.title.replace(/\s/g, '') === title.replace(/\s/g, ''));
   if (!now) throw new Stop(`수정 뒤 목록에서 "${title}" 이 보이지 않아요 — GOMS 목록에서 확인이 필요해요`);
-  if (isRejected(now)) throw new Stop(`"수정"을 눌렀는데 목록이 아직 반려예요 — GOMS 에서 직접 확인이 필요해요 (다시 누르지 않았어요)`);
-  log(`  목록 상태: ${now.cells.filter((c) => /반려|승인|접수|심의|요청|대기/.test(c)).join(' / ') || now.cells.join(' | ')} ✓`);
+  if (needsFix(now)) throw new Stop(`"수정"을 눌렀는데 목록 줄이 아직 빨간색(반려)이에요 — GOMS 에서 직접 확인이 필요해요 (다시 누르지 않았어요)`);
+  log(`  목록: 빨간 줄이 빠짐 (승인상태 ${now.cells.filter((c) => /반려|승인|대기|취소/.test(c)).join(' / ') || '?'}) ✓`);
   return 'done';
 }
 
 async function runRevise(page) {
   if (!(await openList(page))) return 3;
+  await filterStatus(page, '반려');
   const rows = await listRows(page);
-  let targets = rows.filter(isRejected);
+  const blue = rows.filter((r) => isRejected(r) && !r.red);
+  if (blue.length) log(`  이미 고쳐 올린 반려(파란 줄): ${blue.map((r) => r.title).join(', ')} — 건너뜀`);
+  let targets = rows.filter(needsFix);
   const only = arg('--only');
   if (only) targets = targets.filter((r) => numOf(r.title) === Number(only));
   log(`목록 ${rows.length}건 중 반려 ${targets.length}건: ${targets.map((r) => r.title).join(', ') || '없음'}`);
