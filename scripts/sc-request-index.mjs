@@ -52,7 +52,11 @@ async function searchBox(page) {
   }
   return null;
 }
-const RESULT = /URL이 Google에 등록되어 있|URL is on Google|URL is not on Google|할당량|quota/i;
+// 10/26 네 번째 판: 'URL 검사 용량 초과 — 용량은 매일 갱신됩니다' 창이 떴는데(그날 검사 100번 넘게 함) '할당량' 만 찾아 못 알아봤다
+const QUOTA = /용량 초과|용량을 초과|할당량|quota/i;
+// 검사(요청 아님)도 하루 한도가 있다 → 하루 검사 횟수를 묶어, 이미 색인된 글을 훑느라 한도를 다 쓰지 않게 한다
+const MAX_INSPECT = Number(opt('--max-inspect', '30'));
+const RESULT = /URL이 Google에 등록되어 있|URL is on Google|URL is not on Google|용량 초과|용량을 초과|할당량|quota/i;
 
 async function main() {
   fs.mkdirSync(OUT, { recursive: true });
@@ -84,9 +88,11 @@ async function main() {
     if (!(await searchBox(page))) { report.stop = 'no-search-box'; say("맨 위 'URL 검사' 칸을 못 찾음 — 화면 기록을 Claude 가 본다"); await shot('start'); return; }
     await shot('start');
 
-    let streak = 0;
+    let streak = 0, inspected = 0;
+    if (QUOTA.test(await readText(page))) { report.stop = 'quota'; say('오늘 URL 검사 용량이 이미 끝났어요 — 내일 이어서'); return; }
     for (const u of todo) {
       if (report.requested.length >= MAX) break;
+      if (++inspected > MAX_INSPECT) { say(`오늘 검사 ${MAX_INSPECT}번을 다 써서 멈춤 — 내일 이어서`); break; }
       const n = u.split('/').pop();
       try {
         // 열려 있는 창(앞 글 결과 창 등)을 닫고 검색칸에 주소 넣기
@@ -103,14 +109,14 @@ async function main() {
         let t = '', verdict = '';
         for (let i = 0; i < 45; i++) {
           await sleep(2000); t = await readText(page);
-          if (/할당량|quota/i.test(t)) break;
+          if (QUOTA.test(t)) break;
           // 주소 뒤가 공백·줄끝인 자리만 (/1 이 /10 에 걸리지 않게), 그중 마지막 자리 아래 600자 안의 첫 판정
           const hits = [...t.matchAll(keyRe)];
           const at = hits.length ? hits.at(-1).index : -1;
           const m = at >= 0 && t.slice(at, at + 600).match(/URL이 Google에 등록되어 있(?:지 않음|지만|음)|URL is (?:not )?on Google/);
           if (m) { verdict = m[0]; break; }
         }
-        if (/할당량|quota/i.test(t)) { report.stop = 'quota'; say('오늘 할당량이 끝났어요'); break; }
+        if (QUOTA.test(t)) { report.stop = 'quota'; say('오늘 구글 용량(할당량)이 끝났어요 — 내일 이어서'); break; }
         if (!verdict) { report.failed.push({ u, why: 'no-result' }); say(`/${n} 검사 결과가 안 뜸`); await shot(`fail-${n}`); }
         else if (!/않음|not on/.test(verdict)) {
           note(u, 'indexed2'); report.indexed.push(u); say(`/${n} 이미 색인됨 (${verdict})`);
@@ -124,8 +130,8 @@ async function main() {
             await btn.click({ timeout: 10000 }).catch(async () => { await btn.evaluate((el) => el.click()); });
             // 실제 URL 테스트 1~2분 → '색인 생성 요청됨' 또는 할당량 문구 (최대 3분)
             let r = '';
-            for (let i = 0; i < 90; i++) { await sleep(2000); r = await readText(page); if (/색인 생성 요청됨|Indexing requested|할당량|quota|문제가 발생|went wrong/i.test(r)) break; }
-            if (/할당량|quota/i.test(r)) { report.stop = 'quota'; say('오늘 할당량이 끝났어요'); await shot('quota'); break; }
+            for (let i = 0; i < 90; i++) { await sleep(2000); r = await readText(page); if (/색인 생성 요청됨|Indexing requested|용량 초과|용량을 초과|할당량|quota|문제가 발생|went wrong/i.test(r)) break; }
+            if (QUOTA.test(r)) { report.stop = 'quota'; say('오늘 구글 용량(할당량)이 끝났어요 — 내일 이어서'); await shot('quota'); break; }
             if (/색인 생성 요청됨|Indexing requested/i.test(r)) { note(u, 'requested'); report.requested.push(u); say(`/${n} 색인 생성 요청됨`); }
             else { report.failed.push({ u, why: 'no-confirm' }); say(`/${n} 요청 결과를 확인 못 함`); await shot(`fail-${n}`); }
             for (const name of ['확인', '닫기', 'Got it', 'Dismiss']) { const b = page.getByRole('button', { name, exact: true }).first(); if (await b.count()) { await b.click({ timeout: 5000 }).catch(() => {}); break; } }
