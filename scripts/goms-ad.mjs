@@ -630,26 +630,74 @@ function readFixes() {
   return map;
 }
 
-/** 목록을 새로 읽어 「스레드 N편」 줄과 칸 글자를 돌려준다. */
-async function listRows(page) {
-  await gomsMessages(page);
-  await clickText(page, ['조회'], { timeout: 5000 }).catch(() => {});
-  await sleep(2500);
+/**
+ * 목록 표를 위·아래로 움직인다. 표는 보이는 줄만 그린다 (2026-10-26 14:31 — 승인완료 21건 중 14줄만 읽혔다).
+ * 'top' 이면 맨 위로, 'down' 이면 한 화면 아래로. 움직였으면 true.
+ */
+async function scrollList(page, where) {
+  for (const f of page.frames()) {
+    const r = await f.evaluate((where) => {
+      const cell = [...document.querySelectorAll('td')].find((td) => /^스레드\s*\d+\s*편$/.test((td.innerText || '').trim()));
+      if (!cell) return null;
+      let box = cell.parentElement;
+      while (box && box !== document.body) {
+        const st = getComputedStyle(box);
+        if (/(auto|scroll)/.test(st.overflowY) && box.scrollHeight > box.clientHeight + 4) break;
+        box = box.parentElement;
+      }
+      const el = box && box !== document.body ? box : (document.scrollingElement || document.documentElement);
+      const before = el.scrollTop;
+      if (where === 'top') el.scrollTop = 0;
+      else el.scrollTop = before + Math.max(200, el.clientHeight * 0.7);
+      return el.scrollTop !== before;
+    }, where).catch(() => null);
+    if (r !== null) return r;
+  }
+  return false;
+}
+
+/** 지금 그려진 줄만 읽는다. 칸 이름(th)과 칸 수가 맞으면 이름으로도 꺼낼 수 있게 byName 을 붙인다. */
+async function visibleRows(page) {
   const rows = []; let total = null;
   for (const f of page.frames()) {
     const r = await f.evaluate(() => {
+      const heads = [...document.querySelectorAll('th')].map((th) => (th.innerText || '').replace(/\s+/g, '').trim()).filter(Boolean);
       const out = [];
       for (const tr of document.querySelectorAll('tr')) {
         const cells = [...tr.children].map((td) => (td.innerText || '').replace(/\s+/g, ' ').trim());
         const title = cells.find((c) => /^스레드\s*\d+\s*편$/.test(c));
-        if (title) out.push({ title: title.replace(/\s+/g, ' '), cells, red: /notice-emergency/.test(tr.className || '') });
+        if (!title) continue;
+        const byName = {};
+        if (heads.length === cells.length) heads.forEach((h, i) => { byName[h] = cells[i]; });
+        out.push({ title: title.replace(/\s+/g, ' '), cells, byName, red: /notice-emergency/.test(tr.className || '') });
       }
       const m = (document.body.innerText || '').match(/전체\s*조회\s*건수\s*[:：]?\s*(\d+)/);
       return { out, total: m ? Number(m[1]) : null };
     }).catch(() => null);
     if (r) { rows.push(...r.out); if (r.total != null) total = r.total; }
   }
-  if (total != null && total > rows.length) log(`  ⚠ 목록 ${total}건 중 ${rows.length}건만 읽혔어요 (다음 쪽은 아직 못 봐요)`);
+  return { rows, total };
+}
+
+/** 목록을 새로 읽어 「스레드 N편」 줄과 칸 글자를 돌려준다 — 표를 끝까지 내려 가며 모은다. */
+async function listRows(page) {
+  await gomsMessages(page);
+  await clickText(page, ['조회'], { timeout: 5000 }).catch(() => {});
+  await sleep(2500);
+  const seen = new Map(); let total = null;
+  await scrollList(page, 'top'); await sleep(500);
+  for (let pass = 0; pass < 40; pass++) {
+    const v = await visibleRows(page);
+    if (v.total != null) total = v.total;
+    for (const r of v.rows) seen.set(r.title.replace(/\s/g, ''), r);
+    if (total != null && seen.size >= total) break;
+    if (!(await scrollList(page, 'down'))) break;
+    await sleep(800);
+  }
+  await scrollList(page, 'top'); await sleep(500);
+  const rows = [...seen.values()];
+  if (total != null && total > rows.length) log(`  ⚠ 목록 ${total}건 중 ${rows.length}건만 읽혔어요 (표를 끝까지 내려도 더 안 나와요)`);
+  else log(`  목록 ${rows.length}건 읽음`);
   return rows;
 }
 const isRejected = (row) => row.cells.includes('반려');
@@ -711,9 +759,16 @@ async function openDetail(page, title) {
   if (await detailOpen(page)) throw new Stop('상세정보 창이 이미 열려 있어 다른 줄을 누르지 않았어요');
   // 한 번 누르면 줄 선택만 된다 — 두 번 누른다 (2026-10-26 첫 실행)
   let cell = null;
-  for (const f of page.frames()) {
-    const loc = f.locator('td').filter({ hasText: new RegExp(`^\\s*${title.replace(/\s+/g, '\\s*')}\\s*$`) });
-    if (await loc.count().catch(() => 0)) { cell = loc.first(); break; }
+  // 표는 보이는 줄만 그린다 — 못 찾으면 맨 위부터 한 화면씩 내려 가며 찾는다
+  for (let pass = 0; pass < 40 && !cell; pass++) {
+    for (const f of page.frames()) {
+      const loc = f.locator('td').filter({ hasText: new RegExp(`^\\s*${title.replace(/\s+/g, '\\s*')}\\s*$`) });
+      if (await loc.count().catch(() => 0)) { cell = loc.first(); break; }
+    }
+    if (cell) break;
+    if (pass === 0) await scrollList(page, 'top');
+    else if (!(await scrollList(page, 'down'))) break;
+    await sleep(800);
   }
   if (!cell) throw new Stop(`목록에서 "${title}" 칸을 찾지 못했어요`);
   await cell.scrollIntoViewIfNeeded().catch(() => {});
@@ -832,10 +887,15 @@ async function runApproved(page) {
   for (const row of targets) {
     const n = numOf(row.title);
     log(`\n▶ ${row.title} (승인완료) — 심의필 번호 읽기`);
-    await openDetail(page, row.title);
-    const a = await readApproval(page);
-    await shot(page, `approved-${n}`);
-    await closeDetail(page);
+    // 목록 표에 사내준법심의필번호·유효기간·심의결과 칸이 있다 (2026-10-26 structure-ad-review.txt) — 있으면 상세 창을 열지 않는다
+    const b = row.byName || {};
+    let a = { result: b['심의결과'] || '', no: b['사내준법심의필번호'] || '', period: b['유효기간'] || '' };
+    if (!a.no || !/\d{4}[-.]\d{2}[-.]\d{2}.*\d{4}[-.]\d{2}[-.]\d{2}/.test(a.period) || !a.result) {
+      await openDetail(page, row.title);
+      a = await readApproval(page);
+      await shot(page, `approved-${n}`);
+      await closeDetail(page);
+    } else log('  (목록 칸에서 읽음)');
     const no = (a.no.match(/제?\s*(\d{2}-\d{2}-\d{3,5})\s*호?/) || [])[1];
     const dates = (a.period.match(/\d{4}[-.]\d{2}[-.]\d{2}/g) || []).map((d) => d.replace(/\./g, '-'));
     log(`  심의결과: ${a.result || '(못 읽음)'} · 준법심의필번호: ${a.no || '(못 읽음)'} · 유효기간: ${a.period || '(못 읽음)'}`);
