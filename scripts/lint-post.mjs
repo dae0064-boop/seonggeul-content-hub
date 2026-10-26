@@ -42,11 +42,16 @@ const SHIFT_SPLIT = { 생활정보: 4, 생활보장: 1 };
 //   ② 생활정보 3편 중 2편은 홈판형(slot: 홈판) — 제목을 "키워드, 질문 (숫자)" 대신 공감형으로. 홈판에 걸린 글(억새·관엽식물·식단·소풍 도시락·귤)은 모두 괄호 없는 제목이었다
 const SPLIT2_FROM = '2026-10-26';
 const SPLIT2 = { 생활정보: 2, 생활보장: 3 };   // 2026-10-24 같은 날 다시 — 사용자 "생활보장 3편, 생활정보 2편으로" (처음엔 3+2 반대)
+// 2026-10-26 사용자 — "하루에 10편은 블로그로" → 2026-10-27 원고부터 하루 10편 = 생활보장 7 + 생활정보 3 (홈판형 2편은 그대로 생활정보에).
+//   밤 원고 작업이 두 번(1차 5편·2차 5편)에 나눠 쓰므로 10편이 다 모이기 전에는 '넘지 않는지'만 본다. 같은 모양은 하루 3편까지(모양이 5가지뿐).
+const SPLIT3_FROM = '2026-10-27';
+const SPLIT3 = { 생활정보: 3, 생활보장: 7 };
+const DAY_TOTAL3 = 10;
 // 그림체 바꾸는 날 (2026-10-24 사용자 — "생활보장은 클레이로 30편까지, 31편부터 실사풍 / 생활정보는 지금 126편, 150편이 되면 실사풍". 같은 날 다시 센 숫자: 생활보장 19·생활정보 131).
 // 실제 편수로 센다: 이 글이 그 카테고리 몇 번째 네이버 글인가 = 더할 수(OFFSET) + published.tsv 의 같은 카테고리 줄 + content/posts 에서 이 글보다 앞선(날짜·publish_at) 같은 카테고리 글 + 1.
 // OFFSET: 2026-10-24 10:40 사용자가 보낸 블로그 카테고리 화면 — "생활정보 125개의 글"·"생활보장 19개의 글" (발행된 글만, 10/24 10:00 세탁기 배수구 글까지).
 //   저장소 기록은 같은 때 생활보장 19(맞음)·생활정보 90 → 생활정보 차이 35 (자동화 전 옛 글·사용자가 직접 올린 글). 앞서 말로 들은 126·131 로 33·41 을 썼다가 화면 숫자로 고침.
-// 예상 날짜: 생활보장 31번째 = 10/29 원고 (하루 3편 기준).
+// 예상 날짜: 생활보장 31번째 = 10/27 원고 21:00 글 (10/27 원고부터 하루 7편 — 처음 예상은 하루 3편 기준 10/29).
 // 생활정보는 클레이 3D 그대로 (2026-10-25 사용자 "3D 로 쭉 밀고 가는 게 낫다던데" → Claude 추천: 홈판에 걸린 글이 모두 클레이라 151번째 전환을 뺌).
 const REAL_AFTER = { 생활보장: 30, 생활정보: Infinity };
 const COUNT_OFFSET = { 생활보장: 0, 생활정보: 35 };
@@ -354,7 +359,8 @@ for (const file of files) {
       const sib = daySibs(dir, dated);
       const fmts = sib.map((f) => { try { return parsePost(fs.readFileSync(dir + f, 'utf8')).format; } catch { return ''; } });
       const same = fmts.filter((x) => x === post.format).length;
-      if (same > 2) errors.push(`같은 날(${dated}) "${post.format}" 모양이 ${same}편 — 2편까지만 (모양을 돌려 쓰세요)`);
+      const maxSame = dated >= SPLIT3_FROM ? 3 : 2;
+      if (same > maxSame) errors.push(`같은 날(${dated}) "${post.format}" 모양이 ${same}편 — ${maxSame}편까지만 (모양을 돌려 쓰세요)`);
       if (sib.length >= 5 && new Set(fmts.filter(Boolean)).size < 3) notes.push(`같은 날 글 모양이 ${new Set(fmts).size}가지뿐이에요 — 3가지 이상 섞으세요`);
     }
   }
@@ -437,22 +443,26 @@ for (const file of files) {
   const imgWant = 8;
   if (images.length && images.length !== imgWant)
     (!tistory && dated >= TOPIC_SHIFT_FROM ? errors : notes).push(`이미지 자리 ${images.length}개 — ${imgWant}개 기준입니다.`);
-  // 하루 배분: 생활보장 3 + 생활정보 2 (2026-10-20 네이버 원고부터)
+  // 하루 배분: 2026-10-20 생활정보 4 + 생활보장 1 → 10-26 생활보장 3 + 생활정보 2 → 10-27 생활보장 7 + 생활정보 3 (10편)
   if (!tistory && dated >= TOPIC_SHIFT_FROM) {
     const dir = file.replace(/[^\\/]+$/, '') || './';
     const sib = daySibs(dir, dated);
-    if (sib.length >= 5) {
+    const ten = dated >= SPLIT3_FROM;
+    const full = ten ? DAY_TOTAL3 : 5;
+    if (sib.length >= (ten ? 1 : 5)) {
       const sibs = sib.map((f) => { try { return parsePost(fs.readFileSync(dir + f, 'utf8')); } catch { return {}; } });
       const cats = sibs.map((p) => p.category || '');
-      const split = dated >= SPLIT2_FROM ? SPLIT2 : SHIFT_SPLIT;
-      const why = dated >= SPLIT2_FROM ? '2026-10-24 사용자 결정' : '2026-10-19 사용자 결정';
+      const split = ten ? SPLIT3 : dated >= SPLIT2_FROM ? SPLIT2 : SHIFT_SPLIT;
+      const why = ten ? '2026-10-26 사용자 결정' : dated >= SPLIT2_FROM ? '2026-10-24 사용자 결정' : '2026-10-19 사용자 결정';
+      const done = sib.length >= full;
+      if (ten && sib.length > full) errors.push(`같은 날(${dated}) 네이버 원고 ${sib.length}편 — 하루 ${full}편까지 (${why})`);
       for (const [c, n] of Object.entries(split)) {
         const got = cats.filter((x) => x === c).length;
-        if (got !== n) errors.push(`같은 날(${dated}) ${c} ${got}편 — 하루 생활정보 ${split.생활정보} + 생활보장 ${split.생활보장} (${why})`);
+        if (done ? got !== n : got > n) errors.push(`같은 날(${dated}) ${c} ${got}편 — 하루 생활정보 ${split.생활정보} + 생활보장 ${split.생활보장} (${why})`);
       }
       if (dated >= SPLIT2_FROM) {
         const hf = sibs.filter((p) => p.slot === '홈판');
-        if (hf.length !== HOMEFEED_PER_DAY) errors.push(`같은 날(${dated}) 홈판형(slot: 홈판) ${hf.length}편 — 하루 ${HOMEFEED_PER_DAY}편 (생활정보 글에)`);
+        if (done ? hf.length !== HOMEFEED_PER_DAY : hf.length > HOMEFEED_PER_DAY) errors.push(`같은 날(${dated}) 홈판형(slot: 홈판) ${hf.length}편 — 하루 ${HOMEFEED_PER_DAY}편 (생활정보 글에)`);
         if (hf.some((p) => p.category !== '생활정보')) errors.push(`홈판형(slot: 홈판)은 생활정보 글에만 붙입니다`);
       }
     }
