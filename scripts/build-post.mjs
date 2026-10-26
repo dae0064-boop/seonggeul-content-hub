@@ -7,6 +7,7 @@
  */
 import fs from 'node:fs';
 import { parsePost } from './lib/parse-post.mjs';
+import { topicFor } from './lib/naver-topic.mjs';
 
 const files = process.argv.slice(2);
 if (!files.length) {
@@ -29,6 +30,7 @@ for (const file of files) {
     related: post.related.length ? post.related : undefined,
     sourceUrls: post.sourceUrls.length ? post.sourceUrls : undefined,
     brandconnect: post.brandconnect || undefined,   // 링크는 발행할 때 찾는다 (scripts/lib/brandconnect.mjs)
+    topic: topicFor(post) || undefined,   // 발행 패널 '주제' (2026-10-26 — 기본값 '비즈니스·경제'로 들어가고 있었다)
     blocks: post.blocks,
   };
   fs.writeFileSync(out, JSON.stringify(json, null, 2) + '\n');
