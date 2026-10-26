@@ -28,6 +28,7 @@ import path from 'node:path';
 import { readMyBlogId, resolveRelated } from './lib/naver-related.mjs';
 import { applyBrandconnect, DISCLOSURE as SHOP_DISCLOSURE } from './lib/brandconnect.mjs';
 import { leadBlock } from './lib/parse-post.mjs';
+import { topicFor } from './lib/naver-topic.mjs';
 
 // ---------------------------------------------------------------- args
 function parseArgs(argv) {
@@ -371,6 +372,7 @@ async function reservePublish(page, editor, post, at) {
   await dump(page, 'publish-layer');
 
   if (post.category) await pickCategory(page, editor, post.category);
+  await pickTopic(page, editor, post);
   if (post.tags?.length) {
     try { await enterTags(page, editor, post.tags); }
     catch (e) { warn(`태그 입력 실패 (${e.message}) — 예약 후 글 수정에서 넣어 주세요.`); }
@@ -735,6 +737,81 @@ async function pickCategory(page, editor, category) {
       }, category).catch(() => []);
       log(`  진단(${name}): ${found.length ? found.join(' | ') : '없음'}`);
     }
+    await page.keyboard.press('Escape').catch(() => {});
+  }
+  await sleep(400);
+  const open = await findAnywhere(page, editor, RESERVE_RADIO, { timeout: 1500 }).then(() => true).catch(() => false);
+  if (!open) {
+    warn('발행 패널이 닫혀 다시 엽니다');
+    await clickFirst(page, PUBLISH_OPEN, { timeout: 4000 }).catch(() => clickFirst(editor, PUBLISH_OPEN).catch(() => {}));
+    await sleep(1200);
+  }
+}
+
+/**
+ * 발행 패널의 '주제'를 글에 맞게 고른다 (2026-10-26 — 고르지 않아 살림 글이 모두 '비즈니스·경제'로 들어갔다).
+ * 주제 칸 → 목록에서 이름이 정확히 같은 항목 → (있으면) 그 목록 안의 '확인'. 다시 읽어 맞는지 로그에 남긴다.
+ * 실패해도 멈추지 않는다 — 지금처럼 기본 주제로 간다. 발행·예약 단추는 건드리지 않는다.
+ */
+async function pickTopic(page, editor, post) {
+  const topic = post.topic || topicFor(post);
+  if (!topic) { warn(`주제 이름이 목록에 없어 고르지 않습니다 (topic: ${post.topic})`); return; }
+  // 주제 칸 글자(지금 고른 주제)를 읽는다 — '주제' 이름표 바로 옆 줄
+  const readNow = async () => {
+    for (const scope of editor === page.mainFrame() ? [page] : [editor, page]) {
+      const t = await scope.evaluate(() => {
+        for (const el of document.querySelectorAll('strong, span, dt, label, div')) {
+          if ((el.textContent || '').trim() !== '주제' || el.children.length) continue;
+          const row = el.parentElement;
+          const txt = (row?.textContent || '').replace(/\s+/g, ' ').trim();
+          if (txt.length < 60) return txt.replace(/^주제\s*/, '');
+        }
+        return '';
+      }).catch(() => '');
+      if (t) return t;
+    }
+    return '';
+  };
+  const before = await readNow();
+  if (before.includes(topic)) { log(`주제: ${topic} (이미 맞음)`); return; }
+  try {
+    // 주제 칸 열기: 지금 주제 글자가 든 단추, 없으면 class 에 subject/topic 이 든 단추
+    const openSel = [
+      before ? `button:has-text("${before.replace(/[>›\s]+$/, '').trim()}")` : null,
+      'button[class*="subject"]', 'button[class*="topic"]', '[class*="subject"] button', 'a[class*="subject"]',
+    ].filter(Boolean);
+    await findAnywhere(page, editor, openSel, { timeout: 3000 }).then((r) => r.loc.click());
+    await sleep(800);
+    const item = [
+      `[class*="subject"] label:text-is("${topic}")`, `[class*="subject"] button:text-is("${topic}")`,
+      `[class*="subject"] span:text-is("${topic}")`, `[class*="subject"] a:text-is("${topic}")`,
+      `label:text-is("${topic}")`, `li button:text-is("${topic}")`, `li a:text-is("${topic}")`,
+    ];
+    await findAnywhere(page, editor, item, { timeout: 3000 }).then((r) => r.loc.click());
+    await sleep(500);
+    // 주제 목록 안의 '확인' (있을 때만 — 발행 단추는 '발행' 글자라 여기에 걸리지 않는다)
+    await findAnywhere(page, editor, ['[class*="subject"] button:text-is("확인")', '[class*="layer"] button:text-is("확인")'], { timeout: 1500 })
+      .then((r) => r.loc.click()).catch(() => {});
+    await sleep(600);
+    const after = await readNow();
+    if (after.includes(topic)) log(`주제: ${topic} (전: ${before || '?'})`);
+    else warn(`주제를 ${topic} 로 바꿨는지 확인하지 못함 (화면: "${after || '?'}") — 기본 주제로 갈 수 있어요`);
+  } catch (e) {
+    warn(`주제 자동 선택 실패 — 기본 주제(${before || '?'})로 갑니다 (${topic}): ${e.message.split('\n')[0]}`);
+    for (const [name, scope] of [['page', page], ['editor', editor]]) {
+      const found = await scope.evaluate(() => {
+        const out = [];
+        for (const el of document.querySelectorAll('button, label, span, a, li, strong')) {
+          const t = (el.textContent || '').replace(/\s+/g, ' ').trim();
+          const cls = typeof el.className === 'string' ? el.className : '';
+          if ((/주제|·/.test(t) && t.length < 30 && el.children.length < 3) || /subject|topic/i.test(cls)) out.push(`${el.tagName.toLowerCase()}.${cls.split(' ').slice(0, 2).join('.')} "${t.slice(0, 25)}"`);
+          if (out.length >= 20) break;
+        }
+        return out;
+      }).catch(() => []);
+      log(`  진단 주제(${name}): ${found.length ? found.join(' | ') : '없음'}`);
+    }
+    await dump(page, 'topic-fail');
     await page.keyboard.press('Escape').catch(() => {});
   }
   await sleep(400);
@@ -1818,6 +1895,7 @@ async function main() {
       step(`9. 카테고리: ${post.category}`);
       await pickCategory(page, editor, post.category);
     }
+    await pickTopic(page, editor, post);
 
     if (post.tags?.length) {
       step('10. 태그 입력');
