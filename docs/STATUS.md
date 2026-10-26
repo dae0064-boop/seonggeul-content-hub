@@ -27,6 +27,11 @@
 > 사용자는 다 본 대화를 바로 지우는 편이다. 출발점 대화만 지우면 안 된다. 나눔은 그대로: 네이버·티스토리·스레드는 각자 다른 작업.
 > 아침 PC 의 auto-day.cmd(보험글 Word 저장 포함)는 그대로.
 
+### 10/26 (월) 저녁 — 🧹 시험용 실행기·시험 그림 정리 (사용자 — "필요없는 cmd 다 삭제, 테스트 이미지들도 다 삭제")
+- 지운 실행기 7개: `test-post`·`shop-link-test`·`shutdown-test`·`style-test`·`goms-test`·`goms-revise-test`·`threads-post-test` (.cmd). 실제로 쓰는 실행기(`goms-register`·`goms-revise`·`threads-post-now`·`chulgeo-day` 등)는 그대로. `goms-test.ps1` 은 `goms-register.cmd` 가 쓰므로 남김.
+- 시험 그림: 설계도 `content/style-test/*.json` 6개 지움, Drive `ClaudeWorkspace/style-test` 폴더 휴지통으로. PC 의 `content\images\style-test-*` 와 Drive 폴더는 아침 `cleanup.ps1` 이 다음 실행 때 지운다.
+- 오늘 시험 글 `2026-10-26-jeoon-hwasang-hatpaek` 은 실제 예약 글이라 그대로(내일 아침 지난 원고로 정리됨).
+
 ### 10/26 (월) 오후 — 🎨 대표사진: 클레이 3D 그대로 + 글마다 다른 사람·색·표정·글씨 (10/27 네이버 원고부터)
 - 사용자: 시험 그림(close4 실사·클레이)을 보고 "클레이 3D 그대로, 이 느낌으로" + 블로그 첫 화면 캡처를 보내며 "같은 색감·같은 캐릭터라 비슷해서 눈에 안 띈다. 상황별로 사람·색감·표정·글자를 다양하게".
   캡처: 대표사진 15장이 모두 민트 목도리 성글이·크림/살구 색·주아체.
