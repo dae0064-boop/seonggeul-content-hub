@@ -14,6 +14,10 @@
  *   { kind: "label", text: "한 줄 문구", pos: "bottom" | "top" }    본문 — 띠 하나
  *   { kind: "steps", items: [["75세 이상", "10월 12일"], ...] }      본문 — 아래쪽 칸 나눔 표
  *
+ *   대표사진 모양 look (2026-10-26 사용자 — "더 눈에 띄는 방식" 시험. 없으면 위 ① 둥근 글씨 + 형광펜):
+ *     look "band"  사진 위쪽에 진한 남색 그러데이션 띠 + 굵은 고딕 흰 글씨, 메인 키워드(첫 줄)는 노란 글씨
+ *     look "frame" 사진 둘레에 진한 남색 테두리 + 위쪽 흰 글상자에 남색 굵은 글씨, 첫 줄에 노란 형광펜
+ *
  * 대표사진 카드 틀 (2026-10-09 대표사진 시험 결론 — 10/12 원고부터 네이버 하루 2편):
  *   계획서 1번에 "frame": "card" → 진한 남색 카드 + 가운데 사진 칸(1번 그림 그대로) + 위 질문형 제목 두 줄
  *   (메인 키워드만 노란 글씨, 나머지 흰 글씨) + 아래 분류 표시(생활정보·생활보장)와 '성글벙글'.
@@ -61,6 +65,7 @@ function html(imgDataUrl, size, o) {
   let face = '';
   let thumbFamily = STYLE.font;
   if (o.kind === 'thumb' && o.frame === 'card') return cardThumbHtml(imgDataUrl, S, o);
+  if (o.kind === 'thumb' && (o.look === 'band' || o.look === 'frame')) return lookThumbHtml(imgDataUrl, S, o);
   if (o.kind === 'thumb') {
     const tl = String(o.title).split('\n');
     const fs1 = Math.round(S * (tl.length > 2 ? 0.105 : 0.15));
@@ -150,6 +155,52 @@ function cardThumbHtml(imgDataUrl, S, o) {
     <div class="top">${tl.map((t, i) => `<div class="title">${keyLine(t, hasKey ? o.key : '', i === 0)}</div>`).join('')}</div>
     <div class="photo"><img src="${imgDataUrl}"></div>
     <div class="foot"><div class="cat">${esc(o.category || '생활정보')}</div><div class="brand">${esc(o.brand || '성글벙글')}</div></div>
+  </body>`;
+}
+
+// ── 대표사진 모양 band·frame (2026-10-26 시험) ─────────────────
+// 굵은 고딕: 프리텐다드 Bold (SIL OFL — scripts/threads/fonts/Pretendard-LICENSE.txt). 없으면 맑은 고딕
+const PRETENDARD = new URL('../threads/fonts/Pretendard-Bold.otf', import.meta.url);
+let ptdCache;
+const ptdFace = () => {
+  if (ptdCache === undefined) {
+    try { ptdCache = `@font-face{font-family:"PTD";src:url(data:font/otf;base64,${fs.readFileSync(PRETENDARD).toString('base64')}) format("opentype")}`; }
+    catch { ptdCache = ''; }
+  }
+  return ptdCache;
+};
+
+function lookThumbHtml(imgDataUrl, S, o) {
+  const tl = String(o.title).split('\n');
+  const face = ptdFace();
+  const fam = face ? `"PTD",${STYLE.font}` : STYLE.font;
+  const band = o.look === 'band';
+  const b = band ? 0 : S * 0.045;   // frame: 테두리 두께
+  const fs1 = Math.round(S * (tl.length > 2 ? 0.095 : 0.125));
+  return `<!doctype html><meta charset="utf-8"><style>
+    ${face}
+    *{margin:0;box-sizing:border-box}
+    body{width:${S}px;height:${S}px;position:relative;overflow:hidden;background:${NAVY.bg};font-family:${fam}}
+    .ph{position:absolute;inset:${b}px;overflow:hidden;border-radius:${band ? 0 : S * 0.02}px}
+    .ph img{width:100%;height:100%;object-fit:cover;display:block}
+    .shade{position:absolute;left:0;right:0;top:0;height:${S * 0.46}px;
+      background:linear-gradient(to bottom,rgba(16,28,56,.92) 0%,rgba(16,28,56,.82) 55%,rgba(16,28,56,0) 100%)}
+    .wrap{position:absolute;left:${S * 0.06}px;right:${S * 0.06}px;top:${band ? S * 0.035 : S * 0.085}px;height:${band ? S * 0.31 : S * 0.29}px;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+    .box{background:rgba(255,255,255,.95);border-radius:${S * 0.03}px;padding:${S * 0.025}px ${S * 0.05}px;
+      box-shadow:0 ${S * 0.008}px ${S * 0.03}px rgba(0,0,0,.18);display:flex;flex-direction:column;align-items:center;max-width:100%}
+    .title{font-family:${fam};font-weight:800;font-size:${fs1}px;line-height:1.2;white-space:nowrap;letter-spacing:-.02em;position:relative;z-index:1}
+    .band .title{color:#fff;text-shadow:0 ${S * 0.004}px ${S * 0.012}px rgba(0,0,0,.35)}
+    .band .title.key{color:${NAVY.yellow}}
+    .frame .title{color:${NAVY.bg}}
+    .frame .title.key span{position:relative}
+    .frame .title.key span:before{content:"";position:absolute;left:-${S * 0.01}px;right:-${S * 0.01}px;bottom:6%;height:42%;
+      background:${NAVY.yellow};border-radius:${S * 0.008}px;z-index:-1}
+  </style><body class="${band ? 'band' : 'frame'}">
+    <div class="ph"><img src="${imgDataUrl}">${band ? '<div class="shade"></div>' : ''}</div>
+    <div class="wrap">${band
+      ? tl.map((t, i) => `<div class="title${i === 0 ? ' key' : ''}">${esc(t)}</div>`).join('')
+      : `<div class="box">${tl.map((t, i) => `<div class="title${i === 0 ? ' key' : ''}"><span>${esc(t)}</span></div>`).join('')}</div>`}</div>
   </body>`;
 }
 

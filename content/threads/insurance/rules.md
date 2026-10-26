@@ -198,13 +198,16 @@ python3 scripts/threads/insurance-word.py <묶음.md> <사진.jpg> <저장 폴�
 ## 스레드에 올리기 (2026-10-26 사용자 지시)
 
 "스레드 1편부터 스레드에 게시" — 심의 **적격**을 받은 편만, **1편부터 번호 순서대로**, 그 편의 **준법심의필번호·유효기간을 넣은 배너**와 함께 올린다.
-같은 날 결정: **하루 4편(08:30·12:30·18:30·21:30) + 일상글**, 배너는 저장소에, 사무실 PC·노트북 둘 다(노트북은 5분 뒤).
+같은 날 결정: 배너는 저장소에, 사무실 PC·노트북 둘 다(노트북은 5분 뒤) + 일상글(아직 안 정함).
+**같은 날 저녁 바꿈: 2026-10-27 부터 하루 5편(08:30·11:30·14:30·18:30·21:30), 한 편을 둘로 나눠 올린다 —
+1/2 = 글 앞 절반, 2/2 = 뒤 절반 + 심의필 배너(1/2 아래 답글)** ("글이 기니까"). 나누는 자리는 글자 수 절반에 가장 가까운, 문장이 끝나는 줄. 두 조각을 합치면 Word 글과 같아야 올린다.
 
 | 단계 | 어디서 | 무엇 |
 |---|---|---|
 | ① 심의필 번호 읽기 | PC 아침 auto-day 끝 (`launchers/tools/goms-approved.ps1`, 바로 돌릴 땐 `launchers/goms-approved.cmd`) | GOMS 목록 승인완료 「스레드 N편」의 심의결과 탭 → Drive `ClaudeWorkspace/goms-approved.tsv` (`번호 · 제26-10-0209호 · 시작 · 끝 · 적격 · 읽은 날`) |
 | ② 배너 만들기 | 클라우드 아침 확인 (`routines/morning-check.md` 5-2) | `scripts/threads/banner.py` → `content/threads/insurance/banners/thread-N.jpg` (base.jpg 맨 아래 줄만 바꿈, Pretendard Bold) → PR → main |
-| ③ 올리기 | PC 작업 스케줄러 `SeonggeulThreadsPost` (`launchers/tools/threads-post.ps1` → `scripts/threads/insurance-post.mjs --post`) | 한 번에 한 편: 적격·유효기간 안·Word 있음·배너 공개 주소 열림·아직 안 올림·오늘 4편 미만·마지막 보험글 40분 넘음 → 사진 + 글 |
+| ②-1 심의필 Word | PC (`goms-approved.ps1` 끝, `scripts/threads/word-banner.mjs`) | 저장소 배너로 Word 속 배너 사진만 바꿔 Drive `ClaudeWorkspace/보험글-심의필/스레드 N편.docx` (원본 `보험글/` 은 그대로 — GOMS 재심사용) |
+| ③ 올리기 | PC 작업 스케줄러 `SeonggeulThreadsPost` (`launchers/tools/threads-post.ps1` → `scripts/threads/insurance-post.mjs --post`, 바로 한 편: `launchers/threads-post-now.cmd`) | 한 번에 한 편: 적격·유효기간 안·Word 있음·배너 공개 주소 열림·아직 안 올림·앞 번호 중 결과 못 읽은 편 없음(반려 편은 건너뜀)·오늘 5편 미만·마지막 보험글 40분 넘음 → 1/2 글 + 2/2 글·배너. 2/2 가 빠진 편이 있으면 그것부터 붙인다 |
 
 - **글은 심의받은 Word 에서 그대로 읽는다** (사진 문단 앞까지, 반려 뒤 넣은 빨간 문구 포함). 묶음 파일(.md)을 고쳐도 올라가는 글은 바뀌지 않는다 —
   고쳐야 하면 Word 를 다시 만들고 GOMS 에 다시 심의받는다.

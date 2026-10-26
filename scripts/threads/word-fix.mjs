@@ -132,6 +132,23 @@ export function wordText(file) {
   return lines.join('\n');
 }
 
+/**
+ * Word 속 배너 사진을 다른 사진으로 바꿔 새 파일로 저장한다 (2026-10-26 — 편마다 심의필 번호·유효기간을 넣은 배너).
+ * 원본 Word 는 그대로 둔다 (GOMS 재심사에 올리는 파일이라). 바꾼 뒤 다시 읽어 사진이 새 것과 같은지 확인한다.
+ */
+export function replaceImage(src, dest, jpg) {
+  const entries = readZip(fs.readFileSync(src));
+  const media = entries.filter((e) => /^word\/media\/[^/]+\.(jpe?g|png)$/i.test(e.name));
+  if (media.length !== 1) throw new Error(`Word 안 사진이 ${media.length}장이에요 (1장이어야 함)`);
+  const name = media[0].name;
+  if (!/\.jpe?g$/i.test(name)) throw new Error(`Word 안 사진이 jpg 가 아니에요 (${name})`);
+  const tmp = `${dest}.tmp`;
+  fs.writeFileSync(tmp, writeZip(entries, new Map([[name, jpg]])));
+  const back = content(readZip(fs.readFileSync(tmp)).find((e) => e.name === name));
+  if (!back.equals(jpg)) { fs.rmSync(tmp); throw new Error('바꾼 뒤 다시 읽었는데 사진이 달라요'); }
+  fs.renameSync(tmp, dest);
+}
+
 /** Word 에 빠진 문구 목록. */
 export function missingIn(file, phrases) {
   const xml = content(readZip(fs.readFileSync(file)).find((e) => e.name === 'word/document.xml')).toString('utf8');
