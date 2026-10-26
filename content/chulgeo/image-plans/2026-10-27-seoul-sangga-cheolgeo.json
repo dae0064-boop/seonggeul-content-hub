@@ -1,0 +1,76 @@
+{
+  "slug": "2026-10-27-seoul-sangga-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "테이블과 의자를 빼고 비워 둔 작은 식당 홀 (대표사진)",
+      "scene": "wide view of a small Korean restaurant dining hall after closing, tables and chairs removed, plain walls, tiled floor with marks where tables stood, warm daylight through the front glass door.",
+      "prompt": "Camera and composition: wide view of a small Korean restaurant dining hall after closing, tables and chairs removed, plain walls, tiled floor with marks where tables stood, warm daylight through the front glass door. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "서울 상가 철거\n식당 확인할 것"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "카운터 위에 펼쳐 둔 빈 임대차 계약서와 펜",
+      "scene": "close top-down view of a wooden restaurant counter with a few blank paper documents spread out and a ballpoint pen beside them.",
+      "prompt": "Camera and composition: close top-down view of a wooden restaurant counter with a few blank paper documents spread out and a ballpoint pen beside them. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "후드와 덕트가 천장에 달린 식당 주방 안쪽",
+      "scene": "inside a stainless steel Korean restaurant kitchen with a large range hood and ventilation duct on the ceiling, empty cooking stations, slightly greasy tiles, ready for demolition.",
+      "prompt": "Camera and composition: inside a stainless steel Korean restaurant kitchen with a large range hood and ventilation duct on the ceiling, empty cooking stations, slightly greasy tiles, ready for demolition. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "식당 철거 전에 확인할 것을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "식당 철거 전 확인",
+        "items": [
+          "원상복구 조건",
+          "건물주와 정한 범위",
+          "팔거나 가져갈 집기",
+          "가스·전기 정리",
+          "관리실에 날짜 알리기"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "상가 건물 뒤편 좁은 골목에 대 놓은 작은 화물차",
+      "scene": "a narrow alley behind a Korean shopping building with a small blank white cargo truck parked by the back door, stacked tied sacks waiting beside it.",
+      "prompt": "Camera and composition: a narrow alley behind a Korean shopping building with a small blank white cargo truck parked by the back door, stacked tied sacks waiting beside it. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "상가 건물 복도 바닥에 깔아 둔 보호 시트",
+      "scene": "a commercial building corridor with thick grey protective sheets taped along the floor and lower walls in front of a vacant shop door.",
+      "prompt": "Camera and composition: a commercial building corridor with thick grey protective sheets taped along the floor and lower walls in front of a vacant shop door. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "철거를 마치고 바닥만 남은 깨끗한 상가 내부",
+      "scene": "an empty Korean shop interior after full demolition, bare concrete floor swept clean, exposed ceiling, walls stripped, bright and orderly.",
+      "prompt": "Camera and composition: an empty Korean shop interior after full demolition, bare concrete floor swept clean, exposed ceiling, walls stripped, bright and orderly. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "셔터를 반쯤 내린 빈 상가 앞 인도",
+      "scene": "street-level view of a vacant Korean storefront with the metal shutter half lowered, clean sidewalk, quiet afternoon.",
+      "prompt": "Camera and composition: street-level view of a vacant Korean storefront with the metal shutter half lowered, clean sidewalk, quiet afternoon. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

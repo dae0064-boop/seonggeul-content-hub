@@ -14,6 +14,7 @@ content/calendar/  발행 캘린더(publish-calendar.html — 밤 원고 작업�
 content/board/     원고 작업실 아티팩트 소스
 content/affiliate/ 제휴 링크 — 네이버=쇼핑 커넥트(brandconnect-links.tsv, 2026-10-26~ 자동 하루 1편), 티스토리=쿠팡 파트너스 (README.md)
 content/archive/published.tsv  발행이 끝나 지운 원고 목록 (날짜·채널·슬러그·메인 키워드·제목). 같은 키워드를 다시 쓰지 않게
+content/chulgeo/   다와이철거 홍보 블로그 (2026-10-26~, 성글벙글과 별개·다른 네이버 계정). 규칙 정본 README.md, 원고 posts/, 검사 scripts/chulgeo/lint.mjs
 content/threads/   스레드 말투 규칙(voice.md) + 글감(topics.txt)
 content/threads/insurance/  스레드 보험 심의글 — 규칙(rules.md)·글감·10편 묶음(sets/)
 scripts/           발행·검수 자동화(.mjs) + 워크스페이스 동기화 도구(.py)

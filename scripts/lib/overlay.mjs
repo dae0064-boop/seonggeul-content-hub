@@ -149,7 +149,7 @@ function cardThumbHtml(imgDataUrl, S, o) {
   </style><body>
     <div class="top">${tl.map((t, i) => `<div class="title">${keyLine(t, hasKey ? o.key : '', i === 0)}</div>`).join('')}</div>
     <div class="photo"><img src="${imgDataUrl}"></div>
-    <div class="foot"><div class="cat">${esc(o.category || '생활정보')}</div><div class="brand">성글벙글</div></div>
+    <div class="foot"><div class="cat">${esc(o.category || '생활정보')}</div><div class="brand">${esc(o.brand || '성글벙글')}</div></div>
   </body>`;
 }
 
@@ -221,7 +221,7 @@ function cardHtml(S, c) {
   </style><body><div class="card">
     <div class="head"><span class="fit">${esc(c.title)}</span></div>
     ${body}
-    <div class="brand">성글벙글</div>
+    <div class="brand">${esc(c.brand || '성글벙글')}</div>
   </div></body>`;
 }
 

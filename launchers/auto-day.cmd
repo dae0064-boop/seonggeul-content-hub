@@ -26,6 +26,8 @@ REM 다음 원고 키워드 후보의 월간 검색량을 조회해 Drive 로 �
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\keyword-volume.ps1"
 REM 다른 블로그 살펴보기 요청이 있으면 (content\research\blog-snapshot.txt) 읽기만 하고 Drive 로 올린다
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\blog-snapshot.ps1"
+REM 다와이철거 홍보 블로그 (2026-10-26): 철거 블로그 전용 크롬(9223)으로 예약발행. 로그인 전이면 건너뛴다
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\chulgeo-day.ps1"
 REM 지난 날짜 그림·화면 기록을 이 PC 에서 지운다 (2026-10-05 사용자: 발행이 끝난 지난 것은 삭제)
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\cleanup.ps1"
 REM 예전에 등록한 PC 라도 "다시 시도" 시각이 생기게 한다 (한 번만 바뀐다)
