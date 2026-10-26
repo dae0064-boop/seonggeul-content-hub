@@ -54,7 +54,12 @@ const HOMEFEED3 = 1;
 //   저장소 기록은 같은 때 생활보장 19(맞음)·생활정보 90 → 생활정보 차이 35 (자동화 전 옛 글·사용자가 직접 올린 글). 앞서 말로 들은 126·131 로 33·41 을 썼다가 화면 숫자로 고침.
 // 예상 날짜: 생활보장 31번째 = 10/28 원고 세 번째 생활보장 글 (10/27 원고부터 하루 4편 — 처음 예상은 하루 3편 기준 10/29).
 // 생활정보는 클레이 3D 그대로 (2026-10-25 사용자 "3D 로 쭉 밀고 가는 게 낫다던데" → Claude 추천: 홈판에 걸린 글이 모두 클레이라 151번째 전환을 뺌).
-const REAL_AFTER = { 생활보장: 30, 생활정보: Infinity };
+// 2026-10-26 사용자 — 시험 그림(실사·클레이)을 보고 "클레이 3D 그대로" → 생활보장 31번째 실사풍 전환도 취소. 모두 클레이.
+const REAL_AFTER = { 생활보장: Infinity, 생활정보: Infinity };
+// 대표사진 새 모양 (2026-10-26 사용자 — 시험 그림 close4-02 "이 느낌으로", 2026-10-27 네이버 원고부터):
+//   1번 = 한 사람 얼굴 가까이(thumbnail_closeup)·생각하는 표정·강조색, 글씨는 위쪽 남색 띠(look "band") 두 줄 — 첫 줄 메인 키워드, 둘째 줄 질문(숫자 없음).
+//   그림 장면은 style_v2(파스텔보다 진한 색 + 강조색 하나). 검색 결과에서 크림색 빈 벽·작은 두 사람·키워드 반복 글씨가 눈에 안 띄었다.
+const THUMB2_FROM = '2026-10-27';
 const COUNT_OFFSET = { 생활보장: 0, 생활정보: 35 };
 function categoryOrdinal(file, post, dated) {
   let n = COUNT_OFFSET[post.category] || 0;
@@ -102,6 +107,14 @@ const FILE_DOWNLOAD = /(flDownload|fileDown|[Dd]ownload\.do|\.(pdf|hwpx?|docx?|x
 const NOT_PRIMARY = /(^|\.)(blog\.naver\.com|m\.blog\.naver\.com|cafe\.naver\.com|post\.naver\.com|n\.news\.naver\.com|news\.naver\.com|tistory\.com|brunch\.co\.kr|youtube\.com|youtu\.be|namu\.wiki|wikipedia\.org|instagram\.com|threads\.net|search\.naver\.com|google\.com|daum\.net)$/i;
 const plain = (s) => String(s).replace(/\[\/?(빨간글씨|파란글씨|노란배경)\]/g, '').replace(/[\s①-⑧✔⭕❌·,.!?()~\-]/g, '');
 const titleBracket = (t) => /\s\(([^()]*)\)\s*$/.exec(t);
+let imageStyleCache;
+function imageStyle() {
+  if (imageStyleCache === undefined) {
+    try { imageStyleCache = JSON.parse(fs.readFileSync(new URL('../standards/image-style.json', import.meta.url), 'utf8')); }
+    catch { imageStyleCache = {}; }
+  }
+  return imageStyleCache;
+}
 function planOf(file) {
   const slug = file.split(/[\\/]/).pop().replace(/\.md$/, '');
   try { return JSON.parse(fs.readFileSync(`content/image-plans/${slug}.json`, 'utf8')); } catch { return null; }
@@ -480,6 +493,63 @@ for (const file of files) {
       if (real && clay.length) errors.push(`${post.category} ${nth}번째 글이라 실사풍입니다 — 이미지 계획서 ${clay.join(', ')}번에 clay 문구가 있습니다 (standards/image-style.json ${post.category === '생활보장' ? 'style_care' : 'style_life'})`);
       const notClay = scenes.filter((im) => !/clay|plasticine/i.test(im.prompt)).map((im) => im.n);
       if (!real && notClay.length) errors.push(`${post.category} ${nth}번째 글이라 ${Number.isFinite(REAL_AFTER[post.category]) ? `아직 클레이 3D 입니다(${REAL_AFTER[post.category]}편까지)` : '클레이 3D 입니다'} — 이미지 계획서 ${notClay.join(', ')}번에 clay 문구가 없습니다 (standards/image-style.json style)`);
+    }
+  }
+  // 대표사진 새 모양·진한 색 (THUMB2_FROM 네이버 원고부터)
+  if (!tistory && dated >= THUMB2_FROM) {
+    const plan = planOf(file);
+    if (plan && Array.isArray(plan.images)) {
+      const t = plan.images.find((im) => im.n === 1);
+      const ov = t?.overlay || {};
+      const tl = String(ov.title || '').split('\n');
+      const ns = (x) => x.replace(/\s/g, '');
+      if (!t) errors.push('대표사진(1번)이 이미지 계획서에 없습니다');
+      else {
+        if (ov.kind !== 'thumb' || ov.look !== 'band') errors.push('대표사진 글씨는 위쪽 띠 모양입니다 — 1번 overlay 에 "kind": "thumb", "look": "band" (standards/이미지-기준.md "대표사진 제목")');
+        if (tl.length !== 2) errors.push(`대표사진 글씨는 두 줄입니다 (지금 ${tl.length}줄) — 첫 줄 메인 키워드, 둘째 줄 질문`);
+        else {
+          if (post.mainKeyword && !ns(tl[0]).includes(ns(post.mainKeyword)) && !ns(post.mainKeyword).startsWith(ns(tl[0]))) errors.push(`대표사진 첫 줄 "${tl[0]}" 에 메인 키워드 "${post.mainKeyword}" 가 없습니다`);
+          if (!/\?$/.test(tl[1].trim())) errors.push(`대표사진 둘째 줄 "${tl[1]}" 은 질문(?로 끝남)으로 씁니다 — 예: "하루 얼마?", "누가 받을까?"`);
+          for (const l of tl) if (ns(l).length > 10) errors.push(`대표사진 한 줄 "${l}" 이 ${ns(l).length}자 — 10자 안쪽 (길면 글씨가 작아진다)`);
+        }
+        if (/\d/.test(ov.title || '')) errors.push('대표사진 글씨에 숫자를 넣지 않습니다 (2026-10-02 사용자 — 숫자 꼬리표 없음)');
+        if (!/close-up/i.test(t.prompt || '')) errors.push('대표사진 그림은 한 사람 얼굴 가까이입니다 — 1번 프롬프트에 standards/image-style.json thumbnail_closeup 문구를 넣으세요');
+        if (/top third of the image as plain/i.test(t.prompt || '')) errors.push('대표사진 그림에 "위쪽 3분의 1 비우기"(thumbnail_space)를 쓰지 않습니다 — thumbnail_closeup 으로');
+        // 대표사진마다 사람·색·표정·글씨가 달라 보이게 (2026-10-26 사용자 — 블로그 첫 화면이 모두 민트 목도리 성글이·크림색이라 눈에 안 띄었다)
+        const st = imageStyle();
+        const theme = st.thumb_themes?.[t.thumb_theme];
+        if (!theme) errors.push(`대표사진(1번)에 thumb_theme 이 없거나 목록 밖입니다 (${Object.keys(st.thumb_themes || {}).join('·')})`);
+        else {
+          if (ov.theme !== t.thumb_theme) errors.push(`대표사진 overlay "theme" 을 thumb_theme 과 같게 ("${t.thumb_theme}")`);
+          if (!(t.prompt || '').includes(theme.scene)) errors.push(`대표사진 프롬프트에 테마 색 문구가 없습니다 — "${theme.scene}"`);
+        }
+        if (!t.thumb_person) errors.push('대표사진(1번)에 thumb_person(예: "60대 남성", "30대 엄마와 아이")이 없습니다 — 글 상황에 맞는 사람');
+        if (!st.thumb_moods?.[t.thumb_mood]) errors.push(`대표사진(1번)에 thumb_mood 가 없거나 목록 밖입니다 (${Object.keys(st.thumb_moods || {}).join('·')})`);
+        else if (!(t.prompt || '').includes(st.thumb_moods[t.thumb_mood])) errors.push(`대표사진 프롬프트에 표정 문구가 없습니다 — "${st.thumb_moods[t.thumb_mood]}"`);
+        if (/Seonggeul|mint (green )?scarf|apricot knit cardigan|mint green vest/i.test(t.prompt || '')) errors.push('대표사진에는 고정 캐릭터(성글이·할머니·할아버지·자녀)를 쓰지 않습니다 — 글 상황에 맞는 사람을 새로');
+        if (ov.font && !['jua', 'ptd'].includes(ov.font)) errors.push('대표사진 overlay "font" 는 jua 또는 ptd');
+        // 같은 날 네이버 글끼리 테마·사람·표정이 겹치지 않게, 전날 같은 시각 글과 테마가 겹치지 않게
+        const dir = file.replace(/[^\\/]+$/, '') || './';
+        const prev = new Date(Date.parse(dated) - 864e5).toISOString().slice(0, 10);
+        const me = file.split(/[\\/]/).pop();
+        for (const f of [...daySibs(dir, dated), ...daySibs(dir, prev)]) {
+          if (f === me) continue;
+          const o1 = planOf(dir + f)?.images?.find((im) => im.n === 1);
+          if (!o1) continue;
+          const same = f.startsWith(dated);
+          let pa = '';
+          try { pa = parsePost(fs.readFileSync(dir + f, 'utf8')).publishAt?.slice(11) || ''; } catch { /* 없으면 시각 비교 안 함 */ }
+          if (same) {
+            if (o1.thumb_theme && o1.thumb_theme === t.thumb_theme) errors.push(`같은 날 ${f} 와 대표사진 테마(${t.thumb_theme})가 같습니다`);
+            if (o1.thumb_person && o1.thumb_person === t.thumb_person) errors.push(`같은 날 ${f} 와 대표사진 사람(${t.thumb_person})이 같습니다`);
+            if (o1.thumb_mood && o1.thumb_mood === t.thumb_mood) errors.push(`같은 날 ${f} 와 대표사진 표정(${t.thumb_mood})이 같습니다`);
+          } else if (pa && pa === (post.publishAt || '').slice(11) && o1.thumb_theme === t.thumb_theme) {
+            errors.push(`전날 같은 시각 글 ${f} 와 대표사진 테마(${t.thumb_theme})가 같습니다`);
+          }
+        }
+      }
+      const flat = plan.images.filter((im) => im.kind !== 'card' && im.prompt && !/saturated/i.test(im.prompt)).map((im) => im.n);
+      if (flat.length) errors.push(`그림 ${flat.join(', ')}번에 style_v2(파스텔보다 진한 색) 문구가 없습니다 — standards/image-style.json style_v2·palette_v2`);
     }
   }
   // 한다팀장 블로그와 같은 메인 키워드 금지 (2026-10-20 ~ 10-25 네이버 원고). 2026-10-26 원고부터 푼다 —

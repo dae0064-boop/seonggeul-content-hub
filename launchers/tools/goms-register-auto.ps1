@@ -38,7 +38,9 @@ $stamp = Get-Date -Format 'yyyy-MM-dd_HHmm'
 $out = Join-Path $repo "dumps\goms-register-$stamp"
 New-Item -ItemType Directory -Force -Path $out | Out-Null
 Write-Host "GOMS 광고심의 자동 등록 — 스레드 $($todo -join ', ')편 (한 편에 1~2분)..."
-$log = @(& node scripts\threads\word-fix.mjs --dir $fileDir --notice ($todo -join ',') 2>&1 | ForEach-Object { "$_" })
+# 등록 직전에 그 편 Word 를 최신 원고로 다시 만든다 — 밤 작업이 출처를 다시 확인하며 고친 문장이 그대로 올라가게 (2026-10-26)
+$log = @(& node scripts\threads\word-make.mjs --out $fileDir --only ($todo -join ',') --force 2>&1 | ForEach-Object { "$_" })
+$log += @(& node scripts\threads\word-fix.mjs --dir $fileDir --notice ($todo -join ',') 2>&1 | ForEach-Object { "$_" })
 # goms-ad 는 --from ~ --to 사이를 차례로 하며 .done 이 있는 편은 건너뛴다
 $log += @(& node scripts\goms-ad.mjs --file-dir $fileDir --submit --from $todo[0] --to $todo[-1] --done-dir $doneDir --out $out 2>&1 | ForEach-Object { "$_" })
 $code = $LASTEXITCODE

@@ -2,7 +2,7 @@
 /**
  * 스레드 보험글 Word 만들기 — Python 없이 (2026-10-26: 사무실 PC 에 Python 이 없어 insurance-word.py 가 새 묶음 Word 를 못 만든다).
  *
- *   node scripts/threads/word-make.mjs --out <Drive 보험글> [--force]
+ *   node scripts/threads/word-make.mjs --out <Drive 보험글> [--force] [--only 31,32]
  *
  * content/threads/insurance/sets/*.md 를 이름순으로 읽어 편 번호를 이어 매기고(insurance-word.py 와 같은 번호),
  * 없는 「스레드 N편.docx」만 만든다. 모양은 insurance-word.py 가 만든 틀(word-template.docx — 본문 줄마다 한 문단, 빈 줄, 배너 사진) 그대로.
@@ -19,6 +19,8 @@ const argv = process.argv.slice(2);
 const arg = (n) => { const i = argv.indexOf(n); return i >= 0 ? argv[i + 1] : ''; };
 const out = arg('--out');
 const force = argv.includes('--force');
+// --only 31,32,…: 그 편만 (원고를 고친 편을 등록 직전에 다시 만들 때 — goms-register-auto.ps1)
+const only = new Set((arg('--only') || '').split(',').map(Number).filter(Boolean));
 if (!out) { console.log('사용법: node scripts/threads/word-make.mjs --out <보험글 폴더> [--force]'); process.exit(1); }
 
 /** 묶음 파일의 편들 — insurance-word.py parse_set 과 같은 규칙 (## 번호, 앞머리 칸 뒤가 본문). */
@@ -54,6 +56,7 @@ let n = 0, made = 0, kept = 0;
 for (const f of fs.readdirSync(SETS).filter((x) => x.endsWith('.md')).sort()) {
   for (const p of parseSet(fs.readFileSync(path.join(SETS, f), 'utf8'))) {
     n++;
+    if (only.size && !only.has(n)) continue;
     const dest = path.join(out, `스레드 ${n}편.docx`);
     if (fs.existsSync(dest) && !force) { kept++; continue; }
     const tmp = `${dest}.tmp`;

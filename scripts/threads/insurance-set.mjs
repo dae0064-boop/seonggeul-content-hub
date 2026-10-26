@@ -109,6 +109,8 @@ export function checkSet(set, previous = []) {
   }
 
   // ---- 지난 묶음과 겹치지 않는가
+  // 엄격한 출처 검사는 2026-10-27 쓴 묶음부터 (written 칸, 없으면 date)
+  const strict = String(set.meta.written || set.meta.date || '') >= '2026-10-27';
   const oldPosts = previous.flatMap((s) => s.posts.map((p) => ({ ...p, date: s.meta.date || '?' })));
   for (const p of posts) {
     for (const o of oldPosts) {
@@ -157,7 +159,16 @@ export function checkSet(set, previous = []) {
       errors.push(`${tag}: 숫자가 있는데 출처 링크가 없습니다. 출처 칸에 기관·자료명·링크를 적습니다.`);
     }
     if (!p.출처) errors.push(`${tag}: 출처 칸이 없습니다. 숫자가 없으면 "출처: 없음" 이라고 적습니다.`);
-    if (/안\s*함/.test(p.원문확인 || '')) notes.push(`${tag}: 출처 원문을 아직 열어 보지 않았습니다. 올리기 전에 링크를 열어 확인합니다.`);
+    if (/안\s*함/.test(p.원문확인 || '')) (strict ? errors : notes).push(`${tag}: 출처 원문을 아직 열어 보지 않았습니다. ${strict ? '원문을 실제로 열어 확인하고 "원문확인: 함" 으로 적거나, 확인 못 한 내용은 빼고 씁니다.' : '올리기 전에 링크를 열어 확인합니다.'}`);
+    if (strict) {
+      // 2026-10-27 쓴 묶음부터 (사용자 — "정확한 근거와 출처로만, 애매하면 스레드에서 태클 건다"): 사실을 담은 글은 1차 원문을 열어 본 것만
+      const hasFact = /\d/.test(p.body) || /(법|제도|약관|청구|기간|시효|공단|금감원|금융감독원|보험협회)/.test(p.body);
+      if (!/^(함|해당\s*없음)$/.test((p.원문확인 || '').trim())) errors.push(`${tag}: "원문확인:" 은 함 또는 해당 없음 만 씁니다.`);
+      if (hasFact && /해당\s*없음/.test(p.원문확인 || '')) errors.push(`${tag}: 숫자·제도·기간이 들어간 글은 1차 원문을 열어 확인하고 "원문확인: 함" 이어야 합니다.`);
+      if (hasFact && !/https?:\/\//.test(p.출처 || '')) errors.push(`${tag}: 숫자·제도·기간이 들어간 글은 출처에 1차 원문 링크가 있어야 합니다.`);
+      const bad = (p.출처 || '').match(/https?:\/\/[^\s)]*(blog\.|cafe\.|tistory|brunch|namu\.wiki|youtube|youtu\.be|news\.|\.news|post\.naver|kin\.naver|velog|medium\.com)[^\s)]*/i);
+      if (bad) errors.push(`${tag}: 출처가 2차 자료(블로그·카페·뉴스·영상)입니다 — 정부·금융당국·보험협회·법령 원문으로 바꿉니다 (${bad[0]}).`);
+    }
     // 마침표만 이어지면 딱딱하다 — 느낌표·말줄임표를 섞는다 (2026-10-02 사용자 지시)
     if (!/[!…~]/.test(p.body)) notes.push(`${tag}: 느낌표·말줄임표가 하나도 없습니다. 말끝을 상황에 맞게 섞어 주세요.`);
     if (/보장/.test(p.body)) notes.push(`${tag}: "보장" — 약속하는 말이 아니라 이름씨(보장 내용·범위)로 쓰였는지 확인.`);
