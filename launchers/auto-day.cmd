@@ -20,6 +20,8 @@ REM 내 블로그 통계(유입 검색어·글별 조회수)를 읽기만 하고
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\blog-stats.ps1"
 REM 티스토리 상태(방문 통계·유입·애드센스 연동·구글 색인)를 읽기만 하고 Drive 로 올린다 (2026-10-14)
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\tistory-stats.ps1"
+REM 색인 안 된 티스토리 글을 구글 서치 콘솔에 하루 10편씩 색인 생성 요청 (2026-10-26)
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\sc-request.ps1"
 REM 다음 원고 키워드 후보의 월간 검색량을 조회해 Drive 로 올린다 (content\calendar\keyword-queue.txt)
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\keyword-volume.ps1"
 REM 다른 블로그 살펴보기 요청이 있으면 (content\research\blog-snapshot.txt) 읽기만 하고 Drive 로 올린다
