@@ -1,0 +1,92 @@
+{
+  "slug": "2026-10-27-chimae-ansim-center",
+  "title": "치매안심센터, 가족이 가면 무엇을 도와주나요 (검진주기 2년 · 2026년)",
+  "source": "10/27(화) 원고 (10/26 밤 Routine 1차)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 10/27 원고부터 style_v2·대표사진 테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "상담실 책상 앞에서 메모를 보며 설명을 듣는 60대 남성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame, face placed slightly below the center so the top fifth of the image is softly blurred background (a title band goes there). The person looks thoughtful or curious (finger on chin, looking at a paper or the key object), not scared, sad or in pain. The related scene stays softly blurred in the background. A Korean man in his 60s with neat white hair and a gentle face, wearing an orange cardigan over a checked shirt, holding a small memo pad and listening at a counseling desk; a blurred bright counseling room behind him. Facial expression: relieved gentle smile. Color theme: teal and sand tones with an orange accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up, eye level, face and shoulders",
+      "bg": "teal and sand tones with an orange accent",
+      "note": "대표",
+      "thumb_theme": "teal",
+      "thumb_person": "60대 남성",
+      "thumb_mood": "안심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "teal",
+        "font": "jua",
+        "title": "치매안심센터\n뭘 도와줄까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "보건소 건물 앞 화단 옆을 걸어가는 노부부",
+      "prompt": "Camera and composition: wide shot outside a public health center building with a blank sign. An elderly couple walking past a flower bed in front of a public health center Background color: pale peach. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot outside a public health center building with a blank sign",
+      "bg": "pale peach"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "치매안심센터가 하는 일을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "치매안심센터가 하는 일",
+        "items": [
+          "치매 조기검진",
+          "치매환자 등록과 관리",
+          "단기쉼터 운영",
+          "치매 가족지원 사업",
+          "장기요양인정 신청"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "탁자 위에 놓인 빈 검사지와 연필, 돋보기",
+      "prompt": "Camera and composition: top-down shot of a table. A blank test sheet, a pencil and a magnifying glass placed neatly on a wooden table Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "top-down shot of a table",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "달력에 동그라미를 그리는 70대 어머니",
+      "prompt": "Camera and composition: medium shot beside a wall. An elderly mother in her 70s drawing a circle on a blank wall calendar Background color: light butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot beside a wall",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "거실에서 다른 가족들과 둘러앉아 이야기하는 50대 딸",
+      "prompt": "Camera and composition: medium shot in a living room. A woman in her 50s sitting in a circle with other family members, talking warmly Background color: soft sage green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a living room",
+      "bg": "soft sage green"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "현관에서 신분증과 수첩을 챙기는 아들",
+      "prompt": "Camera and composition: eye-level shot at a home entrance. A grown son putting an ID card and a small notebook into his jacket pocket at the entrance Background color: lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "eye-level shot at a home entrance",
+      "bg": "lavender"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "햇살 아래 공원 산책로를 함께 걷는 아버지와 아들",
+      "prompt": "Camera and composition: wide shot of a sunny park path. An elderly father and his adult son walking together along a park path in the sunlight Background color: warm apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a sunny park path",
+      "bg": "warm apricot"
+    }
+  ]
+}
