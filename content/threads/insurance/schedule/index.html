@@ -1,0 +1,157 @@
+<title>스레드 보험글 일정표</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* 배너의 주황 + 증권 서류 같은 남색 잉크. 위에서 아래로: 요약 흐름 → 다음 게시 → 게시 완료 → 전체 편 */
+:root {
+  --bg: #f6f5f2; --panel: #ffffff; --ink: #1e2a3a; --muted: #67707d; --line: #e3e1db;
+  --accent: #e8672a; --accent-soft: #fbe5d9;
+  --ok: #2f7d4f; --ok-soft: #e1f1e7; --warn: #a3620b; --warn-soft: #f8ecd5; --bad: #b53a3a; --bad-soft: #f6e0e0; --idle: #8a8f98; --idle-soft: #eceae5;
+  --sans: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #12161d; --panel: #1a2029; --ink: #e7eaef; --muted: #9aa3ae; --line: #2a323d;
+  --accent: #f08a54; --accent-soft: #3a2519;
+  --ok: #6cc28f; --ok-soft: #173023; --warn: #e2a64f; --warn-soft: #34270f; --bad: #e88686; --bad-soft: #3a1c1c; --idle: #8d949e; --idle-soft: #232a33; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #12161d; --panel: #1a2029; --ink: #e7eaef; --muted: #9aa3ae; --line: #2a323d;
+  --accent: #f08a54; --accent-soft: #3a2519;
+  --ok: #6cc28f; --ok-soft: #173023; --warn: #e2a64f; --warn-soft: #34270f; --bad: #e88686; --bad-soft: #3a1c1c; --idle: #8d949e; --idle-soft: #232a33; color-scheme: dark }
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--ink); font: 15px/1.6 var(--sans); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 24px 48px }
+.wrap { max-width: 980px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px }
+h1 { font-size: 1.6rem; font-weight: 700; margin: 0; text-wrap: balance; letter-spacing: -0.01em }
+h2 { font-size: 1.05rem; font-weight: 700; margin: 0 0 12px; display: flex; gap: 8px; align-items: baseline }
+h2 small { font-weight: 500; color: var(--muted); font-size: .85rem }
+.head { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline; justify-content: space-between }
+.meta { color: var(--muted); font-size: .9rem }
+.num { font-family: var(--mono); font-variant-numeric: tabular-nums }
+/* 흐름: 등록 전 → 심의 중 → 게시 예정 → 게시됨, 반려는 옆길 */
+.flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px }
+.step { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; display: grid; gap: 2px; min-width: 0 }
+.step b { font-size: 1.6rem; font-family: var(--mono); font-weight: 500; line-height: 1.2 }
+.step span { color: var(--muted); font-size: .85rem }
+.step.hot { border-color: var(--accent); background: var(--accent-soft) }
+.step.side { border-style: dashed }
+@media (max-width: 640px) { .flow { grid-template-columns: repeat(2, minmax(0, 1fr)) } }
+/* 다음 게시: 날짜마다 5칸 */
+.days { display: grid; gap: 10px }
+.day { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 12px; align-items: start }
+.day h3 { margin: 0; font-size: .95rem; font-weight: 600 }
+.day h3 small { display: block; color: var(--muted); font-weight: 500; font-size: .8rem }
+.slots { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px }
+.slot { border-left: 3px solid var(--accent); padding: 2px 0 2px 8px; min-width: 0 }
+.slot.empty { border-left-color: var(--line); color: var(--muted) }
+.slot .t { font-family: var(--mono); font-size: .8rem; color: var(--muted) }
+.slot .p { font-weight: 600; font-size: .9rem }
+.slot .f { font-size: .82rem; color: var(--muted); overflow-wrap: anywhere }
+@media (max-width: 760px) { .day { grid-template-columns: 1fr } .slots { grid-template-columns: 1fr } .slot { display: grid; grid-template-columns: 3.2rem 3.6rem minmax(0, 1fr); gap: 6px; align-items: baseline } }
+/* 표 */
+.tablebox { overflow-x: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 10px }
+table { border-collapse: collapse; width: 100%; font-size: .88rem }
+th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--line); vertical-align: top }
+th { font-weight: 600; color: var(--muted); font-size: .8rem; letter-spacing: .02em; white-space: nowrap }
+tr:last-child td { border-bottom: 0 }
+td.first { min-width: 16rem }
+a { color: var(--accent); text-underline-offset: 2px }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+.pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: .78rem; font-weight: 600; white-space: nowrap }
+.s-게시됨 { background: var(--ok-soft); color: var(--ok) }
+.s-게시예정 { background: var(--accent-soft); color: var(--accent) }
+.s-반려재심사 { background: var(--bad-soft); color: var(--bad) }
+.s-심의중 { background: var(--warn-soft); color: var(--warn) }
+.s-등록전 { background: var(--idle-soft); color: var(--idle) }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px }
+.filters button { font: inherit; font-size: .85rem; border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 999px; padding: 3px 12px; cursor: pointer }
+.filters button[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink) }
+.empty-state { color: var(--muted); padding: 16px }
+.note { color: var(--muted); font-size: .85rem; margin: 8px 0 0 }
+</style>
+
+<div class="wrap">
+  <header class="head">
+    <div>
+      <h1>스레드 보험글 일정표</h1>
+      <div class="meta">GOMS 광고심의 승인 편만, 번호 순서대로 하루 5편 · <span id="slots" class="num"></span></div>
+    </div>
+    <div class="meta">갱신 <span id="updated" class="num">—</span></div>
+  </header>
+
+  <section aria-labelledby="h-flow">
+    <h2 id="h-flow">지금 상태</h2>
+    <div class="flow" id="flow"></div>
+    <p class="note">등록 전 → 심의 중(GOMS 하루 10편 등록) → 게시 예정(승인·배너 준비) → 게시됨. 반려는 재심사로 승인되면 번호 순서대로 끼어 들어가요.</p>
+  </section>
+
+  <section aria-labelledby="h-next">
+    <h2 id="h-next">다음 게시 <small>예상 — 반려·재심사 결과에 따라 바뀌어요</small></h2>
+    <div class="days" id="days"><div class="empty-state">자료를 불러오는 중이에요.</div></div>
+  </section>
+
+  <section aria-labelledby="h-done">
+    <h2 id="h-done">게시 완료 <small id="done-count"></small></h2>
+    <div class="tablebox"><table>
+      <thead><tr><th>게시 시각</th><th>편</th><th>첫 줄</th><th>심의필</th><th>스레드</th></tr></thead>
+      <tbody id="done"><tr><td colspan="5" class="empty-state">아직 게시한 편이 없어요.</td></tr></tbody>
+    </table></div>
+  </section>
+
+  <section aria-labelledby="h-all">
+    <h2 id="h-all">전체 편</h2>
+    <div class="filters" id="filters" role="group" aria-label="상태로 거르기"></div>
+    <div class="tablebox"><table>
+      <thead><tr><th>편</th><th>상태</th><th>시각</th><th>첫 줄</th><th>보험</th><th>묶음</th></tr></thead>
+      <tbody id="all"></tbody>
+    </table></div>
+  </section>
+</div>
+
+<script>
+const STATUSES = ['게시됨', '게시 예정', '심의 중', '반려·재심사', '등록 전'];
+const cls = (s) => 's-' + s.replace(/[\s·]/g, '');
+const esc = (t) => String(t ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const WD = ['일', '월', '화', '수', '목', '금', '토'];
+const dayLabel = (d) => { const x = new Date(d + 'T00:00:00'); return `${x.getMonth() + 1}월 ${x.getDate()}일 (${WD[x.getDay()]})`; };
+let filter = '전체';
+try { filter = localStorage.getItem('threads-filter') || '전체'; } catch (e) {}
+
+function render(d) {
+  document.getElementById('updated').textContent = d.updated;
+  document.getElementById('slots').textContent = d.slots.join(' · ');
+  const s = d.summary;
+  const steps = [['등록 전', s.unregistered], ['심의 중', s.reviewing], ['게시 예정', s.queued, 'hot'], ['게시됨', s.posted], ['반려·재심사', s.rejected, 'side']];
+  document.getElementById('flow').innerHTML = steps.map(([k, v, c]) => `<div class="step ${c || ''}"><b>${v}</b><span>${k}</span></div>`).join('');
+
+  const plan = d.items.filter((i) => i.status === '게시 예정' && i.when).sort((a, b) => a.when.localeCompare(b.when));
+  const byDay = new Map();
+  for (const i of plan) { const k = i.when.slice(0, 10); if (!byDay.has(k)) byDay.set(k, []); byDay.get(k).push(i); }
+  const days = [...byDay].slice(0, 7);
+  document.getElementById('days').innerHTML = days.length ? days.map(([k, list]) => `
+    <div class="day"><h3>${dayLabel(k)}<small>${list.length}편</small></h3><div class="slots">
+      ${d.slots.map((t) => { const i = list.find((x) => x.when.slice(11) === t);
+        return i ? `<div class="slot"><div class="t">${t}</div><div class="p">${i.n}편</div><div class="f">${esc(i.first)}</div></div>`
+                 : `<div class="slot empty"><div class="t">${t}</div><div class="p">—</div><div class="f">승인 편 없음</div></div>`; }).join('')}
+    </div></div>`).join('') : '<div class="empty-state">게시를 기다리는 승인 편이 없어요. GOMS 승인이 나면 여기에 들어와요.</div>';
+
+  const done = d.items.filter((i) => i.status === '게시됨').sort((a, b) => b.when.localeCompare(a.when));
+  document.getElementById('done-count').textContent = done.length ? `${done.length}편` : '';
+  if (done.length) document.getElementById('done').innerHTML = done.map((i) => `<tr>
+    <td class="num">${esc(i.when)}</td><td class="num">${i.n}편</td><td class="first">${esc(i.first)}</td><td class="num">${esc(i.no)}</td>
+    <td>${i.url1 ? `<a href="${esc(i.url1)}" target="_blank" rel="noopener">1/2</a>` : ''}${i.url1 && i.url2 ? ' · ' : ''}${i.url2 ? `<a href="${esc(i.url2)}" target="_blank" rel="noopener">2/2</a>` : ''}${!i.url1 && !i.url2 ? '<a href="https://www.threads.com/@seongdaeeyo" target="_blank" rel="noopener">프로필</a>' : ''}</td></tr>`).join('');
+
+  const counts = Object.fromEntries(STATUSES.map((k) => [k, d.items.filter((i) => i.status === k).length]));
+  const fbox = document.getElementById('filters');
+  fbox.innerHTML = ['전체', ...STATUSES].map((k) => `<button type="button" id="f-${cls(k)}" data-k="${k}" aria-pressed="${k === filter}">${k} <span class="num">${k === '전체' ? d.items.length : counts[k]}</span></button>`).join('');
+  fbox.onclick = (e) => { const b = e.target.closest('button'); if (!b) return; filter = b.dataset.k; try { localStorage.setItem('threads-filter', filter); } catch (err) {} render(d); };
+  const rows = d.items.filter((i) => filter === '전체' || i.status === filter);
+  document.getElementById('all').innerHTML = rows.map((i) => `<tr>
+    <td class="num">${i.n}</td><td><span class="pill ${cls(i.status)}">${i.status}</span></td><td class="num">${esc(i.when)}</td>
+    <td class="first">${esc(i.first)}</td><td>${esc(i.kind)}</td><td class="num">${esc(i.set)}</td></tr>`).join('') || '<tr><td colspan="6" class="empty-state">이 상태인 편이 없어요.</td></tr>';
+}
+
+fetch('data.json', { cache: 'no-store' }).then((r) => r.json()).then(render).catch(() => {
+  document.getElementById('days').innerHTML = '<div class="empty-state">일정 자료를 불러오지 못했어요. 아침 확인 때 다시 올라와요.</div>';
+});
+</script>

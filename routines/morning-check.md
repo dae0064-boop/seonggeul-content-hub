@@ -101,6 +101,13 @@
    `python3 scripts/threads/banner.py <받은 tsv>` → 새로 생긴 `content/threads/insurance/banners/thread-N.jpg`·`made.tsv` 를 같은 PR 에 넣는다.
    PC 는 main 의 공개 주소로 배너를 받아 가므로 **PR 이 main 에 합쳐져야** 그 편이 올라간다. tsv 는 저장소에 넣지 않는다.
    Drive `ClaudeWorkspace/run-logs/threads/<어제·오늘>.log` 에서 올린 편·❌·"배너가 아직 공개 주소에 없어요"를 보고, 문제가 있으면 보고 첫 줄(6)에 쓴다.
+   **일정표 갱신** (2026-10-26 사용자 — "발행한 스레드가 어떤 게 올라갔는지 알려주거나 일정표로"): Drive 에서 `run-logs/threads/posted.tsv`(게시 기록),
+   `goms-approved.tsv`, `goms-fixes.tsv` 를 받고, `goms-done/` 의 `스레드 N편.done` 이름에서 번호만 한 줄씩 적은 파일을 만들어
+   `node scripts/threads/schedule-data.mjs --approved … --registered … --posted … --fixes … --out content/threads/insurance/schedule/data.json` →
+   일정표 아티팩트 **https://claude.ai/artifact/1CBQRqSNcjmK8424fo96fb** 를 먼저 Artifact `read` 한 뒤, 같은 `url` 로
+   `file_path: content/threads/insurance/schedule/index.html`, `files: {"data.json": "content/threads/insurance/schedule/data.json"}` 로 다시 올린다. data.json 은 같은 PR 에.
+   보고에 한 줄: 어제 올라간 편(번호·첫 줄), 오늘 올라갈 편, **게시 예정(승인 재고)이 10편 밑이면 보고 첫 줄(6)에 "⚠ 스레드 승인 재고 N편 — 이틀 안에 끊길 수 있어요"**,
+   GOMS 자동 등록(`run-logs/goms-register-*`) 결과(등록한 번호·멈춤). 반려가 새로 생겼으면 "`goms-revise.cmd` 더블클릭 → 0" 을 사람이 할 일로 적는다.
 6. **안 된 글이 한 편이라도 있으면 보고 맨 첫 줄**에 "⚠ 오늘 ○○ N편 예약 안 됨 — 이유 / 사람이 할 일 한 줄"을 쓴다 (2026-10-19 사용자:
    "티스토리가 안 됐으면 말을 했었어야지" — 10/19 카카오 로그인 풀림이 보고 중간에 묻혔다). 그 뒤에 나머지. `PushNotification` 도구가 있으면 같은 한 줄을 휴대폰 알림으로도 보낸다.
    PC 쪽은 draft-day·tistory-day 가 예약 안 된 글이 있으면 화면에 알림 창을 띄운다(`launchers/tools/alert.ps1`).

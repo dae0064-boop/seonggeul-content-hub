@@ -30,6 +30,9 @@ auto-setup.cmd        아침 자동 실행 등록 (PC 마다 처음 한 번만)
 
 goms-register.cmd     GOMS 광고심의 실제 등록 — 몇 편부터 몇 편까지 물어봐요 (이미 등록한 편은 건너뜀)
 
+threads-laptop.cmd    이 PC 에서 스레드 보험글 올리기·GOMS 등록 준비 (노트북에서 처음 한 번)
+                      스레드 키 넣기 → 하루 5번 올리기 등록 → GOMS 로그인 확인까지 한 번에
+
 goms-revise.cmd       GOMS 반려 재심사 실제 — 반려된 스레드 글마다 사유 문구를 넣은 Word 로
                       파일삭제 → 파일추가 → 수정까지 해요
 

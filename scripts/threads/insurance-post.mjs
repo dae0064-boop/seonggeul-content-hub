@@ -33,6 +33,7 @@ const doPost = argv.includes('--post');
 const wordDir = arg('--word-dir');
 const approvedTsv = arg('--approved');
 const fixesTsv = arg('--fixes'); // 반려(수정요구)된 편 번호 — 순서 확인에 쓴다
+const postedTsv = arg('--posted'); // 게시 기록 (Drive run-logs/threads/posted.tsv) — 일정표 페이지가 읽는다
 const maxPerDay = Number(arg('--max-per-day', process.env.THREADS_INSURANCE_PER_DAY || '5'));
 const gapMin = Number(arg('--gap-min', '40'));
 const RAW = process.env.THREADS_BANNER_BASE
@@ -50,6 +51,14 @@ function readApproved(file) {
     if (/^\d+$/.test(c[0] || '') && c.length >= 5) map.set(Number(c[0]), { no: c[1], start: c[2], end: c[3], result: c[4] });
   }
   return map;
+}
+
+/** 게시 기록 한 줄: 한국시간 · 편 · 심의필번호 · 첫 줄 · 1/2 주소 · 2/2 주소 (일정표 페이지·아침 확인이 읽는다) */
+function record(n, no, text, url1, url2) {
+  if (!postedTsv) return;
+  const first = (text.split('\n').find((l) => l.trim()) || '').replace(/\t/g, ' ').trim();
+  try { fs.appendFileSync(postedTsv, [kstStamp().slice(0, 16), n, no, first, url1 || '', url2 || ''].join('\t') + '\n', 'utf8'); }
+  catch (e) { warn(`게시 기록을 남기지 못했어요: ${e.message}`); }
 }
 
 async function opens(url) {
@@ -111,6 +120,7 @@ async function main() {
         try {
           const q = await api.postImage(second, url, { replyToId: p.id });
           log(`✅ 2/2 붙임: 스레드 ${r.n}편 → ${q.permalink || q.id}`);
+          record(r.n, r.a.no, r.text, p.permalink, q.permalink);
           return 0;
         } catch (e) { log(`❌ 2/2 를 붙이지 못했어요: ${e.message}`); return 2; }
       }
@@ -164,6 +174,8 @@ async function main() {
   try {
     const p2 = await api.postImage(second, url, { replyToId: p1.id });
     log(`✅ 2/2 올림 (배너 포함): ${p2.permalink || p2.id}`);
+    const p1full = await api.getPost(p1.id).catch(() => ({}));
+    record(next.n, next.a.no, next.text, p1full.permalink, p2.permalink);
     return 0;
   } catch (e) {
     log(`❌ 2/2 를 올리지 못했어요: ${e.message} — 다음 실행이 2/2 를 먼저 붙여요`);
