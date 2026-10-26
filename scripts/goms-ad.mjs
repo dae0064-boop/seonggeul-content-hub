@@ -842,13 +842,16 @@ async function scanRejected(page, targets) {
 
 /** 승인 결과 표(goms-approved.tsv)에 이미 적은 편 번호. */
 function readApproved() {
-  const have = new Set();
+  // 편마다 마지막 줄이 지금 상태 (반려로 적었다가 나중에 승인되면 적격 줄이 뒤에 붙는다). 적격인 편만 "이미 읽음"으로 본다.
+  const last = new Map();
   if (approvedOut && fs.existsSync(approvedOut)) {
-    for (const line of fs.readFileSync(approvedOut, 'utf8').replace(/^﻿/, '').split(/\r?\n/)) {
-      const n = (line.split('\t')[0] || '').trim();
-      if (/^\d+$/.test(n)) have.add(Number(n));
+    for (const line of fs.readFileSync(approvedOut, 'utf8').replace(/^\uFEFF/, '').split(/\r?\n/)) {
+      const c = line.split('\t');
+      if (/^\d+$/.test((c[0] || '').trim())) last.set(Number(c[0]), (c[4] || '').trim());
     }
   }
+  const have = new Set([...last].filter(([, r]) => r === '적격').map(([n]) => n));
+  have.status = last;
   return have;
 }
 
@@ -972,6 +975,12 @@ async function runApproved(page) {
     fs.appendFileSync(approvedOut, `${n}\t제${no}호\t${dates[0]}\t${dates[1]}\t${a.result}\t${today}\n`, 'utf8');
     log(`  적음: 스레드 ${n}편 제${no}호 (${dates[0]} ~ ${dates[1]})`);
   }
+  // 반려(수정요구)된 편도 적어 둔다 — 게시가 "앞 번호 결과를 못 읽었다"며 기다리지 않게 (2026-10-26). 승인되면 적격 줄이 뒤에 붙는다.
+  await filterStatus(page, '반려');
+  const rej = (await listRows(page)).filter((r) => r.cells.includes('반려'));
+  const add = rej.filter((r) => have.status.get(numOf(r.title)) !== '반려').sort((a, b) => numOf(a.title) - numOf(b.title));
+  for (const r of add) fs.appendFileSync(approvedOut, `${numOf(r.title)}\t\t\t\t반려\t${today}\n`, 'utf8');
+  log(`반려 ${rej.length}건 (새로 적음: ${add.map((r) => numOf(r.title)).join(', ') || '없음'})`);
   return 0;
 }
 
