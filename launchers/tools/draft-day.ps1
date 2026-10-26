@@ -120,6 +120,12 @@ if (-not (CdpUp)) {
 }
 if (-not (CdpUp)) { Say '자동화용 크롬을 켜지 못했어요. launchers\chrome-login.cmd 를 먼저 실행해 주세요.' 'Red'; Release; Share; exit 1 }
 
+# 2-1) 네이버 쇼핑 커넥트 링크 (2026-10-26 사용자 — 링크를 사람이 아니라 자동으로). 발행 전에 만들어 두면 오늘 글에 바로 들어간다.
+# 실패해도 발행은 그대로 간다 (그 글은 쇼핑 부분이 빠진 보통 글)
+if ($Reserve -and -not $Only.Count) {
+  & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'brandconnect-links.ps1') 2>&1 | ForEach-Object { Say "  $_" }
+}
+
 # 3) 네이버 임시저장 (한 편씩)
 $result = @()
 $i = 0
