@@ -9,8 +9,8 @@
 
 | PC | 역할 | 저장소 위치 | 자동 실행 |
 |---|---|---|---|
-| 사무실 PC | 발행 가능 | `C:\Users\dae00\seonggeul-content-hub` | 09:00 (`auto-setup.cmd`) |
-| 노트북 | 발행 가능 | `C:\Users\user\Documents\seonggeul-content-hub` | 09:15 (`auto-setup.cmd -At 09:15`) |
+| 사무실 PC | **주 사용 (2026-10-26~)** | `C:\Users\dae00\seonggeul-content-hub` | **10:00** (`auto-setup.cmd -At 10:00`, 다시 시도 11:10 — 10/26 사용자 요청) |
+| 노트북 | 예비 | `C:\Users\user\Documents\seonggeul-content-hub` | 09:15 (`auto-setup.cmd -At 09:15`) |
 
 **어느 PC 에서든 발행한다** (2026-10-02 사용자 결정 — 오전의 "사무실 PC 한 대"를 바꿈).
 겹침은 Drive `ClaudeWorkspace/run-locks/<날짜>/` 표시로 막는다: 먼저 시작한 PC 가 하고, 늦게 온 PC 는 쉬거나
