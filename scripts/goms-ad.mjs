@@ -894,6 +894,8 @@ async function runRevise(page) {
   let targets = rows.filter(needsFix);
   const only = arg('--only');
   if (only) targets = targets.filter((r) => numOf(r.title) === Number(only));
+  const limit = Number(arg('--limit', '0'));
+  if (!scan && limit > 0 && targets.length > limit) { log(`  이번에는 ${limit}편만 올려요 (나머지는 다음 실행)`); targets = targets.slice(0, limit); }
   log(`목록 ${rows.length}건 중 반려 ${targets.length}건: ${targets.map((r) => r.title).join(', ') || '없음'}`);
   if (!targets.length) return 0;
   if (scan) { await scanRejected(page, targets); return 0; }
