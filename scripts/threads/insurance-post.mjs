@@ -41,7 +41,18 @@ const RAW = process.env.THREADS_BANNER_BASE
 
 const norm = (t) => (t || '').replace(/\s/g, '');
 /** 올린 글인지 볼 때 쓰는 머리 — 첫 두 줄 (제목 + 따옴표 질문). 스레드가 앞뒤 공백을 바꿔도 같게 본다. */
-const head = (text) => norm(text.split('\n').filter((l) => l.trim()).slice(0, 2).join(''));
+// 2026-10-27: 어제 올린 1편을 되읽기가 못 알아봐 다시 올렸다 — 글자·숫자만 남기고(이모지·따옴표·문장부호 빼고) 첫 줄(제목)로 견준다
+const head = (text) => String(text || '').normalize('NFC').split('\n').filter((l) => l.trim())[0]?.replace(/[^\p{L}\p{N}]/gu, '') || '';
+/** 게시 기록(posted.tsv)에 이미 적힌 편 번호 — 두 PC 가 같은 Drive 파일을 보므로 되읽기가 놓쳐도 다시 올리지 않는다 */
+function postedNumbers() {
+  const set = new Set();
+  if (!postedTsv || !fs.existsSync(postedTsv)) return set;
+  for (const line of fs.readFileSync(postedTsv, 'utf8').replace(/^\uFEFF/, '').split(/\r?\n/)) {
+    const c = line.split('\t');
+    if (/^\d+$/.test((c[1] || '').trim())) set.add(Number(c[1]));
+  }
+  return set;
+}
 const today = kstStamp().slice(0, 10);
 
 function readApproved(file) {
@@ -128,7 +139,13 @@ async function main() {
   }
 
   const postedHeads = new Set(ours.map((p) => head(p.text || '')));
-  const todo = ready.filter((r) => !postedHeads.has(head(r.text)));
+  const recorded = postedNumbers();
+  const missed = ready.filter((r) => recorded.has(r.n) && !postedHeads.has(head(r.text)));
+  if (missed.length) {
+    warn(`게시 기록에는 있는데 되읽기에서 못 찾은 편: ${missed.map((r) => r.n).join(', ')} — 기록을 믿고 다시 올리지 않아요`);
+    log(`  (확인용) 최근 글 첫 줄 3개: ${posts.slice(0, 3).map((p) => head(p.text).slice(0, 20) || '(글 없음)').join(' / ')}`);
+  }
+  const todo = ready.filter((r) => !postedHeads.has(head(r.text)) && !recorded.has(r.n));
   log(`아직 안 올린 편: ${todo.map((r) => r.n).join(', ') || '없음'}`);
   if (!todo.length) { log('올릴 편이 없어요 — 다음 승인을 기다려요'); return 0; }
   if (todayOurs.length >= maxPerDay) { log(`오늘 ${maxPerDay}편을 다 올렸어요 — 내일 이어서`); return 0; }
