@@ -19,6 +19,7 @@ const argv = process.argv.slice(2);
 const arg = (n) => { const i = argv.indexOf(n); return i >= 0 ? argv[i + 1] : ''; };
 const out = arg('--out');
 const force = argv.includes('--force');
+const REVIEWED_MAX = 30;
 // --only 31,32,…: 그 편만 (원고를 고친 편을 등록 직전에 다시 만들 때 — goms-register-auto.ps1)
 const only = new Set((arg('--only') || '').split(',').map(Number).filter(Boolean));
 if (!out) { console.log('사용법: node scripts/threads/word-make.mjs --out <보험글 폴더> [--force]'); process.exit(1); }
@@ -58,6 +59,8 @@ for (const f of fs.readdirSync(SETS).filter((x) => x.endsWith('.md')).sort()) {
     n++;
     if (only.size && !only.has(n)) continue;
     const dest = path.join(out, `스레드 ${n}편.docx`);
+    // 1~30편은 GOMS 에서 심의받은 Word 가 정본 — 있으면 --force 여도 절대 다시 만들지 않는다 (2026-10-27 사용자: "처음 심의받은 word 기준, 글씨가 틀리면 안 된다")
+    if (fs.existsSync(dest) && n <= REVIEWED_MAX) { if (force) console.log(`그대로 둠: 스레드 ${n}편.docx (심의받은 Word)`); kept++; continue; }
     if (fs.existsSync(dest) && !force) { kept++; continue; }
     const tmp = `${dest}.tmp`;
     fs.writeFileSync(tmp, writeZip(tpl, new Map([['word/document.xml', build(p.body)]])));

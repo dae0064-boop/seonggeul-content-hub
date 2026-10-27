@@ -164,6 +164,10 @@ def main():
             target = Path(out_dir) / out_name(number)
             # 수정요구 문구가 있는 편은 tsv 가 바뀌어도 다시 만든다
             newest = max(newest_input, Path(fixes_path).stat().st_mtime) if number in fixes else newest_input
+            # 1~30편은 GOMS 에서 심의받은 Word 가 정본 — 있으면 절대 다시 만들지 않는다 (2026-10-27 사용자: 글씨가 틀리면 안 된다)
+            if number <= 30 and target.exists():
+                print(f'그대로 둠: {target.name} (심의받은 Word)')
+                continue
             if skip_fresh and target.exists() and target.stat().st_mtime >= newest:
                 print(f'그대로 둠: {target.name}')
                 continue
