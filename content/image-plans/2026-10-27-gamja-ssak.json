@@ -1,0 +1,93 @@
+{
+  "slug": "2026-10-27-gamja-ssak",
+  "title": "감자 싹 먹어도 될까, 초록색 감자와 감자 솔라닌 도려낼 곳 (껍질 주변 3~8할)",
+  "source": "10/27(화) 티스토리 원고 (10/27 오전 대화 — 밤 Routine 이 원고를 못 올려 다시 씀)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 정보 카드는 로컬 합성(비용 0). 휴대폰·PC 화면은 비워 둔다(가짜 메뉴 글자 금지)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "베란다 감자 상자 앞에서 싹 난 감자를 들고 살펴보는 성글이 (대표사진)",
+      "prompt": "Camera and composition: medium shot on a veranda. Seonggeul, the blog host: a Korean woman in her 30s, round face, dark hair in a low bun, cream sweater with a mint scarf crouching beside a cardboard box of potatoes on a veranda, holding up one potato with small sprouts and looking at it closely Background color: pale peach. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot on a veranda",
+      "bg": "pale peach",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "감자 싹\n먹어도 될까"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "부엌 조리대에서 싹 난 감자와 초록색 감자를 나란히 놓고 보는 40대 여성",
+      "prompt": "Camera and composition: close-up of a kitchen counter. A Korean woman in her 40s in a pink blouse comparing a sprouted potato and a slightly greenish potato placed side by side on a kitchen counter Background color: light butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "close-up of a kitchen counter",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "도마 위 감자 단면 앞에서 칼끝으로 싹 자리를 가리키는 60대 남성",
+      "prompt": "Camera and composition: top-down shot of a cutting board. A Korean man in his 60s with gray hair pointing with a knife tip at the sprout spot on a halved potato on a wooden cutting board Background color: mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "top-down shot of a cutting board",
+      "bg": "mint green"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "가스레인지 냄비에서 감자를 삶으며 뚜껑을 여는 30대 남성",
+      "prompt": "Camera and composition: side view at a gas stove. A Korean man in his 30s in a navy hoodie lifting the lid of a pot of boiling potatoes on a stove, steam rising Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "side view at a gas stove",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "감자 싹 손질 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "감자 싹 손질 순서",
+        "items": [
+          "뿌리 자리째 파내기",
+          "한 번 더 둥글게 도려내기",
+          "초록빛이 안 보일 때까지 깎기",
+          "평소보다 두껍게 벗기기"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "버리는 게 나은 감자를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "버리는 게 나은 감자",
+        "items": [
+          "손가락 마디보다 길게 자랐다",
+          "겉이 대부분 초록색으로 변했다",
+          "초록빛이 깊게 들어가 있다",
+          "탁구공보다 작은 감자다"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "어두운 다용도실 선반에 종이상자를 올려 두는 50대 여성",
+      "prompt": "Camera and composition: wide shot of a dim utility room. A Korean woman in her 50s in a beige cardigan placing a closed cardboard box on a shelf in a dim, cool utility room Background color: warm beige. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "wide shot of a dim utility room",
+      "bg": "warm beige"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "저녁 식탁에 감자조림을 올리며 웃는 30대 여성",
+      "prompt": "Camera and composition: eye-level shot at a dinner table. A Korean woman in her 30s in a yellow apron smiling as she sets a bowl of braised potatoes on a dinner table Background color: pale lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "eye-level shot at a dinner table",
+      "bg": "pale lavender"
+    }
+  ]
+}
