@@ -1,0 +1,103 @@
+{
+  "slug": "2026-10-28-dapa-bogwanbeop",
+  "title": "대파 보관법, 김장철 대파 한 단 사 온 날 씻어서 둘까 그냥 둘까",
+  "source": "10/28(수) 원고 (10/27 밤 Routine 2차)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). style_v2·대표사진 테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "대파 한 단을 품에 안고 반갑게 웃는 30대 남성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame, face placed slightly below the center so the top fifth of the image is softly blurred background (a title band goes there). The person looks thoughtful or curious (finger on chin, looking at a paper or the key object), not scared, sad or in pain. The related scene stays softly blurred in the background. A Korean man in his 30s with short black hair, wearing a mustard-yellow apron over a green shirt, hugging a big bundle of fresh green onions; a blurred cozy kitchen with wooden shelves behind him. Facial expression: bright happy smile. Color theme: deep green plants and warm wood tones with a mustard-yellow accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up, eye level, face and shoulders",
+      "bg": "deep green plants and warm wood tones with a mustard-yellow accent",
+      "note": "대표",
+      "thumb_theme": "forest",
+      "thumb_person": "30대 남성",
+      "thumb_mood": "반가움",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "forest",
+        "font": "jua",
+        "title": "대파 보관법\n씻어서 둘까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "나무 도마 위에 가지런히 놓인 싱싱한 대파 한 단",
+      "prompt": "Camera and composition: close-up top-down shot of a cutting board. A neat bundle of fresh long green onions lying on a wooden cutting board. Background color: warm wood brown. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up top-down shot of a cutting board",
+      "bg": "warm wood brown"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "베란다 한쪽 종이봉투에 세워 둔 흙 묻은 대파",
+      "prompt": "Camera and composition: medium shot of a shaded balcony corner. Long green onions with soil still on their roots standing upright inside a brown paper bag in a shaded corner of an apartment balcony. Background color: soft sage green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot of a shaded balcony corner",
+      "bg": "soft sage green"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "대파 냉장 보관이 되는 경우와 안 되는 경우를 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "대파 냉장 보관",
+        "heads": [
+          "되는 경우",
+          "안 되는 경우"
+        ],
+        "items": [
+          [
+            "물기를 완전히 닦았어요",
+            "물기가 남은 채"
+          ],
+          [
+            "밀폐용기에 담아",
+            "비닐째 냉장고 문칸에"
+          ],
+          [
+            "일주일 안에 다 쓸 양",
+            "한 달 넘게 두고"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "송송 썬 대파를 지퍼백에 나눠 담는 손",
+      "prompt": "Camera and composition: close-up of hands on a kitchen counter. Hands putting finely chopped green onions into small zipper bags, one portion each, on a kitchen counter. Background color: pale mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands on a kitchen counter",
+      "bg": "pale mint"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "냉동실 서랍에 납작하게 눕혀 둔 대파 봉투들",
+      "prompt": "Camera and composition: eye-level shot into an open freezer drawer. Flat, thin zipper bags of chopped green onions lying neatly in an open freezer drawer. Background color: cool sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "eye-level shot into an open freezer drawer",
+      "bg": "cool sky blue"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "냉장고 문에 붙인 메모지에 날짜를 적는 손",
+      "prompt": "Camera and composition: close-up of a refrigerator door. A hand writing on a blank sticky note attached to a refrigerator door, no letters visible. Background color: light butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of a refrigerator door",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "김장 양념 그릇 옆에 썬 대파가 담긴 작은 그릇이 놓인 식탁",
+      "prompt": "Camera and composition: wide shot of a dining table. A Korean dining table with bowls of kimchi seasoning ingredients and a small bowl of chopped green onions, ready for kimjang. Background color: warm apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a dining table",
+      "bg": "warm apricot"
+    }
+  ]
+}
