@@ -53,6 +53,16 @@ function postedNumbers() {
   }
   return set;
 }
+// posted.tsv 에서 그 날짜보다 앞서 올린 편 번호 (첫 칸 = 'YYYY-MM-DD HH:MM')
+function postedBefore(day) {
+  const set = new Set();
+  if (!postedTsv || !fs.existsSync(postedTsv)) return set;
+  for (const line of fs.readFileSync(postedTsv, 'utf8').replace(/^\uFEFF/, '').split(/\r?\n/)) {
+    const c = line.split('\t');
+    if (/^\d+$/.test((c[1] || '').trim()) && (c[0] || '').trim().slice(0, 10) < day) set.add(Number(c[1]));
+  }
+  return set;
+}
 const today = kstStamp().slice(0, 10);
 
 function readApproved(file) {
@@ -109,7 +119,10 @@ async function main() {
   const byHead = new Map(ready.map((r) => [head(r.text), r]));
   const ours = posts.filter((p) => byHead.has(head(p.text || '')));
   const dayStart = kstDayStartUnix();
-  const todayOurs = ours.filter((p) => Date.parse(p.timestamp) / 1000 >= dayStart);
+  // 오늘 '새로' 올린 편만 센다 — 같은 편을 다시 올린 글(10/27 1편 중복)은 하루 5편에 넣지 않는다 (2026-10-27 사용자: "하루 5편, 중복 없이")
+  const earlier = new Set(ours.filter((p) => Date.parse(p.timestamp) / 1000 < dayStart).map((p) => byHead.get(head(p.text || '')).n));
+  for (const n of postedBefore(today)) earlier.add(n);
+  const todayOurs = [...new Set(ours.filter((p) => Date.parse(p.timestamp) / 1000 >= dayStart).map((p) => byHead.get(head(p.text || '')).n))].filter((n) => !earlier.has(n));
   const last = ours.map((p) => Date.parse(p.timestamp)).sort((a, b) => b - a)[0];
   log(`계정 @${me.username} · 최근 글 ${posts.length}개 · 오늘 보험글 ${todayOurs.length}/${maxPerDay}`);
 
