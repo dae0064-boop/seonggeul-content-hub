@@ -7,6 +7,10 @@ param([switch]$Test)
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo
+# 올리기 전에 최신 코드를 받는다 (2026-10-27 — 고친 중복 확인이 다음 날 아침까지 PC 에 안 들어와 같은 편을 또 올릴 뻔했다)
+git fetch -q origin 2>$null
+git checkout -q -- 'content/posts/*.json' 'content/tistory/*.json' 'content/tistory/*.html' 2>$null
+git pull -q --ff-only 2>$null
 . (Join-Path $PSScriptRoot 'lib-drive.ps1')
 $drive = Find-MyDrive
 if (-not $drive) { Write-Host 'Google Drive(내 드라이브\ClaudeWorkspace)를 찾지 못했어요. Drive 가 켜져 있는지 확인해 주세요.' -ForegroundColor Yellow; exit 1 }
