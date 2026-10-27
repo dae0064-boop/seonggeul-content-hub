@@ -15,7 +15,16 @@ $doneDir = Join-Path $drive 'ClaudeWorkspace\goms-done'
 New-Item -ItemType Directory -Force -Path $doneDir | Out-Null
 $have = @(Get-ChildItem $fileDir -Filter '스레드 *편.docx' -ErrorAction SilentlyContinue | ForEach-Object { if ($_.Name -match '^스레드 (\d+)편\.docx$') { [int]$Matches[1] } }) | Sort-Object
 $done = @(Get-ChildItem $doneDir -Filter '스레드 *편.done' -ErrorAction SilentlyContinue | ForEach-Object { if ($_.Name -match '^스레드 (\d+)편\.done$') { [int]$Matches[1] } })
-$todo = @($have | Where-Object { $done -notcontains $_ } | Select-Object -First $Count)
+# 2026-10-27 사용자: "31편부터 80편까지 등록은 11월 1일부터 다시" — 그 전에는 등록하지 않는다.
+#   10/27 아침 이 작업이 .done 이 없던 1~10편을 다시 등록하려다 심의점검표에서 멈췄다 → 이미 심의받은 1~30편과
+#   승인표(goms-approved.tsv)에 있는 편은 절대 다시 고르지 않는다.
+$resumeDate = [datetime]'2026-11-01'
+$minNo = 31
+if ((Get-Date).Date -lt $resumeDate) { Write-Host "GOMS 자동 등록은 $($resumeDate.ToString('M월 d일'))부터 다시 해요 (사용자 결정) — 오늘은 건너뛰어요"; exit 0 }
+$reviewed = @()
+$approvedTsv = Join-Path $drive 'ClaudeWorkspace\goms-approved.tsv'
+if (Test-Path $approvedTsv) { $reviewed = @(Get-Content $approvedTsv -Encoding UTF8 | ForEach-Object { $c = ($_ -replace '^\uFEFF', '') -split "`t"; if ($c[0] -match '^\d+$') { [int]$c[0] } }) }
+$todo = @($have | Where-Object { $_ -ge $minNo -and $done -notcontains $_ -and $reviewed -notcontains $_ } | Select-Object -First $Count)
 if (-not $todo.Count) { Write-Host 'GOMS 에 새로 등록할 보험글이 없어요.'; exit 0 }
 # 사무실 PC·노트북이 같은 아침에 함께 돌 수 있다 — Drive 표시로 한 대만 등록한다 (2시간 지난 표시는 멈춘 실행으로 보고 무시)
 $lock = Join-Path $doneDir 'registering.lock'
