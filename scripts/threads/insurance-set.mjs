@@ -50,6 +50,12 @@ const INSURANCE_BANNED = [
   { re: /상담\s*받(으세요|아\s*보세요)|성글벙글에게\s*(물어|연락)/, why: '상담 유도 (스레드는 점검형까지만)' },
 ];
 
+// 예외가 있는 일을 한 줄로 단정하는 말 (2026-10-27 묶음부터 막는다)
+const ABSOLUTE = [
+  { re: /한\s*번\s*몫|두\s*배로\s*받|이중으로\s*받|소용\s*없/, why: '실손 중복을 "한 번 몫·소용없다"로 단정 — 실제 낸 치료비 안에서 나눠 받되, 한도·자기부담은 계약마다 다르다' },
+  { re: /무조건|절대(로)?\s|100\s*%|반드시\s*(나와|받)|다\s*나와요|전부\s*나와요|하나도\s*안\s*나와/, why: '조건 없는 단정 — "약관에 따라", "~한 경우" 처럼 조건을 붙인다' },
+];
+
 /** 묶음 파일 하나를 읽어 {meta, posts[]} 로 만든다 */
 export function parseSet(src) {
   const text = String(src).replace(/\r\n/g, '\n');
@@ -166,6 +172,15 @@ export function checkSet(set, previous = []) {
       if (!/^(함|해당\s*없음)$/.test((p.원문확인 || '').trim())) errors.push(`${tag}: "원문확인:" 은 함 또는 해당 없음 만 씁니다.`);
       if (hasFact && /해당\s*없음/.test(p.원문확인 || '')) errors.push(`${tag}: 숫자·제도·기간이 들어간 글은 1차 원문을 열어 확인하고 "원문확인: 함" 이어야 합니다.`);
       if (hasFact && !/https?:\/\//.test(p.출처 || '')) errors.push(`${tag}: 숫자·제도·기간이 들어간 글은 출처에 1차 원문 링크가 있어야 합니다.`);
+      // 2026-10-27 사용자 — 1편 "실손 두 개면 받는 돈은 한 번 몫" 에 "한도까지 받을 수 있는 거 모르냐" 는 반박이 달렸다.
+      // 예외가 있는 일을 한 줄로 단정하는 말을 막는다 (rules.md "반박 받지 않게")
+      for (const { re, why } of ABSOLUTE) {
+        const m = p.body.match(re);
+        if (m) errors.push(`${tag}: 반박 받기 쉬운 단정 — ${why} ("${m[0]}")`);
+      }
+      if (/실손/.test(p.body) && /(두\s*개|2\s*개|여러\s*개|중복|겹치)/.test(p.body) && !/(한도|자기\s*부담|가입\s*시기|세대)/.test(p.body)) {
+        errors.push(`${tag}: 실손 중복 이야기에는 "계약마다 한도·자기부담이 달라 받는 금액이 달라질 수 있다"는 조건을 함께 씁니다 (rules.md "반박 받지 않게").`);
+      }
       const bad = (p.출처 || '').match(/https?:\/\/[^\s)]*(blog\.|cafe\.|tistory|brunch|namu\.wiki|youtube|youtu\.be|news\.|\.news|post\.naver|kin\.naver|velog|medium\.com)[^\s)]*/i);
       if (bad) errors.push(`${tag}: 출처가 2차 자료(블로그·카페·뉴스·영상)입니다 — 정부·금융당국·보험협회·법령 원문으로 바꿉니다 (${bad[0]}).`);
     }
