@@ -194,6 +194,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
     let bad = 0;
     for (const n of notice.split(',').map(Number).filter(Boolean)) {
       const f = path.join(dir, `스레드 ${n}편.docx`);
+      if (n <= 30) { console.log(`그대로 둠: 스레드 ${n}편 (심의받은 Word — 1~30편은 손대지 않아요)`); continue; }
       if (!fs.existsSync(f)) { console.log(`⚠ 스레드 ${n}편.docx 가 없어요`); bad++; continue; }
       try { const k = addPhrases(f, [NOTICE], { color: '000000' }); console.log(k ? `약관 문구 넣음: 스레드 ${n}편` : `그대로 둠: 스레드 ${n}편 (이미 있음)`); }
       catch (e) { console.log(`⚠ 스레드 ${n}편 문구 넣지 못함: ${e.message}`); bad++; }
