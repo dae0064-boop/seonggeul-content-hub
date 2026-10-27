@@ -26,8 +26,8 @@ REM 다음 원고 키워드 후보의 월간 검색량을 조회해 Drive 로 �
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\keyword-volume.ps1"
 REM 다른 블로그 살펴보기 요청이 있으면 (content\research\blog-snapshot.txt) 읽기만 하고 Drive 로 올린다
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\blog-snapshot.ps1"
-REM 다와이철거 홍보 블로그 (2026-10-26): 철거 블로그 전용 크롬(9223)으로 예약발행. 로그인 전이면 건너뛴다
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\chulgeo-day.ps1"
+REM 다와이철거 홍보 블로그: 2026-10-28 사용자 지시로 모두 멈춤 (사용량). 다시 켤 때 아래 줄 앞 REM 을 뗀다
+REM powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\chulgeo-day.ps1"
 REM 스레드 보험글 (2026-10-26): GOMS 승인완료 편의 심의필 번호를 Drive goms-approved.tsv 로 (로그인 안 되면 건너뜀) + 하루 4번 올리기 작업 등록(없을 때만)
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\goms-approved.ps1"
 REM 2026-10-26: GOMS 광고심의 자동 등록 — 아직 안 올린 보험글 Word 를 번호 순서로 하루 10편
