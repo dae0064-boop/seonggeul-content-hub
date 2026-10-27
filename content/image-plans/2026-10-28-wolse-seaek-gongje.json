@@ -1,0 +1,92 @@
+{
+  "slug": "2026-10-28-wolse-seaek-gongje",
+  "title": "월세 세액공제 얼마 받을까, 공제율과 연말정산 때 챙길 조건 (최대 17%)",
+  "source": "10/28(수) 티스토리 원고 (10/27 밤 22:37 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 정보 카드는 로컬 합성(비용 0). 휴대폰·PC 화면은 비워 둔다(가짜 메뉴 글자 금지)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "원룸 책상에서 영수증 묶음과 계산기를 놓고 미소 짓는 성글이 (대표사진)",
+      "prompt": "Camera and composition: medium shot at a studio apartment desk. Seonggeul, the blog host: a Korean woman in her 30s, round face, dark hair in a low bun, cream sweater with a mint scarf sitting at a small desk in a studio apartment with a stack of blank receipts and a simple calculator, smiling Background color: light butter yellow. Keep the top third of the image as plain empty background with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot at a studio apartment desk",
+      "bg": "light butter yellow",
+      "note": "대표",
+      "overlay": {
+        "kind": "thumb",
+        "title": "월세 세액공제\n얼마 받을까"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "회사 사무실 자리에서 급여 명세서 봉투를 열어 보는 20대 남성",
+      "prompt": "Camera and composition: medium shot at an office desk. A Korean man in his 20s at his office desk opening a plain pay slip envelope Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot at an office desk",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "월세 세액공제 계산 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "월세 세액공제 계산",
+        "items": [
+          "한 해 낸 월세를 모으고",
+          "한도를 보고",
+          "공제율을 곱하면 끝나요"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "아파트 현관 앞에서 이삿짐 상자를 들고 서 있는 30대 여성",
+      "prompt": "Camera and composition: full shot at an apartment entrance. A Korean woman in her 30s standing at an apartment entrance holding a moving box Background color: warm apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "full shot at an apartment entrance",
+      "bg": "warm apricot"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "월세 세액공제 조건을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "월세 세액공제 조건",
+        "items": [
+          "무주택 세대주",
+          "국민주택규모 주택이거나",
+          "주거용 오피스텔과 고시원",
+          "주소가 같아야 해요"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "벽걸이 달력 앞에서 이사한 날에 동그라미를 치는 40대 남성",
+      "prompt": "Camera and composition: medium shot in front of a wall. A Korean man in his 40s drawing a circle on a wall calendar with blank date boxes Background color: pale mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot in front of a wall",
+      "bg": "pale mint"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "거실 소파에서 노트북을 펼치고 서류를 확인하는 50대 부부",
+      "prompt": "Camera and composition: medium shot on a living room sofa. A Korean couple in their 50s sitting on a sofa checking blank documents beside an open laptop with a blank screen Background color: soft lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot on a living room sofa",
+      "bg": "soft lavender"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "햇살 드는 원룸 창가에서 화분에 물을 주며 웃는 20대 여성",
+      "prompt": "Camera and composition: medium shot by a studio apartment window. A Korean woman in her 20s smiling and watering a small potted plant by a sunny window in a studio apartment Background color: fresh spring green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle soft studio lighting, pastel colors, clean simple background, cozy and warm mood, miniature diorama feel. Use mainly these colors: cream (#F6EFE3), apricot (#F2B8A0), mint (#A8D8C8), soft sky blue (#A9C8E8), warm brown (#8A6A55). Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only.",
+      "shot": "medium shot by a studio apartment window",
+      "bg": "fresh spring green"
+    }
+  ]
+}
