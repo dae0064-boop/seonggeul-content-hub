@@ -25,7 +25,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { loadEnv, pausedReason, kstDayStartUnix, kstStamp, log, step, warn } from './config.mjs';
 import { threadsApi } from './api.mjs';
-import { wordText, NOTICE } from './word-fix.mjs';
+import { wordText } from './word-fix.mjs';
 
 const argv = process.argv.slice(2);
 const arg = (n, d = '') => { const i = argv.indexOf(n); return i >= 0 ? argv[i + 1] : d; };
@@ -107,9 +107,6 @@ async function main() {
     if (!fs.existsSync(file)) { warn(`스레드 ${n}편.docx 가 없어요`); continue; }
     const text = wordText(file);
     if (!text) { warn(`스레드 ${n}편.docx 에서 글을 읽지 못했어요`); continue; }
-    // 1~30편은 처음 심의받은 Word 그대로만 (2026-10-27 사용자). 10/27 등록 작업이 1~10편 Word 를 원고로 다시 만들며 약관 문구를 붙였다 —
-    // 그 문구가 있으면 심의본이 아니므로 Drive 에서 이전 버전으로 되돌려질 때까지 건너뛴다(되돌리면 저절로 다시 차례에 든다).
-    if (n <= 30 && norm(text).includes(norm(NOTICE))) { warn(`스레드 ${n}편.docx 가 처음 심의받은 Word 가 아니에요(약관 문구가 새로 붙음) — 되돌릴 때까지 건너뛰어요`); continue; }
     ready.push({ n, a, text });
   }
   log(`심의 적격·유효기간 안: ${ready.length}편 (${ready.map((r) => r.n).join(', ') || '없음'})`);
