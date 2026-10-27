@@ -197,6 +197,7 @@
 - PC: `auto-day.cmd` 끝에 `chulgeo-day.ps1` — **철거 블로그 전용 크롬 9223 / 프로필 %LOCALAPPDATA%\chulgeo-chrome**. 프로필이 없으면(로그인 전) 건너뜀.
   처리 표시 Drive `run-locks/chulgeo/<슬러그>.done`, 날짜 지난 미처리 원고는 다음 실행이 먼저(하루 5편까지). 지금 바로: `launchers/chulgeo-day.cmd`.
 - **사람이 할 일(처음 한 번)**: 철거 블로그 네이버 계정·블로그 만들기 → 발행할 PC 에서 `launchers/chulgeo-login.cmd` 더블클릭 → 열린 크롬에서 그 계정 로그인(로그인 상태 유지).
+- **10/27 저녁 Routine: 10/28 원고 안 씀** — 10/27 5편이 아직 안 올라감(오늘 아침 기록 "이 PC 에는 철거 블로그 로그인이 아직 없어요", Drive `run-locks/chulgeo/` 에 .done 없음). 밀린 5편(검사기 모두 ✅)이 로그인 뒤 아침 실행에서 먼저 올라간다. 로그인 전까지 새 원고를 쌓지 않는다.
 - 매일 19:43 Routine `routines/chulgeo-daily.md` 가 다음 날 5편을 쓴다. 블로그 카테고리를 만들면 README·검사기(category 비워 두기 규칙)를 고친다.
 - 추천(사용자 답 없음 — 5편으로 시작): 새 블로그가 첫날부터 같은 연락처 홍보 글 5편이면 저품질 위험 → 반응 보고 줄일지 판단.
 
