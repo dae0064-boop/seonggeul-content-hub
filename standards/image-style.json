@@ -97,5 +97,39 @@
     "결심": "determined, nodding, sleeves rolled up",
     "설명": "explaining with one hand open toward the viewer"
   },
-  "thumb_variety_note": "2026-10-26 사용자 — '메인화면이 같은 색감·같은 캐릭터라 눈에 안 띈다. 상황별로 사람·색감·표정·글자를 다양하게'. 2026-10-27 네이버 원고부터 대표사진(1번)은 고정 캐릭터(characters)를 쓰지 않고 글 상황에 맞는 사람(나이·성별·옷)을 새로 정한다. 계획서 1번에 thumb_theme(위 10개 중)·thumb_person(예: 60대 남성)·thumb_mood(위 7개 중)를 적고, 같은 날 네이버 글끼리 테마·사람은 겹치지 않게, 표정은 5편 날 모두 다르게·10편 날(10/27~10/31) 같은 표정 2편까지 + 전날 같은 시각 글과 테마가 겹치지 않게(lint-post). 프롬프트에 테마 scene 문구와 표정 문구를 넣는다. overlay 에 theme(같은 값)·font(jua|ptd — 하루 두 가지 섞기)."
+  "thumb_variety_note": "2026-10-26 사용자 — '메인화면이 같은 색감·같은 캐릭터라 눈에 안 띈다. 상황별로 사람·색감·표정·글자를 다양하게'. 2026-10-27 네이버 원고부터 대표사진(1번)은 고정 캐릭터(characters)를 쓰지 않고 글 상황에 맞는 사람(나이·성별·옷)을 새로 정한다. 계획서 1번에 thumb_theme(위 10개 중)·thumb_person(예: 60대 남성)·thumb_mood(위 7개 중)를 적고, 같은 날 네이버 글끼리 테마·사람은 겹치지 않게, 표정은 5편 날 모두 다르게·10편 날(10/27~10/31) 같은 표정 2편까지 + 전날 같은 시각 글과 테마가 겹치지 않게(lint-post). 프롬프트에 테마 scene 문구와 표정 문구를 넣는다. overlay 에 theme(같은 값)·font(jua|ptd — 하루 두 가지 섞기).",
+  "thumb_shots": {
+    "face": {
+      "이름": "한 사람 얼굴 가까이",
+      "사람": true,
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background."
+    },
+    "duo": {
+      "이름": "두 사람이 마주 보고 이야기",
+      "사람": true,
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible."
+    },
+    "hands": {
+      "이름": "손만 크게 (얼굴 없음)",
+      "사람": true,
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field."
+    },
+    "object": {
+      "이름": "핵심 사물 하나 크게 (사람 없음)",
+      "사람": false,
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people."
+    },
+    "overhead": {
+      "이름": "위에서 내려다본 탁자 (사람 없음)",
+      "사람": false,
+      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people."
+    },
+    "wide": {
+      "이름": "방·장소 전체, 사람은 작게",
+      "사람": true,
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic."
+    }
+  },
+  "thumb_band_space": "Keep the top fifth of the image as softly blurred or plain background (a title band goes there).",
+  "thumb_shot_note": "2026-10-28 사용자 — '글씨 배치(위쪽 색 띠)는 그대로 좋다. 사람이 너무 똑같으니 그림 구도만 바꾸고, 티스토리도 네이버와 똑같이'. 10/27~10/28 대표사진이 모두 한 사람 얼굴 가까이·종이를 든 60~70대 여성(안경·턱 괴기)이었다 (thumbnail_closeup 문구에 'looking at a paper' 가 들어 있었다). 2026-10-29 원고부터 네이버·티스토리 모두 계획서 1번에 thumb_shot(위 6개 중)을 적고, 프롬프트 맨 앞에 그 shot 의 prompt 문구 + thumb_band_space 문구를 넣는다 (thumbnail_closeup 은 쓰지 않는다). overlay 는 그대로 look band·theme·font·두 줄(둘째 줄 질문). 같은 날 5편은 구도 모두 다르게, 10편 날은 같은 구도 2편까지, 전날 같은 시각 글과 구도가 겹치지 않게. 종이·안내문을 든 대표사진은 하루 1편(10편 날 2편)까지, 60대 이상만 나오는 대표사진은 하루 2편(10편 날 4편)까지 — 돌봄 글은 자녀·보호자 쪽으로도 잡는다. 사람이 없는 구도(object·overhead)는 thumb_person 을 '없음', thumb_mood 를 적지 않는다. 티스토리도 thumb_theme·thumb_person·thumb_mood·style_v2 를 네이버와 같게 쓰고, 같은 날 겹침은 티스토리 글끼리 센다."
 }
