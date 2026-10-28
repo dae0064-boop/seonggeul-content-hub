@@ -1,0 +1,99 @@
+{
+  "slug": "2026-10-29-hyeonggwangdeung-beorineun-beop",
+  "title": "형광등 버리는 법, LED 조명은 어디에 넣을까 (확인 5가지)",
+  "source": "10/29(목) 티스토리 원고 (10/28 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 10/29 원고부터 티스토리도 style_v2·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "분리수거장 바닥에 세워 둔 긴 형광등과 둥근 LED 등 (대표사진)",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Two long fluorescent tubes and one round flat LED ceiling light standing carefully against a wall at an apartment recycling corner, intact and clean. Color theme: deep green plants and warm wood tones with a mustard-yellow accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "핵심 사물 하나 크게 (사람 없음)",
+      "bg": "deep green plants and warm wood tones with a mustard-yellow accent",
+      "note": "대표",
+      "thumb_shot": "object",
+      "thumb_theme": "forest",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "forest",
+        "font": "ptd",
+        "title": "형광등 버리는 법\nLED는 어디로?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "주민센터 게시판 앞에서 분리배출 안내문을 읽는 40대 남성",
+      "prompt": "Camera and composition: medium shot at a community center. A Korean man in his 40s in a navy jacket reading a notice board with blank posters and simple recycling icons at a community center. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a community center",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "형광등 버리는 법 체크리스트를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "형광등 버리기 전 확인",
+        "items": [
+          "깨지지 않게 그대로 둬요",
+          "스탠드에서 형광등을 빼요",
+          "LED 조명도 같이 모아요",
+          "형광등 수거함에 넣어요",
+          "깨졌으면 신문지로 감싸요"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "깨진 형광등 처리 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "깨진 형광등 처리 순서",
+        "items": [
+          "장갑을 끼고 치우세요",
+          "신문지와 테이프로 감싼 뒤",
+          "종량제봉투나 특수규격마대 등"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "거실 책상에서 스탠드 갓을 열고 형광등을 빼내는 30대 여성",
+      "prompt": "Camera and composition: close-up at a living room desk. A Korean woman in her 30s opening the shade of a desk lamp and carefully taking out a small fluorescent tube. Background color: light lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up at a living room desk",
+      "bg": "light lavender"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "새로 단 LED 평판등 아래 떼어 낸 옛 조명을 정리하는 50대 부부",
+      "prompt": "Camera and composition: wide shot of a living room ceiling and floor. A Korean couple in their 50s under a newly installed flat LED panel light, neatly setting aside the old ceiling light on the floor. Background color: warm cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a living room ceiling and floor",
+      "bg": "warm cream"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "아파트 관리사무소 창구에서 직원에게 수거함 위치를 묻는 60대 남성",
+      "prompt": "Camera and composition: eye-level shot at a management office counter. A Korean man in his 60s asking a smiling staff member at an apartment management office counter, pointing toward the outside. Background color: pale mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "eye-level shot at a management office counter",
+      "bg": "pale mint"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "햇살 드는 베란다 창고 선반을 비우고 웃는 30대 남성",
+      "prompt": "Camera and composition: medium shot in a balcony storage area. A Korean man in his 30s smiling in front of a neatly emptied balcony storage shelf in sunlight. Background color: soft apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a balcony storage area",
+      "bg": "soft apricot"
+    }
+  ]
+}

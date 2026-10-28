@@ -1,0 +1,100 @@
+{
+  "slug": "2026-10-29-sileopgeubyeo-jogeon",
+  "title": "실업급여 조건, 자진 퇴사라도 받는 정당한 이직 사유는 무엇일까 (180일)",
+  "source": "10/29(목) 티스토리 원고 (10/28 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 10/29 원고부터 티스토리도 style_v2·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "거실에서 30대 아들이 60대 아버지와 마주 앉아 퇴사 고민을 이야기하는 모습 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean son in his 30s in a burgundy sweater and his father in his 60s sitting across from each other on living room chairs, the son calmly explaining his plan to leave his job while the father listens. Facial expression: explaining with one hand open toward the viewer. Color theme: warm burgundy and cream tones with a soft gold accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "warm burgundy and cream tones with a soft gold accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "burgundy",
+      "thumb_person": "30대 아들과 60대 아버지",
+      "thumb_mood": "설명",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "burgundy",
+        "font": "jua",
+        "title": "실업급여 조건\n자진 퇴사도?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "실업급여 조건 네 가지를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "실업급여 조건 네 가지",
+        "items": [
+          "고용보험 180일 이상",
+          "일할 의사와 능력",
+          "수급 제한 사유가 아닐 것",
+          "재취업 노력"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "거실 식탁에서 달력에 근무한 날을 표시하는 20대 여성",
+      "prompt": "Camera and composition: top-down view of a dining table. A Korean woman in her 20s marking work days with small stickers on a blank wall-style desk calendar at a dining table, only her upper body visible. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "top-down view of a dining table",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "회사 휴게실에서 동료와 이야기하며 고민하는 40대 여성",
+      "prompt": "Camera and composition: medium shot in an office break room. A Korean woman in her 40s talking with a colleague over paper cups in a quiet office break room, looking thoughtful. Background color: pale mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in an office break room",
+      "bg": "pale mint"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "자진 퇴사라도 인정되는 이직 사유를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "자진 퇴사 인정 사유 예",
+        "items": [
+          "임금체불이 2개월 이상",
+          "직장 내 괴롭힘을 당함",
+          "통근 왕복 3시간 이상",
+          "계약기간 만료와 정년"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "병원 복도에서 부모님의 휠체어를 밀어 드리는 50대 아들",
+      "prompt": "Camera and composition: wide shot of a hospital corridor. A Korean son in his 50s gently pushing his elderly parent in a wheelchair along a bright hospital corridor. Background color: light lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a hospital corridor",
+      "bg": "light lavender"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "고용센터 상담 창구 앞에서 번호표를 들고 기다리는 30대 여성",
+      "prompt": "Camera and composition: eye-level shot at a public employment center. A Korean woman in her 30s holding a small blank number ticket, waiting calmly in front of a consultation counter at a public employment center. Background color: warm cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "eye-level shot at a public employment center",
+      "bg": "warm cream"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "햇살 드는 공원 벤치에서 노트북으로 이력서를 고치는 30대 남성",
+      "prompt": "Camera and composition: medium shot on a park bench. A Korean man in his 30s editing his resume on a laptop on a sunny park bench, the screen facing away. Background color: soft apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on a park bench",
+      "bg": "soft apricot"
+    }
+  ]
+}
