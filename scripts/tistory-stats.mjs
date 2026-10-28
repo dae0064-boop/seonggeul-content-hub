@@ -43,8 +43,8 @@ const BASE = `https://${blog}.tistory.com`;
 // 짐작한 관리 화면 주소 — 없으면 첫 화면 메뉴 링크로 찾아간다
 const PAGES = [
   ['manage', `${BASE}/manage`],
-  ['stat-visit', `${BASE}/manage/statistics/visit`],
-  ['stat-refer', `${BASE}/manage/statistics/refer`],
+  ['stat-visit', `${BASE}/manage/statistics/blog`], // 2026-10-28 — /visit 은 '페이지 없음', 메뉴가 가는 실제 주소
+  ['stat-refer', `${BASE}/manage/statistics/referrer`],
   ['stat-keyword', `${BASE}/manage/statistics/keyword`],
   ['stat-post', `${BASE}/manage/statistics/entry`],
   ['revenue', `${BASE}/manage/revenue`],
