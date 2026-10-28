@@ -1,0 +1,99 @@
+{
+  "slug": "2026-10-29-hospice-byeongdong",
+  "title": "호스피스 병동, 어떤 환자가 들어갈 수 있나요 (대상 질환 5가지 · 2026년)",
+  "source": "10/29(목) 원고 (10/28 밤 Routine 1차)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). style_v2·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "창가 침대 옆 작은 탁자 위의 꽃병과 담요 (대표사진)",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A small vase of yellow and lavender flowers on a wooden bedside table next to a neatly folded soft blanket in a calm hospital room, warm window light. Color theme: lavender and plum tones with a yellow accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "핵심 사물 하나 크게 (사람 없음)",
+      "bg": "lavender and plum tones with a yellow accent",
+      "note": "대표",
+      "thumb_shot": "object",
+      "thumb_theme": "plum",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "plum",
+        "font": "jua",
+        "title": "호스피스 병동\n누가 갈까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "햇살이 드는 호스피스 병실과 창밖 단풍",
+      "prompt": "Camera and composition: wide shot of a quiet hospital room. A sunlit hospice room with one bed, a comfortable armchair for family and autumn maple trees visible through a large window. Background color: warm cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a quiet hospital room",
+      "bg": "warm cream"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "호스피스 대상 질환 5가지를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "호스피스 대상 질환",
+        "items": [
+          "암",
+          "후천성면역결핍증",
+          "만성 폐쇄성 호흡기질환",
+          "만성 간경화",
+          "만성호흡부전"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "가족이 쉬어 가는 아늑한 가족실 소파",
+      "prompt": "Camera and composition: medium wide shot of a family lounge. A cozy family lounge in a hospital with a soft sofa, a small kitchenette and a plant, where a family member rests. Background color: soft peach. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium wide shot of a family lounge",
+      "bg": "soft peach"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "집 거실에서 방문 간호사와 이야기하는 70대 남성과 아내",
+      "prompt": "Camera and composition: medium shot in a home living room. A visiting nurse in a light blue uniform talking warmly with an elderly man in his 70s and his wife on their living room sofa. Background color: pale mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a home living room",
+      "bg": "pale mint"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "호스피스 신청 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "호스피스 신청",
+        "items": [
+          "호스피스 이용동의서",
+          "의사소견서",
+          "전문기관에 내요"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "병원 상담실 탁자에 놓인 찻잔 두 개와 안내 책자",
+      "prompt": "Camera and composition: top-down shot of a consultation table. Two cups of tea and a closed blank booklet on a round table in a quiet hospital consultation room. Background color: light lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "top-down shot of a consultation table",
+      "bg": "light lavender"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "병실 창가에서 어머니의 손을 잡고 미소 짓는 딸",
+      "prompt": "Camera and composition: close shot by a window. A Korean daughter in her 40s gently holding her elderly mother's hand by a hospital window, both smiling softly. Background color: warm apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close shot by a window",
+      "bg": "warm apricot"
+    }
+  ]
+}

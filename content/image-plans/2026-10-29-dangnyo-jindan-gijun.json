@@ -1,0 +1,97 @@
+{
+  "slug": "2026-10-29-dangnyo-jindan-gijun",
+  "title": "당뇨 진단 기준, 공복혈당 몇부터 당뇨일까요 (126mg/dL 이상)",
+  "source": "10/29(목) 원고 (10/28 밤 Routine 1차)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). style_v2·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "혈당측정기와 결과지, 물컵을 놓은 식탁을 위에서 본 모습 (대표사진)",
+      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A breakfast table seen from above with a blood glucose meter with a blank screen, a lancing pen, a glass of water, a green apple and a small closed notebook neatly arranged. Color theme: terracotta and warm beige tones with a teal accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "위에서 내려다본 탁자 (사람 없음)",
+      "bg": "terracotta and warm beige tones with a teal accent",
+      "note": "대표",
+      "thumb_shot": "overhead",
+      "thumb_theme": "brick",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "brick",
+        "font": "ptd",
+        "title": "당뇨 진단 기준\n몇부터 당뇨?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "아침 공복에 병원 채혈실 앞에서 기다리는 50대 남성",
+      "prompt": "Camera and composition: medium shot in a hospital waiting area. A Korean man in his 50s in a navy coat sitting calmly on a bench outside a hospital blood test room in the early morning. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a hospital waiting area",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "당뇨 진단 기준 4가지를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "당뇨 진단 기준",
+        "items": [
+          "당화혈색소 6.5%",
+          "공복혈당 126",
+          "부하검사·무작위 혈당 200"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "저녁 식사 뒤 물만 마시며 시계를 보는 60대 여성",
+      "prompt": "Camera and composition: medium shot in a kitchen at night. A Korean woman in her 60s drinking a glass of water at a kitchen table in the evening, a wall clock behind her. Background color: light lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a kitchen at night",
+      "bg": "light lavender"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "진료실에서 의사에게 결과지 설명을 듣는 40대 여성",
+      "prompt": "Camera and composition: over-the-shoulder shot in a clinic. A Korean woman in her 40s listening to a doctor who points at a blank chart on a monitor in a bright clinic room. Background color: pale mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "over-the-shoulder shot in a clinic",
+      "bg": "pale mint"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "공원 산책로를 빠르게 걷는 50대 부부",
+      "prompt": "Camera and composition: wide shot of a park path. A Korean couple in their 50s briskly walking together along an autumn park path with yellow ginkgo trees. Background color: warm cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a park path",
+      "bg": "warm cream"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "당뇨 선별검사 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "당뇨 검사 받는 순서",
+        "items": [
+          "당화혈색소로 먼저 검사",
+          "5.7~6.0%면 매년 측정",
+          "다른 날 다시 확인"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "아침 식탁에서 결과지를 함께 보며 웃는 60대 부부",
+      "prompt": "Camera and composition: eye-level shot at a breakfast table. A smiling Korean couple in their 60s looking at a blank results sheet together at a breakfast table with rice and soup. Background color: warm apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "eye-level shot at a breakfast table",
+      "bg": "warm apricot"
+    }
+  ]
+}
