@@ -559,7 +559,7 @@ Q&A          많이 묻는 3~5개
 | 언제 | 어디서 | 무엇 |
 |---|---|---|
 | 전날 20:53 (10/26~10/30 은 21:47 2차도) | 클라우드 Claude (Routine, `routines/naver-daily.md` — 10/27~10/31 원고는 5편씩 두 번 = 10편) | 다음 날 원고 5편 + 이미지 계획서 작성, 검사기 통과, `publish_at` 10:00·12:00·15:00·17:00·21:00 (캘린더 순서, 2026-10-15 원고부터), PR → `main`. 티스토리는 이 작업에 넣지 않는다 (2026-10-02 사용자 결정 — 티스토리는 22:37 작업이 따로 한다) |
-| 매일 21:41 | 클라우드 Claude (Routine, `routines/threads-insurance-daily.md`) | **2026-10-26 사용자 지시로 다시 켬** (10/8~10/26 멈춤). 스레드 보험 심의글 10편 `content/threads/insurance/sets/<날짜>.md` 작성, 검사기 통과, PR → `main`. GOMS 등록 대기가 20편 이상이면 쓰지 않는다. 다음 아침 PC 가 Word 저장 → **GOMS 자동 등록 하루 10편**(`goms-register-auto.ps1`) |
+| 매일 21:41 | 클라우드 Claude (Routine, `routines/threads-insurance-daily.md`) | **⏸ 2026-10-28 사용자 지시로 멈춤 — 11/1 까지 쓰지 않고, 그 뒤는 사용자가 다시 정한다** (10/26 다시 켰던 것). 스레드 보험 심의글 10편 `content/threads/insurance/sets/<날짜>.md` 작성, 검사기 통과, PR → `main`. GOMS 등록 대기가 20편 이상이면 쓰지 않는다. 다음 아침 PC 가 Word 저장 → **GOMS 자동 등록 하루 10편**(`goms-register-auto.ps1`) |
 | 전날 22:37 | 클라우드 Claude (Routine, `routines/tistory-daily.md`) | 다음 날 **티스토리** 원고 5편 + 이미지 계획서 — 그날 네이버 5편과 짝(같은 묶음, 다른 메인 키워드), `lint-tistory` 통과, `publish_at` 10:30·12:30·15:30·17:30·21:30 (네이버와 30분 텀, 2026-10-15 원고부터), PR → `main` |
 | 당일 09:00 | 사용자 PC (작업 스케줄러 `SeonggeulDailyReserve`) | `launchers/auto-day.cmd` → `git pull` → **보험글 Word 저장 (Drive `보험글/스레드 N편.docx`)** → 이미지 생성 → 5편 예약발행 → **티스토리 5편 그림·예약발행 (`tistory-day.ps1 -Reserve`, 2026-10-03~)** → 블로그 통계·**티스토리 상태(`tistory-stats.ps1`, 읽기만 — 방문·유입·애드센스·구글 색인, 2026-10-14~)** → 결과를 Drive `run-logs` 로 |
 | 당일 10:10 | 같은 작업의 두 번째 시각 (첫 실행 70분 뒤, 노트북은 10:25) | 첫 실행에서 저장 못 한 글만 다시 (`.done` 표시가 있는 글은 건너뜀). 2026-10-02 이전 등록 PC 는 `ensure-retry.ps1` 이 다음 실행 때 이 시각을 저절로 더한다 |
