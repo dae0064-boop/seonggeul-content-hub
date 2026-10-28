@@ -19,6 +19,10 @@
  *     look "frame" 사진 둘레에 진한 남색 테두리 + 위쪽 흰 글상자에 남색 굵은 글씨, 첫 줄에 노란 형광펜
  *     theme "forest" 등 (standards/image-style.json thumb_themes) — 띠·테두리 색과 첫 줄 글씨 색. 없으면 남색
  *     font "jua" (둥근 글씨) | "ptd" (굵은 고딕, 기본) — 2026-10-26 사용자: 대표사진마다 색·글씨가 같아 보이지 않게
+ *   2026-10-28 사용자 — "색감이랑 제목만 다를 뿐 너무 비슷한 형식": 글씨 배치를 셋 더 (10/29 네이버 원고부터 하루 섞기)
+ *     look "bottom"  사진은 위 70%, 아래 30% 는 테마 색 띠에 글씨 (첫 줄 키워드 색 크게, 둘째 줄 흰 글씨)
+ *     look "sticker" 사진 꽉 채우고, 왼쪽 아래에 살짝 기운 흰 스티커(첫 줄) + 그 위 키워드 색 말풍선(둘째 줄)
+ *     look "poster"  테마 색 바탕에 큰 글씨 두 줄(위), 사진은 오른쪽 아래 둥근 원 안에
  *
  * 대표사진 카드 틀 (2026-10-09 대표사진 시험 결론 — 10/12 원고부터 네이버 하루 2편):
  *   계획서 1번에 "frame": "card" → 진한 남색 카드 + 가운데 사진 칸(1번 그림 그대로) + 위 질문형 제목 두 줄
@@ -68,6 +72,7 @@ function html(imgDataUrl, size, o) {
   let thumbFamily = STYLE.font;
   if (o.kind === 'thumb' && o.frame === 'card') return cardThumbHtml(imgDataUrl, S, o);
   if (o.kind === 'thumb' && (o.look === 'band' || o.look === 'frame')) return lookThumbHtml(imgDataUrl, S, o);
+  if (o.kind === 'thumb' && (o.look === 'bottom' || o.look === 'sticker' || o.look === 'poster')) return layoutThumbHtml(imgDataUrl, S, o);
   if (o.kind === 'thumb') {
     const tl = String(o.title).split('\n');
     const fs1 = Math.round(S * (tl.length > 2 ? 0.105 : 0.15));
@@ -216,6 +221,69 @@ function lookThumbHtml(imgDataUrl, S, o) {
     <div class="wrap">${band
       ? tl.map((t, i) => `<div class="title${i === 0 ? ' key' : ''}">${esc(t)}</div>`).join('')
       : `<div class="box">${tl.map((t, i) => `<div class="title${i === 0 ? ' key' : ''}"><span>${esc(t)}</span></div>`).join('')}</div>`}</div>
+  </body>`;
+}
+
+// ── 대표사진 모양 bottom·sticker·poster (2026-10-28 사용자 — 모두 위 띠라 형식이 같아 보였다) ──
+function layoutThumbHtml(imgDataUrl, S, o) {
+  const tl = String(o.title).split('\n');
+  const th = thumbTheme(o.theme);
+  const jua = o.font === 'jua' && juaFace();
+  const face = jua || ptdFace();
+  const fam = jua ? `"Jua",${STYLE.font}` : face ? `"PTD",${STYLE.font}` : STYLE.font;
+  const fw = jua ? 400 : 800;
+  const ls = jua ? 0 : '-.02em';
+  const [l1, l2 = ''] = tl.map(esc);
+  const base = `${face}
+    *{margin:0;box-sizing:border-box}
+    body{width:${S}px;height:${S}px;position:relative;overflow:hidden;background:${th.band};font-family:${fam}}
+    img{width:100%;height:100%;object-fit:cover;display:block}
+    .title{font-family:${fam};font-weight:${fw};line-height:1.15;white-space:nowrap;letter-spacing:${ls}}`;
+  if (o.look === 'bottom') {
+    return `<!doctype html><meta charset="utf-8"><style>${base}
+      .ph{position:absolute;left:0;right:0;top:0;height:${S * 0.7}px;overflow:hidden}
+      .bar{position:absolute;left:0;right:0;bottom:0;height:${S * 0.3}px;background:${th.band};
+        display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 ${S * 0.05}px;
+        border-top:${S * 0.012}px solid ${th.key}}
+      .bar>div{width:100%;display:flex;justify-content:center}
+      .t1{font-size:${S * 0.115}px;color:${th.key}}
+      .t2{font-size:${S * 0.075}px;color:#fff;margin-top:${S * 0.008}px}
+    </style><body>
+      <div class="ph"><img src="${imgDataUrl}"></div>
+      <div class="bar"><div><div class="title t1">${l1}</div></div><div><div class="title t2">${l2}</div></div></div>
+    </body>`;
+  }
+  if (o.look === 'sticker') {
+    return `<!doctype html><meta charset="utf-8"><style>${base}
+      .ph{position:absolute;inset:0}
+      .stk{position:absolute;left:${S * 0.045}px;bottom:${S * 0.06}px;width:${S * 0.74}px;transform:rotate(-4deg);transform-origin:left bottom}
+      .bub{display:inline-block;max-width:100%;background:${th.key};border-radius:${S * 0.05}px;padding:${S * 0.016}px ${S * 0.04}px;margin-left:${S * 0.05}px;
+        position:relative;box-shadow:0 ${S * 0.006}px ${S * 0.02}px rgba(0,0,0,.25)}
+      .bub:after{content:"";position:absolute;left:${S * 0.06}px;bottom:-${S * 0.028}px;border:${S * 0.016}px solid transparent;border-top:${S * 0.022}px solid ${th.key}}
+      .bub .t2{font-size:${S * 0.066}px;color:${th.band}}
+      .card{margin-top:${S * 0.04}px;background:#fff;border-radius:${S * 0.035}px;padding:${S * 0.022}px ${S * 0.045}px;
+        border:${S * 0.01}px solid ${th.band};box-shadow:0 ${S * 0.01}px ${S * 0.035}px rgba(0,0,0,.3)}
+      .card .t1{font-size:${S * 0.11}px;color:${th.band}}
+    </style><body>
+      <div class="ph"><img src="${imgDataUrl}"></div>
+      <div class="stk"><div class="bub"><div class="title t2">${l2}</div></div><div class="card"><div class="title t1">${l1}</div></div></div>
+    </body>`;
+  }
+  // poster: 테마 색 바탕 + 큰 글씨 + 둥근 사진
+  return `<!doctype html><meta charset="utf-8"><style>${base}
+    .txt{position:absolute;left:${S * 0.07}px;right:${S * 0.07}px;top:${S * 0.07}px;height:${S * 0.34}px;display:flex;flex-direction:column;justify-content:center}
+    .txt>div{width:100%}
+    .txt .title{display:inline-block}
+    .t1{font-size:${S * 0.13}px;color:${th.key}}
+    .t2{font-size:${S * 0.095}px;color:#fff;margin-top:${S * 0.01}px}
+    .line{width:${S * 0.16}px;height:${S * 0.014}px;background:${th.key};border-radius:${S * 0.01}px;margin-top:${S * 0.025}px}
+    .ph{position:absolute;right:-${S * 0.06}px;bottom:-${S * 0.08}px;width:${S * 0.72}px;height:${S * 0.72}px;border-radius:50%;overflow:hidden;
+      border:${S * 0.018}px solid ${th.key};box-shadow:0 0 0 ${S * 0.02}px ${rgba('#FFFFFF', 0.18)}}
+    .dot{position:absolute;left:${S * 0.08}px;bottom:${S * 0.12}px;width:${S * 0.12}px;height:${S * 0.12}px;border-radius:50%;background:${rgba('#FFFFFF', 0.12)}}
+  </style><body>
+    <div class="dot"></div>
+    <div class="txt"><div><div class="title t1">${l1}</div></div><div><div class="title t2">${l2}</div></div><div class="line"></div></div>
+    <div class="ph"><img src="${imgDataUrl}"></div>
   </body>`;
 }
 
