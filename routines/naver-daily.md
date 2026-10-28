@@ -33,9 +33,9 @@
 >    그림 장면 프롬프트는 `style_v2`·`palette_v2`(진한 색 + 강조색 하나), 대표사진(1번)은 `thumbnail_closeup` + 글 상황에 맞는 새 사람(고정 캐릭터 금지) + `thumb_themes`·`thumb_moods` 하나씩,
 >    계획서 1번에 `thumb_theme`·`thumb_person`·`thumb_mood`, overlay `{"kind":"thumb","look":"band","theme":같은 값,"font":"jua"|"ptd","title":"메인 키워드\n질문?"}`.
 >    5편끼리 테마·사람·표정이 모두 다르게, 글씨체는 두 가지 섞고, 전날 같은 시각 글과 테마가 겹치지 않게 (검사기). 사람은 글 상황 그대로 — 간병비 → 50대 딸, 실손 청구 → 60대 남성, 홈판 살림 → 30대 아빠·20대 자취생처럼 나이·성별을 고루.
->    🆕 **10/29 원고부터 배치·구도도 섞는다** (2026-10-28 사용자 — "색감이랑 제목만 다를 뿐 너무 비슷한 형식", `standards/이미지-기준.md` "대표사진 배치·구도 섞기"):
->    1번에 `thumb_layout`(band·frame·bottom·sticker·poster, overlay `look` 과 같게)·`thumb_shot`(face·duo·hands·object·overhead·wide), 프롬프트 맨 앞에 `image-style.json` 그 shot 의 `prompt` + layout 의 `space` 문구
->    (`thumbnail_closeup` 은 쓰지 않는다). 쓰기 전에 그날 다른 원고의 배치·구도·사람을 먼저 표로 적고 고른다 — 5편 모두 다르게(10편 날 같은 것 2편까지), 둘째 줄 질문은 절반까지("이것만 보세요"·"신청은 여기서" 같은 답으로),
+>    🆕 **10/29 원고부터 그림 구도를 섞는다 — 글씨(위쪽 색 띠·둘째 줄 질문)는 그대로** (2026-10-28 사용자 — "사람이 너무 똑같다", `standards/이미지-기준.md` "대표사진 구도 섞기"):
+>    1번에 `thumb_shot`(face·duo·hands·object·overhead·wide), 프롬프트 맨 앞에 `image-style.json` 그 shot 의 `prompt` + `thumb_band_space` 문구 (`thumbnail_closeup` 은 쓰지 않는다).
+>    쓰기 전에 그날 다른 원고의 구도·사람을 먼저 표로 적고 고른다 — 5편 모두 다르게(10편 날 같은 구도 2편까지), 전날 같은 시각 글과 다르게,
 >    종이·안내문 든 장면 하루 1편(10편 날 2편), 60대 이상만 나오는 장면 하루 2편(10편 날 4편). 사람 없는 구도는 `thumb_person: "없음"`·`thumb_mood` 없음. 검사기가 센다.
 > ④ 쇼핑 커넥트(7-1)는 생활정보 1편(홈판형)에 상품이 자연스럽게 이어질 때만. 안 맞으면 그날은 넣지 않는다 — 상품 때문에 글감을 바꾸지 않는다.
 

@@ -64,8 +64,9 @@ const REAL_AFTER = { 생활보장: Infinity, 생활정보: Infinity };
 //   1번 = 한 사람 얼굴 가까이(thumbnail_closeup)·생각하는 표정·강조색, 글씨는 위쪽 남색 띠(look "band") 두 줄 — 첫 줄 메인 키워드, 둘째 줄 질문(숫자 없음).
 //   그림 장면은 style_v2(파스텔보다 진한 색 + 강조색 하나). 검색 결과에서 크림색 빈 벽·작은 두 사람·키워드 반복 글씨가 눈에 안 띄었다.
 const THUMB2_FROM = '2026-10-27';
-// 대표사진 배치·구도 섞기 (2026-10-28 사용자 — "색감이랑 주제 제목만 다를 뿐 너무 비슷한 형식", 2026-10-29 네이버 원고부터):
-//   1번에 thumb_layout(위 띠·아래 띠·테두리·스티커·포스터)·thumb_shot(얼굴·두 사람·손·사물·탁자·방 전체). 같은 날 겹치지 않게.
+// 대표사진 구도 섞기 (2026-10-28 사용자 — "사람이 너무 똑같다. 글씨 배치(위쪽 색 띠)는 그대로, 그림 구도만", 2026-10-29 원고부터 네이버·티스토리 모두):
+//   1번에 thumb_shot(얼굴·두 사람·손·사물·탁자·방 전체). 같은 날 겹치지 않게, 종이 든 장면·60대 이상만 나오는 장면은 하루 몇 편까지.
+//   티스토리도 같은 날부터 네이버와 같은 대표사진 규칙(위쪽 색 띠·테마·새 사람·표정·style_v2)을 따른다 ("티스토리도 그림체가 너무 비슷하다").
 const THUMB3_FROM = '2026-10-29';
 const PAPER = /\b(paper|papers|letter|brochure|document|leaflet|notice|pamphlet|booklet|form)\b/i;
 // 공통 끝 문장("…signs, labels, screens and papers stay blank…")은 빼고 본다
@@ -507,8 +508,8 @@ for (const file of files) {
       if (!real && notClay.length) errors.push(`${post.category} ${nth}번째 글이라 ${Number.isFinite(REAL_AFTER[post.category]) ? `아직 클레이 3D 입니다(${REAL_AFTER[post.category]}편까지)` : '클레이 3D 입니다'} — 이미지 계획서 ${notClay.join(', ')}번에 clay 문구가 없습니다 (standards/image-style.json style)`);
     }
   }
-  // 대표사진 새 모양·진한 색 (THUMB2_FROM 네이버 원고부터)
-  if (!tistory && dated >= THUMB2_FROM) {
+  // 대표사진 새 모양·진한 색 (THUMB2_FROM 네이버 원고부터, 티스토리는 THUMB3_FROM 부터)
+  if (dated >= (tistory ? THUMB3_FROM : THUMB2_FROM)) {
     const plan = planOf(file);
     if (plan && Array.isArray(plan.images)) {
       const t = plan.images.find((im) => im.n === 1);
@@ -519,22 +520,17 @@ for (const file of files) {
       else {
         const v3 = dated >= THUMB3_FROM;
         const st0 = imageStyle();
-        const lay = st0.thumb_layouts?.[t.thumb_layout];
         const shot = st0.thumb_shots?.[t.thumb_shot];
-        if (!v3 && (ov.kind !== 'thumb' || ov.look !== 'band')) errors.push('대표사진 글씨는 위쪽 띠 모양입니다 — 1번 overlay 에 "kind": "thumb", "look": "band" (standards/이미지-기준.md "대표사진 제목")');
+        if (ov.kind !== 'thumb' || ov.look !== 'band') errors.push('대표사진 글씨는 위쪽 띠 모양입니다 — 1번 overlay 에 "kind": "thumb", "look": "band" (standards/이미지-기준.md "대표사진 제목")');
         if (v3) {
-          if (!lay) errors.push(`대표사진(1번)에 thumb_layout 이 없거나 목록 밖입니다 (${Object.keys(st0.thumb_layouts || {}).join('·')}) — standards/이미지-기준.md "대표사진 배치·구도"`);
-          else {
-            if (ov.kind !== 'thumb' || ov.look !== t.thumb_layout) errors.push(`대표사진 overlay 는 "kind": "thumb", "look": "${t.thumb_layout}" (thumb_layout 과 같게)`);
-            if (!(t.prompt || '').includes(lay.space)) errors.push(`대표사진 프롬프트에 배치 문구가 없습니다 — "${lay.space}"`);
-          }
-          if (!shot) errors.push(`대표사진(1번)에 thumb_shot 이 없거나 목록 밖입니다 (${Object.keys(st0.thumb_shots || {}).join('·')})`);
+          if (!shot) errors.push(`대표사진(1번)에 thumb_shot 이 없거나 목록 밖입니다 (${Object.keys(st0.thumb_shots || {}).join('·')}) — standards/이미지-기준.md "대표사진 구도 섞기"`);
           else if (!(t.prompt || '').includes(shot.prompt)) errors.push(`대표사진 프롬프트에 구도 문구가 없습니다 — "${shot.prompt}"`);
+          if (st0.thumb_band_space && !(t.prompt || '').includes(st0.thumb_band_space)) errors.push(`대표사진 프롬프트에 위쪽 띠 자리 문구가 없습니다 — "${st0.thumb_band_space}"`);
         }
         if (tl.length !== 2) errors.push(`대표사진 글씨는 두 줄입니다 (지금 ${tl.length}줄) — 첫 줄 메인 키워드, 둘째 줄 질문`);
         else {
           if (post.mainKeyword && !ns(tl[0]).includes(ns(post.mainKeyword)) && !ns(post.mainKeyword).startsWith(ns(tl[0]))) errors.push(`대표사진 첫 줄 "${tl[0]}" 에 메인 키워드 "${post.mainKeyword}" 가 없습니다`);
-          if (!v3 && !/\?$/.test(tl[1].trim())) errors.push(`대표사진 둘째 줄 "${tl[1]}" 은 질문(?로 끝남)으로 씁니다 — 예: "하루 얼마?", "누가 받을까?"`);
+          if (!/\?$/.test(tl[1].trim())) errors.push(`대표사진 둘째 줄 "${tl[1]}" 은 질문(?로 끝남)으로 씁니다 — 예: "하루 얼마?", "누가 받을까?"`);
           for (const l of tl) if (ns(l).length > 10) errors.push(`대표사진 한 줄 "${l}" 이 ${ns(l).length}자 — 10자 안쪽 (길면 글씨가 작아진다)`);
         }
         if (/\d/.test(ov.title || '')) errors.push('대표사진 글씨에 숫자를 넣지 않습니다 (2026-10-02 사용자 — 숫자 꼬리표 없음)');
@@ -560,8 +556,8 @@ for (const file of files) {
         const prev = new Date(Date.parse(dated) - 864e5).toISOString().slice(0, 10);
         const me = file.split(/[\\/]/).pop();
         const moodSame = [];
-        const laySame = [], shotSame = [];
-        let asks = /\?$/.test((tl[1] || '').trim()) ? 1 : 0, papers = hasPaper(t.prompt) ? 1 : 0, olds = people && OLD_ONLY(t.thumb_person) ? 1 : 0;
+        const shotSame = [];
+        let papers = hasPaper(t.prompt) ? 1 : 0, olds = people && OLD_ONLY(t.thumb_person) ? 1 : 0;
         for (const f of [...daySibs(dir, dated), ...daySibs(dir, prev)]) {
           if (f === me) continue;
           const o1 = planOf(dir + f)?.images?.find((im) => im.n === 1);
@@ -574,26 +570,22 @@ for (const file of files) {
             if (o1.thumb_person && o1.thumb_person !== '없음' && o1.thumb_person === t.thumb_person) errors.push(`같은 날 ${f} 와 대표사진 사람(${t.thumb_person})이 같습니다`);
             if (o1.thumb_mood && o1.thumb_mood === t.thumb_mood) moodSame.push(f);
             if (v3) {
-              if (o1.thumb_layout && o1.thumb_layout === t.thumb_layout) laySame.push(f);
               if (o1.thumb_shot && o1.thumb_shot === t.thumb_shot) shotSame.push(f);
-              if (/\?$/.test((String(o1.overlay?.title || '').split('\n')[1] || '').trim())) asks++;
               if (hasPaper(o1.prompt)) papers++;
               if (o1.thumb_person && OLD_ONLY(o1.thumb_person) && st.thumb_shots?.[o1.thumb_shot]?.사람 !== false) olds++;
             }
           } else if (pa && pa === (post.publishAt || '').slice(11)) {
             if (o1.thumb_theme === t.thumb_theme) errors.push(`전날 같은 시각 글 ${f} 와 대표사진 테마(${t.thumb_theme})가 같습니다`);
-            if (v3 && o1.thumb_layout && o1.thumb_layout === t.thumb_layout) errors.push(`전날 같은 시각 글 ${f} 와 대표사진 배치(${t.thumb_layout})가 같습니다`);
+            if (v3 && o1.thumb_shot && o1.thumb_shot === t.thumb_shot) errors.push(`전날 같은 시각 글 ${f} 와 대표사진 구도(${t.thumb_shot})가 같습니다`);
           }
         }
         // 표정은 7가지라 10편 날은 같은 표정 2편까지 (5편 날은 모두 다르게)
-        if (moodSame.length >= (isTen(dated) ? 2 : 1)) errors.push(`같은 날 ${moodSame.join(', ')} 와 대표사진 표정(${t.thumb_mood})이 같습니다 — ${isTen(dated) ? '10편 날은 같은 표정 2편까지' : '모두 다르게'}`);
-        // 배치·구도·둘째 줄·종이·나이도 섞는다 (2026-10-28 사용자 — 색과 제목만 다르고 형식이 같아 보였다)
+        const ten = !tistory && isTen(dated);
+        if (moodSame.length >= (ten ? 2 : 1)) errors.push(`같은 날 ${moodSame.join(', ')} 와 대표사진 표정(${t.thumb_mood})이 같습니다 — ${ten ? '10편 날은 같은 표정 2편까지' : '모두 다르게'}`);
+        // 구도·종이·나이도 섞는다 (2026-10-28 사용자 — 사람이 너무 똑같다)
         if (v3) {
-          const ten = isTen(dated);
           const lim = ten ? 2 : 1;
-          if (laySame.length >= lim) errors.push(`같은 날 ${laySame.join(', ')} 와 대표사진 배치(${t.thumb_layout})가 같습니다 — ${ten ? '10편 날은 같은 배치 2편까지' : '5편 모두 다르게'}`);
           if (shotSame.length >= lim) errors.push(`같은 날 ${shotSame.join(', ')} 와 대표사진 구도(${t.thumb_shot})가 같습니다 — ${ten ? '10편 날은 같은 구도 2편까지' : '5편 모두 다르게'}`);
-          if (asks > (ten ? 5 : 3)) errors.push(`같은 날 대표사진 둘째 줄이 질문(?)인 글이 ${asks}편 — ${ten ? 5 : 3}편까지, 나머지는 짧은 답·행동("이것만 보세요", "신청은 여기서")`);
           if (papers > (ten ? 2 : 1)) errors.push(`같은 날 종이·안내문을 든 대표사진이 ${papers}편 — ${ten ? 2 : 1}편까지 (주제 사물을 바꾸세요)`);
           if (olds > (ten ? 4 : 2)) errors.push(`같은 날 60대 이상만 나오는 대표사진이 ${olds}편 — ${ten ? 4 : 2}편까지 (자녀·보호자·젊은 층이나 사람 없는 구도로)`);
         }
