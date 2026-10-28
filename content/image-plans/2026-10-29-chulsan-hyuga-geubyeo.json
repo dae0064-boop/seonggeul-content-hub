@@ -1,0 +1,107 @@
+{
+  "slug": "2026-10-29-chulsan-hyuga-geubyeo",
+  "title": "출산휴가 급여 얼마 받을까, 통상임금과 상한액 계산 (90일 660만 원)",
+  "source": "10/29(목) 티스토리 원고 (10/28 밤 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 10/29 원고부터 티스토리도 style_v2·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "햇살 드는 거실에서 30대 임신부와 남편이 벽 달력을 보며 휴가 계획을 세우는 모습 (대표사진)",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A sunny living room with a sofa and a plant; a pregnant Korean woman in her 30s and her husband standing small in the room, looking together at a blank wall calendar and planning her leave. Facial expression: relieved gentle smile. Color theme: bright cobalt blue and white tones with an orange accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "방·장소 전체, 사람은 작게",
+      "bg": "bright cobalt blue and white tones with an orange accent",
+      "note": "대표",
+      "thumb_shot": "wide",
+      "thumb_theme": "cobalt",
+      "thumb_person": "30대 부부",
+      "thumb_mood": "안심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "cobalt",
+        "font": "jua",
+        "title": "출산휴가 급여\n얼마 받을까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "출산휴가 기간을 경우별로 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "출산휴가 기간",
+        "items": [
+          "출산전후휴가 90일",
+          "미숙아 출산 100일",
+          "둘 이상 임신 120일"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "출산휴가 급여 계산 순서 4단계를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "출산휴가 급여 계산 순서",
+        "items": [
+          "휴가 일수를 정해요",
+          "통상임금을 확인해요",
+          "기간 금액을 구해요",
+          "상한액과 견줘 봐요"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "산부인과 대기실에서 휴대폰 달력을 함께 보는 30대 부부",
+      "prompt": "Camera and composition: medium shot in a clinic waiting room. A Korean couple in their 30s sitting in an obstetrics clinic waiting room, looking at a phone calendar together; the screen faces away from the viewer. Background color: pale mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a clinic waiting room",
+      "bg": "pale mint"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "식탁에서 급여명세서와 달력을 펼쳐 놓고 메모하는 40대 남편",
+      "prompt": "Camera and composition: over-the-shoulder shot at a dining table. A Korean husband in his 40s jotting notes at a dining table with a blank pay slip and a blank desk calendar in front of him. Background color: warm cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "over-the-shoulder shot at a dining table",
+      "bg": "warm cream"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "사무실 휴게실에서 인사 담당자와 마주 앉아 이야기하는 30대 여성 직원",
+      "prompt": "Camera and composition: medium shot in an office lounge. A Korean female employee in her 30s sitting across from an HR staff member at a small table in a bright office lounge, both calmly talking. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in an office lounge",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "출산휴가 급여 받기 전 확인할 것을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "받기 전 확인할 것",
+        "items": [
+          "고용보험 180일 이상",
+          "휴가 시작 1개월 뒤부터 신청",
+          "휴가 끝난 뒤 12개월 안에",
+          "회사가 우선지원 대상기업인지"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "햇살 드는 아기방에서 작은 아기 옷을 개는 30대 엄마",
+      "prompt": "Camera and composition: wide shot of a sunny nursery. A Korean mother in her 30s folding tiny baby clothes beside a crib in a sunny nursery. Background color: soft apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a sunny nursery",
+      "bg": "soft apricot"
+    }
+  ]
+}
