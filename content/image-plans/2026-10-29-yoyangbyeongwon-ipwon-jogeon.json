@@ -1,0 +1,91 @@
+{
+  "slug": "2026-10-29-yoyangbyeongwon-ipwon-jogeon",
+  "title": "요양병원 입원 조건, 장기요양등급이 없어도 될까요 (대상 3가지 · 2026년)",
+  "source": "10/29(목) 원고 (10/28 밤 Routine 1차)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). style_v2·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "창이 넓은 요양병원 병동 전체 모습과 침대 곁의 어머니와 50대 아들 (대표사진)",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A bright long-term care hospital ward with large windows and several neat beds; near one bed a Korean son in his 50s with short black hair and a mustard sweater gently holds the hand of his mother in her 80s sitting up in bed, both small in the frame. Facial expression: relieved gentle smile. Color theme: teal and sand tones with an orange accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "방·장소 전체, 사람은 작게",
+      "bg": "teal and sand tones with an orange accent",
+      "note": "대표",
+      "thumb_shot": "wide",
+      "thumb_theme": "teal",
+      "thumb_person": "50대 아들과 80대 어머니",
+      "thumb_mood": "안심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "teal",
+        "font": "ptd",
+        "title": "요양병원\n입원 조건은?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "햇살이 드는 요양병원 병실에서 쉬는 어르신",
+      "prompt": "Camera and composition: medium wide shot of a hospital room. An elderly woman resting peacefully on a hospital bed in a sunlit long-term care hospital room, a blanket over her knees. Background color: warm cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium wide shot of a hospital room",
+      "bg": "warm cream"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "요양병원 입원 대상 3가지를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "요양병원 입원 대상",
+        "items": [
+          "노인성 질환자",
+          "만성질환자",
+          "다친 뒤 회복기에 있는 사람"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "거실 탁자에서 장기요양 안내문을 읽는 60대 여성",
+      "prompt": "Camera and composition: medium shot at a living room table. A Korean woman in her 60s with permed hair reading a blank leaflet at a living room table, reading glasses on, a cup of barley tea beside her. Background color: soft peach. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a living room table",
+      "bg": "soft peach"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "병원 상담실에서 의사와 이야기하는 남매",
+      "prompt": "Camera and composition: over-the-shoulder shot in a consultation room. A brother and sister in their 40s talking with a doctor in a white coat across a desk in a calm hospital consultation room. Background color: pale mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "over-the-shoulder shot in a consultation room",
+      "bg": "pale mint"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "나란히 선 요양병원과 요양원 건물 미니어처",
+      "prompt": "Camera and composition: split view of two buildings. Two small buildings side by side like a miniature diorama: on the left a hospital with a simple cross icon and a nurse, on the right a homelike care facility with a garden where elderly people chat. Background color: light butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "split view of two buildings",
+      "bg": "light butter yellow"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "진료기록 서류 봉투를 챙겨 병원 복도를 걷는 40대 딸",
+      "prompt": "Camera and composition: tracking shot in a hospital corridor. A Korean woman in her 40s walking down a hospital corridor holding a large blank envelope of medical records, determined but calm. Background color: light lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "tracking shot in a hospital corridor",
+      "bg": "light lavender"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "요양병원 정원 산책로에서 휠체어를 밀며 웃는 아들",
+      "prompt": "Camera and composition: wide shot of a garden path. A middle-aged son smiling while pushing his elderly mother in a wheelchair along a garden path of a hospital with autumn trees. Background color: warm apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a garden path",
+      "bg": "warm apricot"
+    }
+  ]
+}
