@@ -774,19 +774,28 @@ async function pickTopic(page, editor, post) {
   };
   const before = await readNow();
   if (before.includes(topic)) { log(`주제: ${topic} (이미 맞음)`); return; }
+  let stage = '';
   try {
-    // 주제 칸 열기: 지금 주제 글자가 든 단추, 없으면 class 에 subject/topic 이 든 단추
+    // 주제 칸 열기: 지금 주제 글자가 든 링크·단추. 2026-10-27·28 로그 — 칸은 단추가 아니라 '주제' 이름표 옆
+    // a.link__… "비즈니스·경제 >" 라서 button 만 찾다 20편 모두 실패했다
+    const cur = before.replace(/[>›\s]+$/, '').trim();
     const openSel = [
-      before ? `button:has-text("${before.replace(/[>›\s]+$/, '').trim()}")` : null,
+      cur ? `a[class*="link"]:has-text("${cur}")` : null,
+      cur ? `a:has-text("${cur}")` : null,
+      cur ? `button:has-text("${cur}")` : null,
       'button[class*="subject"]', 'button[class*="topic"]', '[class*="subject"] button', 'a[class*="subject"]',
     ].filter(Boolean);
+    stage = '주제 칸 열기';
     await findAnywhere(page, editor, openSel, { timeout: 3000 }).then((r) => r.loc.click());
-    await sleep(800);
+    await sleep(1000);
     const item = [
       `[class*="subject"] label:text-is("${topic}")`, `[class*="subject"] button:text-is("${topic}")`,
       `[class*="subject"] span:text-is("${topic}")`, `[class*="subject"] a:text-is("${topic}")`,
-      `label:text-is("${topic}")`, `li button:text-is("${topic}")`, `li a:text-is("${topic}")`,
+      `[class*="theme"] label:text-is("${topic}")`, `[class*="theme"] button:text-is("${topic}")`, `[class*="theme"] a:text-is("${topic}")`,
+      `label:text-is("${topic}")`, `li button:text-is("${topic}")`, `li a:text-is("${topic}")`, `li label:text-is("${topic}")`,
+      `button:text-is("${topic}")`, `a:text-is("${topic}")`,
     ];
+    stage = `목록에서 ${topic}`;
     await findAnywhere(page, editor, item, { timeout: 3000 }).then((r) => r.loc.click());
     await sleep(500);
     // 주제 목록 안의 '확인' (있을 때만 — 발행 단추는 '발행' 글자라 여기에 걸리지 않는다)
@@ -797,15 +806,17 @@ async function pickTopic(page, editor, post) {
     if (after.includes(topic)) log(`주제: ${topic} (전: ${before || '?'})`);
     else warn(`주제를 ${topic} 로 바꿨는지 확인하지 못함 (화면: "${after || '?'}") — 기본 주제로 갈 수 있어요`);
   } catch (e) {
-    warn(`주제 자동 선택 실패 — 기본 주제(${before || '?'})로 갑니다 (${topic}): ${e.message.split('\n')[0]}`);
+    warn(`주제 자동 선택 실패 (${stage}) — 기본 주제(${before || '?'})로 갑니다 (${topic}): ${e.message.split('\n')[0]}`);
     for (const [name, scope] of [['page', page], ['editor', editor]]) {
       const found = await scope.evaluate(() => {
         const out = [];
         for (const el of document.querySelectorAll('button, label, span, a, li, strong')) {
+          // 본문 글자(se-…)·맞춤법 검사 칸(nspt)은 빼고, 발행 패널 쪽만 남긴다
+          if (el.closest('.se-content, .se-main-container, [class*="nspt"], .se-toolbar')) continue;
           const t = (el.textContent || '').replace(/\s+/g, ' ').trim();
           const cls = typeof el.className === 'string' ? el.className : '';
-          if ((/주제|·/.test(t) && t.length < 30 && el.children.length < 3) || /subject|topic/i.test(cls)) out.push(`${el.tagName.toLowerCase()}.${cls.split(' ').slice(0, 2).join('.')} "${t.slice(0, 25)}"`);
-          if (out.length >= 20) break;
+          if ((/주제|·/.test(t) && t.length < 30 && el.children.length < 3) || /subject|topic|theme/i.test(cls)) out.push(`${el.tagName.toLowerCase()}.${cls.split(' ').slice(0, 2).join('.')} "${t.slice(0, 25)}"`);
+          if (out.length >= 30) break;
         }
         return out;
       }).catch(() => []);

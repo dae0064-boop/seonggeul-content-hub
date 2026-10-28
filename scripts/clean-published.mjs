@@ -20,6 +20,11 @@ import path from 'node:path';
 import { parsePost } from './lib/parse-post.mjs';
 
 const argv = process.argv.slice(2);
+// 모르는 인자(--help 등)로 불렀을 때 지우지 않고 사용법만 보여 준다 (2026-10-28 — --help 가 그대로 지우기를 돌렸다)
+if (argv.some((a, i) => a.startsWith('-') && !['--dry-run', '--before'].includes(a) && argv[i - 1] !== '--before')) {
+  console.log('사용법: node scripts/clean-published.mjs [--before YYYY-MM-DD] [--dry-run]');
+  process.exit(0);
+}
 const dry = argv.includes('--dry-run');
 const bi = argv.indexOf('--before');
 const before = bi >= 0 ? argv[bi + 1]
