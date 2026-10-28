@@ -1,0 +1,91 @@
+{
+ "slug": "2026-10-29-tteolbeun-gam",
+ "title": "떫은감, 선물 받은 감이 떫을 때 집에서 홍시로 익히는 순서",
+ "source": "10/29(목) 원고 (10/28 밤 Routine 2차)",
+ "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). style_v2·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "나무 쟁반 위에 주황빛 떫은감과 홍시가 나란히 놓인 탁자 (대표사진)",
+   "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A wooden tray on a kitchen table with firm orange astringent persimmons lined up next to two soft glossy ripe hongsi persimmons, a small spoon and a linen cloth. Color theme: olive green and warm cream tones with a red accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "위에서 내려다본 탁자 (사람 없음)",
+   "bg": "olive green and warm cream tones with a red accent",
+   "note": "대표",
+   "thumb_shot": "overhead",
+   "thumb_theme": "olive",
+   "thumb_person": "없음",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "olive",
+    "font": "ptd",
+    "title": "떫은감\n어떻게 익힐까?"
+   }
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "햇살 드는 거실 바닥에 펼쳐 둔 감 상자",
+   "prompt": "Camera and composition: high angle shot of a living room floor. An open cardboard box of orange persimmons on a sunny living room floor, a few persimmons taken out and placed on a cloth beside it. Background color: warm cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "high angle shot of a living room floor",
+   "bg": "warm cream"
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "반으로 자른 단단한 감과 말랑한 홍시를 나란히 둔 도마",
+   "prompt": "Camera and composition: close-up on a cutting board. A firm persimmon cut in half next to a soft ripe hongsi persimmon on a wooden cutting board, a small knife set aside. Background color: soft apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up on a cutting board",
+   "bg": "soft apricot"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "시장 좌판에 길쭉한 대봉감과 납작한 단감이 따로 담긴 바구니",
+   "prompt": "Camera and composition: eye-level shot of a market stall. A traditional market stall with two baskets: one with long pointed daebong persimmons and one with flat round sweet persimmons, a friendly vendor in the background. Background color: light sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "eye-level shot of a market stall",
+   "bg": "light sky blue"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "홍시 만들기 순서를 정리한 단계 카드",
+   "kind": "card",
+   "card": {
+    "type": "steps",
+    "title": "홍시 만들기 순서",
+    "items": [
+     "상처 난 감을 골라낸다",
+     "한 겹으로 펼친다",
+     "햇볕 없는 서늘한 실온에 둔다",
+     "익은 것부터 꺼낸다"
+    ]
+   }
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "소주잔과 비닐봉지 옆에 꼭지가 위로 놓인 단단한 감",
+   "prompt": "Camera and composition: close-up on a kitchen counter. A small clear soju glass and an open plastic bag next to firm persimmons placed with their calyx facing up on a kitchen counter. Background color: pale mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up on a kitchen counter",
+   "bg": "pale mint"
+  },
+  {
+   "n": 7,
+   "file": "07.png",
+   "title": "냉동실 칸에 하나씩 담긴 홍시와 작은 숟가락",
+   "prompt": "Camera and composition: front view of an open freezer drawer. An open freezer drawer with several ripe persimmons each in its own small container, a small spoon placed in front. Background color: icy lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "front view of an open freezer drawer",
+   "bg": "icy lavender"
+  },
+  {
+   "n": 8,
+   "file": "08.png",
+   "title": "가을 저녁 식탁에서 홍시를 숟가락으로 떠먹는 가족",
+   "prompt": "Camera and composition: medium wide shot at a dinner table. A family of three at an autumn evening dinner table happily scooping soft hongsi persimmons with spoons from small bowls. Background color: warm terracotta. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium wide shot at a dinner table",
+   "bg": "warm terracotta"
+  }
+ ]
+}

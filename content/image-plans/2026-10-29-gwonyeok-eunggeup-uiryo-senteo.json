@@ -1,0 +1,91 @@
+{
+ "slug": "2026-10-29-gwonyeok-eunggeup-uiryo-senteo",
+ "title": "권역응급의료센터, 경증이면 얼마나 낼까요 (본인부담 90% · 2026년)",
+ "source": "10/29(목) 원고 (10/28 밤 Routine 2차)",
+ "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). style_v2·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "응급실 안내 표지판 아래에서 설명하는 간호사와 듣고 있는 40대 아들 (대표사진)",
+   "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean nurse in her 30s in a navy scrub uniform explains with one open hand to a man in his 40s with short black hair and an orange padded jacket, standing under a blank emergency room direction sign with a simple cross icon. Facial expression: explaining with one hand open toward the viewer. Color theme: bright cobalt blue and white tones with an orange accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "두 사람이 마주 보고 이야기",
+   "bg": "bright cobalt blue and white tones with an orange accent",
+   "note": "대표",
+   "thumb_shot": "duo",
+   "thumb_theme": "cobalt",
+   "thumb_person": "40대 아들과 간호사",
+   "thumb_mood": "설명",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "cobalt",
+    "font": "ptd",
+    "title": "권역응급의료센터\n얼마 낼까?"
+   }
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "밤 시간 불이 켜진 큰 병원 응급실 입구와 구급차",
+   "prompt": "Camera and composition: wide night shot of a hospital entrance. A large hospital emergency room entrance glowing at night with a parked ambulance and a blank sign with a simple cross icon. Background color: deep night blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "wide night shot of a hospital entrance",
+   "bg": "deep night blue"
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "큰 병원 건물을 위에서 내려다본 미니어처 풍경과 헬기 착륙장",
+   "prompt": "Camera and composition: aerial view of a miniature hospital. A miniature diorama of a big hospital building complex seen from above with a rooftop helipad marked by a simple circle icon and small trees around. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "aerial view of a miniature hospital",
+   "bg": "soft sky blue"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "응급실 세 단계를 정리한 확인 카드",
+   "kind": "card",
+   "card": {
+    "type": "check",
+    "title": "응급실 세 단계",
+    "items": [
+     "권역응급의료센터",
+     "지역응급의료센터",
+     "지역응급의료기관"
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "비응급환자가 진료비 안내를 듣는 응급실 접수 창구",
+   "prompt": "Camera and composition: medium shot at a reception window. A man in his 30s with a mild cold listening calmly to a staff member at an emergency room reception window, a blank info board beside them. Background color: warm cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a reception window",
+   "bg": "warm cream"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "응급실 분류실에서 혈압을 재는 간호사와 70대 남성",
+   "prompt": "Camera and composition: close-up in a triage room. A nurse gently checking the blood pressure of a man in his 70s sitting in a small emergency triage room, both calm. Background color: pale mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up in a triage room",
+   "bg": "pale mint"
+  },
+  {
+   "n": 7,
+   "file": "07.png",
+   "title": "거실 탁자에서 휴대폰으로 가까운 병원을 찾아보는 50대 여성",
+   "prompt": "Camera and composition: medium shot on a living room sofa. A woman in her 50s sitting at a living room coffee table looking at a blank-screen smartphone with a map pin icon, a cup of tea beside her. Background color: soft peach. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot on a living room sofa",
+   "bg": "soft peach"
+  },
+  {
+   "n": 8,
+   "file": "08.png",
+   "title": "단풍 든 병원 정원 산책로를 천천히 걷는 노부부",
+   "prompt": "Camera and composition: wide shot of a hospital garden path. An elderly couple walking slowly arm in arm along a hospital garden path lined with red and yellow autumn trees. Background color: golden beige. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "wide shot of a hospital garden path",
+   "bg": "golden beige"
+  }
+ ]
+}
