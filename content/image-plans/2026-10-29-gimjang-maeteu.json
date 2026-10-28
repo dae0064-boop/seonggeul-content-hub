@@ -1,0 +1,93 @@
+{
+ "slug": "2026-10-29-gimjang-maeteu",
+ "title": "김장 매트, 김장 날 무엇과 함께 챙겨야 할까요 (준비물 7가지)",
+ "source": "10/29(목) 원고 (10/28 밤 Routine 2차)",
+ "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). style_v2·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "거실 바닥에 펼친 빨간 김장 매트 위에서 배추에 양념을 바르는 50대 여성의 손 (대표사진)",
+   "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Close-up of a woman's hands in long red rubber gloves spreading red kimchi seasoning between salted napa cabbage leaves on a large red kimjang mat on a living room floor. Facial expression: bright happy smile. Color theme: warm burgundy and cream tones with a soft gold accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "손만 크게 (얼굴 없음)",
+   "bg": "warm burgundy and cream tones with a soft gold accent",
+   "note": "대표",
+   "thumb_shot": "hands",
+   "thumb_theme": "burgundy",
+   "thumb_person": "50대 여성 손",
+   "thumb_mood": "반가움",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "burgundy",
+    "font": "jua",
+    "title": "김장 매트\n뭘 챙길까?"
+   }
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "현관 앞에 도착한 절임배추 상자를 들여다보는 40대 여성",
+   "prompt": "Camera and composition: eye-level shot at an apartment front door. A woman in her 40s opening a delivered box of salted napa cabbage at her apartment front door, pleased. Background color: warm cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "eye-level shot at an apartment front door",
+   "bg": "warm cream"
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "탁자 위에 김장 준비물 7가지를 가지런히 늘어놓은 모습",
+   "prompt": "Camera and composition: top-down flat lay. Seven kimjang supplies neatly arranged on a table: a folded red mat, long red rubber gloves, an apron, a large bowl, a colander, an empty kimchi container and a roll of food wrap. Background color: pale yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "top-down flat lay",
+   "bg": "pale yellow"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "넓은 김장 매트와 작은 김장 매트를 나란히 펼쳐 비교하는 장면",
+   "prompt": "Camera and composition: top-down view. A large kimjang mat and a small kimjang mat spread side by side on a wooden floor for comparison, both with raised edges. Background color: soft mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "top-down view",
+   "bg": "soft mint"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "거실 바닥 신문지 위에 김장 매트를 펼치는 부부",
+   "prompt": "Camera and composition: medium shot in a living room. A husband and wife in their 40s spreading a red kimjang mat over a layer of newspaper on the living room floor, smiling. Background color: light sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a living room",
+   "bg": "light sky blue"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "김장 날 순서를 정리한 단계 카드",
+   "kind": "card",
+   "card": {
+    "type": "steps",
+    "title": "김장 날 순서",
+    "items": [
+     "채반에 엎어 물을 뺀다",
+     "큰 볼에 미리 섞어 둔다",
+     "김장 매트를 펼치고",
+     "사이사이 양념을 바른다",
+     "김치통에 꾹꾹 눌러 담는다"
+    ]
+   }
+  },
+  {
+   "n": 7,
+   "file": "07.png",
+   "title": "욕실에서 샤워기로 김장 매트를 헹구는 30대 남성",
+   "prompt": "Camera and composition: medium shot in a bathroom. A man in his 30s rinsing a red kimjang mat with a shower head in a clean bathroom, water splashing gently. Background color: soft lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a bathroom",
+   "bg": "soft lavender"
+  },
+  {
+   "n": 8,
+   "file": "08.png",
+   "title": "김장을 마치고 김치통을 앞에 두고 웃는 가족",
+   "prompt": "Camera and composition: wide shot of a living room. A happy family of four sitting around several filled kimchi containers after finishing kimjang, smiling and relaxed. Background color: warm terracotta. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "wide shot of a living room",
+   "bg": "warm terracotta"
+  }
+ ]
+}
