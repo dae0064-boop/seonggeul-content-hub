@@ -798,10 +798,11 @@ async function pickTopic(page, editor, post) {
     stage = `목록에서 ${topic}`;
     await findAnywhere(page, editor, item, { timeout: 3000 }).then((r) => r.loc.click());
     await sleep(500);
-    // 주제 목록 안의 '확인' (있을 때만 — 발행 단추는 '발행' 글자라 여기에 걸리지 않는다)
-    await findAnywhere(page, editor, ['[class*="subject"] button:text-is("확인")', '[class*="layer"] button:text-is("확인")'], { timeout: 1500 })
-      .then((r) => r.loc.click()).catch(() => {});
-    await sleep(600);
+    // '주제 설정' 창의 '확인' (발행 단추는 '발행' 글자라 여기에 걸리지 않는다).
+    // 2026-10-29 화면 — 라디오는 골라졌는데 확인을 못 눌러 창이 열린 채 남았고, 예약 단추를 못 찾아 2편이 임시저장으로 남았다
+    stage = '주제 설정 확인';
+    await findAnywhere(page, editor, TOPIC_LAYER_BTN('확인'), { timeout: 2500 }).then((r) => r.loc.click());
+    await sleep(800);
     const after = await readNow();
     if (after.includes(topic)) log(`주제: ${topic} (전: ${before || '?'})`);
     else warn(`주제를 ${topic} 로 바꿨는지 확인하지 못함 (화면: "${after || '?'}") — 기본 주제로 갈 수 있어요`);
@@ -823,8 +824,9 @@ async function pickTopic(page, editor, post) {
       log(`  진단 주제(${name}): ${found.length ? found.join(' | ') : '없음'}`);
     }
     await dump(page, 'topic-fail');
-    await page.keyboard.press('Escape').catch(() => {});
   }
+  // 주제 설정 창이 아직 열려 있으면 '취소'로 닫는다 — 열린 채 '발행' 단추를 다시 누르면 패널이 엉킨다
+  await closeTopicLayer(page, editor);
   await sleep(400);
   const open = await findAnywhere(page, editor, RESERVE_RADIO, { timeout: 1500 }).then(() => true).catch(() => false);
   if (!open) {
@@ -832,6 +834,23 @@ async function pickTopic(page, editor, post) {
     await clickFirst(page, PUBLISH_OPEN, { timeout: 4000 }).catch(() => clickFirst(editor, PUBLISH_OPEN).catch(() => {}));
     await sleep(1200);
   }
+}
+
+/** '주제 설정' 창 안의 단추 (확인·취소). 창 제목 글자에서 단추가 든 가장 가까운 조상으로 올라가 찾는다 */
+const TOPIC_LAYER_BTN = (name) => [
+  `xpath=//*[normalize-space(text())="주제 설정"]/ancestor::*[.//button[normalize-space(.)="${name}"]][1]//button[normalize-space(.)="${name}"]`,
+  `[class*="subject"] button:text-is("${name}")`,
+  `[class*="layer"] button:text-is("${name}")`,
+];
+const TOPIC_LAYER_TITLE = ['xpath=//*[normalize-space(text())="주제 설정"]'];
+
+async function closeTopicLayer(page, editor) {
+  const still = await findAnywhere(page, editor, TOPIC_LAYER_TITLE, { timeout: 600 }).then(() => true).catch(() => false);
+  if (!still) return;
+  warn('주제 설정 창이 열려 있어 취소로 닫습니다');
+  await findAnywhere(page, editor, TOPIC_LAYER_BTN('취소'), { timeout: 1500 }).then((r) => r.loc.click())
+    .catch(() => page.keyboard.press('Escape').catch(() => {}));
+  await sleep(600);
 }
 
 /** 인용구 바로 아래 빈 문단의 화면 위치. 없으면 null */
