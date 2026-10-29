@@ -26,4 +26,8 @@ $dir = Join-Path $drive 'ClaudeWorkspace\run-logs\threads'
 New-Item -ItemType Directory -Force -Path $dir | Out-Null
 @("", "===== $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') · $env:COMPUTERNAME · $(if ($Test) { '시험' } else { '올리기' }) · 종료 코드 $code") + $log |
   Add-Content -Encoding UTF8 (Join-Path $dir "$(Get-Date -Format 'yyyy-MM-dd').log")
+# 아침에 예약 안 된 글이 있으면 지금 다시 예약한다 (2026-10-29 사용자). 이 작업은 15분 제한이 있어 따로 띄우고 바로 끝낸다
+if (-not $Test) {
+  Start-Process powershell.exe -WindowStyle Minimized -WorkingDirectory $repo -ArgumentList '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', "`"$(Join-Path $PSScriptRoot 'catchup-reserve.ps1')`""
+}
 exit $code
