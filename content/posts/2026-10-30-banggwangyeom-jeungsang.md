@@ -5,7 +5,7 @@ main_keyword: 방광염 증상
 sub_keywords: 방광염 원인, 신우신염, 요검사
 lead_keyword: 요로감염
 format: 기본
-publish_at: 2026-10-29 15:00
+publish_at: 2026-10-30 10:00
 related: 골다공증 검사, 국가건강검진으로 몇 살에 받을까요 (여성 54·60·66세)
 source_url: https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6674
 tags: 방광염증상, 방광염원인, 신우신염, 요검사, 요로감염, 재발성방광염, 빈뇨, 잔뇨감, 배뇨통, 여성건강, 부모님건강, 국가건강정보포털, 질병관리청, 건강정보, 생활보장, 서이추, 이웃추가, 서이추환영
