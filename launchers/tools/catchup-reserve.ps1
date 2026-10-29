@@ -10,13 +10,19 @@ $ErrorActionPreference = 'SilentlyContinue'
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo
 $now = Get-Date
-if ($now.Hour -lt 5 -or $now.Hour -ge 21) { exit 0 }
-$busy = Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -ne $PID -and $_.CommandLine -match 'auto-day\.cmd|draft-day\.ps1|tistory-day\.ps1|catchup-reserve\.ps1' }
-if ($busy) { exit 0 }
-
+$today = $now.ToString('yyyy-MM-dd')
 . (Join-Path $PSScriptRoot 'lib-drive.ps1')
 $drive = Find-MyDrive
-if (-not $drive) { exit 0 }   # Drive 가 없으면 .done 을 볼 수 없어 두 번 예약할 수 있다 — 하지 않는다
+# 무엇을 했는지·왜 쉬었는지 매번 남긴다 (2026-10-29 16시 — 조용히 쉬어 원인을 알 수 없었다)
+$noteFile = if ($drive) { Join-Path $drive "ClaudeWorkspace\run-logs\catchup-$today.txt" } else { Join-Path $repo "dumps\catchup-$today.txt" }
+function Note($msg) { New-Item -ItemType Directory -Force -Path (Split-Path $noteFile) | Out-Null; "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') [$env:COMPUTERNAME] $msg" | Add-Content -Encoding UTF8 $noteFile }
+Note "시작 (코드 $(git rev-parse --short HEAD 2>$null))"
+if ($now.Hour -lt 5 -or $now.Hour -ge 21) { Note '21시 이후라 쉼'; exit 0 }
+# 실제로 글을 만들거나 예약하는 일이 돌 때만 쉰다. 기다리기만 하는 auto-day.cmd·wait-turn 은 세지 않는다
+# (16시 첫 실행이 아무것도 남기지 않고 끝났다 — 아침 실행 창이 남아 있던 것으로 본다)
+$busy = @(Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -ne $PID -and $_.CommandLine -match 'draft-day\.ps1|tistory-day\.ps1|publish-naver\.mjs|publish-tistory\.mjs|post-images\.mjs|catchup-reserve\.ps1' })
+if ($busy.Count) { Note ("다른 예약 작업이 돌고 있어 쉼: " + (($busy | ForEach-Object { ($_.CommandLine -replace '\s+', ' ').Substring(0, [Math]::Min(90, ($_.CommandLine -replace '\s+', ' ').Length)) }) -join ' | ')); exit 0 }
+if (-not $drive) { Note 'Drive 를 못 찾아 쉼 (.done 을 볼 수 없어 두 번 예약할 수 있다)'; exit 0 }
 $pendingFor = {
   param($date, $folder, $prefix)
   $lockDir = Join-Path $drive "ClaudeWorkspace\run-locks\$date"
@@ -30,19 +36,16 @@ foreach ($i in 0..2) {
   $d = $now.AddDays($i).ToString('yyyy-MM-dd')
   $n = & $pendingFor $d 'content\posts' ''
   if ($n -gt 0) {
+    Note "네이버 $d 남은 글 $n편 → 다시 예약 시작"
     & (Join-Path $PSScriptRoot 'draft-day.ps1') -Reserve -Date $d
     $did += "네이버 $d $n편"
   }
 }
-$today = $now.ToString('yyyy-MM-dd')
 $t = & $pendingFor $today 'content\tistory' 'tistory-'
 if ($t -gt 0) {
+  Note "티스토리 $today 남은 글 $t편 → 다시 예약 시작"
   & (Join-Path $PSScriptRoot 'tistory-day.ps1') -Reserve -RetryDrafts
   $did += "티스토리 $today $t편"
 }
-if ($did.Count) {
-  $dir = Join-Path $drive 'ClaudeWorkspace\run-logs'
-  "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') [$env:COMPUTERNAME] 다시 예약 시도: $($did -join ' · ')" |
-    Add-Content -Encoding UTF8 (Join-Path $dir "catchup-$today.txt")
-}
+if ($did.Count) { Note "다시 예약 시도 끝: $($did -join ' · ') (결과는 run-logs 의 day-<날짜>.log)" } else { Note '남은 글 없음' }
 exit 0
