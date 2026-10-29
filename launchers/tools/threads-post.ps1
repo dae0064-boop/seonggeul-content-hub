@@ -28,6 +28,9 @@ New-Item -ItemType Directory -Force -Path $dir | Out-Null
   Add-Content -Encoding UTF8 (Join-Path $dir "$(Get-Date -Format 'yyyy-MM-dd').log")
 # 아침에 예약 안 된 글이 있으면 지금 다시 예약한다 (2026-10-29 사용자). 이 작업은 15분 제한이 있어 따로 띄우고 바로 끝낸다
 if (-not $Test) {
-  Start-Process powershell.exe -WindowStyle Minimized -WorkingDirectory $repo -ArgumentList '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', "`"$(Join-Path $PSScriptRoot 'catchup-reserve.ps1')`""
+  try {
+    Start-Process powershell.exe -WindowStyle Minimized -WorkingDirectory $repo -ArgumentList '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', "`"$(Join-Path $PSScriptRoot 'catchup-reserve.ps1')`"" -ErrorAction Stop
+    "  (예약 안 된 글 다시 예약: catchup-reserve 띄움)" | Add-Content -Encoding UTF8 (Join-Path $dir "$(Get-Date -Format 'yyyy-MM-dd').log")
+  } catch { "  ⚠ catchup-reserve 를 띄우지 못함: $($_.Exception.Message)" | Add-Content -Encoding UTF8 (Join-Path $dir "$(Get-Date -Format 'yyyy-MM-dd').log") }
 }
 exit $code
