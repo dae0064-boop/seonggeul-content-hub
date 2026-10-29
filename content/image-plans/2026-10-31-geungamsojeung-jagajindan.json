@@ -1,0 +1,91 @@
+{
+  "slug": "2026-10-31-geungamsojeung-jagajindan",
+  "title": "근감소증 자가진단, 종아리 둘레 몇 cm면 의심할까요 (남 34cm·여 33cm)",
+  "source": "10/31(토) 원고 (10/29 낮 대화 — 사용자 지시로 미리 씀)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). style_v2·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "70대 아버지 종아리를 손가락으로 재 보는 40대 아들이 있는 거실 (대표사진)",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A cozy living room diorama where a Korean man in his 40s kneels and gently wraps his thumb and index finger around the calf of his father in his 70s who sits on a sofa. Facial expression: curious, head slightly tilted. Color theme: deep green plants and warm wood tones with a mustard-yellow accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "방·장소 전체, 사람은 작게",
+      "bg": "deep green plants and warm wood tones with a mustard-yellow accent",
+      "note": "대표",
+      "thumb_shot": "wide",
+      "thumb_theme": "forest",
+      "thumb_person": "40대 아들과 70대 아버지",
+      "thumb_mood": "궁금",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "forest",
+        "font": "jua",
+        "title": "근감소증 자가진단\n종아리 몇 cm?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "소파에서 일어나려고 팔걸이를 짚는 70대 여성",
+      "prompt": "Camera and composition: medium shot in a living room. A Korean woman in her 70s pressing on the armrest to stand up from a low sofa. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a living room",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "계단 앞에서 난간을 잡고 숨을 고르는 60대 남성",
+      "prompt": "Camera and composition: wide shot of a stairwell. A Korean man in his 60s pausing on a staircase holding the handrail, catching his breath calmly. Background color: light lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a stairwell",
+      "bg": "light lavender"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "근감소증 자가진단 방법을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "근감소증 자가진단",
+        "items": [
+          "남자 34cm 미만",
+          "여자 33cm 미만",
+          "손가락 링 테스트"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "마트에서 장바구니를 내려놓고 손목을 터는 60대 여성",
+      "prompt": "Camera and composition: medium shot in a supermarket. A Korean woman in her 60s putting down a shopping basket and shaking out her wrist in a supermarket aisle. Background color: light peach. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a supermarket",
+      "bg": "light peach"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "진료실에서 악력계를 쥐고 힘을 주는 70대 남성",
+      "prompt": "Camera and composition: over-the-shoulder shot in a clinic. A Korean man in his 70s squeezing a hand grip dynamometer while a nurse watches in a bright clinic room. Background color: pale mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "over-the-shoulder shot in a clinic",
+      "bg": "pale mint"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "거실에서 탄력밴드로 운동하는 60대 부부",
+      "prompt": "Camera and composition: wide shot in a living room. A Korean couple in their 60s exercising with elastic resistance bands together in their living room. Background color: warm cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot in a living room",
+      "bg": "warm cream"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "공원에서 함께 걷는 70대 어머니와 30대 딸",
+      "prompt": "Camera and composition: wide shot in an autumn park. A Korean mother in her 70s and her daughter in her 30s walking arm in arm along a park path. Background color: warm apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot in an autumn park",
+      "bg": "warm apricot"
+    }
+  ]
+}
