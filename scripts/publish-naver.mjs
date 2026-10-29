@@ -266,6 +266,7 @@ const RESERVE_MIN = ['select[class*="minute_option"]', 'select[class*="minute"]'
 const RESERVE_DATE = ['input[class*="input_date"]', '[class*="date_area"] input', 'input[class*="date"]', 'button[class*="date"]', '[class*="date_area"]'];
 const PUBLISH_CONFIRM = ['button[class*="confirm_btn"]'];
 
+const TOPIC_HOLD_MIN = 150;  // 발행까지 이보다 많이 남았으면 주제가 확인될 때까지 예약을 미룬다 (다시 할 기회가 있다)
 const RESERVE_MAX_DAYS = 7;  // 오늘부터 이 날수 안쪽 날짜만 예약한다
 const DATEPICKER_DAY = [
   '.ui-datepicker-calendar td:not(.ui-datepicker-other-month):not(.ui-state-disabled) a',
@@ -372,7 +373,17 @@ async function reservePublish(page, editor, post, at) {
   await dump(page, 'publish-layer');
 
   if (post.category) await pickCategory(page, editor, post.category);
-  await pickTopic(page, editor, post);
+  // 주제가 맞는지 다시 읽어 확인된 글만 예약한다 (2026-10-29 사용자 — "주제를 자동으로 체크해서 예약발행 가능할까?").
+  // 홈판은 관심 주제로 글을 보여 줘서, 살림 글이 '비즈니스·경제'로 들어가면 홈판에 닿기 어렵다.
+  // 한 번 더 골라 보고도 안 되면 임시저장으로 두고 다음 실행(그날 13·16·19·22시 catchup-reserve, 다음 날 아침)이 다시 한다.
+  // 다만 발행 시각이 TOPIC_HOLD_MIN 분 안쪽이면 다시 할 기회가 없어 기본 주제로라도 예약한다 — 안 올라가는 것보다 낫다.
+  let topicOk = await pickTopic(page, editor, post);
+  if (!topicOk) { warn('주제를 한 번 더 골라 봅니다'); topicOk = await pickTopic(page, editor, post); }
+  if (!topicOk) {
+    const mins = Math.round((new Date(`${at.ymd}T${at.hh}:${at.mm}:00`) - Date.now()) / 60000);
+    if (mins > TOPIC_HOLD_MIN) return fail(`주제(${post.topic || topicFor(post)})가 맞는지 확인하지 못함 — 예약하지 않고 다음 실행이 다시 합니다 (발행까지 ${mins}분)`);
+    warn(`주제를 확인하지 못했지만 발행까지 ${mins}분뿐이라 기본 주제로 예약합니다`);
+  }
   if (post.tags?.length) {
     try { await enterTags(page, editor, post.tags); }
     catch (e) { warn(`태그 입력 실패 (${e.message}) — 예약 후 글 수정에서 넣어 주세요.`); }
@@ -755,7 +766,7 @@ async function pickCategory(page, editor, category) {
  */
 async function pickTopic(page, editor, post) {
   const topic = post.topic || topicFor(post);
-  if (!topic) { warn(`주제 이름이 목록에 없어 고르지 않습니다 (topic: ${post.topic})`); return; }
+  if (!topic) { warn(`주제 이름이 목록에 없어 고르지 않습니다 (topic: ${post.topic})`); return true; }
   // 주제 칸 글자(지금 고른 주제)를 읽는다 — '주제' 이름표 바로 옆 줄
   const readNow = async () => {
     for (const scope of editor === page.mainFrame() ? [page] : [editor, page]) {
@@ -773,8 +784,9 @@ async function pickTopic(page, editor, post) {
     return '';
   };
   const before = await readNow();
-  if (before.includes(topic)) { log(`주제: ${topic} (이미 맞음)`); return; }
+  if (before.includes(topic)) { log(`주제: ${topic} (이미 맞음)`); return true; }
   let stage = '';
+  let ok = false;
   try {
     // 주제 칸 열기: 지금 주제 글자가 든 링크·단추. 2026-10-27·28 로그 — 칸은 단추가 아니라 '주제' 이름표 옆
     // a.link__… "비즈니스·경제 >" 라서 button 만 찾다 20편 모두 실패했다
@@ -804,7 +816,8 @@ async function pickTopic(page, editor, post) {
     await findAnywhere(page, editor, TOPIC_LAYER_BTN('확인'), { timeout: 2500 }).then((r) => r.loc.click());
     await sleep(800);
     const after = await readNow();
-    if (after.includes(topic)) log(`주제: ${topic} (전: ${before || '?'})`);
+    ok = after.includes(topic);
+    if (ok) log(`주제: ${topic} (전: ${before || '?'})`);
     else warn(`주제를 ${topic} 로 바꿨는지 확인하지 못함 (화면: "${after || '?'}") — 기본 주제로 갈 수 있어요`);
   } catch (e) {
     warn(`주제 자동 선택 실패 (${stage}) — 기본 주제(${before || '?'})로 갑니다 (${topic}): ${e.message.split('\n')[0]}`);
@@ -834,6 +847,7 @@ async function pickTopic(page, editor, post) {
     await clickFirst(page, PUBLISH_OPEN, { timeout: 4000 }).catch(() => clickFirst(editor, PUBLISH_OPEN).catch(() => {}));
     await sleep(1200);
   }
+  return ok;
 }
 
 /** '주제 설정' 창 안의 단추 (확인·취소). 창 제목 글자에서 단추가 든 가장 가까운 조상으로 올라가 찾는다 */
