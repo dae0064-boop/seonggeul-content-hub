@@ -13,6 +13,8 @@ REM 2026-10-05: the lines above must keep the same byte length (cmd keeps readin
 REM Threads insurance posts: save new Word files to Drive (fast, before the blog run)
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\insurance-word.ps1"
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\draft-day.ps1" -Reserve %*
+REM 2026-10-29 user: reserve ahead. If posts for the next 2 days already exist, reserve them now too (run-locks .done stops doubles)
+powershell -NoProfile -ExecutionPolicy Bypass -Command "1..2 | ForEach-Object { $d = (Get-Date).AddDays($_).ToString('yyyy-MM-dd'); if (Test-Path ('content\posts\' + $d + '-*.json')) { & '%~dp0tools\draft-day.ps1' -Reserve -Date $d } }"
 REM Tistory: same day, 30 minutes after each Naver slot (publish_at in content\tistory). Skips if no posts.
 REM -RetryDrafts: posts that were only saved as drafts last time are reserved again (was tistory-reserve.cmd)
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\tistory-day.ps1" -Reserve -RetryDrafts
