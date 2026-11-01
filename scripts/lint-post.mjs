@@ -62,7 +62,16 @@ const HF_SHOTS = ['face', 'duo'];
 // 2026-11-01 사용자 — "하루 20편, 생활정보(리빙·푸드) 10 + 생활보장 10". 2026-11-03 원고부터.
 //   홈판형 14(생활정보 8 + 생활보장 6) · 검색형 6. 같은 주제라도 말투(tone)·내용을 글마다 다르게, 겹치지 않게 (같은 날 사용자).
 const TWENTY_FROM = '2026-11-03';
-const isTwenty = (d) => d >= TWENTY_FROM;
+// 2026-11-02 사용자 — "11월 2일도 15편 더 추가해서 20편, 티스토리도 10편". 그날 먼저 쓴 글(아래 LEGACY_DAY20)은 옛 기준 그대로,
+//   새로 더한 글은 11/3 기준(분량·그림·말투·홈판 인사 없음)으로 본다 — 하루 배분·겹침은 20편 날로.
+const TWENTY_EXTRA = new Set(['2026-11-02']);
+const LEGACY_DAY20 = new Set([
+  '2026-11-02-chimae-chogi-jeungsang', '2026-11-02-daejang-naesigyeong-biyong', '2026-11-02-eunhaengnamu-myeongso',
+  '2026-11-02-gapsangseon-gyeoljeol', '2026-11-02-yoyangbohosa-haneunil',
+  '2026-11-02-aiseupaek-beorineun-beop', '2026-11-02-han-geun-myeot-geuram', '2026-11-02-hwassi-seopssi-byeonhwan',
+  '2026-11-02-pyesigyongyu-beorineun-beop', '2026-11-02-yul-ryul-gubun',
+]);
+const isTwenty = (d) => d >= TWENTY_FROM || TWENTY_EXTRA.has(d);
 // 2026-11-01 사용자 — "20편·10편은 그대로, 이미지랑 글 분량을 조금 줄여서" (비용·아침 그림 시간·밤 작업 사용량). 2026-11-03 원고부터.
 //   그림: 네이버 6장(대표 1 + 장면 3 + 정보 카드 2), 티스토리 4장(대표 1 + 장면 1 + 정보 카드 2)
 //   분량(공백 제외)·키워드 횟수: 네이버 홈판형 1,500~1,800자·메인 7·서브 3 / 검색형 1,900~2,100자·메인 9·서브 4 / 티스토리 1,600~1,900자·메인 8·서브 4
@@ -351,10 +360,13 @@ for (const file of files) {
   const chars = texts.join('').length;
   const charsNS = texts.join('').replace(/\s/g, '').length;
   const dated = (/(\d{4}-\d{2}-\d{2})/.exec(file.split(/[\\/]/).pop()) || [])[1] || '9999-99-99';
+  const legacyDay20 = LEGACY_DAY20.has(file.split(/[\\/]/).pop().replace(/\.md$/, ''));
+  // 글 하나에만 걸리는 기준(분량·그림·말투·홈판 인사)을 고를 때 쓰는 날짜 — 20편으로 늘린 날의 새 글은 11/3 기준
+  const ruleDated = TWENTY_EXTRA.has(dated) && !legacyDay20 ? TWENTY_FROM : dated;
   const newRules = dated >= NEW_RULES_FROM;
   const tistory = forceTistory || /(^|[\\/])content[\\/]tistory[\\/]/.test(file);
   const close1 = tistory ? TISTORY_CLOSE_1 : CLOSE_1;
-  const slim = slimOf(dated, tistory, post.slot);
+  const slim = slimOf(ruleDated, tistory, post.slot);
   const nsChars = slim ? slim.chars : NS_CHARS;
   const minMain = slim ? slim.main : MIN_MAIN;
   const minSub = slim ? slim.sub : MIN_SUB;
@@ -724,7 +736,7 @@ for (const file of files) {
         // 구도·종이·나이도 섞는다 (2026-10-28 사용자 — 사람이 너무 똑같다)
         if (v3) {
           // 홈판형 3편 날은 얼굴 구도(face·duo)가 모자라 같은 구도 2편까지
-          const hfFace = !tistory && post.slot === '홈판' && dated >= HF_STYLE_FROM && HF_SHOTS.includes(t.thumb_shot);
+          const hfFace = !tistory && post.slot === '홈판' && ruleDated >= HF_STYLE_FROM && HF_SHOTS.includes(t.thumb_shot);
           const lim = tw ? (hfFace ? TW.shotHf : TW.shot) : ten || hfFace ? 2 : 1;
           if (shotSame.length >= lim) errors.push(`같은 날 ${shotSame.join(', ')} 와 대표사진 구도(${t.thumb_shot})가 같습니다 — ${tw ? `20편 날은 같은 구도 ${lim}편까지` : ten ? '10편 날은 같은 구도 2편까지' : hfFace ? '홈판형 얼굴 구도는 2편까지' : '5편 모두 다르게'}`);
           const pLim = tw ? TW.papers : ten ? 2 : 1, oLim = tw ? TW.olds : ten ? 4 : 2;
@@ -749,7 +761,7 @@ for (const file of files) {
   // 하루 20편 (2026-11-03 원고부터) — 말투 돌려 쓰기 + 다른 네이버 글과 겹치지 않게 (2026-11-01 사용자:
   //   "같은 주제여도 다른 느낌 다른 말투 다른 내용으로… 최대한 겹치지 않고 중복 컨텐츠가 되지 않도록")
   if (!tistory && isTwenty(dated)) {
-    if (!TONES[post.tone]) errors.push(`프런트매터 tone(말투)이 없거나 모르는 값입니다 ("${post.tone}") — ${Object.keys(TONES).join(' / ')} 중 하나 (routines/naver-daily.md 🔟 상자)`);
+    if (!TONES[post.tone] && !legacyDay20) errors.push(`프런트매터 tone(말투)이 없거나 모르는 값입니다 ("${post.tone}") — ${Object.keys(TONES).join(' / ')} 중 하나 (routines/naver-daily.md 🔟 상자)`);
     const me = file.split(/[\\/]/).pop().replace(/\.md$/, '');
     const myGrams = gramsOf(bodyOf(post));
     const sq = (x) => (x || '').replace(/\s+/g, '');
@@ -787,7 +799,7 @@ for (const file of files) {
       errors.push(`첫 덩어리는 ${hfNoGreet ? '' : '고정 인사말 앞의 '}"확인된 사실 한 문장"(1~2줄)이어야 합니다 (2026-10-12 원고부터)${hfNoGreet ? '' : ` — 빈 줄 다음에 "${OPEN[0]} / ${OPEN[1]}"`}`);
     else if (!greetOk && !hfNoGreet)
       errors.push(`사실 한 문장 다음 덩어리가 고정 인사말 "${OPEN[0]} / ${OPEN[1]}" 이어야 합니다`);
-    else if (greetOk && hfNoGreet && dated >= HF_STYLE_FROM)
+    else if (greetOk && hfNoGreet && ruleDated >= HF_STYLE_FROM)
       errors.push(`홈판형(slot: 홈판)은 고정 인사말 없이 첫 문장 다음 바로 본론으로 씁니다 (2026-11-03 원고부터) — "${OPEN[0]} / ${OPEN[1]}" 두 줄을 빼세요 (닫는 인사는 그대로)`);
     else {
       const lead = first.lines.map((l) => l.t).join(' ');
