@@ -1,0 +1,8 @@
+# 쓰지 않는 쇼핑 커넥트 링크 — 2026-11-01 사용자 "네이버 쇼핑 커넥트 링크도 지워주고 앞으로는 바로바로 원고에 맞춰서". PC 의 dumps/brandconnect-links.local.tsv·Drive 에 남아 있어도 loadLinks 가 건너뛴다
+https://naver.me/5CCcp7SE
+https://naver.me/5WUtBQjo
+https://naver.me/5c8ymxSC
+https://naver.me/5wr987aq
+https://naver.me/FFq3fIBO
+https://naver.me/Fx2Eie9O
+https://naver.me/GEdk2Cfz
