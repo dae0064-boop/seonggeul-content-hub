@@ -18,7 +18,11 @@ export const DISCLOSURE = [
   '이에 따른 일정액의 수수료를 제공받습니다.',
 ];
 export const MARKER = '[쿠팡 링크]';
-export const LINKS_FILE = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..', 'content', 'affiliate', 'coupang-links.tsv');
+const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
+export const LINKS_FILE = path.join(ROOT, 'content', 'affiliate', 'coupang-links.tsv');
+// 아침 PC 가 쿠팡 파트너스에서 저절로 만든 링크 (scripts/coupang-links.mjs, 2026-11-01~). 저장소 밖(dumps)이라 git pull 을 막지 않고,
+// 같은 아침 발행이 바로 쓴다. 아침 확인이 Drive 결과를 보고 LINKS_FILE 로 옮긴다
+export const LOCAL_LINKS_FILE = path.join(ROOT, 'dumps', 'coupang-links.local.tsv');
 // 쿠팡 파트너스가 만들어 주는 주소만 받는다 (다른 단축 주소·리디렉션으로 감추지 않는다)
 export const LINK_RE = /^https:\/\/link\.coupang\.com\/[A-Za-z0-9/_\-?=&.]+$/;
 
@@ -26,14 +30,20 @@ const blockText = (b) => (b.lines || []).map((l) => l.t.trim());
 export const isDisclosure = (b) => b.type === 'p' && blockText(b).join('\n') === DISCLOSURE.join('\n');
 export const isMarker = (b) => b.type === 'p' && blockText(b).join('\n') === MARKER;
 
-/** coupang-links.tsv → Map(키워드 → { url, label }). 줄 형식: 키워드<TAB>링크<TAB>보여 줄 글자. # 은 주석 */
-export function loadLinks(file = LINKS_FILE) {
+/**
+ * coupang-links.tsv (+ 이 PC 의 dumps/coupang-links.local.tsv) → Map(키워드 → { url, label }).
+ * 줄 형식: 키워드<TAB>링크<TAB>보여 줄 글자. # 은 주석. 같은 키워드는 앞 파일(저장소 목록)이 먼저다.
+ * 파일 하나만 주면 그 파일만 읽는다 (예전 호출 그대로).
+ */
+export function loadLinks(files = [LINKS_FILE, LOCAL_LINKS_FILE]) {
   const map = new Map();
-  if (!fs.existsSync(file)) return map;
-  for (const raw of fs.readFileSync(file, 'utf8').split(/\r?\n/)) {
-    if (!raw.trim() || raw.trim().startsWith('#')) continue;
-    const [kw, url, label] = raw.split('\t').map((s) => (s || '').trim());
-    if (kw && LINK_RE.test(url || '')) map.set(kw, { url, label: label || kw });
+  for (const file of [].concat(files)) {
+    if (!fs.existsSync(file)) continue;
+    for (const raw of fs.readFileSync(file, 'utf8').split(/\r?\n/)) {
+      if (!raw.trim() || raw.trim().startsWith('#')) continue;
+      const [kw, url, label] = raw.split('\t').map((s) => (s || '').trim());
+      if (kw && LINK_RE.test(url || '') && !map.has(kw)) map.set(kw, { url, label: label || kw });
+    }
   }
   return map;
 }
