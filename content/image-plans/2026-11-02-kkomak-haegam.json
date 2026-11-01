@@ -1,0 +1,94 @@
+{
+  "slug": "2026-11-02-kkomak-haegam",
+  "title": "꼬막 해감, 소금물에 담갔는데 왜 모래가 씹힐까",
+  "source": "11/2(월) 15:40 네이버 원고 — 생활정보 홈판형, 실사풍 (11/2 20편 추가분)",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고 기준). 실사풍·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "부엌 싱크대 앞에서 꼬막 담긴 볼을 들여다보며 고개를 갸웃하는 60대 어머니와 30대 아들 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean mother in her 60s with short permed gray-black hair in a coral-red knit cardigan and her son in his 30s with neat short hair and glasses in a white sweater stand at a bright kitchen sink, both looking into a glass bowl of cockles soaking in water, heads slightly tilted with curious faces. Color theme: cool blue and white tones with a coral-red accent. Facial expression: curious, head slightly tilted. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "cool blue and white tones with a coral-red accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "navy",
+      "thumb_person": "60대 어머니와 30대 아들",
+      "thumb_mood": "궁금",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "navy",
+        "font": "jua",
+        "title": "꼬막 해감\n몇 분 둘까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "투명한 볼 속 소금물에 잠긴 꼬막 위로 작은 물방울이 오르는 모습",
+      "prompt": "Camera and composition: close-up of a clear glass bowl on a kitchen counter, no people. Fresh cockles lying in a single layer in a clear glass bowl of salt water, tiny bubbles rising from the shells, a little sand settled on the bottom. Background color: soft gray stone countertop with morning window light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of a clear glass bowl on a kitchen counter, no people",
+      "bg": "soft gray stone countertop with morning window light"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "꼬막 해감 소금물 만드는 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "꼬막 해감 소금물",
+        "ask": "소금 얼마나 넣어?",
+        "items": [
+          "넓은 그릇에 찬물 1리터 받기",
+          "소금 30g 남짓 녹이기",
+          "꼬막이 잠길 만큼 붓기",
+          "뚜껑을 덮어 서늘한 곳에 두기"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "냉장고 아래 칸에 뚜껑 덮은 꼬막 그릇을 넣는 30대 여성",
+      "prompt": "Camera and composition: medium shot in front of an open refrigerator. A Korean woman in her 30s with a short bob in a mustard-yellow hoodie placing a covered wide container on the lowest shelf of an open refrigerator, calm expression. Background color: cool white refrigerator light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in front of an open refrigerator",
+      "bg": "cool white refrigerator light"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "생꼬막과 자숙꼬막 손질 차이를 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "생꼬막과 자숙꼬막",
+        "ask": "자숙꼬막도 해감해?",
+        "heads": [
+          "생꼬막",
+          "자숙꼬막"
+        ],
+        "items": [
+          [
+            "소금물 해감",
+            "해감 대신 헹굼"
+          ],
+          [
+            "해감 시간 확인",
+            "흐르는 물에 헹궈"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "솔로 꼬막 껍데기를 문지르는 60대 남성의 손",
+      "prompt": "Camera and composition: close-up of hands over a kitchen sink. The hands of a Korean man in his 60s with a rolled-up olive sleeve scrubbing a cockle shell with a small brush under running tap water, a colander of cockles beside the sink. Background color: warm stainless sink with soft afternoon light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands over a kitchen sink",
+      "bg": "warm stainless sink with soft afternoon light"
+    }
+  ]
+}
