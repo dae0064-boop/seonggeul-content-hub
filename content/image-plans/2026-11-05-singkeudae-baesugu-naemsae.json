@@ -1,0 +1,76 @@
+{
+  "slug": "2026-11-05-singkeudae-baesugu-naemsae",
+  "title": "싱크대 배수구 냄새, 베이킹소다랑 식초는 얼마나 부어야 할까 (1컵씩)",
+  "source": "11/5(목) 티스토리 원고 1회차 (11/1 작성)",
+  "note": "4장(대표 1 + 장면 1 + 정보 카드 2). 장소·주인공·구도·배경색 서로 다르게",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "청록색 개수대에서 고무장갑 낀 두 손이 배수구 거름망을 들어 올리는 모습 (대표사진)",
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Two hands in bright orange rubber gloves lifting a round stainless sink strainer basket out of a kitchen sink drain, a little food residue visible in the mesh, a small cup of white baking soda on the sink edge. Facial expression: explaining with one hand open toward the viewer. Color theme: teal and sand tones with an orange accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "손만 크게 (얼굴 없음)",
+      "bg": "teal and sand tones with an orange accent",
+      "note": "대표",
+      "thumb_shot": "hands",
+      "thumb_theme": "teal",
+      "thumb_person": "30대 여성 손",
+      "thumb_mood": "설명",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "teal",
+        "font": "ptd",
+        "title": "싱크대 배수구 냄새\n뭘 부어야 할까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "싱크대 배수구 냄새 잡는 순서를 네 단계로 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "배수구 냄새 잡는 순서",
+        "items": [
+          "거름망 찌꺼기부터 비우기",
+          "베이킹소다 1컵 붓기",
+          "식초 1컵 붓기",
+          "거품 날 때 뜨거운 물 붓기"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "주방 개수대 옆에서 작은 솔로 배수구 거름망을 닦는 40대 남성",
+      "prompt": "Camera and composition: medium shot beside a kitchen counter. A Korean man in his 40s with short black hair, glasses and a mustard-yellow apron scrubbing a small sink strainer basket with a little brush under running water. Background color: warm sand beige. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot beside a kitchen counter",
+      "bg": "warm sand beige"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "싱크대 배수구 냄새를 줄이는 습관과 피할 것을 나눈 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "싱크대에 버리는 습관",
+        "heads": [
+          "이렇게",
+          "피하기"
+        ],
+        "items": [
+          [
+            "기름은 닦아서",
+            "기름 붓기"
+          ],
+          [
+            "고춧가루는 걷어서",
+            "커피 찌꺼기 흘리기"
+          ]
+        ]
+      }
+    }
+  ]
+}
