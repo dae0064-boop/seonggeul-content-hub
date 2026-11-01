@@ -48,6 +48,10 @@ const SPLIT3_FROM = '2026-10-27';
 const SPLIT3 = { 생활정보: 1, 생활보장: 4 };
 const DAY_TOTAL3 = 5;
 const HOMEFEED3 = 1;
+// 2026-11-01 사용자 — "홈판 비중을 늘려보고 홈판 잘 타는 블로그들이 공통으로 하는 대로". 2026-11-03 원고부터 하루 5편 중 3편 홈판형
+//   = 생활정보 1(12:00) + 생활보장 2(17:00·21:00). 카테고리 배분(생활보장 4 + 생활정보 1)은 그대로, 생활보장 글에도 slot: 홈판 을 붙인다.
+const HOMEFEED4_FROM = '2026-11-03';
+const HOMEFEED4 = 3;
 // 2026-10-26 사용자 다시 — "10월 말까지는 하루 10편(생활보장 7 + 생활정보 3), 11월 1일부터 생활보장 4 + 생활정보 1 총 5편". 10편 날은 홈판형 2편, 같은 모양 3편까지.
 const TEN_UNTIL = '2026-10-31';
 const SPLIT_TEN = { 생활정보: 3, 생활보장: 7 };
@@ -492,9 +496,14 @@ for (const file of files) {
       }
       if (dated >= SPLIT2_FROM) {
         const hf = sibs.filter((p) => p.slot === '홈판');
-        const hfWant = isTen(dated) ? 2 : split3 ? HOMEFEED3 : HOMEFEED_PER_DAY;
-        if (done ? hf.length !== hfWant : hf.length > hfWant) errors.push(`같은 날(${dated}) 홈판형(slot: 홈판) ${hf.length}편 — 하루 ${hfWant}편 (생활정보 글에)`);
-        if (hf.some((p) => p.category !== '생활정보')) errors.push(`홈판형(slot: 홈판)은 생활정보 글에만 붙입니다`);
+        const hf4 = !isTen(dated) && dated >= HOMEFEED4_FROM;
+        const hfWant = isTen(dated) ? 2 : hf4 ? HOMEFEED4 : split3 ? HOMEFEED3 : HOMEFEED_PER_DAY;
+        if (done ? hf.length !== hfWant : hf.length > hfWant) errors.push(`같은 날(${dated}) 홈판형(slot: 홈판) ${hf.length}편 — 하루 ${hfWant}편 (${hf4 ? '생활정보 1 + 생활보장 2' : '생활정보 글에'})`);
+        if (hf4) {
+          const life = sibs.filter((p) => p.category === '생활정보');
+          if (life.some((p) => p.slot !== '홈판')) errors.push(`같은 날(${dated}) 생활정보 글은 홈판형(slot: 홈판)으로 씁니다 (2026-11-03 원고부터)`);
+          if (hf.filter((p) => p.category === '생활보장').length > HOMEFEED4 - 1) errors.push(`같은 날(${dated}) 생활보장 홈판형 — 하루 ${HOMEFEED4 - 1}편까지`);
+        } else if (hf.some((p) => p.category !== '생활정보')) errors.push(`홈판형(slot: 홈판)은 생활정보 글에만 붙입니다`);
       }
     }
   }
