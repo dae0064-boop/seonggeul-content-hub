@@ -1,0 +1,16 @@
+# 쓰지 않는 쿠팡 링크 — 2026-11-01 사용자 "기존 쿠팡 14개는 지워줘" (미리 만든 링크). PC 의 dumps/coupang-links.local.tsv 에 남아 있어도 loadLinks 가 건너뛴다
+# 한 줄 = 키워드<TAB>링크<TAB>보여 줄 글자.  링크는 쿠팡 파트너스가 만든 https://link.coupang.com/... 만 (다른 단축 주소 금지)
+https://link.coupang.com/a/ij9vMvcH6W
+https://link.coupang.com/a/ij9w6IDfXw
+https://link.coupang.com/a/ij9761tm6m
+https://link.coupang.com/a/ij99qtdi56
+https://link.coupang.com/a/ikaaMPvcWW
+https://link.coupang.com/a/ikab97IDv2
+https://link.coupang.com/a/ikadxsF5Do
+https://link.coupang.com/a/ikaeViUWu5
+https://link.coupang.com/a/ikagi2UCvk
+https://link.coupang.com/a/ikahB9dg04
+https://link.coupang.com/a/ikaiYnqaPc
+https://link.coupang.com/a/ikakjDPMku
+https://link.coupang.com/a/ikalE1HyMK
+https://link.coupang.com/a/ikamWbesCa
