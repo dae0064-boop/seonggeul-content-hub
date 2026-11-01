@@ -1,0 +1,84 @@
+{
+  "slug": "2026-11-04-janggiyoyang-bokjiyonggu",
+  "title": "장기요양복지용구, 빌려 쓰다 입원하면 대여료는 어떻게 될까",
+  "source": "11/4(수) 22:00 네이버 원고 — 생활보장 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 실사풍·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "전동침대 옆에서 마주 보고 이야기하며 고개를 끄덕이는 40대 딸과 70대 아버지 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean daughter in her 40s with a high ponytail in a coral-red zip-up fleece and her father in his 70s with short white hair and a gray cardigan over a checked shirt sit facing each other beside a home electric care bed in a bright bedroom, both nodding with determined faces as they talk; gray and white bedding. Facial expression: determined, nodding, sleeves rolled up. Color theme: neutral gray and white tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "neutral gray and white tones with a coral accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "charcoal",
+      "thumb_person": "40대 딸과 70대 아버지",
+      "thumb_mood": "결심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "charcoal",
+        "font": "ptd",
+        "title": "장기요양복지용구\n입원하면 멈출까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "부모님 방에 놓인 전동침대 옆에서 이불을 정리하는 50대 여성",
+      "prompt": "Camera and composition: medium shot in a parents' bedroom. A Korean woman in her 50s with shoulder-length wavy hair in a sage-green sweater folding a soft quilt on a home electric care bed with raised side rails in a calm bedroom. Background color: soft beige morning light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a parents' bedroom",
+      "bg": "soft beige morning light"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "입원했을 때 대여가격 산정 기준을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "대여가격 산정 기준",
+        "items": [
+          "대여가격은 월 단위",
+          "15일보다 짧으면 15일로",
+          "입원 중엔 최대 15일",
+          "사망 뒤엔 최대 7일"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "복지용구 사업소 매장에서 깨끗하게 포장된 휠체어를 살펴보는 60대 남성",
+      "prompt": "Camera and composition: medium shot in a medical supply store. A Korean man in his 60s with a gray flat cap and a dark olive padded jacket looking at a clean manual wheelchair wrapped in clear protective film in a tidy assistive device shop, curious and calm. Background color: clean white shop light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a medical supply store",
+      "bg": "clean white shop light"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "몸 상태가 바뀌었을 때 확인할 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "몸 상태가 바뀌었다면",
+        "items": [
+          "신체 기능 변화 확인하기",
+          "추가급여 신청서 내기",
+          "남은 연 한도액 확인하기",
+          "사업소에 품목별 값 묻기"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "거실 탁자에서 달력과 메모를 펼쳐 놓고 계획을 적는 40대 아들",
+      "prompt": "Camera and composition: medium close-up at a living room table. A Korean man in his 40s with short wavy hair and round glasses in a navy crewneck sweater writing on a blank notepad next to an open wall calendar with blank date boxes on a low wooden table, thoughtful. Background color: warm lamp light in the evening. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium close-up at a living room table",
+      "bg": "warm lamp light in the evening"
+    }
+  ]
+}
