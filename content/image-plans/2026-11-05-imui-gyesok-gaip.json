@@ -1,0 +1,66 @@
+{
+  "slug": "2026-11-05-imui-gyesok-gaip",
+  "title": "건강보험 임의계속가입, 퇴직 후 언제까지 직장가입자일까 (36개월)",
+  "source": "11/5(목) 티스토리 원고 2회차 (11/1 작성)",
+  "note": "4장(대표 1 + 장면 1 + 정보 카드 2) — 2026-11-03 원고부터. 장소·주인공·구도·배경색 서로 다르게",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "올리브색 거실에서 고지서를 함께 보며 이야기하는 60대 아버지와 30대 딸 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A recently retired Korean man in his early 60s with short gray hair and a beige cardigan and his daughter in her 30s with a ponytail and a red knit top sitting at a living room table, facing each other and talking over one blank envelope, both relieved. Facial expression: relieved gentle smile. Color theme: olive green and warm cream tones with a red accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "olive green and warm cream tones with a red accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "olive",
+      "thumb_person": "60대 아버지와 30대 딸",
+      "thumb_mood": "안심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "olive",
+        "font": "ptd",
+        "title": "건강보험 임의계속가입\n언제까지 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "건강보험 임의계속가입 조건과 기한을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "임의계속가입 확인",
+        "items": [
+          "퇴직 전 18개월 동안",
+          "통산 1년 이상이면 돼요",
+          "기간은 36개월까지예요"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "거실 탁자에서 지역보험료 고지서 봉투를 열어 보는 60대 남성",
+      "prompt": "Camera and composition: close-up at a low living room table. A Korean man in his 60s with thin silver hair and a mustard-yellow vest opening a plain blank envelope at a low wooden living room table, a wall calendar softly blurred behind him, calm and thoughtful. Background color: soft mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up at a low living room table",
+      "bg": "soft mint green"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "건강보험 임의계속가입 보험료가 정해지는 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "보험료 정하는 순서",
+        "items": [
+          "최근 12개월 보수월액의 평균",
+          "가입자가 전액을 내요",
+          "100분의 50을 덜어 줘요"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "slug": "2026-11-05-jeongiyo-setak",
+  "title": "전기요 세탁, 물빨래해도 되는 것과 안 되는 것은 어떻게 가릴까",
+  "source": "11/5(목) 22:40 네이버 원고 — 생활정보 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 실사풍·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "꺼내 놓은 전기요 라벨을 함께 들여다보며 고개를 갸웃하는 60대 아버지와 20대 딸 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean father in his 60s with a gray crew cut in a green flannel shirt and his daughter in her 20s with a short wolf-cut hairstyle in a dusty rose sweatshirt kneeling on a bedroom floor beside a folded electric blanket, both looking at its small blank care label with heads slightly tilted. Facial expression: curious, head slightly tilted. Color theme: dusty rose and white tones with a green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "dusty rose and white tones with a green accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "rose",
+      "thumb_person": "60대 아버지와 20대 딸",
+      "thumb_mood": "궁금",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "rose",
+        "font": "jua",
+        "title": "전기요 세탁\n물빨래 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "장롱에서 꺼낸 전기요를 거실 바닥에 펼쳐 놓고 냄새를 맡아 보는 70대 여성",
+      "prompt": "Camera and composition: medium shot in a living room. A Korean woman in her 70s with short gray permed hair in a lavender cardigan sitting on a living room floor, holding up a corner of an unfolded beige electric blanket close to her face, an open wardrobe softly blurred behind. Background color: soft morning window light with cream tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a living room",
+      "bg": "soft morning window light with cream tones"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "물빨래가 되는 전기요와 안 되는 전기요를 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "물빨래 될까",
+        "heads": [
+          "되는 것",
+          "안 되는 것"
+        ],
+        "items": [
+          [
+            "손빨래",
+            "물세탁 금지"
+          ],
+          [
+            "커버 분리형",
+            "온도조절기"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "전기요 세탁 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "전기요 세탁 순서",
+        "items": [
+          "온도조절기와 전원 줄 분리하기",
+          "돌돌 말아 큰 세탁망에 넣기",
+          "라벨대로 손빨래나 약한 코스",
+          "탈수는 라벨이 허락하는 만큼만",
+          "펼쳐서 완전히 말리기"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "볕 드는 베란다 건조대에 전기요를 넓게 펼쳐 널고 있는 60대 남성",
+      "prompt": "Camera and composition: wide shot of a sunny apartment veranda. A Korean man in his 60s with short black-dyed hair in a mustard knit sweater spreading a washed beige electric blanket flat across a wide drying rack on a sunny apartment veranda, no cord attached. Background color: bright sunlight and white veranda walls. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a sunny apartment veranda",
+      "bg": "bright sunlight and white veranda walls"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "식탁 위에서 물빨래 안 되는 전기장판 겉면을 젖은 수건으로 닦는 50대 여성의 손",
+      "prompt": "Camera and composition: close-up of hands on a dining table. Close-up of the hands of a Korean woman in her 50s in a teal sleeve wiping the smooth surface of a thin vinyl electric heating mat with a damp wrung-out white towel on a dining table, a dry towel folded beside it. Background color: soft daylight on a light wood table. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands on a dining table",
+      "bg": "soft daylight on a light wood table"
+    }
+  ]
+}

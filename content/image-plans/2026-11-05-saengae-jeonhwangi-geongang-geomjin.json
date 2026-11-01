@@ -1,0 +1,85 @@
+{
+  "slug": "2026-11-05-saengae-jeonhwangi-geongang-geomjin",
+  "title": "생애전환기 건강검진, 66세엔 무엇이 더해질까 (검사 4가지 · 2026년)",
+  "source": "11/5(목) 16:40 네이버 원고 — 생활보장 검색형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 실사풍·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "건강검진센터 대기실 전경, 접수대 앞에 선 60대 아버지와 50대 딸이 작게 보이는 모습 (대표사진)",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A wide view of a bright Korean health checkup center waiting hall with rows of chairs and a reception counter; a Korean man in his 60s with short gray hair in a navy padded vest and his daughter in her 50s with a short bob in a coral-red cardigan stand small at the counter, both nodding with a determined look, seen from a distance like a miniature diorama. Facial expression: determined, nodding, sleeves rolled up. Color theme: cool blue and white tones with a coral-red accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "방·장소 전체, 사람은 작게",
+      "bg": "cool blue and white tones with a coral-red accent",
+      "note": "대표",
+      "thumb_shot": "wide",
+      "thumb_theme": "navy",
+      "thumb_person": "60대 아버지와 50대 딸",
+      "thumb_mood": "결심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "navy",
+        "font": "jua",
+        "title": "생애전환기\n뭐가 더 붙지?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "거실 탁자에서 우편으로 온 검진 안내 봉투를 여는 50대 남성",
+      "prompt": "Camera and composition: medium shot at a living room table. A Korean man in his 50s with a buzz cut in a brown quarter-zip sweater sitting at a living room table and opening a plain white envelope from the mail, calm and attentive. Background color: warm beige living room light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a living room table",
+      "bg": "warm beige living room light"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "66세 건강검진에 더해지는 검사 4가지를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "66세에 더해지는 검사",
+        "items": [
+          "노인신체기능검사",
+          "인지기능검사",
+          "폐기능검사",
+          "골밀도검사(여성)"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "검진센터 상담실에서 설문지를 함께 보는 50대 딸과 60대 어머니",
+      "prompt": "Camera and composition: medium shot in a small consultation room. A Korean woman in her 50s with long wavy hair in a mustard sweater sitting beside her mother in her 60s with short permed gray hair in a lilac blouse, both looking together at a blank questionnaire sheet on a desk in a clinic consultation room. Background color: soft white and pale green clinic walls. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a small consultation room",
+      "bg": "soft white and pale green clinic walls"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "생애전환기 건강검진 가기 전 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "검진 가기 전 순서",
+        "items": [
+          "건강검진표부터 확인",
+          "신분증 챙기기",
+          "폐기능검사 전 피할 것 지키기",
+          "보호자와 함께 가기",
+          "결과 상담 꼭 듣기"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "사람 없는 건강검진센터 접수대 위 빈 클립보드와 펜, 작은 화분",
+      "prompt": "Camera and composition: close-up of a reception counter. A clean health checkup center reception counter with a plain clipboard, a pen and a small potted plant, a blurred corridor behind, no people. Background color: cool light gray and white. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of a reception counter",
+      "bg": "cool light gray and white"
+    }
+  ]
+}

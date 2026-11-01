@@ -1,0 +1,84 @@
+{
+  "slug": "2026-11-05-gim-bogwanbeop",
+  "title": "김 보관법, 눅눅해진 김도 다시 바삭해질 수 있을까",
+  "source": "11/5(목) 18:40 네이버 원고 — 생활정보 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 실사풍·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "식탁에서 바삭하게 다시 구운 김을 나눠 들고 활짝 웃는 50대 엄마와 20대 아들 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). At a Korean dining table, a Korean mother in her 50s with a shoulder-length layered cut in a burgundy knit vest and her son in his 20s with wavy black hair in a cream hoodie, each holding a crisp sheet of dark roasted seaweed, smiling brightly at each other. Facial expression: bright happy smile. Color theme: warm burgundy and cream tones with a soft gold accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "warm burgundy and cream tones with a soft gold accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "burgundy",
+      "thumb_person": "50대 엄마와 20대 아들",
+      "thumb_mood": "반가움",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "burgundy",
+        "font": "ptd",
+        "title": "김 보관법\n다시 바삭?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "주방 서랍을 열어 반쯤 남은 김 봉지를 꺼내 드는 50대 여성",
+      "prompt": "Camera and composition: medium shot at a kitchen drawer. A Korean woman in her 50s with a neat chignon in a light gray cardigan pulling a half-empty plain silver seaweed snack pouch out of a kitchen drawer. Background color: bright white kitchen light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a kitchen drawer",
+      "bg": "bright white kitchen light"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "김 냉동보관 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "김 냉동보관 순서",
+        "items": [
+          "한 번 먹을 만큼 나누기",
+          "지퍼백에 넣고 공기 빼기",
+          "밀폐용기에 한 번 더 담기",
+          "냉동실 안쪽에 두기"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "냉동실 안쪽 칸에 김을 담은 투명 밀폐용기를 넣는 손",
+      "prompt": "Camera and composition: close-up of hands at an open freezer. Hands placing a clear airtight plastic container with stacked dark seaweed sheets onto the back shelf of an open freezer, light frost on the shelves. Background color: cool icy blue freezer light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands at an open freezer",
+      "bg": "cool icy blue freezer light"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "기름 없는 팬에 김 한 장을 올려 약불에 살짝 굽는 20대 남성",
+      "prompt": "Camera and composition: medium shot at a stovetop. A Korean man in his 20s with a short undercut in a navy apron over a white T-shirt holding one sheet of dark seaweed with chopsticks over a dry black frying pan on low heat, calm and focused. Background color: warm kitchen light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a stovetop",
+      "bg": "warm kitchen light"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "구운김 보관 전에 확인할 것을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "구운김 보관 전에",
+        "items": [
+          "완전히 식힌 뒤 담기",
+          "제습제 같이 넣기",
+          "공기 빼고 밀봉하기",
+          "며칠 안에 먹기"
+        ]
+      }
+    }
+  ]
+}
