@@ -50,8 +50,12 @@ const DAY_TOTAL3 = 5;
 const HOMEFEED3 = 1;
 // 2026-11-01 사용자 — "홈판 비중을 늘려보고 홈판 잘 타는 블로그들이 공통으로 하는 대로". 2026-11-03 원고부터 하루 5편 중 3편 홈판형
 //   = 생활정보 1(12:00) + 생활보장 2(17:00·21:00). 카테고리 배분(생활보장 4 + 생활정보 1)은 그대로, 생활보장 글에도 slot: 홈판 을 붙인다.
-const HOMEFEED4_FROM = '2026-11-03';
+//   2026-11-01 같은 날 다시 — "11월 1일부터 14일까지 2주 테스트": 11/2 남은 칸(17·21시)부터 홈판형. 판정 11/15(일) 아침.
+//   홈판형은 고정 인사 없이 첫 문장(인용구) → 바로 본론 (사용자: 홈판형만 빼기), 대표사진은 사람 얼굴이 보이는 구도(face·duo). 둘 다 11/3 원고부터 검사(11/2 12시 글은 이미 예약됨).
+const HOMEFEED4_FROM = '2026-11-02';
 const HOMEFEED4 = 3;
+const HF_STYLE_FROM = '2026-11-03';
+const HF_SHOTS = ['face', 'duo'];
 // 2026-10-26 사용자 다시 — "10월 말까지는 하루 10편(생활보장 7 + 생활정보 3), 11월 1일부터 생활보장 4 + 생활정보 1 총 5편". 10편 날은 홈판형 2편, 같은 모양 3편까지.
 const TEN_UNTIL = '2026-10-31';
 const SPLIT_TEN = { 생활정보: 3, 생활보장: 7 };
@@ -296,8 +300,9 @@ for (const file of files) {
       else if (!post.brandconnect) errors.push(`대가성 문구나 ${BC.MARKER} 가 있는데 프런트매터 brandconnect: 가 없습니다`);
       else {
         if (post.category === '생활보장' || /보험/.test(`${post.title} ${post.mainKeyword}`)) errors.push('생활보장(보험·의료비·돌봄) 글에는 쇼핑 링크를 넣지 않습니다');
-        const gi = post.blocks.findIndex((b) => b.type === 'p' && b.lines[0]?.t === OPEN[0] && b.lines[1]?.t === OPEN[1]);
-        if (!(gi >= 0 && BC.isDisclosure(post.blocks[gi + 1] || {}))) errors.push(`고정 인사말 바로 다음 덩어리에 대가성 문구 두 줄을 그대로: "${BC.DISCLOSURE.join(' / ')}"`);
+        let gi = post.blocks.findIndex((b) => b.type === 'p' && b.lines[0]?.t === OPEN[0] && b.lines[1]?.t === OPEN[1]);
+        if (gi < 0 && post.slot === '홈판' && dated >= HOMEFEED4_FROM) gi = 0; // 인사 없는 홈판형 — 첫 문장 바로 다음
+        if (!(gi >= 0 && BC.isDisclosure(post.blocks[gi + 1] || {}))) errors.push(`고정 인사말(인사 없는 홈판형은 첫 문장) 바로 다음 덩어리에 대가성 문구 두 줄을 그대로: "${BC.DISCLOSURE.join(' / ')}"`);
         if (markers !== 1) errors.push(`${BC.MARKER} 한 줄짜리 덩어리가 정확히 1곳 있어야 합니다 (지금 ${markers}곳) — 정리 소제목 아래 끝쪽`);
         const dir = file.replace(/[^\\/]+$/, '') || './', me = file.split(/[\\/]/).pop();
         const same = daySibs(dir, dated).filter((f) => f !== me)
@@ -538,6 +543,8 @@ for (const file of files) {
         if (v3) {
           if (!shot) errors.push(`대표사진(1번)에 thumb_shot 이 없거나 목록 밖입니다 (${Object.keys(st0.thumb_shots || {}).join('·')}) — standards/이미지-기준.md "대표사진 구도 섞기"`);
           else if (!(t.prompt || '').includes(shot.prompt)) errors.push(`대표사진 프롬프트에 구도 문구가 없습니다 — "${shot.prompt}"`);
+          if (!tistory && post.slot === '홈판' && dated >= HF_STYLE_FROM && !HF_SHOTS.includes(t.thumb_shot))
+            errors.push(`홈판형 대표사진은 사람 얼굴이 보이는 구도(${HF_SHOTS.join('·')})로 — 지금 ${t.thumb_shot || '없음'} (2026-11-01 사용자)`);
           if (st0.thumb_band_space && !(t.prompt || '').includes(st0.thumb_band_space)) errors.push(`대표사진 프롬프트에 위쪽 띠 자리 문구가 없습니다 — "${st0.thumb_band_space}"`);
         }
         if (tl.length !== 2) errors.push(`대표사진 글씨는 두 줄입니다 (지금 ${tl.length}줄) — 첫 줄 메인 키워드, 둘째 줄 질문`);
@@ -597,8 +604,10 @@ for (const file of files) {
         if (moodSame.length >= (ten ? 2 : 1)) errors.push(`같은 날 ${moodSame.join(', ')} 와 대표사진 표정(${t.thumb_mood})이 같습니다 — ${ten ? '10편 날은 같은 표정 2편까지' : '모두 다르게'}`);
         // 구도·종이·나이도 섞는다 (2026-10-28 사용자 — 사람이 너무 똑같다)
         if (v3) {
-          const lim = ten ? 2 : 1;
-          if (shotSame.length >= lim) errors.push(`같은 날 ${shotSame.join(', ')} 와 대표사진 구도(${t.thumb_shot})가 같습니다 — ${ten ? '10편 날은 같은 구도 2편까지' : '5편 모두 다르게'}`);
+          // 홈판형 3편 날은 얼굴 구도(face·duo)가 모자라 같은 구도 2편까지
+          const hfFace = !tistory && post.slot === '홈판' && dated >= HF_STYLE_FROM && HF_SHOTS.includes(t.thumb_shot);
+          const lim = ten || hfFace ? 2 : 1;
+          if (shotSame.length >= lim) errors.push(`같은 날 ${shotSame.join(', ')} 와 대표사진 구도(${t.thumb_shot})가 같습니다 — ${ten ? '10편 날은 같은 구도 2편까지' : hfFace ? '홈판형 얼굴 구도는 2편까지' : '5편 모두 다르게'}`);
           if (papers > (ten ? 2 : 1)) errors.push(`같은 날 종이·안내문을 든 대표사진이 ${papers}편 — ${ten ? 2 : 1}편까지 (주제 사물을 바꾸세요)`);
           if (olds > (ten ? 4 : 2)) errors.push(`같은 날 60대 이상만 나오는 대표사진이 ${olds}편 — ${ten ? 4 : 2}편까지 (자녀·보호자·젊은 층이나 사람 없는 구도로)`);
         }
@@ -621,10 +630,15 @@ for (const file of files) {
   if (bundle) {
     const [first, second] = post.blocks;
     const greet = second?.lines.map((l) => l.t) || [];
+    const greetOk = greet.length === 2 && greet[0] === OPEN[0] && greet[1] === OPEN[1];
+    // 홈판형은 고정 인사 없이 바로 본론 (2026-11-01 사용자 — 11/2 원고부터 빼도 되고, 11/3 원고부터는 빼야 한다)
+    const hfNoGreet = !tistory && post.slot === '홈판' && dated >= HOMEFEED4_FROM;
     if (!first || first.type !== 'p' || first.lines.length > 2 || first.lines[0].t === OPEN[0])
-      errors.push(`첫 덩어리는 고정 인사말 앞의 "확인된 사실 한 문장"(1~2줄)이어야 합니다 (2026-10-12 원고부터) — 빈 줄 다음에 "${OPEN[0]} / ${OPEN[1]}"`);
-    else if (greet.length !== 2 || greet[0] !== OPEN[0] || greet[1] !== OPEN[1])
+      errors.push(`첫 덩어리는 ${hfNoGreet ? '' : '고정 인사말 앞의 '}"확인된 사실 한 문장"(1~2줄)이어야 합니다 (2026-10-12 원고부터)${hfNoGreet ? '' : ` — 빈 줄 다음에 "${OPEN[0]} / ${OPEN[1]}"`}`);
+    else if (!greetOk && !hfNoGreet)
       errors.push(`사실 한 문장 다음 덩어리가 고정 인사말 "${OPEN[0]} / ${OPEN[1]}" 이어야 합니다`);
+    else if (greetOk && hfNoGreet && dated >= HF_STYLE_FROM)
+      errors.push(`홈판형(slot: 홈판)은 고정 인사말 없이 첫 문장 다음 바로 본론으로 씁니다 (2026-11-03 원고부터) — "${OPEN[0]} / ${OPEN[1]}" 두 줄을 빼세요 (닫는 인사는 그대로)`);
     else {
       const lead = first.lines.map((l) => l.t).join(' ');
       notes.push(`첫 줄 사실(발행 때 인용구): ${lead}`);
