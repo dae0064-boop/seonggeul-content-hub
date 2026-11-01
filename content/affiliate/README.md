@@ -13,6 +13,9 @@
   `coupang:` 키워드를 달아 `content/tistory/` 에 쓰고, 아침 PC 의 build-tistory 가 `coupang-links.tsv` 의 링크를 `rel="sponsored"` 로 넣는다.
   링크 목록도 2026-11-01 부터 아침 PC 가 저절로 채운다 (아래).
 
+> **2026-11-01 사용자 — "미리 링크를 만들지 말고 원고를 작성할 때 상황에 맞게 골라서".** 밤 원고 작업이 글마다 그 글에 맞는 상품 말을 `coupang:`·`brandconnect:` 에 적고,
+> 발행하는 날 아침 PC 가 그 말로 링크를 만든다. `*-wanted.txt` 에 미리 넣어 두지 않는다(사용자가 따로 부탁할 때만). 이미 만든 링크 목록(`*-links.tsv`)은 같은 말이 다시 나오면 다시 쓰는 저장소일 뿐이다.
+
 ## 쇼핑 커넥트 링크 목록 채우기 (자동 — 2026-10-26 사용자 "나에게 링크를 만들라고 하지 말아줘")
 1. 아침 PC 의 `draft-day.ps1 -Reserve` 가 크롬을 켠 뒤 발행 전에 `launchers/tools/brandconnect-links.ps1` → `scripts/brandconnect-links.mjs` 를 부른다.
    앞으로 나갈 원고의 `brandconnect:` 키워드부터, 그다음 `brandconnect-wanted.txt` 순으로 하루 2개까지.
