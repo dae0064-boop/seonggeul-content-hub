@@ -35,14 +35,20 @@ export const isMarker = (b) => b.type === 'p' && blockText(b).join('\n') === MAR
  * 줄 형식: 키워드<TAB>링크<TAB>보여 줄 글자. # 은 주석. 같은 키워드는 앞 파일(저장소 목록)이 먼저다.
  * 파일 하나만 주면 그 파일만 읽는다 (예전 호출 그대로).
  */
+// 쓰지 않기로 한 링크 (2026-11-01 사용자 — 미리 만든 14개를 지움). PC 에 복사본이 남아 있어도 건너뛴다
+const REMOVED_FILE = path.join(ROOT, 'content', 'affiliate', 'coupang-removed.txt');
+function removedUrls() {
+  try { return new Set(fs.readFileSync(REMOVED_FILE, 'utf8').split(/\r?\n/).map((s) => s.trim()).filter((s) => s && !s.startsWith('#'))); } catch { return new Set(); }
+}
 export function loadLinks(files = [LINKS_FILE, LOCAL_LINKS_FILE]) {
   const map = new Map();
+  const removed = removedUrls();
   for (const file of [].concat(files)) {
     if (!fs.existsSync(file)) continue;
     for (const raw of fs.readFileSync(file, 'utf8').split(/\r?\n/)) {
       if (!raw.trim() || raw.trim().startsWith('#')) continue;
       const [kw, url, label] = raw.split('\t').map((s) => (s || '').trim());
-      if (kw && LINK_RE.test(url || '') && !map.has(kw)) map.set(kw, { url, label: label || kw });
+      if (kw && LINK_RE.test(url || '') && !removed.has(url) && !map.has(kw)) map.set(kw, { url, label: label || kw });
     }
   }
   return map;
