@@ -1,0 +1,123 @@
+{
+  "slug": "2026-11-02-han-geun-myeot-geuram",
+  "title": "한 근 몇 그램, 돼지고기와 채소 한 근이 다른 이유 (600g·375g)",
+  "source": "11/2(월) 티스토리 원고 (11/1 밤 22:37 Routine)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). style_v2·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "정육점 저울 위에 돼지고기 덩어리를 올려 무게를 보는 장면 (대표사진)",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A chunk of raw pork shoulder resting on an old-fashioned butcher scale with a round dial, on a wooden butcher counter. Color theme: terracotta and warm beige tones with a teal accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "핵심 사물 하나 크게 (사람 없음)",
+      "bg": "terracotta and warm beige tones with a teal accent",
+      "note": "대표",
+      "thumb_shot": "object",
+      "thumb_theme": "brick",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "brick",
+        "font": "jua",
+        "title": "한 근 몇 그램\n고기 채소 같을까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "시장 채소 가게 앞에서 시금치 묶음을 고르는 50대 여성",
+      "prompt": "Camera and composition: medium shot in front of a market vegetable stall. A Korean woman in her 50s with a coral-red quilted vest choosing a bundle of spinach at a traditional market vegetable stall. Background color: pale mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in front of a market vegetable stall",
+      "bg": "pale mint"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "근·관·냥·돈 무게를 그램으로 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "옛 무게 단위를 그램으로",
+        "heads": [
+          "단위",
+          "그램"
+        ],
+        "items": [
+          [
+            "1근(고기)",
+            "600g"
+          ],
+          [
+            "1근(채소·과일)",
+            "375g"
+          ],
+          [
+            "1관",
+            "3.75kg"
+          ],
+          [
+            "1돈",
+            "3.75g"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "부엌 도마 위에서 돼지고기 앞다리살을 썰어 나누는 40대 남성",
+      "prompt": "Camera and composition: close-up over a cutting board. A Korean man in his 40s in a navy apron slicing a piece of pork into portions on a wooden cutting board in a home kitchen. Background color: light peach. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up over a cutting board",
+      "bg": "light peach"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "장바구니에서 꺼낸 고추와 마늘을 식탁에 펼쳐 둔 모습",
+      "prompt": "Camera and composition: top-down view of a dining table. Red chili peppers and whole garlic bulbs spread out on a dining table next to a cloth shopping bag, no people. Background color: pale butter yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "top-down view of a dining table",
+      "bg": "pale butter yellow"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "마트 정육 코너 진열대에서 그램 표시를 확인하는 30대 부부",
+      "prompt": "Camera and composition: eye-level shot at a supermarket meat aisle. A Korean couple in their 30s, the wife in a mustard-yellow coat, checking a price label on packaged meat in a supermarket refrigerated aisle. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "eye-level shot at a supermarket meat aisle",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "고기와 채소의 한 근 계산법을 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "한 근 계산법 비교",
+        "heads": [
+          "고기",
+          "채소·과일"
+        ],
+        "items": [
+          [
+            "600g",
+            "375g"
+          ],
+          [
+            "두 근이면 1.2kg",
+            "750g"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "저녁 식탁 위에 정리된 장보기 메모와 저울",
+      "prompt": "Camera and composition: still life on an evening dining table. A small kitchen scale and a handwritten shopping memo neatly arranged on a dining table under warm evening light, no people. Background color: light lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "still life on an evening dining table",
+      "bg": "light lavender"
+    }
+  ]
+}
