@@ -51,7 +51,9 @@ const HOMEFEED3 = 1;
 // 2026-10-26 사용자 다시 — "10월 말까지는 하루 10편(생활보장 7 + 생활정보 3), 11월 1일부터 생활보장 4 + 생활정보 1 총 5편". 10편 날은 홈판형 2편, 같은 모양 3편까지.
 const TEN_UNTIL = '2026-10-31';
 const SPLIT_TEN = { 생활정보: 3, 생활보장: 7 };
-const isTen = (d) => d >= SPLIT3_FROM && d <= TEN_UNTIL;
+// 2026-11-01 사용자 — "오늘 날짜로 블로그 10편" (주말 하루 10편, 같은 10편 배분: 생활보장 7 + 생활정보 3, 홈판 2)
+const TEN_EXTRA = new Set(['2026-11-01']);
+const isTen = (d) => (d >= SPLIT3_FROM && d <= TEN_UNTIL) || TEN_EXTRA.has(d);
 // 그림체 바꾸는 날 (2026-10-24 사용자 — "생활보장은 클레이로 30편까지, 31편부터 실사풍 / 생활정보는 지금 126편, 150편이 되면 실사풍". 같은 날 다시 센 숫자: 생활보장 19·생활정보 131).
 // 실제 편수로 센다: 이 글이 그 카테고리 몇 번째 네이버 글인가 = 더할 수(OFFSET) + published.tsv 의 같은 카테고리 줄 + content/posts 에서 이 글보다 앞선(날짜·publish_at) 같은 카테고리 글 + 1.
 // OFFSET: 2026-10-24 10:40 사용자가 보낸 블로그 카테고리 화면 — "생활정보 125개의 글"·"생활보장 19개의 글" (발행된 글만, 10/24 10:00 세탁기 배수구 글까지).
@@ -59,7 +61,8 @@ const isTen = (d) => d >= SPLIT3_FROM && d <= TEN_UNTIL;
 // 예상 날짜: 생활보장 31번째 = 10/28 원고 세 번째 생활보장 글 (10/27 원고부터 하루 4편 — 처음 예상은 하루 3편 기준 10/29).
 // 생활정보는 클레이 3D 그대로 (2026-10-25 사용자 "3D 로 쭉 밀고 가는 게 낫다던데" → Claude 추천: 홈판에 걸린 글이 모두 클레이라 151번째 전환을 뺌).
 // 2026-10-26 사용자 — 시험 그림(실사·클레이)을 보고 "클레이 3D 그대로" → 생활보장 31번째 실사풍 전환도 취소. 모두 클레이.
-const REAL_AFTER = { 생활보장: Infinity, 생활정보: Infinity };
+// 2026-11-01 사용자 다시 — "생활보장은 현재 49개야 51개부터는 실사풍, 생활정보는 146개인데 151개부터는 실사풍" (10/31 원고까지 발행된 수).
+const REAL_AFTER = { 생활보장: 50, 생활정보: 150 };
 // 대표사진 새 모양 (2026-10-26 사용자 — 시험 그림 close4-02 "이 느낌으로", 2026-10-27 네이버 원고부터):
 //   1번 = 한 사람 얼굴 가까이(thumbnail_closeup)·생각하는 표정·강조색, 글씨는 위쪽 남색 띠(look "band") 두 줄 — 첫 줄 메인 키워드, 둘째 줄 질문(숫자 없음).
 //   그림 장면은 style_v2(파스텔보다 진한 색 + 강조색 하나). 검색 결과에서 크림색 빈 벽·작은 두 사람·키워드 반복 글씨가 눈에 안 띄었다.
@@ -72,7 +75,8 @@ const PAPER = /\b(paper|papers|letter|brochure|document|leaflet|notice|pamphlet|
 // 공통 끝 문장("…signs, labels, screens and papers stay blank…")은 빼고 본다
 const hasPaper = (prompt) => PAPER.test(String(prompt || '').replace(/Do not draw any written words[^.]*\./gi, ''));
 const OLD_ONLY = (p) => /[6-9]0대|할머니|할아버지|어르신|노인/.test(p || '') && !/[1-5]0대|아이|딸|아들|손주|며느리|사위|자녀|보호자/.test(p || '');
-const COUNT_OFFSET = { 생활보장: 0, 생활정보: 35 };
+// 2026-11-01 사용자 숫자(생활정보 146 — 저장소 기록 145)에 맞춰 35 → 36
+const COUNT_OFFSET = { 생활보장: 0, 생활정보: 36 };
 function categoryOrdinal(file, post, dated) {
   let n = COUNT_OFFSET[post.category] || 0;
   try {
@@ -590,7 +594,9 @@ for (const file of files) {
           if (olds > (ten ? 4 : 2)) errors.push(`같은 날 60대 이상만 나오는 대표사진이 ${olds}편 — ${ten ? 4 : 2}편까지 (자녀·보호자·젊은 층이나 사람 없는 구도로)`);
         }
       }
-      const flat = plan.images.filter((im) => im.kind !== 'card' && im.prompt && !/saturated/i.test(im.prompt)).map((im) => im.n);
+      // 실사풍 글(REAL_AFTER 넘은 편)은 style_care·style_life 라 style_v2 문구를 보지 않는다 (2026-11-01 사용자 — 실사풍 전환)
+      const realPost = !tistory && Number.isFinite(REAL_AFTER[post.category]) && categoryOrdinal(file, post, dated) > REAL_AFTER[post.category];
+      const flat = realPost ? [] : plan.images.filter((im) => im.kind !== 'card' && im.prompt && !/saturated/i.test(im.prompt)).map((im) => im.n);
       if (flat.length) errors.push(`그림 ${flat.join(', ')}번에 style_v2(파스텔보다 진한 색) 문구가 없습니다 — standards/image-style.json style_v2·palette_v2`);
     }
   }
