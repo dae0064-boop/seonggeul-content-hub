@@ -1,0 +1,85 @@
+{
+  "slug": "2026-11-05-bangeonsi-mandeulgi",
+  "title": "반건시 만들기, 곶감보다 며칠 일찍 걷으면 될까",
+  "source": "11/5(목) 10:40 네이버 원고 — 생활정보 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 실사풍·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "베란다에 매달린 반건시를 함께 눌러 보며 활짝 웃는 20대 아들과 50대 어머니 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean son in his 20s with a short two-block haircut in a mustard sweatshirt and his mother in her 50s with shoulder-length wavy hair in a deep green cardigan stand on a bright apartment veranda facing each other, both gently pressing one hanging deep orange half-dried persimmon with their fingertips, rows of persimmons hanging on a rack beside them, potted green plants and warm wood flooring. Facial expression: bright happy smile. Color theme: deep green plants and warm wood tones with a mustard-yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "deep green plants and warm wood tones with a mustard-yellow accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "forest",
+      "thumb_person": "20대 아들(짧은 투블럭·겨자색 맨투맨)과 50대 어머니(어깨 길이 웨이브·초록 카디건)",
+      "thumb_mood": "반가움",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "forest",
+        "font": "jua",
+        "title": "반건시 만들기\n언제 걷을까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "접시 위에 반으로 갈라 속이 말랑하게 보이는 주황빛 반건시",
+      "prompt": "Camera and composition: close-up of a plate on a wooden table. Two deep orange half-dried persimmons on a small white plate, one torn in half showing a soft jelly-like amber inside, a small fork beside the plate, no people. Background color: warm afternoon light on a walnut table. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of a plate on a wooden table",
+      "bg": "warm afternoon light on a walnut table"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "반건시 만들기 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "반건시 만들기 순서",
+        "items": [
+          "꼭지 달린 단단한 감 고르기",
+          "껍질 얇게 돌려 깎기",
+          "그늘 바람길에 매달기",
+          "겉이 마르면 살살 주무르기",
+          "속이 말랑할 때 걷기"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "열린 베란다 창 앞 곶감걸이에 간격을 두고 매달린 깎은 감",
+      "prompt": "Camera and composition: side view of an open veranda window. Peeled orange persimmons clipped on a plastic persimmon hanger rack with even gaps between them in front of a half-open apartment veranda window, a light breeze moving a sheer curtain, no people. Background color: pale blue late autumn sky and white window frame. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "side view of an open veranda window",
+      "bg": "pale blue late autumn sky and white window frame"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "반건시 걷을 때 확인할 것을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "반건시 걷을 때 확인",
+        "items": [
+          "겉이 쫀득하게 말랐나요",
+          "속이 아직 말랑한가요",
+          "곰팡이 핀 곳은 없나요",
+          "색이 진한 주황빛인가요"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "반건시를 하나씩 랩에 싸서 냉동실 서랍에 줄 세워 넣는 손",
+      "prompt": "Camera and composition: close-up of hands at a freezer drawer. Close-up of the hands of a person in a navy knit sleeve laying half-dried persimmons, each wrapped in clear plastic wrap, in a neat row inside a pulled-out freezer drawer next to a small lidded container. Background color: cool white freezer light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands at a freezer drawer",
+      "bg": "cool white freezer light"
+    }
+  ]
+}
