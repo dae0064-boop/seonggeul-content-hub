@@ -60,6 +60,18 @@ const HF_SHOTS = ['face', 'duo'];
 //   홈판형 14(생활정보 8 + 생활보장 6) · 검색형 6. 같은 주제라도 말투(tone)·내용을 글마다 다르게, 겹치지 않게 (같은 날 사용자).
 const TWENTY_FROM = '2026-11-03';
 const isTwenty = (d) => d >= TWENTY_FROM;
+// 2026-11-01 사용자 — "20편·10편은 그대로, 이미지랑 글 분량을 조금 줄여서" (비용·아침 그림 시간·밤 작업 사용량). 2026-11-03 원고부터.
+//   그림: 네이버 6장(대표 1 + 장면 3 + 정보 카드 2), 티스토리 4장(대표 1 + 장면 1 + 정보 카드 2)
+//   분량(공백 제외)·키워드 횟수: 네이버 홈판형 1,500~1,800자·메인 7·서브 3 / 검색형 1,900~2,100자·메인 9·서브 4 / 티스토리 1,600~1,900자·메인 8·서브 4
+//   Q&A 한 쌍씩 줄임(3→2, 질문형 5→4), 소제목 7개까지
+const SLIM_FROM = '2026-11-03';
+function slimOf(dated, tistory, slot) {
+  if (dated < SLIM_FROM) return null;
+  if (tistory) return { imgs: 4, cards: [2, 2], chars: [1600, 1900], main: 8, sub: 4, quotes: 7 };
+  if (slot === '홈판') return { imgs: 6, cards: [2, 2], chars: [1500, 1800], main: 7, sub: 3, quotes: 7 };
+  return { imgs: 6, cards: [2, 2], chars: [1900, 2100], main: 9, sub: 4, quotes: 7 };
+}
+const SLIM_QA = { 기본: [2], 순서형: [0, 2], 체크리스트형: [0, 2], 비교형: [0, 2], 질문형: [4] };
 const SPLIT_TWENTY = { 생활정보: 10, 생활보장: 10 };
 const HF_TWENTY = { 생활정보: 8, 생활보장: 6 };
 // 같은 날 같은 값 몇 편까지 (20편 날)
@@ -339,6 +351,11 @@ for (const file of files) {
   const newRules = dated >= NEW_RULES_FROM;
   const tistory = forceTistory || /(^|[\\/])content[\\/]tistory[\\/]/.test(file);
   const close1 = tistory ? TISTORY_CLOSE_1 : CLOSE_1;
+  const slim = slimOf(dated, tistory, post.slot);
+  const nsChars = slim ? slim.chars : NS_CHARS;
+  const minMain = slim ? slim.main : MIN_MAIN;
+  const minSub = slim ? slim.sub : MIN_SUB;
+  const maxQuotes = slim ? slim.quotes : MAX_QUOTES;
   const errors = [];
   const notes = [];
 
@@ -449,7 +466,8 @@ for (const file of files) {
     const as = all.filter((t) => /^A\d+:/.test(t)).length;
     // 티스토리도 같은 글 모양 규칙을 따른다 (routines/tistory-daily.md — 2026-10-05 원고부터)
     const useFormat = dated >= FORMAT_FROM;
-    const fmt = useFormat ? FORMATS[post.format] : FORMATS.기본;
+    const fmt0 = useFormat ? FORMATS[post.format] : FORMATS.기본;
+    const fmt = fmt0 && slim ? { ...fmt0, qa: SLIM_QA[post.format] || fmt0.qa } : fmt0;
     if (useFormat && !fmt) errors.push(`format 이 없거나 모르는 값입니다 ("${post.format}") — ${Object.keys(FORMATS).join(' / ')} 중 하나`);
     if (fmt) {
       if (qs !== as || !fmt.qa.includes(qs)) errors.push(`Q&A 는 "Q1: 질문" / "A1: 답변" 형식으로 ${fmt.qa.join(' 또는 ')}쌍이어야 합니다 (${post.format || '기본'}, 지금 Q ${qs}개 / A ${as}개)`);
@@ -484,16 +502,16 @@ for (const file of files) {
   const subN = post.subKeywords.map((k) => [k, countOf(k)]);
 
   if (newRules) {
-    if (charsNS < NS_CHARS[0]) errors.push(`본문이 짧습니다: 공백 제외 ${charsNS}자 (최소 ${NS_CHARS[0]})`);
-    if (charsNS > NS_CHARS[1]) errors.push(`본문이 깁니다: 공백 제외 ${charsNS}자 (최대 ${NS_CHARS[1]})`);
+    if (charsNS < nsChars[0]) errors.push(`본문이 짧습니다: 공백 제외 ${charsNS}자 (최소 ${nsChars[0]})`);
+    if (charsNS > nsChars[1]) errors.push(`본문이 깁니다: 공백 제외 ${charsNS}자 (최대 ${nsChars[1]})`);
   } else {
     if (chars < MIN_CHARS) errors.push(`본문이 짧습니다: ${chars}자 (최소 ${MIN_CHARS})`);
     if (chars > MAX_CHARS) errors.push(`본문이 깁니다: ${chars}자 (최대 ${MAX_CHARS})`);
   }
-  if (post.mainKeyword && mainN < MIN_MAIN)
-    errors.push(`메인 키워드 "${post.mainKeyword}" ${mainN}회 — ${MIN_MAIN}회 이상 필요`);
+  if (post.mainKeyword && mainN < minMain)
+    errors.push(`메인 키워드 "${post.mainKeyword}" ${mainN}회 — ${minMain}회 이상 필요`);
   for (const [k, n] of subN)
-    if (n < MIN_SUB) errors.push(`서브 키워드 "${k}" ${n}회 — ${MIN_SUB}회 이상 필요`);
+    if (n < minSub) errors.push(`서브 키워드 "${k}" ${n}회 — ${minSub}회 이상 필요`);
 
   // 제목은 메인 키워드로 시작해야 한다 (타깃 키워드를 첫 어절에)
   if (post.mainKeyword) {
@@ -546,9 +564,10 @@ for (const file of files) {
   }
 
   // standards/이미지-기준.md — 한 글에 8장 (대표 1 + 본문 7). 네이버는 2026-10-20 원고부터 빠지면 막는다
-  const imgWant = 8;
-  if (images.length && images.length !== imgWant)
-    (!tistory && dated >= TOPIC_SHIFT_FROM ? errors : notes).push(`이미지 자리 ${images.length}개 — ${imgWant}개 기준입니다.`);
+  // 2026-11-03 원고부터 네이버 6장·티스토리 4장 (위 SLIM_FROM) — 둘 다 맞지 않으면 막는다
+  const imgWant = slim ? slim.imgs : 8;
+  if ((images.length || slim) && images.length !== imgWant)
+    (slim || (!tistory && dated >= TOPIC_SHIFT_FROM) ? errors : notes).push(`이미지 자리 ${images.length}개 — ${imgWant}개 기준입니다.`);
   // 하루 배분: 2026-10-20 생활정보 4 + 생활보장 1 → 10-26 생활보장 3 + 생활정보 2 → 10-27 생활보장 4 + 생활정보 1
   if (!tistory && dated >= TOPIC_SHIFT_FROM) {
     const dir = file.replace(/[^\\/]+$/, '') || './';
@@ -792,7 +811,8 @@ for (const file of files) {
     if (!plan) notes.push('이미지 계획서가 아직 없어 정보 카드 검사를 건너뜁니다 — 계획서를 쓴 뒤 다시 돌리세요');
     else {
       const cards = plan.images.filter((im) => im.kind === 'card');
-      const want = !tistory && dated >= WEEK_TEST_FROM ? CARDS_WEEK_TEST : CARDS;
+      const want = slim ? slim.cards : !tistory && dated >= WEEK_TEST_FROM ? CARDS_WEEK_TEST : CARDS;
+      if (slim && plan.images.length !== slim.imgs) errors.push(`이미지 계획서가 ${plan.images.length}장 — ${slim.imgs}장이어야 합니다 (원고 [이미지 N] 자리와 같게)`);
       if (cards.length < want[0] || cards.length > want[1]) errors.push(`정보 카드(kind "card")는 ${plan.images.length}장 중 ${want[0]}~${want[1]}장 (지금 ${cards.length}장)`);
       const bodyPlain = plain(texts.join(''));
       for (const im of cards) {
@@ -844,9 +864,9 @@ for (const file of files) {
     });
     const quotes = post.blocks.filter((b) => b.type === 'quote').length;
     const under = post.blocks.filter((b, i) => b.type === 'image' && b.n !== 1 && post.blocks[i - 1]?.type === 'quote').length;
-    if (quotes - under > 3) notes.push(`그림 없는 소제목이 ${quotes - under}개예요 — 소제목 수를 그림 수(7)에 가깝게 맞추면 패턴이 더 고르게 보여요`);
+    if (!slim && quotes - under > 3) notes.push(`그림 없는 소제목이 ${quotes - under}개예요 — 소제목 수를 그림 수(7)에 가깝게 맞추면 패턴이 더 고르게 보여요`);
     // 인용구 소제목이 너무 많다 (2026-10-03 사용자 지시 — 10~12개에서 2~3개 빼기). 그림 7 + Q&A + 정리 = 9개까지
-    if (quotes > MAX_QUOTES) errors.push(`인용구(소제목)가 ${quotes}개 — ${MAX_QUOTES}개 이하로 줄이세요 (그림 7개 자리 + Q&A + 정리). 그림 없는 소제목은 앞 덩어리와 합칩니다`);
+    if (quotes > maxQuotes) errors.push(`인용구(소제목)가 ${quotes}개 — ${maxQuotes}개 이하로 줄이세요${slim ? ' (2026-11-03 원고부터 6~7개 — 일부 소제목에만 그림)' : ' (그림 7개 자리 + Q&A + 정리)'}. 그림 없는 소제목은 앞 덩어리와 합칩니다`);
   }
   if (perBlock < MIN_BLOCK_LINES)
     errors.push(`덩어리가 잘게 쪼개졌습니다: 덩어리당 ${perBlock.toFixed(1)}줄 (최소 ${MIN_BLOCK_LINES})`);
@@ -869,14 +889,14 @@ for (const file of files) {
   console.log(`\n${file}${tistory ? '  [티스토리]' : ''}`);
   console.log(`  제목        : ${post.title} (${post.title.length}자)`);
   if (newRules) {
-    const range = charsNS < NS_CHARS[0] ? '짧음' : charsNS > NS_CHARS[1] ? '김' : 'OK';
-    console.log(`  본문        : 공백 제외 ${charsNS}자 (기준 ${NS_CHARS[0]}~${NS_CHARS[1]}) ${range} · 공백 포함 ${chars}자`);
+    const range = charsNS < nsChars[0] ? '짧음' : charsNS > nsChars[1] ? '김' : 'OK';
+    console.log(`  본문        : 공백 제외 ${charsNS}자 (기준 ${nsChars[0]}~${nsChars[1]}) ${range} · 공백 포함 ${chars}자`);
     console.log(`  제목 키워드 : ${Math.round(titleKw.ratio * 100)}% (${!tistory && dated >= WEEK_TEST_FROM ? '비율 규칙 쉼 — 10/19 시험' : `권장 ${TITLE_KW[0] * 100}~${TITLE_KW[1] * 100}%`}) · 서브 ${titleKw.subs.join(', ') || '없음'}`);
   } else {
     const range = chars < MIN_CHARS ? '짧음' : chars > MAX_CHARS ? '김' : 'OK';
     console.log(`  본문        : ${chars}자 (기준 ${MIN_CHARS}~${MAX_CHARS}) ${range} · 공백 제외 ${charsNS}자`);
   }
-  console.log(`  메인 키워드 : "${post.mainKeyword}" ${mainN}회 (최소 ${MIN_MAIN})`);
+  console.log(`  메인 키워드 : "${post.mainKeyword}" ${mainN}회 (최소 ${minMain}${slim ? ` · 서브 각 ${minSub}` : ''})`);
   if (subN.length) console.log(`  서브 키워드 : ${subN.map(([k, n]) => `${k} ${n}회`).join(' / ')}`);
   console.log(`  줄/덩어리   : ${lines.length}줄 / ${post.blocks.length}덩어리`);
   console.log(`  줄 길이     : 평균 ${avg}자 (권장 ${AVG_LINE[0]}~${AVG_LINE[1]}), 최장 ${max}자 (한도 ${MAX_LINE})`);
