@@ -11,7 +11,8 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 export const ROOT = path.resolve(HERE, '..', '..');
 export const DIR = path.join(ROOT, 'content', 'threads');
-export const PAUSE_FILE = path.join(DIR, 'PAUSE');
+// THREADS_PAUSE_FILE: 시험(selftest)이 저장소의 실제 PAUSE 파일과 상관없이 돌도록 바꿔 끼우는 자리
+export const PAUSE_FILE = process.env.THREADS_PAUSE_FILE || path.join(DIR, 'PAUSE');
 export const VOICE_FILE = path.join(DIR, 'voice.md');
 export const TOPICS_FILE = path.join(DIR, 'topics.txt');
 
