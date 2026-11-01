@@ -1,0 +1,100 @@
+{
+  "slug": "2026-11-02-chimae-chogi-jeungsang",
+  "title": "치매초기증상, 건망증과 무엇이 다를까요 (65세 이상 9.25% · 2026년)",
+  "source": "11/2(월) 네이버 원고 (11/1 낮 사용자 요청으로 미리 씀) — 생활보장 53번째, 실사풍",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). style_v2·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "거실 소파에서 70대 어머니에게 차분히 설명하는 40대 아들 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean man in his 40s in a navy knit sweater sitting on a living room sofa and calmly explaining something with one open hand to his mother in her 70s with short gray hair, both relaxed. Facial expression: explaining with one hand open toward the viewer. Color theme: warm burgundy and cream tones with a soft gold accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "warm burgundy and cream tones with a soft gold accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "burgundy",
+      "thumb_person": "40대 아들과 70대 어머니",
+      "thumb_mood": "설명",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "burgundy",
+        "font": "ptd",
+        "title": "치매초기증상\n건망증과 다를까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "현관 신발장 앞에서 열쇠를 찾는 70대 여성",
+      "prompt": "Camera and composition: medium shot at a front entrance. A Korean woman in her 70s in a lavender cardigan looking calmly for her keys on top of a shoe cabinet at the front entrance of an apartment. Background color: soft indoor daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a front entrance",
+      "bg": "soft indoor daylight"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "건망증과 치매초기증상을 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "건망증과 알츠하이머병",
+        "heads": [
+          "건망증",
+          "알츠하이머병"
+        ],
+        "items": [
+          [
+            "기억이 떠올라요",
+            "전혀 기억하지 못해요"
+          ],
+          [
+            "좋아졌다 나빠져요",
+            "옛일은 잘 기억해요"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "식탁에서 가계부를 정리하는 60대 남성",
+      "prompt": "Camera and composition: medium shot at a dining table. A Korean man in his 60s with glasses writing in a household account notebook at a dining table, focused and calm. Background color: warm lamp light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a dining table",
+      "bg": "warm lamp light"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "공원 벤치에서 담소를 나누는 70대 어르신들",
+      "prompt": "Camera and composition: wide shot in a neighborhood park. A few Korean seniors in their 70s sitting on a park bench chatting and laughing together under autumn trees. Background color: clear autumn daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot in a neighborhood park",
+      "bg": "clear autumn daylight"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "베란다 화분에 물을 주며 생각에 잠긴 60대 남성",
+      "prompt": "Camera and composition: medium shot on an apartment balcony. A Korean man in his 60s in a beige vest watering potted plants on an apartment balcony, lost in thought. Background color: bright balcony daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on an apartment balcony",
+      "bg": "bright balcony daylight"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "보건소 치매안심센터 상담실에서 검사를 받는 70대 어르신과 딸",
+      "prompt": "Camera and composition: medium shot in a public health center consultation room. A Korean woman in her 70s and her daughter in her 40s sitting at a desk across from a friendly health center staff member, doing a simple paper check-up together. Background color: clean bright clinic light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a public health center consultation room",
+      "bg": "clean bright clinic light"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "저녁 식탁에서 부모님과 이야기하며 웃는 30대 딸",
+      "prompt": "Camera and composition: medium wide shot at a dinner table. A Korean woman in her 30s having dinner with her parents in their 60s at a home dinner table, all three talking and smiling. Background color: warm evening home light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium wide shot at a dinner table",
+      "bg": "warm evening home light"
+    }
+  ]
+}
