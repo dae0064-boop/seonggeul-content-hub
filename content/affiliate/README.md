@@ -11,7 +11,7 @@
   (그 전에는 이 폴더에 원고를 두고 손으로 올렸다 — 아래 "손으로 올리는 순서".)
 - **티스토리 쿠팡 글은 자동이다** (2026-10-17 사용자 — 티스토리 목표 ① 조회수 ② 수익). 밤 티스토리 Routine 이 하루 5편 중 T3 계산 글 1편까지
   `coupang:` 키워드를 달아 `content/tistory/` 에 쓰고, 아침 PC 의 build-tistory 가 `coupang-links.tsv` 의 링크를 `rel="sponsored"` 로 넣는다.
-  사람 손은 링크 목록을 채울 때만 든다 (아래).
+  링크 목록도 2026-11-01 부터 아침 PC 가 저절로 채운다 (아래).
 
 ## 쇼핑 커넥트 링크 목록 채우기 (자동 — 2026-10-26 사용자 "나에게 링크를 만들라고 하지 말아줘")
 1. 아침 PC 의 `draft-day.ps1 -Reserve` 가 크롬을 켠 뒤 발행 전에 `launchers/tools/brandconnect-links.ps1` → `scripts/brandconnect-links.mjs` 를 부른다.
@@ -29,11 +29,21 @@
 3. 원고의 `[브랜드커넥트 링크 자리]`·`[쿠팡 링크 자리]` 줄을 상품 한 줄 소개 + 링크로 바꾼다. 링크는 한 글에 1개.
 4. 글쓰기 화면에 넣고, 발행은 사용자 확인 뒤에 한다.
 
-## 티스토리 쿠팡 링크 목록 채우기 (가끔, 데스크톱 앱)
-1. 아침 확인이 "쿠팡 링크 만들기" 를 안내하면(`coupang-wanted.txt` 5줄 이상) 데스크톱 앱 대화에서 "쿠팡 링크 만들어줘" 라고 한다.
-2. 사용자가 partners.coupang.com 에 로그인 → Claude 가 키워드마다 인기·평점 높은 상품 또는 검색 결과로 파트너스 링크를 만든다.
+## 티스토리 쿠팡 링크 목록 채우기 (자동 — 2026-11-01 사용자 "티스토리 10편, 쿠팡으로 수익화")
+1. 아침 PC 의 `tistory-day.ps1 -Reserve` 가 크롬을 켠 뒤 티스토리 발행 전에 `launchers/tools/coupang-links.ps1` → `scripts/coupang-links.mjs` 를 부른다.
+   앞으로 나갈 티스토리 원고(`content/tistory/`)의 `coupang:` 키워드부터, 그다음 `coupang-wanted.txt` 순으로 하루 8개까지. 이미 링크가 있는 키워드는 건너뛴다.
+2. 쿠팡 파트너스(partners.coupang.com)에서 링크 생성 → 상품 검색 → 후기 수가 가장 큰 상품(못 읽으면 첫 결과)의 '링크 생성' 버튼을 눌러
+   `https://link.coupang.com/...` 주소를 읽는다. 구매·결제·주문·장바구니·설정·정산·삭제 같은 버튼은 누르지 않는다.
+   자동화용 크롬(9222)에 쿠팡 파트너스 로그인이 되어 있어야 한다 — 풀려 있으면 화면을 남기고 멈춘다(종료 코드 3, 발행은 그대로).
+3. 만든 링크는 `dumps/coupang-links.local.tsv`(이 PC — 같은 아침 build-tistory 가 바로 씀)와 Drive `ClaudeWorkspace/coupang/`(다른 PC·아침 확인)에 남는다.
+4. 아침 확인 Routine 이 Drive 결과를 `coupang-links.tsv` 에 옮기고 `coupang-wanted.txt` 에서 지운 뒤 main 에 합친다.
+   실패하면 화면 기록을 보고 스크립트를 고친다 (`routines/morning-check.md`). 쿠팡 파트너스 화면을 아직 실제로 보지 못해 첫 실행은 실패할 수 있다.
+
+손으로 채우는 방법 (자동이 계속 실패할 때만, 데스크톱 앱):
+1. 데스크톱 앱 대화에서 "쿠팡 링크 만들어줘" 라고 한다.
+2. 사용자가 partners.coupang.com 에 로그인 → Claude 가 키워드마다 후기 많은 상품 또는 검색 결과로 파트너스 링크를 만든다.
 3. `coupang-links.tsv` 에 `키워드<TAB>https://link.coupang.com/...<TAB>보여 줄 글자` 로 적고, `coupang-wanted.txt` 에서 지운 뒤 main 에 합친다.
-   나중에 쿠팡 파트너스 Open API 키를 받을 수 있게 되면 이 단계를 PC 자동으로 바꾼다 (키는 PC `.env` 에만).
+   나중에 쿠팡 파트너스 Open API 키를 받을 수 있게 되면 화면 대신 API 로 바꾼다 (키는 PC `.env` 에만).
 
 ## 대가성 문구 (고정 인사말 바로 아래)
 - 네이버(쇼핑 커넥트, 2026-10-26~): "이 포스팅은 네이버 쇼핑 커넥트 활동의 일환으로, / 판매 발생 시 수수료를 제공받습니다." (`scripts/lib/brandconnect.mjs` DISCLOSURE)

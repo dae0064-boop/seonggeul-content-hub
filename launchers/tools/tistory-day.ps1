@@ -123,6 +123,12 @@ if (-not (CdpUp)) {
 }
 if (-not (CdpUp)) { Say '자동화용 크롬을 켜지 못했어요. launchers\chrome-login.cmd 를 먼저 실행해 주세요.' 'Red'; Share; exit 1 }
 
+# 2-1) 쿠팡 파트너스 링크 (2026-11-01 사용자 — 티스토리 10편, 쿠팡으로 수익화). 발행 전에 만들어 두면 오늘 글에 바로 들어간다
+# (build-tistory 가 dumps\coupang-links.local.tsv 도 읽는다). 실패해도 발행은 그대로 간다 (그 글은 쿠팡 부분이 빠진 보통 글)
+if ($Reserve -and -not $DryRun -and -not $Only.Count) {
+  & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'coupang-links.ps1') 2>&1 | ForEach-Object { Say "  $_" }
+}
+
 $mode = if ($DryRun) { '--dry-run' } else { '--save-draft' }
 $result = @()
 $i = 0
