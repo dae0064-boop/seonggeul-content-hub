@@ -157,7 +157,9 @@ export function checkSet(set, previous = []) {
       const tail = lines.slice(-3).join(' ');
       if (!/확인/.test(tail)) errors.push(`${tag}: 끝 세 줄 안에 "증권에서 한 번 확인해 봐" 같은 확인 권유가 없습니다 (rules.md "31편부터 말투").`);
       // 반말 (2026-11-02 사용자 — "스레드는 반말이 컨셉"). 따옴표 속 남의 말은 빼고 본다
-      const polite = lines.filter((l) => !/["“”'‘’]/.test(l) && /(요|니다|세요)[\s.!?…~\p{Extended_Pictographic}\uFE0F]*$/u.test(l.trim()));
+      // 운전자보험 필수 문장("…제외됩니다.")은 글자 그대로 넣어야 해서 예외
+      const notice = DRIVER_NOTICE.replace(/\s/g, '');
+      const polite = lines.filter((l) => !/["“”'‘’]/.test(l) && !(l.replace(/\s/g, '') && notice.includes(l.replace(/\s/g, ''))) && /(요|니다|세요)[\s.!?…~\p{Extended_Pictographic}\uFE0F]*$/u.test(l.trim()));
       if (polite.length) errors.push(`${tag}: 존댓말 줄 ${polite.length}개 — 31편부터는 반말로 씁니다: "${polite[0].trim()}"`);
       // 한 편 = 질문 하나 · 답 하나 (뒤죽박죽 방지) — 단서 줄('다만·근데·그런데·대신')이 있어야 '괜찮다 → 그래도 확인' 흐름이 선다
       if (!/(다만|근데|그런데|그치만|대신|단,)/.test(p.body)) notes.push(`${tag}: '다만·근데' 같은 단서가 없습니다 — 인정 → 이유 → 단서 → 확인 흐름인지 봐 주세요.`);
