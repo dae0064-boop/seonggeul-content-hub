@@ -56,6 +56,21 @@ const HOMEFEED4_FROM = '2026-11-02';
 const HOMEFEED4 = 3;
 const HF_STYLE_FROM = '2026-11-03';
 const HF_SHOTS = ['face', 'duo'];
+// 2026-11-01 사용자 — "하루 20편, 생활정보(리빙·푸드) 10 + 생활보장 10". 2026-11-03 원고부터.
+//   홈판형 14(생활정보 8 + 생활보장 6) · 검색형 6. 같은 주제라도 말투(tone)·내용을 글마다 다르게, 겹치지 않게 (같은 날 사용자).
+const TWENTY_FROM = '2026-11-03';
+const isTwenty = (d) => d >= TWENTY_FROM;
+const SPLIT_TWENTY = { 생활정보: 10, 생활보장: 10 };
+const HF_TWENTY = { 생활정보: 8, 생활보장: 6 };
+// 같은 날 같은 값 몇 편까지 (20편 날)
+const TW = { format: 5, tone: 5, mood: 3, shot: 4, shotHf: 8, theme: 2, person: 1, papers: 4, olds: 8, brandconnect: 5 };
+const TONES = {
+  수다형: '옆집 언니·이웃처럼 편하게 — "~더라구요", "그쵸?" 가 많고 문장이 짧다',
+  설명형: '차분하게 하나씩 — "~예요", "~거든요", 이유를 먼저 짚고 순서대로',
+  정리형: '꼼꼼한 메모처럼 — 짧은 문장, 숫자·기준을 앞에, 군더더기 없이',
+  이야기형: '흔한 장면 하나로 시작해 따라가는 — "이맘때 이런 분 많죠" (지어낸 실화 금지, 일반화한 장면)',
+  공감형: '마음을 먼저 알아주는 — 걱정·번거로움을 짚고 "괜찮아요, 이것만 보면 돼요"로 이어 간다',
+};
 // 2026-10-26 사용자 다시 — "10월 말까지는 하루 10편(생활보장 7 + 생활정보 3), 11월 1일부터 생활보장 4 + 생활정보 1 총 5편". 10편 날은 홈판형 2편, 같은 모양 3편까지.
 const TEN_UNTIL = '2026-10-31';
 const SPLIT_TEN = { 생활정보: 3, 생활보장: 7 };
@@ -142,6 +157,56 @@ function imageStyle() {
 function planOf(file) {
   const slug = file.split(/[\\/]/).pop().replace(/\.md$/, '');
   try { return JSON.parse(fs.readFileSync(`content/image-plans/${slug}.json`, 'utf8')); } catch { return null; }
+}
+
+// 겹침 검사 (2026-11-03 원고부터, 하루 20편) — lint-tistory.mjs 와 같은 방법
+const DUP = { mainDays: 14, title: 0.6, titleNote: 0.45, body: 0.12, bodyNote: 0.06 };
+const DUP_FIXED = /^(안녕하세요|매일매일 좋은 날을 나누는 성글벙글입니다😊|좋아요·공감과 (구독|이웃추가) 부탁드려요💙|이상 성글벙글의 .+ 포스팅이었습니다😎|이 포스팅은 .+|판매 발생 시 .+)$/;
+const dupNorm = (x) => String(x || '').replace(/[\s.,!?·~'"“”‘’()\[\]:;\-–—*|#>]/g, '');
+function gramsOf(text, n = 10) {
+  const set = new Set();
+  for (let i = 0; i + n <= text.length; i++) set.add(text.slice(i, i + n));
+  return set;
+}
+function dice(a, b) {
+  const A = gramsOf(dupNorm(a), 2), B = gramsOf(dupNorm(b), 2);
+  if (!A.size || !B.size) return 0;
+  let hit = 0;
+  for (const x of A) if (B.has(x)) hit++;
+  return (2 * hit) / (A.size + B.size);
+}
+function overlap(A, B) {
+  if (!A.size || !B.size) return 0;
+  let hit = 0;
+  for (const x of A) if (B.has(x)) hit++;
+  return hit / Math.min(A.size, B.size);
+}
+const bodyOf = (p) => dupNorm(flatLines(p).filter((l) => l.block !== 'image' && !DUP_FIXED.test(l.t)).map((l) => l.t.replace(/\[\/?[^\]]+\]/g, '')).join(''));
+let naverPostsCache = null;
+function allNaverPosts() {
+  if (naverPostsCache) return naverPostsCache;
+  naverPostsCache = [];
+  try {
+    for (const f of fs.readdirSync('content/posts').filter((x) => x.endsWith('.md'))) {
+      try {
+        const p = parsePost(fs.readFileSync(`content/posts/${f}`, 'utf8'));
+        naverPostsCache.push({ slug: f.replace(/\.md$/, ''), title: p.title, main: p.mainKeyword, grams: gramsOf(bodyOf(p)) });
+      } catch { /* 깨진 원고는 그 원고 검사에서 잡힌다 */ }
+    }
+  } catch { /* 폴더가 없으면 비교할 글이 없다 */ }
+  return naverPostsCache;
+}
+let pubRowsCache = null;
+function publishedNaverRows() {
+  if (pubRowsCache) return pubRowsCache;
+  pubRowsCache = [];
+  try {
+    for (const row of fs.readFileSync('content/archive/published.tsv', 'utf8').split(/\r?\n/).slice(1)) {
+      const c = row.split('\t');
+      if (c[1] === 'naver' && c[3]) pubRowsCache.push({ date: c[0], main: c[3], title: c[4] || c[2] });
+    }
+  } catch { /* 없으면 건너뛴다 */ }
+  return pubRowsCache;
 }
 
 let publishedCache = null;
@@ -307,7 +372,8 @@ for (const file of files) {
         const dir = file.replace(/[^\\/]+$/, '') || './', me = file.split(/[\\/]/).pop();
         const same = daySibs(dir, dated).filter((f) => f !== me)
           .filter((f) => /^brandconnect:\s*\S/m.test(fs.readFileSync(dir + f, 'utf8')));
-        if (same.length) errors.push(`쇼핑 커넥트 글은 하루 1편까지 — 같은 날 ${same.join(', ')}`);
+        const bcMax = isTwenty(dated) ? TW.brandconnect : 1;
+        if (same.length >= bcMax) errors.push(`쇼핑 커넥트 글은 하루 ${bcMax}편까지 — 같은 날 ${same.join(', ')}`);
         const l = BC.loadLinks().get(post.brandconnect);
         notes.push(`쇼핑 커넥트 글: ${post.brandconnect} ${l ? '(링크 있음)' : '— 링크가 content/affiliate/brandconnect-links.tsv 에 아직 없음. 발행 때도 없으면 쇼핑 부분을 빼고 보통 글로 나갑니다'}`);
       }
@@ -398,7 +464,8 @@ for (const file of files) {
       const sib = daySibs(dir, dated);
       const fmts = sib.map((f) => { try { return parsePost(fs.readFileSync(dir + f, 'utf8')).format; } catch { return ''; } });
       const same = fmts.filter((x) => x === post.format).length;
-      const maxSame = isTen(dated) ? 3 : 2;
+      // 티스토리는 2026-11-03 원고부터 하루 10편 (2026-11-01 사용자) — 10편 날처럼 같은 모양 3편까지
+      const maxSame = !tistory && isTwenty(dated) ? TW.format : (tistory && isTwenty(dated)) || isTen(dated) ? 3 : 2;
       if (same > maxSame) errors.push(`같은 날(${dated}) "${post.format}" 모양이 ${same}편 — ${maxSame}편까지만 (모양을 돌려 쓰세요)`);
       if (sib.length >= 5 && new Set(fmts.filter(Boolean)).size < 3) notes.push(`같은 날 글 모양이 ${new Set(fmts).size}가지뿐이에요 — 3가지 이상 섞으세요`);
     }
@@ -487,19 +554,30 @@ for (const file of files) {
     const dir = file.replace(/[^\\/]+$/, '') || './';
     const sib = daySibs(dir, dated);
     const split3 = dated >= SPLIT3_FROM;
-    const full = isTen(dated) ? 10 : split3 ? DAY_TOTAL3 : 5;
+    const twenty = isTwenty(dated);
+    const full = twenty ? 20 : isTen(dated) ? 10 : split3 ? DAY_TOTAL3 : 5;
     if (sib.length >= (split3 ? 1 : 5)) {
       const sibs = sib.map((f) => { try { return parsePost(fs.readFileSync(dir + f, 'utf8')); } catch { return {}; } });
       const cats = sibs.map((p) => p.category || '');
-      const split = isTen(dated) ? SPLIT_TEN : split3 ? SPLIT3 : dated >= SPLIT2_FROM ? SPLIT2 : SHIFT_SPLIT;
-      const why = split3 ? '2026-10-26 사용자 결정' : dated >= SPLIT2_FROM ? '2026-10-24 사용자 결정' : '2026-10-19 사용자 결정';
+      const split = twenty ? SPLIT_TWENTY : isTen(dated) ? SPLIT_TEN : split3 ? SPLIT3 : dated >= SPLIT2_FROM ? SPLIT2 : SHIFT_SPLIT;
+      const why = twenty ? '2026-11-01 사용자 결정 — 하루 20편' : split3 ? '2026-10-26 사용자 결정' : dated >= SPLIT2_FROM ? '2026-10-24 사용자 결정' : '2026-10-19 사용자 결정';
       const done = sib.length >= full;
       if (split3 && sib.length > full) errors.push(`같은 날(${dated}) 네이버 원고 ${sib.length}편 — 하루 ${full}편까지 (${why})`);
       for (const [c, n] of Object.entries(split)) {
         const got = cats.filter((x) => x === c).length;
         if (done ? got !== n : got > n) errors.push(`같은 날(${dated}) ${c} ${got}편 — 하루 생활정보 ${split.생활정보} + 생활보장 ${split.생활보장} (${why})`);
       }
-      if (dated >= SPLIT2_FROM) {
+      if (twenty) {
+        // 홈판형 14 = 생활정보 8 + 생활보장 6, 검색형 6 (2026-11-01 사용자 — 홈판 비중을 늘린다)
+        for (const [c, n] of Object.entries(HF_TWENTY)) {
+          const got = sibs.filter((p) => p.category === c && p.slot === '홈판').length;
+          if (done ? got !== n : got > n) errors.push(`같은 날(${dated}) ${c} 홈판형(slot: 홈판) ${got}편 — 하루 생활정보 ${HF_TWENTY.생활정보} + 생활보장 ${HF_TWENTY.생활보장}편 (나머지는 검색형)`);
+        }
+        // 말투 돌려 쓰기 — 같은 주제라도 다른 느낌으로 (2026-11-01 사용자)
+        const tones = sibs.map((p) => p.tone || '');
+        const sameTone = tones.filter((x) => x && x === post.tone).length;
+        if (sameTone > TW.tone) errors.push(`같은 날(${dated}) 말투 "${post.tone}" ${sameTone}편 — ${TW.tone}편까지 (말투를 돌려 쓰세요)`);
+      } else if (dated >= SPLIT2_FROM) {
         const hf = sibs.filter((p) => p.slot === '홈판');
         const hf4 = !isTen(dated) && dated >= HOMEFEED4_FROM;
         const hfWant = isTen(dated) ? 2 : hf4 ? HOMEFEED4 : split3 ? HOMEFEED3 : HOMEFEED_PER_DAY;
@@ -577,6 +655,7 @@ for (const file of files) {
         const me = file.split(/[\\/]/).pop();
         const moodSame = [];
         const shotSame = [];
+        const themeSame = [];
         let papers = hasPaper(t.prompt) ? 1 : 0, olds = people && OLD_ONLY(t.thumb_person) ? 1 : 0;
         for (const f of [...daySibs(dir, dated), ...daySibs(dir, prev)]) {
           if (f === me) continue;
@@ -586,7 +665,7 @@ for (const file of files) {
           let pa = '';
           try { pa = parsePost(fs.readFileSync(dir + f, 'utf8')).publishAt?.slice(11) || ''; } catch { /* 없으면 시각 비교 안 함 */ }
           if (same) {
-            if (o1.thumb_theme && o1.thumb_theme === t.thumb_theme) errors.push(`같은 날 ${f} 와 대표사진 테마(${t.thumb_theme})가 같습니다`);
+            if (o1.thumb_theme && o1.thumb_theme === t.thumb_theme) themeSame.push(f);
             if (o1.thumb_person && o1.thumb_person !== '없음' && o1.thumb_person === t.thumb_person) errors.push(`같은 날 ${f} 와 대표사진 사람(${t.thumb_person})이 같습니다`);
             if (o1.thumb_mood && o1.thumb_mood === t.thumb_mood) moodSame.push(f);
             if (v3) {
@@ -600,16 +679,21 @@ for (const file of files) {
           }
         }
         // 표정은 7가지라 10편 날은 같은 표정 2편까지 (5편 날은 모두 다르게)
-        const ten = !tistory && isTen(dated);
-        if (moodSame.length >= (ten ? 2 : 1)) errors.push(`같은 날 ${moodSame.join(', ')} 와 대표사진 표정(${t.thumb_mood})이 같습니다 — ${ten ? '10편 날은 같은 표정 2편까지' : '모두 다르게'}`);
+        const tw = !tistory && isTwenty(dated);
+        const ten = (!tistory && isTen(dated)) || (tistory && isTwenty(dated)); // 티스토리 하루 10편 (2026-11-03 원고부터)
+        // 테마는 10가지라 20편 날은 같은 테마 2편까지 (그 전은 모두 다르게)
+        if (themeSame.length >= (tw ? TW.theme : 1)) errors.push(`같은 날 ${themeSame.join(', ')} 와 대표사진 테마(${t.thumb_theme})가 같습니다${tw ? ` — 20편 날은 같은 테마 ${TW.theme}편까지` : ''}`);
+        if (tw && moodSame.length >= TW.mood) errors.push(`같은 날 ${moodSame.join(', ')} 와 대표사진 표정(${t.thumb_mood})이 같습니다 — 20편 날은 같은 표정 ${TW.mood}편까지`);
+        else if (!tw && moodSame.length >= (ten ? 2 : 1)) errors.push(`같은 날 ${moodSame.join(', ')} 와 대표사진 표정(${t.thumb_mood})이 같습니다 — ${ten ? '10편 날은 같은 표정 2편까지' : '모두 다르게'}`);
         // 구도·종이·나이도 섞는다 (2026-10-28 사용자 — 사람이 너무 똑같다)
         if (v3) {
           // 홈판형 3편 날은 얼굴 구도(face·duo)가 모자라 같은 구도 2편까지
           const hfFace = !tistory && post.slot === '홈판' && dated >= HF_STYLE_FROM && HF_SHOTS.includes(t.thumb_shot);
-          const lim = ten || hfFace ? 2 : 1;
-          if (shotSame.length >= lim) errors.push(`같은 날 ${shotSame.join(', ')} 와 대표사진 구도(${t.thumb_shot})가 같습니다 — ${ten ? '10편 날은 같은 구도 2편까지' : hfFace ? '홈판형 얼굴 구도는 2편까지' : '5편 모두 다르게'}`);
-          if (papers > (ten ? 2 : 1)) errors.push(`같은 날 종이·안내문을 든 대표사진이 ${papers}편 — ${ten ? 2 : 1}편까지 (주제 사물을 바꾸세요)`);
-          if (olds > (ten ? 4 : 2)) errors.push(`같은 날 60대 이상만 나오는 대표사진이 ${olds}편 — ${ten ? 4 : 2}편까지 (자녀·보호자·젊은 층이나 사람 없는 구도로)`);
+          const lim = tw ? (hfFace ? TW.shotHf : TW.shot) : ten || hfFace ? 2 : 1;
+          if (shotSame.length >= lim) errors.push(`같은 날 ${shotSame.join(', ')} 와 대표사진 구도(${t.thumb_shot})가 같습니다 — ${tw ? `20편 날은 같은 구도 ${lim}편까지` : ten ? '10편 날은 같은 구도 2편까지' : hfFace ? '홈판형 얼굴 구도는 2편까지' : '5편 모두 다르게'}`);
+          const pLim = tw ? TW.papers : ten ? 2 : 1, oLim = tw ? TW.olds : ten ? 4 : 2;
+          if (papers > pLim) errors.push(`같은 날 종이·안내문을 든 대표사진이 ${papers}편 — ${pLim}편까지 (주제 사물을 바꾸세요)`);
+          if (olds > oLim) errors.push(`같은 날 60대 이상만 나오는 대표사진이 ${olds}편 — ${oLim}편까지 (자녀·보호자·젊은 층이나 사람 없는 구도로)`);
         }
       }
       // 실사풍 글(REAL_AFTER 넘은 편)은 style_care·style_life 라 style_v2 문구를 보지 않는다 (2026-11-01 사용자 — 실사풍 전환)
@@ -624,6 +708,36 @@ for (const file of files) {
     const mk = post.mainKeyword.replace(/\s+/g, '');
     const hit = handeKeywords().find((k) => k === mk);
     if (hit) errors.push(`메인 키워드 "${post.mainKeyword}" 는 한다팀장 블로그가 이미 쓴 말입니다 (content/research/hande-keywords.txt) — 같은 묶음의 다른 질문으로`);
+  }
+
+  // 하루 20편 (2026-11-03 원고부터) — 말투 돌려 쓰기 + 다른 네이버 글과 겹치지 않게 (2026-11-01 사용자:
+  //   "같은 주제여도 다른 느낌 다른 말투 다른 내용으로… 최대한 겹치지 않고 중복 컨텐츠가 되지 않도록")
+  if (!tistory && isTwenty(dated)) {
+    if (!TONES[post.tone]) errors.push(`프런트매터 tone(말투)이 없거나 모르는 값입니다 ("${post.tone}") — ${Object.keys(TONES).join(' / ')} 중 하나 (routines/naver-daily.md 🔟 상자)`);
+    const me = file.split(/[\\/]/).pop().replace(/\.md$/, '');
+    const myGrams = gramsOf(bodyOf(post));
+    const sq = (x) => (x || '').replace(/\s+/g, '');
+    const days = (a, b) => Math.round(Math.abs(Date.parse(a) - Date.parse(b)) / 864e5);
+    for (const o of allNaverPosts()) {
+      if (o.slug === me) continue;
+      const od = o.slug.slice(0, 10);
+      if (post.mainKeyword && sq(o.main) === sq(post.mainKeyword)) {
+        if (days(od, dated) <= DUP.mainDays) errors.push(`메인 키워드 "${post.mainKeyword}" 를 ${o.slug} 도 씁니다 — ${DUP.mainDays}일 안에는 같은 메인 키워드를 다시 쓰지 않습니다 (같은 묶음의 다른 질문으로)`);
+      }
+      const ts = dice(post.title, o.title);
+      if (ts >= DUP.title) errors.push(`제목이 ${o.slug} 와 너무 비슷합니다 (유사도 ${Math.round(ts * 100)}%) — 다른 질문·다른 장면으로`);
+      else if (ts >= DUP.titleNote) notes.push(`제목이 ${o.slug} 와 비슷한 편이에요 (${Math.round(ts * 100)}%)`);
+      const ov = overlap(myGrams, o.grams);
+      if (ov >= DUP.body) errors.push(`본문이 ${o.slug} 와 ${Math.round(ov * 100)}% 겹칩니다 (10글자 조각) — ${Math.round(DUP.body * 100)}% 아래로, 다른 내용·다른 말투로`);
+      else if (ov >= DUP.bodyNote) notes.push(`본문이 ${o.slug} 와 ${Math.round(ov * 100)}% 겹쳐요`);
+    }
+    // 이미 발행해 지운 글 (published.tsv) — 같은 메인 키워드
+    for (const r of publishedNaverRows()) {
+      if (!post.mainKeyword || sq(r.main) !== sq(post.mainKeyword)) continue;
+      const d = days(r.date, dated);
+      if (d <= DUP.mainDays) errors.push(`메인 키워드 "${post.mainKeyword}" 는 ${r.date} 에 이미 썼습니다 (${r.title}) — ${DUP.mainDays}일 안에는 다시 쓰지 않습니다`);
+      else notes.push(`메인 키워드 "${post.mainKeyword}" 는 ${r.date} 에 쓴 말이에요 (${r.title}) — 그 글과 다른 질문·다른 내용인지 확인`);
+    }
   }
 
   // 고정 인사말. 2026-10-12 원고부터는 그 앞에 사실 한 문장(1~2줄) 덩어리가 먼저 온다
