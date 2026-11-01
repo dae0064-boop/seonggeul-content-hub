@@ -159,7 +159,9 @@ if ($Reserve) {
       $from = $day.AddHours($win[0]); if ($from -lt $it.Earliest) { $from = $it.Earliest }
       $to = $day.AddHours($win[1])
       # 가장 이른 자리부터: 다른 글과 30분 이상 떨어진 첫 자리
-      foreach ($need in @(30)) {
+      # 하루 20편(2026-11-03 원고부터, 40분 간격)이면 30분 떨어진 빈자리가 없어 15분으로 (2026-11-01 사용자 — 하루 20편)
+      $gapNeed = if ($items.Count -ge 12) { 15 } else { 30 }
+      foreach ($need in @($gapNeed)) {
         for ($t = $from; $t -le $to; $t = $t.AddMinutes(10)) {
           if ($t.Hour -ge 23) { break }
           $gap = 9999
