@@ -1,0 +1,639 @@
+{
+  "slug": "2026-11-04-gaseupgi-cheongso",
+  "title": "가습기 청소, 구연산 물에 수조를 얼마나 불릴까 (30분~1시간)",
+  "category": "생활정보",
+  "tags": [
+    "가습기청소",
+    "구연산",
+    "진동자",
+    "수조",
+    "가습기수돗물",
+    "가습기청소방법",
+    "가습기구연산",
+    "초음파가습기청소",
+    "가열식가습기청소",
+    "가습기물때",
+    "가습기관리",
+    "겨울살림",
+    "살림팁",
+    "살림정보",
+    "생활정보"
+  ],
+  "publishAt": "2026-11-04 11:40",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "가습기 수돗물은 소독 성분이 남아 있어"
+        },
+        {
+          "t": "정수기 물보다 세균이 덜 늘어나요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "가습기를 꺼내 물을 채우려다 보면"
+        },
+        {
+          "t": "바닥에 하얀 물때가 굳어 있더라구요."
+        },
+        {
+          "t": "오늘은 가습기 청소를 어떻게 하는지 정리해 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "결론부터요. 가습기 청소는 세제 대신 구연산이에요.",
+          "segs": [
+            {
+              "t": "결론부터요. 가습기 청소는 세제 대신 "
+            },
+            {
+              "t": "구연산",
+              "s": "blue"
+            },
+            {
+              "t": "이에요."
+            }
+          ]
+        },
+        {
+          "t": "LG전자 안내는 물 10L에 구연산 30g 비율로 녹여",
+          "segs": [
+            {
+              "t": "LG전자 안내는 물 "
+            },
+            {
+              "t": "10L",
+              "s": "blue"
+            },
+            {
+              "t": "에 구연산 "
+            },
+            {
+              "t": "30g",
+              "s": "blue"
+            },
+            {
+              "t": " 비율로 녹여"
+            }
+          ]
+        },
+        {
+          "t": "수조를 30분~1시간 불린 뒤 씻으라고 해요.",
+          "segs": [
+            {
+              "t": "수조",
+              "s": "blue"
+            },
+            {
+              "t": "를 "
+            },
+            {
+              "t": "30분~1시간",
+              "s": "blue"
+            },
+            {
+              "t": " 불린 뒤 씻으라고 해요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "세제나 락스를 쓰면 남은 성분이",
+          "s": "red"
+        },
+        {
+          "t": "물과 함께 공기 중으로 나갈 수 있어요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "버건디색 탁자 위에 물통을 뺀 가습기 본체와 수조가 크게 놓인 모습 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "가습기 청소, 구연산은 얼마나 넣을까"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "가습기 청소 순서를 네 단계로 정리한 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "물 10L에 30g이면 물 1L에 3g 정도예요."
+        },
+        {
+          "t": "집에서는 물통 크기에 맞춰 줄여서 타면 돼요."
+        },
+        {
+          "t": "가루가 남지 않게 잘 저어 녹이는 게 먼저예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "① 구연산을 물에 녹이기"
+        },
+        {
+          "t": "② 물통과 수조에 붓고 불리기"
+        },
+        {
+          "t": "③ 부드러운 솔로 닦아 내기"
+        },
+        {
+          "t": "④ 맑은 물로 여러 번 헹구기"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "구연산 물은 헹굼까지 해야 끝이에요.",
+          "s": "yellow"
+        },
+        {
+          "t": "시큼한 냄새가 남으면 한 번 더 헹궈요."
+        },
+        {
+          "t": "물기를 말린 뒤 조립하는 것도 잊지 마세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "전원이 들어가는 본체는 물에 통째로 담그지 않아요."
+        },
+        {
+          "t": "물통과 수조처럼 물이 닿는 부분만 불리고"
+        },
+        {
+          "t": "본체 겉은 젖은 수건으로 닦아 내면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "방식마다 가습기 청소가 달라요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "같은 가습기 청소라도 방식에 따라"
+        },
+        {
+          "t": "손이 가는 곳이 달라요. 내 가습기가"
+        },
+        {
+          "t": "어느 쪽인지 설명서에서 먼저 확인해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 초음파식은 진동자와 수조를 솔로 닦기",
+          "segs": [
+            {
+              "t": "✔ 초음파식은 "
+            },
+            {
+              "t": "진동자",
+              "s": "blue"
+            },
+            {
+              "t": "와 수조를 솔로 닦기"
+            }
+          ]
+        },
+        {
+          "t": "✔ 가열식은 물통과 수조를 구연산 물에 불리기"
+        },
+        {
+          "t": "✔ 필터와 수조는 40℃ 이하 물로 씻기"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 자연기화식은 주 1회 기본 청소"
+        },
+        {
+          "t": "✔ 자연기화식 디스크는 월 1회 분해 청소"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "LG전자 안내로는 진동자를 닦을 솔이 없으면"
+        },
+        {
+          "t": "부드러운 수건을 써도 된다고 해요."
+        },
+        {
+          "t": "진동자를 쇠붙이로 긁으면 고장 날 수 있어요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "뜨거운 물로 씻으면 안 되는 이유"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "욕실 세면대에서 미지근한 물로 가습기 물통을 헹구는 20대 여성"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "물때가 단단하면 뜨거운 물을 붓고 싶어져요."
+        },
+        {
+          "t": "그런데 제조사 안내는 40℃ 이하 물을 권해요.",
+          "segs": [
+            {
+              "t": "그런데 제조사 안내는 "
+            },
+            {
+              "t": "40℃",
+              "s": "blue"
+            },
+            {
+              "t": " 이하 물을 권해요."
+            }
+          ]
+        },
+        {
+          "t": "뜨거운 물에 필터가 변형될 수 있다고 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "손을 넣었을 때 따뜻한 정도면 충분해요.",
+          "s": "yellow"
+        },
+        {
+          "t": "대신 구연산 물에 불리는 시간을 넉넉히 두면"
+        },
+        {
+          "t": "굳은 물때도 솔로 쉽게 밀려 나와요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "한 번에 다 벗겨지지 않으면 억지로 긁지 말고"
+        },
+        {
+          "t": "구연산 물에 한 번 더 불려요."
+        },
+        {
+          "t": "두 번에 나눠 하는 게 부품을 아끼는 길이에요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "물은 수돗물이 나은 이유"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "가습기 물은 수돗물을 쓰라고 해요."
+        },
+        {
+          "t": "정수기 물은 염소 같은 소독 성분이 빠져 있어"
+        },
+        {
+          "t": "세균이 더 빨리 늘 수 있대요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "매일 쓰는 가습기라면 남은 물을 버리고"
+        },
+        {
+          "t": "새 물로 채우는 습관이 가습기 청소의 시작이에요."
+        },
+        {
+          "t": "물을 이어 붓기만 하면 바닥에 물때가 쌓여요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "물에 살균제나 세제를 타지 않아요.",
+          "s": "red"
+        },
+        {
+          "t": "가습기 청소는 씻고 헹구는 것까지만이에요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "가습기 청소, 얼마나 자주 할까"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "가습기 청소 주기는 방식과 모델마다 달라요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "자연기화식은 앞에서 본 것처럼 주 1회가 기본이고,"
+        },
+        {
+          "t": "일부 가열식 모델은 물때 거르는 필터를"
+        },
+        {
+          "t": "2~3일에 한 번 씻으라고 안내하기도 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "매일 할 일은 남은 물 버리고 새 물 채우기예요.",
+          "s": "yellow"
+        },
+        {
+          "t": "물통 안을 한 번 헹궈 주기만 해도"
+        },
+        {
+          "t": "구연산 청소 사이 간격을 늘릴 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "씻은 부품은 바로 조립하지 말고"
+        },
+        {
+          "t": "물기가 다 마를 때까지 엎지 말고 세워 둬요."
+        },
+        {
+          "t": "젖은 채 닫아 두면 냄새가 먼저 올라와요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "겨울이 끝나 넣어 둘 때는 한 번 더"
+        },
+        {
+          "t": "가습기 청소를 하고 바짝 말려서 보관해요."
+        },
+        {
+          "t": "다음 해 꺼냈을 때 물때부터 닦는 일이 줄어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "가습기 청소 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "가습기 청소 때 하면 좋은 것과 피할 것을 나눈 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "가습기 청소에 많이 묻는 두 가지예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 구연산 대신 식초를 써도 되나요?"
+        },
+        {
+          "t": "A1: 식초를 묽게 써도 된다는 안내도 있어요."
+        },
+        {
+          "t": "다만 냄새가 남기 쉬우니 더 많이 헹궈요."
+        },
+        {
+          "t": "설명서에 따로 적힌 게 있으면 그걸 따라요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 진동자 물때가 안 떨어지면요?"
+        },
+        {
+          "t": "A2: 구연산 물을 진동자에 잠기게 붓고"
+        },
+        {
+          "t": "조금 불린 뒤 부드러운 솔로 닦아요."
+        },
+        {
+          "t": "세게 긁지 말고 여러 번 나눠서 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분 댁 가습기는 초음파식인가요, 가열식인가요?"
+        },
+        {
+          "t": "한 단어로 댓글 남겨 주세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "가습기 청소 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "가습기 청소는 구연산 물에 수조를 불리고,",
+          "s": "red"
+        },
+        {
+          "t": "40℃ 이하 물로 씻어 헹구는 게 기본이에요.",
+          "s": "red"
+        },
+        {
+          "t": "세제와 뜨거운 물만 피하면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "청소한 날은 첫 물을 채워 잠깐 틀어 보고"
+        },
+        {
+          "t": "시큼한 냄새가 나는지 한 번 맡아 봐요."
+        },
+        {
+          "t": "냄새가 나면 물을 버리고 한 번 더 헹궈요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "진동자나 좁은 홈은 손이 잘 안 닿아요."
+        },
+        {
+          "t": "솔을 고를 때는 끝이 부드러운지,"
+        },
+        {
+          "t": "진동자 크기에 맞는 작은 머리가 있는지 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "가습기 청소 방법은 방식과 모델에 따라 조금씩 달라요."
+        },
+        {
+          "t": "오늘 정리한 비율과 시간은 출발점으로 삼고,"
+        },
+        {
+          "t": "내 제품 설명서도 꼭 함께 확인해 주세요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "이상 성글벙글의 생활정보 포스팅이었습니다😎"
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">가습기 수돗물은 소독 성분이 남아 있어<br>정수기 물보다 세균이 덜 늘어나요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">가습기를 꺼내 물을 채우려다 보면<br>바닥에 하얀 물때가 굳어 있더라구요.<br>오늘은 가습기 청소를 어떻게 하는지 정리해 볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">결론부터요. 가습기 청소는 세제 대신 <span style=\"color: #0078cb;\"><b>구연산</b></span>이에요.<br>LG전자 안내는 물 <span style=\"color: #0078cb;\"><b>10L</b></span>에 구연산 <span style=\"color: #0078cb;\"><b>30g</b></span> 비율로 녹여<br><span style=\"color: #0078cb;\"><b>수조</b></span>를 <span style=\"color: #0078cb;\"><b>30분~1시간</b></span> 불린 뒤 씻으라고 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>세제나 락스를 쓰면 남은 성분이</b></span><br><span style=\"color: #ff0010;\"><b>물과 함께 공기 중으로 나갈 수 있어요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 1] 버건디색 탁자 위에 물통을 뺀 가습기 본체와 수조가 크게 놓인 모습 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>가습기 청소, 구연산은 얼마나 넣을까</h2>\n<p data-ke-size=\"size16\">[이미지 2] 가습기 청소 순서를 네 단계로 정리한 카드</p>\n<p data-ke-size=\"size16\">물 10L에 30g이면 물 1L에 3g 정도예요.<br>집에서는 물통 크기에 맞춰 줄여서 타면 돼요.<br>가루가 남지 않게 잘 저어 녹이는 게 먼저예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">① 구연산을 물에 녹이기<br>② 물통과 수조에 붓고 불리기<br>③ 부드러운 솔로 닦아 내기<br>④ 맑은 물로 여러 번 헹구기</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #fff8b2;\"><b>구연산 물은 헹굼까지 해야 끝이에요.</b></span><br>시큼한 냄새가 남으면 한 번 더 헹궈요.<br>물기를 말린 뒤 조립하는 것도 잊지 마세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">전원이 들어가는 본체는 물에 통째로 담그지 않아요.<br>물통과 수조처럼 물이 닿는 부분만 불리고<br>본체 겉은 젖은 수건으로 닦아 내면 돼요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>방식마다 가습기 청소가 달라요</h2>\n<p data-ke-size=\"size16\">같은 가습기 청소라도 방식에 따라<br>손이 가는 곳이 달라요. 내 가습기가<br>어느 쪽인지 설명서에서 먼저 확인해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">✔ 초음파식은 <span style=\"color: #0078cb;\"><b>진동자</b></span>와 수조를 솔로 닦기<br>✔ 가열식은 물통과 수조를 구연산 물에 불리기<br>✔ 필터와 수조는 40℃ 이하 물로 씻기</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">✔ 자연기화식은 주 1회 기본 청소<br>✔ 자연기화식 디스크는 월 1회 분해 청소</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">LG전자 안내로는 진동자를 닦을 솔이 없으면<br>부드러운 수건을 써도 된다고 해요.<br><span style=\"color: #ff0010;\"><b>진동자를 쇠붙이로 긁으면 고장 날 수 있어요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>뜨거운 물로 씻으면 안 되는 이유</h2>\n<p data-ke-size=\"size16\">[이미지 3] 욕실 세면대에서 미지근한 물로 가습기 물통을 헹구는 20대 여성</p>\n<p data-ke-size=\"size16\">물때가 단단하면 뜨거운 물을 붓고 싶어져요.<br>그런데 제조사 안내는 <span style=\"color: #0078cb;\"><b>40℃</b></span> 이하 물을 권해요.<br>뜨거운 물에 필터가 변형될 수 있다고 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #fff8b2;\"><b>손을 넣었을 때 따뜻한 정도면 충분해요.</b></span><br>대신 구연산 물에 불리는 시간을 넉넉히 두면<br>굳은 물때도 솔로 쉽게 밀려 나와요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">한 번에 다 벗겨지지 않으면 억지로 긁지 말고<br>구연산 물에 한 번 더 불려요.<br>두 번에 나눠 하는 게 부품을 아끼는 길이에요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>물은 수돗물이 나은 이유</h2>\n<p data-ke-size=\"size16\">가습기 물은 수돗물을 쓰라고 해요.<br>정수기 물은 염소 같은 소독 성분이 빠져 있어<br>세균이 더 빨리 늘 수 있대요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">매일 쓰는 가습기라면 남은 물을 버리고<br>새 물로 채우는 습관이 가습기 청소의 시작이에요.<br>물을 이어 붓기만 하면 바닥에 물때가 쌓여요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>물에 살균제나 세제를 타지 않아요.</b></span><br>가습기 청소는 씻고 헹구는 것까지만이에요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>가습기 청소, 얼마나 자주 할까</h2>\n<p data-ke-size=\"size16\">가습기 청소 주기는 방식과 모델마다 달라요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">자연기화식은 앞에서 본 것처럼 주 1회가 기본이고,<br>일부 가열식 모델은 물때 거르는 필터를<br>2~3일에 한 번 씻으라고 안내하기도 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #fff8b2;\"><b>매일 할 일은 남은 물 버리고 새 물 채우기예요.</b></span><br>물통 안을 한 번 헹궈 주기만 해도<br>구연산 청소 사이 간격을 늘릴 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">씻은 부품은 바로 조립하지 말고<br>물기가 다 마를 때까지 엎지 말고 세워 둬요.<br>젖은 채 닫아 두면 냄새가 먼저 올라와요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">겨울이 끝나 넣어 둘 때는 한 번 더<br>가습기 청소를 하고 바짝 말려서 보관해요.<br>다음 해 꺼냈을 때 물때부터 닦는 일이 줄어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>가습기 청소 Q&amp;A</h2>\n<p data-ke-size=\"size16\">[이미지 4] 가습기 청소 때 하면 좋은 것과 피할 것을 나눈 카드</p>\n<p data-ke-size=\"size16\">가습기 청소에 많이 묻는 두 가지예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 구연산 대신 식초를 써도 되나요?<br>A1: 식초를 묽게 써도 된다는 안내도 있어요.<br>다만 냄새가 남기 쉬우니 더 많이 헹궈요.<br>설명서에 따로 적힌 게 있으면 그걸 따라요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 진동자 물때가 안 떨어지면요?<br>A2: 구연산 물을 진동자에 잠기게 붓고<br>조금 불린 뒤 부드러운 솔로 닦아요.<br>세게 긁지 말고 여러 번 나눠서 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분 댁 가습기는 초음파식인가요, 가열식인가요?<br>한 단어로 댓글 남겨 주세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>가습기 청소 정리</h2>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>가습기 청소는 구연산 물에 수조를 불리고,</b></span><br><span style=\"color: #ff0010;\"><b>40℃ 이하 물로 씻어 헹구는 게 기본이에요.</b></span><br>세제와 뜨거운 물만 피하면 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">청소한 날은 첫 물을 채워 잠깐 틀어 보고<br>시큼한 냄새가 나는지 한 번 맡아 봐요.<br>냄새가 나면 물을 버리고 한 번 더 헹궈요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">진동자나 좁은 홈은 손이 잘 안 닿아요.<br>솔을 고를 때는 끝이 부드러운지,<br>진동자 크기에 맞는 작은 머리가 있는지 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">가습기 청소 방법은 방식과 모델에 따라 조금씩 달라요.<br>오늘 정리한 비율과 시간은 출발점으로 삼고,<br>내 제품 설명서도 꼭 함께 확인해 주세요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>이상 성글벙글의 생활정보 포스팅이었습니다😎</p>"
+}

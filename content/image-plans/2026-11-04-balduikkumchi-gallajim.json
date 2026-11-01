@@ -1,0 +1,84 @@
+{
+  "slug": "2026-11-04-balduikkumchi-gallajim",
+  "title": "발뒤꿈치갈라짐, 겨울만 되면 왜 이렇게 쩍쩍 갈라질까",
+  "source": "11/4(수) 19:20 네이버 원고 — 생활보장 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 실사풍·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "거실 소파에서 보습제를 든 50대 아버지와 20대 아들이 마주 보며 안심한 듯 웃는 장면 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean man in his 50s with a neat side part and a short trimmed beard in a burgundy waffle-knit shirt sits on a sofa with a jar of plain moisturizer, talking with his son in his 20s with a short undercut in a gray hoodie who sits facing him; both smile with relief, warm living room behind them. Facial expression: relieved gentle smile. Color theme: warm burgundy and cream tones with a soft gold accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "warm burgundy and cream tones with a soft gold accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "burgundy",
+      "thumb_person": "50대 아버지와 20대 아들",
+      "thumb_mood": "안심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "burgundy",
+        "font": "jua",
+        "title": "발뒤꿈치갈라짐\n겨울엔 왜 심해?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "거실 바닥에 앉아 갈라진 발뒤꿈치를 살펴보는 50대 여성",
+      "prompt": "Camera and composition: medium shot on a living room floor. A Korean woman in her 50s with a medium-length straight bob in a gray sweatsuit sitting on a living room floor and looking closely at the dry heel of her foot. Background color: soft warm floor lamp light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on a living room floor",
+      "bg": "soft warm floor lamp light"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "발뒤꿈치 각질과 굳은살이 생기는 이유를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "발뒤꿈치 각질과 굳은살",
+        "items": [
+          "건조하고 찬 공기",
+          "때를 세게 밀면 더 말라요",
+          "계속 눌리고 쓸리면",
+          "잘 안 맞는 구두"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "발뒤꿈치갈라짐 관리 순서를 네 단계로 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "발뒤꿈치갈라짐 관리 순서",
+        "items": [
+          "오래 불리거나 세게 밀지 않기",
+          "가볍게 닦기",
+          "바로 보습제 바르기",
+          "편한 신발 신기"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "집 현관에 앉아 발을 살펴보는 60대 남성",
+      "prompt": "Camera and composition: medium shot at a home entrance. A Korean man in his 60s with thinning white hair in a dark green fleece sitting on the step of a home entrance and calmly checking the sole of his foot. Background color: soft entrance hallway light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a home entrance",
+      "bg": "soft entrance hallway light"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "피부과 진료실에서 의사에게 발을 보여 주는 50대 여성",
+      "prompt": "Camera and composition: medium shot in a dermatology clinic room. A Korean woman in her 50s with a shoulder-length wavy perm in a camel coat sitting on an exam chair while a Korean doctor gently looks at her heel. Background color: clean pale clinic light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a dermatology clinic room",
+      "bg": "clean pale clinic light"
+    }
+  ]
+}
