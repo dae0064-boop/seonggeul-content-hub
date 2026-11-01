@@ -7,14 +7,14 @@
     {
       "n": 1,
       "file": "01.png",
-      "title": "욕실 앞 의자에 앉아 발에 크림을 바른 뒤 안심한 듯 미소 짓는 50대 남성의 얼굴 (대표사진)",
-      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean man in his 50s with a neat side part and a short trimmed beard in a burgundy waffle-knit shirt sits on a stool outside a bathroom after applying cream to his feet, smiling with relief, a jar of plain moisturizer softly blurred beside him. Facial expression: relieved gentle smile. Color theme: warm burgundy and cream tones with a soft gold accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "한 사람 얼굴 가까이",
+      "title": "거실 소파에서 보습제를 든 50대 아버지와 20대 아들이 마주 보며 안심한 듯 웃는 장면 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean man in his 50s with a neat side part and a short trimmed beard in a burgundy waffle-knit shirt sits on a sofa with a jar of plain moisturizer, talking with his son in his 20s with a short undercut in a gray hoodie who sits facing him; both smile with relief, warm living room behind them. Facial expression: relieved gentle smile. Color theme: warm burgundy and cream tones with a soft gold accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
       "bg": "warm burgundy and cream tones with a soft gold accent",
       "note": "대표",
-      "thumb_shot": "face",
+      "thumb_shot": "duo",
       "thumb_theme": "burgundy",
-      "thumb_person": "50대 남성",
+      "thumb_person": "50대 아버지와 20대 아들",
       "thumb_mood": "안심",
       "overlay": {
         "kind": "thumb",
@@ -43,7 +43,7 @@
         "items": [
           "건조하고 찬 공기",
           "때를 세게 밀면 더 말라요",
-          "같은 자리가 계속 눌리고 쓸리면",
+          "계속 눌리고 쓸리면",
           "잘 안 맞는 구두"
         ]
       }

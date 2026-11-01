@@ -7,14 +7,14 @@
     {
       "n": 1,
       "file": "01.png",
-      "title": "부엌 식탁에서 태추단감 상자를 열며 활짝 웃는 50대 이모와 30대 조카 (대표사진)",
-      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean aunt in her 50s with a short pixie cut in a brick-red quilted vest and her nephew in his 30s with a two-block haircut in a cream knit sweater open a cardboard box of round orange sweet persimmons on a kitchen table, both smiling brightly at each other. Facial expression: bright happy smile. Color theme: olive green and warm cream tones with a red accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "두 사람이 마주 보고 이야기",
+      "title": "부엌에서 태추단감 하나를 볼 옆에 들고 활짝 웃는 50대 여성의 얼굴 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her 50s with a short pixie cut in a brick-red quilted vest holds up one round orange sweet persimmon near her cheek in a kitchen and smiles brightly, an open cardboard box of persimmons softly blurred on the table behind her. Facial expression: bright happy smile. Color theme: olive green and warm cream tones with a red accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
       "bg": "olive green and warm cream tones with a red accent",
       "note": "대표",
-      "thumb_shot": "duo",
+      "thumb_shot": "face",
       "thumb_theme": "olive",
-      "thumb_person": "50대 이모와 30대 조카",
+      "thumb_person": "50대 엄마",
       "thumb_mood": "반가움",
       "overlay": {
         "kind": "thumb",
@@ -50,8 +50,8 @@
             "떫은감"
           ],
           [
-            "단단할 때 깎아 먹는",
-            "말랑한 홍시로 익혀 먹어요"
+            "단단할 때",
+            "말랑한 홍시로"
           ]
         ]
       }
