@@ -9,6 +9,9 @@ import { parsePost, flatLines } from './lib/parse-post.mjs';
 import { normTitle } from './lib/naver-related.mjs';
 import { checkCard } from './lib/overlay.mjs';
 import * as BC from './lib/brandconnect.mjs';
+import { topicFor } from './lib/naver-topic.mjs';
+// 맞춤법 시험 (2026-11-02 사용자 승인) — 2026-11-04~11-17 네이버 원고, 하루 1편 (routines/naver-daily.md ⓓ-2)
+const SPELL_TEST = ['2026-11-04', '2026-11-17'];
 
 // 10/12 변경 묶음 (2026-10-02·10-03 사용자 결정) — 2026-10-12 원고부터
 //   ① 고정 인사말 앞 첫 덩어리 = 확인된 사실 한 문장(1~2줄)
@@ -566,6 +569,17 @@ for (const file of files) {
     if (noFixed.length) errors.push(`고정 해시태그 빠짐: ${noFixed.join(', ')} — 주제 태그 뒤에 붙이세요`);
   }
 
+  // 네이버 글 주제 (발행 패널) — 프런트매터 topic 이 네이버 목록에 없는 이름이면 발행 때 고르지 못한다
+  if (!tistory && post.topic && topicFor(post) === null) errors.push(`topic "${post.topic}" 은 네이버 주제 목록에 없습니다 (scripts/lib/naver-topic.mjs NAVER_TOPICS)`);
+  if (!tistory && dated >= SPELL_TEST[0] && topicFor(post) === '교육·학문') {
+    if (dated > SPELL_TEST[1]) errors.push('맞춤법 시험은 2026-11-17 원고까지입니다 — 11/18 판정 전에는 쓰지 않습니다 (routines/naver-daily.md ⓓ-2)');
+    else {
+      const dir = file.replace(/[^\\/]+$/, '') || './';
+      const n = daySibs(dir, dated).filter((f) => { try { return topicFor(parsePost(fs.readFileSync(dir + f, 'utf8'))) === '교육·학문'; } catch { return false; } }).length;
+      if (n > 1) errors.push(`같은 날(${dated}) 맞춤법 글이 ${n}편 — 시험은 하루 1편(14:40 칸)`);
+      if (post.category !== '생활정보') errors.push('맞춤법 글 카테고리는 생활정보입니다');
+    }
+  }
   // standards/이미지-기준.md — 한 글에 8장 (대표 1 + 본문 7). 네이버는 2026-10-20 원고부터 빠지면 막는다
   // 2026-11-03 원고부터 네이버 6장·티스토리 4장 (위 SLIM_FROM) — 둘 다 맞지 않으면 막는다
   const imgWant = slim ? slim.imgs : 8;
