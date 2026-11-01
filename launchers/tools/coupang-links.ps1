@@ -20,8 +20,14 @@ if ($shared -and (Test-Path $shared)) {
 }
 $before = @(if (Test-Path $local) { Get-Content $local -Encoding UTF8 })
 # 하루 8개까지 (2026-11-01 — 티스토리 하루 10편)
-& node scripts/coupang-links.mjs --max $Max --out $out 2>&1 | ForEach-Object { Write-Host $_ }
+# 화면에 나온 글자를 그대로 run-<시각>.log 로 남겨 Drive 에 올린다 (2026-11-01 사용자 "기록 남게 고쳐줘" — 쿠팡 단계가 기록 없이 끝난 적이 있다)
+New-Item -ItemType Directory -Force -Path $out | Out-Null
+$runLog = Join-Path $out ("run-" + (Get-Date -Format 'HHmmss') + ".log")
+"[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] $env:COMPUTERNAME 쿠팡 링크 만들기 시작 (최대 $Max)" | Out-File $runLog -Encoding utf8
+"git: $(git log -1 --format='%h %cd' --date=format:'%m-%d %H:%M' 2>&1)" | Out-File $runLog -Append -Encoding utf8
+& node scripts/coupang-links.mjs --max $Max --out $out 2>&1 | ForEach-Object { Write-Host $_; "$_" | Out-File $runLog -Append -Encoding utf8 }
 $code = $LASTEXITCODE
+"종료 코드: $code" | Out-File $runLog -Append -Encoding utf8
 if ($code -eq 3) { Write-Host '쿠팡 파트너스 로그인이 풀려 있어 링크를 만들지 못했어요. 오늘 쿠팡 글은 쿠팡 부분이 빠진 보통 글로 나갑니다.' -ForegroundColor Yellow }
 $after = @(if (Test-Path $local) { Get-Content $local -Encoding UTF8 })
 $new = @($after | Where-Object { $_ -and ($before -notcontains $_) })

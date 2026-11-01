@@ -346,9 +346,16 @@ async function makeOne(ctx, kw) {
 
 async function main() {
   const kws = pickKeywords();
-  if (!kws.length) { log('쿠팡 파트너스: 새로 만들 링크 없음'); return 0; }
+  if (!kws.length) {
+    // 왜 없는지 남긴다 — 앞으로 나갈 티스토리 원고의 coupang: 말과 이미 있는 링크 (2026-11-01 기록 없이 끝난 적이 있다)
+    const dir = 'content/tistory';
+    const seen = fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => f.endsWith('.md') && f.slice(0, 10) >= today).sort()
+      .map((f) => (fs.readFileSync(path.join(dir, f), 'utf8').match(/^coupang:\s*(.+)$/m) || [])[1]).filter(Boolean).map((s) => s.trim()) : [];
+    log(`쿠팡 파트너스: 새로 만들 링크 없음 (오늘 ${today} 이후 원고의 coupang: ${seen.join(', ') || '없음'} / 이미 있는 링크 ${[...loadLinks().keys()].join(', ') || '없음'})`);
+    return 0;
+  }
   fs.mkdirSync(OUT, { recursive: true });
-  log(`쿠팡 파트너스 링크 만들기: ${kws.join(', ')}`);
+  log(`쿠팡 파트너스 링크 만들기: ${kws.join(', ')} (오늘 ${today})`);
   let browser;
   try { browser = await chromium.connectOverCDP(CDP); }
   catch (e) { console.error(`자동화용 크롬(${CDP})에 연결하지 못했어요: ${e.message.split('\n')[0]}`); return 1; }
