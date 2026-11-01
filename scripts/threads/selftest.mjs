@@ -110,6 +110,8 @@ process.env.THREADS_PAUSED = '';
 delete process.env.GITHUB_TOKEN; // 진짜 이슈를 열지 않는다
 
 // env 를 먼저 세팅한 뒤에 불러온다 (모듈이 읽는 시점이 그때다)
+// 저장소에 실제 멈춤 파일(content/threads/PAUSE)이 있어도 시험은 돈다 — 없는 경로로 바꿔 끼운다
+process.env.THREADS_PAUSE_FILE = '/nonexistent/threads-selftest-PAUSE';
 const { guard } = await import('./guard.mjs');
 const publish = await import('./publish.mjs');
 const replies = await import('./replies.mjs');

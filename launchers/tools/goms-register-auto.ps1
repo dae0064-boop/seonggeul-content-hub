@@ -4,6 +4,8 @@
 #   등록한 편은 goms-done 에 .done 이 남아 다시 하지 않는다. GOMS 로그인이 안 되면 아무것도 하지 않는다.
 #   아침 auto-day 끝(승인 결과 읽기 다음)에서 돈다. 바로 돌릴 땐 launchers\goms-register.cmd (번호를 직접 고름).
 param([int]$Count = 10)
+# 2026-11-01 사용자: "스레드 자동발행 우선 다 중단 — 새로 구성해서 시작" — content\threads\PAUSE 가 있으면 아무것도 하지 않는다
+if (Test-Path (Join-Path (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent) 'content\threads\PAUSE')) { Write-Host '스레드 멈춤(content\threads\PAUSE) — 건너뛰어요'; exit 0 }
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo

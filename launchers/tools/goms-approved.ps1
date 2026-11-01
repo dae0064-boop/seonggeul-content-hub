@@ -3,6 +3,8 @@
 #   Drive ClaudeWorkspace\goms-approved.tsv 에 한 줄씩 적는다. 이미 적은 편은 다시 열지 않는다. GOMS 에서 아무것도 바꾸지 않는다.
 #   아침 auto-day 끝에서 돌고(로그인이 안 되면 건너뜀), launchers\goms-approved.cmd 로 바로 돌릴 수도 있다.
 # 배너(content\threads\insurance\banners\thread-N.jpg)는 클라우드 Claude 가 아침 확인 때 이 표로 만든다 (routines\morning-check.md).
+# 2026-11-01 사용자: "스레드 자동발행 우선 다 중단 — 새로 구성해서 시작" — content\threads\PAUSE 가 있으면 아무것도 하지 않는다
+if (Test-Path (Join-Path (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent) 'content\threads\PAUSE')) { Write-Host '스레드 멈춤(content\threads\PAUSE) — 건너뛰어요'; exit 0 }
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo

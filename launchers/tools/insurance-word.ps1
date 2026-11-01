@@ -4,6 +4,8 @@
 # 고정 사진은 ClaudeWorkspace\보험글-사진\ 에서 가장 최근 사진을 쓴다. 사진을 바꾸면 Word 도 다시 만든다.
 # 사진에 설계사 정보가 있어 저장소(GitHub, 공개)에는 올리지 않는다.
 param([switch]$Force)
+# 2026-11-01 사용자: "스레드 자동발행 우선 다 중단 — 새로 구성해서 시작" — content\threads\PAUSE 가 있으면 아무것도 하지 않는다
+if (Test-Path (Join-Path (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent) 'content\threads\PAUSE')) { Write-Host '스레드 멈춤(content\threads\PAUSE) — 건너뛰어요'; exit 0 }
 $ErrorActionPreference = 'Continue'
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $env:PYTHONIOENCODING = 'utf-8'
