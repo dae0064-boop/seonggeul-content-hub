@@ -20,7 +20,7 @@
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
-import { LINK_RE, LOCAL_LINKS_FILE, loadLinks } from './lib/coupang.mjs';
+import { LINK_RE, LOCAL_LINKS_FILE, LINKS_FILE, loadLinks } from './lib/coupang.mjs';
 
 const argv = process.argv.slice(2);
 const opt = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : d; };
@@ -352,6 +352,13 @@ async function main() {
     const seen = fs.existsSync(dir) ? fs.readdirSync(dir).filter((f) => f.endsWith('.md') && f.slice(0, 10) >= today).sort()
       .map((f) => (fs.readFileSync(path.join(dir, f), 'utf8').match(/^coupang:\s*(.+)$/m) || [])[1]).filter(Boolean).map((s) => s.trim()) : [];
     log(`쿠팡 파트너스: 새로 만들 링크 없음 (오늘 ${today} 이후 원고의 coupang: ${seen.join(', ') || '없음'} / 이미 있는 링크 ${[...loadLinks().keys()].join(', ') || '없음'})`);
+    // 이미 있다고 본 링크가 어느 파일의 어떤 주소인지 (2026-11-01 — 지운 14개와 다른 주소가 PC 에 남아 있었다)
+    for (const f of [LINKS_FILE, LOCAL_LINKS_FILE]) {
+      if (!fs.existsSync(f)) { log(`  ${f}: 없음`); continue; }
+      const st = fs.statSync(f);
+      log(`  ${f} (${st.size}바이트, 고친 때 ${st.mtime.toISOString()}):`);
+      for (const line of fs.readFileSync(f, 'utf8').split(/\r?\n/).filter((l) => l.trim() && !l.startsWith('#'))) log(`    ${line.replace(/\t/g, ' | ')}`);
+    }
     return 0;
   }
   fs.mkdirSync(OUT, { recursive: true });
