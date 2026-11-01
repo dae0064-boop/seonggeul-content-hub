@@ -1,0 +1,98 @@
+{
+  "slug": "2026-11-01-jumindeungrokjeung-bunsil-singo",
+  "title": "주민등록증 분실 신고, 되찾으면 다시 쓸 수 있을까 재발급 수수료까지 (5천 원)",
+  "source": "11/1(일) 티스토리 원고 (10/31 밤 Routine, 11/1 아침 늦게 실행)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). style_v2·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "거실 소파 쿠션 틈을 들추며 무언가를 찾다 놀란 표정의 40대 여성 (대표사진)",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A cozy living room like a miniature diorama; one small Korean woman in her 40s with a shoulder-length bob and a coral-red sweater lifting a sofa cushion and finding something underneath, eyebrows up and pleasantly surprised. Facial expression: pleasantly surprised, eyebrows up, not scared. Color theme: neutral gray and white tones with a coral accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "방·장소 전체, 사람은 작게",
+      "bg": "neutral gray and white tones with a coral accent",
+      "note": "대표",
+      "thumb_shot": "wide",
+      "thumb_theme": "charcoal",
+      "thumb_person": "40대 여성",
+      "thumb_mood": "놀람",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "charcoal",
+        "font": "jua",
+        "title": "주민등록증 분실\n찾으면 다시 쓸까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "주민센터 민원 창구 앞에서 번호표를 들고 기다리는 50대 남성",
+      "prompt": "Camera and composition: medium shot at a community center service counter. A Korean man in his 50s in a navy jacket holding a small waiting ticket and waiting calmly in front of a community service center counter. Background color: pale mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a community center service counter",
+      "bg": "pale mint"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "주민등록증 분실 신고 뒤 경우별 처리를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "찾은 때에 따라",
+        "items": [
+          "재발급 전 찾으면 철회",
+          "철회는 가족도 할 수 있어요",
+          "재발급 뒤 찾으면 못 써요"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "사진관에서 증명사진을 찍는 30대 남성",
+      "prompt": "Camera and composition: eye-level shot in a small photo studio. A Korean man in his 30s in a white shirt sitting upright on a stool in front of a plain backdrop while a photographer takes his ID photo. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "eye-level shot in a small photo studio",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "주민등록증 재발급 신청 때 챙길 것을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "재발급 신청 때 챙길 것",
+        "items": [
+          "사진 1장을 함께 내요",
+          "4.5센티미터 상반신 사진",
+          "모자를 쓴 사진은 쓸 수 없어"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "카페 테이블에서 휴대폰을 들고 신분증 정보를 확인하는 20대 여성",
+      "prompt": "Camera and composition: medium close shot at a cafe table. A Korean woman in her 20s with long hair and a mustard-yellow cardigan holding a smartphone at a cafe table and looking at the blank screen with a relaxed face. Background color: light lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium close shot at a cafe table",
+      "bg": "light lavender"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "현관 신발장 위 작은 바구니에 지갑과 열쇠를 두는 60대 남성",
+      "prompt": "Camera and composition: medium shot at a house entrance. A Korean man in his 60s with gray hair and a forest-green vest placing his wallet and keys into a small basket on top of a shoe cabinet by the front door. Background color: warm cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a house entrance",
+      "bg": "warm cream"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "거실 탁자 위 새 증명사진과 신청 서류 봉투가 놓인 모습",
+      "prompt": "Camera and composition: top-down view of a living room coffee table. A small stack of blank ID photos and a plain paper envelope neatly placed on a wooden coffee table beside a pen, no people. Background color: light peach. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "top-down view of a living room coffee table",
+      "bg": "light peach"
+    }
+  ]
+}
