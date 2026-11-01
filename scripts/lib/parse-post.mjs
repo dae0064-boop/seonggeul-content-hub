@@ -125,12 +125,15 @@ export function parsePost(raw) {
 
 /**
  * 고정 인사말 앞 첫 덩어리(사실 한 문장, 2026-10-12 원고부터). 발행할 때 인용구 1번(따옴표)으로 넣는다
- * (2026-10-13 사용자 지시 — 글자만 두지 말고 인용구로). 없으면 null. .json 의 blocks 에도 그대로 쓴다.
+ * (2026-10-13 사용자 지시 — 글자만 두지 말고 인용구로). 인사 없는 홈판형(2026-11-03 원고부터)은 첫 덩어리. 없으면 null. .json 의 blocks 에도 그대로 쓴다.
  */
 export const OPEN_GREETING = '안녕하세요';
 export function leadBlock(blocks) {
   const [a, b] = blocks || [];
-  return a?.type === 'p' && a.lines.length <= 2 && a.lines[0]?.t !== OPEN_GREETING && b?.type === 'p' && b.lines[0]?.t === OPEN_GREETING ? a : null;
+  if (!(a?.type === 'p' && a.lines.length <= 2 && a.lines[0]?.t !== OPEN_GREETING && b)) return null;
+  if (b.type === 'p' && b.lines[0]?.t === OPEN_GREETING) return a;
+  // 홈판형은 고정 인사 없이 첫 문장 → 바로 본론 (2026-11-01 사용자). 인사가 어디에도 없으면 첫 덩어리가 첫 문장이다
+  return blocks.some((x) => x.type === 'p' && x.lines[0]?.t === OPEN_GREETING) ? null : a;
 }
 
 /** 자동화 스크립트가 실제로 입력할 텍스트 줄만 평평하게 뽑는다. */
