@@ -392,7 +392,7 @@ for (const file of files) {
         const bcMax = isTwenty(dated) ? TW.brandconnect : 1;
         if (same.length >= bcMax) errors.push(`쇼핑 커넥트 글은 하루 ${bcMax}편까지 — 같은 날 ${same.join(', ')}`);
         const l = BC.loadLinks().get(post.brandconnect);
-        notes.push(`쇼핑 커넥트 글: ${post.brandconnect} ${l ? '(링크 있음)' : '— 링크가 content/affiliate/brandconnect-links.tsv 에 아직 없음. 발행 때도 없으면 쇼핑 부분을 빼고 보통 글로 나갑니다'}`);
+        notes.push(`쇼핑 커넥트 글: ${post.brandconnect} ${l ? '(링크 있음)' : '— 발행하는 날 아침 PC 가 이 말로 링크를 만들어 넣어요. 못 만들면 쇼핑 부분을 빼고 보통 글로 나갑니다'}`);
       }
     }
   }

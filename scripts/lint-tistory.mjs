@@ -109,7 +109,7 @@ for (const file of files) {
       if (iDis < 0) errors.push(`대가성 문구 두 줄을 고정 인사말 바로 다음 덩어리로 그대로 씁니다:\n     ${DISCLOSURE.join('\n     ')}`);
       else if (iGreet >= 0 && iDis !== iGreet + 1) errors.push('대가성 문구는 고정 인사말 바로 다음 덩어리에 둡니다.');
       if (nMark !== 1) errors.push(`"${MARKER}" 한 줄짜리 덩어리를 정리 부분에 하나만 둡니다 (지금 ${nMark}개).`);
-      if (!loadLinks().has(post.coupang)) notes.push(`coupang: "${post.coupang}" 링크가 content/affiliate/coupang-links.tsv 에 없어요 — 이대로면 발행 때 쿠팡 부분이 빠진 보통 글로 나갑니다. 목록에 있는 키워드를 고르세요.`);
+      if (!loadLinks().has(post.coupang)) notes.push(`coupang: "${post.coupang}" — 발행하는 날 아침 PC 가 이 말로 쿠팡 링크를 만들어 넣어요 (2026-11-01 사용자 — 글마다 상황에 맞게 고른 상품). 못 만들면 쿠팡 부분이 빠진 보통 글로 나갑니다.`);
       const day = path.basename(file).slice(0, 10);
       const others = fs.readdirSync(path.dirname(file)).filter((f) => f.startsWith(day) && f.endsWith('.md') && f !== path.basename(file))
         .filter((f) => /^coupang:\s*\S/m.test(fs.readFileSync(path.join(path.dirname(file), f), 'utf8')));
