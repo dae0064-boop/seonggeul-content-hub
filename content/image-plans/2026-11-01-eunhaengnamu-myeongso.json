@@ -1,0 +1,91 @@
+{
+  "slug": "2026-11-01-eunhaengnamu-myeongso",
+  "title": "은행나무 명소, 늦가을 노란 길 언제 가야 가장 예쁠까",
+  "source": "11/1(일) 원고 (10/31 밤 네이버 Routine — 11/1 오전에 실행됨)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). style_v2·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "노란 은행나무길을 걸으며 위를 올려다보는 30대 여성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her 30s in a cozy knit scarf on a ginkgo tree road in late autumn, golden yellow leaves glowing behind her. Facial expression: bright happy smile. Color theme: olive green and warm cream tones with a red accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "olive green and warm cream tones with a red accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "olive",
+      "thumb_person": "30대 여성",
+      "thumb_mood": "반가움",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "olive",
+        "font": "jua",
+        "title": "은행나무 명소\n언제 갈까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "노란 잎이 반쯤 물든 은행나무와 아직 푸른 잎이 섞인 가로수",
+      "prompt": "Camera and composition: medium shot of a street. A row of ginkgo street trees, some fully yellow and some still half green, along a quiet sidewalk. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot of a street",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "수종별 단풍 절정 예측을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "2026 단풍 절정 예측",
+        "items": [
+          "은행나무: 10월 30일",
+          "단풍나무류: 10월 31일",
+          "참나무류: 10월 31일"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "산 능선을 따라 위에서 아래로 단풍이 내려오는 풍경",
+      "prompt": "Camera and composition: wide landscape shot. Mountain ridges where autumn colors spread from the top of the mountains down toward the valley. Background color: pale mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide landscape shot",
+      "bg": "pale mint"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "한옥 서원 앞에 가지를 길게 늘어뜨린 커다란 은행나무",
+      "prompt": "Camera and composition: wide shot of a traditional Korean seowon. A huge old ginkgo tree with long drooping branches in front of an elegant traditional Korean hanok academy building, yellow leaves on the ground. Background color: warm cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a traditional Korean seowon",
+      "bg": "warm cream"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "호수 위 긴 다리 끝에 서 있는 커다란 노란 은행나무",
+      "prompt": "Camera and composition: wide shot over a lake. A long footbridge across a calm lake leading to one enormous golden ginkgo tree on the far shore. Background color: light lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot over a lake",
+      "bg": "light lavender"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "강변 자전거길 옆으로 줄지어 선 은행나무숲을 달리는 자전거",
+      "prompt": "Camera and composition: wide shot along a riverside. A riverside bicycle path lined with tall ginkgo trees, one small cyclist riding under the yellow canopy. Background color: light peach. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot along a riverside",
+      "bg": "light peach"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "노란 은행잎을 주워 책갈피로 끼우는 손",
+      "prompt": "Camera and composition: close-up of hands. Hands slipping a bright yellow ginkgo leaf between the pages of an open book as a bookmark. Background color: soft apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands",
+      "bg": "soft apricot"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "slug": "2026-11-01-janggiyoyang-deunggeup-hyetaek",
+  "title": "장기요양등급혜택, 등급 받으면 어떤 서비스를 쓸까요 (재가 15% · 2026년)",
+  "source": "11/1(일) 원고 (10/31 밤 네이버 Routine — 11/1 오전에 실행됨)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). style_v2·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "거실에서 요양보호사와 인사하는 80대 어머니와 50대 딸 (대표사진)",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A cozy Korean living room; a Korean woman in her 50s and her mother in her 80s sitting on the sofa warmly greeting a friendly home care worker in an apron who has just arrived. Facial expression: relieved gentle smile. Color theme: bright cobalt blue and white tones with an orange accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "방·장소 전체, 사람은 작게",
+      "bg": "bright cobalt blue and white tones with an orange accent",
+      "note": "대표",
+      "thumb_shot": "wide",
+      "thumb_theme": "cobalt",
+      "thumb_person": "50대 딸과 80대 어머니",
+      "thumb_mood": "안심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "cobalt",
+        "font": "ptd",
+        "title": "장기요양등급혜택\n어떤 서비스?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "주민센터 같은 창구에서 신청서를 내는 50대 딸",
+      "prompt": "Camera and composition: wide shot at a community service counter. A Korean woman in her 50s handing an application form across a bright public service counter to a smiling clerk. Background color: pale mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot at a community service counter",
+      "bg": "pale mint"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "요양보호사가 집에서 70대 아버지의 식사를 돕는 장면",
+      "prompt": "Camera and composition: medium shot in a home kitchen. A friendly home care worker helping a Korean man in his 70s eat a warm meal at the dining table. Background color: warm cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a home kitchen",
+      "bg": "warm cream"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "햇살 드는 요양원 휴게실에서 쉬는 어르신들",
+      "prompt": "Camera and composition: wide shot of a nursing home lounge. A sunny nursing home lounge where several elderly Korean residents rest in armchairs by large windows. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a nursing home lounge",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "현관 옆 벽에 달린 안전손잡이와 보행기",
+      "prompt": "Camera and composition: close-up of an entrance hallway. A sturdy grab bar fixed on the wall next to a home entrance and a walking frame standing beside it, no people. Background color: light peach. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of an entrance hallway",
+      "bg": "light peach"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "장기요양 서비스별 본인부담 비율을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "서비스별 본인부담",
+        "items": [
+          "재가급여: 총 비용의 15%",
+          "시설급여: 총 비용의 20%",
+          "복지용구: 총 비용의 15%"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "공단 직원이 집을 찾아와 어르신과 이야기하는 장면",
+      "prompt": "Camera and composition: medium shot in a living room. A Korean public insurance staff member with a clipboard visiting home and talking kindly with an elderly woman at a low table. Background color: light lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a living room",
+      "bg": "light lavender"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "식탁에서 돌봄 일정표를 함께 적는 50대 남매",
+      "prompt": "Camera and composition: overhead view of a dining table. A Korean brother and sister in their 50s writing a weekly care schedule together on a paper calendar at the dining table. Background color: soft apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "overhead view of a dining table",
+      "bg": "soft apricot"
+    }
+  ]
+}
