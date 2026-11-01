@@ -35,6 +35,8 @@ export const MAX_EMOJI = 3;
 // 2026-11-02 쓴 묶음(31편 새로 쓰기)부터: 더 차분하게 — 이모지 0~1개, 끝은 '확인해 보시길' 권유 (사용자 — "이모지를 많이 쓰는 것 같다")
 export const CALM_FROM = '2026-11-02';
 export const CALM_MAX_EMOJI = 1;
+// 쓸 수 있는 이모지는 이 셋만 (2026-11-02 사용자 — "최대한 없이, 넣는다면 👍‼️🤔 정도, 튀지 않게")
+export const CALM_EMOJI = ['👍', '‼️', '‼', '🤔'];
 export const MAX_PLANNER = 3;
 
 // 운전자보험 글 필수 문장 (2026-10-05 사용자 지시) — 줄바꿈·띄어쓰기는 상관없이 글자 그대로
@@ -153,6 +155,8 @@ export function checkSet(set, previous = []) {
     const emoji = (p.body.match(/\p{Extended_Pictographic}/gu) || []).length;
     if (calm) {
       if (emoji > CALM_MAX_EMOJI) errors.push(`${tag}: 이모지가 ${emoji}개 — ${CALM_FROM} 묶음부터 0~${CALM_MAX_EMOJI}개 (차분하게, rules.md "31편부터 말투").`);
+      const odd = (p.body.match(/\p{Extended_Pictographic}/gu) || []).filter((e) => !CALM_EMOJI.includes(e));
+      if (odd.length) errors.push(`${tag}: 이모지 ${odd.join('')} — 31편부터는 👍 ‼️ 🤔 중 하나만, 되도록 없이.`);
       if (/!!/.test(p.body)) errors.push(`${tag}: "!!" 는 쓰지 않습니다 — 31편부터는 차분한 말투.`);
       const tail = lines.slice(-3).join(' ');
       if (!/확인/.test(tail)) errors.push(`${tag}: 끝 세 줄 안에 "증권에서 한 번 확인해 봐" 같은 확인 권유가 없습니다 (rules.md "31편부터 말투").`);
