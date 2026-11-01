@@ -1,0 +1,100 @@
+{
+  "slug": "2026-11-02-gapsangseon-gyeoljeol",
+  "title": "갑상선결절, 검진에서 혹이 보이면 다 검사해야 할까",
+  "source": "11/2(월) 21:00 네이버 원고 — 생활보장 홈판형, 실사풍",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 실사풍(style_care)·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "목에 손을 살짝 대고 안심한 듯 웃는 40대 여성의 얼굴 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her 40s in a dusty rose knit sweater lightly touching the front of her neck with one hand at home, smiling gently. Facial expression: relieved gentle smile. Color theme: dusty rose and white tones with a green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "dusty rose and white tones with a green accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "rose",
+      "thumb_person": "40대 여성",
+      "thumb_mood": "안심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "rose",
+        "font": "ptd",
+        "title": "갑상선결절\n다 검사할까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "거울 앞에서 목 앞쪽을 살펴보는 50대 여성",
+      "prompt": "Camera and composition: medium shot in a bathroom. A Korean woman in her 50s looking calmly at the front of her neck in a bathroom mirror. Background color: soft white bathroom light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a bathroom",
+      "bg": "soft white bathroom light"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "부엌 식탁에서 건강기능식품 통을 살펴보는 60대 남성",
+      "prompt": "Camera and composition: medium shot at a kitchen table. A Korean man in his 60s with glasses holding a plain unlabeled supplement bottle at a kitchen table, reading it thoughtfully. Background color: warm morning kitchen light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a kitchen table",
+      "bg": "warm morning kitchen light"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "소파에 앉아 따뜻한 차를 마시는 50대 부부",
+      "prompt": "Camera and composition: medium wide shot in a living room. A Korean couple in their 50s sitting on a sofa holding warm mugs of tea and chatting. Background color: cozy evening lamp light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium wide shot in a living room",
+      "bg": "cozy evening lamp light"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "검사 없이 지켜보는 결절과 검사가 필요한 결절을 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "갑상선결절 검사",
+        "heads": [
+          "지켜봐도 되는 경우",
+          "넘기지 않는 경우"
+        ],
+        "items": [
+          [
+            "전형적인 물혹일 때",
+            "암이 의심될 때"
+          ],
+          [
+            "암 가능성이 낮을 때",
+            "모양이 변했을 때"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "진료실에서 의사에게 검사 설명을 듣는 40대 딸과 70대 어머니",
+      "prompt": "Camera and composition: medium shot in a clinic consultation room. A Korean woman in her 70s and her daughter in her 40s sitting together across from a friendly Korean doctor who is explaining with a gentle gesture. Background color: clean bright clinic light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a clinic consultation room",
+      "bg": "clean bright clinic light"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "진료실 모니터 앞에서 초음파 화면을 함께 보는 의사와 50대 여성",
+      "prompt": "Camera and composition: close-up over the shoulder in an ultrasound room. A friendly Korean doctor and a Korean woman in her 50s looking together at a blank grayscale ultrasound monitor, the woman calm. Background color: dim blue ultrasound room light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up over the shoulder in an ultrasound room",
+      "bg": "dim blue ultrasound room light"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "저녁 산책길에서 나란히 걷는 60대 부부",
+      "prompt": "Camera and composition: wide shot on a riverside walking path. A Korean couple in their 60s in light jackets walking side by side on a riverside path at dusk. Background color: soft dusk sky light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot on a riverside walking path",
+      "bg": "soft dusk sky light"
+    }
+  ]
+}

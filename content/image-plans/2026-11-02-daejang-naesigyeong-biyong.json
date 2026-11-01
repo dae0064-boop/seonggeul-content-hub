@@ -1,0 +1,98 @@
+{
+  "slug": "2026-11-02-daejang-naesigyeong-biyong",
+  "title": "대장내시경 비용, 국가검진이면 정말 안 내도 될까",
+  "source": "11/2(월) 17:00 네이버 원고 — 생활보장 홈판형, 실사풍",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 실사풍(style_care)·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "건강검진 안내문을 펼쳐 든 50대 남성의 손 (대표사진)",
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Close-up of the hands of a Korean man in his 50s in a cobalt blue shirt sleeve holding open a blank health checkup letter over a living room table, a pen beside it. Facial expression: curious, head slightly tilted. Color theme: bright cobalt blue and white tones with an orange accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "손만 크게 (얼굴 없음)",
+      "bg": "bright cobalt blue and white tones with an orange accent",
+      "note": "대표",
+      "thumb_shot": "hands",
+      "thumb_theme": "cobalt",
+      "thumb_person": "50대 남성 손",
+      "thumb_mood": "궁금",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "cobalt",
+        "font": "jua",
+        "title": "대장내시경 비용\n수면은 따로?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "검진센터 접수대에서 순서를 기다리는 50대 부부",
+      "prompt": "Camera and composition: medium wide shot in a health checkup center. A Korean couple in their 50s sitting on a bench in a clean health checkup center waiting area, waiting for their turn. Background color: clean white clinic light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium wide shot in a health checkup center",
+      "bg": "clean white clinic light"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "대장암 검진 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "대장암 검진 순서",
+        "items": [
+          "50세 이상, 주기는 1년",
+          "분변잠혈검사부터 받기",
+          "대장내시경 예약하기"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "내시경실 앞 대기 의자에 앉아 있는 60대 여성",
+      "prompt": "Camera and composition: medium shot in a hospital corridor. A Korean woman in her 60s in a patient gown sitting on a waiting chair in a quiet hospital corridor, calm and relaxed. Background color: soft corridor light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a hospital corridor",
+      "bg": "soft corridor light"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "진료실에서 의사의 설명을 듣는 50대 남성",
+      "prompt": "Camera and composition: medium shot in a doctor's office. A Korean man in his 50s sitting across a desk from a friendly Korean doctor in a white coat, listening and nodding. Background color: bright office daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a doctor's office",
+      "bg": "bright office daylight"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "달력에 다음 검진 해를 표시하는 40대 딸과 70대 아버지",
+      "prompt": "Camera and composition: medium shot at a kitchen wall. A Korean woman in her 40s and her father in his 70s standing in front of a blank wall calendar in the kitchen, the daughter marking it with a pen. Background color: warm kitchen light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a kitchen wall",
+      "bg": "warm kitchen light"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "대장내시경 비용 확인 목록을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "대장내시경 비용 확인",
+        "items": [
+          "검진 대상인지 확인하기",
+          "분변잠혈검사부터 받기",
+          "정해진 장 비우는 약 쓰기"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "검진을 마치고 공원을 산책하며 웃는 50대 부부",
+      "prompt": "Camera and composition: wide shot in a city park. A Korean couple in their 50s walking side by side along a park path with autumn trees, smiling. Background color: clear autumn afternoon. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot in a city park",
+      "bg": "clear autumn afternoon"
+    }
+  ]
+}

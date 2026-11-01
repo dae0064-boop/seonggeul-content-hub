@@ -1,0 +1,98 @@
+{
+  "slug": "2026-11-02-yoyangbohosa-haneunil",
+  "title": "요양보호사 하는일, 가족 반찬도 해 줄까요 (가사지원 90분 · 2026년)",
+  "source": "11/2(월) 10:00 네이버 원고 — 생활보장, 실사풍",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). 실사풍(style_care)·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "식탁 위에 가지런히 놓인 앞치마·고무장갑·수건·도시락 통 (대표사진)",
+      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A wooden home dining table seen from above with a neatly folded teal apron, a pair of rubber gloves, a folded towel, a small lunch box and a plain notebook arranged tidily. Color theme: teal and sand tones with an orange accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "위에서 내려다본 탁자 (사람 없음)",
+      "bg": "teal and sand tones with an orange accent",
+      "note": "대표",
+      "thumb_shot": "overhead",
+      "thumb_theme": "teal",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "teal",
+        "font": "ptd",
+        "title": "요양보호사 하는일\n가족 반찬도 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "거실 식탁에서 80대 어머니의 식사를 돕는 50대 요양보호사",
+      "prompt": "Camera and composition: medium shot at a home dining table. A Korean caregiver in her 50s in a light apron sitting beside a Korean woman in her 80s and helping her eat a simple meal with a spoon, both calm. Background color: warm morning light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a home dining table",
+      "bg": "warm morning light"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "작은 부엌에서 한 사람 몫의 죽을 끓이는 요양보호사",
+      "prompt": "Camera and composition: medium shot in a small apartment kitchen. A Korean caregiver in her 50s stirring a small pot of rice porridge for one person on a gas stove. Background color: soft kitchen daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a small apartment kitchen",
+      "bg": "soft kitchen daylight"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "급여외행위 세 가지를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "급여외행위 세 가지",
+        "items": [
+          "가족만을 위한 행위",
+          "생업을 돕는 행위",
+          "일상생활에 지장이 없는 행위"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "병원 접수대 앞에서 70대 어르신 곁을 지키는 요양보호사",
+      "prompt": "Camera and composition: medium wide shot in a hospital lobby. A Korean caregiver in her 50s standing beside a Korean man in his 70s with a walking cane in front of a hospital reception desk, waiting calmly. Background color: bright hospital lobby light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium wide shot in a hospital lobby",
+      "bg": "bright hospital lobby light"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "방문요양 첫 준비 네 단계를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "방문요양 첫 준비",
+        "items": [
+          "장기요양등급부터 받아요",
+          "필요한 도움을 적어요",
+          "기관과 받을 내용을 정해요",
+          "급여제공기록지로 확인해요"
+        ]
+      }
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "창가에서 70대 어머니와 사진첩을 보며 이야기하는 요양보호사",
+      "prompt": "Camera and composition: medium shot by a living room window. A Korean caregiver in her 50s and a Korean woman in her 70s sitting side by side by a window, looking at an old photo album together and smiling. Background color: golden afternoon window light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot by a living room window",
+      "bg": "golden afternoon window light"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "정돈된 방에서 웃으며 차를 마시는 80대 어머니와 50대 딸",
+      "prompt": "Camera and composition: wide shot of a tidy bedroom. A Korean woman in her 80s and her daughter in her 50s sitting at a small table in a neat bedroom, drinking tea and smiling. Background color: soft evening lamp light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a tidy bedroom",
+      "bg": "soft evening lamp light"
+    }
+  ]
+}
