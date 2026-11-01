@@ -1,0 +1,85 @@
+{
+  "slug": "2026-11-02-hwajangsil-naemsae-jegeo",
+  "title": "화장실 냄새제거, 어디부터 확인해야 할까요 (확인할 곳 5곳)",
+  "source": "11/2(월) 12:35 네이버 원고 — 생활정보 검색형, 쇼핑 커넥트 (11/2 20편 추가분)",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고 기준). 실사풍·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "깨끗한 회색 타일 바닥 위 스테인리스 배수구 덮개 하나 (대표사진)",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A single round stainless steel floor drain cover set in clean light gray bathroom floor tiles, a few water droplets around it, a coral-colored folded towel at the edge of the frame, white walls softly blurred behind. Color theme: neutral gray and white tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "핵심 사물 하나 크게 (사람 없음)",
+      "bg": "neutral gray and white tones with a coral accent",
+      "note": "대표",
+      "thumb_shot": "object",
+      "thumb_theme": "charcoal",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "charcoal",
+        "font": "jua",
+        "title": "화장실 냄새제거\n어디서 날까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "욕실 문을 활짝 열고 안쪽을 둘러보는 40대 여성",
+      "prompt": "Camera and composition: medium shot from a hallway into a bathroom. A Korean woman in her 40s with a high ponytail in a mustard-yellow sweatshirt holding a bathroom door wide open and looking around inside calmly, a clean bathroom with a shower area visible behind her. Background color: bright hallway with warm beige walls. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot from a hallway into a bathroom",
+      "bg": "bright hallway with warm beige walls"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "화장실 배수구 트랩 확인 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "배수구 트랩 확인",
+        "ask": "하수구 냄새 뭐부터 봐?",
+        "items": [
+          "덮개 열어 찌꺼기 빼기",
+          "물 한 바가지 붓기",
+          "깨진 부품 있는지 보기"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "손전등으로 변기 바닥 실리콘 틈을 비춰 보는 손",
+      "prompt": "Camera and composition: low close-up of hands at the base of a toilet. The hands of a Korean man in a green work glove shining a small flashlight on the white silicone seam where a toilet base meets the floor tiles, slightly lifted silicone visible. Background color: cool white bathroom tiles with soft shadow. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "low close-up of hands at the base of a toilet",
+      "bg": "cool white bathroom tiles with soft shadow"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "의자를 딛고 서서 욕실 천장 환풍기 덮개를 닦는 50대 남성",
+      "prompt": "Camera and composition: low angle medium shot inside a bathroom. A Korean man in his 50s with short gray hair in a navy T-shirt standing on a small step stool wiping a square ceiling ventilation fan cover in a bathroom with a cloth, calm expression. Background color: pale mint bathroom walls with ceiling light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "low angle medium shot inside a bathroom",
+      "bg": "pale mint bathroom walls with ceiling light"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "곰팡내 줄이는 화장실 관리 습관을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "곰팡내 줄이는 습관",
+        "ask": "곰팡내는 어떻게 줄여?",
+        "items": [
+          "샤워 뒤 환풍기 켜 두기",
+          "바닥 물기 밀어내기",
+          "수건·발매트 자주 말리기",
+          "세면대 넘침 구멍 닦기",
+          "배수구 덮개 머리카락 빼기"
+        ]
+      }
+    }
+  ]
+}
