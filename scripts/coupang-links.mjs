@@ -152,6 +152,18 @@ async function readCards(page) {
   return cards;
 }
 
+/** 받은 응답 중 /api/v1/search 의 상품 목록 (2026-11-01 시험에서 확인: data.products[] — title·ratingCount·rawImage·image·productId) */
+function searchProducts(bodies) {
+  for (let i = bodies.length - 1; i >= 0; i--) {
+    try {
+      const j = JSON.parse(bodies[i]);
+      const ps = j?.data?.products;
+      if (Array.isArray(ps) && ps.length && ps[0].productId) return ps;
+    } catch { /* JSON 아님 */ }
+  }
+  return [];
+}
+
 async function collectUrls(page, extraBodies) {
   const set = new Set();
   for (const fr of page.frames()) {
@@ -188,8 +200,17 @@ async function makeOne(ctx, kw) {
     await dump(cur, `${kw}-home`);
     if (await isLogin(cur)) return loginStop('쿠팡 파트너스 로그인이 풀려 있어요 (launchers\\coupang-test.cmd 가 연 자동화용 크롬에서 partners.coupang.com 에 로그인)');
 
+    // 2026-11-01 두 번째 시험에서 확인: 검색 결과 화면 주소는 #affiliate/ws/link/0/<키워드> — 메뉴 없이 바로 간다
+    const searchUrl = `https://partners.coupang.com/#affiliate/ws/link/0/${encodeURIComponent(kw)}`;
+    let direct = false;
+    try {
+      await cur.goto(searchUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
+      await sleep(5000);
+      direct = !!searchProducts(bodies).length;
+    } catch { /* 아래 메뉴 방식으로 */ }
+    if (await isLogin(cur)) return loginStop('쿠팡 파트너스에서 로그인을 다시 요구해요');
     // 메뉴를 따라 상품 검색 칸이 보일 때까지 (최대 3번)
-    let box = await findSearchBox(cur);
+    let box = direct ? true : await findSearchBox(cur);
     for (let k = 0; k < 3 && !box; k++) {
       const c = await clickText(cur, MENU);
       if (!c) break;
@@ -199,14 +220,68 @@ async function makeOne(ctx, kw) {
       box = await findSearchBox(cur);
     }
     if (!box) { r.why = '상품 검색 칸을 찾지 못했어요 (화면 기록 확인 필요)'; return r; }
-    await box.fill(kw); await box.press('Enter'); await sleep(5000);
-    r.steps.push('검색');
+    if (direct) r.steps.push('검색(주소로 바로)');
+    else { await box.fill(kw); await box.press('Enter'); await sleep(5000); r.steps.push('검색'); }
     // 정렬 칸이 있으면 후기 많은순으로 (없으면 기본 순서 — 보통 쿠팡 랭킹순)
     const s1 = await clickText(cur, ['리뷰 많은순', '리뷰많은순', '상품평 많은순', '후기 많은순', '리뷰순']);
     r.sort = s1?.clicked || '정렬 못 바꿈(기본 순서)';
     if (s1) await sleep(2000);
     await dump(cur, `${kw}-search`);
 
+    // ① 검색 데이터(/api/v1/search 의 products — ratingCount·image)로 후기가 가장 많은 상품을 고르고,
+    //    그 상품 그림에 마우스를 올려 나타나는 '링크 생성' 버튼 중 그림에서 가장 가까운 것을 누른다 (2026-11-01 두 번째 시험:
+    //    카드 버튼은 마우스를 올려야 보여서, 예전 방식은 화면 위 안내 문구 '링크 생성 을 클릭하여…'를 눌렀다)
+    const prods = searchProducts(bodies);
+    if (prods.length && !DRY) {
+      const kwS = kw.replace(/\s/g, '');
+      const rel = prods.filter((p) => (p.title || '').replace(/\s/g, '').includes(kwS) && !p.isSoldOut && !p.isAdult);
+      const best = [...(rel.length ? rel : prods)].sort((a, b) => (b.ratingCount || 0) - (a.ratingCount || 0))[0];
+      r.product = best.title; r.review = best.ratingCount || 0; r.productId = best.productId;
+      log(`  고른 상품: ${r.product} (후기 ${r.review})`);
+      const seg = String(best.rawImage || best.image || '').split('/').pop();
+      const before0 = await collectUrls(cur, bodies);
+      const clip00 = await readClipboard(cur);
+      const img = cur.locator(`img[src*="${seg}"]`).first();
+      if (seg && await img.count().catch(() => 0)) {
+        await img.scrollIntoViewIfNeeded().catch(() => {});
+        await img.hover({ timeout: 5000 }).catch(() => {});
+        await sleep(800);
+        const ib = await img.boundingBox().catch(() => null);
+        const btns = cur.locator('a, button, [role="button"], span, div').filter({ hasText: /^\s*링크\s*생성\s*$/ });
+        const n = await btns.count().catch(() => 0);
+        let pick = null, dist = Infinity;
+        for (let i = 0; i < n; i++) {
+          const b = btns.nth(i);
+          if (!(await b.isVisible().catch(() => false))) continue;
+          const bb = await b.boundingBox().catch(() => null);
+          if (!bb || !ib) continue;
+          const d = Math.hypot(bb.x + bb.width / 2 - (ib.x + ib.width / 2), bb.y + bb.height / 2 - (ib.y + ib.height / 2));
+          if (d < dist) { dist = d; pick = b; }
+        }
+        if (pick && dist < 400) {
+          await pick.click({ timeout: 5000 }).catch(() => {});
+          await sleep(3500);
+          r.steps.push('상품 그림 위 링크 생성');
+          await dump(cur, `${kw}-link`);
+          let got = [...(await collectUrls(cur, bodies))].filter((u) => !before0.has(u));
+          let clipA = await readClipboard(cur);
+          if (!got.some((u) => LINK_RE.test(u)) && !(clipA && clipA !== clip00 && LINK_RE.test(clipA.trim()))) {
+            const c = await clickText(cur, ['단축 URL', '단축URL', 'URL 생성', 'URL 복사', '링크 복사', '복사', '복사하기']);
+            if (c) { r.steps.push(`복사창: ${c.clicked}`); await dump(cur, `${kw}-copy`); got = [...(await collectUrls(cur, bodies))].filter((u) => !before0.has(u)); clipA = await readClipboard(cur); }
+          }
+          const cands = [];
+          if (clipA && clipA !== clip00 && LINK_RE.test(clipA.trim())) cands.push(clipA.trim());
+          cands.push(...got.filter((u) => /link\.coupang\.com\/a\//.test(u)), ...got.filter((u) => !/link\.coupang\.com\/a\//.test(u)));
+          const url = cands.find((u) => LINK_RE.test(u) && !/link\.coupang\.com\/?$/.test(u));
+          r.candidates = cands.slice(0, 10);
+          if (url) { r.url = url; r.ok = true; await cur.keyboard.press('Escape').catch(() => {}); return r; }
+          r.why = '상품 링크 생성은 눌렀는데 주소를 읽지 못했어요 (화면 기록 확인 필요)';
+          return r;
+        }
+        r.steps.push(`상품 그림 위 링크 생성 버튼 못 찾음(${n}개, 거리 ${Math.round(dist)})`);
+      } else r.steps.push('검색 데이터의 상품 그림을 화면에서 못 찾음');
+    }
+    // ② 예전 방식 (화면 카드 글자로)
     const cards = await readCards(cur);
     fs.writeFileSync(path.join(OUT, `cards-${kw}.json`), JSON.stringify(cards, null, 1));
     if (!cards.length) { r.why = '검색 결과에서 링크 생성 버튼을 찾지 못했어요'; return r; }
@@ -293,7 +368,7 @@ async function main() {
     } else log(`  쿠팡 링크 못 만듦: ${kw} — ${r.why}`);
     fs.writeFileSync(resFile, JSON.stringify(results, null, 1));
     if (r.login) {
-      console.error(`쿠팡 파트너스 로그인이 필요해요. launchers 폴더의 chrome-login.cmd 를 더블클릭해 열린 크롬에서 partners.coupang.com 에 로그인해 주세요. 남은 키워드는 다음 실행에서 합니다.`);
+      console.error(`쿠팡 파트너스 로그인이 필요해요. launchers 폴더의 coupang-test.cmd 를 더블클릭해 열린 크롬에서 partners.coupang.com 에 로그인해 주세요. 남은 키워드는 다음 실행에서 합니다.`);
       code = 3;
       break;
     }
