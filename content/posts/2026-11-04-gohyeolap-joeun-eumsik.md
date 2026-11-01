@@ -4,13 +4,13 @@ category: 생활보장
 slot: 홈판
 main_keyword: 고혈압에좋은음식
 sub_keywords: 고혈압식단, 소금 섭취, 대시 식단
-lead_keyword: 혈압약 한 알
+lead_keyword: 혈압약
 format: 비교형
 tone: 이야기형
 publish_at: 2026-11-04 14:00
 related: 당뇨 진단 기준, 공복혈당 몇부터 당뇨일까요 (126mg/dL 이상)
 source_url: https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6765 | https://www.korea.kr/news/healthView.do?newsId=148900030
-tags: 고혈압에좋은음식, 고혈압식단, 소금섭취, 대시식단, 혈압약한알, 고혈압, 싱겁게먹기, 저염식, 혈압관리, 고혈압음식, 국물줄이기, 부모님건강, 만성질환, 건강정보, 생활보장, 서이추, 이웃추가, 서이추환영
+tags: 고혈압에좋은음식, 고혈압식단, 소금섭취, 대시식단, 혈압약, 고혈압, 싱겁게먹기, 저염식, 혈압관리, 고혈압음식, 국물줄이기, 부모님건강, 만성질환, 건강정보, 생활보장, 서이추, 이웃추가, 서이추환영
 ---
 
 소금 줄이기 같은 생활습관 개선은
