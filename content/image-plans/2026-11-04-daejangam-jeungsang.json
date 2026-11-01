@@ -1,0 +1,84 @@
+{
+  "slug": "2026-11-04-daejangam-jeungsang",
+  "title": "대장암 증상, 변이 가늘어졌다면 꼭 그 때문일까",
+  "source": "11/4(수) 11:20 네이버 원고 — 생활보장 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 실사풍·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "거실에서 마주 앉아 건강 이야기를 나누며 생각에 잠긴 30대 아들과 60대 아버지 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean son in his 30s with short neat hair in a coral-red crew-neck sweater and his father in his 60s with short salt-and-pepper hair in a light blue cotton shirt sit facing each other at a white living room table, talking calmly about health, the father thoughtful with a finger on his chin, cool blue curtains softly blurred behind. Facial expression: thoughtful, finger on chin. Color theme: cool blue and white tones with a coral-red accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "cool blue and white tones with a coral-red accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "navy",
+      "thumb_person": "30대 아들과 60대 아버지",
+      "thumb_mood": "생각",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "navy",
+        "font": "ptd",
+        "title": "대장암 증상\n변 굵기 탓일까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "아침 욕실 앞에서 머리를 긁적이며 잠시 생각하는 40대 남성",
+      "prompt": "Camera and composition: medium shot in a home hallway. A Korean man in his 40s with a short beard in a gray long-sleeve T-shirt standing in a bright apartment hallway near a closed bathroom door, scratching his head with a mildly puzzled but calm face. Background color: soft white morning hallway light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a home hallway",
+      "bg": "soft white morning hallway light"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "진료실에서 의사의 설명을 차분히 듣는 50대 여성",
+      "prompt": "Camera and composition: medium shot in a clinic consultation room. A Korean woman in her 50s with a neat low bun in a beige knit cardigan sitting across a desk from a friendly Korean male doctor in a white coat who gestures toward a simple anatomical model of the intestine. Background color: clean pale mint clinic walls. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a clinic consultation room",
+      "bg": "clean pale mint clinic walls"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "진료를 받아 볼 대장암 증상 신호를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "진료를 받아 볼 신호",
+        "items": [
+          "최근 변 굵기가 가늘어졌다",
+          "검은 변을 봤다",
+          "이유 없이 체중이 줄었다",
+          "갑자기 변비가 생겼다",
+          "배에서 혹 같은 게 만져진다"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "부엌 식탁에서 따뜻한 차를 마주하고 이야기 나누는 60대 부부",
+      "prompt": "Camera and composition: medium shot at a kitchen table. A Korean couple in their 60s, the wife with short permed gray hair in a plum blouse and the husband in a brown corduroy shirt, sitting at a wooden kitchen table with two cups of steaming tea, talking gently. Background color: warm honey-colored kitchen light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a kitchen table",
+      "bg": "warm honey-colored kitchen light"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "50세 이상 대장암 검진 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "50세 넘으면 검진부터",
+        "items": [
+          "매년 분변잠혈검사 받기",
+          "잠혈 반응이 있으면 대장내시경",
+          "배변 습관이 바뀌면 진료받기"
+        ]
+      }
+    }
+  ]
+}

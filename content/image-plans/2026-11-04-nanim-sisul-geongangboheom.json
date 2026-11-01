@@ -1,0 +1,66 @@
+{
+  "slug": "2026-11-04-nanim-sisul-geongangboheom",
+  "title": "난임 시술 건강보험, 체외수정은 몇 번까지 지원될까 (출산당 25회)",
+  "source": "11/4(수) 티스토리 원고 2회차 (11/1 작성)",
+  "note": "4장(대표 1 + 장면 1 + 정보 카드 2) — 2026-11-03 원고부터. 장소·주인공·구도·배경색 서로 다르게",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "장미색 거실 소파에서 안도한 얼굴로 미소 짓는 30대 여성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her early 30s with long straight dark hair and a cream knit sweater sitting on a living room sofa, a small green potted plant softly blurred behind her. Facial expression: relieved gentle smile. Color theme: dusty rose and white tones with a green accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "dusty rose and white tones with a green accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "rose",
+      "thumb_person": "30대 여성 회사원",
+      "thumb_mood": "안심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "rose",
+        "font": "ptd",
+        "title": "난임 시술 건강보험\n몇 번까지?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "난임 시술 건강보험 횟수를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "출산당 25회 나누기",
+        "items": [
+          "체외수정은 20회",
+          "인공수정은 5회예요",
+          "출산하면 새로 25회"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "보건소 창구 앞에서 서류를 함께 보며 이야기하는 30대 부부",
+      "prompt": "Camera and composition: medium shot at a public health center counter. A Korean couple in their 30s, a man in a mustard-yellow jacket and a woman in a navy coat, standing side by side at a public health center counter and looking at one blank form together, calm and hopeful. Background color: soft mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a public health center counter",
+      "bg": "soft mint green"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "난임부부 시술비 지원 신청 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "시술비 지원 신청 순서",
+        "items": [
+          "병원에서 난임 진단서 받기",
+          "보건소나 정부24로 신청",
+          "지원결정통지서 병원에 내기"
+        ]
+      }
+    }
+  ]
+}

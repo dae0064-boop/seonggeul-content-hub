@@ -1,0 +1,92 @@
+{
+  "slug": "2026-11-04-jutaek-hwajae-boheom",
+  "title": "주택화재보험, 내 증권에서 무엇부터 확인할까요 (유의사항 5가지)",
+  "source": "11/4(수) 20:40 네이버 원고 — 생활보장 검색형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 실사풍·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "나무 탁자 위 작은 집 모형과 파란 서류철, 소화기가 놓인 장면 (대표사진)",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A small wooden model of a Korean two-story house placed large in the frame on a warm wooden table, with a closed blue document folder leaning beside it and a small red home fire extinguisher in the soft background, deep green potted plants behind, no people. Color theme: deep green plants and warm wood tones with a mustard-yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "핵심 사물 하나 크게 (사람 없음)",
+      "bg": "deep green plants and warm wood tones with a mustard-yellow accent",
+      "note": "대표",
+      "thumb_shot": "object",
+      "thumb_theme": "forest",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "forest",
+        "font": "ptd",
+        "title": "주택화재보험\n가재도구 들었나?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "거실 서랍에서 보험 서류 파일을 꺼내 펼쳐 보는 60대 여성",
+      "prompt": "Camera and composition: medium shot beside a living room drawer. A Korean woman in her 60s with chin-length gray hair in a lavender knit vest pulling a blue plastic document folder out of a wooden drawer and opening it, looking calm and focused; the papers are blank. Background color: soft afternoon window light on beige walls. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot beside a living room drawer",
+      "bg": "soft afternoon window light on beige walls"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "주택화재보험 증권에서 확인할 다섯 가지를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "증권에서 볼 5가지",
+        "items": [
+          "주소와 면적이 맞는지",
+          "가재도구가 들어 있는지",
+          "가입금액이 실제 가치에 맞는지",
+          "상품이 주택용인지",
+          "이사 때 주소를 바꿨는지"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "거실 소파와 텔레비전, 책장이 놓인 집 안을 둘러보는 40대 남성",
+      "prompt": "Camera and composition: medium wide shot inside a living room. A Korean man in his 40s with a short side-parted haircut in a navy quilted vest standing in his living room and looking around at the sofa, television, bookshelf and refrigerator visible in the open kitchen, thoughtful and calm. Background color: warm lamp light in a tidy living room. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium wide shot inside a living room",
+      "bg": "warm lamp light in a tidy living room"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "보험가입금액을 낮게 잡았을 때와 맞게 잡았을 때를 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "보험가입금액",
+        "heads": [
+          "낮게 잡으면",
+          "맞게 잡으면"
+        ],
+        "items": [
+          [
+            "가입한 비율만큼 보상",
+            "손해액 기준으로 보상"
+          ],
+          [
+            "사고 때 덜 받아요",
+            "실제 가치에 맞춰요"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "이삿짐 상자가 쌓인 새집 현관에서 서류를 확인하는 30대 여성",
+      "prompt": "Camera and composition: medium shot at an apartment entrance. A Korean woman in her 30s with a long low ponytail in an oatmeal knit sweater standing by stacked moving boxes at the entrance of a new apartment, checking a blank paper on a clipboard, relaxed. Background color: bright white hallway light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at an apartment entrance",
+      "bg": "bright white hallway light"
+    }
+  ]
+}
