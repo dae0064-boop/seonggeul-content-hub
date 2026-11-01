@@ -32,6 +32,9 @@ export const MAX_LINE = 24;
 // 딱딱하지 않게 — 문맥에 맞는 이모지 2~3개 (2026-10-02 사용자 지시)
 export const MIN_EMOJI = 2;
 export const MAX_EMOJI = 3;
+// 2026-11-02 쓴 묶음(31편 새로 쓰기)부터: 더 차분하게 — 이모지 0~1개, 끝은 '확인해 보시길' 권유 (사용자 — "이모지를 많이 쓰는 것 같다")
+export const CALM_FROM = '2026-11-02';
+export const CALM_MAX_EMOJI = 1;
 export const MAX_PLANNER = 3;
 
 // 운전자보험 글 필수 문장 (2026-10-05 사용자 지시) — 줄바꿈·띄어쓰기는 상관없이 글자 그대로
@@ -117,6 +120,7 @@ export function checkSet(set, previous = []) {
   // ---- 지난 묶음과 겹치지 않는가
   // 엄격한 출처 검사는 2026-10-27 쓴 묶음부터 (written 칸, 없으면 date)
   const strict = String(set.meta.written || set.meta.date || '') >= '2026-10-27';
+  const calm = String(set.meta.written || set.meta.date || '') >= CALM_FROM;
   const oldPosts = previous.flatMap((s) => s.posts.map((p) => ({ ...p, date: s.meta.date || '?' })));
   for (const p of posts) {
     for (const o of oldPosts) {
@@ -147,7 +151,12 @@ export function checkSet(set, previous = []) {
     const title = lines[0].trim().replace(/[\s\p{Extended_Pictographic}\uFE0F\u200D]+$/u, '');
     if (!/\?$/.test(title)) errors.push(`${tag}: 첫 줄(제목)은 물음표로 끝나는 질문으로 씁니다.`);
     const emoji = (p.body.match(/\p{Extended_Pictographic}/gu) || []).length;
-    if (emoji < MIN_EMOJI || emoji > MAX_EMOJI) {
+    if (calm) {
+      if (emoji > CALM_MAX_EMOJI) errors.push(`${tag}: 이모지가 ${emoji}개 — ${CALM_FROM} 묶음부터 0~${CALM_MAX_EMOJI}개 (차분하게, rules.md "31편부터 말투").`);
+      if (/!!/.test(p.body)) errors.push(`${tag}: "!!" 는 쓰지 않습니다 — 31편부터는 차분한 말투.`);
+      const tail = lines.slice(-3).join(' ');
+      if (!/확인/.test(tail)) errors.push(`${tag}: 끝 세 줄 안에 "확인해 보시길 추천드려요" 같은 확인 권유가 없습니다 (rules.md "31편부터 말투").`);
+    } else if (emoji < MIN_EMOJI || emoji > MAX_EMOJI) {
       errors.push(`${tag}: 이모지가 ${emoji}개 — ${MIN_EMOJI}~${MAX_EMOJI}개로 문맥에 맞게 넣습니다.`);
     }
     if (/#[^\s#]+/.test(p.body)) errors.push(`${tag}: 해시태그는 달지 않습니다.`);
@@ -185,7 +194,7 @@ export function checkSet(set, previous = []) {
       if (bad) errors.push(`${tag}: 출처가 2차 자료(블로그·카페·뉴스·영상)입니다 — 정부·금융당국·보험협회·법령 원문으로 바꿉니다 (${bad[0]}).`);
     }
     // 마침표만 이어지면 딱딱하다 — 느낌표·말줄임표를 섞는다 (2026-10-02 사용자 지시)
-    if (!/[!…~]/.test(p.body)) notes.push(`${tag}: 느낌표·말줄임표가 하나도 없습니다. 말끝을 상황에 맞게 섞어 주세요.`);
+    if (!calm && !/[!…~]/.test(p.body)) notes.push(`${tag}: 느낌표·말줄임표가 하나도 없습니다. 말끝을 상황에 맞게 섞어 주세요.`);
     if (/보장/.test(p.body)) notes.push(`${tag}: "보장" — 약속하는 말이 아니라 이름씨(보장 내용·범위)로 쓰였는지 확인.`);
   }
 
