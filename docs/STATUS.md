@@ -35,7 +35,7 @@
 - 사용자에게 물음(답 기다림): ① 티스토리 T5 살림 4 → 6편(T1·T3 3 → 1, 방문이 모두 다음 × 살림) ② 네이버 맞춤법 1칸 2주 시험(근거 '되 돼' 1편뿐 — 크게 기대하지 않음). 반려식물은 보류 추천.
 
 ### 11/1 (일) 밤 — 사용자: "미리 링크를 만들지 말고 원고를 작성할 때 상황에 맞게 골라서 넣어"
-- 쿠팡·쇼핑 커넥트 모두: 밤 원고 작업이 글마다 그 글에 맞는 상품 말(종류 + 조건 한 마디)을 `coupang:`·`brandconnect:` 에 적고, 발행 날 아침 PC 가 그 말로 링크를 만들어 넣는다. 링크 목록·wanted 에 미리 넣지 않는다 (`routines/tistory-daily.md` 🔟 ⓒ·5-2, `naver-daily.md` 7-1, README). **같은 밤 사용자 "기존 쿠팡 14개는 지워줘"** → 저장소 목록에서 지우고 Drive `coupang/links.tsv` 는 휴지통으로, PC 에 남은 복사본은 `content/affiliate/coupang-removed.txt` 로 건너뛴다. 쇼핑 커넥트 링크는 그대로.
+- 쿠팡·쇼핑 커넥트 모두: 밤 원고 작업이 글마다 그 글에 맞는 상품 말(종류 + 조건 한 마디)을 `coupang:`·`brandconnect:` 에 적고, 발행 날 아침 PC 가 그 말로 링크를 만들어 넣는다. 링크 목록·wanted 에 미리 넣지 않는다 (`routines/tistory-daily.md` 🔟 ⓒ·5-2, `naver-daily.md` 7-1, README). **같은 밤 사용자 "기존 쿠팡 14개는 지워줘"** → 저장소 목록에서 지우고 Drive `coupang/links.tsv` 는 휴지통으로, PC 에 남은 복사본은 `content/affiliate/coupang-removed.txt` 로 건너뛴다. **이어서 사용자 "네이버 쇼핑 커넥트 링크도 지워줘"** → brandconnect-links.tsv 8줄·wanted 3줄 지움, Drive `brandconnect/links.tsv` 휴지통, PC 복사본은 `brandconnect-removed.txt` 로 건너뜀. 11/3 원고의 brandconnect 말(창문 틈새막이 등)은 11/3 아침 PC 가 새로 만든다.
 
 ### 11/1 (일) 밤 — ✂ 사용자: "20편·10편 그대로, 이미지랑 글 분량을 조금 줄여서" → 11/3 원고부터
 - 그림: 네이버 8 → **6장**(대표 1 + 장면 3 + 정보 카드 2), 티스토리 8 → **4장**(대표 1 + 장면 1 + 카드 2). 하루 240 → 160장, 돈 드는 그림 약 100장.
