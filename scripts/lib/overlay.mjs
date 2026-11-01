@@ -239,13 +239,67 @@ export function checkCard(c) {
     if (items.some((t) => typeof t !== 'string' || t.length > 16)) bad.push('줄 글자는 16자 안쪽');
   }
   if (String(c?.title || '').length > 16) bad.push('card.title 은 16자 안쪽');
-  const all = [c?.title, ...(c?.heads || []), ...items.flat()].join(' ');
+  if (c?.ask && String(c.ask).length > 18) bad.push('card.ask(질문 말풍선)는 18자 안쪽');
+  const all = [c?.title, c?.ask, ...(c?.heads || []), ...items.flat()].join(' ');
   const m = MONEY.exec(all);
   if (m) bad.push(`돈·통화기호는 쓰지 않음: "${m[0]}"`);
   return bad;
 }
 
+// 2026-11-02 사용자 — "8번(채팅)으로 통일, 채팅 느낌이 제일 깔끔하고 눈에 들어온다". 질문 말풍선(오른쪽, 노랑) + 성글벙글 답 말풍선(왼쪽, 흰색).
+//   카카오톡 화면처럼 보이지 않게 바탕·말풍선은 우리 색(따뜻한 연보라 바탕, 버터 노랑 질문), 위에 '성글벙글 Q&A' 를 단다 — 실제 대화 캡처로 오해받지 않게.
+//   질문은 card.ask (18자 안쪽, 없으면 제목으로 "○○ 알려 줘!").  steps 는 번호 말풍선, compare 는 ⭕/❌ 두 말풍선에 줄을 나눠 담는다.
+//   예전 크림색·파스텔 동그라미 카드는 cardHtmlClassic (card.style: "classic" 일 때만).
+const askOf = (c) => {
+  const a = String(c.ask || '').trim();
+  if (a) return a;
+  const t = String(c.title || '').trim();
+  return /[?？]$/.test(t) ? t : `${t} 알려 줘!`;
+};
 function cardHtml(S, c) {
+  if (c.style === 'classic') return cardHtmlClassic(S, c);
+  const face = ptdFace();
+  const fam = face ? `"PTD",${STYLE.font}` : STYLE.font;
+  const n = c.items.length;
+  const big = c.type === 'compare' ? (n >= 4 ? 0.72 : 0.8) : n <= 3 ? 1.08 : n >= 5 ? 0.88 : 1;
+  const fz = Math.round(S * 0.047 * big);
+  let answers = '';
+  if (c.type === 'compare') {
+    const [h1, h2] = c.heads?.length === 2 ? c.heads : ['이럴 땐 괜찮아요', '이럴 땐 피해요'];
+    const box = (mk, h, list) => `<div class="m wide"><div class="mh">${mk} ${esc(h)}</div>${list.map((t) => `<div class="ml"><span class="fit">· ${esc(t)}</span></div>`).join('')}</div>`;
+    answers = box('⭕', h1, c.items.map((r) => r[0])) + box('❌', h2, c.items.map((r) => r[1]));
+  } else {
+    answers = c.items.map((t, i) => `<div class="m"><span class="fit">${c.type === 'steps' ? `<b class="no">${i + 1}</b>` : '✔ '}${esc(t)}</span></div>`).join('');
+  }
+  return `<!doctype html><meta charset="utf-8"><style>
+    ${face}
+    *{margin:0;box-sizing:border-box}
+    body{width:${S}px;height:${S}px;position:relative;overflow:hidden;font-family:${fam};color:#1E1B2E;
+      background:linear-gradient(180deg,#EDE7F6 0%,#E3ECF7 100%);padding:${S * 0.06}px ${S * 0.06}px;display:flex;flex-direction:column;justify-content:center;gap:${S * 0.026}px}
+    .top{text-align:center;font-size:${S * 0.034}px;color:#6B6585;letter-spacing:.02em}
+    .top b{display:block;font-size:${S * 0.05}px;color:#2A2540;margin-top:${S * 0.008}px;letter-spacing:-.02em}
+    .q{align-self:flex-end;max-width:84%;background:#FFE58A;font-size:${S * 0.05}px;padding:${S * 0.022}px ${S * 0.032}px;
+      border-radius:${S * 0.03}px ${S * 0.03}px ${S * 0.006}px ${S * 0.03}px;box-shadow:0 ${S * 0.004}px ${S * 0.012}px rgba(60,50,90,.08);white-space:nowrap;overflow:hidden}
+    .a{display:flex;gap:${S * 0.02}px;align-items:flex-start;min-height:0}
+    .av{flex:none;width:${S * 0.085}px;height:${S * 0.085}px;border-radius:${S * 0.028}px;background:#fff;display:flex;align-items:center;justify-content:center;
+      font-size:${S * 0.048}px;box-shadow:0 ${S * 0.004}px ${S * 0.012}px rgba(60,50,90,.08)}
+    .bb{flex:1;min-width:0;display:flex;flex-direction:column;gap:${S * 0.016}px}
+    .nm{font-size:${S * 0.03}px;color:#6B6585}
+    .m{align-self:flex-start;max-width:100%;background:#fff;font-size:${fz}px;padding:${S * 0.02}px ${S * 0.03}px;
+      border-radius:${S * 0.006}px ${S * 0.03}px ${S * 0.03}px ${S * 0.03}px;box-shadow:0 ${S * 0.004}px ${S * 0.012}px rgba(60,50,90,.08);white-space:nowrap;overflow:hidden}
+    .m .no{display:inline-flex;align-items:center;justify-content:center;width:${fz * 1.15}px;height:${fz * 1.15}px;border-radius:50%;background:#7C6CF2;color:#fff;
+      font-size:${fz * 0.7}px;margin-right:${S * 0.016}px;vertical-align:middle}
+    .m.wide{width:100%;padding:${S * 0.016}px ${S * 0.03}px}
+    .mh{font-size:${fz}px;margin-bottom:${S * 0.01}px}
+    .ml{font-size:${fz * 0.95}px;color:#3B3650;padding:${S * 0.002}px 0;white-space:nowrap;overflow:hidden}
+  </style><body>
+    <div class="top">성글벙글 Q&amp;A<b><span class="fit">${esc(c.title)}</span></b></div>
+    <div class="q"><span class="fit">${esc(askOf(c))}</span></div>
+    <div class="a"><div class="av">🏠</div><div class="bb"><div class="nm">${esc(c.brand || '성글벙글')}</div>${answers}</div></div>
+  </body>`;
+}
+
+function cardHtmlClassic(S, c) {
   const face = juaFace();
   const fam = face ? `"Jua",${STYLE.font}` : STYLE.font;
   const fw = face ? 400 : 800;
