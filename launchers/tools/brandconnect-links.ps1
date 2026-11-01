@@ -17,7 +17,8 @@ if ($shared -and (Test-Path $shared)) {
   if ($add.Count) { [IO.File]::AppendAllLines((Join-Path (Get-Location) $local), [string[]]$add, (New-Object Text.UTF8Encoding $false)) }
 }
 $before = @(if (Test-Path $local) { Get-Content $local -Encoding UTF8 })
-& node scripts/brandconnect-links.mjs --out $out 2>&1 | ForEach-Object { Write-Host $_ }
+# 하루 6개까지 (2026-11-01 사용자 — 하루 20편 중 쇼핑 커넥트 글 5편까지)
+& node scripts/brandconnect-links.mjs --max 6 --out $out 2>&1 | ForEach-Object { Write-Host $_ }
 $after = @(if (Test-Path $local) { Get-Content $local -Encoding UTF8 })
 $new = @($after | Where-Object { $_ -and ($before -notcontains $_) })
 if ($drive -and (Test-Path $out)) {

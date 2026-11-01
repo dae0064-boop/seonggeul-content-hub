@@ -112,6 +112,7 @@ export function parsePost(raw) {
     related: meta.related ? meta.related.split('|').map((s) => s.trim()).filter(Boolean) : [],
     leadKeyword: (meta.lead_keyword || '').trim(),
     slot: (meta.slot || '').trim(),
+    tone: (meta.tone || '').trim(),   // 말투 (2026-11-03 원고부터 — 하루 20편, 같은 주제라도 다른 느낌으로. lint-post TONES)
     extra: (meta.extra || '').trim(),   // 하루 5편 밖에 사용자가 따로 부탁한 글 (2026-10-26 쇼핑 커넥트 시험) — 하루 배분 검사에서 뺀다
     coupang: (meta.coupang || '').trim(),   // 티스토리 쿠팡 파트너스 글 — 상품 키워드 (content/affiliate/coupang-links.tsv)
     brandconnect: (meta.brandconnect || '').trim(),

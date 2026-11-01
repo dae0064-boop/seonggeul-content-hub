@@ -113,7 +113,9 @@ for (const file of files) {
       const day = path.basename(file).slice(0, 10);
       const others = fs.readdirSync(path.dirname(file)).filter((f) => f.startsWith(day) && f.endsWith('.md') && f !== path.basename(file))
         .filter((f) => /^coupang:\s*\S/m.test(fs.readFileSync(path.join(path.dirname(file), f), 'utf8')));
-      if (others.length) errors.push(`쿠팡 글은 하루 1편까지예요 (같은 날: ${others.join(', ')})`);
+      // 2026-11-03 원고부터 하루 10편 중 쿠팡 글 6편까지 (2026-11-01 사용자 — 쿠팡 파트너스로 수익화)
+      const cpMax = day >= '2026-11-03' ? 6 : 1;
+      if (others.length >= cpMax) errors.push(`쿠팡 글은 하루 ${cpMax}편까지예요 (같은 날: ${others.join(', ')})`);
     } else if (iDis >= 0 || nMark) {
       errors.push('대가성 문구나 [쿠팡 링크] 가 있는데 프런트매터 coupang: 이 없습니다.');
     }
