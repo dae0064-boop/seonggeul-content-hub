@@ -1,0 +1,92 @@
+{
+  "slug": "2026-11-03-daebangeo-cheol",
+  "title": "대방어철, 겨울 방어가 유독 맛있다는 말 진짜일까",
+  "source": "11/3(화) 18:40 네이버 원고 — 생활정보 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 장면마다 장소·주인공·구도·배경색이 다르게",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "수산시장 진열대 앞에서 커다란 방어를 보고 놀라는 50대 어머니와 20대 딸 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). At a bright seafood market counter, a Korean woman in her 50s with a short layered bob in a cobalt-blue padded vest and her daughter in her 20s with long straight hair in a white knit sweater stand facing each other, both looking at a very large whole yellowtail fish on crushed ice between them. Facial expression: pleasantly surprised, eyebrows up, not scared. Color theme: bright cobalt blue and white tones with an orange accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "bright cobalt blue and white tones with an orange accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "cobalt",
+      "thumb_person": "50대 어머니와 20대 딸",
+      "thumb_mood": "놀람",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "cobalt",
+        "font": "jua",
+        "title": "대방어철\n겨울이 진짜?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "겨울 바다 위 고깃배가 항구로 들어오는 풍경",
+      "prompt": "Camera and composition: wide landscape shot of a harbor. A small Korean fishing boat sailing into a quiet harbor on a crisp winter morning, calm sea, distant hills. Background color: cold clear blue winter sky. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide landscape shot of a harbor",
+      "bg": "cold clear blue winter sky"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "대방어와 소방어 고르는 기준을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "대방어 고르는 기준",
+        "heads": [
+          "대방어가 좋을 때",
+          "대방어가 부담일 때"
+        ],
+        "items": [
+          [
+            "부위별로 맛볼 때",
+            "둘이서 조금만 먹을 땐"
+          ],
+          [
+            "회와 탕을 한 번에",
+            "며칠 두고 먹을 생각"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "부엌 도마 위에서 방어 토막을 손질하는 40대 남성",
+      "prompt": "Camera and composition: medium shot in a home kitchen. A Korean man in his 40s with short hair and a navy apron rinsing fish head and bone pieces in a bowl at a kitchen sink, a clean cutting board beside him. Background color: warm kitchen light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a home kitchen",
+      "bg": "warm kitchen light"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "대방어철에 먹는 방법을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "대방어철 먹는 방법",
+        "items": [
+          "먹을 만큼만 사는 게",
+          "회로 산 건 산 날 바로 먹는",
+          "남은 머리와 뼈는 탕으로",
+          "익혀 먹는 요리로"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "겨울 저녁 식탁에 둘러앉아 방어회를 나누는 가족",
+      "prompt": "Camera and composition: medium wide shot at a dining table. A Korean family of four around a dining table on a winter evening sharing a platter of sliced raw yellowtail and a pot of fish soup, smiling. Background color: warm yellow evening dining light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium wide shot at a dining table",
+      "bg": "warm yellow evening dining light"
+    }
+  ]
+}

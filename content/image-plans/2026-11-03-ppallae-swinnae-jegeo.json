@@ -1,0 +1,85 @@
+{
+  "slug": "2026-11-03-ppallae-swinnae-jegeo",
+  "title": "빨래 쉰내 제거, 다시 빨아도 냄새가 남는 이유",
+  "source": "11/3(화) 13:20 네이버 원고 — 생활정보 홈판형",
+  "note": "6장 = 대표 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 장면마다 장소·주인공·구도·배경색이 다르게. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "갓 꺼낸 수건 냄새를 맡고 놀란 표정의 30대 남성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean man in his early 30s with short black hair and a light gray hooded sweatshirt holding a freshly washed white towel close to his face in a small laundry corner, sniffing it. Facial expression: pleasantly surprised, eyebrows up, not scared. Color theme: lavender and plum tones with a yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "lavender and plum tones with a yellow accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "plum",
+      "thumb_person": "30대 남성(짧은 머리·회색 후드티)",
+      "thumb_mood": "놀람",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "plum",
+        "font": "jua",
+        "title": "빨래 쉰내\n왜 또 날까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "세탁이 끝난 뒤 문이 닫힌 채 그대로 있는 세탁기 앞 빨래 바구니",
+      "prompt": "Camera and composition: medium shot at floor level in a small laundry room. A closed front-loading washing machine with an empty plastic laundry basket waiting in front of it, quiet evening, no people. Background color: cool lavender evening light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at floor level in a small laundry room",
+      "bg": "cool lavender evening light"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "빨래 쉰내가 생기는 원인을 확인하는 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "냄새가 남는 습관",
+        "items": [
+          "한참 뒤에 꺼낸다",
+          "세제를 표시보다 많이",
+          "세탁기에 꽉 채워",
+          "세탁조 청소를 한 지 오래",
+          "빨래끼리 붙여 넌다"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "대야의 따뜻한 물에 수건을 담가 두는 손",
+      "prompt": "Camera and composition: close-up of hands from above. Two hands in yellow rubber gloves pressing a white towel into a basin of warm water on a bathroom floor, light steam rising. Background color: bright white bathroom tiles. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands from above",
+      "bg": "bright white bathroom tiles"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "세탁조 청소와 빨래 건조 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "냄새 줄이는 순서",
+        "items": [
+          "빈 통 돌리기",
+          "고무패킹 틈의 물기",
+          "문과 세제통을 열어 말리기",
+          "주먹 하나 간격을 두고"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "거실 건조대에 간격을 두고 빨래를 널고 선풍기를 켠 모습",
+      "prompt": "Camera and composition: wide shot of a living room corner. A clothes drying rack in a Korean apartment living room with shirts and towels hung apart from each other, a small electric fan blowing toward them, no people. Background color: soft warm afternoon window light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a living room corner",
+      "bg": "soft warm afternoon window light"
+    }
+  ]
+}

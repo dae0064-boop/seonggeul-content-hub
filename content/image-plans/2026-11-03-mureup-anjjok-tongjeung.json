@@ -1,0 +1,83 @@
+{
+  "slug": "2026-11-03-mureup-anjjok-tongjeung",
+  "title": "무릎안쪽통증, 아침에 뻣뻣하다 풀린다면 무엇을 볼까",
+  "source": "11/3(화) 18:00 네이버 원고 — 생활보장 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 장면마다 장소·주인공·구도·배경색이 다르게",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "거실 소파에서 무릎을 짚은 60대 어머니와 이야기하는 30대 아들 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). In a cozy living room, a Korean woman in her 60s with short permed gray-brown hair in a burgundy cardigan sits on a sofa with one hand resting on her knee, talking with her son in his 30s with neat short hair and round glasses in a cream sweater who leans in, both thinking it over calmly. Facial expression: thoughtful, finger on chin. Color theme: warm burgundy and cream tones with a soft gold accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "warm burgundy and cream tones with a soft gold accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "burgundy",
+      "thumb_person": "30대 아들과 60대 어머니",
+      "thumb_mood": "생각",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "burgundy",
+        "font": "ptd",
+        "title": "무릎안쪽통증\n아침에 더 뻣뻣?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "무릎 모형을 앞에 두고 설명을 듣는 50대 여성",
+      "prompt": "Camera and composition: medium shot in a doctor's office. A Korean woman in her 50s with a low ponytail and a teal blouse sitting at a desk, listening to a friendly Korean doctor in a white coat who points at a plastic knee joint model. Background color: bright clean clinic daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a doctor's office",
+      "bg": "bright clean clinic daylight"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "골관절염에서 살펴볼 신호를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "골관절염 살펴볼 신호",
+        "items": [
+          "아침에 뻣뻣하다 풀린다",
+          "걸을 때 소리가 난다",
+          "앉았다 일어나면 잘 안 펴진다",
+          "운동 뒤에 붓고 아프다"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "공원 산책로에서 걸음을 멈추고 무릎을 살피는 40대 남성",
+      "prompt": "Camera and composition: medium wide shot on a park path. A Korean man in his 40s in a gray running jacket standing on a leafy park walking path, bending slightly to look at his knee calmly. Background color: soft autumn park light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium wide shot on a park path",
+      "bg": "soft autumn park light"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "무릎통증 생활관리 방법을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "무릎통증 생활관리",
+        "items": [
+          "체중을 줄여 무릎 부담 덜기",
+          "허벅지 앞쪽 근육 강화 운동",
+          "지팡이로 관절 부하 줄이기"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "가을 공원 벤치에 나란히 앉아 웃는 60대 부부",
+      "prompt": "Camera and composition: wide shot in a city park. A Korean couple in their 60s sitting side by side on a wooden park bench under autumn trees, smiling and chatting. Background color: warm golden afternoon. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot in a city park",
+      "bg": "warm golden afternoon"
+    }
+  ]
+}
