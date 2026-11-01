@@ -1,0 +1,93 @@
+{
+  "slug": "2026-11-02-ot-jeongjeongi",
+  "title": "옷 정전기 없애는 법, 니트 벗을 때마다 따끔했다면",
+  "source": "11/2(월) 20:20 네이버 원고 — 생활정보 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "니트를 벗다가 머리카락이 살짝 선 채 눈썹을 올리는 20대 남성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean man in his 20s with short black hair, a few strands of hair lifted up by static, holding a half pulled-off chunky knit sweater near his shoulders in his bedroom, a wooden wardrobe and green plants softly blurred behind him. Facial expression: pleasantly surprised, eyebrows up, not scared. Color theme: deep green plants and warm wood tones with a mustard-yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "deep green plants and warm wood tones with a mustard-yellow accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "forest",
+      "thumb_person": "20대 남성",
+      "thumb_mood": "놀람",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "forest",
+        "font": "ptd",
+        "title": "옷 정전기\n따닥 이유는?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "건조한 겨울 거실에서 스웨터를 개다 손끝을 털어 보는 30대 여성",
+      "prompt": "Camera and composition: medium shot on a living room floor. A Korean woman in her 30s with a long low braid in a cream fleece top, sitting by a folded pile of sweaters and lightly shaking her fingertips with a small amused look, a radiator nearby. Background color: pale winter afternoon light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on a living room floor",
+      "bg": "pale winter afternoon light"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "정전기가 덜 생기는 옷 조합과 잘 생기는 조합을 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "니트 정전기 옷 조합",
+        "ask": "뭘 받쳐 입어야 덜 따끔해?",
+        "heads": [
+          "덜 생겨요",
+          "잘 생겨요"
+        ],
+        "items": [
+          [
+            "면 티셔츠 받쳐 입기",
+            "합성섬유 겉옷"
+          ],
+          [
+            "하나는 면으로",
+            "겹겹이 껴입기"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "세탁기 세제 투입구에 섬유유연제를 붓는 40대 남성의 손",
+      "prompt": "Camera and composition: close-up of hands at a front-loading washing machine drawer. The hands of a Korean man in his 40s in a gray sweatshirt sleeve pouring blue fabric softener from a plain unlabeled bottle into the softener compartment of an open detergent drawer. Background color: clean white laundry room light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands at a front-loading washing machine drawer",
+      "bg": "clean white laundry room light"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "건조기 정전기 줄이는 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "건조기 정전기 줄이기",
+        "ask": "건조기만 돌리면 따닥해",
+        "items": [
+          "두꺼운 옷과 얇은 옷 나눠",
+          "건조 정도를 한 단계 낮추기",
+          "끝나면 바로 꺼내 털어 주기"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "외출 전 현관에서 손등에 로션을 바르는 20대 여성",
+      "prompt": "Camera and composition: medium shot at an apartment entryway. A Korean woman in her 20s with a short bob in a camel wool coat standing at the entryway shoe area, rubbing hand lotion onto the back of her hands before going out, a small mirror on the wall. Background color: warm entryway lamp light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at an apartment entryway",
+      "bg": "warm entryway lamp light"
+    }
+  ]
+}
