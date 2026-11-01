@@ -1,0 +1,100 @@
+{
+  "slug": "2026-11-01-dokgam-jeungsang",
+  "title": "독감 증상, 감기와 어떻게 다를까요 (38~41℃ 갑자기)",
+  "source": "11/1(일) 원고 (11/1 낮 대화 — 사용자 지시로 당일 10편)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색. 실사풍(style_care/style_life — 2026-11-01 사용자: 생활보장 51번째·생활정보 151번째부터). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "이불을 덮고 체온계를 보는 30대 엄마와 아이 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean mother in her 30s sitting on a bed beside her young child under a blanket, gently explaining while holding a digital thermometer. Facial expression: explaining with one hand open toward the viewer. Color theme: neutral gray and white tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "neutral gray and white tones with a coral accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "charcoal",
+      "thumb_person": "30대 엄마와 아이",
+      "thumb_mood": "설명",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "charcoal",
+        "font": "ptd",
+        "title": "독감 증상\n감기와 다를까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "거실 소파에 담요를 덮고 앉아 차를 마시는 40대 남성",
+      "prompt": "Camera and composition: medium shot on a living room sofa. A Korean man in his 40s sitting on a sofa under a blanket, drinking a warm cup of tea. Background color: soft gray living room. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on a living room sofa",
+      "bg": "soft gray living room"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "감기와 독감 증상을 나란히 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "독감과 감기",
+        "heads": [
+          "독감",
+          "감기"
+        ],
+        "items": [
+          [
+            "38~41℃ 고열",
+            "미열이 서서히"
+          ],
+          [
+            "근육통·관절통",
+            "콧물·코막힘 위주"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "거실에서 70대 어머니의 이마를 짚어 보는 40대 딸",
+      "prompt": "Camera and composition: medium shot in a living room. A Korean woman in her 40s gently touching her mother's forehead, the mother in her 70s sitting on a sofa. Background color: warm living room. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a living room",
+      "bg": "warm living room"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "동네 의원 진료실에서 검사를 받는 20대 여성",
+      "prompt": "Camera and composition: medium shot in a small clinic examination room. A Korean woman in her 20s sitting on an exam chair in a neighborhood clinic while a nurse prepares a swab test. Background color: clean bright clinic. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a small clinic examination room",
+      "bg": "clean bright clinic"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "창가 침대에서 쉬며 물을 마시는 60대 남성",
+      "prompt": "Camera and composition: medium shot by a bedroom window. A Korean man in his 60s resting in bed by a window and drinking a glass of water. Background color: calm bedroom daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot by a bedroom window",
+      "bg": "calm bedroom daylight"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "보건소 접종실 앞 의자에 앉아 순서를 기다리는 70대 부부",
+      "prompt": "Camera and composition: wide shot of a public health center hallway. A Korean couple in their 70s sitting on chairs outside a vaccination room in a public health center. Background color: bright public building hallway. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a public health center hallway",
+      "bg": "bright public building hallway"
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "따뜻한 국을 함께 먹으며 웃는 3대 가족",
+      "prompt": "Camera and composition: wide shot of a dining table. A smiling three-generation Korean family eating warm soup together at a dining table. Background color: cozy home dining room. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a dining table",
+      "bg": "cozy home dining room"
+    }
+  ]
+}
