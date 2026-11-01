@@ -70,9 +70,13 @@ async function dump(page, name) {
   await page.screenshot({ path: `${base}.jpg`, type: 'jpeg', quality: 55, fullPage: true }).catch(() => {});
 }
 
-/** 로그인 화면인가 — 주소가 로그인이거나, 비밀번호 칸이 보이면 */
+/** 로그인 화면인가 — 주소가 로그인이거나, 비밀번호 칸이 보이거나, 로그인 전 첫 화면(로그인·회원가입 버튼 + 가입 안내)이면.
+ *  2026-11-01 첫 시험: 로그인 안 된 첫 화면("로그인회원가입 … 쿠팡과 함께 수익을 창출해보세요")을 못 알아보고 검색 칸을 찾다 실패했다 */
+const LOGGED_OUT_TEXT = /로그인\s*회원가입|쿠팡과 함께 수익을\s*창출해보세요|왜 쿠팡 파트너스 인가요/;
 async function isLogin(page) {
   if (LOGIN_URL.test(page.url())) return true;
+  const body = await page.evaluate(() => document.body?.innerText || '').catch(() => '');
+  if (LOGGED_OUT_TEXT.test(body) && !/로그아웃|마이페이지|리포트|정산 정보/.test(body)) return true;
   for (const fr of page.frames()) {
     const pw = fr.locator('input[type="password"]');
     const n = await pw.count().catch(() => 0);
@@ -182,7 +186,7 @@ async function makeOne(ctx, kw) {
     await cur.goto(START, { waitUntil: 'domcontentloaded', timeout: 30000 });
     await sleep(4000);
     await dump(cur, `${kw}-home`);
-    if (await isLogin(cur)) return loginStop('쿠팡 파트너스 로그인이 풀려 있어요 (launchers\\chrome-login.cmd 로 연 크롬에서 partners.coupang.com 에 로그인)');
+    if (await isLogin(cur)) return loginStop('쿠팡 파트너스 로그인이 풀려 있어요 (launchers\\coupang-test.cmd 가 연 자동화용 크롬에서 partners.coupang.com 에 로그인)');
 
     // 메뉴를 따라 상품 검색 칸이 보일 때까지 (최대 3번)
     let box = await findSearchBox(cur);
