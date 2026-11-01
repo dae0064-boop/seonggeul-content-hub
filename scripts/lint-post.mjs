@@ -12,6 +12,11 @@ import * as BC from './lib/brandconnect.mjs';
 import { topicFor } from './lib/naver-topic.mjs';
 // 맞춤법 시험 (2026-11-02 사용자 승인) — 2026-11-04~11-17 네이버 원고, 하루 1편 (routines/naver-daily.md ⓓ-2)
 const SPELL_TEST = ['2026-11-04', '2026-11-17'];
+// 장면·경험·대화 (2026-11-02 사용자 승인 — CLAUDE.md "장면·경험·대화") — 2026-11-06 원고부터 네이버·티스토리
+const SCENE_FROM = '2026-11-06';
+const SCENE_RE = /(라면|예를 들어|이맘때|이런 분|하기 쉬워요|경우가 많아요)/;
+const QUOTE_RE = /["“][^"”]{4,40}[?？.!요]["”]/;
+const NAMED_RE = /[A-Z]씨|[가-힣]{1,3}\s?(어머니|아버지|할머니|할아버지)께서|(?:지인|친구|이웃)(?:이|가) 실제로/;
 
 // 10/12 변경 묶음 (2026-10-02·10-03 사용자 결정) — 2026-10-12 원고부터
 //   ① 고정 인사말 앞 첫 덩어리 = 확인된 사실 한 문장(1~2줄)
@@ -569,6 +574,18 @@ for (const file of files) {
     if (noFixed.length) errors.push(`고정 해시태그 빠짐: ${noFixed.join(', ')} — 주제 태그 뒤에 붙이세요`);
   }
 
+  if (dated >= SCENE_FROM) {
+    const bodyText = texts.join('\n');
+    if (!SCENE_RE.test(bodyText)) errors.push("'예를 들면' 장면이 없습니다 — 독자가 겪을 법한 장면을 \"~라면\", \"예를 들어\", \"이맘때\", \"~하기 쉬워요\" 로 하나 이상 (CLAUDE.md 장면·경험·대화)");
+    if (!QUOTE_RE.test(bodyText)) errors.push('따옴표 대화 장면이 없습니다 — 독자가 할 법한 말 한 줄을 "…?" 처럼 따옴표로 (CLAUDE.md 장면·경험·대화)');
+    const nm = NAMED_RE.exec(bodyText);
+    if (nm) errors.push(`이름 붙인 인물·실화처럼 보이는 표현 "${nm[0]}" — 사용자 실제 경험(content/experience/notes.md)이 아니면 쓰지 않습니다`);
+    const exp = (/^experience:\s*(\S+)/m.exec(fs.readFileSync(file, 'utf8').split(/^---\s*$/m)[1] || '') || [])[1];
+    if (exp) {
+      let notes = ''; try { notes = fs.readFileSync('content/experience/notes.md', 'utf8'); } catch { /* 없음 */ }
+      if (!new RegExp('^' + exp + '\\s*\\|', 'm').test(notes)) errors.push(`experience: ${exp} 가 content/experience/notes.md 에 없습니다 — 사용자 실제 경험 메모만 실화로 씁니다`);
+    }
+  }
   // 네이버 글 주제 (발행 패널) — 프런트매터 topic 이 네이버 목록에 없는 이름이면 발행 때 고르지 못한다
   if (!tistory && post.topic && topicFor(post) === null) errors.push(`topic "${post.topic}" 은 네이버 주제 목록에 없습니다 (scripts/lib/naver-topic.mjs NAVER_TOPICS)`);
   if (!tistory && dated >= SPELL_TEST[0] && topicFor(post) === '교육·학문') {
