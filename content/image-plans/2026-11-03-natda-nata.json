@@ -1,0 +1,76 @@
+{
+  "slug": "2026-11-03-natda-nata",
+  "title": "낫다 낳다 구분, 감기가 나았다일까 낳았다일까 (규칙 1가지)",
+  "source": "11/3(화) 티스토리 원고 2차 (11/1 사용자 요청으로 미리 작성)",
+  "note": "4장(대표 1·장면 1·정보 카드 2) — 11/3 원고부터 티스토리 4장. style_v2·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "휴대폰 문자를 쓰다 고개를 갸웃하는 20대 여성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her 20s with a short wolf-cut hairstyle and a dusty-rose hoodie holding a smartphone with a blank screen near her chin while typing a message, a cozy room softly blurred behind her. Facial expression: curious, head slightly tilted. Color theme: dusty rose and white tones with a green accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "dusty rose and white tones with a green accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "rose",
+      "thumb_person": "20대 여성",
+      "thumb_mood": "궁금",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "rose",
+        "font": "jua",
+        "title": "낫다 낳다\n뭐가 맞을까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "낫다와 낳다의 뜻과 쓰임을 나란히 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "낫다와 낳다",
+        "heads": [
+          "낫다",
+          "낳다"
+        ],
+        "items": [
+          [
+            "병이 낫다",
+            "아기를 낳다"
+          ],
+          [
+            "상처가 낫다",
+            "알을 낳다"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "낫다가 모음 앞에서 바뀌는 모양을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "낫다가 바뀌는 모양",
+        "items": [
+          "나아",
+          "나으니",
+          "나았다",
+          "나으세요"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "카페 창가에서 손편지를 쓰는 50대 남성",
+      "prompt": "Camera and composition: close-up at a cafe window seat. A Korean man in his 50s with salt-and-pepper hair and a forest-green knit sweater writing a get-well card with a pen at a wooden cafe table by the window, a cup of tea beside him, the card shows no letters. Background color: light sage green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up at a cafe window seat",
+      "bg": "light sage green"
+    }
+  ]
+}
