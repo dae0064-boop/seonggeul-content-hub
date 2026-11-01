@@ -1,0 +1,92 @@
+{
+  "slug": "2026-11-03-yoksil-cheongso-seje",
+  "title": "욕실청소세제, 어디에 어떤 걸 써야 할까요 (세제 3가지)",
+  "source": "11/3(화) 20:00 네이버 원고 — 생활정보 검색형, 실사풍, 쇼핑 커넥트",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 실사풍·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "욕실 세면대 앞에서 고무장갑을 끼고 세정제 분무기를 든 손 (대표사진)",
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Two hands of a Korean woman in her 40s wearing lavender rubber gloves at a bright bathroom sink; one hand holds a plain unlabeled spray bottle, the other hand is open toward the viewer as if explaining. Gesture: explaining with one hand open toward the viewer. Facial expression: explaining with one hand open toward the viewer. Color theme: lavender and plum tones with a yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "손만 크게 (얼굴 없음)",
+      "bg": "lavender and plum tones with a yellow accent",
+      "note": "대표",
+      "thumb_shot": "hands",
+      "thumb_theme": "plum",
+      "thumb_person": "40대 여성 (손만)",
+      "thumb_mood": "설명",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "plum",
+        "font": "ptd",
+        "title": "욕실청소세제\n뭘 어디에?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "샤워부스 유리에 남은 하얀 물때를 살펴보는 30대 여성",
+      "prompt": "Camera and composition: medium shot inside a bathroom next to a glass shower booth. A Korean woman in her 30s with a short ponytail in a gray hoodie looking closely at faint white water spots on a shower glass panel. Background color: cool white bathroom tile light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot inside a bathroom next to a glass shower booth",
+      "bg": "cool white bathroom tile light"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "수전 주변 하얀 얼룩을 천으로 닦는 40대 남성",
+      "prompt": "Camera and composition: close-up from the side at a bathroom faucet. A Korean man in his 40s with glasses in a navy t-shirt wiping a chrome bathroom faucet with a soft cloth. Background color: warm beige tile tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up from the side at a bathroom faucet",
+      "bg": "warm beige tile tones"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "욕실세정제 쓰기 전 확인할 네 가지를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "쓰기 전 확인할 것",
+        "items": [
+          "라벨에서 산성·염소계 보기",
+          "환풍기 켜고 문 열기",
+          "고무장갑 끼기",
+          "다른 세제와 섞지 않기"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "욕실 타일 줄눈을 칫솔로 닦는 50대 여성",
+      "prompt": "Camera and composition: medium close-up kneeling by a bathroom wall. A Korean woman in her 50s with short permed hair wearing yellow rubber gloves and a mask, scrubbing tile grout lines with an old toothbrush, the small window open. Background color: soft green and white tile tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium close-up kneeling by a bathroom wall",
+      "bg": "soft green and white tile tones"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "같이 써도 되는 세제와 섞으면 안 되는 세제를 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "세제 같이 써도 될까",
+        "heads": [
+          "같이 써도 되는 경우",
+          "섞으면 안 되는 경우"
+        ],
+        "items": [
+          [
+            "산성 세제 뒤 헹구기",
+            "락스와 식초·구연산"
+          ],
+          [
+            "날을 나눠 따로 쓰기",
+            "락스와 다른 세정제"
+          ]
+        ]
+      }
+    }
+  ]
+}

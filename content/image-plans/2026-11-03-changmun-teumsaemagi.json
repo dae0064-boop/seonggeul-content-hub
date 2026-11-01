@@ -1,0 +1,84 @@
+{
+  "slug": "2026-11-03-changmun-teumsaemagi",
+  "title": "창문틈새막이, 붙였는데도 바람이 새는 이유",
+  "source": "11/3(화) 22:40 네이버 원고 — 생활정보 홈판형, 실사풍, 쇼핑 커넥트",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 실사풍·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "창가에서 손바닥을 틈에 대 보며 고개를 갸웃하는 20대 딸과 60대 어머니 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean daughter in her 20s with a high ponytail in a dusty rose hoodie and her mother in her 60s with short curly hair in a green cardigan face each other by a sliding window at home, the daughter holding her palm near the window frame gap, both heads slightly tilted, curious. Facial expression: curious, head slightly tilted. Color theme: dusty rose and white tones with a green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "dusty rose and white tones with a green accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "rose",
+      "thumb_person": "20대 딸과 60대 어머니",
+      "thumb_mood": "궁금",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "rose",
+        "font": "jua",
+        "title": "창문틈새막이\n왜 또 새지?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "거실 창가 소파에서 무릎 담요를 덮고 창 쪽을 바라보는 30대 남성",
+      "prompt": "Camera and composition: medium wide shot in a living room by the window. A Korean man in his 30s with neat short hair in a gray knit sitting on a sofa by a large window with a lap blanket, glancing toward the window calmly. Background color: cool winter evening window light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium wide shot in a living room by the window",
+      "bg": "cool winter evening window light"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "창문 바람 길 찾는 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "바람 길 찾는 순서",
+        "items": [
+          "창문을 닫고 잠금까지 걸기",
+          "휴지 한 장을 틈 가까이 대기",
+          "가운데·아래·위 순서로 옮기기",
+          "흔들리는 자리에 표시해 두기"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "자리마다 맞는 창문틈새막이를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "자리마다 맞는 막이",
+        "items": [
+          "가운데 겹침엔 모헤어형",
+          "아래 레일엔 쿠션·솔형",
+          "위쪽 좁은 틈엔 스펀지형",
+          "안 여는 창은 방풍비닐"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "베란다 창 전체에 투명한 방풍비닐을 붙이는 50대 부부",
+      "prompt": "Camera and composition: wide shot on an apartment veranda. A Korean couple in their 50s, the husband in a brown vest and the wife in a beige sweater, smoothing a clear plastic draft film over a veranda window together. Background color: pale daylight through glass. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot on an apartment veranda",
+      "bg": "pale daylight through glass"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "창틀 레일의 먼지를 마른 솔과 걸레로 닦아 내는 40대 여성",
+      "prompt": "Camera and composition: close-up at a window rail. A Korean woman in her 40s with a headband in a navy sweatshirt cleaning dust from a sliding window rail with a small dry brush and a cloth. Background color: soft white window frame tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up at a window rail",
+      "bg": "soft white window frame tones"
+    }
+  ]
+}
