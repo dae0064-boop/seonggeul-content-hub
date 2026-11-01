@@ -1,0 +1,85 @@
+{
+  "slug": "2026-11-05-bamjorim-mandeulgi",
+  "title": "밤조림 만들기, 속껍질째 졸이면 정말 안 떫을까",
+  "source": "11/5(목) 13:20 네이버 원고 — 생활정보 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 실사풍·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "밤조림 병을 앞에 두고 소매를 걷어붙인 40대 여성의 얼굴 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her 40s with short wavy permed hair wearing a mustard apron over a lavender knit top, sleeves rolled up, standing in a home kitchen with a glass jar of glossy brown chestnuts in syrup on the counter in front of her, softly blurred. Facial expression: determined, nodding, sleeves rolled up. Color theme: lavender and plum tones with a yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "lavender and plum tones with a yellow accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "plum",
+      "thumb_person": "40대 여성(짧은 웨이브 펌·머스터드 앞치마)",
+      "thumb_mood": "결심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "plum",
+        "font": "ptd",
+        "title": "밤조림 만들기\n속껍질 그대로?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "식탁 위 바구니에 담긴 알밤을 하나 집어 살펴보는 40대 남성",
+      "prompt": "Camera and composition: medium shot at a wooden dining table. A Korean man in his 40s with a buzz cut and a gray hoodie picking up one raw chestnut from a wicker basket full of shiny brown chestnuts on a wooden dining table and looking at it closely. Background color: warm afternoon light and pale wood. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a wooden dining table",
+      "bg": "warm afternoon light and pale wood"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "밤조림 만들기 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "밤조림 만들기 순서",
+        "items": [
+          "밤을 따뜻한 물에 불려요",
+          "겉껍질만 벗겨요",
+          "베이킹소다 푼 물에 하룻밤",
+          "물 버리기를 몇 번 반복해요",
+          "설탕을 넣고 약불에 졸여요"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "도마 위에서 칼끝으로 밤 겉껍질만 조심스럽게 벗기는 손",
+      "prompt": "Camera and composition: close-up of hands on a cutting board. Close-up of a person's hands with a small paring knife lifting off only the hard outer shell of a chestnut, leaving the thin brown inner skin intact, a small pile of peeled shells on a light cutting board. Background color: cream cutting board and soft gray counter. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands on a cutting board",
+      "bg": "cream cutting board and soft gray counter"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "넓은 냄비 속 붉은 물에서 끓고 있는 갈색 밤들",
+      "prompt": "Camera and composition: high-angle view into a pot on a gas stove. A wide stainless pot on a gas stove with brown chestnuts in their inner skins simmering gently in reddish-brown water, light steam rising, no people. Background color: dark stove top and white kitchen tiles. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "high-angle view into a pot on a gas stove",
+      "bg": "dark stove top and white kitchen tiles"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "밤조림을 병에 담기 전 확인할 것을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "병에 담기 전 확인",
+        "items": [
+          "병은 끓는 물로 소독했다",
+          "병 안 물기를 바짝 말렸다",
+          "조림물이 밤을 다 덮는다",
+          "한 김 식힌 뒤 뚜껑을 닫는다"
+        ]
+      }
+    }
+  ]
+}

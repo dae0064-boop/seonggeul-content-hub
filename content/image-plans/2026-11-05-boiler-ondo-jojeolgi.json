@@ -1,0 +1,96 @@
+{
+  "slug": "2026-11-05-boiler-ondo-jojeolgi",
+  "title": "보일러온도조절기, 실내 모드와 온돌 모드 우리 집엔 뭐가 맞을까",
+  "source": "11/5(목) 17:20 네이버 원고 — 생활정보 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 실사풍·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "거실 벽에 붙은 보일러온도조절기 앞에서 고개를 갸웃하는 50대 여성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her early 50s with a short pixie haircut and small pearl earrings in a mustard-yellow knit cardigan, standing in front of a plain white wall-mounted heating thermostat with blank buttons in her living room, a green potted plant and warm wood shelves softly blurred behind. Facial expression: curious, head slightly tilted. Color theme: deep green plants and warm wood tones with a mustard-yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "deep green plants and warm wood tones with a mustard-yellow accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "forest",
+      "thumb_person": "50대 초반 숏컷 여성",
+      "thumb_mood": "궁금",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "forest",
+        "font": "ptd",
+        "title": "보일러온도조절기\n실내? 온돌?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "저녁 거실 소파에 담요를 덮고 앉아 벽 쪽을 바라보는 50대 부부",
+      "prompt": "Camera and composition: medium shot of a living room sofa in the evening. A Korean couple in their 50s, the husband with gray side-parted hair in a navy sweatshirt and the wife with a low ponytail in a beige knit, sitting under one blanket on a sofa and looking toward the wall, relaxed. Background color: warm lamp light, evening. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot of a living room sofa in the evening",
+      "bg": "warm lamp light, evening"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "보일러 실내온도 모드와 온돌 모드를 견준 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "실내 모드와 온돌 모드",
+        "heads": [
+          "실내 모드",
+          "온돌 모드"
+        ],
+        "items": [
+          [
+            "방 공기 온도",
+            "난방수 온도"
+          ],
+          [
+            "온도 센서",
+            "바닥 배관"
+          ],
+          [
+            "단열이 좋은 집",
+            "외풍이 센 집"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "거실 바닥에 손바닥을 대고 온기를 느끼는 50대 남성의 손",
+      "prompt": "Camera and composition: close-up of a hand on a wooden floor. The hand of a Korean man in his 50s in a gray flannel sleeve resting flat on a warm light-oak heated floor, feeling the warmth. Background color: soft afternoon light on wooden floor. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of a hand on a wooden floor",
+      "bg": "soft afternoon light on wooden floor"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "실내 모드와 온돌 모드가 맞는 집을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "우리 집엔 어느 쪽?",
+        "items": [
+          "단열이 좋은 집이면 실내 모드",
+          "외풍이 센 집이면 온돌 모드",
+          "번갈아 써 보고 비교해요",
+          "조절기 설명서"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "창문 아래 틈에 문풍지를 꾹 눌러 붙이는 50대 여성",
+      "prompt": "Camera and composition: medium shot at a window. A Korean woman in her 50s with curly bobbed hair in a lavender fleece pressing a plain white foam weatherstrip along the bottom gap of a window frame with her thumb. Background color: cool winter daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a window",
+      "bg": "cool winter daylight"
+    }
+  ]
+}
