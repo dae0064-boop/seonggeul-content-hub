@@ -1,7 +1,7 @@
 @echo off
 chcp 65001 >nul
-title 성글벙글 - 쿠팡 링크 만들기 시험
-REM 2026-11-01 사용자 — 쿠팡 파트너스 링크가 자동으로 만들어지는지 시험. 링크 2개만 만든다. 결과·화면 기록은 Drive ClaudeWorkspace\coupang\<날짜> 로 올라가 Claude 가 읽는다.
+title 성글벙글 - 쿠팡 링크 만들기
+REM 2026-11-01 사용자 — 쿠팡 파트너스 링크가 자동으로 만들어지는지 시험. 목록(coupang-wanted.txt)의 링크를 12개까지 만든다. 결과·화면 기록은 Drive ClaudeWorkspace\coupang\<날짜> 로 올라가 Claude 가 읽는다.
 cd /d "%~dp0.."
 echo.
 echo [1/3] 최신 내용 받는 중...
@@ -23,8 +23,8 @@ echo   이미 로그인돼 있으면 그냥 넘어가도 됩니다.
 echo  ----------------------------------------------------------------
 echo   로그인을 마쳤으면 이 검은 창을 클릭하고 아무 키나 누르세요.
 pause >nul
-echo [3/3] 쿠팡 파트너스에서 링크 2개 만드는 중... (2~5분)
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\coupang-links.ps1" -Max 2
+echo [3/3] 쿠팡 파트너스에서 목록의 링크 만드는 중... (개당 20초쯤, 최대 5분)
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\coupang-links.ps1" -Max 12
 echo.
 echo 끝났어요. 이 창을 캡처(윈도우 키 + Shift + S)해서 Claude 에게 보여 주세요.
 pause
