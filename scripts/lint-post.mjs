@@ -417,8 +417,11 @@ for (const file of files) {
   }
   // 티스토리 카테고리 (2026-10-05 사용자 지시): 생활보장·생활정보 두 개만. 보험 → 생활보장, 나머지 → 생활정보
   if (tistory && dated >= '2026-10-06') {
-    const want = /보험/.test(`${post.title} ${post.mainKeyword}`) ? '생활보장' : '생활정보';
-    if (post.category !== want) errors.push(`티스토리 category 는 "${want}" 여야 합니다 (지금 "${post.category || '없음'}") — 티스토리는 생활보장·생활정보 두 개만 씁니다`);
+    // 2026-11-03 원고부터 티스토리 생활보장 하루 2편 = 의료비·돌봄 제도 글도 (2026-11-01 사용자, routines/tistory-daily.md 🔟 ⓑ) — 네이버처럼 보험 글만 생활보장으로 못 박고 나머지는 둘 다 허용
+    const insur = /보험/.test(`${post.title} ${post.mainKeyword}`);
+    const want = insur ? '생활보장' : '생활정보';
+    const okCat = isTwenty(dated) && !insur ? ['생활정보', '생활보장'].includes(post.category) : post.category === want;
+    if (!okCat) errors.push(`티스토리 category 는 "${want}" 여야 합니다 (지금 "${post.category || '없음'}") — 티스토리는 생활보장·생활정보 두 개만 씁니다`);
   }
   // 네이버 카테고리: 보험 → 생활보장, 나머지(음식·제철 글 포함) → 생활정보 (2026-10-07 사용자 지시 — 맛집·카페는 사용자가 직접 쓴다).
   // 2026-10-07 원고까지는 예전 기준(음식·카페·맛집 → 맛집·카페)
