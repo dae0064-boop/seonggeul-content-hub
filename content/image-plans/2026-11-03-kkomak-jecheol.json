@@ -1,0 +1,92 @@
+{
+  "slug": "2026-11-03-kkomak-jecheol",
+  "title": "꼬막 제철, 겨울만 되면 왜 자꾸 생각날까",
+  "source": "11/3(화) 10:40 네이버 원고 — 생활정보 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 실사풍·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "시장 좌판의 꼬막 앞에서 반갑게 웃으며 이야기하는 60대 어머니와 30대 아들 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean mother in her 60s with short curly black hair in a mustard-yellow padded vest and her son in his 30s with a short crew cut in a deep green fleece jacket face each other over a traditional market stall basket full of fresh cockles, both smiling brightly, wooden crates and green plants softly blurred behind them. Facial expression: bright happy smile. Color theme: deep green plants and warm wood tones with a mustard-yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "deep green plants and warm wood tones with a mustard-yellow accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "forest",
+      "thumb_person": "60대 어머니와 30대 아들",
+      "thumb_mood": "반가움",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "forest",
+        "font": "ptd",
+        "title": "꼬막 제철\n참꼬막은 뭐야?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "김이 오르는 꼬막무침 접시를 식탁에 내려놓는 50대 여성",
+      "prompt": "Camera and composition: medium shot at a dining table. A Korean woman in her 50s with a low ponytail in a striped apron setting down a plate of seasoned cockles topped with green onion and red pepper on a wooden dining table, steam rising. Background color: warm evening dining light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a dining table",
+      "bg": "warm evening dining light"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "참꼬막과 새꼬막의 차이를 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "참꼬막과 새꼬막",
+        "heads": [
+          "참꼬막",
+          "새꼬막"
+        ],
+        "items": [
+          [
+            "골이 굵고 깊어요",
+            "골이 가늘고 촘촘해요"
+          ],
+          [
+            "갯벌에서 자라고",
+            "바닷속에서 자라요"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "마트 수산 코너에서 꼬막 봉지를 들어 보는 30대 여성",
+      "prompt": "Camera and composition: medium close-up in a supermarket seafood section. A Korean woman in her 30s with long wavy hair in a light blue puffer jacket lifting a mesh bag of cockles from a chilled seafood display to check its weight, looking calm and attentive. Background color: cool supermarket white light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium close-up in a supermarket seafood section",
+      "bg": "cool supermarket white light"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "꼬막 해감 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "꼬막 해감 순서",
+        "items": [
+          "흐르는 물에 씻기",
+          "짭짤한 소금물에 담그기",
+          "어둡게 덮기",
+          "한 번 더 헹구기"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "냄비 속 꼬막을 국자로 한 방향으로 젓는 40대 남성의 손",
+      "prompt": "Camera and composition: top-down close-up over a gas stove. The hands of a Korean man in his 40s in a rolled-up navy sleeve stirring cockles in a pot of boiling water with a ladle in one direction, a few shells starting to open. Background color: warm stove light with gentle steam. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "top-down close-up over a gas stove",
+      "bg": "warm stove light with gentle steam"
+    }
+  ]
+}
