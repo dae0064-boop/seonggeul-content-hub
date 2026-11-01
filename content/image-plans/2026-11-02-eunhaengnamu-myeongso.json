@@ -1,0 +1,99 @@
+{
+  "slug": "2026-11-02-eunhaengnamu-myeongso",
+  "title": "은행나무 명소, 늦가을 노란 길 언제 가야 가장 예쁠까",
+  "source": "11/2(월) 네이버 원고 (11/1 낮 사용자 요청으로 미리 씀)",
+  "note": "8장 모두 다른 장면·장소·구도·배경색 (standards/이미지-기준.md). style_v2·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "노란 은행나무길을 함께 걷는 30대 부부 (대표사진)",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A long avenue lined with bright yellow ginkgo trees like a miniature diorama, golden leaves covering the path; a small Korean couple in their 30s walking hand in hand, the woman in a red scarf, smiling brightly. Facial expression: bright happy smile. Color theme: olive green and warm cream tones with a red accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "방·장소 전체, 사람은 작게",
+      "bg": "olive green and warm cream tones with a red accent",
+      "note": "대표",
+      "thumb_shot": "wide",
+      "thumb_theme": "olive",
+      "thumb_person": "30대 부부",
+      "thumb_mood": "반가움",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "olive",
+        "font": "jua",
+        "title": "은행나무 명소\n언제 가야 예쁠까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "노란 잎이 반쯤 물든 은행나무 가지를 올려다보는 40대 여성",
+      "prompt": "Camera and composition: low angle under a ginkgo tree. A Korean woman in her 40s in a cobalt-blue coat looking up at ginkgo branches whose leaves are half green and half yellow. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "low angle under a ginkgo tree",
+      "bg": "soft sky blue"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "단풍 시작과 절정 기준을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "절정 기준 비교",
+        "items": [
+          "산림청 절정: 단풍 50%",
+          "기상청 시작: 잎 약 20%",
+          "기상청 절정: 잎 약 80%"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "바닥에 노란 잎이 깔린 공원 길을 산책하는 60대 부부",
+      "prompt": "Camera and composition: medium wide shot in a city park. A Korean couple in their 60s strolling slowly on a park path carpeted with fallen yellow ginkgo leaves, the man in a mustard-yellow vest. Background color: warm cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium wide shot in a city park",
+      "bg": "warm cream"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "강변을 따라 길게 이어진 노란 은행나무길 풍경",
+      "prompt": "Camera and composition: high wide view of a riverside avenue. A long straight riverside road lined with tall yellow ginkgo trees on both sides, a calm stream beside it, tiny walkers in the distance. Background color: pale mint. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "high wide view of a riverside avenue",
+      "bg": "pale mint"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "산사 입구에 우뚝 선 거대한 은행나무 아래 선 50대 남성",
+      "prompt": "Camera and composition: low angle at a temple entrance. A Korean man in his 50s in a navy jacket standing small beneath a huge ancient ginkgo tree with a thick trunk at the entrance of a mountain temple, a low wooden fence around the tree. Background color: light lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "low angle at a temple entrance",
+      "bg": "light lavender"
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "은행나무 명소 가기 전 챙길 것을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "가기 전 챙길 것",
+        "items": [
+          "미끄럽지 않은 신발",
+          "바닥 두꺼운 신발",
+          "은행 열매 만질 때 쓸 장갑",
+          "사진 찍기 좋은 오전 시간"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "노란 은행잎이 쌓인 벤치에 나란히 앉아 쉬는 20대 친구 두 명",
+      "prompt": "Camera and composition: medium shot on a park bench. Two Korean friends in their 20s, one in a coral-red sweater, sitting side by side on a wooden park bench covered with yellow ginkgo leaves, sharing a warm drink and laughing. Background color: light peach. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on a park bench",
+      "bg": "light peach"
+    }
+  ]
+}
