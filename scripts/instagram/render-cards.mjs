@@ -117,13 +117,14 @@ em{font-style:normal;color:#C2551E}
 .ck{font-size:38px;line-height:1.5;margin-top:24px;display:flex;gap:18px}.ck i{font-style:normal;color:#C2551E}
 .cta{margin-top:36px;font-size:30px;color:#888;line-height:1.6}
 .terms{font-size:22px;line-height:1.5;color:#a0a0a0;margin-top:26px}
+.pt{width:100%;border-collapse:collapse;margin-top:26px;font-size:30px}.pt td{padding:12px 4px;border-bottom:1px solid rgba(255,255,255,.3)}.pt td:last-child{text-align:right}.pt .sum td{font-family:Head;font-size:40px;color:#FFC25A;border-bottom:none;padding-top:20px}
 .nt{font-size:23px;line-height:1.55;color:#444}.nt h3{font-size:44px;color:#1c1c1c;margin-bottom:26px}.nt b{display:block;font-size:29px;color:#1c1c1c}.nt p{margin-top:16px}.nt .ap{color:#FFC25A;font-size:27px}
 `;
 // 2026-11-02 사용자: "사진을 그냥 배경으로 두고 사진이랑 글자가 잘 보이게" — 사진 한 장을 7장 모두 같은 자리로 깔고, 그 위에 흰 글 칸
 function mpage(photo, crop, h, inner, i, left, full) {
   const ph = photo ? `<div class="bgp" style="background-image:url('${photo}');background-position:center"></div><div class="shade${full ? ' full' : ''}"></div>` : '';
   return `<!doctype html><html><head><meta charset="utf-8"><style>${MCSS}</style></head><body style="background:#333">${ph}<div class="panel">${inner}</div>
-<div class="ft"><span>${esc(left || '친근한 설계사')}</span><span>${i} / 7</span></div></body></html>`;
+<div class="ft"><span>${esc(left || '친근한 설계사')}</span><span>${i} / ${TOTAL}</span></div></body></html>`;
 }
 function mcard(c, photo, i) {
   const H = (a) => a.map(hl).join('<br>');
@@ -135,10 +136,15 @@ function mcard(c, photo, i) {
     case 'steps': return mpage(photo, c.crop, 300, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label)}</div>${c.steps.map(([n, t]) => `<div class="st"><b>${esc(n)}</b><span>${hl(t)}</span></div>`).join('')}${terms}</div>`, i, src || undefined);
     case 'compare': return mpage(photo, c.crop, 300, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label)}</div><div class="cp">${[c.left, c.right].map((x) => `<div><h4>${esc(x.t)}</h4>${x.lines.map(esc).join('<br>')}</div>`).join('')}</div><div class="bd" style="font-size:30px;margin-top:26px">${esc(c.foot || '')}</div>${terms}</div>`, i, src || undefined);
     case 'check': return mpage(photo, c.crop, 300, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label)}</div>${c.checks.map((t) => `<div class="ck"><i>✓</i><span>${hl(t)}</span></div>`).join('')}<div class="cta">${esc(c.cta)}</div></div>`, i);
+    // 설계안 장 (2026-11-02 사용자 — 설계안을 받으면 납입·만기·상해급수·보험료를 넣는다. 숫자는 받은 설계안 그대로만)
+    case 'plan': return mpage(photo, '', 0, `<div class="in"><div class="hd">${H(c.head || ['설계안 [예시]'])}</div><div class="lb">${esc(c.cond)}</div>
+<table class="pt">${c.rows.map(([a, b]) => `<tr><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join('')}<tr class="sum"><td>월 보험료</td><td>${esc(c.premium)}</td></tr></table>
+<div class="terms">${esc(NOTICE.terms)}<br>보험사 상품별, 성별, 연령, 직업 등에 따라 가입 가능한 담보와 가입금액, 보험료는 달라질 수 있습니다.</div></div>`, i);
     default: throw new Error('모르는 카드 종류: ' + c.type);
   }
 }
 // 7장째 심의 고지 — 2026-11-02 사용자: 참고 계정처럼 맨 위에 회사(글로벌금융판매) 로고, 가운데 맞춤
+let TOTAL = 7;
 function mnotice(approval) {
   const N = NOTICE;
   return `<!doctype html><html><head><meta charset="utf-8"><style>${MCSS}
@@ -151,7 +157,7 @@ body{background:#111;color:#fff;text-align:center}
 <div class="nn"><b>${esc(N.agency)}</b><b>${esc(N.agent)}</b>
 <p class="ap">${esc(approval || N.approval)}<br><span style="font-size:24px;color:rgba(255,255,255,.88)">${esc(N.rule)}</span></p>
 <p>${N.replace.map(esc).join('<br>')}</p><p>${N.opinion.map(esc).join(' ')}</p><p>${esc(N.terms)}</p></div>
-<div class="ft"><span>친근한 설계사</span><span>7 / 7</span></div></body></html>`;
+<div class="ft"><span>친근한 설계사</span><span>${TOTAL} / ${TOTAL}</span></div></body></html>`;
 }
 
 function page(bg, inner, i) {
@@ -191,13 +197,14 @@ for (const p of set.posts) {
   if (only.size && !only.has(p.no)) continue;
   const mag = p.style === 'magazine';
   const need = mag ? 6 : 5;
-  if (p.cards.length !== need) throw new Error(`${p.no}편: 카드는 ${need}장이어야 해요 (나머지는 저절로) — 지금 ${p.cards.length}장`);
+  const plain = p.cards.filter((c) => c.type !== 'plan');
+  if (plain.length !== need) throw new Error(`${p.no}편: 카드는 ${need}장이어야 해요 (나머지는 저절로) — 지금 ${p.cards.length}장`);
   const bgFile = fs.existsSync(path.join(ROOT, `content/instagram/bg/${p.slug}.png`)) ? `content/instagram/bg/${p.slug}.png` : 'content/instagram/bg/_placeholder.png';
   const bg = img(bgFile);
   const dir = path.join(outRoot, `${p.no}-${p.slug}`);
   fs.mkdirSync(dir, { recursive: true });
   const htmls = mag
-    ? [...p.cards.map((c, k) => mcard(c, bg, k + 1)), mnotice(p.approval)]
+    ? (TOTAL = p.cards.length + 1, [...p.cards.map((c, k) => mcard(c, bg, k + 1)), mnotice(p.approval)])
     : [...p.cards.map((c, k) => card(c, bg, k + 1)), follow(bg), notice(bg, p.approval)];
   for (let k = 0; k < htmls.length; k++) {
     await pg.setContent(htmls[k], { waitUntil: 'load' });
