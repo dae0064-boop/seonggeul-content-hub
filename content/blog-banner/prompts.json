@@ -1,0 +1,45 @@
+{
+  "_설명": "네이버 블로그 PC 타이틀 배너 시안 (2026-11-02 사용자 — 'GPT 에 요청해서 만들어와 봐'). 카테고리 5개(생활·정보/생활·보장/이슈·뉴스/연예·방송/맛집·나들이). PC 의 make-bg.mjs 가 low 로 만들어 Drive ClaudeWorkspace/블로그배너/ 로 올린다(이미 있으면 다시 만들지 않음). 한글 글씨는 그림에 넣지 않고 클라우드가 scripts/blog-banner/render.mjs 로 얹는다. 8장 low 약 $0.05.",
+  "items": [
+    {
+      "slug": "bg-a-warm",
+      "size": "1536x1024",
+      "prompt": "Wide horizontal blog header illustration, soft hand-drawn digital painting with gentle watercolor texture. A friendly Korean man in his mid 20s with short black hair and soft bangs, kind smiling eyes, warm closed-mouth smile, wearing a cream knit henley sweater with two buttons. Upper body, slightly turned toward the left, placed in the right third of the frame, his head roughly in the vertical middle of the image. The left two-thirds is an empty, calm warm beige and peach background with soft light, subtle paper texture and very faint brush strokes, plenty of clean empty space. Cozy, warm, trustworthy mood."
+    },
+    {
+      "slug": "bg-b-fresh",
+      "size": "1536x1024",
+      "prompt": "Wide horizontal blog header illustration, clean modern Korean webtoon style with soft cel shading. A friendly Korean man in his mid 20s with short black hair and soft bangs, kind smiling eyes, bright smile, wearing a cream knit sweater over a light blue shirt collar, waving hello with one hand. Upper body, placed in the right third of the frame, head in the vertical middle. The left two-thirds is an empty bright pastel background, gradient from soft mint to light sky blue, with a few very subtle round soft shapes and tiny sparkles, lots of clean empty space. Fresh, bright, cheerful morning mood."
+    },
+    {
+      "slug": "bg-c-clean",
+      "size": "1536x1024",
+      "prompt": "Wide horizontal blog header illustration, soft 3D clay style render, rounded and cute but tidy. A friendly Korean man in his mid 20s with short black hair and soft bangs, kind smiling eyes, warm smile, wearing a cream knit sweater, holding a small notebook against his chest. Upper body, placed in the right third of the frame, head in the vertical middle. Beside him on a small shelf: a tiny potted plant and a coffee mug. The left two-thirds is an empty clean off-white and very light butter-yellow studio background with soft shadows, lots of clean empty space. Neat, friendly, organized mood."
+    },
+    {
+      "slug": "icon-life",
+      "size": "1024x1024",
+      "prompt": "Cute chibi sticker illustration, soft hand-drawn style, big head small body, a friendly Korean young man with short black hair and soft bangs, cream knit sweater, holding a notebook and raising one finger with a small glowing light bulb above, a tiny potted plant beside him. Centered, plain solid white background, no shadow on background."
+    },
+    {
+      "slug": "icon-care",
+      "size": "1024x1024",
+      "prompt": "Cute chibi sticker illustration, soft hand-drawn style, big head small body, a friendly Korean young man with short black hair and soft bangs, cream knit sweater, holding a clipboard checklist, beside him a tiny house and a small red heart and a first-aid kit. Centered, plain solid white background, no shadow on background."
+    },
+    {
+      "slug": "icon-news",
+      "size": "1024x1024",
+      "prompt": "Cute chibi sticker illustration, soft hand-drawn style, big head small body, a friendly Korean young man with short black hair and soft bangs, cream knit sweater, reading an open newspaper with a surprised curious face, a tiny exclamation bubble shape above. Centered, plain solid white background, no shadow on background."
+    },
+    {
+      "slug": "icon-ent",
+      "size": "1024x1024",
+      "prompt": "Cute chibi sticker illustration, soft hand-drawn style, big head small body, a friendly Korean young man with short black hair and soft bangs, cream knit sweater, holding a microphone and smiling, next to a small retro TV and a few tiny stars and a film clapperboard. Centered, plain solid white background, no shadow on background."
+    },
+    {
+      "slug": "icon-food",
+      "size": "1024x1024",
+      "prompt": "Cute chibi sticker illustration, soft hand-drawn style, big head small body, a friendly Korean young man with short black hair and soft bangs, cream knit sweater, happily eating pasta with a fork, a small coffee cup and a tiny red map pin beside him. Centered, plain solid white background, no shadow on background."
+    }
+  ]
+}

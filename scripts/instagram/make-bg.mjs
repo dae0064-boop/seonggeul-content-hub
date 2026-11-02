@@ -58,4 +58,19 @@ if (fs.existsSync(cf)) {
     } catch { console.log(`⚠ ${it.slug} 고치기 실패 — 다음 실행 때 다시`); }
   }
 }
+// 블로그 배너 시안 (2026-11-02 사용자 — "GPT 에 요청해서 만들어와 봐") — content/blog-banner/prompts.json → ClaudeWorkspace/블로그배너/<slug>.png
+const bf = path.join(ROOT, 'content/blog-banner/prompts.json');
+if (fs.existsSync(bf)) {
+  const b = JSON.parse(fs.readFileSync(bf, 'utf8'));
+  const bout = path.join(path.dirname(path.dirname(out)), '블로그배너');
+  fs.mkdirSync(bout, { recursive: true });
+  for (const it of b.items || []) {
+    if (fs.existsSync(path.join(bout, `${it.slug}.png`)) || fs.existsSync(path.join(ROOT, 'content/blog-banner/src', `${it.slug}.png`))) continue;
+    console.log(`배너 그림 만들기: ${it.slug}`);
+    try {
+      execFileSync(process.execPath, [path.join(ROOT, 'scripts/image-gen.mjs'), it.prompt, '--quality', 'low', '--size', it.size || '1024x1024', '--out', bout, '--name', it.slug], { stdio: 'inherit' });
+      made++;
+    } catch (e) { console.log(`배너 그림 실패: ${it.slug} — ${e.message}`); }
+  }
+}
 console.log(made ? `인스타 바탕·캐릭터 사진 ${made}장 만듦 → ${out}` : '');
