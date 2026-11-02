@@ -23,13 +23,13 @@ data = json.load(open(set_file, encoding='utf-8'))
 for p in data['posts']:
     img_dir = os.path.join(ROOT, 'content/instagram/images', day, f"{p['no']}-{p['slug']}")
     imgs = sorted(glob.glob(os.path.join(img_dir, '*.png')))
-    if len(imgs) != 7:
+    if len(imgs) < 7:
         sys.exit(f"{p['no']}편: 카드 그림이 7장이 아니에요 ({len(imgs)}장) — 먼저 render-cards.mjs 를 돌려 주세요")
     doc = Document()
     st = doc.styles['Normal']; st.font.size = Pt(11)
-    doc.add_paragraph(f"인스타그램 카드뉴스 {p['no']}편 (카드 7장 + 본문)").runs[0].bold = True
+    doc.add_paragraph(f"인스타그램 카드뉴스 {p['no']}편 (카드 {len(imgs)}장 + 본문)").runs[0].bold = True
     for i, f in enumerate(imgs, 1):
-        doc.add_paragraph(f"[카드 {i}/7]")
+        doc.add_paragraph(f"[카드 {i}/{len(imgs)}]")
         doc.add_picture(f, width=Cm(13))
     doc.add_paragraph('')
     doc.add_paragraph('[게시물 본문]').runs[0].bold = True
