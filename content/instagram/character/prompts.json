@@ -37,5 +37,21 @@
       "slug": "char-v2-watercolor",
       "prompt": "Soft watercolor and pencil hand-drawn illustration, warm gentle storybook style, textured paper, a friendly Korean man in his early 30s with short black hair and soft side-swept bangs, round friendly face, small gently smiling eyes, warm closed-mouth smile, wearing a dark charcoal suit, white shirt and dark grey tie, upper body, centered, holding a notebook and smiling kindly, light warm beige paper background"
     }
+  ],
+  "items_edit": [
+    {
+      "slug": "profile-photo-low",
+      "source": "content/instagram/character/profile-source.png",
+      "quality": "low",
+      "size": "1024x1536",
+      "prompt": "Edit this photo. Keep the man EXACTLY as he is: the same face, identity, facial features, eyes, smile and expression, the same hairstyle, the same pose with arms crossed, the same black suit, white shirt and black tie, the same camera angle, framing and soft studio lighting. Do not beautify, slim, age or change him in any way. Remove every leftover graphic on the right side (flat gray patches, the dark rectangle on his left shoulder) and restore that area naturally: rebuild his left shoulder and suit sleeve with real fabric to match the rest of the jacket, and fill the rest with the same clean, plain light gray-white studio backdrop. Also remove the thin gray border strip at the left edge. No text, no letters, no logos, no quote marks, no phone button, no frames anywhere. Result: a sharp, high-resolution, realistic professional business profile photo of the same person on a seamless light studio background."
+    },
+    {
+      "slug": "profile-photo-medium",
+      "source": "content/instagram/character/profile-source.png",
+      "quality": "medium",
+      "size": "1024x1536",
+      "prompt": "Edit this photo. Keep the man EXACTLY as he is: the same face, identity, facial features, eyes, smile and expression, the same hairstyle, the same pose with arms crossed, the same black suit, white shirt and black tie, the same camera angle, framing and soft studio lighting. Do not beautify, slim, age or change him in any way. Remove every leftover graphic on the right side (flat gray patches, the dark rectangle on his left shoulder) and restore that area naturally: rebuild his left shoulder and suit sleeve with real fabric to match the rest of the jacket, and fill the rest with the same clean, plain light gray-white studio backdrop. Also remove the thin gray border strip at the left edge. No text, no letters, no logos, no quote marks, no phone button, no frames anywhere. Result: a sharp, high-resolution, realistic professional business profile photo of the same person on a seamless light studio background."
+    }
   ]
 }
