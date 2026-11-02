@@ -139,6 +139,13 @@
    `file_path: content/threads/insurance/schedule/index.html`, `files: {"data.json": "content/threads/insurance/schedule/data.json"}` 로 다시 올린다. data.json 은 같은 PR 에.
    보고에 한 줄: 어제 올라간 편(번호·첫 줄), 오늘 올라갈 편, **게시 예정(승인 재고)이 10편 밑이면 보고 첫 줄(6)에 "⚠ 스레드 승인 재고 N편 — 이틀 안에 끊길 수 있어요"**,
    GOMS 자동 등록(`run-logs/goms-register-*`) 결과(등록한 번호·멈춤). 반려가 새로 생겼으면 "`goms-revise.cmd` 더블클릭 → 0" 을 사람이 할 일로 적는다.
+5-3. **인스타 카드뉴스 심의필 그림** (2026-11-02 사용자 — "보험심의를 자동으로 올리는 걸 진행". 스레드 PAUSE 와 상관없이 한다, `content/instagram/PAUSE` 가 있으면 건너뜀):
+   Drive `ClaudeWorkspace/goms-approved-insta.tsv`(아침 PC 의 `insta-goms.ps1` 이 GOMS 승인완료 「인스타 카드뉴스 N편」을 읽어 적는다)가 있으면 받아
+   `node scripts/instagram/finalize.mjs --approved <받은 tsv>` → 새로 생긴 `content/instagram/final/<N>/`(01~NN.jpg·approval.txt)를 같은 PR 에 넣는다.
+   PC 는 main 의 공개 주소로 그림을 가져가 올리므로(18~22시, 하루 1편) **PR 이 main 에 합쳐져야** 그 편이 올라간다. tsv 는 저장소에 넣지 않는다.
+   Drive `run-logs/instagram/<어제·오늘>.log`·`posted.tsv`, `run-logs/insta-goms-*` 를 보고 보고에 한 줄: 어제 올라간 편(번호·첫 줄·주소), GOMS 에 새로 등록한 편, 새 승인·반려.
+   ❌ 가 있거나 "연결 키가 맞지 않아요" 면 보고 첫 줄(6)에 쓴다 — 키 문제는 "`launchers/insta-key.cmd` 로 새 키 넣기(docs/INSTAGRAM.md)" 를 사람이 할 일로.
+   반려가 생기면 사유(`run-logs/insta-goms-*/approved/reason-*.txt` 가 없으면 GOMS 화면)를 보고 원고를 고쳐 **새 번호**로 다시 만든다(반려 편 번호는 다시 쓰지 않는다).
 6. **안 된 글이 한 편이라도 있으면 보고 맨 첫 줄**에 "⚠ 오늘 ○○ N편 예약 안 됨 — 이유 / 사람이 할 일 한 줄"을 쓴다 (2026-10-19 사용자:
    "티스토리가 안 됐으면 말을 했었어야지" — 10/19 카카오 로그인 풀림이 보고 중간에 묻혔다). 그 뒤에 나머지. `PushNotification` 도구가 있으면 같은 한 줄을 휴대폰 알림으로도 보낸다.
    PC 쪽은 draft-day·tistory-day 가 예약 안 된 글이 있으면 화면에 알림 창을 띄운다(`launchers/tools/alert.ps1`).

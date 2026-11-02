@@ -21,6 +21,8 @@ Note "시작 (코드 $(git rev-parse --short HEAD 2>$null))"
 try { & (Join-Path $PSScriptRoot 'threads-blog-setup.ps1') -IfMissing | Out-Null } catch { Note "스레드 블로그 작업 등록 실패: $($_.Exception.Message)" }
 # 인스타 카드뉴스 Word·그림을 Drive 로 (2026-11-02 — 클라우드가 큰 파일을 Drive 로 못 보낸다)
 $ig = & (Join-Path $PSScriptRoot 'instagram-to-drive.ps1'); if ($ig) { Note "$ig" }
+# 인스타 카드뉴스 자동 게시 (2026-11-02) — GOMS 적격 편을 하루 1편, 18~22시 (보통 19시 실행). 키가 없는 PC 는 조용히 넘어간다
+try { & (Join-Path $PSScriptRoot 'insta-post.ps1') | Out-Null; Note '인스타 게시 확인 끝 (기록: run-logs\instagram)' } catch { Note "인스타 게시 실패: $($_.Exception.Message)" }
 # 오늘 글은 21시 이후면 넣을 자리가 없다 — 내일·모레 글은 밤에도 예약한다 (22시 실행이 마지막 기회가 되게)
 $late = ($now.Hour -lt 5 -or $now.Hour -ge 21)
 # 실제로 글을 만들거나 예약하는 일이 돌 때만 쉰다. 기다리기만 하는 auto-day.cmd·wait-turn 은 세지 않는다

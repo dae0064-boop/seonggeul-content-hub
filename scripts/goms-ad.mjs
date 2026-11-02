@@ -49,6 +49,9 @@ const approvedOut = arg('--approved-out');
 const scan = argv.includes('--scan');
 const fixesPath = arg('--fixes');
 const fileDir = arg('--file-dir');
+// 광고제목 앞말 (2026-11-02 사용자 — 인스타 카드뉴스도 자동 등록·승인 읽기): 기본 "스레드" → 「스레드 N편」, --prefix "인스타 카드뉴스" → 「인스타 카드뉴스 N편」
+const PREFIX = arg('--prefix', '스레드').trim();
+const TITLE_RE = `^${PREFIX.replace(/[.*+?^${}()|[\]\\]/g, '\\$&').replace(/\s+/g, '\\s*')}\\s*\\d+\\s*편$`; // 화면 안(evaluate)에도 넘기는 글자
 const out = arg('--out', path.join('dumps', `goms-${Date.now()}`));
 const doneDir = arg('--done-dir');
 const from = Number(arg('--from', arg('--number', '11')));
@@ -534,7 +537,7 @@ async function verifyAll(page, title) {
 }
 
 async function one(page, ctx, n) {
-  const title = `스레드 ${n}편`;
+  const title = `${PREFIX} ${n}편`;
   const file = path.join(fileDir, `${title}.docx`);
   if (!fs.existsSync(file)) throw new Stop(`Word 파일이 없어요: ${file}`);
   log(`\n▶ ${title}`);
@@ -636,8 +639,8 @@ function readFixes() {
  */
 async function scrollList(page, where) {
   for (const f of page.frames()) {
-    const r = await f.evaluate((where) => {
-      const cell = [...document.querySelectorAll('td')].find((td) => /^스레드\s*\d+\s*편$/.test((td.innerText || '').trim()));
+    const r = await f.evaluate(([where, re]) => {
+      const cell = [...document.querySelectorAll('td')].find((td) => new RegExp(re).test((td.innerText || '').trim()));
       if (!cell) return null;
       let box = cell.parentElement;
       while (box && box !== document.body) {
@@ -650,7 +653,7 @@ async function scrollList(page, where) {
       if (where === 'top') el.scrollTop = 0;
       else el.scrollTop = before + Math.max(200, el.clientHeight * 0.7);
       return el.scrollTop !== before;
-    }, where).catch(() => null);
+    }, [where, TITLE_RE]).catch(() => null);
     if (r !== null) return r;
   }
   return false;
@@ -660,12 +663,12 @@ async function scrollList(page, where) {
 async function visibleRows(page) {
   const rows = []; let total = null;
   for (const f of page.frames()) {
-    const r = await f.evaluate(() => {
+    const r = await f.evaluate((re) => {
       const heads = [...document.querySelectorAll('th')].map((th) => (th.innerText || '').replace(/\s+/g, '').trim()).filter(Boolean);
       const out = [];
       for (const tr of document.querySelectorAll('tr')) {
         const cells = [...tr.children].map((td) => (td.innerText || '').replace(/\s+/g, ' ').trim());
-        const title = cells.find((c) => /^스레드\s*\d+\s*편$/.test(c));
+        const title = cells.find((c) => new RegExp(re).test(c));
         if (!title) continue;
         const byName = {};
         if (heads.length === cells.length) heads.forEach((h, i) => { byName[h] = cells[i]; });
@@ -673,7 +676,7 @@ async function visibleRows(page) {
       }
       const m = (document.body.innerText || '').match(/전체\s*조회\s*건수\s*[:：]?\s*(\d+)/);
       return { out, total: m ? Number(m[1]) : null };
-    }).catch(() => null);
+    }, TITLE_RE).catch(() => null);
     if (r) { rows.push(...r.out); if (r.total != null) total = r.total; }
   }
   return { rows, total };
@@ -785,7 +788,7 @@ async function openDetail(page, title) {
   await sleep(1500);
   if (!(await markDetail(page))) throw new Stop('상세정보 창 영역을 가려내지 못했어요');
   // 다른 편이 열리면 안 된다 — 창 안 광고제목 칸으로 확인
-  const t = await FORM.root.evaluate((f) => [...f.querySelectorAll('input')].map((i) => i.value).find((v) => /^스레드\s*\d+\s*편$/.test((v || '').trim())) || '').catch(() => '');
+  const t = await FORM.root.evaluate((f, re) => [...f.querySelectorAll('input')].map((i) => i.value).find((v) => new RegExp(re).test((v || '').trim())) || '', TITLE_RE).catch(() => '');
   if (t && t.replace(/\s/g, '') !== title.replace(/\s/g, '')) throw new Stop(`"${title}" 을 눌렀는데 "${t}" 창이 열렸어요`);
 }
 
@@ -817,7 +820,7 @@ async function scanRejected(page, targets) {
     await openDetail(page, row.title);
     const { result, opinion } = await readReason(page);
     await shot(page, `reason-${n}`);
-    fs.writeFileSync(path.join(out, `reason-스레드 ${n}편.txt`), `심의결과: ${result}\n심의의견:\n${opinion}\n`, 'utf8');
+    fs.writeFileSync(path.join(out, `reason-${PREFIX} ${n}편.txt`), `심의결과: ${result}\n심의의견:\n${opinion}\n`, 'utf8');
     log(`  심의결과: ${result || '(못 읽음)'}`);
     for (const l of opinion.split(/\r?\n/).filter(Boolean)) log(`  심의의견: ${l}`);
     const ph = phrasesFrom(opinion);
@@ -925,7 +928,7 @@ async function findMissing(page, rows, have) {
   log(`  목록에 안 보인 편을 제목으로 하나씩 찾아요: ${missing.join(', ')}편`);
   const found = [];
   for (const n of missing) {
-    if (!(await setTitleFilter(page, `스레드 ${n}편`))) { log('  ⚠ 제목 칸을 찾지 못해 더 찾지 않아요'); break; }
+    if (!(await setTitleFilter(page, `${PREFIX} ${n}편`))) { log('  ⚠ 제목 칸을 찾지 못해 더 찾지 않아요'); break; }
     const hit = (await listRows(page)).find((r) => numOf(r.title) === n && r.cells.includes('승인완료'));
     if (hit) found.push(hit);
     if (found.length >= need) break;
@@ -973,7 +976,7 @@ async function runApproved(page) {
     log(`  심의결과: ${a.result || '(못 읽음)'} · 준법심의필번호: ${a.no || '(못 읽음)'} · 유효기간: ${a.period || '(못 읽음)'}`);
     if (!no || dates.length < 2) { log('  ⚠ 번호나 유효기간을 읽지 못해 적지 않았어요 (다음 실행에서 다시 봐요)'); continue; }
     fs.appendFileSync(approvedOut, `${n}\t제${no}호\t${dates[0]}\t${dates[1]}\t${a.result}\t${today}\n`, 'utf8');
-    log(`  적음: 스레드 ${n}편 제${no}호 (${dates[0]} ~ ${dates[1]})`);
+    log(`  적음: ${PREFIX} ${n}편 제${no}호 (${dates[0]} ~ ${dates[1]})`);
   }
   // 반려(수정요구)된 편도 적어 둔다 — 게시가 "앞 번호 결과를 못 읽었다"며 기다리지 않게 (2026-10-26). 승인되면 적격 줄이 뒤에 붙는다.
   await filterStatus(page, '반려');
@@ -987,7 +990,7 @@ async function runApproved(page) {
 /** 고친 Word 에 문구가 다 들어 있는지 — Python 없이 Word 를 직접 읽는다 (사무실 PC 에 Python 이 없다, 2026-10-26). */
 function wordHasFix(n) {
   const ph = readWordFixes(fixesPath).get(n) || [];
-  const file = path.join(fileDir, `스레드 ${n}편.docx`);
+  const file = path.join(fileDir, `${PREFIX} ${n}편.docx`);
   try { return ph.length > 0 && fs.existsSync(file) && missingIn(file, ph).length === 0; } catch { return false; }
 }
 
@@ -1050,7 +1053,7 @@ async function checkFileBox(page) {
 /** 2단계: 한 편 다시 올리기 — 등록 탭 → 네모칸 → 파일삭제 → 파일추가 → 수정. */
 async function reviseOne(page, row) {
   const n = numOf(row.title);
-  const title = `스레드 ${n}편`;
+  const title = `${PREFIX} ${n}편`;
   const file = path.join(fileDir, `${title}.docx`);
   log(`\n▶ ${title} (반려) — 다시 올리기`);
   if (!fs.existsSync(file)) throw new Stop(`Word 파일이 없어요: ${file}`);
@@ -1157,16 +1160,16 @@ if (approved) {
     log(`  ❌ 멈춤 — ${e instanceof Stop ? e.message : '화면이 예상과 달라 멈췄어요 (자세한 내용은 기록 파일에)'}`);
     code = 2;
   }
-} else log(submit ? `실제 등록: 스레드 ${from}편 ~ ${to}편` : `시험: 스레드 ${from}편 (등록은 누르지 않음)`);
+} else log(submit ? `실제 등록: ${PREFIX} ${from}편 ~ ${to}편` : `시험: ${PREFIX} ${from}편 (등록은 누르지 않음)`);
 for (let n = from; !revise && !approved && n <= to; n++) {
-  const mark = doneDir && path.join(doneDir, `스레드 ${n}편.done`);
-  if (submit && mark && fs.existsSync(mark)) { log(`\n▶ 스레드 ${n}편 — 이미 등록함, 건너뜀`); continue; }
+  const mark = doneDir && path.join(doneDir, `${PREFIX} ${n}편.done`);
+  if (submit && mark && fs.existsSync(mark)) { log(`\n▶ ${PREFIX} ${n}편 — 이미 등록함, 건너뜀`); continue; }
   try {
     const r = await one(page, ctx, n);
     if (r === 'login') { log('⚠ LOGIN 을 눌렀는데 들어가지지 않았어요. 열린 크롬 창에서 아이디·비밀번호가 채워져 있는지 확인해 주세요.'); code = 3; break; }
     if (r === 'done') {
       if (mark) fs.writeFileSync(mark, `${new Date().toISOString()}\n${dialogs.slice(-3).join('\n')}\n`, 'utf8');
-      log(`  ✅ 스레드 ${n}편 등록`);
+      log(`  ✅ ${PREFIX} ${n}편 등록`);
     }
   } catch (e) {
     await shot(page, 'stopped');
