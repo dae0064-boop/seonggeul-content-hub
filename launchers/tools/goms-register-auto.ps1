@@ -3,9 +3,10 @@
 #   약관 참조 문구를 미리 넣고(반려 9건 중 8건이 이 문구 요구 — 이미 있으면 그대로) scripts\goms-ad.mjs --submit 으로 등록한다.
 #   등록한 편은 goms-done 에 .done 이 남아 다시 하지 않는다. GOMS 로그인이 안 되면 아무것도 하지 않는다.
 #   아침 auto-day 끝(승인 결과 읽기 다음)에서 돈다. 바로 돌릴 땐 launchers\goms-register.cmd (번호를 직접 고름).
-param([int]$Count = 10)
+param([int]$Count = 10, [switch]$IgnorePause)
 # 2026-11-01 사용자: "스레드 자동발행 우선 다 중단 — 새로 구성해서 시작" — content\threads\PAUSE 가 있으면 아무것도 하지 않는다
-if (Test-Path (Join-Path (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent) 'content\threads\PAUSE')) { Write-Host '스레드 멈춤(content\threads\PAUSE) — 건너뛰어요'; exit 0 }
+# 2026-11-02 사용자: 스레드는 멈춘 채 31~115편 심의만 한꺼번에 올린다 → launchers\goms-register-all.cmd 가 -IgnorePause 로 부른다
+if (-not $IgnorePause -and (Test-Path (Join-Path (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent) 'content\threads\PAUSE'))) { Write-Host '스레드 멈춤(content\threads\PAUSE) — 건너뛰어요'; exit 0 }
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo
@@ -15,6 +16,8 @@ if (-not $drive) { Write-Host 'Google Drive 를 찾지 못해 GOMS 자동 등록
 $fileDir = Join-Path $drive 'ClaudeWorkspace\보험글'
 $doneDir = Join-Path $drive 'ClaudeWorkspace\goms-done'
 New-Item -ItemType Directory -Force -Path $doneDir | Out-Null
+# 2026-11-02: 원고(sets)에 있는데 Word 가 없는 편(새로 쓴 31~115편)을 먼저 만든다 — 있는 Word(심의받은 1~30편 등)는 그대로
+if ($IgnorePause) { & node scripts\threads\word-make.mjs --out $fileDir 2>&1 | Select-Object -Last 1 | ForEach-Object { Write-Host $_ } }
 $have = @(Get-ChildItem $fileDir -Filter '스레드 *편.docx' -ErrorAction SilentlyContinue | ForEach-Object { if ($_.Name -match '^스레드 (\d+)편\.docx$') { [int]$Matches[1] } }) | Sort-Object
 $done = @(Get-ChildItem $doneDir -Filter '스레드 *편.done' -ErrorAction SilentlyContinue | ForEach-Object { if ($_.Name -match '^스레드 (\d+)편\.done$') { [int]$Matches[1] } })
 # 2026-10-27 사용자: "31편부터 80편까지 등록은 11월 1일부터 다시" — 그 전에는 등록하지 않는다.

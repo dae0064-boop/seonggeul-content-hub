@@ -51,6 +51,12 @@
 ### 11/2 — 🌙 `reserve-tomorrow.cmd` 가 티스토리 내일 글도 예약 (사용자 "티스토리도 같이 고쳐줘")
 - 실행기가 네이버 `draft-day.ps1` 다음에 `tistory-day.ps1 -Reserve -RetryDrafts -Date <내일>` 을 돈다. `publish-tistory.mjs --reserve` 가 오늘~7일 날짜를 받고, 오늘이 아니면 날짜 글자를 눌러 달력에서 그날을 고른다(가짜 화면으로 다음 날·다음 달 고르기 시험 통과).
 - ⚠ 티스토리 달력은 실제 화면에서 처음이다 — 날짜를 다시 읽어 맞지 않으면 누르지 않고 임시저장, 다음 날 아침 실행이 다시 예약. [x] 11/2 낮 11/3 10편 미리 예약에서 통함(아침 확인) 첫 밤 실행 뒤 아침 확인이 day-<내일>-tistory.log 의 '날짜 글자 누름'·'달력 칸 누름'·'확인: 날짜' 줄과 reserve-calendar 덤프를 보고 맞춘다.
+
+### 11/2 (월) 오후 — 🧵 스레드 심의글 41~115편 75편 (사용자 "이번 달 하루 3편 필요한 만큼 다 써서 오늘 심의 올리자")
+- 11/3~11/30 × 3편 = 84편 → 31~40 + 새 41~115편(75편). `content/threads/insurance/sets/2026-11-02b~i.md`, 모두 법 원문 확인 + 다른 작업자 재확인, 검사기 통과. 자세한 건 `content/threads/PLAN.md`.
+- Drive 옛 31~90편 Word → `보험글-옛원고/`. 검사기: 31편부터 문단 2~4줄(`PARA_MAX`).
+- **사용자 PC: `launchers/goms-register-all.cmd`** 로 31~115편 GOMS 등록(로그인·휴대폰 인증은 사용자, 한 편 1~2분). 스레드 올리기는 PAUSE 그대로 — 올리기 스크립트를 세 갈래·새 시간표·'끊긴 줄 뒤에서 나누기'로 고친 뒤 켠다.
+
 ### 11/2 (월) 오후 — 🧵 스레드 보험글 31~40편 초안 → 사용자 "다들 애매하다" → ⏸ 참고 계정 보고 다시 쓰기
 - `content/threads/insurance/sets/2026-11-02.md` 31~40편 초안(검사기 통과, 다른 작업자 두 번째 검증 반영). **GOMS 에 올리지 않는다** — 사용자: 더 확실한 내용으로, 참고 계정 @yj_baeksbook·@jei_7942·@bohum.onepick 의 글감·예시 드는 법을 보고.
 - 클라우드에서 threads.com 이 막혀(Remote Control 연결도 안 보임) **PC 실행기 `launchers/threads-read.cmd`** 를 만듦 — 자동화용 크롬으로 세 계정 프로필을 스크롤하며 글자만 읽고(누르지 않음) Drive `ClaudeWorkspace/threads-read/<날짜_시각>/` 로 올린다. 다음 대화가 그걸 읽어 `content/threads/PLAN.md` 에 정리 → 31~40편 다시 쓰기.

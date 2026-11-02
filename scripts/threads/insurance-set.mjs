@@ -28,6 +28,7 @@ const TOPIC_DUP = 0.5;
 // 짧은 글감은 짧게, 설명이 더 필요한 글감은 300자·19줄까지 늘려도 된다 (2026-10-03 사용자 지시)
 export const MAX_CHARS = 300;
 export const MAX_LINES = 19;
+export const PARA_MAX = 4; // 2026-11-02 묶음부터 문단 2~4줄
 export const MAX_LINE = 24;
 // 딱딱하지 않게 — 문맥에 맞는 이모지 2~3개 (2026-10-02 사용자 지시)
 export const MIN_EMOJI = 2;
@@ -142,13 +143,20 @@ export function checkSet(set, previous = []) {
     for (const n of v.notes) notes.push(`${tag}: ${n}`);
     earlier.push(p.body);
 
-    const lines = p.body.split('\n');
-    if (p.body.length > MAX_CHARS) errors.push(`${tag}: ${p.body.length}자 — ${MAX_CHARS}자 이하로 줄입니다 (모바일에서 접힘).`);
+    // 2026-11-02 사용자: 문단을 2~4줄로 끊는다 (calm 묶음부터) — 빈 줄은 문단 사이 한 줄만, 줄 수·길이는 빈 줄을 빼고 센다
+    const lines = calm ? p.body.split('\n').filter((l) => l.trim()) : p.body.split('\n');
+    if (calm) {
+      const paras = p.body.split(/\n\s*\n/).map((b) => b.split('\n').filter((l) => l.trim()));
+      if (/\n\s*\n\s*\n/.test(p.body)) errors.push(`${tag}: 빈 줄이 두 줄 이상 이어집니다. 문단 사이는 빈 줄 하나.`);
+      if (paras.length < 2) errors.push(`${tag}: 문단을 2~4줄씩 빈 줄로 끊습니다 (2026-11-02 사용자).`);
+      paras.forEach((b, k) => { if (b.length < 2 || b.length > PARA_MAX) errors.push(`${tag}: ${k + 1}번째 문단이 ${b.length}줄 — 2~${PARA_MAX}줄로 끊습니다: "${b[0]}"`); });
+    }
+    if ([...p.body.replace(/\n\s*\n/g, '\n')].length > MAX_CHARS) errors.push(`${tag}: ${p.body.length}자 — ${MAX_CHARS}자 이하로 줄입니다 (모바일에서 접힘).`);
     if (lines.length > MAX_LINES) errors.push(`${tag}: ${lines.length}줄 — ${MAX_LINES}줄 이하로 줄입니다.`);
     lines.forEach((l, k) => {
       if (l.length > MAX_LINE) errors.push(`${tag}: ${k + 1}번째 줄이 ${l.length}자 — ${MAX_LINE}자 이하로 끊습니다: "${l}"`);
     });
-    if (lines.some((l) => !l.trim())) errors.push(`${tag}: 빈 줄이 있습니다. 줄바꿈만으로 이어 씁니다.`);
+    if (!calm && lines.some((l) => !l.trim())) errors.push(`${tag}: 빈 줄이 있습니다. 줄바꿈만으로 이어 씁니다.`);
     // 제목 끝에 이모지 하나는 붙어도 된다: "…될까? 🤔"
     const title = lines[0].trim().replace(/[\s\p{Extended_Pictographic}\uFE0F\u200D]+$/u, '');
     if (!/\?$/.test(title)) errors.push(`${tag}: 첫 줄(제목)은 물음표로 끝나는 질문으로 씁니다.`);
