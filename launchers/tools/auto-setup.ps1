@@ -19,6 +19,7 @@ $wakeName = 'SeonggeulMorningStart'
 if ($Remove) {
   Unregister-ScheduledTask -TaskName $name -Confirm:$false -ErrorAction SilentlyContinue
   Unregister-ScheduledTask -TaskName $wakeName -Confirm:$false -ErrorAction SilentlyContinue
+  Unregister-ScheduledTask -TaskName 'SeonggeulIssueScan' -Confirm:$false -ErrorAction SilentlyContinue
   Write-Host '아침 자동 예약발행을 껐어요.' -ForegroundColor Green
   exit 0
 }

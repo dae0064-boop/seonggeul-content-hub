@@ -9,6 +9,16 @@ powercfg /SETDCVALUEINDEX SCHEME_CURRENT SUB_SLEEP RTCWAKE 1 2>$null | Out-Null
 powercfg /SETACTIVE SCHEME_CURRENT 2>$null | Out-Null
 # 2026-10-05: 배터리일 때도 돌게 (예전 등록은 '전원 연결 시에만' 이라 노트북 실행이 뜨지 않았다)
 $battery = $t.Settings.DisallowStartIfOnBatteries -or $t.Settings.StopIfGoingOnBatteries
+# 2026-11-02: 아침 이슈 모으기(07:50, 사무실 PC / 노트북 07:55) 작업이 없으면 등록한다 — 사용자 "오전 7~8시 기사로 이슈 글"
+if (-not (Get-ScheduledTask -TaskName 'SeonggeulIssueScan')) {
+  $first = [datetime]$t.Triggers[0].StartBoundary
+  $scanAt = if ($first.Minute -ge 15) { '07:55' } else { '07:50' }
+  $act = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-NoProfile -ExecutionPolicy Bypass -WindowStyle Minimized -File `"$(Join-Path $PSScriptRoot 'issue-scan.ps1')`""
+  $set = New-ScheduledTaskSettingsSet -WakeToRun -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Minutes 30) -MultipleInstances IgnoreNew
+  Register-ScheduledTask -TaskName 'SeonggeulIssueScan' -Action $act -Trigger (New-ScheduledTaskTrigger -Daily -At $scanAt) -Settings $set -Principal $t.Principal `
+    -Description '성글벙글 아침 이슈 모으기 (구글 트렌드·네이버 랭킹 → Drive issues)' -Force | Out-Null
+  Write-Host "아침 이슈 모으기 작업을 등록했어요 (매일 $scanAt)."
+}
 # 2026-10-05: 켜거나 잠금을 풀면 바로 시작하는 작업(SeonggeulMorningStart)이 없으면 다시 등록한다
 $wake = Get-ScheduledTask -TaskName 'SeonggeulMorningStart'
 if (@($t.Triggers).Count -ge 2 -and -not $battery -and $wake) { exit 0 }
