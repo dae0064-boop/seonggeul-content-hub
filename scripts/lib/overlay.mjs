@@ -68,6 +68,7 @@ function html(imgDataUrl, size, o) {
   let thumbFamily = STYLE.font;
   if (o.kind === 'thumb' && o.frame === 'card') return cardThumbHtml(imgDataUrl, S, o);
   if (o.kind === 'thumb' && (o.look === 'band' || o.look === 'frame')) return lookThumbHtml(imgDataUrl, S, o);
+  if (o.kind === 'thumb' && o.look === 'news') return newsThumbHtml(imgDataUrl, S, o);
   if (o.kind === 'thumb') {
     const tl = String(o.title).split('\n');
     const fs1 = Math.round(S * (tl.length > 2 ? 0.105 : 0.15));
@@ -217,6 +218,25 @@ function lookThumbHtml(imgDataUrl, S, o) {
       ? tl.map((t, i) => `<div class="title${i === 0 ? ' key' : ''}">${esc(t)}</div>`).join('')
       : `<div class="box">${tl.map((t, i) => `<div class="title${i === 0 ? ' key' : ''}"><span>${esc(t)}</span></div>`).join('')}</div>`}</div>
   </body>`;
+}
+
+// ── 이슈 글 대표사진 (2026-11-02 사용자 — "사진이 눈에 확 들어와야, 글자는 눈에 띄지 않을 정도로") ──
+// 실제 사진을 꽉 채우고(얼굴이 잘리지 않게 위쪽 기준으로 자름), 아래쪽만 살짝 어둡게 해서 작은 글씨 한 줄.
+function newsThumbHtml(imgDataUrl, S, o) {
+  const face = ptdFace();
+  const fam = face ? `"PTD",${STYLE.font}` : STYLE.font;
+  const text = String(o.title || '').replace(/\n/g, ' ').trim();
+  const pos = o.focus || 'center 22%';
+  return `<!doctype html><meta charset="utf-8"><style>
+    ${face}
+    *{margin:0;box-sizing:border-box}
+    body{width:${S}px;height:${S}px;position:relative;overflow:hidden;background:#111;font-family:${fam}}
+    img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:${pos}}
+    .shade{position:absolute;left:0;right:0;bottom:0;height:${S * 0.24}px;background:linear-gradient(to top,rgba(0,0,0,.55),rgba(0,0,0,0))}
+    .cap{position:absolute;left:${S * 0.05}px;right:${S * 0.05}px;bottom:${S * 0.045}px;color:#fff;font-weight:800;
+      font-size:${Math.round(S * 0.052)}px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+      letter-spacing:-.01em;text-shadow:0 ${S * 0.003}px ${S * 0.01}px rgba(0,0,0,.5)}
+  </style><body><img src="${imgDataUrl}">${text ? `<div class="shade"></div><div class="cap">${esc(text)}</div>` : ''}</body>`;
 }
 
 // ── 정보 카드 (그림 없이 글자만) ───────────────────────────────

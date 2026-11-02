@@ -727,7 +727,10 @@ for (const file of files) {
         const v3 = dated >= THUMB3_FROM;
         const st0 = imageStyle();
         const shot = st0.thumb_shots?.[t.thumb_shot];
-        if (ov.kind !== 'thumb' || ov.look !== 'band') errors.push('대표사진 글씨는 위쪽 띠 모양입니다 — 1번 overlay 에 "kind": "thumb", "look": "band" (standards/이미지-기준.md "대표사진 제목")');
+        // 이슈 글 + 실제 사진(kind: photo)은 사진을 꽉 채우고 아래 작은 글씨 한 줄(look: news) — 2026-11-02 사용자
+        const newsThumb = !!post.issue && t.kind === 'photo' && ov.look === 'news';
+        if (newsThumb) { if (ns(String(ov.title || '')).length > 18) errors.push(`이슈 대표사진 아래 글씨는 한 줄 18자 안쪽 (지금 ${ns(String(ov.title || '')).length}자)`); }
+        else if (ov.kind !== 'thumb' || ov.look !== 'band') errors.push('대표사진 글씨는 위쪽 띠 모양입니다 — 1번 overlay 에 "kind": "thumb", "look": "band" (standards/이미지-기준.md "대표사진 제목")');
         if (v3) {
           if (!shot) errors.push(`대표사진(1번)에 thumb_shot 이 없거나 목록 밖입니다 (${Object.keys(st0.thumb_shots || {}).join('·')}) — standards/이미지-기준.md "대표사진 구도 섞기"`);
           else if (!(t.prompt || '').includes(shot.prompt)) errors.push(`대표사진 프롬프트에 구도 문구가 없습니다 — "${shot.prompt}"`);
@@ -735,7 +738,8 @@ for (const file of files) {
             errors.push(`홈판형 대표사진은 사람 얼굴이 보이는 구도(${HF_SHOTS.join('·')})로 — 지금 ${t.thumb_shot || '없음'} (2026-11-01 사용자)`);
           if (st0.thumb_band_space && !(t.prompt || '').includes(st0.thumb_band_space)) errors.push(`대표사진 프롬프트에 위쪽 띠 자리 문구가 없습니다 — "${st0.thumb_band_space}"`);
         }
-        if (tl.length !== 2) errors.push(`대표사진 글씨는 두 줄입니다 (지금 ${tl.length}줄) — 첫 줄 메인 키워드, 둘째 줄 질문`);
+        if (newsThumb) { /* 한 줄, 질문·10자 규칙 없음 */ }
+        else if (tl.length !== 2) errors.push(`대표사진 글씨는 두 줄입니다 (지금 ${tl.length}줄) — 첫 줄 메인 키워드, 둘째 줄 질문`);
         else {
           if (post.mainKeyword && !ns(tl[0]).includes(ns(post.mainKeyword)) && !ns(post.mainKeyword).startsWith(ns(tl[0]))) errors.push(`대표사진 첫 줄 "${tl[0]}" 에 메인 키워드 "${post.mainKeyword}" 가 없습니다`);
           if (!/\?$/.test(tl[1].trim())) errors.push(`대표사진 둘째 줄 "${tl[1]}" 은 질문(?로 끝남)으로 씁니다 — 예: "하루 얼마?", "누가 받을까?"`);
