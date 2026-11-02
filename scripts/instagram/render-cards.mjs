@@ -150,6 +150,17 @@ body{font-family:GB,sans-serif}
 .panel .ck{font-size:calc(44px*var(--f,1));margin-top:calc(28px*var(--k,1))}
 .panel .cp{margin-top:calc(36px*var(--k,1))}.panel .cp>div{font-size:calc(38px*var(--f,1));line-height:calc(1.6*var(--l,1))}
 .panel .cta{margin-top:calc(40px*var(--k,1))}.panel .terms{margin-top:calc(28px*var(--k,1))}
+/* 2026-11-02 사용자: "Q&A 도 친근한 설계사로 카톡 형식으로" — 대화 장 (카카오 로고·화면은 흉내 내지 않고 말풍선만) */
+.chat{margin-top:calc(24px*var(--k,1))}
+.cq,.ca{display:flex;gap:16px;margin-top:calc(16px*var(--k,1));text-shadow:none}
+.cq{justify-content:flex-end}
+.cq p,.ca p{max-width:760px;font-family:GB;font-size:calc(34px*var(--f,1));line-height:calc(1.45*var(--l,1));padding:16px 26px;border-radius:28px}
+.cq p{background:rgba(255,255,255,.95);color:#1a1a1a;border-top-right-radius:8px}
+.ca p{background:#FFE07A;color:#1a1a1a;border-top-left-radius:8px}
+.ca img{flex:none;width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center 20%;background:#fff}
+.ca.cont img{visibility:hidden}
+.cname{font-family:GX;font-size:26px;color:#fff;margin:0 0 -6px 80px}
+.cq em,.ca em{color:#C2410C;background:none;padding:0}
 .panel .pt{margin-top:calc(26px*var(--k,1))}.panel .pt td{padding:calc(12px*var(--k,1)) 4px}
 .nt{font-size:23px;line-height:1.55;color:#444}.nt h3{font-size:44px;color:#1c1c1c;margin-bottom:26px}.nt b{display:block;font-size:29px;color:#1c1c1c}.nt p{margin-top:16px}.nt .ap{color:#FFC25A;font-size:27px}
 `;
@@ -169,6 +180,15 @@ function mcard(c, photo, i) {
     case 'steps': return mpage(photo, c.crop, 300, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label)}</div>${c.steps.map(([n, t]) => `<div class="st"><b>${esc(n)}</b><span>${hl(t)}</span></div>`).join('')}${terms}</div>`, i, src || undefined);
     case 'compare': return mpage(photo, c.crop, 300, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label)}</div><div class="cp">${[c.left, c.right].map((x) => `<div><h4>${esc(x.t)}</h4>${x.lines.map(esc).join('<br>')}</div>`).join('')}</div><div class="bd" style="font-size:30px;margin-top:26px">${esc(c.foot || '')}</div>${terms}</div>`, i, src || undefined);
     case 'check': return mpage(photo, c.crop, 300, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label)}</div>${c.checks.map((t) => `<div class="ck"><i>✓</i><span>${hl(t)}</span></div>`).join('')}<div class="cta">${esc(c.cta)}</div></div>`, i);
+    case 'chat': {
+      let prevA = false;
+      const rows = c.msgs.map(([who, t]) => {
+        if (who === 'q') { prevA = false; return `<div class="cq"><p>${hl(t)}</p></div>`; }
+        const first = !prevA; prevA = true;
+        return `${first ? '<div class="cname">친근한 설계사</div>' : ''}<div class="ca${first ? '' : ' cont'}"><img src="${logo}"><p>${hl(t)}</p></div>`;
+      }).join('');
+      return mpage(photo, '', 0, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label || '친근한 설계사에게 물어봤어요')}</div><div class="chat">${rows}</div>${c.terms ? `<div class="terms">${esc(NOTICE.terms)}</div>` : ''}</div>`, i, c.src ? '근거 · ' + c.src : undefined);
+    }
     // 설계안 장 (2026-11-02 사용자 — 설계안을 받으면 납입·만기·상해급수·보험료를 넣는다. 숫자는 받은 설계안 그대로만)
     case 'plan': return mpage(photo, '', 0, `<div class="in"><div class="hd">${H(c.head || ['설계안 [예시]'])}</div><div class="lb">${esc(c.cond)}</div>
 <table class="pt">${c.rows.map(([a, b]) => `<tr><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join('')}<tr class="sum"><td>월 보험료</td><td>${esc(c.premium)}</td></tr></table>
