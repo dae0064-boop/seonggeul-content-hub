@@ -60,6 +60,8 @@ export function parsePost(raw) {
     const im = /^\[이미지\s*(\d+)\]\s*(.*)$/.exec(lines[0]);
     if (im) {
       blocks.push({ type: 'image', n: Number(im[1]), lines: [{ t: im[2].trim() }] });
+      // 그림 바로 다음 줄(공식 사진 출처 "[사진 출처 N]")은 글로 남긴다 — 발행 때 출처 글자로 바뀐다
+      if (lines.length > 1) blocks.push({ type: 'p', lines: lines.slice(1).map((t) => ({ t })) });
       continue;
     }
 

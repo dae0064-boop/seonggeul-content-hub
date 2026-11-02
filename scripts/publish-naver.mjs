@@ -1510,6 +1510,23 @@ async function main() {
   // 쇼핑 커넥트 링크는 발행할 때 목록(content/affiliate/brandconnect-links.tsv)에서 찾는다. 없으면 대가성 문구·링크 자리를 빼고 낸다
   const shop = applyBrandconnect(post);
   post.blocks = shop.blocks;
+  // 공식 사진 출처 (2026-11-02, 이슈 글): 원고의 "[사진 출처 N]" 줄을 그림 폴더의 NN.credit.txt 첫 줄로 바꾼다.
+  // 사진을 못 받아 AI 그림으로 대신했으면(credit 파일 없음) 그 줄을 뺀다
+  {
+    const CREDIT = /^\[사진 출처 (\d+)\]$/;
+    for (const b of post.blocks) {
+      if (!Array.isArray(b.lines) || !b.lines.some((l) => CREDIT.test((l.t || '').trim()))) continue;
+      b.lines = b.lines.flatMap((l) => {
+        const m = CREDIT.exec((l.t || '').trim());
+        if (!m) return [l];
+        const f = args.images && path.resolve(args.images, `${String(m[1]).padStart(2, '0')}.credit.txt`);
+        const c = f && fs.existsSync(f) ? fs.readFileSync(f, 'utf8').split(/\r?\n/)[0].trim() : '';
+        if (c) log(`사진 출처 ${m[1]}: ${c}`);
+        return c ? [{ t: c }] : [];
+      });
+    }
+    post.blocks = post.blocks.filter((b) => b.type === 'image' || !Array.isArray(b.lines) || b.lines.length);
+  }
   if (shop.note) log(shop.note);
   // 인사말 앞 사실 한 문장 → 인용구 1번 (2026-10-13 사용자 지시). 두 줄을 한 문단으로 이어 붙여 넣고,
   // 소제목과 같은 방법(insertQuoteAt)으로 인용구로 바꾼다. 실패해도 글자는 남고 발행은 멈추지 않는다
