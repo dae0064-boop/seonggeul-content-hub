@@ -16,7 +16,7 @@ content/archive/published.tsv  발행이 끝나 지운 원고 목록 (날짜·�
 content/matjip/    맛집 후기 (사용자 사진 5~10장 → 원고는 Claude 가 전부, 지도·발행은 사용자). README.md = 규칙, template.md = 빈 틀, posts/ = 원고
 content/chulgeo/   다와이철거 홍보 블로그 (⏸ 2026-10-28 사용자 지시로 원고·발행 모두 멈춤. 2026-10-26~, 성글벙글과 별개·다른 네이버 계정). 규칙 정본 README.md, 원고 posts/, 검사 scripts/chulgeo/lint.mjs
 content/threads/   스레드 말투 규칙(voice.md) + 글감(topics.txt)
-content/threads/blog/  스레드 블로그 유입 글 — 네이버 생활보장 글 요약 (규칙 ../blog.md, 검사 blog-set.mjs, 올리기 blog-post.mjs — 2026-11-03 부터, 보험글 PAUSE 와 따로, 멈춤은 PAUSE-BLOG)
+content/threads/blog/  스레드 블로그 유입 글 — 네이버 생활보장 글 요약 (규칙 ../blog.md, 검사 blog-set.mjs, 올리기 blog-post.mjs — 하루 5편, 매시간 작업 SeonggeulThreadsBlog, 보험글 PAUSE 와 따로, 멈춤은 PAUSE-BLOG)
 content/threads/insurance/  스레드 보험 심의글 — 규칙(rules.md)·글감·10편 묶음(sets/)
 scripts/           발행·검수 자동화(.mjs) + 워크스페이스 동기화 도구(.py)
 scripts/threads/   스레드 자동 발행·댓글 답변
@@ -698,7 +698,7 @@ Drive 를 못 찾으면 겹침을 막을 수 없다고 알리고 그대로 진�
 `node scripts/threads/insurance-set.mjs <묶음>`. Word 는 Drive `보험글/스레드 N편.docx` 로 저장된다.
 매일 자동: 전날 밤 클라우드 Routine 이 10편을 쓰고, 아침 `auto-day.cmd` 가 Word 를 저장한다 (위 "매일 자동으로 도는 것").
 **⏸ 2026-11-01 사용자 지시로 스레드 자동발행을 모두 멈췄다** ("우선 다 중단해봐, 새로 구성해서 시작할거야") — `content/threads/PAUSE` 파일이 있으면 PC 의 올리기(`insurance-post.mjs`)·Word 저장·GOMS 승인 읽기·GOMS 자동 등록이 모두 건너뛴다. 올리기 작업(10·13·16·19·22시)은 그대로 떠서 블로그 '그날 다시 예약'(catchup-reserve)만 띄운다. 다시 켤 때는 사용자가 새 구성을 정한 뒤 PAUSE 를 지운다.
-**예외 — 블로그 유입 글은 2026-11-03 부터 올린다** (2026-11-02 사용자 "보험 심의글 전에 생활보장 글로 올려 보자"): 네이버 생활보장 글 요약 하루 3편 + 링크 답글, `scripts/threads/blog-post.mjs`(같은 올리기 작업이 부름). PAUSE 를 보지 않고 `content/threads/PAUSE-BLOG` 로 멈춘다. 규칙 `content/threads/blog.md`.
+**예외 — 블로그 유입 글은 2026-11-02 저녁부터 올린다** (2026-11-02 사용자 "생활정보글로만 5개씩 매일, 심의글은 내가 요청할 때"): 네이버 생활보장(건강·제도)·생활정보 글 요약 하루 5편 + 링크 답글, `scripts/threads/blog-post.mjs` — PC 작업 `SeonggeulThreadsBlog`(매시간 10~23시, catchup 이 저절로 등록)가 묶음의 시각대로. PAUSE 를 보지 않고 `content/threads/PAUSE-BLOG` 로 멈춘다. 규칙 `content/threads/blog.md`.
 (멈추기 전) **2026-10-26 부터 스레드에 올리는 것도 자동이다** (사용자 지시) — GOMS 심의 적격 편을 1편부터 하루 5편(10/27~, 10:00·13:00·16:00·19:00·22:00, 노트북 5분 뒤) — 한 편을 1/2(앞 절반)·2/2(뒤 절반 + 배너, 답글)로 나눠,
 그 편의 준법심의필번호·유효기간을 넣은 배너(`content/threads/insurance/banners/`, 공개 주소용으로 저장소에 둔다)와 함께. 글은 심의받은 Word 그대로.
 흐름·확인 순서는 `content/threads/insurance/rules.md` "스레드에 올리기". 아래 `guard.mjs`·옛 자동 글쓰기 흐름과는 별개다(심의받은 글을 그대로 올리므로 고치지 않는다).
