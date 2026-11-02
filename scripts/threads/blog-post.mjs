@@ -42,8 +42,8 @@ function paused() {
 }
 
 function postTitle(slug) {
-  const f = path.join(ROOT, 'content', 'posts', `${slug}.md`);
-  if (!fs.existsSync(f)) return '';
+  const f = [path.join(ROOT, 'content', 'posts', `${slug}.md`), path.join(DIR, 'blog', 'src', `${slug}.md`)].find((x) => fs.existsSync(x));
+  if (!f) return '';
   const raw = fs.readFileSync(f, 'utf8').replace(/\r\n?/g, '\n');
   return (/^title:\s*(.+)$/m.exec(raw) || [])[1]?.trim() || '';
 }
@@ -79,7 +79,7 @@ async function main() {
   if (!blogId) { log('내 블로그 아이디(content/research/my-blog.txt)가 없어요'); return 1; }
 
   // 내 블로그 공개 글 목록 → 그 원고의 주소 (예약만 된 글은 여기 없다)
-  const list = await fetchPostList(blogId, { pages: 2, log });
+  const list = await fetchPostList(blogId, { pages: 10, log }); // 지난 글(src)도 찾게 넉넉히
   const urlOf = (it) => {
     const t = normTitle(postTitle(it['원고']));
     if (!t) return '';
