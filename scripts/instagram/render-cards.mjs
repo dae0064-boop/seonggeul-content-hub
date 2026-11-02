@@ -141,6 +141,16 @@ body{font-family:GB,sans-serif}
 .ft{font-family:GB;font-size:25px;letter-spacing:1px;color:#fff}
 .pt{font-family:GB;font-size:33px}.pt .sum td{font-family:Ser;color:#FFD978;font-size:44px}
 .nt .ap{color:#FFD978}
+/* 2026-11-02 사용자 "밑에 공백이 너무 많이 남는다" — 장마다 남는 높이에 맞춰 --k(사이 간격)·--l(줄 간격)·--f(글씨)를 늘려 아래까지 채운다 */
+.panel .hd{font-size:calc(74px*var(--f,1))}
+.panel .lb{margin-top:calc(40px*var(--k,1))}
+.panel .bd{font-size:calc(41px*var(--f,1));line-height:calc(1.7*var(--l,1));margin-top:calc(24px*var(--k,1))}
+.panel .bd p+p{margin-top:calc(16px*var(--k,1))}
+.panel .st{font-size:calc(39px*var(--f,1));line-height:calc(1.65*var(--l,1));margin-top:calc(32px*var(--k,1))}
+.panel .ck{font-size:calc(44px*var(--f,1));margin-top:calc(28px*var(--k,1))}
+.panel .cp{margin-top:calc(36px*var(--k,1))}.panel .cp>div{font-size:calc(38px*var(--f,1));line-height:calc(1.6*var(--l,1))}
+.panel .cta{margin-top:calc(40px*var(--k,1))}.panel .terms{margin-top:calc(28px*var(--k,1))}
+.panel .pt{margin-top:calc(26px*var(--k,1))}.panel .pt td{padding:calc(12px*var(--k,1)) 4px}
 .nt{font-size:23px;line-height:1.55;color:#444}.nt h3{font-size:44px;color:#1c1c1c;margin-bottom:26px}.nt b{display:block;font-size:29px;color:#1c1c1c}.nt p{margin-top:16px}.nt .ap{color:#FFC25A;font-size:27px}
 `;
 // 2026-11-02 사용자: "사진을 그냥 배경으로 두고 사진이랑 글자가 잘 보이게" — 사진 한 장을 7장 모두 같은 자리로 깔고, 그 위에 흰 글 칸
@@ -154,7 +164,7 @@ function mcard(c, photo, i) {
   const terms = c.terms ? `<div class="terms">${esc(NOTICE.terms)}</div>` : '';
   const src = c.src ? '근거 · ' + c.src : '';
   switch (c.type) {
-    case 'cover': return mpage(photo, c.crop, 560, `<div class="in" style="margin-top:70px"><div class="lb" style="margin-top:0">${esc(c.kw)}</div><div class="hd" style="font-size:96px;line-height:1.28;margin-top:34px">${H(c.title)}</div><div class="bd" style="margin-top:44px;font-size:44px">${esc(c.sub || '')}</div></div>`, i);
+    case 'cover': return mpage(photo, c.crop, 560, `<div class="in" style="margin-top:70px"><div class="lb" style="margin-top:0">${esc(c.kw)}</div><div class="hd" style="font-size:calc(96px*var(--f,1));line-height:1.28;margin-top:calc(34px*var(--k,1))">${H(c.title)}</div><div class="bd" style="margin-top:calc(44px*var(--k,1));font-size:calc(44px*var(--f,1))">${esc(c.sub || '')}</div></div>`, i);
     case 'text': return mpage(photo, c.crop, 300, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label)}</div><div class="bd">${c.body.map((t) => `<p>${hl(t)}</p>`).join('')}</div>${terms}</div>`, i, src || undefined);
     case 'steps': return mpage(photo, c.crop, 300, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label)}</div>${c.steps.map(([n, t]) => `<div class="st"><b>${esc(n)}</b><span>${hl(t)}</span></div>`).join('')}${terms}</div>`, i, src || undefined);
     case 'compare': return mpage(photo, c.crop, 300, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label)}</div><div class="cp">${[c.left, c.right].map((x) => `<div><h4>${esc(x.t)}</h4>${x.lines.map(esc).join('<br>')}</div>`).join('')}</div><div class="bd" style="font-size:30px;margin-top:26px">${esc(c.foot || '')}</div>${terms}</div>`, i, src || undefined);
@@ -172,9 +182,9 @@ function mnotice(approval) {
   const N = NOTICE;
   return `<!doctype html><html><head><meta charset="utf-8"><style>${MCSS}
 body{background:#111;color:#fff;text-align:center}
-.gl{display:inline-block;background:#fff;border-radius:22px;padding:22px 40px;margin-top:84px}.gl img{height:96px;display:block}
-.nn{font-family:GB;margin:44px 80px 0;font-size:25px;line-height:1.6;color:rgba(255,255,255,.88)}.nn b{display:block;font-size:30px;color:#fff;line-height:1.5}
-.nn p{margin-top:20px}.nn .ap{color:#FFD978;font-size:28px}
+.gl{display:inline-block;background:#fff;border-radius:24px;padding:26px 46px;margin-top:80px}.gl img{height:104px;display:block}
+.nn{font-family:GB;margin:46px 70px 0;font-size:26px;line-height:1.62;color:rgba(255,255,255,.88)}.nn b{display:block;font-size:31px;color:#fff;line-height:1.5}
+.nn p{margin-top:22px}.nn .ap{color:#FFD978;font-size:28px}
 .ft{color:rgba(255,255,255,.9);text-shadow:none}</style></head><body>
 <div class="gl"><img src="${glogo}"></div>
 <div class="nn"><b>${esc(N.agency)}</b><b>${esc(N.agent)}</b>
@@ -232,6 +242,15 @@ for (const p of set.posts) {
   for (let k = 0; k < htmls.length; k++) {
     await pg.setContent(htmls[k], { waitUntil: 'load' });
     await pg.evaluate(() => document.fonts.ready);
+    await pg.evaluate(() => {
+      const pn = document.querySelector('.panel'); const ft = document.querySelector('.ft');
+      if (!pn || !ft) return;
+      const target = ft.getBoundingClientRect().top - 110;
+      const set = (k) => { pn.style.setProperty('--k', k); pn.style.setProperty('--l', Math.min(1 + (k - 1) * 0.3, 1.3)); pn.style.setProperty('--f', Math.min(1 + (k - 1) * 0.2, 1.18)); };
+      let k = 1;
+      for (let t = 1.05; t <= 2.6; t += 0.05) { set(t); if (pn.getBoundingClientRect().bottom > target) break; k = t; }
+      set(k);
+    });
     // 넘침: 본문이 아래 줄(.ft)을 덮거나 칸을 넘치면 멈춘다
     const over = await pg.evaluate(() => {
       if ([...document.querySelectorAll('.wrap,.nt')].some((w) => w.scrollHeight > w.clientHeight + 2)) return true;
