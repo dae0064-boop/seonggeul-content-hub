@@ -61,6 +61,7 @@
 - ✅ **11/2 같은 대화에서 패널 켜짐** — 켜기 질문이 늦게 떠서 사용자가 'Turn them on' 을 누름 → `/usage-pane` 이 "클로드 사용량 패널을 열었어요" (사용자 "잘 되었어"). 새 대화에서는 저절로 안 켜지므로, 원하면 Claude 에게 "사용량 패널 켜 줘" → Claude 가 `.claude/skills/usage-meter` 를 그 대화의 모드 폴더로 복사 → 앱에 뜨는 'Turn them on' (조금 늦게 뜰 수 있음).
 - 🟢 **사용량 위젯 `launchers/usage-widget.cmd`** (사용자 "이런 식으로 만들어" — 둥근 막대 위젯 사진): 화면 오른쪽 위 항상 위 검은 카드(WPF, `tools/usage-widget.ps1`), 5분마다 `scripts/claude-usage.mjs` 가 자동화용 크롬(9222)의 claude.ai 로그인으로 `/api/organizations/<id>/usage`(공개 문서 없는 통로)를 읽어 `dumps/claude-usage.json`. 처음 한 번 그 크롬에서 claude.ai 로그인 필요(실행기가 탭을 열어 줌). 클라우드에서는 '로그인 필요' 흐름까지만 시험(claude.ai 가 Cloudflare 로 막음) — 실제 숫자·화면은 PC 에서 처음. [ ] 사용자 캡처로 모양 확인, 안 되면 `dumps/claude-usage-raw.json` 보고 고친다.
   - 같은 날 사용자 사진(작업 표시줄 위 "주간 사용량 12% 남음" + 주황 막대) → **기본 모양을 작은 막대로**(`usage-widget.ps1 -Mode bar`, 오른쪽 아래). 마우스 올리면 5시간·주간·초기화 시각, 오른쪽 클릭 = 새로 고침·5시간↔주간·큰 카드·닫기. 클라우드에 PowerShell 이 없어 실행 시험 못 함 — [ ] PC 에서 첫 실행 확인.
+  - **PC 켤 때마다 자동으로** (사용자): 시작프로그램 바로가기(`tools/usage-autostart.ps1`) → 로그인 20초 뒤 `usage-widget-start.ps1` 이 자동화용 크롬(없으면 최소화로)·작은 막대를 띄움. 바로가기는 `usage-widget.cmd` 실행 때, 그리고 다음 아침 실행의 `ensure-retry.ps1` 이 저절로 만든다. 끄기 `usage-autostart.ps1 -Remove` 또는 `dumps\no-usage-autostart.txt`. [ ] 다음 켤 때 막대가 뜨는지.
   - `/usage-pane`(채팅 안)은 이 앱 화면이 옆 패널을 못 띄워(isPlaced=false) 숫자를 글자로 돌려주게 고침.
 
 ### 11/2 — 🌙 `reserve-tomorrow.cmd` 가 티스토리 내일 글도 예약 (사용자 "티스토리도 같이 고쳐줘")

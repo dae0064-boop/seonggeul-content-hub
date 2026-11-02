@@ -35,6 +35,7 @@ pause
 exit /b 1
 
 :widget
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\usage-autostart.ps1"
 echo [3/3] 위젯 띄우는 중... 이 검은 창은 저절로 닫혀요.
 start "" powershell -NoProfile -STA -WindowStyle Hidden -ExecutionPolicy Bypass -File "%~dp0tools\usage-widget.ps1"
 exit /b 0
