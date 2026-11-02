@@ -49,14 +49,14 @@ body{width:1920px;background:#fff;font-family:sans-serif}
 .bn{position:relative;width:1920px;height:600px;overflow:hidden;background:linear-gradient(90deg,#f7e6cf,#f4dcc0)}
 .bg{position:absolute;left:50%;top:50%;width:${1920 * ZOOM}px;transform:translate(-${X}%,-${Y}%)}
 .col{position:absolute;left:477px;width:966px;top:0;height:600px}
-.title{position:absolute;left:0;width:860px;top:92px;text-align:center;font:138px/1 Pen;color:#2c5236;letter-spacing:6px;text-shadow:0 2px 0 rgba(255,255,255,.35)}
-.tag{position:absolute;left:0;width:860px;top:252px;text-align:center;font:58px/1 Pen;color:#7a5230}
-.sub{position:absolute;left:0;width:860px;top:330px;text-align:center;font:40px/1 Pen;color:#2c5236}
-.cats{position:absolute;left:22px;top:418px;display:flex;gap:6px}
+.title{position:absolute;left:0;width:966px;top:92px;text-align:center;font:138px/1 Pen;color:#2c5236;letter-spacing:6px;text-shadow:0 2px 0 rgba(255,255,255,.35)}
+.tag{position:absolute;left:0;width:966px;top:252px;text-align:center;font:58px/1 Pen;color:#7a5230}
+.sub{position:absolute;left:0;width:966px;top:330px;text-align:center;font:40px/1 Pen;color:#2c5236}
+.cats{position:absolute;left:71px;top:410px;display:flex;gap:6px}
 .cat{width:160px;text-align:center}
 .nm{font:27px/1 Gaegu;color:#2b2b2b;margin-bottom:6px}
-.ic{width:132px;height:132px;margin:0 auto}
-.ic img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.ic{width:150px;height:150px;margin:0 auto}
+.ic img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 3px 4px rgba(120,80,40,.15))}
 .ic i{display:block;width:110px;height:110px;margin:10px auto;border-radius:50%;border:3px dashed rgba(0,0,0,.2)}
 /* 확인용 네이버 화면 흉내 */
 .nv{position:absolute;font:13px sans-serif;color:#333}
