@@ -45,6 +45,7 @@
 ### 11/2 — 📊 클로드 사용량 패널 `.claude/skills/usage-meter/` (사용자 "사용량을 클로드 옆에 계속 뜨게")
 - 이 저장소로 여는 대화가 시작될 때 채팅 옆에 5시간·주간 사용량 막대·초기화 시각을 띄우는 플러그인. 읽기만 한다. 패널이 안 보이면 `/usage-pane`, 끄려면 폴더 삭제.
 - ❌ **클라우드 대화에서는 켜지지 않는다 (11/2 원인 확인)**: Anthropic 쪽 기능 스위치(`tengu_plugin_hooks_modules`)가 이 환경에서 꺼져 있어 저장소의 패널 프로그램을 읽지 않고, 대화 중 켜기 질문도 사용자 앱에 뜨지 않음(거절로 기록). 프로그램 자체는 시험 실행에서 정상. 자세한 건 그 폴더 README. **대안: `launchers/usage-window.cmd`** (평소 크롬으로 claude.ai 사용량 화면을 작은 창으로 — 사용자 확인: 잘 뜸). 같은 날 화면 오른쪽 끝 '항상 위' 고정 더함(`tools/usage-pin.ps1`). [ ] 고정이 되는지 사용자 확인.
+- ✅ **11/2 같은 대화에서 패널 켜짐** — 켜기 질문이 늦게 떠서 사용자가 'Turn them on' 을 누름 → `/usage-pane` 이 "클로드 사용량 패널을 열었어요" (사용자 "잘 되었어"). 새 대화에서는 저절로 안 켜지므로, 원하면 Claude 에게 "사용량 패널 켜 줘" → Claude 가 `.claude/skills/usage-meter` 를 그 대화의 모드 폴더로 복사 → 앱에 뜨는 'Turn them on' (조금 늦게 뜰 수 있음).
 - 🟢 **사용량 위젯 `launchers/usage-widget.cmd`** (사용자 "이런 식으로 만들어" — 둥근 막대 위젯 사진): 화면 오른쪽 위 항상 위 검은 카드(WPF, `tools/usage-widget.ps1`), 5분마다 `scripts/claude-usage.mjs` 가 자동화용 크롬(9222)의 claude.ai 로그인으로 `/api/organizations/<id>/usage`(공개 문서 없는 통로)를 읽어 `dumps/claude-usage.json`. 처음 한 번 그 크롬에서 claude.ai 로그인 필요(실행기가 탭을 열어 줌). 클라우드에서는 '로그인 필요' 흐름까지만 시험(claude.ai 가 Cloudflare 로 막음) — 실제 숫자·화면은 PC 에서 처음. [ ] 사용자 캡처로 모양 확인, 안 되면 `dumps/claude-usage-raw.json` 보고 고친다.
 
 ### 11/2 — 🌙 `reserve-tomorrow.cmd` 가 티스토리 내일 글도 예약 (사용자 "티스토리도 같이 고쳐줘")
