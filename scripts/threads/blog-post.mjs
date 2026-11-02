@@ -42,7 +42,9 @@ function paused() {
 }
 
 function postTitle(slug) {
-  const raw = fs.readFileSync(path.join(ROOT, 'content', 'posts', `${slug}.md`), 'utf8').replace(/\r\n?/g, '\n');
+  const f = path.join(ROOT, 'content', 'posts', `${slug}.md`);
+  if (!fs.existsSync(f)) return '';
+  const raw = fs.readFileSync(f, 'utf8').replace(/\r\n?/g, '\n');
   return (/^title:\s*(.+)$/m.exec(raw) || [])[1]?.trim() || '';
 }
 
@@ -64,7 +66,7 @@ async function main() {
 
   const { errors, items } = checkSet(file);
   if (errors.length) { log(`묶음 검사 불통과 — 올리지 않아요:\n     ${errors.join('\n     ')}`); return 1; }
-  const direct = items.filter((it) => it['갈래'] === '바로');
+  const direct = items.filter((it) => it['갈래'] === '바로' && !it.gone);
   const skipped = items.length - direct.length;
   if (skipped) log(`'심의' 갈래 ${skipped}편은 아직 올리지 않아요 (GOMS 적격 흐름을 붙인 뒤)`);
   const due = direct.filter((it) => it['시각'] <= hhmm);
@@ -80,6 +82,7 @@ async function main() {
   const list = await fetchPostList(blogId, { pages: 2, log });
   const urlOf = (it) => {
     const t = normTitle(postTitle(it['원고']));
+    if (!t) return '';
     const hit = list.find((x) => normTitle(x.title) === t);
     return hit ? `https://blog.naver.com/${blogId}/${hit.logNo}` : '';
   };
