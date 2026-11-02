@@ -26,6 +26,26 @@ $late = ($now.Hour -lt 5 -or $now.Hour -ge 21)
 $busy = @(Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -ne $PID -and $_.CommandLine -match 'draft-day\.ps1|tistory-day\.ps1|publish-naver\.mjs|publish-tistory\.mjs|post-images\.mjs|catchup-reserve\.ps1' })
 if ($busy.Count) { Note ("다른 예약 작업이 돌고 있어 쉼: " + (($busy | ForEach-Object { ($_.CommandLine -replace '\s+', ' ').Substring(0, [Math]::Min(90, ($_.CommandLine -replace '\s+', ' ').Length)) }) -join ' | ')); exit 0 }
 if (-not $drive) { Note 'Drive 를 못 찾아 쉼 (.done 을 볼 수 없어 두 번 예약할 수 있다)'; exit 0 }
+# 2026-11-02 사용자 — "막히면 뚫을 방법", "네이버 홈판을 확인해 봐":
+#   ① 아침 이슈 모으기 작업(SeonggeulIssueScan 07:50) 등록 — 다음 날 아침을 기다리지 않게 여기서도
+#   ② 오늘 이슈를 아직 안 모았으면 모은다 (네이버 랭킹 화면 읽기를 오늘 바로 확인)
+#   ③ 네이버 홈판 화면 읽기 (로그인·비로그인) → Drive homefeed\<날짜>\<시각>
+try { & (Join-Path $PSScriptRoot 'ensure-retry.ps1') | Out-Null } catch { Note "작업 등록 확인 실패: $($_.Exception.Message)" }
+if (-not (Test-Path (Join-Path $drive "ClaudeWorkspace\issues\$today\issues.json"))) {
+  Note '오늘 이슈 모으기 시작'
+  & (Join-Path $PSScriptRoot 'issue-scan.ps1') | Out-Null
+  Note ("오늘 이슈 모으기 끝: " + $(if (Test-Path (Join-Path $drive "ClaudeWorkspace\issues\$today\issues.json")) { 'Drive 에 올림' } else { '실패 — dumps 확인' }))
+}
+try {
+  $hm = $now.ToString('HHmm')
+  $hfOut = Join-Path $repo "dumps\homefeed\$today\$hm"
+  New-Item -ItemType Directory -Force -Path (Split-Path $hfOut) | Out-Null
+  & node scripts/homefeed-snapshot.mjs --out $hfOut 2>&1 | Out-Null
+  $hfDest = Join-Path $drive "ClaudeWorkspace\homefeed\$today"
+  New-Item -ItemType Directory -Force -Path $hfDest | Out-Null
+  Get-ChildItem "$hfOut*" | Copy-Item -Destination $hfDest -Force
+  Note "홈판 화면 읽기 → Drive homefeed\$today\$hm"
+} catch { Note "홈판 화면 읽기 실패: $($_.Exception.Message)" }
 $pendingFor = {
   param($date, $folder, $prefix)
   $lockDir = Join-Path $drive "ClaudeWorkspace\run-locks\$date"
