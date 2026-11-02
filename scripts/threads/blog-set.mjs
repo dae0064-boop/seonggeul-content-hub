@@ -16,6 +16,7 @@ const MIN_CHARS = 90;
 const MAX_CHARS = 300;
 const MAX_LINE = 24;
 const PARA_MAX = 4;
+const PARA_MIN = 2; // 2026-11-02 사용자 — "2~4줄 사이로 쓰고 한 칸 띄고"
 const MAX_EMOJI = 2;
 
 // '바로' 갈래에서 막는 민간 보험 낱말. 공적 제도 이름(건강보험 등)은 아래 PUBLIC 으로 먼저 지운다
@@ -91,9 +92,11 @@ export function checkSet(file) {
     const flat = body.replace(/\s/g, '');
     if (body.length < MIN_CHARS || body.length > MAX_CHARS) err(`${body.length}자 — ${MIN_CHARS}~${MAX_CHARS}자로.`);
     for (const line of body.split('\n')) if (line.length > MAX_LINE) err(`한 줄 ${line.length}자 (최대 ${MAX_LINE}): "${line}"`);
+    if (body.split(/\n\s*\n/).length < 2) err('문단 사이에 빈 줄이 없습니다 — 2~4줄마다 한 칸 띄웁니다.');
     for (const para of body.split(/\n\s*\n/)) {
       const n = para.split('\n').filter(Boolean).length;
       if (n > PARA_MAX) err(`문단이 ${n}줄입니다 (최대 ${PARA_MAX}).`);
+      if (n && n < PARA_MIN) err(`한 줄짜리 문단이 있습니다 — 2~4줄로 묶어 주세요: "${para.trim()}"`);
     }
     const emoji = (body.match(/\p{Extended_Pictographic}/gu) || []).length;
     if (emoji > MAX_EMOJI) err(`이모지 ${emoji}개 (최대 ${MAX_EMOJI}).`);
