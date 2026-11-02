@@ -32,6 +32,7 @@ const INSURANCE_BANNED = [
 const FAKE_ASKED = /물어보는\s*사람|질문\s*받|많이\s*물어|자주\s*물어/;
 
 export function parseSet(text) {
+  text = String(text).replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n'); // 윈도우 PC 는 줄바꿈이 \r\n (2026-11-02 첫 실행에서 칸을 못 읽음)
   const items = [];
   for (const chunk of text.split(/^## /m).slice(1)) {
     const [head, ...rest] = chunk.split(/\n\s*\n/);
@@ -49,7 +50,7 @@ export function parseSet(text) {
 function readPost(slug) {
   const f = path.join(POSTS_DIR, slug.endsWith('.md') ? slug : `${slug}.md`);
   if (!fs.existsSync(f)) return null;
-  const raw = fs.readFileSync(f, 'utf8');
+  const raw = fs.readFileSync(f, 'utf8').replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n');
   const fm = {};
   const m = raw.match(/^---\n([\s\S]*?)\n---/);
   if (m) for (const l of m[1].split('\n')) {

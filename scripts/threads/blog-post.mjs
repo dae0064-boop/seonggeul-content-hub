@@ -42,7 +42,7 @@ function paused() {
 }
 
 function postTitle(slug) {
-  const raw = fs.readFileSync(path.join(ROOT, 'content', 'posts', `${slug}.md`), 'utf8');
+  const raw = fs.readFileSync(path.join(ROOT, 'content', 'posts', `${slug}.md`), 'utf8').replace(/\r\n?/g, '\n');
   return (/^title:\s*(.+)$/m.exec(raw) || [])[1]?.trim() || '';
 }
 
