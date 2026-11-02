@@ -81,6 +81,22 @@ if ($Reserve) {
   }
 }
 
+# 아침 이슈 글 기다리기 (2026-11-02 사용자 — "아침 기사 글은 출근 시간에 보게 8~9시에, PC 는 7~8시에 켠다").
+# 오늘·예약 실행·08:15 전인데 오늘 이슈 글(issue:)이 아직 4편이 안 들어왔으면, 클라우드 작업(07:05)이 main 에 합칠 때까지
+# 1분마다 받아 보며 기다린다 — 이슈 글(08:20~09:20)이 생활 글(10:00~)보다 먼저 예약되게 (draft-day 는 publish_at 순서로 돈다).
+if ($Reserve -and $Date -eq (Get-Date -Format 'yyyy-MM-dd')) {
+  $issueCount = { @(Get-ChildItem "content\posts\$Date-*.md" -ErrorAction SilentlyContinue | Where-Object { Select-String -Path $_.FullName -Pattern '^issue:\s*\S' -Quiet }).Count }
+  $said = $false
+  while ((& $issueCount) -lt 4 -and (Get-Date).Hour * 60 + (Get-Date).Minute -lt 8 * 60 + 15 -and (Get-Date).Hour -ge 5) {
+    if (-not $said) { Write-Host '오늘 아침 이슈 글이 아직 안 들어왔어요 — 08:15 까지 1분마다 받아 보며 기다립니다.' -ForegroundColor Cyan; $said = $true }
+    Start-Sleep -Seconds 60
+    git fetch -q origin 2>$null
+    git checkout -q -- 'content/posts/*.json' 'content/tistory/*.json' 'content/tistory/*.html' 2>$null
+    git pull -q --ff-only 2>$null
+  }
+  if ($said) { Write-Host "이슈 글 $(& $issueCount)편 — 이어서 예약합니다." -ForegroundColor Green }
+}
+
 $posts = Get-ChildItem "content\posts\$Date-*.json" | Sort-Object @{ Expression = { (Get-Content $_.FullName -Raw -Encoding UTF8 | ConvertFrom-Json).publishAt } }, Name
 $Only = @($Only | ForEach-Object { $_ -split ',' } | ForEach-Object { $_.Trim() } | Where-Object { $_ })
 if ($Only.Count) { $posts = $posts | Where-Object { $s = $_.BaseName.Substring(11); $Only -contains $s } }
