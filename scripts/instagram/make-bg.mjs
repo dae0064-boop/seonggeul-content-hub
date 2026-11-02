@@ -41,5 +41,12 @@ if (fs.existsSync(cf)) {
     execFileSync(process.execPath, [path.join(ROOT, 'scripts/image-gen.mjs'), `${c.base} ${it.pose}`, '--quality', 'low', '--size', '1024x1024', '--out', cout, '--name', it.slug], { stdio: 'inherit' });
     made++;
   }
+  // v2: 그림체 4가지 (item 마다 prompt 전체)
+  for (const it of c.items_v2 || []) {
+    if (fs.existsSync(path.join(cout, `${it.slug}.png`))) continue;
+    console.log(`캐릭터 만들기: ${it.slug}`);
+    execFileSync(process.execPath, [path.join(ROOT, 'scripts/image-gen.mjs'), it.prompt, '--quality', 'low', '--size', '1024x1024', '--out', cout, '--name', it.slug], { stdio: 'inherit' });
+    made++;
+  }
 }
 console.log(made ? `인스타 바탕·캐릭터 사진 ${made}장 만듦 → ${out}` : '');

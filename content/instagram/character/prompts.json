@@ -2,9 +2,40 @@
   "_설명": "friendly_agent 캐릭터 (2026-11-02 사용자 — 사용자 본인 사진을 3D 캐릭터로, 비용 승인 '돈 주고 만들게'). PC 가 make-bg.mjs 로 low 1장씩 만들어 Drive 인스타카드뉴스/character/ 로. 이미 만든 것은 다시 만들지 않는다.",
   "base": "Cute 3D character illustration in soft clay / Pixar-like style, upper body, centered. A friendly Korean man in his early 30s: short black hair with soft side-swept bangs over the forehead, round friendly face, small gently smiling eyes, warm closed-mouth smile, fair skin. Wearing a dark charcoal suit, crisp white shirt and a dark grey tie. Soft warm beige background, gentle studio lighting, clean and polished, high detail.",
   "items": [
-    { "slug": "char-1-fist", "pose": "His right hand is lightly clenched in a fist in front of his chest, confident and kind expression." },
-    { "slug": "char-2-wave", "pose": "He is waving hello with his right hand, cheerful welcoming expression." },
-    { "slug": "char-3-umbrella", "pose": "He is holding a small orange umbrella over his shoulder, protective and reassuring expression." },
-    { "slug": "char-4-thumb", "pose": "He is giving a thumbs-up with his right hand and smiling brightly." }
+    {
+      "slug": "char-1-fist",
+      "pose": "His right hand is lightly clenched in a fist in front of his chest, confident and kind expression."
+    },
+    {
+      "slug": "char-2-wave",
+      "pose": "He is waving hello with his right hand, cheerful welcoming expression."
+    },
+    {
+      "slug": "char-3-umbrella",
+      "pose": "He is holding a small orange umbrella over his shoulder, protective and reassuring expression."
+    },
+    {
+      "slug": "char-4-thumb",
+      "pose": "He is giving a thumbs-up with his right hand and smiling brightly."
+    }
+  ],
+  "_설명2": "2026-11-02 사용자 '모든 캐릭터 느낌이 같다, 4개 다른 느낌으로' → 그림체 4가지(v2). base 대신 item 마다 style 을 쓴다.",
+  "items_v2": [
+    {
+      "slug": "char-v2-flat",
+      "prompt": "Flat vector illustration, minimal modern style, clean bold shapes, no outlines, limited palette of navy, warm orange and cream, simple geometric shading, a friendly Korean man in his early 30s with short black hair and soft side-swept bangs, round friendly face, small gently smiling eyes, warm closed-mouth smile, wearing a dark charcoal suit, white shirt and dark grey tie, upper body, centered, giving a thumbs-up, plain cream background, like a modern app mascot"
+    },
+    {
+      "slug": "char-v2-webtoon",
+      "prompt": "Korean webtoon / manhwa style illustration, clean ink line art with soft cel shading, bright and friendly, a friendly Korean man in his early 30s with short black hair and soft side-swept bangs, round friendly face, small gently smiling eyes, warm closed-mouth smile, wearing a dark charcoal suit, white shirt and dark grey tie, upper body, centered, waving hello cheerfully, soft pastel sky-blue background with subtle sparkles"
+    },
+    {
+      "slug": "char-v2-chibi",
+      "prompt": "Chibi sticker style, cute super-deformed character with a big head and small body, thick white sticker outline, kawaii, a friendly Korean man in his early 30s with short black hair and soft side-swept bangs, round friendly face, small gently smiling eyes, warm closed-mouth smile, wearing a dark charcoal suit, white shirt and dark grey tie, upper body, centered, holding a small orange umbrella, pastel peach background, emoji sticker look"
+    },
+    {
+      "slug": "char-v2-watercolor",
+      "prompt": "Soft watercolor and pencil hand-drawn illustration, warm gentle storybook style, textured paper, a friendly Korean man in his early 30s with short black hair and soft side-swept bangs, round friendly face, small gently smiling eyes, warm closed-mouth smile, wearing a dark charcoal suit, white shirt and dark grey tie, upper body, centered, holding a notebook and smiling kindly, light warm beige paper background"
+    }
   ]
 }
