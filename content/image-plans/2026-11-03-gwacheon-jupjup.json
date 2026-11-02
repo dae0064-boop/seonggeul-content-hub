@@ -1,0 +1,100 @@
+{
+  "slug": "2026-11-03-gwacheon-jupjup",
+  "title": "과천 줍줍, 2가구에 3264명 몰린 이유는 10억 시세 차이",
+  "source": "11/3(화) 08:40 네이버 원고 — 출근길 이슈 글(정책·부동산) 시험, 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실존 인물 얼굴은 그리지 않는다 · 1번은 공식 사진 먼저(kind: photo)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "kind": "photo",
+      "photo": {
+        "query": "과천지식정보타운",
+        "query_en": "Gwacheon"
+      },
+      "title": "가을 햇살 아래 새로 지은 아파트 단지 모습 (대표사진)",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A newly built Korean high-rise apartment complex under clear autumn sunlight, landscaped trees in front. Color theme: teal and sand tones with an orange accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "shot": "hero shot of one key object",
+      "bg": "teal and sand tones with an orange accent",
+      "note": "대표 — 공식 사진(위키미디어 공용) 먼저, 없으면 이 prompt (사람 없는 관련 장면)",
+      "thumb_shot": "object",
+      "thumb_theme": "teal",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "과천 줍줍, 결국 추첨 운",
+        "focus": "center 18%",
+        "theme": "teal"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "아침 식탁에서 휴대폰으로 청약 화면을 보는 손",
+      "prompt": "Camera and composition: close-up of hands at a breakfast table. Hands holding a smartphone with a blank bright screen over a breakfast table with toast and coffee, morning light, face not shown. Background color: warm morning cream. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "shot": "close-up of hands at a breakfast table",
+      "bg": "warm morning cream"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "신청 자격과 일정을 순서대로 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "신청부터 입주까지",
+        "items": [
+          "과천시에 사는 무주택 세대주",
+          "통장 없이도 넣을 수 있었어요",
+          "당첨자 발표는 11월 5일",
+          "입주는 2027년 5월"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "해 질 녘 신도시 아파트 단지와 넓은 공원",
+      "prompt": "Camera and composition: wide shot of a new town at dusk. A new Korean apartment town with tall towers beside a wide green park at dusk, soft orange sky, a few tiny pedestrians far away. Background color: dusky orange and blue. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "shot": "wide shot of a new town at dusk",
+      "bg": "dusky orange and blue"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "당첨 뒤 붙는 조건을 나란히 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "당첨 뒤 붙는 조건",
+        "heads": [
+          "조건",
+          "기간"
+        ],
+        "items": [
+          [
+            "전매제한",
+            "3년"
+          ],
+          [
+            "거주의무",
+            "5년"
+          ],
+          [
+            "재당첨 제한",
+            "10년"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "저녁 불빛이 켜진 아파트 창문들",
+      "prompt": "Camera and composition: medium shot of an apartment facade at night. Rows of apartment windows glowing with warm lights at night, a calm evening sky, no people. Background color: deep navy night with warm window lights. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "shot": "medium shot of an apartment facade at night",
+      "bg": "deep navy night with warm window lights"
+    }
+  ]
+}

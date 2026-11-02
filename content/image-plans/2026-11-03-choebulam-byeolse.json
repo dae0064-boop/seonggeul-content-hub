@@ -1,0 +1,100 @@
+{
+  "slug": "2026-11-03-choebulam-byeolse",
+  "title": "최불암 별세, 전원일기 김 회장 22년 국민 아버지의 마지막 길",
+  "source": "11/3(화) 08:20 네이버 원고 — 출근길 이슈 글(연예) 시험, 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실존 인물 얼굴은 그리지 않는다 · 1번은 공식 사진 먼저(kind: photo)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "kind": "photo",
+      "photo": {
+        "query": "최불암",
+        "query_en": "Choi Bool-am"
+      },
+      "title": "하얀 국화가 놓인 조용한 추모 공간 (대표사진)",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A bouquet of white chrysanthemums laid on a plain wooden table in a quiet memorial room, a single candle glowing beside it. Color theme: neutral gray and white tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "shot": "hero shot of one key object",
+      "bg": "neutral gray and white tones with a coral accent",
+      "note": "대표 — 공식 사진(위키미디어 공용) 먼저, 없으면 이 prompt (사람 없는 관련 장면)",
+      "thumb_shot": "object",
+      "thumb_theme": "charcoal",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "최불암 별세, 마지막 배웅",
+        "focus": "center 18%",
+        "theme": "charcoal"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "아침 햇살이 드는 거실 탁자 위 신문과 찻잔",
+      "prompt": "Camera and composition: medium shot of a living room table in the morning. A folded newspaper and a cup of tea on a wooden living room table, morning sunlight through a window, an old television in the soft background, no people. Background color: warm morning beige. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "shot": "medium shot of a living room table in the morning",
+      "bg": "warm morning beige"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "데뷔부터 교양 진행까지 걸어온 길을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "걸어온 길",
+        "items": [
+          "연극 햄릿으로 데뷔",
+          "수사반장의 박영한 반장",
+          "전원일기의 김 회장",
+          "한국인의 밥상"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "시골 부엌 나무 상 위에 차려진 소박한 밥상",
+      "prompt": "Camera and composition: overhead shot of a low wooden table in a countryside kitchen. A simple Korean home meal of rice, soybean paste soup and a few side dishes on a low wooden table in a rustic countryside kitchen, steam rising, no people. Background color: warm wood brown. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "shot": "overhead shot of a low wooden table in a countryside kitchen",
+      "bg": "warm wood brown"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "대표 작품과 맡은 역할을 나란히 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "기억에 남는 세 얼굴",
+        "heads": [
+          "작품",
+          "역할"
+        ],
+        "items": [
+          [
+            "수사반장",
+            "박영한 반장"
+          ],
+          [
+            "전원일기",
+            "김 회장"
+          ],
+          [
+            "한국인의 밥상",
+            "진행"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "해 질 녘 시골 마을 들판 사이로 난 길",
+      "prompt": "Camera and composition: wide shot of a countryside road at sunset. A narrow country road between harvested rice fields leading toward a small village at sunset, golden light, no people. Background color: golden sunset orange. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "shot": "wide shot of a countryside road at sunset",
+      "bg": "golden sunset orange"
+    }
+  ]
+}
