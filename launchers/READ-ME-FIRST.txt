@@ -36,6 +36,11 @@ threads-laptop.cmd    이 PC 에서 스레드 보험글 올리기·GOMS 등록 �
 goms-revise.cmd       GOMS 반려 재심사 실제 — 반려된 스레드 글마다 사유 문구를 넣은 Word 로
                       파일삭제 → 파일추가 → 수정까지 해요
 
+usage-widget.cmd      클로드 사용량 위젯 — 화면 오른쪽 위에 둥근 막대로 항상 떠 있고 5분마다 저절로 바뀌어요
+                      처음 한 번 자동화용 크롬에서 claude.ai 로그인. 오른쪽 클릭 = 새로 고침·닫기
+
+usage-window.cmd      (예전 것) 사용량 화면을 작은 크롬 창으로. 숫자를 보려면 F5
+
 
 tools 폴더            위 실행기가 쓰는 부품이에요. 열거나 누를 필요 없어요.
                       (새 PC 를 연결할 때 쓰는 connect.cmd·openai-key.cmd 도 여기 있어요)
