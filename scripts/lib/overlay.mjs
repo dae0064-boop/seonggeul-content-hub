@@ -372,7 +372,7 @@ export async function renderCards(jobs) {
   }
 }
 
-async function launch() {
+export async function launch() {
   const { chromium } = await import('playwright');
   const tries = [
     () => chromium.launch({ channel: 'chrome', headless: true }),

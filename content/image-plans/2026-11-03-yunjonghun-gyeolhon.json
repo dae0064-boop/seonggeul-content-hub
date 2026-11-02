@@ -2,7 +2,7 @@
   "slug": "2026-11-03-yunjonghun-gyeolhon",
   "title": "윤종훈 결혼, 10살 연하 아내 한은서와 8년 전 처음 만난 곳은",
   "source": "11/3(화) 21:40 네이버 원고 — 이슈 글(연예) 시험 1편, 홈판형, 실사풍",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실존 인물 얼굴은 그리지 않는다 — 소식을 보는 가상의 일반인, 예식장·촬영장 장면",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실존 인물 얼굴은 그리지 않는다 — 소식을 보는 가상의 일반인, 예식장·촬영장 장면 · 1번은 공식 사진 먼저(kind: photo)",
   "images": [
     {
       "n": 1,
@@ -11,7 +11,7 @@
       "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). An ordinary Korean woman in her 30s with long wavy brown hair in a beige trench coat on an evening subway train, holding a smartphone near her chest and looking at the screen with a curious look, city lights blurred through the window behind her. Facial expression: curious, head slightly tilted. Color theme: dusty rose and white tones with a green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
       "shot": "한 사람 얼굴 가까이",
       "bg": "dusty rose and white tones with a green accent",
-      "note": "대표",
+      "note": "대표 — 공식 사진(위키미디어 공용, 라이선스 맞는 것만). 못 찾으면 아래 prompt 로 AI 그림",
       "thumb_shot": "face",
       "thumb_theme": "rose",
       "thumb_person": "30대 여성(긴 웨이브 갈색 머리·베이지 트렌치코트)",
@@ -22,6 +22,11 @@
         "theme": "rose",
         "font": "jua",
         "title": "윤종훈 결혼\n상대는 누구?"
+      },
+      "kind": "photo",
+      "photo": {
+        "query": "윤종훈",
+        "query_en": "Yoon Jong-hoon"
       }
     },
     {
