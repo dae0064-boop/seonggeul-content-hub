@@ -23,6 +23,11 @@
 
 ## 지금 상태
 
+### 11/2 — 🧹 지난 파일 정리 (사용자 "사용하지 않거나 오래된 파일 모두 삭제")
+- 저장소: 지난 원고는 이미 정리돼 11/2~11/5 원고만 남아 있음 — 지울 것 없음. 스크립트·실행기는 멈춘 기능(스레드 보험·GOMS 등)도 다시 켤 수 있게 남김.
+- Drive: `keyword-volume/` 10/5~10/17 날짜 폴더 13개 휴지통으로(30일 안 되살릴 수 있음). 보험글 Word·goms-done 표시·상태 파일은 그대로.
+- `launchers/tools/cleanup.ps1`(아침 실행 끝)이 이제 run-logs·run-locks 말고도 keyword-volume·issues·homefeed·index-requests·threads-web·threads-read·run-logs/threads 의 14일 지난 날짜 기록, blog-stats·tistory-stats 의 35일 지난 기록을 지움. 바로 돌리기: `launchers/cleanup-now.cmd`.
+
 ### 11/2 — 😊 스레드 일상 글 하루 2편 (사용자 "생활정보로만 쓰면 광고글 같으니까 — 긍정적이고 힘이 되는 스레드")
 - **07:00 운동·러닝 + 오늘 힘내자 / 19:00 하루 마무리**(와이프·부모님 통화·나를 다독이기). 말투는 인간적·유쾌(사용자 "오그라든다" → 고침), 이모지 1~2개만(사용자). 사실은 사용자가 준 것만: **11/3 부터 아침 러닝 시작**, 가족은 와이프, 퇴근길 부모님 통화.
 - 규칙 `content/threads/daily.md`, 묶음 `content/threads/daily/<날짜>.md`, 검사 `daily-set.mjs`, 올리기 `daily-post.mjs`(링크 없음, 시각에서 3시간 안만, 스레드 되읽어 중복 막음). PC 작업 `SeonggeulThreadsBlog` 에 07:00·19:00 추가(19시 catchup 이 다시 등록) — 일상 글 먼저, 블로그 유입 글 다음. 멈춤 `content/threads/PAUSE-DAILY`.
