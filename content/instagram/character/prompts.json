@@ -36,6 +36,22 @@
     {
       "slug": "char-v2-watercolor",
       "prompt": "Soft watercolor and pencil hand-drawn illustration, warm gentle storybook style, textured paper, a friendly Korean man in his early 30s with short black hair and soft side-swept bangs, round friendly face, small gently smiling eyes, warm closed-mouth smile, wearing a dark charcoal suit, white shirt and dark grey tie, upper body, centered, holding a notebook and smiling kindly, light warm beige paper background"
+    },
+    {
+      "slug": "avatar-umbrella",
+      "prompt": "A cute rounded umbrella icon in warm white and soft yellow, gently opened, with a tiny heart on the handle. Background: warm coral orange (#F07A3A). Profile avatar icon for a friendly insurance advisor's Instagram chat. Designed to be shown very small inside a circle (64px): one simple bold subject centered with generous margin, fills about 60% of the frame, perfectly circular-crop safe. Clean flat vector style, smooth shapes, no outlines clutter, no gradients noise, no texture, no shadows except a soft subtle one. Solid plain background color filling the whole square. Absolutely no text, no letters, no numbers, no logos."
+    },
+    {
+      "slug": "avatar-smile",
+      "prompt": "A minimal friendly mascot: a round soft cream-colored face with a gentle closed-eye smile and rosy cheeks, wearing a tiny navy necktie below. Background: warm coral orange (#F07A3A). Profile avatar icon for a friendly insurance advisor's Instagram chat. Designed to be shown very small inside a circle (64px): one simple bold subject centered with generous margin, fills about 60% of the frame, perfectly circular-crop safe. Clean flat vector style, smooth shapes, no outlines clutter, no gradients noise, no texture, no shadows except a soft subtle one. Solid plain background color filling the whole square. Absolutely no text, no letters, no numbers, no logos."
+    },
+    {
+      "slug": "avatar-shield",
+      "prompt": "A rounded shield shape in white with a small warm yellow heart in the middle. Background: deep navy blue (#1F2D4D). Profile avatar icon for a friendly insurance advisor's Instagram chat. Designed to be shown very small inside a circle (64px): one simple bold subject centered with generous margin, fills about 60% of the frame, perfectly circular-crop safe. Clean flat vector style, smooth shapes, no outlines clutter, no gradients noise, no texture, no shadows except a soft subtle one. Solid plain background color filling the whole square. Absolutely no text, no letters, no numbers, no logos."
+    },
+    {
+      "slug": "avatar-bubble",
+      "prompt": "A rounded white speech bubble with a small coral heart inside, like a chat message. Background: soft warm yellow (#FFD978). Profile avatar icon for a friendly insurance advisor's Instagram chat. Designed to be shown very small inside a circle (64px): one simple bold subject centered with generous margin, fills about 60% of the frame, perfectly circular-crop safe. Clean flat vector style, smooth shapes, no outlines clutter, no gradients noise, no texture, no shadows except a soft subtle one. Solid plain background color filling the whole square. Absolutely no text, no letters, no numbers, no logos."
     }
   ],
   "items_edit": [
