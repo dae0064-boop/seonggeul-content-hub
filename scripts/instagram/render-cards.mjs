@@ -161,7 +161,7 @@ body{font-family:GB,sans-serif}
 .ca{gap:24px}
 .ca img{flex:none;width:76px;height:76px;border-radius:50%;object-fit:cover;object-position:center;background:#F07A3A;margin-top:2px}
 .ca.cont img{visibility:hidden}
-.cname{font-family:GX;font-size:26px;color:#fff;margin:calc(30px*var(--k,1)) 0 0 100px;line-height:1}
+.cname{font-family:GX;font-size:26px;color:#fff;margin:calc(54px*var(--k,1)) 0 0 100px;line-height:1}
 .cname+.ca{margin-top:12px}
 .cq em,.ca em{color:#C2410C;background:none;padding:0}
 .panel .pt{margin-top:calc(26px*var(--k,1))}.panel .pt td{padding:calc(12px*var(--k,1)) 4px}
