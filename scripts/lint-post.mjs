@@ -170,6 +170,13 @@ const LEAD_KW_FROM = '2026-10-15';
 // 출처 ①(기관 자료) 글은 프런트매터 source_url 에 실제로 확인한 1차 원문 주소 1~2개. 발행 때 출처 줄 아래 링크 카드로 들어간다.
 // 출처 ②(생활 노하우) 글에는 달지 않는다. 블로그·카페·뉴스·영상 주소는 1차 원문이 아니다.
 const SOURCE_URL_FROM = '2026-10-19';
+// 이슈 글 (2026-11-02 사용자 — "연예·오늘 이슈·정책 변경으로 홈판 조회수, 무조건 진행") — 2026-11-06 네이버 원고부터.
+// issue: 연예 | 정책 + slot: 홈판. 출처는 언론 보도·소속사·정부 발표 주소(뉴스 주소 허용), 2개 이상 매체로 확인한 사실만.
+// 메인 키워드 검색량 상한(12,000)·네 기둥은 보지 않는다. 사람 이름이 그림 계획서 프롬프트에 들어가면 막는다(실존 인물 얼굴을 AI 로 만들지 않는다).
+const ISSUE_FROM = '2026-11-06';
+const ISSUE_KINDS = ['연예', '정책'];
+const ISSUE_TOPICS = { 연예: ['스타·연예인', '방송', '드라마', '영화', '음악'], 정책: ['사회·정치', '비즈니스·경제', '건강·의학'] };
+const ISSUE_NOT_SOURCE = /(^|\.)(blog\.naver\.com|m\.blog\.naver\.com|cafe\.naver\.com|post\.naver\.com|tistory\.com|brunch\.co\.kr|youtube\.com|youtu\.be|namu\.wiki|wikipedia\.org|instagram\.com|threads\.net|search\.naver\.com|google\.com|x\.com|twitter\.com|theqoo\.net|dcinside\.com|fmkorea\.com|instiz\.net)$/i;
 const SOURCE_ONE = /확인한 정보를 바탕으로/;
 const FILE_DOWNLOAD = /(flDownload|fileDown|[Dd]ownload\.do|\.(pdf|hwpx?|docx?|xlsx?|zip)(\?|$))/i;
 const NOT_PRIMARY = /(^|\.)(blog\.naver\.com|m\.blog\.naver\.com|cafe\.naver\.com|post\.naver\.com|n\.news\.naver\.com|news\.naver\.com|tistory\.com|brunch\.co\.kr|youtube\.com|youtu\.be|namu\.wiki|wikipedia\.org|instagram\.com|threads\.net|search\.naver\.com|google\.com|daum\.net)$/i;
@@ -419,6 +426,8 @@ for (const file of files) {
   // 출처 원문 링크 (2026-10-19 원고부터, 네이버)
   {
     const srcOne = texts.some((t) => SOURCE_ONE.test(t));
+    const issuePost = !tistory && post.issue && dated >= ISSUE_FROM;
+    if (issuePost && !post.sourceUrls.length) errors.push('이슈 글은 프런트매터 source_url 에 실제로 읽은 보도·발표 주소 1~2개를 적습니다 (언론사 기사·소속사·정부 보도자료)');
     if (post.sourceUrls.length && tistory) errors.push('source_url 은 네이버 원고에만 씁니다 (티스토리는 아직 지원하지 않음)');
     else if (post.sourceUrls.length && !srcOne) errors.push('source_url 은 출처 ①(기관 자료 — "…에서 확인한 정보를 바탕으로 정리했어요") 글에만 답니다');
     else if (!tistory && srcOne && dated >= SOURCE_URL_FROM && !post.sourceUrls.length)
@@ -428,7 +437,7 @@ for (const file of files) {
       let url = null;
       try { url = new URL(u); } catch { /* 아래에서 잡는다 */ }
       if (!url || url.protocol !== 'https:' && url.protocol !== 'http:') errors.push(`source_url 이 주소 형식이 아닙니다: ${u}`);
-      else if (NOT_PRIMARY.test(url.hostname)) errors.push(`source_url 은 1차 원문(기관·법령·학술지) 주소여야 합니다 — 블로그·카페·뉴스·영상·검색 주소 안 됨: ${u}`);
+      else if (issuePost ? ISSUE_NOT_SOURCE.test(url.hostname) : NOT_PRIMARY.test(url.hostname)) errors.push(issuePost ? `이슈 글 source_url 은 언론사 기사·소속사·정부 발표 주소여야 합니다 — 블로그·카페·커뮤니티·SNS·영상·나무위키 안 됨: ${u}` : `source_url 은 1차 원문(기관·법령·학술지) 주소여야 합니다 — 블로그·카페·뉴스·영상·검색 주소 안 됨: ${u}`);
       // 파일 내려받기 주소는 링크 카드가 안 만들어져 발행 때 빠진다 (2026-10-26 law.go.kr flDownload.do 2편 모두 빠짐)
       else if (dated >= '2026-10-27' && FILE_DOWNLOAD.test(url.pathname + url.search))
         errors.push(`source_url 에 파일 내려받기 주소(PDF·HWP·flDownload)는 링크 카드가 안 만들어져 빠집니다 — 그 자료를 보여 주는 웹 화면 주소(법령 본문·보도자료 화면)로 바꾸세요: ${u}`);
@@ -466,6 +475,7 @@ for (const file of files) {
     const v = volumeOf(post.mainKeyword);
     if (v == null) notes.push(`메인 키워드 "${post.mainKeyword}" 검색량 자료가 없어요 — keyword-queue.txt 에 넣어 조회해 두세요`);
     else if (v < minVolume(dated)) errors.push(`메인 키워드 "${post.mainKeyword}" 월 검색량 ${v} — ${minVolume(dated)} 이상인 말로 바꾸세요 (1,000~10,000 우선)`);
+    else if (post.issue && dated >= ISSUE_FROM) notes.push(`이슈 글 메인 키워드 "${post.mainKeyword}" 월 검색량 ${v.toLocaleString()} (상한 없음)`);
     else if (dated >= TOPIC_SHIFT_FROM && v > (!tistory && dated >= SPLIT2_FROM && post.category === '생활보장' ? MAIN_MAX_CARE : MAIN_MAX)) errors.push(`메인 키워드 "${post.mainKeyword}" 월 검색량 ${v.toLocaleString()} — ${(!tistory && dated >= SPLIT2_FROM && post.category === '생활보장' ? MAIN_MAX_CARE : MAIN_MAX).toLocaleString()} 넘는 말은 최적화 블로그가 차지해 우리 글이 유입을 못 받았습니다. 서브로 쓰고, 메인은 그 말의 자동완성·연관 중 1,000~10,000 인 구체적인 말로`);
     else notes.push(`메인 키워드 "${post.mainKeyword}" 월 검색량 ${v.toLocaleString()}`);
   }
@@ -599,6 +609,27 @@ for (const file of files) {
     }
   }
   // 네이버 글 주제 (발행 패널) — 프런트매터 topic 이 네이버 목록에 없는 이름이면 발행 때 고르지 못한다
+  // 이슈 글 (2026-11-06 원고부터)
+  if (post.issue) {
+    if (tistory) errors.push('issue: 는 네이버 원고에만 씁니다');
+    else if (dated < ISSUE_FROM) errors.push(`이슈 글은 ${ISSUE_FROM} 원고부터입니다`);
+    else {
+      if (!ISSUE_KINDS.includes(post.issue)) errors.push(`issue 는 "${ISSUE_KINDS.join('" 또는 "')}" 입니다 (지금 "${post.issue}")`);
+      if (post.slot !== '홈판') errors.push('이슈 글은 slot: 홈판 과 함께 씁니다');
+      if (post.category !== '생활정보') errors.push('이슈 글 카테고리는 생활정보입니다 (블로그 카테고리가 생활정보·생활보장 두 개뿐)');
+      const okT = ISSUE_TOPICS[post.issue] || [];
+      if (okT.length && !okT.includes(post.topic)) errors.push(`이슈(${post.issue}) 글은 topic: 을 ${okT.join('·')} 중 하나로 적습니다 (지금 "${post.topic || '없음'}")`);
+      // 실존 인물 얼굴을 AI 그림으로 만들지 않는다 — 그림 계획서 프롬프트에 인물 이름(people:)이 들어가면 막는다
+      const people = String(post.people || '').split(/[|,]/).map((x) => x.trim()).filter(Boolean);
+      if (post.issue === '연예' && !people.length) errors.push('연예 이슈 글은 프런트매터 people: 에 글에 나오는 실존 인물 이름을 적습니다 (그림 프롬프트에 들어가지 않게 검사)');
+      const plan = planOf(file);
+      if (plan) {
+        const txt = (plan.images || []).map((im) => `${im.prompt || ''} ${im.title || ''} ${im.thumb_person || ''}`).join(' ');
+        for (const n of people) if (n.length >= 2 && txt.includes(n)) errors.push(`그림 계획서에 실존 인물 이름 "${n}" 이 있습니다 — 실존 인물 얼굴·닮은 그림은 만들지 않습니다. 장소·물건·글자 카드로 바꾸세요 (대표사진 글씨(overlay)·정보 카드 글자에 이름을 넣는 것은 괜찮습니다)`);
+      }
+      notes.push(`이슈 글(${post.issue}) — 출처 매체 2곳 이상으로 확인한 사실만, 추측·지어낸 말 없이`);
+    }
+  }
   if (!tistory && post.topic && topicFor(post) === null) errors.push(`topic "${post.topic}" 은 네이버 주제 목록에 없습니다 (scripts/lib/naver-topic.mjs NAVER_TOPICS)`);
   if (!tistory && dated >= SPELL_TEST[0] && topicFor(post) === '교육·학문') {
     if (dated > SPELL_TEST[1]) errors.push('맞춤법 시험은 2026-11-17 원고까지입니다 — 11/18 판정 전에는 쓰지 않습니다 (routines/naver-daily.md ⓓ-2)');
