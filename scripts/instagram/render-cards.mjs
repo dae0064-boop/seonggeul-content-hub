@@ -81,13 +81,65 @@ em{font-style:normal;color:#FFD43B}
 .fw .h{font-size:70px;line-height:1.35}.fw img{width:300px;border-radius:24px;box-shadow:0 8px 30px rgba(0,0,0,.5)}
 /* 고지 */
 .nt{position:absolute;top:80px;left:56px;right:56px;bottom:130px;background:rgba(255,255,255,.94);color:#2E2620;border-radius:28px;padding:44px 44px;font-size:24px;line-height:1.55}
-.nt h3{font:44px Head;color:#E0642A;margin-bottom:18px}.nt b{display:block;font-size:28px}.nt p{margin-top:14px}.nt .ap{color:#C2551E;font-size:26px}
+.nt h3{font:44px Head;color:#E0642A;margin-bottom:18px}.nt b{display:block;font-size:28px}.nt p{margin-top:14px}.nt .ap{color:#FFC25A;font-size:26px}
 `;
+
+// ── C안 '잡지형' (2026-11-02 사용자 선택): 위 사진 + 아래 흰 칸, 글꼴 하나(Pretendard), 포인트 색 하나 ──
+const MCSS = `
+@font-face{font-family:Pre;src:url('${font('scripts/threads/fonts/Pretendard-Bold.otf')}')}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1080px;position:relative;overflow:hidden;word-break:keep-all;font-family:Pre,sans-serif;color:#1c1c1c;background:#fff}
+.ph{background-size:cover;background-repeat:no-repeat}
+em{font-style:normal;color:#C2551E}
+.lb{font-size:30px;color:#C2551E;letter-spacing:1px}
+.hd{font-size:62px;line-height:1.3;letter-spacing:-1.5px;margin-top:18px}
+.bd{font-size:36px;line-height:1.7;color:#555;margin-top:34px}
+.bd p+p{margin-top:16px}
+.bgp{position:absolute;inset:0;background-size:cover;background-repeat:no-repeat}
+.shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 22%,rgba(0,0,0,.55) 50%,rgba(0,0,0,.82) 100%)}
+.shade.full{background:rgba(0,0,0,.72)}
+.panel{position:absolute;left:72px;right:72px;bottom:110px;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.55)}
+.panel .lb{color:#FFB27A}.panel em{color:#FFC25A}.panel .bd,.panel .st,.panel .cp>div,.panel .cta,.panel .terms,.panel .nt{color:rgba(255,255,255,.9)}
+.panel .hd{color:#fff}.panel .nt b,.panel .nt h3{color:#fff}.panel .ck i{color:#FFC25A}
+.ft{position:absolute;left:64px;right:64px;bottom:44px;display:flex;justify-content:space-between;font-size:24px;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6)}
+.in{padding:0}
+.st{display:flex;gap:26px;margin-top:30px;font-size:36px;line-height:1.6;color:#444}
+.st b{flex:none;width:58px;height:58px;border-radius:50%;background:#C2551E;color:#fff;font-size:32px;line-height:58px;text-align:center;font-weight:normal}
+.cp{display:flex;gap:24px;margin-top:36px}.cp>div{flex:1;padding:6px 0 6px 28px;font-size:34px;line-height:1.6;border-left:4px solid #FFB27A}.cp h4{font-size:32px;color:#FFB27A;margin-bottom:12px;font-weight:normal}
+.ck{font-size:38px;line-height:1.5;margin-top:24px;display:flex;gap:18px}.ck i{font-style:normal;color:#C2551E}
+.cta{margin-top:36px;font-size:30px;color:#888;line-height:1.6}
+.terms{font-size:22px;line-height:1.5;color:#a0a0a0;margin-top:26px}
+.nt{font-size:23px;line-height:1.55;color:#444}.nt h3{font-size:44px;color:#1c1c1c;margin-bottom:26px}.nt b{display:block;font-size:29px;color:#1c1c1c}.nt p{margin-top:16px}.nt .ap{color:#FFC25A;font-size:27px}
+`;
+// 2026-11-02 사용자: "사진을 그냥 배경으로 두고 사진이랑 글자가 잘 보이게" — 사진 한 장을 7장 모두 같은 자리로 깔고, 그 위에 흰 글 칸
+function mpage(photo, crop, h, inner, i, left, full) {
+  const ph = photo ? `<div class="bgp" style="background-image:url('${photo}');background-position:center"></div><div class="shade${full ? ' full' : ''}"></div>` : '';
+  return `<!doctype html><html><head><meta charset="utf-8"><style>${MCSS}</style></head><body style="background:#333">${ph}<div class="panel">${inner}</div>
+<div class="ft"><span>${esc(left || '친근한 설계사')}</span><span>${i} / 7</span></div></body></html>`;
+}
+function mcard(c, photo, i) {
+  const H = (a) => a.map(hl).join('<br>');
+  const terms = c.terms ? `<div class="terms">${esc(NOTICE.terms)}</div>` : '';
+  const src = c.src ? '근거 · ' + c.src : '';
+  switch (c.type) {
+    case 'cover': return mpage(photo, c.crop, 560, `<div class="in"><div class="lb">${esc(c.kw)}</div><div class="hd" style="font-size:72px">${H(c.title)}</div><div class="bd" style="margin-top:20px">${esc(c.sub || '')}</div></div>`, i);
+    case 'text': return mpage(photo, c.crop, 300, `<div class="in"><div class="lb">${esc(c.label)}</div><div class="hd">${H(c.head)}</div><div class="bd">${c.body.map((t) => `<p>${hl(t)}</p>`).join('')}</div>${terms}</div>`, i, src || undefined);
+    case 'steps': return mpage(photo, c.crop, 300, `<div class="in"><div class="lb">${esc(c.label)}</div><div class="hd">${H(c.head)}</div>${c.steps.map(([n, t]) => `<div class="st"><b>${esc(n)}</b><span>${hl(t)}</span></div>`).join('')}${terms}</div>`, i, src || undefined);
+    case 'compare': return mpage(photo, c.crop, 300, `<div class="in"><div class="lb">${esc(c.label)}</div><div class="hd">${H(c.head)}</div><div class="cp">${[c.left, c.right].map((x) => `<div><h4>${esc(x.t)}</h4>${x.lines.map(esc).join('<br>')}</div>`).join('')}</div><div class="bd" style="font-size:30px;margin-top:26px">${esc(c.foot || '')}</div>${terms}</div>`, i, src || undefined);
+    case 'check': return mpage(photo, c.crop, 300, `<div class="in"><div class="lb">${esc(c.label)}</div><div class="hd">${H(c.head)}</div>${c.checks.map((t) => `<div class="ck"><i>✓</i><span>${hl(t)}</span></div>`).join('')}<div class="cta">${esc(c.cta)}</div></div>`, i);
+    default: throw new Error('모르는 카드 종류: ' + c.type);
+  }
+}
+function mnotice(approval, photo7) {
+  const N = NOTICE;
+  return mpage(photo7, '', 0, `<div class="nt"><h3>꼭 읽어 주세요</h3><b>${esc(N.agency)}</b><b>${esc(N.agent)}</b>
+<p>${N.opinion.map(esc).join('<br>')}</p><p>${N.replace.map(esc).join('<br>')}</p><p>${esc(N.terms)}</p><p>${esc(N.rule)}</p><p class="ap">${esc(approval || N.approval)}</p></div>`, 7, undefined, true);
+}
 
 function page(bg, inner, i) {
   return `<!doctype html><html><head><meta charset="utf-8"><style>${CSS}</style></head><body>
 <div class="bg" style="background-image:url('${bg}')"></div><div class="dim"></div>${inner}
-<div class="page">${i}/7</div><div class="brand"><img src="${logo}">친근한 설계사 강성대의 보험 이야기</div></body></html>`;
+<div class="page">${i}/7</div><div class="brand"><img src="${logo}">친근한 설계사의 보험 이야기</div></body></html>`;
 }
 
 function card(c, bg, i) {
@@ -111,7 +163,7 @@ function notice(bg, approval) {
   const N = NOTICE;
   return page(bg, `<div class="nt"><h3>꼭 읽어 주세요</h3><b>${esc(N.agency)}</b><b>${esc(N.agent)}</b>
 <p>${N.opinion.map(esc).join('<br>')}</p><p>${N.replace.map(esc).join('<br>')}</p><p>${esc(N.terms)}</p><p>${esc(N.rule)}</p>
-<p class="ap">${esc(approval || N.approval)}</p></div>`, 7);
+<p class="ap">${esc(approval || N.approval)}</p></div>`, 7, undefined, true);
 }
 
 const browser = await chromium.launch();
@@ -119,16 +171,25 @@ const pg = await browser.newPage({ viewport: { width: 1080, height: 1080 } });
 let made = 0;
 for (const p of set.posts) {
   if (only.size && !only.has(p.no)) continue;
-  if (p.cards.length !== 5) throw new Error(`${p.no}편: 카드는 5장이어야 해요 (6장째 팔로우·7장째 고지는 저절로) — 지금 ${p.cards.length}장`);
+  const mag = p.style === 'magazine';
+  const need = mag ? 6 : 5;
+  if (p.cards.length !== need) throw new Error(`${p.no}편: 카드는 ${need}장이어야 해요 (나머지는 저절로) — 지금 ${p.cards.length}장`);
   const bgFile = fs.existsSync(path.join(ROOT, `content/instagram/bg/${p.slug}.png`)) ? `content/instagram/bg/${p.slug}.png` : 'content/instagram/bg/_placeholder.png';
   const bg = img(bgFile);
   const dir = path.join(outRoot, `${p.no}-${p.slug}`);
   fs.mkdirSync(dir, { recursive: true });
-  const htmls = [...p.cards.map((c, k) => card(c, bg, k + 1)), follow(bg), notice(bg, p.approval)];
+  const htmls = mag
+    ? [...p.cards.map((c, k) => mcard(c, bg, k + 1)), mnotice(p.approval, bg)]
+    : [...p.cards.map((c, k) => card(c, bg, k + 1)), follow(bg), notice(bg, p.approval)];
   for (let k = 0; k < htmls.length; k++) {
     await pg.setContent(htmls[k], { waitUntil: 'load' });
     await pg.evaluate(() => document.fonts.ready);
-    const over = await pg.evaluate(() => [...document.querySelectorAll('.wrap,.nt')].some((w) => w.scrollHeight > w.clientHeight + 2));
+    // 넘침: 본문이 아래 줄(.ft)을 덮거나 칸을 넘치면 멈춘다
+    const over = await pg.evaluate(() => {
+      if ([...document.querySelectorAll('.wrap,.nt')].some((w) => w.scrollHeight > w.clientHeight + 2)) return true;
+      const pn = document.querySelector('.panel');
+      return !!(pn && pn.getBoundingClientRect().top < 60);
+    });
     if (over) throw new Error(`${p.no}편 ${k + 1}장: 글이 칸을 넘쳐요 — 줄을 줄여 주세요`);
     await pg.screenshot({ path: path.join(dir, String(k + 1).padStart(2, '0') + '.png') });
     made++;
