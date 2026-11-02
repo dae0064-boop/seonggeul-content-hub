@@ -36,6 +36,8 @@ threads-laptop.cmd    이 PC 에서 스레드 보험글 올리기·GOMS 등록 �
 goms-revise.cmd       GOMS 반려 재심사 실제 — 반려된 스레드 글마다 사유 문구를 넣은 Word 로
                       파일삭제 → 파일추가 → 수정까지 해요
 
+usage-window.cmd      클로드 사용량(5시간·주간)을 작은 크롬 창으로 띄워요. 새로 보려면 그 창에서 F5
+
 
 tools 폴더            위 실행기가 쓰는 부품이에요. 열거나 누를 필요 없어요.
                       (새 PC 를 연결할 때 쓰는 connect.cmd·openai-key.cmd 도 여기 있어요)
