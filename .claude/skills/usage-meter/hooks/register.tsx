@@ -47,10 +47,20 @@ export const register: Register = on => {
     return ran
   })
 
+  // 2026-11-02: 앱이 패널을 못 띄우는 화면이 있어(사용자 "뜨지 않는다") 숫자를 글자로도 바로 돌려준다
   on('command.run', { command: 'usage-pane' }, async $ => {
     shown = true
-    await $.ui.open({ id: PANE, title: TITLE })
-    return { text: '클로드 사용량 패널을 열었어요.' }
+    const u = await $.session.usage()
+    const now = await $.clock.now()
+    if (u.rateLimits.length > 0) await update($, reading, (): Reading => ({ limits: u.rateLimits.map((l): Limit => ({ ...l })), at: now }))
+    const r = await read($, reading)
+    const order = (k: string) => (k === 'five_hour' ? 0 : k === 'seven_day' ? 1 : 2)
+    const lines = [...r.limits]
+      .sort((a, b) => order(a.kind) - order(b.kind))
+      .map(l => `${NAMES[l.kind] ?? l.kind}: ${bar(l.percentUsed)} ${Math.round(l.percentUsed)}%${l.resetsAt ? ' · ' + resetText(l.resetsAt) : ''}`)
+    const opened = await $.ui.open({ id: PANE, title: TITLE })
+    const head = opened.isPlaced ? '클로드 사용량 (옆 패널에도 열었어요)' : '클로드 사용량'
+    return { text: [head, ...(lines.length ? lines : ['아직 사용량 숫자를 받지 못했어요. 답변 한 번 뒤에 다시 쳐 주세요.'])].join('\n') }
   })
 
   on('session.measure', async ($, e, next) => {
