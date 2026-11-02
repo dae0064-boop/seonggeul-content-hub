@@ -16,7 +16,7 @@ export const DAILY_SLOTS = ['07:00', '19:00'];
 const MIN_CHARS = 60;
 const MAX_CHARS = 250;
 const MAX_LINE = 26;
-const MAX_EMOJI = 4;
+const MAX_EMOJI = 2; // 2026-11-02 사용자 "너무 쓰지 말고 1~2개만"
 // 일상 글에 보험·광고 이야기를 넣지 않는다 (daily.md "지키는 것")
 const OFF_TOPIC = /보험|실손|실비|보장|청구|상담|가입|설계사|블로그|링크|구매|할인|광고|협찬/;
 
@@ -49,7 +49,7 @@ export function checkDaily(file) {
     }
     const emoji = (body.match(/\p{Extended_Pictographic}(?:\uFE0F|\u200D\p{Extended_Pictographic}\uFE0F?)*/gu) || []).length; // 🏃‍♂️ 같은 이어 붙인 그림은 하나로
     if (emoji > MAX_EMOJI) err(`이모지 ${emoji}개 (최대 ${MAX_EMOJI}).`);
-    if (!emoji) notes.push(`${tag} 이모지가 없습니다 (사용자 — 2~3개 넣기).`);
+    if (!emoji) notes.push(`${tag} 이모지가 없습니다 (사용자 — 1~2개 넣기).`);
     if (/https?:\/\/|#[^\s#]+/.test(body)) err('링크·해시태그는 쓰지 않습니다.');
     const off = body.match(OFF_TOPIC);
     if (off) err(`일상 글에 "${off[0]}" — 보험·광고·블로그 이야기는 넣지 않습니다.`);
