@@ -1,0 +1,1 @@
+{ "name": "usage-meter", "version": "0.1.0", "description": "채팅 옆 패널에 Claude 구독 사용량(5시간·주간)을 계속 띄워 둔다", "types": "./types/index.d.ts" }
