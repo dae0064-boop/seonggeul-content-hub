@@ -45,7 +45,7 @@ const PAGES = [
   ['manage', `${BASE}/manage`],
   ['stat-visit', `${BASE}/manage/statistics/blog`], // 2026-10-28 — /visit 은 '페이지 없음', 메뉴가 가는 실제 주소
   ['stat-refer', `${BASE}/manage/statistics/referrer`],
-  ['stat-keyword', `${BASE}/manage/statistics/keyword`],
+  // stat-keyword(/manage/statistics/keyword) 는 2026-11-02 '요청하신 페이지를 찾을 수 없습니다' — 검색어는 유입 경로 화면 로그에 나와 뺐다
   ['stat-post', `${BASE}/manage/statistics/entry`],
   ['revenue', `${BASE}/manage/revenue`],
 ];
