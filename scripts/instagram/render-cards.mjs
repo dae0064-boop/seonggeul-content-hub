@@ -115,7 +115,7 @@ em{font-style:normal;color:#C2551E}
 function mpage(photo, crop, h, inner, i, left, full) {
   const ph = photo ? `<div class="bgp" style="background-image:url('${photo}');background-position:center"></div><div class="shade${full ? ' full' : ''}"></div>` : '';
   return `<!doctype html><html><head><meta charset="utf-8"><style>${MCSS}</style></head><body style="background:#333">${ph}<div class="panel">${inner}</div>
-<div class="ft"><span>${esc(left || '친근한 설계사 강성대')}</span><span>${i} / 7</span></div></body></html>`;
+<div class="ft"><span>${esc(left || '친근한 설계사')}</span><span>${i} / 7</span></div></body></html>`;
 }
 function mcard(c, photo, i) {
   const H = (a) => a.map(hl).join('<br>');
@@ -139,7 +139,7 @@ function mnotice(approval, photo7) {
 function page(bg, inner, i) {
   return `<!doctype html><html><head><meta charset="utf-8"><style>${CSS}</style></head><body>
 <div class="bg" style="background-image:url('${bg}')"></div><div class="dim"></div>${inner}
-<div class="page">${i}/7</div><div class="brand"><img src="${logo}">친근한 설계사 강성대의 보험 이야기</div></body></html>`;
+<div class="page">${i}/7</div><div class="brand"><img src="${logo}">친근한 설계사의 보험 이야기</div></body></html>`;
 }
 
 function card(c, bg, i) {
