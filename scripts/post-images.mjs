@@ -19,6 +19,8 @@
  *
  * 정보 카드 (2026-10-12 원고부터): kind: "card" 인 그림은 OpenAI 를 부르지 않고 글자 카드를 로컬로 그린다 (비용 0).
  *   { n: 4, file: "04.png", title: "...", kind: "card", card: { type: "steps", title: "...", items: [...] } }
+ * 공식 사진 (2026-11-02, 이슈 글): kind: "photo" — 위키미디어 공용·정책브리핑에서 라이선스가 맞는 사진을 받아 NN.png + NN.credit.txt.
+ *   못 찾으면 그 항목의 prompt 로 AI 그림을 대신 만든다 (credit 파일 없음 → 발행 때 [사진 출처 N] 줄이 빠진다). scripts/lib/official-photo.mjs
  * 대표사진 카드 틀: 1번에 "frame": "card" — 그림(1번)은 지금처럼 low 로 만들고, 남색 카드 틀에 넣어 합성한다.
  *   메인 키워드(노란 글씨)·분류 표시는 같은 슬러그의 원고(.md)에서 읽는다.
  */
@@ -27,7 +29,9 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
 import { parseArgs } from "node:util";
-import { renderOverlays, renderCards, checkCard } from "./lib/overlay.mjs";
+import { renderOverlays, renderCards, checkCard, launch as launchBrowser } from "./lib/overlay.mjs";
+import { findPhoto, savePhotoPng } from "./lib/official-photo.mjs";
+import { writeFileSync, rmSync } from "node:fs";
 import { parsePost } from "./lib/parse-post.mjs";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -107,6 +111,19 @@ for (const im of todo) {
     console.log(`⏭  ${name}.png 이미 있음 — ${im.title}`);
     skipped++;
     continue;
+  }
+  // 공식 사진 — 받으면 AI 를 부르지 않는다 (비용 0)
+  const creditFile = join(outDir, `${name}.credit.txt`);
+  if (im.kind === "photo" && !(im.overlay && existsSync(raw) && !opt.force)) {
+    const { photo, why } = await findPhoto(im.photo || {}).catch((e) => ({ photo: null, why: e.message }));
+    let got = false;
+    if (photo) {
+      try { await savePhotoPng(photo, raw, launchBrowser); writeFileSync(creditFile, photo.credit + "\n" + (photo.page || "") + "\n"); got = true; console.log(`📷 [${im.n}] 공식 사진: ${photo.credit} — ${photo.page || photo.url}`); }
+      catch (e) { console.log(`⚠ [${im.n}] 사진 받기 실패: ${e.message}`); }
+    } else console.log(`⚠ [${im.n}] 쓸 수 있는 공식 사진 없음 (${why}) — AI 그림으로 대신합니다`);
+    if (got) { made++; if (im.overlay) overlayJobs.push({ n: im.n, src: raw, dest: target, overlay: overlayOf(im) }); continue; }
+    try { rmSync(creditFile, { force: true }); } catch { /* 없음 */ }
+    if (!im.prompt) { failed.push(im.n); continue; }
   }
   if (!(im.overlay && existsSync(raw) && !opt.force)) {
     if (noCredit) { failed.push(im.n); continue; }

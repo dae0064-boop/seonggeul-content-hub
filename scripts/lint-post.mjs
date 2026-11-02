@@ -624,11 +624,25 @@ for (const file of files) {
       if (post.issue === '연예' && !people.length) errors.push('연예 이슈 글은 프런트매터 people: 에 글에 나오는 실존 인물 이름을 적습니다 (그림 프롬프트에 들어가지 않게 검사)');
       const plan = planOf(file);
       if (plan) {
-        const txt = (plan.images || []).map((im) => `${im.prompt || ''} ${im.title || ''} ${im.thumb_person || ''}`).join(' ');
+        const txt = (plan.images || []).map((im) => `${im.prompt || ''} ${im.kind === 'photo' ? '' : im.title || ''} ${im.thumb_person || ''}`).join(' ');
         for (const n of people) if (n.length >= 2 && txt.includes(n)) errors.push(`그림 계획서에 실존 인물 이름 "${n}" 이 있습니다 — 실존 인물 얼굴·닮은 그림은 만들지 않습니다. 장소·물건·글자 카드로 바꾸세요 (대표사진 글씨(overlay)·정보 카드 글자에 이름을 넣는 것은 괜찮습니다)`);
       }
       notes.push(`이슈 글(${post.issue}) — 출처 매체 2곳 이상으로 확인한 사실만, 추측·지어낸 말 없이`);
     }
+  }
+  // 공식 사진 (2026-11-02, 이슈 글) — kind: "photo" 그림은 photo.query/page + 대신 그릴 prompt, 원고에 [사진 출처 N] 줄
+  {
+    const plan = planOf(file);
+    const photos = (plan?.images || []).filter((im) => im.kind === 'photo');
+    const raw = fs.readFileSync(file, 'utf8');
+    for (const im of photos) {
+      if (!post.issue) errors.push(`${im.n}번 공식 사진(kind: photo)은 이슈 글(issue:)에만 씁니다`);
+      if (!im.photo || !(im.photo.query || im.photo.query_en || im.photo.page)) errors.push(`${im.n}번 공식 사진: photo.query(이름·장소) 또는 photo.page(정책브리핑 기사 주소)를 적습니다`);
+      if (im.photo?.page && !/^https:\/\/(www\.)?korea\.kr\//.test(im.photo.page)) errors.push(`${im.n}번 photo.page 는 정책브리핑(korea.kr) 주소만 — 언론사 사진은 쓰지 않습니다`);
+      if (!im.prompt) errors.push(`${im.n}번 공식 사진: 못 찾을 때 대신 그릴 prompt 를 적습니다 (실존 인물 없이)`);
+      if (!new RegExp(`^\\[이미지 ${im.n}\\][^\\n]*\\n\\[사진 출처 ${im.n}\\]\\s*$`, 'm').test(raw)) errors.push(`${im.n}번 공식 사진: 원고의 [이미지 ${im.n}] 바로 다음 줄에 "[사진 출처 ${im.n}]" 을 둡니다 (발행 때 출처 글자로 바뀜)`);
+    }
+    for (const m of raw.matchAll(/^\[사진 출처 (\d+)\]/gm)) if (!photos.some((im) => im.n === Number(m[1]))) errors.push(`[사진 출처 ${m[1]}] 줄이 있는데 계획서 ${m[1]}번이 kind: photo 가 아닙니다`);
   }
   if (!tistory && post.topic && topicFor(post) === null) errors.push(`topic "${post.topic}" 은 네이버 주제 목록에 없습니다 (scripts/lib/naver-topic.mjs NAVER_TOPICS)`);
   if (!tistory && dated >= SPELL_TEST[0] && topicFor(post) === '교육·학문') {
