@@ -17,6 +17,8 @@ $drive = Find-MyDrive
 $noteFile = if ($drive) { Join-Path $drive "ClaudeWorkspace\run-logs\catchup-$today.txt" } else { Join-Path $repo "dumps\catchup-$today.txt" }
 function Note($msg) { New-Item -ItemType Directory -Force -Path (Split-Path $noteFile) | Out-Null; "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') [$env:COMPUTERNAME] $msg" | Add-Content -Encoding UTF8 $noteFile }
 Note "시작 (코드 $(git rev-parse --short HEAD 2>$null))"
+# 인스타 카드뉴스 Word·그림을 Drive 로 (2026-11-02 — 클라우드가 큰 파일을 Drive 로 못 보낸다)
+$ig = & (Join-Path $PSScriptRoot 'instagram-to-drive.ps1'); if ($ig) { Note "$ig" }
 # 오늘 글은 21시 이후면 넣을 자리가 없다 — 내일·모레 글은 밤에도 예약한다 (22시 실행이 마지막 기회가 되게)
 $late = ($now.Hour -lt 5 -or $now.Hour -ge 21)
 # 실제로 글을 만들거나 예약하는 일이 돌 때만 쉰다. 기다리기만 하는 auto-day.cmd·wait-turn 은 세지 않는다
