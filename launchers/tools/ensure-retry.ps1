@@ -1,6 +1,8 @@
 ﻿# 작업 스케줄러에 "다시 시도" 시각이 없으면 넣는다 (2026-10-02 이전에 등록한 PC 용).
 # auto-day.cmd 가 하루 작업을 마친 뒤 부른다. 사람이 auto-setup 을 다시 돌리지 않아도 되게.
 $ErrorActionPreference = 'SilentlyContinue'
+# 2026-11-02: 사용량 막대를 PC 를 켤 때마다 띄우는 바로가기 (사용자 "pc 켤 때마다 자동으로")
+& (Join-Path $PSScriptRoot 'usage-autostart.ps1') | Out-Null
 $t = Get-ScheduledTask -TaskName 'SeonggeulDailyReserve'
 if (-not $t) { exit 0 }
 # 2026-10-05: 절전에서 깨우는 타이머가 꺼져 있으면 09:00 에 깨어나지 못한다 — 매번 켜 둔다

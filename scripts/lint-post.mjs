@@ -173,7 +173,7 @@ const SOURCE_URL_FROM = '2026-10-19';
 // 이슈 글 (2026-11-02 사용자 — "연예·오늘 이슈·정책 변경으로 홈판 조회수, 무조건 진행") — 2026-11-03 네이버 원고부터(11/3 시험 1편 extra, 정식 하루 4편은 11/6 원고부터).
 // issue: 연예 | 정책 + slot: 홈판. 출처는 언론 보도·소속사·정부 발표 주소(뉴스 주소 허용), 2개 이상 매체로 확인한 사실만.
 // 메인 키워드 검색량 상한(12,000)·네 기둥은 보지 않는다. 사람 이름이 그림 계획서 프롬프트에 들어가면 막는다(실존 인물 얼굴을 AI 로 만들지 않는다).
-const ISSUE_FROM = '2026-11-03';
+const ISSUE_FROM = '2026-11-02';
 const ISSUE_KINDS = ['연예', '정책'];
 const ISSUE_TOPICS = { 연예: ['스타·연예인', '방송', '드라마', '영화', '음악'], 정책: ['사회·정치', '비즈니스·경제', '건강·의학'] };
 const ISSUE_NOT_SOURCE = /(^|\.)(blog\.naver\.com|m\.blog\.naver\.com|cafe\.naver\.com|post\.naver\.com|tistory\.com|brunch\.co\.kr|youtube\.com|youtu\.be|namu\.wiki|wikipedia\.org|instagram\.com|threads\.net|search\.naver\.com|google\.com|x\.com|twitter\.com|theqoo\.net|dcinside\.com|fmkorea\.com|instiz\.net)$/i;
