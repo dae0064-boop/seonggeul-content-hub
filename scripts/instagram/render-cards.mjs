@@ -84,6 +84,52 @@ em{font-style:normal;color:#FFD43B}
 .nt h3{font:44px Head;color:#E0642A;margin-bottom:18px}.nt b{display:block;font-size:28px}.nt p{margin-top:14px}.nt .ap{color:#C2551E;font-size:26px}
 `;
 
+// ── C안 '잡지형' (2026-11-02 사용자 선택): 위 사진 + 아래 흰 칸, 글꼴 하나(Pretendard), 포인트 색 하나 ──
+const MCSS = `
+@font-face{font-family:Pre;src:url('${font('scripts/threads/fonts/Pretendard-Bold.otf')}')}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1080px;height:1080px;position:relative;overflow:hidden;word-break:keep-all;font-family:Pre,sans-serif;color:#1c1c1c;background:#fff}
+.ph{background-size:cover;background-repeat:no-repeat}
+em{font-style:normal;color:#C2551E}
+.lb{font-size:30px;color:#C2551E;letter-spacing:1px}
+.hd{font-size:62px;line-height:1.3;letter-spacing:-1.5px;margin-top:18px}
+.bd{font-size:36px;line-height:1.7;color:#555;margin-top:34px}
+.bd p+p{margin-top:16px}
+.ft{position:absolute;left:80px;right:80px;bottom:52px;display:flex;justify-content:space-between;font-size:24px;color:#a0a0a0}
+.in{padding:56px 80px 0}
+.st{display:flex;gap:26px;margin-top:30px;font-size:36px;line-height:1.6;color:#444}
+.st b{flex:none;width:58px;height:58px;border-radius:50%;background:#C2551E;color:#fff;font-size:32px;line-height:58px;text-align:center;font-weight:normal}
+.cp{display:flex;gap:24px;margin-top:36px}.cp>div{flex:1;border-radius:24px;padding:30px 32px;font-size:34px;line-height:1.6;color:#444;background:#F6F3EF}
+.cp>div:last-child{background:#FBEDE4}.cp h4{font-size:32px;color:#C2551E;margin-bottom:12px;font-weight:normal}
+.ck{font-size:38px;line-height:1.5;margin-top:24px;display:flex;gap:18px}.ck i{font-style:normal;color:#C2551E}
+.cta{margin-top:36px;font-size:30px;color:#888;line-height:1.6}
+.terms{font-size:22px;line-height:1.5;color:#a0a0a0;margin-top:26px}
+.nt{padding:90px 80px;font-size:25px;line-height:1.6;color:#444}.nt h3{font-size:44px;color:#1c1c1c;margin-bottom:26px}.nt b{display:block;font-size:29px;color:#1c1c1c}.nt p{margin-top:16px}.nt .ap{color:#C2551E;font-size:27px}
+`;
+function mpage(photo, crop, h, inner, i, left) {
+  const ph = photo && h ? `<div class="ph" style="height:${h}px;background-image:url('${photo}');background-position:${crop || 'center'}"></div>` : '';
+  return `<!doctype html><html><head><meta charset="utf-8"><style>${MCSS}</style></head><body>${ph}${inner}
+<div class="ft"><span>${esc(left || '친근한 설계사 강성대')}</span><span>${i} / 7</span></div></body></html>`;
+}
+function mcard(c, photo, i) {
+  const H = (a) => a.map(hl).join('<br>');
+  const terms = c.terms ? `<div class="terms">${esc(NOTICE.terms)}</div>` : '';
+  const src = c.src ? '근거 · ' + c.src : '';
+  switch (c.type) {
+    case 'cover': return mpage(photo, c.crop, 560, `<div class="in"><div class="lb">${esc(c.kw)}</div><div class="hd" style="font-size:76px">${H(c.title)}</div><div class="bd" style="margin-top:20px">${esc(c.sub || '')}</div></div>`, i);
+    case 'text': return mpage(photo, c.crop, 300, `<div class="in"><div class="lb">${esc(c.label)}</div><div class="hd">${H(c.head)}</div><div class="bd">${c.body.map((t) => `<p>${hl(t)}</p>`).join('')}</div>${terms}</div>`, i, src || undefined);
+    case 'steps': return mpage(photo, c.crop, 300, `<div class="in"><div class="lb">${esc(c.label)}</div><div class="hd">${H(c.head)}</div>${c.steps.map(([n, t]) => `<div class="st"><b>${esc(n)}</b><span>${hl(t)}</span></div>`).join('')}${terms}</div>`, i, src || undefined);
+    case 'compare': return mpage(photo, c.crop, 300, `<div class="in"><div class="lb">${esc(c.label)}</div><div class="hd">${H(c.head)}</div><div class="cp">${[c.left, c.right].map((x) => `<div><h4>${esc(x.t)}</h4>${x.lines.map(esc).join('<br>')}</div>`).join('')}</div><div class="bd" style="font-size:30px;margin-top:26px">${esc(c.foot || '')}</div>${terms}</div>`, i, src || undefined);
+    case 'check': return mpage(photo, c.crop, 300, `<div class="in"><div class="lb">${esc(c.label)}</div><div class="hd">${H(c.head)}</div>${c.checks.map((t) => `<div class="ck"><i>✓</i><span>${hl(t)}</span></div>`).join('')}<div class="cta">${esc(c.cta)}</div></div>`, i);
+    default: throw new Error('모르는 카드 종류: ' + c.type);
+  }
+}
+function mnotice(approval) {
+  const N = NOTICE;
+  return mpage(null, '', 0, `<div class="nt"><h3>꼭 읽어 주세요</h3><b>${esc(N.agency)}</b><b>${esc(N.agent)}</b>
+<p>${N.opinion.map(esc).join('<br>')}</p><p>${N.replace.map(esc).join('<br>')}</p><p>${esc(N.terms)}</p><p>${esc(N.rule)}</p><p class="ap">${esc(approval || N.approval)}</p></div>`, 7);
+}
+
 function page(bg, inner, i) {
   return `<!doctype html><html><head><meta charset="utf-8"><style>${CSS}</style></head><body>
 <div class="bg" style="background-image:url('${bg}')"></div><div class="dim"></div>${inner}
@@ -119,16 +165,25 @@ const pg = await browser.newPage({ viewport: { width: 1080, height: 1080 } });
 let made = 0;
 for (const p of set.posts) {
   if (only.size && !only.has(p.no)) continue;
-  if (p.cards.length !== 5) throw new Error(`${p.no}편: 카드는 5장이어야 해요 (6장째 팔로우·7장째 고지는 저절로) — 지금 ${p.cards.length}장`);
+  const mag = p.style === 'magazine';
+  const need = mag ? 6 : 5;
+  if (p.cards.length !== need) throw new Error(`${p.no}편: 카드는 ${need}장이어야 해요 (나머지는 저절로) — 지금 ${p.cards.length}장`);
   const bgFile = fs.existsSync(path.join(ROOT, `content/instagram/bg/${p.slug}.png`)) ? `content/instagram/bg/${p.slug}.png` : 'content/instagram/bg/_placeholder.png';
   const bg = img(bgFile);
   const dir = path.join(outRoot, `${p.no}-${p.slug}`);
   fs.mkdirSync(dir, { recursive: true });
-  const htmls = [...p.cards.map((c, k) => card(c, bg, k + 1)), follow(bg), notice(bg, p.approval)];
+  const htmls = mag
+    ? [...p.cards.map((c, k) => mcard(c, bg, k + 1)), mnotice(p.approval)]
+    : [...p.cards.map((c, k) => card(c, bg, k + 1)), follow(bg), notice(bg, p.approval)];
   for (let k = 0; k < htmls.length; k++) {
     await pg.setContent(htmls[k], { waitUntil: 'load' });
     await pg.evaluate(() => document.fonts.ready);
-    const over = await pg.evaluate(() => [...document.querySelectorAll('.wrap,.nt')].some((w) => w.scrollHeight > w.clientHeight + 2));
+    // 넘침: 본문이 아래 줄(.ft)을 덮거나 칸을 넘치면 멈춘다
+    const over = await pg.evaluate(() => {
+      if ([...document.querySelectorAll('.wrap,.nt')].some((w) => w.scrollHeight > w.clientHeight + 2)) return true;
+      const ft = document.querySelector('.ft'); const inn = document.querySelector('.in,.nt');
+      return !!(ft && inn && inn.getBoundingClientRect().bottom > ft.getBoundingClientRect().top - 10);
+    });
     if (over) throw new Error(`${p.no}편 ${k + 1}장: 글이 칸을 넘쳐요 — 줄을 줄여 주세요`);
     await pg.screenshot({ path: path.join(dir, String(k + 1).padStart(2, '0') + '.png') });
     made++;
