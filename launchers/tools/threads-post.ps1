@@ -26,6 +26,14 @@ $dir = Join-Path $drive 'ClaudeWorkspace\run-logs\threads'
 New-Item -ItemType Directory -Force -Path $dir | Out-Null
 @("", "===== $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') · $env:COMPUTERNAME · $(if ($Test) { '시험' } else { '올리기' }) · 종료 코드 $code") + $log |
   Add-Content -Encoding UTF8 (Join-Path $dir "$(Get-Date -Format 'yyyy-MM-dd').log")
+# 블로그 유입 글 (네이버 생활보장 글 요약 + 링크 답글) — 보험 심의글 멈춤(PAUSE)과 따로 돈다 (2026-11-02 사용자). 멈춤은 content\threads\PAUSE-BLOG
+$blogArgs = @('scripts\threads\blog-post.mjs', '--posted', (Join-Path $dir 'blog-posted.tsv'))
+if (-not $Test) { $blogArgs += '--post' }
+$blogLog = @(& node @blogArgs 2>&1 | ForEach-Object { "$_" })
+$blogCode = $LASTEXITCODE
+$blogLog | ForEach-Object { Write-Host $_ }
+@("----- 블로그 유입 글 · 종료 코드 $blogCode") + $blogLog | Add-Content -Encoding UTF8 (Join-Path $dir "$(Get-Date -Format 'yyyy-MM-dd').log")
+if ($code -eq 0 -and $blogCode -ne 0) { $code = $blogCode }
 # 아침에 예약 안 된 글이 있으면 지금 다시 예약한다 (2026-10-29 사용자). 이 작업은 15분 제한이 있어 따로 띄우고 바로 끝낸다
 if (-not $Test) {
   try {

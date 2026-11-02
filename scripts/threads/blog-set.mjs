@@ -8,11 +8,11 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
-import { ROOT } from './config.mjs';
+import { ROOT, isMain } from './config.mjs';
 import { guard } from './guard.mjs';
 
 const POSTS_DIR = path.join(ROOT, 'content', 'posts');
-const MIN_CHARS = 120;
+const MIN_CHARS = 90;
 const MAX_CHARS = 300;
 const MAX_LINE = 24;
 const PARA_MAX = 4;
@@ -128,7 +128,7 @@ export function checkSet(file) {
 }
 
 const file = process.argv[2];
-if (file && import.meta.url === `file://${path.resolve(process.argv[1])}`) {
+if (file && isMain(import.meta.url)) {
   const { errors, notes, items } = checkSet(file);
   console.log(`스레드 블로그 유입 묶음: ${path.basename(file)} — ${items.length}편`);
   for (const n of notes) console.log(`  참고 ${n}`);
