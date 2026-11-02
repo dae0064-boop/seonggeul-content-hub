@@ -34,6 +34,9 @@ const resetText = (iso?: string) => {
   return `${d.getUTCMonth() + 1}/${d.getUTCDate()}(${day}) ${hh}:${mm} 초기화`
 }
 
+// 2026-11-02 사용자: 모든 대화에 띄우지 말고 요청할 때만 — 시작할 때 열지 않고, /usage-pane 을 쳤을 때만 패널·상태 줄을 보인다
+let shown = false
+
 export const register: Register = on => {
   on('session.start', async ($, e, next) => {
     const ran = await next(e)
@@ -41,11 +44,11 @@ export const register: Register = on => {
     const u = await $.session.usage()
     const now = await $.clock.now()
     if (u.rateLimits.length > 0) await update($, reading, (): Reading => ({ limits: u.rateLimits.map((l): Limit => ({ ...l })), at: now }))
-    void $.ui.open({ id: PANE, title: TITLE })
     return ran
   })
 
   on('command.run', { command: 'usage-pane' }, async $ => {
+    shown = true
     await $.ui.open({ id: PANE, title: TITLE })
     return { text: '클로드 사용량 패널을 열었어요.' }
   })
@@ -54,7 +57,7 @@ export const register: Register = on => {
     const now = await $.clock.now()
     if (e.rateLimits.length > 0) await update($, reading, (): Reading => ({ limits: e.rateLimits.map((l): Limit => ({ ...l })), at: now }))
     const p = e.rateLimits.find(l => l.kind === 'five_hour')?.percentUsed
-    $.ui.status(p === undefined ? undefined : `사용량 ${Math.round(p)}%`)
+    if (shown) $.ui.status(p === undefined ? undefined : `사용량 ${Math.round(p)}%`)
     return next(e)
   })
 
