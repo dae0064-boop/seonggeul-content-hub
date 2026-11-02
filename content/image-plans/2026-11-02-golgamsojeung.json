@@ -1,0 +1,84 @@
+{
+  "slug": "2026-11-02-golgamsojeung",
+  "title": "골감소증이라는 말을 들었다면, 오늘부터 바꿀 세 가지",
+  "source": "11/2(월) 19:40 네이버 원고 — 생활보장 홈판형",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고 기준). 장면마다 장소·주인공·구도·배경색이 다르게",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "건강검진 결과를 들은 뒤 운동화 끈을 묶으며 마음을 다잡는 50대 여성의 얼굴 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her 50s with short layered dark brown hair in a bright cobalt blue zip-up training jacket with sleeves rolled up, sitting on a bench by her apartment front door, looking ahead with a firm, determined small nod; a pair of white running shoes is softly blurred in the background. Facial expression: determined, nodding, sleeves rolled up. Color theme: bright cobalt blue and white tones with an orange accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "bright cobalt blue and white tones with an orange accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "cobalt",
+      "thumb_person": "50대 여성",
+      "thumb_mood": "결심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "cobalt",
+        "font": "ptd",
+        "title": "골감소증\n지금 뭘 바꿀까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "검진센터 상담실에서 의사의 설명을 듣는 50대 여성",
+      "prompt": "Camera and composition: medium shot across a desk in a health checkup center. A Korean woman in her 50s with a low bun in a beige blouse sits at a desk, listening calmly to a friendly Korean female doctor in a white coat who points at a blank monitor showing a simple spine bone icon. Background color: clean white and light green clinic interior. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot across a desk in a health checkup center",
+      "bg": "clean white and light green clinic interior"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "T 점수 기준을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "T 점수 기준",
+        "ask": "T 점수 어떻게 읽어?",
+        "items": [
+          "-1.0 이상: 정상",
+          "그 사이: 골감소증",
+          "-2.5 이하: 골다공증"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "아침 식탁에 우유, 두부, 멸치볶음, 채소 반찬이 놓인 모습",
+      "prompt": "Camera and composition: three-quarter view of a breakfast table, no people. A Korean breakfast table with a glass of milk, a plate of pan-fried tofu, a small dish of stir-fried dried anchovies, a bowl of spinach side dish and a bowl of rice, no people. Background color: warm morning sunlight on a light wood table. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "three-quarter view of a breakfast table, no people",
+      "bg": "warm morning sunlight on a light wood table"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "골감소증 관리 운동 세 가지를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "운동은 세 가지 같이",
+        "ask": "뼈에 좋은 운동 뭐야?",
+        "items": [
+          "걷기 같은 유산소 운동",
+          "근력을 키우는 저항 운동",
+          "균형 감각을 키우는 운동"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "점심 무렵 공원 벤치에서 소매를 걷고 햇볕을 쬐는 60대 남성",
+      "prompt": "Camera and composition: wide shot in a neighborhood park. A Korean man in his 60s with short gray hair in a light olive shirt with sleeves rolled up sits on a park bench in the midday sun, arms relaxed, smiling softly. Background color: clear blue midday sky with autumn trees. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot in a neighborhood park",
+      "bg": "clear blue midday sky with autumn trees"
+    }
+  ]
+}

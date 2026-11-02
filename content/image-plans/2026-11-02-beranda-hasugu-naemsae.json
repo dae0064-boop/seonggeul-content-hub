@@ -1,0 +1,84 @@
+{
+  "slug": "2026-11-02-beranda-hasugu-naemsae",
+  "title": "베란다 하수구 냄새, 어디부터 막아야 할까 (점검 순서 4단계)",
+  "source": "11/2(월) 19:00 네이버 원고 — 생활정보 검색형",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고 기준). 장면마다 장소·주인공·구도·배경색이 다르게",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "베란다 배수구 청소 도구와 덮개를 위에서 내려다본 모습 (대표사진)",
+      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). On a terracotta-tiled Korean apartment veranda floor: a round metal floor drain with its cover lifted off and set beside it, a pair of teal rubber gloves, a long narrow cleaning brush, a small plastic water dipper and a round drain trap insert, neatly arranged. Color theme: terracotta and warm beige tones with a teal accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "위에서 내려다본 탁자 (사람 없음)",
+      "bg": "terracotta and warm beige tones with a teal accent",
+      "note": "대표",
+      "thumb_shot": "overhead",
+      "thumb_theme": "brick",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "brick",
+        "font": "jua",
+        "title": "베란다 하수구\n냄새 어디서?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "베란다 바닥 배수구 앞에 쪼그려 앉아 덮개를 열어 보는 30대 여성",
+      "prompt": "Camera and composition: medium shot from the side on an apartment veranda. A Korean woman in her 30s with a low ponytail in a cream sweatshirt crouches on a veranda floor beside a washing machine, lifting the round drain cover with a curious look. Background color: bright late autumn daylight through large windows. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot from the side on an apartment veranda",
+      "bg": "bright late autumn daylight through large windows"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "베란다 하수구 냄새 점검 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "냄새 점검 순서",
+        "ask": "베란다 냄새 어디부터 봐?",
+        "items": [
+          "배수구에 물 한 바가지 붓기",
+          "덮개 열고 찌꺼기 빼기",
+          "호스 꽂은 틈 막기",
+          "덮개나 트랩 달기"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "고무장갑 낀 손으로 배수구 거름망의 머리카락을 집어내는 모습",
+      "prompt": "Camera and composition: close-up of hands only from above. Hands in yellow rubber gloves lifting a small round drain strainer basket out of a floor drain, a little tangle of hair and lint on it, no face in the frame. Background color: gray wet tile floor. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands only from above",
+      "bg": "gray wet tile floor"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "세탁기 배수 호스가 꽂힌 베란다 배수구 옆에서 틈을 살펴보는 50대 남성",
+      "prompt": "Camera and composition: medium close shot at floor level. A Korean man in his 50s with short gray-black hair in a navy fleece kneels beside a washing machine and looks closely at where the gray drain hose enters a floor drain, thoughtful and calm. Background color: cool white utility corner with a window. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium close shot at floor level",
+      "bg": "cool white utility corner with a window"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "하수구 덮개와 베란다 트랩 고르는 기준을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "덮개·트랩 고르는 기준",
+        "ask": "덮개랑 트랩 뭐가 맞아?",
+        "items": [
+          "배수구 지름 먼저 재기",
+          "빗물 빠지는 길인지 보기",
+          "안쪽 통이 빠지는지 보기"
+        ]
+      }
+    }
+  ]
+}
