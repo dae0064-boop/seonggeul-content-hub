@@ -39,7 +39,7 @@
 1. 원고 `content/instagram/sets/<날짜>.json` — 편마다 카드 6장(cover·talk·fact·example·note·check) + 본문 글(caption)·해시태그. 7장째 심의 고지는 저절로 붙는다.
    사실 칸(fact)은 **법령·기관 1차 원문으로 확인한 것만**, `원문확인:` 에 적는다. 보장 내용을 말하는 장(note)에는 `"terms": true` 로 약관 참조 문구를 넣는다.
 2. 그림 `node scripts/instagram/render-cards.mjs` → `content/instagram/images/<날짜>/<번호>-<slug>/01~07.png` (1080×1080, 글자 카드라 **비용 0원**, 글이 칸을 넘치면 멈춘다).
-3. Word `python3 scripts/instagram/word-cards.py` → `content/instagram/word/<날짜>/인스타 카드뉴스 N편.docx` (커밋 안 함) → 사용자가 GOMS 에 올린다.
+3. Word `python3 scripts/instagram/word-cards.py` → `content/instagram/word/<날짜>/인스타 카드뉴스 N편.docx` → 커밋하면 PC 가 Drive `ClaudeWorkspace/인스타카드뉴스/<날짜>/` 로 옮긴다 (`launchers/tools/instagram-to-drive.ps1`, 10·13·16·19·22시 catchup-reserve 안). 클라우드는 큰 파일을 Drive 로 못 보낸다. 카드는 어차피 인스타에 공개로 올라가고 설계사 정보도 스레드 배너와 같아 공개 저장소에 둬도 된다 → 사용자가 GOMS 에 올린다.
 4. 승인되면 심의필 번호를 넣어 7장째만 다시 그린다: `APPROVAL="글로벌금융판매 준법감시인 심의필 제26-xx-xxxx호(시작~끝)" node scripts/instagram/render-cards.mjs`
    — 지금은 편마다 번호가 달라 한 편씩 따로 돌려야 한다(승인 나오면 편별 번호 칸을 원고에 둔다).
 
