@@ -12,6 +12,8 @@ import { ROOT, isMain } from './config.mjs';
 import { guard } from './guard.mjs';
 
 const POSTS_DIR = path.join(ROOT, 'content', 'posts');
+// 이미 발행돼 content/posts 에서 정리된 지난 글 — 빈 칸을 채울 때 git 기록에서 꺼내 여기 둔다 (2026-11-02 사용자 "더 쓸 거 있으면 추가")
+export const SRC_DIR = path.join(ROOT, 'content', 'threads', 'blog', 'src');
 const MIN_CHARS = 90;
 const MAX_CHARS = 300;
 const MAX_LINE = 24;
@@ -50,8 +52,9 @@ export function parseSet(text) {
 }
 
 function readPost(slug) {
-  const f = path.join(POSTS_DIR, slug.endsWith('.md') ? slug : `${slug}.md`);
-  if (!fs.existsSync(f)) return null;
+  const name = slug.endsWith('.md') ? slug : `${slug}.md`;
+  const f = [path.join(POSTS_DIR, name), path.join(SRC_DIR, name)].find((x) => fs.existsSync(x));
+  if (!f) return null;
   const raw = fs.readFileSync(f, 'utf8').replace(/^\uFEFF/, '').replace(/\r\n?/g, '\n');
   const fm = {};
   const m = raw.match(/^---\n([\s\S]*?)\n---/);
@@ -69,6 +72,10 @@ export function checkSet(file) {
   const items = parseSet(fs.readFileSync(file, 'utf8'));
   if (!items.length) errors.push('글이 없습니다 (## 1 … 형식).');
   const seen = new Set();
+  const usedElsewhere = new Map();
+  for (const g of fs.readdirSync(path.dirname(file)).filter((x) => /^\d{4}-\d{2}-\d{2}\.md$/.test(x) && x !== path.basename(file))) {
+    for (const m of fs.readFileSync(path.join(path.dirname(file), g), 'utf8').matchAll(/^원고[:：]\s*(\S+)/gm)) usedElsewhere.set(m[1], g);
+  }
 
   for (const it of items) {
     const tag = `[${it.no}]`;
@@ -78,6 +85,7 @@ export function checkSet(file) {
     if (!it['원고']) { err('원고: 칸이 없습니다.'); continue; }
     if (seen.has(it['원고'])) err(`같은 원고를 두 번 썼습니다: ${it['원고']}`);
     seen.add(it['원고']);
+    if (usedElsewhere.has(it['원고'])) err(`이미 다른 날 묶음(${usedElsewhere.get(it['원고'])})에서 쓴 원고입니다.`);
 
     const post = readPost(it['원고']);
     // 아침 칸은 전날 원고 — 아침 확인이 지난 원고 파일을 지우면(10:47) 그 뒤엔 검사를 건너뛴다 (이미 올라간 글)
