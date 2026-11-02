@@ -1,0 +1,86 @@
+{
+  "slug": "2026-11-02-yujacha",
+  "title": "유자차, 한 번 담가 두면 겨울 내내 마실 수 있을까",
+  "source": "11/2(월) 14:20 네이버 원고 — 생활정보 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 기준). 실사풍·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "노란 유자를 두 손에 들고 활짝 웃는 20대 여성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her 20s with long straight dark hair and a dusty rose knit sweater holds two bright yellow yuzu fruits up near her face in a cozy kitchen, a jar and green leaves softly blurred behind her. Facial expression: bright happy smile. Color theme: dusty rose and white tones with a green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "dusty rose and white tones with a green accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "rose",
+      "thumb_person": "20대 여성",
+      "thumb_mood": "반가움",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "rose",
+        "font": "jua",
+        "title": "유자차\n설탕은 얼마나?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "시장 과일 가게에 소복이 쌓인 노란 유자를 고르는 50대 여성",
+      "prompt": "Camera and composition: medium shot at a traditional market fruit stall. A Korean woman in her 50s with short permed hair in a brown padded vest picks up a yuzu from a heaped basket of yellow yuzu at a market fruit stall, smiling calmly. Background color: warm late-autumn market light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a traditional market fruit stall",
+      "bg": "warm late-autumn market light"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "도마 위에서 반으로 가른 유자의 씨를 숟가락으로 덜어내는 손",
+      "prompt": "Camera and composition: top-down close-up on a cutting board. The hands of a Korean woman with a cream sleeve scoop seeds out of a halved yuzu with a small spoon on a wooden cutting board, a small bowl of seeds beside it. Background color: light wooden cutting board on a white counter. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "top-down close-up on a cutting board",
+      "bg": "light wooden cutting board on a white counter"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "유자청 만들기 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "유자청 만들기 순서",
+        "ask": "유자청 어떻게 담가?",
+        "items": [
+          "유자 씻어 물기 닦기",
+          "반 갈라 씨 빼기",
+          "얇게 채썰기",
+          "설탕에 골고루 버무리기",
+          "맨 위를 설탕으로 덮기"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "주방 저울에 채썬 유자 그릇을 올려 무게를 재는 30대 남성",
+      "prompt": "Camera and composition: medium close-up at a kitchen counter. A Korean man in his 30s with short hair in a gray hoodie places a glass bowl of thinly sliced yuzu on a small kitchen scale with a blank display, a bag of sugar beside it, looking focused and relaxed. Background color: bright white kitchen with a green plant. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium close-up at a kitchen counter",
+      "bg": "bright white kitchen with a green plant"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "유자차 보관할 때 확인할 것을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "유자차 보관 확인",
+        "ask": "유자청 어디에 둬?",
+        "items": [
+          "냉장 보관하기",
+          "뜰 때는 마른 숟가락 쓰기",
+          "거품·이상한 냄새면 버리기"
+        ]
+      }
+    }
+  ]
+}

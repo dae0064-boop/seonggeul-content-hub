@@ -953,6 +953,12 @@ for (const file of files) {
   console.log(`  태그        : ${post.tags.join(', ') || '(없음)'}`);
   if (post.publishAt) console.log(`  예약발행    : ${post.publishAt}`);
 
+  // 20편으로 늘린 날의 먼저 쓴 글(이미 예약됨 — 고치지 않는다)은 뒤에 더한 글 때문에 생긴 하루 한도·그림체 순번 오류를 알림으로만
+  if (legacyDay20) {
+    for (let i = errors.length - 1; i >= 0; i--) {
+      if (/대표사진 구도|실사풍입니다|클레이/.test(errors[i])) notes.push(`(이미 예약된 글 — 알림만) ${errors.splice(i, 1)[0]}`);
+    }
+  }
   for (const n of notes) console.log(`  · ${n}`);
   if (errors.length) {
     failed++;
