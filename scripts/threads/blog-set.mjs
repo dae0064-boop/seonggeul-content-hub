@@ -79,7 +79,9 @@ export function checkSet(file) {
 
     const post = readPost(it['원고']);
     if (!post) { err(`원고를 찾지 못했습니다: content/posts/${it['원고']}.md`); continue; }
-    if (post.fm.category !== '생활보장') err(`생활보장 원고가 아닙니다 (category: ${post.fm.category}).`);
+    // 2026-11-02 사용자 "생활정보글로만 5개씩" — 심의 없는 정보글: 생활보장(건강·제도)·생활정보(살림·제철). 이슈·연예 글은 빼요
+    if (!['생활보장', '생활정보'].includes(post.fm.category)) err(`생활보장·생활정보 원고가 아닙니다 (category: ${post.fm.category}).`);
+    if (post.fm.issue) err('이슈·연예 글은 고르지 않습니다.');
 
     // 시각 — 블로그 글이 발행된 뒤여야 링크가 열린다
     const at = it['시각'];

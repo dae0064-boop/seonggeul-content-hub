@@ -23,6 +23,8 @@ if (-not $scanTask) {
     -Description '성글벙글 아침 이슈 모으기 (구글 트렌드·네이버 랭킹 → Drive issues)' -Force | Out-Null
   Write-Host "아침 이슈 모으기 작업을 등록했어요 (매일 $scanAt)."
 }
+# 2026-11-02: 스레드 블로그 유입 글 작업(매시간 10~23시)
+& (Join-Path $PSScriptRoot 'threads-blog-setup.ps1') -IfMissing | Out-Null
 # 2026-10-05: 켜거나 잠금을 풀면 바로 시작하는 작업(SeonggeulMorningStart)이 없으면 다시 등록한다
 $wake = Get-ScheduledTask -TaskName 'SeonggeulMorningStart'
 if (@($t.Triggers).Count -ge 2 -and -not $battery -and $wake) { exit 0 }

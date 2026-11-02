@@ -29,7 +29,7 @@ const argv = process.argv.slice(2);
 const arg = (n, d = '') => { const i = argv.indexOf(n); return i >= 0 ? argv[i + 1] : d; };
 const doPost = argv.includes('--post');
 const postedTsv = arg('--posted'); // Drive run-logs/threads/blog-posted.tsv (있으면 기록만)
-const maxPerDay = Number(arg('--max-per-day', '3'));
+const maxPerDay = Number(arg('--max-per-day', '5')); // 2026-11-02 사용자 "매일 5개씩"
 const gapMin = Number(arg('--gap-min', '40'));
 const PAUSE_BLOG = path.join(DIR, 'PAUSE-BLOG');
 
