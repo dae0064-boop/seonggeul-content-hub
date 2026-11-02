@@ -48,6 +48,15 @@ if (fs.existsSync(cf)) {
     execFileSync(process.execPath, [path.join(ROOT, 'scripts/image-gen.mjs'), it.prompt, '--quality', 'low', '--size', '1024x1024', '--out', cout, '--name', it.slug], { stdio: 'inherit' });
     made++;
   }
+  // 사진 고치기 (2026-11-02 사용자 — 프로필 사진에서 글자만 빼고 사람은 그대로): source 사진 → images/edits
+  for (const it of c.items_edit || []) {
+    if (fs.existsSync(path.join(cout, `${it.slug}.png`))) continue;
+    console.log(`사진 고치기: ${it.slug}`);
+    try {
+      execFileSync(process.execPath, [path.join(ROOT, 'scripts/image-edit.mjs'), path.join(ROOT, it.source), it.prompt, '--quality', it.quality || 'low', '--size', it.size || '1024x1536', '--out', cout, '--name', it.slug], { stdio: 'inherit' });
+      made++;
+    } catch { console.log(`⚠ ${it.slug} 고치기 실패 — 다음 실행 때 다시`); }
+  }
 }
 // 블로그 배너 시안 (2026-11-02 사용자 — "GPT 에 요청해서 만들어와 봐") — content/blog-banner/prompts.json → ClaudeWorkspace/블로그배너/<slug>.png
 const bf = path.join(ROOT, 'content/blog-banner/prompts.json');
