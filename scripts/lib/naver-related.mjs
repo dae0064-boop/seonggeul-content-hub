@@ -52,7 +52,7 @@ export async function fetchPostList(blogId, { pages = 10, fetchImpl = globalThis
   try {
     for (let p = 1; p <= pages; p++) {
       const url = `https://blog.naver.com/PostTitleListAsync.naver?blogId=${encodeURIComponent(blogId)}&viewdate=&currentPage=${p}&categoryNo=0&parentCategoryNo=0&countPerPage=30`;
-      const res = await fetchImpl(url, { headers });
+      const res = await fetchImpl(url, { headers, signal: AbortSignal.timeout(20000) }); // 20초 제한 (2026-11-02 스레드 20시 멈춤)
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const items = parseTitleList(await res.text());
       const fresh = items.filter((x) => !seen.has(x.logNo));
@@ -62,7 +62,7 @@ export async function fetchPostList(blogId, { pages = 10, fetchImpl = globalThis
   } catch (e) { log(`글 목록 읽기 실패 (${e.message}) — RSS 로 봅니다`); }
   if (!seen.size) {
     try {
-      const res = await fetchImpl(`https://rss.blog.naver.com/${encodeURIComponent(blogId)}.xml`, { headers });
+      const res = await fetchImpl(`https://rss.blog.naver.com/${encodeURIComponent(blogId)}.xml`, { headers, signal: AbortSignal.timeout(20000) });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       parseRss(await res.text(), blogId).forEach((x) => seen.set(x.logNo, x));
     } catch (e) { log(`RSS 읽기 실패 (${e.message})`); }

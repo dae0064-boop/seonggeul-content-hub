@@ -56,4 +56,5 @@ async function main() {
   } catch (e) { log(`❌ 일상 글을 올리지 못했어요: ${e.message}`); return 2; }
 }
 
+if (isMain(import.meta.url)) setTimeout(() => { console.error('❌ 7분이 넘도록 끝나지 않아 멈춰요 — 다음 실행이 다시 해요'); process.exit(2); }, 7 * 60000).unref();
 if (isMain(import.meta.url)) process.exitCode = await main().catch((e) => { console.error(`❌ ${e.message}`); return 2; });
