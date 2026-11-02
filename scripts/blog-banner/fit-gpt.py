@@ -54,11 +54,14 @@ def keyed(box):
 title = keyed((700, 95, 1300, 255))
 out.alpha_composite(title, (943 - title.width // 2, 92))
 SUB = sys.argv[1] if len(sys.argv) > 1 else ''
-if SUB:  # 부제를 바꿀 때: 고딕 글씨로 직접
+if SUB:  # 부제를 바꿀 때: 고딕 글씨로 직접 (제목과 간격 넓게, 자간 넓게 — 2026-11-02 사용자)
     from PIL import ImageFont
-    fnt = ImageFont.truetype('scripts/lib/fonts/GothicA1-Medium.ttf', 36)
-    dd = ImageDraw.Draw(out); w = dd.textlength(SUB, font=fnt)
-    dd.text((943 - w / 2, 252), SUB, font=fnt, fill=(112, 100, 88, 255))
+    fnt = ImageFont.truetype('scripts/lib/fonts/GothicA1-Medium.ttf', 34)
+    dd = ImageDraw.Draw(out); sp = 3
+    w = sum(dd.textlength(ch, font=fnt) for ch in SUB) + sp * (len(SUB) - 1)
+    x = 943 - w / 2; y = 92 + title.height + 26
+    for ch in SUB:
+        dd.text((x, y), ch, font=fnt, fill=(112, 100, 88, 255)); x += dd.textlength(ch, font=fnt) + sp
 else:
     sub = keyed((700, 255, 1300, 318))
     out.alpha_composite(sub, (943 - sub.width // 2, 92 + title.height))
