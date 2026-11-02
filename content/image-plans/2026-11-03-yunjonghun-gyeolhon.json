@@ -1,0 +1,96 @@
+{
+  "slug": "2026-11-03-yunjonghun-gyeolhon",
+  "title": "윤종훈 결혼, 10살 연하 아내 한은서와 8년 전 처음 만난 곳은",
+  "source": "11/3(화) 21:40 네이버 원고 — 이슈 글(연예) 시험 1편, 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실존 인물 얼굴은 그리지 않는다 — 소식을 보는 가상의 일반인, 예식장·촬영장 장면",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "휴대폰으로 결혼 소식을 보며 고개를 갸웃하는 30대 여성의 얼굴 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). An ordinary Korean woman in her 30s with long wavy brown hair in a beige trench coat on an evening subway train, holding a smartphone near her chest and looking at the screen with a curious look, city lights blurred through the window behind her. Facial expression: curious, head slightly tilted. Color theme: dusty rose and white tones with a green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "dusty rose and white tones with a green accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "rose",
+      "thumb_person": "30대 여성(긴 웨이브 갈색 머리·베이지 트렌치코트)",
+      "thumb_mood": "궁금",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "rose",
+        "font": "jua",
+        "title": "윤종훈 결혼\n상대는 누구?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "하얀 꽃으로 꾸민 빈 예식장 통로",
+      "prompt": "Camera and composition: wide shot down the center aisle of an empty wedding hall. White flower arrangements and soft hanging lights line an empty wedding aisle leading to a bright stage, rows of empty white chairs on both sides, no people. Background color: warm ivory light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "shot": "wide shot down the center aisle of an empty wedding hall",
+      "bg": "warm ivory light"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "두 배우가 드라마에서 만나 결혼까지 온 과정을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "리턴에서 결혼까지",
+        "items": [
+          "2018년 SBS 드라마 리턴",
+          "팬카페에 자필 편지",
+          "석사 과정을 마쳤어요",
+          "서울 강남의 한 예식장"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "조명이 켜진 드라마 촬영장의 빈 세트",
+      "prompt": "Camera and composition: medium wide shot of a television drama studio set. An empty living-room style drama set with a sofa and lamp lit by large studio lights on stands, a film camera on a tripod in the foreground, cables on the floor, no people. Background color: dark studio with warm spotlight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "shot": "medium wide shot of a television drama studio set",
+      "bg": "dark studio with warm spotlight"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "신랑과 신부 두 배우를 나란히 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "신랑과 신부",
+        "heads": [
+          "윤종훈",
+          "한은서"
+        ],
+        "items": [
+          [
+            "1984년생",
+            "1994년생"
+          ],
+          [
+            "서준희 역",
+            "리턴"
+          ],
+          [
+            "기쁜 우리 좋은 날",
+            "석사 과정"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "무대 조명 아래 놓인 빈 의자 두 개",
+      "prompt": "Camera and composition: medium shot on a small theater stage. Two empty wooden chairs placed side by side under a single soft spotlight on a dark stage, a few white flower petals on the floor, no people. Background color: deep navy with a warm spotlight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "shot": "medium shot on a small theater stage",
+      "bg": "deep navy with a warm spotlight"
+    }
+  ]
+}
