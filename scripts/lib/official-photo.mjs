@@ -11,7 +11,7 @@
  *
  * 계획서 그림 항목:
  *   { n: 2, file: "02.png", kind: "photo", title: "...",
- *     photo: { query: "윤종훈", query_en: "Yoon Jong-hoon", page: "https://www.korea.kr/..." (선택) },
+ *     photo: { file: "File:Shin Se-kyung 170719.jpg" (선택, 먼저), query: "윤종훈", query_en: "Yoon Jong-hoon", page: "https://www.korea.kr/..." (선택) },
  *     prompt: "...대신 그릴 그림 프롬프트(사진을 못 찾으면 AI 로)" }
  * 찾으면 content/images/<슬러그>/NN.png 와 NN.credit.txt(사진 출처 한 줄)를 남긴다.
  * 원고에는 [이미지 N] 바로 다음 줄에 "[사진 출처 N]" 을 두면, 발행 때 그 줄이 출처 글자로 바뀐다(AI 그림으로 대신하면 줄이 빠진다).
@@ -68,6 +68,23 @@ export async function searchCommons({ query, query_en: queryEn, minWidth = 600 }
   return null;
 }
 
+/** 위키미디어 공용 파일 하나를 이름으로 (클라우드가 WebSearch 로 찾아 계획서 photo.file 에 적은 것) — 라이선스는 여기서 다시 확인한다 */
+export async function commonsFile(file) {
+  const title = file.startsWith('File:') ? file : `File:${file}`;
+  const url = 'https://commons.wikimedia.org/w/api.php?' + new URLSearchParams({
+    action: 'query', format: 'json', titles: title, prop: 'imageinfo', iiprop: 'url|size|mime|extmetadata', iiurlwidth: '1280',
+  });
+  const data = await getJson(url);
+  const p = Object.values(data?.query?.pages || {})[0];
+  const ii = p?.imageinfo?.[0];
+  if (!ii) return { skip: `파일 없음: ${title}` };
+  const md = ii.extmetadata || {};
+  const lic = strip(md.LicenseShortName?.value);
+  if (!OK_LICENSE.test(lic) || BAD_LICENSE.test(lic) || String(md.NonFree?.value || '') === 'true') return { skip: `라이선스 안 맞음(${lic}): ${title}` };
+  const author = strip(md.Artist?.value).slice(0, 40) || '작가 미상';
+  return { url: ii.thumburl || ii.url, page: ii.descriptionurl, license: lic, author, title: p.title, source: '위키미디어 공용', credit: `사진: ${author} / 위키미디어 공용 (${lic})` };
+}
+
 /** 정책브리핑 기사 — 사진까지 공공누리 제1유형일 때만 본문 첫 사진 */
 export async function fromKoreaKr(page) {
   const r = await fetch(page, { headers: { 'User-Agent': UA } });
@@ -86,6 +103,9 @@ export async function findPhoto(spec = {}) {
   const why = [];
   if (spec.page && /korea\.kr/.test(spec.page)) {
     try { const k = await fromKoreaKr(spec.page); if (k.url) return { photo: k }; why.push(`정책브리핑: ${k.skip}`); } catch (e) { why.push(`정책브리핑: ${e.message}`); }
+  }
+  for (const f of [].concat(spec.file || [])) {
+    try { const c = await commonsFile(f); if (c.url) return { photo: c }; why.push(`위키미디어 파일: ${c.skip}`); } catch (e) { why.push(`위키미디어 파일: ${e.message}`); }
   }
   if (spec.query || spec.query_en) {
     try { const c = await searchCommons(spec); if (c) return { photo: c }; why.push('위키미디어 공용: 라이선스 맞는 사진 없음'); } catch (e) { why.push(`위키미디어 공용: ${e.message}`); }
