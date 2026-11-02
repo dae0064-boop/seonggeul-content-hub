@@ -23,10 +23,10 @@ const img = (s) => { const f = path.join(SRC, `${s}.png`); return fs.existsSync(
 const CATS = [['생활·정보', 'icon-life'], ['생활·보장', 'icon-care'], ['이슈·뉴스', 'icon-news'], ['연예·방송', 'icon-ent'], ['맛집·나들이', 'icon-food']];
 // 폴라로이드: [slug, left, top, w, 기울기, 빈칸 색]
 const PHOTOS = [
-  ['photo-food', 70, 150, 230, -7, '#f3c9a0'],
-  ['photo-home', 270, 110, 210, 6, '#e8d9c2'],
-  ['photo-walk', 1430, 104, 215, -5, '#f5d9a8'],
-  ['photo-cafe', 1620, 150, 230, 8, '#eccab4'],
+  ['photo-food', 150, 140, 290, -7, '#f3c9a0'],
+  ['photo-home', 400, 112, 280, 6, '#e8d9c2'],
+  ['photo-walk', 1210, 108, 280, -5, '#f5d9a8'],
+  ['photo-cafe', 1450, 148, 290, 8, '#eccab4'],
 ];
 
 // 찢은 종이 가장자리
@@ -71,11 +71,11 @@ function banner(preview) {
     <text><textPath href="#arcp" startOffset="50%" text-anchor="middle">Every Good Day</textPath></text>
   </svg>
   <div class="paper">
-    <svg width="560" height="170" viewBox="0 0 560 170"><polygon points="${torn(560, 170, 7)}" fill="#fffaf1"/></svg>
+    <svg width="600" height="178" viewBox="0 0 600 178"><polygon points="${torn(600, 178, 7)}" fill="#fffaf1"/></svg>
     <div class="ttl">성글벙글</div>
     <div class="tg">매일매일 좋은 날을 나누는 공간</div>
   </div>
-  ${tape(905, 128, 120, -3)}
+  ${tape(885, 116, 120, -3)}
   ${mascot ? `<img class="mascot" src="${mascot}">` : ''}
   ${cats}
   ${preview ? [0, 1, 2, 3, 4].map((k) => `<div style="position:absolute;left:${486 + k * 186}px;top:321px;width:170px;height:279px;border:2px dashed rgba(40,90,220,.55)"></div>`).join('') + `<div class="nv" style="left:1158px;top:12px">내블로그 | 이웃블로그 | 블로그홈 | 로그인</div><div class="nv" style="left:487px;top:56px;font-weight:bold">프롤로그 | <span style="color:#d22">블로그</span></div><div class="nv" style="left:1365px;top:56px">태그 | 안부</div>` : ''}
@@ -92,13 +92,13 @@ body{width:1920px;background:#fff}
 .pol{position:absolute;background:#fff;padding:14px 14px 52px;box-shadow:0 10px 22px rgba(150,100,60,.18),0 2px 4px rgba(0,0,0,.06)}
 .ph{overflow:hidden}.ph img{width:100%;height:100%;object-fit:cover}
 .tape{position:absolute;height:34px;background:rgba(244,226,196,.82);box-shadow:0 1px 2px rgba(0,0,0,.06)}
-.arc{position:absolute;left:610px;top:58px}
+.arc{position:absolute;left:593px;top:40px}
 .arc text{font:46px Pop;fill:#fff;letter-spacing:4px;paint-order:stroke;stroke:#e9a878;stroke-width:6px;stroke-linejoin:round}
-.paper{position:absolute;left:680px;top:138px;width:560px;height:170px;filter:drop-shadow(0 6px 10px rgba(150,100,60,.16));transform:rotate(-1.2deg)}
+.paper{position:absolute;left:643px;top:130px;width:600px;height:178px;filter:drop-shadow(0 6px 10px rgba(150,100,60,.16));transform:rotate(-1.2deg)}
 .paper svg{position:absolute;inset:0}
-.ttl{position:absolute;left:0;right:0;top:26px;text-align:center;font:84px/1 Jua;color:#3b5a3f;letter-spacing:4px}
-.tg{position:absolute;left:0;right:0;top:118px;text-align:center;font:28px/1 Gaegu;color:#8a5a34}
-.mascot{position:absolute;left:640px;top:112px;width:120px;transform:rotate(-8deg);filter:drop-shadow(0 4px 6px rgba(120,80,40,.2))}
+.ttl{position:absolute;left:0;right:0;top:28px;text-align:center;font:88px/1 Jua;color:#3b5a3f;letter-spacing:4px}
+.tg{position:absolute;left:0;right:0;top:124px;text-align:center;font:28px/1 Gaegu;color:#8a5a34}
+.mascot{position:absolute;left:610px;top:96px;width:118px;transform:rotate(-8deg);filter:drop-shadow(0 4px 6px rgba(120,80,40,.2))}
 .btn{position:absolute;top:400px;width:170px;height:176px}
 .btn .in{position:absolute;left:6px;right:6px;top:56px;bottom:6px;background:#fff;border-radius:14px;box-shadow:0 8px 16px rgba(150,100,60,.16);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:16px;gap:7px;outline:2px dashed #f0cfae;outline-offset:-9px}
 .btn span{font:27px/1 Gaegu;color:#4a3526}
