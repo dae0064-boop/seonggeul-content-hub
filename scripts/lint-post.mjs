@@ -175,6 +175,12 @@ const SOURCE_URL_FROM = '2026-10-19';
 // 메인 키워드 검색량 상한(12,000)·네 기둥은 보지 않는다. 사람 이름이 그림 계획서 프롬프트에 들어가면 막는다(실존 인물 얼굴을 AI 로 만들지 않는다).
 const ISSUE_FROM = '2026-11-02';
 const ISSUE_KINDS = ['연예', '정책'];
+// 홈판형 제목 반전형 시험 (2026-11-02 사용자 — "반전형으로 바꾸는 거 몇 개, 바꾸지 않는 거 몇 개 나눠서 테스트").
+// 2026-11-06 ~ 11-19 네이버 원고의 생활 홈판형(slot: 홈판, 이슈 글 빼고)에 title_test: 반전 | 기본. 같은 날 두 쪽 차이 1편 이하.
+// 반전 = 흔한 생각을 뒤집는 말이 제목에 있다 ("~인 줄 알았는데", "알고 보니", "오히려", "사실은", "아니었"…). 기본 = 그 말 없이 지금 홈판형(호기심·감정).
+// 둘 다 메인 키워드로 시작·본문에 있는 사실만(낚시 금지)은 같다. 판정 11/20(금) 아침 확인 (routines/morning-check.md).
+const TITLE_TEST = { from: '2026-11-06', to: '2026-11-19' };
+const TWIST_RE = /줄\s*알았(는데|지만|다)|알고\s*보니|오히려|사실은|아니었|아니라고|반대(였|로|라)|거꾸로|착각|의외로|뜻밖|정반대|잘못\s*알고/;
 const ISSUE_TOPICS = { 연예: ['스타·연예인', '방송', '드라마', '영화', '음악'], 정책: ['사회·정치', '비즈니스·경제', '건강·의학'] };
 const ISSUE_NOT_SOURCE = /(^|\.)(blog\.naver\.com|m\.blog\.naver\.com|cafe\.naver\.com|post\.naver\.com|tistory\.com|brunch\.co\.kr|youtube\.com|youtu\.be|namu\.wiki|wikipedia\.org|instagram\.com|threads\.net|search\.naver\.com|google\.com|x\.com|twitter\.com|theqoo\.net|dcinside\.com|fmkorea\.com|instiz\.net)$/i;
 const SOURCE_ONE = /확인한 정보를 바탕으로/;
@@ -567,6 +573,12 @@ for (const file of files) {
     const homefeedSlot = !tistory && dated >= SPLIT2_FROM && post.slot === '홈판';
     if (homefeedSlot) {
       if (tb) notes.push(`홈판형(slot: 홈판) 제목은 괄호 숫자 없이 공감형으로 씁니다: "${post.title}"`);
+      if (!post.issue && !post.extra && dated >= TITLE_TEST.from && dated <= TITLE_TEST.to) {
+        const twist = TWIST_RE.test(post.title);
+        if (!['반전', '기본'].includes(post.titleTest)) errors.push(`홈판형 제목 시험(${TITLE_TEST.from}~${TITLE_TEST.to} 원고) — 프런트매터 title_test: 반전 | 기본 을 적으세요 (routines/naver-daily.md 🔀 상자)`);
+        else if (post.titleTest === '반전' && !twist) errors.push(`title_test: 반전 인데 제목에 뒤집는 말("~인 줄 알았는데"·"알고 보니"·"오히려"·"사실은"…)이 없습니다: "${post.title}"`);
+        else if (post.titleTest === '기본' && twist) errors.push(`title_test: 기본 인데 제목에 반전 말이 있습니다 — 기본 쪽은 반전 없이 써야 비교가 됩니다: "${post.title}"`);
+      }
     } else if (!tistory && dated >= WEEK_TEST_FROM) {
       const head = (tb ? post.title.slice(0, tb.index) : post.title).trim();
       if (!TITLE_QUESTION.test(head)) errors.push(`제목은 "메인 키워드, 질문 (숫자)" 모양으로 — 괄호 앞이 질문(…나요/…까/…?)으로 끝나야 합니다: "${post.title}"`);
@@ -682,6 +694,13 @@ for (const file of files) {
         for (const [c, n] of Object.entries(HF_TWENTY)) {
           const got = sibs.filter((p) => p.category === c && p.slot === '홈판').length;
           if (done ? got !== n : got > n) errors.push(`같은 날(${dated}) ${c} 홈판형(slot: 홈판) ${got}편 — 하루 생활정보 ${HF_TWENTY.생활정보} + 생활보장 ${HF_TWENTY.생활보장}편 (나머지는 검색형)`);
+        }
+        // 홈판형 제목 시험 — 같은 날 반전·기본 차이 1편 이하 (2026-11-02 사용자)
+        if (dated >= TITLE_TEST.from && dated <= TITLE_TEST.to) {
+          const tt = sibs.filter((p) => p.slot === '홈판' && !p.issue && !p.extra);
+          const nT = tt.filter((p) => p.titleTest === '반전').length, nB = tt.filter((p) => p.titleTest === '기본').length;
+          if (done && Math.abs(nT - nB) > 1) errors.push(`같은 날(${dated}) 홈판형 제목 시험 반전 ${nT} · 기본 ${nB}편 — 두 쪽 차이는 1편까지`);
+          else if (!done && Math.max(nT, nB) > Math.ceil(tt.length / 2) + 1) errors.push(`같은 날(${dated}) 홈판형 제목 시험 반전 ${nT} · 기본 ${nB}편 — 한쪽으로 몰렸습니다`);
         }
         // 말투 돌려 쓰기 — 같은 주제라도 다른 느낌으로 (2026-11-01 사용자)
         const tones = sibs.map((p) => p.tone || '');
