@@ -158,7 +158,7 @@ body{font-family:GB,sans-serif}
 .cq p,.ca p{max-width:760px;font-family:GB;font-size:calc(34px*var(--f,1));line-height:calc(1.45*var(--l,1));padding:16px 26px;border-radius:28px}
 .cq p{background:rgba(255,255,255,.95);color:#1a1a1a;border-top-right-radius:8px}
 .ca p{background:#FFE07A;color:#1a1a1a;border-top-left-radius:8px}
-.ca img{flex:none;width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center;background:#F07A3A;margin-top:2px;border:2px solid rgba(255,255,255,.85);box-sizing:border-box}
+.ca img{flex:none;width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center;background:#F07A3A;margin-top:2px}
 .ca.cont img{visibility:hidden}
 .cname{font-family:GX;font-size:26px;color:#fff;margin:calc(30px*var(--k,1)) 0 0 80px;line-height:1}
 .cname+.ca{margin-top:12px}
