@@ -26,6 +26,7 @@
 - 사용자 "인스타 카드뉴스로 보험심의 받아서 진행". 참고 계정 @zorbainsurance 카드뉴스 13장 캡처(Drive `insta-ref/`)를 읽고 `content/instagram/README.md` 에 구성·가져올 점·피할 점 정리. 아직 만든 것 없음.
 - ✅ 사용자 "계정 있어, word 만들어서 3편" → 시험 3편(카드 7장씩, 글자 카드 비용 0) 원고·그림·Word 만듦: 누수 책임(민법 758)·청구 3년(상법 662)·알릴의무(상법 651·655). 만드는 법 `content/instagram/README.md`.
 - Word·카드 그림은 저장소에 커밋 → PC catchup-reserve(10·13·16·19·22시)가 Drive `ClaudeWorkspace/인스타카드뉴스/2026-11-02/` 로 옮긴다 (사용자 "드라이브에 올려줘" — 클라우드는 큰 파일을 Drive 로 못 보냄). [ ] 다음 아침 확인이 Drive 에 Word 3개가 있는지 본다.
+- 🔁 사용자가 Drive 에서 보고 "참고 카드와 다르다" → **v2**(AI 바탕 1장 + 굵은 제목 + 짧은 줄, README "v2 모양"). 지금 그림·Word 는 임시 바탕. [ ] PC 13시 catchup 이 바탕 3장(약 30원)을 Drive `인스타카드뉴스/bg/` 에 만들면 → 클라우드가 받아 다시 그리기 → 그 뒤 GOMS.
 - [ ] 사용자가 Word 3개를 GOMS 에 올림 → 승인되면 심의필 번호로 7장째 다시 그리기 → 인스타에 손으로 올리기.
 - Drive ClaudeWorkspace 정리(사용자 "필요없는 건 다 삭제"): 휴지통으로 — flu-test·openai-key·update.cmd(옛 사본), projects/ 9월 옛 원고 3개, run-logs 10/26 이전 기록. 자동 작업이 쓰는 폴더·파일은 그대로 (30일 안에 휴지통에서 되살릴 수 있음).
 
