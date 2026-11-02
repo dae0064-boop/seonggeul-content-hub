@@ -47,6 +47,8 @@ async function googleTrends() {
 async function rankingLinks(page, url, linkRe) {
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
   await page.waitForTimeout(2500);
+  // 연예 랭킹은 목록을 늦게 그린다 — 한 번 내려 줘서 다 그리게 (2026-11-03 연예 랭킹 0건)
+  try { await page.mouse.wheel(0, 3000); await page.waitForTimeout(1500); } catch {}
   const links = await page.evaluate((src) => {
     const re = new RegExp(src);
     const seen = new Set(); const outL = [];
@@ -88,10 +90,10 @@ const browser = await launch();
 try {
   const ctx = await browser.newContext({ userAgent: UA, locale: 'ko-KR' });
   const page = await ctx.newPage();
-  try { result.naverEnt = await rankingLinks(page, 'https://m.entertain.naver.com/ranking', /entertain\.naver\.com\/(home\/)?article\//); }
+  try { result.naverEnt = await rankingLinks(page, 'https://m.entertain.naver.com/ranking', /(entertain\.naver\.com\/(home\/|ranking\/)?article\/|n\.news\.naver\.com\/(m?entertain|mnews\/entertain)\/article\/)/); }
   catch (e) { notes.push(`네이버 연예 랭킹 실패: ${e.message.split('\n')[0]}`); }
   if (!result.naverEnt.length) {
-    try { result.naverEnt = await rankingLinks(page, 'https://entertain.naver.com/ranking', /entertain\.naver\.com\/(home\/)?article\//); }
+    try { result.naverEnt = await rankingLinks(page, 'https://entertain.naver.com/ranking', /(entertain\.naver\.com\/(home\/|ranking\/)?article\/|n\.news\.naver\.com\/(m?entertain|mnews\/entertain)\/article\/)/); }
     catch (e) { notes.push(`네이버 연예 랭킹(PC) 실패: ${e.message.split('\n')[0]}`); }
   }
   try { result.naverNews = await rankingLinks(page, 'https://news.naver.com/main/ranking/popularDay.naver', /n\.news\.naver\.com\/(mnews\/)?article\//); }
