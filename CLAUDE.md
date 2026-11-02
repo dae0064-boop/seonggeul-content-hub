@@ -17,6 +17,7 @@ content/matjip/    맛집 후기 (사용자 사진 5~10장 → 원고는 Claude 
 content/chulgeo/   다와이철거 홍보 블로그 (⏸ 2026-10-28 사용자 지시로 원고·발행 모두 멈춤. 2026-10-26~, 성글벙글과 별개·다른 네이버 계정). 규칙 정본 README.md, 원고 posts/, 검사 scripts/chulgeo/lint.mjs
 content/threads/   스레드 말투 규칙(voice.md) + 글감(topics.txt)
 content/threads/blog/  스레드 블로그 유입 글 — 네이버 생활보장 글 요약 (규칙 ../blog.md, 검사 blog-set.mjs, 올리기 blog-post.mjs — 하루 최대 5편 07:30·08:30·20:00·21:00·22:30, 작업 SeonggeulThreadsBlog, 보험글 PAUSE 와 따로, 멈춤은 PAUSE-BLOG)
+content/threads/daily/  스레드 일상 글 — 07:00 러닝·응원, 19:00 하루 마무리 (규칙 ../daily.md, 검사 daily-set.mjs, 올리기 daily-post.mjs, 멈춤 PAUSE-DAILY)
 content/threads/insurance/  스레드 보험 심의글 — 규칙(rules.md)·글감·10편 묶음(sets/)
 scripts/           발행·검수 자동화(.mjs) + 워크스페이스 동기화 도구(.py)
 scripts/threads/   스레드 자동 발행·댓글 답변
