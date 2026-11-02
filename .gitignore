@@ -32,3 +32,6 @@ Thumbs.db
 
 # --- 생성한 이미지 (용량이 커서 커밋하지 않는다) ---
 content/images/
+
+# 인스타 카드뉴스 Word (GOMS 제출용, 커밋하지 않음)
+content/instagram/word/
