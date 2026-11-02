@@ -372,7 +372,7 @@ async function reservePublish(page, editor, post, at) {
   await sleep(1500);
   await dump(page, 'publish-layer');
 
-  if (post.category) await pickCategory(page, editor, post.category);
+  if (post.category) await pickCategory(page, editor, blogCategory(post));
   // 주제가 맞는지 다시 읽어 확인된 글만 예약한다 (2026-10-29 사용자 — "주제를 자동으로 체크해서 예약발행 가능할까?").
   // 홈판은 관심 주제로 글을 보여 줘서, 살림 글이 '비즈니스·경제'로 들어가면 홈판에 닿기 어렵다.
   // 한 번 더 골라 보고도 안 되면 임시저장으로 두고 다음 실행(그날 13·16·19·22시 catchup-reserve, 다음 날 아침)이 다시 한다.
@@ -715,10 +715,30 @@ async function insertQuoteAt(page, editor, text, style) {
  * '일상'을 찾다 본문의 "…성글벙글의 일상 포스팅" 글자를 눌러 패널이 닫힌 적이 있다 (2026-10-02).
  * 고른 뒤 패널이 닫혔으면 다시 연다. 실패해도 멈추지 않는다 (기본 카테고리로 간다).
  */
+/**
+ * 원고 category·issue → 블로그 카테고리 실제 이름 (2026-11-02 사용자가 블로그 카테고리를 바꿈:
+ * 생활·보장 / 다녀온 곳 / 생활·정보 / 이슈·뉴스 / 연예·방송). 원고 프런트매터는 예전 이름(생활정보·생활보장) 그대로 쓴다.
+ * 고를 때 새 이름이 없으면 예전 이름도 찾아본다(pickCategory).
+ */
+const BLOG_CATEGORY = { 생활정보: '생활·정보', 생활보장: '생활·보장', '맛집': '생활·정보', '맛집·카페': '생활·정보' };
+function blogCategory(post) {
+  if (post.issue === '연예') return '연예·방송';
+  if (post.issue === '정책') return '이슈·뉴스';
+  return BLOG_CATEGORY[post.category] || post.category;
+}
+const OLD_CATEGORY = { '생활·정보': '생활정보', '생활·보장': '생활보장', '이슈·뉴스': '생활·정보', '연예·방송': '생활·정보' };
+
 async function pickCategory(page, editor, category) {
-  // 블로그 카테고리 실제 이름 (2026-10-03 로그: 생활보장 / 맛집·카페 / 생활정보).
-  // 2026-10-07 사용자 지시: 맛집·카페는 사용자가 직접 쓴다 → 자동 발행은 보험 글 생활보장, 나머지 전부 생활정보
-  if (category === '맛집' || category === '맛집·카페') category = '생활정보';
+  try { await pickCategoryOnce(page, editor, category, true); }
+  catch {
+    const old = OLD_CATEGORY[category];
+    if (old) { warn(`카테고리 "${category}" 를 못 찾아 "${old}" 로 다시 해 봅니다`); await pickCategoryOnce(page, editor, old, false).catch(() => {}); }
+  }
+}
+
+async function pickCategoryOnce(page, editor, category, rethrow) {
+  // 맛집·카페(지금 '다녀온 곳')는 사용자가 직접 쓴다 — 자동 발행 이름은 blogCategory() 가 정한다
+  let ok = true;
   const exact = [
     `[class*="option"] label:text-is("${category}")`,
     `[class*="category"] label:text-is("${category}")`,
@@ -732,7 +752,8 @@ async function pickCategory(page, editor, category) {
     await findAnywhere(page, editor, exact, { timeout: 3000 }).then((r) => r.loc.click());
     log(`카테고리: ${category}`);
   } catch {
-    warn(`카테고리 자동 선택 실패 — 기본 카테고리로 갑니다 (${category})`);
+    ok = false;
+    warn(`카테고리 자동 선택 실패 (${category})${rethrow ? '' : ' — 기본 카테고리로 갑니다'}`);
     // 다음에 고칠 수 있게 카테고리 근처 요소를 기록한다 (HTML 덤프는 Drive 로 올리지 않으므로 로그에 남긴다)
     for (const [name, scope] of [['page', page], ['editor', editor]]) {
       const found = await scope.evaluate((cat) => {
@@ -757,6 +778,7 @@ async function pickCategory(page, editor, category) {
     await clickFirst(page, PUBLISH_OPEN, { timeout: 4000 }).catch(() => clickFirst(editor, PUBLISH_OPEN).catch(() => {}));
     await sleep(1200);
   }
+  if (!ok && rethrow) throw new Error(`카테고리 없음: ${category}`);
 }
 
 /**
@@ -1954,7 +1976,7 @@ async function main() {
 
     if (post.category) {
       step(`9. 카테고리: ${post.category}`);
-      await pickCategory(page, editor, post.category);
+      await pickCategory(page, editor, blogCategory(post));
     }
     await pickTopic(page, editor, post);
 
