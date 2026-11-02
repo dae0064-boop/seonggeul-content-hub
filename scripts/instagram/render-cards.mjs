@@ -247,6 +247,23 @@ function notice(bg, approval) {
 <p class="ap">${esc(approval || N.approval)}</p></div>`, 7, undefined, true);
 }
 
+// 광고 심의 금지어 (memory/CLAUDE.md [4]) — 2026-11-02 세트 뒤 원고부터 멈춘다 (11/2 3편 "가장 안전해요" 를 되짚어 보고 넣음).
+// 필수 약관 문구의 "반드시", 오해를 바로잡는 "무조건은 아니에요" 같은 부정문만 허용한다.
+{
+  const BAN = ['최고', '최저', '제일', '가장', '무조건', '100%', '보장', '손실 없음', '공짜', '단언', '완벽', '압도', '유일'];
+  const strict = day > '2026-11-02';
+  for (const p of set.posts) {
+    const t = (JSON.stringify(p.cards) + '\n' + (p.caption || []).join('\n'))
+      .replace(/세부사항은 반드시 해당 약관/g, '').replace(/무조건은 아니/g, '').replace(/무조건 (다 )?(물어|못)/g, '');
+    const hit = BAN.filter((w) => t.includes(w));
+    if (hit.length) {
+      const msg = `${p.no}편: 광고 심의 금지어 — ${hit.join(', ')} (memory/CLAUDE.md [4])`;
+      if (strict) throw new Error(msg + ' — 고친 뒤 다시 그려 주세요');
+      console.log('⚠ ' + msg);
+    }
+  }
+}
+
 const browser = await chromium.launch();
 const pg = await browser.newPage({ viewport: { width: 1080, height: 1080 } });
 let made = 0;
