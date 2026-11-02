@@ -148,6 +148,7 @@ body{font-family:GB,sans-serif}
 .panel .bd{font-size:calc(41px*var(--f,1));line-height:calc(1.7*var(--l,1));margin-top:calc(24px*var(--k,1))}
 .panel .bd p+p{margin-top:calc(16px*var(--k,1))}
 .panel .st{font-size:calc(39px*var(--f,1));line-height:calc(1.65*var(--l,1));margin-top:calc(32px*var(--k,1))}
+.panel .st b{margin-top:calc((39px*var(--f,1)*1.65*var(--l,1) - 56px)/2)}
 .panel .ck{font-size:calc(44px*var(--f,1));margin-top:calc(28px*var(--k,1))}
 .panel .cp{margin-top:calc(36px*var(--k,1))}.panel .cp>div{font-size:calc(38px*var(--f,1));line-height:calc(1.6*var(--l,1))}
 .panel .cta{margin-top:calc(40px*var(--k,1))}.panel .terms{margin-top:calc(28px*var(--k,1))}
