@@ -45,6 +45,7 @@ const font = (f) => `data:font/ttf;base64,${b64(f)}`;
 const img = (f) => `data:image/${f.endsWith('.png') ? 'png' : 'jpeg'};base64,${b64(f)}`;
 const logo = img('content/instagram/logo.png');
 const glogo = img('content/instagram/global-logo.png');
+const avatar = img('content/instagram/avatar.png');
 const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const hl = (t) => esc(t).replace(/\[([^\]]+)\]/g, '<em>$1</em>');
 const lines = (a, cls) => (a || []).map((l) => `<div class="${cls}">${hl(l)}</div>`).join('');
@@ -157,9 +158,10 @@ body{font-family:GB,sans-serif}
 .cq p,.ca p{max-width:760px;font-family:GB;font-size:calc(34px*var(--f,1));line-height:calc(1.45*var(--l,1));padding:16px 26px;border-radius:28px}
 .cq p{background:rgba(255,255,255,.95);color:#1a1a1a;border-top-right-radius:8px}
 .ca p{background:#FFE07A;color:#1a1a1a;border-top-left-radius:8px}
-.ca img{flex:none;width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center 20%;background:#fff}
+.ca img{flex:none;width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center;background:#F07A3A;margin-top:2px}
 .ca.cont img{visibility:hidden}
-.cname{font-family:GX;font-size:26px;color:#fff;margin:0 0 -6px 80px}
+.cname{font-family:GX;font-size:26px;color:#fff;margin:calc(30px*var(--k,1)) 0 0 80px;line-height:1}
+.cname+.ca{margin-top:12px}
 .cq em,.ca em{color:#C2410C;background:none;padding:0}
 .panel .pt{margin-top:calc(26px*var(--k,1))}.panel .pt td{padding:calc(12px*var(--k,1)) 4px}
 .nt{font-size:23px;line-height:1.55;color:#444}.nt h3{font-size:44px;color:#1c1c1c;margin-bottom:26px}.nt b{display:block;font-size:29px;color:#1c1c1c}.nt p{margin-top:16px}.nt .ap{color:#FFC25A;font-size:27px}
@@ -185,7 +187,7 @@ function mcard(c, photo, i) {
       const rows = c.msgs.map(([who, t]) => {
         if (who === 'q') { prevA = false; return `<div class="cq"><p>${hl(t)}</p></div>`; }
         const first = !prevA; prevA = true;
-        return `${first ? '<div class="cname">친근한 설계사</div>' : ''}<div class="ca${first ? '' : ' cont'}"><img src="${logo}"><p>${hl(t)}</p></div>`;
+        return `${first ? '<div class="cname">친근한 설계사</div>' : ''}<div class="ca${first ? '' : ' cont'}"><img src="${avatar}"><p>${hl(t)}</p></div>`;
       }).join('');
       return mpage(photo, '', 0, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label || '친근한 설계사에게 물어봤어요')}</div><div class="chat">${rows}</div>${c.terms ? `<div class="terms">${esc(NOTICE.terms)}</div>` : ''}</div>`, i, c.src ? '근거 · ' + c.src : undefined);
     }
