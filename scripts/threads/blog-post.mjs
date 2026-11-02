@@ -79,6 +79,7 @@ async function main() {
   if (!blogId) { log('내 블로그 아이디(content/research/my-blog.txt)가 없어요'); return 1; }
 
   // 내 블로그 공개 글 목록 → 그 원고의 주소 (예약만 된 글은 여기 없다)
+  log('네이버 블로그 글 목록 읽는 중…');
   const list = await fetchPostList(blogId, { pages: 10, log }); // 지난 글(src)도 찾게 넉넉히
   const urlOf = (it) => {
     const t = normTitle(postTitle(it['원고']));
@@ -87,6 +88,7 @@ async function main() {
     return hit ? `https://blog.naver.com/${blogId}/${hit.logNo}` : '';
   };
 
+  log(`블로그 글 ${list.length}편 읽음 · 스레드 확인 중…`);
   const api = threadsApi(token);
   const me = await api.me();
   const posts = await api.myPosts({ limit: 50, since: kstDayStartUnix() - 3 * 86400 });
@@ -132,6 +134,7 @@ async function main() {
 
   const again = await api.myPosts({ limit: 25, since: kstDayStartUnix() - 86400 });
   if (again.some((x) => head(x.text) === head(next.body))) { log('방금 다른 PC 가 올렸어요 — 올리지 않아요'); return 0; }
+  log('스레드에 올리는 중…');
   let p1;
   try { p1 = await api.postText(next.body); log(`✅ 본문 올림 (${p1.id})`); }
   catch (e) { log(`❌ 본문을 올리지 못했어요: ${e.message}`); return 2; }
