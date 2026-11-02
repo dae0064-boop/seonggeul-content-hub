@@ -44,6 +44,7 @@ const b64 = (f) => fs.readFileSync(path.join(ROOT, f)).toString('base64');
 const font = (f) => `data:font/ttf;base64,${b64(f)}`;
 const img = (f) => `data:image/${f.endsWith('.png') ? 'png' : 'jpeg'};base64,${b64(f)}`;
 const logo = img('content/instagram/logo.png');
+const glogo = img('content/instagram/global-logo.png');
 const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const hl = (t) => esc(t).replace(/\[([^\]]+)\]/g, '<em>$1</em>');
 const lines = (a, cls) => (a || []).map((l) => `<div class="${cls}">${hl(l)}</div>`).join('');
@@ -86,6 +87,7 @@ em{font-style:normal;color:#FFD43B}
 
 // ── C안 '잡지형' (2026-11-02 사용자 선택): 위 사진 + 아래 흰 칸, 글꼴 하나(Pretendard), 포인트 색 하나 ──
 const MCSS = `
+@font-face{font-family:Head;src:url('${font('scripts/lib/fonts/BlackHanSans-Regular.ttf')}')}
 @font-face{font-family:Pre;src:url('${font('scripts/threads/fonts/Pretendard-Bold.otf')}')}
 *{margin:0;padding:0;box-sizing:border-box}
 body{width:1080px;height:1080px;position:relative;overflow:hidden;word-break:keep-all;font-family:Pre,sans-serif;color:#1c1c1c;background:#fff}
@@ -96,10 +98,16 @@ em{font-style:normal;color:#C2551E}
 .bd{font-size:36px;line-height:1.7;color:#555;margin-top:34px}
 .bd p+p{margin-top:16px}
 .bgp{position:absolute;inset:0;background-size:cover;background-repeat:no-repeat}
-.shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 22%,rgba(0,0,0,.55) 50%,rgba(0,0,0,.82) 100%)}
+.shade{position:absolute;inset:0;background:rgba(0,0,0,.42)}
 .shade.full{background:rgba(0,0,0,.72)}
-.panel{position:absolute;left:72px;right:72px;bottom:110px;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.55)}
-.panel .lb{color:#FFB27A}.panel em{color:#FFC25A}.panel .bd,.panel .st,.panel .cp>div,.panel .cta,.panel .terms,.panel .nt{color:rgba(255,255,255,.9)}
+.panel{position:absolute;left:72px;right:72px;top:120px;color:#fff;text-shadow:0 2px 10px rgba(0,0,0,.5)}
+.panel .hd{font-family:Head;font-size:76px;line-height:1.22;letter-spacing:-1px;margin-top:0}
+.panel .lb{display:inline-block;font-size:28px;border:2px solid rgba(255,255,255,.75);color:#fff;border-radius:30px;padding:6px 20px;margin-top:44px;letter-spacing:0}
+.panel .bd{font-size:40px;line-height:1.65;margin-top:22px}
+.panel .st{font-size:38px;line-height:1.6}
+.panel .ck{font-size:42px}
+.panel .cp>div{font-size:36px}
+.panel em{color:#FFC25A}.panel .bd,.panel .st,.panel .cp>div,.panel .cta,.panel .terms,.panel .nt{color:rgba(255,255,255,.9)}
 .panel .hd{color:#fff}.panel .nt b,.panel .nt h3{color:#fff}.panel .ck i{color:#FFC25A}
 .ft{position:absolute;left:64px;right:64px;bottom:44px;display:flex;justify-content:space-between;font-size:24px;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.6)}
 .in{padding:0}
@@ -122,18 +130,28 @@ function mcard(c, photo, i) {
   const terms = c.terms ? `<div class="terms">${esc(NOTICE.terms)}</div>` : '';
   const src = c.src ? '근거 · ' + c.src : '';
   switch (c.type) {
-    case 'cover': return mpage(photo, c.crop, 560, `<div class="in"><div class="lb">${esc(c.kw)}</div><div class="hd" style="font-size:72px">${H(c.title)}</div><div class="bd" style="margin-top:20px">${esc(c.sub || '')}</div></div>`, i);
-    case 'text': return mpage(photo, c.crop, 300, `<div class="in"><div class="lb">${esc(c.label)}</div><div class="hd">${H(c.head)}</div><div class="bd">${c.body.map((t) => `<p>${hl(t)}</p>`).join('')}</div>${terms}</div>`, i, src || undefined);
-    case 'steps': return mpage(photo, c.crop, 300, `<div class="in"><div class="lb">${esc(c.label)}</div><div class="hd">${H(c.head)}</div>${c.steps.map(([n, t]) => `<div class="st"><b>${esc(n)}</b><span>${hl(t)}</span></div>`).join('')}${terms}</div>`, i, src || undefined);
-    case 'compare': return mpage(photo, c.crop, 300, `<div class="in"><div class="lb">${esc(c.label)}</div><div class="hd">${H(c.head)}</div><div class="cp">${[c.left, c.right].map((x) => `<div><h4>${esc(x.t)}</h4>${x.lines.map(esc).join('<br>')}</div>`).join('')}</div><div class="bd" style="font-size:30px;margin-top:26px">${esc(c.foot || '')}</div>${terms}</div>`, i, src || undefined);
-    case 'check': return mpage(photo, c.crop, 300, `<div class="in"><div class="lb">${esc(c.label)}</div><div class="hd">${H(c.head)}</div>${c.checks.map((t) => `<div class="ck"><i>✓</i><span>${hl(t)}</span></div>`).join('')}<div class="cta">${esc(c.cta)}</div></div>`, i);
+    case 'cover': return mpage(photo, c.crop, 560, `<div class="in" style="margin-top:60px"><div class="hd" style="font-size:64px;color:#FFC25A">${esc(c.kw)}</div><div class="hd" style="font-size:96px;margin-top:10px">${H(c.title)}</div><div class="bd" style="margin-top:40px;font-size:44px">${esc(c.sub || '')}</div></div>`, i);
+    case 'text': return mpage(photo, c.crop, 300, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label)}</div><div class="bd">${c.body.map((t) => `<p>${hl(t)}</p>`).join('')}</div>${terms}</div>`, i, src || undefined);
+    case 'steps': return mpage(photo, c.crop, 300, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label)}</div>${c.steps.map(([n, t]) => `<div class="st"><b>${esc(n)}</b><span>${hl(t)}</span></div>`).join('')}${terms}</div>`, i, src || undefined);
+    case 'compare': return mpage(photo, c.crop, 300, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label)}</div><div class="cp">${[c.left, c.right].map((x) => `<div><h4>${esc(x.t)}</h4>${x.lines.map(esc).join('<br>')}</div>`).join('')}</div><div class="bd" style="font-size:30px;margin-top:26px">${esc(c.foot || '')}</div>${terms}</div>`, i, src || undefined);
+    case 'check': return mpage(photo, c.crop, 300, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label)}</div>${c.checks.map((t) => `<div class="ck"><i>✓</i><span>${hl(t)}</span></div>`).join('')}<div class="cta">${esc(c.cta)}</div></div>`, i);
     default: throw new Error('모르는 카드 종류: ' + c.type);
   }
 }
-function mnotice(approval, photo7) {
+// 7장째 심의 고지 — 2026-11-02 사용자: 참고 계정처럼 맨 위에 회사(글로벌금융판매) 로고, 가운데 맞춤
+function mnotice(approval) {
   const N = NOTICE;
-  return mpage(photo7, '', 0, `<div class="nt"><h3>꼭 읽어 주세요</h3><b>${esc(N.agency)}</b><b>${esc(N.agent)}</b>
-<p>${N.opinion.map(esc).join('<br>')}</p><p>${N.replace.map(esc).join('<br>')}</p><p>${esc(N.terms)}</p><p>${esc(N.rule)}</p><p class="ap">${esc(approval || N.approval)}</p></div>`, 7, undefined, true);
+  return `<!doctype html><html><head><meta charset="utf-8"><style>${MCSS}
+body{background:#111;color:#fff;text-align:center}
+.gl{display:inline-block;background:#fff;border-radius:22px;padding:22px 40px;margin-top:84px}.gl img{height:96px;display:block}
+.nn{margin:44px 80px 0;font-size:25px;line-height:1.6;color:rgba(255,255,255,.88)}.nn b{display:block;font-size:30px;color:#fff;line-height:1.5}
+.nn p{margin-top:20px}.nn .ap{color:#FFC25A;font-size:28px}
+.ft{color:rgba(255,255,255,.6);text-shadow:none}</style></head><body>
+<div class="gl"><img src="${glogo}"></div>
+<div class="nn"><b>${esc(N.agency)}</b><b>${esc(N.agent)}</b>
+<p class="ap">${esc(approval || N.approval)}<br><span style="font-size:24px;color:rgba(255,255,255,.88)">${esc(N.rule)}</span></p>
+<p>${N.replace.map(esc).join('<br>')}</p><p>${N.opinion.map(esc).join(' ')}</p><p>${esc(N.terms)}</p></div>
+<div class="ft"><span>친근한 설계사</span><span>7 / 7</span></div></body></html>`;
 }
 
 function page(bg, inner, i) {
@@ -179,7 +197,7 @@ for (const p of set.posts) {
   const dir = path.join(outRoot, `${p.no}-${p.slug}`);
   fs.mkdirSync(dir, { recursive: true });
   const htmls = mag
-    ? [...p.cards.map((c, k) => mcard(c, bg, k + 1)), mnotice(p.approval, bg)]
+    ? [...p.cards.map((c, k) => mcard(c, bg, k + 1)), mnotice(p.approval)]
     : [...p.cards.map((c, k) => card(c, bg, k + 1)), follow(bg), notice(bg, p.approval)];
   for (let k = 0; k < htmls.length; k++) {
     await pg.setContent(htmls[k], { waitUntil: 'load' });
@@ -187,8 +205,8 @@ for (const p of set.posts) {
     // 넘침: 본문이 아래 줄(.ft)을 덮거나 칸을 넘치면 멈춘다
     const over = await pg.evaluate(() => {
       if ([...document.querySelectorAll('.wrap,.nt')].some((w) => w.scrollHeight > w.clientHeight + 2)) return true;
-      const pn = document.querySelector('.panel');
-      return !!(pn && pn.getBoundingClientRect().top < 60);
+      const pn = document.querySelector('.panel,.nn'); const ft = document.querySelector('.ft');
+      return !!(pn && ft && pn.getBoundingClientRect().bottom > ft.getBoundingClientRect().top - 12);
     });
     if (over) throw new Error(`${p.no}편 ${k + 1}장: 글이 칸을 넘쳐요 — 줄을 줄여 주세요`);
     await pg.screenshot({ path: path.join(dir, String(k + 1).padStart(2, '0') + '.png') });
