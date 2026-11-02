@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 /**
- * 네이버 블로그 PC 타이틀 배너 그리기 (2026-11-02 사용자 — 카테고리 5개).
+ * 네이버 블로그 스킨 배경 배너 (2026-11-02 사용자 — 카테고리 5개, 블로그 전체 화면에 맞춰).
  *
- *   node scripts/blog-banner/render.mjs            # a·b·c 세 시안 모두
- *   node scripts/blog-banner/render.mjs b          # 하나만
+ *   node scripts/blog-banner/render.mjs [바탕slug] [--x 0.5] [--y 0.45] [--zoom 1]
  *
- * 바탕·아이콘 그림은 GPT(OpenAI) 로 PC 가 만든다 (content/blog-banner/prompts.json → make-bg.mjs → Drive 블로그배너/).
- * 클라우드가 그 그림을 content/blog-banner/src/ 에 넣고 이 스크립트로 한글 글씨·카테고리 칸을 얹는다 (GPT 는 한글이 깨진다).
- * 그림이 아직 없으면 색 바탕·빈 동그라미로 자리만 그린다.
- * 결과: content/blog-banner/out/banner-<시안>.png (966×400 — 네이버 타이틀 폭) + banner-<시안>@2x.png (선명한 화면용)
+ * 블로그 화면(1920 폭 모니터) 실측: 타이틀 영역 높이 600, 글 칸 966px 이 가운데(x 477~1443).
+ *   위 0~85px 은 네이버 메뉴(내블로그·이웃블로그 / 프롤로그·블로그 / 태그·안부)가 얹히는 자리 — 글씨를 두지 않는다.
+ *   글씨·아이콘은 글 칸 안, 인물은 칸 오른쪽 끝에 걸치게 (지금 배너와 같은 배치).
+ * 바탕·아이콘은 GPT 그림(PC 가 만들어 Drive 블로그배너/ → content/blog-banner/src/). 아이콘은 흰 바탕이라 multiply 로 얹어 흰색을 지운다.
+ * 결과: content/blog-banner/out/<바탕>.png (1920×600 — 블로그에 올릴 파일), <바탕>-preview.png (네이버 메뉴·카테고리 칸을 흉내 낸 확인용)
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -19,66 +19,61 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 const SRC = path.join(ROOT, 'content/blog-banner/src');
 const OUT = path.join(ROOT, 'content/blog-banner/out');
 fs.mkdirSync(OUT, { recursive: true });
-const b64 = (f) => fs.readFileSync(path.join(ROOT, f)).toString('base64');
-const font = (f) => `data:font/ttf;base64,${b64(f)}`;
-const img = (slug) => {
-  const f = path.join(SRC, `${slug}.png`);
-  return fs.existsSync(f) ? `data:image/png;base64,${fs.readFileSync(f).toString('base64')}` : '';
-};
+const arg = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : d; };
+const slug = process.argv[2] && !process.argv[2].startsWith('--') ? process.argv[2] : 'bg-full-1';
+const X = arg('--x', '50'), Y = arg('--y', '45'), ZOOM = Number(arg('--zoom', '1'));
+const font = (f) => `data:font/ttf;base64,${fs.readFileSync(path.join(ROOT, f)).toString('base64')}`;
+const img = (s) => { const f = path.join(SRC, `${s}.png`); return fs.existsSync(f) ? `data:image/png;base64,${fs.readFileSync(f).toString('base64')}` : ''; };
 
-const CATS = [
-  { name: '생활·정보', icon: 'icon-life' },
-  { name: '생활·보장', icon: 'icon-care' },
-  { name: '이슈·뉴스', icon: 'icon-news' },
-  { name: '연예·방송', icon: 'icon-ent' },
-  { name: '맛집·나들이', icon: 'icon-food' },
-];
-const V = {
-  a: { bg: 'bg-a-warm', fallback: 'linear-gradient(90deg,#f6e7d3,#f3d9bf)', fade: 'rgba(250,240,226,.85)', title: '#2f5a3c', tag: '#7a5532', sub: '#5b4a3a', ring: '#e7cfae' },
-  b: { bg: 'bg-b-fresh', fallback: 'linear-gradient(90deg,#dff5ec,#d6ecfa)', fade: 'rgba(238,250,248,.85)', title: '#1f5f7a', tag: '#2f7d6a', sub: '#3d5560', ring: '#bfe3dc' },
-  c: { bg: 'bg-c-clean', fallback: 'linear-gradient(90deg,#fffdf6,#fbf1cf)', fade: 'rgba(255,253,246,.88)', title: '#3a3a3a', tag: '#c4842a', sub: '#555', ring: '#efdca8' },
-};
+const CATS = [['생활·정보', 'icon-life'], ['생활·보장', 'icon-care'], ['이슈·뉴스', 'icon-news'], ['연예·방송', 'icon-ent'], ['맛집·나들이', 'icon-food']];
 
-function html(v) {
-  const t = V[v];
-  const bg = img(t.bg);
-  const cats = CATS.map((c) => {
-    const i = img(c.icon);
-    return `<div class="cat"><div class="ic">${i ? `<img src="${i}">` : ''}</div><div class="nm">${c.name}</div></div>`;
-  }).join('');
-  return `<!doctype html><meta charset="utf-8"><style>
-@font-face{font-family:Jua;src:url('${font('scripts/lib/fonts/Jua-Regular.ttf')}')}
-@font-face{font-family:Pre;src:url('${font('scripts/threads/fonts/Pretendard-Bold.otf')}')}
-*{margin:0;padding:0;box-sizing:border-box}
-body{width:966px;height:400px;overflow:hidden;position:relative;background:${t.fallback};word-break:keep-all}
-.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 38%}
-.fade{position:absolute;inset:0;background:linear-gradient(90deg,${t.fade} 0%,${t.fade} 38%,rgba(255,255,255,0) 66%)}
-.txt{position:absolute;left:46px;top:34px}
-.title{font:82px/1 Jua;color:${t.title};letter-spacing:2px}
-.tag{margin-top:12px;font:28px/1.2 Jua;color:${t.tag}}
-.sub{margin-top:8px;font:18px/1.3 Pre;color:${t.sub}}
-.cats{position:absolute;left:36px;bottom:22px;display:flex;gap:10px}
-.cat{width:104px;text-align:center}
-.ic{width:84px;height:84px;margin:0 auto;border-radius:50%;background:#fff;border:3px solid ${t.ring};overflow:hidden;box-shadow:0 3px 8px rgba(0,0,0,.08)}
-.ic img{width:100%;height:100%;object-fit:cover;transform:scale(1.12)}
-.nm{margin-top:6px;font:16px Pre;color:${t.sub}}
-</style>
-${bg ? `<img class="bg" src="${bg}">` : ''}<div class="fade"></div>
-<div class="txt"><div class="title">성글벙글</div><div class="tag">매일매일 좋은 날을 나누는 공간</div><div class="sub">살림·건강·보험부터 오늘의 이슈까지</div></div>
-<div class="cats">${cats}</div>`;
+function banner() {
+  const bg = img(slug);
+  const cats = CATS.map(([n, s]) => { const i = img(s); return `<div class="cat"><div class="nm">${n}</div><div class="ic">${i ? `<img src="${i}">` : '<i></i>'}</div></div>`; }).join('');
+  return `
+<div class="bn">
+  ${bg ? `<img class="bg" src="${bg}">` : ''}
+  <div class="col">
+    <div class="title">성글벙글</div>
+    <div class="tag">매일매일 좋은 날을 나누는 공간</div>
+    <div class="sub">살림·건강·보험부터 오늘의 이슈·연예까지!</div>
+    <div class="cats">${cats}</div>
+  </div>
+</div>`;
 }
+const CSS = `
+@font-face{font-family:Pen;src:url('${font('scripts/lib/fonts/NanumPenScript-Regular.ttf')}')}
+@font-face{font-family:Gaegu;src:url('${font('scripts/lib/fonts/Gaegu-Bold.ttf')}')}
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1920px;background:#fff;font-family:sans-serif}
+.bn{position:relative;width:1920px;height:600px;overflow:hidden;background:linear-gradient(90deg,#f7e6cf,#f4dcc0)}
+.bg{position:absolute;left:50%;top:50%;width:${1920 * ZOOM}px;transform:translate(-${X}%,-${Y}%)}
+.col{position:absolute;left:477px;width:966px;top:0;height:600px}
+.title{position:absolute;left:0;width:966px;top:92px;text-align:center;font:138px/1 Pen;color:#2c5236;letter-spacing:6px;text-shadow:0 2px 0 rgba(255,255,255,.35)}
+.tag{position:absolute;left:0;width:966px;top:252px;text-align:center;font:58px/1 Pen;color:#7a5230}
+.sub{position:absolute;left:0;width:966px;top:330px;text-align:center;font:40px/1 Pen;color:#2c5236}
+.cats{position:absolute;left:71px;top:410px;display:flex;gap:6px}
+.cat{width:160px;text-align:center}
+.nm{font:27px/1 Gaegu;color:#2b2b2b;margin-bottom:6px}
+.ic{width:150px;height:150px;margin:0 auto}
+.ic img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 3px 4px rgba(120,80,40,.15))}
+.ic i{display:block;width:110px;height:110px;margin:10px auto;border-radius:50%;border:3px dashed rgba(0,0,0,.2)}
+/* 확인용 네이버 화면 흉내 */
+.nv{position:absolute;font:13px sans-serif;color:#333}
+.side{margin:18px 0 0 477px;width:170px;border:1px solid #ddd;border-radius:4px;padding:14px;font:13px/1.9 sans-serif;color:#555}
+.side b{color:#d33;display:block;margin-bottom:4px}
+`;
+const page = (preview) => `<!doctype html><meta charset="utf-8"><style>${CSS}</style><div style="position:relative">${banner()}
+${preview ? `<div class="nv" style="left:1158px;top:12px">내블로그 | 이웃블로그 | 블로그홈 | 로그인</div>
+<div class="nv" style="left:487px;top:56px;font-weight:bold">프롤로그 | <span style="color:#d22">블로그</span></div>
+<div class="nv" style="left:1365px;top:56px">태그 | 안부</div>` : ''}</div>
+${preview ? `<div class="side"><b>카테고리</b>전체보기 (448)<br>맛집·나들이 (236)<br>생활·정보 (153)<br>생활·보장 (59)<br>이슈·뉴스<br>연예·방송</div>` : ''}`;
 
-const want = process.argv[2] ? [process.argv[2]] : Object.keys(V);
 const browser = await chromium.launch();
-for (const v of want) {
-  for (const scale of [1, 2]) {
-    const page = await browser.newPage({ viewport: { width: 966, height: 400 }, deviceScaleFactor: scale });
-    await page.setContent(html(v));
-    await page.waitForTimeout(300);
-    const f = path.join(OUT, `banner-${v}${scale === 2 ? '@2x' : ''}.png`);
-    await page.screenshot({ path: f });
-    await page.close();
-    console.log(f);
-  }
+for (const pv of [false, true]) {
+  const p = await browser.newPage({ viewport: { width: 1920, height: pv ? 900 : 600 } });
+  await p.setContent(page(pv)); await p.waitForTimeout(400);
+  const f = path.join(OUT, `${slug}${pv ? '-preview' : ''}.png`);
+  await p.screenshot({ path: f }); await p.close(); console.log(f);
 }
 await browser.close();
