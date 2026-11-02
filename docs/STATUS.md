@@ -23,6 +23,9 @@
 
 ## 지금 상태
 
+### 11/2 — 🧵 스레드용 "성글벙글" 글씨 그림
+- 네이버 PC 배너의 "성글벙글" 글씨만 떼어 배너와 같은 크림 바탕 1080×1080 으로: `content/threads/brand/seonggeul-logo-1080.png` (+ 투명 배경 `seonggeul-logo-transparent.png`). 다시 만들기 `python3 scripts/threads/logo-image.py`. 스레드는 아직 멈춤(PAUSE) — 사용자가 손으로 올린다.
+
 ### 11/2 — 🖼 블로그 PC 배너 바꿈 (완성, 사용자가 올림)
 - 카테고리 5개(생활·정보/생활·보장/이슈·뉴스/연예·방송/맛집·나들이) 배너: ChatGPT 깔끔한 시안 → `scripts/blog-banner/fit-gpt.py` 로 1920×600·네이버 위젯 칸(가로 170×5, 사이 16, x 486~, 위 321~600)에 맞춤. 부제 "오늘도 싱글벙글, 생활이 편해지는 이야기". 최종 `content/blog-banner/out/seonggeul-banner-final.png`, ChatGPT 프롬프트 `content/blog-banner/chatgpt-prompt.md`. PC catchup 의 make-bg.mjs 가 `content/blog-banner/prompts.json` 그림을 Drive 블로그배너/ 로 만든다(이미 있으면 건너뜀).
 
