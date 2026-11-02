@@ -71,7 +71,8 @@ export function threadsApi(token) {
 
       let res, text;
       try {
-        res = await fetch(url, init);
+        // 30초 안에 답이 없으면 끊고 다시 시도 (2026-11-02 20시 — 응답 없는 요청을 끝없이 기다리다 작업 10분 제한에 걸려 글도 기록도 없이 끝났다)
+        res = await fetch(url, { ...init, signal: AbortSignal.timeout(30000) });
         text = await res.text();
       } catch (e) {
         lastErr = new Error(`네트워크 실패 (${endpoint}): ${redact(e.message)}`);

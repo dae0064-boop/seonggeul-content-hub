@@ -21,6 +21,8 @@ $dailyCode = $LASTEXITCODE
 $dailyLog | ForEach-Object { Write-Host $_ }
 @("", "===== $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') · $env:COMPUTERNAME · 일상 글 $(if ($Test) { '시험' } else { '올리기' }) · 종료 코드 $dailyCode") + $dailyLog |
   Add-Content -Encoding UTF8 (Join-Path $dir "$(Get-Date -Format 'yyyy-MM-dd').log")
+# 시작을 먼저 적는다 — 중간에 멈춰도 '시작만 있고 끝이 없는' 기록이 남게 (2026-11-02 20시 기록 없이 사라짐)
+"`n----- $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') · $env:COMPUTERNAME · 블로그 유입 글 시작" | Add-Content -Encoding UTF8 (Join-Path $dir "$(Get-Date -Format 'yyyy-MM-dd').log")
 $nodeArgs = @('scripts\threads\blog-post.mjs', '--posted', (Join-Path $dir 'blog-posted.tsv'))
 if (-not $Test) { $nodeArgs += '--post' }
 $log = @(& node @nodeArgs 2>&1 | ForEach-Object { "$_" })

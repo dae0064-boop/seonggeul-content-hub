@@ -144,4 +144,6 @@ async function main() {
   } catch (e) { log(`❌ 링크 답글을 올리지 못했어요: ${e.message} — 다음 실행이 먼저 붙여요`); return 2; }
 }
 
+// 마지막 안전장치: 7분이 넘으면 이유를 남기고 끝낸다 — 작업 스케줄러 10분 제한에 걸리면 기록이 하나도 안 남는다 (2026-11-02 20시)
+if (isMain(import.meta.url)) setTimeout(() => { console.error('❌ 7분이 넘도록 끝나지 않아 멈춰요 (네이버·스레드 응답 없음) — 다음 실행이 다시 해요'); process.exit(2); }, 7 * 60000).unref();
 if (isMain(import.meta.url)) process.exitCode = await main().catch((e) => { console.error(`❌ ${e.message}`); return 2; });
