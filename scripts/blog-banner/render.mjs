@@ -55,7 +55,7 @@ function banner() {
   return `
 <div class="bn">
   ${bg ? `<img class="bg" src="${bg}">` : ''}
-  ${DECO}
+  ${bg ? '' : DECO}
   <div class="col">
     <div class="title">성글벙글</div>
     <div class="tag">매일매일 좋은 날을 나누는 공간</div>
