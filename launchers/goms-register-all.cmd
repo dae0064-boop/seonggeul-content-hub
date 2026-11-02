@@ -1,7 +1,8 @@
 @echo off
 chcp 65001 >nul
-title 성글벙글 - GOMS 광고심의 한꺼번에 등록 (스레드 31~115편)
+title 성글벙글 - GOMS 광고심의 등록 (하루 30편까지)
 REM 2026-11-02 사용자: "이번 달 하루 3편 스레드에 필요한 심의글을 오늘 중으로 다 심의 올리자" — 아직 등록 안 한 31편~ 을 차례로 모두 등록한다.
+REM 2026-11-02 사용자: "한 번에 너무 많이 올리면 잘 안 나니 하루 30개만" — 한 번 실행에 아직 안 올린 편 30편까지. 다음 날 다시 더블클릭하면 다음 30편.
 REM 원고(sets)로 Word 를 새로 만들고 약관 참조 문구를 넣은 뒤 올린다. 등록한 편은 Drive goms-done 에 표시돼 다시 하지 않는다 (중간에 끊겨도 다시 더블클릭하면 이어서).
 cd /d "%~dp0.."
 echo.
@@ -20,8 +21,8 @@ echo   GOMS 첫 화면(왼쪽에 "업무" 메뉴)이 보이면 로그인된 것�
 echo  ----------------------------------------------------------------
 echo   로그인을 마쳤으면 이 검은 창을 클릭하고 아무 키나 누르세요.
 pause >nul
-echo [3/3] GOMS 에 차례로 등록하는 중... (한 편에 1~2분, 85편이면 2~3시간. 창을 닫지 마세요)
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\goms-register-auto.ps1" -Count 200 -IgnorePause
+echo [3/3] GOMS 에 차례로 등록하는 중... (30편까지, 한 편에 1~2분이라 1시간쯤. 창을 닫지 마세요)
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\goms-register-auto.ps1" -Count 30 -IgnorePause
 echo.
 echo 끝났어요. Claude 에게 "GOMS 끝" 이라고 알려 주세요.
 pause
