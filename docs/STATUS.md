@@ -23,6 +23,11 @@
 
 ## 지금 상태
 
+### 11/2 — ⏸ 인스타 카드뉴스 자동 게시 멈춤 (사용자 "당분간은 내가 이야기할 때만 올려줘. 자동으로는 잠시 스톱")
+- `content/instagram/PAUSE-POST` 가 있는 동안 `insta-post.mjs` 는 `content/instagram/post-allow.txt` 에 적힌 편만 올린다. GOMS 등록·승인 읽기·심의필 그림(final)은 그대로 돈다.
+- **사용자가 "N편 올려줘" 하면**: post-allow.txt 에 N 을 한 줄로 적어 main 에 → 승인·final 그림이 있으면 그날 19시(못 하면 22시) 게시. 바로 올리려면 사무실 PC `launchers\insta-post-now.cmd` 더블클릭(시간대 무시, 허락한 편만).
+- 사용자가 심의 결과를 직접 알려 주기로 함. 다시 자동으로 하자고 하면 PAUSE-POST 를 지운다.
+
 ### 11/2 — 📸 인스타 카드뉴스 GOMS 자동 등록 → 승인 읽기 → 자동 게시 (사용자 "보험심의를 자동으로 올리는 걸 진행")
 - 흐름 정본 **`docs/INSTAGRAM.md`**: 아침 PC `insta-goms.ps1`(auto-day 끝) — Word 를 Drive `인스타심의/` 로 모으고 GOMS 에 「인스타 카드뉴스 N편」 하루 3편 등록(`goms-ad.mjs --prefix "인스타 카드뉴스"`, Drive `goms-done-insta/`) + 승인완료 편 심의필 → Drive `goms-approved-insta.tsv`
   → 클라우드 아침 확인 5-3 `scripts/instagram/finalize.mjs` 가 마지막 장에 그 편의 심의필을 넣은 `content/instagram/final/<N>/*.jpg`(1~6장은 심의받은 그림 그대로) → main

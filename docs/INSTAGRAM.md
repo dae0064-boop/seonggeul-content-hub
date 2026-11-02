@@ -18,6 +18,7 @@
 
 - 기록: Drive `ClaudeWorkspace/run-logs/instagram/<날짜>.log`, 게시한 편은 `run-logs/instagram/posted.tsv` (시각 · 편 · 심의필 · 첫 줄 · 주소).
   GOMS 쪽은 `run-logs/insta-goms-<시각>-<PC>/`.
+- **⏸ 2026-11-02 사용자: 자동 게시 잠시 멈춤** — `content/instagram/PAUSE-POST` 가 있으면 `content/instagram/post-allow.txt` 에 적힌 편만 올린다(사용자가 "N편 올려줘" 하면 Claude 가 적는다). 바로 올리기: `launchers/insta-post-now.cmd`. 등록·승인 읽기·그림 만들기는 그대로.
 - 멈춤: 저장소에 `content/instagram/PAUSE` 파일을 만들면 등록·게시가 모두 멈춘다. 스레드 멈춤(`content/threads/PAUSE`)과는 따로다.
 - 하루 편수·시간: `insta-post.ps1` 이 부르는 `insta-post.mjs` 의 `--max-per-day`(기본 1)·`--from-hour 18 --to-hour 22`.
 - 연결 키는 60일짜리다. PC 가 7일마다 새 키로 바꿔 두므로, PC 를 두 달 넘게 안 켜지 않는 한 다시 넣을 일은 없다.

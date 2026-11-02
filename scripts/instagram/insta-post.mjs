@@ -9,7 +9,7 @@
  *   node scripts/instagram/insta-post.mjs --refresh-out <파일>            60일 키를 새로 받아 파일에 씀 (insta-post.ps1 이 1주마다)
  *
  * 한 번 실행 = 많아야 한 편. 하나라도 어긋나면 올리지 않는다 (경고로 낮추지 않는다):
- *   - 멈춤 파일 content/instagram/PAUSE 가 없다
+ *   - 멈춤 파일 content/instagram/PAUSE 가 없다 (PAUSE-POST 가 있으면 post-allow.txt 에 적힌 편만)
  *   - goms-approved-insta.tsv 에 그 편이 '적격'이고 오늘이 유효기간 안이다
  *   - 글(캡션)은 심의받은 Word(「인스타 카드뉴스 N편.docx」의 [게시물 본문] 아래)에서 그대로 읽는다 — 원고 json 이 아니라 Word 가 정본
  *   - 그림은 main 의 content/instagram/final/<N>/01~NN.jpg 공개 주소에서 모두 열리고, 장 수가 Word 의 카드 수와 같고,
@@ -80,6 +80,15 @@ log(`인스타 계정 @${me.username} (${me.account_type || '?'})`);
 if (argv.includes('--check')) process.exit(0);
 
 if (fs.existsSync(PAUSE)) { log(`⏸ 멈춤 파일(content/instagram/PAUSE)이 있어 올리지 않아요`); process.exit(0); }
+// 2026-11-02 사용자: "당분간은 내가 이야기할 때만 인스타 카드뉴스 올려줘, 자동으로는 잠시 스톱"
+//   content/instagram/PAUSE-POST 가 있으면 content/instagram/post-allow.txt 에 적힌 편 번호만 올린다 (사용자가 말하면 Claude 가 적는다).
+//   GOMS 등록·승인 읽기·심의필 그림 만들기는 그대로 돈다.
+const PAUSE_POST = path.join(ROOT, 'content/instagram/PAUSE-POST');
+const allow = new Set((fs.existsSync(path.join(ROOT, 'content/instagram/post-allow.txt'))
+  ? fs.readFileSync(path.join(ROOT, 'content/instagram/post-allow.txt'), 'utf8').split(/\r?\n/).map((l) => l.replace(/#.*/, '').trim()).filter((l) => /^\d+$/.test(l)).map(Number) : []));
+const onlyAllowed = fs.existsSync(PAUSE_POST);
+if (onlyAllowed) log(`⏸ 자동 게시 멈춤(PAUSE-POST) — 사용자가 허락한 편만: ${[...allow].join(', ') || '없음'}`);
+if (onlyAllowed && !allow.size) process.exit(0);
 for (const [name, f] of [['--word-dir', wordDir], ['--approved', approvedTsv]]) {
   if (!f || !fs.existsSync(f)) { log(`${name} 위치가 없어요 (${f || '비어 있음'}) — 아직 승인 난 편이 없으면 정상이에요`); process.exit(0); }
 }
@@ -143,6 +152,7 @@ const words = fs.readdirSync(wordDir).map((f) => f.match(/^인스타 카드뉴�
 let pick = null;
 for (const n of words) {
   if (done.has(n)) continue;
+  if (onlyAllowed && !allow.has(n)) continue; // 허락 안 한 편은 건너뛰고(기다리지 않고) 다음 편을 본다
   const a = approvals.get(n);
   if (!a) { log(`${n}편: 아직 심의 결과를 못 읽었어요 — 이 편이 나올 때까지 뒤 번호도 기다려요`); break; }
   if (a.result !== '적격') { log(`${n}편: ${a.result || '결과 없음'} — 건너뜀`); continue; }

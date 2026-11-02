@@ -3,7 +3,7 @@
 #   catchup-reserve.ps1(10·13·16·19·22시)이 부른다 → 보통 19시에 올라가고, 19시를 놓치면 22시.
 #   연결 키: Windows 사용자 환경 변수 INSTAGRAM_ACCESS_TOKEN (launchers\insta-key.cmd). 7일마다 새 60일 키로 바꿔 둔다.
 #   기록: Drive ClaudeWorkspace\run-logs\instagram\<날짜>.log, 게시 기록 run-logs\instagram\posted.tsv
-param([switch]$Test)
+param([switch]$Test, [switch]$Now)   # -Now: 시간대(18~22시) 상관없이 지금 (launchers\insta-post-now.cmd)
 $ErrorActionPreference = 'SilentlyContinue'
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
@@ -37,6 +37,7 @@ if (((Get-Date) - $last).TotalDays -ge 7) {
 $args2 = @('scripts\instagram\insta-post.mjs', '--word-dir', (Join-Path $drive 'ClaudeWorkspace\인스타심의'),
   '--approved', (Join-Path $drive 'ClaudeWorkspace\goms-approved-insta.tsv'), '--posted', (Join-Path $logDir 'posted.tsv'))
 if (-not $Test) { $args2 += '--post' }
+if ($Now) { $args2 += @('--from-hour', '0', '--to-hour', '23') }
 $out = & node @args2 2>&1 | ForEach-Object { "$_" }
 $out | ForEach-Object { Write-Host $_ }
 Note ("코드 $(git rev-parse --short HEAD 2>$null)`n" + ($out -join "`n"))
