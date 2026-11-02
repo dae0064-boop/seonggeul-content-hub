@@ -170,10 +170,10 @@ const LEAD_KW_FROM = '2026-10-15';
 // 출처 ①(기관 자료) 글은 프런트매터 source_url 에 실제로 확인한 1차 원문 주소 1~2개. 발행 때 출처 줄 아래 링크 카드로 들어간다.
 // 출처 ②(생활 노하우) 글에는 달지 않는다. 블로그·카페·뉴스·영상 주소는 1차 원문이 아니다.
 const SOURCE_URL_FROM = '2026-10-19';
-// 이슈 글 (2026-11-02 사용자 — "연예·오늘 이슈·정책 변경으로 홈판 조회수, 무조건 진행") — 2026-11-06 네이버 원고부터.
+// 이슈 글 (2026-11-02 사용자 — "연예·오늘 이슈·정책 변경으로 홈판 조회수, 무조건 진행") — 2026-11-03 네이버 원고부터(11/3 시험 1편 extra, 정식 하루 4편은 11/6 원고부터).
 // issue: 연예 | 정책 + slot: 홈판. 출처는 언론 보도·소속사·정부 발표 주소(뉴스 주소 허용), 2개 이상 매체로 확인한 사실만.
 // 메인 키워드 검색량 상한(12,000)·네 기둥은 보지 않는다. 사람 이름이 그림 계획서 프롬프트에 들어가면 막는다(실존 인물 얼굴을 AI 로 만들지 않는다).
-const ISSUE_FROM = '2026-11-06';
+const ISSUE_FROM = '2026-11-03';
 const ISSUE_KINDS = ['연예', '정책'];
 const ISSUE_TOPICS = { 연예: ['스타·연예인', '방송', '드라마', '영화', '음악'], 정책: ['사회·정치', '비즈니스·경제', '건강·의학'] };
 const ISSUE_NOT_SOURCE = /(^|\.)(blog\.naver\.com|m\.blog\.naver\.com|cafe\.naver\.com|post\.naver\.com|tistory\.com|brunch\.co\.kr|youtube\.com|youtu\.be|namu\.wiki|wikipedia\.org|instagram\.com|threads\.net|search\.naver\.com|google\.com|x\.com|twitter\.com|theqoo\.net|dcinside\.com|fmkorea\.com|instiz\.net)$/i;
@@ -778,8 +778,10 @@ for (const file of files) {
         const tw = !tistory && isTwenty(dated);
         const ten = (!tistory && isTen(dated)) || (tistory && isTwenty(dated)); // 티스토리 하루 10편 (2026-11-03 원고부터)
         // 테마는 10가지라 20편 날은 같은 테마 2편까지 (그 전은 모두 다르게)
-        if (themeSame.length >= (tw ? TW.theme : 1)) errors.push(`같은 날 ${themeSame.join(', ')} 와 대표사진 테마(${t.thumb_theme})가 같습니다${tw ? ` — 20편 날은 같은 테마 ${TW.theme}편까지` : ''}`);
-        if (tw && moodSame.length >= TW.mood) errors.push(`같은 날 ${moodSame.join(', ')} 와 대표사진 표정(${t.thumb_mood})이 같습니다 — 20편 날은 같은 표정 ${TW.mood}편까지`);
+        // 하루 배분 밖 추가 글(extra:)은 같은 날 한도에 넣지 않는다 — 다른 글들은 이 글을 세지 않으므로 이 글도 다른 글 수로 막지 않는다
+        if (!post.extra && themeSame.length >= (tw ? TW.theme : 1)) errors.push(`같은 날 ${themeSame.join(', ')} 와 대표사진 테마(${t.thumb_theme})가 같습니다${tw ? ` — 20편 날은 같은 테마 ${TW.theme}편까지` : ''}`);
+        if (post.extra) { /* 위와 같은 이유 */ }
+        else if (tw && moodSame.length >= TW.mood) errors.push(`같은 날 ${moodSame.join(', ')} 와 대표사진 표정(${t.thumb_mood})이 같습니다 — 20편 날은 같은 표정 ${TW.mood}편까지`);
         else if (!tw && moodSame.length >= (ten ? 2 : 1)) errors.push(`같은 날 ${moodSame.join(', ')} 와 대표사진 표정(${t.thumb_mood})이 같습니다 — ${ten ? '10편 날은 같은 표정 2편까지' : '모두 다르게'}`);
         // 구도·종이·나이도 섞는다 (2026-10-28 사용자 — 사람이 너무 똑같다)
         if (v3) {
