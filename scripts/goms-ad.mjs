@@ -417,11 +417,43 @@ async function checklist(page) {
   log(`  심의점검표: 맨 아래까지 ${seen.size}줄 모두 "해당없음" ✓`);
 }
 
+/**
+ * GOMS 공지 창 닫기 (2026-11-02 사용자 — "[GOMS] 2차 인증(본인인증) 적용 안내" 창이 뜨면 닫기 누르고 로그인 진행).
+ * 보이는 창(대화상자) 중 제목·글에 "안내"·"공지"·"인증" 이 들어 있고 "닫기" 버튼이 있는 것만, 그 "닫기" 만 누른다.
+ * 다른 버튼(확인·등록 등)은 누르지 않는다. 닫은 창 수를 돌려준다.
+ */
+async function closeNotices(page) {
+  let closed = 0;
+  for (let round = 0; round < 4; round++) {
+    let hit = false;
+    for (const f of page.frames()) {
+      const r = await f.evaluate(() => {
+        const vis = (e) => !!(e.offsetWidth || e.offsetHeight) && getComputedStyle(e).visibility !== 'hidden';
+        const boxes = [...document.querySelectorAll('[role=dialog], .v-dialog, .modal, .popup, .layer, [class*=dialog], [class*=modal], [class*=popup]')].filter(vis);
+        for (const box of boxes) {
+          const text = (box.innerText || '').replace(/\s+/g, ' ');
+          if (!/(적용\s*안내|공지|안내|2차\s*인증|본인인증)/.test(text)) continue;
+          const btn = [...box.querySelectorAll('button, a, [role=button]')].filter(vis)
+            .find((b) => (b.innerText || b.getAttribute('aria-label') || '').replace(/\s/g, '') === '닫기');
+          if (!btn) continue;
+          btn.click();
+          return text.slice(0, 40);
+        }
+        return null;
+      }).catch(() => null);
+      if (r) { log(`  GOMS 공지 창 닫음: ${r}…`); closed++; hit = true; await sleep(800); break; }
+    }
+    if (!hit) break;
+  }
+  return closed;
+}
+
 /** GOMS 첫 화면 → (로그인) → 업무 → 광고심의 목록. 로그인이 안 되면 false. */
 async function openList(page) {
   await page.goto(HOME, { waitUntil: 'domcontentloaded', timeout: 30000 });
   await sleep(4000);
   const onLogin = async () => /#\/login/.test(page.url()) || await page.locator('input[type=password]').first().isVisible().catch(() => false);
+  await closeNotices(page); // 로그인 화면 위에 뜨는 공지(2차 인증 안내 등)
   if (await onLogin()) {
     // 사용자 (2026-10-05): "LOGIN 만 누르면 들어갈 수 있어" — 크롬이 아이디·비밀번호를 채워 둔다.
     // 비밀번호는 넣지 않는다. 크롬 자동 채움은 실제 클릭이 있어야 사이트에 전달되므로 비밀번호 칸을 한 번 누른 뒤 LOGIN.
@@ -430,12 +462,20 @@ async function openList(page) {
     await page.locator('input[type=password]').first().click({ timeout: 5000 }).catch(() => {});
     await sleep(500);
     await clickText(page, ['LOGIN', 'Login', '로그인'], { timeout: 5000 }).catch(() => {});
-    for (let i = 0; i < 20 && await onLogin(); i++) await sleep(500);
+    for (let i = 0; i < 20 && await onLogin(); i++) { await sleep(500); if (i % 4 === 3) await closeNotices(page); }
+    await closeNotices(page);
     await gomsMessages(page).catch(() => {}); // 로그인 뒤 공지 창이 뜨면 닫는다
-    if (await onLogin()) { await shot(page, 'login-failed'); return false; }
+    if (await onLogin()) {
+      await shot(page, 'login-failed');
+      // 2차 인증(휴대폰 본인인증)은 사람만 할 수 있다 — 대신 인증하지 않는다 (GOMS 공지: 대리 인증 금지)
+      const otp = (await Promise.all(page.frames().map((f) => f.evaluate(() => /본인\s*인증|인증\s*번호|휴대폰\s*인증|2차\s*인증/.test(document.body.innerText || '')).catch(() => false)))).some(Boolean);
+      if (otp) log('  ⚠ GOMS 가 휴대폰 본인인증(2차 인증)을 기다려요 — 자동화용 크롬 창에서 사람이 한 번 인증해 주세요');
+      return false;
+    }
     log('  GOMS 로그인 ✓');
     await sleep(3000);
   }
+  await closeNotices(page); // 로그인 뒤 첫 화면 공지
   await shot(page, 'home');
   await clickText(page, ['업무']);
   await sleep(1500);
