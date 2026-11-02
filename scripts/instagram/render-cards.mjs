@@ -45,6 +45,7 @@ const font = (f) => `data:font/ttf;base64,${b64(f)}`;
 const img = (f) => `data:image/${f.endsWith('.png') ? 'png' : 'jpeg'};base64,${b64(f)}`;
 const logo = img('content/instagram/logo.png');
 const glogo = img('content/instagram/global-logo.png');
+const avatar = img('content/instagram/avatar.png');
 const esc = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const hl = (t) => esc(t).replace(/\[([^\]]+)\]/g, '<em>$1</em>');
 const lines = (a, cls) => (a || []).map((l) => `<div class="${cls}">${hl(l)}</div>`).join('');
@@ -118,6 +119,51 @@ em{font-style:normal;color:#C2551E}
 .cta{margin-top:36px;font-size:30px;color:#888;line-height:1.6}
 .terms{font-size:22px;line-height:1.5;color:#a0a0a0;margin-top:26px}
 .pt{width:100%;border-collapse:collapse;margin-top:26px;font-size:30px}.pt td{padding:12px 4px;border-bottom:1px solid rgba(255,255,255,.3)}.pt td:last-child{text-align:right}.pt .sum td{font-family:Head;font-size:40px;color:#FFC25A;border-bottom:none;padding-top:20px}
+/* ── 2026-11-02 사용자: "글자를 더 깔끔하게, 사진과 어울리는 글씨체" → 다시 "글자 더 크게, 핵심엔 포인트, 숫자·글자가 연해서 안 보인다" ──
+   제목 Noto Serif KR Black(명조 가장 굵게) · 본문 Gothic A1 Bold · 핵심은 노란 글씨 + 밑줄 형광 · 번호·표시는 흰색으로 또렷하게 */
+@font-face{font-family:Ser;src:url('${font('scripts/lib/fonts/NotoSerifKR-Black.ttf')}')}
+@font-face{font-family:GB;src:url('${font('scripts/lib/fonts/GothicA1-Bold.ttf')}')}
+@font-face{font-family:GX;src:url('${font('scripts/lib/fonts/GothicA1-ExtraBold.ttf')}')}
+@font-face{font-family:GM;src:url('${font('scripts/lib/fonts/GothicA1-Medium.ttf')}')}
+body{font-family:GB,sans-serif}
+.shade{background:linear-gradient(180deg,rgba(8,8,10,.7) 0%,rgba(8,8,10,.56) 60%,rgba(8,8,10,.4) 100%)}
+.panel{top:116px;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+.panel .hd{font-family:Ser;font-weight:normal;font-size:74px;line-height:1.32;letter-spacing:-1px;color:#fff}
+.panel em{color:#FFD978;background:linear-gradient(transparent 68%,rgba(255,200,80,.35) 68%);padding:0 2px}
+.panel .lb{border:none;border-radius:0;padding:0 0 0 58px;position:relative;font-family:GX;font-size:30px;letter-spacing:2px;color:#fff;margin-top:40px}
+.panel .lb:before{content:'';position:absolute;left:0;top:50%;width:42px;height:3px;background:#FFD978}
+.panel .bd{font-family:GB;font-size:41px;line-height:1.7;margin-top:24px;color:#fff}
+.panel .st{font-family:GB;font-size:39px;line-height:1.65;color:#fff;margin-top:32px}
+.panel .st b{background:#fff;color:#111;border:none;font-family:GX;font-size:32px;width:56px;height:56px;line-height:56px;text-shadow:none}
+.panel .ck{font-family:GB;font-size:44px;color:#fff;margin-top:28px}.panel .ck i{color:#FFD978;font-family:GX}
+.panel .cp>div{font-family:GB;font-size:38px;color:#fff;border-left:3px solid #FFD978}.panel .cp h4{color:#FFD978;font-family:GX;font-size:34px}
+.panel .cta{font-family:GB;font-size:31px;color:#fff;margin-top:40px}
+.panel .terms{font-family:GM;font-size:23px;color:rgba(255,255,255,.85);margin-top:28px}
+.ft{font-family:GB;font-size:25px;letter-spacing:1px;color:#fff}
+.pt{font-family:GB;font-size:33px}.pt .sum td{font-family:Ser;color:#FFD978;font-size:44px}
+.nt .ap{color:#FFD978}
+/* 2026-11-02 사용자 "밑에 공백이 너무 많이 남는다" — 장마다 남는 높이에 맞춰 --k(사이 간격)·--l(줄 간격)·--f(글씨)를 늘려 아래까지 채운다 */
+.panel .hd{font-size:calc(74px*var(--f,1))}
+.panel .lb{margin-top:calc(40px*var(--k,1))}
+.panel .bd{font-size:calc(41px*var(--f,1));line-height:calc(1.7*var(--l,1));margin-top:calc(24px*var(--k,1))}
+.panel .bd p+p{margin-top:calc(16px*var(--k,1))}
+.panel .st{font-size:calc(39px*var(--f,1));line-height:calc(1.65*var(--l,1));margin-top:calc(32px*var(--k,1))}
+.panel .ck{font-size:calc(44px*var(--f,1));margin-top:calc(28px*var(--k,1))}
+.panel .cp{margin-top:calc(36px*var(--k,1))}.panel .cp>div{font-size:calc(38px*var(--f,1));line-height:calc(1.6*var(--l,1))}
+.panel .cta{margin-top:calc(40px*var(--k,1))}.panel .terms{margin-top:calc(28px*var(--k,1))}
+/* 2026-11-02 사용자: "Q&A 도 친근한 설계사로 카톡 형식으로" — 대화 장 (카카오 로고·화면은 흉내 내지 않고 말풍선만) */
+.chat{margin-top:calc(24px*var(--k,1))}
+.cq,.ca{display:flex;gap:16px;margin-top:calc(16px*var(--k,1));text-shadow:none}
+.cq{justify-content:flex-end}
+.cq p,.ca p{max-width:760px;font-family:GB;font-size:calc(34px*var(--f,1));line-height:calc(1.45*var(--l,1));padding:16px 26px;border-radius:28px}
+.cq p{background:rgba(255,255,255,.95);color:#1a1a1a;border-top-right-radius:8px}
+.ca p{background:#FFE07A;color:#1a1a1a;border-top-left-radius:8px}
+.ca img{flex:none;width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:center;background:#F07A3A;margin-top:2px}
+.ca.cont img{visibility:hidden}
+.cname{font-family:GX;font-size:26px;color:#fff;margin:calc(30px*var(--k,1)) 0 0 80px;line-height:1}
+.cname+.ca{margin-top:12px}
+.cq em,.ca em{color:#C2410C;background:none;padding:0}
+.panel .pt{margin-top:calc(26px*var(--k,1))}.panel .pt td{padding:calc(12px*var(--k,1)) 4px}
 .nt{font-size:23px;line-height:1.55;color:#444}.nt h3{font-size:44px;color:#1c1c1c;margin-bottom:26px}.nt b{display:block;font-size:29px;color:#1c1c1c}.nt p{margin-top:16px}.nt .ap{color:#FFC25A;font-size:27px}
 `;
 // 2026-11-02 사용자: "사진을 그냥 배경으로 두고 사진이랑 글자가 잘 보이게" — 사진 한 장을 7장 모두 같은 자리로 깔고, 그 위에 흰 글 칸
@@ -131,11 +177,20 @@ function mcard(c, photo, i) {
   const terms = c.terms ? `<div class="terms">${esc(NOTICE.terms)}</div>` : '';
   const src = c.src ? '근거 · ' + c.src : '';
   switch (c.type) {
-    case 'cover': return mpage(photo, c.crop, 560, `<div class="in" style="margin-top:60px"><div class="hd" style="font-size:64px;color:#FFC25A">${esc(c.kw)}</div><div class="hd" style="font-size:96px;margin-top:10px">${H(c.title)}</div><div class="bd" style="margin-top:40px;font-size:44px">${esc(c.sub || '')}</div></div>`, i);
+    case 'cover': return mpage(photo, c.crop, 560, `<div class="in" style="margin-top:70px"><div class="lb" style="margin-top:0">${esc(c.kw)}</div><div class="hd" style="font-size:calc(96px*var(--f,1));line-height:1.28;margin-top:calc(34px*var(--k,1))">${H(c.title)}</div><div class="bd" style="margin-top:calc(44px*var(--k,1));font-size:calc(44px*var(--f,1))">${esc(c.sub || '')}</div></div>`, i);
     case 'text': return mpage(photo, c.crop, 300, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label)}</div><div class="bd">${c.body.map((t) => `<p>${hl(t)}</p>`).join('')}</div>${terms}</div>`, i, src || undefined);
     case 'steps': return mpage(photo, c.crop, 300, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label)}</div>${c.steps.map(([n, t]) => `<div class="st"><b>${esc(n)}</b><span>${hl(t)}</span></div>`).join('')}${terms}</div>`, i, src || undefined);
     case 'compare': return mpage(photo, c.crop, 300, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label)}</div><div class="cp">${[c.left, c.right].map((x) => `<div><h4>${esc(x.t)}</h4>${x.lines.map(esc).join('<br>')}</div>`).join('')}</div><div class="bd" style="font-size:30px;margin-top:26px">${esc(c.foot || '')}</div>${terms}</div>`, i, src || undefined);
     case 'check': return mpage(photo, c.crop, 300, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label)}</div>${c.checks.map((t) => `<div class="ck"><i>✓</i><span>${hl(t)}</span></div>`).join('')}<div class="cta">${esc(c.cta)}</div></div>`, i);
+    case 'chat': {
+      let prevA = false;
+      const rows = c.msgs.map(([who, t]) => {
+        if (who === 'q') { prevA = false; return `<div class="cq"><p>${hl(t)}</p></div>`; }
+        const first = !prevA; prevA = true;
+        return `${first ? '<div class="cname">친근한 설계사</div>' : ''}<div class="ca${first ? '' : ' cont'}"><img src="${avatar}"><p>${hl(t)}</p></div>`;
+      }).join('');
+      return mpage(photo, '', 0, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label || '친근한 설계사에게 물어봤어요')}</div><div class="chat">${rows}</div>${c.terms ? `<div class="terms">${esc(NOTICE.terms)}</div>` : ''}</div>`, i, c.src ? '근거 · ' + c.src : undefined);
+    }
     // 설계안 장 (2026-11-02 사용자 — 설계안을 받으면 납입·만기·상해급수·보험료를 넣는다. 숫자는 받은 설계안 그대로만)
     case 'plan': return mpage(photo, '', 0, `<div class="in"><div class="hd">${H(c.head || ['설계안 [예시]'])}</div><div class="lb">${esc(c.cond)}</div>
 <table class="pt">${c.rows.map(([a, b]) => `<tr><td>${esc(a)}</td><td>${esc(b)}</td></tr>`).join('')}<tr class="sum"><td>월 보험료</td><td>${esc(c.premium)}</td></tr></table>
@@ -149,10 +204,10 @@ function mnotice(approval) {
   const N = NOTICE;
   return `<!doctype html><html><head><meta charset="utf-8"><style>${MCSS}
 body{background:#111;color:#fff;text-align:center}
-.gl{display:inline-block;background:#fff;border-radius:22px;padding:22px 40px;margin-top:84px}.gl img{height:96px;display:block}
-.nn{margin:44px 80px 0;font-size:25px;line-height:1.6;color:rgba(255,255,255,.88)}.nn b{display:block;font-size:30px;color:#fff;line-height:1.5}
-.nn p{margin-top:20px}.nn .ap{color:#FFC25A;font-size:28px}
-.ft{color:rgba(255,255,255,.6);text-shadow:none}</style></head><body>
+.gl{display:inline-block;background:#fff;border-radius:24px;padding:26px 46px;margin-top:80px}.gl img{height:104px;display:block}
+.nn{font-family:GB;margin:46px 70px 0;font-size:26px;line-height:1.62;color:rgba(255,255,255,.88)}.nn b{display:block;font-size:31px;color:#fff;line-height:1.5}
+.nn p{margin-top:22px}.nn .ap{color:#FFD978;font-size:28px}
+.ft{color:rgba(255,255,255,.9);text-shadow:none}</style></head><body>
 <div class="gl"><img src="${glogo}"></div>
 <div class="nn"><b>${esc(N.agency)}</b><b>${esc(N.agent)}</b>
 <p class="ap">${esc(approval || N.approval)}<br><span style="font-size:24px;color:rgba(255,255,255,.88)">${esc(N.rule)}</span></p>
@@ -209,6 +264,15 @@ for (const p of set.posts) {
   for (let k = 0; k < htmls.length; k++) {
     await pg.setContent(htmls[k], { waitUntil: 'load' });
     await pg.evaluate(() => document.fonts.ready);
+    await pg.evaluate(() => {
+      const pn = document.querySelector('.panel'); const ft = document.querySelector('.ft');
+      if (!pn || !ft) return;
+      const target = ft.getBoundingClientRect().top - 110;
+      const set = (k) => { pn.style.setProperty('--k', k); pn.style.setProperty('--l', Math.min(1 + (k - 1) * 0.3, 1.3)); pn.style.setProperty('--f', Math.min(1 + (k - 1) * 0.2, 1.18)); };
+      let k = 1;
+      for (let t = 1.05; t <= 2.6; t += 0.05) { set(t); if (pn.getBoundingClientRect().bottom > target) break; k = t; }
+      set(k);
+    });
     // 넘침: 본문이 아래 줄(.ft)을 덮거나 칸을 넘치면 멈춘다
     const over = await pg.evaluate(() => {
       if ([...document.querySelectorAll('.wrap,.nt')].some((w) => w.scrollHeight > w.clientHeight + 2)) return true;

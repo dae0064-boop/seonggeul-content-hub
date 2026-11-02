@@ -29,4 +29,17 @@ for (const f of fs.readdirSync(dir).filter((x) => x.endsWith('.json')).sort()) {
     made++;
   }
 }
-console.log(made ? `인스타 바탕 사진 ${made}장 만듦 → ${out}` : '');
+// 캐릭터 (2026-11-02 사용자 승인) — content/instagram/character/prompts.json → <out>/../character/<slug>.png
+const cf = path.join(ROOT, 'content/instagram/character/prompts.json');
+if (fs.existsSync(cf)) {
+  const c = JSON.parse(fs.readFileSync(cf, 'utf8'));
+  const cout = path.join(path.dirname(out), 'character');
+  fs.mkdirSync(cout, { recursive: true });
+  for (const it of c.items || []) {
+    if (fs.existsSync(path.join(cout, `${it.slug}.png`))) continue;
+    console.log(`캐릭터 만들기: ${it.slug}`);
+    execFileSync(process.execPath, [path.join(ROOT, 'scripts/image-gen.mjs'), `${c.base} ${it.pose}`, '--quality', 'low', '--size', '1024x1024', '--out', cout, '--name', it.slug], { stdio: 'inherit' });
+    made++;
+  }
+}
+console.log(made ? `인스타 바탕·캐릭터 사진 ${made}장 만듦 → ${out}` : '');
