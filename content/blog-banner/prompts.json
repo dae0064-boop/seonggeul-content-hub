@@ -2,14 +2,24 @@
   "_설명": "네이버 블로그 PC 타이틀 배너 시안 (2026-11-02 사용자 — 'GPT 에 요청해서 만들어와 봐'). 카테고리 5개(생활·정보/생활·보장/이슈·뉴스/연예·방송/맛집·나들이). PC 의 make-bg.mjs 가 low 로 만들어 Drive ClaudeWorkspace/블로그배너/ 로 올린다(이미 있으면 다시 만들지 않음). 한글 글씨는 그림에 넣지 않고 클라우드가 scripts/blog-banner/render.mjs 로 얹는다. 8장 low 약 $0.05.",
   "items": [
     {
-      "slug": "bg-room",
-      "size": "1536x1024",
-      "prompt": "Ultra-wide panoramic background, soft hand-drawn watercolor illustration in warm cream, peach and light apricot tones, a sunny cozy room. On the far left, a bright window with soft white daylight and blurred light green trees outside, warm sunbeams falling diagonally across the wall and a light wooden floor. On the far right, soft blurred warm sunlight and a few out-of-focus light bokeh circles, a small potted green plant near the right edge. No people, no characters, no furniture in the middle. The whole middle area of the image is a calm, bright, softly lit warm wall with lots of clean empty space for text. All details sit near the left and right edges. Very bright, airy, cheerful and cozy, high-key lighting, no dark areas, no heavy shadows."
+      "slug": "photo-food",
+      "size": "1024x1024",
+      "prompt": "Square photo of autumn seasonal Korean food on a light wooden table: ripe orange persimmons, roasted chestnuts in a small bowl, a few ginkgo leaves, a linen napkin, top-down slightly angled view. Warm, bright, soft natural light, gentle film photo look with soft pastel warm tones, cozy and friendly, shallow depth of field. No people, no faces, no hands."
     },
     {
-      "slug": "bg-soft",
-      "size": "1536x1024",
-      "prompt": "Ultra-wide panoramic background, soft dreamy watercolor wash in warm cream, butter yellow and soft peach tones, gentle morning sunlight glowing from the upper left, soft out-of-focus golden bokeh circles near the left and right edges, delicate pale leaves and tiny wildflowers in soft pastel colors only at the bottom left and bottom right corners, subtle watercolor paper texture. No people, no characters, no furniture in the middle. The whole middle area of the image is a calm, bright, softly lit warm wall with lots of clean empty space for text. All details sit near the left and right edges. Very bright, airy, cheerful and cozy, high-key lighting, no dark areas, no heavy shadows."
+      "slug": "photo-home",
+      "size": "1024x1024",
+      "prompt": "Square photo of a tidy cozy Korean apartment living room corner bathed in morning sunlight: cream sofa with a knit blanket, folded laundry in a basket, a small green plant, light wood floor. Warm, bright, soft natural light, gentle film photo look with soft pastel warm tones, cozy and friendly, shallow depth of field. No people, no faces, no hands."
+    },
+    {
+      "slug": "photo-walk",
+      "size": "1024x1024",
+      "prompt": "Square photo of a peaceful autumn park path in Korea lined with golden ginkgo trees and red maple leaves, sunlight through the trees, a wooden bench, fallen yellow leaves on the path. Warm, bright, soft natural light, gentle film photo look with soft pastel warm tones, cozy and friendly, shallow depth of field. No people, no faces, no hands."
+    },
+    {
+      "slug": "photo-cafe",
+      "size": "1024x1024",
+      "prompt": "Square photo of a cozy cafe table by a sunny window: a plate of creamy pasta, a latte with latte art, a small dessert, warm wooden table. Warm, bright, soft natural light, gentle film photo look with soft pastel warm tones, cozy and friendly, shallow depth of field. No people, no faces, no hands."
     },
     {
       "slug": "icon-life",
@@ -39,5 +49,6 @@
   ],
   "_설명2": "2026-11-02 사용자가 블로그 전체 화면을 보내 줌 → 스킨 배경 1920×600(가운데 966px 칸에 글씨·아이콘, 오른쪽 칸 밖에 인물)으로 바꿈. 바탕 2장 + 아이콘 5장 = 7장 low.",
   "_설명3": "2026-11-02 사용자 '사람은 안 넣어도 된다' → 바탕 그림 빼고 아이콘 5개만. 완성본 content/blog-banner/out/banner-1920x600.png",
-  "_설명4": "2026-11-02 사용자 '배경이 암울하다' → 직접 그린 장식 대신 GPT 수채화 바탕(사람 없음) 2장. 지금 배너처럼 햇살 드는 따뜻한 방."
+  "_설명4": "2026-11-02 사용자 '배경이 암울하다' → 직접 그린 장식 대신 GPT 수채화 바탕(사람 없음) 2장. 지금 배너처럼 햇살 드는 따뜻한 방.",
+  "_설명5": "2026-11-02 사용자가 스크랩북(폴라로이드·테이프·찢은 종이) 예시와 흰 카드 '바로가기' 버튼 예시를 보여 줌 → scripts/blog-banner/scrap.mjs. 수채화 바탕 2장 대신 폴라로이드 사진 4장(사람 없음)."
 }
