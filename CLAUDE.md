@@ -34,6 +34,7 @@ docs/OPEN-ISSUES.md 아직 정하지 못한 것들. 규칙을 손대기 전에 �
 docs/STATUS.md     진행 상황 (최근 1주 + 매일 쓰는 목록). 작업을 시작할 때 먼저 읽고, 끝낼 때 갱신한다
 docs/STATUS-archive.md 지난 진행 기록. 통째로 읽지 않고 필요할 때 검색만 한다 (2026-10-27 사용자 — 사용량 줄이기)
 docs/OFFICE-PC.md  다른 PC(사무실 PC)에서 이어서 작업하는 순서 — 사용자용
+content/instagram/ 인스타 카드뉴스(보험 심의) — 규칙 README.md, 원고 sets/, 심의필 넣은 올릴 그림 final/. 자동 심의 등록·게시 docs/INSTAGRAM.md (멈춤 content/instagram/PAUSE)
 content/calendar/title-keywords/  제목용 키워드 조회 결과 (검색량). 제목·키워드를 정할 때 본다
 ```
 

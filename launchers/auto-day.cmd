@@ -34,6 +34,8 @@ REM 스레드 보험글 (2026-10-26): GOMS 승인완료 편의 심의필 번호�
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\goms-approved.ps1"
 REM 2026-10-26: GOMS 광고심의 자동 등록 — 아직 안 올린 보험글 Word 를 번호 순서로 하루 10편
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\goms-register-auto.ps1"
+REM 2026-11-02: 인스타 카드뉴스 — GOMS 승인 결과 읽기 + 새 편 등록 (하루 3편까지, 스레드 멈춤과 따로)
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\insta-goms.ps1"
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\threads-setup.ps1" -IfMissing
 REM 지난 날짜 그림·화면 기록을 이 PC 에서 지운다 (2026-10-05 사용자: 발행이 끝난 지난 것은 삭제)
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\cleanup.ps1"
