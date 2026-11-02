@@ -69,9 +69,15 @@ function Ring($p, $color) {
   $g
 }
 
+# PowerShell 5 는 날짜를 글자로, 7 은 DateTime 으로 준다 — 둘 다 받는다
+function ToLocal($v) {
+  if ($v -is [DateTime]) { return ([DateTimeOffset]$v).ToLocalTime() }
+  [DateTimeOffset]::Parse([string]$v, $inv).ToLocalTime()
+}
+
 function ResetText($iso) {
   if (-not $iso) { return '' }
-  try { $t = [DateTimeOffset]::Parse($iso, $inv).ToLocalTime() } catch { return '' }
+  try { $t = ToLocal $iso } catch { return '' }
   $left = $t - [DateTimeOffset]::Now
   $day = '일월화수목금토'[[int]$t.DayOfWeek]
   $when = '{0}/{1}({2}) {3:HH\:mm} 초기화' -f $t.Month, $t.Day, $day, $t
@@ -114,7 +120,7 @@ function Draw {
   try { $d = Get-Content $json -Raw -Encoding UTF8 | ConvertFrom-Json } catch { $foot.Text = '사용량 파일을 읽지 못했어요'; return }
   if ($d.ok) {
     foreach ($l in $d.limits) { [void]$rows.Children.Add((Row $l)) }
-    $at = [DateTimeOffset]::Parse($d.at, $inv).ToLocalTime()
+    $at = ToLocal $d.at
     $foot.Text = ('{0:HH\:mm} 업데이트 · 5분마다 · 오른쪽 클릭 = 새로 고침/닫기' -f $at)
     $foot.Foreground = Brush '#777777'
   } else {
