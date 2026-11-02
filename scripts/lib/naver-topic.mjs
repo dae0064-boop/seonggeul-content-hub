@@ -14,11 +14,16 @@ export const NAVER_TOPICS = [
   '일상·생각', '육아·결혼', '반려동물', '좋은글·이미지', '패션·미용', '인테리어·DIY', '요리·레시피', '상품리뷰', '원예·재배',
   // 취미·여가·여행
   '국내여행', '세계여행', '맛집', '취미',
-  // 지식·동향
-  '건강·의학', '비즈니스·경제', '교육·학문',
+  // 엔터테인먼트·예술 (2026-11-02 사용자 — 이슈 글: 연예·방송)
+  '스타·연예인', '방송', '드라마', '영화', '음악',
+  // 지식·동향 (사회·정치 = 이슈 글의 정책·사회)
+  '건강·의학', '비즈니스·경제', '교육·학문', '사회·정치',
 ];
 
 const RULES = [
+  // 이슈 글 (2026-11-06 원고부터) — 원고에 topic: 을 적지만, 빠졌을 때를 위해
+  [(p) => p.issue === '연예', '스타·연예인'],
+  [(p) => p.issue === '정책', '사회·정치'],
   // 생활보장 = 의료비·돌봄·건강 제도 (2026-10-26 원고부터 건강 글 포함)
   [(p) => p.category === '생활보장', '건강·의학'],
   // 맞춤법 시험 (2026-11-04~11-17 원고, 2026-11-02 사용자 승인) — 원고에 topic: 교육·학문 을 적지만, 빠졌을 때를 위해
@@ -30,8 +35,8 @@ const RULES = [
   [(p) => /제철|손질|레시피|만들기|담그|조림|볶|굽|삶|찌는|찜|김장|반찬|도시락|김치|묵|청 만들|보관법|보관|요리|간식|식단|메뉴|고르는 ?법/.test(p.text), '요리·레시피'],
 ];
 
-export function guessTopic({ title = '', mainKeyword = '', category = '' } = {}) {
-  const p = { text: `${title} ${mainKeyword}`, category };
+export function guessTopic({ title = '', mainKeyword = '', category = '', issue = '' } = {}) {
+  const p = { text: `${title} ${mainKeyword}`, category, issue };
   for (const [test, topic] of RULES) if (test(p)) return topic;
   return '인테리어·DIY';
 }

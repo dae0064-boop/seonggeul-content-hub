@@ -13,6 +13,7 @@
  *   lead_keyword: 첫 인용구 키워드        ← 고정 인사말 앞 첫 인용구에 넣는, 제목과 다른 주제 키워드 (2026-10-15 원고부터)
  *   source_url: https://… | https://…    ← 출처 ①(기관 자료) 글의 원문 주소 1~2개. 발행 때 출처 줄 아래 링크 카드 (2026-10-19 원고부터)
  *   slot: 홈판                            ← 하루 2편 홈판형 글 표시. 제목을 공감형으로 쓴다 (2026-10-26 원고부터)
+ *   issue: 연예 | 정책                    ← 이슈 글 (2026-11-06 원고부터, 사용자 — 연예·방송·정책 이슈로 홈판 조회수). slot: 홈판 과 함께
  *   ---
  *
  *   본문 줄1
@@ -112,6 +113,8 @@ export function parsePost(raw) {
     related: meta.related ? meta.related.split('|').map((s) => s.trim()).filter(Boolean) : [],
     leadKeyword: (meta.lead_keyword || '').trim(),
     slot: (meta.slot || '').trim(),
+    issue: (meta.issue || '').trim(),
+    people: (meta.people || '').trim(),   // 이슈 글에 나오는 실존 인물 이름 (그림 계획서 검사용)   // 이슈 글 (연예·정책) — lint-post ISSUE_FROM
     tone: (meta.tone || '').trim(),   // 말투 (2026-11-03 원고부터 — 하루 20편, 같은 주제라도 다른 느낌으로. lint-post TONES)
     extra: (meta.extra || '').trim(),   // 하루 5편 밖에 사용자가 따로 부탁한 글 (2026-10-26 쇼핑 커넥트 시험) — 하루 배분 검사에서 뺀다
     coupang: (meta.coupang || '').trim(),   // 티스토리 쿠팡 파트너스 글 — 상품 키워드 (content/affiliate/coupang-links.tsv)
