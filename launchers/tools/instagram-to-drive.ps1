@@ -8,6 +8,9 @@ $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 $drive = Find-MyDrive
 if (-not $drive) { return }
 $dest = Join-Path $drive 'ClaudeWorkspace\인스타카드뉴스'
+# 바탕 AI 사진(편마다 1장, low 약 10원)이 없는 편만 만든다 — 클라우드 대화가 Drive 에서 받아 카드를 다시 그린다
+$bgOut = node (Join-Path $repo 'scripts\instagram\make-bg.mjs') --out (Join-Path $dest 'bg') 2>&1 | Select-Object -Last 1
+if ($bgOut -match '만듦') { Write-Output "$bgOut" }
 $copied = 0
 foreach ($srcRoot in @('content\instagram\word', 'content\instagram\images')) {
   $base = Join-Path $repo $srcRoot
@@ -21,4 +24,4 @@ foreach ($srcRoot in @('content\instagram\word', 'content\instagram\images')) {
     $copied++
   }
 }
-if ($copied) { Write-Host "인스타 카드뉴스 $copied 개 파일을 Drive ClaudeWorkspace\인스타카드뉴스 로 옮겼어요." }
+if ($copied) { Write-Output "인스타 카드뉴스 $copied 개 파일을 Drive ClaudeWorkspace\인스타카드뉴스 로 옮겼어요." }
