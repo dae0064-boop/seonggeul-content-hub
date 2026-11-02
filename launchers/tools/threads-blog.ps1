@@ -25,9 +25,9 @@ $dailyLog | ForEach-Object { Write-Host $_ }
 "`n----- $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') · $env:COMPUTERNAME · 블로그 유입 글 시작" | Add-Content -Encoding UTF8 (Join-Path $dir "$(Get-Date -Format 'yyyy-MM-dd').log")
 $nodeArgs = @('scripts\threads\blog-post.mjs', '--posted', (Join-Path $dir 'blog-posted.tsv'))
 if (-not $Test) { $nodeArgs += '--post' }
-$log = @(& node @nodeArgs 2>&1 | ForEach-Object { "$_" })
+# 한 줄씩 바로 화면에 보인다 (2026-11-02 — 멈춘 곳을 화면에서 알 수 없었다)
+$log = @(& node @nodeArgs 2>&1 | ForEach-Object { Write-Host "$_"; "$_" })
 $code = $LASTEXITCODE
-$log | ForEach-Object { Write-Host $_ }
 @("", "===== $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') · $env:COMPUTERNAME · 블로그 유입 글 $(if ($Test) { '시험' } else { '올리기' }) · 종료 코드 $code") + $log |
   Add-Content -Encoding UTF8 (Join-Path $dir "$(Get-Date -Format 'yyyy-MM-dd').log")
 exit $code
