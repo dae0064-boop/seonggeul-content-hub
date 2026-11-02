@@ -77,7 +77,8 @@ const USAGE = `
   --publish-now      공개 발행까지 누른다. 사람이 그 자리에서 결정했을 때만 쓴다
   --reserve          예약발행. 임시저장 → 발행 패널 → '공개' → '예약' → 날짜·시·분을 넣고 다시 읽어 확인한 뒤에만
                      '발행'을 누른다. 하나라도 확인되지 않으면 누르지 않고 임시저장으로 남긴다 (종료 코드 2).
-                     시각은 --at 또는 원고 publish_at. 오늘 날짜, 지금부터 20분 뒤 이후만 받는다
+                     시각은 --at 또는 원고 publish_at. 오늘~7일 안 날짜, 지금부터 20분 뒤 이후만 받는다.
+                     오늘이 아니면 날짜 글자를 눌러 달력에서 그날을 고르고, 다시 읽어 맞을 때만 누른다 (2026-11-02)
   --at "Y-M-D H:M"   예약 시각 (--reserve 와 함께)
   --no-tags          태그를 넣지 않는다
   --dump             단계별 스크린샷/HTML 을 dumps/ 에 저장
@@ -375,6 +376,70 @@ async function ensureCategory(context, blog, name) {
 const enterTags = (page, tags) => enterTagsLib(page, tags, { log, warn });
 
 // ---------------------------------------------------------------- 예약발행
+// 오늘이 아닌 날 예약 (2026-11-02 사용자 — 전날 밤 reserve-tomorrow 로 티스토리 내일 글도 예약).
+// 티스토리 예약 화면은 시·분 칸만 있고 날짜는 글자로 보인다(2026-10-03). 그 글자를 눌러 달력을 열고 그날 칸을 누른다.
+// 이 달력은 아직 실제 화면에서 본 적이 없다 — 고른 뒤 날짜를 다시 읽어 맞지 않으면 발행을 누르지 않는다(임시저장으로 남음).
+/** (페이지 안에서) 시 칸 근처에서 'YYYY.MM.DD' 글자를 가진 가장 작은 요소에 data-sg-date 표시 */
+function markDateText(hi) {
+  document.querySelectorAll('[data-sg-date]').forEach((e) => e.removeAttribute('data-sg-date'));
+  const pat = /\d{4}\s*[.\-\/년]\s*\d{1,2}\s*[.\-\/월]\s*\d{1,2}/;
+  let el = document.querySelector(`[data-sg-field="${hi}"]`);
+  for (let k = 0; el && k < 6; k++, el = el.parentElement) {
+    const hits = [...el.querySelectorAll('*')].filter((e) => pat.test(e.textContent || '') && ![...e.children].some((c) => pat.test(c.textContent || '')));
+    if (hits.length) { const t = hits[0].closest('button,a,[role="button"],input') || hits[0]; t.setAttribute('data-sg-date', '1'); return { ok: true, text: (t.textContent || t.value || '').trim().slice(0, 40), tag: t.tagName }; }
+  }
+  return { ok: false };
+}
+/** (페이지 안에서) "YYYY년 M월"·"YYYY.MM"·"YYYY. M" 머리글이 보이는 달력에서 글자가 정확히 d 인 칸에 data-sg-pick 표시 */
+function markTistoryDay({ y, mo, d }) {
+  document.querySelectorAll('[data-sg-pick]').forEach((e) => e.removeAttribute('data-sg-pick'));
+  const visible = (e) => { const r = e.getBoundingClientRect(); const cs = getComputedStyle(e); return r.width > 0 && r.height > 0 && cs.visibility !== 'hidden' && cs.display !== 'none'; };
+  const head = new RegExp(`^\\s*${y}\\s*(?:년\\s*0?${mo}\\s*월|[.\\-/]\\s*0?${mo}\\s*\\.?)\\s*$`);
+  const heads = [...document.querySelectorAll('body *')].filter((e) => visible(e) && head.test(e.textContent || '') && ![...e.children].some((c) => head.test(c.textContent || '')));
+  if (!heads.length) return { ok: false, why: `"${y}년 ${mo}월" 달력 머리글이 보이지 않음` };
+  const bad = /disab|other|prev|next|out|dim|inactive|not-?allow|past/i;
+  const leaves = (root) => [...root.querySelectorAll('*')].filter((e) => !e.children.length && /^\d{1,2}$/.test((e.textContent || '').trim()));
+  for (const h of heads) {
+    let box = h.parentElement;
+    while (box && leaves(box).length < 28) box = box.parentElement;
+    if (!box) continue;
+    const cands = leaves(box).filter((e) => {
+      if ((e.textContent || '').trim() !== String(d) || !visible(e)) return false;
+      for (let x = e; x && x !== box; x = x.parentElement) {
+        if (bad.test(typeof x.className === 'string' ? x.className : '') || x.getAttribute('aria-disabled') === 'true' || x.hasAttribute('disabled')) return false;
+      }
+      return true;
+    });
+    if (!cands.length) continue;
+    const pick = d <= 14 ? cands[0] : cands[cands.length - 1];
+    const t = pick.closest('a,button,td') || pick;
+    t.setAttribute('data-sg-pick', '1');
+    return { ok: true, desc: `${t.tagName.toLowerCase()}.${(typeof t.className === 'string' ? t.className : '').slice(0, 40)} "${d}"` };
+  }
+  return { ok: false, why: `달력에서 ${d}일 칸을 하나로 정하지 못함` };
+}
+async function pickTistoryDate(page, hourIdx, at) {
+  const opened = await page.evaluate(markDateText, hourIdx).catch((e) => ({ ok: false, why: e.message }));
+  if (!opened.ok) return { ok: false, why: '날짜 글자를 찾지 못함' };
+  try { await page.locator('[data-sg-date="1"]').first().click({ timeout: 3000 }); }
+  catch (e) { return { ok: false, why: `날짜 글자를 누르지 못함 — ${e.message.split('\n')[0]}` }; }
+  log(`날짜 글자 누름: ${opened.tag} "${opened.text}"`);
+  await sleep(900);
+  await dump(page, 'reserve-calendar');
+  const now = new Date();
+  if (at.mo !== now.getMonth() + 1 || at.y !== now.getFullYear()) {
+    try { await clickFirst(page, ['button:has-text("다음")', 'button[aria-label*="다음"]', 'button[aria-label*="next" i]', '[class*="next"]:visible'], { timeout: 2500 }); await sleep(700); }
+    catch { return { ok: false, why: "달력의 '다음 달' 버튼을 찾지 못함" }; }
+  }
+  const found = await page.evaluate(markTistoryDay, { y: at.y, mo: at.mo, d: at.d }).catch((e) => ({ ok: false, why: e.message }));
+  if (!found.ok) { await dump(page, 'reserve-calendar-miss'); return found; }
+  try { await page.locator('[data-sg-pick="1"]').first().click({ timeout: 3000 }); }
+  catch (e) { return { ok: false, why: `날짜 칸을 누르지 못함 — ${e.message.split('\n')[0]}` }; }
+  log(`달력 칸 누름: ${found.desc}`);
+  await sleep(900);
+  return { ok: true };
+}
+
 /**
  * 발행 패널(완료를 누른 뒤)에서 예약한다. 순서: '공개' 확인 → '예약' → 날짜·시·분 → 다시 읽어 확인 → 발행.
  * 패널의 날짜·시각 칸 이름을 아직 실제 화면에서 본 적이 없어서(2026-10-03), '예약'을 누르기 전후로 화면에 새로 보이는
@@ -429,6 +494,15 @@ async function reservePublish(page, at) {
   }, hourF.i);
 
   const loc = (f) => page.locator(`[data-sg-field="${f.i}"]`).first(); // 마지막으로 읽은 칸 번호 (after)
+  // 오늘이 아닌 날: 날짜가 글자로만 보이면 달력에서 고른다 (시·분보다 먼저 — 날짜를 바꾸며 시각이 바뀌어도 아래에서 다시 넣고 확인)
+  if (!at.today && !dateF) {
+    const cur = (await dateText()).found;
+    const nums = (cur.match(/\d+/g) || []).map(Number);
+    if (!(nums[0] === at.y && nums[1] === at.mo && nums[2] === at.d)) {
+      const picked = await pickTistoryDate(page, hourF.i, at);
+      if (!picked.ok) return { ok: false, why: `예약 날짜(${at.y}-${at.mo}-${at.d})를 달력에서 고르지 못함 — ${picked.why}` };
+    }
+  }
   // 시·분 넣기 (select 면 고르고, 입력칸이면 지우고 친다)
   for (const [f, v, label] of [[hourF, at.hh, '시'], [minF, at.mm, '분']]) {
     const l = loc(f);
@@ -438,7 +512,7 @@ async function reservePublish(page, at) {
     } catch (e) { return { ok: false, why: `${label} 칸에 넣지 못함 — ${e.message.split('\n')[0]}` }; }
     await sleep(300);
   }
-  // 날짜: 오늘이어야 한다. 비었거나 다르면 입력칸일 때만 직접 넣는다 (달력은 건드리지 않는다)
+  // 날짜: 예약할 날(at)이어야 한다. 비었거나 다르면 입력칸일 때만 직접 넣는다 (글자로 보이는 날짜는 위에서 달력으로 골랐다)
   const ymdOk = (txt) => { const n = (txt.match(/\d+/g) || []).map(Number); const q = `,${n.join(',')},`; return q.includes(`,${at.y},${at.mo},${at.d},`) || q.includes(`,${at.y % 100},${at.mo},${at.d},`); };
   let dateVal = '';
   if (dateF) dateVal = await loc(dateF).inputValue().catch(() => '');
@@ -456,7 +530,7 @@ async function reservePublish(page, at) {
   const hv = await loc(hourF).inputValue().catch(() => '');
   const mv = await loc(minF).inputValue().catch(() => '');
   log(`확인: 날짜 "${dateVal}" · 시 "${hv}" · 분 "${mv}"`);
-  if (!ymdOk(dateVal)) return { ok: false, why: `예약 날짜가 오늘(${at.y}-${at.mo}-${at.d})로 읽히지 않음 ("${dateVal}")` };
+  if (!ymdOk(dateVal)) return { ok: false, why: `예약 날짜가 ${at.y}-${at.mo}-${at.d} 로 읽히지 않음 ("${dateVal}")` };
   if (String(+hv) !== String(+at.hh)) return { ok: false, why: `시가 ${at.hh} 대신 "${hv}"` };
   if (String(+mv) !== String(+at.mm)) return { ok: false, why: `분이 ${at.mm} 대신 "${mv}"` };
   await dump(page, 'reserve-ready');
@@ -489,18 +563,20 @@ async function main() {
   if (!post.title || !post.html || !Array.isArray(post.blocks)) {
     throw new Error(`${args.post}: title·html·blocks 가 필요합니다. build-tistory.mjs 로 생성하세요.`);
   }
-  // 예약: 오늘 날짜, 20분 뒤 이후만. 조건이 안 맞으면 멈추지 않고 임시저장으로 바꿔 글은 남긴다
+  // 예약: 오늘~7일 안 날짜, 20분 뒤 이후만 (2026-11-02 — 전날 밤 내일 글 예약). 조건이 안 맞으면 멈추지 않고 임시저장으로 바꿔 글은 남긴다
   let at = null;
   if (args.reserve) {
     const when = args.at || post.publishAt;
     const m = /^(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2})$/.exec(when || '');
     const now = new Date();
     const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+    const ahead = m ? Math.round((new Date(+m[1], +m[2] - 1, +m[3]) - new Date(now.getFullYear(), now.getMonth(), now.getDate())) / 86400000) : 0;
     const why = !m ? `예약 시각이 없거나 형식이 다름 ("${when || ''}")`
-      : `${m[1]}-${m[2]}-${m[3]}` !== today ? `예약 날짜(${m[1]}-${m[2]}-${m[3]})가 오늘(${today})이 아님`
+      : ahead < 0 ? `예약 날짜(${m[1]}-${m[2]}-${m[3]})가 오늘(${today})보다 앞`
+      : ahead > 7 ? `예약 날짜(${m[1]}-${m[2]}-${m[3]})가 7일보다 멀다`
       : new Date(+m[1], +m[2] - 1, +m[3], +m[4], +m[5]).getTime() - Date.now() < 20 * 60000 ? `예약 시각(${when})까지 20분이 안 남음` : '';
     if (why) { warn(`${why} — 예약하지 않고 임시저장만 합니다.`); args.reserve = false; args.saveDraft = true; args.reserveSkipped = why; }
-    else at = { y: +m[1], mo: +m[2], d: +m[3], hh: m[4], mm: m[5], text: when };
+    else at = { y: +m[1], mo: +m[2], d: +m[3], hh: m[4], mm: m[5], text: when, today: ahead === 0 };
   }
   // 기대 글자 수 = 에디터가 보여 줄 글자 (HTML 의 태그를 걷어 낸 것)
   const textOf = (h) => squash(h.replace(IMAGE_CODE, '').replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&nbsp;/g, ' '));
