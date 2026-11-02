@@ -85,11 +85,22 @@
       "slug": "icon-food",
       "size": "1024x1024",
       "prompt": "Cute chibi sticker illustration, soft hand-drawn style, big head small body, a friendly Korean young man with short black hair and soft bangs, cream knit sweater, happily eating pasta with a fork, a small coffee cup and a tiny red map pin beside him. Centered, plain pure white background, no shadow, no ground, isolated sticker."
+    },
+    {
+      "slug": "cat-care2",
+      "size": "1024x1024",
+      "prompt": "A clean, modern medical consultation desk in a bright clinic: a stethoscope, a neat clipboard with blank medical forms and a pen, a tablet with a blank screen, a small white plant, soft daylight, professional and trustworthy atmosphere. Square photo, clean minimal lifestyle-magazine look, soft bright natural daylight, low saturation warm beige and white tones, calm and tidy composition, shallow depth of field. No people, no faces, no hands, no text, no logos."
+    },
+    {
+      "slug": "cat-trip",
+      "size": "1024x1024",
+      "prompt": "A sunny outdoor terrace table overlooking a scenic green valley and a small village in the distance: a brunch plate, an iced coffee, a vintage film camera, a straw hat and a folded paper map, a relaxed travel and day-trip mood. Square photo, clean minimal lifestyle-magazine look, soft bright natural daylight, low saturation warm beige and white tones, calm and tidy composition, shallow depth of field. No people, no faces, no hands, no text, no logos."
     }
   ],
   "_설명2": "2026-11-02 사용자가 블로그 전체 화면을 보내 줌 → 스킨 배경 1920×600(가운데 966px 칸에 글씨·아이콘, 오른쪽 칸 밖에 인물)으로 바꿈. 바탕 2장 + 아이콘 5장 = 7장 low.",
   "_설명3": "2026-11-02 사용자 '사람은 안 넣어도 된다' → 바탕 그림 빼고 아이콘 5개만. 완성본 content/blog-banner/out/banner-1920x600.png",
   "_설명4": "2026-11-02 사용자 '배경이 암울하다' → 직접 그린 장식 대신 GPT 수채화 바탕(사람 없음) 2장. 지금 배너처럼 햇살 드는 따뜻한 방.",
   "_설명5": "2026-11-02 사용자가 스크랩북(폴라로이드·테이프·찢은 종이) 예시와 흰 카드 '바로가기' 버튼 예시를 보여 줌 → scripts/blog-banner/scrap.mjs. 수채화 바탕 2장 대신 폴라로이드 사진 4장(사람 없음).",
-  "_설명6": "2026-11-02 사용자 '배경부터 사진칸 카테고리 사진까지 GPT 로' → 배경 3가지(bg-g-*) + 카테고리 사진 5장(cat-*). 한글 제목·버튼 이름만 클라우드가 얹는다."
+  "_설명6": "2026-11-02 사용자 '배경부터 사진칸 카테고리 사진까지 GPT 로' → 배경 3가지(bg-g-*) + 카테고리 사진 5장(cat-*). 한글 제목·버튼 이름만 클라우드가 얹는다.",
+  "_설명7": "2026-11-02 사용자: 생활·보장은 더 전문적인 사진, 맛집·나들이는 여행·나들이 느낌도 → cat-care2·cat-trip (ChatGPT 배너 카드 사진 톤에 맞춤)"
 }
