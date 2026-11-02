@@ -86,6 +86,7 @@ const todo = plan.images.filter((im) => !only || only.has(im.n));
 
 console.log(`🖼  ${plan.slug} — ${todo.length}장`);
 console.log(`   저장 위치: ${outDir}\n`);
+mkdirSync(outDir, { recursive: true }); // 공식 사진은 AI 그림보다 먼저 저장된다 — 폴더가 없으면 실패했다 (11/2 신세경 글)
 
 let made = 0, skipped = 0, failed = [];
 let noCredit = false; // OpenAI 크레딧이 바닥나면(image-gen 종료 코드 3) 남은 그림은 부르지 않는다
