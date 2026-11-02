@@ -16,7 +16,9 @@ const MIN_CHARS = 90;
 const MAX_CHARS = 300;
 const MAX_LINE = 24;
 const PARA_MAX = 4;
-const PARA_MIN = 2; // 2026-11-02 사용자 — "2~4줄 사이로 쓰고 한 칸 띄고"
+const PARA_MIN = 2;
+// 고정 시각 (2026-11-02 사용자 — "출근길 7~9시 2개, 퇴근 뒤 저녁 8~11시 3개로 고정"). 아침 두 편은 전날 공개된 글로
+export const SLOTS = ['07:30', '08:30', '20:00', '21:00', '22:30']; // 2026-11-02 사용자 — "2~4줄 사이로 쓰고 한 칸 띄고"
 const MAX_EMOJI = 2;
 
 // '바로' 갈래에서 막는 민간 보험 낱말. 공적 제도 이름(건강보험 등)은 아래 PUBLIC 으로 먼저 지운다
@@ -78,6 +80,8 @@ export function checkSet(file) {
     seen.add(it['원고']);
 
     const post = readPost(it['원고']);
+    // 아침 칸은 전날 원고 — 아침 확인이 지난 원고 파일을 지우면(10:47) 그 뒤엔 검사를 건너뛴다 (이미 올라간 글)
+    if (!post && it['원고'].slice(0, 10) < date) { notes.push(`${tag} 전날 원고 파일이 정리돼 검사를 건너뜁니다`); it.gone = true; continue; }
     if (!post) { err(`원고를 찾지 못했습니다: content/posts/${it['원고']}.md`); continue; }
     // 2026-11-02 사용자 — 생활보장 원고만 ("꼬막 해감은 생활보장이 아니잖아"). '생활정보글로만'은 심의 없는 정보글이라는 뜻
     if (post.fm.category !== '생활보장') err(`생활보장 원고가 아닙니다 (category: ${post.fm.category}).`);
@@ -86,6 +90,7 @@ export function checkSet(file) {
     // 시각 — 블로그 글이 발행된 뒤여야 링크가 열린다
     const at = it['시각'];
     if (!/^\d{2}:\d{2}$/.test(at || '')) err('시각: HH:MM 이 필요합니다.');
+    else if (it['갈래'] === '바로' && date >= '2026-11-03' && !SLOTS.includes(at)) err(`시각 ${at} — 고정 시각 ${SLOTS.join('·')} 중 하나로.`);
     else if (post.fm.publish_at) {
       const [pd, pt] = post.fm.publish_at.split(' ');
       if (pd > date || (pd === date && pt >= at)) err(`블로그 발행(${post.fm.publish_at})보다 앞이거나 같은 시각입니다 (${date} ${at}).`);
