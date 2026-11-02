@@ -118,28 +118,29 @@ em{font-style:normal;color:#C2551E}
 .cta{margin-top:36px;font-size:30px;color:#888;line-height:1.6}
 .terms{font-size:22px;line-height:1.5;color:#a0a0a0;margin-top:26px}
 .pt{width:100%;border-collapse:collapse;margin-top:26px;font-size:30px}.pt td{padding:12px 4px;border-bottom:1px solid rgba(255,255,255,.3)}.pt td:last-child{text-align:right}.pt .sum td{font-family:Head;font-size:40px;color:#FFC25A;border-bottom:none;padding-top:20px}
-/* ── 2026-11-02 사용자: "글자를 더 깔끔하게, 주황 아니어도 되니 사진과 어울리는 글씨체로" ──
-   제목 Noto Serif KR(명조 굵게) · 본문 Gothic A1 · 강조는 사진 얼룩과 같은 따뜻한 흰색, 표시는 가는 줄 */
-@font-face{font-family:Ser;src:url('${font('scripts/lib/fonts/NotoSerifKR-Bold.ttf')}')}
+/* ── 2026-11-02 사용자: "글자를 더 깔끔하게, 사진과 어울리는 글씨체" → 다시 "글자 더 크게, 핵심엔 포인트, 숫자·글자가 연해서 안 보인다" ──
+   제목 Noto Serif KR Black(명조 가장 굵게) · 본문 Gothic A1 Bold · 핵심은 노란 글씨 + 밑줄 형광 · 번호·표시는 흰색으로 또렷하게 */
+@font-face{font-family:Ser;src:url('${font('scripts/lib/fonts/NotoSerifKR-Black.ttf')}')}
+@font-face{font-family:GB;src:url('${font('scripts/lib/fonts/GothicA1-Bold.ttf')}')}
+@font-face{font-family:GX;src:url('${font('scripts/lib/fonts/GothicA1-ExtraBold.ttf')}')}
 @font-face{font-family:GM;src:url('${font('scripts/lib/fonts/GothicA1-Medium.ttf')}')}
-@font-face{font-family:GL;src:url('${font('scripts/lib/fonts/GothicA1-Light.ttf')}')}
-body{font-family:GM,sans-serif}
-.shade{background:linear-gradient(180deg,rgba(10,10,12,.66) 0%,rgba(10,10,12,.5) 55%,rgba(10,10,12,.32) 100%)}
-.panel{top:132px;text-shadow:0 1px 14px rgba(0,0,0,.45)}
-.panel .hd{font-family:Ser;font-weight:normal;font-size:64px;line-height:1.38;letter-spacing:-.5px}
-.panel em{color:#F1DDBF}
-.panel .lb{border:none;border-radius:0;padding:0 0 0 54px;position:relative;font-family:GM;font-size:26px;letter-spacing:3px;color:rgba(255,255,255,.72);margin-top:40px}
-.panel .lb:before{content:'';position:absolute;left:0;top:50%;width:38px;height:1px;background:rgba(255,255,255,.72)}
-.panel .bd{font-family:GM;font-size:36px;line-height:1.75;margin-top:24px;color:rgba(255,255,255,.86)}
-.panel .st{font-family:GM;font-size:35px;line-height:1.7;color:rgba(255,255,255,.86)}
-.panel .st b{background:none;border:1.5px solid rgba(255,255,255,.7);font-family:Ser;font-size:28px;width:52px;height:52px;line-height:50px}
-.panel .ck{font-family:GM;font-size:39px;color:#fff}.panel .ck i{color:#F1DDBF}
-.panel .cp>div{font-family:GM;font-size:34px;border-left:1.5px solid rgba(255,255,255,.55)}.panel .cp h4{color:#F1DDBF;font-family:GM}
-.panel .cta{font-family:GL;font-size:28px;color:rgba(255,255,255,.75)}
-.panel .terms{font-family:GL;font-size:21px;color:rgba(255,255,255,.62)}
-.ft{font-family:GL;font-size:22px;letter-spacing:2px;color:rgba(255,255,255,.8)}
-.pt{font-family:GM}.pt .sum td{font-family:Ser;color:#F1DDBF}
-.nt .ap{color:#F1DDBF}
+body{font-family:GB,sans-serif}
+.shade{background:linear-gradient(180deg,rgba(8,8,10,.7) 0%,rgba(8,8,10,.56) 60%,rgba(8,8,10,.4) 100%)}
+.panel{top:116px;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+.panel .hd{font-family:Ser;font-weight:normal;font-size:74px;line-height:1.32;letter-spacing:-1px;color:#fff}
+.panel em{color:#FFD978;background:linear-gradient(transparent 68%,rgba(255,200,80,.35) 68%);padding:0 2px}
+.panel .lb{border:none;border-radius:0;padding:0 0 0 58px;position:relative;font-family:GX;font-size:30px;letter-spacing:2px;color:#fff;margin-top:40px}
+.panel .lb:before{content:'';position:absolute;left:0;top:50%;width:42px;height:3px;background:#FFD978}
+.panel .bd{font-family:GB;font-size:41px;line-height:1.7;margin-top:24px;color:#fff}
+.panel .st{font-family:GB;font-size:39px;line-height:1.65;color:#fff;margin-top:32px}
+.panel .st b{background:#fff;color:#111;border:none;font-family:GX;font-size:32px;width:56px;height:56px;line-height:56px;text-shadow:none}
+.panel .ck{font-family:GB;font-size:44px;color:#fff;margin-top:28px}.panel .ck i{color:#FFD978;font-family:GX}
+.panel .cp>div{font-family:GB;font-size:38px;color:#fff;border-left:3px solid #FFD978}.panel .cp h4{color:#FFD978;font-family:GX;font-size:34px}
+.panel .cta{font-family:GB;font-size:31px;color:#fff;margin-top:40px}
+.panel .terms{font-family:GM;font-size:23px;color:rgba(255,255,255,.85);margin-top:28px}
+.ft{font-family:GB;font-size:25px;letter-spacing:1px;color:#fff}
+.pt{font-family:GB;font-size:33px}.pt .sum td{font-family:Ser;color:#FFD978;font-size:44px}
+.nt .ap{color:#FFD978}
 .nt{font-size:23px;line-height:1.55;color:#444}.nt h3{font-size:44px;color:#1c1c1c;margin-bottom:26px}.nt b{display:block;font-size:29px;color:#1c1c1c}.nt p{margin-top:16px}.nt .ap{color:#FFC25A;font-size:27px}
 `;
 // 2026-11-02 사용자: "사진을 그냥 배경으로 두고 사진이랑 글자가 잘 보이게" — 사진 한 장을 7장 모두 같은 자리로 깔고, 그 위에 흰 글 칸
@@ -153,7 +154,7 @@ function mcard(c, photo, i) {
   const terms = c.terms ? `<div class="terms">${esc(NOTICE.terms)}</div>` : '';
   const src = c.src ? '근거 · ' + c.src : '';
   switch (c.type) {
-    case 'cover': return mpage(photo, c.crop, 560, `<div class="in" style="margin-top:70px"><div class="lb" style="margin-top:0">${esc(c.kw)}</div><div class="hd" style="font-size:88px;line-height:1.3;margin-top:34px">${H(c.title)}</div><div class="bd" style="margin-top:40px;font-size:38px">${esc(c.sub || '')}</div></div>`, i);
+    case 'cover': return mpage(photo, c.crop, 560, `<div class="in" style="margin-top:70px"><div class="lb" style="margin-top:0">${esc(c.kw)}</div><div class="hd" style="font-size:96px;line-height:1.28;margin-top:34px">${H(c.title)}</div><div class="bd" style="margin-top:44px;font-size:44px">${esc(c.sub || '')}</div></div>`, i);
     case 'text': return mpage(photo, c.crop, 300, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label)}</div><div class="bd">${c.body.map((t) => `<p>${hl(t)}</p>`).join('')}</div>${terms}</div>`, i, src || undefined);
     case 'steps': return mpage(photo, c.crop, 300, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label)}</div>${c.steps.map(([n, t]) => `<div class="st"><b>${esc(n)}</b><span>${hl(t)}</span></div>`).join('')}${terms}</div>`, i, src || undefined);
     case 'compare': return mpage(photo, c.crop, 300, `<div class="in"><div class="hd">${H(c.head)}</div><div class="lb">${esc(c.label)}</div><div class="cp">${[c.left, c.right].map((x) => `<div><h4>${esc(x.t)}</h4>${x.lines.map(esc).join('<br>')}</div>`).join('')}</div><div class="bd" style="font-size:30px;margin-top:26px">${esc(c.foot || '')}</div>${terms}</div>`, i, src || undefined);
@@ -172,9 +173,9 @@ function mnotice(approval) {
   return `<!doctype html><html><head><meta charset="utf-8"><style>${MCSS}
 body{background:#111;color:#fff;text-align:center}
 .gl{display:inline-block;background:#fff;border-radius:22px;padding:22px 40px;margin-top:84px}.gl img{height:96px;display:block}
-.nn{font-family:GM;margin:44px 80px 0;font-size:25px;line-height:1.6;color:rgba(255,255,255,.88)}.nn b{display:block;font-size:30px;color:#fff;line-height:1.5}
-.nn p{margin-top:20px}.nn .ap{color:#F1DDBF;font-size:28px}
-.ft{color:rgba(255,255,255,.6);text-shadow:none}</style></head><body>
+.nn{font-family:GB;margin:44px 80px 0;font-size:25px;line-height:1.6;color:rgba(255,255,255,.88)}.nn b{display:block;font-size:30px;color:#fff;line-height:1.5}
+.nn p{margin-top:20px}.nn .ap{color:#FFD978;font-size:28px}
+.ft{color:rgba(255,255,255,.9);text-shadow:none}</style></head><body>
 <div class="gl"><img src="${glogo}"></div>
 <div class="nn"><b>${esc(N.agency)}</b><b>${esc(N.agent)}</b>
 <p class="ap">${esc(approval || N.approval)}<br><span style="font-size:24px;color:rgba(255,255,255,.88)">${esc(N.rule)}</span></p>
