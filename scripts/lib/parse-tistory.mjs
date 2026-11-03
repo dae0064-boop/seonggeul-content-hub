@@ -36,7 +36,7 @@ function lineHtml(l) {
   return styled(l.t, l.s);
 }
 
-/** post: parsePost() 결과. opts.blocks 로 바꾼 덩어리, opts.coupang = { url, label } (scripts/lib/coupang.mjs) */
+/** post: parsePost() 결과. opts.blocks 로 바꾼 덩어리, opts.coupang = { url, label } (scripts/lib/coupang.mjs), opts.related = [{ title, url }] */
 export function toHtml(post, opts = {}) {
   const out = [];
   let prev = null;
@@ -61,6 +61,11 @@ export function toHtml(post, opts = {}) {
       out.push(`<p data-ke-size="size16">${b.lines.map(lineHtml).join('<br>')}</p>`);
     }
     prev = b.type;
+  }
+  // 함께 보면 좋은 글 (2026-11-03 사용자 승인) — 닫는 인사 아래, 같은 블로그 글로 가는 보통 링크 (scripts/lib/tistory-related.mjs)
+  if (opts.related?.length) {
+    out.push(BLANK);
+    out.push(`<p data-ke-size="size16"><b>▶ 함께 보면 좋은 글</b><br>${opts.related.map((r) => `<a href="${esc(r.url)}">${esc(r.title)}</a>`).join('<br>')}</p>`);
   }
   return out.join('\n');
 }

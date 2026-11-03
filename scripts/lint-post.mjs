@@ -256,16 +256,17 @@ function publishedNaverRows() {
 }
 
 let publishedCache = null;
-function publishedNaverTitles() {
-  if (publishedCache) return publishedCache;
-  publishedCache = new Set();
+function publishedNaverTitles(channel = 'naver') {
+  publishedCache ||= {};
+  if (publishedCache[channel]) return publishedCache[channel];
+  const set = publishedCache[channel] = new Set();
   try {
     for (const row of fs.readFileSync('content/archive/published.tsv', 'utf8').split(/\r?\n/).slice(1)) {
       const c = row.split('\t');
-      if (c[1] === 'naver' && c[4]) publishedCache.add(normTitle(c[4]));
+      if (c[1] === channel && c[4]) set.add(normTitle(c[4]));
     }
   } catch { /* 목록이 없으면 모두 못 찾음으로 나온다 */ }
-  return publishedCache;
+  return set;
 }
 
 // 실제 발행글(119 안심콜) 실측치에 맞춰 잡은 기준
@@ -400,12 +401,13 @@ for (const file of files) {
   if (!post.mainKeyword) errors.push('main_keyword 가 없습니다.');
   // 함께 보면 좋은 글 (2026-10-07 사용자 승인): 발행이 끝난 내 네이버 글 제목 1~2개. 발행 때 주소로 바뀐다
   if (post.related.length) {
-    if (tistory) errors.push('related 는 네이버 원고에만 씁니다 (티스토리는 아직 지원하지 않음)');
-    if (post.related.length > 2) errors.push(`related 는 2개까지 (지금 ${post.related.length}개) — 정말 관련 있는 글만`);
-    const done = publishedNaverTitles();
+    // 티스토리 (2026-11-03 사용자 승인): 발행된 티스토리 글 1~3개 — 색인 안 된 옛 글로 가는 길
+    const maxRel = tistory ? 3 : 2, ch = tistory ? 'tistory' : 'naver', chName = tistory ? '티스토리' : '네이버';
+    if (post.related.length > maxRel) errors.push(`related 는 ${maxRel}개까지 (지금 ${post.related.length}개) — 정말 관련 있는 글만`);
+    const done = publishedNaverTitles(ch);
     for (const t of post.related) {
       if (normTitle(t) === normTitle(post.title)) errors.push(`related 에 자기 글 제목이 있습니다: ${t}`);
-      else if (!done.has(normTitle(t))) errors.push(`related 제목이 content/archive/published.tsv 의 네이버 글에 없습니다: "${t}" — 발행이 끝난 글의 제목을 그대로 쓰세요`);
+      else if (!done.has(normTitle(t))) errors.push(`related 제목이 content/archive/published.tsv 의 ${chName} 글에 없습니다: "${t}" — 발행이 끝난 글의 제목을 그대로 쓰세요`);
     }
   }
   // 제휴 링크 채널 (2026-10-17 사용자 결정): 네이버 = 브랜드커넥트, 쿠팡 파트너스 = 티스토리만
