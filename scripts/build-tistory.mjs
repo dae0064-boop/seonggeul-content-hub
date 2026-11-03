@@ -10,6 +10,7 @@
 import fs from 'node:fs';
 import { parsePost, toHtml } from './lib/parse-tistory.mjs';
 import { applyCoupang, loadLinks } from './lib/coupang.mjs';
+import { resolveTistoryRelated } from './lib/tistory-related.mjs';
 
 const files = process.argv.slice(2);
 if (!files.length) {
@@ -27,7 +28,10 @@ for (const file of files) {
   const cp = applyCoupang(post, links);
   if (cp.note) console.log(`  ${file}: ${cp.note}`);
   post.blocks = cp.blocks;
-  const html = toHtml(post, { coupang: cp.link });
+  // 함께 보면 좋은 글: 발행된 티스토리 글 주소를 찾아 끝에 넣는다. 못 찾으면 빠진다 (클라우드에서는 늘 빠지고 아침 PC 가 다시 만든다)
+  const related = await resolveTistoryRelated(post, { blog: process.env.TISTORY_BLOG || 'seongdaeeyo', log: (m) => console.log(`  ${file}: ${m}`) });
+  if (related.length) console.log(`  ${file}: 함께 보면 좋은 글 ${related.length}개 — ${related.map((r) => r.url).join(' , ')}`);
+  const html = toHtml(post, { coupang: cp.link, related });
   const json = {
     slug: file.split(/[\\/]/).pop().replace(/\.md$/, ''),
     title: post.title,
@@ -35,6 +39,7 @@ for (const file of files) {
     tags: post.tags,
     publishAt: post.publishAt || undefined,
     coupangUrl: cp.link?.url || undefined,
+    relatedUrls: related.length ? related.map((r) => r.url) : undefined,
     blocks: post.blocks,
     html,
   };
