@@ -64,7 +64,7 @@ const postedToday = [...posted.values()].filter((p) => p.at.startsWith(today)).l
 const queue = posts.filter((p) => approved.get(p.n)?.result === '적격' && !posted.has(p.n)).map((p) => p.n);
 const plan = new Map();
 // --start 날짜: 그날부터 짠다 (자동 올리기를 아직 안 켠 날 — 2026-10-26 첫 일정표)
-const start = arg('--start') > today ? arg('--start') : today;
+const start = [arg('--start'), PLAN.startDate || '', today].sort().pop();
 let day = new Date(`${start}T00:00:00Z`), used = postedToday, qi = 0;
 for (let guard = 0; qi < queue.length && guard < 400; guard++) {
   const d = day.toISOString().slice(0, 10);
