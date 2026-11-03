@@ -372,7 +372,15 @@ async function reservePublish(page, editor, post, at) {
   await sleep(1500);
   await dump(page, 'publish-layer');
 
-  if (post.category) await pickCategory(page, editor, blogCategory(post));
+  if (post.category) {
+    const want = blogCategory(post);
+    const got = await pickCategory(page, editor, want, { noFallback: !!post.issue });
+    if (got !== want) {
+      const mins = Math.round((new Date(`${at.ymd}T${at.hh}:${at.mm}:00`) - Date.now()) / 60000);
+      if (post.issue) return fail(`카테고리 "${want}" 를 고르지 못함 — 이슈 글은 다른 카테고리로 예약하지 않고 다음 실행이 다시 합니다 (발행까지 ${mins}분)`);
+      warn(`카테고리 "${want}" 대신 "${got || '기본'}" 로 갑니다`);
+    }
+  }
   // 주제가 맞는지 다시 읽어 확인된 글만 예약한다 (2026-10-29 사용자 — "주제를 자동으로 체크해서 예약발행 가능할까?").
   // 홈판은 관심 주제로 글을 보여 줘서, 살림 글이 '비즈니스·경제'로 들어가면 홈판에 닿기 어렵다.
   // 한 번 더 골라 보고도 안 되면 임시저장으로 두고 다음 실행(그날 13·16·19·22시 catchup-reserve, 다음 날 아침)이 다시 한다.
@@ -728,11 +736,14 @@ function blogCategory(post) {
 }
 const OLD_CATEGORY = { '생활·정보': '생활정보', '생활·보장': '생활보장', '이슈·뉴스': '생활·정보', '연예·방송': '생활·정보' };
 
-async function pickCategory(page, editor, category) {
-  try { await pickCategoryOnce(page, editor, category, true); }
+/** 고른 카테고리 이름을 돌려준다 (못 고르면 null). 이슈 글은 예전 이름(생활·정보)으로 물러서지 않는다 —
+ *  2026-11-03 사용자: 연예인 글이 생활 카테고리에 들어갔다 "카테고리에 맞게". 못 고르면 예약하지 않는다(reservePublish). */
+async function pickCategory(page, editor, category, { noFallback = false } = {}) {
+  try { await pickCategoryOnce(page, editor, category, true); return category; }
   catch {
     const old = OLD_CATEGORY[category];
-    if (old) { warn(`카테고리 "${category}" 를 못 찾아 "${old}" 로 다시 해 봅니다`); await pickCategoryOnce(page, editor, old, false).catch(() => {}); }
+    if (old && !noFallback) { warn(`카테고리 "${category}" 를 못 찾아 "${old}" 로 다시 해 봅니다`); try { await pickCategoryOnce(page, editor, old, true); return old; } catch { return null; } }
+    return null;
   }
 }
 
