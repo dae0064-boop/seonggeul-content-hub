@@ -43,7 +43,7 @@
 ### 11/3 — 🧵 스레드 보험글 다시 게시 — 1편부터, 하루 3편 09·15·21시 (사용자 "스레드 1편부터 게시해줘, 오늘부터 3개씩")
 - `insurance-post.mjs` 가 `content/threads/insurance/post-plan.json` 을 읽음: 시각마다 2시간 안 한 편, `since 2026-11-03`(그 전 게시·posted.tsv 줄은 안 셈 → 1편부터 새 배너로 다시), 하루 3편, 멈춤 `insurance/PAUSE-POST`(전체 PAUSE 는 무시 — GOMS 자동 등록·Word 저장·밤 원고는 계속 멈춤).
 - 작업 스케줄러 `SeonggeulThreadsPost` 시각 09·10·13·15·16·19·21·22 — catchup 이 `threads-setup -IfMissing` 으로 다시 등록(오늘 16시 실행 뒤). 오늘: 16:00 실행이 15시 칸으로 1편, 21:00 2편.
-- ⚠ 10/26~11/1 에 올린 옛 1~19편 글은 계정에 그대로 — 사용자가 지우지 않으면 같은 글이 두 번 보임. [ ] 11/3 16시·21시 기록(run-logs/threads/2026-11-03.log) 확인.
+- **계정 = 새 계정 @___sd.eyo** (사용자 확인 — PC 키가 이 계정, 블로그 유입 글과 같은 계정). 옛 1~19편은 옛 계정 @seongdaeeyo 에 있어 겹치지 않음. 지금 한 편: `launchers/threads-post-now.cmd`(`--now`, 시각 칸만 안 봄). [ ] 11/3 16시·21시 기록(run-logs/threads/2026-11-03.log) 확인.
 
 ### 11/3 — 🎨 새 배너로 확정·전부 바꿈 (사용자 "지금 워드에 들어간 모든 배너 사진 이걸로 변경, 앞으로 심의 올릴 때·받았을 때도 이 배너")
 - 디자인 = 2차 d-warm(크림·복숭아 GPT 배경 `banners/art-d-warm.jpg`, 왼쪽 '친근한 설계사' 25px·안부 문구 12.5px). 심의 문구는 옛 배너와 같음.
