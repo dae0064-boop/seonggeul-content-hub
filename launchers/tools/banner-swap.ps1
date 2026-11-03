@@ -13,7 +13,7 @@ $drive = Find-MyDrive
 if (-not $drive) { Write-Host 'Google Drive 를 못 찾았어요'; exit 1 }
 $word = Join-Path $drive 'ClaudeWorkspace\보험글'
 $marker = Join-Path $word 'banner-swap-d-warm.txt'
-if ($IfNeeded -and (Test-Path $marker)) { exit 0 }
+if ($IfNeeded -and (Test-Path $marker) -and (Test-Path (Join-Path $drive 'ClaudeWorkspace\스레드-새배너'))) { exit 0 }
 $base = Join-Path $repo 'content\threads\insurance\banners\base.jpg'
 $log = @("PC: $env:COMPUTERNAME", "시각: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')", "코드: $(git rev-parse --short HEAD 2>$null)", '')
 $photoDir = Join-Path $drive 'ClaudeWorkspace\보험글-사진'
@@ -21,6 +21,12 @@ New-Item -ItemType Directory -Force -Path $photoDir | Out-Null
 Copy-Item $base (Join-Path $photoDir '배너-2026-11-03-새디자인.jpg') -Force
 (Get-Item (Join-Path $photoDir '배너-2026-11-03-새디자인.jpg')).LastWriteTime = Get-Date
 $log += '보험글-사진: 배너-2026-11-03-새디자인.jpg 넣음'
+# 이미 스레드에 게시한 글을 사용자가 손으로 고칠 수 있게 편별 새 배너를 Drive 로 (2026-11-03 사용자 "스레드 게시했던 거 다 수정할 거야")
+$nb = Join-Path $drive 'ClaudeWorkspace\스레드-새배너'
+New-Item -ItemType Directory -Force -Path $nb | Out-Null
+Get-ChildItem (Join-Path $repo 'content\threads\insurance\banners') -Filter 'thread-*.jpg' | ForEach-Object { Copy-Item $_.FullName (Join-Path $nb ("스레드 " + ($_.BaseName -replace 'thread-', '') + "편 배너.jpg")) -Force }
+$log += "스레드-새배너: 편별 배너 $(@(Get-ChildItem $nb -Filter '*.jpg').Count)장"
+
 $log += @(& node scripts\threads\word-banner.mjs --word-dir $word --placeholder $base 2>&1 | ForEach-Object { "$_" }); $ok1 = $LASTEXITCODE -eq 0
 $log += @(& node scripts\threads\word-banner.mjs --word-dir $word --out-dir (Join-Path $drive 'ClaudeWorkspace\보험글-심의필') 2>&1 | ForEach-Object { "$_" })
 $log | ForEach-Object { Write-Host $_ }
