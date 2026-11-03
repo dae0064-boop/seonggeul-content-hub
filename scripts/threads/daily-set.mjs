@@ -12,7 +12,10 @@ import { isMain } from './config.mjs';
 import { guard, similarity } from './guard.mjs';
 import { parseSet } from './blog-set.mjs';
 
-export const DAILY_SLOTS = ['07:00', '19:00'];
+export const DAILY_SLOTS_OLD = ['07:00', '19:00'];
+// 2026-11-03 사용자 "블로그 유입 글 3, 일상 글 4, 보험 심의글 3 — 하루 10편": 11/4 묶음부터 07:00 러닝·응원 · 12:30 점심 · 18:30 퇴근길 · 23:00 하루 마무리
+export const DAILY_SLOTS = ['07:00', '12:30', '18:30', '23:00'];
+export const dailySlots = (date) => (date >= '2026-11-04' ? DAILY_SLOTS : DAILY_SLOTS_OLD);
 const MIN_CHARS = 60;
 const MAX_CHARS = 250;
 const MAX_LINE = 26;
@@ -24,6 +27,8 @@ export function checkDaily(file) {
   const errors = [];
   const notes = [];
   const items = parseSet(fs.readFileSync(file, 'utf8'));
+  const slots = dailySlots(path.basename(file).slice(0, 10));
+  if (slots === DAILY_SLOTS && items.length !== slots.length) errors.push(`${items.length}편 — 하루 ${slots.length}편(${slots.join('·')})입니다.`);
   if (!items.length) errors.push('글이 없습니다 (## 1 … 형식).');
   const times = new Set();
   // 지난 묶음 글과 너무 비슷하면 막는다 (같은 농담 반복 금지)
@@ -35,7 +40,7 @@ export function checkDaily(file) {
     const tag = `[${it.no}]`;
     const err = (s) => errors.push(`${tag} ${s}`);
     const body = it.body || '';
-    if (!DAILY_SLOTS.includes(it['시각'])) err(`시각 ${it['시각'] || '(없음)'} — ${DAILY_SLOTS.join('·')} 중 하나로.`);
+    if (!slots.includes(it['시각'])) err(`시각 ${it['시각'] || '(없음)'} — ${slots.join('·')} 중 하나로.`);
     if (times.has(it['시각'])) err(`같은 시각(${it['시각']})에 두 편입니다.`);
     times.add(it['시각']);
     if (body.length < MIN_CHARS || body.length > MAX_CHARS) err(`${body.length}자 — ${MIN_CHARS}~${MAX_CHARS}자로.`);
