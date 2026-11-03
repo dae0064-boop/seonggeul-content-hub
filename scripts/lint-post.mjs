@@ -5,6 +5,7 @@
  *   node scripts/lint-post.mjs content/posts/*.md
  */
 import fs from 'node:fs';
+import { soloOk } from './lib/official-photo.mjs';
 import { parsePost, flatLines } from './lib/parse-post.mjs';
 import { normTitle } from './lib/naver-related.mjs';
 import { checkCard } from './lib/overlay.mjs';
@@ -652,6 +653,12 @@ for (const file of files) {
       if (!im.photo || !(im.photo.file || im.photo.query || im.photo.query_en || im.photo.page)) errors.push(`${im.n}번 공식 사진: photo.query(이름·장소) 또는 photo.page(정책브리핑 기사 주소)를 적습니다`);
       if (im.photo?.page && !/^https:\/\/(www\.)?korea\.kr\//.test(im.photo.page)) errors.push(`${im.n}번 photo.page 는 정책브리핑(korea.kr) 주소만 — 언론사 사진은 쓰지 않습니다`);
       if (!im.prompt) errors.push(`${im.n}번 공식 사진: 못 찾을 때 대신 그릴 prompt 를 적습니다 (실존 인물 없이)`);
+      // 인물 사진은 그 사람 혼자 (2026-11-03 사용자 — 소연 글에 티아라 단체 사진). 연예 글의 사진엔 photo.person(영문·한글 이름들)을 적고, file 을 적었으면 제목에 그 이름이 있어야
+      if (post.issue === '연예' && dated >= '2026-11-04') {
+        const person = [].concat(im.photo?.person || []).filter(Boolean);
+        if (!person.length) errors.push(`${im.n}번 공식 사진: 연예 글은 photo.person 에 그 사람 이름을 적습니다 (예: ["Soyeon", "So-yeon", "소연"]) — 혼자 나온 그 사람 사진만 고릅니다`);
+        else for (const f of [].concat(im.photo?.file || [])) if (!soloOk(String(f).replace(/^File:/, ''), person)) errors.push(`${im.n}번 photo.file "${f}" — 제목에 ${person.join('/')} 이름이 없거나 단체 사진으로 보입니다. 그 사람 혼자 나온 사진 파일로`);
+      }
       if (!new RegExp(`^\\[이미지 ${im.n}\\][^\\n]*\\n\\[사진 출처 ${im.n}\\]\\s*$`, 'm').test(raw)) errors.push(`${im.n}번 공식 사진: 원고의 [이미지 ${im.n}] 바로 다음 줄에 "[사진 출처 ${im.n}]" 을 둡니다 (발행 때 출처 글자로 바뀜)`);
     }
     for (const m of raw.matchAll(/^\[사진 출처 (\d+)\]/gm)) if (!photos.some((im) => im.n === Number(m[1]))) errors.push(`[사진 출처 ${m[1]}] 줄이 있는데 계획서 ${m[1]}번이 kind: photo 가 아닙니다`);

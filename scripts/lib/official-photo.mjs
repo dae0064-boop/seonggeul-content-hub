@@ -29,8 +29,20 @@ async function getJson(url) {
   return r.json();
 }
 
+// 인물 사진은 그 사람 혼자 나온 것만 (2026-11-03 사용자 — 「소연 임신」에 티아라 단체 사진이 걸려 조잡했다. "특정 인물 사진만").
+// photo.person: ["Soyeon", "So-yeon", "소연"] — 파일 제목에 이 이름 중 하나가 있어야 하고, 여러 사람·단체로 보이는 제목은 버린다.
+const norm = (t) => String(t || '').toLowerCase().replace(/[\s_\-.()]/g, '');
+const GROUP_WORDS = /(\band\b|&|\bwith\b|\bmembers?\b|\bgroup\b|\bcast\b|\bteam\b|\bconcert\b|\bstage\b|\bfans?\b|단체|멤버|출연진|무대)/i;
+export function soloOk(title, person) {
+  const names = [].concat(person || []).map(norm).filter((x) => x.length >= 2);
+  if (!names.length) return true;
+  const t = norm(title);
+  if (!names.some((n) => t.includes(n))) return false;
+  return !GROUP_WORDS.test(String(title).replace(/_/g, ' '));
+}
+
 /** 위키미디어 공용 검색 — 라이선스가 맞는 첫 사진 */
-export async function searchCommons({ query, query_en: queryEn, minWidth = 600 }) {
+export async function searchCommons({ query, query_en: queryEn, person, minWidth = 600 }) {
   const terms = [queryEn, query].filter(Boolean);
   for (const q of terms) {
     const url = 'https://commons.wikimedia.org/w/api.php?' + new URLSearchParams({
@@ -50,8 +62,9 @@ export async function searchCommons({ query, query_en: queryEn, minWidth = 600 }
       const hay = `${p.title} ${strip(md.ImageDescription?.value)} ${strip(md.ObjectName?.value)}`.toLowerCase();
       const hit = words.filter((w) => hay.includes(w)).length;
       if (!hit) continue; // 이름이 제목·설명에 없는 사진은 다른 사람일 수 있다
+      if (person && !soloOk(p.title.replace(/^File:/, ''), person)) continue; // 혼자 나온 그 사람 사진만
       scored.push({
-        score: hit * 10 + Math.min(ii.width, 2000) / 1000 + (ii.width >= ii.height ? 1 : 0),
+        score: hit * 10 + Math.min(ii.width, 2000) / 1000 + (person ? (ii.height >= ii.width ? 1 : 0) : (ii.width >= ii.height ? 1 : 0)), // 인물은 세로(얼굴 위주) 사진을 먼저
         url: ii.thumburl || ii.url,
         page: ii.descriptionurl,
         license: lic,
@@ -105,6 +118,7 @@ export async function findPhoto(spec = {}) {
     try { const k = await fromKoreaKr(spec.page); if (k.url) return { photo: k }; why.push(`정책브리핑: ${k.skip}`); } catch (e) { why.push(`정책브리핑: ${e.message}`); }
   }
   for (const f of [].concat(spec.file || [])) {
+    if (spec.person && !soloOk(String(f).replace(/^File:/, ''), spec.person)) { why.push(`위키미디어 파일: ${f} — 제목에 ${[].concat(spec.person).join('/')} 이름이 없거나 단체 사진으로 보여 건너뜀`); continue; }
     try { const c = await commonsFile(f); if (c.url) return { photo: c }; why.push(`위키미디어 파일: ${c.skip}`); } catch (e) { why.push(`위키미디어 파일: ${e.message}`); }
   }
   if (spec.query || spec.query_en) {
