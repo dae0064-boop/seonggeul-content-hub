@@ -120,7 +120,8 @@ export function parsePost(raw) {
     titleTest: (meta.title_test || '').trim(),   // 홈판형 제목 시험 반전 | 기본 (2026-11-02 사용자)
     people: (meta.people || '').trim(),   // 이슈 글에 나오는 실존 인물 이름 (그림 계획서 검사용)   // 이슈 글 (연예·정책) — lint-post ISSUE_FROM
     tone: (meta.tone || '').trim(),   // 말투 (2026-11-03 원고부터 — 하루 20편, 같은 주제라도 다른 느낌으로. lint-post TONES)
-    extra: (meta.extra || '').trim(),   // 하루 5편 밖에 사용자가 따로 부탁한 글 (2026-10-26 쇼핑 커넥트 시험) — 하루 배분 검사에서 뺀다
+    extra: (meta.extra || '').trim(),
+    draftOnly: (meta.draft_only || '').trim(),   // 확인용 원고 (2026-11-03 사용자 "써서 임시저장해줘") — draft-test 로 임시저장만, 아침 예약은 건너뛴다   // 하루 5편 밖에 사용자가 따로 부탁한 글 (2026-10-26 쇼핑 커넥트 시험) — 하루 배분 검사에서 뺀다
     coupang: (meta.coupang || '').trim(),   // 티스토리 쿠팡 파트너스 글 — 상품 키워드 (content/affiliate/coupang-links.tsv)
     brandconnect: (meta.brandconnect || '').trim(),
     topic: (meta.topic || '').trim(),   // 네이버 글 주제 (발행 패널 '주제') — 없으면 scripts/lib/naver-topic.mjs 규칙으로 고른다   // 네이버 쇼핑 커넥트 글 — 상품 키워드 (content/affiliate/brandconnect-links.tsv)

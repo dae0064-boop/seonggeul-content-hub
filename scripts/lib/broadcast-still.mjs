@@ -73,6 +73,23 @@ async function dump(page, tag) {
  * launchBrowser: overlay.mjs 의 launch (playwright chromium)
  */
 export async function fetchStill(still = {}, launchBrowser, tag = 'x') {
+  // 방송사 공식 유튜브 영상의 표지 그림 (2026-11-03 — 계약결혼은 공식 홈페이지 포토가 없어 MBC에브리원 공식 채널 영상으로). still.youtube = 영상 ID
+  if (still.youtube) {
+    const id = String(still.youtube).trim();
+    if (!/^[\w-]{11}$/.test(id)) return { photo: null, why: `still.youtube 영상 ID 가 이상함: ${id}` };
+    let lastErr = '';
+    for (const size of ['maxresdefault', 'sddefault', 'hqdefault']) {
+      const url = `https://i.ytimg.com/vi/${id}/${size}.jpg`;
+      try {
+        const r = await fetch(url, { signal: AbortSignal.timeout(30000) });
+        if (!r.ok) { lastErr = `HTTP ${r.status}`; continue; }
+        const buf = Buffer.from(await r.arrayBuffer());
+        if (buf.length < 5000) { lastErr = '그림이 너무 작음'; continue; }
+        return { photo: { buf, url, page: `https://www.youtube.com/watch?v=${id}`, credit: `사진: ${still.owner || '방송사'} 「${still.program || ''}」 공식 유튜브 (인용)` } };
+      } catch (e) { lastErr = e.message; }
+    }
+    if (!still.page) return { photo: null, why: `유튜브 표지 그림 받기 실패 (${lastErr})` };
+  }
   if (!still.page || !stillHostOk(still.page)) return { photo: null, why: `still.page 가 방송사 공식 사이트가 아님: ${still.page || '없음'}` };
   const browser = await launchBrowser();
   try {
