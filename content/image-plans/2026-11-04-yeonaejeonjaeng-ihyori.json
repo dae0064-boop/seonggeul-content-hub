@@ -1,0 +1,103 @@
+{
+  "slug": "2026-11-04-yeonaejeonjaeng-ihyori",
+  "title": "연애전쟁 이효리, 정신과 다닌다고 털어놓은 이유는?",
+  "source": "11/4(수) 09:00 네이버 원고 — 출근길 이슈 글(연예·예능), 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실존 인물 얼굴은 그리지 않는다 · 1번은 공식 사진 먼저(kind: photo)",
+  "images": [
+    {
+      "kind": "photo",
+      "title": "연애전쟁 출연자 사진 (대표사진)",
+      "photo": {
+        "query": "이효리",
+        "query_en": "Lee Hyori",
+        "person": [
+          "Lee Hyori",
+          "Lee Hyo-ri",
+          "이효리"
+        ]
+      },
+      "note": "대표 — 이효리 단독 공식 사진(위키미디어 등) 먼저, 없으면 사람 없는 장면",
+      "thumb_shot": "object",
+      "thumb_theme": "plum",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "이효리, 정신과 고백한 이유",
+        "focus": "center 18%",
+        "theme": "plum"
+      },
+      "n": 1,
+      "file": "01.png",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A single studio microphone on a stand in a softly lit empty television studio, no people. Color theme: lavender and plum tones with a yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "title": "밤 거실 소파와 꺼진 텔레비전",
+      "n": 2,
+      "file": "02.png",
+      "prompt": "Camera and composition: wide shot of a living room at night. A cozy living room at night with a sofa, a soft floor lamp and a switched-off television, no people. Background color: dim warm amber and navy. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "kind": "card",
+      "title": "출연자 조언을 정리한 카드",
+      "card": {
+        "type": "steps",
+        "title": "이효리가 한 말",
+        "ask": "이효리가 뭐라고 했어?",
+        "items": [
+          "병원에 함께 가 보라",
+          "건강검진을 받듯이",
+          "한번 점검해 보라",
+          "연애를 잠시 쉬라"
+        ]
+      },
+      "n": 3,
+      "file": "03.png"
+    },
+    {
+      "title": "녹화 스튜디오의 빈 의자와 조명",
+      "n": 4,
+      "file": "04.png",
+      "prompt": "Camera and composition: wide shot of an empty studio. An empty talk show studio with a few chairs under bright stage lights, no people. Background color: cool gray and soft blue. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "kind": "card",
+      "title": "연애전쟁 방송 정보를 정리한 카드",
+      "card": {
+        "type": "compare",
+        "title": "연애전쟁 한눈에",
+        "ask": "연애전쟁 언제 해?",
+        "heads": [
+          "궁금한 것",
+          "내용"
+        ],
+        "items": [
+          [
+            "방송",
+            "JTBC"
+          ],
+          [
+            "요일",
+            "월요일"
+          ],
+          [
+            "방송",
+            "11월 2일"
+          ],
+          [
+            "특별 외교관",
+            "김원훈과 엄지윤"
+          ]
+        ]
+      },
+      "n": 5,
+      "file": "05.png"
+    },
+    {
+      "title": "아침 햇살이 드는 창가의 찻잔",
+      "n": 6,
+      "file": "06.png",
+      "prompt": "Camera and composition: medium shot of a window sill. A cup of warm tea on a sunny window sill with a small plant in the morning light, no people. Background color: soft morning cream and green. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}
