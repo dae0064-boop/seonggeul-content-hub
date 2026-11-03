@@ -38,6 +38,17 @@ if ($drive -and $now.Hour -ge 19) {
     } catch { Note "GOMS 로그인 확인 실패: $($_.Exception.Message)" }
   }
 }
+# 사진 찾기 곳(위키미디어·오픈버스·픽사베이)이 되는지 하루 한 번 (2026-11-03 사용자 — "신경 안 쓰면 알아서 확인되는 건가?") → 아침 확인이 읽는다
+if ($drive) {
+  $pt = Join-Path $drive "ClaudeWorkspace\run-logs\photo-test-$today.txt"
+  if (-not (Test-Path $pt)) {
+    try {
+      $out = @(& node scripts\photo-test.mjs 2>&1 | ForEach-Object { "$_" })
+      @("PC: $env:COMPUTERNAME", "시각: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')", '') + $out | Set-Content -Encoding UTF8 $pt
+      Note ("사진 찾기 시험: " + (($out | Where-Object { $_ -match '오픈버스 (토큰|검색)|오픈버스: 연결' }) -join ' / '))
+    } catch { Note "사진 찾기 시험 실패: $($_.Exception.Message)" }
+  }
+}
 # 오늘 글은 21시 이후면 넣을 자리가 없다 — 내일·모레 글은 밤에도 예약한다 (22시 실행이 마지막 기회가 되게)
 $late = ($now.Hour -lt 5 -or $now.Hour -ge 21)
 # 실제로 글을 만들거나 예약하는 일이 돌 때만 쉰다. 기다리기만 하는 auto-day.cmd·wait-turn 은 세지 않는다
