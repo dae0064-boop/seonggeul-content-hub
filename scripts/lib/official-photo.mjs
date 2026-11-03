@@ -24,7 +24,7 @@ const BAD_LICENSE = /(nc|nd|non-?commercial|no ?deriv|fair use|non-?free)/i;
 const strip = (s) => String(s || '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 
 async function getJson(url) {
-  const r = await fetch(url, { headers: { 'User-Agent': UA } });
+  const r = await fetch(url, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(30000) });
   if (!r.ok) throw new Error(`HTTP ${r.status} ${url}`);
   return r.json();
 }
@@ -115,9 +115,19 @@ export async function findPhoto(spec = {}) {
 
 /** 사진을 받아 PNG 로 저장 (브라우저 캔버스로 바꾼다 — 네이버·티스토리 올리기는 NN.png 를 찾는다) */
 export async function savePhotoPng(photo, dest, launchBrowser) {
-  const r = await fetch(photo.url, { headers: { 'User-Agent': UA } });
-  if (!r.ok) throw new Error(`사진 내려받기 HTTP ${r.status}`);
-  const buf = Buffer.from(await r.arrayBuffer());
+  // 내려받기가 중간에 끊겨도(2026-11-03 과천 글 'terminated') 바로 AI 그림으로 넘어가지 않고 4번까지 다시 받는다 (사용자 — "끊겨도 계속 실사 사진으로")
+  let buf, lastErr;
+  for (let attempt = 1; attempt <= 4 && !buf; attempt++) {
+    try {
+      const r = await fetch(photo.url, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(60000) });
+      if (!r.ok) throw new Error(`사진 내려받기 HTTP ${r.status}`);
+      buf = Buffer.from(await r.arrayBuffer());
+    } catch (e) {
+      lastErr = e;
+      if (attempt < 4) { console.log(`  사진 받기 ${attempt}번째 실패 (${e.message}) — ${attempt * 5}초 뒤 다시`); await new Promise((ok) => setTimeout(ok, attempt * 5000)); }
+    }
+  }
+  if (!buf) throw lastErr;
   const mime = /\.png(\?|$)/i.test(photo.url) ? 'image/png' : 'image/jpeg';
   const browser = await launchBrowser();
   try {
