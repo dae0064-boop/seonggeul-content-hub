@@ -726,6 +726,9 @@ for (const file of files) {
       }
     }
   }
+  // 그림 계획서 slug 는 원고 이름과 같아야 한다 (2026-11-03 — 과천 글을 -v2 로 바꿨는데 계획서 slug 가 옛 이름이라 PC 가 옛 그림 폴더를 썼다)
+  { const pl = planOf(file); const me = file.split(/[\\/]/).pop().replace(/\.md$/, '');
+    if (pl && pl.slug && pl.slug !== me) errors.push(`그림 계획서 slug "${pl.slug}" 가 원고 이름 "${me}" 와 다릅니다 — content/image-plans/${me}.json 의 slug 를 고치세요`); }
   // 그림체: 클레이 3D → 실사풍 (카테고리 편수 REAL_AFTER 를 넘은 글부터). 정보 카드(kind: card)는 보지 않는다
   if (!tistory && dated >= SPLIT2_FROM && REAL_AFTER[post.category]) {
     const plan = planOf(file);
