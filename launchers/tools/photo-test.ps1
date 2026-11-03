@@ -3,7 +3,7 @@
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo
 . (Join-Path $PSScriptRoot 'lib-drive.ps1')
-foreach ($n in 'PIXABAY_API_KEY', 'FLICKR_API_KEY', 'PEXELS_API_KEY') { if (-not (Get-Item "env:$n" -ErrorAction SilentlyContinue)) { $v = [Environment]::GetEnvironmentVariable($n, 'User'); if ($v) { Set-Item "env:$n" $v } } }
+foreach ($n in 'PIXABAY_API_KEY', 'FLICKR_API_KEY', 'PEXELS_API_KEY', 'OPENVERSE_CLIENT_ID', 'OPENVERSE_CLIENT_SECRET') { if (-not (Get-Item "env:$n" -ErrorAction SilentlyContinue)) { $v = [Environment]::GetEnvironmentVariable($n, 'User'); if ($v) { Set-Item "env:$n" $v } } }
 Write-Host '사진 찾기 시험 중 (1~2분, 그림은 받지 않아요)...' -ForegroundColor Cyan
 $log = @(& node scripts\photo-test.mjs 2>&1 | ForEach-Object { Write-Host "$_"; "$_" })
 $drive = Find-MyDrive
