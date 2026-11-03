@@ -1,0 +1,173 @@
+{
+  "slug": "2026-11-03-100il-geojitmal-8hoe",
+  "title": "100일의 거짓말 8회, 김유정이 손가락을 꼬지 않은 이유는?",
+  "source": "11/3 사용자 요청 — 방영 중 드라마 글, 바로 예약",
+  "note": "공식 클립 표지 3(대표 포함) + 카드 2 + 그림 1",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "kind": "photo",
+      "title": "100일의 거짓말 8회 공식 영상 장면 (대표사진)",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "100일의 거짓말 8회",
+            "must": [
+              "100일의 거짓말"
+            ],
+            "episode": [
+              "EP.8",
+              "EP8",
+              "8화",
+              "8회"
+            ],
+            "channels": [
+              "tvN",
+              "tvN DRAMA",
+              "티빙",
+              "TVING"
+            ],
+            "prefer": [
+              "울지 말아요",
+              "소원권",
+              "엔딩",
+              "김유정"
+            ]
+          },
+          "owner": "tvN",
+          "program": "100일의 거짓말"
+        }
+      },
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). An old 1930s style fountain pen and a folded letter on a dark wooden desk under lamp light. Color theme: cool blue and white tones with a coral-red accent. Natural realistic photograph look, soft light, shallow depth of field, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "note": "8회(11/1) tvN 공식 유튜브 클립 표지 — PC 가 찾는다. 못 찾으면 사람 없는 그림",
+      "thumb_shot": "object",
+      "thumb_theme": "navy",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "김유정의 소원권, 그 의미",
+        "focus": "center 30%",
+        "theme": "navy"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "kind": "photo",
+      "title": "100일의 거짓말 8회 엔딩 장면 (공식 영상 인용)",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "100일의 거짓말 8회",
+            "must": [
+              "100일의 거짓말"
+            ],
+            "episode": [
+              "EP.8",
+              "EP8",
+              "8화",
+              "8회"
+            ],
+            "channels": [
+              "tvN",
+              "tvN DRAMA",
+              "티빙",
+              "TVING"
+            ],
+            "prefer": [
+              "소원권",
+              "울지 말아요",
+              "이가경"
+            ]
+          },
+          "owner": "tvN",
+          "program": "100일의 거짓말"
+        }
+      },
+      "prompt": "Camera and composition: medium shot of an empty 1930s style hallway with warm lamps at night, no people. Natural realistic photograph look, soft light, shallow depth of field, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "note": "8회(11/1) tvN 공식 유튜브 클립 표지 — PC 가 찾는다. 못 찾으면 사람 없는 그림"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "kind": "card",
+      "title": "8회 엔딩까지의 흐름을 정리한 카드",
+      "card": {
+        "type": "steps",
+        "title": "8회 엔딩 흐름",
+        "ask": "8회 엔딩 어떻게 됐어?",
+        "items": [
+          "태웅이 양부 과거 확인",
+          "태웅이 무너짐",
+          "가경이 손가락을 멈춤",
+          "소원권으로 위로"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "kind": "photo",
+      "title": "100일의 거짓말 김태웅 장면 (공식 영상 인용)",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "100일의 거짓말 8회",
+            "must": [
+              "100일의 거짓말"
+            ],
+            "episode": [
+              "EP.8",
+              "EP8",
+              "8화",
+              "8회"
+            ],
+            "channels": [
+              "tvN",
+              "tvN DRAMA",
+              "티빙",
+              "TVING"
+            ],
+            "prefer": [
+              "김태웅",
+              "박진영",
+              "사토",
+              "양부"
+            ]
+          },
+          "owner": "tvN",
+          "program": "100일의 거짓말"
+        }
+      },
+      "prompt": "Camera and composition: medium shot of an old government office desk with a lamp at night, no people. Natural realistic photograph look, soft light, shallow depth of field, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "note": "8회(11/1) tvN 공식 유튜브 클립 표지 — PC 가 찾는다. 못 찾으면 사람 없는 그림"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "kind": "card",
+      "title": "시청률과 방송 일정을 정리한 카드",
+      "card": {
+        "type": "steps",
+        "title": "8회 시청률·일정",
+        "ask": "시청률이랑 다음 회는?",
+        "items": [
+          "전국 9.8% 자체 최고",
+          "수도권 10.7%",
+          "16부작, 토·일 밤",
+          "9회 11월 7일(토)"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "밤 창가에 놓인 오래된 편지와 촛불",
+      "prompt": "Camera and composition: medium shot of an old handwritten letter and a lit candle on a window sill at night, no people. Background color: deep navy and candle amber. Natural realistic photograph look, soft light, shallow depth of field, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "shot": "medium shot of a letter and candle",
+      "bg": "deep navy and candle amber"
+    }
+  ]
+}
