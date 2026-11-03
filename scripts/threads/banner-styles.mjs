@@ -90,7 +90,8 @@ body{font-family:P,sans-serif;-webkit-font-smoothing:antialiased;letter-spacing:
 .wrap{position:relative;width:801px;height:252px;display:flex}
 .left{position:relative;width:216px;height:252px;flex:none;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:hidden}
 .left .bg{position:absolute;inset:0;background-size:cover;background-position:center}
-.left .in{position:relative;z-index:1}
+.left .in{position:relative;z-index:3}
+.left .deco{position:absolute;inset:0;z-index:2}
 .right{flex:1;display:flex;flex-direction:column;justify-content:center}
 .firm,.agent{font-weight:700;font-size:13.6px;line-height:1.38}
 .p{font-size:10.6px;line-height:1.5}
@@ -110,6 +111,41 @@ const body = (s) => `
 <div class="valid">${T.valid}</div>
 <div class="no">${T.no}</div>`;
 
+// 왼쪽 칸 장식 그림 — GPT 없이 코드로 그린다 (2026-11-03 사용자 "클로드 너가 만들어봐", 비용 0). --art 로 GPT 그림을 넣으면 빠진다.
+const svg = (inner) => `<svg class="deco" width="216" height="252" viewBox="0 0 216 252" xmlns="http://www.w3.org/2000/svg">${inner}</svg>`;
+const leaf = (x, y, r, fill, op) => `<ellipse cx="0" cy="-9" rx="4.6" ry="10" fill="${fill}" opacity="${op}" transform="translate(${x} ${y}) rotate(${r})"/>`;
+const DECO = {
+  "a-soft": svg(`
+    <circle cx="18" cy="22" r="74" fill="#FBEFE4" opacity=".75"/>
+    <circle cx="206" cy="238" r="66" fill="#DCE3CF" opacity=".55"/>
+    <g transform="translate(150 22)" stroke="#9FAE8C" stroke-width="1.2" fill="none" stroke-linecap="round">
+      <path d="M8 46 C 14 30, 24 16, 40 4"/>
+    </g>
+    <g transform="translate(150 22)">${leaf(14, 36, -60, "#B5C1A2", .9)}${leaf(20, 26, 40, "#C4CDB2", .9)}${leaf(27, 18, -55, "#B5C1A2", .9)}${leaf(34, 10, 35, "#C4CDB2", .9)}</g>
+    <g transform="translate(18 196)" stroke="#C8906F" stroke-width="1.4" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M2 12 H34 V17 A16 16 0 0 1 2 17 Z" fill="#FFF8F1"/>
+      <path d="M34 15 a6 6 0 0 1 0 11"/>
+      <path d="M-4 35 H40"/>
+      <path d="M12 8 c-3 -4 3 -6 0 -10"/><path d="M22 8 c-3 -4 3 -6 0 -10"/>
+    </g>`),
+  "b-clean": svg(`
+    <g fill="none" stroke="#C9B27C" stroke-width=".8">
+      <circle cx="216" cy="252" r="58" opacity=".35"/><circle cx="216" cy="252" r="82" opacity=".25"/>
+      <circle cx="216" cy="252" r="106" opacity=".17"/><circle cx="216" cy="252" r="130" opacity=".1"/>
+      <circle cx="0" cy="0" r="46" opacity=".2"/><circle cx="0" cy="0" r="66" opacity=".12"/>
+    </g>`),
+  "c-calm": svg(`
+    <g transform="translate(-6 252)">
+      <path d="M0 0 C 20 -30, 40 -52, 74 -74" stroke="#EAF1EE" stroke-width="1.3" fill="none" opacity=".45"/>
+      ${leaf(16, -18, 20, "#EAF1EE", .28)}${leaf(26, -32, -70, "#EAF1EE", .22)}${leaf(36, -40, 30, "#EAF1EE", .28)}
+      ${leaf(48, -54, -60, "#EAF1EE", .22)}${leaf(58, -60, 40, "#EAF1EE", .28)}${leaf(70, -72, -50, "#EAF1EE", .22)}
+    </g>
+    <g transform="translate(222 -4) rotate(180)">
+      <path d="M0 0 C 14 -20, 28 -34, 50 -48" stroke="#EAF1EE" stroke-width="1.2" fill="none" opacity=".35"/>
+      ${leaf(14, -16, 20, "#EAF1EE", .2)}${leaf(26, -28, -60, "#EAF1EE", .16)}${leaf(40, -38, 30, "#EAF1EE", .2)}
+    </g>`),
+};
+
 const LAYOUT = {
   // ① 부드럽고 편안한 — 크림 바탕, 따뜻한 복숭아·세이지, 손글씨 느낌 명조 이름
   "a-soft": (img) => `
@@ -117,8 +153,7 @@ const LAYOUT = {
 body{background:#FBF6EF;color:#4A3B32}
 .left{background:linear-gradient(160deg,#F6E3D3 0%,#EFD9C6 55%,#E3E6D6 100%)}
 .left .bg{${img ? `background-image:url(${pathToFileURL(img)});opacity:.55` : ""}}
-.left::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,246,239,.15),rgba(251,246,239,.55))}
-.left .in{z-index:2}
+.left::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(251,246,239,.15),rgba(251,246,239,.55))}
 .kicker{font-family:GD;font-size:14px;color:#9A6B52;letter-spacing:.02em}
 .name{font-family:GB;font-weight:700;font-size:40px;color:#5A3B2A;margin-top:2px;letter-spacing:.06em}
 .line{width:26px;height:1.5px;background:#C8906F;margin:10px auto 9px;border-radius:2px}
@@ -130,7 +165,7 @@ body{background:#FBF6EF;color:#4A3B32}
 .valid{color:#5A463A}
 .no{color:#A0552F}
 </style>
-<div class="wrap"><div class="left"><div class="bg"></div><div class="in">
+<div class="wrap"><div class="left"><div class="bg"></div>${img ? "" : DECO["a-soft"]}<div class="in">
 <div class="kicker">친근한 설계사</div><div class="name">강성대</div><div class="line"></div><div class="tag">보험보다 안부를<br>먼저 묻는 사람</div>
 </div></div><div class="right">${body()}</div></div>`,
 
@@ -151,7 +186,7 @@ body{background:#FFFFFF;color:#22262E}
 .valid{color:#2E3440}
 .no{color:#1E2A44}
 </style>
-<div class="wrap"><div class="left"><div class="bg"></div><div class="in">
+<div class="wrap"><div class="left"><div class="bg"></div>${img ? "" : DECO["b-clean"]}<div class="in">
 <div class="kicker">친근한 설계사</div><div class="name">강성대</div><div class="line"></div><div class="tag">보험보다 안부를<br>먼저 묻는 사람</div>
 </div></div><div class="right">${body()}</div></div>`,
 
@@ -172,7 +207,7 @@ body{background:#F3F1EC;color:#2F3A37}
 .valid{color:#3A4643}
 .no{color:#2C4A43}
 </style>
-<div class="wrap"><div class="left"><div class="bg"></div><div class="in">
+<div class="wrap"><div class="left"><div class="bg"></div>${img ? "" : DECO["c-calm"]}<div class="in">
 <div class="kicker">친근한 설계사</div><div class="name">강성대</div><div class="line"></div><div class="tag">보험보다 안부를<br>먼저 묻는 사람</div>
 </div></div><div class="right">${body()}</div></div>`,
 };

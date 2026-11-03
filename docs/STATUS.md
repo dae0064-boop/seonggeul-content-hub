@@ -26,7 +26,7 @@
 
 ### 11/3 — 🎨 스레드 심의필 배너 새 디자인 시안 3장 (사용자 "지금 배너가 저렴한 느낌, GPT 로 30원에 3장")
 - `scripts/threads/banner-styles.mjs` — ① 부드럽고 편안한(크림·복숭아, 고운바탕 이름) ② 깔끔하고 단정한(흰 바탕·남색 칸·금색 선) ③ 무난하면서 편안한(회백색·세이지 그린). 심의 문구는 base.jpg 와 한 글자도 다르지 않게 코드로 쓴다(GPT 는 한글을 깨뜨려 글자는 맡기지 않음), 칸 넘침·글꼴 못 읽음이면 실패.
-- 클라우드는 OpenAI 가 막혀(connect_rejected) 글자·배치 시안(비용 0)만 만들어 보여 드림. GPT 그림을 왼쪽 칸에 넣은 판은 PC `launchers/banner-styles.cmd` → low 3장(약 30원) → Drive `ClaudeWorkspace/banner-styles/`.
+- 사용자 "클로드 너가 만들어봐" → 왼쪽 칸 장식(찻잔·잎 / 금색 원호 / 잎 줄기)을 코드로 그려 넣음(비용 0). 클라우드는 OpenAI 가 막혀(connect_rejected) GPT 는 못 씀. GPT 그림을 왼쪽 칸에 넣은 판은 PC `launchers/banner-styles.cmd` → low 3장(약 30원) → Drive `ClaudeWorkspace/banner-styles/`.
 - [ ] 사용자가 고르면: banner.py 가 그 디자인으로 편마다 심의필 줄을 넣게 바꾼다. ⚠ 디자인이 바뀐 배너가 심의받은 광고물과 같은 것으로 인정되는지 준법감시 쪽 확인이 먼저(새 배너로 GOMS 다시 받아야 할 수 있음).
 
 ### 11/3 — 🧹 launchers 실행기 정리 (사용자 "안 쓰는 cmd 지워, 너무 많아 헷갈린다")
