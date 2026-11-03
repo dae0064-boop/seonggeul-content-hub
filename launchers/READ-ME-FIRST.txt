@@ -35,6 +35,7 @@ insta-now.cmd         인스타 카드뉴스 GOMS 등록 지금 하기
 insta-post-now.cmd    인스타 카드뉴스 지금 올리기
 goms-register-all.cmd GOMS 광고심의 여러 편 등록 (하루 30편까지)
 goms-revise.cmd       GOMS 반려 재심사
+goms-approved.cmd     GOMS 심의 결과(심의필 번호) 읽기 — 읽기만 해요
 banner-styles.cmd     스레드 심의필 배너 새 시안 3장 (GPT 그림, 약 30원) → Drive banner-styles 폴더
 banner-swap.cmd       Drive 보험글 Word 의 배너를 새 배너로 바꾸기 (자동으로도 한 번 함)
 
