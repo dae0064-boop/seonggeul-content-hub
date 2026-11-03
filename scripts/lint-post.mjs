@@ -650,7 +650,7 @@ for (const file of files) {
     const raw = fs.readFileSync(file, 'utf8');
     for (const im of photos) {
       if (!post.issue) errors.push(`${im.n}번 공식 사진(kind: photo)은 이슈 글(issue:)에만 씁니다`);
-      if (!im.photo || !(im.photo.file || im.photo.query || im.photo.query_en || im.photo.page)) errors.push(`${im.n}번 공식 사진: photo.query(이름·장소) 또는 photo.page(정책브리핑 기사 주소)를 적습니다`);
+      if (!im.photo || !(im.photo.file || im.photo.query || im.photo.query_en || im.photo.scene_en || im.photo.person || im.photo.page)) errors.push(`${im.n}번 공식 사진: photo.query(이름·장소) 또는 photo.page(정책브리핑 기사 주소)를 적습니다`);
       if (im.photo?.page && !/^https:\/\/(www\.)?korea\.kr\//.test(im.photo.page)) errors.push(`${im.n}번 photo.page 는 정책브리핑(korea.kr) 주소만 — 언론사 사진은 쓰지 않습니다`);
       if (!im.prompt) errors.push(`${im.n}번 공식 사진: 못 찾을 때 대신 그릴 prompt 를 적습니다 (실존 인물 없이)`);
       // 인물 사진은 그 사람 혼자 (2026-11-03 사용자 — 소연 글에 티아라 단체 사진). 연예 글의 사진엔 photo.person(영문·한글 이름들)을 적고, file 을 적었으면 제목에 그 이름이 있어야
