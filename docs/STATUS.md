@@ -38,6 +38,8 @@
 - 사용자 "계약결혼 원고도 써서 임시저장" → `2026-11-04-gyeyakgyeolhon-minhyeon-hwa`(6회 정현 개인 카메라·민현, `draft_only:` — 아침 예약에서 빠지고 draft-test 만 임시저장, draft-test 가 run-locks .done 남김, auto-shutdown 셈에서 뺌). 공식 홈페이지 포토를 못 찾아 **MBC에브리원·KBS Joy 공식 유튜브 영상 표지**(`photo.still.youtube`, i.ytimg.com — 클라우드는 막힘, PC 에서 첫 확인) 3장(대표 포함). [ ] draft-test 기록의 📷 [1]·[2]·[5].
 - 🛠 사용자 "대표사진 짤려있잖아" — 유튜브 표지(16:9)를 정사각형 가운데만 잘라 사람·영상 글씨가 잘림 → `overlay.mjs` 뉴스형 대표사진: 가로:세로 1.25 넘는 사진은 전체를 가운데 두고 위아래를 같은 사진 흐림으로 채움(세로 사진은 그대로 꽉 채움, `overlay.fit` 로 강제 가능). draft-test.txt 셋째 칸 `thumb` = 대표사진만 다시(`--overlay-only --only 1`) 후 임시저장. [ ] 사용자 draft-test 다시 → 새 임시저장본 확인(옛 임시저장본은 지우기).
 - 사용자 "사진들이 어제(6회)가 아니라 지난주(5회) 회차" → 6회 클립은 검색 사이트에 아직 안 잡힘. `broadcast-still.mjs` `still.youtube_search`: PC 가 유튜브 검색(업로드 날짜순)에서 제목에 must·회차(EP.6 등)가 있고 공식 채널(every1·Joy)인 클립을 prefer 순으로, 한 실행에서 겹치지 않게 고름(가짜 검색 화면으로 시험). 계약결혼 1·2·5번을 이걸로, draft-test.txt `redo=1,2,5`(그 번호만 새로 받음). [ ] draft-test 기록의 '유튜브에서 찾음:' 줄.
+- ✅ 계약결혼 draft-test 13:28: 1·2·5번이 새 유튜브 표지로 바뀜(편집 화면 미리보기로 확인 — 고른 영상 제목은 기록 범위 밖이라 안 남음 → draft-test 가 redo 기록·새 그림도 Drive 로 올리게 고침). 사용자 "좋아, 오늘 거는 내가 발행" → 예약·draft-test 목록에서 뺌(원고 지움, published.tsv 줄).
+- **사용자 확정 (11/3)**: "앞으로 이런 식으로 — 이슈가 있거나 지금 방영 중인 예능·드라마 위주로" → 연예 5편 중 **3~4편이 방영 중 프로그램 글**, 목록 `content/calendar/programs.tsv`(닥터X·굿파트너2·계약결혼·우리들의 발라드2·나는솔로, 아침 작업이 새 화제작 추가). 대표 1 + 본문 2 = 그 회차 공식 사진(SBS 포토 / 공식 유튜브 클립 youtube_search). issue-morning 3, naver-daily 📰 ⓔ-3.
 - 앞으로 연예 칸 1~2편은 방송 다음 날 프로그램 글(계약결혼·우리들의 발라드2 화, 나는솔로 목, 닥터X 토·일 — 11/14 종영, 굿파트너2 11/20~) — `routines/naver-daily.md` 📰 ⓔ-2·ⓔ-3, `routines/issue-morning.md` 3.
 
 ### 11/3 — 🧵 스레드 하루 10편 = 일상 4 + 블로그 유입 3 + 보험 심의 3 (사용자 "블로그 유입 글 3개로 줄이고 일상 글 4개랑 보험 심의글 3개로 총 10개씩")
