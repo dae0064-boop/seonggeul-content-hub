@@ -35,6 +35,9 @@ $code = $LASTEXITCODE
 if ($code -eq 0) {
   Write-Host '2/3 수정 문구를 넣어 Word 를 다시 만드는 중...'
   $log += & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'insurance-word.ps1') 2>&1 | ForEach-Object { "$_" }
+  # 원고(.md)를 통째로 고친 편 (content\threads\insurance\revised.tsv, 2026-11-03 39편~) — 고친 원고로 Word 를 새로 만든다
+  $rev = @(Get-Content (Join-Path $repo 'content\threads\insurance\revised.tsv') -Encoding UTF8 -ErrorAction SilentlyContinue | Where-Object { $_ -match '^\d+\t' } | ForEach-Object { ($_ -split "`t")[0] })
+  if ($rev.Count) { $log += & node scripts\threads\word-make.mjs --out $fileDir --force --only ($rev -join ',') 2>&1 | ForEach-Object { "$_" } }
   # Python 이 없는 PC(사무실 PC)는 위에서 Word 를 다시 만들지 못한다 — 이미 있는 Word 에 문구만 직접 넣는다 (있으면 그대로 둠)
   $log += & node scripts\threads\word-fix.mjs --dir $fileDir --fixes $fixes 2>&1 | ForEach-Object { "$_" }
   Write-Host $(if ($Submit) { '3/3 고친 Word 로 다시 올리는 중 (한 편에 1분쯤)...' } else { '3/3 시험 — 첫 편의 첨부파일 네모칸 체크까지만 해요 (삭제·수정은 누르지 않아요)...' })
