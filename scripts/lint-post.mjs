@@ -11,7 +11,7 @@ import { parsePost, flatLines } from './lib/parse-post.mjs';
 import { normTitle } from './lib/naver-related.mjs';
 import { checkCard } from './lib/overlay.mjs';
 import * as BC from './lib/brandconnect.mjs';
-import { topicFor } from './lib/naver-topic.mjs';
+import { topicFor, guessTopic } from './lib/naver-topic.mjs';
 // 맞춤법 시험 (2026-11-02 사용자 승인) — 2026-11-04~11-17 네이버 원고, 하루 1편 (routines/naver-daily.md ⓓ-2)
 const SPELL_TEST = ['2026-11-04', '2026-11-17'];
 // 장면·경험·대화 (2026-11-02 사용자 승인 — CLAUDE.md "장면·경험·대화") — 2026-11-06 원고부터 네이버·티스토리
@@ -644,6 +644,7 @@ for (const file of files) {
         for (const n of people) if (n.length >= 2 && txt.includes(n)) errors.push(`그림 계획서에 실존 인물 이름 "${n}" 이 있습니다 — 실존 인물 얼굴·닮은 그림은 만들지 않습니다. 장소·물건·글자 카드로 바꾸세요 (대표사진 글씨(overlay)·정보 카드 글자에 이름을 넣는 것은 괜찮습니다)`);
       }
       notes.push(`이슈 글(${post.issue}) — 출처 매체 2곳 이상으로 확인한 사실만, 추측·지어낸 말 없이`);
+      { const g = guessTopic({ title: post.title, mainKeyword: post.mainKeyword, issue: post.issue }); if (post.issue === '연예' && g !== '스타·연예인' && post.topic && post.topic !== g) notes.push(`주제 확인: 제목으로는 "${g}" 같은데 topic 은 "${post.topic}" — 드라마=드라마, 예능=방송, 영화=영화, 가요=음악, 사람 소식=스타·연예인`); }
     }
   }
   // 공식 사진 (2026-11-02, 이슈 글) — kind: "photo" 그림은 photo.query/page + 대신 그릴 prompt, 원고에 [사진 출처 N] 줄
@@ -658,7 +659,6 @@ for (const file of files) {
       if (im.photo?.still) {
         const st = im.photo.still;
         if (post.issue !== '연예') errors.push(`${im.n}번 장면 사진(photo.still)은 연예 이슈 글에만 씁니다`);
-        if (im.n === 1) errors.push('1번(대표사진)에는 방송사 장면 사진을 쓰지 않습니다 — 인용은 본문 장면 설명 옆에만 (저작권법 28조)');
         if (!stillHostOk(st.page)) errors.push(`${im.n}번 still.page 는 방송사·OTT 공식 사이트만 (scripts/lib/broadcast-still.mjs STILL_HOSTS): ${st.page || '없음'}`);
         if (!st.owner || !st.program) errors.push(`${im.n}번 still 에 owner(방송사)·program(프로그램 이름)을 적습니다 — 출처 줄에 들어갑니다`);
       }
@@ -673,7 +673,8 @@ for (const file of files) {
       if (!new RegExp(`^\\[이미지 ${im.n}\\][^\\n]*\\n\\[사진 출처 ${im.n}\\]\\s*$`, 'm').test(raw)) errors.push(`${im.n}번 공식 사진: 원고의 [이미지 ${im.n}] 바로 다음 줄에 "[사진 출처 ${im.n}]" 을 둡니다 (발행 때 출처 글자로 바뀜)`);
     }
     const stills = photos.filter((im) => im.photo?.still).length;
-    if (stills > 2) errors.push(`방송사 장면 사진이 ${stills}장 — 인용은 한 글에 2장까지 (글이 주인공)`);
+    // 2026-11-03 사용자 — 대표사진도 그 프로그램 공식 사진으로 (닥터X 글을 SBS 사진 대표로 직접 발행). 대표 1 + 본문 2 = 3장까지
+    if (stills > 3) errors.push(`방송사 장면 사진이 ${stills}장 — 한 글에 3장까지(대표 1 + 본문 2, 글이 주인공)`);
     for (const m of raw.matchAll(/^\[사진 출처 (\d+)\]/gm)) if (!photos.some((im) => im.n === Number(m[1]))) errors.push(`[사진 출처 ${m[1]}] 줄이 있는데 계획서 ${m[1]}번이 kind: photo 가 아닙니다`);
   }
   if (!tistory && post.topic && topicFor(post) === null) errors.push(`topic "${post.topic}" 은 네이버 주제 목록에 없습니다 (scripts/lib/naver-topic.mjs NAVER_TOPICS)`);
