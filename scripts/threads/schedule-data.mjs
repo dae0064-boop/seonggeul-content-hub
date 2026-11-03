@@ -18,7 +18,10 @@ import { fileURLToPath } from 'node:url';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SETS = path.resolve(HERE, '../../content/threads/insurance/sets');
-const SLOTS = ['10:00', '13:00', '16:00', '19:00', '22:00'];
+// 2026-11-03 사용자: 하루 3편 09·15·21시, 1편부터 다시 — content/threads/insurance/post-plan.json 을 따른다
+const PLAN = (() => { try { return JSON.parse(fs.readFileSync(path.resolve(HERE, '../../content/threads/insurance/post-plan.json'), 'utf8')); } catch { return {}; } })();
+const SLOTS = PLAN.slots || ['10:00', '13:00', '16:00', '19:00', '22:00'];
+const SINCE = PLAN.since || '';
 const argv = process.argv.slice(2);
 const arg = (n) => { const i = argv.indexOf(n); return i >= 0 ? argv[i + 1] : ''; };
 const read = (f) => (f && fs.existsSync(f) ? fs.readFileSync(f, 'utf8').replace(/^﻿/, '') : '');
@@ -51,7 +54,7 @@ for (const l of read(arg('--registered')).split(/[\s,]+/)) {
 }
 for (const n of approved.keys()) registered.add(n);
 const posted = new Map();
-for (const c of rows(arg('--posted'))) if (/^\d+$/.test(c[1] || '')) posted.set(Number(c[1]), { at: c[0], no: c[2], url1: c[4] || '', url2: c[5] || '' });
+for (const c of rows(arg('--posted'))) if (/^\d+$/.test(c[1] || '') && !(SINCE && (c[0] || '').slice(0, 10) < SINCE)) posted.set(Number(c[1]), { at: c[0], no: c[2], url1: c[4] || '', url2: c[5] || '' });
 
 // 3) 앞으로의 게시 — 지금(한국시간) 다음 시각부터, 오늘 이미 올린 수만큼 빼고
 const kst = new Date(Date.now() + 9 * 3600e3);
@@ -61,13 +64,13 @@ const postedToday = [...posted.values()].filter((p) => p.at.startsWith(today)).l
 const queue = posts.filter((p) => approved.get(p.n)?.result === '적격' && !posted.has(p.n)).map((p) => p.n);
 const plan = new Map();
 // --start 날짜: 그날부터 짠다 (자동 올리기를 아직 안 켠 날 — 2026-10-26 첫 일정표)
-const start = arg('--start') > today ? arg('--start') : today;
+const start = [arg('--start'), PLAN.startDate || '', today].sort().pop();
 let day = new Date(`${start}T00:00:00Z`), used = postedToday, qi = 0;
 for (let guard = 0; qi < queue.length && guard < 400; guard++) {
   const d = day.toISOString().slice(0, 10);
   for (const s of SLOTS) {
     if (qi >= queue.length) break;
-    if (d === today && (s <= nowHm || used >= 5)) continue;
+    if (d === today && (s <= nowHm || used >= SLOTS.length)) continue;
     plan.set(queue[qi++], `${d} ${s}`);
     if (d === today) used++;
   }
