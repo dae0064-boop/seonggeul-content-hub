@@ -57,7 +57,7 @@ async function postLinks(page, match) {
   const words = [].concat(match || []).filter(Boolean);
   const hit = same.filter((l) => words.some((w) => l.text.includes(w)));
   const seen = new Set();
-  return [...hit, ...same].filter((l) => !seen.has(l.href) && seen.add(l.href)).slice(0, 4);
+  return [...hit, ...same].filter((l) => !usedSet.has(l.href) && !seen.has(l.href) && seen.add(l.href)).slice(0, 8);
 }
 
 async function dump(page, tag) {
@@ -72,7 +72,14 @@ async function dump(page, tag) {
  * 공식 홈페이지에서 장면 사진 1장을 받아 { buf, url, page, credit } 로 돌려준다. 못 받으면 { photo: null, why }.
  * launchBrowser: overlay.mjs 의 launch (playwright chromium)
  */
-const usedYoutube = new Set(); // 한 번 실행에서 같은 영상 표지를 두 번 쓰지 않는다
+// 이미 다른 글에 쓴 사진·영상 표지는 다시 쓰지 않는다 (2026-11-03 — 닥터X 두 번째 글에 첫 글과 같은 SBS 사진 2장이 들어감).
+// PC 의 dumps/stills-used.txt 에 한 줄씩 (사진 주소 또는 yt:<영상 ID>). 한 번 실행 안에서도 겹치지 않게.
+const USED_FILE = path.resolve('dumps', 'stills-used.txt');
+// 저장소의 content/calendar/stills-used.txt(이미 발행한 글에 쓴 사진 글 주소 — Claude 가 적는다)도 함께 읽는다
+const readLines = (f) => { try { return fs.readFileSync(f, 'utf8').split(/\r?\n/).map((x) => x.trim()).filter((x) => x && !x.startsWith('#')); } catch { return []; } };
+const usedSet = new Set([...readLines(USED_FILE), ...readLines(path.resolve('content', 'calendar', 'stills-used.txt'))]);
+function markUsed(key) { if (usedSet.has(key)) return; usedSet.add(key); try { fs.mkdirSync(path.dirname(USED_FILE), { recursive: true }); fs.appendFileSync(USED_FILE, key + '\n'); } catch { /* 기록 실패는 무시 */ } }
+const usedYoutube = { has: (id) => usedSet.has('yt:' + id), add: (id) => markUsed('yt:' + id) };
 
 async function searchYoutube(q, launchBrowser) {
   const words = (a) => [].concat(a || []).map(String).filter(Boolean);
@@ -143,7 +150,8 @@ export async function fetchStill(still = {}, launchBrowser, tag = 'x') {
       await page.waitForTimeout(1000);
       const imgs = (await bigImages(page)).filter((i) => i.alt !== 'og:image' || true);
       tried.push(`${href} → 큰 사진 ${imgs.length}`);
-      if (imgs.length) { found = imgs[0]; from = href; break; }
+      const fresh = imgs.filter((i) => !usedSet.has(i.src));
+      if (fresh.length) { found = fresh[0]; from = href; break; }
     }
     // ② 링크가 없거나 글에서 못 찾으면 처음 화면의 큰 사진
     if (!found) {
@@ -151,7 +159,8 @@ export async function fetchStill(still = {}, launchBrowser, tag = 'x') {
       await page.waitForTimeout(1500);
       const imgs = await bigImages(page);
       tried.push(`${still.page} → 큰 사진 ${imgs.length}`);
-      if (imgs.length) { found = imgs[0]; from = still.page; }
+      const fresh = imgs.filter((i) => !usedSet.has(i.src));
+      if (fresh.length) { found = fresh[0]; from = still.page; }
     }
     if (!found) { await dump(page, tag); return { photo: null, why: `큰 사진을 찾지 못함 (${tried.join(' / ')}) — dumps/still-${tag}.png 확인` }; }
     // 같은 화면에서 받는다 (Referer — 바로 받으면 막는 사이트가 있다)
@@ -164,6 +173,7 @@ export async function fetchStill(still = {}, launchBrowser, tag = 'x') {
       } catch (e) { lastErr = e.message; await page.waitForTimeout(i * 3000); }
     }
     if (!buf) return { photo: null, why: `사진 내려받기 실패 ${lastErr}: ${found.src}` };
+    markUsed(found.src); if (from !== still.page) markUsed(from);
     return { photo: { buf, url: found.src, page: from, credit: stillCredit(still) } };
   } catch (e) {
     return { photo: null, why: `공식 홈페이지 열기 실패: ${e.message}` };
