@@ -47,22 +47,22 @@ const T = {
   no: `글로벌금융판매 준법감시인 심의필 ${opt.no}(${d(opt.from)}~${d(opt.to)})`,
 };
 
-// 왼쪽 칸 그림 프롬프트 (글자·사람 얼굴 없이, 부드러운 배경 그림만)
+// 배너 전체 배경 그림 프롬프트 (2026-11-03 사용자 "배경만 GPT 한테") — 글자·사람 없이. 1024x1024 low 로 만들어 가로로 잘라 깐다 (3장 약 30원)
 const STYLES = [
   {
     id: "a-soft",
     title: "부드럽고 편안한",
-    prompt: "Soft watercolor illustration, a warm cup of tea and an open notebook with a pen on a light wooden table, gentle morning sunlight, a small sprig of dried flowers, pastel peach, cream and muted sage palette, airy, lots of empty space, calm and caring mood, no people.",
+    prompt: "Soft watercolor background texture for a wide banner, warm peach, cream and muted sage green washes blending gently, delicate dried flowers and small leaves only near the far left and far right edges, large calm empty center, soft morning light, airy and caring mood, no people, no objects in the center.",
   },
   {
     id: "b-clean",
     title: "깔끔하고 단정한",
-    prompt: "Minimal elegant abstract background, deep navy blue with very subtle soft paper texture and a few thin fine champagne-gold curved lines, refined, premium, quiet, lots of empty space, no objects, no people.",
+    prompt: "Elegant premium abstract background for a wide banner, deep navy blue with a subtle silk texture and a few fine flowing champagne-gold lines sweeping across, refined and quiet, large empty areas, no people, no objects.",
   },
   {
     id: "c-calm",
     title: "무난하면서 편안한",
-    prompt: "Calm minimal flat illustration, a green leafy plant in a simple ceramic pot beside a stack of neat papers on a soft beige desk, muted sage green and warm beige palette, soft shadows, clean and tidy, lots of empty space, no people.",
+    prompt: "Calm minimal background for a wide banner, soft warm beige paper texture with gentle muted sage green leaf shadows from a plant falling diagonally across it, natural daylight, clean and tidy, large empty areas, no people, no objects.",
   },
 ];
 
@@ -72,7 +72,7 @@ function art(style) {
   if (!opt.art) return null;
   if (existsSync(file)) return file; // 이미 만든 그림은 다시 만들지 않는다 (지출 최소)
   const r = spawnSync(process.execPath, [join(ROOT, "scripts", "image-gen.mjs"), style.prompt,
-    "--out", OUT, "--name", name, "--quality", "low", "--size", "1024x1536"], { stdio: "inherit" });
+    "--out", OUT, "--name", name, "--quality", "low", "--size", "1024x1024"], { stdio: "inherit" });
   if (r.status !== 0 || !existsSync(file)) { console.log(`⚠ ${style.title} 그림 실패 — 그림 없이 만듭니다`); return null; }
   return file;
 }
@@ -212,6 +212,15 @@ body{background:#F3F1EC;color:#2F3A37}
 </div></div><div class="right">${body()}</div></div>`,
 };
 
+
+// GPT 배경을 쓸 때: 배너 전체에 깔고, 이름 칸·글 칸은 반투명으로 덮어 글씨가 잘 읽히게
+const ART_CSS = {
+  "a-soft": ".left{background:rgba(251,242,232,.45)!important}.left::after{display:none}.right{background:rgba(255,253,249,.93)!important}",
+  "b-clean": ".left{background:rgba(22,32,54,.55)!important}.right{margin:14px 14px 14px 0;background:rgba(255,255,255,.95);border-radius:4px}",
+  "c-calm": ".left{background:rgba(94,124,116,.78)!important}.right{background:rgba(255,255,255,.94)!important}",
+};
+const withArt = (id, img) => img ? `<style>body{background:url(${pathToFileURL(img)}) center/cover no-repeat}.left .bg{display:none}${ART_CSS[id]}</style>` : "";
+
 const { chromium } = await import("playwright");
 const browser = await chromium.launch();
 try {
@@ -220,7 +229,7 @@ try {
     const img = art(s);
     // file:// 글꼴은 about:blank 에서 안 읽혀서 파일로 써서 연다
     const html = join(OUT, `.banner-${s.id}.html`);
-    writeFileSync(html, `<!doctype html><meta charset="utf-8"><style>${fontCss}</style>${LAYOUT[s.id](img)}`);
+    writeFileSync(html, `<!doctype html><meta charset="utf-8"><style>${fontCss}</style>${LAYOUT[s.id](img)}${withArt(s.id, img)}`);
     await page.goto(pathToFileURL(html).href, { waitUntil: "load" });
     await page.evaluate(() => Promise.all(["400 16px P", "700 16px P", "700 16px GB", "16px GD"].map((f) => document.fonts.load(f, "강")).concat(document.fonts.ready)));
     const missing = await page.evaluate(() => ["P", "GB", "GD"].filter((f) => !document.fonts.check(`16px ${f}`, "강")));
