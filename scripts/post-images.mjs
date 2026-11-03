@@ -30,6 +30,21 @@ import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
 import { parseArgs } from "node:util";
 import { renderOverlays, renderCards, checkCard, launch as launchBrowser } from "./lib/overlay.mjs";
+
+/** 진한 남색 그라데이션 1024×1024 PNG (인물 사진을 못 찾은 대표사진 바탕) */
+async function plainBackground(dest, launch) {
+  const browser = await launch();
+  try {
+    const page = await browser.newPage();
+    const b64 = await page.evaluate(() => {
+      const c = document.createElement("canvas"); c.width = 1024; c.height = 1024;
+      const g = c.getContext("2d"); const gr = g.createLinearGradient(0, 0, 0, 1024);
+      gr.addColorStop(0, "#1f2a44"); gr.addColorStop(1, "#0d1424"); g.fillStyle = gr; g.fillRect(0, 0, 1024, 1024);
+      return c.toDataURL("image/png").split(",")[1];
+    });
+    writeFileSync(dest, Buffer.from(b64, "base64"));
+  } finally { await browser.close(); }
+}
 import { findPhoto, savePhotoPng } from "./lib/official-photo.mjs";
 import { writeFileSync, rmSync } from "node:fs";
 import { parsePost } from "./lib/parse-post.mjs";
@@ -123,6 +138,11 @@ for (const im of todo) {
       catch (e) { console.log(`⚠ [${im.n}] 사진 받기 실패: ${e.message}`); }
     } else console.log(`⚠ [${im.n}] 쓸 수 있는 공식 사진 없음 (${why}) — AI 그림으로 대신합니다`);
     if (got) { made++; if (im.overlay) overlayJobs.push({ n: im.n, src: raw, dest: target, overlay: overlayOf(im) }); continue; }
+    // 인물 대표사진을 못 찾으면 엉뚱한 사진·AI 그림 대신 깔끔한 단색 바탕 + 제목 글씨 (2026-11-03 사용자 — 최불암 별세 글에 현충일 행사 사진이 걸렸다)
+    if (im.photo?.person && im.overlay) {
+      try { await plainBackground(raw, launchBrowser); made++; overlayJobs.push({ n: im.n, src: raw, dest: target, overlay: overlayOf(im) }); console.log(`🟦 [${im.n}] 그 사람 혼자 나온 공식 사진이 없어 단색 바탕 + 제목으로 만듭니다`); continue; }
+      catch (e) { console.log(`⚠ [${im.n}] 단색 바탕 실패: ${e.message}`); }
+    }
     try { rmSync(creditFile, { force: true }); } catch { /* 없음 */ }
     if (!im.prompt) { failed.push(im.n); continue; }
   }
