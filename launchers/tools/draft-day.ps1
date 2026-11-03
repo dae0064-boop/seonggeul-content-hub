@@ -113,6 +113,8 @@ if (-not $posts) {
 Say "원고 $($posts.Count)편: $(( $posts | ForEach-Object { $_.BaseName.Substring(11) }) -join ', ')" 'Cyan'
 
 # 1) 이미지
+# 사진 찾기 키(픽사베이·오픈버스 등)를 사용자 환경 변수에서 다시 읽는다 — 방금 넣은 키도 이번 실행에 쓰게 (2026-11-03)
+foreach ($n in 'PIXABAY_API_KEY', 'FLICKR_API_KEY', 'PEXELS_API_KEY', 'OPENVERSE_CLIENT_ID', 'OPENVERSE_CLIENT_SECRET') { $v = [Environment]::GetEnvironmentVariable($n, 'User'); if ($v) { Set-Item "env:$n" $v } }
 if (-not $SkipImages) {
   foreach ($p in $posts) {
     $plan = "content\image-plans\$($p.BaseName).json"

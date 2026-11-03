@@ -43,6 +43,7 @@ if ($drive) {
   $pt = Join-Path $drive "ClaudeWorkspace\run-logs\photo-test-$today.txt"
   if (-not (Test-Path $pt)) {
     try {
+      foreach ($n in 'PIXABAY_API_KEY', 'FLICKR_API_KEY', 'PEXELS_API_KEY', 'OPENVERSE_CLIENT_ID', 'OPENVERSE_CLIENT_SECRET') { $v = [Environment]::GetEnvironmentVariable($n, 'User'); if ($v) { Set-Item "env:$n" $v } }  # 방금 넣은 키도 읽게
       $out = @(& node scripts\photo-test.mjs 2>&1 | ForEach-Object { "$_" })
       @("PC: $env:COMPUTERNAME", "시각: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')", '') + $out | Set-Content -Encoding UTF8 $pt
       Note ("사진 찾기 시험: " + (($out | Where-Object { $_ -match '오픈버스 (토큰|검색)|오픈버스: 연결' }) -join ' / '))
