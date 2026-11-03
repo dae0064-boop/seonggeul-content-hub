@@ -52,17 +52,17 @@ const STYLES = [
   {
     id: "a-soft",
     title: "부드럽고 편안한",
-    prompt: "Soft watercolor background texture for a wide banner, warm peach, cream and muted sage green washes blending gently, delicate dried flowers and small leaves only near the far left and far right edges, large calm empty center, soft morning light, airy and caring mood, no people, no objects in the center.",
+    prompt: "Design a background image for a wide banner of a Korean insurance planner. Leave space for text to be placed on top later. Do not draw any text, letters or people. The feel: professional but comfortable and relaxed, with a softer, gentle feeling (전문적이지만 편안해 보이는, 조금 더 부드러운 느낌).",
   },
   {
     id: "b-clean",
     title: "깔끔하고 단정한",
-    prompt: "Elegant premium abstract background for a wide banner, deep navy blue with a subtle silk texture and a few fine flowing champagne-gold lines sweeping across, refined and quiet, large empty areas, no people, no objects.",
+    prompt: "Design a background image for a wide banner of a Korean insurance planner. Leave space for text to be placed on top later. Do not draw any text, letters or people. The feel: professional, plain and neat, clean (전문적이고 무난하게 깔끔한 느낌).",
   },
   {
     id: "c-calm",
     title: "무난하면서 편안한",
-    prompt: "Calm minimal background for a wide banner, soft warm beige paper texture with gentle muted sage green leaf shadows from a plant falling diagonally across it, natural daylight, clean and tidy, large empty areas, no people, no objects.",
+    prompt: "Design a background image for a wide banner of a Korean insurance planner. Leave space for text to be placed on top later. Do not draw any text, letters or people. The feel: unassuming and plain, yet professional-looking and comfortable (무난하지만 전문적으로 보이면서 편안해 보이는 느낌).",
   },
 ];
 
