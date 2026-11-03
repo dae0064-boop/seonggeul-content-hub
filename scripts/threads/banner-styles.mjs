@@ -4,6 +4,7 @@
  *
  *   node scripts/threads/banner-styles.mjs                 글자·배치만 (비용 0)
  *   node scripts/threads/banner-styles.mjs --art           왼쪽 칸 그림을 GPT(low)로 3장 만들어 넣음 (약 30원, PC 에서만 — 클라우드는 OpenAI 가 막힘)
+ *   --set 1 = 1차 시안(a·b·c), 기본 2 = 2차 시안(d 지금 느낌·e 네이비·f 색다른 색감)
  *   node scripts/threads/banner-styles.mjs --out <폴더> --no 제26-10-0209호 --from 2026-10-06 --to 2027-10-05
  *
  * 글(심의받은 문구)은 지금 배너(base.jpg)와 한 글자도 다르지 않게 코드로 쓴다 — GPT 는 글자를 깨뜨려서 글자는 맡기지 않는다.
@@ -23,6 +24,7 @@ const FONTS = join(HERE, "fonts");
 const { values: opt } = parseArgs({
   options: {
     art: { type: "boolean", default: false },
+    set: { type: "string", default: "2" },
     out: { type: "string", default: join(ROOT, "dumps", "banner-styles") },
     no: { type: "string", default: "제26-00-0000호" },
     from: { type: "string", default: "2026-00-00" },
@@ -221,16 +223,51 @@ const ART_CSS = {
 };
 const withArt = (id, img) => img ? `<style>body{background:url(${pathToFileURL(img)}) center/cover no-repeat}.left .bg{display:none}${ART_CSS[id]}</style>` : "";
 
+
+// ── 2차 시안 (2026-11-03 사용자: 1차 ① 부드러운 GPT 판이 가장 좋음 → "배경 꽃 없이, 조금 더 심플(너무 심플은 아니게),
+//    왼쪽 큰 '강성대' 빼고 '친근한 설계사'로" + 심플한 신뢰감 네이비 1 · 남들이 잘 안 쓰는 색감 1 · 지금 느낌 그대로 1)
+const P2 = "Design a background image for a wide banner of a Korean insurance planner. Leave space for text to be placed on top later. Do not draw any text, letters or people. No flowers, no plants, no leaves, no objects. Keep it simple, but not too plain. The feel: ";
+const STYLES2 = [
+  { id: "d-warm", title: "지금 느낌 그대로(꽃 없이)", prompt: P2 + "the same warm, soft feeling as a cream and light peach watercolor texture — professional but comfortable and gentle (부드럽고 따뜻한 느낌)." },
+  { id: "e-navy", title: "심플한 신뢰감 네이비", prompt: P2 + "simple and trustworthy, in navy tones (심플하고 신뢰감 있는 네이비 계열)." },
+  { id: "f-unique", title: "남들이 잘 안 쓰는 색감", prompt: P2 + "simple and trustworthy, with a distinctive color palette that other insurance banners rarely use (남들이 잘 하지 않는 색감)." },
+];
+const THEME2 = {
+  "d-warm": { fb: "linear-gradient(120deg,#F6EADF,#EFE4D6 60%,#F3ECE2)", left: "rgba(251,244,236,.35)", title: "#5A3B2A", font: "GB", line: "#C8906F", tag: "#7A5C4A", card: "rgba(255,253,249,.93)", ink: "#4A3226", body: "#6B5A4E", sep: "#EBDDCF", no: "#A0552F" },
+  "e-navy": { fb: "linear-gradient(120deg,#22345A,#16243F)", left: "rgba(14,24,46,.45)", title: "#FFFFFF", font: "P", line: "#9DB4D8", tag: "#D5DEEC", card: "rgba(255,255,255,.95)", ink: "#1B2B4B", body: "#56607A", sep: "#E1E6EF", no: "#1B2B4B" },
+  "f-unique": { fb: "linear-gradient(120deg,#E4DEEA,#D8D4C3)", left: "rgba(255,255,255,.5)", title: "#2F2A36", font: "GB", line: "#8A7A6A", tag: "#4E4756", card: "rgba(255,255,255,.93)", ink: "#2F2A36", body: "#5D5862", sep: "#E6E2E8", no: "#2F2A36" },
+};
+const layout2 = (id, img) => { const t = THEME2[id]; return `
+<style>
+body{background:${img ? `url(${pathToFileURL(img)}) center/cover no-repeat` : t.fb};color:${t.ink}}
+.left{background:${t.left}}
+.title{font-family:${t.font === "GB" ? "GB" : "P"};font-weight:700;font-size:31px;line-height:1.22;color:${t.title};letter-spacing:.04em}
+.line{width:26px;height:1.5px;background:${t.line};margin:12px auto 10px;border-radius:2px}
+.tag{font-family:${t.font === "GB" ? "GD" : "P"};font-size:11.5px;color:${t.tag};line-height:1.55}
+.right{margin:14px 14px 14px 0;padding:0 22px;background:${t.card};border-radius:16px;box-shadow:0 6px 18px rgba(40,30,20,.08)}
+.firm,.agent{color:${t.ink}}
+.p{color:${t.body}}
+.sep{height:1px;background:${t.sep};margin:7px 0 6px}
+.valid{color:${t.ink}}
+.no{color:${t.no}}
+</style>
+<div class="wrap"><div class="left"><div class="in">
+<div class="title">친근한<br>설계사</div><div class="line"></div><div class="tag">보험보다 안부를<br>먼저 묻는 사람</div>
+</div></div><div class="right">${body()}</div></div>`; };
+const ROUND = opt.set === "1"
+  ? STYLES.map((s) => ({ ...s, html: (img) => LAYOUT[s.id](img) + withArt(s.id, img) }))
+  : STYLES2.map((s) => ({ ...s, html: (img) => layout2(s.id, img) }));
+
 // PC 에 깔린 크롬(없으면 엣지)을 쓴다 — playwright 전용 브라우저는 PC 에 없다 (2026-11-03 첫 실행 실패)
 const { launch } = await import(pathToFileURL(join(ROOT, "scripts", "lib", "overlay.mjs")).href);
 const browser = await launch();
 try {
   const page = await browser.newPage({ viewport: { width: 801, height: 252 }, deviceScaleFactor: 2 });
-  for (const s of STYLES) {
+  for (const s of ROUND) {
     const img = art(s);
     // file:// 글꼴은 about:blank 에서 안 읽혀서 파일로 써서 연다
     const html = join(OUT, `.banner-${s.id}.html`);
-    writeFileSync(html, `<!doctype html><meta charset="utf-8"><style>${fontCss}</style>${LAYOUT[s.id](img)}${withArt(s.id, img)}`);
+    writeFileSync(html, `<!doctype html><meta charset="utf-8"><style>${fontCss}</style>${s.html(img)}`);
     await page.goto(pathToFileURL(html).href, { waitUntil: "load" });
     await page.evaluate(() => Promise.all(["400 16px P", "700 16px P", "700 16px GB", "16px GD"].map((f) => document.fonts.load(f, "강")).concat(document.fonts.ready)));
     const missing = await page.evaluate(() => ["P", "GB", "GD"].filter((f) => !document.fonts.check(`16px ${f}`, "강")));
