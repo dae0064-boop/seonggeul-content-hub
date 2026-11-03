@@ -94,7 +94,7 @@ if ($Reserve -and $Date -eq (Get-Date -Format 'yyyy-MM-dd')) {
     git checkout -q -- 'content/posts/*.json' 'content/tistory/*.json' 'content/tistory/*.html' 2>$null
     git pull -q --ff-only 2>$null
   }
-  if ($said) { Write-Host "이슈 글 $(& $issueCount)편 — 이어서 예약합니다." -ForegroundColor Green }
+  if ($said) { Say "이슈 글 $(& $issueCount)편 — $(Get-Date -Format 'HH:mm:ss') 이어서 예약합니다." 'Green' }
 }
 
 $posts = Get-ChildItem "content\posts\$Date-*.json" | Sort-Object @{ Expression = { (Get-Content $_.FullName -Raw -Encoding UTF8 | ConvertFrom-Json).publishAt } }, Name
@@ -117,7 +117,7 @@ if (-not $SkipImages) {
   foreach ($p in $posts) {
     $plan = "content\image-plans\$($p.BaseName).json"
     if (-not (Test-Path $plan)) { Say "  이미지 계획서 없음 — 건너뜀: $($p.BaseName)" 'Yellow'; continue }
-    Say "`n[이미지] $($p.BaseName)" 'Cyan'
+    Say "`n[이미지] $($p.BaseName) ($(Get-Date -Format 'HH:mm:ss'))" 'Cyan'
     $code = Run @('scripts/post-images.mjs', $plan)
     if ($code -ne 0) { Say "  이미지 일부 실패 — 이 글은 빈 자리를 표시 줄로 남깁니다" 'Yellow' }
   }
