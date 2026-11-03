@@ -145,10 +145,28 @@ export async function searchFlickr({ query, query_en: queryEn, person, minWidth 
 // ── 오픈버스 (Openverse — 키 없이, 플리커·위키미디어 등의 CC 사진을 한 번에) ──────────────
 // 2026-11-03: 펙셀스가 새 키 발급을 멈춰 키 없는 곳을 더함. 상업 이용 가능한 by·by-sa·cc0·pdm 만, 인물은 soloOk.
 const OV_LIC = { by: 'CC BY', 'by-sa': 'CC BY-SA', cc0: 'CC0', pdm: 'Public Domain Mark' };
+// 오픈버스는 2026-11 무렵부터 익명 검색을 막았다(401) — 가입한 앱의 client_id·secret 으로 받은 토큰을 쓴다 (launchers\\openverse-key.cmd)
+let ovToken = null;
+async function openverseAuth() {
+  const id = process.env.OPENVERSE_CLIENT_ID, secret = process.env.OPENVERSE_CLIENT_SECRET;
+  if (!id || !secret) return {};
+  if (!ovToken) {
+    const r = await fetch('https://api.openverse.org/v1/auth_tokens/token/', { method: 'POST', headers: { 'content-type': 'application/x-www-form-urlencoded', 'User-Agent': UA },
+      body: new URLSearchParams({ grant_type: 'client_credentials', client_id: id, client_secret: secret }), signal: AbortSignal.timeout(30000) });
+    const j = await r.json().catch(() => ({}));
+    if (!r.ok || !j.access_token) throw new Error(`오픈버스 토큰 실패 HTTP ${r.status} ${j.error_description || j.detail || ''} (가입 메일의 인증 링크를 눌렀는지)`);
+    ovToken = j.access_token;
+  }
+  return { Authorization: `Bearer ${ovToken}` };
+}
 export async function searchOpenverse({ query, query_en: queryEn, person, minWidth = 600 }) {
+  const auth = await openverseAuth();
   const terms = [...new Set([].concat(person || []).slice(0, 2).concat([queryEn, query]).filter(Boolean))];
   for (const q of terms) {
-    const data = await getJson('https://api.openverse.org/v1/images/?' + new URLSearchParams({ q, license_type: 'commercial', page_size: '40', mature: 'false' }));
+    const r = await fetch('https://api.openverse.org/v1/images/?' + new URLSearchParams({ q, license_type: 'commercial', page_size: '40', mature: 'false' }), { headers: { 'User-Agent': UA, ...auth }, signal: AbortSignal.timeout(30000) });
+    if (r.status === 401) throw new Error(auth.Authorization ? '오픈버스 인증 실패(401)' : '오픈버스 키 없음 — launchers\\openverse-key.cmd');
+    if (!r.ok) throw new Error(`오픈버스 HTTP ${r.status}`);
+    const data = await r.json();
     const scored = [];
     for (const p of data?.results || []) {
       const lic = OV_LIC[String(p.license || '').toLowerCase()];
