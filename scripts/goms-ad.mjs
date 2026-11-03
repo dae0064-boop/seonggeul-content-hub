@@ -29,6 +29,11 @@
  *       목록에서 승인상태 "승인완료" 인 「스레드 N편」을 열어 심의결과 탭의 심의결과·준법심의필번호·유효기간을 읽고
  *       <approved-out> 에 "번호<TAB>심의필번호<TAB>시작일<TAB>끝일<TAB>심의결과<TAB>읽은 날" 로 적는다. 이미 적은 편은 다시 열지 않는다. 아무것도 바꾸지 않는다.
  *
+ *   로그인만 (휴대폰 인증 포함, 2026-11-03 사용자 — 아침 9시):
+ *   node scripts/goms-ad.mjs --login-only --otp-dir <Drive ClaudeWorkspace\goms-otp> --out <폴더>
+ *       휴대폰 인증 칸이 나오면 [인증번호받기] 를 누르고, 사용자가 Claude 에게 알려 준 번호(Drive goms-otp/code.txt)를 넣는다 (scripts/lib/goms-otp.mjs).
+ *       --otp-dir 가 없는 실행(승인 읽기·등록)은 예전처럼 인증 화면에서 멈춘다 — 사람이 없을 때 문자를 보내지 않게.
+ *
  * - 자동화용 크롬(9222)에 붙는다. 크롬은 끄지 않는다. GOMS 로그인은 사람이 그 크롬에서 직접 한다.
  * - 칸을 채운 뒤 다시 읽어 맞지 않으면 등록을 누르지 않는다. 이 확인을 경고로 낮추지 않는다.
  * - 화면 HTML 은 남기지 않는다(개인정보). 칸 이름·버튼 글자만 structure-*.txt 로 남긴다.
@@ -39,6 +44,7 @@ import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
 import { readFixes as readWordFixes, missingIn } from './threads/word-fix.mjs';
+import { otpScreen, otpLogin } from './lib/goms-otp.mjs';
 
 const argv = process.argv.slice(2);
 const arg = (name, def = '') => { const i = argv.indexOf(name); return i >= 0 ? argv[i + 1] : def; };
@@ -46,6 +52,8 @@ const submit = argv.includes('--submit');
 const revise = argv.includes('--revise');
 const approved = argv.includes('--approved');
 const approvedOut = arg('--approved-out');
+const loginOnly = argv.includes('--login-only');
+const otpDir = arg('--otp-dir');
 const scan = argv.includes('--scan');
 const fixesPath = arg('--fixes');
 const fileDir = arg('--file-dir');
@@ -464,13 +472,20 @@ async function openList(page) {
     await clickText(page, ['LOGIN', 'Login', '로그인'], { timeout: 5000 }).catch(() => {});
     for (let i = 0; i < 20 && await onLogin(); i++) { await sleep(500); if (i % 4 === 3) await closeNotices(page); }
     await closeNotices(page);
-    await gomsMessages(page).catch(() => {}); // 로그인 뒤 공지 창이 뜨면 닫는다
+    // 로그인 뒤 공지 창이 뜨면 닫는다 — 휴대폰 인증 칸이 보이면 누르지 않는다 (그 칸의 [확인] 을 빈 번호로 누르게 된다)
+    if (!(await otpScreen(page))) await gomsMessages(page).catch(() => {});
     if (await onLogin()) {
       await shot(page, 'login-failed');
-      // 2차 인증(휴대폰 본인인증)은 사람만 할 수 있다 — 대신 인증하지 않는다 (GOMS 공지: 대리 인증 금지)
-      const otp = (await Promise.all(page.frames().map((f) => f.evaluate(() => /본인\s*인증|인증\s*번호|휴대폰\s*인증|2차\s*인증/.test(document.body.innerText || '')).catch(() => false)))).some(Boolean);
-      if (otp) log('  ⚠ GOMS 가 휴대폰 본인인증(2차 인증)을 기다려요 — 자동화용 크롬 창에서 사람이 한 번 인증해 주세요');
-      return false;
+      const otp = await otpScreen(page);
+      // 휴대폰 인증: 문자는 사용자 본인 휴대폰으로 가고, 번호는 사용자가 직접 Claude 에게 알려 준 것만 넣는다 (--otp-dir 일 때만)
+      if (otp && otpDir) {
+        log('  🔐 GOMS 휴대폰 인증 화면 — 인증번호를 요청하고 사용자 번호를 기다려요');
+        if (!(await otpLogin(page, { dir: otpDir, log, shot, stillLogin: onLogin }))) return false;
+        await closeNotices(page);
+      } else {
+        if (otp) log('  ⚠ GOMS 가 휴대폰 인증(2차 인증)을 기다려요 — 아침 9시 인증(goms-login)이 되면 이어서 돼요');
+        return false;
+      }
     }
     log('  GOMS 로그인 ✓');
     await sleep(3000);
@@ -1200,7 +1215,16 @@ page.on('dialog', onDialog);
 ctx.on('page', (p) => p.on('dialog', onDialog));
 
 let code = 0;
-if (approved) {
+if (loginOnly) {
+  log('GOMS 로그인만 (휴대폰 인증이 나오면 사용자 번호로)');
+  try { code = (await openList(page)) ? 0 : 3; if (!code) log('✅ GOMS 로그인 상태 — 광고심의 목록까지 열림'); }
+  catch (e) {
+    await shot(page, 'stopped');
+    if (!(e instanceof Stop)) fs.writeFileSync(path.join(out, 'error-detail.txt'), String(e.stack || e.message), 'utf8');
+    log(`  ❌ 멈춤 — ${e instanceof Stop ? e.message : '화면이 예상과 달라 멈췄어요 (자세한 내용은 기록 파일에)'}`);
+    code = 2;
+  }
+} else if (approved) {
   log('승인 결과 읽기: 승인완료 편의 준법심의필번호·유효기간 (아무것도 바꾸지 않음)');
   try { code = await runApproved(page); if (code === 3) log('⚠ LOGIN 을 눌렀는데 들어가지지 않았어요. 열린 크롬 창에서 아이디·비밀번호가 채워져 있는지 확인해 주세요.'); }
   catch (e) {
@@ -1221,7 +1245,7 @@ if (approved) {
     code = 2;
   }
 } else log(submit ? `실제 등록: ${PREFIX} ${from}편 ~ ${to}편` : `시험: ${PREFIX} ${from}편 (등록은 누르지 않음)`);
-for (let n = from; !revise && !approved && n <= to; n++) {
+for (let n = from; !loginOnly && !revise && !approved && n <= to; n++) {
   const mark = doneDir && path.join(doneDir, `${PREFIX} ${n}편.done`);
   if (submit && mark && fs.existsSync(mark)) { log(`\n▶ ${PREFIX} ${n}편 — 이미 등록함, 건너뜀`); continue; }
   try {

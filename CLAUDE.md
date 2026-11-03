@@ -729,6 +729,18 @@ Drive 를 못 찾으면 겹침을 막을 수 없다고 알리고 그대로 진�
 스크립트를 고쳐 커밋할 수는 있어도 실제 발행은 확인할 수 없다.
 돌려보지 않고 "발행했습니다"라고 보고하지 말 것.
 
+## GOMS 인증번호 (2026-11-03 사용자 — 휴대폰 인증 시험)
+
+GOMS 는 로그인할 때 곰스에 등록된 사용자 휴대폰으로 인증번호 문자를 보낸다. PC 의 `launchers/goms-login.cmd`(`launchers/tools/goms-login.ps1` → `goms-ad.mjs --login-only --otp-dir`)가
+[인증번호받기] 를 누르고 Drive `ClaudeWorkspace/goms-otp/` 에 `waiting.txt` 를 남긴 채 **최대 6분** 기다린다.
+
+**사용자가 어느 Claude 대화에서든 "GOMS 인증번호 123456"(또는 숫자 4~8자리만)이라고 하면, 다른 일보다 먼저 바로** Drive `ClaudeWorkspace/goms-otp`
+폴더(id `1ZZySAXzyGcxyBCRgJO5pdNP5Q_vRti-R`)에 `code.txt` 를 만든다 — `create_file`, 내용은 숫자만, `contentMimeType: text/plain`,
+**`disableConversionToGoogleType: true`**(구글 문서로 바뀌면 PC 가 못 읽는다). 번호는 문자가 온 뒤 보통 3분 안에 끝나므로 확인 질문을 하지 않는다.
+그다음 1~2분 뒤 같은 폴더의 `result.txt`(성공/실패 한 줄)를 읽어 알려 준다. `waiting.txt` 에 "맞지 않았어요"가 있으면 새 번호를 다시 달라고 한다.
+번호는 저장소·커밋·STATUS·다른 기록에 적지 않는다. PC 가 쓰고 나면 지운다. 사용자가 직접 받은 번호만 쓴다 — 번호를 짐작하거나 다른 곳에서 가져오지 않는다.
+매일 저절로 돌리는 것은 시험 결과를 보고 사용자와 정한다 (아직 작업 스케줄러에 없음).
+
 ## 검수 도구
 
 원고 검수기는 **`scripts/lint-post.mjs` 하나만 게이트다.**
