@@ -222,11 +222,34 @@ function lookThumbHtml(imgDataUrl, S, o) {
 
 // ── 이슈 글 대표사진 (2026-11-02 사용자 — "사진이 눈에 확 들어와야, 글자는 눈에 띄지 않을 정도로") ──
 // 실제 사진을 꽉 채우고(얼굴이 잘리지 않게 위쪽 기준으로 자름), 아래쪽만 살짝 어둡게 해서 작은 글씨 한 줄.
+/** data:image/png;base64 의 가로÷세로 (PNG 머리에서 읽는다, 모르면 1) */
+function pngRatio(dataUrl) {
+  try {
+    const m = /^data:image\/png;base64,(.{0,64})/.exec(dataUrl); if (!m) return 1;
+    const b = Buffer.from(m[1], 'base64'); const w = b.readUInt32BE(16), h = b.readUInt32BE(20);
+    return w && h ? w / h : 1;
+  } catch { return 1; }
+}
+
 function newsThumbHtml(imgDataUrl, S, o) {
   const face = ptdFace();
   const fam = face ? `"PTD",${STYLE.font}` : STYLE.font;
   const text = String(o.title || '').replace(/\n/g, ' ').trim();
   const pos = o.focus || 'center 22%';
+  // 가로로 긴 사진(방송 장면·유튜브 표지 16:9)은 가운데만 잘라내면 사람·화면 글씨가 잘린다 (2026-11-03 계약결혼 대표사진 — 사용자 "짤려있잖아").
+  // 가로:세로가 1.25 넘으면 사진 전체를 가운데 두고, 위아래 빈 곳은 같은 사진을 흐리게 채운다. o.fit 으로 강제할 수 있다 ('cover' | 'contain').
+  const ratio = pngRatio(imgDataUrl);
+  const contain = o.fit === 'contain' || (o.fit !== 'cover' && ratio > 1.25);
+  if (contain) return `<!doctype html><meta charset="utf-8"><style>
+    ${face}
+    *{margin:0;box-sizing:border-box}
+    body{width:${S}px;height:${S}px;position:relative;overflow:hidden;background:#111;font-family:${fam}}
+    .bg{position:absolute;inset:-${S * 0.06}px;width:calc(100% + ${S * 0.12}px);height:calc(100% + ${S * 0.12}px);object-fit:cover;filter:blur(${Math.round(S * 0.03)}px) brightness(.55)}
+    .fg{position:absolute;left:0;right:0;top:${S * 0.04}px;bottom:${S * 0.2}px;width:100%;height:${S * 0.76}px;object-fit:contain}
+    .cap{position:absolute;left:${S * 0.05}px;right:${S * 0.05}px;bottom:${S * 0.06}px;color:#fff;font-weight:800;text-align:center;
+      font-size:${Math.round(S * 0.058)}px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+      letter-spacing:-.01em;text-shadow:0 ${S * 0.003}px ${S * 0.01}px rgba(0,0,0,.5)}
+  </style><body><img class="bg" src="${imgDataUrl}"><img class="fg" src="${imgDataUrl}">${text ? `<div class="cap">${esc(text)}</div>` : ''}</body>`;
   return `<!doctype html><meta charset="utf-8"><style>
     ${face}
     *{margin:0;box-sizing:border-box}

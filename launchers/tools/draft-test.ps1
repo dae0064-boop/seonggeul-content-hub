@@ -8,7 +8,13 @@ if (-not $list) { Write-Host '임시저장할 글이 없어요 (content\calendar
 . (Join-Path $PSScriptRoot 'lib-drive.ps1')
 $drive = Wait-MyDrive
 foreach ($line in $list) {
-  $d, $s = ($line.Trim() -split '\s+')[0, 1]
+  $parts = $line.Trim() -split '\s+'
+  $d, $s = $parts[0], $parts[1]
+  # 세 번째 칸 'thumb' — 대표사진 글씨·자르기만 다시 (그림은 다시 받지 않음, 비용 0). 2026-11-03 계약결혼 대표사진이 잘려서
+  if ($parts.Count -ge 3 -and $parts[2] -eq 'thumb') {
+    Write-Host "  대표사진을 다시 만듭니다 (잘림 고침)" -ForegroundColor Cyan
+    & node scripts/post-images.mjs "content\image-plans\$d-$s.json" --overlay-only --only 1
+  }
   Write-Host "`n=== $d $s — 그림 만들고 임시저장 (발행 안 함)" -ForegroundColor Cyan
   & (Join-Path $PSScriptRoot 'draft-day.ps1') -Date $d -Only $s
   # 그날 아침 실행·켜짐 확인이 '남은 글'로 세지 않게 처리 표시를 남긴다 (예약은 draft_only 로 이미 건너뛴다)
