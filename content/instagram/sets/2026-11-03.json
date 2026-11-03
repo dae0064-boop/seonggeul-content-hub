@@ -107,7 +107,7 @@
         "팔로우하시면 생활 속 보험 이야기를 꾸준히 알려 드릴게요."
       ],
       "tags": ["청약철회", "보험청약철회", "보험해지", "금융소비자보호법", "보험상식", "보험꿀팁", "보험증권", "보험공부"],
-      "bg_prompt": "Realistic photo, an insurance policy document in an envelope and a desk calendar with a pen on a wooden table, soft dim moody light, shallow depth of field, no people, no readable text",
+      "bg_prompt": "Realistic photo, an insurance policy document in an envelope and a desk calendar with a pen on a wooden table, soft dim moody light, shallow depth of field, no people, no readable text, no money, no coins, no banknotes, no currency symbols",
       "style": "magazine"
     },
     {
@@ -215,7 +215,7 @@
         "팔로우하시면 생활 속 보험 이야기를 꾸준히 알려 드릴게요."
       ],
       "tags": ["보험료미납", "보험해지", "보험부활", "실효", "효력회복", "보험료연체", "보험상식", "보험꿀팁"],
-      "bg_prompt": "Realistic photo, an empty wallet and a bank passbook with a few coins on a kitchen table, dim moody evening light, shallow depth of field, no people, no readable text",
+      "bg_prompt": "Realistic photo, a closed paper envelope and a smartphone lying face down next to a mug on a kitchen table, dim moody evening light, shallow depth of field, no people, no readable text, no money, no coins, no banknotes, no wallet, no currency symbols",
       "style": "magazine"
     },
     {
@@ -320,7 +320,7 @@
         "팔로우하시면 생활 속 보험 이야기를 꾸준히 알려 드릴게요."
       ],
       "tags": ["직업변경", "계약후알릴의무", "통지의무", "상해보험", "보험상식", "보험꿀팁", "이직", "보험공부"],
-      "bg_prompt": "Realistic photo, a construction safety helmet and work gloves placed next to an office laptop on a desk, dim moody light, shallow depth of field, no people, no readable text",
+      "bg_prompt": "Realistic photo, a construction safety helmet and work gloves placed next to an office laptop on a desk, dim moody light, shallow depth of field, no people, no readable text, no money, no coins, no banknotes, no currency symbols",
       "style": "magazine"
     }
   ]
