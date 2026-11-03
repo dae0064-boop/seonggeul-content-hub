@@ -42,6 +42,7 @@
 - 디자인 = 2차 d-warm(크림·복숭아 GPT 배경 `banners/art-d-warm.jpg`, 왼쪽 '친근한 설계사' 25px·안부 문구 12.5px). 심의 문구는 옛 배너와 같음.
 - 저장소: `banner.py` 가 이 디자인으로 그림(made.tsv 에 `[d-warm]`) → thread-1~30 적격 21장 다시 만듦 · `base.jpg`·`word-template.docx` 사진 = 자리표시 판(제26-00-0000호).
 - Drive Word: PC `banner-swap.ps1`(catchup 13·16·19·22시가 한 번, 표시 `보험글/banner-swap-d-warm.txt`) — 보험글/스레드 N편.docx 원본 배너 → 자리표시 새 배너, 보험글-심의필 다시, 보험글-사진에 새 배너. 기록 run-logs/banner-swap-*.txt. [ ] 다음 확인 때 기록 보기.
+- 사용자 "31~60편 심의 결과 읽어와" → `goms-approved.ps1` 이 스레드 PAUSE 와 상관없이 돎(읽기만, 매일 아침 auto-day 끝에서도) + `launchers/goms-approved.cmd` 되살림. [ ] Drive goms-approved.tsv 받아 `banner.py` → 새 편 배너 → PR, 그 뒤 PC banner-swap 으로 보험글-심의필 다시.
 - GOMS 에 이미 올린 파일(심의 중·승인된 것)은 GOMS 쪽이라 바꿀 수 없음. 인스타 카드뉴스 고지 칸은 따로(손대지 않음).
 
 ### 11/3 — 🎨 스레드 심의필 배너 새 디자인 시안 3장 (사용자 "지금 배너가 저렴한 느낌, GPT 로 30원에 3장")
