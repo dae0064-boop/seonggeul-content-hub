@@ -8,16 +8,39 @@
       "n": 1,
       "file": "01.png",
       "kind": "photo",
-      "title": "계약결혼 공식 영상 장면 (대표사진)",
+      "title": "계약결혼 6회 공식 영상 장면 (대표사진)",
       "photo": {
         "still": {
-          "youtube": "H9YA3otRsOg",
           "owner": "MBC에브리원",
-          "program": "계약결혼"
+          "program": "계약결혼",
+          "youtube_search": {
+            "query": "계약결혼 6회",
+            "must": [
+              "계약결혼"
+            ],
+            "episode": [
+              "EP.6",
+              "6회",
+              "6-1",
+              "6-2",
+              "261102"
+            ],
+            "channels": [
+              "every1",
+              "에브리원",
+              "KBS Joy",
+              "Joy"
+            ],
+            "prefer": [
+              "카메라",
+              "민현",
+              "정현"
+            ]
+          }
         }
       },
       "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A small handheld camera with its memory card slot open on a wooden dining table in a cozy newlywed apartment at night. Color theme: dusty rose and white tones with a green accent. Natural realistic photograph look, soft light, shallow depth of field, real Korean places, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
-      "note": "MBC에브리원·KBS Joy 공식 유튜브 영상 표지 인용 — 못 받으면 사람 없는 AI 그림",
+      "note": "6회(11/2) 공식 유튜브 클립 표지 — PC 가 유튜브에서 찾는다. 못 찾으면 사람 없는 AI 그림",
       "thumb_shot": "object",
       "thumb_theme": "rose",
       "thumb_person": "없음",
@@ -36,13 +59,37 @@
       "title": "계약결혼 정현 장면 (공식 영상 인용)",
       "photo": {
         "still": {
-          "youtube": "DsQH50I2ttI",
           "owner": "MBC에브리원",
-          "program": "계약결혼"
+          "program": "계약결혼",
+          "youtube_search": {
+            "query": "계약결혼 6회",
+            "must": [
+              "계약결혼"
+            ],
+            "episode": [
+              "EP.6",
+              "6회",
+              "6-1",
+              "6-2",
+              "261102"
+            ],
+            "channels": [
+              "every1",
+              "에브리원",
+              "KBS Joy",
+              "Joy"
+            ],
+            "prefer": [
+              "정현",
+              "민현",
+              "카메라",
+              "꽃"
+            ]
+          }
         }
       },
       "prompt": "Camera and composition: medium shot of a small handheld camera on a kitchen shelf in a bright apartment, no people. Natural realistic photograph look, soft light, shallow depth of field, real Korean places, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
-      "note": "MBC에브리원·KBS Joy 공식 유튜브 영상 표지 인용 — 못 받으면 사람 없는 AI 그림"
+      "note": "6회(11/2) 공식 유튜브 클립 표지 — PC 가 유튜브에서 찾는다. 못 찾으면 사람 없는 AI 그림"
     },
     {
       "n": 3,
@@ -93,13 +140,36 @@
       "title": "계약결혼 시애틀 부부 장면 (공식 영상 인용)",
       "photo": {
         "still": {
-          "youtube": "pqv7vqpDyjA",
           "owner": "MBC에브리원",
-          "program": "계약결혼"
+          "program": "계약결혼",
+          "youtube_search": {
+            "query": "계약결혼 6회",
+            "must": [
+              "계약결혼"
+            ],
+            "episode": [
+              "EP.6",
+              "6회",
+              "6-1",
+              "6-2",
+              "261102"
+            ],
+            "channels": [
+              "every1",
+              "에브리원",
+              "KBS Joy",
+              "Joy"
+            ],
+            "prefer": [
+              "정환",
+              "유진",
+              "시애틀"
+            ]
+          }
         }
       },
       "prompt": "Camera and composition: wide shot of a quiet Seattle-style apartment living room at dusk with rain on the window, no people. Natural realistic photograph look, soft light, shallow depth of field, real Korean places, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
-      "note": "MBC에브리원·KBS Joy 공식 유튜브 영상 표지 인용 — 못 받으면 사람 없는 AI 그림"
+      "note": "6회(11/2) 공식 유튜브 클립 표지 — PC 가 유튜브에서 찾는다. 못 찾으면 사람 없는 AI 그림"
     },
     {
       "n": 6,
