@@ -20,13 +20,19 @@ if (-not ($id -and $secret)) {
   Info '인증 메일을 받을 이메일 주소를 적고 Enter 를 누르세요.'
   $email = (Read-Host '  이메일').Trim()
   if ($email -notmatch '^[^@\s]+@[^@\s]+\.[^@\s]+$') { Bad '이메일 모양이 아니에요. 다시 실행해 주세요.'; exit 1 }
-  $body = @{ name = "seonggeul-blog-$env:COMPUTERNAME"; description = 'Find CC-licensed photos (CC BY, CC0) for my personal blog articles, with credit.'; email = $email } | ConvertTo-Json
+  $body = @{ name = "seonggeul-blog-$(Get-Date -Format 'yyMMddHHmm')"; description = 'Find CC-licensed photos (CC BY, CC0) for my personal blog articles, with credit.'; email = $email } | ConvertTo-Json
   try {
-    $r = Invoke-RestMethod -Method Post -Uri "$api/auth_tokens/register/" -ContentType 'application/json' -Body $body -TimeoutSec 30
+    Info '가입 요청 중... 인증 메일을 보내느라 1~2분 걸릴 수 있어요. 창을 닫지 마세요.'
+    $bytes = [Text.Encoding]::UTF8.GetBytes($body)
+    $r = $null
+    for ($try = 1; $try -le 2 -and -not $r; $try++) {
+      try { $r = Invoke-RestMethod -Method Post -Uri "$api/auth_tokens/register/" -ContentType 'application/json; charset=utf-8' -Body $bytes -TimeoutSec 150 }
+      catch { if ($try -ge 2 -or $_.ErrorDetails.Message) { throw }; Info "응답이 없어 한 번 더 해 볼게요 ($($_.Exception.Message))" }
+    }
   } catch {
     Bad "가입 요청이 실패했어요 ($($_.Exception.Message))"
     if ($_.ErrorDetails.Message) { Info $_.ErrorDetails.Message }
-    Info '이 화면을 캡처해서 보내 주세요.'; exit 1
+    Info '이미 인증 메일이 왔다면 그 링크를 눌러 두세요(키는 받지 못해 다시 가입해야 해요). 이 화면을 캡처해서 보내 주세요.'; exit 1
   }
   if (-not $r.client_id -or -not $r.client_secret) { Bad '가입 답에 키가 없어요. 이 화면을 캡처해서 보내 주세요.'; exit 1 }
   [Environment]::SetEnvironmentVariable('OPENVERSE_CLIENT_ID', $r.client_id, 'User')
@@ -41,8 +47,8 @@ if (-not ($id -and $secret)) {
 
 # 확인: 토큰 → 검색 한 번
 try {
-  $t = Invoke-RestMethod -Method Post -Uri "$api/auth_tokens/token/" -ContentType 'application/x-www-form-urlencoded' -Body "grant_type=client_credentials&client_id=$id&client_secret=$secret" -TimeoutSec 30
-  $s = Invoke-RestMethod -Uri "$api/images/?q=Seoul&license_type=commercial&page_size=3" -Headers @{ Authorization = "Bearer $($t.access_token)" } -TimeoutSec 30
+  $t = Invoke-RestMethod -Method Post -Uri "$api/auth_tokens/token/" -ContentType 'application/x-www-form-urlencoded' -Body "grant_type=client_credentials&client_id=$id&client_secret=$secret" -TimeoutSec 90
+  $s = Invoke-RestMethod -Uri "$api/images/?q=Seoul&license_type=commercial&page_size=3" -Headers @{ Authorization = "Bearer $($t.access_token)" } -TimeoutSec 90
   Ok "오픈버스 검색 정상 (Seoul 사진 $($s.result_count)장 찾음). 다음 실행부터 써요."
 } catch {
   Bad "아직 확인이 안 돼요 ($($_.Exception.Message))"
