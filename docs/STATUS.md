@@ -54,7 +54,7 @@
 - 조문은 law.go.kr 조문정보(lsLinkProc.do, mode=10 — 클라우드에서 WebFetch 로 읽힘)로 글자 그대로 확인. 철회 안 되는 계약 예시는 금융위원회 안내(정책브리핑 2021-03 '건강진단 지원 보험·90일 보험 등'). 약관마다 다른 것(부활 기간, 알리지 않았을 때 보험금, 해지 기간 사고)은 단정하지 않고 '약관에서 확인'으로.
 - 금지어 검사 통과 — 상법 문구 '최고(납입 최고)'는 '납입 안내'로, '보장성 상품'은 '보험'으로 바꿔 씀.
 - 반박 대비로 넣은 것: 15일/30일 '먼저 끝나는 날', 철회 예외·보험금 사유 발생 시(46조 ⑤), 해지환급금 받으면 부활 대상 아님, 부활은 보험사 승낙, 652조는 '현저한' 변화만, 알림은 보험사에 직접·기록 남게.
-- 바탕 AI 사진 아직 없음(임시 바탕으로 그림). PC catchup(`instagram-to-drive.ps1` → `make-bg.mjs`)이 Drive `인스타카드뉴스/bg/` 에 cancel-15days·lapse-revival·job-change-notice 를 만든다.
+- 바탕 AI 사진 아직 없음(임시 바탕으로 그림). 사용자 "달러·동전은 광고심의에 안 된다" → 5편 바탕을 동전·지갑 → 봉투·휴대폰으로 바꾸고 모든 bg_prompt 에 돈 금지, render-cards 가 막음. PC catchup(`instagram-to-drive.ps1` → `make-bg.mjs`)이 Drive `인스타카드뉴스/bg/` 에 cancel-15days·lapse-revival·job-change-notice 를 만든다.
   **`insta-goms.ps1` 이 바탕 없는 편의 Word 는 모으지 않게 고침** — 임시 바탕 Word 가 그대로 심의 등록되지 않게. [ ] 다음 클라우드 대화: Drive bg 3장을 `content/instagram/bg/` 로 → `render-cards.mjs`·`word-cards.py` 다시 → main. 그 뒤 아침 PC 가 4~6편 GOMS 등록.
 
 ### 11/2 — ⏸ 인스타 카드뉴스 자동 게시 멈춤 (사용자 "당분간은 내가 이야기할 때만 올려줘. 자동으로는 잠시 스톱")

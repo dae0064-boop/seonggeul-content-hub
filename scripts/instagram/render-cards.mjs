@@ -264,6 +264,12 @@ function notice(bg, approval) {
   }
 }
 
+// 바탕 사진에 돈 그림 금지 (2026-11-03 사용자 — 달러·동전은 광고심의에서 안 된다)
+for (const p of set.posts) {
+  const bp = String(p.bg_prompt || '').toLowerCase();
+  if (bp && day > '2026-11-02' && (/\b(coins?|dollars?|banknotes?|cash|wallet|money)\b/.test(bp.replace(/\bno (money|coins|banknotes|wallet|currency symbols|cash)\b/g, '')) || !bp.includes('no money')))
+    throw new Error(`${p.no}편: bg_prompt 에 돈(동전·지폐·지갑)이 들어가거나 'no money, no coins, no banknotes, no currency symbols' 가 없어요`);
+}
 const browser = await chromium.launch();
 const pg = await browser.newPage({ viewport: { width: 1080, height: 1080 } });
 let made = 0;
