@@ -26,7 +26,7 @@
 
 ### 11/3 — 🏷 생활보장 글 주제 정리 (사용자 "화재보험 주제 지금 바로 정리해줘")
 - 11/4 20:40 「주택화재보험…」 예약이 주제 `건강·의학` 으로 들어감(규칙이 생활보장을 모두 건강·의학으로). `naver-topic.mjs`: 생활보장 중 화재·누수·배상·도난·자동차·운전자·자부상·여행자 → `비즈니스·경제`, 펫보험 → `반려동물`. 11/4~ 다른 생활보장 원고는 모두 의료·건강이라 그대로. naver-daily 🏷 상자.
-- 이미 예약된 11/4 화재보험 글은 사용자가 예약 글 수정에서 주제만 바꾸도록 안내(발행 전이라 지수 영향 없음). [ ] 사용자 확인.
+- 이미 예약된 11/4 화재보험 글은 사용자 "그대로 진행" — 손대지 않음(카테고리 생활·보장, 주제 건강·의학 그대로 발행).
 
 ### 11/3 — 🧹 launchers 실행기 정리 (사용자 "안 쓰는 cmd 지워, 너무 많아 헷갈린다")
 - 32개 → 16개. 지운 것: affiliate-test·photo-test·threads-web-test·threads-read(시험 끝) · chulgeo-day·chulgeo-login(철거 멈춤) · threads-laptop·threads-post-now·threads-setup·threads-blog-now(노트북 안 씀·보험글 멈춤·자동 작업이 함) · goms-register·goms-approved(goms-register-all·아침 자동으로 대신) · index-request·cleanup-now(아침 자동) · usage-window(위젯으로 바뀜) · photo-key(키 넣음 끝 — 다시 넣을 땐 `launchers/tools/photo-key.ps1`).
