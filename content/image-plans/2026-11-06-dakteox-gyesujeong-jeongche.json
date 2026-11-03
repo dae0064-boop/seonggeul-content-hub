@@ -1,0 +1,107 @@
+{
+  "slug": "2026-11-06-dakteox-gyesujeong-jeongche",
+  "title": "닥터X 계수정, 정체 숨기는 이유는? 손현주가 던진 질문",
+  "source": "11/6(금) 09:00 네이버 원고 — 방영 중 드라마 글 시험 1편 (사용자 확인용), 홈판형",
+  "note": "6장 = 대표사진(공식 사진) 1 + 배우 단독 사진 2 + 장면 1 + 정보 카드 2. 실존 인물 얼굴은 AI 로 그리지 않는다",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "kind": "photo",
+      "title": "김지원 단독 사진 (대표사진)",
+      "photo": {
+        "person": [
+          "Kim Ji-won",
+          "김지원"
+        ],
+        "file": "File:Kim Ji-won at BVLGARI photo call event.jpg",
+        "query": "김지원",
+        "query_en": "Kim Ji-won actress"
+      },
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A surgeon's folded green scrub cap and a stethoscope on a steel tray in a dim operating room. Color theme: teal and sand tones with an orange accent. Natural realistic photograph look, soft light, shallow depth of field, real Korean places, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "thumb_shot": "object",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "닥터X 계수정, 정체는?",
+        "focus": "center 18%",
+        "theme": "teal"
+      },
+      "thumb_theme": "teal"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "kind": "photo",
+      "title": "손현주 단독 사진",
+      "photo": {
+        "person": [
+          "Son Hyun-joo",
+          "Son Hyun-Joo",
+          "손현주"
+        ],
+        "file": "File:Son Hyun-Joo.jpg",
+        "query": "손현주",
+        "query_en": "Son Hyun-joo"
+      },
+      "prompt": "Camera and composition: medium shot of an empty hospital director's office with a large wooden desk at dusk, no people. Natural realistic photograph look, soft light, shallow depth of field, real Korean places, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "kind": "card",
+      "title": "8회에 겹친 수술 세 가지를 정리한 카드",
+      "card": {
+        "type": "steps",
+        "title": "8회 12시간 수술",
+        "items": [
+          "혼자 집도 선언",
+          "6시간 안에 끝내기 승부",
+          "쓰러진 교수 대신 긴급 수술",
+          "소아암 환자 수술까지"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "kind": "photo",
+      "title": "이정은 단독 사진",
+      "photo": {
+        "person": [
+          "Lee Jung-eun",
+          "이정은"
+        ],
+        "file": "File:Lee Jung-eun.2019.jpg",
+        "query": "이정은 (배우)",
+        "query_en": "Lee Jung-eun actress"
+      },
+      "prompt": "Camera and composition: medium shot of a small old office with a desk lamp and a phone at night, no people. Natural realistic photograph look, soft light, shallow depth of field, real Korean places, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "kind": "card",
+      "title": "남은 회차 방송 날짜를 정리한 카드",
+      "card": {
+        "type": "steps",
+        "title": "남은 4회 방송",
+        "items": [
+          "9회 6일",
+          "10회 7일",
+          "11회 13일",
+          "12회 14일 마지막 회"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "불 꺼진 병원 복도 끝 수술실 문",
+      "prompt": "Camera and composition: long shot down a dim empty hospital corridor at night, an operating room door glowing softly at the end, no people. Background color: cool teal and dark navy. Natural realistic photograph look, soft light, shallow depth of field, real Korean places, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "shot": "long shot of a hospital corridor",
+      "bg": "cool teal and dark navy"
+    }
+  ]
+}
