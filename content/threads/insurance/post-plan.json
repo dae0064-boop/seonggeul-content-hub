@@ -1,8 +1,13 @@
 {
-  "note": "2026-11-03 사용자: 스레드 보험글 1편부터 다시(새 배너), 오늘부터 하루 3편 — 09:00·15:00·21:00. scripts/threads/insurance-post.mjs 가 읽는다. 멈추려면 content/threads/insurance/PAUSE-POST 파일을 만든다 (전체 content/threads/PAUSE 는 GOMS 자동 등록·밤 원고용으로 그대로).",
-  "slots": ["09:00", "15:00", "21:00"],
+  "note": "2026-11-03 사용자: 스레드 보험글 1편부터 다시(새 배너), 오늘부터 하루 3편 — 09:00·15:00·21:00. scripts/threads/insurance-post.mjs 가 읽는다. 멈추려면 content/threads/insurance/PAUSE-POST 파일을 만든다 (전체 content/threads/PAUSE 는 GOMS 자동 등록·밤 원고용으로 그대로). 2026-11-03 사용자 \"내일부터 진행\" — 첫 게시는 11/4 09:00.",
+  "slots": [
+    "09:00",
+    "15:00",
+    "21:00"
+  ],
   "windowMin": 120,
-  "since": "2026-11-03",
+  "since": "2026-11-04",
   "maxPerDay": 3,
-  "pauseFile": "content/threads/insurance/PAUSE-POST"
+  "pauseFile": "content/threads/insurance/PAUSE-POST",
+  "startDate": "2026-11-04"
 }

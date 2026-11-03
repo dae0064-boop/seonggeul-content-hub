@@ -110,6 +110,7 @@ async function main() {
     ? (fs.existsSync(pauseFile) ? `보험글 올리기 멈춤(${path.basename(pauseFile)}) — ${fs.readFileSync(pauseFile, 'utf8').trim()}` : (['1', 'true', 'yes', 'on'].includes(String(process.env.THREADS_PAUSED || '').toLowerCase()) ? 'THREADS_PAUSED 가 켜져 있습니다' : null))
     : pausedReason();
   if (paused) { log(`멈춤 스위치가 켜져 있어 올리지 않아요: ${paused}`); return 0; }
+  if (plan.startDate && today < plan.startDate) { log(`보험글 올리기는 ${plan.startDate} 부터예요 (post-plan.json — 2026-11-03 사용자 "내일부터")`); return 0; }
   if (!wordDir || !approvedTsv) { log('--word-dir 와 --approved 가 필요해요'); return 1; }
   if (!fs.existsSync(approvedTsv)) { log(`심의 승인 표가 아직 없어요 (${path.basename(approvedTsv)}) — GOMS 승인 결과 읽기를 먼저 돌려요`); return 0; }
   const token = process.env.THREADS_ACCESS_TOKEN;
