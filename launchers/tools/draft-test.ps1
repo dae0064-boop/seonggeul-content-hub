@@ -7,21 +7,26 @@ $list = Get-Content 'content\calendar\draft-test.txt' -Encoding UTF8 | Where-Obj
 if (-not $list) { Write-Host '임시저장할 글이 없어요 (content\calendar\draft-test.txt).' -ForegroundColor Yellow; exit 0 }
 . (Join-Path $PSScriptRoot 'lib-drive.ps1')
 $drive = Wait-MyDrive
+$t0 = Get-Date
+New-Item -ItemType Directory -Force -Path dumps | Out-Null
 foreach ($line in $list) {
   $parts = $line.Trim() -split '\s+'
   $d, $s = $parts[0], $parts[1]
+  Remove-Item "dumps\day-$d-redo.log" -ErrorAction SilentlyContinue
   # 세 번째 칸 'thumb' — 대표사진 글씨·자르기만 다시 (그림은 다시 받지 않음, 비용 0). 2026-11-03 계약결혼 대표사진이 잘려서
   if ($parts.Count -ge 3 -and $parts[2] -eq 'thumb') {
     Write-Host "  대표사진을 다시 만듭니다 (잘림 고침)" -ForegroundColor Cyan
-    & node scripts/post-images.mjs "content\image-plans\$d-$s.json" --overlay-only --only 1
+    & node scripts/post-images.mjs "content\image-plans\$d-$s.json" --overlay-only --only 1 2>&1 | Tee-Object -FilePath "dumps\day-$d-redo.log" -Append
   }
   # 세 번째 칸 'redo=1,2,5' — 그 번호 그림을 새로 받는다 (2026-11-03 계약결혼 사진이 지난 회차라서)
   if ($parts.Count -ge 3 -and $parts[2] -match '^redo=([\d,]+)$') {
     Write-Host "  그림 $($Matches[1]) 번을 새로 만듭니다" -ForegroundColor Cyan
-    & node scripts/post-images.mjs "content\image-plans\$d-$s.json" --force --only $Matches[1]
+    & node scripts/post-images.mjs "content\image-plans\$d-$s.json" --force --only $Matches[1] 2>&1 | Tee-Object -FilePath "dumps\day-$d-redo.log" -Append
   }
   Write-Host "`n=== $d $s — 그림 만들고 임시저장 (발행 안 함)" -ForegroundColor Cyan
   & (Join-Path $PSScriptRoot 'draft-day.ps1') -Date $d -Only $s
   # 그날 아침 실행·켜짐 확인이 '남은 글'로 세지 않게 처리 표시를 남긴다 (예약은 draft_only 로 이미 건너뛴다)
   if ($drive) { $ld = Join-Path $drive "ClaudeWorkspace\run-locks\$d"; New-Item -ItemType Directory -Force -Path $ld | Out-Null; "$env:COMPUTERNAME $(Get-Date -Format 'HH:mm') 확인용 임시저장 (draft-test)" | Out-File (Join-Path $ld "$d-$s.done") -Encoding utf8 }
 }
+# 새로 받은 그림(redo)·고른 유튜브 영상 기록까지 Drive 로 올린다 — draft-day 는 자기 시작 뒤 것만 올려 redo 그림이 빠졌다 (2026-11-03)
+foreach ($line in $list) { $d = ($line.Trim() -split '\s+')[0]; & (Join-Path $PSScriptRoot 'share-run.ps1') -Date $d -Since $t0 }
