@@ -13,6 +13,9 @@ auto-day.cmd          오늘 글 예약발행 (네이버 → 티스토리)
 now.cmd               지금 바로 — 그림 만들기 + 예약 + 홈판 확인
                       Claude 가 "now.cmd 눌러 주세요"라고 할 때.
 
+draft-test.cmd        원고를 그림까지 넣어 네이버 '임시저장'만 (발행 안 함)
+                      Claude 가 "draft-test.cmd 눌러 주세요"라고 할 때. 확인용.
+
 reserve-tomorrow.cmd  내일 글(네이버·티스토리)을 오늘 밤 미리 예약
                       다음 날 아침 PC 를 못 켤 때.
 

@@ -16,6 +16,8 @@ import { topicFor } from './lib/naver-topic.mjs';
 const SPELL_TEST = ['2026-11-04', '2026-11-17'];
 // 장면·경험·대화 (2026-11-02 사용자 승인 — CLAUDE.md "장면·경험·대화") — 2026-11-06 원고부터 네이버·티스토리
 const SCENE_FROM = '2026-11-06';
+// 2026-11-03 — 채팅 카드의 질문 말풍선(card.ask)이 11/5 계획서까지 모두 비어 "받을 수 있나요 알려 줘!" 처럼 어색하게 그려졌다. 11/6 원고부터 꼭 적는다.
+const ASK_FROM = '2026-11-06';
 const SCENE_RE = /(라면|예를 들어|이맘때|이런 분|하기 쉬워요|경우가 많아요)/;
 const QUOTE_RE = /["“][^"”]{4,40}[?？.!요]["”]/;
 const NAMED_RE = /[A-Z]씨|[가-힣]{1,3}\s?(어머니|아버지|할머니|할아버지)께서|(?:지인|친구|이웃)(?:이|가) 실제로/;
@@ -955,6 +957,7 @@ for (const file of files) {
       for (const im of cards) {
         if (im.n === 1) errors.push('1번(대표사진)은 정보 카드로 만들지 않습니다');
         for (const b of checkCard(im.card)) errors.push(`${im.n}번 카드: ${b}`);
+        if (dated >= ASK_FROM && im.card?.style !== 'classic' && !String(im.card?.ask || '').trim()) errors.push(`${im.n}번 카드: card.ask(질문 말풍선, 18자 안쪽 — 독자가 칠 법한 질문)가 없습니다. 없으면 "<제목> 알려 줘!" 로 어색하게 그려집니다`);
         const items = (im.card?.items || []).flat();
         const miss = items.filter((x) => !bodyPlain.includes(plain(x)));
         if (miss.length) errors.push(`${im.n}번 카드 글자가 본문에 없습니다: ${miss.map((x) => `"${x}"`).join(', ')} — 카드 글자는 원고 내용과 같게`);
