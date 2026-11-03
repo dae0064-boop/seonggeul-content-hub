@@ -24,6 +24,11 @@
 
 ## 지금 상태
 
+### 11/3 — 🎬 방영 중 드라마·예능 글 + 방송사 장면 사진 인용 (사용자 "연예·방송·이슈가 조회수가 잘 나온다", "드라마 사진 인용, 자동으로")
+- 첫 원고 `2026-11-06-dakteox-gyesujeong-jeongche`(11/6 09:00, 9회 방송일 출근길) 「닥터X 계수정, 정체 숨기는 이유는? 손현주가 던진 질문」 — 사용자 확인 후 main. 대표사진 = 김지원 위키미디어 단독 사진(CC BY 3.0), 본문 2·3번 = SBS 공식 포토갤러리 사진 인용, 카드 2, 6번 AI 장면. '장희숙=계수정 이모'는 기사 2곳에서 확인 못 해 '이모처럼 챙기는'으로 씀.
+- `scripts/lib/broadcast-still.mjs` — PC 가 방송사 공식 포토갤러리(STILL_HOSTS 만)에서 match 말이 든 사진 글을 열어 큰 사진을 받고 출처 "사진: SBS 「닥터X」 공식 홈페이지 (인용)". 못 받으면 사람 없는 AI 그림 + `dumps/still-*`. 검사기: 연예 이슈 글만·대표사진(1번) 금지·한 글 2장까지·공식 사이트만(저작권법 28조 인용 조건). 가짜 갤러리로 시험만 함 — **SBS 실제 화면은 PC 첫 실행에서 처음 본다.** [ ] 11/6 아침 기록의 '📷 [2]'·'📷 [3]' 줄 / '방송사 장면 사진 못 받음' 확인 → 안 되면 덤프로 고친다.
+- 앞으로 연예 칸 1~2편은 방송 다음 날 프로그램 글(계약결혼·우리들의 발라드2 화, 나는솔로 목, 닥터X 토·일 — 11/14 종영, 굿파트너2 11/20~) — `routines/naver-daily.md` 📰 ⓔ-2·ⓔ-3, `routines/issue-morning.md` 3.
+
 ### 11/3 — 🧹 launchers 실행기 정리 (사용자 "안 쓰는 cmd 지워, 너무 많아 헷갈린다")
 - 32개 → 16개. 지운 것: affiliate-test·photo-test·threads-web-test·threads-read(시험 끝) · chulgeo-day·chulgeo-login(철거 멈춤) · threads-laptop·threads-post-now·threads-setup·threads-blog-now(노트북 안 씀·보험글 멈춤·자동 작업이 함) · goms-register·goms-approved(goms-register-all·아침 자동으로 대신) · index-request·cleanup-now(아침 자동) · usage-window(위젯으로 바뀜) · photo-key(키 넣음 끝 — 다시 넣을 땐 `launchers/tools/photo-key.ps1`).
 - 부품 .ps1 은 그대로 둠. 되살릴 때는 git 기록에서. READ-ME-FIRST.txt 를 남은 실행기 기준으로 새로 씀. 앞으로 사용자에게 지운 실행기를 안내하지 않는다(photo-test 대신 다음 실행 로그 '📷' 줄로 확인).

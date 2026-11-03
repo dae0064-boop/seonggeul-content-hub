@@ -2,7 +2,7 @@
   "slug": "2026-11-06-dakteox-gyesujeong-jeongche",
   "title": "닥터X 계수정, 정체 숨기는 이유는? 손현주가 던진 질문",
   "source": "11/6(금) 09:00 네이버 원고 — 방영 중 드라마 글 시험 1편 (사용자 확인용), 홈판형",
-  "note": "6장 = 대표사진(공식 사진) 1 + 배우 단독 사진 2 + 장면 1 + 정보 카드 2. 실존 인물 얼굴은 AI 로 그리지 않는다",
+  "note": "6장 = 대표사진(김지원 위키미디어 사진) 1 + SBS 공식 장면 사진 인용 2 + 정보 카드 2 + 장면 1. 장면 사진은 PC 가 SBS 포토갤러리에서 받는다(못 받으면 사람 없는 AI 그림)",
   "images": [
     {
       "n": 1,
@@ -34,50 +34,57 @@
       "n": 2,
       "file": "02.png",
       "kind": "photo",
-      "title": "손현주 단독 사진",
+      "title": "닥터X 부승권·장희숙 장면 (SBS 공식 사진 인용)",
       "photo": {
-        "person": [
-          "Son Hyun-joo",
-          "Son Hyun-Joo",
-          "손현주"
-        ],
-        "file": "File:Son Hyun-Joo.jpg",
-        "query": "손현주",
-        "query_en": "Son Hyun-joo"
+        "still": {
+          "page": "https://programs.sbs.co.kr/drama/doctorx/visualboards/90312",
+          "match": [
+            "부승권",
+            "장희숙",
+            "손현주",
+            "이정은"
+          ],
+          "owner": "SBS",
+          "program": "닥터X"
+        }
       },
-      "prompt": "Camera and composition: medium shot of an empty hospital director's office with a large wooden desk at dusk, no people. Natural realistic photograph look, soft light, shallow depth of field, real Korean places, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+      "prompt": "Camera and composition: medium shot of an empty hospital director's office with a large wooden desk at dusk, no people. Natural realistic photograph look, soft light, shallow depth of field, real Korean places, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "note": "방송사 장면 사진 인용 — 본문 장면 설명 옆, 출처 줄"
     },
     {
       "n": 3,
       "file": "03.png",
-      "kind": "card",
-      "title": "8회에 겹친 수술 세 가지를 정리한 카드",
-      "card": {
-        "type": "steps",
-        "title": "8회 12시간 수술",
-        "items": [
-          "혼자 집도 선언",
-          "6시간 안에 끝내기 승부",
-          "쓰러진 교수 대신 긴급 수술",
-          "소아암 환자 수술까지"
-        ]
-      }
+      "kind": "photo",
+      "title": "닥터X 계수정 수술 장면 (SBS 공식 사진 인용)",
+      "photo": {
+        "still": {
+          "page": "https://programs.sbs.co.kr/drama/doctorx/visualboards/90312",
+          "match": [
+            "수술",
+            "계수정",
+            "김지원"
+          ],
+          "owner": "SBS",
+          "program": "닥터X"
+        }
+      },
+      "prompt": "Camera and composition: medium shot of an empty operating room with surgical lights on, no people. Natural realistic photograph look, soft light, shallow depth of field, real Korean places, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "note": "방송사 장면 사진 인용 — 본문 장면 설명 옆, 출처 줄"
     },
     {
       "n": 4,
       "file": "04.png",
-      "kind": "photo",
-      "title": "이정은 단독 사진",
-      "photo": {
-        "person": [
-          "Lee Jung-eun",
-          "이정은"
-        ],
-        "file": "File:Lee Jung-eun.2019.jpg",
-        "query": "이정은 (배우)",
-        "query_en": "Lee Jung-eun actress"
-      },
-      "prompt": "Camera and composition: medium shot of a small old office with a desk lamp and a phone at night, no people. Natural realistic photograph look, soft light, shallow depth of field, real Korean places, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+      "kind": "card",
+      "title": "정체 단서 세 가지를 정리한 카드",
+      "card": {
+        "type": "steps",
+        "title": "정체 단서 세 가지",
+        "items": [
+          "장 소장이 크게 흔들림",
+          "부승권이 과거를 캐물음",
+          "X 뜻은 공개 안 됨"
+        ]
+      }
     },
     {
       "n": 5,
