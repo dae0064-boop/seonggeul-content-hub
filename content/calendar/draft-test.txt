@@ -1,4 +1,4 @@
 # launchers\draft-test.cmd 가 읽는다 — 이 글들을 그림까지 넣어 네이버 '임시저장'만 한다 (발행·예약 안 함, run-locks 표시도 안 남김)
-# 한 줄에 "날짜 슬러그" (content/posts/<날짜>-<슬러그>.md). 셋째 칸 thumb = 대표사진만 다시 만든 뒤 임시저장
+# 한 줄에 "날짜 슬러그" (content/posts/<날짜>-<슬러그>.md). 셋째 칸 thumb = 대표사진 글씨만 다시, redo=1,2 = 그 번호 그림을 새로 받은 뒤 임시저장
 # 2026-11-06 dakteox-gyesujeong-jeongche — 11/3 사용자가 SBS 사진 대표로 직접 발행함
-2026-11-04 gyeyakgyeolhon-minhyeon-hwa thumb
+2026-11-04 gyeyakgyeolhon-minhyeon-hwa redo=1,2,5

@@ -72,8 +72,42 @@ async function dump(page, tag) {
  * 공식 홈페이지에서 장면 사진 1장을 받아 { buf, url, page, credit } 로 돌려준다. 못 받으면 { photo: null, why }.
  * launchBrowser: overlay.mjs 의 launch (playwright chromium)
  */
+const usedYoutube = new Set(); // 한 번 실행에서 같은 영상 표지를 두 번 쓰지 않는다
+
+async function searchYoutube(q, launchBrowser) {
+  const words = (a) => [].concat(a || []).map(String).filter(Boolean);
+  const must = words(q.must), episode = words(q.episode), prefer = words(q.prefer), channels = words(q.channels);
+  const browser = await launchBrowser();
+  try {
+    const page = await (browser.contexts?.()[0] || browser).newPage();
+    await page.goto((process.env.YT_SEARCH_BASE || 'https://www.youtube.com/results') + '?search_query=' + encodeURIComponent(q.query) + '&sp=CAI%253D', { waitUntil: 'domcontentloaded', timeout: 45000 }); // 업로드 날짜순
+    await page.waitForSelector('a#video-title, ytd-video-renderer', { timeout: 20000 }).catch(() => {});
+    await page.waitForTimeout(2500);
+    const list = await page.evaluate(() => [...document.querySelectorAll('ytd-video-renderer')].slice(0, 30).map((r) => {
+      const a = r.querySelector('a#video-title'); const ch = r.querySelector('ytd-channel-name a, #channel-name a');
+      return { title: (a?.getAttribute('title') || a?.textContent || '').trim(), href: a?.href || '', channel: (ch?.textContent || '').trim() };
+    }));
+    const norm = (t) => t.replace(/\s+/g, '');
+    const has = (t, w) => norm(t).toLowerCase().includes(norm(w).toLowerCase());
+    let c = list.map((v) => ({ ...v, id: (/[?&]v=([\w-]{11})/.exec(v.href) || [])[1] })).filter((v) => v.id && !usedYoutube.has(v.id));
+    c = c.filter((v) => must.every((w) => has(v.title, w)) && (!episode.length || episode.some((w) => has(v.title, w))));
+    if (channels.length) c = c.filter((v) => !v.channel || channels.some((w) => has(v.channel, w)));
+    if (!c.length) return { why: `검색 결과 ${list.length}개 중 맞는 제목 없음 — 앞 5개: ${list.slice(0, 5).map((v) => v.title).join(' / ')}` };
+    c.sort((x, y) => prefer.filter((w) => has(y.title, w)).length - prefer.filter((w) => has(x.title, w)).length);
+    usedYoutube.add(c[0].id);
+    return c[0];
+  } finally { await browser.close().catch(() => {}); }
+}
+
 export async function fetchStill(still = {}, launchBrowser, tag = 'x') {
   // 방송사 공식 유튜브 영상의 표지 그림 (2026-11-03 — 계약결혼은 공식 홈페이지 포토가 없어 MBC에브리원 공식 채널 영상으로). still.youtube = 영상 ID
+  // 그 회차 공식 클립을 PC 가 유튜브에서 찾는다 (2026-11-03 사용자 — "사진들이 어제 회차가 아니라 지난주 회차"). 검색 사이트에 새 클립이 늦게 잡혀
+  // 원고를 쓸 때 영상 ID 를 모를 수 있다. still.youtube_search = { query, must: [제목에 꼭 있을 말], episode: [회차 표시 하나라도], prefer: [있으면 먼저], channels: [채널 이름 하나라도] }
+  if (still.youtube_search && !still.youtube) {
+    const found = await searchYoutube(still.youtube_search, launchBrowser).catch((e) => ({ why: e.message }));
+    if (found.id) { still = { ...still, youtube: found.id }; console.log(`  유튜브에서 찾음: ${found.title} (${found.channel || '채널 모름'}) — ${found.id}`); }
+    else return { photo: null, why: `유튜브에서 그 회차 공식 영상을 못 찾음 (${found.why})` };
+  }
   if (still.youtube) {
     const id = String(still.youtube).trim();
     if (!/^[\w-]{11}$/.test(id)) return { photo: null, why: `still.youtube 영상 ID 가 이상함: ${id}` };
