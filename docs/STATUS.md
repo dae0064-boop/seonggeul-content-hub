@@ -29,6 +29,17 @@
 - `scripts/lib/broadcast-still.mjs` — PC 가 방송사 공식 포토갤러리(STILL_HOSTS 만)에서 match 말이 든 사진 글을 열어 큰 사진을 받고 출처 "사진: SBS 「닥터X」 공식 홈페이지 (인용)". 못 받으면 사람 없는 AI 그림 + `dumps/still-*`. 검사기: 연예 이슈 글만·대표사진(1번) 금지·한 글 2장까지·공식 사이트만(저작권법 28조 인용 조건). 가짜 갤러리로 시험만 함 — **SBS 실제 화면은 PC 첫 실행에서 처음 본다.** [ ] 11/6 아침 기록의 '📷 [2]'·'📷 [3]' 줄 / '방송사 장면 사진 못 받음' 확인 → 안 되면 덤프로 고친다.
 - 앞으로 연예 칸 1~2편은 방송 다음 날 프로그램 글(계약결혼·우리들의 발라드2 화, 나는솔로 목, 닥터X 토·일 — 11/14 종영, 굿파트너2 11/20~) — `routines/naver-daily.md` 📰 ⓔ-2·ⓔ-3, `routines/issue-morning.md` 3.
 
+### 11/3 — 🎨 스레드 심의필 배너 새 디자인 시안 3장 (사용자 "지금 배너가 저렴한 느낌, GPT 로 30원에 3장")
+- `scripts/threads/banner-styles.mjs` — ① 부드럽고 편안한(크림·복숭아, 고운바탕 이름) ② 깔끔하고 단정한(흰 바탕·남색 칸·금색 선) ③ 무난하면서 편안한(회백색·세이지 그린). 심의 문구는 base.jpg 와 한 글자도 다르지 않게 코드로 쓴다(GPT 는 한글을 깨뜨려 글자는 맡기지 않음), 칸 넘침·글꼴 못 읽음이면 실패.
+- 사용자 "클로드 너가 만들어봐" → 왼쪽 칸 장식(찻잔·잎 / 금색 원호 / 잎 줄기)을 코드로 그려 넣음(비용 0). 클라우드는 OpenAI 가 막혀(connect_rejected) GPT 는 못 씀. GPT 그림을 왼쪽 칸에 넣은 판은 PC `launchers/banner-styles.cmd` → low 3장(약 30원) → Drive `ClaudeWorkspace/banner-styles/`.
+- 사용자 "배경은 GPT 한테" → `--art` 는 GPT 배경(1024 low 3장 약 30원)을 배너 전체에 깔고 이름 칸·글 칸을 반투명으로 덮게 바꿈. PC 의 catchup-reserve(13·16·19·22시)가 Drive `banner-styles/done.txt` 가 없으면 하루 한 번 만들어 `ClaudeWorkspace/banner-styles/` 에 올림(기록 try-<날짜>.txt). 이미 만든 배경은 다시 만들지 않음.
+- [ ] 다음 아침 확인·대화에서 Drive banner-styles 3장을 사용자에게 보여 준다.
+- [ ] 사용자가 고르면: banner.py 가 그 디자인으로 편마다 심의필 줄을 넣게 바꾼다. ⚠ 디자인이 바뀐 배너가 심의받은 광고물과 같은 것으로 인정되는지 준법감시 쪽 확인이 먼저(새 배너로 GOMS 다시 받아야 할 수 있음).
+
+### 11/3 — 🏷 생활보장 글 주제 정리 (사용자 "화재보험 주제 지금 바로 정리해줘")
+- 11/4 20:40 「주택화재보험…」 예약이 주제 `건강·의학` 으로 들어감(규칙이 생활보장을 모두 건강·의학으로). `naver-topic.mjs`: 생활보장 중 화재·누수·배상·도난·자동차·운전자·자부상·여행자 → `비즈니스·경제`, 펫보험 → `반려동물`. 11/4~ 다른 생활보장 원고는 모두 의료·건강이라 그대로. naver-daily 🏷 상자.
+- 이미 예약된 11/4 화재보험 글은 사용자 "그대로 진행" — 손대지 않음(카테고리 생활·보장, 주제 건강·의학 그대로 발행).
+
 ### 11/3 — 🧹 launchers 실행기 정리 (사용자 "안 쓰는 cmd 지워, 너무 많아 헷갈린다")
 - 32개 → 16개. 지운 것: affiliate-test·photo-test·threads-web-test·threads-read(시험 끝) · chulgeo-day·chulgeo-login(철거 멈춤) · threads-laptop·threads-post-now·threads-setup·threads-blog-now(노트북 안 씀·보험글 멈춤·자동 작업이 함) · goms-register·goms-approved(goms-register-all·아침 자동으로 대신) · index-request·cleanup-now(아침 자동) · usage-window(위젯으로 바뀜) · photo-key(키 넣음 끝 — 다시 넣을 땐 `launchers/tools/photo-key.ps1`).
 - 부품 .ps1 은 그대로 둠. 되살릴 때는 git 기록에서. READ-ME-FIRST.txt 를 남은 실행기 기준으로 새로 씀. 앞으로 사용자에게 지운 실행기를 안내하지 않는다(photo-test 대신 다음 실행 로그 '📷' 줄로 확인).
