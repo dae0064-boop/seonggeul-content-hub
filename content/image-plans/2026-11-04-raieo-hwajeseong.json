@@ -1,0 +1,180 @@
+{
+  "slug": "2026-11-04-raieo-hwajeseong",
+  "title": "라이어 드라마, 시청률 1%대인데 화제성 1위인 이유는?",
+  "source": "11/4(수) 09:20 네이버 원고 — 출근길 이슈 글(연예·드라마), 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실존 인물 얼굴은 그리지 않는다 · 1번은 공식 사진 먼저(kind: photo)",
+  "images": [
+    {
+      "kind": "photo",
+      "title": "라이어 공식 영상 장면 (대표사진)",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "라이어 2회",
+            "must": [
+              "라이어"
+            ],
+            "episode": [
+              "EP.2",
+              "EP2",
+              "2화",
+              "2회"
+            ],
+            "channels": [
+              "MBC",
+              "MBC 드라마",
+              "MBCdrama"
+            ],
+            "prefer": [
+              "거짓말 탐지기",
+              "엔딩",
+              "서현진"
+            ]
+          },
+          "owner": "MBC",
+          "program": "라이어"
+        }
+      },
+      "note": "2회(10/31) MBC 공식 유튜브 클립 표지 — PC 가 찾는다. 못 찾으면 사람 없는 그림",
+      "thumb_shot": "object",
+      "thumb_theme": "charcoal",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "라이어, 거짓말한 건 누구",
+        "focus": "center 30%",
+        "theme": "charcoal"
+      },
+      "n": 1,
+      "file": "01.png",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A polygraph machine with paper chart on a table in a dim interrogation room, no people. Color theme: neutral gray and white tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "kind": "photo",
+      "title": "라이어 2회 장면 (공식 영상 인용)",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "라이어 2회",
+            "must": [
+              "라이어"
+            ],
+            "episode": [
+              "EP.2",
+              "EP2",
+              "2화",
+              "2회"
+            ],
+            "channels": [
+              "MBC",
+              "MBC 드라마",
+              "MBCdrama"
+            ],
+            "prefer": [
+              "유연석",
+              "체포",
+              "진실"
+            ]
+          },
+          "owner": "MBC",
+          "program": "라이어"
+        }
+      },
+      "n": 2,
+      "file": "02.png",
+      "prompt": "Camera and composition: medium shot of an empty police station corridor. An empty police station corridor at night under cold fluorescent lights, no people. Background color: cold blue gray. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "kind": "card",
+      "title": "라이어 첫 주 흐름을 정리한 카드",
+      "card": {
+        "type": "steps",
+        "title": "라이어 첫 주 흐름",
+        "ask": "라이어 어떻게 흘러갔어?",
+        "items": [
+          "10월 30일 첫 방송",
+          "진실 공방이 시작",
+          "거짓말 탐지기 조사 결과",
+          "뜻밖에도 강지선"
+        ]
+      },
+      "n": 3,
+      "file": "03.png"
+    },
+    {
+      "kind": "photo",
+      "title": "라이어 장면 (공식 영상 인용)",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "라이어 2회",
+            "must": [
+              "라이어"
+            ],
+            "episode": [
+              "EP.2",
+              "EP2",
+              "2화",
+              "2회"
+            ],
+            "channels": [
+              "MBC",
+              "MBC 드라마",
+              "MBCdrama"
+            ],
+            "prefer": [
+              "서현진",
+              "강지선",
+              "눈물"
+            ]
+          },
+          "owner": "MBC",
+          "program": "라이어"
+        }
+      },
+      "n": 4,
+      "file": "04.png",
+      "prompt": "Camera and composition: medium shot of an empty interview room. An empty interview room with two chairs facing each other across a small table, dim light, no people. Background color: muted charcoal and amber. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "kind": "card",
+      "title": "라이어 시청률과 일정을 정리한 카드",
+      "card": {
+        "type": "compare",
+        "title": "라이어 한눈에",
+        "ask": "시청률이랑 다음 회는?",
+        "heads": [
+          "궁금한 것",
+          "내용"
+        ],
+        "items": [
+          [
+            "시청률",
+            "1.9%"
+          ],
+          [
+            "분당 최고",
+            "4.8%"
+          ],
+          [
+            "화제성",
+            "뉴스 기사 수 1위"
+          ],
+          [
+            "3회",
+            "11월 6일(금)"
+          ]
+        ]
+      },
+      "n": 5,
+      "file": "05.png"
+    },
+    {
+      "title": "비 오는 밤 창문에 맺힌 물방울",
+      "n": 6,
+      "file": "06.png",
+      "prompt": "Camera and composition: close-up of a window at night. Raindrops on a dark window glass with blurred city lights behind, no people. Background color: deep navy and soft city glow. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}
