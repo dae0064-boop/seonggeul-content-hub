@@ -95,10 +95,11 @@ function slimOf(dated, tistory, slot) {
 const SLIM_QA = { 기본: [2], 순서형: [0, 2], 체크리스트형: [0, 2], 비교형: [0, 2], 질문형: [4] };
 const SPLIT_TWENTY = { 생활정보: 10, 생활보장: 10 };
 const HF_TWENTY = { 생활정보: 8, 생활보장: 6 };
-// 2026-11-03 사용자 — "생활보장 홈판 칸도 제철·나들이로 2편 바꿔줘": 11/6 원고부터 15:20·19:20 생활보장 홈판 → 생활정보 제철·나들이 홈판 (routines/naver-daily.md 🍂)
+// 2026-11-03 사용자 — 제철·나들이 홈판형 2편(10:40·20:00). 한때 생활보장 홈판 2칸을 돌렸다가 같은 날 "생활보장을 늘리고 생활정보를 줄이자"로
+// 생활보장 10 그대로, 20:00 생활정보 검색형만 홈판형으로 (routines/naver-daily.md 🍂)
 const SEASON_FROM = '2026-11-06';
-const SPLIT_SEASON = { 생활정보: 12, 생활보장: 8 };
-const HF_SEASON = { 생활정보: 10, 생활보장: 4 };
+const SPLIT_SEASON = { 생활정보: 10, 생활보장: 10 };
+const HF_SEASON = { 생활정보: 9, 생활보장: 6 };
 // 같은 날 같은 값 몇 편까지 (20편 날)
 const TW = { format: 5, tone: 5, mood: 3, shot: 4, shotHf: 8, theme: 2, person: 1, papers: 4, olds: 8, brandconnect: 5 };
 const TONES = {
@@ -712,7 +713,7 @@ for (const file of files) {
       const cats = sibs.map((p) => p.category || '');
       const season = twenty && dated >= SEASON_FROM;
       const split = season ? SPLIT_SEASON : twenty ? SPLIT_TWENTY : isTen(dated) ? SPLIT_TEN : split3 ? SPLIT3 : dated >= SPLIT2_FROM ? SPLIT2 : SHIFT_SPLIT;
-      const why = season ? '2026-11-03 사용자 결정 — 생활보장 홈판 2칸을 제철·나들이로' : twenty ? '2026-11-01 사용자 결정 — 하루 20편' : split3 ? '2026-10-26 사용자 결정' : dated >= SPLIT2_FROM ? '2026-10-24 사용자 결정' : '2026-10-19 사용자 결정';
+      const why = season ? '2026-11-03 사용자 결정 — 생활보장 10 그대로, 제철·나들이 홈판형 2편' : twenty ? '2026-11-01 사용자 결정 — 하루 20편' : split3 ? '2026-10-26 사용자 결정' : dated >= SPLIT2_FROM ? '2026-10-24 사용자 결정' : '2026-10-19 사용자 결정';
       const done = sib.length >= full;
       if (split3 && sib.length > full) errors.push(`같은 날(${dated}) 네이버 원고 ${sib.length}편 — 하루 ${full}편까지 (${why})`);
       for (const [c, n] of Object.entries(split)) {
