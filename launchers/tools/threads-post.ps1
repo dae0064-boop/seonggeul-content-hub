@@ -3,7 +3,7 @@
 #   심의 '적격' 받은 편을 1편부터 차례로, 그 편의 심의필 배너를 붙여 올린다 (scripts\threads\insurance-post.mjs 가 모두 확인한다).
 #   -Test 면 올리지 않고 다음에 올릴 글만 보여 준다 (launchers\threads-post-test.cmd).
 # 기록은 Drive ClaudeWorkspace\run-logs\threads\<날짜>.log 에 이어 붙인다.
-param([switch]$Test)
+param([switch]$Test, [switch]$Now)
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo
@@ -19,6 +19,7 @@ if (-not $env:THREADS_ACCESS_TOKEN) { $env:THREADS_ACCESS_TOKEN = [Environment]:
 $nodeArgs = @('scripts\threads\insurance-post.mjs', '--word-dir', (Join-Path $drive 'ClaudeWorkspace\보험글'), '--approved', (Join-Path $drive 'ClaudeWorkspace\goms-approved.tsv'), '--fixes', (Join-Path $drive 'ClaudeWorkspace\goms-fixes.tsv'), '--posted', (Join-Path $drive 'ClaudeWorkspace\run-logs\threads\posted.tsv'))
 New-Item -ItemType Directory -Force -Path (Join-Path $drive 'ClaudeWorkspace\run-logs\threads') | Out-Null
 if (-not $Test) { $nodeArgs += '--post' }
+if ($Now) { $nodeArgs += '--now' }  # 지금 한 편 (threads-post-now.cmd) — 시각 칸만 안 본다
 $log = @(& node @nodeArgs 2>&1 | ForEach-Object { "$_" })
 $code = $LASTEXITCODE
 $log | ForEach-Object { Write-Host $_ }
