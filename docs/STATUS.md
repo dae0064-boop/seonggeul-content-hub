@@ -38,6 +38,11 @@
 - 사용자 "계약결혼 원고도 써서 임시저장" → `2026-11-04-gyeyakgyeolhon-minhyeon-hwa`(6회 정현 개인 카메라·민현, `draft_only:` — 아침 예약에서 빠지고 draft-test 만 임시저장, draft-test 가 run-locks .done 남김, auto-shutdown 셈에서 뺌). 공식 홈페이지 포토를 못 찾아 **MBC에브리원·KBS Joy 공식 유튜브 영상 표지**(`photo.still.youtube`, i.ytimg.com — 클라우드는 막힘, PC 에서 첫 확인) 3장(대표 포함). [ ] draft-test 기록의 📷 [1]·[2]·[5].
 - 앞으로 연예 칸 1~2편은 방송 다음 날 프로그램 글(계약결혼·우리들의 발라드2 화, 나는솔로 목, 닥터X 토·일 — 11/14 종영, 굿파트너2 11/20~) — `routines/naver-daily.md` 📰 ⓔ-2·ⓔ-3, `routines/issue-morning.md` 3.
 
+### 11/3 — 🧵 스레드 보험글 다시 게시 — 1편부터, 하루 3편 09·15·21시 (사용자 "스레드 1편부터 게시해줘, 오늘부터 3개씩")
+- `insurance-post.mjs` 가 `content/threads/insurance/post-plan.json` 을 읽음: 시각마다 2시간 안 한 편, `since 2026-11-03`(그 전 게시·posted.tsv 줄은 안 셈 → 1편부터 새 배너로 다시), 하루 3편, 멈춤 `insurance/PAUSE-POST`(전체 PAUSE 는 무시 — GOMS 자동 등록·Word 저장·밤 원고는 계속 멈춤).
+- 작업 스케줄러 `SeonggeulThreadsPost` 시각 09·10·13·15·16·19·21·22 — catchup 이 `threads-setup -IfMissing` 으로 다시 등록(오늘 16시 실행 뒤). 오늘: 16:00 실행이 15시 칸으로 1편, 21:00 2편.
+- ⚠ 10/26~11/1 에 올린 옛 1~19편 글은 계정에 그대로 — 사용자가 지우지 않으면 같은 글이 두 번 보임. [ ] 11/3 16시·21시 기록(run-logs/threads/2026-11-03.log) 확인.
+
 ### 11/3 — 🎨 새 배너로 확정·전부 바꿈 (사용자 "지금 워드에 들어간 모든 배너 사진 이걸로 변경, 앞으로 심의 올릴 때·받았을 때도 이 배너")
 - 디자인 = 2차 d-warm(크림·복숭아 GPT 배경 `banners/art-d-warm.jpg`, 왼쪽 '친근한 설계사' 25px·안부 문구 12.5px). 심의 문구는 옛 배너와 같음.
 - 저장소: `banner.py` 가 이 디자인으로 그림(made.tsv 에 `[d-warm]`) → thread-1~30 적격 21장 다시 만듦 · `base.jpg`·`word-template.docx` 사진 = 자리표시 판(제26-00-0000호).

@@ -34,8 +34,21 @@ const wordDir = arg('--word-dir');
 const approvedTsv = arg('--approved');
 const fixesTsv = arg('--fixes'); // 반려(수정요구)된 편 번호 — 순서 확인에 쓴다
 const postedTsv = arg('--posted'); // 게시 기록 (Drive run-logs/threads/posted.tsv) — 일정표 페이지가 읽는다
-const maxPerDay = Number(arg('--max-per-day', process.env.THREADS_INSURANCE_PER_DAY || '5'));
+
 const gapMin = Number(arg('--gap-min', '40'));
+// 2026-11-03 사용자: "스레드 1편부터 게시, 오늘부터 3개씩 아침 9시·오후 3시·저녁 9시" (새 배너로 다시)
+//   --slots 09:00,15:00,21:00  그 시각부터 --window-min(기본 120)분 안에만, 한 시각에 한 편
+//   --since 2026-11-03         그날 전에 올린 글·게시 기록은 '올린 편'으로 세지 않는다 (1편부터 다시)
+//   --pause-file <파일>        보험글 올리기만의 멈춤 스위치 — 주면 content/threads/PAUSE(전체 멈춤)는 보지 않는다
+// 값은 content/threads/insurance/post-plan.json 이 정한다 (작업 스케줄러가 부르는 ps1 을 고치지 않고 바꿀 수 있게). 명령줄 값이 있으면 그것이 먼저.
+const ROOT_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
+const plan = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'content/threads/insurance/post-plan.json'), 'utf8')); } catch { return {}; } })();
+const slots = arg('--slots') ? arg('--slots').split(',').map((x) => x.trim()).filter(Boolean) : (Array.isArray(plan.slots) && plan.slots.length ? plan.slots : null);
+const windowMin = Number(arg('--window-min', String(plan.windowMin || 120)));
+const since = arg('--since', plan.since || '');
+const sinceMs = since ? Date.parse(`${since}T00:00:00+09:00`) : 0;
+const maxPerDay = Number(arg('--max-per-day', process.env.THREADS_INSURANCE_PER_DAY || String(plan.maxPerDay || 5)));
+const pauseFile = arg('--pause-file') || (plan.pauseFile ? path.join(ROOT_DIR, plan.pauseFile) : '');
 const RAW = process.env.THREADS_BANNER_BASE
   || 'https://raw.githubusercontent.com/dae0064-boop/seonggeul-content-hub/main/content/threads/insurance/banners';
 
@@ -49,6 +62,7 @@ function postedNumbers() {
   if (!postedTsv || !fs.existsSync(postedTsv)) return set;
   for (const line of fs.readFileSync(postedTsv, 'utf8').replace(/^\uFEFF/, '').split(/\r?\n/)) {
     const c = line.split('\t');
+    if (since && (c[0] || '').trim().slice(0, 10) < since) continue;
     if (/^\d+$/.test((c[1] || '').trim())) set.add(Number(c[1]));
   }
   return set;
@@ -59,6 +73,7 @@ function postedBefore(day) {
   if (!postedTsv || !fs.existsSync(postedTsv)) return set;
   for (const line of fs.readFileSync(postedTsv, 'utf8').replace(/^\uFEFF/, '').split(/\r?\n/)) {
     const c = line.split('\t');
+    if (since && (c[0] || '').trim().slice(0, 10) < since) continue;
     if (/^\d+$/.test((c[1] || '').trim()) && (c[0] || '').trim().slice(0, 10) < day) set.add(Number(c[1]));
   }
   return set;
@@ -90,7 +105,9 @@ async function opens(url) {
 async function main() {
   loadEnv();
   step(`스레드 보험글 ${doPost ? '올리기' : '시험 (올리지 않음)'} — ${kstStamp()}`);
-  const paused = pausedReason();
+  const paused = pauseFile
+    ? (fs.existsSync(pauseFile) ? `보험글 올리기 멈춤(${path.basename(pauseFile)}) — ${fs.readFileSync(pauseFile, 'utf8').trim()}` : (['1', 'true', 'yes', 'on'].includes(String(process.env.THREADS_PAUSED || '').toLowerCase()) ? 'THREADS_PAUSED 가 켜져 있습니다' : null))
+    : pausedReason();
   if (paused) { log(`멈춤 스위치가 켜져 있어 올리지 않아요: ${paused}`); return 0; }
   if (!wordDir || !approvedTsv) { log('--word-dir 와 --approved 가 필요해요'); return 1; }
   if (!fs.existsSync(approvedTsv)) { log(`심의 승인 표가 아직 없어요 (${path.basename(approvedTsv)}) — GOMS 승인 결과 읽기를 먼저 돌려요`); return 0; }
@@ -117,7 +134,8 @@ async function main() {
   const me = await api.me();
   const posts = await api.myPosts({ limit: 100 });
   const byHead = new Map(ready.map((r) => [head(r.text), r]));
-  const ours = posts.filter((p) => byHead.has(head(p.text || '')));
+  const ours = posts.filter((p) => byHead.has(head(p.text || '')) && Date.parse(p.timestamp) >= sinceMs);
+  if (since) log(`${since} 전에 올린 글은 세지 않아요 (1편부터 다시 — 2026-11-03 사용자)`);
   const dayStart = kstDayStartUnix();
   // 오늘 '새로' 올린 편만 센다 — 같은 편을 다시 올린 글(10/27 1편 중복)은 하루 5편에 넣지 않는다 (2026-10-27 사용자: "하루 5편, 중복 없이")
   const earlier = new Set(ours.filter((p) => Date.parse(p.timestamp) / 1000 < dayStart).map((p) => byHead.get(head(p.text || '')).n));
@@ -162,6 +180,12 @@ async function main() {
   log(`아직 안 올린 편: ${todo.map((r) => r.n).join(', ') || '없음'}`);
   if (!todo.length) { log('올릴 편이 없어요 — 다음 승인을 기다려요'); return 0; }
   if (todayOurs.length >= maxPerDay) { log(`오늘 ${maxPerDay}편을 다 올렸어요 — 내일 이어서`); return 0; }
+  if (slots) {
+    const nowMs = Date.now();
+    const w = slots.map((t) => Date.parse(`${today}T${t}:00+09:00`)).find((st) => nowMs >= st && nowMs < st + windowMin * 60000);
+    if (!w) { log(`올리는 시각(${slots.join('·')}, 각 ${windowMin}분 안)이 아니라 쉬어요`); return 0; }
+    if (ours.some((p) => Date.parse(p.timestamp) >= w)) { log(`이번 시각(${kstStamp(new Date(w)).slice(11, 16)})에는 이미 한 편 올렸어요`); return 0; }
+  }
   if (last && Date.now() - last < gapMin * 60000) {
     log(`마지막 보험글이 ${Math.round((Date.now() - last) / 60000)}분 전이라 이번엔 쉬어요 (다른 PC 가 막 올렸을 수 있어요)`);
     return 0;
