@@ -47,6 +47,8 @@ async function googleTrends() {
 async function rankingLinks(page, url, linkRe) {
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 });
   await page.waitForTimeout(2500);
+  // 기사 링크가 그려질 때까지 최대 10초 더 기다린다 (2026-11-03 — 고정 2.5초로는 연예 랭킹이 이틀째 0건)
+  await page.waitForSelector('a[href*="article"]', { timeout: 10000 }).catch(() => {});
   // 연예 랭킹은 목록을 늦게 그린다 — 한 번 내려 줘서 다 그리게 (2026-11-03 연예 랭킹 0건)
   try { await page.mouse.wheel(0, 3000); await page.waitForTimeout(1500); } catch {}
   const links = await page.evaluate((src) => {
@@ -63,6 +65,13 @@ async function rankingLinks(page, url, linkRe) {
     }
     return outL;
   }, linkRe.source);
+  if (!links.length) {
+    // 0건이면 고칠 근거를 남긴다 — 화면 주소와 링크 주소 모양 앞 15개 (다음 아침 확인이 이것으로 linkRe 를 고친다)
+    const sample = await page.evaluate(() => [...document.querySelectorAll('a[href]')].map((a) => a.href)
+      .filter((h) => /article|ranking|entertain/.test(h)).slice(0, 15)).catch(() => []);
+    const total = await page.evaluate(() => document.querySelectorAll('a[href]').length).catch(() => -1);
+    notes.push(`진단 ${url} → ${page.url()} · 링크 ${total}개 · 기사 모양 후보: ${sample.join(' ') || '없음'}`);
+  }
   return links.slice(0, 40).map((x, i) => ({ rank: i + 1, ...x }));
 }
 
