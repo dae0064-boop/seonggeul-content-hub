@@ -1,5 +1,6 @@
 ﻿# 스레드 블로그 유입 글 작업(SeonggeulThreadsBlog)을 작업 스케줄러에 등록한다.
-#   2026-11-02 사용자 고정: 일상 글 07:00·19:00, 블로그 유입 글 07:30·08:30·20:00·21:00·22:30 (+ 놓친 글 다시 09:15·23:15). 무엇을 올릴지는 묶음의 '시각:'.
+#   2026-11-03 사용자 "블로그 유입 3 · 일상 4 · 보험 심의 3, 하루 10편": 일상 글 07:00·12:30·18:30·23:00, 블로그 유입 글 08:00·20:00·22:00 (+ 놓친 글 다시 09:15·13:30·23:30). 보험글(09·15·21시)은 SeonggeulThreadsPost 가 따로. 무엇을 올릴지는 묶음의 '시각:'.
+#   (그 전 11/2: 일상 07:00·19:00, 블로그 07:30·08:30·20:00·21:00·22:30)
 #   catchup-reserve.ps1·ensure-retry.ps1 이 -IfMissing 으로 부른다 (사람이 따로 할 일 없음). -Remove 로 끈다.
 param([switch]$Remove, [switch]$IfMissing)
 $name = 'SeonggeulThreadsBlog'
@@ -11,8 +12,8 @@ $action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-NoProfil
 $offset = 0
 $day = Get-ScheduledTask -TaskName 'SeonggeulDailyReserve' -ErrorAction SilentlyContinue
 if ($day -and $day.Triggers.Count) { try { if (([datetime]$day.Triggers[0].StartBoundary).Minute -ne 0) { $offset = 3 } } catch {} }
-# 07:00·19:00 = 일상 글 (2026-11-02 사용자)
-$times = @('07:00', '07:30', '08:30', '09:15', '19:00', '20:00', '21:00', '22:30', '23:15') | ForEach-Object { ([datetime]::ParseExact($_, 'HH:mm', $null)).AddMinutes($offset) }
+# 07:00·12:30·18:30·23:00 = 일상 글, 08:00·20:00·22:00 = 블로그 유입 글, 09:15·13:30·23:30 = 놓친 글 다시 (2026-11-03 사용자)
+$times = @('07:00', '08:00', '09:15', '12:30', '13:30', '18:30', '20:00', '22:00', '23:00', '23:30') | ForEach-Object { ([datetime]::ParseExact($_, 'HH:mm', $null)).AddMinutes($offset) }
 $want = ($times | ForEach-Object { $_.ToString('HH:mm') }) -join ','
 $old = Get-ScheduledTask -TaskName $name -ErrorAction SilentlyContinue
 $have = @($old.Triggers | ForEach-Object { try { ([datetime]$_.StartBoundary).ToString('HH:mm') } catch { '' } }) -join ','

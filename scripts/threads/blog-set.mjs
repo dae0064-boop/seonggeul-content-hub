@@ -20,7 +20,10 @@ const MAX_LINE = 24;
 const PARA_MAX = 4;
 const PARA_MIN = 2;
 // 고정 시각 (2026-11-02 사용자 — "출근길 7~9시 2개, 퇴근 뒤 저녁 8~11시 3개로 고정"). 아침 두 편은 전날 공개된 글로
-export const SLOTS = ['07:30', '08:30', '20:00', '21:00', '22:30']; // 2026-11-02 사용자 — "2~4줄 사이로 쓰고 한 칸 띄고"
+export const SLOTS_OLD = ['07:30', '08:30', '20:00', '21:00', '22:30']; // 2026-11-02 사용자 — "출근길 2개, 퇴근 뒤 3개"
+// 2026-11-03 사용자 "블로그 유입 글 3개로 줄이고 일상 4 · 보험 심의글 3, 하루 10편": 11/4 묶음부터 08:00(아침 — 전날 글) · 20:00 · 22:00
+export const SLOTS = ['08:00', '20:00', '22:00'];
+const slotsFor = (date) => (date >= '2026-11-04' ? SLOTS : SLOTS_OLD);
 const MAX_EMOJI = 2;
 
 // '바로' 갈래에서 막는 민간 보험 낱말. 공적 제도 이름(건강보험 등)은 아래 PUBLIC 으로 먼저 지운다
@@ -98,7 +101,7 @@ export function checkSet(file) {
     // 시각 — 블로그 글이 발행된 뒤여야 링크가 열린다
     const at = it['시각'];
     if (!/^\d{2}:\d{2}$/.test(at || '')) err('시각: HH:MM 이 필요합니다.');
-    else if (it['갈래'] === '바로' && date >= '2026-11-03' && !SLOTS.includes(at)) err(`시각 ${at} — 고정 시각 ${SLOTS.join('·')} 중 하나로.`);
+    else if (it['갈래'] === '바로' && date >= '2026-11-03' && !slotsFor(date).includes(at)) err(`시각 ${at} — 고정 시각 ${slotsFor(date).join('·')} 중 하나로.`);
     else if (post.fm.publish_at) {
       const [pd, pt] = post.fm.publish_at.split(' ');
       if (pd > date || (pd === date && pt >= at)) err(`블로그 발행(${post.fm.publish_at})보다 앞이거나 같은 시각입니다 (${date} ${at}).`);
