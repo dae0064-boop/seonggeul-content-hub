@@ -244,7 +244,7 @@ export async function findPhoto(spec = {}) {
 /** 사진을 받아 PNG 로 저장 (브라우저 캔버스로 바꾼다 — 네이버·티스토리 올리기는 NN.png 를 찾는다) */
 export async function savePhotoPng(photo, dest, launchBrowser) {
   // 내려받기가 중간에 끊겨도(2026-11-03 과천 글 'terminated') 바로 AI 그림으로 넘어가지 않고 4번까지 다시 받는다 (사용자 — "끊겨도 계속 실사 사진으로")
-  let buf, lastErr;
+  let buf = photo.buf, lastErr; // 방송사 장면 사진(broadcast-still.mjs)은 이미 받아 온 buf 를 넘긴다
   for (let attempt = 1; attempt <= 4 && !buf; attempt++) {
     try {
       const r = await fetch(photo.url, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(60000) });

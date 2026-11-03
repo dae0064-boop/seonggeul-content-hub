@@ -46,6 +46,7 @@ async function plainBackground(dest, launch) {
   } finally { await browser.close(); }
 }
 import { findPhoto, savePhotoPng } from "./lib/official-photo.mjs";
+import { fetchStill } from "./lib/broadcast-still.mjs";
 import { writeFileSync, rmSync } from "node:fs";
 import { parsePost } from "./lib/parse-post.mjs";
 
@@ -131,7 +132,15 @@ for (const im of todo) {
   // 공식 사진 — 받으면 AI 를 부르지 않는다 (비용 0)
   const creditFile = join(outDir, `${name}.credit.txt`);
   if (im.kind === "photo" && !(im.overlay && existsSync(raw) && !opt.force)) {
-    const { photo, why } = await findPhoto(im.photo || {}).catch((e) => ({ photo: null, why: e.message }));
+    // 방송사 공식 홈페이지 장면 사진 (2026-11-03 사용자 — 드라마 사진 인용, 본문 1~2장만) — 못 받으면 아래 다른 곳·AI 그림으로
+    let st = null;
+    if (im.photo?.still) {
+      st = await fetchStill(im.photo.still, launchBrowser, `${plan.slug}-${im.n}`).catch((e) => ({ photo: null, why: e.message }));
+      if (!st.photo) console.log(`⚠ [${im.n}] 방송사 장면 사진 못 받음 (${st.why})`);
+    }
+    const { photo, why } = st?.photo ? st : (im.photo?.still && !(im.photo.file || im.photo.query || im.photo.query_en || im.photo.scene_en || im.photo.page))
+      ? { photo: null, why: st?.why || '장면 사진 없음' }
+      : await findPhoto(im.photo || {}).catch((e) => ({ photo: null, why: e.message }));
     let got = false;
     if (photo) {
       try { await savePhotoPng(photo, raw, launchBrowser); writeFileSync(creditFile, photo.credit + "\n" + (photo.page || "") + "\n"); got = true; console.log(`📷 [${im.n}] 공식 사진: ${photo.credit} — ${photo.page || photo.url}`); }
