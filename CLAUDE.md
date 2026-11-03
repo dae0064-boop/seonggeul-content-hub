@@ -23,7 +23,7 @@ scripts/           발행·검수 자동화(.mjs) + 워크스페이스 동기화
 scripts/threads/   스레드 자동 발행·댓글 답변
 routines/          클라우드 자동 작업(Routine) 지시문 정본. 지시를 바꿀 땐 이 파일을 고친다
 .github/workflows/ 스레드 자동화 스케줄 + PR 검사 (GitHub Actions)
-launchers/         윈도우 더블클릭 실행기 5개 (READ-ME-FIRST.txt). 부품은 launchers/tools/
+launchers/         윈도우 더블클릭 실행기 (READ-ME-FIRST.txt — 2026-11-03 안 쓰는 16개 정리). 부품은 launchers/tools/
 standards/         운영 기준 문서 (블로그-성장-전략.md = 조회수 목표·전략 정본)
 docs/SETUP.md      새 컴퓨터 설치 가이드
 docs/THREADS.md    스레드 자동화 설치·운영 가이드
