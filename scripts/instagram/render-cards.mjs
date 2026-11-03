@@ -10,6 +10,7 @@
  *   사진이 아직 없으면 bg/_placeholder.png (임시 바탕)로 그린다.
  * 글 안 [대괄호] 는 노란 글씨로 칠한다.
  */
+import { riskyIn } from '../lib/goms-risky.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -269,6 +270,15 @@ for (const p of set.posts) {
   const bp = String(p.bg_prompt || '').toLowerCase();
   if (bp && day > '2026-11-02' && (/\b(coins?|dollars?|banknotes?|cash|wallet|money)\b/.test(bp.replace(/\bno (money|coins|banknotes|wallet|currency symbols|cash)\b/g, '')) || !bp.includes('no money')))
     throw new Error(`${p.no}편: bg_prompt 에 돈(동전·지폐·지갑)이 들어가거나 'no money, no coins, no banknotes, no currency symbols' 가 없어요`);
+}
+// GOMS 반려 사례 표현 (2026-11-03 스레드 39편 수정요구 — scripts/lib/goms-risky.mjs) — 11/3 세트부터 막고, 그 전은 알림만
+for (const p of set.posts) {
+  const hits = riskyIn(JSON.stringify(p.cards) + '\n' + (p.caption || []).join('\n'));
+  for (const h of hits) {
+    const msg = `${p.no}편: 심의 반려 사례 표현 "${h.text}" — ${h.why}`;
+    if (day > '2026-11-02') throw new Error(msg);
+    console.log('⚠ ' + msg);
+  }
 }
 const browser = await chromium.launch();
 const pg = await browser.newPage({ viewport: { width: 1080, height: 1080 } });

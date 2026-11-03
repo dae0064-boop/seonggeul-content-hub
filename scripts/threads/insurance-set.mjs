@@ -7,6 +7,7 @@
  * 규칙 정본은 content/threads/insurance/rules.md 다. 여기서 errors 가 나오면 올리지 않는다.
  * 글마다 스레드 안전장치(guard.mjs)도 그대로 거친다.
  */
+import { riskyIn } from '../lib/goms-risky.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { ROOT, isMain } from './config.mjs';
@@ -168,6 +169,8 @@ export function checkSet(set, previous = []) {
       if (/!!/.test(p.body)) errors.push(`${tag}: "!!" 는 쓰지 않습니다 — 31편부터는 차분한 말투.`);
       const tail = lines.slice(-3).join(' ');
       if (!/확인/.test(tail)) errors.push(`${tag}: 끝 세 줄 안에 "증권에서 한 번 확인해 봐" 같은 확인 권유가 없습니다 (rules.md "31편부터 말투").`);
+      // GOMS 반려 사례 표현 (2026-11-03 사용자 — 39편 수정요구, "앞으로 반려가 나지 않게") — 11/3 뒤 쓴 묶음은 막고, 그 전 묶음은 알림만
+      for (const h of riskyIn(p.body)) (String(set.meta.written || set.meta.date || '') >= '2026-11-03' ? errors : notes).push(`${tag}: 심의 반려 사례 표현 "${h.text}" — ${h.why} (rules.md "심의 반려 사례")`);
       // 반말 (2026-11-02 사용자 — "스레드는 반말이 컨셉"). 따옴표 속 남의 말은 빼고 본다
       // 운전자보험 필수 문장("…제외됩니다.")은 글자 그대로 넣어야 해서 예외
       const notice = DRIVER_NOTICE.replace(/\s/g, '');

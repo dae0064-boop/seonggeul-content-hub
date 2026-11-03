@@ -642,12 +642,29 @@ async function one(page, ctx, n) {
 const DRIVER = '음주, 무면허, 도주 사고는 보상에서 제외됩니다.';
 const YAKGWAN = '보험사 상품별로 상이할 수 있으므로, 세부사항은 반드시 해당 약관을 참조하시기바랍니다';
 
+/** 원고를 통째로 고쳐 다시 만든 편 (content/threads/insurance/revised.tsv, 2026-11-03 39편~) → Map(번호 → 새 본문 확인 문구) */
+function readRevised() {
+  const map = new Map();
+  if (PREFIX !== '스레드') return map;
+  const f = new URL('../content/threads/insurance/revised.tsv', import.meta.url);
+  try {
+    for (const line of fs.readFileSync(f, 'utf8').split(/\r?\n/)) {
+      const [n, t] = line.split('\t');
+      if (/^\d+$/.test((n || '').trim()) && (t || '').trim()) map.set(Number(n), t.trim());
+    }
+  } catch {}
+  return map;
+}
+
 /** 심의의견에서 넣으라는 문구를 뽑는다. "→ '…'", ">…" 처럼 화살표로 시작하는 줄의 글을 그대로 쓴다 (따옴표만 뗀다). */
 function phrasesFrom(opinion) {
   const out = [];
   for (const raw of opinion.split(/\r?\n/)) {
     const m = raw.match(/^\s*(?:→|->|=>|>|▶|☞)\s*(.+)$/);
     if (!m) continue;
+    const quoted = /^\s*["'“”‘’`]/.test(m[1]);
+    // 고치라는 지시 줄("… 수정할 것", "… 표현") 은 넣을 문구가 아니다 (2026-11-03 39편 — 지시 글이 빨간 글씨로 들어갈 뻔함)
+    if (!quoted && /(할\s*것|수정|표현|단정|읽힐|생길\s*수|바랍니다\s*$)/.test(m[1]) && !/약관을\s*참조/.test(m[1])) continue;
     const t = m[1].trim().replace(/^["'“”‘’`]+|["'“”‘’`]+$/g, '').trim();
     if (t.length >= 8 && !out.includes(t)) out.push(t);
   }
@@ -863,6 +880,7 @@ async function scanRejected(page, targets) {
     fs.writeFileSync(path.join(out, `reason-${PREFIX} ${n}편.txt`), `심의결과: ${result}\n심의의견:\n${opinion}\n`, 'utf8');
     log(`  심의결과: ${result || '(못 읽음)'}`);
     for (const l of opinion.split(/\r?\n/).filter(Boolean)) log(`  심의의견: ${l}`);
+    if (readRevised().has(n)) { log('  원고를 고쳐 다시 만든 편(revised.tsv) — 문구를 뽑지 않아요'); await closeDetail(page); continue; }
     const ph = phrasesFrom(opinion);
     if (!ph.length) log('  ⚠ 넣을 문구를 찾지 못했어요 — 이 편은 다시 올리지 않고 사유만 남겨요 (Claude 가 보고 고칠게요)');
     for (const t of ph) {
@@ -1029,6 +1047,8 @@ async function runApproved(page) {
 
 /** 고친 Word 에 문구가 다 들어 있는지 — Python 없이 Word 를 직접 읽는다 (사무실 PC 에 Python 이 없다, 2026-10-26). */
 function wordHasFix(n) {
+  const rv = readRevised().get(n);
+  if (rv) { const file = path.join(fileDir, `${PREFIX} ${n}편.docx`); try { return fs.existsSync(file) && missingIn(file, [rv]).length === 0; } catch { return false; } }
   const ph = readWordFixes(fixesPath).get(n) || [];
   const file = path.join(fileDir, `${PREFIX} ${n}편.docx`);
   try { return ph.length > 0 && fs.existsSync(file) && missingIn(file, ph).length === 0; } catch { return false; }
