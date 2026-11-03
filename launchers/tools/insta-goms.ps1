@@ -19,10 +19,18 @@ $doneDir = Join-Path $drive 'ClaudeWorkspace\goms-done-insta'
 $tsv = Join-Path $drive 'ClaudeWorkspace\goms-approved-insta.tsv'
 New-Item -ItemType Directory -Force -Path $fileDir, $doneDir | Out-Null
 
+# 바탕 AI 사진(content\instagram\bg\<slug>.png)이 아직 없는 편은 임시 바탕으로 그려진 Word 라 모으지 않는다 (2026-11-03 —
+# 심의받은 Word 가 정본이라, 임시 바탕 그대로 등록되면 나중에 바탕을 바꿀 수 없다). 클라우드가 바탕을 넣어 다시 그리면 그때 모인다.
+$noBg = @{}
+Get-ChildItem (Join-Path $repo 'content\instagram\sets') -Filter '*.json' -ErrorAction SilentlyContinue | ForEach-Object {
+  try { (Get-Content $_.FullName -Raw -Encoding UTF8 | ConvertFrom-Json).posts | ForEach-Object {
+    if ($_.bg_prompt -and -not (Test-Path (Join-Path $repo "content\instagram\bg\$($_.slug).png"))) { $noBg[[int]$_.no] = $_.slug } } } catch {}
+}
 # ① Word 모으기
 Get-ChildItem (Join-Path $repo 'content\instagram\word') -Recurse -Filter "$prefix *편.docx" -ErrorAction SilentlyContinue | ForEach-Object {
   $to = Join-Path $fileDir $_.Name
   if (Test-Path (Join-Path $doneDir ($_.BaseName + '.done'))) { return }   # 등록한 편은 그대로
+  if ($_.Name -match '(\d+)편\.docx$' -and $noBg.ContainsKey([int]$Matches[1])) { Write-Host "바탕 사진 기다림: $($_.Name) ($($noBg[[int]$Matches[1]])) — 아직 등록하지 않아요"; return }
   if ((Test-Path $to) -and ((Get-Item $to).Length -eq $_.Length)) { return }
   Copy-Item $_.FullName $to -Force
   Write-Host "Word 모음: $($_.Name)"
