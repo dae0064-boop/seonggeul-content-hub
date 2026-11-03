@@ -1968,7 +1968,7 @@ async function main() {
       console.log('\n✅ 임시저장 완료 — 발행하지 않았습니다.');
       if (args.reserveSkipped) { console.log(`   (예약하지 않은 이유: ${args.reserveSkipped})`); process.exitCode = 2; }
       log('네이버 글쓰기 화면 오른쪽 위 "저장" 옆 숫자를 누르면 임시저장 목록에서 볼 수 있어요.');
-      if (post.category) log(`카테고리는 발행할 때 고르세요: ${post.category}`);
+      if (post.category) log(`카테고리는 발행할 때 고르세요: ${blogCategory(post)} · 주제: ${topicFor(post) || '(규칙 없음)'}`);
       if (post.tags?.length) log(`태그: ${post.tags.join(', ')}`);
       log('임시저장 글을 다시 열었을 때 태그가 없으면 발행 패널에서 위 태그를 넣어 주세요.');
       return;
