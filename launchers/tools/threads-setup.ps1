@@ -11,7 +11,8 @@ if ($Remove) {
   Write-Host '스레드 자동 올리기를 껐어요.' -ForegroundColor Green
   exit 0
 }
-$times0 = @('10:00', '13:00', '16:00', '19:00', '22:00')
+# 2026-11-03 사용자: 보험글 09:00·15:00·21:00 하루 3편 — 그 시각 + 놓쳤을 때 한 번 더(10·16·22시, 2시간 안), 13·19시는 catchup-reserve(블로그 예약 다시) 용
+$times0 = @('09:00', '10:00', '13:00', '15:00', '16:00', '19:00', '21:00', '22:00')
 # 이미 등록돼 있어도 시각이 다르면(옛 시각) 다시 등록한다 — 노트북의 5분 뒤 시각은 분만 다르니 시(時)로 견준다
 $old = Get-ScheduledTask -TaskName $name -ErrorAction SilentlyContinue
 $oldHours = @($old.Triggers | ForEach-Object { try { ([datetime]$_.StartBoundary).ToString('HH') } catch { '' } }) -join ','
