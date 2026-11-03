@@ -35,6 +35,12 @@
 - 사용자 "원고를 블로그에 써봐, 사진이랑, 발행은 하지 마" → `launchers/draft-test.cmd`(+ `tools/draft-test.ps1`): `content/calendar/draft-test.txt` 의 글을 그림까지 만들어 네이버 임시저장만(`draft-day.ps1 -Only`, -Reserve 없음 → run-locks 표시 안 남김 → 11/6 아침 실행은 원래대로 예약). 닥터X 글 1편 넣음. [ ] 사용자 PC 실행 결과 — 특히 SBS 장면 사진 '📷 [2]'·'📷 [3]' 줄(실제 SBS 화면 첫 확인).
 - 앞으로 연예 칸 1~2편은 방송 다음 날 프로그램 글(계약결혼·우리들의 발라드2 화, 나는솔로 목, 닥터X 토·일 — 11/14 종영, 굿파트너2 11/20~) — `routines/naver-daily.md` 📰 ⓔ-2·ⓔ-3, `routines/issue-morning.md` 3.
 
+### 11/3 — 🎨 새 배너로 확정·전부 바꿈 (사용자 "지금 워드에 들어간 모든 배너 사진 이걸로 변경, 앞으로 심의 올릴 때·받았을 때도 이 배너")
+- 디자인 = 2차 d-warm(크림·복숭아 GPT 배경 `banners/art-d-warm.jpg`, 왼쪽 '친근한 설계사' 25px·안부 문구 12.5px). 심의 문구는 옛 배너와 같음.
+- 저장소: `banner.py` 가 이 디자인으로 그림(made.tsv 에 `[d-warm]`) → thread-1~30 적격 21장 다시 만듦 · `base.jpg`·`word-template.docx` 사진 = 자리표시 판(제26-00-0000호).
+- Drive Word: PC `banner-swap.ps1`(catchup 13·16·19·22시가 한 번, 표시 `보험글/banner-swap-d-warm.txt`) — 보험글/스레드 N편.docx 원본 배너 → 자리표시 새 배너, 보험글-심의필 다시, 보험글-사진에 새 배너. 기록 run-logs/banner-swap-*.txt. [ ] 다음 확인 때 기록 보기.
+- GOMS 에 이미 올린 파일(심의 중·승인된 것)은 GOMS 쪽이라 바꿀 수 없음. 인스타 카드뉴스 고지 칸은 따로(손대지 않음).
+
 ### 11/3 — 🎨 스레드 심의필 배너 새 디자인 시안 3장 (사용자 "지금 배너가 저렴한 느낌, GPT 로 30원에 3장")
 - `scripts/threads/banner-styles.mjs` — ① 부드럽고 편안한(크림·복숭아, 고운바탕 이름) ② 깔끔하고 단정한(흰 바탕·남색 칸·금색 선) ③ 무난하면서 편안한(회백색·세이지 그린). 심의 문구는 base.jpg 와 한 글자도 다르지 않게 코드로 쓴다(GPT 는 한글을 깨뜨려 글자는 맡기지 않음), 칸 넘침·글꼴 못 읽음이면 실패.
 - 사용자 "클로드 너가 만들어봐" → 왼쪽 칸 장식(찻잔·잎 / 금색 원호 / 잎 줄기)을 코드로 그려 넣음(비용 0). 클라우드는 OpenAI 가 막혀(connect_rejected) GPT 는 못 씀. GPT 그림을 왼쪽 칸에 넣은 판은 PC `launchers/banner-styles.cmd` → low 3장(약 30원) → Drive `ClaudeWorkspace/banner-styles/`.

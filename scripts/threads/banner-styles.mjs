@@ -26,6 +26,8 @@ const { values: opt } = parseArgs({
     art: { type: "boolean", default: false },
     set: { type: "string", default: "2" },
     only: { type: "string" },
+    "art-file": { type: "string" }, // 이미 만든 배경 그림을 쓴다 (편별 배너 — banner.py)
+    file: { type: "string" },       // 결과 파일 이름 (--only 한 장일 때)
     out: { type: "string", default: join(ROOT, "dumps", "banner-styles") },
     no: { type: "string", default: "제26-00-0000호" },
     from: { type: "string", default: "2026-00-00" },
@@ -70,6 +72,7 @@ const STYLES = [
 ];
 
 function art(style) {
+  if (opt["art-file"]) return resolve(opt["art-file"]);
   const name = `art-${style.id}`;
   const file = join(OUT, `${name}.png`);
   if (!opt.art) return null;
@@ -278,7 +281,7 @@ try {
     const over = await page.evaluate(() => [...document.querySelectorAll(".right > div")].some((e) => e.scrollWidth > e.clientWidth + 1)
       || document.querySelector(".right").scrollHeight > document.querySelector(".right").clientHeight + 1);
     if (over) throw new Error(`${s.title}: 글자가 칸을 넘칩니다`);
-    const file = join(OUT, `banner-${s.id}.jpg`);
+    const file = opt.file ? resolve(opt.file) : join(OUT, `banner-${s.id}.jpg`);
     await page.screenshot({ path: file, type: "jpeg", quality: 95 });
     console.log(`✅ ${s.title}: ${file}${img ? " (GPT 그림 넣음)" : ""}`);
   }
