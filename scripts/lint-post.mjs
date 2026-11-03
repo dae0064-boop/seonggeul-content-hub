@@ -95,6 +95,10 @@ function slimOf(dated, tistory, slot) {
 const SLIM_QA = { 기본: [2], 순서형: [0, 2], 체크리스트형: [0, 2], 비교형: [0, 2], 질문형: [4] };
 const SPLIT_TWENTY = { 생활정보: 10, 생활보장: 10 };
 const HF_TWENTY = { 생활정보: 8, 생활보장: 6 };
+// 2026-11-03 사용자 — "생활보장 홈판 칸도 제철·나들이로 2편 바꿔줘": 11/6 원고부터 15:20·19:20 생활보장 홈판 → 생활정보 제철·나들이 홈판 (routines/naver-daily.md 🍂)
+const SEASON_FROM = '2026-11-06';
+const SPLIT_SEASON = { 생활정보: 12, 생활보장: 8 };
+const HF_SEASON = { 생활정보: 10, 생활보장: 4 };
 // 같은 날 같은 값 몇 편까지 (20편 날)
 const TW = { format: 5, tone: 5, mood: 3, shot: 4, shotHf: 8, theme: 2, person: 1, papers: 4, olds: 8, brandconnect: 5 };
 const TONES = {
@@ -706,8 +710,9 @@ for (const file of files) {
     if (sib.length >= (split3 ? 1 : 5)) {
       const sibs = sib.map((f) => { try { return parsePost(fs.readFileSync(dir + f, 'utf8')); } catch { return {}; } });
       const cats = sibs.map((p) => p.category || '');
-      const split = twenty ? SPLIT_TWENTY : isTen(dated) ? SPLIT_TEN : split3 ? SPLIT3 : dated >= SPLIT2_FROM ? SPLIT2 : SHIFT_SPLIT;
-      const why = twenty ? '2026-11-01 사용자 결정 — 하루 20편' : split3 ? '2026-10-26 사용자 결정' : dated >= SPLIT2_FROM ? '2026-10-24 사용자 결정' : '2026-10-19 사용자 결정';
+      const season = twenty && dated >= SEASON_FROM;
+      const split = season ? SPLIT_SEASON : twenty ? SPLIT_TWENTY : isTen(dated) ? SPLIT_TEN : split3 ? SPLIT3 : dated >= SPLIT2_FROM ? SPLIT2 : SHIFT_SPLIT;
+      const why = season ? '2026-11-03 사용자 결정 — 생활보장 홈판 2칸을 제철·나들이로' : twenty ? '2026-11-01 사용자 결정 — 하루 20편' : split3 ? '2026-10-26 사용자 결정' : dated >= SPLIT2_FROM ? '2026-10-24 사용자 결정' : '2026-10-19 사용자 결정';
       const done = sib.length >= full;
       if (split3 && sib.length > full) errors.push(`같은 날(${dated}) 네이버 원고 ${sib.length}편 — 하루 ${full}편까지 (${why})`);
       for (const [c, n] of Object.entries(split)) {
@@ -716,9 +721,10 @@ for (const file of files) {
       }
       if (twenty) {
         // 홈판형 14 = 생활정보 8 + 생활보장 6, 검색형 6 (2026-11-01 사용자 — 홈판 비중을 늘린다)
-        for (const [c, n] of Object.entries(HF_TWENTY)) {
+        const hf = season ? HF_SEASON : HF_TWENTY;
+        for (const [c, n] of Object.entries(hf)) {
           const got = sibs.filter((p) => p.category === c && p.slot === '홈판').length;
-          if (done ? got !== n : got > n) errors.push(`같은 날(${dated}) ${c} 홈판형(slot: 홈판) ${got}편 — 하루 생활정보 ${HF_TWENTY.생활정보} + 생활보장 ${HF_TWENTY.생활보장}편 (나머지는 검색형)`);
+          if (done ? got !== n : got > n) errors.push(`같은 날(${dated}) ${c} 홈판형(slot: 홈판) ${got}편 — 하루 생활정보 ${hf.생활정보} + 생활보장 ${hf.생활보장}편 (나머지는 검색형)`);
         }
         // 홈판형 제목 시험 — 같은 날 반전·기본 차이 1편 이하 (2026-11-02 사용자)
         if (dated >= TITLE_TEST.from && dated <= TITLE_TEST.to) {
