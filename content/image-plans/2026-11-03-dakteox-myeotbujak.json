@@ -1,0 +1,125 @@
+{
+  "slug": "2026-11-03-dakteox-myeotbujak",
+  "title": "닥터X 몇부작, 종영은 언제? 남은 4회 일정과 후속작",
+  "source": "11/3 사용자 요청 — 방영 중 드라마 글, 바로 예약",
+  "note": "SBS 공식 포토 인용 3(대표 포함) + 카드 2 + 그림 1",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "kind": "photo",
+      "title": "닥터X 공식 장면 사진 (대표사진)",
+      "photo": {
+        "still": {
+          "page": "https://programs.sbs.co.kr/drama/doctorx/visualboards/90312",
+          "match": [
+            "김지원",
+            "계수정",
+            "수술"
+          ],
+          "owner": "SBS",
+          "program": "닥터X"
+        },
+        "person": [
+          "Kim Ji-won",
+          "김지원"
+        ],
+        "file": "File:Kim Ji-won at BVLGARI photo call event.jpg"
+      },
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A surgeon's folded green scrub cap and a stethoscope on a steel tray in a dim operating room. Color theme: teal and sand tones with an orange accent. Natural realistic photograph look, soft light, shallow depth of field, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "note": "SBS 닥터X 공식 포토 인용 — 못 받으면 대신",
+      "thumb_shot": "object",
+      "thumb_theme": "teal",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "닥터X 종영은 언제?",
+        "focus": "center 30%",
+        "theme": "teal"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "kind": "photo",
+      "title": "닥터X 공식 장면 사진 (인용)",
+      "photo": {
+        "still": {
+          "page": "https://programs.sbs.co.kr/drama/doctorx/visualboards/90312",
+          "match": [
+            "손현주",
+            "부승권",
+            "병원장"
+          ],
+          "owner": "SBS",
+          "program": "닥터X"
+        }
+      },
+      "prompt": "Camera and composition: medium shot of an empty hospital director's office with a large wooden desk at dusk, no people. Natural realistic photograph look, soft light, shallow depth of field, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "note": "SBS 닥터X 공식 포토 인용 — 못 받으면 대신"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "kind": "card",
+      "title": "남은 4회 방송 날짜를 정리한 카드",
+      "card": {
+        "type": "steps",
+        "title": "남은 4회 일정",
+        "ask": "닥터X 언제 끝나?",
+        "items": [
+          "9회 11월 6일(금)",
+          "10회 11월 7일(토)",
+          "11회 11월 13일(금)",
+          "12회 11월 14일(토)"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "kind": "card",
+      "title": "회차별 시청률 흐름을 정리한 카드",
+      "card": {
+        "type": "steps",
+        "title": "시청률 흐름",
+        "ask": "시청률 어땠어?",
+        "items": [
+          "1회 11.4%로 시작",
+          "4회 18.5%",
+          "6회 19.5% 최고",
+          "8회 15.6%"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "kind": "photo",
+      "title": "닥터X 공식 장면 사진 (인용)",
+      "photo": {
+        "still": {
+          "page": "https://programs.sbs.co.kr/drama/doctorx/visualboards/90312",
+          "match": [
+            "이정은",
+            "장희숙",
+            "김지원"
+          ],
+          "owner": "SBS",
+          "program": "닥터X"
+        }
+      },
+      "prompt": "Camera and composition: medium shot of an empty operating room with surgical lights on, no people. Natural realistic photograph look, soft light, shallow depth of field, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "note": "SBS 닥터X 공식 포토 인용 — 못 받으면 대신"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "불 꺼진 병원 복도 끝 수술실 문",
+      "prompt": "Camera and composition: long shot down a dim empty hospital corridor at night, an operating room door glowing softly at the end, no people. Background color: cool teal and dark navy. Natural realistic photograph look, soft light, shallow depth of field, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "shot": "long shot of a hospital corridor",
+      "bg": "cool teal and dark navy"
+    }
+  ]
+}
