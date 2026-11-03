@@ -1,0 +1,8 @@
+# 이미 발행한 글에 쓴 방송사 공식 사진 글 주소 — broadcast-still.mjs 가 이 주소의 사진은 다시 쓰지 않는다 (2026-11-03)
+# PC 는 자기가 쓴 것을 dumps/stills-used.txt 에 따로 남긴다. 여기는 Claude 가 실행 기록을 보고 적는다.
+https://programs.sbs.co.kr/drama/doctorx/visualboard/90312?cmd=view&page=1&board_no=16619
+https://programs.sbs.co.kr/drama/doctorx/visualboards/90684
+https://programs.sbs.co.kr/drama/doctorx/visualboard/90312?cmd=view&page=1&board_no=16694
+yt:ckrUMsxuBN0
+yt:baKsHD2_e-c
+yt:oIebPyr8cuA
