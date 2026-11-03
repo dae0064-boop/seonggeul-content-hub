@@ -127,6 +127,8 @@
 
 ## 3. 다시 할 것 (2026-11-03) — 사이트맵 다시 제출 + 빙 등록
 
+> **주소는 `seongdaeeyo.com`** — 블로그에 개인 도메인이 연결돼 있고, 티스토리 주소 글도 이 주소를 정본(canonical)으로 가리킨다. 서치 콘솔·빙 모두 이 주소로 본다 (11/3 처음 안내에 tistory 주소를 잘못 적어 바로잡음).
+
 왜: 구글이 사이트맵을 **10/23 뒤로 다시 읽지 않았다**. 그사이 글 주소 모양이 `/숫자` 에서 `/entry/제목` 으로 바뀌었다.
 다시 제출하면 구글이 새 주소 목록을 읽어 간다. 빙은 구글에 등록한 것을 그대로 가져올 수 있어 5분이면 끝난다
 (빙 검색과 ChatGPT 검색이 빙 목록을 쓴다). 둘 다 컴퓨터 크롬에서 한다. 합쳐서 10분쯤.
@@ -136,10 +138,10 @@
 1. 크롬을 연다.
 2. 주소창에 아래 주소를 붙여 넣고(마우스 오른쪽 클릭 → 붙여넣기) Enter.
    ```
-   https://search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fseongdaeeyo.tistory.com%2F
+   https://search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fseongdaeeyo.com%2F
    ```
 3. 정상: 화면 위에 **Sitemaps** 라고 쓰여 있고, 아래 "제출된 사이트맵" 표에 `/sitemap.xml` 줄이 보인다.
-   - 다른 블로그 주소가 보이면: 화면 왼쪽 위 주소 칸을 눌러 `https://seongdaeeyo.tistory.com/` 을 고른다.
+   - 다른 주소가 보이면: 화면 왼쪽 위 주소 칸을 눌러 **`https://seongdaeeyo.com/`** 을 고른다 (블로그에 연결한 개인 도메인. `seongdaeeyo.tistory.com` 이 아니다).
    - "속성에 액세스할 수 없음"이 나오면: 오른쪽 위 동그란 사진을 눌러 Drive 와 같은 구글 계정인지 본다.
 4. 위쪽 **"새 사이트맵 추가"** 칸의 빈칸을 눌러 아래를 친다.
    ```
@@ -159,10 +161,10 @@
 2. **로그인**(또는 "Sign in") 버튼을 누른다 → 세 가지 중 **Google** 을 고른다 → 위 3-1 과 같은 구글 계정을 고른다 → **허용**(또는 "계속").
 3. "사이트 추가" 화면이 나온다. 두 칸 중 **"Google Search Console에서 가져오기"**(영어면 "Import your sites from GSC") 쪽 **가져오기**("Import") 를 누른다.
 4. 구글 계정 고르기 창이 다시 뜨면 같은 계정 → **허용**.
-5. 사이트 목록에 `https://seongdaeeyo.tistory.com/` 가 보인다. 앞 네모에 체크 → **가져오기**("Import").
+5. 사이트 목록에 `https://seongdaeeyo.com/` 가 보인다. 앞 네모에 체크 → **가져오기**("Import").
    - 목록이 비어 있으면: 2단계에서 다른 구글 계정을 고른 것이다. 오른쪽 위 계정 사진 → 로그아웃 → 2단계부터 다시.
 6. 정상: "사이트를 가져왔습니다"(영어 "Sites imported") 같은 말과 함께 대시보드가 열린다. 사이트맵도 같이 들어온다 — 따로 넣을 것은 없다.
-7. 왼쪽 메뉴 **사이트맵**("Sitemaps") 을 눌러 `sitemap.xml` 줄이 보이면 끝. 안 보이면 오른쪽 위 **사이트맵 제출**("Submit sitemap") → `https://seongdaeeyo.tistory.com/sitemap.xml` 붙여 넣기 → **제출**.
+7. 왼쪽 메뉴 **사이트맵**("Sitemaps") 을 눌러 `sitemap.xml` 줄이 보이면 끝. 안 보이면 오른쪽 위 **사이트맵 제출**("Submit sitemap") → `https://seongdaeeyo.com/sitemap.xml` 붙여 넣기 → **제출**.
 
 빙은 처음 며칠 "처리 중"으로 보이는 게 정상이다. 숫자가 바로 오르지 않아도 된다.
 

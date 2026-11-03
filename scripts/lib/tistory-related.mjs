@@ -41,8 +41,11 @@ async function get(url, fetchImpl) {
   return res.text();
 }
 
-export async function fetchTistoryList(blog, { fetchImpl = globalThis.fetch, log = () => {} } = {}) {
-  const base = `https://${blog}.tistory.com`;
+// 블로그에 개인 도메인이 연결돼 있다 (seongdaeeyo.com — 티스토리 주소 글도 canonical 이 이쪽, 서치 콘솔 속성도 이쪽).
+// 링크는 개인 도메인 주소로 넣어야 구글이 넘김 없이 바로 그 글로 간다
+export const TISTORY_DOMAIN = process.env.TISTORY_DOMAIN || 'https://seongdaeeyo.com';
+
+export async function fetchTistoryList(blog, { fetchImpl = globalThis.fetch, log = () => {}, base = TISTORY_DOMAIN || `https://${blog}.tistory.com` } = {}) {
   const list = [];
   try { list.push(...parseTistoryRss(await get(`${base}/rss`, fetchImpl))); } catch (e) { log(`RSS 읽기 실패 (${e.message})`); }
   try {
