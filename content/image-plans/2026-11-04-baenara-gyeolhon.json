@@ -1,0 +1,103 @@
+{
+  "slug": "2026-11-04-baenara-gyeolhon",
+  "title": "배나라 결혼, 나 혼자 산다 하차하는 이유는?",
+  "source": "11/4(수) 08:20 네이버 원고 — 출근길 이슈 글(연예), 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실존 인물 얼굴은 그리지 않는다 · 1번은 공식 사진 먼저(kind: photo)",
+  "images": [
+    {
+      "kind": "photo",
+      "title": "배나라 사진 (대표사진)",
+      "photo": {
+        "query": "배나라",
+        "query_en": "Bae Na-ra",
+        "person": [
+          "Bae Na-ra",
+          "Bae Nara",
+          "배나라"
+        ]
+      },
+      "note": "대표 — 배나라 단독 공식 사진(위키미디어 등) 먼저, 없으면 사람 없는 장면",
+      "thumb_shot": "object",
+      "thumb_theme": "rose",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "배나라, 결국 나혼산 졸업",
+        "focus": "center 18%",
+        "theme": "rose"
+      },
+      "n": 1,
+      "file": "01.png",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A white wedding bouquet resting on a wooden church pew in soft morning light, no people. Color theme: dusty rose and white tones with a green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "title": "성당 앞 계단과 하얀 꽃 장식",
+      "n": 2,
+      "file": "02.png",
+      "prompt": "Camera and composition: wide shot of a church entrance. Stone steps in front of a small red brick church decorated with white flower garlands, autumn trees, no people. Background color: soft ivory and autumn brown. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "kind": "card",
+      "title": "결혼 소식과 하차 흐름을 정리한 카드",
+      "card": {
+        "type": "steps",
+        "title": "결혼부터 하차까지",
+        "ask": "배나라 결혼, 어떻게 된 거야?",
+        "items": [
+          "11월 14일 오후",
+          "옥수동 성당",
+          "비공개로 진행",
+          "프로그램을 졸업"
+        ]
+      },
+      "n": 3,
+      "file": "03.png"
+    },
+    {
+      "title": "불이 켜진 빈 뮤지컬 무대",
+      "n": 4,
+      "file": "04.png",
+      "prompt": "Camera and composition: wide shot of an empty theater stage. An empty musical theater stage lit by warm spotlights with red velvet seats in the foreground, no people. Background color: deep red and warm gold. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "kind": "card",
+      "title": "많이 묻는 질문을 정리한 카드",
+      "card": {
+        "type": "compare",
+        "title": "배나라 결혼 한눈에",
+        "ask": "결혼식이랑 방송은 어떻게 돼?",
+        "heads": [
+          "궁금한 것",
+          "보도된 내용"
+        ],
+        "items": [
+          [
+            "결혼식",
+            "11월 14일 오후"
+          ],
+          [
+            "장소",
+            "옥수동 성당"
+          ],
+          [
+            "예식",
+            "비공개"
+          ],
+          [
+            "마지막 방송",
+            "아직 알려지지 않았어요"
+          ]
+        ]
+      },
+      "n": 5,
+      "file": "05.png"
+    },
+    {
+      "title": "창가에 놓인 두 개의 커피잔과 꽃다발",
+      "n": 6,
+      "file": "06.png",
+      "prompt": "Camera and composition: medium shot of a window sill. Two coffee cups and a small bouquet of white flowers on a sunny window sill, no people. Background color: soft cream and pale green. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}
