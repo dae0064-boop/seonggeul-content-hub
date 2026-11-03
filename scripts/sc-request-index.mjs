@@ -24,6 +24,40 @@ const MAX = Number(opt('--max', '10'));
 const CDP = opt('--cdp', 'http://localhost:9222');
 if (argv.includes('--help')) { console.log('사용법: node scripts/sc-request-index.mjs --state <파일> --out <폴더> [--max 10]'); process.exit(0); }
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+// 사이트맵에서 글 주소(/숫자 또는 /entry/…)만 골라 오래된 글부터 — 시험: node scripts/sc-request-index.mjs --selftest
+export function sitemapPosts(xml) {
+  const items = [...xml.matchAll(/<url>([\s\S]*?)<\/url>/g)].map((m) => m[1]);
+  const blocks = items.length ? items : [...xml.matchAll(/<loc>[^<]+<\/loc>/g)].map((m) => m[0]);
+  const seen = new Set();
+  const out = [];
+  blocks.forEach((b, i) => {
+    const loc = (b.match(/<loc>([^<]+)<\/loc>/) || [])[1]?.trim();
+    if (!loc || seen.has(loc)) return;
+    if (!/^https:\/\/seongdaeeyo\.com\/(\d+|entry\/[^/?#]+)$/.test(loc)) return;
+    seen.add(loc);
+    const num = /\/(\d+)$/.test(loc) ? Number(loc.split('/').pop()) : null;
+    const lastmod = (b.match(/<lastmod>([^<]+)<\/lastmod>/) || [])[1]?.trim() || '';
+    out.push({ loc, num, lastmod, i });
+  });
+  out.sort((a, b) => {
+    if (a.num != null && b.num != null) return a.num - b.num;
+    if ((a.num != null) !== (b.num != null)) return a.num != null ? -1 : 1;  // 옛 /숫자 주소 먼저
+    if (a.lastmod && b.lastmod && a.lastmod !== b.lastmod) return a.lastmod < b.lastmod ? -1 : 1;
+    return a.i - b.i;
+  });
+  return out.map((x) => x.loc);
+}
+if (argv.includes('--selftest')) {
+  const xml = `<urlset><url><loc>https://seongdaeeyo.com/entry/%EB%91%98</loc><lastmod>2026-10-20</lastmod></url>
+<url><loc>https://seongdaeeyo.com/entry/%ED%95%98%EB%82%98</loc><lastmod>2026-10-05</lastmod></url>
+<url><loc>https://seongdaeeyo.com/m/entry/x</loc></url><url><loc>https://seongdaeeyo.com/category</loc></url>
+<url><loc>https://seongdaeeyo.com/12</loc></url><url><loc>https://seongdaeeyo.com/3</loc></url></urlset>`;
+  const got = sitemapPosts(xml);
+  const want = ['https://seongdaeeyo.com/3', 'https://seongdaeeyo.com/12', 'https://seongdaeeyo.com/entry/%ED%95%98%EB%82%98', 'https://seongdaeeyo.com/entry/%EB%91%98'];
+  const ok = got.length === 4 && got.slice(0, 2).join() === want.slice(0, 2).join() && got.slice(2).join() === want.slice(2).join();
+  console.log(ok ? '✅ selftest 통과' : `❌ selftest 실패: ${JSON.stringify(got)}`);
+  process.exit(ok ? 0 : 1);
+}
 const log = (s) => console.log(s);
 const today = new Date().toISOString().slice(0, 10);
 // 2026-10-26 첫 실행: 서치 콘솔 검사 화면은 열린 뒤 스스로 한 번 더 이동해 'Execution context was destroyed'·'interrupted by another navigation' 으로
@@ -74,10 +108,11 @@ async function main() {
     fs.writeFileSync(path.join(OUT, `${name}.txt`), `${page.url()}\n\n${await readText(page)}`);
   };
   try {
-    // 사이트맵의 글 주소(/숫자)만, 오래된 글부터 — '발견됨' 90편은 대부분 옛 글이다
+    // 사이트맵의 글 주소만, 오래된 글부터 — '발견됨' 90편은 대부분 옛 글이다
+    // 2026-11-03: 사이트맵 글 주소가 /숫자 에서 /entry/제목 으로 바뀌어 0편으로 읽혔다 → 둘 다 받는다.
+    // /entry/ 주소는 번호가 없어 사이트맵의 lastmod(없으면 사이트맵 순서)로 오래된 것부터 줄 세운다.
     const xml = await (await page.request.get(SITEMAP, { timeout: 20000 })).text();
-    const posts = [...new Set([...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1].trim()).filter((u) => /^https:\/\/seongdaeeyo\.com\/\d+$/.test(u)))]
-      .sort((a, b) => Number(a.split('/').pop()) - Number(b.split('/').pop()));
+    const posts = sitemapPosts(xml);
     const todo = posts.filter((u) => !done.has(u));
     say(`사이트맵 글 ${posts.length}편 · 남은 확인 ${todo.length}편 · 오늘 최대 ${MAX}편 요청`);
 
@@ -93,7 +128,9 @@ async function main() {
     for (const u of todo) {
       if (report.requested.length >= MAX) break;
       if (++inspected > MAX_INSPECT) { say(`오늘 검사 ${MAX_INSPECT}번을 다 써서 멈춤 — 내일 이어서`); break; }
-      const n = u.split('/').pop();
+      // /entry/ 주소는 퍼센트 글자가 길어 화면 기록 파일 이름이 윈도우 길이 제한을 넘는다 → 앞 몇 글자만
+      const last = u.split('/').pop();
+      const n = /^\d+$/.test(last) ? last : `e-${decodeURIComponent(last).replace(/[^0-9A-Za-z가-힣]+/g, '').slice(0, 12)}`;
       try {
         // 열려 있는 창(앞 글 결과 창 등)을 닫고 검색칸에 주소 넣기
         await page.keyboard.press('Escape').catch(() => {});
