@@ -25,6 +25,7 @@ const { values: opt } = parseArgs({
   options: {
     art: { type: "boolean", default: false },
     set: { type: "string", default: "2" },
+    only: { type: "string" },
     out: { type: "string", default: join(ROOT, "dumps", "banner-styles") },
     no: { type: "string", default: "제26-00-0000호" },
     from: { type: "string", default: "2026-00-00" },
@@ -241,9 +242,9 @@ const layout2 = (id, img) => { const t = THEME2[id]; return `
 <style>
 body{background:${img ? `url(${pathToFileURL(img)}) center/cover no-repeat` : t.fb};color:${t.ink}}
 .left{background:${t.left}}
-.title{font-family:${t.font === "GB" ? "GB" : "P"};font-weight:700;font-size:31px;line-height:1.22;color:${t.title};letter-spacing:.04em}
-.line{width:26px;height:1.5px;background:${t.line};margin:12px auto 10px;border-radius:2px}
-.tag{font-family:${t.font === "GB" ? "GD" : "P"};font-size:11.5px;color:${t.tag};line-height:1.55}
+.title{font-family:${t.font === "GB" ? "GB" : "P"};font-weight:700;font-size:25px;line-height:1.3;color:${t.title};letter-spacing:.06em}
+.line{width:22px;height:1.5px;background:${t.line};margin:11px auto 10px;border-radius:2px}
+.tag{font-family:${t.font === "GB" ? "GD" : "P"};font-size:12.5px;color:${t.tag};line-height:1.6}
 .right{margin:14px 14px 14px 0;padding:0 22px;background:${t.card};border-radius:16px;box-shadow:0 6px 18px rgba(40,30,20,.08)}
 .firm,.agent{color:${t.ink}}
 .p{color:${t.body}}
@@ -263,7 +264,7 @@ const { launch } = await import(pathToFileURL(join(ROOT, "scripts", "lib", "over
 const browser = await launch();
 try {
   const page = await browser.newPage({ viewport: { width: 801, height: 252 }, deviceScaleFactor: 2 });
-  for (const s of ROUND) {
+  for (const s of ROUND.filter((x) => !opt.only || opt.only.split(",").includes(x.id))) {
     const img = art(s);
     // file:// 글꼴은 about:blank 에서 안 읽혀서 파일로 써서 연다
     const html = join(OUT, `.banner-${s.id}.html`);
