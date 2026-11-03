@@ -33,7 +33,9 @@
 - `scripts/threads/banner-styles.mjs` — ① 부드럽고 편안한(크림·복숭아, 고운바탕 이름) ② 깔끔하고 단정한(흰 바탕·남색 칸·금색 선) ③ 무난하면서 편안한(회백색·세이지 그린). 심의 문구는 base.jpg 와 한 글자도 다르지 않게 코드로 쓴다(GPT 는 한글을 깨뜨려 글자는 맡기지 않음), 칸 넘침·글꼴 못 읽음이면 실패.
 - 사용자 "클로드 너가 만들어봐" → 왼쪽 칸 장식(찻잔·잎 / 금색 원호 / 잎 줄기)을 코드로 그려 넣음(비용 0). 클라우드는 OpenAI 가 막혀(connect_rejected) GPT 는 못 씀. GPT 그림을 왼쪽 칸에 넣은 판은 PC `launchers/banner-styles.cmd` → low 3장(약 30원) → Drive `ClaudeWorkspace/banner-styles/`.
 - 사용자 "배경은 GPT 한테" → `--art` 는 GPT 배경(1024 low 3장 약 30원)을 배너 전체에 깔고 이름 칸·글 칸을 반투명으로 덮게 바꿈. PC 의 catchup-reserve(13·16·19·22시)가 Drive `banner-styles/done.txt` 가 없으면 하루 한 번 만들어 `ClaudeWorkspace/banner-styles/` 에 올림(기록 try-<날짜>.txt). 이미 만든 배경은 다시 만들지 않음.
-- [ ] 다음 아침 확인·대화에서 Drive banner-styles 3장을 사용자에게 보여 준다.
+- PC 첫 실행 실패 2번 고침: banner-styles.cmd 가 빈 파일(0바이트) → 다시 씀 / playwright 전용 브라우저 없음 → `overlay.mjs` launch()(PC 크롬). 이후 PC 에서 GPT 배경 판 성공.
+- 사용자: 1차 ① 부드러운(GPT 배경) 판이 가장 좋음 → **2차 시안** (`--set 2`, 기본): 배경 꽃·식물 없이 조금 더 심플(너무 심플은 아니게), 왼쪽 큰 '강성대' 빼고 '친근한 설계사'(이름은 오른쪽에 있으니). d 지금 느낌 그대로 · e 심플한 신뢰감 네이비 · f 남들이 잘 안 쓰는 색감. GPT 에는 느낌만 전한다. PC `banner-styles.cmd` → GPT low 3장(약 30원) → Drive banner-styles.
+- [ ] Drive banner-styles 의 2차 3장(banner-d-warm·e-navy·f-unique)을 사용자에게 보여 준다.
 - [ ] 사용자가 고르면: banner.py 가 그 디자인으로 편마다 심의필 줄을 넣게 바꾼다. ⚠ 디자인이 바뀐 배너가 심의받은 광고물과 같은 것으로 인정되는지 준법감시 쪽 확인이 먼저(새 배너로 GOMS 다시 받아야 할 수 있음).
 
 ### 11/3 — 🏷 생활보장 글 주제 정리 (사용자 "화재보험 주제 지금 바로 정리해줘")
