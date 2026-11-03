@@ -1,6 +1,7 @@
 ---
 title: [지역·역] [밥집|맛집|카페] [가게 이름] [대표 메뉴 1~2] [상황]
 category: 맛집·나들이
+topic: 맛집
 main_keyword: [지역·역] [밥집|맛집|카페]
 shop: [가게 이름]
 visit: [YYYY-MM-DD 점심|저녁]
