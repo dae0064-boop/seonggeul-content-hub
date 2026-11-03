@@ -24,6 +24,10 @@
 
 ## 지금 상태
 
+### 11/3 — 🧹 launchers 실행기 정리 (사용자 "안 쓰는 cmd 지워, 너무 많아 헷갈린다")
+- 32개 → 16개. 지운 것: affiliate-test·photo-test·threads-web-test·threads-read(시험 끝) · chulgeo-day·chulgeo-login(철거 멈춤) · threads-laptop·threads-post-now·threads-setup·threads-blog-now(노트북 안 씀·보험글 멈춤·자동 작업이 함) · goms-register·goms-approved(goms-register-all·아침 자동으로 대신) · index-request·cleanup-now(아침 자동) · usage-window(위젯으로 바뀜) · photo-key(키 넣음 끝 — 다시 넣을 땐 `launchers/tools/photo-key.ps1`).
+- 부품 .ps1 은 그대로 둠. 되살릴 때는 git 기록에서. READ-ME-FIRST.txt 를 남은 실행기 기준으로 새로 씀. 앞으로 사용자에게 지운 실행기를 안내하지 않는다(photo-test 대신 다음 실행 로그 '📷' 줄로 확인).
+
 ### 11/3 (화) 아침 확인 (10:47 Routine) — 네이버·티스토리 예약 안 된 글 없음
 - 네이버 11/3: 생활 20편(전날 밤 예약, 10:00~22:40) + 윤종훈 21:40 + 이슈 4편(소연 09:20·최불암 09:50·이미숙 10:50·과천 v2 11:00 — 위키미디어 과천 사진) = 25편 모두 예약. 이슈 글 카테고리 이슈·뉴스, 주제 비즈니스·경제 확인(과천 v2). 11/5 13편도 09:15 실행이 미리 예약.
   ⚠ 옛 과천 글(08:38 실행이 10:20 예약)과 신세경 원본(11/2 20:40)이 v2·v3 와 **같은 제목으로 두 번 예약됐을 수 있다** — 사용자가 지웠는지는 기록으로 알 수 없음. 보고에서 확인 부탁.

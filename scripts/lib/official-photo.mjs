@@ -228,14 +228,14 @@ export async function findPhoto(spec = {}) {
     try { const o = await searchOpenverse(spec); if (o) return { photo: o }; why.push('오픈버스: 맞는 사진 없음'); } catch (e) { why.push(`오픈버스: ${e.message}`); }
   }
   if (spec.query || spec.query_en || spec.person) {
-    if (!process.env.FLICKR_API_KEY) why.push('플리커: 키 없음(launchers\\photo-key.cmd)');
+    if (!process.env.FLICKR_API_KEY) why.push('플리커: 키 없음(launchers\\tools\\photo-key.ps1)');
     else try { const f = await searchFlickr(spec); if (f) return { photo: f }; why.push('플리커: 맞는 사진 없음'); } catch (e) { why.push(`플리커: ${e.message}`); }
   }
   if (!spec.person && (spec.scene_en || spec.query_en) && process.env.PIXABAY_API_KEY) {
     try { const x = await searchPixabay(spec); if (x) return { photo: x }; why.push('픽사베이: 맞는 사진 없음'); } catch (e) { why.push(`픽사베이: ${e.message}`); }
   }
   if (!spec.person && (spec.scene_en || spec.query_en)) {
-    if (!process.env.PEXELS_API_KEY) why.push('펙셀스: 키 없음(launchers\\photo-key.cmd)');
+    if (!process.env.PEXELS_API_KEY) why.push('펙셀스: 키 없음(launchers\\tools\\photo-key.ps1)');
     else try { const x = await searchPexels(spec); if (x) return { photo: x }; why.push('펙셀스: 맞는 사진 없음'); } catch (e) { why.push(`펙셀스: ${e.message}`); }
   }
   return { photo: null, why: why.join(' / ') || 'photo.query 나 photo.page 가 없음' };
