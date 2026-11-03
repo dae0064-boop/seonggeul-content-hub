@@ -142,6 +142,43 @@ export async function searchFlickr({ query, query_en: queryEn, person, minWidth 
   return null;
 }
 
+// ── 오픈버스 (Openverse — 키 없이, 플리커·위키미디어 등의 CC 사진을 한 번에) ──────────────
+// 2026-11-03: 펙셀스가 새 키 발급을 멈춰 키 없는 곳을 더함. 상업 이용 가능한 by·by-sa·cc0·pdm 만, 인물은 soloOk.
+const OV_LIC = { by: 'CC BY', 'by-sa': 'CC BY-SA', cc0: 'CC0', pdm: 'Public Domain Mark' };
+export async function searchOpenverse({ query, query_en: queryEn, person, minWidth = 600 }) {
+  const terms = [...new Set([].concat(person || []).slice(0, 2).concat([queryEn, query]).filter(Boolean))];
+  for (const q of terms) {
+    const data = await getJson('https://api.openverse.org/v1/images/?' + new URLSearchParams({ q, license_type: 'commercial', page_size: '40', mature: 'false' }));
+    const scored = [];
+    for (const p of data?.results || []) {
+      const lic = OV_LIC[String(p.license || '').toLowerCase()];
+      if (!lic || !p.url || (p.width && p.width < minWidth)) continue;
+      if (person) { if (!soloOk(p.title || '', person)) continue; }
+      else if (!q.toLowerCase().split(/\s+/).some((wd) => wd.length >= 2 && String(p.title || '').toLowerCase().includes(wd))) continue;
+      const w = Number(p.width || 0), h = Number(p.height || 0);
+      scored.push({ score: Math.min(w, 2000) / 1000 + (person ? (h >= w ? 1 : 0) : (w >= h ? 1 : 0)), p, lic });
+    }
+    scored.sort((a, b) => b.score - a.score);
+    if (scored[0]) {
+      const { p, lic } = scored[0]; const ver = p.license_version ? ` ${p.license_version}` : '';
+      const author = String(p.creator || '작가 미상').slice(0, 40); const src = { flickr: '플리커', wikimedia: '위키미디어 공용' }[p.source] || p.source || '오픈버스';
+      return { url: p.url, page: p.foreign_landing_url || p.url, license: lic + ver, author, title: p.title, source: src, credit: `사진: ${author} / ${src} (${lic}${ver})` };
+    }
+  }
+  return null;
+}
+
+// ── 픽사베이 (장면·장소·물건 — 사람 글에는 쓰지 않는다. Pixabay 콘텐츠 라이선스: 상업 이용 가능) ──
+export async function searchPixabay({ scene_en: sceneEn, query_en: queryEn }, key = process.env.PIXABAY_API_KEY) {
+  const q = sceneEn || queryEn;
+  if (!key || !q) return null;
+  const data = await getJson('https://pixabay.com/api/?' + new URLSearchParams({ key, q, image_type: 'photo', safesearch: 'true', per_page: '20', min_width: '1000' }));
+  const p = (data?.hits || [])[0];
+  if (!p) return null;
+  const author = String(p.user || '작가 미상').slice(0, 40);
+  return { url: p.largeImageURL || p.webformatURL, page: p.pageURL, license: 'Pixabay 라이선스', author, source: '픽사베이', credit: `사진: ${author} / Pixabay` };
+}
+
 // ── 펙셀스 (장면·장소·물건 사진 — 사람 글에는 쓰지 않는다) ──────────────────────────────
 // Pexels 라이선스: 상업적 사용 가능, 출처 표시는 의무가 아니지만 남긴다. 인물(photo.person)이 있는 칸에는 부르지 않는다.
 export async function searchPexels({ scene_en: sceneEn, query_en: queryEn }, key = process.env.PEXELS_API_KEY) {
@@ -170,8 +207,14 @@ export async function findPhoto(spec = {}) {
     try { const c = await searchCommons(spec); if (c) return { photo: c }; why.push('위키미디어 공용: 라이선스 맞는 사진 없음'); } catch (e) { why.push(`위키미디어 공용: ${e.message}`); }
   }
   if (spec.query || spec.query_en || spec.person) {
+    try { const o = await searchOpenverse(spec); if (o) return { photo: o }; why.push('오픈버스: 맞는 사진 없음'); } catch (e) { why.push(`오픈버스: ${e.message}`); }
+  }
+  if (spec.query || spec.query_en || spec.person) {
     if (!process.env.FLICKR_API_KEY) why.push('플리커: 키 없음(launchers\\photo-key.cmd)');
     else try { const f = await searchFlickr(spec); if (f) return { photo: f }; why.push('플리커: 맞는 사진 없음'); } catch (e) { why.push(`플리커: ${e.message}`); }
+  }
+  if (!spec.person && (spec.scene_en || spec.query_en) && process.env.PIXABAY_API_KEY) {
+    try { const x = await searchPixabay(spec); if (x) return { photo: x }; why.push('픽사베이: 맞는 사진 없음'); } catch (e) { why.push(`픽사베이: ${e.message}`); }
   }
   if (!spec.person && (spec.scene_en || spec.query_en)) {
     if (!process.env.PEXELS_API_KEY) why.push('펙셀스: 키 없음(launchers\\photo-key.cmd)');

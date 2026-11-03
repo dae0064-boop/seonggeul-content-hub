@@ -1,5 +1,5 @@
-﻿# 사진 찾기 키 2개(플리커·펙셀스)를 이 컴퓨터에 저장한다 (2026-11-03 사용자 — "위키미디어 말고 다른 곳도"). photo-key.cmd 를 더블클릭하면 실행된다.
-# 키는 Windows 사용자 환경 변수 FLICKR_API_KEY · PEXELS_API_KEY 에 넣는다. 화면에는 앞 3자·끝 4자만 보인다.
+﻿# 사진 찾기 키 2개(플리커·픽사베이)를 이 컴퓨터에 저장한다 (2026-11-03 사용자 — "위키미디어 말고 다른 곳도"). photo-key.cmd 를 더블클릭하면 실행된다.
+# 키는 Windows 사용자 환경 변수 FLICKR_API_KEY · PIXABAY_API_KEY 에 넣는다. 화면에는 앞 3자·끝 4자만 보인다.
 # 확인은 검색 한 번뿐이라 요금이 없다(둘 다 무료). 하나만 넣어도 된다 — 그냥 Enter 면 건너뛴다.
 $ErrorActionPreference = 'Stop'
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
@@ -16,7 +16,7 @@ function ReadKey($label) {
 
 Write-Host ''
 Write-Host '  ==============================================='
-Write-Host '    사진 찾기 키 설정 (플리커 · 펙셀스)'
+Write-Host '    사진 찾기 키 설정 (플리커 · 픽사베이)'
 Write-Host '  ==============================================='
 Write-Host ''
 Info '복사한 키를 붙여넣으세요 (마우스 오른쪽 클릭 또는 Ctrl+V).'
@@ -36,20 +36,21 @@ if ($k) {
 } elseif (-not $old) { Info '플리커는 건너뛰었어요.' }
 Write-Host ''
 
-# 2) 펙셀스
-$old = [Environment]::GetEnvironmentVariable('PEXELS_API_KEY', 'User')
-if ($old) { Info "펙셀스: 이미 키가 있어요 ($(Mask $old)). 바꾸려면 새 키를, 아니면 그냥 Enter." }
-$k = ReadKey '펙셀스(Pexels)'
+# 2) 픽사베이 (2026-11-03 — 펙셀스가 새 키 발급을 멈춰 대신)
+$old = [Environment]::GetEnvironmentVariable('PIXABAY_API_KEY', 'User')
+if ($old) { Info "픽사베이: 이미 키가 있어요 ($(Mask $old)). 바꾸려면 새 키를, 아니면 그냥 Enter." }
+$k = ReadKey '픽사베이(Pixabay)'
 if ($k) {
   try {
-    Invoke-RestMethod -Uri 'https://api.pexels.com/v1/search?query=apartment&per_page=1' -Headers @{ Authorization = $k } -TimeoutSec 20 | Out-Null
-    [Environment]::SetEnvironmentVariable('PEXELS_API_KEY', $k, 'User'); Ok "펙셀스 키 정상, 저장했어요: $(Mask $k)"
+    $r = Invoke-RestMethod -Uri "https://pixabay.com/api/?key=$k&q=apartment&per_page=3" -TimeoutSec 20
+    if ($null -ne $r.totalHits) { [Environment]::SetEnvironmentVariable('PIXABAY_API_KEY', $k, 'User'); Ok "픽사베이 키 정상, 저장했어요: $(Mask $k)" }
+    else { Bad '픽사베이 답이 이상해요. 저장하지 않았어요.' }
   } catch {
     $code = $null; if ($_.Exception.Response) { $code = [int]$_.Exception.Response.StatusCode }
-    if ($code -eq 401 -or $code -eq 403) { Bad '펙셀스가 키를 거절했어요. 저장하지 않았어요.'; Info 'https://www.pexels.com/api/ 에서 "Your API Key" 를 다시 복사해 보세요.' }
-    else { Bad "펙셀스에 접속하지 못했어요 ($($_.Exception.Message)). 키는 일단 저장해 둘게요."; [Environment]::SetEnvironmentVariable('PEXELS_API_KEY', $k, 'User') }
+    if ($code -eq 400 -or $code -eq 401 -or $code -eq 403) { Bad '픽사베이가 키를 거절했어요. 저장하지 않았어요.'; Info 'https://pixabay.com/api/docs/ 의 key 옆 글자를 다시 복사해 보세요.' }
+    else { Bad "픽사베이에 접속하지 못했어요 ($($_.Exception.Message)). 키는 일단 저장해 둘게요."; [Environment]::SetEnvironmentVariable('PIXABAY_API_KEY', $k, 'User') }
   }
-} elseif (-not $old) { Info '펙셀스는 건너뛰었어요.' }
+} elseif (-not $old) { Info '픽사베이는 건너뛰었어요.' }
 
 Write-Host ''
 Write-Host '  ==============================================='
