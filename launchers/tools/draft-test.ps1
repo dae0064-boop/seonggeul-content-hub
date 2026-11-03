@@ -15,6 +15,11 @@ foreach ($line in $list) {
     Write-Host "  대표사진을 다시 만듭니다 (잘림 고침)" -ForegroundColor Cyan
     & node scripts/post-images.mjs "content\image-plans\$d-$s.json" --overlay-only --only 1
   }
+  # 세 번째 칸 'redo=1,2,5' — 그 번호 그림을 새로 받는다 (2026-11-03 계약결혼 사진이 지난 회차라서)
+  if ($parts.Count -ge 3 -and $parts[2] -match '^redo=([\d,]+)$') {
+    Write-Host "  그림 $($Matches[1]) 번을 새로 만듭니다" -ForegroundColor Cyan
+    & node scripts/post-images.mjs "content\image-plans\$d-$s.json" --force --only $Matches[1]
+  }
   Write-Host "`n=== $d $s — 그림 만들고 임시저장 (발행 안 함)" -ForegroundColor Cyan
   & (Join-Path $PSScriptRoot 'draft-day.ps1') -Date $d -Only $s
   # 그날 아침 실행·켜짐 확인이 '남은 글'로 세지 않게 처리 표시를 남긴다 (예약은 draft_only 로 이미 건너뛴다)
