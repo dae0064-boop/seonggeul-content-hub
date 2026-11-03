@@ -30,6 +30,7 @@ import { wordText } from './word-fix.mjs';
 const argv = process.argv.slice(2);
 const arg = (n, d = '') => { const i = argv.indexOf(n); return i >= 0 ? argv[i + 1] : d; };
 const doPost = argv.includes('--post');
+const nowAnyTime = argv.includes('--now'); // 사람이 '지금 한 편' 누를 때 — 시각 칸은 안 보고 하루 상한·간격·순서는 그대로 (launchers/threads-post-now.cmd)
 const wordDir = arg('--word-dir');
 const approvedTsv = arg('--approved');
 const fixesTsv = arg('--fixes'); // 반려(수정요구)된 편 번호 — 순서 확인에 쓴다
@@ -180,7 +181,7 @@ async function main() {
   log(`아직 안 올린 편: ${todo.map((r) => r.n).join(', ') || '없음'}`);
   if (!todo.length) { log('올릴 편이 없어요 — 다음 승인을 기다려요'); return 0; }
   if (todayOurs.length >= maxPerDay) { log(`오늘 ${maxPerDay}편을 다 올렸어요 — 내일 이어서`); return 0; }
-  if (slots) {
+  if (slots && !nowAnyTime) {
     const nowMs = Date.now();
     const w = slots.map((t) => Date.parse(`${today}T${t}:00+09:00`)).find((st) => nowMs >= st && nowMs < st + windowMin * 60000);
     if (!w) { log(`올리는 시각(${slots.join('·')}, 각 ${windowMin}분 안)이 아니라 쉬어요`); return 0; }
