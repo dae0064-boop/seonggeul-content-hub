@@ -306,7 +306,7 @@ python3 scripts/threads/insurance-word.py <묶음.md> <사진.jpg> <저장 폴�
 |---|---|---|
 | ⓪ 쓰기·등록 | 밤 Routine(`routines/threads-insurance-daily.md`, 매일 21:41) → 아침 PC Word 저장(`insurance-word.ps1`, Python 없으면 `word-make.mjs`) → **GOMS 자동 등록 하루 10편**(`goms-register-auto.ps1` — 번호 순서, 약관 참조 문구를 검은 글씨로 미리 넣음, 두 PC 겹침은 Drive `goms-done/registering.lock`) | 2026-10-26 사용자: "하루 10편씩 만들어서 광고 등록". 반려 9건 중 8건이 약관 참조 문구 요구라 미리 넣는다. **2026-10-27 사용자: 31~80편 등록은 11/1 부터 다시** — 그 전엔 건너뛰고, 31편 미만·승인표에 있는 편은 절대 다시 고르지 않는다 |
 | ① 심의필 번호 읽기 | PC 아침 auto-day 끝 (`launchers/tools/goms-approved.ps1`, 바로 돌릴 땐 `launchers/goms-approved.cmd`) | GOMS 목록 승인완료 「스레드 N편」의 심의결과 탭 → Drive `ClaudeWorkspace/goms-approved.tsv` (`번호 · 제26-10-0209호 · 시작 · 끝 · 적격 · 읽은 날`). 반려 편도 `번호 · · · · 반려 · 날짜` 로 적는다(게시가 그 번호를 기다리지 않게). 편마다 마지막 줄이 지금 상태 — 재심사로 승인되면 적격 줄이 뒤에 붙고, 그다음 게시 차례에 번호 순서대로 들어간다 |
-| ② 배너 만들기 | 클라우드 아침 확인 (`routines/morning-check.md` 5-2) | `scripts/threads/banner.py` → `content/threads/insurance/banners/thread-N.jpg` (base.jpg 맨 아래 줄만 바꿈, Pretendard Bold) → PR → main |
+| ② 배너 만들기 | 클라우드 아침 확인 (`routines/morning-check.md` 5-2) | `scripts/threads/banner.py` → `content/threads/insurance/banners/thread-N.jpg` (**2026-11-03 새 배너** — `banner-styles.mjs` d-warm + `art-d-warm.jpg`, 크림·복숭아 배경·왼쪽 '친근한 설계사'. base.jpg = 자리표시 판 = Word 틀 사진) → PR → main |
 | ②-1 심의필 Word | PC (`goms-approved.ps1` 끝, `scripts/threads/word-banner.mjs`) | 저장소 배너로 Word 속 배너 사진만 바꿔 Drive `ClaudeWorkspace/보험글-심의필/스레드 N편.docx` (원본 `보험글/` 은 그대로 — GOMS 재심사용) |
 | ③ 올리기 | PC 작업 스케줄러 `SeonggeulThreadsPost` (`launchers/tools/threads-post.ps1` → `scripts/threads/insurance-post.mjs --post`, 바로 한 편: `launchers/threads-post-now.cmd`) | 한 번에 한 편: 적격·유효기간 안·Word 있음·배너 공개 주소 열림·아직 안 올림·앞 번호 중 결과 못 읽은 편 없음(반려 편은 건너뜀)·오늘 5편 미만·마지막 보험글 40분 넘음 → 1/2 글 + 2/2 글·배너. 2/2 가 빠진 편이 있으면 그것부터 붙인다 |
 
@@ -320,4 +320,5 @@ python3 scripts/threads/insurance-word.py <묶음.md> <사진.jpg> <저장 폴�
   아침 확인이 매일 `schedule-data.mjs` 로 data.json 을 바꿔 올린다 (`routines/morning-check.md` 5-2).
 - **매일 반복** (2026-10-26 사용자): ① 승인 편 5편 게시 ② GOMS 10편 등록 ③ 승인 난 편 심의필 번호 읽기 → 다음 날 게시 준비.
   같은 글감은 다시 쓰지 않는다(topics.txt `# 사용`, 검사기 겹침, 쓰기 전 지난 묶음 훑기). 하루 5편 게시는 꼭 — 승인 재고가 10편 밑이면 아침 확인이 경고한다.
+- **배너는 2026-11-03 부터 새 디자인 하나** (사용자 — "앞으로 심의 올릴 때·받았을 때 모두 이 배너"): 심의 올리는 Word(word-template.docx·보험글-사진)·심의필 Word·스레드 게시 배너 모두. Drive Word 바꾸기는 PC `launchers/tools/banner-swap.ps1`(catchup 이 한 번).
 - 배너에는 설계사 이름·등록번호가 있지만 스레드에 어차피 공개로 올라가는 사진이라 저장소(공개)에 둔다 (2026-10-26 사용자 승인).
