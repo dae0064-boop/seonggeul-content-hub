@@ -44,7 +44,12 @@ if (-not (CdpUp)) {
   if (-not (Test-Path $chrome)) { $chrome = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe' }
   if (-not (Test-Path $chrome)) { $chrome = "$env:LOCALAPPDATA\Google\Chrome\Application\chrome.exe" }
   Start-Process $chrome -ArgumentList '--remote-debugging-port=9222', "--user-data-dir=$env:LOCALAPPDATA\seonggeul-chrome", '--no-first-run', 'about:blank'
-  for ($i = 0; $i -lt 20 -and -not (CdpUp); $i++) { Start-Sleep -Seconds 1 }
+  for ($i = 0; $i -lt 45 -and -not (CdpUp); $i++) { Start-Sleep -Seconds 1 }
+}
+# 2026-11-03: 11:40 실행이 크롬에 붙지 못해 4~6편 등록을 못 함 — 크롬이 안 뜨면 GOMS 단계로 가지 않고 이유를 크게 알린다
+if (-not (CdpUp)) {
+  Write-Host '자동화용 크롬이 열리지 않았어요. 작업 표시줄의 크롬 창을 모두 닫고(오른쪽 아래 숨은 아이콘의 크롬도 종료) 다시 더블클릭해 주세요.' -ForegroundColor Yellow
+  exit 0
 }
 # 두 PC 가 함께 돌면 한 대만 (2시간 지난 표시는 멈춘 실행으로 보고 무시)
 $lock = Join-Path $doneDir 'running.lock'
