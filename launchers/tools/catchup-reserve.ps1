@@ -50,6 +50,22 @@ if ($drive) {
     } catch { Note "사진 찾기 시험 실패: $($_.Exception.Message)" }
   }
 }
+# 스레드 심의필 배너 새 시안 — 배경만 GPT(low 3장, 약 30원)로 (2026-11-03 사용자 "배경만 GPT 한테"). 성공하면 다시 하지 않고, 실패해도 하루 한 번만
+if ($drive) {
+  $bsDir = Join-Path $drive 'ClaudeWorkspace\banner-styles'
+  $bsTry = Join-Path $bsDir "try-$today.txt"
+  if (-not (Test-Path (Join-Path $bsDir 'done.txt')) -and -not (Test-Path $bsTry)) {
+    try {
+      New-Item -ItemType Directory -Force -Path $bsDir | Out-Null
+      $k = [Environment]::GetEnvironmentVariable('OPENAI_API_KEY', 'User'); if ($k) { $env:OPENAI_API_KEY = $k }
+      $out = @(& node scripts\threads\banner-styles.mjs --art --out "$bsDir" 2>&1 | ForEach-Object { "$_" })
+      @("PC: $env:COMPUTERNAME", "시각: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')", '') + $out | Set-Content -Encoding UTF8 $bsTry
+      $ok = @($out | Where-Object { $_ -match 'GPT 그림 넣음' }).Count
+      if ($ok -ge 3) { "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') [$env:COMPUTERNAME] 3장 완성" | Set-Content -Encoding UTF8 (Join-Path $bsDir 'done.txt') }
+      Note "배너 시안 GPT 배경: $ok/3장"
+    } catch { Note "배너 시안 실패: $($_.Exception.Message)" }
+  }
+}
 # 오늘 글은 21시 이후면 넣을 자리가 없다 — 내일·모레 글은 밤에도 예약한다 (22시 실행이 마지막 기회가 되게)
 $late = ($now.Hour -lt 5 -or $now.Hour -ge 21)
 # 실제로 글을 만들거나 예약하는 일이 돌 때만 쉰다. 기다리기만 하는 auto-day.cmd·wait-turn 은 세지 않는다
