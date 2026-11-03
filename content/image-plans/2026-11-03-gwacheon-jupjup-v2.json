@@ -10,7 +10,8 @@
       "kind": "photo",
       "photo": {
         "query": "과천지식정보타운",
-        "query_en": "Gwacheon"
+        "query_en": "Gwacheon",
+        "scene_en": "Korean high-rise apartment complex"
       },
       "title": "가을 햇살 아래 새로 지은 아파트 단지 모습 (대표사진)",
       "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A newly built Korean high-rise apartment complex under clear autumn sunlight, landscaped trees in front. Color theme: teal and sand tones with an orange accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",

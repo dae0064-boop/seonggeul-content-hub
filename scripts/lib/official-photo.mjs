@@ -111,6 +111,51 @@ export async function fromKoreaKr(page) {
   return { url: m[1], page, license: '공공누리 제1유형', source: '대한민국 정책브리핑', credit: '사진: 대한민국 정책브리핑(www.korea.kr) (공공누리 제1유형)' };
 }
 
+// ── 플리커 (2026-11-03 사용자 — "위키미디어 말고 다른 곳도") ─────────────────────────────
+// 상업적으로 써도 되는 라이선스만: 4 CC BY 2.0 · 5 CC BY-SA 2.0 · 9 CC0 · 10 Public Domain Mark · 11 CC BY 4.0 · 12 CC BY-SA 4.0
+// (NC·ND·저작권 보유는 고르지 않는다). 인물은 soloOk — 사진 제목에 그 사람 이름이 있고 단체·행사로 보이지 않는 것만.
+const FLICKR_LIC = { 4: 'CC BY 2.0', 5: 'CC BY-SA 2.0', 9: 'CC0 1.0', 10: 'Public Domain Mark', 11: 'CC BY 4.0', 12: 'CC BY-SA 4.0' };
+export async function searchFlickr({ query, query_en: queryEn, person, minWidth = 600 }, key = process.env.FLICKR_API_KEY) {
+  if (!key) return null;
+  const terms = [...new Set([].concat(person || []).slice(0, 2).concat([queryEn, query]).filter(Boolean))];
+  for (const q of terms) {
+    const url = 'https://www.flickr.com/services/rest/?' + new URLSearchParams({
+      method: 'flickr.photos.search', api_key: key, text: q, license: Object.keys(FLICKR_LIC).join(','), content_type: '1', media: 'photos',
+      sort: 'relevance', per_page: '50', extras: 'license,owner_name,url_l,url_c,tags', format: 'json', nojsoncallback: '1',
+    });
+    const data = await getJson(url);
+    if (data?.stat !== 'ok') throw new Error(`플리커: ${data?.message || '응답 이상'}`);
+    const scored = [];
+    for (const p of data.photos?.photo || []) {
+      const src = p.url_l || p.url_c; const w = Number(p.width_l || p.width_c), h = Number(p.height_l || p.height_c);
+      if (!src || !FLICKR_LIC[p.license] || w < minWidth) continue;
+      if (person) { if (!soloOk(p.title || '', person)) continue; }
+      else if (!q.toLowerCase().split(/\s+/).some((wd) => wd.length >= 2 && `${p.title} ${p.tags}`.toLowerCase().includes(wd))) continue;
+      scored.push({ score: Math.min(w, 2000) / 1000 + (person ? (h >= w ? 1 : 0) : (w >= h ? 1 : 0)), p, src });
+    }
+    scored.sort((a, b) => b.score - a.score);
+    if (scored[0]) {
+      const { p, src } = scored[0]; const lic = FLICKR_LIC[p.license]; const author = String(p.ownername || '작가 미상').slice(0, 40);
+      return { url: src, page: `https://www.flickr.com/photos/${p.owner}/${p.id}`, license: lic, author, title: p.title, source: '플리커', credit: `사진: ${author} / 플리커 (${lic})` };
+    }
+  }
+  return null;
+}
+
+// ── 펙셀스 (장면·장소·물건 사진 — 사람 글에는 쓰지 않는다) ──────────────────────────────
+// Pexels 라이선스: 상업적 사용 가능, 출처 표시는 의무가 아니지만 남긴다. 인물(photo.person)이 있는 칸에는 부르지 않는다.
+export async function searchPexels({ scene_en: sceneEn, query_en: queryEn }, key = process.env.PEXELS_API_KEY) {
+  const q = sceneEn || queryEn;
+  if (!key || !q) return null;
+  const r = await fetch('https://api.pexels.com/v1/search?' + new URLSearchParams({ query: q, per_page: '15' }), { headers: { Authorization: key, 'User-Agent': UA }, signal: AbortSignal.timeout(30000) });
+  if (!r.ok) throw new Error(`펙셀스 HTTP ${r.status}`);
+  const data = await r.json();
+  const p = (data.photos || []).find((x) => x.width >= 1000);
+  if (!p) return null;
+  const author = String(p.photographer || '작가 미상').slice(0, 40);
+  return { url: p.src?.large2x || p.src?.large || p.src?.original, page: p.url, license: 'Pexels 라이선스', author, source: '펙셀스', credit: `사진: ${author} / Pexels` };
+}
+
 /** 계획서 photo 칸으로 사진 하나 고르기. 못 찾으면 null 과 이유 */
 export async function findPhoto(spec = {}) {
   const why = [];
@@ -123,6 +168,14 @@ export async function findPhoto(spec = {}) {
   }
   if (spec.query || spec.query_en) {
     try { const c = await searchCommons(spec); if (c) return { photo: c }; why.push('위키미디어 공용: 라이선스 맞는 사진 없음'); } catch (e) { why.push(`위키미디어 공용: ${e.message}`); }
+  }
+  if (spec.query || spec.query_en || spec.person) {
+    if (!process.env.FLICKR_API_KEY) why.push('플리커: 키 없음(launchers\\photo-key.cmd)');
+    else try { const f = await searchFlickr(spec); if (f) return { photo: f }; why.push('플리커: 맞는 사진 없음'); } catch (e) { why.push(`플리커: ${e.message}`); }
+  }
+  if (!spec.person && (spec.scene_en || spec.query_en)) {
+    if (!process.env.PEXELS_API_KEY) why.push('펙셀스: 키 없음(launchers\\photo-key.cmd)');
+    else try { const x = await searchPexels(spec); if (x) return { photo: x }; why.push('펙셀스: 맞는 사진 없음'); } catch (e) { why.push(`펙셀스: ${e.message}`); }
   }
   return { photo: null, why: why.join(' / ') || 'photo.query 나 photo.page 가 없음' };
 }
