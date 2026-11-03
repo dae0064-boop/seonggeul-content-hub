@@ -659,7 +659,8 @@ for (const file of files) {
       if (im.photo?.still) {
         const st = im.photo.still;
         if (post.issue !== '연예') errors.push(`${im.n}번 장면 사진(photo.still)은 연예 이슈 글에만 씁니다`);
-        if (!stillHostOk(st.page)) errors.push(`${im.n}번 still.page 는 방송사·OTT 공식 사이트만 (scripts/lib/broadcast-still.mjs STILL_HOSTS): ${st.page || '없음'}`);
+        if (st.youtube && !/^[\w-]{11}$/.test(String(st.youtube))) errors.push(`${im.n}번 still.youtube 는 방송사 공식 채널 영상 ID 11자리`);
+        if (!st.youtube && !stillHostOk(st.page)) errors.push(`${im.n}번 still.page 는 방송사·OTT 공식 사이트만 (scripts/lib/broadcast-still.mjs STILL_HOSTS): ${st.page || '없음'}`);
         if (!st.owner || !st.program) errors.push(`${im.n}번 still 에 owner(방송사)·program(프로그램 이름)을 적습니다 — 출처 줄에 들어갑니다`);
       }
       if (im.photo?.page && !/^https:\/\/(www\.)?korea\.kr\//.test(im.photo.page)) errors.push(`${im.n}번 photo.page 는 정책브리핑(korea.kr) 주소만 — 언론사 사진은 쓰지 않습니다`);

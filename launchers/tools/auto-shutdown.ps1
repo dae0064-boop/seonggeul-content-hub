@@ -40,7 +40,7 @@ if ($busy -and -not $Test) { Log '다른 발행 작업이 아직 돌고 있어 P
 
 # 오늘 남은 글이 있으면 끄지 않는다 (on-wake.ps1 과 같은 셈법)
 $today = (Get-Date).ToString('yyyy-MM-dd')
-$naver = @(Get-ChildItem 'content\posts' -Filter "$today-*.md" | ForEach-Object { $_.BaseName })
+$naver = @(Get-ChildItem 'content\posts' -Filter "$today-*.md" | Where-Object { -not (Select-String -Path $_.FullName -Pattern '^draft_only:\s*\S' -Quiet) } | ForEach-Object { $_.BaseName })   # 확인용 원고는 셈에서 뺀다
 $tistory = @(Get-ChildItem 'content\tistory' -Filter "$today-*.md" | ForEach-Object { $_.BaseName })
 $lockDir = if ($drive) { Join-Path $drive "ClaudeWorkspace\run-locks\$today" } else { Join-Path $repo "dumps\run-locks\$today" }
 $left = @()
