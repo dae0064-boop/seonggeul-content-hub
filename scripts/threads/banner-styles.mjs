@@ -221,8 +221,9 @@ const ART_CSS = {
 };
 const withArt = (id, img) => img ? `<style>body{background:url(${pathToFileURL(img)}) center/cover no-repeat}.left .bg{display:none}${ART_CSS[id]}</style>` : "";
 
-const { chromium } = await import("playwright");
-const browser = await chromium.launch();
+// PC 에 깔린 크롬(없으면 엣지)을 쓴다 — playwright 전용 브라우저는 PC 에 없다 (2026-11-03 첫 실행 실패)
+const { launch } = await import(pathToFileURL(join(ROOT, "scripts", "lib", "overlay.mjs")).href);
+const browser = await launch();
 try {
   const page = await browser.newPage({ viewport: { width: 801, height: 252 }, deviceScaleFactor: 2 });
   for (const s of STYLES) {
