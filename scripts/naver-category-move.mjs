@@ -98,16 +98,19 @@ async function openList(page, catNo, pageNo = 1) {
 /** 목록에 보이는 글 번호들 (체크칸 줄마다) */
 async function visibleLogNos(frame) {
   return frame.evaluate(() => {
+      const noOf = (cb) => {
+        for (const a of ['value', 'data-log-no', 'data-logno', 'data-lognum']) { const v = cb.getAttribute(a) || ''; const m = /(\d{9,})/.exec(v); if (m) return m[1]; }
+        let el = cb.parentElement;
+        for (let d = 0; el && d < 8; d++, el = el.parentElement) {
+          const set = new Set();
+          for (const x of el.querySelectorAll('a[href]')) { const m = /logNo=(\d{9,})|\/(\d{9,})(?:[?#]|$)/.exec(x.href); if (m) set.add(m[1] || m[2]); }
+          if (set.size === 1) return [...set][0];
+          if (set.size > 1) return '';
+        }
+        return '';
+      };
     const out = [];
-    for (const cb of document.querySelectorAll('input[type=checkbox]')) {
-      let no = /^\d{9,}$/.test(cb.value) ? cb.value : '';
-      if (!no) {
-        const row = cb.closest('tr, li, div');
-        const a = row && [...row.querySelectorAll('a[href]')].map((x) => (/logNo=(\d+)|\/(\d{9,})(?:\?|$)/.exec(x.href) || [])).find((m) => m[1] || m[2]);
-        no = a ? (a[1] || a[2]) : '';
-      }
-      if (no) out.push(no);
-    }
+    for (const cb of document.querySelectorAll('input[type=checkbox]')) { const no = noOf(cb); if (no) out.push(no); }
     return out;
   });
 }
@@ -115,15 +118,21 @@ async function visibleLogNos(frame) {
 /** 목록에서 logNo 가 맞는 줄의 체크칸을 켠다. 켠 logNo 들을 돌려준다 */
 async function checkRows(frame, want) {
   return frame.evaluate((wantList) => {
+      const noOf = (cb) => {
+        for (const a of ['value', 'data-log-no', 'data-logno', 'data-lognum']) { const v = cb.getAttribute(a) || ''; const m = /(\d{9,})/.exec(v); if (m) return m[1]; }
+        let el = cb.parentElement;
+        for (let d = 0; el && d < 8; d++, el = el.parentElement) {
+          const set = new Set();
+          for (const x of el.querySelectorAll('a[href]')) { const m = /logNo=(\d{9,})|\/(\d{9,})(?:[?#]|$)/.exec(x.href); if (m) set.add(m[1] || m[2]); }
+          if (set.size === 1) return [...set][0];
+          if (set.size > 1) return '';
+        }
+        return '';
+      };
     const want = new Set(wantList);
     const done = [];
     for (const cb of document.querySelectorAll('input[type=checkbox]')) {
-      let no = /^\d{9,}$/.test(cb.value) ? cb.value : '';
-      if (!no) {
-        const row = cb.closest('tr, li, div');
-        const a = row && [...row.querySelectorAll('a[href]')].map((x) => (/logNo=(\d+)|\/(\d{9,})(?:\?|$)/.exec(x.href) || [])).find((m) => m[1] || m[2]);
-        no = a ? (a[1] || a[2]) : '';
-      }
+      const no = noOf(cb);
       if (no && want.has(no)) { if (!cb.checked) cb.click(); if (cb.checked) done.push(no); }
     }
     return done;
@@ -233,6 +242,7 @@ async function main() {
       const frame = await openList(page, 0, pg);
       if (!frame) { if (pg === 1) { log('✖ 목록열기 화면에서 체크칸을 못 찾음 — 멈춤'); await save(page, 'fail-list'); code = 2; } break; }
       const vis = new Set(await visibleLogNos(frame));
+      if (pg === 1 && first) { log(`1쪽: 체크칸 ${await frame.locator('input[type=checkbox]').count()}개, 글 번호 읽힘 ${vis.size}개 (${frame.url().slice(0, 120)})`); await save(page, 'list-page1'); }
       const here = todo.filter((t) => vis.has(t.logNo));
       if (!here.length) { pg++; continue; }
       const cnt = {};
@@ -255,6 +265,7 @@ async function main() {
       for (const n of good) todo.splice(todo.findIndex((t) => t.logNo === n), 1);
       first = false;
     }
+    if (!moved && !code) { log('✖ 목록에서 옮길 글을 하나도 찾지 못함 — list-page1 화면을 보고 고친다'); code = 2; }
     log(`\n끝: ${moved}편 옮김, 남은 글 ${todo.length}편`);
     if (MODE === 'test' && moved === 1) log('시험 한 편이 맞게 옮겨졌어요.');
   } catch (e) { log(`✖ 오류: ${e.message.split('\n')[0]}`); await save(page, 'fail-error'); code = 1; }
