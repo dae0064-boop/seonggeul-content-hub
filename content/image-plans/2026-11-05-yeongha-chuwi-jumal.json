@@ -1,0 +1,83 @@
+{
+  "slug": "2026-11-05-yeongha-chuwi-jumal",
+  "title": "영하권 추위, 이번 주말 서울이 올가을 처음일까? 입동 날씨",
+  "source": "11/5(목) 09:20 네이버 원고 — 아침 이슈 글(뉴스·날씨), 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실존 인물 얼굴은 그리지 않는다 · 1번은 공식 사진 먼저(kind: photo)",
+  "images": [
+    {
+      "kind": "photo",
+      "title": "서리가 살짝 내린 아침 단풍잎 (대표사진)",
+      "photo": {
+        "query": "서리 단풍",
+        "query_en": "frost on autumn leaves",
+        "scene_en": "frost on red autumn maple leaves in the morning"
+      },
+      "note": "대표 — 위키미디어 CC 장면 사진 먼저(사람 없음), 없으면 AI 그림",
+      "thumb_shot": "object",
+      "thumb_theme": "olive",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "주말 첫 영하권 추위",
+        "focus": "center 40%",
+        "theme": "olive"
+      },
+      "n": 1,
+      "file": "01.png",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Red and orange maple leaves covered with thin white morning frost on a wooden bench. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Color theme: olive green and warm cream tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "title": "비 내린 아침 우산을 접는 손",
+      "n": 2,
+      "file": "02.png",
+      "prompt": "Camera and composition: close-up of hands at a building entrance. Hands folding a wet transparent umbrella on a rainy autumn morning, wet pavement and fallen yellow ginkgo leaves behind, face not shown. Background color: rainy grey with yellow leaves. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "kind": "card",
+      "title": "영하권 추위 흐름을 정리한 카드",
+      "card": {
+        "type": "steps",
+        "title": "이번 주 날씨 흐름",
+        "ask": "언제부터 추워져?",
+        "items": [
+          "11월 5일 전국 비",
+          "비 그친 뒤 찬 공기",
+          "입동 아침 가장 추움",
+          "낮이면 추위 물러남"
+        ]
+      },
+      "n": 3,
+      "file": "03.png"
+    },
+    {
+      "title": "현관 옷걸이에 걸린 두꺼운 겉옷과 목도리",
+      "n": 4,
+      "file": "04.png",
+      "prompt": "Camera and composition: medium shot of a home entrance. A thick padded winter coat and a knitted scarf hanging on a wooden coat rack by the front door, no people. Background color: warm beige wall. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "kind": "card",
+      "title": "주말 날씨 확인할 것 카드",
+      "card": {
+        "type": "check",
+        "title": "영하권 추위 전에",
+        "ask": "뭘 챙기면 돼?",
+        "items": [
+          "금요일 밤 아침 기온 확인",
+          "두꺼운 겉옷 꺼내 두기",
+          "얇은 옷 여러 겹",
+          "보일러 한 번 돌려 보기"
+        ]
+      },
+      "n": 5,
+      "file": "05.png"
+    },
+    {
+      "title": "창가에 놓인 따뜻한 차 한 잔과 담요",
+      "n": 6,
+      "file": "06.png",
+      "prompt": "Camera and composition: medium shot of a window sill. A steaming mug of tea and a folded knitted blanket on a window sill, misty cold morning outside the glass, no people. Background color: soft grey blue and cream. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}
