@@ -87,8 +87,12 @@ const isTwenty = (d) => d >= TWENTY_FROM || TWENTY_EXTRA.has(d);
 //   분량(공백 제외)·키워드 횟수: 네이버 홈판형 1,500~1,800자·메인 7·서브 3 / 검색형 1,900~2,100자·메인 9·서브 4 / 티스토리 1,600~1,900자·메인 8·서브 4
 //   Q&A 한 쌍씩 줄임(3→2, 질문형 5→4), 소제목 7개까지
 const SLIM_FROM = '2026-11-03';
-function slimOf(dated, tistory, slot) {
+// 2026-11-04 사용자 "따라해보자" — 한다팀장 모양 (2026-11-07 네이버 원고부터, 생활보장만): 홈판형 칸 없이 모두 검색형,
+//   제목 "큰 검색어, 결과지·진단 상황 + 꼭 ~해야 하나요 (기준 · 2026년)", 분량 1,900~2,300자, 인용구 10개까지 (routines/naver-daily.md 🩺👩‍💼 상자)
+const HANDE_FROM = '2026-11-07';
+function slimOf(dated, tistory, slot, category) {
   if (dated < SLIM_FROM) return null;
+  if (!tistory && category === '생활보장' && dated >= HANDE_FROM) return { imgs: 6, cards: [2, 2], chars: [1900, 2300], main: 9, sub: 4, quotes: 10 };
   if (tistory) return { imgs: 4, cards: [2, 2], chars: [1600, 1900], main: 8, sub: 4, quotes: 7 };
   if (slot === '홈판') return { imgs: 6, cards: [2, 2], chars: [1500, 1800], main: 7, sub: 3, quotes: 7 };
   return { imgs: 6, cards: [2, 2], chars: [1900, 2100], main: 9, sub: 4, quotes: 7 };
@@ -403,12 +407,19 @@ for (const file of files) {
   const newRules = dated >= NEW_RULES_FROM;
   const tistory = forceTistory || /(^|[\\/])content[\\/]tistory[\\/]/.test(file);
   const close1 = tistory ? TISTORY_CLOSE_1 : CLOSE_1;
-  const slim = slimOf(ruleDated, tistory, post.slot);
+  const slim = slimOf(ruleDated, tistory, post.slot, post.category);
   const nsChars = slim ? slim.chars : NS_CHARS;
   const minMain = slim ? slim.main : MIN_MAIN;
   const minSub = slim ? slim.sub : MIN_SUB;
   const maxQuotes = slim ? slim.quotes : MAX_QUOTES;
   const errors = [];
+  // 한다팀장 모양 (HANDE_FROM) — 생활보장은 홈판형 칸 없이 검색형, 제목은 질문 + 괄호 기준
+  if (!tistory && post.category === '생활보장' && dated >= HANDE_FROM && !post.issue) {
+    if (post.slot === '홈판') errors.push('2026-11-07 원고부터 생활보장은 홈판형(slot: 홈판)을 쓰지 않습니다 — slot 줄을 지우고 검색형으로 (한다팀장 모양, routines/naver-daily.md 🩺👩‍💼)');
+    const t = String(post.title || '');
+    if (!/\([^)]*\)\s*$/.test(t)) errors.push('생활보장 제목 끝에 괄호 기준이 없습니다 — "(크기별 추적 기준 · 2026년)"처럼 답의 기준을 괄호로 (한다팀장 모양)');
+    if (!/(나요|까요|될까|할까|일까|인가요)\s*(\(|$)/.test(t)) errors.push('생활보장 제목 가운데에 걱정 질문이 없습니다 — "꼭 ~해야 하나요", "~되나요"처럼 (한다팀장 모양)');
+  }
   // 하위 카테고리 (2026-11-04 사용자) — 적었으면 블로그에 있는 이름이어야 한다 (scripts/lib/naver-subcategory.mjs)
   if (post.subcategory && !ALL_SUBCATEGORIES.includes(post.subcategory)) errors.push(`subcategory "${post.subcategory}" 는 블로그에 없는 이름 — ${ALL_SUBCATEGORIES.join(' / ')} 중 하나 (비우면 저절로 고른다)`);
   const notes = [];
