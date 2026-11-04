@@ -92,6 +92,15 @@ const overlayOf = (im) => im.overlay && (im.frame === "card"
   ? { ...im.overlay, frame: "card", brand: plan.brand, key: im.overlay.key || postMeta?.mainKeyword || "", category: im.overlay.category || postMeta?.category || "생활정보" }
   : im.overlay);
 
+// 카드 색 (2026-11-04 사용자 — 블로그 카테고리마다 따로): 이슈 연예 → 연예방송, 이슈 정책 → 이슈뉴스,
+// 맛집·나들이(맛집 글·주제 국내여행·나들이 '언제' 글) → 맛집나들이, 나머지는 원고 category (생활정보·생활보장)
+function cardThemeOf(m) {
+  if (!m) return "";
+  if (m.issue === "연예") return "연예방송";
+  if (m.issue === "정책") return "이슈뉴스";
+  if (/맛집|나들이/.test(m.category || "") || m.topic === "국내여행") return "맛집나들이";
+  return String(m.category || "").replace(/[·\s]/g, "");
+}
 // 정보 카드는 먼저 내용을 확인한다 (돈·통화기호, 줄 수, 글자 수)
 for (const im of plan.images.filter((x) => x.kind === "card")) {
   const bad = checkCard(im.card);
@@ -113,7 +122,7 @@ for (const im of todo) {
     const name = im.file ? im.file.replace(/\.png$/i, "") : String(im.n).padStart(2, "0");
     const target = join(outDir, `${name}.png`);
     if (existsSync(target) && !opt.force && !opt["overlay-only"]) { console.log(`⏭  ${name}.png 이미 있음 — ${im.title}`); skipped++; }
-    else cardJobs.push({ n: im.n, dest: target, card: { ...im.card, brand: plan.brand } });
+    else cardJobs.push({ n: im.n, dest: target, card: { ...im.card, brand: plan.brand, theme: im.card.theme || cardThemeOf(postMeta), category: im.card.category || postMeta?.category } });
     continue;
   }
   const name = im.file ? im.file.replace(/\.png$/i, "") : String(im.n).padStart(2, "0");

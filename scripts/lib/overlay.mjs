@@ -265,7 +265,7 @@ function newsThumbHtml(imgDataUrl, S, o) {
 // ── 정보 카드 (그림 없이 글자만) ───────────────────────────────
 // 돈·통화기호 금지 (보험 글 그림 규칙과 같다 — standards/이미지-기준.md)
 const MONEY = /[₩$€¥￦]|\d[\d,.]*\s*(만\s*|천\s*|억\s*)?(원|달러)|지폐|동전/;
-const CARD_TYPES = ['steps', 'check', 'compare'];
+const CARD_TYPES = ['steps', 'check', 'compare', 'lead'];
 
 /** 카드 내용이 규칙에 맞는지 본다. 문제 목록(빈 배열이면 통과) */
 export function checkCard(c) {
@@ -273,7 +273,13 @@ export function checkCard(c) {
   if (!c || !CARD_TYPES.includes(c.type)) bad.push(`card.type 은 ${CARD_TYPES.join('/')} 중 하나`);
   if (!c?.title) bad.push('card.title 이 없음');
   const items = Array.isArray(c?.items) ? c.items : [];
-  if (c?.type === 'compare') {
+  if (c?.type === 'lead') {
+    // ① 첫머리 카드 (2026-11-04 사용자) — 큰 질문 제목만, 그림 없음
+    if (!c.keyword || String(c.keyword).length > 8) bad.push('lead 카드 keyword(메인 키워드, 8자 안쪽)가 필요');
+    if (String(c.title || '').split('\n').some((l) => l.length > 7) || String(c.title || '').split('\n').length > 2) bad.push('lead 카드 title(키워드 다음 질문)은 두 줄까지, 한 줄 7자 안쪽 (줄바꿈 \\n)');
+    if (!c.ask) bad.push('lead 카드 ask(말풍선, 18자 안쪽)가 필요');
+    if (items.length) bad.push('lead 카드에는 items 를 쓰지 않음');
+  } else if (c?.type === 'compare') {
     if (items.length < 2 || items.length > 4) bad.push(`compare 줄은 2~4개 (지금 ${items.length})`);
     if (items.some((r) => !Array.isArray(r) || r.length !== 2)) bad.push('compare 의 items 는 ["왼쪽", "오른쪽"] 쌍');
     if (items.flat().some((t) => String(t).length > 12)) bad.push('compare 칸 글자는 12자 안쪽');
@@ -283,7 +289,13 @@ export function checkCard(c) {
   }
   if (String(c?.title || '').length > 16) bad.push('card.title 은 16자 안쪽');
   if (c?.ask && String(c.ask).length > 18) bad.push('card.ask(질문 말풍선)는 18자 안쪽');
-  const all = [c?.title, c?.ask, ...(c?.heads || []), ...items.flat()].join(' ');
+  if (c?.theme && !CARD_THEMES[c.theme]) bad.push(`card.theme 은 ${Object.keys(CARD_THEMES).join('/')} 중 하나`);
+  if (c?.style === 'memo') {
+    if (!['check', 'steps'].includes(c.type)) bad.push('memo 모양은 check·steps 카드만');
+    if (String(c.sub || '').length > 24) bad.push('card.sub(제목 아래 한 줄)는 24자 안쪽');
+    if (String(c.memo || '').length > 24) bad.push('card.memo(아래 메모 한 줄)는 24자 안쪽');
+  }
+  const all = [c?.keyword, c?.title, c?.ask, c?.sub, c?.memo, ...(c?.heads || []), ...items.flat()].join(' ');
   const m = MONEY.exec(all);
   if (m) bad.push(`돈·통화기호는 쓰지 않음: "${m[0]}"`);
   return bad;
@@ -299,7 +311,112 @@ const askOf = (c) => {
   const t = String(c.title || '').trim();
   return /[?？]$/.test(t) ? t : `${t} 알려 줘!`;
 };
+// ── ① 첫머리 카드·② 메모 카드 (2026-11-04 사용자 — 다른 블로그 카드 느낌을 우리 색·우리 말투로, 그림 자리 없이) ──
+//   문구는 성글벙글 말로만. 아래 고정 문구는 글마다 돌려 써 같은 문장이 매일 반복되지 않게 한다.
+const pick = (arr, seed) => { let h = 0; for (const ch of String(seed)) h = (h * 31 + ch.charCodeAt(0)) >>> 0; return arr[h % arr.length]; };
+const brandLine = (b) => (!b || b === '성글벙글' ? '⌂ 매일매일 좋은 날, 성글벙글' : `⌂ ${b}`);
+const HAN = new URL('./fonts/BlackHanSans-Regular.ttf', import.meta.url);
+let hanCache;
+const hanFace = () => {
+  if (hanCache === undefined) {
+    try { hanCache = `@font-face{font-family:"HAN";src:url(data:font/ttf;base64,${fs.readFileSync(HAN).toString('base64')}) format("truetype")}`; }
+    catch { hanCache = ''; }
+  }
+  return hanCache;
+};
+// 카테고리별 색 (2026-11-04 사용자 — 생활보장은 보라로 쭉, 생활정보도 따로). card.category 는 post-images 가 원고에서 넣는다
+const BASE_SUBS = ['걱정 내려놓고, 같이 차근차근 볼까요?', '어렵지 않아요, 순서대로 정리했어요', '궁금했던 것부터 하나씩 풀어 볼게요'];
+const BASE_MAINS = [['답은 이 글에', ' 다 모아 뒀어요 😊'], ['끝까지 보면', ' 딱 정리돼요 😊'], ['대신 찾아서', ' 정리해 뒀어요 😊']];
+const CARD_THEMES = {
+  생활보장: { l1: '#F3EEFC', l2: '#E6EEFA', ac: '#7C6CF2', dk: '#2A2540', dk2: '#3B3650', yl: '#FFD54A', yl2: '#FFE58A', soft: '#C9C2F5', shadow: 'rgba(124,108,242,.18)',
+    g1: '#8E7FF5', g2: '#6A5AE0', g3: '#4B3FB0', on: '#E6E1FF', row: '#F3F1FB', rowhl: '#FFF3C4', dash: '#E2DEF3', heart: '💜', mark: '?',
+    tags: ['오늘의 궁금증', '오늘 같이 볼 것', '많이 물어보셔서'], subs: BASE_SUBS, mains: BASE_MAINS },
+  생활정보: { l1: '#EEF8F1', l2: '#FFF8E8', ac: '#2FA36B', dk: '#1F3A2E', dk2: '#2F4A3D', yl: '#FFB648', yl2: '#FFE08A', soft: '#BFE5CF', shadow: 'rgba(47,163,107,.18)',
+    g1: '#5CC28E', g2: '#2FA36B', g3: '#1E7A50', on: '#E3F6EA', row: '#F0F8F3', rowhl: '#FFF1CC', dash: '#D5EBDD', heart: '💚', mark: '?',
+    tags: ['오늘의 살림 팁', '이맘때 꼭 할 것', '알아 두면 편해요'],
+    subs: ['한 번 알아 두면 매년 편해요', '어렵지 않아요, 순서대로 정리했어요', '오늘 저녁에 바로 해 볼 수 있어요'],
+    mains: [['방법은 이 글에', ' 다 모아 뒀어요 😊'], ['끝까지 보면', ' 살림이 쉬워져요 😊'], ['순서대로만', ' 따라 해 보세요 😊']] },
+  이슈뉴스: { l1: '#EEF3FB', l2: '#F7F2EC', ac: '#2F6FD6', dk: '#14243F', dk2: '#25344F', yl: '#FF7A59', yl2: '#FFD9A8', soft: '#BFD2F2', shadow: 'rgba(47,111,214,.18)',
+    g1: '#4F86E0', g2: '#2F6FD6', g3: '#1D4E9E', on: '#E2ECFB', row: '#F0F4FB', rowhl: '#FFEBD9', dash: '#D8E2F2', heart: '📌', mark: '!',
+    tags: ['오늘의 이슈', '오늘 바뀌는 것', '한 번에 정리'],
+    subs: ['어려운 말은 빼고 쉽게 풀었어요', '내 생활에 뭐가 달라지는지 봐요', '핵심만 골라 순서대로 정리했어요'],
+    mains: [['핵심만', ' 쏙 골라 정리했어요 📌'], ['3분이면', ' 오늘 이슈 끝나요 📌'], ['나랑 관계있는 것만', ' 모았어요 📌']] },
+  연예방송: { l1: '#FDEFF4', l2: '#F1ECFB', ac: '#E5487D', dk: '#2E1A2B', dk2: '#45293F', yl: '#FFC94A', yl2: '#FFE38F', soft: '#F6C2D5', shadow: 'rgba(229,72,125,.18)',
+    g1: '#F06C98', g2: '#D9437A', g3: '#9B2D6A', on: '#FCE3EC', row: '#FBF0F4', rowhl: '#FFF0C8', dash: '#F1D9E3', heart: '🎬', mark: '★',
+    tags: ['어젯밤 화제 장면', '이번 주 화제작', '본방 놓쳤다면'],
+    subs: ['본방 놓친 분도 금방 따라와요', '다들 궁금해한 그 장면, 같이 봐요', '어젯밤 이야기, 순서대로 풀었어요'],
+    mains: [['다음 회 보기 전에', ' 같이 정리해요 🎬'], ['화제 장면만', ' 쏙 골라 봤어요 🎬'], ['3분이면', ' 줄거리 따라와요 🎬']] },
+  맛집나들이: { l1: '#FFF3E6', l2: '#F2F7EC', ac: '#E07A3F', dk: '#3A2618', dk2: '#4E3626', yl: '#7DBB5A', yl2: '#FFE08A', soft: '#F5CFB3', shadow: 'rgba(224,122,63,.18)',
+    g1: '#F29A5E', g2: '#E07A3F', g3: '#B5572A', on: '#FDEBDD', row: '#FDF4EC', rowhl: '#EAF5DF', dash: '#F1E0D2', heart: '🧡', mark: '♪',
+    tags: ['이번 주말 어디 가지', '나들이 메모', '가기 전에 보세요'],
+    subs: ['헛걸음 안 하게 미리 챙겨요', '주차·시간부터 차근차근 봐요', '사진 찍기 좋은 때까지 정리했어요'],
+    mains: [['가기 전에', ' 이것만 챙겨요 🧺'], ['주말 계획은', ' 이 글로 끝 🧺'], ['헛걸음 없이', ' 다녀와요 🧺']] },
+};
+const cardTheme = (c) => CARD_THEMES[c.theme] || CARD_THEMES[String(c.category || '').replace(/[·\s]/g, '')] || CARD_THEMES.생활보장;
+export const CARD_THEME_NAMES = Object.keys(CARD_THEMES);
+function leadHtml(S, c) {
+  const k = S / 1024;
+  const P = cardTheme(c);
+  const seed = `${c.keyword}${c.title}`;
+  const [m1, m2] = pick(P.mains, seed + 'm');
+  const t = String(c.title || '').split('\n');
+  return `<!doctype html><meta charset="utf-8"><style>${ptdFace()}${hanFace()}
+    *{margin:0;box-sizing:border-box}body{width:${S}px;height:${S}px;position:relative;overflow:hidden;background:#fff;font-family:"PTD",sans-serif}
+    .c{position:absolute;inset:${28 * k}px;border-radius:${44 * k}px;overflow:hidden;background:linear-gradient(160deg,${P.l1} 0%,${P.l2} 100%)}
+    .top{position:absolute;left:${64 * k}px;top:${62 * k}px;font-size:${30 * k}px;color:${P.dk};display:flex;align-items:center;gap:${10 * k}px}
+    .top i{display:inline-block;width:${34 * k}px;height:${34 * k}px;border-radius:${10 * k}px;background:${P.ac};color:#fff;font-style:normal;text-align:center;line-height:${34 * k}px;font-size:${22 * k}px}
+    .bub{position:absolute;right:${120 * k}px;top:${48 * k}px;background:#fff;border-radius:${40 * k}px;padding:${18 * k}px ${32 * k}px;font-size:${30 * k}px;color:${P.dk};white-space:nowrap;box-shadow:0 ${4 * k}px ${14 * k}px ${P.shadow}}
+    .bub:after{content:'';position:absolute;left:${40 * k}px;bottom:${-16 * k}px;border:${12 * k}px solid transparent;border-top:${16 * k}px solid #fff}
+    .dots{position:absolute;left:${66 * k}px;top:${186 * k}px;display:flex;gap:${10 * k}px}.dots i{width:${14 * k}px;height:${14 * k}px;border-radius:50%;background:${P.ac}}.dots i:nth-child(2){background:${P.yl}}.dots i:nth-child(3){background:${P.soft}}
+    .q{position:absolute;right:${70 * k}px;top:${330 * k}px;font-family:"HAN";font-size:${380 * k}px;line-height:1;color:${P.ac};opacity:.16;transform:rotate(12deg)}
+    .t{position:absolute;left:${62 * k}px;right:${62 * k}px;top:${220 * k}px;font-family:"HAN",sans-serif;font-size:${138 * k}px;line-height:1.12;color:${P.dk}}
+    .t div{white-space:nowrap;width:fit-content}.t b{font-weight:normal;color:${P.ac};background:linear-gradient(transparent 62%,${P.yl2} 62%)}
+    .bot{position:absolute;left:0;right:0;bottom:0;height:${176 * k}px;background:${P.dk};color:#fff;padding:${34 * k}px ${64 * k}px}
+    .bot .s{font-size:${28 * k}px;color:${P.soft}}.bot .m{font-size:${42 * k}px;margin-top:${12 * k}px}.bot .m span{color:${P.yl2}}
+    .bot .br{position:absolute;right:${56 * k}px;top:${36 * k}px;font-size:${24 * k}px;color:${P.soft}}.bot .s{max-width:62%;white-space:nowrap;overflow:hidden}.bot .m{white-space:nowrap}
+  </style><body><div class="c">
+    <div class="top"><i>⌂</i>${esc(c.brand && c.brand !== '성글벙글' ? c.brand : '성글벙글')} · ${esc(pick(P.tags, seed))}</div>
+    <div class="bub">${esc(c.ask)}</div><div class="dots"><i></i><i></i><i></i></div><div class="q">${esc(P.mark)}</div>
+    <div class="t"><div class="fitw"><b>${esc(c.keyword)}</b></div>${t.map((x) => `<div class="fitw">${esc(x)}</div>`).join('')}</div>
+    <div class="bot"><div class="s">${esc(pick(P.subs, seed + 's'))}</div><div class="m"><span>${esc(m1)}</span>${esc(m2)}</div><div class="br">${esc(brandLine(c.brand))}</div></div>
+  </div></body>`;
+}
+function memoHtml(S, c) {
+  const k = S / 1024;
+  const P = cardTheme(c);
+  const n = c.items.length;
+  const rowH = (n <= 3 ? 104 : n === 4 ? 86 : 72) * k;
+  const fz = (n <= 3 ? 46 : n === 4 ? 40 : 34) * k;
+  const hl = Number.isInteger(c.hl) ? c.hl : Math.floor((n - 1) / 2);
+  const words = String(c.title || '').split(' ');
+  const cut = words.length > 2 && words.at(-1).length < 2 ? 2 : 1; // 끝 낱말이 한 글자('것')면 두 낱말을 칠한다
+  const head = words.length > 1 ? `${esc(words.slice(0, -cut).join(' '))} <b>${esc(words.slice(-cut).join(' '))}</b>` : `<b>${esc(c.title)}</b>`;
+  return `<!doctype html><meta charset="utf-8"><style>${ptdFace()}${hanFace()}
+    *{margin:0;box-sizing:border-box}body{width:${S}px;height:${S}px;position:relative;overflow:hidden;background:#fff;font-family:"PTD",sans-serif}
+    .c{position:absolute;inset:${28 * k}px;border-radius:${44 * k}px;overflow:hidden;background:linear-gradient(160deg,${P.g1} 0%,${P.g2} 55%,${P.g3} 100%)}
+    .h{position:absolute;top:${70 * k}px;left:${40 * k}px;right:${40 * k}px;text-align:center;font-family:"HAN",sans-serif;font-size:${84 * k}px;color:#fff;white-space:nowrap}
+    .h b{font-weight:normal;color:${P.yl2}}
+    .sub{position:absolute;top:${184 * k}px;width:100%;text-align:center;font-size:${32 * k}px;color:${P.on}}
+    .nb{position:absolute;left:${78 * k}px;right:${78 * k}px;top:${280 * k}px;bottom:${120 * k}px;background:#fff;border-radius:${30 * k}px;padding:${64 * k}px ${46 * k}px 0;display:flex;flex-direction:column;justify-content:center;box-shadow:0 ${10 * k}px ${30 * k}px rgba(0,0,0,.18)}
+    .tape{position:absolute;top:${-26 * k}px;left:50%;width:${260 * k}px;height:${56 * k}px;margin-left:${-130 * k}px;background:rgba(255,229,138,.92);transform:rotate(-3deg);border-radius:${6 * k}px}
+    .r{display:flex;align-items:center;gap:${22 * k}px;background:${P.row};border-radius:${18 * k}px;height:${rowH}px;padding:0 ${30 * k}px;margin-bottom:${20 * k}px;font-size:${fz}px;color:${P.dk};white-space:nowrap;overflow:hidden}
+    .r.hl{background:${P.rowhl}}
+    .r .ck{width:${50 * k}px;height:${50 * k}px;border-radius:50%;background:${P.ac};color:#fff;font-size:${28 * k}px;text-align:center;line-height:${50 * k}px;flex:none}
+    .foot{border-top:${3 * k}px dashed ${P.dash};margin:${6 * k}px 0 ${30 * k}px;padding-top:${22 * k}px;font-size:${29 * k}px;color:${P.dk2};display:flex;gap:${16 * k}px;align-items:center;white-space:nowrap}
+    .tag{background:${P.yl2};border-radius:${10 * k}px;padding:${6 * k}px ${14 * k}px;font-size:${25 * k}px;color:${P.dk};flex:none}
+    .br{position:absolute;right:${62 * k}px;bottom:${46 * k}px;font-size:${26 * k}px;color:${P.on}}
+  </style><body><div class="c">
+    <div class="h">${head}</div>${c.sub ? `<div class="sub">${esc(c.sub)}</div>` : ''}
+    <div class="nb"><div class="tape"></div>
+      ${c.items.map((t, i) => `<div class="r${i === hl ? ' hl' : ''}"><span class="ck">${c.type === 'steps' ? i + 1 : '✓'}</span>${esc(t)}</div>`).join('')}
+      ${c.memo ? `<div class="foot"><span class="tag">${P.heart} ${esc(c.brand && c.brand !== '성글벙글' ? c.brand : '성글벙글')} 메모</span>${esc(c.memo)}</div>` : ''}
+    </div><div class="br">${esc(brandLine(c.brand))}</div>
+  </div></body>`;
+}
+
 function cardHtml(S, c) {
+  if (c.type === 'lead') return leadHtml(S, c);
+  if (c.style === 'memo') return memoHtml(S, c);
   if (c.style === 'classic') return cardHtmlClassic(S, c);
   const face = ptdFace();
   const fam = face ? `"PTD",${STYLE.font}` : STYLE.font;
@@ -400,6 +517,11 @@ export async function renderCards(jobs) {
       await page.evaluate(() => document.fonts.ready);
       // 칸을 넘는 글자는 넘지 않을 때까지 줄인다
       await page.evaluate(() => {
+        for (const el of document.querySelectorAll('.fitw, .h, .r, .bub, .bot .m, .bot .s')) {
+          let fs = parseFloat(getComputedStyle(el).fontSize); let guard = 40;
+          const max = (el.classList.contains('bub') ? document.body.clientWidth * 0.5 : el.parentElement.clientWidth) - 4;
+          while (el.scrollWidth > max && fs > 12 && guard--) { fs *= 0.95; el.style.fontSize = fs + 'px'; }
+        }
         for (const el of document.querySelectorAll('.fit')) {
           const box = el.parentElement;
           let fs = parseFloat(getComputedStyle(box).fontSize);
