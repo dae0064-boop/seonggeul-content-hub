@@ -102,10 +102,17 @@ $Only = @($Only | ForEach-Object { $_ -split ',' } | ForEach-Object { $_.Trim() 
 if ($Only.Count) { $posts = $posts | Where-Object { $s = $_.BaseName.Substring(11); $Only -contains $s } }
 # 확인용 원고(draft_only:)는 예약하지 않는다 — launchers\draft-test.cmd 가 임시저장만 한다 (2026-11-03 사용자)
 if ($Reserve) { $posts = @($posts | Where-Object { -not (Get-Content $_.FullName -Raw -Encoding UTF8 | ConvertFrom-Json).draftOnly }) }
+# 이미 예약된 글의 시각 — 늦은 글을 옮길 때 그 자리를 피한다 (2026-11-04: 이슈 글이 이미 예약된 11:20 글과 같은 11:20 으로 옮겨졌다)
+$doneTimes = New-Object System.Collections.ArrayList
 if ($lockDir) {
   $posts = @($posts | Where-Object {
     $done = Join-Path $lockDir "$($_.BaseName).done"
-    if (Test-Path $done) { Say "  건너뜀 (이미 처리됨: $((Get-Content $done -Raw).Trim())): $($_.BaseName)" 'Yellow'; $false } else { $true }
+    if (Test-Path $done) {
+      $dt = (Get-Content $done -Raw).Trim()
+      Say "  건너뜀 (이미 처리됨: $dt): $($_.BaseName)" 'Yellow'
+      if ($dt -match '예약발행 (\d{4}-\d{2}-\d{2} \d{2}:\d{2})') { [void]$doneTimes.Add([datetime]::ParseExact($Matches[1], 'yyyy-MM-dd HH:mm', $null)) }
+      $false
+    } else { $true }
   })
 }
 if (-not $posts) {
@@ -171,6 +178,7 @@ if ($Reserve) {
     $k++
   }
   $taken = New-Object System.Collections.ArrayList
+  foreach ($x in $doneTimes) { [void]$taken.Add($x) }
   foreach ($it in $items) { if (-not $it.Late) { [void]$taken.Add($it.Want); $planned[$it.Slug] = $it.Want } }
   foreach ($it in ($items | Where-Object Late)) {
     $day = $it.Want.Date
@@ -180,7 +188,7 @@ if ($Reserve) {
       $to = $day.AddHours($win[1])
       # 가장 이른 자리부터: 다른 글과 30분 이상 떨어진 첫 자리
       # 하루 20편(2026-11-03 원고부터, 40분 간격)이면 30분 떨어진 빈자리가 없어 15분으로 (2026-11-01 사용자 — 하루 20편)
-      $gapNeed = if ($items.Count -ge 12) { 15 } else { 30 }
+      $gapNeed = if (($items.Count + $doneTimes.Count) -ge 12) { 15 } else { 30 }
       foreach ($need in @($gapNeed)) {
         for ($t = $from; $t -le $to; $t = $t.AddMinutes(10)) {
           if ($t.Hour -ge 23) { break }

@@ -1,0 +1,87 @@
+{
+  "slug": "2026-11-04-ichangho-2000seung",
+  "title": "이창호 2000승, 입단 40년 만에 세운 기록 의미는?",
+  "source": "11/4(수) 20:20 네이버 원고 — 사용자 부탁 추가 이슈 글(뉴스·바둑), 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 1번은 위키미디어 공용 이창호 단독 사진(퍼블릭 도메인, 2007 삼성화재배) — 못 받으면 사람 없는 바둑판 그림",
+  "images": [
+    {
+      "kind": "photo",
+      "title": "이창호 9단 사진 (대표사진)",
+      "photo": {
+        "file": "File:Lee_ChangHo.JPG",
+        "query": "이창호 바둑",
+        "query_en": "Lee Chang-ho go player",
+        "person": [
+          "Lee ChangHo",
+          "Lee Chang-ho",
+          "Lee Changho",
+          "이창호"
+        ]
+      },
+      "note": "위키미디어 공용 File:Lee_ChangHo.JPG — 퍼블릭 도메인(저작자 Chevy0193), 2007-01-24 상하이 삼성화재배, 혼자 나온 상반신. 못 받으면 아래 그림",
+      "thumb_shot": "object",
+      "thumb_theme": "navy",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "돌부처 이창호, 대기록 달성",
+        "focus": "center 25%",
+        "theme": "navy"
+      },
+      "n": 1,
+      "file": "01.png",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A wooden go board (baduk board) with a few black and white stones placed mid-game and two round wooden stone bowls, no people. Color theme: cool blue and white tones with a coral-red accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "kind": "card",
+      "title": "이창호 2000승 소식을 정리한 첫머리 카드",
+      "card": {
+        "type": "lead",
+        "keyword": "이창호 9단",
+        "title": "기록 의미\n뭘까요?",
+        "ask": "아직도 대국을 두고 있었어?"
+      },
+      "n": 2,
+      "file": "02.png"
+    },
+    {
+      "title": "바둑판 위에 놓인 흑돌과 백돌",
+      "n": 3,
+      "file": "03.png",
+      "prompt": "Camera and composition: close-up from a low angle across the board surface. Black and white go stones on a wooden go board grid with soft window light, no people. Background color: warm wood and soft white. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "title": "창가 바둑판 앞 빈 의자 두 개",
+      "n": 4,
+      "file": "04.png",
+      "prompt": "Camera and composition: medium shot of a quiet room. A low wooden go board between two empty floor cushions by a bright window with paper screen, no people. Background color: calm beige and pale green. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "kind": "card",
+      "title": "이창호 9단 소감 정리 메모 카드",
+      "card": {
+        "type": "check",
+        "style": "memo",
+        "title": "이창호 9단 소감",
+        "sub": "11월 3일 기념식에서 밝힌 말",
+        "items": [
+          "나 자신에게 주는 상 같다고",
+          "3000승은 어렵다고 봤어요",
+          "2500승까지 욕심을 내 보고",
+          "받아들이는 데 시간이 걸렸다고"
+        ],
+        "memo": "40년 꾸준함이 더 큰 의미예요",
+        "hl": 1
+      },
+      "n": 5,
+      "file": "05.png"
+    },
+    {
+      "title": "저녁 햇살이 드는 조용한 대국실",
+      "n": 6,
+      "file": "06.png",
+      "prompt": "Camera and composition: wide shot of an empty game room. A quiet traditional game room with several go boards on low tables in warm evening sunlight, no people. Background color: golden amber and soft brown. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}

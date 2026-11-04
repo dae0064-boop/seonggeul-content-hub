@@ -12,6 +12,7 @@ import { normTitle } from './lib/naver-related.mjs';
 import { checkCard } from './lib/overlay.mjs';
 import * as BC from './lib/brandconnect.mjs';
 import { topicFor, guessTopic } from './lib/naver-topic.mjs';
+import { ALL_SUBCATEGORIES } from './lib/naver-subcategory.mjs';
 // 맞춤법 시험 (2026-11-02 사용자 승인) — 2026-11-04~11-17 네이버 원고, 하루 1편 (routines/naver-daily.md ⓓ-2)
 const SPELL_TEST = ['2026-11-04', '2026-11-17'];
 // 장면·경험·대화 (2026-11-02 사용자 승인 — CLAUDE.md "장면·경험·대화") — 2026-11-06 원고부터 네이버·티스토리
@@ -400,6 +401,8 @@ for (const file of files) {
   const minSub = slim ? slim.sub : MIN_SUB;
   const maxQuotes = slim ? slim.quotes : MAX_QUOTES;
   const errors = [];
+  // 하위 카테고리 (2026-11-04 사용자) — 적었으면 블로그에 있는 이름이어야 한다 (scripts/lib/naver-subcategory.mjs)
+  if (post.subcategory && !ALL_SUBCATEGORIES.includes(post.subcategory)) errors.push(`subcategory "${post.subcategory}" 는 블로그에 없는 이름 — ${ALL_SUBCATEGORIES.join(' / ')} 중 하나 (비우면 저절로 고른다)`);
   const notes = [];
 
   if (!post.title) errors.push('title 이 없습니다.');
