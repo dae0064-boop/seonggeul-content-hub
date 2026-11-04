@@ -12,6 +12,7 @@ if (-not (CdpUp)) {
   Start-Process $chrome -ArgumentList '--remote-debugging-port=9222', "--user-data-dir=$env:LOCALAPPDATA\seonggeul-chrome", '--no-first-run', 'about:blank'
   for ($i = 0; $i -lt 20 -and -not (CdpUp); $i++) { Start-Sleep -Seconds 1 }
 }
+try { & (Join-Path $PSScriptRoot 'matjip-watch-setup.ps1') -IfMissing | Out-Null } catch { }  # 15분마다 새 맛집 원고 예약 (2026-11-04)
 . (Join-Path $PSScriptRoot 'lib-drive.ps1')
 $drive = Find-MyDrive
 if (-not $drive) { Write-Host 'Google Drive(내 드라이브)를 찾지 못했어요. Drive 가 켜져 있는지 확인해 주세요.' -ForegroundColor Yellow; exit 1 }
