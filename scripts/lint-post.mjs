@@ -87,6 +87,10 @@ const isTwenty = (d) => d >= TWENTY_FROM || TWENTY_EXTRA.has(d);
 //   분량(공백 제외)·키워드 횟수: 네이버 홈판형 1,500~1,800자·메인 7·서브 3 / 검색형 1,900~2,100자·메인 9·서브 4 / 티스토리 1,600~1,900자·메인 8·서브 4
 //   Q&A 한 쌍씩 줄임(3→2, 질문형 5→4), 소제목 7개까지
 const SLIM_FROM = '2026-11-03';
+// 카드 6모양 돌려 쓰기 (2026-11-04 사용자) — 한 글 2장은 서로 다른 모양, 하루 카드의 한 모양은 30%까지
+const CARD_MIX_FROM = '2026-11-07';
+const CARD_MIX_MAX = 0.3;
+const cardDesign = (c) => (['lead', 'number', 'quiz', 'selfcheck'].includes(c?.type) ? c.type : c?.style === 'memo' ? 'memo' : c?.style === 'classic' ? 'classic' : 'chat');
 // 2026-11-04 사용자 "따라해보자" — 한다팀장 모양 (2026-11-07 네이버 원고부터, 생활보장만): 홈판형 칸 없이 모두 검색형,
 //   제목 "큰 검색어, 결과지·진단 상황 + 꼭 ~해야 하나요 (기준 · 2026년)", 분량 1,900~2,300자, 인용구 10개까지 (routines/naver-daily.md 🩺👩‍💼 상자)
 const HANDE_FROM = '2026-11-07';
@@ -998,11 +1002,28 @@ for (const file of files) {
       for (const im of cards) {
         if (im.n === 1) errors.push('1번(대표사진)은 정보 카드로 만들지 않습니다');
         for (const b of checkCard(im.card)) errors.push(`${im.n}번 카드: ${b}`);
-        if (writtenFor >= ASK_FROM && !['classic', 'memo'].includes(im.card?.style) && !String(im.card?.ask || '').trim()) errors.push(`${im.n}번 카드: card.ask(질문 말풍선, 18자 안쪽 — 독자가 칠 법한 질문)가 없습니다. 없으면 "<제목> 알려 줘!" 로 어색하게 그려집니다`);
-        const items = (im.card?.items || []).flat();
+        if (writtenFor >= ASK_FROM && !['classic', 'memo'].includes(im.card?.style) && !['number', 'quiz', 'selfcheck'].includes(im.card?.type) && !String(im.card?.ask || '').trim()) errors.push(`${im.n}번 카드: card.ask(질문 말풍선, 18자 안쪽 — 독자가 칠 법한 질문)가 없습니다. 없으면 "<제목> 알려 줘!" 로 어색하게 그려집니다`);
+        // ④ number 는 큰 숫자만, ⑤ quiz 문장은 본문을 짧게 바꾼 말이라 글자 그대로 보지 않는다 (answers 로 본문에 답이 있는지 사람이 확인)
+        const items = im.card?.type === 'number' ? (im.card.items || []).map((r) => r?.[0]).filter(Boolean)
+          : im.card?.type === 'quiz' ? [] : (im.card?.items || []).flat();
         if (im.card?.type === 'lead' && !bodyPlain.includes(plain(im.card.keyword || ''))) errors.push(`${im.n}번 lead 카드 keyword "${im.card.keyword}" 가 본문에 없습니다`);
         const miss = items.filter((x) => !bodyPlain.includes(plain(x)));
         if (miss.length) errors.push(`${im.n}번 카드 글자가 본문에 없습니다: ${miss.map((x) => `"${x}"`).join(', ')} — 카드 글자는 원고 내용과 같게`);
+      }
+      // 카드 모양 돌려 쓰기 (2026-11-04 사용자 "1~6번을 원고에 맞춰 다양하게, 너무 같은 것만 쓰지 말고") — CARD_MIX_FROM 원고부터
+      if (writtenFor >= CARD_MIX_FROM && cards.length) {
+        const ds = cards.map((im) => cardDesign(im.card));
+        if (new Set(ds).size < ds.length) errors.push(`한 글의 카드 ${ds.length}장이 같은 모양(${ds.join('·')})입니다 — 서로 다른 모양으로 (채팅·메모·첫머리·숫자·퀴즈·자가체크, standards/이미지-기준.md)`);
+        const dir = file.replace(/[^\\/]+$/, '') || './';
+        const count = {}; let total = 0;
+        for (const f of fs.readdirSync(dir).filter((f) => f.startsWith(dated) && f.endsWith('.md'))) {
+          for (const im of planOf(dir + f)?.images || []) if (im.kind === 'card') { count[cardDesign(im.card)] = (count[cardDesign(im.card)] || 0) + 1; total++; }
+        }
+        if (total >= 10) {
+          const cap = Math.ceil(total * CARD_MIX_MAX);
+          for (const d of ds) if (count[d] > cap) errors.push(`${dated} 카드 ${total}장 중 '${d}' 모양이 ${count[d]}장 — ${cap}장까지 (${Math.round(CARD_MIX_MAX * 100)}%). 원고에 맞는 다른 모양으로`);
+          if (total >= 20 && Object.keys(count).length < 5) notes.push(`${dated} 카드 모양이 ${Object.keys(count).length}가지예요 — 5가지 이상 섞어 주세요 (${JSON.stringify(count)})`);
+        }
       }
       const framed = plan.images.some((im) => im.n === 1 && im.frame === 'card');
       if (tistory && framed) errors.push('티스토리 대표사진은 지금 방식으로 둡니다 (frame "card" 는 네이버만)');
