@@ -12,8 +12,8 @@ $action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-NoProfil
 $offset = 0
 $day = Get-ScheduledTask -TaskName 'SeonggeulDailyReserve' -ErrorAction SilentlyContinue
 if ($day -and $day.Triggers.Count) { try { if (([datetime]$day.Triggers[0].StartBoundary).Minute -ne 0) { $offset = 3 } } catch {} }
-# 07:00·12:30·18:30·23:00 = 일상 글, 08:00·20:00·22:00 = 블로그 유입 글, 09:15·13:30·23:30 = 놓친 글 다시 (2026-11-03 사용자)
-$times = @('07:00', '08:00', '09:15', '12:30', '13:30', '18:30', '20:00', '22:00', '23:00', '23:30') | ForEach-Object { ([datetime]::ParseExact($_, 'HH:mm', $null)).AddMinutes($offset) }
+# 07:00·08:30·12:30·18:30·19:30·23:00 = 일상 글 (08:30·19:30 = 2026-11-04 사용자 '긍정 일상글 2개 더'), 08:00·20:00·22:00 = 블로그 유입 글, 09:15·13:30·23:30 = 놓친 글 다시 (2026-11-03 사용자)
+$times = @('07:00', '08:00', '08:30', '09:15', '12:30', '13:30', '18:30', '19:30', '20:00', '22:00', '23:00', '23:30') | ForEach-Object { ([datetime]::ParseExact($_, 'HH:mm', $null)).AddMinutes($offset) }
 $want = ($times | ForEach-Object { $_.ToString('HH:mm') }) -join ','
 $old = Get-ScheduledTask -TaskName $name -ErrorAction SilentlyContinue
 $have = @($old.Triggers | ForEach-Object { try { ([datetime]$_.StartBoundary).ToString('HH:mm') } catch { '' } }) -join ','

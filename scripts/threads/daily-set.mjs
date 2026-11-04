@@ -15,7 +15,9 @@ import { parseSet } from './blog-set.mjs';
 export const DAILY_SLOTS_OLD = ['07:00', '19:00'];
 // 2026-11-03 사용자 "블로그 유입 글 3, 일상 글 4, 보험 심의글 3 — 하루 10편": 11/4 묶음부터 07:00 러닝·응원 · 12:30 점심 · 18:30 퇴근길 · 23:00 하루 마무리
 export const DAILY_SLOTS = ['07:00', '12:30', '18:30', '23:00'];
-export const dailySlots = (date) => (date >= '2026-11-04' ? DAILY_SLOTS : DAILY_SLOTS_OLD);
+// 2026-11-04 사용자 "긍정 일상글 2개 더 — 아침 출근길 '모두 힘내자', 퇴근 뒤 '모두 수고했다, 푹 쉬자'": 11/5 묶음부터 08:30 출근길 응원 · 19:30 퇴근 수고 추가 (하루 6편). 11/4 는 19:30 만 더함
+export const DAILY_SLOTS6 = ['07:00', '08:30', '12:30', '18:30', '19:30', '23:00'];
+export const dailySlots = (date) => (date >= '2026-11-05' ? DAILY_SLOTS6 : date === '2026-11-04' ? ['07:00', '12:30', '18:30', '19:30', '23:00'] : date >= '2026-11-04' ? DAILY_SLOTS : DAILY_SLOTS_OLD);
 const MIN_CHARS = 15; // 2026-11-04 사용자 "너무 AI 같다" — 한두 줄짜리 글도 된다 (daily.md 🤖)
 const MAX_CHARS = 250;
 const MAX_LINE = 26;
@@ -31,7 +33,7 @@ export function checkDaily(file) {
   const notes = [];
   const items = parseSet(fs.readFileSync(file, 'utf8'));
   const slots = dailySlots(path.basename(file).slice(0, 10));
-  if (slots === DAILY_SLOTS && items.length !== slots.length) errors.push(`${items.length}편 — 하루 ${slots.length}편(${slots.join('·')})입니다.`);
+  if (slots !== DAILY_SLOTS_OLD && items.length !== slots.length) errors.push(`${items.length}편 — 하루 ${slots.length}편(${slots.join('·')})입니다.`);
   if (!items.length) errors.push('글이 없습니다 (## 1 … 형식).');
   const times = new Set();
   // 지난 묶음 글과 너무 비슷하면 막는다 (같은 농담 반복 금지)
@@ -68,7 +70,7 @@ export function checkDaily(file) {
     for (const e of g.errors) err(`안전장치: ${e}`);
   }
   // 하루 4편이 같은 모양이면 찍어 낸 글로 보인다 (daily.md 🤖) — 11/5 묶음부터
-  if (slots === DAILY_SLOTS && items.length && path.basename(file).slice(0, 10) >= '2026-11-05') {
+  if (slots !== DAILY_SLOTS_OLD && items.length && path.basename(file).slice(0, 10) >= '2026-11-05') {
     const bodies = items.map((it) => (it.body || '').trim());
     if (!bodies.some((b) => b.length <= 50)) errors.push('한두 줄짜리(50자 이하) 글이 하루 1편 이상 있어야 합니다 (daily.md 🤖).');
     const three = bodies.filter((b) => b.split(/\n\s*\n/).length >= 3).length;
