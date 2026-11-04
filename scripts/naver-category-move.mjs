@@ -188,7 +188,10 @@ async function clickMove(page, frame, target) {
   const got = await P.locator('#elCategorySelect').getAttribute('data-categoryno').catch(() => '');
   if (String(got) !== String(target.no)) { log(`  ✖ 골랐는데 선택값이 ${got} (바라는 값 ${target.no}) — 멈춤`); await pop.close().catch(() => {}); return false; }
   log(`  고름: "${target.name}" (${target.no})`);
-  await P.locator('a.button_next._checkInput').click(); log('  누름: 확인');
+  // 2026-11-04 일곱 번째 실행: 23편 묶음에서 확인 누르기가 30초를 넘겨 오류로 끝났다 — 페이지 안에서 바로 누르고, 안 되면 한 번 더. 옮겨졌는지는 뒤에서 블로그를 다시 읽어 본다
+  const pressed = await P.evaluate(() => { const b = document.querySelector('a.button_next._checkInput'); if (!b) return false; b.click(); return true; }).catch(() => null);
+  if (pressed === false) { log('  ✖ 확인 버튼이 없음'); await pop.close().catch(() => {}); return false; }
+  log(`  누름: 확인${pressed === null ? ' (창이 바로 닫힘)' : ''}`);
   await sleep(4000);
   await pop.close().catch(() => {});
   return true;
