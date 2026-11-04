@@ -31,6 +31,7 @@
 
 **사용자 최종 (같은 날): "내가 요청할 때는 직접 써 주고, 아닐 때는 아티팩트만."**
 - 기본: 아래 1~5 (원고 + 붙여넣기 화면). 원고에 `publish_at:` 을 쓰지 않고, 사진은 저장소에 올리지 않는다 — 사용자가 직접 발행.
+- 🆗 원고·붙여넣기 화면을 보여 줄 때 "이대로 블로그에 올릴까요?"를 묻는다 (사용자 — "cmd 를 켜지 않아도, 원고를 만들어서 확인받고"). "올려줘·좋아"면 아래 예약을 걸고, `send_later` 로 20분 뒤 이 대화에 확인을 걸어 Drive `run-logs/matjip-*` 를 읽고 예약 결과를 먼저 알린다. PC 쪽은 사람 손이 필요 없다 — 지킴이 작업은 아침 실행(ensure-retry)·catchup-reserve 가 저절로 다시 등록한다. `launchers/matjip-watch.cmd` 는 급할 때만.
 - 사용자가 "블로그에 직접 써 줘"처럼 요청한 글만: 1~5 에 더해 모자이크 사진을 `content/matjip/photos/<원고 이름>/01.jpg…` 에 넣고(공개 저장소 — 사용자 승인),
   원고에 `publish_at: 요청 시각 + 1시간을 10분 단위로 올린 것` 을 붙여 PR → main. 사무실 PC `SeonggeulMatjipWatch`(07~23시 15분마다, 절전이면 깨움, `matjip-watch.ps1`)가
   publish_at 있는 새 원고를 `matjip-draft.mjs --reserve` 로 글·사진·지도·태그·카테고리까지 넣어 예약한다(25분 안쪽이면 40분 뒤로 미룸, 한 원고 한 번 — Drive `run-locks/matjip/<원고>.done`, 예약 확인 실패면 임시저장만). 기록 Drive `run-logs/matjip-*`.
