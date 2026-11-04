@@ -7,7 +7,8 @@ sub_keywords: 골다공증 초기증상, 골밀도 검사, 척추 골절
 lead_keyword: 골감소증
 format: 질문형
 tone: 정리형
-publish_at: 2026-11-05 15:20
+moved_from: 2026-11-05
+publish_at: 2026-11-06 11:20
 related: 골다공증 검사, 국가건강검진으로 몇 살에 받을까요 (여성 54·60·66세)
 source_url: https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5833
 tags: 골다공증증상, 골다공증초기증상, 골밀도검사, 척추골절, 골감소증, 골다공증, 골다공증원인, 키가줄어요, 등굽음, 손목골절, 폐경골다공증, 뼈건강, 칼슘, 비타민D, 생활보장, 서이추, 이웃추가, 서이추환영

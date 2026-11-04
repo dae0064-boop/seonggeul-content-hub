@@ -7,7 +7,8 @@ sub_keywords: 인공눈물, 건성안, 실내 습도
 lead_keyword: 눈 뻑뻑함
 format: 비교형
 tone: 공감형
-publish_at: 2026-11-05 22:00
+moved_from: 2026-11-05
+publish_at: 2026-11-06 20:40
 related: 백내장 수술 비용, 렌즈마다 왜 이렇게 다를까요 (만 65세 이상 · 2026년) | 가습기 종류, 우리 집엔 어떤 방식이 맞을까요 (방식 4가지)
 source_url: https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=6306
 tags: 안구건조증, 인공눈물, 건성안, 실내습도, 눈뻑뻑함, 안구건조증증상, 안구건조증원인, 눈건조, 눈물막, 마이봄샘, 겨울눈건강, 난방, 눈피로, 눈건강, 생활보장, 서이추, 이웃추가, 서이추환영

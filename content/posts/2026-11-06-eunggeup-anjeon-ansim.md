@@ -7,7 +7,8 @@ sub_keywords: 독거노인, 응급호출기, 화재감지기
 lead_keyword: 어르신 안부확인
 format: 질문형
 tone: 설명형
-publish_at: 2026-11-05 19:20
+moved_from: 2026-11-05
+publish_at: 2026-11-06 16:40
 topic: 건강·의학
 related: 노인 어지럼증, 빙빙 도는 것과 휘청이는 건 다를까요 (65세 이상 30%)
 source_url: https://www.mohw.go.kr/board.es?mid=a10503010100&bid=0027&act=view&list_no=1480948
