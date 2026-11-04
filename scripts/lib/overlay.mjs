@@ -265,7 +265,7 @@ function newsThumbHtml(imgDataUrl, S, o) {
 // ── 정보 카드 (그림 없이 글자만) ───────────────────────────────
 // 돈·통화기호 금지 (보험 글 그림 규칙과 같다 — standards/이미지-기준.md)
 const MONEY = /[₩$€¥￦]|\d[\d,.]*\s*(만\s*|천\s*|억\s*)?(원|달러)|지폐|동전/;
-const CARD_TYPES = ['steps', 'check', 'compare', 'lead'];
+const CARD_TYPES = ['steps', 'check', 'compare', 'lead', 'number', 'quiz', 'selfcheck'];
 
 /** 카드 내용이 규칙에 맞는지 본다. 문제 목록(빈 배열이면 통과) */
 export function checkCard(c) {
@@ -279,6 +279,26 @@ export function checkCard(c) {
     if (String(c.title || '').split('\n').some((l) => l.length > 7) || String(c.title || '').split('\n').length > 2) bad.push('lead 카드 title(키워드 다음 질문)은 두 줄까지, 한 줄 7자 안쪽 (줄바꿈 \\n)');
     if (!c.ask) bad.push('lead 카드 ask(말풍선, 18자 안쪽)가 필요');
     if (items.length) bad.push('lead 카드에는 items 를 쓰지 않음');
+  } else if (c?.type === 'number') {
+    // ④ 숫자 한눈에 (2026-11-04 사용자) — items: [["47.9%", "50세 이상 성인", "골감소증"], ...] 큰 숫자·작은 설명·굵은 설명
+    if (items.length < 2 || items.length > 3) bad.push(`number 칸은 2~3개 (지금 ${items.length})`);
+    if (items.some((r) => !Array.isArray(r) || r.length !== 3)) bad.push('number 의 items 는 ["큰 숫자", "작은 설명", "굵은 설명"]');
+    else {
+      if (items.some((r) => String(r[0]).length > 6)) bad.push('number 큰 숫자는 6자 안쪽 ("47.9%", "3~5년")');
+      if (items.some((r) => String(r[1]).length > 10 || String(r[2]).length > 12)) bad.push('number 설명은 작은 줄 10자·굵은 줄 12자 안쪽');
+    }
+  } else if (c?.type === 'quiz') {
+    // ⑤ O·X 퀴즈 — items: 문장 3개(18자 안쪽), answers: ["X","O","O"] (정답은 카드에 그리지 않고 본문에)
+    if (items.length !== 3) bad.push(`quiz 문장은 3개 (지금 ${items.length})`);
+    if (items.some((t) => typeof t !== 'string' || t.length > 18)) bad.push('quiz 문장은 18자 안쪽 (띄어쓰기 포함)');
+    const ans = Array.isArray(c.answers) ? c.answers : [];
+    if (ans.length !== items.length || ans.some((a) => !['O', 'X'].includes(a))) bad.push('quiz answers 는 문장마다 "O" 또는 "X" (본문에서 답을 알려 주는지 확인용)');
+    if (String(c.where || '').length > 10) bad.push('quiz where(정답 있는 곳, 예 "아래 Q&A")는 10자 안쪽');
+  } else if (c?.type === 'selfcheck') {
+    // ⑥ 자가 체크 — items: 해당 여부 3~4줄(14자 안쪽), result: 아래 한 줄(24자 안쪽, 지어낸 점수 기준 없이 "하나라도 해당되면 …")
+    if (items.length < 3 || items.length > 4) bad.push(`selfcheck 줄은 3~4개 (지금 ${items.length})`);
+    if (items.some((t) => typeof t !== 'string' || t.length > 14)) bad.push('selfcheck 줄은 14자 안쪽');
+    if (!c.result || String(c.result).length > 24) bad.push('selfcheck result(아래 안내 한 줄, 24자 안쪽)가 필요');
   } else if (c?.type === 'compare') {
     if (items.length < 2 || items.length > 4) bad.push(`compare 줄은 2~4개 (지금 ${items.length})`);
     if (items.some((r) => !Array.isArray(r) || r.length !== 2)) bad.push('compare 의 items 는 ["왼쪽", "오른쪽"] 쌍');
@@ -288,6 +308,7 @@ export function checkCard(c) {
     if (items.some((t) => typeof t !== 'string' || t.length > 16)) bad.push('줄 글자는 16자 안쪽');
   }
   if (String(c?.title || '').length > 16) bad.push('card.title 은 16자 안쪽');
+  if (['number', 'quiz', 'selfcheck'].includes(c?.type) && String(c?.title || '').length > 12) bad.push(`${c.type} 카드 title 은 12자 안쪽 (큰 제목 한 줄)`);
   if (c?.ask && String(c.ask).length > 18) bad.push('card.ask(질문 말풍선)는 18자 안쪽');
   if (c?.theme && !CARD_THEMES[c.theme]) bad.push(`card.theme 은 ${Object.keys(CARD_THEMES).join('/')} 중 하나`);
   if (c?.style === 'memo') {
@@ -295,7 +316,7 @@ export function checkCard(c) {
     if (String(c.sub || '').length > 24) bad.push('card.sub(제목 아래 한 줄)는 24자 안쪽');
     if (String(c.memo || '').length > 24) bad.push('card.memo(아래 메모 한 줄)는 24자 안쪽');
   }
-  const all = [c?.keyword, c?.title, c?.ask, c?.sub, c?.memo, ...(c?.heads || []), ...items.flat()].join(' ');
+  const all = [c?.keyword, c?.title, c?.ask, c?.sub, c?.memo, c?.result, ...(c?.heads || []), ...items.flat()].join(' ');
   const m = MONEY.exec(all);
   if (m) bad.push(`돈·통화기호는 쓰지 않음: "${m[0]}"`);
   return bad;
@@ -315,7 +336,8 @@ const askOf = (c) => {
 //   문구는 성글벙글 말로만. 아래 고정 문구는 글마다 돌려 써 같은 문장이 매일 반복되지 않게 한다.
 const pick = (arr, seed) => { let h = 0; for (const ch of String(seed)) h = (h * 31 + ch.charCodeAt(0)) >>> 0; return arr[h % arr.length]; };
 const brandLine = (b) => (!b || b === '성글벙글' ? '⌂ 매일매일 좋은 날, 성글벙글' : `⌂ ${b}`);
-const HAN = new URL('./fonts/BlackHanSans-Regular.ttf', import.meta.url);
+// 2026-11-04 사용자 "몇 개지 몋 개가 아니잖아" — 블랙한산스는 받침 ㅊ 이 ㅎ 처럼 보여(몇→몋, 꽃·빛·및) 카드 큰 글씨를 고딕 A1 ExtraBold 로 바꿈 (SIL OFL)
+const HAN = new URL('./fonts/GothicA1-ExtraBold.ttf', import.meta.url);
 let hanCache;
 const hanFace = () => {
   if (hanCache === undefined) {
@@ -352,7 +374,14 @@ const CARD_THEMES = {
     subs: ['헛걸음 안 하게 미리 챙겨요', '주차·시간부터 차근차근 봐요', '사진 찍기 좋은 때까지 정리했어요'],
     mains: [['가기 전에', ' 이것만 챙겨요 🧺'], ['주말 계획은', ' 이 글로 끝 🧺'], ['헛걸음 없이', ' 다녀와요 🧺']] },
 };
-const cardTheme = (c) => CARD_THEMES[c.theme] || CARD_THEMES[String(c.category || '').replace(/[·\s]/g, '')] || CARD_THEMES.생활보장;
+// 2026-11-04 사용자 "보라색 말고 성글벙글이랑 어울리게, 눈에 들어오게" — 모든 카드 기본은 성글벙글 색(블로그 배너: 아이보리 · 세이지 그린 · 진갈색 + 코랄 포인트).
+//   카테고리 색은 card.theme 로 적을 때만. 형광펜은 진한 글씨 위에만 (코랄 글씨 + 노랑 형광펜은 받침이 묻혀 '몇'이 '몋'처럼 보였다)
+CARD_THEMES.성글벙글 = { l1: '#FFF8EE', l2: '#FBEBD6', ac: '#FF7043', dk: '#4A3A30', dk2: '#5C4A3E', yl: '#FFD24D', yl2: '#FFD24D', soft: '#E4EEE3', shadow: 'rgba(74,58,48,.12)',
+  g1: '#6E8B6B', g2: '#56795C', g3: '#3E6B4F', on: '#E4EEE3', row: '#FFF8EE', rowhl: '#FFE1D3', dash: '#EADCC8', heart: '💚', mark: '?', band: '#3E6B4F', keyHl: 'none',
+  gr: '#3E6B4F', mu: '#8A7A6C', co2: '#FFE1D3',
+  tags: ['오늘의 궁금증', '많이 물어보셔서', '오늘 같이 볼 것'], subs: BASE_SUBS, mains: BASE_MAINS };
+const BRAND_KEYS = { gr: '#3E6B4F', mu: '#8A7A6C', co2: '#FFE1D3', band: null, keyHl: null };
+const cardTheme = (c) => ({ ...BRAND_KEYS, ...(CARD_THEMES[c.theme] || CARD_THEMES.성글벙글) });
 export const CARD_THEME_NAMES = Object.keys(CARD_THEMES);
 function leadHtml(S, c) {
   const k = S / 1024;
@@ -370,8 +399,8 @@ function leadHtml(S, c) {
     .dots{position:absolute;left:${66 * k}px;top:${186 * k}px;display:flex;gap:${10 * k}px}.dots i{width:${14 * k}px;height:${14 * k}px;border-radius:50%;background:${P.ac}}.dots i:nth-child(2){background:${P.yl}}.dots i:nth-child(3){background:${P.soft}}
     .q{position:absolute;right:${70 * k}px;top:${330 * k}px;font-family:"HAN";font-size:${380 * k}px;line-height:1;color:${P.ac};opacity:.16;transform:rotate(12deg)}
     .t{position:absolute;left:${62 * k}px;right:${62 * k}px;top:${220 * k}px;font-family:"HAN",sans-serif;font-size:${138 * k}px;line-height:1.12;color:${P.dk}}
-    .t div{white-space:nowrap;width:fit-content}.t b{font-weight:normal;color:${P.ac};background:linear-gradient(transparent 62%,${P.yl2} 62%)}
-    .bot{position:absolute;left:0;right:0;bottom:0;height:${176 * k}px;background:${P.dk};color:#fff;padding:${34 * k}px ${64 * k}px}
+    .t div{white-space:nowrap;width:fit-content}.t b{font-weight:normal;color:${P.ac};background:${P.keyHl || `linear-gradient(transparent 62%,${P.yl2} 62%)`}}
+    .bot{position:absolute;left:0;right:0;bottom:0;height:${176 * k}px;background:${P.band || P.dk};color:#fff;padding:${34 * k}px ${64 * k}px}
     .bot .s{font-size:${28 * k}px;color:${P.soft}}.bot .m{font-size:${42 * k}px;margin-top:${12 * k}px}.bot .m span{color:${P.yl2}}
     .bot .br{position:absolute;right:${56 * k}px;top:${36 * k}px;font-size:${24 * k}px;color:${P.soft}}.bot .s{max-width:62%;white-space:nowrap;overflow:hidden}.bot .m{white-space:nowrap}
   </style><body><div class="c">
@@ -414,10 +443,73 @@ function memoHtml(S, c) {
   </div></body>`;
 }
 
+// ── ④ 숫자 한눈에 · ⑤ O·X 퀴즈 · ⑥ 자가 체크 (2026-11-04 사용자 — "1~6번을 원고에 맞춰 다양하게") ──
+function baseCss(S, P) {
+  const k = S / 1024;
+  return `${ptdFace()}${hanFace()}
+    *{margin:0;box-sizing:border-box}body{width:${S}px;height:${S}px;position:relative;overflow:hidden;background:#fff;font-family:"PTD",sans-serif;color:${P.dk}}
+    .c{position:absolute;inset:${28 * k}px;border-radius:${44 * k}px;overflow:hidden;background:linear-gradient(165deg,${P.l1},${P.l2})}
+    .top{position:absolute;left:${60 * k}px;top:${54 * k}px;font-size:${30 * k}px;color:${P.gr};display:flex;gap:${12 * k}px;align-items:center;white-space:nowrap}
+    .top i{width:${38 * k}px;height:${38 * k}px;border-radius:${11 * k}px;background:${P.gr};color:#fff;font-style:normal;text-align:center;line-height:${38 * k}px;font-size:${22 * k}px}
+    .h{position:absolute;left:${60 * k}px;right:${60 * k}px;top:${104 * k}px;font-family:"HAN",sans-serif;font-size:${82 * k}px;line-height:1.15;white-space:nowrap}
+    .h b{font-weight:normal;color:${P.ac}}
+    .ft{position:absolute;right:${60 * k}px;bottom:${38 * k}px;font-size:${24 * k}px;color:${P.mu}}
+    .box{background:#fff;border-radius:${28 * k}px;box-shadow:0 ${8 * k}px ${24 * k}px ${P.shadow}}`;
+}
+const headOf = (title) => {
+  const w = String(title || '').split(' ');
+  return w.length > 1 ? `${esc(w.slice(0, -1).join(' '))} <b>${esc(w.at(-1))}</b>` : `<b>${esc(title)}</b>`;
+};
+const brandOf = (c) => esc(c.brand && c.brand !== '성글벙글' ? c.brand : '성글벙글');
+function numberHtml(S, c) {
+  const k = S / 1024; const P = cardTheme(c);
+  const cols = [P.ac, P.gr, '#D99A00'];
+  const n = c.items.length; const h = (n === 2 ? 230 : 184) * k;
+  return `<!doctype html><meta charset="utf-8"><style>${baseCss(S, P)}
+    .g{position:absolute;left:${60 * k}px;right:${60 * k}px;top:${290 * k}px;bottom:${100 * k}px;display:flex;flex-direction:column;justify-content:center;gap:${26 * k}px}
+    .t{height:${h}px;display:flex;align-items:center;padding:0 ${44 * k}px;gap:${34 * k}px}
+    .n{font-family:"HAN",sans-serif;font-size:${104 * k}px;min-width:${320 * k}px;white-space:nowrap}
+    .s{font-size:${34 * k}px;color:${P.mu};white-space:nowrap}.s b{display:block;font-size:${44 * k}px;color:${P.dk};margin-top:${6 * k}px}
+  </style><body><div class="c"><div class="top"><i>⌂</i>${brandOf(c)} · 한눈에 보기</div><div class="h">${headOf(c.title)}</div>
+    <div class="g">${c.items.map((r, i) => `<div class="t box" style="border-left:${16 * k}px solid ${cols[i]}"><div class="n" style="color:${cols[i]}">${esc(r[0])}</div><div class="s">${esc(r[1])}<b>${esc(r[2])}</b></div></div>`).join('')}</div>
+    <div class="ft">${esc(brandLine(c.brand))}</div></div></body>`;
+}
+function quizHtml(S, c) {
+  const k = S / 1024; const P = cardTheme(c);
+  return `<!doctype html><meta charset="utf-8"><style>${baseCss(S, P)}
+    .c{background:linear-gradient(165deg,${P.g1},${P.g3})}.top{color:#fff}.top i{background:#fff;color:${P.gr}}.h{color:#fff}.h b{color:${P.yl}}.ft{color:${P.on}}
+    .q{position:absolute;left:${60 * k}px;right:${60 * k}px;top:${290 * k}px;display:flex;flex-direction:column;gap:${24 * k}px}
+    .q .qrow{height:${150 * k}px;display:flex;align-items:center;padding:0 ${30 * k}px 0 ${36 * k}px;gap:${22 * k}px;font-size:${38 * k}px;white-space:nowrap;overflow:hidden}
+    .no{font-family:"HAN",sans-serif;font-size:${58 * k}px;color:${P.ac};width:${54 * k}px;flex:none}.tx{flex:1;min-width:0}
+    .ox{display:flex;gap:${12 * k}px;flex:none}.ox span{width:${84 * k}px;height:${84 * k}px;border-radius:${20 * k}px;border:${5 * k}px solid ${P.dash};font-family:"HAN",sans-serif;font-size:${52 * k}px;text-align:center;line-height:${74 * k}px;color:${P.ac}}.ox span+span{color:${P.g1}}
+    .ans{position:absolute;left:0;right:0;bottom:${96 * k}px;text-align:center;font-size:${40 * k}px;color:#fff}.ans b{background:${P.yl};color:${P.dk};border-radius:${14 * k}px;padding:${6 * k}px ${18 * k}px;font-weight:normal}
+  </style><body><div class="c"><div class="top"><i>⌂</i>${brandOf(c)} · 먼저 맞혀 보세요</div><div class="h">${headOf(c.title)}</div>
+    <div class="q">${c.items.map((t, i) => `<div class="qrow box"><span class="no">${i + 1}</span><span class="tx shrink">${esc(t)}</span><span class="ox"><span>O</span><span>X</span></span></div>`).join('')}</div>
+    <div class="ans">정답은 <b>${esc(c.where || '아래 본문')}</b>에 있어요 👇</div><div class="ft">${esc(brandLine(c.brand))}</div></div></body>`;
+}
+function selfHtml(S, c) {
+  const k = S / 1024; const P = cardTheme(c);
+  return `<!doctype html><meta charset="utf-8"><style>${baseCss(S, P)}
+    .l{position:absolute;left:${60 * k}px;right:${60 * k}px;top:${240 * k}px;padding:${30 * k}px ${40 * k}px}
+    .l .srow{display:flex;align-items:center;gap:${26 * k}px;height:${96 * k}px;font-size:${42 * k}px;border-bottom:${3 * k}px dashed ${P.dash};white-space:nowrap;overflow:hidden}.srow:last-child{border:0}
+    .srow i{width:${62 * k}px;height:${62 * k}px;border-radius:${16 * k}px;border:${5 * k}px solid ${P.gr};flex:none}
+    .sc{position:absolute;left:${60 * k}px;right:${60 * k}px;bottom:${84 * k}px;background:${P.ac};color:#fff;border-radius:${24 * k}px;padding:${22 * k}px ${30 * k}px;font-size:${34 * k}px;white-space:nowrap}
+    .sc b{display:block;font-family:"HAN",sans-serif;font-size:${44 * k}px;font-weight:normal;color:#fff;margin-bottom:${4 * k}px}
+    .ft{bottom:${30 * k}px}
+  </style><body><div class="c"><div class="top"><i>⌂</i>${brandOf(c)} · 30초 자가 체크</div><div class="h">${headOf(c.title)}</div>
+    <div class="l box">${c.items.map((t) => `<div class="srow shrink"><i></i>${esc(t)}</div>`).join('')}</div>
+    <div class="sc"><b>하나라도 체크했다면</b><span class="fitw">${esc(c.result)}</span></div>
+    <div class="ft">${esc(brandLine(c.brand))}</div></div></body>`;
+}
+
 function cardHtml(S, c) {
   if (c.type === 'lead') return leadHtml(S, c);
+  if (c.type === 'number') return numberHtml(S, c);
+  if (c.type === 'quiz') return quizHtml(S, c);
+  if (c.type === 'selfcheck') return selfHtml(S, c);
   if (c.style === 'memo') return memoHtml(S, c);
   if (c.style === 'classic') return cardHtmlClassic(S, c);
+  const P = cardTheme(c);
   const face = ptdFace();
   const fam = face ? `"PTD",${STYLE.font}` : STYLE.font;
   const n = c.items.length;
@@ -429,33 +521,33 @@ function cardHtml(S, c) {
     const box = (mk, h, list) => `<div class="m wide"><div class="mh">${mk} ${esc(h)}</div>${list.map((t) => `<div class="ml"><span class="fit">· ${esc(t)}</span></div>`).join('')}</div>`;
     answers = box('⭕', h1, c.items.map((r) => r[0])) + box('❌', h2, c.items.map((r) => r[1]));
   } else {
-    answers = c.items.map((t, i) => `<div class="m"><span class="fit">${c.type === 'steps' ? `<b class="no">${i + 1}</b>` : '✔ '}${esc(t)}</span></div>`).join('');
+    answers = c.items.map((t, i) => `<div class="m"><span class="fit">${c.type === 'steps' ? `<b class="no">${i + 1}</b>` : `<b style="color:${P.ac}">✔</b> `}${esc(t)}</span></div>`).join('');
   }
   return `<!doctype html><meta charset="utf-8"><style>
     ${face}
     *{margin:0;box-sizing:border-box}
-    body{width:${S}px;height:${S}px;position:relative;overflow:hidden;font-family:${fam};color:#1E1B2E;
-      background:linear-gradient(180deg,#EDE7F6 0%,#E3ECF7 100%);padding:${S * 0.06}px ${S * 0.06}px;display:flex;flex-direction:column;justify-content:center;gap:${S * 0.026}px}
-    .top{text-align:center;font-size:${S * 0.034}px;color:#6B6585;letter-spacing:.02em}
-    .top b{display:block;font-size:${S * 0.05}px;color:#2A2540;margin-top:${S * 0.008}px;letter-spacing:-.02em}
-    .q{align-self:flex-end;max-width:84%;background:#FFE58A;font-size:${S * 0.05}px;padding:${S * 0.022}px ${S * 0.032}px;
-      border-radius:${S * 0.03}px ${S * 0.03}px ${S * 0.006}px ${S * 0.03}px;box-shadow:0 ${S * 0.004}px ${S * 0.012}px rgba(60,50,90,.08);white-space:nowrap;overflow:hidden}
+    body{width:${S}px;height:${S}px;position:relative;overflow:hidden;font-family:${fam};color:${P.dk};
+      background:linear-gradient(170deg,${P.l1} 0%,${P.l2} 100%);padding:${S * 0.06}px ${S * 0.06}px;display:flex;flex-direction:column;justify-content:center;gap:${S * 0.026}px}
+    .top{text-align:center;font-size:${S * 0.034}px;color:${P.gr};letter-spacing:.02em}
+    .top b{display:block;font-size:${S * 0.05}px;color:${P.dk};margin-top:${S * 0.008}px;letter-spacing:-.02em}
+    .q{align-self:flex-end;max-width:84%;background:${P.yl};font-size:${S * 0.05}px;padding:${S * 0.022}px ${S * 0.032}px;
+      border-radius:${S * 0.03}px ${S * 0.03}px ${S * 0.006}px ${S * 0.03}px;box-shadow:0 ${S * 0.004}px ${S * 0.012}px ${P.shadow};white-space:nowrap;overflow:hidden}
     .a{display:flex;gap:${S * 0.02}px;align-items:flex-start;min-height:0}
     .av{flex:none;width:${S * 0.085}px;height:${S * 0.085}px;border-radius:${S * 0.028}px;background:#fff;display:flex;align-items:center;justify-content:center;
-      font-size:${S * 0.048}px;box-shadow:0 ${S * 0.004}px ${S * 0.012}px rgba(60,50,90,.08)}
+      font-size:${S * 0.048}px;box-shadow:0 ${S * 0.004}px ${S * 0.012}px ${P.shadow}}
     .bb{flex:1;min-width:0;display:flex;flex-direction:column;gap:${S * 0.016}px}
-    .nm{font-size:${S * 0.03}px;color:#6B6585}
+    .nm{font-size:${S * 0.03}px;color:${P.mu}}
     .m{align-self:flex-start;max-width:100%;background:#fff;font-size:${fz}px;padding:${S * 0.02}px ${S * 0.03}px;
-      border-radius:${S * 0.006}px ${S * 0.03}px ${S * 0.03}px ${S * 0.03}px;box-shadow:0 ${S * 0.004}px ${S * 0.012}px rgba(60,50,90,.08);white-space:nowrap;overflow:hidden}
-    .m .no{display:inline-flex;align-items:center;justify-content:center;width:${fz * 1.15}px;height:${fz * 1.15}px;border-radius:50%;background:#7C6CF2;color:#fff;
+      border-radius:${S * 0.006}px ${S * 0.03}px ${S * 0.03}px ${S * 0.03}px;box-shadow:0 ${S * 0.004}px ${S * 0.012}px ${P.shadow};white-space:nowrap;overflow:hidden}
+    .m .no{display:inline-flex;align-items:center;justify-content:center;width:${fz * 1.15}px;height:${fz * 1.15}px;border-radius:50%;background:${P.ac};color:#fff;
       font-size:${fz * 0.7}px;margin-right:${S * 0.016}px;vertical-align:middle}
     .m.wide{width:100%;padding:${S * 0.016}px ${S * 0.03}px}
     .mh{font-size:${fz}px;margin-bottom:${S * 0.01}px}
-    .ml{font-size:${fz * 0.95}px;color:#3B3650;padding:${S * 0.002}px 0;white-space:nowrap;overflow:hidden}
+    .ml{font-size:${fz * 0.95}px;color:${P.dk2};padding:${S * 0.002}px 0;white-space:nowrap;overflow:hidden}
   </style><body>
     <div class="top">성글벙글 Q&amp;A<b><span class="fit">${esc(c.title)}</span></b></div>
     <div class="q"><span class="fit">${esc(askOf(c))}</span></div>
-    <div class="a"><div class="av">🏠</div><div class="bb"><div class="nm">${esc(c.brand || '성글벙글')}</div>${answers}</div></div>
+    <div class="a"><div class="av" style="background:${P.gr};color:#fff">⌂</div><div class="bb"><div class="nm">${esc(c.brand || '성글벙글')}</div>${answers}</div></div>
   </body>`;
 }
 
@@ -527,6 +619,11 @@ export async function renderCards(jobs) {
           let fs = parseFloat(getComputedStyle(box).fontSize);
           let guard = 40;
           while (el.offsetWidth > box.clientWidth - 4 && fs > 12 && guard--) { fs *= 0.95; box.style.fontSize = fs + 'px'; }
+        }
+        // 칸 안에서 넘치는 글자 (퀴즈 문장·자가 체크 줄) — 자기 칸 너비 기준
+        for (const el of document.querySelectorAll('.shrink')) {
+          let fs = parseFloat(getComputedStyle(el).fontSize); let guard = 40;
+          while (el.scrollWidth > el.clientWidth + 1 && fs > 12 && guard--) { fs *= 0.95; el.style.fontSize = fs + 'px'; }
         }
       });
       await page.screenshot({ path: j.dest, type: 'png' });

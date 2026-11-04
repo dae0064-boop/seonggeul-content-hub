@@ -94,7 +94,9 @@ const overlayOf = (im) => im.overlay && (im.frame === "card"
 
 // 카드 색 (2026-11-04 사용자 — 블로그 카테고리마다 따로): 이슈 연예 → 연예방송, 이슈 정책 → 이슈뉴스,
 // 맛집·나들이(맛집 글·주제 국내여행·나들이 '언제' 글) → 맛집나들이, 나머지는 원고 category (생활정보·생활보장)
+// 2026-11-04 사용자 "보라색 말고 성글벙글이랑 어울리게" — 카드는 모두 성글벙글 색(overlay.mjs 기본). 카테고리 색은 계획서 card.theme 로 적을 때만
 function cardThemeOf(m) {
+  return "";
   if (!m) return "";
   if (m.issue === "연예") return "연예방송";
   if (m.issue === "정책") return "이슈뉴스";
