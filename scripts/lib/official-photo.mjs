@@ -45,7 +45,7 @@ export function soloOk(title, person) {
 const PERSON_MIN_SIDE = 1000; // 인물 사진 짧은 쪽 최소 px (대표사진 1024 정사각형이 늘려지지 않게)
 const GENERIC_WORDS = new Set(['korea', 'korean', 'south', 'republic', 'national', 'service', 'center', 'centre', 'office', 'the', 'of', 'and', 'in', 'seoul', 'photo', 'image', 'building', 'government', 'ministry', 'public', 'agency', 'corporation', 'company', 'official']);
 
-export async function searchCommons({ query, query_en: queryEn, person, minWidth = 600 }) {
+export async function searchCommons({ query, query_en: queryEn, person, minWidth = 800 }) {
   const terms = [queryEn, query].filter(Boolean);
   for (const q of terms) {
     const url = 'https://commons.wikimedia.org/w/api.php?' + new URLSearchParams({
@@ -129,7 +129,8 @@ export async function fromKoreaKr(page) {
 // 상업적으로 써도 되는 라이선스만: 4 CC BY 2.0 · 5 CC BY-SA 2.0 · 9 CC0 · 10 Public Domain Mark · 11 CC BY 4.0 · 12 CC BY-SA 4.0
 // (NC·ND·저작권 보유는 고르지 않는다). 인물은 soloOk — 사진 제목에 그 사람 이름이 있고 단체·행사로 보이지 않는 것만.
 const FLICKR_LIC = { 4: 'CC BY 2.0', 5: 'CC BY-SA 2.0', 9: 'CC0 1.0', 10: 'Public Domain Mark', 11: 'CC BY 4.0', 12: 'CC BY-SA 4.0' };
-export async function searchFlickr({ query, query_en: queryEn, person, minWidth = 600 }, key = process.env.FLICKR_API_KEY) {
+export async function searchFlickr({ query, query_en: queryEn, person, minWidth: mw }, key = process.env.FLICKR_API_KEY) {
+  const minWidth = mw || (person ? PERSON_MIN_SIDE : 800); // 인물은 고화질만 (2026-11-04 사용자)
   if (!key) return null;
   const terms = [...new Set([].concat(person || []).slice(0, 2).concat([queryEn, query]).filter(Boolean))];
   for (const q of terms) {
@@ -173,7 +174,8 @@ async function openverseAuth() {
   }
   return { Authorization: `Bearer ${ovToken}` };
 }
-export async function searchOpenverse({ query, query_en: queryEn, person, minWidth = 600 }) {
+export async function searchOpenverse({ query, query_en: queryEn, person, minWidth: mw }) {
+  const minWidth = mw || (person ? PERSON_MIN_SIDE : 800); // 인물은 고화질만 (2026-11-04 사용자)
   const auth = await openverseAuth();
   const terms = [...new Set([].concat(person || []).slice(0, 2).concat([queryEn, query]).filter(Boolean))];
   for (const q of terms) {
@@ -278,12 +280,15 @@ export async function savePhotoPng(photo, dest, launchBrowser) {
       const img = new Image();
       img.src = `data:${mime};base64,${b64}`;
       await img.decode();
-      const max = 1280, k = Math.min(1, max / Math.max(img.naturalWidth, img.naturalHeight));
+      // 2026-11-04 사용자 "사진이 흐릿해" — 예전엔 긴 쪽 1280 으로 줄여서 세로 인물 사진이 914px 로 줄었다가 대표사진 1024 로 다시 늘려졌다. 2400 까지 둔다
+      if (Math.min(img.naturalWidth, img.naturalHeight) < 600) return { small: `${img.naturalWidth}×${img.naturalHeight}` };
+      const max = 2400, k = Math.min(1, max / Math.max(img.naturalWidth, img.naturalHeight));
       const c = document.createElement('canvas');
       c.width = Math.round(img.naturalWidth * k); c.height = Math.round(img.naturalHeight * k);
       c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
       return c.toDataURL('image/png').split(',')[1];
     }, { b64: buf.toString('base64'), mime });
+    if (typeof png === 'object' && png?.small) throw new Error(`사진이 너무 작아 흐려짐 (${png.small}) — 쓰지 않음`);
     fs.writeFileSync(dest, Buffer.from(png, 'base64'));
   } finally { await browser.close(); }
 }
