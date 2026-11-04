@@ -30,6 +30,7 @@ usage-widget.cmd      클로드 사용량 위젯 (화면 오른쪽 위 둥근 �
 
 ■ Claude 가 말할 때만
 index-check.cmd       구글 색인 확인 (티스토리) — 구글에서 "색인이 생성되지 않습니다" 메일이 왔을 때
+category-check.cmd    블로그 카테고리 확인 — 올라간 글 전부와 지금 카테고리를 읽기만 해 Drive 로 (11/4~)
 coupang-test.cmd      쿠팡 파트너스 로그인이 풀렸을 때 (열린 크롬에서 로그인)
 insta-now.cmd         인스타 카드뉴스 GOMS 등록 지금 하기
 insta-post-now.cmd    인스타 카드뉴스 지금 올리기
