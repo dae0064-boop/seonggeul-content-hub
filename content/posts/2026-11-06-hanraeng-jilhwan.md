@@ -7,7 +7,8 @@ sub_keywords: 저체온증, 체감온도, 동상
 lead_keyword: 겨울철 노인 건강
 format: 체크리스트형
 tone: 공감형
-publish_at: 2026-11-05 18:00
+moved_from: 2026-11-05
+publish_at: 2026-11-06 12:40
 topic: 건강·의학
 related: 노인 어지럼증, 빙빙 도는 것과 휘청이는 건 다를까요 (65세 이상 30%)
 source_url: https://www.korea.kr/news/policyNewsView.do?newsId=148958252 | https://www.korea.kr/news/policyNewsView.do?newsId=148959192

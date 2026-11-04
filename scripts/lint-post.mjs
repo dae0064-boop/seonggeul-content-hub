@@ -98,6 +98,11 @@ const SPLIT_TWENTY = { 생활정보: 10, 생활보장: 10 };
 const HF_TWENTY = { 생활정보: 8, 생활보장: 6 };
 // 2026-11-03 사용자 — 제철·나들이 홈판형 2편(10:40·20:00). 한때 생활보장 홈판 2칸을 돌렸다가 같은 날 "생활보장을 늘리고 생활정보를 줄이자"로
 // 생활보장 10 그대로, 20:00 생활정보 검색형만 홈판형으로 (routines/naver-daily.md 🍂)
+// 2026-11-05 원고부터 하루 20편 = 생활보장 5 · 생활정보 3 · 이슈·뉴스 6 · 연예·방송 6 (2026-11-04 사용자 — 발행된 글 맛집·나들이 237 · 생활정보 170 · 생활보장 76
+// 에 비해 이슈·연예가 너무 적다, "점차 같은 숫자가 되도록"). 이슈 글 category 는 생활정보라 생활정보 15 · 생활보장 5 로 센다. 홈판형 칸 수는 세지 않는다.
+const ISSUE12_FROM = '2026-11-05';
+const SPLIT_ISSUE12 = { 생활정보: 15, 생활보장: 5 };
+const ISSUE12 = { 연예: 6, 정책: 6 };
 const SEASON_FROM = '2026-11-06';
 const SPLIT_SEASON = { 생활정보: 10, 생활보장: 10 };
 const HF_SEASON = { 생활정보: 9, 생활보장: 6 };
@@ -392,6 +397,8 @@ for (const file of files) {
   const legacyDay20 = LEGACY_DAY20.has(file.split(/[\\/]/).pop().replace(/\.md$/, ''));
   // 글 하나에만 걸리는 기준(분량·그림·말투·홈판 인사)을 고를 때 쓰는 날짜 — 20편으로 늘린 날의 새 글은 11/3 기준
   const ruleDated = TWENTY_EXTRA.has(dated) && !legacyDay20 ? TWENTY_FROM : dated;
+  // 다른 날에서 옮긴 원고 (프런트매터 moved_from: YYYY-MM-DD — 2026-11-04 사용자 배분 변경으로 11/5 생활보장 5편을 11/6 로) 는 쓴 날 기준의 글 하나 규칙(제목 시험·장면·카드 ask)을 쓴다
+  const writtenFor = /^\d{4}-\d{2}-\d{2}$/.test(post.movedFrom || '') ? post.movedFrom : dated;
   const newRules = dated >= NEW_RULES_FROM;
   const tistory = forceTistory || /(^|[\\/])content[\\/]tistory[\\/]/.test(file);
   const close1 = tistory ? TISTORY_CLOSE_1 : CLOSE_1;
@@ -587,7 +594,7 @@ for (const file of files) {
     const homefeedSlot = !tistory && dated >= SPLIT2_FROM && post.slot === '홈판';
     if (homefeedSlot) {
       if (tb) notes.push(`홈판형(slot: 홈판) 제목은 괄호 숫자 없이 공감형으로 씁니다: "${post.title}"`);
-      if (!post.issue && !post.extra && dated >= TITLE_TEST.from && dated <= TITLE_TEST.to) {
+      if (!post.issue && !post.extra && writtenFor >= TITLE_TEST.from && writtenFor <= TITLE_TEST.to) {
         const twist = TWIST_RE.test(post.title);
         if (!['반전', '기본'].includes(post.titleTest)) errors.push(`홈판형 제목 시험(${TITLE_TEST.from}~${TITLE_TEST.to} 원고) — 프런트매터 title_test: 반전 | 기본 을 적으세요 (routines/naver-daily.md 🔀 상자)`);
         else if (post.titleTest === '반전' && !twist) errors.push(`title_test: 반전 인데 제목에 뒤집는 말("~인 줄 알았는데"·"알고 보니"·"오히려"·"사실은"…)이 없습니다: "${post.title}"`);
@@ -622,7 +629,7 @@ for (const file of files) {
     if (noFixed.length) errors.push(`고정 해시태그 빠짐: ${noFixed.join(', ')} — 주제 태그 뒤에 붙이세요`);
   }
 
-  if (dated >= SCENE_FROM) {
+  if (writtenFor >= SCENE_FROM) {
     const bodyText = texts.join('\n');
     if (!SCENE_RE.test(bodyText)) errors.push("'예를 들면' 장면이 없습니다 — 독자가 겪을 법한 장면을 \"~라면\", \"예를 들어\", \"이맘때\", \"~하기 쉬워요\" 로 하나 이상 (CLAUDE.md 장면·경험·대화)");
     if (!QUOTE_RE.test(bodyText)) errors.push('따옴표 대화 장면이 없습니다 — 독자가 할 법한 말 한 줄을 "…?" 처럼 따옴표로 (CLAUDE.md 장면·경험·대화)');
@@ -715,8 +722,9 @@ for (const file of files) {
       const sibs = sib.map((f) => { try { return parsePost(fs.readFileSync(dir + f, 'utf8')); } catch { return {}; } });
       const cats = sibs.map((p) => p.category || '');
       const season = twenty && dated >= SEASON_FROM;
-      const split = season ? SPLIT_SEASON : twenty ? SPLIT_TWENTY : isTen(dated) ? SPLIT_TEN : split3 ? SPLIT3 : dated >= SPLIT2_FROM ? SPLIT2 : SHIFT_SPLIT;
-      const why = season ? '2026-11-03 사용자 결정 — 생활보장 10 그대로, 제철·나들이 홈판형 2편' : twenty ? '2026-11-01 사용자 결정 — 하루 20편' : split3 ? '2026-10-26 사용자 결정' : dated >= SPLIT2_FROM ? '2026-10-24 사용자 결정' : '2026-10-19 사용자 결정';
+      const i12 = twenty && dated >= ISSUE12_FROM;
+      const split = i12 ? SPLIT_ISSUE12 : season ? SPLIT_SEASON : twenty ? SPLIT_TWENTY : isTen(dated) ? SPLIT_TEN : split3 ? SPLIT3 : dated >= SPLIT2_FROM ? SPLIT2 : SHIFT_SPLIT;
+      const why = i12 ? '2026-11-04 사용자 결정 — 생활보장 5 · 생활정보 3 · 이슈·뉴스 6 · 연예·방송 6' : season ? '2026-11-03 사용자 결정 — 생활보장 10 그대로, 제철·나들이 홈판형 2편' : twenty ? '2026-11-01 사용자 결정 — 하루 20편' : split3 ? '2026-10-26 사용자 결정' : dated >= SPLIT2_FROM ? '2026-10-24 사용자 결정' : '2026-10-19 사용자 결정';
       const done = sib.length >= full;
       if (split3 && sib.length > full) errors.push(`같은 날(${dated}) 네이버 원고 ${sib.length}편 — 하루 ${full}편까지 (${why})`);
       for (const [c, n] of Object.entries(split)) {
@@ -725,8 +733,12 @@ for (const file of files) {
       }
       if (twenty) {
         // 홈판형 14 = 생활정보 8 + 생활보장 6, 검색형 6 (2026-11-01 사용자 — 홈판 비중을 늘린다)
+        if (i12) for (const [k, n] of Object.entries(ISSUE12)) {
+          const got = sibs.filter((p) => p.issue === k).length;
+          if (done ? got !== n : got > n) errors.push(`같은 날(${dated}) 이슈 ${k} ${got}편 — 하루 연예·방송 ${ISSUE12.연예} + 이슈·뉴스 ${ISSUE12.정책} (${why})`);
+        }
         const hf = season ? HF_SEASON : HF_TWENTY;
-        for (const [c, n] of Object.entries(hf)) {
+        if (!i12) for (const [c, n] of Object.entries(hf)) {
           const got = sibs.filter((p) => p.category === c && p.slot === '홈판').length;
           if (done ? got !== n : got > n) errors.push(`같은 날(${dated}) ${c} 홈판형(slot: 홈판) ${got}편 — 하루 생활정보 ${hf.생활정보} + 생활보장 ${hf.생활보장}편 (나머지는 검색형)`);
         }
@@ -972,7 +984,7 @@ for (const file of files) {
       for (const im of cards) {
         if (im.n === 1) errors.push('1번(대표사진)은 정보 카드로 만들지 않습니다');
         for (const b of checkCard(im.card)) errors.push(`${im.n}번 카드: ${b}`);
-        if (dated >= ASK_FROM && !['classic', 'memo'].includes(im.card?.style) && !String(im.card?.ask || '').trim()) errors.push(`${im.n}번 카드: card.ask(질문 말풍선, 18자 안쪽 — 독자가 칠 법한 질문)가 없습니다. 없으면 "<제목> 알려 줘!" 로 어색하게 그려집니다`);
+        if (writtenFor >= ASK_FROM && !['classic', 'memo'].includes(im.card?.style) && !String(im.card?.ask || '').trim()) errors.push(`${im.n}번 카드: card.ask(질문 말풍선, 18자 안쪽 — 독자가 칠 법한 질문)가 없습니다. 없으면 "<제목> 알려 줘!" 로 어색하게 그려집니다`);
         const items = (im.card?.items || []).flat();
         if (im.card?.type === 'lead' && !bodyPlain.includes(plain(im.card.keyword || ''))) errors.push(`${im.n}번 lead 카드 keyword "${im.card.keyword}" 가 본문에 없습니다`);
         const miss = items.filter((x) => !bodyPlain.includes(plain(x)));
