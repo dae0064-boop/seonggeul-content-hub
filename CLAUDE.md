@@ -17,8 +17,8 @@ content/matjip/    맛집 후기 (사용자 사진 5~10장 → 원고는 Claude 
 content/chulgeo/   다와이철거 홍보 블로그 (⏸ 2026-10-28 사용자 지시로 원고·발행 모두 멈춤. 2026-10-26~, 성글벙글과 별개·다른 네이버 계정). 규칙 정본 README.md, 원고 posts/, 검사 scripts/chulgeo/lint.mjs
 content/threads/   스레드 말투 규칙(voice.md) + 글감(topics.txt)
 content/threads/blog/  스레드 블로그 유입 글 — 네이버 생활보장 글 요약 (규칙 ../blog.md, 검사 blog-set.mjs, 올리기 blog-post.mjs — 11/4~ 하루 최대 3편 08:00·20:00·22:00, 작업 SeonggeulThreadsBlog, 보험글 PAUSE 와 따로, 멈춤은 PAUSE-BLOG)
-content/threads/daily/  스레드 일상 글 — 11/4~ 하루 4편 07:00 러닝 · 12:30 점심 · 18:30 퇴근길 · 23:00 마무리 (규칙 ../daily.md, 검사 daily-set.mjs, 올리기 daily-post.mjs, 멈춤 PAUSE-DAILY)
-                        스레드 하루 10편 = 일상 4 + 블로그 유입 3 + 보험 심의 3(09·15·21시, insurance/post-plan.json) — 2026-11-03 사용자
+content/threads/daily/  스레드 일상 글 — 11/5~ 하루 6편 07:00 러닝 · 08:30 출근 응원 · 12:30 점심 · 18:30 퇴근길 · 19:30 수고했다 · 23:00 마무리 (규칙 ../daily.md, 검사 daily-set.mjs, 올리기 daily-post.mjs, 멈춤 PAUSE-DAILY)
+                        스레드 하루 12편 = 일상 6 + 블로그 유입 3 + 보험 심의 3(09·15·21시, insurance/post-plan.json) — 2026-11-03 사용자, 일상 6편은 2026-11-04 사용자
 content/threads/insurance/  스레드 보험 심의글 — 규칙(rules.md)·글감·10편 묶음(sets/)
 scripts/           발행·검수 자동화(.mjs) + 워크스페이스 동기화 도구(.py)
 scripts/threads/   스레드 자동 발행·댓글 답변
