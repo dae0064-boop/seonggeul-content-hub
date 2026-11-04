@@ -14,7 +14,7 @@
 | 사무실 PC | 발행 가능 | `C:\Users\dae00\seonggeul-content-hub` | 09:00 (`auto-setup.cmd`) |
 | 노트북 | 발행 가능 | `C:\Users\user\Documents\seonggeul-content-hub` | 09:15 (`auto-setup.cmd -At 09:15`) |
 
-**2026-11-04 사용자: 앞으로 모든 업무(자동 발행·맛집 글·손으로 하는 일 모두)는 사무실 PC 로 한다. 노트북은 당분간 쓰지 않고, 쓰게 되면 사용자가 알려 준다.** 맛집 글도 사무실 PC 가 임시저장까지 하는 흐름으로 바꿀 예정 — [ ] 사용자가 '장소'(지도) 넣는 순서를 알려 주면 만든다 (첫 시험 원고 `content/matjip/posts/2026-11-04-불란서찐빵-대부도본점.md`, 붙여넣기 화면 https://claude.ai/artifact/PbmJAA8FR2zYwSeovaybG7).
+**2026-11-04 사용자: 앞으로 모든 업무(자동 발행·맛집 글·손으로 하는 일 모두)는 사무실 PC 로 한다. 노트북은 당분간 쓰지 않고, 쓰게 되면 사용자가 알려 준다.** 맛집 글도 사무실 PC 가 임시저장까지 — 만듦(`launchers/matjip.cmd` → `scripts/matjip-draft.mjs` → publish-naver `--save-draft`, 지도는 사용자가 알려 준 '장소 → 검색 → 추가 → 확인', `content/matjip/README.md` 🆕). [ ] 첫 실행(불란서찐빵): 사용자가 Drive `맛집사진/불란서찐빵` 에 사진 올림 → Claude 가 원고 `photos:` 채움 → matjip.cmd. 지도·카테고리 선택자는 실제 화면에서 처음이라 run-logs `matjip-*` 로 고친다 (첫 시험 원고 `content/matjip/posts/2026-11-04-불란서찐빵-대부도본점.md`, 붙여넣기 화면 https://claude.ai/artifact/PbmJAA8FR2zYwSeovaybG7).
 **2026-11-03 사용자: 당분간 사무실 PC 로만 한다 — 사용자에게 안내할 때 '사무실 PC' 라고 굳이 짚지 않는다(그냥 'PC').** 클라우드 네트워크 허용 도메인에 commons·upload.wikimedia·ko.wikipedia·kogl·korea.kr 들어감(11/3 확인, 위키미디어 API 는 클라우드 공용 IP 라 가끔 요청 제한).
 **⚠ 2026-11-02 사용자: 당분간 노트북은 쓰지 않는다 — 사무실 PC(09:00) 기준으로만 정한다.** 노트북 시각(09:15·07:55)은 켜질 때만 의미가 있고, 켜져도 run-locks 로 겹치지 않는다.
 **어느 PC 에서든 발행한다** (2026-10-02 사용자 결정 — 오전의 "사무실 PC 한 대"를 바꿈).

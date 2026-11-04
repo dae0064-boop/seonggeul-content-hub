@@ -740,6 +740,7 @@ async function insertQuoteAt(page, editor, text, style) {
  */
 const BLOG_CATEGORY = { 생활정보: '생활·정보', 생활보장: '생활·보장', '맛집': '생활·정보', '맛집·카페': '생활·정보' };
 function blogCategory(post) {
+  if (post.matjip) return '맛집·나들이'; // 사용자가 다녀온 맛집 후기만 (matjip-draft.mjs). 자동 원고의 맛집·카페는 아래처럼 생활·정보로
   if (post.issue === '연예') return '연예·방송';
   if (post.issue === '정책') return '이슈·뉴스';
   return BLOG_CATEGORY[post.category] || post.category;
@@ -1352,6 +1353,97 @@ async function addShopLink(page, editor, shop) {
   return { ok: false, why: r.why, removed };
 }
 
+// ---------------------------------------------------------------- 맛집 지도 ('장소')
+/**
+ * "[지도]" 줄을 지우고 그 자리에 네이버 '장소' 지도를 넣는다 (2026-11-04 사용자가 알려 준 순서):
+ *   도구 막대 '장소'(초록 핀) → 위 칸에 가게 이름 → 왼쪽 결과에서 그 가게의 [+ 추가] → 아래 [확인]
+ * 결과가 여럿이면(예: 불란서찐빵 / 불란서찐빵 핑크점) 이름에 검색어가 있고 주소에 place.addr 이 들어 있는 곳 하나만 고른다.
+ * 실제 화면을 아직 스크립트로 본 적이 없어 선택자는 후보 배열이다 — 못 찾으면 창을 닫고 [지도] 줄을 되살린다(덤프 place-*).
+ */
+const MAP_LABEL = '[지도]';
+const PLACE_SEL = {
+  button: ['button.se-map-toolbar-button', 'button[data-name="map"]', 'button[data-log="dot.map"]', 'button[class*="map-toolbar"]', 'button:has-text("장소")'],
+  input: ['.se-popup-placesMap input[type="text"]', '.se-place-search-input', 'input[placeholder*="장소"]', 'input[placeholder*="검색"]', '.se-popup input[type="text"]'],
+  confirm: ['.se-popup-placesMap button.se-popup-button-confirm', '.se-popup button.se-popup-button-confirm', '.se-popup button:has-text("확인")', 'button:has-text("확인")'],
+  close: ['.se-popup-placesMap button.se-popup-close-button', '.se-popup button.se-popup-close-button', '.se-popup button[class*="close"]'],
+};
+const PLACE_MAP_SEL = '.se-component.se-placesMap, .se-component.se-map, .se-module-map, .se-component[class*="placesMap"]';
+
+async function addPlaceMap(page, editor, place) {
+  const maps = () => editor.locator(PLACE_MAP_SEL).count();
+  const before = await maps();
+  const snap0 = await snapshot(editor);
+  if (!(await caretAtEnd(page, editor, MAP_LABEL))) return { ok: false, why: `"${MAP_LABEL}" 줄을 찾지 못함` };
+  await page.keyboard.press('Shift+Home'); await sleep(200);
+  await page.keyboard.press('Backspace'); await sleep(400);
+  const lost = lostLines(snap0, await snapshot(editor), [MAP_LABEL]);
+  if (lost.length) {
+    const back = await undoUntilRestored(page, editor, snap0);
+    return { ok: false, why: `줄을 지우다 다른 글 ${lost.length}줄이 지워져 ${back ? '되돌림' : '되돌리지 못함'}`, lost: back ? null : lost };
+  }
+  const giveUp = async (why) => {
+    await dump(page, 'place-fail');
+    try { await clickFirst(page, PLACE_SEL.close, { timeout: 1500 }); } catch { await page.keyboard.press('Escape').catch(() => {}); }
+    await sleep(600);
+    const back = (await snapshot(editor)).includes(MAP_LABEL) || await undoUntilRestored(page, editor, snap0);
+    return { ok: false, why, lost: back ? null : lostLines(snap0, await snapshot(editor)) };
+  };
+  try {
+    const btn = await findFirst(editor, PLACE_SEL.button, { timeout: 4000 });
+    await btn.loc.click(); log(`클릭: ${btn.sel}`);
+    await sleep(1500);
+    const inp = await findAnywhere(page, editor, PLACE_SEL.input, { timeout: 6000 });
+    await inp.loc.fill(place.query); await sleep(300);
+    await inp.loc.press('Enter'); await sleep(2500);
+    await dump(page, 'place-search');
+    // 검색 결과 줄 고르기 — 입력칸이 든 창 안에서 '추가' 버튼이 있거나 주소처럼 보이는 줄
+    const scope = (await editor.locator(inp.sel).first().isVisible().catch(() => false)) ? editor : page; // 창이 에디터 프레임 안인지
+    const pick = await scope.evaluate(({ query, addr }) => {
+      const norm = (t) => (t || '').replace(/\s+/g, ' ').trim();
+      const inp = [...document.querySelectorAll('input')].find((i) => i.offsetParent && i.value && i.value.includes(query));
+      const box = inp?.closest('[class*="popup"], [role="dialog"]') || document.body;
+      const items = [...box.querySelectorAll('li')].filter((li) => li.offsetParent && norm(li.textContent));
+      const q = query.replace(/\s/g, '');
+      const rows = items.map((li, i) => ({ i, t: norm(li.textContent), name: norm((li.querySelector('strong, b, [class*="name"], [class*="title"]') || li.firstElementChild || li).textContent) }));
+      let cand = rows.filter((x) => x.t.replace(/\s/g, '').includes(q) && (!addr || x.t.replace(/\s/g, '').includes(addr.replace(/\s/g, ''))));
+      // 주소가 화면에서 '…'로 잘려 글자에 없을 수 있다 → 이름이 검색어와 똑같은 곳이 하나뿐이면 그곳 (넣은 뒤 지도 카드의 주소로 다시 본다)
+      if (!cand.length) cand = rows.filter((x) => x.name.replace(/\s/g, '') === q);
+      items.forEach((li) => li.removeAttribute('data-sg-place'));
+      const all = items.map((li) => norm(li.textContent).slice(0, 60));
+      if (cand.length !== 1) return { n: cand.length, all };
+      items[cand[0].i].setAttribute('data-sg-place', '1');
+      return { n: 1, picked: cand[0].t.slice(0, 80), all };
+    }, place);
+    if (pick.n !== 1) return await giveUp(`검색 결과에서 하나로 고르지 못함 (맞는 곳 ${pick.n}개 / 결과: ${pick.all.slice(0, 5).join(' ; ') || '없음'})`);
+    const row = scope.locator('li[data-sg-place="1"]').first();
+    await row.hover().catch(() => {}); await sleep(400);
+    const add = row.locator('button:has-text("추가"), a:has-text("추가")').first();
+    if (await add.isVisible({ timeout: 1500 }).catch(() => false)) await add.click();
+    else { await row.click(); await sleep(500); await scope.locator('button:has-text("추가")').first().click({ timeout: 3000 }); }
+    await sleep(1000);
+    await dump(page, 'place-added');
+    await clickFirst(scope, PLACE_SEL.confirm, { timeout: 4000 }).catch(() => clickFirst(page, PLACE_SEL.confirm, { timeout: 3000 }));
+    const deadline = Date.now() + 10000;
+    while (Date.now() < deadline) {
+      if ((await maps()) > before) {
+        await sleep(800);
+        const lost2 = lostLines(snap0, await snapshot(editor), [MAP_LABEL]);
+        if (lost2.length) {
+          const back = await undoUntilRestored(page, editor, snap0, 6);
+          return { ok: false, why: `지도를 넣으며 다른 글 ${lost2.length}줄이 사라져 ${back ? '되돌림' : '되돌리지 못함'}`, lost: back ? null : lost2 };
+        }
+        const card = await editor.locator(PLACE_MAP_SEL).last().innerText().catch(() => '');
+        const addrOk = !place.addr || card.replace(/\s/g, '').includes(place.addr.replace(/\s/g, ''));
+        return { ok: true, picked: `${pick.picked}${addrOk ? '' : ` — ⚠ 지도 카드에 "${place.addr}" 이 안 보임, 맞는 가게인지 확인`}`, checkAddr: !addrOk };
+      }
+      await sleep(500);
+    }
+    return await giveUp('확인을 눌렀는데 지도가 글에 보이지 않음');
+  } catch (e) {
+    return await giveUp(e.message.split('\n')[0]);
+  }
+}
+
 // ---------------------------------------------------------------- 본문 넣기
 /** 굵게/기울임/밑줄/취소선이 켜져 있으면 끈다. 켜진 채로 쓰면 글 전체에 그 서식이 붙는다. */
 async function resetToggles(editor) {
@@ -1600,8 +1692,9 @@ async function main() {
   if (args.images) {
     if (!fs.existsSync(args.images)) throw new Error(`이미지 폴더가 없습니다: ${args.images}\n먼저 post-images.mjs 로 만드세요.`);
     for (const b of imageBlocks) {
-      const f = path.resolve(args.images, `${String(b.n).padStart(2, '0')}.png`);
-      if (fs.existsSync(f)) imageFiles.set(b.n, f);
+      // 맛집 글은 사용자가 찍은 사진(jpg)이다 (2026-11-04, matjip-draft.mjs)
+      const f = ['.png', '.jpg', '.jpeg', '.webp'].map((x) => path.resolve(args.images, `${String(b.n).padStart(2, '0')}${x}`)).find((x) => fs.existsSync(x));
+      if (f) imageFiles.set(b.n, f);
     }
   }
   // 그림 8장은 지킨다 (2026-10-03 사용자 지시). 하나라도 없으면 예약하지 않는다
@@ -1880,6 +1973,29 @@ async function main() {
       }
     }
 
+    // ---- 맛집 지도 ('장소' 버튼, 2026-11-04 사용자가 순서를 알려 줌: 장소 → 검색 → 추가 → 확인). 실패하면 [지도] 줄을 남긴다
+    if (post.place) {
+      step(`7-2m. 지도 (장소: ${post.place.query}${post.place.addr ? ` · ${post.place.addr}` : ''})`);
+      try {
+        const r = await addPlaceMap(page, editor, post.place);
+        if (r.ok) {
+          log(`✓ 지도 넣음 — ${r.picked}`);
+          if (r.checkAddr) manual.push(`지도가 ${post.place.query} (${post.place.addr}) 인지 확인`);
+          post.blocks = post.blocks.map((b) => (b.type === 'image' ? b : { ...b, lines: b.lines.filter((l) => l.t !== MAP_LABEL) }))
+            .filter((b) => b.type === 'image' || b.lines.length);
+        } else {
+          warn(`지도 넣기 실패 (${r.why}) — "${MAP_LABEL}" 줄을 남깁니다`);
+          if (r.lost) throw new Error(`지도를 넣다가 글이 사라졌고 되돌리지 못했습니다: ${r.lost.slice(0, 3).join(' / ')}. 저장하지 않고 멈춥니다.`);
+          manual.push(`"${MAP_LABEL}" 줄을 지우고 '장소' 버튼으로 ${post.place.query} 넣기  [${r.why}]`);
+        }
+        await dump(page, 'place-map');
+      } catch (e) {
+        if (/저장하지 않고 멈춥니다/.test(e.message)) throw e;
+        warn(`지도 단계 건너뜀 (${e.message.split('\n')[0]})`);
+        manual.push(`'장소' 버튼으로 ${post.place.query} 지도 넣기`);
+      }
+    }
+
     // ---- 쇼핑 커넥트 상품 링크 카드 (원고 brandconnect:, 2026-10-26 사용자). 실패하면 링크 줄·대가성 문구를 지우고 그대로 발행한다
     if (shop.link) {
       step(`7-2b. 쇼핑 커넥트 링크 (${post.brandconnect})`);
@@ -1947,6 +2063,13 @@ async function main() {
         await dump(page, 'tag-layer');
         await enterTags(page, editor, post.tags);
         await dump(page, 'tag-filled');
+        if (post.matjip) { // 맛집 후기는 임시저장 때 카테고리·주제도 골라 둔다 (못 골라도 저장은 한다 — 발행할 때 사용자가 고른다)
+          const got = (post.subcategory && await pickCategory(page, editor, post.subcategory, { noFallback: true }))
+            || await pickCategory(page, editor, blogCategory(post), { noFallback: true });
+          log(got ? `카테고리: ${got}` : '⚠ 카테고리를 고르지 못함 — 발행할 때 직접 고르세요');
+          if (!got) manual.push('카테고리 맛집·나들이 > 맛집·카페 후기 고르기');
+          if (!(await pickTopic(page, editor, post).catch(() => false))) manual.push('주제 맛집 고르기');
+        }
       } catch (e) {
         warn(`태그 입력 실패 — 저장 후 수동으로 넣으세요. (${e.message})`);
       }
