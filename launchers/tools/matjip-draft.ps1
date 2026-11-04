@@ -20,7 +20,7 @@ if (-not $post) { Write-Host '맛집 원고가 없어요. Claude 에게 원고�
 $stamp = Get-Date -Format 'yyyy-MM-dd_HHmm'
 $log = Join-Path $repo "dumps\matjip-$stamp.log"
 Write-Host "맛집 글 임시저장 중: $($post.BaseName)  (3~5분, 창을 닫지 마세요)"
-& node scripts\matjip-draft.mjs $post.FullName --drive $drive --dump 2>&1 | Tee-Object -FilePath $log | ForEach-Object { Write-Host $_ }
+& node scripts\matjip-draft.mjs $post.FullName --drive $drive --dump 2>&1 | ForEach-Object { Write-Host $_; Add-Content -Path $log -Value $_ -Encoding UTF8 }  # Tee-Object 는 UTF-16 으로 써서 Drive 에서 글자가 깨졌다
 $ok = $LASTEXITCODE -eq 0
 # 기록과 화면 캡처를 Drive 로 (HTML 덤프는 올리지 않는다)
 $dest = Join-Path $drive "ClaudeWorkspace\run-logs\matjip-$stamp-$env:COMPUTERNAME"
