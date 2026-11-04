@@ -102,7 +102,7 @@ async function searchYoutube(q, launchBrowser) {
     if (!c.length) return { why: `검색 결과 ${list.length}개 중 맞는 제목 없음 — 앞 5개: ${list.slice(0, 5).map((v) => v.title).join(' / ')}` };
     c.sort((x, y) => prefer.filter((w) => has(y.title, w)).length - prefer.filter((w) => has(x.title, w)).length);
     usedYoutube.add(c[0].id);
-    return c[0];
+    return { ...c[0], alts: c.slice(1, 6).map((v) => v.id) }; // 고화질 표지가 없으면 다음 후보를 본다
   } finally { await browser.close().catch(() => {}); }
 }
 
@@ -112,14 +112,27 @@ export async function fetchStill(still = {}, launchBrowser, tag = 'x') {
   // 원고를 쓸 때 영상 ID 를 모를 수 있다. still.youtube_search = { query, must: [제목에 꼭 있을 말], episode: [회차 표시 하나라도], prefer: [있으면 먼저], channels: [채널 이름 하나라도] }
   if (still.youtube_search && !still.youtube) {
     const found = await searchYoutube(still.youtube_search, launchBrowser).catch((e) => ({ why: e.message }));
-    if (found.id) { still = { ...still, youtube: found.id }; console.log(`  유튜브에서 찾음: ${found.title} (${found.channel || '채널 모름'}) — ${found.id}`); }
+    if (found.id) { still = { ...still, youtube: found.id, youtubeAlts: found.alts || [] }; console.log(`  유튜브에서 찾음: ${found.title} (${found.channel || '채널 모름'}) — ${found.id}`); }
     else return { photo: null, why: `유튜브에서 그 회차 공식 영상을 못 찾음 (${found.why})` };
   }
   if (still.youtube) {
     const id = String(still.youtube).trim();
     if (!/^[\w-]{11}$/.test(id)) return { photo: null, why: `still.youtube 영상 ID 가 이상함: ${id}` };
     let lastErr = '';
-    for (const size of ['maxresdefault', 'sddefault', 'hqdefault']) {
+    // 고화질(1280×720 maxres) 표지 먼저 — 첫 영상에 없으면 같은 회차의 다른 후보 영상에서 찾는다 (2026-11-04 사용자 "메인 사진 화질이 너무 구려").
+    // 640 이하(sd·hq)는 정사각형으로 자르면 480px 남짓이라 흐려진다 — 모든 후보에 maxres 가 없을 때만 첫 영상의 sd 를 쓴다
+    for (const alt of [id, ...(still.youtubeAlts || [])]) {
+      try {
+        const r = await fetch(`https://i.ytimg.com/vi/${alt}/maxresdefault.jpg`, { signal: AbortSignal.timeout(30000) });
+        if (!r.ok) continue;
+        const buf = Buffer.from(await r.arrayBuffer());
+        if (buf.length < 5000) continue;
+        if (alt !== id) { console.log(`  고화질 표지가 있는 다른 영상으로: ${alt}`); usedYoutube.add(alt); }
+        return { photo: { buf, url: `https://i.ytimg.com/vi/${alt}/maxresdefault.jpg`, page: `https://www.youtube.com/watch?v=${alt}`, credit: `사진: ${still.owner || '방송사'} 「${still.program || ''}」 공식 유튜브 (인용)` } };
+      } catch (e) { lastErr = e.message; }
+    }
+    console.log('  ⚠ 고화질(maxres) 표지가 있는 영상이 없어 작은 표지를 씁니다 — 흐릴 수 있어요');
+    for (const size of ['sddefault', 'hqdefault']) {
       const url = `https://i.ytimg.com/vi/${id}/${size}.jpg`;
       try {
         const r = await fetch(url, { signal: AbortSignal.timeout(30000) });
