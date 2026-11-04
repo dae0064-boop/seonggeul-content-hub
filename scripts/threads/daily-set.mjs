@@ -18,7 +18,7 @@ export const DAILY_SLOTS = ['07:00', '12:30', '18:30', '23:00'];
 // 2026-11-04 사용자 "긍정 일상글 2개 더 — 아침 출근길 '모두 힘내자', 퇴근 뒤 '모두 수고했다, 푹 쉬자'": 11/5 묶음부터 08:30 출근길 응원 · 19:30 퇴근 수고 추가 (하루 6편). 11/4 는 19:30 만 더함
 export const DAILY_SLOTS6 = ['07:00', '08:30', '12:30', '18:30', '19:30', '23:00'];
 export const dailySlots = (date) => (date >= '2026-11-05' ? DAILY_SLOTS6 : date === '2026-11-04' ? ['07:00', '12:30', '18:30', '19:30', '23:00'] : date >= '2026-11-04' ? DAILY_SLOTS : DAILY_SLOTS_OLD);
-const MIN_CHARS = 15; // 2026-11-04 사용자 "너무 AI 같다" — 한두 줄짜리 글도 된다 (daily.md 🤖)
+const MIN_CHARS = 30; // 2026-11-04 사용자 "이런식으로, 너무 짧게는 쓰지 말고" (daily.md ✍) — 그 전 같은 날 15자
 const MAX_CHARS = 250;
 const MAX_LINE = 26;
 const MAX_EMOJI = 2; // 2026-11-02 사용자 "너무 쓰지 말고 1~2개만"
@@ -72,7 +72,7 @@ export function checkDaily(file) {
   // 하루 4편이 같은 모양이면 찍어 낸 글로 보인다 (daily.md 🤖) — 11/5 묶음부터
   if (slots !== DAILY_SLOTS_OLD && items.length && path.basename(file).slice(0, 10) >= '2026-11-05') {
     const bodies = items.map((it) => (it.body || '').trim());
-    if (!bodies.some((b) => b.length <= 50)) errors.push('한두 줄짜리(50자 이하) 글이 하루 1편 이상 있어야 합니다 (daily.md 🤖).');
+    for (const [i, b] of bodies.entries()) if (b.split('\n').filter((l) => l.trim()).length < 2) errors.push(`[${i + 1}] 한 줄짜리 — 2~5줄로 (daily.md ✍, 사용자 "너무 짧게는 쓰지 말고").`);
     const three = bodies.filter((b) => b.split(/\n\s*\n/).length >= 3).length;
     if (three > 1) errors.push(`3문단 글이 ${three}편 — 하루 1편까지 (daily.md 🤖).`);
     const emo = /\p{Extended_Pictographic}/u;
