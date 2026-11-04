@@ -1,8 +1,7 @@
 ﻿# 맛집 글 예약 지킴이 — 작업 스케줄러 SeonggeulMatjipWatch 가 07~23시 15분마다 부른다 (2026-11-04 사용자:
 #   "어디서나 모바일 앱으로 요청하면 PC 로 작성해서 1시간 뒤 예약발행", PC 는 15분마다 깨워 확인).
 # 새 맛집 원고(content/matjip/posts, publish_at 있음, 아직 안 한 것)가 있으면 사진·지도까지 넣어 예약한다. 크롬은 끄지 않는다.
-# ⏸ 2026-11-04 사용자: 맛집은 원고만 써서 아티팩트로 — 사용자가 직접 블로그에 옮긴다. 자동 예약은 하지 않는다.
-exit 0
+# 2026-11-04 사용자 최종: 평소엔 원고 + 아티팩트만(원고에 publish_at 없음 → 여기서 할 일 없음). 사용자가 "직접 써 줘"라고 한 원고만 publish_at 이 붙어 예약된다.
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo

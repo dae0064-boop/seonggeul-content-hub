@@ -14,7 +14,7 @@
 | 사무실 PC | 발행 가능 | `C:\Users\dae00\seonggeul-content-hub` | 09:00 (`auto-setup.cmd`) |
 | 노트북 | 발행 가능 | `C:\Users\user\Documents\seonggeul-content-hub` | 09:15 (`auto-setup.cmd -At 09:15`) |
 
-**📱 2026-11-04 사용자: 맛집 글은 대화로 요청("맛집 블로그 작성" + 장소·후기·사진) → Claude 가 사람 모자이크·원고·붙여넣기 화면 아티팩트(https://claude.ai/artifact/PbmJAA8FR2zYwSeovaybG7) → 사용자가 직접 발행.** 같은 날 만든 PC 1시간 뒤 예약은 사용자 지시로 껐다(SeonggeulMatjipWatch 지움). matjip.cmd(임시저장)는 남김 — 불란서찐빵 15:44 실제 화면 첫 실행에서 사진·지도·카테고리·태그 모두 성공. 정본 `content/matjip/README.md` 🆕📱.
+**📱 2026-11-04 사용자 최종: 맛집 글은 "맛집 블로그 작성" → 사람 모자이크·원고·붙여넣기 화면 아티팩트(https://claude.ai/artifact/PbmJAA8FR2zYwSeovaybG7)까지가 기본(사용자가 직접 발행). "블로그에 직접 써 줘"라고 한 글만 사진을 저장소에 넣고 publish_at(요청 + 1시간)을 붙여 PC `SeonggeulMatjipWatch` 가 예약.** matjip.cmd(임시저장)도 남김 — 불란서찐빵 15:44 실제 화면 첫 실행에서 사진·지도·카테고리·태그 모두 성공. 정본 `content/matjip/README.md` 🆕📱.
 **2026-11-04 사용자: 앞으로 모든 업무(자동 발행·맛집 글·손으로 하는 일 모두)는 사무실 PC 로 한다. 노트북은 당분간 쓰지 않고, 쓰게 되면 사용자가 알려 준다.** 맛집 글도 사무실 PC 가 임시저장까지 — 만듦(`launchers/matjip.cmd` → `scripts/matjip-draft.mjs` → publish-naver `--save-draft`, 지도는 사용자가 알려 준 '장소 → 검색 → 추가 → 확인', `content/matjip/README.md` 🆕). ✅ 첫 실행(불란서찐빵 15:44) 성공. 그 뒤 사용자가 "원고 + 아티팩트, 발행은 직접"으로 정함(위 📱 줄) — 앞으로도 그렇게 (사용자 "앞으로도 그렇게 해보자") (첫 시험 원고 `content/matjip/posts/2026-11-04-불란서찐빵-대부도본점.md`, 붙여넣기 화면 https://claude.ai/artifact/PbmJAA8FR2zYwSeovaybG7).
 **2026-11-03 사용자: 당분간 사무실 PC 로만 한다 — 사용자에게 안내할 때 '사무실 PC' 라고 굳이 짚지 않는다(그냥 'PC').** 클라우드 네트워크 허용 도메인에 commons·upload.wikimedia·ko.wikipedia·kogl·korea.kr 들어감(11/3 확인, 위키미디어 API 는 클라우드 공용 IP 라 가끔 요청 제한).
 **⚠ 2026-11-02 사용자: 당분간 노트북은 쓰지 않는다 — 사무실 PC(09:00) 기준으로만 정한다.** 노트북 시각(09:15·07:55)은 켜질 때만 의미가 있고, 켜져도 run-locks 로 겹치지 않는다.
