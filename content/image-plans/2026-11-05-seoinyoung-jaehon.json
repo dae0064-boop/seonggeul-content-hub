@@ -1,0 +1,119 @@
+{
+  "slug": "2026-11-05-seoinyoung-jaehon",
+  "title": "서인영 재혼, 12월 26일 교회 스몰웨딩…이번엔 무엇을 뺐을까",
+  "source": "11/5(목) 21:20 네이버 원고 — 아침 이슈 2차(연예·스타 소식), 홈판형",
+  "note": "대표 = 주인공이 나온 방송사 공식 유튜브 클립 표지(위키미디어 단독 사진 없음) — 못 받으면 사람 없는 교회 그림. 카드 2 + 그림 3",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "kind": "photo",
+      "title": "방송 출연 공식 영상 장면 (대표사진)",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "유퀴즈 서인영",
+            "must": [
+              "서인영"
+            ],
+            "channels": [
+              "유 퀴즈 온 더 튜브",
+              "tvN",
+              "tvN D ENT",
+              "디글 :Diggle"
+            ],
+            "prefer": [
+              "서인영",
+              "유퀴즈"
+            ]
+          },
+          "owner": "tvN",
+          "program": "유 퀴즈 온 더 블럭"
+        },
+        "person": [
+          "Seo In-young",
+          "서인영"
+        ],
+        "query": "서인영",
+        "query_en": "Seo In-young"
+      },
+      "note": "대표: tvN 「유 퀴즈 온 더 블럭」 출연 공식 클립 표지 → 없으면 사람 없는 교회 그림(실존 인물 그리지 않음)",
+      "thumb_shot": "wide",
+      "thumb_theme": "charcoal",
+      "thumb_mood": "반가움",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "서인영, 교회서 스몰웨딩",
+        "focus": "center 25%",
+        "theme": "charcoal"
+      },
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A small bright chapel interior with simple wooden pews and soft winter sunlight through tall windows, seen from the back, one tiny figure arranging a single white ribbon on a pew, face not visible. Color theme: warm brown wood and ivory tones with a coral accent. Mood: bright happy smile. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "햇살이 드는 작은 교회 안 빈 의자들",
+      "prompt": "Camera and composition: medium shot down an aisle. Empty wooden chairs lined up in a small quiet chapel with warm sunlight through a window, no people. Background color: soft ivory and light wood. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "kind": "card",
+      "title": "재혼 소식을 정리한 카드",
+      "card": {
+        "type": "compare",
+        "title": "서인영 재혼 한눈에",
+        "ask": "이번 결혼식은 어떻게 해?",
+        "heads": [
+          "이번 결혼식",
+          "예비 신랑"
+        ],
+        "items": [
+          [
+            "12월 26일",
+            "최지훈 대표"
+          ],
+          [
+            "교회 스몰웨딩",
+            "6살 연상"
+          ],
+          [
+            "축가와 꽃 장식",
+            "지인 소개"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "kind": "card",
+      "title": "재혼까지의 흐름을 정리한 카드",
+      "card": {
+        "type": "steps",
+        "title": "서인영 재혼까지",
+        "ask": "어떻게 된 거야?",
+        "items": [
+          "2023년 2월 첫 결혼",
+          "6월 재혼 소식이 먼저 알려짐",
+          "유튜브에서 날짜 공개",
+          "교회에서 스몰웨딩 예정"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "새 집 거실에 놓인 이삿짐 상자와 화분",
+      "prompt": "Camera and composition: wide shot of an empty new living room. Plain cardboard moving boxes and a green potted plant in a bright new apartment living room with wooden floor, no people. Background color: soft white and green. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "테이블 위 하얀 꽃 한 송이와 반지 상자",
+      "prompt": "Camera and composition: close-up on a table. A single white flower and a small closed velvet ring box on a white tablecloth in soft window light, no people. Background color: ivory and blush pink. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}
