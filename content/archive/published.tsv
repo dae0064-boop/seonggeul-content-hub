@@ -1,4 +1,4 @@
-date	channel	slug	main_keyword	title	category
+date	channel	slug	main_keyword	title	category	status
 2026-09-11	naver	2026-09-11-hwanjeolgi-gamgi			
 2026-09-11	naver	2026-09-11-yeoreum-ibul		여름이불 그냥 넣으면 내년에 냄새납니다	생활정보
 2026-09-12	naver	2026-09-12-aircon-cover	에어컨 청소	에어컨 청소 안 하고 덮으면 내년에 생기는 일	생활정보
@@ -313,7 +313,7 @@ date	channel	slug	main_keyword	title	category
 2026-11-02	naver	2026-11-02-ot-jeongjeongi	옷 정전기 없애는 법	옷 정전기 없애는 법, 니트 벗을 때마다 따끔했다면	생활정보
 2026-11-02	naver	2026-11-02-silson24-chamyeo-byeongwon	실손24 참여병원	실손24 참여병원, 동네 의원도 될까요 (10월 25일부터 확대)	생활보장
 2026-11-02	naver	2026-11-02-sinsaenga-seupdo	신생아 습도	신생아 습도, 숫자만 맞추면 정말 괜찮을까	생활정보
-2026-11-02	naver	2026-11-02-sinsegyeong-akpeulreo-v3	신세경 악플러	신세경 악플러, 2심도 징역 8개월 결국 법정구속된 이유	생활정보
+2026-11-02	naver	2026-11-02-sinsegyeong-akpeulreo-v3	신세경 악플러	신세경 악플러, 2심도 징역 8개월 결국 법정구속된 이유	생활정보	deleted
 2026-11-02	naver	2026-11-02-siraegi-doenjangguk-recipe	시래기 된장국 레시피	시래기 된장국 레시피, 국물이 텁텁해지지 않으려면	생활정보
 2026-11-02	naver	2026-11-02-yoyangbohosa-haneunil	요양보호사 하는일	요양보호사 하는일, 가족 반찬도 해 줄까요 (가사지원 90분 · 2026년)	생활보장
 2026-11-02	naver	2026-11-02-yoyangbohosa-wolgeup	요양보호사 월급	요양보호사 월급, 시급 말고 더 붙는 게 있을까요 (10,320원 · 2026년)	생활보장
@@ -328,22 +328,22 @@ date	channel	slug	main_keyword	title	category
 2026-11-02	tistory	2026-11-02-noin-bocheonggi-jiwongeum	노인 보청기 지원금	노인 보청기 지원금, 청각장애 등록 안 됐다면 어디서 받을까 (65세)	생활보장
 2026-11-02	tistory	2026-11-02-pyesigyongyu-beorineun-beop	폐식용유 버리는 법	폐식용유 버리는 법, 키친타월에 흡수할까 싱크대는 왜 안 될까 (양에 따라 2가지)	생활정보
 2026-11-02	tistory	2026-11-02-yul-ryul-gubun	율 률 구분	율 률 구분, 비율 확률 받침으로 가리기 (규칙 1가지)	생활정보
-2026-11-03	naver	2026-11-06-dakteox-gyesujeong-jeongche	닥터X 계수정	닥터X 계수정, 정체 숨기는 이유는? 손현주가 던진 질문	생활정보
-2026-11-03	naver	2026-11-04-gyeyakgyeolhon-minhyeon-hwa	계약결혼 민현	계약결혼 민현이 화난 이유는 몰카 때문? 정현이 지운 영상	생활정보
-2026-11-03	naver	2026-11-03-100il-geojitmal-8hoe	100일의 거짓말 8회	100일의 거짓말 8회, 김유정이 손가락을 꼬지 않은 이유는?	생활정보
+2026-11-03	naver	2026-11-06-dakteox-gyesujeong-jeongche	닥터X 계수정	닥터X 계수정, 정체 숨기는 이유는? 손현주가 던진 질문	생활정보	deleted
+2026-11-03	naver	2026-11-04-gyeyakgyeolhon-minhyeon-hwa	계약결혼 민현	계약결혼 민현이 화난 이유는 몰카 때문? 정현이 지운 영상	생활정보	deleted
+2026-11-03	naver	2026-11-03-100il-geojitmal-8hoe	100일의 거짓말 8회	100일의 거짓말 8회, 김유정이 손가락을 꼬지 않은 이유는?	생활정보	deleted
 2026-11-03	naver	2026-11-03-baeknaejang-chogi-jeungsang	백내장초기증상	백내장초기증상, 노안인 줄 알았는데 아닐 수도 있을까	생활보장
 2026-11-03	naver	2026-11-03-bocheonggi-gagyeok	보청기가격	보청기가격, 건강보험 지원은 얼마일까요 (기준액 131만 원 · 2026년)	생활보장
 2026-11-03	naver	2026-11-03-changmun-teumsaemagi	창문틈새막이	창문틈새막이, 붙였는데도 바람이 새는 이유	생활정보
 2026-11-03	naver	2026-11-03-chigwa-rejin-biyong	치과레진비용	치과레진비용, 건강보험은 몇 살까지 될까요 (만 12세 이하)	생활보장
 2026-11-03	naver	2026-11-03-chimae-geomsa	치매검사	치매검사, 보건소에서 먼저 받으면 무엇이 달라질까	생활보장
-2026-11-03	naver	2026-11-03-choebulam-byeolse	최불암 별세	최불암 별세, 전원일기 김 회장 22년 국민 아버지의 마지막 길	생활정보
+2026-11-03	naver	2026-11-03-choebulam-byeolse	최불암 별세	최불암 별세, 전원일기 김 회장 22년 국민 아버지의 마지막 길	생활정보	deleted
 2026-11-03	naver	2026-11-03-daebangeo-cheol	대방어철	대방어철, 겨울 방어가 유독 맛있다는 말 진짜일까	생활정보
 2026-11-03	naver	2026-11-03-daesangpojin-yebangjeopjong-gagyeok	대상포진 예방접종 가격	대상포진 예방접종 가격, 병원마다 다른 진짜 이유	생활보장
-2026-11-03	naver	2026-11-03-dakteox-myeotbujak	닥터X 몇부작	닥터X 몇부작, 종영은 언제? 남은 4회 일정과 후속작	생활정보
+2026-11-03	naver	2026-11-03-dakteox-myeotbujak	닥터X 몇부작	닥터X 몇부작, 종영은 언제? 남은 4회 일정과 후속작	생활정보	deleted
 2026-11-03	naver	2026-11-03-ganbyeongbi-jiwon	간병비 지원	간병비 지원, 요양병원 간병비도 건강보험이 될까요 (30% 내외 · 2027년)	생활보장
 2026-11-03	naver	2026-11-03-gulgukbap	굴국밥	굴국밥, 집에서 끓이면 굴이 왜 질겨질까	생활정보
-2026-11-03	naver	2026-11-03-gwacheon-jupjup-v2	과천 줍줍	과천 줍줍, 2가구에 3264명 몰린 이유는 10억 시세 차이	생활정보
-2026-11-03	naver	2026-11-03-imisuk-jusik	이미숙 주식	이미숙 주식, 66세에 처음 뛰어들었다가 집 날아갔다고 한 이유	생활정보
+2026-11-03	naver	2026-11-03-gwacheon-jupjup-v2	과천 줍줍	과천 줍줍, 2가구에 3264명 몰린 이유는 10억 시세 차이	생활정보	deleted
+2026-11-03	naver	2026-11-03-imisuk-jusik	이미숙 주식	이미숙 주식, 66세에 처음 뛰어들었다가 집 날아갔다고 한 이유	생활정보	deleted
 2026-11-03	naver	2026-11-03-kkomak-jecheol	꼬막 제철	꼬막 제철, 겨울만 되면 왜 자꾸 생각날까	생활정보
 2026-11-03	naver	2026-11-03-mechurial-jangjorim-recipe	메추리알 장조림 레시피	메추리알 장조림 레시피, 간장과 물은 몇 대 몇일까 (간장 1 : 물 2)	생활정보
 2026-11-03	naver	2026-11-03-mumallaengi	무말랭이	무말랭이, 꼬들꼬들하게 말리고 불리는 집은 뭐가 다를까	생활정보
@@ -351,12 +351,12 @@ date	channel	slug	main_keyword	title	category
 2026-11-03	naver	2026-11-03-neulgeunhobakjuk	늙은호박죽	늙은호박죽, 집에서 끓이면 왜 묽어질까	생활정보
 2026-11-03	naver	2026-11-03-norobaireoseu	노로바이러스	노로바이러스, 한 사람이 걸리면 온 가족이 옮는 이유	생활보장
 2026-11-03	naver	2026-11-03-ppallae-swinnae-jegeo	빨래 쉰내 제거	빨래 쉰내 제거, 다시 빨아도 냄새가 남는 이유	생활정보
-2026-11-03	naver	2026-11-03-soyeon-imsin	소연 임신	소연 임신, 조유민과 결혼 4년 만에 찾아온 아들 태명은 파워	생활정보
+2026-11-03	naver	2026-11-03-soyeon-imsin	소연 임신	소연 임신, 조유민과 결혼 4년 만에 찾아온 아들 태명은 파워	생활정보	deleted
 2026-11-03	naver	2026-11-03-undonghwa-setak-bangbeop	운동화 세탁방법	운동화 세탁방법, 주말 한 번에 끝내는 순서가 따로 있어요	생활정보
 2026-11-03	naver	2026-11-03-winaesigyeong-biyong	위내시경 비용	위내시경 비용, 수면으로 받으면 따로 낼까요 (본인부담 10%)	생활보장
 2026-11-03	naver	2026-11-03-yoksil-cheongso-seje	욕실청소세제	욕실청소세제, 어디에 어떤 걸 써야 할까요 (세제 3가지)	생활정보
 2026-11-03	naver	2026-11-03-yoyangwon-yoyangbyeongwon-chai	요양원	요양원, 요양병원과 같은 곳인 줄 알았다면	생활보장
-2026-11-03	naver	2026-11-03-yunjonghun-gyeolhon	윤종훈 결혼	윤종훈 결혼, 10살 연하 아내 한은서와 8년 전 처음 만난 곳은	생활정보
+2026-11-03	naver	2026-11-03-yunjonghun-gyeolhon	윤종훈 결혼	윤종훈 결혼, 10살 연하 아내 한은서와 8년 전 처음 만난 곳은	생활정보	deleted
 2026-11-03	tistory	2026-11-03-gajokgwangye-jeungmyeongseo-internet-balgeup	가족관계증명서 인터넷 발급	가족관계증명서 인터넷 발급, 상세증명서까지 떼야 할 때는 언제일까 (증명서 3종)	생활정보
 2026-11-03	tistory	2026-11-03-gaseupgi-jeongise	가습기 전기세	가습기 전기세, 가열식 가습기는 초음파보다 얼마 더 들까 (1년 7만 원대)	생활정보
 2026-11-03	tistory	2026-11-03-geonjeonji-beorineun-beop	건전지 버리는 법	건전지 버리는 법, 보조배터리도 같이 버려도 될까 (전지 6종)	생활정보
@@ -367,3 +367,7 @@ date	channel	slug	main_keyword	title	category
 2026-11-03	tistory	2026-11-03-milpye-yonggi-jeonjareinji	밀폐용기 전자레인지	밀폐용기 전자레인지, 뚜껑 닫고 데워도 괜찮을까 (재질 4가지)	생활정보
 2026-11-03	tistory	2026-11-03-natda-nata	낫다 낳다	낫다 낳다 구분, 감기가 나았다일까 낳았다일까 (규칙 1가지)	생활정보
 2026-11-03	tistory	2026-11-03-sanjeong-teukrye-jaedeungrok	산정특례 재등록	산정특례 재등록, 잔존암이나 중증난치질환이면 건강보험 다시 될까 (5년)	생활보장
+2026-11-04	naver	2026-11-04-baenara-gyeolhon	배나라 결혼	배나라 결혼, 나 혼자 산다 하차하는 이유는?	생활정보	deleted
+2026-11-04	naver	2026-11-04-gukminyeongeum-suryeongaek	국민연금 수령액	국민연금 수령액, 10년 내면 기초연금보다 적은 이유는?	생활정보	deleted
+2026-11-04	naver	2026-11-04-yeonaejeonjaeng-ihyori	연애전쟁 이효리	연애전쟁 이효리, 정신과 다닌다고 털어놓은 이유는?	생활정보	deleted
+2026-11-04	naver	2026-11-04-raieo-hwajeseong	라이어 드라마	라이어 드라마, 시청률 1%대인데 화제성 1위인 이유는?	생활정보	deleted
