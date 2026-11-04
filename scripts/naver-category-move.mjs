@@ -264,7 +264,14 @@ async function main() {
       const ok = await clickMove(page, frame, target);
       if (!ok) { await save(page, 'fail-move'); code = 2; break; }
       state = await readState(page);
-      const good = checked.filter((n) => state.get(n) === target.no);
+      let good = checked.filter((n) => state.get(n) === target.no);
+      // 2026-11-04 다섯 번째 실행: 9편 묶음이 2/9 로 읽혀 멈췄다(59편째) — 블로그 목록이 늦게 바뀌는 것으로 보고 기다렸다 다시 읽는다
+      for (let r = 1; r <= 3 && good.length !== checked.length; r++) {
+        log(`  아직 ${good.length}/${checked.length}편 — ${r * 10}초 기다렸다 다시 읽음`);
+        await sleep(r * 10000);
+        state = await readState(page);
+        good = checked.filter((n) => state.get(n) === target.no);
+      }
       log(`  확인: ${good.length}/${checked.length}편 옮겨짐`);
       if (good.length !== checked.length) { log('✖ 블로그에서 다시 읽었더니 옮겨지지 않은 글이 있어 멈춤'); await save(page, 'fail-verify'); code = 2; break; }
       moved += good.length;
