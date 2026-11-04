@@ -91,7 +91,7 @@ export function guard(text, { kind = 'post', recentTexts = [] } = {}) {
   if (body.length > cfg.maxChars) {
     errors.push(`${cfg.maxChars}자를 넘습니다 (${body.length}자). 스레드는 한 글에 500자까지입니다.`);
   }
-  const floor = kind === 'reply' ? 10 : cfg.minChars;
+  const floor = kind === 'reply' ? 10 : kind === 'daily' ? 15 : cfg.minChars; // 일상 글은 한두 줄짜리도 된다 (daily.md 🤖, 2026-11-04)
   if (body && body.length < floor) errors.push(`너무 짧습니다 (${body.length}자, 최소 ${floor}자).`);
 
   // ---- 금지 표현
