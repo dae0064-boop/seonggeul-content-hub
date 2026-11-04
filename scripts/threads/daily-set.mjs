@@ -26,6 +26,7 @@ const MAX_EMOJI = 2; // 2026-11-02 사용자 "너무 쓰지 말고 1~2개만"
 const OFF_TOPIC = /보험|실손|실비|보장|청구|상담|가입|설계사|블로그|링크|구매|할인|광고|협찬/;
 
 // 2026-11-04 사용자 "너무 AI 같지 않냐?" — 매끈한 정리 말 (daily.md 🤖)
+const TOPIC_FROM = '2026-11-06';
 const AI_WORDS = /의외로|어느새|그제야|은근 힐링|소소한|하루 피로|하는 시간|사실상|왜 이제|이게 행복/;
 
 export function checkDaily(file) {
@@ -78,6 +79,24 @@ export function checkDaily(file) {
     const emo = /\p{Extended_Pictographic}/u;
     const withEmoji = bodies.filter((b) => emo.test(b)).length;
     if (withEmoji > 2) errors.push(`이모지 쓴 글이 ${withEmoji}편 — 하루 1~2편만 (daily.md 🤖).`);
+  }
+  // 🔀 2026-11-04 사용자 "매번 같은 주제로 쓰지 말고 다른 주제로도" — 11/6 묶음부터 글마다 '주제:' (daily.md 🔀)
+  const day = path.basename(file).slice(0, 10);
+  if (day >= TOPIC_FROM) {
+    const back = (d, n) => new Date(Date.parse(d) - n * 86400000).toISOString().slice(0, 10);
+    const recent = fs.readdirSync(dir).filter((x) => /^\d{4}-\d{2}-\d{2}\.md$/.test(x) && x.slice(0, 10) < day && x.slice(0, 10) >= back(day, 7))
+      .flatMap((x) => parseSet(fs.readFileSync(path.join(dir, x), 'utf8')).map((it) => ({ f: x.slice(0, 10), t: (it['주제'] || '').trim() })));
+    const seen = new Set();
+    let runs = recent.filter((r) => /러닝|달리기/.test(r.t) && r.f >= back(day, 6)).length;
+    for (const it of items) {
+      const t = (it['주제'] || '').trim();
+      if (!t) { errors.push(`[${it.no}] '주제:' 줄이 없습니다 — 시각 아래에 한 낱말로 (daily.md 🔀).`); continue; }
+      if (seen.has(t)) errors.push(`[${it.no}] 주제 "${t}" 가 오늘 두 번입니다.`);
+      seen.add(t);
+      const hit = !/러닝|달리기/.test(t) && recent.find((r) => r.t === t); // 러닝은 아래 주 2편 규칙으로만
+      if (hit) errors.push(`[${it.no}] 주제 "${t}" — ${hit.f} 에 썼습니다. 7일 안에는 다른 주제로 (daily.md 🔀).`);
+      if (/러닝|달리기/.test(t) && ++runs > 2) errors.push(`[${it.no}] 러닝 글이 7일 안에 ${runs}편 — 주 2편까지 (daily.md 🔀).`);
+    }
   }
   return { errors, notes, items };
 }
