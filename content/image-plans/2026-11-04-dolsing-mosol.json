@@ -8,6 +8,34 @@
       "kind": "photo",
       "title": "돌싱N모솔 진행자 채정안 (대표사진)",
       "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "돌싱N모솔 1회",
+            "must": [
+              "돌싱"
+            ],
+            "episode": [
+              "1회",
+              "EP.1",
+              "EP1",
+              "1화"
+            ],
+            "channels": [
+              "every1",
+              "에브리원",
+              "MBC every1",
+              "E채널",
+              "채널S"
+            ],
+            "prefer": [
+              "첫인상",
+              "입학식",
+              "채정안"
+            ]
+          },
+          "owner": "MBC에브리원·E채널",
+          "program": "연애기숙학교 2기-돌싱N모솔"
+        },
         "query": "채정안",
         "query_en": "Chae Jung-an",
         "person": [
@@ -16,7 +44,7 @@
           "채정안"
         ]
       },
-      "note": "위키미디어 공용 채정안 단독 사진(CC) — PC 가 찾는다. 못 찾으면 사람 없는 그림",
+      "note": "사용자 11/4 \"표지는 유튜브 클립에서\" — 방송사 공식 1회 클립 표지 먼저, 못 받으면 채정안 단독 사진, 그다음 그림",
       "thumb_shot": "object",
       "thumb_theme": "rose",
       "thumb_person": "없음",
@@ -47,7 +75,38 @@
       "title": "불이 켜진 빈 강당과 줄 맞춘 의자",
       "n": 3,
       "file": "03.png",
-      "prompt": "Camera and composition: wide shot of an empty small school auditorium with neat rows of chairs and a simple stage, warm lights on, no people. Background color: warm beige and soft pink. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+      "prompt": "Camera and composition: wide shot of an empty small school auditorium with neat rows of chairs and a simple stage, warm lights on, no people. Background color: warm beige and soft pink. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "kind": "photo",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "돌싱N모솔 1회",
+            "must": [
+              "돌싱"
+            ],
+            "episode": [
+              "1회",
+              "EP.1",
+              "EP1",
+              "1화"
+            ],
+            "channels": [
+              "every1",
+              "에브리원",
+              "MBC every1",
+              "E채널",
+              "채널S"
+            ],
+            "prefer": [
+              "삼각관계",
+              "첫인상 선택",
+              "까망콩"
+            ]
+          },
+          "owner": "MBC에브리원·E채널",
+          "program": "연애기숙학교 2기-돌싱N모솔"
+        }
+      }
     },
     {
       "title": "노을 지는 시골길에 서 있는 작은 차",
