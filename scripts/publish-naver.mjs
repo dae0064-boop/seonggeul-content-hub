@@ -1386,7 +1386,9 @@ async function addPlaceMap(page, editor, place) {
     try { await clickFirst(page, PLACE_SEL.close, { timeout: 1500 }); } catch { await page.keyboard.press('Escape').catch(() => {}); }
     await sleep(600);
     const back = (await snapshot(editor)).includes(MAP_LABEL) || await undoUntilRestored(page, editor, snap0);
-    return { ok: false, why, lost: back ? null : lostLines(snap0, await snapshot(editor)) };
+    // [지도] 줄만 없어진 것은 글이 사라진 게 아니다 (2026-11-04 16:03 — 이것 때문에 저장 없이 멈췄다) → 그 줄만 빼고 계속
+    const gone = back ? [] : lostLines(snap0, await snapshot(editor), [MAP_LABEL]);
+    return { ok: false, why, lost: gone.length ? gone : null, labelGone: !back };
   };
   try {
     const btn = await findFirst(editor, PLACE_SEL.button, { timeout: 4000 });
@@ -1998,7 +2000,9 @@ async function main() {
         } else {
           warn(`지도 넣기 실패 (${r.why}) — "${MAP_LABEL}" 줄을 남깁니다`);
           if (r.lost) throw new Error(`지도를 넣다가 글이 사라졌고 되돌리지 못했습니다: ${r.lost.slice(0, 3).join(' / ')}. 저장하지 않고 멈춥니다.`);
-          manual.push(`"${MAP_LABEL}" 줄을 지우고 '장소' 버튼으로 ${post.place.query} 넣기  [${r.why}]`);
+          if (r.labelGone) post.blocks = post.blocks.map((b) => (b.type === 'image' ? b : { ...b, lines: b.lines.filter((l) => l.t !== MAP_LABEL) }))
+            .filter((b) => b.type === 'image' || b.lines.length);
+          manual.push(`${r.labelGone ? '' : `"${MAP_LABEL}" 줄을 지우고 `}'장소' 버튼으로 ${post.place.query} 넣기  [${r.why}]`);
         }
         await dump(page, 'place-map');
       } catch (e) {
