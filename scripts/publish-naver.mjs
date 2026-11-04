@@ -1365,7 +1365,7 @@ const PLACE_SEL = {
   button: ['button.se-map-toolbar-button', 'button[data-name="map"]', 'button[data-log="dot.map"]', 'button[class*="map-toolbar"]', 'button:has-text("장소")'],
   input: ['.se-popup-placesMap input[type="text"]', '.se-place-search-input', 'input[placeholder*="장소"]', 'input[placeholder*="검색"]', '.se-popup input[type="text"]'],
   confirm: ['.se-popup-placesMap button.se-popup-button-confirm', '.se-popup button.se-popup-button-confirm', '.se-popup button:has-text("확인")', 'button:has-text("확인")'],
-  close: ['.se-popup-placesMap button.se-popup-close-button', '.se-popup button.se-popup-close-button', '.se-popup button[class*="close"]'],
+  close: ['.se-popup-placesMap button.se-popup-close-button', '.se-popup button.se-popup-close-button', '.se-popup-placesMap button[class*="close"]', '.se-popup button[class*="close"]', '.se-popup button[aria-label*="닫기"]', '.se-popup-placesMap [class*="close"]'],
 };
 const PLACE_MAP_SEL = '.se-component.se-placesMap, .se-component.se-map, .se-module-map, .se-component[class*="placesMap"]';
 
@@ -1383,8 +1383,15 @@ async function addPlaceMap(page, editor, place) {
   }
   const giveUp = async (why) => {
     await dump(page, 'place-fail');
-    try { await clickFirst(page, PLACE_SEL.close, { timeout: 1500 }); } catch { await page.keyboard.press('Escape').catch(() => {}); }
-    await sleep(600);
+    // 창을 꼭 닫는다 — 2026-11-04 16:15 창 뒤 어두운 막(se-popup-dim)이 남아 저장 버튼이 눌리지 않았다
+    for (let t = 0; t < 4; t++) {
+      const dim = await editor.locator('.se-popup-dim').first().isVisible().catch(() => false)
+        || await page.locator('.se-popup-dim').first().isVisible().catch(() => false);
+      if (!dim && t) break;
+      try { const c = await findAnywhere(page, editor, PLACE_SEL.close, { timeout: 1500 }); await c.loc.click(); log(`클릭: ${c.sel} (지도 창 닫기)`); }
+      catch { await page.keyboard.press('Escape').catch(() => {}); }
+      await sleep(700);
+    }
     const back = (await snapshot(editor)).includes(MAP_LABEL) || await undoUntilRestored(page, editor, snap0);
     // [지도] 줄만 없어진 것은 글이 사라진 게 아니다 (2026-11-04 16:03 — 이것 때문에 저장 없이 멈췄다) → 그 줄만 빼고 계속
     const gone = back ? [] : lostLines(snap0, await snapshot(editor), [MAP_LABEL]);
@@ -1414,8 +1421,17 @@ async function addPlaceMap(page, editor, place) {
       let cand = rows.filter((x) => x.t.replace(/\s/g, '').includes(q) && (!addr || x.t.replace(/\s/g, '').includes(addr.replace(/\s/g, ''))));
       // 주소가 화면에서 '…'로 잘려 글자에 없을 수 있다 → 이름이 검색어와 똑같은 곳이 하나뿐이면 그곳 (넣은 뒤 지도 카드의 주소로 다시 본다)
       if (!cand.length) cand = rows.filter((x) => x.name.replace(/\s/g, '') === q);
-      // 주소로 찾았을 때: 가게 이름이 든 줄, 없으면 결과가 하나뿐일 때 그 주소
-      if (!cand.length && byAddr) { cand = rows.filter((x) => x.t.replace(/\s/g, '').includes(q)); if (!cand.length && rows.length === 1) cand = rows; }
+      // 이름이 조금 달라도(네이버 등록 이름 "16호원조할머니칼국수 대부도본점" vs 원고 "16호 원조 할머니 손칼국수") 낱말이 가장 많이 겹치는 한 곳
+      // — 주소 말(addr)이 있으면 그 주소인 줄만. 원고 이름 낱말의 절반 넘게 겹쳐야 고른다
+      if (!cand.length) {
+        const words = (name || query).split(/\s+/).filter((w) => w.length >= 2);
+        const okAddr = (x) => !addr || x.t.replace(/\s/g, '').includes(addr.replace(/\s/g, ''));
+        const scored = rows.filter(okAddr).map((x) => ({ ...x, sc: words.filter((w) => x.name.replace(/\s/g, '').includes(w)).length }));
+        const best = Math.max(0, ...scored.map((x) => x.sc));
+        if (best > words.length / 2) cand = scored.filter((x) => x.sc === best);
+      }
+      // 주소로 찾았을 때 결과가 하나뿐이면 그 주소
+      if (!cand.length && byAddr && rows.length === 1) cand = rows;
       items.forEach((li) => li.removeAttribute('data-sg-place'));
       const all = items.map((li) => norm(li.textContent).slice(0, 60));
       if (cand.length !== 1) return { n: cand.length, all };
