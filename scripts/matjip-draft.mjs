@@ -41,7 +41,8 @@ const meta = Object.fromEntries(fm[1].split(/\r?\n/).map((l) => /^([A-Za-z_]+):\
 
 // 사진 폴더: --photos, 없으면 <내 드라이브>/ClaudeWorkspace/맛집사진/<photo_dir>
 if (!photoDir && opt('--drive') && meta.photo_dir) photoDir = path.join(opt('--drive'), 'ClaudeWorkspace', '맛집사진', meta.photo_dir);
-if (!photoDir || !fs.existsSync(photoDir)) throw new Error(`사진 폴더가 없습니다: ${photoDir || '(원고에 photo_dir: 이 없음)'}`);
+const stop = (m) => { console.log(`\n❌ ${m}`); process.exit(1); }; // 사용자가 읽는 말로 멈춘다 (2026-11-04 — 오류 줄이 길게 나와 알아보기 어려웠다)
+if (!photoDir || !fs.existsSync(photoDir)) stop(`사진 폴더가 아직 없어요: ${photoDir || '(원고에 photo_dir: 이 없음)'}\n   휴대폰 Google Drive 앱에서 ClaudeWorkspace → 맛집사진 안에 '${meta.photo_dir || '가게 이름'}' 폴더를 만들고 사진을 올린 뒤 Claude 에게 알려 주세요.`);
 
 // [사진 N] → [이미지 N] (publish-naver 가 아는 표시). 본문은 그대로.
 const body = raw.slice(fm[0].length).replace(/^\[사진\s*(\d+)\]/gm, '[이미지 $1]');
@@ -50,7 +51,7 @@ const imageNs = post.blocks.filter((b) => b.type === 'image').map((b) => b.n);
 
 // 사진 파일 고르기
 const isPhoto = (f) => /\.(jpe?g|png|heic|webp)$/i.test(f);
-if (/^\(/.test(meta.photos || '')) throw new Error('원고에 사진 순서(photos:)가 아직 없어요. Claude 에게 "맛집사진 올렸어" 라고 말해 주세요.');
+if (/^\(/.test(meta.photos || '')) stop('원고에 사진 순서(photos:)가 아직 없어요. Claude 에게 "맛집사진 올렸어" 라고 말해 주세요.');
 const listed = (meta.photos || '').split('|').map((s) => s.trim()).filter(Boolean);
 const files = listed.length ? listed : fs.readdirSync(photoDir).filter(isPhoto).sort((a, b) => a.localeCompare(b, 'ko', { numeric: true }));
 const slug = path.basename(md, '.md');
