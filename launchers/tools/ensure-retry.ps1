@@ -25,6 +25,7 @@ if (-not $scanTask) {
 }
 # 2026-11-02: 스레드 블로그 유입 글 작업(매시간 10~23시)
 & (Join-Path $PSScriptRoot 'threads-blog-setup.ps1') -IfMissing | Out-Null
+try { & (Join-Path $PSScriptRoot 'matjip-watch-setup.ps1') -IfMissing | Out-Null } catch { }  # 맛집 예약 지킴이 (2026-11-04)
 # 2026-10-05: 켜거나 잠금을 풀면 바로 시작하는 작업(SeonggeulMorningStart)이 없으면 다시 등록한다
 $wake = Get-ScheduledTask -TaskName 'SeonggeulMorningStart'
 if (@($t.Triggers).Count -ge 2 -and -not $battery -and $wake) { exit 0 }

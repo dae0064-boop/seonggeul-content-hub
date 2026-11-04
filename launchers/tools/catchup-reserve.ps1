@@ -19,6 +19,7 @@ function Note($msg) { New-Item -ItemType Directory -Force -Path (Split-Path $not
 Note "시작 (코드 $(git rev-parse --short HEAD 2>$null))"
 # 2026-11-02 사용자 "스레드에 매일 5개씩" — 블로그 유입 글 작업(매시간)이 없으면 등록 (바쁨·Drive 확인보다 먼저)
 try { & (Join-Path $PSScriptRoot 'threads-blog-setup.ps1') -IfMissing | Out-Null } catch { Note "스레드 블로그 작업 등록 실패: $($_.Exception.Message)" }
+try { & (Join-Path $PSScriptRoot 'matjip-watch-setup.ps1') -IfMissing | Out-Null } catch { }  # 맛집 예약 지킴이 (2026-11-04)
 # 2026-11-03 사용자 — 보험글 09·15·21시: 올리기 작업 시각이 바뀌었으면 다시 등록 (다음 날 아침을 기다리지 않게)
 try { & (Join-Path $PSScriptRoot 'threads-setup.ps1') -IfMissing | Out-Null } catch { Note "스레드 올리기 작업 등록 실패: $($_.Exception.Message)" }
 # 인스타 카드뉴스 Word·그림을 Drive 로 (2026-11-02 — 클라우드가 큰 파일을 Drive 로 못 보낸다)
