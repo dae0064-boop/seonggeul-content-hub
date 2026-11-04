@@ -40,8 +40,17 @@ function readPlan() {
   return rows.map((l) => Object.fromEntries(l.split('\t').map((v, i) => [head[i], v])));
 }
 async function getJson(page, url) {
-  const t = await page.evaluate(async (u) => (await fetch(u, { credentials: 'include' })).text(), url);
-  try { return JSON.parse(t); } catch { return null; }
+  // 2026-11-04 여덟 번째 실행: 이동 확인 뒤 원래 창이 새로 고쳐지면서 읽기가 끊겼다 — 쪽이 다 뜰 때까지 기다렸다 3번까지 다시
+  for (let k = 0; k < 3; k++) {
+    try {
+      const t = await page.evaluate(async (u) => (await fetch(u, { credentials: 'include' })).text(), url);
+      try { return JSON.parse(t); } catch { return null; }
+    } catch (e) {
+      if (k === 2) throw e;
+      await page.waitForLoadState('domcontentloaded').catch(() => {}); await sleep(3000);
+    }
+  }
+  return null;
 }
 async function readCategories(page) {
   const j = await getJson(page, `https://m.blog.naver.com/api/blogs/${id}/category-list`);
