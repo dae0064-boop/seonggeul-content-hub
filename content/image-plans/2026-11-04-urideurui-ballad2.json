@@ -5,22 +5,53 @@
   "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2(첫머리 + 메모). 미성년 참가자가 많아 사진은 2장만 공식 클립(5회, 11/2), 나머지는 사람 없는 그림. 실존 인물 얼굴은 그리지 않는다",
   "images": [
     {
-      "title": "거실 소파에서 TV 오디션 결과를 보고 놀라 입을 가린 30대 여성의 얼굴 (대표사진)",
-      "note": "미성년 참가자 얼굴이 공식 클립 표지에 나올 수 있어 사람 없는 무대 그림으로 (2026-11-04)",
-      "thumb_shot": "face",
+      "title": "우리들의 발라드2 공식 영상 장면 (대표사진)",
+      "note": "사용자 11/4 \"표지는 유튜브 클립에서\" — SBS 공식 5회 클립 표지, 심사위원 클립 먼저(미성년 참가자 얼굴은 피하려고 prefer). 못 받으면 아래 그림",
+      "thumb_shot": "object",
       "thumb_theme": "navy",
-      "thumb_person": "30대 여성",
+      "thumb_person": "없음",
       "overlay": {
         "kind": "thumb",
-        "look": "band",
-        "theme": "navy",
-        "font": "jua",
-        "title": "우리들의 발라드\n만점인데 탈락?"
+        "look": "news",
+        "title": "만점인데 탈락, 무슨 일?",
+        "focus": "center 30%",
+        "theme": "navy"
       },
       "n": 1,
       "file": "01.png",
-      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her 30s with shoulder-length dark hair, wearing a light blue knit sweater, sitting on a sofa at night, covering her mouth with one hand in surprise while watching a music audition show on TV (screen shows only blurred stage lights, no people, no text); a small cream cushion as an accent. Facial expression: pleasantly surprised, eyebrows up, not scared. Color theme: cool blue and white tones with a coral-red accent. Natural realistic photograph look, soft lamp light, shallow depth of field, real Korean people and real Korean homes, warm cozy everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
-      "thumb_mood": "놀람"
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A single vintage stage microphone on a stand on an empty concert stage under a warm spotlight, no people. Color theme: cool blue and white tones with a coral-red accent. Natural realistic photograph look, soft light, shallow depth of field, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "kind": "photo",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "우리들의 발라드2 5회",
+            "must": [
+              "발라드"
+            ],
+            "episode": [
+              "5회",
+              "EP.5",
+              "EP5",
+              "5화"
+            ],
+            "channels": [
+              "SBS",
+              "스브스",
+              "SBS Entertainment",
+              "SBS 예능"
+            ],
+            "prefer": [
+              "로이킴",
+              "정승환",
+              "비비",
+              "전현무",
+              "탑백귀"
+            ]
+          },
+          "owner": "SBS",
+          "program": "우리들의 발라드2"
+        }
+      }
     },
     {
       "kind": "card",
@@ -39,7 +70,36 @@
       "n": 3,
       "file": "03.png",
       "prompt": "Camera and composition: wide shot of an empty audition stage. An empty audition stage with two stand microphones facing the audience under blue stage lights, no people. Background color: deep blue and soft white stage light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
-      "note": "미성년 참가자 얼굴이 공식 클립 표지에 나올 수 있어 사람 없는 무대 그림으로 (2026-11-04)"
+      "kind": "photo",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "우리들의 발라드2 5회",
+            "must": [
+              "발라드"
+            ],
+            "episode": [
+              "5회",
+              "EP.5",
+              "EP5",
+              "5화"
+            ],
+            "channels": [
+              "SBS",
+              "스브스",
+              "SBS Entertainment",
+              "SBS 예능"
+            ],
+            "prefer": [
+              "데스매치",
+              "전현무",
+              "심사"
+            ]
+          },
+          "owner": "SBS",
+          "program": "우리들의 발라드2"
+        }
+      }
     },
     {
       "title": "텅 빈 무대 위 스탠드 마이크",
