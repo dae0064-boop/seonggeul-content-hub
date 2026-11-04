@@ -18,16 +18,41 @@
             "수술"
           ],
           "owner": "SBS",
-          "program": "닥터X"
+          "program": "닥터X",
+          "youtube_search": {
+            "query": "닥터X 8회",
+            "must": [
+              "닥터X"
+            ],
+            "episode": [
+              "8회",
+              "8화",
+              "EP.8",
+              "EP8"
+            ],
+            "channels": [
+              "SBS",
+              "SBS 드라마",
+              "SBS Catch",
+              "SBS NOW"
+            ],
+            "prefer": [
+              "김지원",
+              "계수정",
+              "수술"
+            ]
+          }
         },
         "person": [
           "Kim Ji-won",
           "김지원"
         ],
-        "file": "File:Kim Ji-won at BVLGARI photo call event.jpg"
+        "file": "File:28102026 Kim Ji-won Bvlgari B.zero1 6.png",
+        "query": "김지원",
+        "query_en": "Kim Ji-won"
       },
       "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A surgeon's folded green scrub cap and a stethoscope on a steel tray in a dim operating room. Color theme: dusty rose and white tones with a green accent. Natural realistic photograph look, soft light, shallow depth of field, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
-      "note": "SBS 닥터X 공식 포토 인용 — 못 받으면 대신",
+      "note": "대표: SBS 공식 유튜브 8회 클립 표지(1280×720) → SBS 공식 포토 → 위키미디어 김지원(10/28, 1620×2160, 눈으로 고름)",
       "thumb_shot": "object",
       "thumb_theme": "rose",
       "thumb_person": "없음",

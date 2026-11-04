@@ -37,10 +37,17 @@
           },
           "owner": "tvN",
           "program": "100일의 거짓말"
-        }
+        },
+        "file": "File:Kim Yoo-jung in October 2025.png",
+        "person": [
+          "Kim Yoo-jung",
+          "김유정"
+        ],
+        "query": "김유정",
+        "query_en": "Kim Yoo-jung"
       },
       "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). An old 1930s style fountain pen and a folded letter on a dark wooden desk under lamp light. Color theme: bright cobalt blue and white tones with an orange accent. Natural realistic photograph look, soft light, shallow depth of field, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
-      "note": "8회(11/1) tvN 공식 유튜브 클립 표지 — PC 가 찾는다. 못 찾으면 사람 없는 그림",
+      "note": "대표: 방송사 공식 유튜브 클립 표지(1280×720) 먼저 → 없으면 위키미디어 김유정(눈으로 고름)",
       "thumb_shot": "overhead",
       "thumb_theme": "cobalt",
       "thumb_person": "없음",
