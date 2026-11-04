@@ -969,8 +969,9 @@ for (const file of files) {
       for (const im of cards) {
         if (im.n === 1) errors.push('1번(대표사진)은 정보 카드로 만들지 않습니다');
         for (const b of checkCard(im.card)) errors.push(`${im.n}번 카드: ${b}`);
-        if (dated >= ASK_FROM && im.card?.style !== 'classic' && !String(im.card?.ask || '').trim()) errors.push(`${im.n}번 카드: card.ask(질문 말풍선, 18자 안쪽 — 독자가 칠 법한 질문)가 없습니다. 없으면 "<제목> 알려 줘!" 로 어색하게 그려집니다`);
+        if (dated >= ASK_FROM && !['classic', 'memo'].includes(im.card?.style) && !String(im.card?.ask || '').trim()) errors.push(`${im.n}번 카드: card.ask(질문 말풍선, 18자 안쪽 — 독자가 칠 법한 질문)가 없습니다. 없으면 "<제목> 알려 줘!" 로 어색하게 그려집니다`);
         const items = (im.card?.items || []).flat();
+        if (im.card?.type === 'lead' && !bodyPlain.includes(plain(im.card.keyword || ''))) errors.push(`${im.n}번 lead 카드 keyword "${im.card.keyword}" 가 본문에 없습니다`);
         const miss = items.filter((x) => !bodyPlain.includes(plain(x)));
         if (miss.length) errors.push(`${im.n}번 카드 글자가 본문에 없습니다: ${miss.map((x) => `"${x}"`).join(', ')} — 카드 글자는 원고 내용과 같게`);
       }
