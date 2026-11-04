@@ -42,6 +42,7 @@ export function soloOk(title, person) {
 }
 
 /** 위키미디어 공용 검색 — 라이선스가 맞는 첫 사진 */
+const PERSON_MIN_SIDE = 1000; // 인물 사진 짧은 쪽 최소 px (대표사진 1024 정사각형이 늘려지지 않게)
 const GENERIC_WORDS = new Set(['korea', 'korean', 'south', 'republic', 'national', 'service', 'center', 'centre', 'office', 'the', 'of', 'and', 'in', 'seoul', 'photo', 'image', 'building', 'government', 'ministry', 'public', 'agency', 'corporation', 'company', 'official']);
 
 export async function searchCommons({ query, query_en: queryEn, person, minWidth = 600 }) {
@@ -49,7 +50,7 @@ export async function searchCommons({ query, query_en: queryEn, person, minWidth
   for (const q of terms) {
     const url = 'https://commons.wikimedia.org/w/api.php?' + new URLSearchParams({
       action: 'query', format: 'json', generator: 'search', gsrsearch: `${q} filetype:bitmap`, gsrnamespace: '6', gsrlimit: '25',
-      prop: 'imageinfo', iiprop: 'url|size|mime|extmetadata', iiurlwidth: '1280',
+      prop: 'imageinfo', iiprop: 'url|size|mime|extmetadata', iiurlwidth: '2048',
     });
     const data = await getJson(url);
     const pages = Object.values(data?.query?.pages || {}).sort((a, b) => (a.index || 0) - (b.index || 0));
@@ -63,6 +64,8 @@ export async function searchCommons({ query, query_en: queryEn, person, minWidth
     for (const p of pages) {
       const ii = p.imageinfo?.[0];
       if (!ii || !/image\/(jpeg|png)/.test(ii.mime) || ii.width < minWidth) continue;
+      // 인물 대표사진은 고화질만 (2026-11-04 사용자 — "연예인 메인 사진 화질이 너무 구려, 선명하고 고화질로"): 짧은 쪽 1000px 미만은 정사각형으로 자르면 흐려진다
+      if (person && Math.min(ii.width, ii.height) < PERSON_MIN_SIDE) continue;
       const md = ii.extmetadata || {};
       const lic = strip(md.LicenseShortName?.value);
       if (!OK_LICENSE.test(lic) || BAD_LICENSE.test(lic) || String(md.NonFree?.value || '') === 'true') continue;
@@ -74,7 +77,7 @@ export async function searchCommons({ query, query_en: queryEn, person, minWidth
       if (!hit || hit < needHits) continue; // 이름이 제목·설명에 없는 사진은 다른 사람일 수 있다
       if (person && !soloOk(p.title.replace(/^File:/, ''), person)) continue; // 혼자 나온 그 사람 사진만
       scored.push({
-        score: hit * 10 + Math.min(ii.width, 2000) / 1000 + (person ? (ii.height >= ii.width ? 1 : 0) : (ii.width >= ii.height ? 1 : 0)), // 인물은 세로(얼굴 위주) 사진을 먼저
+        score: hit * 10 + Math.min(Math.min(ii.width, ii.height), 3000) / (person ? 500 : 1000) + (person ? (ii.height >= ii.width ? 1 : 0) : (ii.width >= ii.height ? 1 : 0)), // 인물은 세로(얼굴 위주) 사진을 먼저
         url: ii.thumburl || ii.url,
         page: ii.descriptionurl,
         license: lic,
@@ -95,7 +98,7 @@ export async function searchCommons({ query, query_en: queryEn, person, minWidth
 export async function commonsFile(file) {
   const title = file.startsWith('File:') ? file : `File:${file}`;
   const url = 'https://commons.wikimedia.org/w/api.php?' + new URLSearchParams({
-    action: 'query', format: 'json', titles: title, prop: 'imageinfo', iiprop: 'url|size|mime|extmetadata', iiurlwidth: '1280',
+    action: 'query', format: 'json', titles: title, prop: 'imageinfo', iiprop: 'url|size|mime|extmetadata', iiurlwidth: '2048',
   });
   const data = await getJson(url);
   const p = Object.values(data?.query?.pages || {})[0];
@@ -104,6 +107,7 @@ export async function commonsFile(file) {
   const md = ii.extmetadata || {};
   const lic = strip(md.LicenseShortName?.value);
   if (!OK_LICENSE.test(lic) || BAD_LICENSE.test(lic) || String(md.NonFree?.value || '') === 'true') return { skip: `라이선스 안 맞음(${lic}): ${title}` };
+  if (Math.min(ii.width || 0, ii.height || 0) < 700) return { skip: `사진이 작아 흐려짐(${ii.width}×${ii.height}): ${title}` };
   const author = strip(md.Artist?.value).slice(0, 40) || '작가 미상';
   return { url: ii.thumburl || ii.url, page: ii.descriptionurl, license: lic, author, title: p.title, source: '위키미디어 공용', credit: `사진: ${author} / 위키미디어 공용 (${lic})` };
 }
