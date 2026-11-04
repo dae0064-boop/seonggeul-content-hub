@@ -2,8 +2,6 @@
 #   catchup-reserve.ps1·ensure-retry.ps1·matjip.cmd 가 -IfMissing 으로 부른다 (사람이 따로 할 일 없음). -Remove 로 끈다.
 param([switch]$Remove, [switch]$IfMissing)
 $name = 'SeonggeulMatjipWatch'
-# ⏸ 2026-11-04 사용자: 맛집 자동 예약을 쓰지 않는다 → 부르면 작업을 지운다 (catchup-reserve·ensure-retry·matjip.cmd 가 -IfMissing 으로 부른다)
-$Remove = $true
 if ($Remove) { Unregister-ScheduledTask -TaskName $name -Confirm:$false -ErrorAction SilentlyContinue; Write-Host '맛집 예약 지킴이를 껐어요.'; exit 0 }
 if ($IfMissing -and (Get-ScheduledTask -TaskName $name -ErrorAction SilentlyContinue)) { exit 0 }
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
