@@ -85,40 +85,28 @@ async function openList(page, catNo, pageNo = 1) {
   }
   const html0 = await W.innerHTML().catch(() => '');
   if (pageNo === 1 && !fs.existsSync(path.join(OUT, 'toplist-open.html'))) fs.writeFileSync(path.join(OUT, 'toplist-open.html'), html0.slice(0, 300000));
-  // 한 쪽에 30줄
-  const sel = W.locator('select').filter({ has: f.locator('option', { hasText: /30/ }) });
-  if (await sel.count().catch(() => 0)) {
-    const lab = (await sel.first().locator('option').allInnerTexts()).find((o) => /30/.test(o));
-    await sel.first().selectOption({ label: lab }).catch(() => {}); await sleep(2000);
-  } else {
-    const a30 = W.locator('a, button').filter({ hasText: /^\s*30\s*줄?\s*(보기)?\s*$/ });
-    if (await a30.count().catch(() => 0)) { await a30.first().click().catch(() => {}); await sleep(2000); }
-    else {
-      const tog = W.locator('a, button').filter({ hasText: /줄\s*보기/ });
-      if (await tog.count().catch(() => 0)) { await tog.first().click().catch(() => {}); await sleep(800);
-        const o30 = f.locator('a, button, li').filter({ hasText: /^\s*30\s*줄?\s*(보기)?\s*$/ });
-        if (await o30.count().catch(() => 0)) { await o30.first().click().catch(() => {}); await sleep(2000); } }
-    }
+  // 2026-11-04 세 번째 실행 화면: 줄 수 #listCountToggle → #changeListCount a[data-value="30"],
+  // 글관리 열기 #btnSwitchManager → #listManagerWrapper 안에 '설정 변경 · 태그달기 · 이동(a._cfmMovePost) · 삭제',
+  // 쪽 번호 a._goPageTop._param(N), 다음 a.next._goPageTop. 체크칸 input._checkPost[name=logNo] value=글 번호.
+  if (!/30/.test(await f.locator('#listCountView').innerText().catch(() => ''))) {
+    await f.locator('#listCountToggle').click().catch(() => {}); await sleep(600);
+    await f.locator('#changeListCount a[data-value="30"]').click().catch(() => {}); await sleep(2500);
   }
-  // 글 관리(체크칸) 켜기 — '관리' 글자가 든 것만, 삭제·공개 등은 안 누른다
-  if (await W.locator('input[type=checkbox]').count().catch(() => 0) < 2) {
-    const mg = W.locator('a, button').filter({ hasText: /관리/ });
-    const n = await mg.count().catch(() => 0);
-    for (let i = 0; i < n; i++) {
-      const t = norm(await mg.nth(i).innerText().catch(() => ''));
-      if (BAD.test(t) || !(await mg.nth(i).isVisible().catch(() => false))) continue;
-      await mg.nth(i).click().catch(() => {}); log(`  누름: "${t}"`); await sleep(1500); break;
-    }
+  if (!(await f.locator('#listManagerWrapper').isVisible().catch(() => false))) {
+    await f.locator('#btnSwitchManager').click().catch(() => {}); await sleep(1200);
+    log(`  글관리 열기: ${await f.locator('#listManagerWrapper').isVisible().catch(() => false) ? '열림' : '안 열림'}`);
   }
-  if (pageNo > 1) { // 목록 아래 쪽 번호
-    const pg = W.locator('a').filter({ hasText: new RegExp(`^\\s*${pageNo}\\s*$`) });
-    if (!(await pg.count().catch(() => 0))) {
-      const nx = W.locator('a').filter({ hasText: /다음/ });
-      if (await nx.count().catch(() => 0)) { await nx.first().click().catch(() => {}); await sleep(2000); }
+  if (pageNo > 1) {
+    for (let k = 0; k < 6; k++) {
+      const pg = f.locator(`#toplistWrapper a._goPageTop._param\\(${pageNo}\\)`);
+      if (await pg.count().catch(() => 0)) { await pg.first().click().catch(() => {}); await sleep(2500); break; }
+      const nx = f.locator('#toplistWrapper a.next._goPageTop');
+      if (!(await nx.count().catch(() => 0))) return null;
+      await nx.first().click().catch(() => {}); await sleep(2500);
     }
-    const pg2 = W.locator('a').filter({ hasText: new RegExp(`^\\s*${pageNo}\\s*$`) });
-    if (!(await pg2.count().catch(() => 0))) return null;
-    await pg2.first().click().catch(() => {}); await sleep(2500);
+    const cur = norm(await f.locator('#toplistWrapper strong.page').first().innerText().catch(() => ''));
+    if (!cur.startsWith(String(pageNo))) return null;
+    if (!(await f.locator('#listManagerWrapper').isVisible().catch(() => false))) { await f.locator('#btnSwitchManager').click().catch(() => {}); await sleep(1000); }
   }
   if (pageNo === 1 && !fs.existsSync(path.join(OUT, 'toplist-manage.html'))) fs.writeFileSync(path.join(OUT, 'toplist-manage.html'), (await W.innerHTML().catch(() => '')).slice(0, 300000));
   return f;
@@ -139,7 +127,7 @@ async function visibleLogNos(frame) {
         return '';
       };
     const out = [];
-    for (const cb of (document.querySelector('#toplistWrapper') || document).querySelectorAll('input[type=checkbox]')) { const no = noOf(cb); if (no) out.push(no); }
+    for (const cb of (document.querySelector('#toplistWrapper') || document).querySelectorAll('input._checkPost[name=logNo], input[type=checkbox][name=logNo]')) { const no = noOf(cb); if (no) out.push(no); }
     return out;
   });
 }
@@ -160,7 +148,7 @@ async function checkRows(frame, want) {
       };
     const want = new Set(wantList);
     const done = [];
-    for (const cb of (document.querySelector('#toplistWrapper') || document).querySelectorAll('input[type=checkbox]')) {
+    for (const cb of (document.querySelector('#toplistWrapper') || document).querySelectorAll('input._checkPost[name=logNo], input[type=checkbox][name=logNo]')) {
       const no = noOf(cb);
       if (no && want.has(no)) { if (!cb.checked) cb.click(); if (cb.checked) done.push(no); }
     }
@@ -168,55 +156,53 @@ async function checkRows(frame, want) {
   }, [...want]);
 }
 
-/** '카테고리 이동' 버튼 → 대상 카테고리 고르기 → 확인. 어느 단계든 못 찾으면 false */
+/** '이동'(a._cfmMovePost) → 뜨는 창(새 창 또는 레이어)에서 대상 카테고리 → 확인. 어느 단계든 못 찾으면 false */
 async function clickMove(page, frame, target) {
-  const frames = [frame, page.mainFrame(), ...page.frames()];
-  let clicked = false;
-  for (const f of frames) {
-    const btns = f.locator('a, button, input[type=button]');
-    const n = await btns.count().catch(() => 0);
-    for (let i = 0; i < n && !clicked; i++) {
-      const b = btns.nth(i);
-      const t = norm(await b.innerText().catch(() => '') || await b.getAttribute('value').catch(() => ''));
-      if (!t || BAD.test(t)) continue;
-      if (/^(카테고리\s*)?(이동|변경)$|^카테고리\s*(이동|변경)/.test(t) && await b.isVisible().catch(() => false)) { await b.click(); clicked = true; log(`  누름: "${t}"`); }
-    }
-    if (clicked) break;
+  const mv = frame.locator('#listManagerWrapper a._cfmMovePost');
+  if (!(await mv.count().catch(() => 0)) || !(await mv.first().isVisible().catch(() => false))) { log('  ✖ \'이동\' 버튼이 안 보임'); return false; }
+  const popP = page.context().waitForEvent('page', { timeout: 8000 }).catch(() => null);
+  await mv.first().click(); log('  누름: 이동');
+  const pop = await popP;
+  if (pop) {
+    pop.on('dialog', async (d) => { const m = d.message(); log(`  확인창(새 창): "${m.slice(0, 80)}"`); if (/이동|카테고리/.test(m) && !/삭제/.test(m)) await d.accept().catch(() => {}); else await d.dismiss().catch(() => {}); });
+    await pop.waitForLoadState('domcontentloaded').catch(() => {}); await sleep(2000);
+    log(`  새 창: ${pop.url().slice(0, 120)}`);
+  } else await sleep(1500);
+  const where = pop ? [pop.mainFrame(), ...pop.frames()] : [frame, page.mainFrame(), ...page.frames()];
+  if (!fs.existsSync(path.join(OUT, 'move-window.html'))) {
+    try { fs.writeFileSync(path.join(OUT, 'move-window.html'), (await where[0].content()).slice(0, 300000)); (pop || page).screenshot({ path: path.join(OUT, 'move-window.jpg'), type: 'jpeg', quality: 60, fullPage: true }).catch(() => {}); } catch { /* */ }
   }
-  if (!clicked) { log('  ✖ "카테고리 이동/변경" 버튼을 못 찾음'); return false; }
-  await sleep(1500);
-  // 대상 카테고리 고르기: select 의 option 또는 글자 항목
+  const esc = target.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   let picked = false;
-  for (const f of [frame, page.mainFrame(), ...page.frames()]) {
-    const sels = f.locator('select');
-    const n = await sels.count().catch(() => 0);
+  for (const f of where) {
+    const sels = f.locator('select'); const n = await sels.count().catch(() => 0);
     for (let i = 0; i < n && !picked; i++) {
-      const s = sels.nth(i);
-      const opts = await s.locator('option').allInnerTexts().catch(() => []);
-      const hit = opts.find((o) => norm(o).replace(/^[-ㄴ└\s]+/, '') === target.name);
-      if (hit && await s.isVisible().catch(() => false)) { await s.selectOption({ label: hit }); picked = true; log(`  고름(목록): "${norm(hit)}"`); }
+      const sl = sels.nth(i);
+      const opts = await sl.locator('option').allInnerTexts().catch(() => []);
+      const hit = opts.find((o) => norm(o).replace(/^[-ㄴ└·\s]+/, '') === target.name);
+      if (hit) { await sl.selectOption({ label: hit }); picked = true; log(`  고름(목록): "${norm(hit)}"`); }
     }
-    if (!picked) {
-      const it = f.locator('label, li, a, span').filter({ hasText: new RegExp(`^\\s*${target.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*$`) });
-      const k = await it.count().catch(() => 0);
-      for (let i = k - 1; i >= 0 && !picked; i--) { // 화면 왼쪽 카테고리 메뉴 말고 새로 뜬 창(뒤쪽 요소)을 먼저
-        if (await it.nth(i).isVisible().catch(() => false)) { await it.nth(i).click(); picked = true; log(`  고름: "${target.name}"`); }
-      }
+    if (picked) break;
+    const it = f.locator('label, li, a, span, td').filter({ hasText: new RegExp(`^\\s*[-ㄴ└·]?\\s*${esc}\\s*$`) });
+    const k = await it.count().catch(() => 0);
+    for (let i = k - 1; i >= 0 && !picked; i--) {
+      if (!(await it.nth(i).isVisible().catch(() => false))) continue;
+      if (!pop && await it.nth(i).evaluate((el) => !!el.closest('#category-list, .category_list, #category')).catch(() => false)) continue; // 왼쪽 카테고리 메뉴는 아님
+      await it.nth(i).click(); picked = true; log(`  고름: "${target.name}"`);
     }
     if (picked) break;
   }
-  if (!picked) { log(`  ✖ 옮길 카테고리 "${target.name}" 를 못 찾음`); return false; }
+  if (!picked) { log(`  ✖ 옮길 카테고리 "${target.name}" 를 못 찾음`); if (pop) await pop.close().catch(() => {}); return false; }
   await sleep(800);
-  for (const f of [frame, page.mainFrame(), ...page.frames()]) {
-    const ok = f.locator('a, button, input[type=button], input[type=submit]').filter({ hasText: /^\s*(확인|이동|적용)\s*$/ });
-    const n = await ok.count().catch(() => 0);
-    for (let i = n - 1; i >= 0; i--) {
-      if (await ok.nth(i).isVisible().catch(() => false)) { await ok.nth(i).click(); log('  누름: 확인'); await sleep(2500); return true; }
-    }
-    const inp = f.locator('input[type=button][value="확인"], input[type=submit][value="확인"]');
-    if (await inp.count().catch(() => 0)) { await inp.first().click(); log('  누름: 확인'); await sleep(2500); return true; }
+  for (const f of where) {
+    const ok = f.locator('a, button, input[type=button], input[type=submit], input[type=image]').filter({ hasText: /^\s*(확인|이동|적용)\s*$/ });
+    let n = await ok.count().catch(() => 0);
+    for (let i = n - 1; i >= 0; i--) if (await ok.nth(i).isVisible().catch(() => false)) { await ok.nth(i).click(); log('  누름: 확인'); await sleep(3000); return true; }
+    const inp = f.locator('input[value="확인"], input[alt="확인"], img[alt="확인"], input[value="이동"]');
+    n = await inp.count().catch(() => 0);
+    for (let i = n - 1; i >= 0; i--) if (await inp.nth(i).isVisible().catch(() => false)) { await inp.nth(i).click(); log('  누름: 확인'); await sleep(3000); return true; }
   }
-  log('  ✖ 확인 버튼을 못 찾음'); return false;
+  log('  ✖ 확인 버튼을 못 찾음'); if (pop) await pop.close().catch(() => {}); return false;
 }
 
 async function main() {
@@ -271,7 +257,7 @@ async function main() {
       const frame = await openList(page, 0, pg);
       if (!frame) { if (pg === 1) { log('✖ 목록열기 화면에서 체크칸을 못 찾음 — 멈춤'); await save(page, 'fail-list'); code = 2; } break; }
       const vis = new Set(await visibleLogNos(frame));
-      if (pg === 1 && first) { log(`1쪽: 체크칸 ${await frame.locator('#toplistWrapper input[type=checkbox]').count()}개, 글 번호 읽힘 ${vis.size}개 (${frame.url().slice(0, 120)})`); await save(page, 'list-page1'); }
+      if (pg === 1 && first) { log(`1쪽: 글 체크칸 ${await frame.locator('#toplistWrapper input[name=logNo]').count()}개, 글 번호 읽힘 ${vis.size}개 (${frame.url().slice(0, 120)})`); await save(page, 'list-page1'); }
       const here = todo.filter((t) => vis.has(t.logNo));
       if (!here.length) { pg++; continue; }
       const cnt = {};
