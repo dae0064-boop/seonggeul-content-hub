@@ -1,0 +1,79 @@
+{
+  "slug": "2026-11-04-somaek-tesla",
+  "title": "테슬라 소맥, 하이트진로가 캔으로 낸다는 말 사실일까?",
+  "source": "11/4(수) 17:40 네이버 원고 — 사용자 부탁 추가 이슈 글(정책·경제), 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 사람·상표·글자 없는 장면만 · 술을 권하는 느낌 없이 빈 잔·식탁 위주",
+  "images": [
+    {
+      "kind": "photo",
+      "title": "나무 탁자 위에 놓인 빈 유리잔들 (대표사진)",
+      "photo": {
+        "scene_en": "empty drinking glasses on a wooden table"
+      },
+      "note": "대표 — 사람·상표 없는 사진(픽사베이), 못 받으면 아래 그림",
+      "thumb_shot": "object",
+      "thumb_theme": "brick",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "테슬라 소맥, 캔으로 나온다",
+        "focus": "center 40%",
+        "theme": "brick"
+      },
+      "n": 1,
+      "file": "01.png",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Two small empty clear drinking glasses and one plain unlabeled aluminum can on a wooden table, no people. Color theme: terracotta and warm beige tones with a teal accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No brand logos or labels on any bottle, can or glass. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "kind": "card",
+      "title": "테슬라 소맥 소식을 정리한 첫머리 카드",
+      "card": {
+        "type": "lead",
+        "keyword": "테슬라 소맥",
+        "title": "캔으로\n나온다고?",
+        "ask": "이제 캔 하나 따면 되는 거야?"
+      },
+      "n": 2,
+      "file": "02.png"
+    },
+    {
+      "title": "회식 자리 탁자 위의 빈 잔과 반찬 접시",
+      "n": 3,
+      "file": "03.png",
+      "prompt": "Camera and composition: medium shot of a restaurant table. A Korean restaurant table after dinner with a few empty clear glasses and small side dish plates, warm evening light, no people. Background color: warm amber and brown. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No brand logos or labels on any bottle, can or glass. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "title": "편의점 냉장고 앞 빈 장바구니",
+      "n": 4,
+      "file": "04.png",
+      "prompt": "Camera and composition: medium shot in a convenience store aisle. An empty red shopping basket on the floor in front of a glass-door drinks fridge whose shelves are blurred, no people. Background color: cool white and soft blue. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No brand logos or labels on any bottle, can or glass. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "kind": "card",
+      "title": "테슬라 소맥 소식 정리 메모 카드",
+      "card": {
+        "type": "check",
+        "style": "memo",
+        "title": "정해진 것과 아닌 것",
+        "sub": "하이트진로가 밝힌 것까지만",
+        "items": [
+          "준비 중인 건 맞다고 했어요",
+          "캔 형태로 나올 계획이에요",
+          "출시일은 아직 미정이에요",
+          "정식 발표를 기다려야 해요"
+        ],
+        "memo": "소문보다 공식 발표를 기준으로",
+        "hl": 1
+      },
+      "n": 5,
+      "file": "05.png"
+    },
+    {
+      "title": "저녁 햇살이 드는 빈 식탁과 물병",
+      "n": 6,
+      "file": "06.png",
+      "prompt": "Camera and composition: medium shot of a dining table by a window. A clean dining table with a glass water bottle and two water glasses in warm evening sunlight, no people. Background color: soft cream and sage green. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No brand logos or labels on any bottle, can or glass. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}
