@@ -841,7 +841,9 @@ for (const file of files) {
         if (!theme) errors.push(`대표사진(1번)에 thumb_theme 이 없거나 목록 밖입니다 (${Object.keys(st.thumb_themes || {}).join('·')})`);
         else {
           if (ov.theme !== t.thumb_theme) errors.push(`대표사진 overlay "theme" 을 thumb_theme 과 같게 ("${t.thumb_theme}")`);
-          if (!(t.prompt || '').includes(theme.scene)) errors.push(`대표사진 프롬프트에 테마 색 문구가 없습니다 — "${theme.scene}"`);
+          // 2026-11-04 사용자 "대표사진도 성글벙글 색으로" — 11/7 원고부터 새 장면 색 문구, 그 전 원고는 예전 문구(scene_before)도 통과
+          const oldOk = writtenFor < '2026-11-07' && theme.scene_before && (t.prompt || '').includes(theme.scene_before);
+          if (!(t.prompt || '').includes(theme.scene) && !oldOk) errors.push(`대표사진 프롬프트에 테마 색 문구가 없습니다 — "${theme.scene}"`);
         }
         const people = !v3 || !shot || shot.사람;
         if (!t.thumb_person) errors.push(`대표사진(1번)에 thumb_person(예: "60대 남성", "30대 엄마와 아이"${v3 ? ', 사람 없는 구도는 "없음"' : ''})이 없습니다 — 글 상황에 맞는 사람`);
