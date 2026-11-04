@@ -6,18 +6,20 @@
   "images": [
     {
       "kind": "photo",
-      "title": "나무 탁자 위에 놓인 빈 유리잔들 (대표사진)",
+      "title": "소주와 맥주를 섞은 소맥 잔 (대표사진)",
       "photo": {
-        "scene_en": "empty drinking glasses on a wooden table"
+        "file": "File:Somaek (soju and beer mix).jpg",
+        "query": "somaek",
+        "scene_en": "glass of beer and soju bottles on a Korean restaurant table"
       },
-      "note": "대표 — 사람·상표 없는 사진(픽사베이), 못 받으면 아래 그림",
+      "note": "사용자 11/4 \"소주·맥주가 보여야\" — 위키미디어 공용 소맥 사진(CC BY 2.0), 못 받으면 픽사베이 소주·맥주 장면, 그다음 그림",
       "thumb_shot": "object",
       "thumb_theme": "brick",
       "thumb_person": "없음",
       "overlay": {
         "kind": "thumb",
         "look": "news",
-        "title": "테슬라 소맥, 캔으로 나온다",
+        "title": "소주 맥주 섞던 그 소맥, 캔으로?",
         "focus": "center 40%",
         "theme": "brick"
       },
@@ -38,10 +40,15 @@
       "file": "02.png"
     },
     {
-      "title": "회식 자리 탁자 위의 빈 잔과 반찬 접시",
+      "title": "초록 소주병과 소주잔",
       "n": 3,
       "file": "03.png",
-      "prompt": "Camera and composition: medium shot of a restaurant table. A Korean restaurant table after dinner with a few empty clear glasses and small side dish plates, warm evening light, no people. Background color: warm amber and brown. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No brand logos or labels on any bottle, can or glass. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+      "prompt": "Camera and composition: medium shot of a restaurant table. A Korean restaurant table after dinner with a few empty clear glasses and small side dish plates, warm evening light, no people. Background color: warm amber and brown. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No brand logos or labels on any bottle, can or glass. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "kind": "photo",
+      "photo": {
+        "file": "File:Bottle soju.jpg",
+        "scene_en": "green soju bottle and small shot glass on a table"
+      }
     },
     {
       "title": "편의점 냉장고 앞 빈 장바구니",
