@@ -47,7 +47,27 @@ export function sitemapPosts(xml) {
   });
   return out.map((x) => x.loc);
 }
+// 검사 화면 글자에서 이 주소의 판정 줄을 찾는다.
+// 2026-11-04: 서치 콘솔은 /entry/ 주소를 한글로 풀어 보여 주는데(…/entry/본인부담상한액-…) 퍼센트 글자(%EB%B3%B8…)로만 찾아
+// 결과가 떠 있는데도 '검사 결과가 안 뜸'으로 4편 연달아 실패 → 10/23 뒤로 색인 요청 0편. 풀어 쓴 주소·퍼센트 주소 둘 다 찾는다.
+export function verdictFor(text, u) {
+  const keys = new Set([u.replace('https://', '')]);
+  try { keys.add(decodeURI(u).replace('https://', '')); } catch {}
+  try { keys.add(decodeURIComponent(u).replace('https://', '')); } catch {}
+  let at = -1;
+  for (const key of keys) {
+    const re = new RegExp(`${key.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&')}(?=\\s|$)`, 'g');
+    const hits = [...text.matchAll(re)];
+    if (hits.length) at = Math.max(at, hits.at(-1).index);
+  }
+  const m = at >= 0 && text.slice(at, at + 600).match(/URL이 Google에 등록되어 있(?:지 않음|지만|음)|URL is (?:not )?on Google/);
+  return m ? m[0] : '';
+}
 if (argv.includes('--selftest')) {
+  const scr = 'URL 검사\nhttps://seongdaeeyo.com/entry/본인부담상한액-초과금-신청\nURL 검사\n실제 URL 테스트\ninfo\nURL이 Google에 등록되어 있지 않음\n색인 생성 요청';
+  const enc = 'https://seongdaeeyo.com/entry/' + encodeURIComponent('본인부담상한액-초과금-신청');
+  const v1 = verdictFor(scr, enc), v2 = verdictFor('https://seongdaeeyo.com/12\nURL이 Google에 등록되어 있음', 'https://seongdaeeyo.com/1');
+  if (v1 !== 'URL이 Google에 등록되어 있지 않음' || v2 !== '') { console.log(`❌ selftest 실패(판정 읽기): ${JSON.stringify([v1, v2])}`); process.exit(1); }
   const xml = `<urlset><url><loc>https://seongdaeeyo.com/entry/%EB%91%98</loc><lastmod>2026-10-20</lastmod></url>
 <url><loc>https://seongdaeeyo.com/entry/%ED%95%98%EB%82%98</loc><lastmod>2026-10-05</lastmod></url>
 <url><loc>https://seongdaeeyo.com/m/entry/x</loc></url><url><loc>https://seongdaeeyo.com/category</loc></url>
@@ -141,17 +161,13 @@ async function main() {
         await box.fill(u);
         await box.press('Enter');
         // 이 글의 검사 결과가 뜰 때까지 (최대 90초) — 화면에서 이 주소 아래쪽 첫 판정 줄만 읽는다(앞 글 결과를 잘못 읽지 않게)
-        const key = u.replace('https://', '');
-        const keyRe = new RegExp(`${key.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&')}(?=\\s|$)`, 'g');
         let t = '', verdict = '';
         for (let i = 0; i < 45; i++) {
           await sleep(2000); t = await readText(page);
           if (QUOTA.test(t)) break;
           // 주소 뒤가 공백·줄끝인 자리만 (/1 이 /10 에 걸리지 않게), 그중 마지막 자리 아래 600자 안의 첫 판정
-          const hits = [...t.matchAll(keyRe)];
-          const at = hits.length ? hits.at(-1).index : -1;
-          const m = at >= 0 && t.slice(at, at + 600).match(/URL이 Google에 등록되어 있(?:지 않음|지만|음)|URL is (?:not )?on Google/);
-          if (m) { verdict = m[0]; break; }
+          verdict = verdictFor(t, u);
+          if (verdict) break;
         }
         if (QUOTA.test(t)) { report.stop = 'quota'; say('오늘 구글 용량(할당량)이 끝났어요 — 내일 이어서'); break; }
         if (!verdict) { report.failed.push({ u, why: 'no-result' }); say(`/${n} 검사 결과가 안 뜸`); await shot(`fail-${n}`); }
