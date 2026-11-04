@@ -8,7 +8,8 @@
  *
  * 자동화용 크롬(9222)에 붙어 claude.ai 탭 안에서 claude.ai 화면이 쓰는 사용량 정보를 읽는다
  * (/api/organizations → /api/organizations/<id>/usage — 공개 문서가 없는 통로라 바뀌면 고친다).
- * claude.ai 탭이 없으면 하나 열어 두고 닫지 않는다 (5분마다 탭이 깜빡이지 않게). 브라우저는 닫지 않는다.
+ * claude.ai 탭이 없으면 뒤쪽 탭(background)으로 하나 열어 두고 닫지 않는다 — 창을 앞으로 띄우지 않는다
+ * (2026-11-04 사용자 "따로 요청 안 하면 사용량 화면이 뜨지 않게"). 브라우저는 닫지 않는다.
  *
  * 남기는 것: <out> = { ok, status, at, limits: [{ kind, label, pct, resets_at }], message }
  *            <out 이름>-raw.json = 받은 그대로 (모양이 바뀌었을 때 고치는 근거)
@@ -64,8 +65,13 @@ if (process.argv[1] && import.meta.url.endsWith(path.basename(process.argv[1])))
     const ctx = browser.contexts()[0] || (await browser.newContext());
     let page = ctx.pages().find((p) => /^https:\/\/claude\.ai\//.test(p.url()));
     if (!page) {
-      page = await ctx.newPage();
-      await page.goto('https://claude.ai/settings/usage', { waitUntil: 'domcontentloaded', timeout: 45000 });
+      // 뒤쪽 탭으로만 연다 — 앞에 뜨지 않게 (2026-11-04 사용자 "요청 안 하면 사용량 창이 계속 뜨지 않게").
+      // ctx.newPage() 는 크롬 창을 앞으로 띄워 5분마다 사용량 화면이 튀어나왔다. 사용량 화면 대신 빈 응답 주소를 연다.
+      const cdp = await browser.newBrowserCDPSession();
+      const opened = ctx.waitForEvent('page', { timeout: 15000 });
+      await cdp.send('Target.createTarget', { url: 'https://claude.ai/api/organizations', background: true });
+      page = await opened;
+      await page.waitForLoadState('domcontentloaded', { timeout: 45000 }).catch(() => {});
       await page.waitForTimeout(3000);
     }
     const got = await page.evaluate(async () => {
