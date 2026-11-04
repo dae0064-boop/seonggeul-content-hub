@@ -16,10 +16,13 @@ if (-not $blog) { $blog = [Environment]::GetEnvironmentVariable('NAVER_BLOG_ID',
 if (-not $blog) { $blog = 'seongdaeeyo' }
 $stamp = Get-Date -Format 'yyyy-MM-dd_HHmm'
 $out = Join-Path $repo "dumps\category-move-$stamp"
-Write-Host '블로그 글을 카테고리에 맞게 옮기는 중... (10~30분, 창을 닫지 마세요)'
-& node scripts\naver-category-move.mjs $blog --all --out $out 2>&1 | ForEach-Object { Write-Host $_ }
+Write-Host '블로그 글을 카테고리에 맞게 옮기는 중... (20~40분, 창을 닫지 마세요)'
 . (Join-Path $PSScriptRoot 'lib-drive.ps1')
 $drive = Find-MyDrive
+# 진행 기록을 Drive 에 바로 쓴다 (창이 닫혀도 어디까지 했는지 남게)
+$live = @()
+if ($drive) { $live = @('--live', (Join-Path $drive "ClaudeWorkspace\run-logs\category-move-live\$stamp-$env:COMPUTERNAME.txt")) }
+& node scripts\naver-category-move.mjs $blog --all --out $out @live 2>&1 | ForEach-Object { Write-Host $_ }
 if ($drive -and (Test-Path $out)) {
   $dest = Join-Path $drive "ClaudeWorkspace\run-logs\category-move-$stamp-$env:COMPUTERNAME"
   New-Item -ItemType Directory -Force -Path $dest | Out-Null
