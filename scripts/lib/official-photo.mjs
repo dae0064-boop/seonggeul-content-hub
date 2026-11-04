@@ -42,6 +42,8 @@ export function soloOk(title, person) {
 }
 
 /** 위키미디어 공용 검색 — 라이선스가 맞는 첫 사진 */
+const GENERIC_WORDS = new Set(['korea', 'korean', 'south', 'republic', 'national', 'service', 'center', 'centre', 'office', 'the', 'of', 'and', 'in', 'seoul', 'photo', 'image', 'building', 'government', 'ministry', 'public', 'agency', 'corporation', 'company', 'official']);
+
 export async function searchCommons({ query, query_en: queryEn, person, minWidth = 600 }) {
   const terms = [queryEn, query].filter(Boolean);
   for (const q of terms) {
@@ -51,7 +53,12 @@ export async function searchCommons({ query, query_en: queryEn, person, minWidth
     });
     const data = await getJson(url);
     const pages = Object.values(data?.query?.pages || {}).sort((a, b) => (a.index || 0) - (b.index || 0));
-    const words = q.toLowerCase().split(/\s+/).filter((w) => w.length >= 2);
+    // 흔한 말(korea·national·service …)만 맞은 사진은 엉뚱한 사진이다 — 2026-11-04 「National Pension Service Korea」로 1939년 자동차 사진이 대표사진이 됐다.
+    // 사람이 아닌 검색은 흔한 말을 빼고 센다: 남은 말이 1~2개면 모두, 3개 넘으면 60% 이상 맞아야 한다
+    const allWords = q.toLowerCase().split(/\s+/).filter((w) => w.length >= 2);
+    const keyWords = person ? allWords : allWords.filter((w) => !GENERIC_WORDS.has(w));
+    const words = keyWords.length ? keyWords : allWords;
+    const needHits = person ? 1 : (words.length <= 2 ? words.length : Math.ceil(words.length * 0.6));
     const scored = [];
     for (const p of pages) {
       const ii = p.imageinfo?.[0];
@@ -59,9 +66,12 @@ export async function searchCommons({ query, query_en: queryEn, person, minWidth
       const md = ii.extmetadata || {};
       const lic = strip(md.LicenseShortName?.value);
       if (!OK_LICENSE.test(lic) || BAD_LICENSE.test(lic) || String(md.NonFree?.value || '') === 'true') continue;
-      const hay = `${p.title} ${strip(md.ImageDescription?.value)} ${strip(md.ObjectName?.value)}`.toLowerCase();
-      const hit = words.filter((w) => hay.includes(w)).length;
-      if (!hit) continue; // 이름이 제목·설명에 없는 사진은 다른 사람일 수 있다
+      // 사람이 아닌 검색은 파일 이름·이름표·설명 앞부분만, 낱말 단위로 본다 (긴 설명 속 'suspension' 이 'pension' 으로 맞던 것)
+      const desc = strip(md.ImageDescription?.value);
+      const hay = `${p.title} ${person ? desc : desc.slice(0, 300)} ${strip(md.ObjectName?.value)}`.toLowerCase();
+      const has = (w) => (person || !/^[a-z0-9-]+$/.test(w) ? hay.includes(w) : new RegExp(`(^|[^a-z0-9])${w.replace(/-/g, '\\-')}([^a-z0-9]|$)`).test(hay));
+      const hit = words.filter(has).length;
+      if (!hit || hit < needHits) continue; // 이름이 제목·설명에 없는 사진은 다른 사람일 수 있다
       if (person && !soloOk(p.title.replace(/^File:/, ''), person)) continue; // 혼자 나온 그 사람 사진만
       scored.push({
         score: hit * 10 + Math.min(ii.width, 2000) / 1000 + (person ? (ii.height >= ii.width ? 1 : 0) : (ii.width >= ii.height ? 1 : 0)), // 인물은 세로(얼굴 위주) 사진을 먼저
