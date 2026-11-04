@@ -48,7 +48,7 @@ export function collectTitles(today, days, { root = '.' } = {}) {
   try {
     for (const row of fs.readFileSync(path.join(root, 'content/archive/published.tsv'), 'utf8').split(/\r?\n/).slice(1)) {
       const c = row.split('\t');
-      if (c[1] === 'naver' && want.has(c[0]) && c[4]) out.set(c[2], { date: c[0], title: c[4], slug: c[2] });
+      if (c[1] === 'naver' && want.has(c[0]) && c[4] && c[6] !== 'deleted') out.set(c[2], { date: c[0], title: c[4], slug: c[2] });
     }
   } catch { /* 없으면 원고만 */ }
   const dir = path.join(root, 'content/posts');

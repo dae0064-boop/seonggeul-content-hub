@@ -260,7 +260,8 @@ function publishedNaverRows() {
   try {
     for (const row of fs.readFileSync('content/archive/published.tsv', 'utf8').split(/\r?\n/).slice(1)) {
       const c = row.split('\t');
-      if (c[1] === 'naver' && c[3]) pubRowsCache.push({ date: c[0], main: c[3], title: c[4] || c[2] });
+      // status=deleted (2026-11-04 사용자가 블로그에서 지운 글) 는 겹침 검사에서 빼고, 링크로도 쓰지 않는다
+      if (c[1] === 'naver' && c[3] && c[6] !== 'deleted') pubRowsCache.push({ date: c[0], main: c[3], title: c[4] || c[2] });
     }
   } catch { /* 없으면 건너뛴다 */ }
   return pubRowsCache;
@@ -274,7 +275,7 @@ function publishedNaverTitles(channel = 'naver') {
   try {
     for (const row of fs.readFileSync('content/archive/published.tsv', 'utf8').split(/\r?\n/).slice(1)) {
       const c = row.split('\t');
-      if (c[1] === channel && c[4]) set.add(normTitle(c[4]));
+      if (c[1] === channel && c[4] && c[6] !== 'deleted') set.add(normTitle(c[4]));
     }
   } catch { /* 목록이 없으면 모두 못 찾음으로 나온다 */ }
   return set;
