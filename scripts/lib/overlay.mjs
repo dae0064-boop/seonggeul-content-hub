@@ -558,7 +558,8 @@ export async function renderOverlays(jobs) {
   try {
     for (const j of jobs) {
       const size = j.size || 1024;
-      const page = await browser.newPage({ viewport: { width: size, height: size } });
+      // 실제 사진(공식 사진)을 얹을 때는 1.5배로 찍는다 (1536px) — 사진이 1024 로 뭉개지지 않게 (2026-11-04 사용자 "사진이 흐릿해")
+      const page = await browser.newPage({ viewport: { width: size, height: size }, deviceScaleFactor: j.scale || 1 });
       const data = `data:image/png;base64,${fs.readFileSync(j.src).toString('base64')}`;
       await page.setContent(html(data, size, j.overlay), { waitUntil: 'load' });
       await page.evaluate(() => document.fonts.ready);

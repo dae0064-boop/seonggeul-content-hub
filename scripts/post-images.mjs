@@ -155,7 +155,7 @@ for (const im of todo) {
       try { await savePhotoPng(photo, raw, launchBrowser); writeFileSync(creditFile, photo.credit + "\n" + (photo.page || "") + "\n"); got = true; console.log(`📷 [${im.n}] 공식 사진: ${photo.credit} — ${photo.page || photo.url}`); }
       catch (e) { console.log(`⚠ [${im.n}] 사진 받기 실패: ${e.message}`); }
     } else console.log(`⚠ [${im.n}] 쓸 수 있는 공식 사진 없음 (${why}) — AI 그림으로 대신합니다`);
-    if (got) { made++; if (im.overlay) overlayJobs.push({ n: im.n, src: raw, dest: target, overlay: overlayOf(im) }); continue; }
+    if (got) { made++; if (im.overlay) overlayJobs.push({ n: im.n, src: raw, dest: target, overlay: overlayOf(im), scale: 1.5 }); continue; }
     // 인물 대표사진을 못 찾으면 엉뚱한 사진·AI 그림 대신 깔끔한 단색 바탕 + 제목 글씨 (2026-11-03 사용자 — 최불암 별세 글에 현충일 행사 사진이 걸렸다)
     if (im.photo?.person && im.overlay) {
       try { await plainBackground(raw, launchBrowser); made++; overlayJobs.push({ n: im.n, src: raw, dest: target, overlay: overlayOf(im) }); console.log(`🟦 [${im.n}] 그 사람 혼자 나온 공식 사진이 없어 단색 바탕 + 제목으로 만듭니다`); continue; }
