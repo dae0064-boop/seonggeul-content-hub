@@ -72,7 +72,13 @@
       "title": "냄비 속 따뜻한 물에 꿀병을 담가 중탕하는 50대 남성",
       "prompt": "Camera and composition: medium close-up at a kitchen stove. A Korean man in his 50s with short gray-streaked hair and a cobalt-blue cardigan gently lowering an open glass honey jar into a pot of warm water on a turned-off stove, steam barely visible, calm and careful. Background color: warm apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
       "shot": "medium close-up at a kitchen stove",
-      "bg": "warm apricot"
+      "bg": "warm apricot",
+      "kind": "photo",
+      "photo": {
+        "query_en": "honey jar",
+        "scene_en": "glass jar of honey on a kitchen table"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
     }
   ]
 }

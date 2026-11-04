@@ -45,12 +45,13 @@ export function soloOk(title, person) {
 const PERSON_MIN_SIDE = 1000; // 인물 사진 짧은 쪽 최소 px (대표사진 1024 정사각형이 늘려지지 않게)
 const GENERIC_WORDS = new Set(['korea', 'korean', 'south', 'republic', 'national', 'service', 'center', 'centre', 'office', 'the', 'of', 'and', 'in', 'seoul', 'photo', 'image', 'building', 'government', 'ministry', 'public', 'agency', 'corporation', 'company', 'official']);
 
-export async function searchCommons({ query, query_en: queryEn, person, minWidth = 800 }) {
+export async function searchCommons({ query, query_en: queryEn, person, minWidth: mw }) {
+  const minWidth = mw || (person ? 800 : 1200); // 장면·사물 사진은 1200px 이상 (2026-11-04 사용자 — 고화질), 인물은 아래 PERSON_MIN_SIDE 로 다시 거른다
   const terms = [queryEn, query].filter(Boolean);
   for (const q of terms) {
     const url = 'https://commons.wikimedia.org/w/api.php?' + new URLSearchParams({
       action: 'query', format: 'json', generator: 'search', gsrsearch: `${q} filetype:bitmap`, gsrnamespace: '6', gsrlimit: '25',
-      prop: 'imageinfo', iiprop: 'url|size|mime|extmetadata', iiurlwidth: '2048',
+      prop: 'imageinfo', iiprop: 'url|size|mime|extmetadata', iiurlwidth: '1920',
     });
     const data = await getJson(url);
     const pages = Object.values(data?.query?.pages || {}).sort((a, b) => (a.index || 0) - (b.index || 0));
@@ -98,7 +99,7 @@ export async function searchCommons({ query, query_en: queryEn, person, minWidth
 export async function commonsFile(file) {
   const title = file.startsWith('File:') ? file : `File:${file}`;
   const url = 'https://commons.wikimedia.org/w/api.php?' + new URLSearchParams({
-    action: 'query', format: 'json', titles: title, prop: 'imageinfo', iiprop: 'url|size|mime|extmetadata', iiurlwidth: '2048',
+    action: 'query', format: 'json', titles: title, prop: 'imageinfo', iiprop: 'url|size|mime|extmetadata', iiurlwidth: '1920',
   });
   const data = await getJson(url);
   const p = Object.values(data?.query?.pages || {})[0];
@@ -107,7 +108,12 @@ export async function commonsFile(file) {
   const md = ii.extmetadata || {};
   const lic = strip(md.LicenseShortName?.value);
   if (!OK_LICENSE.test(lic) || BAD_LICENSE.test(lic) || String(md.NonFree?.value || '') === 'true') return { skip: `라이선스 안 맞음(${lic}): ${title}` };
-  if (Math.min(ii.width || 0, ii.height || 0) < 700) return { skip: `사진이 작아 흐려짐(${ii.width}×${ii.height}): ${title}` };
+  if (Math.min(ii.width || 0, ii.height || 0) < 700) {
+    // "(cropped)" 파일이 작으면 잘라 내기 전 원본을 본다 (2026-11-04 — 손예진 2018 사진: 잘린 파일 474×633, 원본 1920×1280. 사용자가 고른 좋은 사진이었다)
+    const orig = title.replace(/\s*\(cropped\)(?=\.\w+$)/i, '');
+    if (orig !== title) { const o = await commonsFile(orig); if (o.url) return { ...o, note: `잘린 파일이 작아 원본으로: ${orig}` }; }
+    return { skip: `사진이 작아 흐려짐(${ii.width}×${ii.height}): ${title}` };
+  }
   const author = strip(md.Artist?.value).slice(0, 40) || '작가 미상';
   return { url: ii.thumburl || ii.url, page: ii.descriptionurl, license: lic, author, title: p.title, source: '위키미디어 공용', credit: `사진: ${author} / 위키미디어 공용 (${lic})` };
 }
@@ -130,7 +136,7 @@ export async function fromKoreaKr(page) {
 // (NC·ND·저작권 보유는 고르지 않는다). 인물은 soloOk — 사진 제목에 그 사람 이름이 있고 단체·행사로 보이지 않는 것만.
 const FLICKR_LIC = { 4: 'CC BY 2.0', 5: 'CC BY-SA 2.0', 9: 'CC0 1.0', 10: 'Public Domain Mark', 11: 'CC BY 4.0', 12: 'CC BY-SA 4.0' };
 export async function searchFlickr({ query, query_en: queryEn, person, minWidth: mw }, key = process.env.FLICKR_API_KEY) {
-  const minWidth = mw || (person ? PERSON_MIN_SIDE : 800); // 인물은 고화질만 (2026-11-04 사용자)
+  const minWidth = mw || (person ? PERSON_MIN_SIDE : 1200); // 인물은 고화질만 (2026-11-04 사용자)
   if (!key) return null;
   const terms = [...new Set([].concat(person || []).slice(0, 2).concat([queryEn, query]).filter(Boolean))];
   for (const q of terms) {
@@ -175,7 +181,7 @@ async function openverseAuth() {
   return { Authorization: `Bearer ${ovToken}` };
 }
 export async function searchOpenverse({ query, query_en: queryEn, person, minWidth: mw }) {
-  const minWidth = mw || (person ? PERSON_MIN_SIDE : 800); // 인물은 고화질만 (2026-11-04 사용자)
+  const minWidth = mw || (person ? PERSON_MIN_SIDE : 1200); // 인물은 고화질만 (2026-11-04 사용자)
   const auth = await openverseAuth();
   const terms = [...new Set([].concat(person || []).slice(0, 2).concat([queryEn, query]).filter(Boolean))];
   for (const q of terms) {

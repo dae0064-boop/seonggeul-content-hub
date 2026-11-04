@@ -53,7 +53,13 @@
       "title": "거실 소파 다리 밑에 깔린 전선을 빼내 벽 쪽으로 옮기는 30대 여성",
       "prompt": "Camera and composition: medium shot in a cozy living room near a sofa. A Korean woman in her 30s with a short bob and a coral-red sweater kneeling on the floor, gently pulling a power cable out from under a sofa leg and moving it along the wall. Background color: pale sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
       "shot": "medium shot in a cozy living room near a sofa",
-      "bg": "pale sky blue"
+      "bg": "pale sky blue",
+      "kind": "photo",
+      "photo": {
+        "query_en": "power cables power strip",
+        "scene_en": "tangled power cables and power strip on the floor"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
     },
     {
       "n": 4,

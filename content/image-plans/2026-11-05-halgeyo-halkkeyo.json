@@ -73,7 +73,13 @@
       "title": "회사 책상에서 메신저 답장을 쓰다 고개를 끄덕이는 30대 남성",
       "prompt": "Camera and composition: medium shot at an office desk. A Korean man in his 30s with neat short hair, round glasses and a mustard-yellow sweater sitting at an office desk with a laptop showing a blank screen, nodding to himself with a small confident smile. Background color: soft lavender. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
       "shot": "medium shot at an office desk",
-      "bg": "soft lavender"
+      "bg": "soft lavender",
+      "kind": "photo",
+      "photo": {
+        "query_en": "smartphone typing",
+        "scene_en": "hands typing a message on a smartphone"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
     }
   ]
 }

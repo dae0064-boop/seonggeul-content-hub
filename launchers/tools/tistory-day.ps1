@@ -152,7 +152,6 @@ foreach ($m in $mds) {
     $result += [pscustomobject]@{ 글 = $slug; 결과 = '검사 불통과 — 넣지 않음' }
     continue
   }
-  Run @('scripts/build-tistory.mjs', $m.FullName) | Out-Null
   $plan = "content\image-plans\$slug.json"
   if (-not $SkipImages -and (Test-Path $plan)) {
     Say "  그림 만들기: $plan" 'Cyan'
@@ -166,6 +165,8 @@ foreach ($m in $mds) {
       Say '  그림 일부 실패 — 못 만든 자리는 표시 글자로 남깁니다' 'Yellow'
     }
   } elseif (-not (Test-Path $plan)) { Say "  이미지 계획서 없음 — 그림 없이 넣습니다: $plan" 'Yellow' }
+  # 그림을 만든 뒤에 변환한다 — 실제 사진의 출처 줄([사진 출처 N] → NN.credit.txt)이 그림을 만들 때 생긴다 (2026-11-04 티스토리 고화질 사진)
+  Run @('scripts/build-tistory.mjs', $m.FullName) | Out-Null
   $postMode = $mode; $atArgs = @(); $when = ''
   if ($Reserve) {
     $when = (Get-Content ($m.FullName -replace '\.md$', '.json') -Raw -Encoding UTF8 | ConvertFrom-Json).publishAt

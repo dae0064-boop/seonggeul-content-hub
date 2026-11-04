@@ -45,7 +45,13 @@
       "title": "거실 소파에서 계산기와 메모지를 들고 급여를 계산하는 30대 여성",
       "prompt": "Camera and composition: medium shot on a living room sofa. A Korean woman in her 30s with long straight hair tied low and a cobalt-blue cardigan sitting on a sofa, holding a simple calculator and a blank memo pad, a child's small backpack resting beside her. Background color: warm cream yellow. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
       "shot": "medium shot on a living room sofa",
-      "bg": "warm cream yellow"
+      "bg": "warm cream yellow",
+      "kind": "photo",
+      "photo": {
+        "query_en": "calculator notebook",
+        "scene_en": "calculator and notepad on a table"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
     },
     {
       "n": 4,

@@ -45,7 +45,13 @@
       "title": "거실 탁자에서 지역보험료 고지서 봉투를 열어 보는 60대 남성",
       "prompt": "Camera and composition: close-up at a low living room table. A Korean man in his 60s with thin silver hair and a mustard-yellow vest opening a plain blank envelope at a low wooden living room table, a wall calendar softly blurred behind him, calm and thoughtful. Background color: soft mint green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
       "shot": "close-up at a low living room table",
-      "bg": "soft mint green"
+      "bg": "soft mint green",
+      "kind": "photo",
+      "photo": {
+        "query_en": "opening letter envelope",
+        "scene_en": "opening a letter envelope at a living room table"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
     },
     {
       "n": 4,

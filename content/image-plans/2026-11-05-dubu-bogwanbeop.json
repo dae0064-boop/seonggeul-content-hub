@@ -46,7 +46,13 @@
       "title": "조리대에서 으깬 두부를 면보에 싸서 물기를 짜는 30대 남성",
       "prompt": "Camera and composition: medium close-up at a kitchen counter. A Korean man in his 30s with short black hair and a navy padded vest squeezing crumbled tofu wrapped in a white cotton cloth over a bowl at a kitchen counter, a small freezer bag waiting beside him, calm and focused. Background color: soft sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
       "shot": "medium close-up at a kitchen counter",
-      "bg": "soft sky blue"
+      "bg": "soft sky blue",
+      "kind": "photo",
+      "photo": {
+        "query_en": "tofu",
+        "scene_en": "fresh tofu block on a kitchen counter"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
     },
     {
       "n": 4,
