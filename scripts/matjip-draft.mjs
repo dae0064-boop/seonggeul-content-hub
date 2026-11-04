@@ -98,7 +98,8 @@ const json = {
   subcategory: meta.subcategory || '맛집·카페 후기',
   topic: '맛집',
   tags: post.tags,
-  place: query ? { query, addr: addr || '' } : undefined,
+  // 장소 검색어: 원고 그대로 → 띄어쓰기 없이 → 주소(address:) 순서로 해 본다 (2026-11-04 사용자)
+  place: query ? { query, addr: addr || '', address: meta.address || '', queries: [query.replace(/\s/g, ''), meta.address].filter(Boolean) } : undefined,
   publishAt,
   blocks: post.blocks,
 };

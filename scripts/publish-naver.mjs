@@ -1393,28 +1393,37 @@ async function addPlaceMap(page, editor, place) {
     await btn.loc.click(); log(`클릭: ${btn.sel}`);
     await sleep(1500);
     const inp = await findAnywhere(page, editor, PLACE_SEL.input, { timeout: 6000 });
-    await inp.loc.fill(place.query); await sleep(300);
-    await inp.loc.press('Enter'); await sleep(2500);
-    await dump(page, 'place-search');
-    // 검색 결과 줄 고르기 — 입력칸이 든 창 안에서 '추가' 버튼이 있거나 주소처럼 보이는 줄
     const scope = (await editor.locator(inp.sel).first().isVisible().catch(() => false)) ? editor : page; // 창이 에디터 프레임 안인지
-    const pick = await scope.evaluate(({ query, addr }) => {
+    // 검색어를 차례로 해 본다 (2026-11-04 사용자: "16호 원조로 안 나오면 16호원조 붙여서, 아니면 주소로 검색하면 다 나와")
+    const queries = [...new Set([place.query, ...(place.queries || [])].filter(Boolean))];
+    let pick = { n: 0, all: [] }; const tried = [];
+    for (const [qi, query] of queries.entries()) {
+    await inp.loc.fill(query); await sleep(300);
+    await inp.loc.press('Enter'); await sleep(2500);
+    await dump(page, `place-search-${qi + 1}`);
+    // 검색 결과 줄 고르기 — 입력칸이 든 창 안에서 '추가' 버튼이 있거나 주소처럼 보이는 줄
+    pick = await scope.evaluate(({ query, name, addr, byAddr }) => {
       const norm = (t) => (t || '').replace(/\s+/g, ' ').trim();
       const inp = [...document.querySelectorAll('input')].find((i) => i.offsetParent && i.value && i.value.includes(query));
       const box = inp?.closest('[class*="popup"], [role="dialog"]') || document.body;
       const items = [...box.querySelectorAll('li')].filter((li) => li.offsetParent && norm(li.textContent));
-      const q = query.replace(/\s/g, '');
+      const q = (name || query).replace(/\s/g, '');
       const rows = items.map((li, i) => ({ i, t: norm(li.textContent), name: norm((li.querySelector('strong, b, [class*="name"], [class*="title"]') || li.firstElementChild || li).textContent) }));
       let cand = rows.filter((x) => x.t.replace(/\s/g, '').includes(q) && (!addr || x.t.replace(/\s/g, '').includes(addr.replace(/\s/g, ''))));
       // 주소가 화면에서 '…'로 잘려 글자에 없을 수 있다 → 이름이 검색어와 똑같은 곳이 하나뿐이면 그곳 (넣은 뒤 지도 카드의 주소로 다시 본다)
       if (!cand.length) cand = rows.filter((x) => x.name.replace(/\s/g, '') === q);
+      // 주소로 찾았을 때: 가게 이름이 든 줄, 없으면 결과가 하나뿐일 때 그 주소
+      if (!cand.length && byAddr) { cand = rows.filter((x) => x.t.replace(/\s/g, '').includes(q)); if (!cand.length && rows.length === 1) cand = rows; }
       items.forEach((li) => li.removeAttribute('data-sg-place'));
       const all = items.map((li) => norm(li.textContent).slice(0, 60));
       if (cand.length !== 1) return { n: cand.length, all };
       items[cand[0].i].setAttribute('data-sg-place', '1');
       return { n: 1, picked: cand[0].t.slice(0, 80), all };
-    }, place);
-    if (pick.n !== 1) return await giveUp(`검색 결과에서 하나로 고르지 못함 (맞는 곳 ${pick.n}개 / 결과: ${pick.all.slice(0, 5).join(' ; ') || '없음'})`);
+    }, { query, name: place.query, addr: place.addr, byAddr: query === place.address });
+    tried.push(`"${query}" ${pick.n}곳`);
+    if (pick.n === 1) { log(`장소 검색 "${query}" 에서 고름`); break; }
+    }
+    if (pick.n !== 1) return await giveUp(`검색 결과에서 하나로 고르지 못함 (${tried.join(' · ')} / 마지막 결과: ${pick.all.slice(0, 5).join(' ; ') || '없음'})`);
     const row = scope.locator('li[data-sg-place="1"]').first();
     await row.hover().catch(() => {}); await sleep(400);
     const add = row.locator('button:has-text("추가"), a:has-text("추가")').first();
@@ -1980,6 +1989,9 @@ async function main() {
         const r = await addPlaceMap(page, editor, post.place);
         if (r.ok) {
           log(`✓ 지도 넣음 — ${r.picked}`);
+          // 지도 위에 남는 빈 줄 지우기 (2026-11-04 사용자 캡처 — "자세한 위치는…" 과 지도 사이 공백)
+          const blank = await removeBlanksBeside(page, editor, PLACE_MAP_SEL, 'before').catch(() => ({ removed: 0 }));
+          log(`지도 위 빈 줄 ${blank.removed}곳 지움`);
           if (r.checkAddr) manual.push(`지도가 ${post.place.query} (${post.place.addr}) 인지 확인`);
           post.blocks = post.blocks.map((b) => (b.type === 'image' ? b : { ...b, lines: b.lines.filter((l) => l.t !== MAP_LABEL) }))
             .filter((b) => b.type === 'image' || b.lines.length);
