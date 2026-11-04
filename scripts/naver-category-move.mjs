@@ -172,37 +172,24 @@ async function clickMove(page, frame, target) {
   if (!fs.existsSync(path.join(OUT, 'move-window.html'))) {
     try { fs.writeFileSync(path.join(OUT, 'move-window.html'), (await where[0].content()).slice(0, 300000)); (pop || page).screenshot({ path: path.join(OUT, 'move-window.jpg'), type: 'jpeg', quality: 60, fullPage: true }).catch(() => {}); } catch { /* */ }
   }
-  const esc = target.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  let picked = false;
-  for (const f of where) {
-    const sels = f.locator('select'); const n = await sels.count().catch(() => 0);
-    for (let i = 0; i < n && !picked; i++) {
-      const sl = sels.nth(i);
-      const opts = await sl.locator('option').allInnerTexts().catch(() => []);
-      const hit = opts.find((o) => norm(o).replace(/^[-ㄴ└·\s]+/, '') === target.name);
-      if (hit) { await sl.selectOption({ label: hit }); picked = true; log(`  고름(목록): "${norm(hit)}"`); }
-    }
-    if (picked) break;
-    const it = f.locator('label, li, a, span, td').filter({ hasText: new RegExp(`^\\s*[-ㄴ└·]?\\s*${esc}\\s*$`) });
-    const k = await it.count().catch(() => 0);
-    for (let i = k - 1; i >= 0 && !picked; i--) {
-      if (!(await it.nth(i).isVisible().catch(() => false))) continue;
-      if (!pop && await it.nth(i).evaluate((el) => !!el.closest('#category-list, .category_list, #category')).catch(() => false)) continue; // 왼쪽 카테고리 메뉴는 아님
-      await it.nth(i).click(); picked = true; log(`  고름: "${target.name}"`);
-    }
-    if (picked) break;
-  }
-  if (!picked) { log(`  ✖ 옮길 카테고리 "${target.name}" 를 못 찾음`); if (pop) await pop.close().catch(() => {}); return false; }
-  await sleep(800);
-  for (const f of where) {
-    const ok = f.locator('a, button, input[type=button], input[type=submit], input[type=image]').filter({ hasText: /^\s*(확인|이동|적용)\s*$/ });
-    let n = await ok.count().catch(() => 0);
-    for (let i = n - 1; i >= 0; i--) if (await ok.nth(i).isVisible().catch(() => false)) { await ok.nth(i).click(); log('  누름: 확인'); await sleep(3000); return true; }
-    const inp = f.locator('input[value="확인"], input[alt="확인"], img[alt="확인"], input[value="이동"]');
-    n = await inp.count().catch(() => 0);
-    for (let i = n - 1; i >= 0; i--) if (await inp.nth(i).isVisible().catch(() => false)) { await inp.nth(i).click(); log('  누름: 확인'); await sleep(3000); return true; }
-  }
-  log('  ✖ 확인 버튼을 못 찾음'); if (pop) await pop.close().catch(() => {}); return false;
+  // 2026-11-04 네 번째 실행 화면(PostCategoryMoveForm.naver): 카테고리 드롭다운 #elCategorySelect(a.present_selected) →
+  // #categoryNo a.item[data-index=<카테고리 번호>] (하위는 data-name 이 "- 이름"), 고르면 #elCategorySelect 의 data-categoryno 가 바뀜,
+  // 확인 a.button_next._checkInput → 원래 창 listTopForm 을 /PostCategoryMove.naver 로 보낸다(새 창 _postMoveCfm).
+  if (!pop) { log('  ✖ 이동 창이 새 창으로 안 떴음'); return false; }
+  const P = pop.mainFrame();
+  const item = P.locator(`#categoryNo a.item[data-index="${target.no}"]`);
+  if (!(await item.count().catch(() => 0))) { log(`  ✖ 이동 창에 "${target.name}"(${target.no}) 칸이 없음`); await pop.close().catch(() => {}); return false; }
+  const nm = norm(await item.first().getAttribute('data-name').catch(() => '')).replace(/^-\s*/, '');
+  if (nm !== target.name) { log(`  ✖ 이동 창의 ${target.no}번 이름이 "${nm}" — 표의 "${target.name}" 와 달라 멈춤`); await pop.close().catch(() => {}); return false; }
+  await P.locator('#elCategorySelect').click().catch(() => {}); await sleep(500);
+  await item.first().click(); await sleep(500);
+  const got = await P.locator('#elCategorySelect').getAttribute('data-categoryno').catch(() => '');
+  if (String(got) !== String(target.no)) { log(`  ✖ 골랐는데 선택값이 ${got} (바라는 값 ${target.no}) — 멈춤`); await pop.close().catch(() => {}); return false; }
+  log(`  고름: "${target.name}" (${target.no})`);
+  await P.locator('a.button_next._checkInput').click(); log('  누름: 확인');
+  await sleep(4000);
+  await pop.close().catch(() => {});
+  return true;
 }
 
 async function main() {
@@ -217,6 +204,10 @@ async function main() {
     const m = d.message();
     log(`  확인창: "${m.slice(0, 80)}"`);
     if (/이동|카테고리|변경/.test(m) && !BAD.test(m.replace(/변경/g, ''))) await d.accept().catch(() => {}); else await d.dismiss().catch(() => {});
+  });
+  ctx.on('page', (np) => {
+    np.on('dialog', async (d) => { const m = d.message(); log(`  확인창(다른 창): "${m.slice(0, 80)}"`); if (/이동|카테고리|변경/.test(m) && !/삭제/.test(m)) await d.accept().catch(() => {}); else await d.dismiss().catch(() => {}); });
+    np.waitForLoadState('domcontentloaded').then(async () => { if (/PostCategoryMove\.naver/i.test(np.url())) { log(`  결과 창: ${(await np.evaluate(() => document.body?.innerText || '').catch(() => '')).replace(/\s+/g, ' ').slice(0, 120)}`); } }).catch(() => {});
   });
   let code = 0;
   try {
