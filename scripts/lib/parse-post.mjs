@@ -117,6 +117,7 @@ export function parsePost(raw) {
     leadKeyword: (meta.lead_keyword || '').trim(),
     slot: (meta.slot || '').trim(),
     issue: (meta.issue || '').trim(),
+    subcategory: (meta.subcategory || '').trim(), // 블로그 하위 카테고리 (2026-11-04 사용자 — 연예·방송 안에서도 드라마·예능, 뉴스도 정책·이슈로). 못 찾으면 위 카테고리로
     titleTest: (meta.title_test || '').trim(),   // 홈판형 제목 시험 반전 | 기본 (2026-11-02 사용자)
     people: (meta.people || '').trim(),   // 이슈 글에 나오는 실존 인물 이름 (그림 계획서 검사용)   // 이슈 글 (연예·정책) — lint-post ISSUE_FROM
     tone: (meta.tone || '').trim(),   // 말투 (2026-11-03 원고부터 — 하루 20편, 같은 주제라도 다른 느낌으로. lint-post TONES)

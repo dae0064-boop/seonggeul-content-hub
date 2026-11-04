@@ -29,6 +29,7 @@ import { readMyBlogId, resolveRelated } from './lib/naver-related.mjs';
 import { applyBrandconnect, DISCLOSURE as SHOP_DISCLOSURE } from './lib/brandconnect.mjs';
 import { leadBlock } from './lib/parse-post.mjs';
 import { topicFor } from './lib/naver-topic.mjs';
+import { subcategoryFor } from './lib/naver-subcategory.mjs';
 
 // ---------------------------------------------------------------- args
 function parseArgs(argv) {
@@ -373,8 +374,17 @@ async function reservePublish(page, editor, post, at) {
   await dump(page, 'publish-layer');
 
   if (post.category) {
-    const want = blogCategory(post);
-    const got = await pickCategory(page, editor, want, { noFallback: !!post.issue });
+    // 하위 카테고리 (2026-11-04 사용자 — "연예·방송 안에서도 드라마인지 예능인지, 뉴스도 정책인지 이슈인지").
+    // 원고 subcategory: 가 있으면 그 이름을 먼저 고르고, 블로그에 그 이름이 없으면 위 카테고리(연예·방송 등)로 간다.
+    let want = blogCategory(post);
+    let got = null;
+    const sub = subcategoryFor(post);
+    if (sub) {
+      got = await pickCategory(page, editor, sub, { noFallback: true });
+      if (got) want = sub;
+      else warn(`하위 카테고리 "${sub}" 를 못 찾아 "${want}" 로 갑니다 — 블로그 카테고리 이름과 scripts/lib/naver-subcategory.mjs 를 맞춰 주세요`);
+    }
+    if (!got) got = await pickCategory(page, editor, want, { noFallback: !!post.issue });
     if (got !== want) {
       const mins = Math.round((new Date(`${at.ymd}T${at.hh}:${at.mm}:00`) - Date.now()) / 60000);
       if (post.issue) return fail(`카테고리 "${want}" 를 고르지 못함 — 이슈 글은 다른 카테고리로 예약하지 않고 다음 실행이 다시 합니다 (발행까지 ${mins}분)`);
