@@ -28,6 +28,22 @@ for (const file of files) {
   const cp = applyCoupang(post, links);
   if (cp.note) console.log(`  ${file}: ${cp.note}`);
   post.blocks = cp.blocks;
+  // 실제 사진 출처 (2026-11-04 사용자 — 티스토리도 고화질 사진): "[사진 출처 N]" 줄을 그림 폴더의 NN.credit.txt 첫 줄로. 사진 대신 AI 그림이 들어갔으면(파일 없음) 그 줄을 뺀다
+  {
+    const slug = file.split(/[\\/]/).pop().replace(/\.md$/, '');
+    const CREDIT = /^\[사진 출처 (\d+)\]$/;
+    for (const b of post.blocks) {
+      if (!Array.isArray(b.lines) || !b.lines.some((l) => CREDIT.test((l.t || '').trim()))) continue;
+      b.lines = b.lines.flatMap((l) => {
+        const m = CREDIT.exec((l.t || '').trim());
+        if (!m) return [l];
+        const f = `content/images/${slug}/${String(m[1]).padStart(2, '0')}.credit.txt`;
+        const c = fs.existsSync(f) ? fs.readFileSync(f, 'utf8').split(/\r?\n/)[0].trim() : '';
+        return c ? [{ t: c }] : [];
+      });
+    }
+    post.blocks = post.blocks.filter((b) => b.type === 'image' || !Array.isArray(b.lines) || b.lines.length);
+  }
   // 함께 보면 좋은 글: 발행된 티스토리 글 주소를 찾아 끝에 넣는다. 못 찾으면 빠진다 (클라우드에서는 늘 빠지고 아침 PC 가 다시 만든다)
   const related = await resolveTistoryRelated(post, { blog: process.env.TISTORY_BLOG || 'seongdaeeyo', log: (m) => console.log(`  ${file}: ${m}`) });
   if (related.length) console.log(`  ${file}: 함께 보면 좋은 글 ${related.length}개 — ${related.map((r) => r.url).join(' , ')}`);

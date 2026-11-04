@@ -45,7 +45,13 @@
       "title": "동네 보건소 1층 폐의약품 수거함에 약 봉투를 넣는 60대 여성",
       "prompt": "Camera and composition: medium shot in the lobby of a small public health center. A Korean woman in her 60s with short permed gray hair and a mustard-yellow padded vest dropping a small sealed bag of old medicine into a plain gray collection box with a simple pill icon on it. Background color: soft peach. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
       "shot": "medium shot in the lobby of a small public health center",
-      "bg": "soft peach"
+      "bg": "soft peach",
+      "kind": "photo",
+      "photo": {
+        "query_en": "medicine pills",
+        "scene_en": "pill blister packs and medicine bottles on a table"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
     },
     {
       "n": 4,

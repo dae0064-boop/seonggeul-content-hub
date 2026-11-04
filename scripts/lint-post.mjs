@@ -670,7 +670,9 @@ for (const file of files) {
     const photos = (plan?.images || []).filter((im) => im.kind === 'photo');
     const raw = fs.readFileSync(file, 'utf8');
     for (const im of photos) {
-      if (!post.issue) errors.push(`${im.n}번 공식 사진(kind: photo)은 이슈 글(issue:)에만 씁니다`);
+      // 티스토리는 장면 사진(대표사진 아닌 칸)에 무료 고화질 사진을 쓸 수 있다 (2026-11-04 사용자 — "티스토리도 사진 고화질로", 비용은 늘리지 않음)
+      if (!post.issue && !(tistory && im.n !== 1)) errors.push(`${im.n}번 공식 사진(kind: photo)은 이슈 글(issue:)·티스토리 장면 칸에만 씁니다`);
+      if (tistory && !post.issue && (im.photo?.person || im.photo?.still)) errors.push(`${im.n}번: 티스토리 생활 글 사진은 사람 이름·방송 장면 없이 장면·사물(photo.scene_en·query_en)로만 찾습니다`);
       if (!im.photo || !(im.photo.file || im.photo.query || im.photo.query_en || im.photo.scene_en || im.photo.person || im.photo.page || im.photo.still)) errors.push(`${im.n}번 공식 사진: photo.query(이름·장소) 또는 photo.page(정책브리핑 기사 주소)를 적습니다`);
       // 방송사 장면 사진 인용 (2026-11-03 사용자) — 저작권법 28조 인용 조건: 본문 1~2장, 대표사진 아님, 방송사 공식 사이트, 출처 줄
       if (im.photo?.still) {
