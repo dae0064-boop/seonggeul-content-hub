@@ -19,7 +19,7 @@ import path from 'node:path';
 
 const argv = process.argv.slice(2);
 const opt = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : d; };
-const id = argv.find((a, i) => !a.startsWith('--') && !['--out', '--cdp', '--plan'].includes(argv[i - 1]));
+const id = argv.find((a, i) => !a.startsWith('--') && !['--out', '--cdp', '--plan', '--live'].includes(argv[i - 1]));
 const MODE = argv.includes('--all') ? 'all' : argv.includes('--test') ? 'test' : 'look';
 const OUT = opt('--out', `dumps/category-move/${new Date().toISOString().slice(0, 10)}`);
 const CDP = opt('--cdp', 'http://localhost:9222');
@@ -28,7 +28,9 @@ if (!id) { console.log('사용법: node scripts/naver-category-move.mjs <블로�
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const lines = [];
-const log = (s) => { console.log(s); lines.push(s); };
+const LIVE = opt('--live', '');
+// 2026-11-04 여섯 번째 실행: 검은 창이 사라져 몇 편 옮겼는지 알 수 없었다 — 줄마다 바로 파일(Drive)에 붙여 쓴다
+const log = (s) => { console.log(s); lines.push(s); if (LIVE) { try { fs.mkdirSync(path.dirname(LIVE), { recursive: true }); fs.appendFileSync(LIVE, `${new Date().toTimeString().slice(0, 8)} ${s}\n`); } catch { /* */ } } };
 const norm = (s) => String(s ?? '').replace(/\s+/g, ' ').trim();
 const BAD = /삭제|공개|발행|수정|스크랩|초기화|비공개|신고/; // 이 글자가 든 것은 절대 누르지 않는다
 
