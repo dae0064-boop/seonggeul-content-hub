@@ -29,6 +29,11 @@ const FIELDS = {
   reply: 'id,text,username,permalink,timestamp,replied_to,is_reply,hide_status,has_replies',
 };
 
+/** 주제 태그 다듬기 — # 와 마침표·& 를 빼고 50자까지. 비면 '' */
+export function cleanTopicTag(t) {
+  return String(t || '').replace(/^#+/, '').replace(/[.&#]/g, '').trim().slice(0, 50);
+}
+
 /** 토큰이 섞인 문자열을 로그에 쓰기 전에 가린다. */
 export function redact(s) {
   return String(s).replace(/(access_token=)[^&\s"]+/g, '$1***');
@@ -109,6 +114,21 @@ export function threadsApi(token) {
     return out;
   }
 
+  /**
+   * 주제 태그(topic_tag)를 붙여 컨테이너를 만든다 (2026-11-05 사용자 "주제 태그 붙여줘"). 스레드는 글 하나에 태그 하나, 1~50자, 마침표·& 는 안 된다.
+   * 태그 때문에 400 이 나면 태그 없이 한 번 더 만든다 — 컨테이너는 발행 전이라 두 번 만들어도 글이 두 번 올라가지 않는다.
+   */
+  async function withTag(topicTag, make) {
+    const tag = cleanTopicTag(topicTag);
+    if (!tag) return make(undefined);
+    try { return await make(tag); }
+    catch (e) {
+      if (e.status !== 400) throw e;
+      warn(`주제 태그 "${tag}" 를 받지 않아 태그 없이 올려요 — ${String(e.message).slice(0, 160)}`);
+      return make(undefined);
+    }
+  }
+
   return {
     /** 연결 확인 — 내 계정 id/username */
     async me() {
@@ -152,14 +172,15 @@ export function threadsApi(token) {
      * 글 또는 답글을 올린다. 컨테이너를 만들고 잠깐 기다렸다 발행하는 2단계다.
      * replyToId 를 주면 그 글/댓글에 달리는 답글이 된다.
      */
-    async postText(text, { replyToId, replyControl } = {}) {
+    async postText(text, { replyToId, replyControl, topicTag } = {}) {
       const me = await this.me();
-      const container = await call('POST', EP.createContainer(me.id), {
+      const container = await withTag(topicTag, (tag) => call('POST', EP.createContainer(me.id), {
         media_type: 'TEXT',
         text,
         reply_to_id: replyToId,
         reply_control: replyControl,
-      });
+        topic_tag: tag,
+      }));
       if (!container?.id) throw new Error(`컨테이너 생성 응답에 id 가 없습니다: ${JSON.stringify(container)}`);
 
       await sleep(cfg.publishDelayMs);
@@ -173,9 +194,9 @@ export function threadsApi(token) {
      * 사진 한 장 + 글을 올린다 (2026-10-26 — 보험 심의글 + 심의필 배너). imageUrl 은 공개 주소여야 한다.
      * 사진 컨테이너는 스레드가 사진을 받아 가는 동안 IN_PROGRESS 라 FINISHED 가 될 때까지 기다린 뒤 발행한다.
      */
-    async postImage(text, imageUrl, { replyToId } = {}) {
+    async postImage(text, imageUrl, { replyToId, topicTag } = {}) {
       const me = await this.me();
-      const container = await call('POST', EP.createContainer(me.id), { media_type: 'IMAGE', image_url: imageUrl, text, reply_to_id: replyToId });
+      const container = await withTag(topicTag, (tag) => call('POST', EP.createContainer(me.id), { media_type: 'IMAGE', image_url: imageUrl, text, reply_to_id: replyToId, topic_tag: tag }));
       if (!container?.id) throw new Error(`컨테이너 생성 응답에 id 가 없습니다: ${JSON.stringify(container)}`);
       let status = '';
       for (let i = 0; i < 24; i++) {

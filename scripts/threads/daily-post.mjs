@@ -14,7 +14,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { DIR, loadEnv, kstStamp, kstDayStartUnix, isMain, log, step } from './config.mjs';
 import { threadsApi } from './api.mjs';
-import { checkDaily } from './daily-set.mjs';
+import { checkDaily, dailyTopicTag } from './daily-set.mjs';
 
 const argv = process.argv.slice(2);
 const arg = (n, d = '') => { const i = argv.indexOf(n); return i >= 0 ? argv[i + 1] : d; };
@@ -47,9 +47,11 @@ async function main() {
   if (!next) { log('이미 올렸어요'); return 0; }
   step(`다음: ${next['시각']} 일상 글`);
   console.log(next.body.split('\n').map((l) => `   │ ${l}`).join('\n'));
+  const topicTag = dailyTopicTag(next);
+  log(`주제 태그: ${topicTag}`);
   if (!doPost) { log('시험이라 여기서 멈춰요 (--post 를 붙이면 올라가요)'); return 0; }
   try {
-    const p = await api.postText(next.body);
+    const p = await api.postText(next.body, { topicTag });
     const full = await api.getPost(p.id).catch(() => ({}));
     log(`✅ 일상 글 올림 → ${full.permalink || p.id}`);
     return 0;

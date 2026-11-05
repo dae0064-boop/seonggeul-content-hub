@@ -23,7 +23,19 @@ const PARA_MIN = 2;
 export const SLOTS_OLD = ['07:30', '08:30', '20:00', '21:00', '22:30']; // 2026-11-02 사용자 — "출근길 2개, 퇴근 뒤 3개"
 // 2026-11-03 사용자 "블로그 유입 글 3개로 줄이고 일상 4 · 보험 심의글 3, 하루 10편": 11/4 묶음부터 08:00(아침 — 전날 글) · 20:00 · 22:00
 export const SLOTS = ['08:00', '20:00', '22:00'];
-const slotsFor = (date) => (date >= '2026-11-04' ? SLOTS : SLOTS_OLD);
+// 2026-11-05 사용자 "6편으로 줄이고 주제 태그" (일상 4 · 보험 1 · 블로그 1): 11/6 묶음부터 그날 글 1편 21:00
+export const SLOTS1 = ['21:00'];
+const slotsFor = (date) => (date >= '2026-11-06' ? SLOTS1 : date >= '2026-11-04' ? SLOTS : SLOTS_OLD);
+/** 하루 '바로' 글 수 */
+export const blogPerDay = (date) => (date >= '2026-11-06' ? 1 : date >= '2026-11-04' ? 3 : 5);
+/** 주제 태그 — 묶음에 '태그:' 가 있으면 그것, 없으면 본문으로 (2026-11-05 사용자) */
+export function blogTopicTag(it) {
+  if (it['태그']) return it['태그'];
+  const b = it.body || '';
+  if (/실비|실손/.test(b)) return '실비';
+  if (/의료비|병원비|수술비|진료비|검사비|치료비/.test(b)) return '의료비';
+  return '건강보험';
+}
 const MAX_EMOJI = 2;
 
 // '바로' 갈래에서 막는 민간 보험 낱말. 공적 제도 이름(건강보험 등)은 아래 PUBLIC 으로 먼저 지운다
@@ -80,6 +92,8 @@ export function checkSet(file) {
     for (const m of fs.readFileSync(path.join(path.dirname(file), g), 'utf8').matchAll(/^원고[:：]\s*(\S+)/gm)) usedElsewhere.set(m[1], g);
   }
 
+  const nDirect = items.filter((it) => it['갈래'] === '바로').length;
+  if (nDirect > blogPerDay(date)) errors.push(`'바로' 글이 ${nDirect}편 — 하루 ${blogPerDay(date)}편(${slotsFor(date).join('·')})입니다.`);
   for (const it of items) {
     const tag = `[${it.no}]`;
     const err = (s) => errors.push(`${tag} ${s}`);
