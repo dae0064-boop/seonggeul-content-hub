@@ -12,6 +12,7 @@ $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo
 . (Join-Path $PSScriptRoot 'lib-drive.ps1')
 $drive = Wait-MyDrive 120
+Invoke-StayAwakeRequest 45   # 사용자가 Claude 에게 '잠시 깨워 줘' 했으면 그 시각까지 안 잠 (2026-11-05)
 $now = Get-Date
 $today = $now.ToString('yyyy-MM-dd')
 $noteFile = if ($drive) { Join-Path $drive "ClaudeWorkspace\run-logs\health-$today.txt" } else { Join-Path $repo "dumps\health-$today.txt" }
