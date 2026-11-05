@@ -1,0 +1,85 @@
+{
+  "slug": "2026-11-06-gyeollo-changmun-dakgi",
+  "title": "결로 방지, 아침마다 창문 물방울 닦는 순서",
+  "source": "11/6(목) 10:40 네이버 원고 — 생활정보 홈판형, 순서형, 공감형",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 실사풍·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "아침 창가에서 물방울 맺힌 창문을 살펴보는 40대 여성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her early 40s with a loose low ponytail and a light gray cardigan, looking toward a window with condensation droplets with a calm, slightly concerned but relieved expression, morning daylight through the window. Facial expression: relieved gentle smile. Color theme: soft coral and ivory tones with a sage green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (living room, window, home), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "soft coral and ivory tones with a sage green accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "cobalt",
+      "thumb_person": "40대 초반 묶은 머리 여성",
+      "thumb_mood": "안심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "cobalt",
+        "font": "jua",
+        "title": "결로 방지\n아침엔 어떻게 닦죠?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "아침 창가 유리에 물방울이 맺힌 장면",
+      "prompt": "Camera and composition: medium close-up of a living room window in the morning. Water droplets have formed on the inside surface of a clear glass window, a window sill below with a small amount of water, soft morning light coming through. No people in the frame. Background color: soft beige and pale blue morning light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean places (living room, window, home), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium close-up of a living room window",
+      "bg": "soft beige and pale blue morning light"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "창문 닦는 네 단계를 정리한 정보 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "창문 닦는 네 단계",
+        "items": [
+          "유리의 물방울을 위에서 아래로",
+          "창틀과 창턱에 고인 물",
+          "고무패킹과 창틀 홈에 물기",
+          "창문을 살짝 열고 선풍기로"
+        ],
+        "ask": "창문 닦는 순서가 뭐예요?"
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "창틀 홈과 고무패킹을 가까이에서 본 장면",
+      "prompt": "Camera and composition: close-up macro view of a window frame corner. A white plastic window frame with a black rubber gasket along the edge, a small groove on the sill with a few droplets of water, a folded dry cloth resting nearby. No people. Background color: soft gray and white daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean places (living room, window, home), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of a window frame corner",
+      "bg": "soft gray and white daylight"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "살짝 열린 창문과 환기하는 방의 장면",
+      "prompt": "Camera and composition: medium wide shot of a bright Korean living room with one window opened slightly, a light breeze moving the sheer curtain. A Korean man in his 30s in a navy sweatshirt standing beside the window and looking outside calmly, nothing else prominent in the room. Background color: soft white and light blue daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (living room, window, home), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium wide shot of a living room with a slightly open window",
+      "bg": "soft white and light blue daylight"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "닦기 전에 확인할 것을 정리한 정보 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "닦기 전에 확인할 것",
+        "items": [
+          "창틀 홈에 고인 물",
+          "고무패킹은 주름 사이에 물이",
+          "창문 근처 가구는 조금 떼어"
+        ],
+        "ask": "닦기 전에 뭘 보죠?"
+      }
+    }
+  ]
+}
