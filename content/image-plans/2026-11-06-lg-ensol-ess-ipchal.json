@@ -1,0 +1,82 @@
+{
+  "slug": "2026-11-06-lg-ensol-ess-ipchal",
+  "title": "LG에너지솔루션 ESS 입찰 불참, 물량 두 배 판을 왜 건너뛰었을까",
+  "source": "11/6(금) 22:00 네이버 원고 — 아침 이슈 2차(뉴스·경제·사회 이슈), 홈판형",
+  "note": "6장 = 대표 CC 장면 사진(사람 없음) 1 + 그림 3 + 카드 2(첫머리 + 메모). 투자 권유 없이 사실만",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "kind": "photo",
+      "title": "에너지저장장치 소식 (대표사진)",
+      "photo": {
+        "query": "에너지저장장치",
+        "query_en": "battery energy storage system",
+        "scene_en": "battery energy storage containers next to a solar farm"
+      },
+      "note": "대표 — 위키미디어·픽사베이 CC 장면 사진(사람 없음), 없으면 AI 그림",
+      "thumb_shot": "wide",
+      "thumb_theme": "charcoal",
+      "thumb_person": "현장 작업자 1명(작게)",
+      "thumb_mood": "생각",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "LG엔솔, ESS 입찰 불참",
+        "focus": "center 45%",
+        "theme": "charcoal"
+      },
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Rows of white battery storage containers beside a solar panel field under a clear sky, one tiny worker in a hard hat walking between them, face not visible. Facial expression: thoughtful, finger on chin. Color theme: warm brown wood and ivory tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "kind": "card",
+      "title": "ESS 입찰 이야기를 여는 첫머리 카드",
+      "card": {
+        "type": "lead",
+        "keyword": "ESS 입찰",
+        "title": "큰 장을\n왜 놓쳤지?",
+        "ask": "물량이 두 배라던데?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "넓은 들판에 줄지어 선 하얀 배터리 컨테이너",
+      "prompt": "Camera and composition: wide shot of a field. Rows of white battery storage containers lined up on a wide flat field with power lines in the distance, no people. Background color: clear blue sky and pale green grass. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "kind": "card",
+      "title": "3차 ESS 입찰을 정리한 메모 카드",
+      "card": {
+        "type": "check",
+        "style": "memo",
+        "title": "3차 ESS 입찰 한눈에",
+        "sub": "앞선 두 번의 두 배 규모",
+        "items": [
+          "모두 1180MW",
+          "제주 80MW",
+          "1차는 563MW",
+          "삼성SDI와 SK온의 2파전"
+        ],
+        "memo": "다음 입찰 참여는 그때 정한대요",
+        "hl": 4
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "창가 책상 위 노트북과 메모지",
+      "prompt": "Camera and composition: close-up from slightly above. A laptop with a blank screen and a few sticky notes on a desk by a window, no people. Background color: soft grey and warm white. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "해 질 녘 태양광 패널과 송전탑이 보이는 풍경",
+      "prompt": "Camera and composition: wide landscape shot. A solar panel field at sunset with transmission towers on the horizon, no people. Background color: warm orange sunset and deep blue. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}
