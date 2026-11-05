@@ -30,4 +30,13 @@ $log = @(& node @nodeArgs 2>&1 | ForEach-Object { Write-Host "$_"; "$_" })
 $code = $LASTEXITCODE
 @("", "===== $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') · $env:COMPUTERNAME · 블로그 유입 글 $(if ($Test) { '시험' } else { '올리기' }) · 종료 코드 $code") + $log |
   Add-Content -Encoding UTF8 (Join-Path $dir "$(Get-Date -Format 'yyyy-MM-dd').log")
+# 노출 확인(읽기만) — 3시간에 한 번 insights-<날짜>.txt 를 새로 쓴다 (2026-11-05 사용자 "스레드 노출이 전혀 안 된다")
+if (-not $Test) {
+  try {
+    $ins = Join-Path $dir "insights-$(Get-Date -Format 'yyyy-MM-dd').txt"
+    if (-not (Test-Path $ins) -or ((Get-Date) - (Get-Item $ins).LastWriteTime).TotalHours -ge 3) {
+      & node 'scripts\threads\insights.mjs' --days 3 --out $ins 2>&1 | Out-Null
+    }
+  } catch { }
+}
 exit $code
