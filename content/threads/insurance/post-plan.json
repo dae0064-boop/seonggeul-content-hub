@@ -9,5 +9,16 @@
   "since": "2026-11-04",
   "maxPerDay": 3,
   "pauseFile": "content/threads/insurance/PAUSE-POST",
-  "startDate": "2026-11-04"
+  "startDate": "2026-11-04",
+  "changes": [
+    {
+      "from": "2026-11-06",
+      "note": "2026-11-05 사용자 \"6편으로 줄이고 주제 태그\" — 스레드 하루 6편(일상 4 · 보험 1 · 블로그 1), 보험은 15:00 하루 1편",
+      "slots": [
+        "15:00"
+      ],
+      "maxPerDay": 1
+    }
+  ],
+  "topicTag": "보험"
 }

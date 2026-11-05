@@ -43,7 +43,17 @@ const gapMin = Number(arg('--gap-min', '40'));
 //   --pause-file <파일>        보험글 올리기만의 멈춤 스위치 — 주면 content/threads/PAUSE(전체 멈춤)는 보지 않는다
 // 값은 content/threads/insurance/post-plan.json 이 정한다 (작업 스케줄러가 부르는 ps1 을 고치지 않고 바꿀 수 있게). 명령줄 값이 있으면 그것이 먼저.
 const ROOT_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
-const plan = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'content/threads/insurance/post-plan.json'), 'utf8')); } catch { return {}; } })();
+// post-plan.json 의 changes: [{ from: 날짜, slots, maxPerDay }] — 그날부터 바뀌는 값 (2026-11-05 사용자 "6편으로 줄이고" → 11/6 부터 15:00 하루 1편)
+const plan = (() => {
+  let p = {};
+  try { p = JSON.parse(fs.readFileSync(path.join(ROOT_DIR, 'content/threads/insurance/post-plan.json'), 'utf8')); } catch { return {}; }
+  const day = new Date(Date.now() + 9 * 3600e3).toISOString().slice(0, 10);
+  for (const c of (Array.isArray(p.changes) ? p.changes : []).filter((c) => c.from && c.from <= day).sort((a, b) => (a.from < b.from ? -1 : 1))) {
+    const { from, ...rest } = c;
+    p = { ...p, ...rest };
+  }
+  return p;
+})();
 const slots = arg('--slots') ? arg('--slots').split(',').map((x) => x.trim()).filter(Boolean) : (Array.isArray(plan.slots) && plan.slots.length ? plan.slots : null);
 const windowMin = Number(arg('--window-min', String(plan.windowMin || 120)));
 const since = arg('--since', plan.since || '');
@@ -224,7 +234,7 @@ async function main() {
 
   let p1;
   try {
-    p1 = await api.postText(first);
+    p1 = await api.postText(first, { topicTag: plan.topicTag || '보험' });
     log(`✅ 1/2 올림: 스레드 ${next.n}편 (${p1.id})`);
   } catch (e) { log(`❌ 1/2 를 올리지 못했어요: ${e.message}`); return 2; }
   try {

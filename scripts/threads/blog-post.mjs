@@ -22,14 +22,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { ROOT, DIR, loadEnv, kstStamp, kstDayStartUnix, isMain, log, step, warn } from './config.mjs';
 import { threadsApi } from './api.mjs';
-import { checkSet } from './blog-set.mjs';
+import { checkSet, blogPerDay, blogTopicTag } from './blog-set.mjs';
 import { fetchPostList, readMyBlogId, normTitle } from '../lib/naver-related.mjs';
 
 const argv = process.argv.slice(2);
 const arg = (n, d = '') => { const i = argv.indexOf(n); return i >= 0 ? argv[i + 1] : d; };
 const doPost = argv.includes('--post');
 const postedTsv = arg('--posted'); // Drive run-logs/threads/blog-posted.tsv (있으면 기록만)
-const maxPerDay = Number(arg('--max-per-day', '3')); // 2026-11-03 사용자 "블로그 유입 글 3개로 줄이고" (11/2 는 5개)
+const maxArg = arg('--max-per-day'); // 기본은 날짜별 blogPerDay — 11/6~ 1편 (2026-11-05 사용자), 11/3~ 3편, 11/2 5편
 const gapMin = Number(arg('--gap-min', '40'));
 const PAUSE_BLOG = path.join(DIR, 'PAUSE-BLOG');
 
@@ -58,6 +58,7 @@ async function main() {
   loadEnv();
   const now = arg('--now') || kstStamp(); // "YYYY-MM-DD HH:MM (KST)" — --now 는 시험용
   const today = now.slice(0, 10), hhmm = now.slice(11, 16);
+  const maxPerDay = Number(maxArg || blogPerDay(today));
   step(`스레드 블로그 유입 글 ${doPost ? '올리기' : '시험 (올리지 않음)'} — ${now}`);
   const p = paused();
   if (p) { log(`멈춤: ${p}`); return 0; }
@@ -136,7 +137,7 @@ async function main() {
   if (again.some((x) => head(x.text) === head(next.body))) { log('방금 다른 PC 가 올렸어요 — 올리지 않아요'); return 0; }
   log('스레드에 올리는 중…');
   let p1;
-  try { p1 = await api.postText(next.body); log(`✅ 본문 올림 (${p1.id})`); }
+  try { const topicTag = blogTopicTag(next); log(`주제 태그: ${topicTag}`); p1 = await api.postText(next.body, { topicTag }); log(`✅ 본문 올림 (${p1.id})`); }
   catch (e) { log(`❌ 본문을 올리지 못했어요: ${e.message}`); return 2; }
   try {
     const p2 = await api.postText(url, { replyToId: p1.id });

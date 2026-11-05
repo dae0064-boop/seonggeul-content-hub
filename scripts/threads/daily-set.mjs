@@ -17,7 +17,9 @@ export const DAILY_SLOTS_OLD = ['07:00', '19:00'];
 export const DAILY_SLOTS = ['07:00', '12:30', '18:30', '23:00'];
 // 2026-11-04 사용자 "긍정 일상글 2개 더 — 아침 출근길 '모두 힘내자', 퇴근 뒤 '모두 수고했다, 푹 쉬자'": 11/5 묶음부터 08:30 출근길 응원 · 19:30 퇴근 수고 추가 (하루 6편). 11/4 는 19:30 만 더함
 export const DAILY_SLOTS6 = ['07:00', '08:30', '12:30', '18:30', '19:30', '23:00'];
-export const dailySlots = (date) => (date >= '2026-11-05' ? DAILY_SLOTS6 : date === '2026-11-04' ? ['07:00', '12:30', '18:30', '19:30', '23:00'] : date >= '2026-11-04' ? DAILY_SLOTS : DAILY_SLOTS_OLD);
+// 2026-11-05 사용자 "6편으로 줄이고 주제 태그" (스레드 노출 0 — 새 계정이 하루 12편): 11/6 묶음부터 일상 4편 07:00 · 08:30 · 12:30 · 19:30 (18:30 퇴근길·23:00 마무리 뺌)
+export const DAILY_SLOTS4 = ['07:00', '08:30', '12:30', '19:30'];
+export const dailySlots = (date) => (date >= '2026-11-06' ? DAILY_SLOTS4 : date >= '2026-11-05' ? DAILY_SLOTS6 : date === '2026-11-04' ? ['07:00', '12:30', '18:30', '19:30', '23:00'] : date >= '2026-11-04' ? DAILY_SLOTS : DAILY_SLOTS_OLD);
 const MIN_CHARS = 30; // 2026-11-04 사용자 "이런식으로, 너무 짧게는 쓰지 말고" (daily.md ✍) — 그 전 같은 날 15자
 const MAX_CHARS = 250;
 const MAX_LINE = 26;
@@ -28,6 +30,14 @@ const OFF_TOPIC = /보험|실손|실비|보장|청구|상담|가입|설계사|�
 // 2026-11-04 사용자 "너무 AI 같지 않냐?" — 매끈한 정리 말 (daily.md 🤖)
 const TOPIC_FROM = '2026-11-06';
 const AI_WORDS = /의외로|어느새|그제야|은근 힐링|소소한|하루 피로|하는 시간|사실상|왜 이제|이게 행복/;
+
+/** 스레드 주제 태그 (2026-11-05 사용자) — 묶음에 '태그:' 가 있으면 그것, 없으면 주제·시각으로. 넓은 말(사람들이 찾는 말)로 */
+export function dailyTopicTag(it) {
+  if (it['태그']) return it['태그'];
+  if (/러닝|달리기|운동/.test(it['주제'] || '') || /러닝|달리기|뛰/.test(it.body || '')) return '러닝';
+  if (['08:30', '12:30'].includes(it['시각'])) return '직장인';
+  return '일상';
+}
 
 export function checkDaily(file) {
   const errors = [];
