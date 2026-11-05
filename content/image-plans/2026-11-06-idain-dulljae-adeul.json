@@ -1,0 +1,105 @@
+{
+  "slug": "2026-11-06-idain-dulljae-adeul",
+  "title": "이다인 이승기 둘째 아들 첫 공개, 생일날 올린 네 식구 사진은?",
+  "source": "11/6(금) 08:20 네이버 원고 — 아침 이슈 1차(연예·스타 소식), 홈판형",
+  "note": "대표 = 두 사람이 나온 방송사 공식 유튜브 클립 표지 → 없으면 사람 없는 생일 식탁 그림. 아이 얼굴은 쓰지 않는다. 카드 2(첫머리·메모) + 그림 3",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "kind": "photo",
+      "title": "방송 출연 공식 영상 장면 (대표사진)",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "이승기 이다인",
+            "must": [
+              "이승기"
+            ],
+            "channels": [
+              "SBS Entertainment",
+              "스브스예능맛집",
+              "MBCentertainment",
+              "KBS Entertain",
+              "tvN"
+            ],
+            "prefer": [
+              "이다인",
+              "이승기"
+            ]
+          },
+          "owner": "방송사 공식 유튜브",
+          "program": "이승기 출연 프로그램"
+        },
+        "person": [
+          "Lee Da-in",
+          "이다인"
+        ],
+        "query": "이다인",
+        "query_en": "Lee Da-in actress"
+      },
+      "note": "대표: 방송사 공식 클립 표지 → 위키미디어 → 없으면 사람 없는 생일 식탁 그림(실존 인물 그리지 않음)",
+      "thumb_shot": "overhead",
+      "thumb_theme": "brick",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "이다인, 둘째 아들 첫 공개",
+        "focus": "center 25%",
+        "theme": "brick"
+      },
+      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A small round birthday cake with lit candles, two wrapped gifts and a pair of tiny baby socks on a light wooden table, warm evening light. Color theme: terracotta and warm beige tones with a sage green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "생일 케이크와 촛불이 놓인 따뜻한 거실 식탁",
+      "prompt": "Camera and composition: eye-level medium shot. A warm living room with a dining table holding a birthday cake with candles and a small vase of flowers, soft lamp light, no people. Background color: warm ivory and soft coral. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "kind": "card",
+      "title": "가족 소식을 정리한 첫머리 카드",
+      "card": {
+        "type": "lead",
+        "keyword": "이다인",
+        "title": "생일날\n둘째 첫 공개",
+        "ask": "둘째가 벌써 태어났어?"
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "침대 위에서 아이에게 그림책을 읽어 주는 손",
+      "prompt": "Camera and composition: close-up of hands only, no face in the frame. An adult's hands holding open a colorful picture book on a soft white bed blanket, a small child's hand touching the page, warm morning light. Background color: soft cream and pale blue. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "kind": "card",
+      "title": "두 사람이 걸어온 시간을 정리한 메모 카드",
+      "card": {
+        "type": "check",
+        "style": "memo",
+        "title": "네 식구가 되기까지",
+        "sub": "결혼 3년 만에 1남 1녀",
+        "items": [
+          "2023년 4월에 결혼했어요",
+          "이듬해 2월에 첫딸을 얻었어요",
+          "7월 둘째 아들이 태어났어요",
+          "결혼 3년 만에 1남 1녀"
+        ],
+        "memo": "아이 얼굴은 가리고 공개했어요",
+        "hl": 3
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "창가에 놓인 작은 아기 신발 한 켤레",
+      "prompt": "Camera and composition: close-up still life. A pair of tiny knitted baby shoes on a sunny windowsill next to a small potted plant, no people. Background color: soft white and light wood. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}
