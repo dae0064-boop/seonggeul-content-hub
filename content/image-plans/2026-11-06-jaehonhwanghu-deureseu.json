@@ -1,0 +1,134 @@
+{
+  "slug": "2026-11-06-jaehonhwanghu-deureseu",
+  "title": "재혼황후 드레스, 싸 보인다더니 알고 보니 한 벌 1700만 원대",
+  "source": "11/6(금) 14:00 네이버 원고 — 아침 이슈 2차(연예·드라마), 홈판형",
+  "note": "6장 = 대표 공식 영상 표지 1 + 장면 공식 영상 1 + 그림 2 + 카드 2(첫머리 + 메모). 실존 인물 얼굴은 그리지 않는다",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "kind": "photo",
+      "title": "재혼황후 공식 영상 장면 (대표사진)",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "재혼 황후",
+            "must": [
+              "재혼"
+            ],
+            "channels": [
+              "디즈니+ 코리아",
+              "Disney Plus Korea",
+              "Disney+ Korea",
+              "디즈니플러스 코리아"
+            ],
+            "prefer": [
+              "신민아",
+              "나비에",
+              "드레스"
+            ]
+          },
+          "owner": "디즈니+",
+          "program": "재혼 황후"
+        },
+        "person": [
+          "Shin Min-a",
+          "Shin Min-ah",
+          "신민아"
+        ],
+        "query": "신민아",
+        "query_en": "Shin Min-a",
+        "file": [
+          "File:Shin Min-a for Marie Claire Korea December 2018.jpg",
+          "File:Shin Min-a-2.jpg"
+        ]
+      },
+      "note": "디즈니+ 코리아 공식 영상 표지 → 신민아 위키미디어 단독 사진 → 사람 없는 의상실 그림",
+      "thumb_shot": "object",
+      "thumb_theme": "rose",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "재혼황후 드레스, 알고 보니",
+        "focus": "center 25%",
+        "theme": "rose"
+      },
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A pale mint ball gown on a dress form under soft studio light in a quiet costume fitting room. Color theme: apricot and ivory tones with a sage green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "kind": "card",
+      "title": "재혼황후 드레스 이야기를 여는 첫머리 카드",
+      "card": {
+        "type": "lead",
+        "keyword": "재혼황후",
+        "title": "드레스가\n싸 보였다고?",
+        "ask": "황후 옷이 왜 밋밋하지?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "kind": "photo",
+      "title": "재혼황후 장면 (공식 영상 인용)",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "재혼 황후",
+            "must": [
+              "재혼"
+            ],
+            "channels": [
+              "디즈니+ 코리아",
+              "Disney Plus Korea",
+              "Disney+ Korea",
+              "디즈니플러스 코리아"
+            ],
+            "prefer": [
+              "예고편",
+              "하이라이트",
+              "황후"
+            ]
+          },
+          "owner": "디즈니+",
+          "program": "재혼 황후"
+        }
+      },
+      "prompt": "Camera and composition: medium shot of an empty palace hall. A grand empty palace ballroom with tall windows, chandeliers and polished floor, no people. Background color: ivory and pale gold. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "조명이 켜진 빈 촬영 세트장의 의상 걸이",
+      "prompt": "Camera and composition: medium wide shot of a film set. An empty film set with studio lights switched on and a rolling rack of colorful period gowns beside a camera on a tripod, no people. Background color: warm amber light with deep shadows. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "kind": "card",
+      "title": "재혼황후 드레스를 정리한 메모 카드",
+      "card": {
+        "type": "check",
+        "style": "memo",
+        "title": "재혼황후 드레스 정리",
+        "sub": "수입 드레스와 국내 드레스",
+        "items": [
+          "민트 드레스: 조르주 호베이카",
+          "하늘색 드레스: 제니 팩햄",
+          "붉은 드레스: 국내 제작",
+          "흰색 오프숄더: 국내 제작"
+        ],
+        "memo": "제작진이 이유를 밝힌 건 아직 없어요",
+        "hl": 1
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "거울 앞 마네킹에 걸린 연한 하늘색 드레스",
+      "prompt": "Camera and composition: medium shot in front of a tall mirror. A dress form wearing a pale sky blue gown standing in front of a tall standing mirror in a bright quiet room, no people. Background color: soft white and sky blue. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}

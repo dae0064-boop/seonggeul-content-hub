@@ -1,0 +1,134 @@
+{
+  "slug": "2026-11-06-nain-tu-siseu-cheotbangsong",
+  "title": "나인 투 식스 첫 방송, 박민영·육성재 9살 차이 로맨스는 언제부터?",
+  "source": "11/6(금) 21:20 네이버 원고 — 아침 이슈 2차(연예·드라마), 홈판형",
+  "note": "대표 = SBS 「나인 투 식스」 공식 유튜브 티저 표지 → 박민영 위키미디어 단독 사진(2024, CC BY 3.0). 본문 1장 공식 영상. 카드 2 + 그림 2",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "kind": "photo",
+      "title": "나인 투 식스 박민영 (대표사진)",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "나인 투 식스 티저",
+            "must": [
+              "나인 투 식스"
+            ],
+            "channels": [
+              "SBS",
+              "SBS 드라마",
+              "SBS Drama",
+              "스브스"
+            ],
+            "prefer": [
+              "박민영",
+              "티저",
+              "강이지"
+            ]
+          },
+          "owner": "SBS",
+          "program": "나인 투 식스"
+        },
+        "person": [
+          "Park Min-young",
+          "박민영"
+        ],
+        "query": "박민영",
+        "query_en": "Park Min-young",
+        "file": [
+          "File:Park Min-young 박민영 2024 03.jpg",
+          "File:20220105 Park Min-young 박민영 ELLE Taiwan (2).jpg"
+        ]
+      },
+      "note": "대표: SBS 공식 티저 표지 → 박민영 위키미디어 단독 사진(웃는 얼굴, 948×1344) → 사람 없는 사무실 그림",
+      "thumb_shot": "hands",
+      "thumb_theme": "brick",
+      "thumb_person": "30대 여성(손만)",
+      "thumb_mood": "궁금",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "나인 투 식스, 첫 방송은?",
+        "focus": "center 20%",
+        "theme": "brick"
+      },
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Hands of a woman holding a TV remote and marking a date on a small desk calendar on a coffee table in a cozy living room. Facial expression: curious, head slightly tilted. Color theme: terracotta and warm beige tones with a sage green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "kind": "card",
+      "title": "새 드라마 이야기를 여는 첫머리 카드",
+      "card": {
+        "type": "lead",
+        "keyword": "나인 투 식스",
+        "title": "첫 방송\n언제예요?",
+        "ask": "박민영 새 드라마 언제 해?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "kind": "photo",
+      "title": "나인 투 식스 공식 영상 장면 (인용)",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "나인 투 식스",
+            "must": [
+              "나인 투 식스"
+            ],
+            "channels": [
+              "SBS",
+              "SBS 드라마",
+              "SBS Drama",
+              "스브스"
+            ],
+            "prefer": [
+              "육성재",
+              "한선우",
+              "포스터"
+            ]
+          },
+          "owner": "SBS",
+          "program": "나인 투 식스"
+        }
+      },
+      "prompt": "Camera and composition: medium shot of an office lobby. A bright car company office lobby with a glossy floor and a sleek concept car on display, no people. Background color: silver grey and soft blue. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "kind": "card",
+      "title": "나인 투 식스 인물 관계를 정리한 메모 카드",
+      "card": {
+        "type": "check",
+        "style": "memo",
+        "title": "나인 투 식스 인물",
+        "sub": "누가 누구를 맡았을까",
+        "items": [
+          "법무팀 차장 강이지",
+          "다정한 연하남 한선우",
+          "엘리트 본부장 박현태",
+          "절친한 동생 신지원"
+        ],
+        "memo": "11월 25일 수요일 밤 9시 첫 방송",
+        "hl": 2
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "저녁 거실 소파 앞 TV와 담요",
+      "prompt": "Camera and composition: medium shot of a living room. A cozy living room in the evening with a soft blanket on a sofa facing a TV with a blank glowing screen, no people. Background color: warm lamp light and soft navy. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "해 질 녘 사무실 빌딩 창가 풍경",
+      "prompt": "Camera and composition: wide shot from inside an office. A view of city office buildings at sunset through a large office window, an empty desk with a laptop in front, no people. Background color: warm orange sunset and steel blue. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}
