@@ -235,12 +235,11 @@ function newsThumbHtml(imgDataUrl, S, o) {
   const face = ptdFace();
   const fam = face ? `"PTD",${STYLE.font}` : STYLE.font;
   const text = String(o.title || '').replace(/\n/g, ' ').trim();
-  const pos = o.focus || 'center 22%';
-  // 가로로 긴 사진(방송 장면·유튜브 표지 16:9)은 가운데만 잘라내면 사람·화면 글씨가 잘린다 (2026-11-03 계약결혼 대표사진 — 사용자 "짤려있잖아").
-  // 가로:세로가 1.25 넘으면 사진 전체를 가운데 두고, 위아래 빈 곳은 같은 사진을 흐리게 채운다. o.fit 으로 강제할 수 있다 ('cover' | 'contain').
-  const ratio = pngRatio(imgDataUrl);
-  const contain = o.fit === 'contain' || (o.fit !== 'cover' && ratio > 1.25);
-  if (contain) return `<!doctype html><meta charset="utf-8"><style>
+  const pos = o.focus || (pngRatio(imgDataUrl) > 1.25 ? 'center center' : 'center 22%');
+  // 2026-11-05 사용자 — 위아래 흐린 빈 곳 없이 사진으로 꽉 채우고 글씨만 아래에 얹는다 ("위 공백까지 사진으로, 밑 공백도 없애고 글씨만").
+  // 그래서 가로로 긴 사진(16:9)도 기본은 꽉 채움(cover). 가로가 잘리는 만큼 o.focus 로 보일 자리를 고른다 ('40% center' 처럼 첫 값이 가로).
+  // 예전 모양(사진 전체 + 위아래 흐린 채움)은 o.fit: 'contain' 일 때만 쓴다 (2026-11-03 계약결혼 대표사진 — 사람이 잘려 그렇게 했었다).
+  if (o.fit === 'contain') return `<!doctype html><meta charset="utf-8"><style>
     ${face}
     *{margin:0;box-sizing:border-box}
     body{width:${S}px;height:${S}px;position:relative;overflow:hidden;background:#111;font-family:${fam}}
@@ -255,9 +254,9 @@ function newsThumbHtml(imgDataUrl, S, o) {
     *{margin:0;box-sizing:border-box}
     body{width:${S}px;height:${S}px;position:relative;overflow:hidden;background:#111;font-family:${fam}}
     img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:${pos}}
-    .shade{position:absolute;left:0;right:0;bottom:0;height:${S * 0.24}px;background:linear-gradient(to top,rgba(0,0,0,.55),rgba(0,0,0,0))}
-    .cap{position:absolute;left:${S * 0.05}px;right:${S * 0.05}px;bottom:${S * 0.045}px;color:#fff;font-weight:800;
-      font-size:${Math.round(S * 0.052)}px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+    .shade{position:absolute;left:0;right:0;bottom:0;height:${S * 0.28}px;background:linear-gradient(to top,rgba(0,0,0,.7),rgba(0,0,0,.35) 55%,rgba(0,0,0,0))}
+    .cap{position:absolute;left:${S * 0.05}px;right:${S * 0.05}px;bottom:${S * 0.05}px;color:#fff;font-weight:800;text-align:center;
+      font-size:${Math.round(S * 0.058)}px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
       letter-spacing:-.01em;text-shadow:0 ${S * 0.003}px ${S * 0.01}px rgba(0,0,0,.5)}
   </style><body><img src="${imgDataUrl}">${text ? `<div class="shade"></div><div class="cap">${esc(text)}</div>` : ''}</body>`;
 }
