@@ -8,7 +8,7 @@ if (-not $up) {
   $chrome = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
   if (-not (Test-Path $chrome)) { $chrome = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe' }
   if (Test-Path $chrome) {
-    Start-Process $chrome -ArgumentList '--remote-debugging-port=9222', "--user-data-dir=$env:LOCALAPPDATA\seonggeul-chrome", '--no-first-run', '--restore-last-session', '--start-minimized', 'about:blank' -WindowStyle Minimized
+    . (Join-Path $PSScriptRoot 'lib-detach.ps1'); Start-Detached $chrome -ArgumentList '--remote-debugging-port=9222', "--user-data-dir=$env:LOCALAPPDATA\seonggeul-chrome", '--no-first-run', '--restore-last-session', '--start-minimized', 'about:blank' -WindowStyle Minimized
     # 크롬이 뜰 때까지 30초까지 기다린다 (그래야 위젯의 첫 읽기가 맞는다)
     for ($i = 0; $i -lt 15; $i++) {
       Start-Sleep -Seconds 2

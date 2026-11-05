@@ -89,5 +89,6 @@ function Invoke-StayAwakeRequest([int]$Wait = 0) {
   if (-not $until) { return }
   if (@(Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'stay-awake\.ps1' }).Count) { return }
   $ps1 = Join-Path $PSScriptRoot 'stay-awake.ps1'
-  Start-Process powershell.exe -WindowStyle Hidden -ArgumentList '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', "`"$ps1`"", '-Until', $until.ToString('yyyy-MM-dd HH:mm')
+  . (Join-Path $PSScriptRoot 'lib-detach.ps1')   # 작업 묶음 밖으로 — 띄운 작업의 제한 시간에 같이 꺼지지 않게 (2026-11-05)
+  Start-Detached powershell.exe -ArgumentList '-NoProfile', '-WindowStyle', 'Hidden', '-ExecutionPolicy', 'Bypass', '-File', "`"$ps1`"", '-Until', $until.ToString('yyyy-MM-dd HH:mm')
 }
