@@ -1,0 +1,84 @@
+{
+  "slug": "2026-11-06-garibi-jecheol",
+  "title": "가리비 제철, 한겨울인 줄 알았는데 늦가을부터 살이 찬다",
+  "source": "11/6(금) 20:00 네이버 원고 — 생활정보 홈판형(제철 '언제'), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (첫머리 + 메모)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "수산시장에서 가리비를 들어 보며 고개를 갸웃하는 40대 남성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean man in his 40s with short wavy hair and a neat beard in a terracotta quilted vest over a cream sweater holds up one large scallop shell near his face at a bright seafood market stall, tilting his head slightly with a curious look, ice-filled trays of scallops softly blurred behind him. Facial expression: curious, head slightly tilted. Color theme: warm terracotta and cream tones with a soft gold accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "warm terracotta and cream tones with a soft gold accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "burgundy",
+      "thumb_person": "40대 남성(짧은 웨이브 머리·턱수염·테라코타 조끼)",
+      "thumb_mood": "궁금",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "burgundy",
+        "font": "jua",
+        "title": "가리비 제철\n벌써 시작?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "가리비 제철을 한눈에 정리한 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "가리비 제철",
+        "title": "지금 사도\n맛있을까?",
+        "ask": "가리비 겨울에 사야 해?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "동해안 바닷가 양식장 부표가 줄지어 떠 있는 겨울 바다",
+      "prompt": "Camera and composition: wide view of a calm winter sea. Rows of round orange aquaculture buoys float in neat lines on a calm blue winter sea near a rocky Korean east coast shoreline with low mountains behind, no people. Background color: clear cold blue sky and deep blue sea. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide view of a calm winter sea",
+      "bg": "clear cold blue sky and deep blue sea"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "가리비 고를 때 확인할 것을 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "style": "memo",
+        "title": "가리비 고를 때 확인",
+        "sub": "장바구니에 담기 전에 이렇게만",
+        "items": [
+          "껍데기에 금 간 곳이 없나요",
+          "산지 표시를 확인했나요",
+          "바다 냄새가 나나요",
+          "사 온 날 바로 조리하나요"
+        ],
+        "memo": "닫히지 않는 건 빼 두세요",
+        "hl": 1
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "팬 위에서 노릇하게 구워지는 버터 올린 가리비 관자",
+      "prompt": "Camera and composition: close-up of a frying pan on a stove. Several scallops in their half shells sizzling in a black frying pan, each topped with a small melting piece of butter and golden edges, a wooden spatula at the side, no people. Background color: warm stove light with cream and gold tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of a frying pan on a stove",
+      "bg": "warm stove light with cream and gold tones"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "저녁 식탁에 가리비찜과 삼치구이를 올려 두고 마주 앉아 웃는 60대 부부",
+      "prompt": "Camera and composition: medium shot at a dining table in the evening. A Korean couple in their 60s, the husband with short gray hair in a navy cardigan and the wife with a short perm in a soft pink sweater, sit across a home dining table smiling, a plate of steamed scallops and a grilled Spanish mackerel with rice bowls between them. Background color: warm evening home lighting with wood tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a dining table in the evening",
+      "bg": "warm evening home lighting with wood tones"
+    }
+  ]
+}
