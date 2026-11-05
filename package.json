@@ -21,9 +21,11 @@
     "images": "node scripts/post-images.mjs",
     "tistory:build": "node scripts/build-tistory.mjs",
     "tistory:lint": "node scripts/lint-tistory.mjs",
-    "tistory:draft": "node scripts/publish-tistory.mjs --save-draft --dump"
+    "tistory:draft": "node scripts/publish-tistory.mjs --save-draft --dump",
+    "clip": "node scripts/clip/make-clip.mjs"
   },
   "dependencies": {
-    "playwright": "^1.47.0"
+    "playwright": "^1.47.0",
+    "ffmpeg-static": "^5.2.0"
   }
 }
