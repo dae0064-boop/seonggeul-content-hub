@@ -3,7 +3,7 @@
  * 인스타 카드뉴스 → 세로 영상 (네이버 클립 · 인스타 릴스 겸용) 예시 (2026-11-05 사용자 —
  * "카드뉴스가 좋은데 눈에 잘 안 들어온다, 대체할 수 있는지 확인하고 예시로 하나").
  *
- *   node scripts/clip/make-reel.mjs content/instagram/sets/<날짜>.json <편 번호> [--out 폴더]
+ *   node scripts/clip/make-reel.mjs content/instagram/sets/<날짜>.json <편 번호> [--out 폴더] [--cards 카드 그림 폴더]
  *
  * 카드뉴스 원고(json)를 그대로 쓴다 — 말을 새로 지어내지 않는다. 그림 값 0원(편의 AI 바탕 사진을 다시 씀).
  *  - 1080×1920, 30fps, 소리 없음(음악은 올릴 때 앱 안의 무료 음악으로)
@@ -36,7 +36,10 @@ fs.mkdirSync(outDir, { recursive: true });
 const b64 = (f) => fs.readFileSync(f).toString('base64');
 const font = (f) => `url(data:font/ttf;base64,${b64(path.join(ROOT, 'scripts/lib/fonts', f))})`;
 const bgFile = [path.join(ROOT, 'content/instagram/bg', `${post.slug}.png`), path.join(ROOT, 'content/instagram/bg/_placeholder.png')].find((f) => fs.existsSync(f));
-const discl = path.join(ROOT, 'content/instagram/images', date, `${no}-${post.slug}`, '07.png');
+const ci = args.indexOf('--cards'); // 카드 그림 폴더 (마지막 장 = 심의 고지). 없으면 content/instagram/images/<날짜>/<번호>-<slug>/
+const cardDir = ci >= 0 ? path.resolve(args[ci + 1]) : path.join(ROOT, 'content/instagram/images', date, `${no}-${post.slug}`);
+const lastCard = fs.existsSync(cardDir) ? fs.readdirSync(cardDir).filter((f) => /^\d+\.png$/.test(f)).sort().pop() : '';
+const discl = lastCard ? path.join(cardDir, lastCard) : '';
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 // [낱말] → 형광펜. d = 이 낱말에 펜이 그어지기 시작하는 시각(초)
 const hi = (s, d) => esc(s).replace(/\[(.+?)\]/g, (_, w) => `<em style="--d:${d}s">${w}</em>`);
@@ -72,7 +75,7 @@ for (const c of post.cards) {
     for (const side of [c.left, c.right]) { h += `<div class="cmp up" style="animation-delay:${t}s"><h4>${esc(side.t)}</h4><p>${side.lines.map(esc).join(' ')}</p></div>`; t += 0.9; }
     if (c.foot) { h += line('foot2', c.foot, t); t += 0.5; }
   } else if (c.type === 'check') {
-    for (const s of c.checks) { h += `<div class="ck up" style="animation-delay:${t}s"><i class="tick" style="animation-delay:${t + 0.2}s">✔</i>${hi(s, t + 0.35)}</div>`; t += 0.75; }
+    for (const s of c.checks) { h += `<div class="ck up" style="animation-delay:${t}s"><i class="tick" style="animation-delay:${t + 0.2}s">✔</i><span>${hi(s, t + 0.35)}</span></div>`; t += 0.75; }
     if (c.cta) { h += `<div class="cta up" style="animation-delay:${t + 0.2}s">📌 ${esc(c.cta)}</div>`; t += 0.6; }
   }
   if (c.terms) { h += `<div class="terms up" style="animation-delay:${t}s">자세한 내용은 약관을 참조하시기 바랍니다</div>`; t += 0.3; }
@@ -121,7 +124,7 @@ em{font-style:normal;color:#FFD978;background:linear-gradient(rgba(255,200,80,.4
 .mark{position:absolute;bottom:90px;left:0;right:0;text-align:center;font-family:GX;font-size:36px;color:rgba(255,255,255,.85)}`;
 
 const avatar = path.join(ROOT, 'content/instagram/avatar.png');
-const N = scenes.length + (fs.existsSync(discl) ? 1 : 0);
+const N = scenes.length + (discl ? 1 : 0);
 const page = (s, i) => `<!doctype html><meta charset="utf-8"><style>${css}</style><body style="--D:${s.dur}s">
 <div class="bg"></div><div class="shade"></div>
 <div class="bars">${Array.from({ length: N }, (_, k) => `<i class="${k === i ? 'now' : ''}" style="--w:${k < i ? '100%' : '0'}"><b></b></i>`).join('')}</div>
@@ -148,7 +151,7 @@ try {
     }
     if (i === 0) await pg.screenshot({ path: path.join(outDir, `${post.slug}-cover.jpg`), type: 'jpeg', quality: 90 });
   }
-  if (fs.existsSync(discl)) {
+  if (discl) {
     // 심의 고지 장 — 카드 그대로, 4초
     await pg.setContent(`<body style="margin:0;width:1080px;height:1920px;background:#000;display:flex;align-items:center;justify-content:center"><img src="data:image/png;base64,${b64(discl)}" style="width:1080px"></body>`);
     const f0 = path.join(fdir, 'discl.jpg'); await pg.screenshot({ path: f0, type: 'jpeg', quality: 92 });

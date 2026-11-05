@@ -20,3 +20,6 @@
 - 같은 영상을 **인스타 릴스와 네이버 클립 모두**에 쓸 수 있다(둘 다 9:16, 90초 안쪽).
 - ⚠ 심의: 그림 카드의 심의필을 영상에 옮겨 쓰지 않는다 — 영상은 새 광고물이라 영상으로 따로 GOMS 심의를 받은 뒤에만 올린다. 지금 PC 의 GOMS 자동 등록은 Word(카드) 기준이라 영상 등록은 아직 없다.
 - 첫 예시: 2편 「보험금 청구 3년」(2026-11-05, 클라우드에서 만들어 사용자에게 보냄). 올리지 않음.
+- **상담 유도형 예시 (2026-11-05 사용자 — "상담을 유도하려고 만드는 건데 상품 설명만 하는 느낌")**: `content/instagram/examples/sangdam-claim-3years.json`(카드 6장 + 게시글 본문) · 그린 카드 `…-cards/` ·
+  영상 `node scripts/clip/make-reel.mjs content/instagram/examples/sangdam-claim-3years.json 2 --cards content/instagram/examples/sangdam-claim-3years-cards`.
+  흐름: 내 이야기 표지 → 카톡(“증권을 같이 봐야 알아요”) → 법 근거 1장 → "사람마다 달라요" → "제가 먼저 확인하는 세 가지" → 댓글·DM·증권 같이 확인(가입·해지 권유 없음) → 고지. 심의·게시용 아님, 사용자 답 기다림.
