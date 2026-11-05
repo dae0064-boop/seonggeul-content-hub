@@ -231,24 +231,33 @@ function pngRatio(dataUrl) {
   } catch { return 1; }
 }
 
+/** 이슈 글 대표사진(look: news)의 그림 높이 — 가로로 긴 사진이면 사진 높이 + 글씨 띠, 아니면 정사각형 */
+export function newsThumbHeight(imgDataUrl, S, o) {
+  const ratio = pngRatio(imgDataUrl);
+  if (o.fit === 'cover' || ratio <= 1.25) return S;
+  return Math.round(S / ratio) + (String(o.title || '').trim() ? Math.round(S * 0.13) : 0);
+}
+
 function newsThumbHtml(imgDataUrl, S, o) {
   const face = ptdFace();
   const fam = face ? `"PTD",${STYLE.font}` : STYLE.font;
   const text = String(o.title || '').replace(/\n/g, ' ').trim();
-  const pos = o.focus || (pngRatio(imgDataUrl) > 1.25 ? 'center center' : 'center 22%');
-  // 2026-11-05 사용자 — 위아래 흐린 빈 곳 없이 사진으로 꽉 채우고 글씨만 아래에 얹는다 ("위 공백까지 사진으로, 밑 공백도 없애고 글씨만").
-  // 그래서 가로로 긴 사진(16:9)도 기본은 꽉 채움(cover). 가로가 잘리는 만큼 o.focus 로 보일 자리를 고른다 ('40% center' 처럼 첫 값이 가로).
-  // 예전 모양(사진 전체 + 위아래 흐린 채움)은 o.fit: 'contain' 일 때만 쓴다 (2026-11-03 계약결혼 대표사진 — 사람이 잘려 그렇게 했었다).
-  if (o.fit === 'contain') return `<!doctype html><meta charset="utf-8"><style>
+  const pos = o.focus || 'center 22%';
+  // 2026-11-05 사용자 — 가로로 긴 사진(방송 장면·유튜브 표지 16:9)은 사진 전체가 다 보이되 위아래 흐린 빈 곳이 없게:
+  // 그림 자체를 정사각형이 아니라 '사진 + 아래 글씨 띠' 높이로 만든다 (newsThumbHeight). 사진은 맨 위부터 가로 꽉, 잘림 없음.
+  // 2026-11-03 계약결혼 대표사진 — 가운데만 자르면 사람·화면 글씨가 잘렸다(사용자 "짤려있잖아"). o.fit: 'cover' 면 정사각형으로 자른다.
+  const H = newsThumbHeight(imgDataUrl, S, o);
+  if (H !== S) {
+    const ph = Math.round(S / pngRatio(imgDataUrl));
+    return `<!doctype html><meta charset="utf-8"><style>
     ${face}
     *{margin:0;box-sizing:border-box}
-    body{width:${S}px;height:${S}px;position:relative;overflow:hidden;background:#111;font-family:${fam}}
-    .bg{position:absolute;inset:-${S * 0.06}px;width:calc(100% + ${S * 0.12}px);height:calc(100% + ${S * 0.12}px);object-fit:cover;filter:blur(${Math.round(S * 0.03)}px) brightness(.55)}
-    .fg{position:absolute;left:0;right:0;top:${S * 0.04}px;bottom:${S * 0.2}px;width:100%;height:${S * 0.76}px;object-fit:contain}
-    .cap{position:absolute;left:${S * 0.05}px;right:${S * 0.05}px;bottom:${S * 0.06}px;color:#fff;font-weight:800;text-align:center;
-      font-size:${Math.round(S * 0.058)}px;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
-      letter-spacing:-.01em;text-shadow:0 ${S * 0.003}px ${S * 0.01}px rgba(0,0,0,.5)}
-  </style><body><img class="bg" src="${imgDataUrl}"><img class="fg" src="${imgDataUrl}">${text ? `<div class="cap">${esc(text)}</div>` : ''}</body>`;
+    body{width:${S}px;height:${H}px;position:relative;overflow:hidden;background:#111;font-family:${fam}}
+    img{position:absolute;left:0;top:0;width:${S}px;height:${ph}px;object-fit:cover}
+    .cap{position:absolute;left:${S * 0.04}px;right:${S * 0.04}px;top:${ph}px;bottom:0;display:flex;align-items:center;justify-content:center;
+      color:#fff;font-weight:800;font-size:${Math.round(S * 0.058)}px;line-height:1.2;white-space:nowrap;overflow:hidden;letter-spacing:-.01em}
+  </style><body><img src="${imgDataUrl}">${text ? `<div class="cap">${esc(text)}</div>` : ''}</body>`;
+  }
   return `<!doctype html><meta charset="utf-8"><style>
     ${face}
     *{margin:0;box-sizing:border-box}
@@ -655,8 +664,9 @@ export async function renderOverlays(jobs) {
     for (const j of jobs) {
       const size = j.size || 1024;
       // 실제 사진(공식 사진)을 얹을 때는 1.5배로 찍는다 (1536px) — 사진이 1024 로 뭉개지지 않게 (2026-11-04 사용자 "사진이 흐릿해")
-      const page = await browser.newPage({ viewport: { width: size, height: size }, deviceScaleFactor: j.scale || 1 });
       const data = `data:image/png;base64,${fs.readFileSync(j.src).toString('base64')}`;
+      const height = j.overlay?.kind === 'thumb' && j.overlay?.look === 'news' && !j.overlay?.frame ? newsThumbHeight(data, size, j.overlay) : size;
+      const page = await browser.newPage({ viewport: { width: size, height }, deviceScaleFactor: j.scale || 1 });
       await page.setContent(html(data, size, j.overlay), { waitUntil: 'load' });
       await page.evaluate(() => document.fonts.ready);
       // 글씨가 칸을 넘으면 넘지 않을 때까지 줄인다 (줄바꿈으로 "챙기나 / 요?" 처럼 끊기지 않게)
