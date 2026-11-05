@@ -171,6 +171,7 @@
    `file_path: content/threads/insurance/schedule/index.html`, `files: {"data.json": "content/threads/insurance/schedule/data.json"}` 로 다시 올린다. data.json 은 같은 PR 에.
    보고에 한 줄: 어제 올라간 편(번호·첫 줄), 오늘 올라갈 편, **게시 예정(승인 재고)이 10편 밑이면 보고 첫 줄(6)에 "⚠ 스레드 승인 재고 N편 — 이틀 안에 끊길 수 있어요"**,
    GOMS 자동 등록(`run-logs/goms-register-*`) 결과(등록한 번호·멈춤). 반려가 새로 생겼으면 "`goms-revise.cmd` 더블클릭 → 0" 을 사람이 할 일로 적는다.
+5-2-9. **인스타 새 편 태클 점검** (2026-11-05 사용자 — "태클 걸리지 않는 주제로만"): 어젯밤 새로 생긴 `content/instagram/sets/*.json` 편마다 `태클점검` ⓐ~ⓔ 가 실제 카드 내용과 맞는지 본다 — 보험사 의무로 읽히는 말·계산·해지/가입 연결·예외가 둘 이상인 곳이 있으면 그 편은 Word 를 확정하지 말고(바탕 받기 전이면 원고에서 빼고) 보고에 한 줄. 아직 GOMS 에 등록 안 된 편만.
 5-3. **인스타 카드뉴스 심의필 그림** (2026-11-02 사용자 — "보험심의를 자동으로 올리는 걸 진행". 스레드 PAUSE 와 상관없이 한다, `content/instagram/PAUSE` 가 있으면 건너뜀):
    Drive `ClaudeWorkspace/goms-approved-insta.tsv`(아침 PC 의 `insta-goms.ps1` 이 GOMS 승인완료 「인스타 카드뉴스 N편」을 읽어 적는다)가 있으면 받아
    `node scripts/instagram/finalize.mjs --approved <받은 tsv>` → 새로 생긴 `content/instagram/final/<N>/`(01~NN.jpg·approval.txt)를 같은 PR 에 넣는다.

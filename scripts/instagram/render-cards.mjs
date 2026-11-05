@@ -280,6 +280,13 @@ for (const p of set.posts) {
     console.log('⚠ ' + msg);
   }
 }
+// 🛡 태클 점검 기록 (2026-11-05 사용자 — "태클 걸리지 않는 주제로만", routines/instagram-daily.md ② 3) — 11/6 세트부터 ⓐ~ⓔ 다섯 줄이 없으면 멈춘다
+for (const p of set.posts) {
+  if (day < '2026-11-06' || !/^\d{4}-\d{2}-\d{2}$/.test(day)) break;
+  const t = p['태클점검'] || [];
+  const miss = ['ⓐ', 'ⓑ', 'ⓒ', 'ⓓ', 'ⓔ'].filter((k) => !t.some((x) => String(x).startsWith(k)));
+  if (miss.length) throw new Error(`${p.no}편: 태클점검 ${miss.join('')} 가 없어요 — 글감 고르기 ⓐ~ⓔ 를 통과한 주제만 씁니다 (routines/instagram-daily.md ② 3)`);
+}
 const browser = await chromium.launch();
 const pg = await browser.newPage({ viewport: { width: 1080, height: 1080 } });
 let made = 0;
