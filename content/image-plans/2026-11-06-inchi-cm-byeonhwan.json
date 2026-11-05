@@ -1,0 +1,74 @@
+{
+  "slug": "2026-11-06-inchi-cm-byeonhwan",
+  "title": "인치 cm 변환, TV 인치는 어디를 잰 숫자일까 (1인치 2.54cm)",
+  "source": "11/6(금) 티스토리 원고 1회차 (11/5 밤 작성) 21:00",
+  "note": "4장(대표 1 + 첫머리 카드 1 + 메모·채팅 카드 1 + 장면 사진 1) — 2026-11-06 원고부터. 장소·주인공·구도·배경색 서로 다르게",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "거실 TV장 앞에서 줄자를 들고 폭을 재며 생각에 잠긴 30대 남성 (대표사진)",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A cozy living room diorama, a small Korean man in his 30s in a coral sweater holding a tape measure in front of a low wooden TV cabinet with a blank wall above. Expression: thoughtful, finger on chin. Color theme: warm brown wood and ivory tones with a coral accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "방·장소 전체, 사람은 작게",
+      "bg": "warm brown wood and ivory tones with a coral accent",
+      "note": "대표",
+      "thumb_shot": "wide",
+      "thumb_theme": "charcoal",
+      "thumb_person": "30대 남성",
+      "thumb_mood": "생각",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "charcoal",
+        "font": "jua",
+        "title": "인치 cm 변환\nTV 어디를 잴까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "인치 cm 변환이 궁금한 사람의 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "인치 cm",
+        "title": "65인치는\n몇 cm예요?",
+        "ask": "우리 장에 들어갈까요?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "TV 인치별 대각선과 가로 길이를 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "style": "memo",
+        "title": "이렇게 계산해요",
+        "sub": "인치 cm 변환, 곱하기 세 가지",
+        "items": [
+          "1인치는 2.54cm",
+          "인치에 2.54를 곱하면",
+          "0.87을 곱하면 가로 길이",
+          "0.49를 곱하면"
+        ],
+        "memo": "TV 인치는 대각선이에요",
+        "hl": 3
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "거실 벽에 걸린 큰 TV와 그 아래 낮은 원목 TV장이 있는 모습",
+      "prompt": "Camera and composition: medium wide shot of a living room wall. A large flat TV mounted on a living room wall above a low wooden cabinet, the screen dark and blank, no people. Background color: warm beige. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium wide shot of a living room wall",
+      "bg": "warm beige",
+      "kind": "photo",
+      "photo": {
+        "query_en": "living room tv wall",
+        "scene_en": "large television on a living room wall above a wooden cabinet"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}
