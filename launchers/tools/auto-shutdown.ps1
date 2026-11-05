@@ -31,6 +31,7 @@ function Log([string]$m, [string]$c = 'Gray') {
 }
 Log "시작$(if ($Test) { ' (시험)' })"
 if (-not $Test -and (Test-Path (Join-Path $repo 'dumps\no-auto-shutdown.txt'))) { Log '자동 끄기 꺼 둠 (dumps\no-auto-shutdown.txt) — PC 를 켜 둡니다.'; exit 0 }
+if (-not $Test -and (Test-SleepAfterWork)) { Log '작업 뒤 바로 절전 기간 — 묻는 창 없이 절전 담당(sleeper.ps1)이 재웁니다.'; exit 0 }
 $away = Get-AwayUntil
 if (-not $Test -and $away) { Log "집 비움 모드 ($($away.ToString('M월 d일'))까지, content\away.txt) — 원격으로 들어갈 수 있게 절전하지 않습니다."; exit 0 }
 
