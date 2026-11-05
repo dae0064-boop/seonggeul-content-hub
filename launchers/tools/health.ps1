@@ -57,6 +57,15 @@ if ($awayUntil) {
   Remove-Item $backup -Force
   $awayNote = " · 집 비움 모드 끝 — 절전 시간을 원래대로 (절전 $($b.standby)초)"
 }
+# ⓪-2 맛집 예약 확인 쉬기 (content\away.txt matjip_pause_until — 그날까지 작업을 꺼서 PC 를 깨우지 않는다)
+$mjf = Join-Path $repo 'content\away.txt'
+$mjm = if (Test-Path $mjf) { Select-String -Path $mjf -Pattern '^\s*matjip_pause_until:\s*(\d{4}-\d{2}-\d{2})' | Select-Object -First 1 } else { $null }
+$mjPause = $mjm -and ((Get-Date).Date -le [datetime]::ParseExact($mjm.Matches[0].Groups[1].Value, 'yyyy-MM-dd', $null))
+$mjTask = Get-ScheduledTask -TaskName 'SeonggeulMatjipWatch' -ErrorAction SilentlyContinue
+if ($mjTask) {
+  if ($mjPause -and $mjTask.State -ne 'Disabled') { Disable-ScheduledTask -TaskName 'SeonggeulMatjipWatch' | Out-Null; $awayNote += ' · 맛집 예약 확인 쉼(깨우지 않음)' }
+  elseif (-not $mjPause -and $mjTask.State -eq 'Disabled') { Enable-ScheduledTask -TaskName 'SeonggeulMatjipWatch' | Out-Null; $awayNote += ' · 맛집 예약 확인 다시 켬' }
+}
 $chromeNote += $awayNote
 
 $busy = @(Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -ne $PID -and $_.CommandLine -match 'auto-day\.cmd|draft-day\.ps1|tistory-day\.ps1|publish-naver\.mjs|publish-tistory\.mjs|post-images\.mjs|catchup-reserve\.ps1|matjip|category-move|goms-ad\.mjs|insta-post' })
