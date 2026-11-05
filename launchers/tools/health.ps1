@@ -29,6 +29,35 @@ if (-not (CdpUp)) {
   $chromeNote = if (CdpUp) { '⚠ 크롬이 꺼져 있어 다시 켬' } else { '❌ 크롬을 다시 켜지 못함' }
 }
 
+# ⓪ 집 비움 모드 — 윈도우 절전·최대 절전을 '안 함'으로, 끝나면 원래대로 (원래 값은 dumps\away-power-backup.txt)
+$awayNote = ''
+$backup = Join-Path $repo 'dumps\away-power-backup.txt'
+function AcIndex($sub, $set) { $o = powercfg /q SCHEME_CURRENT $sub $set 2>$null; $l = $o | Where-Object { $_ -match 'AC' -and $_ -match '0x[0-9a-fA-F]+' } | Select-Object -Last 1; if ($l -match '(0x[0-9a-fA-F]+)') { [Convert]::ToInt32($Matches[1], 16) } else { $null } }
+$awayUntil = Get-AwayUntil
+if ($awayUntil) {
+  if (-not (Test-Path $backup)) {
+    $sb = AcIndex 'SUB_SLEEP' 'STANDBYIDLE'; $hb = AcIndex 'SUB_SLEEP' 'HIBERNATEIDLE'; $ub = AcIndex 'SUB_SLEEP' 'UNATTENDSLEEP'
+    New-Item -ItemType Directory -Force -Path (Split-Path $backup) | Out-Null
+    "standby=$sb`nhibernate=$hb`nunattend=$ub" | Set-Content -Encoding UTF8 $backup
+  }
+  powercfg /SETACVALUEINDEX SCHEME_CURRENT SUB_SLEEP STANDBYIDLE 0 2>$null | Out-Null
+  powercfg /SETACVALUEINDEX SCHEME_CURRENT SUB_SLEEP HIBERNATEIDLE 0 2>$null | Out-Null
+  # 작업이 깨운 PC 를 2분 뒤 다시 재우는 '무인 절전 시간'도 끈다 — 켜졌다 꺼졌다의 원인
+  powercfg /SETACVALUEINDEX SCHEME_CURRENT SUB_SLEEP UNATTENDSLEEP 0 2>$null | Out-Null
+  powercfg /SETACTIVE SCHEME_CURRENT 2>$null | Out-Null
+  $now0 = AcIndex 'SUB_SLEEP' 'STANDBYIDLE'
+  $awayNote = if ($now0 -eq 0) { " · 집 비움 모드($($awayUntil.ToString('M/d'))까지): 절전 안 함" } else { " · ⚠ 집 비움 모드인데 절전 '안 함'으로 못 바꿈 (지금 $now0 초)" }
+} elseif (Test-Path $backup) {
+  $b = @{}; Get-Content $backup -Encoding UTF8 | ForEach-Object { if ($_ -match '^(\w+)=(\d+)$') { $b[$Matches[1]] = $Matches[2] } }
+  if ($b.standby) { powercfg /SETACVALUEINDEX SCHEME_CURRENT SUB_SLEEP STANDBYIDLE $b.standby 2>$null | Out-Null }
+  if ($b.hibernate) { powercfg /SETACVALUEINDEX SCHEME_CURRENT SUB_SLEEP HIBERNATEIDLE $b.hibernate 2>$null | Out-Null }
+  if ($b.unattend) { powercfg /SETACVALUEINDEX SCHEME_CURRENT SUB_SLEEP UNATTENDSLEEP $b.unattend 2>$null | Out-Null }
+  powercfg /SETACTIVE SCHEME_CURRENT 2>$null | Out-Null
+  Remove-Item $backup -Force
+  $awayNote = " · 집 비움 모드 끝 — 절전 시간을 원래대로 (절전 $($b.standby)초)"
+}
+$chromeNote += $awayNote
+
 $busy = @(Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -ne $PID -and $_.CommandLine -match 'auto-day\.cmd|draft-day\.ps1|tistory-day\.ps1|publish-naver\.mjs|publish-tistory\.mjs|post-images\.mjs|catchup-reserve\.ps1|matjip|category-move|goms-ad\.mjs|insta-post' })
 if ($busy.Count) { Note "$chromeNote · 다른 작업이 돌고 있어 나머지는 쉼"; exit 0 }
 

@@ -43,3 +43,16 @@ function Sync-LocalLocks([string]$Date) {
   }
   return $n
 }
+
+# 집 비움 모드 (2026-11-05 사용자 — "절전이 켜졌다 꺼졌다 한다", 원격으로 들어가야 하는데 절전이면 못 들어간다).
+#   저장소 content\away.txt 의 'until: YYYY-MM-DD' 날까지(그날 포함) 아침 작업 뒤 자동 절전을 하지 않고, 지킴이(health.ps1)가 윈도우 절전을 '안 함'으로 둔다.
+#   날이 지나면 지킴이가 원래 절전 시간으로 되돌린다. 클라우드 Claude 가 이 파일만 고치면 PC 가 따른다.
+function Get-AwayUntil {
+  $f = Join-Path (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent) 'content\away.txt'
+  if (-not (Test-Path $f)) { return $null }
+  $m = Select-String -Path $f -Pattern '^\s*until:\s*(\d{4}-\d{2}-\d{2})' | Select-Object -First 1
+  if (-not $m) { return $null }
+  $d = [datetime]::ParseExact($m.Matches[0].Groups[1].Value, 'yyyy-MM-dd', $null)
+  if ((Get-Date).Date -le $d) { return $d } else { return $null }
+}
+
