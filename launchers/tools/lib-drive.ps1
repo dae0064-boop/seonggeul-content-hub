@@ -56,3 +56,16 @@ function Get-AwayUntil {
   if ((Get-Date).Date -le $d) { return $d } else { return $null }
 }
 
+# 작업 뒤 바로 절전 (2026-11-05 사용자 — "11/6~일요일: 작업할 때는 켜고, 안 하면 바로 절전. 집에 없어서 바로 절전해도 상관없어").
+#   content\away.txt 의 'sleep_after_work: 시작일 끝일' 사이(양끝 포함)면 $true. 절전 담당(sleeper.ps1, 5분마다)이 본다.
+function Test-SleepAfterWork {
+  $f = Join-Path (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent) 'content\away.txt'
+  if (-not (Test-Path $f)) { return $false }
+  $m = Select-String -Path $f -Pattern '^\s*sleep_after_work:\s*(\d{4}-\d{2}-\d{2})\s+(\d{4}-\d{2}-\d{2})' | Select-Object -First 1
+  if (-not $m) { return $false }
+  $a = [datetime]::ParseExact($m.Matches[0].Groups[1].Value, 'yyyy-MM-dd', $null)
+  $b = [datetime]::ParseExact($m.Matches[0].Groups[2].Value, 'yyyy-MM-dd', $null)
+  $t = (Get-Date).Date
+  return ($t -ge $a -and $t -le $b)
+}
+
