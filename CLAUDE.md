@@ -751,8 +751,8 @@ GOMS 는 로그인할 때 곰스에 등록된 사용자 휴대폰으로 인증�
 **사용자가 어느 대화에서든 "PC 깨워 줘", "절전 풀어 줘", "원격 들어갈게" 같은 말을 하면 다른 일보다 먼저** Drive `ClaudeWorkspace`(id `1YpVcDBSupzdKKR-YoeFQL-UKNXWOR6Cw`)의
 `stay-awake.txt` 를 `until: YYYY-MM-DD HH:mm` 한 줄로 쓴다 (한국 시각, 기본 지금 + 2시간, 사용자가 시간을 말하면 그대로). 있으면 `update_file`, 없으면 `create_file` —
 `contentMimeType: text/plain`, **`disableConversionToGoogleType: true`**. 확인 질문은 하지 않는다. "그만 깨워도 돼"면 시각을 지금으로 바꾼다.
-절전 중인 PC 는 바깥 신호를 못 받는다 — **다음에 깨어날 때**(지킴이 매시간 :40, 맛집 확인 07·10·13·16·19·22시, 그 밖의 작업 시각) 읽고 그 시각까지 잠들지 않는다(`launchers/tools/stay-awake.ps1`).
-그래서 사용자에게 "다음 :40 쯤부터 들어갈 수 있어요"라고 알린다. 깨어 있기 시작하면 Drive `run-logs/stay-awake-<날짜>.txt` 에 줄이 남는다 — 확인해서 알려 준다.
+절전 중인 PC 는 바깥 신호를 못 받는다 — **다음에 깨어날 때**(지킴이 07:40·08:40, 스레드·발행 같은 작업 시각 — 맛집 확인은 11/8 까지 쉼) 읽고 그 시각까지 잠들지 않는다(`launchers/tools/stay-awake.ps1`).
+그래서 사용자에게 다음 작업 시각(스레드 시각 등)부터 들어갈 수 있다고 알린다. 깨어 있기 시작하면 Drive `run-logs/stay-awake-<날짜>.txt` 에 줄이 남는다 — 확인해서 알려 준다.
 
 ## 검수 도구
 
