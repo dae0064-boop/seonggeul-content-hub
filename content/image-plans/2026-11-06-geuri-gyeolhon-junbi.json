@@ -1,0 +1,109 @@
+{
+  "slug": "2026-11-06-geuri-gyeolhon-junbi",
+  "title": "그리 결혼 준비, 설정이라더니 이번엔 진짜일까",
+  "source": "11/6(금) 18:40 네이버 원고 — 아침 이슈 2차(연예·예능), 홈판형",
+  "note": "대표 = E채널 「서인영의 유행꼰대」 공식 유튜브 클립 표지(위키미디어 단독 사진 없음) — 못 받으면 사람 없는 그림. 카드 2 + 그림 3",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "kind": "photo",
+      "title": "그리 방송 출연 공식 영상 장면 (대표사진)",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "유행꼰대 그리",
+            "must": [
+              "그리"
+            ],
+            "episode": [
+              "6회",
+              "EP.6"
+            ],
+            "channels": [
+              "E채널",
+              "티캐스트 E채널",
+              "E CHANNEL",
+              "Echannel"
+            ],
+            "prefer": [
+              "그리",
+              "결혼"
+            ]
+          },
+          "owner": "E채널",
+          "program": "서인영의 유행꼰대"
+        },
+        "person": [
+          "Gree",
+          "그리",
+          "김동현"
+        ],
+        "query": "그리",
+        "query_en": "Gree"
+      },
+      "note": "대표: E채널 「서인영의 유행꼰대」 6회 공식 클립 표지 → 없으면 사람 없는 그림(실존 인물 그리지 않음)",
+      "thumb_shot": "overhead",
+      "thumb_theme": "plum",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "그리 결혼, 이번엔 진짜?",
+        "focus": "center 25%",
+        "theme": "plum"
+      },
+      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A bouquet of white flowers, a wedding magazine, a coffee cup and a small ring box arranged on a light wooden table. Color theme: cocoa brown and peach tones with a cream accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "kind": "card",
+      "title": "결혼 이야기를 여는 첫머리 카드",
+      "card": {
+        "type": "lead",
+        "keyword": "그리 결혼",
+        "title": "이번엔\n진짜예요?",
+        "ask": "그리가 진짜 장가가?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "소파 위에 놓인 웨딩 잡지와 커피잔",
+      "prompt": "Camera and composition: close-up of a sofa corner. A wedding magazine and a coffee cup placed on a light grey sofa cushion in a bright living room, no people. Background color: soft cream and light grey. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "kind": "card",
+      "title": "결혼 이야기 순서를 정리한 메모 카드",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "그리 결혼 이야기 순서",
+        "sub": "설정에서 근황까지",
+        "items": [
+          "8월, 결혼하려구요 영상",
+          "10월, 김구라 '설정' 해명",
+          "결혼정보회사 방문 영상",
+          "11월 5일, 유행꼰대 출연"
+        ],
+        "memo": "결혼 날짜는 아직 밝혀지지 않았어요",
+        "hl": 4
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "저녁 거실 TV 앞에 놓인 간식 바구니",
+      "prompt": "Camera and composition: medium shot of a living room. A cozy living room in the evening with a TV glowing softly and a basket of snacks on a low table, no people. Background color: warm lamp light and soft orange. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "햇살 드는 창가 테이블 위 꽃다발",
+      "prompt": "Camera and composition: close-up of a window table. A bouquet of white and pink flowers wrapped in paper lying on a table by a sunny window, no people. Background color: soft pink and warm white. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}
