@@ -150,7 +150,8 @@
     "",
     "#보험금청구 #실손청구 #병원비"
    ],
-   "bg_prompt": "x, no money, no coins, no banknotes, no currency symbols"
+   "bg_prompt": "x, no money, no coins, no banknotes, no currency symbols",
+   "balance": true
   }
  ],
  "_설명": "상담 유도형 예시 (2026-11-05 사용자 — \"상담을 유도하려고 만드는 건데 상품 설명만 하는 느낌\", \"하나 예시로 클립이랑 카드까지\"). 심의·게시용 아님. 2편과 같은 사실(상법 제662조)로 흐름만 바꿈."

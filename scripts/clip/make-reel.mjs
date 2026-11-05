@@ -72,7 +72,7 @@ for (const c of post.cards) {
   } else if (c.type === 'steps') {
     for (const [n, s] of c.steps) { h += `<div class="step up" style="animation-delay:${t}s"><b>${esc(n)}</b><span>${hi(s, t + 0.35)}</span></div>`; t += 0.85; }
   } else if (c.type === 'compare') {
-    for (const side of [c.left, c.right]) { h += `<div class="cmp up" style="animation-delay:${t}s"><h4>${esc(side.t)}</h4><p>${side.lines.map(esc).join(' ')}</p></div>`; t += 0.9; }
+    for (const side of [c.left, c.right]) { h += `<div class="cmp up" style="animation-delay:${t}s"><h4>${esc(side.t)}</h4><p>${side.lines.map(esc).join('<br>')}</p></div>`; t += 0.9; }
     if (c.foot) { h += line('foot2', c.foot, t); t += 0.5; }
   } else if (c.type === 'check') {
     for (const s of c.checks) { h += `<div class="ck up" style="animation-delay:${t}s"><i class="tick" style="animation-delay:${t + 0.2}s">✔</i><span>${hi(s, t + 0.35)}</span></div>`; t += 0.75; }
@@ -86,7 +86,7 @@ for (const c of post.cards) {
 const BG = `data:image/png;base64,${b64(bgFile)}`;
 const css = `@font-face{font-family:Ser;src:${font('NotoSerifKR-Black.ttf')}}@font-face{font-family:H;src:${font('BlackHanSans-Regular.ttf')}}
 @font-face{font-family:GB;src:${font('GothicA1-Bold.ttf')}}@font-face{font-family:GX;src:${font('GothicA1-ExtraBold.ttf')}}
-*{margin:0;box-sizing:border-box}body{width:1080px;height:1920px;overflow:hidden;background:#000;color:#fff;font-family:GB,sans-serif;word-break:keep-all;position:relative}
+*{margin:0;box-sizing:border-box}body{width:1080px;height:1920px;overflow:hidden;background:#000;color:#fff;font-family:GB,sans-serif;word-break:keep-all;text-wrap:balance;position:relative}
 .bg{position:absolute;inset:-40px;background:url(${BG}) center/cover;filter:brightness(1.25);animation:zoom var(--D) linear both}
 @keyframes zoom{from{transform:scale(1.05)}to{transform:scale(1.18) translateY(-20px)}}
 .shade{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.72),rgba(0,0,0,.38) 45%,rgba(0,0,0,.7))}
@@ -143,6 +143,8 @@ try {
   for (let i = 0; i < scenes.length; i++) {
     await pg.setContent(page(scenes[i], i), { waitUntil: 'load' });
     await pg.evaluate(() => document.fonts.ready);
+    // 원고에서 한 줄로 쓴 제목 줄이 두 줄로 끊기면 글씨를 줄여 한 줄에 (사용자 — "글자가 애매하게 끊긴다")
+    await pg.evaluate(() => { for (const el of document.querySelectorAll('.h1,.h2')) { const lh = parseFloat(getComputedStyle(el).lineHeight); let fs = parseFloat(getComputedStyle(el).fontSize); const min = fs * 0.7; while (el.offsetHeight > lh * 1.3 && fs > min) { fs *= 0.96; el.style.fontSize = fs + 'px'; el.style.lineHeight = lh * fs / parseFloat(getComputedStyle(el).fontSize) + 'px'; } } });
     await pg.evaluate(() => document.getAnimations().forEach((a) => a.pause()));
     const n = Math.round(scenes[i].dur * FPS);
     for (let f = 0; f < n; f++) {
