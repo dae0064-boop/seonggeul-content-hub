@@ -53,9 +53,26 @@ export async function tistoryRelogin(page, targetUrl, log = () => {}) {
       await sleep(400);
       await pw.click({ timeout: 3000 }).catch(() => {});
       await sleep(800);
-      const filled = await pw.evaluate((el) => (el.value || '').length > 0).catch(() => false);
-      const idFilled = await id.evaluate((el) => (el.value || '').length > 0).catch(() => false);
+      let filled = await pw.evaluate((el) => (el.value || '').length > 0).catch(() => false);
+      let idFilled = await id.evaluate((el) => (el.value || '').length > 0).catch(() => false);
+      if (!(filled && idFilled)) {
+        // 2026-11-05 사용자 화면: 아이디 칸을 누르면 크롬의 저장된 계정 목록(dae0064@daum.net ••••)이 뜬다 — 사람이 그걸 누르면 채워진다.
+        // 목록은 크롬 화면이라 글자로 못 찾으므로 키보드로 고른다: 아이디 칸에서 ↓ → Enter (첫 저장 계정)
+        log('카카오 로그인 칸이 비어 있음 → 크롬 저장 계정 목록에서 첫 계정 고름 (↓ Enter)');
+        await id.click({ timeout: 3000 }).catch(() => {});
+        await sleep(700);
+        await page.keyboard.press('ArrowDown').catch(() => {});
+        await sleep(300);
+        await page.keyboard.press('Enter').catch(() => {});
+        await sleep(1200);
+        await pw.click({ timeout: 3000 }).catch(() => {});
+        await sleep(600);
+        filled = await pw.evaluate((el) => (el.value || '').length > 0).catch(() => false);
+        idFilled = await id.evaluate((el) => (el.value || '').length > 0).catch(() => false);
+      }
+      await page.keyboard.press('Escape').catch(() => {}); // 계정 목록이 '간편로그인 정보 저장'·[로그인] 을 가리지 않게 닫는다
       if (filled && idFilled) {
+        // '간편로그인 정보 저장'을 켜 두면 다음부터는 계정 선택 화면에서 계정만 누르면 된다 (10:15 시험에서 통한 길)
         const keep = page.locator('input[type="checkbox"][name="saveSignedIn"], input#saveSignedIn--4, input[type="checkbox"]').first();
         if (await keep.count().catch(() => 0) && !(await keep.isChecked().catch(() => true))) await keep.check({ force: true }).catch(() => {});
         log('카카오 로그인 칸에 크롬이 저장한 아이디·비밀번호가 채워져 있음 → [로그인] 누름 (비밀번호는 넣지 않음)');
