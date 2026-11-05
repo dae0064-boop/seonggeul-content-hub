@@ -13,6 +13,7 @@ git checkout -q -- "content/posts/*.json" "content/tistory/*.json" "content/tist
 git pull -q --ff-only 2>$null
 . (Join-Path $PSScriptRoot 'lib-drive.ps1')
 $drive = Find-MyDrive
+Invoke-StayAwakeRequest 45   # 잠시 깨어 있기 요청 (2026-11-05)
 $marks = if ($drive) { Join-Path $drive 'ClaudeWorkspace\run-locks\matjip' } else { Join-Path $repo 'dumps\matjip-done' }
 New-Item -ItemType Directory -Force -Path $marks | Out-Null
 $todo = @()
