@@ -1,0 +1,99 @@
+{
+  "slug": "2026-11-06-gul-jeecheol",
+  "title": "굴 고르는 방법, 껍데기가 벌어진 굴은 버려야 할까?",
+  "source": "11/6(금) 20:00 네이버 원고 — 생활정보 홈판형(제철 '언제·고르는 법'), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 대표사진 얼굴 구도(thumb_shot face). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "시장 얼음판 위 굴을 고르며 웃는 40대 여성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her early 40s with a short bob haircut in a navy apron, gently holding a fresh oyster in one hand near her chest and smiling at the camera with a pleased, curious expression, a seafood counter with crushed ice softly blurred behind her. Facial expression: pleased gentle smile. Color theme: warm ivory and walnut brown tones with a butter-yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (seafood market counter, home kitchen, dinner table), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "warm ivory and walnut brown tones with a butter-yellow accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "navy",
+      "thumb_person": "40대 초반 단발 여성 (앞치마)",
+      "thumb_mood": "궁금",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "navy",
+        "font": "jua",
+        "title": "굴 고르는 방법\n껍데기 벌어진 건?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "생선 가게 얼음 위 굴 바구니를 살펴보는 손",
+      "prompt": "Camera and composition: close-up at a fish market counter, two hands only (no face visible) picking up and turning over fresh closed oyster shells from a wooden crate on crushed ice. Background color: cool blue-gray market light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (seafood market counter, home kitchen, dinner table), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up at a fish market counter",
+      "bg": "cool blue-gray market light"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "굴 고르는 기준을 체크리스트로 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "굴 고르는 체크 목록",
+        "items": [
+          "껍데기가 깨지지 않았는지",
+          "물빛이 맑고 뿌옇지 않은지",
+          "살이 통통하고 윤기가 도는지",
+          "시큼한 냄새가 나지 않는지",
+          "바다 냄새가 은은한지"
+        ],
+        "ask": "굴 고르는 법 알려 주세요"
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "생굴과 익힌 굴 비교 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "생굴과 익힌 굴",
+        "heads": [
+          "생으로 먹을 때",
+          "익혀 먹을 때"
+        ],
+        "items": [
+          [
+            "향과 식감을 즐기는",
+            "익혀서 든든하게 먹는"
+          ],
+          [
+            "식중독 걱정이 있어요",
+            "익혀서 드리는 편"
+          ],
+          [
+            "껍데기째 세워서",
+            "그날 드세요"
+          ]
+        ],
+        "ask": "생굴 먹어도 될까요?"
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "냉장고 선반 밀폐 용기에 담긴 깐굴",
+      "prompt": "Camera and composition: medium close-up, eye level, an open home refrigerator middle shelf with a clear airtight glass container holding plump shucked oysters in pale water, a small wooden spoon resting beside it, no people. Background color: cool white refrigerator light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (seafood market counter, home kitchen, dinner table), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium close-up of an open refrigerator shelf",
+      "bg": "cool white refrigerator light"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "가족이 김이 오르는 굴찜을 둘러앉아 먹는 저녁 식탁",
+      "prompt": "Camera and composition: wide shot of a family dinner table in the evening. A Korean family of four (a man in his 40s, a woman in her 40s, a teenage daughter and a younger son) sitting around a dining table sharing a steaming bowl of steamed oysters on a plate, smiling and passing chopsticks, a few lit pendant lamps overhead. Background color: warm amber dining light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (seafood market counter, home kitchen, dinner table), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a family dinner table in the evening",
+      "bg": "warm amber dining light"
+    }
+  ]
+}

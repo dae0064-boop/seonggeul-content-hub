@@ -1,0 +1,84 @@
+{
+  "slug": "2026-11-06-baechu-bogwanbeop",
+  "title": "배추 보관법, 남은 배추 보관하는 순서 (0~3℃)",
+  "source": "11/6 네이버 검색형 원고 — 생활정보, 체크리스트형, 정리형",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 대표사진은 실사풍, 장면은 글자 없이. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "김장 뒤 남은 배추 한 통을 식탁에 올려 두고 겉잎을 살피는 손 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, a pair of hands and one whole napa cabbage on a wooden kitchen table fill most of the frame; the kitchen stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A whole Korean napa cabbage with a few outer leaves gently turned back, the hands of a Korean woman in her 40s in a plain beige cardigan, a clean kitchen with a white tile wall softly blurred behind. Facial expression: calm and focused, face mostly out of frame. Color theme: green and cream tones with a warm red accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "손과 배추 한 통 가까이",
+      "bg": "green and cream tones with a warm red accent",
+      "note": "대표",
+      "thumb_shot": "object",
+      "thumb_theme": "green",
+      "thumb_person": "40대 여성 손만",
+      "thumb_mood": "차분함",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "green",
+        "font": "jua",
+        "title": "배추 보관법\n남은 배추 어떻게?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "싱크대 옆 채반에 놓인 배추 한 통과 떼어 낸 겉잎 몇 장",
+      "prompt": "Camera and composition: medium shot at a kitchen sink counter. A whole napa cabbage on a bamboo tray beside the sink, a few loose outer leaves set aside on the counter, no people in the frame. Background color: soft morning daylight from a window. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean places, calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a kitchen sink counter",
+      "bg": "soft morning daylight from a window"
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "배추 보관 전에 확인할 목록을 적은 정보 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "보관 전에 확인할 것",
+        "items": [
+          "물러진 겉잎 떼기",
+          "씻지 않고 흙만 털기",
+          "마른 천으로 물기 닦기",
+          "속잎 먼저 먹을 것 고르기"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "신문지로 감싼 배추를 찬 곳에 세워 둔 장면",
+      "prompt": "Camera and composition: medium close shot of a cool corner of a home kitchen. A whole napa cabbage wrapped loosely in plain newspaper, standing upright on its root end in a cool corner next to a refrigerator, the newspaper blank with no printing visible. Background color: soft cool white and pale gray light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean places, calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium close shot of a cool kitchen corner",
+      "bg": "soft cool white and pale gray light"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "채소칸과 김치냉장고 안에 놓인 배추를 비교한 정보 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "보관 장소 고르기",
+        "items": [
+          "냉장고 채소칸",
+          "김치냉장고",
+          "0~3℃ 정도의 찬 곳",
+          "베란다는 날이 풀리면 주의"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "겉절이와 물김치가 담긴 작은 그릇 두 개가 식탁에 놓인 장면",
+      "prompt": "Camera and composition: medium shot of a simple Korean dining table with two small plain ceramic bowls side by side, one with fresh green cabbage salad and one with cabbage water kimchi, no people. Background color: warm light from a nearby window. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean places, calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot of a simple dining table",
+      "bg": "warm light from a nearby window"
+    }
+  ]
+}
