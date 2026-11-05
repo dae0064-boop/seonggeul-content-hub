@@ -82,6 +82,8 @@ try {
   Get-ChildItem "$hfOut*" | Copy-Item -Destination $hfDest -Force
   Note "홈판 화면 읽기 → Drive homefeed\$today\$hm"
 } catch { Note "홈판 화면 읽기 실패: $($_.Exception.Message)" }
+# 2026-11-05 고장 고침: 아침 블로그 통계가 크롬이 닫혀 중간에 끊긴 날은 여기서 다시 읽는다 (다 읽은 날은 blog-stats.ps1 이 바로 끝냄)
+try { & (Join-Path $PSScriptRoot 'blog-stats.ps1') | Out-Null } catch { Note "블로그 통계 다시 읽기 실패: $($_.Exception.Message)" }
 $pendingFor = {
   param($date, $folder, $prefix)
   $lockDir = Join-Path $drive "ClaudeWorkspace\run-locks\$date"

@@ -100,7 +100,11 @@ async function main() {
       } catch (e) { log(`  ${name} 읽지 못함: ${e.message.split('\n')[0]}`); index.pages.push({ name, url, error: e.message.split('\n')[0] }); }
     }
   } finally {
-    fs.writeFileSync(path.join(OUT, 'index.json'), JSON.stringify(index, null, 1));
+    // 2026-11-05 고장 고침: 크롬이 중간에 닫혀(07:01) 조회수 순위 등 18화면을 못 읽었는데 index.json 을 남겨
+    // blog-stats.ps1 이 '오늘 이미 했음'으로 건너뛰었다. 브라우저가 닫혀 끊긴 날은 index-partial.json 만 남겨 다음 실행이 다시 읽게 한다.
+    const cut = index.pages.some((p) => /has been closed|Target closed/i.test(p.error || ''));
+    fs.writeFileSync(path.join(OUT, cut ? 'index-partial.json' : 'index.json'), JSON.stringify(index, null, 1));
+    if (cut) { try { fs.rmSync(path.join(OUT, 'index.json'), { force: true }); } catch {} log('⚠ 크롬이 중간에 닫혀 일부 화면을 못 읽었어요 — 다음 실행(catchup)이 다시 읽어요'); }
     await page.close().catch(() => {});
     // 사용자의 브라우저는 닫지 않는다 — 연결만 끊는다
   }
