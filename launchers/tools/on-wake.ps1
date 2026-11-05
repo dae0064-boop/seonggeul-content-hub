@@ -31,5 +31,5 @@ if (-not $pending) { exit 0 }
 
 New-Item -ItemType Directory -Force -Path (Split-Path $stamp) | Out-Null
 "$($now.ToString('s')) 남은 글 $pending 편" | Out-File $stamp -Encoding utf8
-Start-Process cmd.exe -ArgumentList '/c', "`"$(Join-Path (Split-Path $PSScriptRoot -Parent) 'auto-day.cmd')`""
+. (Join-Path $PSScriptRoot 'lib-detach.ps1'); Start-Detached cmd.exe -ArgumentList '/c', "`"$(Join-Path (Split-Path $PSScriptRoot -Parent) 'auto-day.cmd')`"" -WorkingDirectory $repo
 exit 0

@@ -41,7 +41,9 @@ if ($code -eq 0 -and $blogCode -ne 0) { $code = $blogCode }
 # 아침에 예약 안 된 글이 있으면 지금 다시 예약한다 (2026-10-29 사용자). 이 작업은 15분 제한이 있어 따로 띄우고 바로 끝낸다
 if (-not $Test) {
   try {
-    Start-Process powershell.exe -WindowStyle Minimized -WorkingDirectory $repo -ArgumentList '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', "`"$(Join-Path $PSScriptRoot 'catchup-reserve.ps1')`"" -ErrorAction Stop
+    # 2026-11-05: Start-Process 로 띄우면 이 작업 묶음에 남아 15분 뒤 catchup·크롬이 같이 꺼졌다 → 묶음 밖으로 (lib-detach.ps1)
+    . (Join-Path $PSScriptRoot 'lib-detach.ps1')
+    Start-Detached powershell.exe -ArgumentList '-NoProfile', '-WindowStyle', 'Minimized', '-ExecutionPolicy', 'Bypass', '-File', "`"$(Join-Path $PSScriptRoot 'catchup-reserve.ps1')`"" -WorkingDirectory $repo
     "  (예약 안 된 글 다시 예약: catchup-reserve 띄움)" | Add-Content -Encoding UTF8 (Join-Path $dir "$(Get-Date -Format 'yyyy-MM-dd').log")
   } catch { "  ⚠ catchup-reserve 를 띄우지 못함: $($_.Exception.Message)" | Add-Content -Encoding UTF8 (Join-Path $dir "$(Get-Date -Format 'yyyy-MM-dd').log") }
 }
