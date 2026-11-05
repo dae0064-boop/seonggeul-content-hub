@@ -111,6 +111,11 @@ const HF_TWENTY = { 생활정보: 8, 생활보장: 6 };
 const ISSUE12_FROM = '2026-11-05';
 const SPLIT_ISSUE12 = { 생활정보: 15, 생활보장: 5 };
 const ISSUE12 = { 연예: 6, 정책: 6 };
+// 2026-11-06 사용자 — 하루 20편 = 방송·드라마 이슈 8 · 뉴스이슈 4 · 생활정보 4 · 생활보장 4 (밤 원고 8 + 아침 이슈 12).
+// 이슈 글 category 는 생활정보라 생활정보 16 · 생활보장 4 로 센다. 같은 날 같은 작품 이슈는 2편까지 (routines/issue-morning.md).
+const RATIO8_FROM = '2026-11-06';
+const SPLIT_RATIO8 = { 생활정보: 16, 생활보장: 4 };
+const ISSUE_RATIO8 = { 연예: 8, 정책: 4 };
 const SEASON_FROM = '2026-11-06';
 const SPLIT_SEASON = { 생활정보: 10, 생활보장: 10 };
 const HF_SEASON = { 생활정보: 9, 생활보장: 6 };
@@ -741,8 +746,9 @@ for (const file of files) {
       const cats = sibs.map((p) => p.category || '');
       const season = twenty && dated >= SEASON_FROM;
       const i12 = twenty && dated >= ISSUE12_FROM;
-      const split = i12 ? SPLIT_ISSUE12 : season ? SPLIT_SEASON : twenty ? SPLIT_TWENTY : isTen(dated) ? SPLIT_TEN : split3 ? SPLIT3 : dated >= SPLIT2_FROM ? SPLIT2 : SHIFT_SPLIT;
-      const why = i12 ? '2026-11-04 사용자 결정 — 생활보장 5 · 생활정보 3 · 이슈·뉴스 6 · 연예·방송 6' : season ? '2026-11-03 사용자 결정 — 생활보장 10 그대로, 제철·나들이 홈판형 2편' : twenty ? '2026-11-01 사용자 결정 — 하루 20편' : split3 ? '2026-10-26 사용자 결정' : dated >= SPLIT2_FROM ? '2026-10-24 사용자 결정' : '2026-10-19 사용자 결정';
+      const r8 = twenty && dated >= RATIO8_FROM;
+      const split = r8 ? SPLIT_RATIO8 : i12 ? SPLIT_ISSUE12 : season ? SPLIT_SEASON : twenty ? SPLIT_TWENTY : isTen(dated) ? SPLIT_TEN : split3 ? SPLIT3 : dated >= SPLIT2_FROM ? SPLIT2 : SHIFT_SPLIT;
+      const why = r8 ? '2026-11-06 사용자 결정 — 방송·드라마 이슈 8 · 뉴스이슈 4 · 생활정보 4 · 생활보장 4' : i12 ? '2026-11-04 사용자 결정 — 생활보장 5 · 생활정보 3 · 이슈·뉴스 6 · 연예·방송 6' : season ? '2026-11-03 사용자 결정 — 생활보장 10 그대로, 제철·나들이 홈판형 2편' : twenty ? '2026-11-01 사용자 결정 — 하루 20편' : split3 ? '2026-10-26 사용자 결정' : dated >= SPLIT2_FROM ? '2026-10-24 사용자 결정' : '2026-10-19 사용자 결정';
       const done = sib.length >= full;
       if (split3 && sib.length > full) errors.push(`같은 날(${dated}) 네이버 원고 ${sib.length}편 — 하루 ${full}편까지 (${why})`);
       for (const [c, n] of Object.entries(split)) {
@@ -751,9 +757,10 @@ for (const file of files) {
       }
       if (twenty) {
         // 홈판형 14 = 생활정보 8 + 생활보장 6, 검색형 6 (2026-11-01 사용자 — 홈판 비중을 늘린다)
-        if (i12) for (const [k, n] of Object.entries(ISSUE12)) {
+        const IS = r8 ? ISSUE_RATIO8 : ISSUE12;
+        if (i12) for (const [k, n] of Object.entries(IS)) {
           const got = sibs.filter((p) => p.issue === k).length;
-          if (done ? got !== n : got > n) errors.push(`같은 날(${dated}) 이슈 ${k} ${got}편 — 하루 연예·방송 ${ISSUE12.연예} + 이슈·뉴스 ${ISSUE12.정책} (${why})`);
+          if (done ? got !== n : got > n) errors.push(`같은 날(${dated}) 이슈 ${k} ${got}편 — 하루 연예·방송 ${IS.연예} + 이슈·뉴스 ${IS.정책} (${why})`);
         }
         const hf = season ? HF_SEASON : HF_TWENTY;
         if (!i12) for (const [c, n] of Object.entries(hf)) {
