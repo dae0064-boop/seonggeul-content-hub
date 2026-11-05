@@ -1,5 +1,5 @@
 ﻿# 지킴이 (2026-11-05 사용자 "3일간 집에 없는데 오류가 나거나 진행이 안 될 때가 있다 — 집에 없어도 작업 가능하도록").
-#   작업 스케줄러 SeonggeulHealth 가 06:40~22:40 매시간 부른다 (health-setup.ps1, ensure-retry 가 저절로 등록).
+#   작업 스케줄러 SeonggeulHealth 가 07:40·08:40 에 부른다 (2026-11-05 사용자 — 매시간에서 줄임) (health-setup.ps1, ensure-retry 가 저절로 등록).
 #   사람 손이 필요해지기 전에 아래를 스스로 고친다. 무엇을 했는지 Drive run-logs\health-<날짜>.txt 에 한 줄씩 남긴다 → 아침 확인이 읽는다.
 #   ① 자동화용 크롬(9222)이 꺼져 있으면 다시 켠다 (--restore-last-session — 카카오·네이버 로그인을 되살린다)
 #   ② 최신 원고를 못 받았으면(git pull 실패·밀림) 다시 받는다
@@ -88,9 +88,9 @@ if ($behind -gt 0) {
   $gitNote = if ($left -eq 0) { " · 최신 원고 받음 (밀려 있던 변경 $behind개)" } else { " · ❌ 최신 원고를 못 받음 (밀림 $left개)" }
 }
 
-# ③ 로그인 (3시간마다 — 06·09·12·15·18·21시대)
+# ③ 로그인 — 08:40 (09시 발행 전) 실행에서만
 $loginNote = ''
-if ($now.Hour % 3 -eq 0) {
+if ($now.Hour -eq 8) {
   $out = Join-Path $repo "dumps\health-login-$today-$($now.ToString('HHmm'))"
   New-Item -ItemType Directory -Force -Path $out | Out-Null
   $log = @(& node scripts\login-check.mjs --shots $out 2>&1 | ForEach-Object { "$_" })
