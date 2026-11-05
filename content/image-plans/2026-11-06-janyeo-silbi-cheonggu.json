@@ -1,0 +1,74 @@
+{
+  "slug": "2026-11-06-janyeo-silbi-cheonggu",
+  "title": "자녀 실비 청구, 부모가 대신할 때 가족관계증명서 꼭 낼까 (만 19세 미만)",
+  "source": "11/6(금) 티스토리 원고 1회차 (11/5 밤 작성) 15:00",
+  "note": "4장(대표 1 + 첫머리 카드 1 + 메모·채팅 카드 1 + 장면 사진 1) — 2026-11-06 원고부터. 장소·주인공·구도·배경색 서로 다르게",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "소아과 진료비 영수증을 들고 고개를 갸웃하는 40대 엄마 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her 40s with shoulder-length hair and a mustard cardigan holding a blank pediatric clinic receipt, a blurred cozy living room behind her. Expression: curious, head slightly tilted. Color theme: cocoa brown and peach tones with a cream accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "cocoa brown and peach tones with a cream accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "plum",
+      "thumb_person": "40대 여성",
+      "thumb_mood": "궁금",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "plum",
+        "font": "jua",
+        "title": "자녀 실비 청구\n누구 이름으로?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "자녀 실비 청구가 궁금한 부모의 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "자녀 실비",
+        "title": "부모가\n대신 내요?",
+        "ask": "아이 영수증 누가 청구해요?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "자녀 실비 청구 때 챙길 서류를 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "이 서류를 챙겨요",
+        "sub": "자녀 실비 청구 기본 서류",
+        "items": [
+          "진료비 영수증",
+          "진료비 세부내역서",
+          "자녀 기준 가족관계증명서",
+          "청구하는 부모의 신분증"
+        ],
+        "memo": "발급일 3개월 안인지 먼저 봐요",
+        "hl": 3
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "거실 탁자에서 아빠가 자녀의 병원 영수증을 휴대폰으로 찍는 모습",
+      "prompt": "Camera and composition: medium shot at a living room table. A Korean father in his 40s photographing a blank paper receipt with a smartphone on a wooden living room table, a child's crayon drawing nearby. Background color: warm apricot. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a living room table",
+      "bg": "warm apricot",
+      "kind": "photo",
+      "photo": {
+        "query_en": "receipt smartphone",
+        "scene_en": "person photographing a paper receipt with a phone"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}
