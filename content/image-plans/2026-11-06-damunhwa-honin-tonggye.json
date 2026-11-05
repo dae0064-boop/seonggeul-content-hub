@@ -1,0 +1,82 @@
+{
+  "slug": "2026-11-06-damunhwa-honin-tonggye",
+  "title": "다문화 혼인 2만 1천 건, 전체 결혼은 늘었는데 왜 줄었을까?",
+  "source": "11/6(금) 09:20 네이버 원고 — 아침 이슈 1차(뉴스·경제·사회 이슈), 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실존 인물 얼굴은 그리지 않는다 · 1번은 공공누리·CC 사진 먼저(kind: photo)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "kind": "photo",
+      "title": "두 사람이 손을 맞잡은 결혼식 장면 (대표사진)",
+      "photo": {
+        "query": "결혼식 반지",
+        "query_en": "wedding rings hands",
+        "scene_en": "two hands with wedding rings holding each other"
+      },
+      "note": "대표 — 공공누리·CC 결혼 반지 사진 먼저, 없으면 손을 맞잡은 두 사람 손 그림",
+      "thumb_shot": "hands",
+      "thumb_theme": "navy",
+      "thumb_mood": "반가움",
+      "thumb_person": "30대 부부 손(반지)",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "다문화 혼인, 왜 줄었을까",
+        "focus": "center 40%",
+        "theme": "navy"
+      },
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Two hands of a newly married couple gently holding each other, simple gold wedding rings visible, soft bouquet blurred behind. Color theme: warm ivory and walnut brown tones with a butter-yellow accent. Mood: bright happy smile. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "kind": "card",
+      "title": "통계를 정리한 첫머리 카드",
+      "card": {
+        "type": "lead",
+        "keyword": "다문화 혼인",
+        "title": "결혼 늘었는데\n왜 줄었나?",
+        "ask": "다문화 결혼도 늘었겠지?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "세계 지도 위에 놓인 작은 비행기 모형",
+      "prompt": "Camera and composition: close-up still life slightly from above. A small toy airplane model resting on a plain world map with no labels, soft daylight, no people. Background color: soft blue and cream. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "아기 침대 옆에 걸린 작은 모빌",
+      "prompt": "Camera and composition: eye-level medium shot. A soft felt baby mobile with clouds and stars hanging over an empty white crib in a sunny nursery, no people. Background color: pale yellow and white. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "kind": "card",
+      "title": "늘어난 것과 줄어든 것을 정리한 메모 카드",
+      "card": {
+        "type": "check",
+        "style": "memo",
+        "title": "지난해 다문화 통계",
+        "sub": "국가데이터처 11월 5일 발표",
+        "items": [
+          "다문화 혼인 0.2%",
+          "다문화 출생아 0.5%",
+          "다문화 이혼 1.4%",
+          "전체 혼인 8.1%"
+        ],
+        "memo": "비중이 낮아진 해",
+        "hl": 0
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "창가에 놓인 두 개의 머그잔과 작은 화분",
+      "prompt": "Camera and composition: eye-level close-up still life. Two mugs side by side on a windowsill with a small potted plant and morning light, no people. Background color: warm beige and soft green. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}
