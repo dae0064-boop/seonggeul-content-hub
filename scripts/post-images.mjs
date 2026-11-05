@@ -227,3 +227,5 @@ if (failed.length) {
   process.exit(1);
 }
 console.log(`✅ 완료 — ${outDir}`);
+// 2026-11-05: 11/4 아침 '✅ 완료' 뒤 48분 동안 프로그램이 끝나지 않아 이슈 글 예약이 밀렸다 (무언가 연결이 남아 있었다) — 다 했으면 바로 끝낸다
+process.exit(0);
