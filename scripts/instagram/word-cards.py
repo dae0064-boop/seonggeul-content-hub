@@ -36,6 +36,14 @@ for p in data['posts']:
     for line in p['caption']:
         doc.add_paragraph(line)
     doc.add_paragraph(' '.join('#' + t for t in p['tags']))
+    # 네이버 클립·릴스 영상 설명 (2026-11-05 사용자 — 클립 설명은 300자까지라 짧은 설명도 같이 심의받는다)
+    if p.get('clip_caption'):
+        cc = '\n'.join(p['clip_caption'])
+        if len(cc) > 300: sys.exit(f"{p['no']}편: clip_caption 이 {len(cc)}자예요 — 300자 안쪽으로")
+        doc.add_paragraph('')
+        doc.add_paragraph('[네이버 클립·릴스 영상 설명 (300자 안쪽)]').runs[0].bold = True
+        for line in p['clip_caption']:
+            doc.add_paragraph(line)
     path = os.path.join(out, f"인스타 카드뉴스 {p['no']}편.docx")
     doc.save(path)
     print('✅', os.path.relpath(path, ROOT))

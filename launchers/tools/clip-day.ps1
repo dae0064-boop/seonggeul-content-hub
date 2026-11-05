@@ -56,8 +56,8 @@ if (-not $pick) {
   $meta = Join-Path $out "$($pick.slug).json"
   if (-not $mp4) { $res = "❌ 영상 못 만듦: $($mk -join ' / ')"; $code = 9 }
   else {
-    # 설명 = 심의받은 게시글 본문 그대로 (300자 안쪽으로 줄이지 않는다 — 넘으면 멈춘다)
-    & node -e "const s=require(process.argv[1]),p=s.posts.find(x=>String(x.no)===process.argv[2]);const d=(p.caption||[]).join('\n');require('fs').writeFileSync(process.argv[3],JSON.stringify({description:d,tags:p.tags||[],title:p.cards[0].title.join(' ').replace(/[\[\]]/g,'')}));if(d.length>300)process.exit(3)" (Resolve-Path $pick.set) $pick.no $meta
+    # 설명 = 심의받은 클립용 설명(clip_caption, 7편~) — 없으면 게시글 본문. 줄이지 않는다(300자 넘으면 멈춘다)
+    & node -e "const s=require(process.argv[1]),p=s.posts.find(x=>String(x.no)===process.argv[2]);const d=(p.clip_caption||p.caption||[]).join('\n');require('fs').writeFileSync(process.argv[3],JSON.stringify({description:d,tags:p.tags||[],title:p.cards[0].title.join(' ').replace(/[\[\]]/g,'')}));if(d.length>300)process.exit(3)" (Resolve-Path $pick.set) $pick.no $meta
     if ($LASTEXITCODE -eq 3) { $res = "⏸ $($pick.no)편 게시글 본문이 300자를 넘어 클립 설명에 못 넣음 — 심의받은 짧은 설명이 필요"; $code = 3 }
     else {
       # ③ 올리기
