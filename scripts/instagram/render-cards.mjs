@@ -296,6 +296,8 @@ for (const p of set.posts) {
   const htmls = mag
     ? (TOTAL = p.cards.length + 1, [...p.cards.map((c, k) => mcard(c, bg, k + 1)), mnotice(p.approval)])
     : [...p.cards.map((c, k) => card(c, bg, k + 1)), follow(bg), notice(bg, p.approval)];
+  // 줄바꿈을 고르게 (2026-11-05 사용자 — "글자가 중간에 애매하게 끊긴다"). 심의받은 편은 다시 그리지 않으므로 balance: true 인 편에만, 고지 장은 그대로(심의필 번호가 끊기지 않게)
+  if (p.balance) for (let k = 0; k < htmls.length - 1; k++) htmls[k] = htmls[k].replace('</style>', '*{text-wrap:balance}</style>');
   for (let k = 0; k < htmls.length; k++) {
     await pg.setContent(htmls[k], { waitUntil: 'load' });
     await pg.evaluate(() => document.fonts.ready);
