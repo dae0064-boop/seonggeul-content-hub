@@ -1041,7 +1041,15 @@ for (const file of files) {
       }
     }
   }
-  if (texts[texts.length - 2] !== close1 || !CLOSE_RE.test(texts[texts.length - 1]))
+  if (tistory && dated >= "2026-11-06") {
+    // 2026-11-06 원고부터 티스토리 마지막 줄은 고정 "이상 성글벙글의 OO 포스팅" 이 아니라 그 글의 키워드가 든 한 문장
+    // (2026-11-06 사용자 — 애드센스 "가치가 별로 없는 콘텐츠": 150편이 같은 닫는 줄로 끝났다)
+    const last = texts[texts.length - 1] || "";
+    const kws = [post.mainKeyword, ...(post.subKeywords || [])].filter(Boolean).map((k) => plain(k));
+    if (texts[texts.length - 2] !== close1) errors.push(`마지막에서 두 번째 줄은 "${close1}" 이어야 합니다.`);
+    if (CLOSE_RE.test(last)) errors.push(`티스토리 닫는 줄을 "이상 성글벙글의 OO 포스팅이었습니다😎" 로 쓰지 않습니다 — 그 글에만 맞는 한 문장으로 바꿉니다.`);
+    else if (!kws.some((k) => k && plain(last).includes(k))) errors.push("마지막 줄에 이 글의 메인 또는 서브 키워드를 넣어 그 글에만 맞는 한 문장으로 끝냅니다.");
+  } else if (texts[texts.length - 2] !== close1 || !CLOSE_RE.test(texts[texts.length - 1]))
     errors.push(`클로징이 고정 문구와 다릅니다. "${close1} / 이상 성글벙글의 OO 포스팅이었습니다😎" 로 끝나야 합니다.`);
 
   // 덩어리를 너무 잘게 쪼개면 글이 툭툭 끊긴다
