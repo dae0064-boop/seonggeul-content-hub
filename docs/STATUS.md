@@ -45,6 +45,7 @@
 - 만듦: `scripts/clip/make-clip.mjs`(블로그 원고 → 1080×1920 약 20초 글자 영상, 그림 값 0원, 성글벙글 색) · `scripts/clip/upload-clip.mjs`(9222 크롬, --look / 채우고 멈춤 / --post) · `launchers/tools/clip-day.ps1`(catchup 안, 하루 1편, 발행된 생활보장 글 먼저) · package.json 에 ffmpeg-static. 규칙 `content/clip/README.md`.
 - 실제 화면을 본 적 없음 → **첫 실행은 화면 살펴보기만, 다음은 채우고 멈춤**. 기록 Drive `run-logs/clip-<시각>-<PC>/`. 화면 맞으면 Claude 가 `content/clip/POST-OK` 를 넣어 실제로 올림. [ ] 다음 확인: clip-* 기록(로그인·업로드 단추·파일 칸).
 - 수익 프로그램(미션) 참여는 모집 때 사용자가 신청해야 할 수 있음 — 기록 보고 알림.
+- 사용자 "다음 주 월요일부터 진행해 보자" → **11/9(월)부터** (`content/clip/start.txt`). 첫 화면 살펴보기는 11/9 catchup 때.
 
 ### 11/5 — 📸 인스타 카드뉴스 심의 하루 3편 (사용자 "게시는 안 하지만 심의는 하루 3개씩 받아 놓으려는데 안 하고 있네?")
 - 확인: PC 등록 쪽은 정상 — 11/5 09:57 insta-goms 가 GOMS 로그인·승인 읽기까지 했고 "새로 등록할 카드뉴스가 없어요". 1~6편은 11/2·11/3 에 등록돼 모두 적격(goms-approved-insta.tsv). **원인은 원고가 없었던 것** — 카드뉴스는 "사용자가 요청할 때만" 쓰게 돼 있어 11/3 뒤로 새 편이 0.

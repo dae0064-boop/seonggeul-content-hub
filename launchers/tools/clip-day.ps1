@@ -10,6 +10,10 @@ $ErrorActionPreference = 'SilentlyContinue'
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo
 if (Test-Path (Join-Path $repo 'content\clip\PAUSE')) { Write-Output '클립 멈춤(content\clip\PAUSE)'; exit 0 }
+# 시작일 (content\clip\start.txt 'start: YYYY-MM-DD' — 2026-11-05 사용자 "다음 주 월요일부터")
+$sf = Join-Path $repo 'content\clip\start.txt'
+if (Test-Path $sf) { $sm = Select-String -Path $sf -Pattern '^\s*start:\s*(\d{4}-\d{2}-\d{2})' | Select-Object -First 1
+  if ($sm -and (Get-Date).Date -lt [datetime]::ParseExact($sm.Matches[0].Groups[1].Value, 'yyyy-MM-dd', $null)) { Write-Output "클립: $($sm.Matches[0].Groups[1].Value) 부터 시작"; exit 0 } }
 . (Join-Path $PSScriptRoot 'lib-drive.ps1')
 $drive = Find-MyDrive
 if (-not $drive) { Write-Output '클립: Drive 없음 — 쉼'; exit 0 }
