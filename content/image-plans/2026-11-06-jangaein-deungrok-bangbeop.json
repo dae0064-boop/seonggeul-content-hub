@@ -1,36 +1,36 @@
 {
   "slug": "2026-11-06-jangaein-deungrok-bangbeop",
   "title": "장애인 등록 방법, 부모님 장애 정도 판정은 어떤 순서로 받나요 (준비물 · 2026년)",
-  "source": "11/5(목) 14:00 네이버 원고 — 생활보장 홈판형, 실사풍",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 실사풍·대표사진 구도(thumb_shot)·테마·사람·표정. 정보 카드는 로컬 합성(비용 0)",
+  "source": "11/6 원고 — 생활보장 홈판형, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (11/3 원고부터). 실사풍. 정보 카드는 로컬 합성(비용 0)",
   "images": [
     {
       "n": 1,
       "file": "01.png",
-      "title": "부모님 댁 거실에서 70대 어머니와 마주 앉아 안심한 얼굴로 이야기하는 40대 아들 (대표사진)",
-      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean man in his 40s with black-rimmed glasses and a navy shirt sitting across from his mother in her 70s with short gray permed hair and a coral cardigan on a gray sofa in a bright apartment living room, both smiling gently at each other while talking. Facial expression: relieved gentle smile. Color theme: neutral gray and white tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "두 사람이 마주 보고 이야기",
-      "bg": "neutral gray and white tones with a coral accent",
+      "title": "장애인 등록 방법 대표",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean son in his 40s in a light gray sweater sits at a family table with his mother in her 70s, both smiling calmly as they talk. Facial expression: explaining with one hand open toward the viewer.  Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Color: cocoa brown and peach tones with a cream accent.",
+      "shot": "얼굴 가까이",
+      "bg": "gray yellow",
       "note": "대표",
-      "thumb_shot": "duo",
-      "thumb_theme": "charcoal",
-      "thumb_person": "40대 아들(검은 뿔테 안경·네이비 셔츠)과 70대 어머니(짧은 회색 파마머리·코랄 카디건)",
-      "thumb_mood": "안심",
+      "thumb_shot": "face",
+      "thumb_theme": "plum",
+      "thumb_person": "40대 아들과 70대 어머니",
+      "thumb_mood": "설명",
       "overlay": {
         "kind": "thumb",
         "look": "band",
-        "theme": "charcoal",
+        "theme": "plum",
         "font": "jua",
-        "title": "장애인 등록 방법\n어디서 시작?"
+        "title": "장애인 등록\n어떤 순서로 받을까?"
       }
     },
     {
       "n": 2,
       "file": "02.png",
       "title": "행정복지센터 민원 창구에서 상담을 받는 40대 딸과 70대 아버지",
-      "prompt": "Camera and composition: medium shot at a public service counter. A Korean woman in her 40s with a low ponytail and a beige trench coat sitting with her father in his 70s with a cane and a flat cap at a clean community service center counter, a staff member across the desk listening and nodding. Background color: bright white counter and light wood panels. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot at a public service counter",
-      "bg": "bright white counter and light wood panels"
+      "prompt": "Camera and composition: medium shot at a Korean community service center counter. A woman in her 40s in a blue blouse talks with a clerk at the counter while her father in his 70s listens beside her. Background color: soft blue and white. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a service counter",
+      "bg": "soft blue and white"
     },
     {
       "n": 3,
@@ -38,13 +38,13 @@
       "title": "장애인 등록 방법을 다섯 단계로 정리한 카드",
       "kind": "card",
       "card": {
-        "type": "steps",
-        "title": "장애인 등록 순서",
+        "type": "check",
+        "title": "장애인 등록 다섯 단계",
         "items": [
-          "행정복지센터에 신청서를 내요",
-          "상담 뒤 진단 의뢰서를 받아요",
+          "신청서를 내요",
+          "진단 의뢰서를 받아요",
           "병원에서 장애 진단을 받아요",
-          "필요하면 장애 정도 심사",
+          "장애 정도 심사를 거쳐요",
           "장애인등록증을 받아요"
         ]
       }
@@ -53,9 +53,9 @@
       "n": 4,
       "file": "04.png",
       "title": "진료실에서 의사의 설명을 듣는 70대 어머니와 곁에 앉은 40대 딸",
-      "prompt": "Camera and composition: medium shot inside a doctor's consultation room. A Korean woman in her 70s with silver bob hair in a green blouse and her daughter in her 40s in a mustard sweater sitting side by side, listening to a doctor in a white coat explaining across a tidy desk. Background color: soft white clinic walls and pale blue curtain. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot inside a doctor's consultation room",
-      "bg": "soft white clinic walls and pale blue curtain"
+      "prompt": "Camera and composition: medium shot of a hospital consultation room. A woman in her 70s listens to a doctor across a desk while her daughter in her 40s sits beside her taking notes. Background color: soft mint and white. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot of a consultation room",
+      "bg": "soft mint and white"
     },
     {
       "n": 5,
@@ -64,11 +64,11 @@
       "kind": "card",
       "card": {
         "type": "check",
-        "title": "신청 때 챙길 것",
+        "title": "장애 정도 심사",
         "items": [
-          "등록 및 서비스 신청서",
-          "6개월 안에 찍은 사진 1장",
-          "장애 상태 확인 서류"
+          "국민연금공단",
+          "장애 정도 심사",
+          "장애 정도가 정해져요"
         ]
       }
     },
@@ -76,9 +76,9 @@
       "n": 6,
       "file": "06.png",
       "title": "식탁에서 새로 받은 카드를 들여다보며 웃는 70대 아버지",
-      "prompt": "Camera and composition: close medium shot at a kitchen table. A Korean man in his 70s with short white hair and a brown knit vest sitting at a kitchen table and smiling while looking at a small blank plastic ID card in his hand, a cup of barley tea beside him. Background color: warm yellow kitchen light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "close medium shot at a kitchen table",
-      "bg": "warm yellow kitchen light"
+      "prompt": "Camera and composition: close-up of a Korean man in his 70s at a dining table looking at a newly received plain blank card with a warm smile. Background color: warm wood and soft cream. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up at a dining table",
+      "bg": "warm wood and soft cream"
     }
   ]
 }
