@@ -1,0 +1,98 @@
+{
+  "slug": "2026-11-07-saenggye-geupyeo-geumaek",
+  "title": "기초생활수급자 생계급여, 1인 가구는 한 달 얼마 받나요 (82만 556원 · 2026년)",
+  "source": "11/7(토) 10:00 네이버 원고 — 생활보장 검색형(한다팀장 모양), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장)·한다팀장 모양. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "주민센터 상담 창구에서 안내문을 들고 생각에 잠긴 50대 딸 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her 50s with low tied hair and a khaki jacket holding a blank leaflet at a community center counter, thoughtful face, in a bright Korean community service center. Facial expression: thoughtful, finger on chin. Color theme: terracotta and warm beige tones with a sage green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "terracotta and warm beige tones with a sage green accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "brick",
+      "thumb_person": "50대 딸(낮게 묶은 머리·카키 점퍼)",
+      "thumb_mood": "생각",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "brick",
+        "font": "ptd",
+        "title": "기초생활수급자\n생계급여 얼마?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "2026년 생계급여 선정기준을 숫자로 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "생계급여 한눈에",
+        "items": [
+          [
+            "32%",
+            "생계급여 선정기준",
+            "기준 중위소득"
+          ],
+          [
+            "7.20%",
+            "1인 가구",
+            "1년 전보다"
+          ],
+          [
+            "30일",
+            "결과 통지",
+            "신청일부터"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "거실 소파에 앉아 휴대폰으로 복지 안내를 찾아보는 40대 아들",
+      "prompt": "Camera and composition: medium shot on a living room sofa. A Korean man in his 40s with short black hair and a navy hoodie sitting on a living room sofa, looking at a blank smartphone screen with a thoughtful face. Background color: warm beige walls and soft lamp light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on a living room sofa",
+      "bg": "warm beige walls and soft lamp light"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "실제 생계급여를 계산하는 순서를 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "받는 돈 계산 순서",
+        "sub": "선정기준에서 소득인정액을 빼요",
+        "items": [
+          "가구원 수의 선정기준을 찾는다",
+          "우리 집 소득인정액을 확인한다",
+          "선정기준에서 소득인정액을 뺀다"
+        ],
+        "memo": "그대로 다 받는 건 아니에요",
+        "hl": 1
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "창가 식탁에서 따뜻한 차를 마시며 이야기하는 70대 부부",
+      "prompt": "Camera and composition: medium shot at a kitchen table by the window. A Korean couple in their 70s, the woman with short curly gray hair in a mustard cardigan and the man with glasses in a brown sweater, sitting at a small kitchen table by the window holding warm tea cups and talking calmly. Background color: soft morning light and pale wood table. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a kitchen table by the window",
+      "bg": "soft morning light and pale wood table"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "행정복지센터 창구에서 안내를 받는 60대 어머니와 30대 딸",
+      "prompt": "Camera and composition: medium wide shot at a public service counter. A Korean woman in her 60s with a short bob and a beige coat and her daughter in her 30s with a ponytail and a denim jacket standing at a public service counter, listening to a staff member with calm faces. Background color: clean white counter and light green partitions. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium wide shot at a public service counter",
+      "bg": "clean white counter and light green partitions"
+    }
+  ]
+}

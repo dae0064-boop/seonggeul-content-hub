@@ -1,0 +1,80 @@
+{
+  "slug": "2026-11-07-boheomgeum-cheonggu-gigan",
+  "title": "보험금 청구 기간, 3년 지난 병원비는 정말 못 받나요 (상법 3년 · 10일 · 2026년)",
+  "source": "11/7(토) 16:40 네이버 원고 — 생활보장 검색형(한다팀장 모양, 청구 묶음), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장)·한다팀장 모양. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "서랍에서 꺼낸 병원 영수증을 날짜순으로 펼쳐 놓는 손 (대표사진)",
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Close-up of a Korean woman's hands in a beige knit sleeve spreading several blank receipts in a row on a wooden table next to an open drawer. Facial expression: determined, nodding, sleeves rolled up. Color theme: cocoa brown and peach tones with a cream accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "손만 크게 (얼굴 없음)",
+      "bg": "cocoa brown and peach tones with a cream accent",
+      "note": "대표",
+      "thumb_shot": "hands",
+      "thumb_theme": "plum",
+      "thumb_person": "40대 여성 손(베이지 니트 소매)",
+      "thumb_mood": "결심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "plum",
+        "font": "jua",
+        "title": "보험금 청구 기간\n지나면 끝?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "보험금 청구 기간을 첫머리에 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "보험금 청구",
+        "title": "3년 지나면\n못 받나요?",
+        "ask": "묵은 영수증 지금 내도 될까?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "달력 앞에서 휴대폰 메모를 보며 날짜를 세는 30대 여성",
+      "prompt": "Camera and composition: medium shot in front of a wall calendar. A Korean woman in her 30s with a short ponytail and a mint sweatshirt standing in front of a blank wall calendar, holding a smartphone with a blank screen and counting on her fingers with a curious face. Background color: light gray wall and warm wood shelf. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in front of a wall calendar",
+      "bg": "light gray wall and warm wood shelf"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "거실 바닥에 앉아 영수증을 봉투에 나눠 담는 50대 엄마와 20대 딸",
+      "prompt": "Camera and composition: medium wide shot on a living room floor. A Korean woman in her 50s with a short perm in a coral cardigan and her daughter in her 20s with long straight hair in a white hoodie sitting on a living room rug, sorting blank paper slips into plain envelopes together and smiling. Background color: soft rug and afternoon window light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium wide shot on a living room floor",
+      "bg": "soft rug and afternoon window light"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "은행 앱 알림이 온 휴대폰을 보며 미소 짓는 60대 남성",
+      "prompt": "Camera and composition: close medium shot on a park bench. A Korean man in his 60s with gray hair and a brown padded jacket sitting on a park bench, looking at a smartphone with a blank screen and smiling with relief. Background color: autumn park trees and soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close medium shot on a park bench",
+      "bg": "autumn park trees and soft daylight"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "보험금 청구 기간에 많이 묻는 질문에 답한 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "ask": "사고 나면 언제 알려요?",
+        "title": "알리기와 청구",
+        "items": [
+          "사고를 알면 지체 없이 알리기",
+          "진료 중에라도 먼저 연락하기",
+          "청구는 3년 안에 마치기"
+        ]
+      }
+    }
+  ]
+}
