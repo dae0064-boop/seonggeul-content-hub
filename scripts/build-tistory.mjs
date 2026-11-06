@@ -8,6 +8,7 @@
  * .html 은 자동화가 막혔을 때 티스토리 에디터 HTML 모드에 그대로 붙여넣는 용도다.
  */
 import fs from 'node:fs';
+import { cleanCredit } from './lib/official-photo.mjs';
 import { parsePost, toHtml } from './lib/parse-tistory.mjs';
 import { applyCoupang, loadLinks } from './lib/coupang.mjs';
 import { resolveTistoryRelated } from './lib/tistory-related.mjs';
@@ -38,7 +39,7 @@ for (const file of files) {
         const m = CREDIT.exec((l.t || '').trim());
         if (!m) return [l];
         const f = `content/images/${slug}/${String(m[1]).padStart(2, '0')}.credit.txt`;
-        const c = fs.existsSync(f) ? fs.readFileSync(f, 'utf8').split(/\r?\n/)[0].trim() : '';
+        const c = fs.existsSync(f) ? cleanCredit(fs.readFileSync(f, 'utf8').split(/\r?\n/)[0].trim()) : '';
         return c ? [{ t: c }] : [];
       });
     }

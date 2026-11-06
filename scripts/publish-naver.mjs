@@ -28,6 +28,7 @@ import path from 'node:path';
 import { readMyBlogId, resolveRelated } from './lib/naver-related.mjs';
 import { applyBrandconnect, DISCLOSURE as SHOP_DISCLOSURE } from './lib/brandconnect.mjs';
 import { leadBlock } from './lib/parse-post.mjs';
+import { cleanCredit } from './lib/official-photo.mjs';
 import { topicFor } from './lib/naver-topic.mjs';
 import { subcategoryFor } from './lib/naver-subcategory.mjs';
 
@@ -1682,7 +1683,7 @@ async function main() {
         const m = CREDIT.exec((l.t || '').trim());
         if (!m) return [l];
         const f = args.images && path.resolve(args.images, `${String(m[1]).padStart(2, '0')}.credit.txt`);
-        const c = f && fs.existsSync(f) ? fs.readFileSync(f, 'utf8').split(/\r?\n/)[0].trim() : '';
+        const c = f && fs.existsSync(f) ? cleanCredit(fs.readFileSync(f, 'utf8').split(/\r?\n/)[0].trim()) : '';
         if (c) log(`사진 출처 ${m[1]}: ${c}`);
         return c ? [{ t: c }] : [];
       });
