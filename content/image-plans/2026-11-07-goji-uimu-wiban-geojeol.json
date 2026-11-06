@@ -1,0 +1,89 @@
+{
+  "slug": "2026-11-07-goji-uimu-wiban-geojeol",
+  "title": "고지의무 위반, 보험금 거절 통보를 받으면 그대로 끝인가요 (1개월 · 3년 · 2026년)",
+  "source": "11/7(토) 11:20 네이버 원고 — 생활보장 검색형(한다팀장 모양, 청구 묶음), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장)·한다팀장 모양. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "식탁에 앉아 휴대폰 안내 문자를 보며 고개를 갸웃하는 50대 남성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean man in his 50s with short graying hair and a navy knit sweater sitting at a dining table at home, looking at a blank smartphone screen with his head slightly tilted. Facial expression: curious, head slightly tilted. Color theme: warm ivory and walnut brown tones with a butter-yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "warm ivory and walnut brown tones with a butter-yellow accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "navy",
+      "thumb_person": "50대 남성(희끗한 짧은 머리·남색 니트)",
+      "thumb_mood": "궁금",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "navy",
+        "font": "jua",
+        "title": "고지의무 위반\n그대로 끝일까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "고지의무 위반을 두고 많이 헷갈리는 세 가지를 O·X로 낸 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "고지의무 위반 O·X",
+        "items": [
+          "위반이면 보험금은 아예 끝",
+          "계약 3년 지나면 해지 못 한다",
+          "사고와 무관하면 받을 수 있다"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "O"
+        ],
+        "where": "아래 Q&A"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "거실 소파에서 오래된 보험 서류 파일을 펼쳐 보는 60대 부부",
+      "prompt": "Camera and composition: medium shot on a living room sofa. A Korean couple in their 60s, the woman with a short perm in a coral cardigan and the man with glasses in a gray sweater, sitting on a sofa and looking through a plain document folder together with calm faces. Background color: soft ivory walls and warm afternoon light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on a living room sofa",
+      "bg": "soft ivory walls and warm afternoon light"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "고지의무 위반 통보를 받았을 때 확인할 것을 채팅으로 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "ask": "거절 통보 오면 뭘 봐요?",
+        "title": "안내문에서 볼 것",
+        "items": [
+          "계약일과 회사가 안 날",
+          "알리지 않은 병과 이번 진단",
+          "청약서 질문지의 내용"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "창가 책상에서 노트북으로 서류를 정리하는 40대 딸",
+      "prompt": "Camera and composition: medium shot at a desk by the window. A Korean woman in her 40s with a short bob and a cream blouse sitting at a desk by a window, typing on a laptop with a blank screen next to a neat stack of plain papers, focused calm face. Background color: pale wood desk and bright window light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a desk by the window",
+      "bg": "pale wood desk and bright window light"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "동네 약국 앞 벤치에 앉아 처방전 봉투를 챙기는 70대 여성",
+      "prompt": "Camera and composition: medium wide shot on a bench outside a neighborhood pharmacy. A Korean woman in her 70s with short white hair and a lavender padded jacket sitting on a bench in front of a neighborhood pharmacy, putting a plain paper envelope into her handbag with a gentle face. Background color: quiet street with autumn trees and a glass storefront. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium wide shot on a bench outside a neighborhood pharmacy",
+      "bg": "quiet street with autumn trees and a glass storefront"
+    }
+  ]
+}
