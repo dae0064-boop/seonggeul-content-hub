@@ -1,0 +1,89 @@
+{
+  "slug": "2026-11-07-dosangwoo-parkjihye-gyeolhon",
+  "title": "도상우 결혼, 모델 박지혜와 내년 2월 비공개로 하는 이유는?",
+  "source": "11/7(토) 14:00 네이버 원고 — 아침 이슈 2차(연예·스타), 홈판형",
+  "note": "대표 = 위키미디어 단독 사진 검색(클라우드 확인 땐 없음) → 사람 없는 탁자 그림(실존 인물 그림 금지). 카드 2(채팅 + O·X) + 그림 3",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "kind": "photo",
+      "title": "결혼 소식 (대표사진)",
+      "photo": {
+        "person": [
+          "Do Sang-woo",
+          "도상우"
+        ],
+        "query": "도상우",
+        "query_en": "Do Sang-woo"
+      },
+      "note": "대표: 도상우 단독 사진(위키미디어 검색 — 클라우드 확인 땐 없음) → 사람 없는 탁자 그림",
+      "thumb_shot": "overhead",
+      "thumb_theme": "burgundy",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "도상우 결혼, 상대는 모델",
+        "focus": "center 30%",
+        "theme": "burgundy"
+      },
+      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). An open ring box with a simple ring, a small bouquet of white flowers, a blank wedding invitation card and a ribbon neatly arranged on a linen tablecloth. Color theme: warm terracotta and cream tones with a soft gold accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "kind": "card",
+      "title": "결혼 소식을 묻고 답한 채팅 카드",
+      "card": {
+        "type": "check",
+        "title": "결혼 소식 한눈에",
+        "ask": "도상우 언제 결혼해?",
+        "items": [
+          "결혼식은 2027년 2월",
+          "결혼식은 비공개로 치른다",
+          "배우 활동을 이어 갈 예정"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "하얀 꽃으로 꾸민 작은 예식장 입구",
+      "prompt": "Camera and composition: medium shot of a venue entrance. A small elegant wedding venue entrance decorated with white flowers and soft drapes, closed doors, no people. Background color: soft white and blush pink. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "반지 상자와 꽃다발이 놓인 탁자",
+      "prompt": "Camera and composition: close-up of a table. An open velvet ring box and a bouquet of roses on a wooden table near a window, no people. Background color: warm cream and deep red. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "kind": "card",
+      "title": "결혼 소식을 O·X로 짚어 보는 카드",
+      "card": {
+        "type": "quiz",
+        "title": "도상우 결혼 O·X",
+        "items": [
+          "결혼식은 2027년 2월",
+          "결혼식은 공개로 해요",
+          "프러포즈 영상을 올렸어요"
+        ],
+        "answers": [
+          "O",
+          "X",
+          "O"
+        ],
+        "where": "아래 Q&A"
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "겨울 햇살이 드는 창가와 꽃병",
+      "prompt": "Camera and composition: medium shot by a window. A glass vase with white flowers on a windowsill in soft winter sunlight, no people. Background color: pale winter white and soft gold. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}
