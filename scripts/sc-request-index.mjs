@@ -67,6 +67,9 @@ if (argv.includes('--selftest')) {
   const scr = 'URL 검사\nhttps://seongdaeeyo.com/entry/본인부담상한액-초과금-신청\nURL 검사\n실제 URL 테스트\ninfo\nURL이 Google에 등록되어 있지 않음\n색인 생성 요청';
   const enc = 'https://seongdaeeyo.com/entry/' + encodeURIComponent('본인부담상한액-초과금-신청');
   const v1 = verdictFor(scr, enc), v2 = verdictFor('https://seongdaeeyo.com/12\nURL이 Google에 등록되어 있음', 'https://seongdaeeyo.com/1');
+  const flat = 'URL 검사 https://seongdaeeyo.com/entry/본인부담상한액-초과금-신청 실제 URL 테스트 URL이 Google에 등록되어 있지 않음 색인 생성 요청';
+  const v3 = verdictFor(flat, 'https://seongdaeeyo.com/entry/본인부담상한액-초과금-신청');
+  if (v3 !== 'URL이 Google에 등록되어 있지 않음') { console.log(`❌ selftest 실패(한 줄 글자): ${JSON.stringify(v3)}`); process.exit(1); }
   if (v1 !== 'URL이 Google에 등록되어 있지 않음' || v2 !== '') { console.log(`❌ selftest 실패(판정 읽기): ${JSON.stringify([v1, v2])}`); process.exit(1); }
   const xml = `<urlset><url><loc>https://seongdaeeyo.com/entry/%EB%91%98</loc><lastmod>2026-10-20</lastmod></url>
 <url><loc>https://seongdaeeyo.com/entry/%ED%95%98%EB%82%98</loc><lastmod>2026-10-05</lastmod></url>
@@ -82,9 +85,27 @@ const log = (s) => console.log(s);
 const today = new Date().toISOString().slice(0, 10);
 // 2026-10-26 첫 실행: 서치 콘솔 검사 화면은 열린 뒤 스스로 한 번 더 이동해 'Execution context was destroyed'·'interrupted by another navigation' 으로
 // 처음 3편이 모두 실패했다. → 이동 중이면 잠깐 기다렸다 다시 읽고, 다음 글로 가기 전 빈 화면으로 이동을 끊는다.
+// 2026-11-06 원인: 서치 콘솔 검사 화면은 document.body.innerText 가 비어 있다(글자가 iframe·shadow DOM 안에 있음).
+// 그래서 결과가 화면에 떠 있어도 글자를 못 읽고 '검사 결과가 안 뜸' 4편 연속 실패 (dumps .txt 가 주소만 있었다).
+// 모든 프레임의 글자를 shadow DOM 까지 모아 읽는다.
+const TEXT_WALK = () => {
+  const acc = [];
+  const walk = (n) => {
+    if (n.nodeType === 3) { acc.push(n.textContent); return; }
+    if (n.shadowRoot) walk(n.shadowRoot);
+    for (const c of n.childNodes || []) walk(c);
+  };
+  walk(document.body || document.documentElement);
+  return acc.join(' ');
+};
 const readText = async (page) => {
   for (let i = 0; i < 8; i++) {
-    try { return await page.evaluate(() => document.body?.innerText || ''); } catch { await sleep(1500); }
+    let out = '';
+    for (const f of page.frames()) {
+      try { out += ' ' + await f.evaluate(TEXT_WALK); } catch { /* 주소가 다른 프레임이 닫혔을 때 등 */ }
+    }
+    if (out.trim()) return out;
+    await sleep(1500);
   }
   return '';
 };
