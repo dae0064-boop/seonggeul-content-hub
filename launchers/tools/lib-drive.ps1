@@ -72,6 +72,21 @@ function Test-SleepAfterWork {
 # 잠시 깨어 있기 요청 (2026-11-05 사용자 — "절전 중에 원격이 안 되면 Claude 앱으로 잠시 절전 풀어 달라고 하면 되잖아").
 #   사용자가 아무 Claude 대화에 "PC 깨워 줘 / 절전 풀어 줘" → Claude 가 Drive ClaudeWorkspace\stay-awake.txt 에 'until: YYYY-MM-DD HH:mm' (기본 지금 + 2시간).
 #   절전 중인 PC 는 바깥 신호를 못 받으므로 다음에 깨어날 때(지킴이 07:40·08:40, 그 밖의 작업 시각) 읽는다 → 그 시각까지 잠들지 않게 붙잡는 창 없는 프로그램(stay-awake.ps1)을 띄운다.
+# 깨어 있기 요청이 살아 있는가 (2026-11-06 사고 — stay-awake 가 18:30 '11/8 까지 절전 안 함'을 시작했는데
+#   절전 담당이 18:36·19:06 에 그대로 재웠다. 절전 담당은 stay-awake.ps1 프로세스가 보일 때만 쉬었는데 그 프로세스가 없었고,
+#   SetSuspendState 는 '시스템 필요' 상태를 무시한다). 프로세스 유무가 아니라 요청 자체(Drive stay-awake.txt 시각·away.txt until)를 본다.
+function Test-KeepAwake {
+  if (Get-AwayUntil) { return $true }
+  $drive = Find-MyDrive
+  if (-not $drive) { return $false }
+  $f = Join-Path $drive 'ClaudeWorkspace\stay-awake.txt'
+  if (-not (Test-Path $f)) { return $false }
+  $m = Select-String -Path $f -Pattern '^\s*until:\s*(\d{4}-\d{2}-\d{2} \d{2}:\d{2})' | Select-Object -First 1
+  if (-not $m) { return $false }
+  $u = [datetime]::ParseExact($m.Matches[0].Groups[1].Value, 'yyyy-MM-dd HH:mm', $null)
+  return ($u -gt (Get-Date))
+}
+
 function Invoke-StayAwakeRequest([int]$Wait = 0) {
   # $Wait: PC 를 깨우는 작업(지킴이·맛집 확인)은 45 — 깨어난 직후 Drive 가 바뀐 파일을 아직 못 받았을 수 있어 한 번 더 본다
   $drive = Find-MyDrive

@@ -9,6 +9,7 @@ $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo
 . (Join-Path $PSScriptRoot 'lib-drive.ps1')
 Invoke-StayAwakeRequest
+if (Test-KeepAwake) { exit 0 }   # 깨어 있기 요청이 있으면 재우지 않는다 (2026-11-06)
 if (-not (Test-SleepAfterWork)) { exit 0 }
 if (Test-Path (Join-Path $repo 'dumps\no-auto-shutdown.txt')) { exit 0 }
 Add-Type @'
