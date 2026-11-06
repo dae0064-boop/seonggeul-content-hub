@@ -1,0 +1,667 @@
+{
+  "slug": "2026-11-07-sudo-gyeryanggi-dongpa",
+  "title": "수도계량기 동파 예방, 계량기함 안은 무엇으로 채워야 할까 (영하 10도)",
+  "category": "생활정보",
+  "tags": [
+    "수도계량기동파예방",
+    "계량기함",
+    "보온재",
+    "수도꼭지",
+    "얼은수도녹이기",
+    "수도계량기동파",
+    "동파예방",
+    "계량기동파",
+    "수도관동파",
+    "수도동파",
+    "동파예보",
+    "겨울집관리",
+    "월동준비",
+    "살림팁",
+    "생활정보"
+  ],
+  "publishAt": "2026-11-07 10:20",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "얼은 수도 녹이기는 불이 아니라"
+        },
+        {
+          "t": "50~60도 따뜻한 물수건으로 천천히 해야 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "첫 한파 소식이 들리는 날 저녁,"
+        },
+        {
+          "t": "현관 옆 계량기함을 열어 보면 텅 비어 있고"
+        },
+        {
+          "t": "틈으로 찬 바람이 그대로 드는 집이 많아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘은 수도계량기 동파 예방을"
+        },
+        {
+          "t": "서울시 상수도사업본부 안내로 정리해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "결론부터요. 수도계량기 동파 예방은 세 가지예요."
+        },
+        {
+          "t": "계량기함 안을 보온재로 채우고, 겉을 막고,",
+          "s": "yellow"
+        },
+        {
+          "t": "추운 밤엔 수도꼭지를 조금 틀어 두기예요.",
+          "segs": [
+            {
+              "t": "추운 밤엔 수도꼭지를 조금 틀어 두기",
+              "s": "yellow"
+            },
+            {
+              "t": "예요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "얼고 나서 불이나 드라이기를 대면",
+          "s": "red"
+        },
+        {
+          "t": "계량기가 깨지거나 불이 날 수 있어요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "헌 옷으로 채운 계량기함 속 수도계량기 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "수도계량기 동파, 언제부터 걱정할까"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "수도계량기 동파 예방이 궁금한 사람의 첫머리 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "서울시는 하루 최저기온으로"
+        },
+        {
+          "t": "동파예보를 4단계로 나눠 알려요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그중 3단계인 경계는 최저기온"
+        },
+        {
+          "t": "영하 10도 미만이 이틀 넘게 이어질 때예요.",
+          "segs": [
+            {
+              "t": "영하 10도",
+              "s": "blue"
+            },
+            {
+              "t": " 미만이 이틀 넘게 이어질 때예요."
+            }
+          ]
+        },
+        {
+          "t": "서울시 분석을 보면 이런 날이 계속될 때"
+        },
+        {
+          "t": "동파가 많이 생기기 시작했어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "영하 15도 아래로 떨어지면",
+          "segs": [
+            {
+              "t": "영하 15도",
+              "s": "blue"
+            },
+            {
+              "t": " 아래로 떨어지면"
+            }
+          ]
+        },
+        {
+          "t": "동파가 갑자기 늘었다고 해요."
+        },
+        {
+          "t": "그래서 첫 영하 10도 예보가 나오기 전에"
+        },
+        {
+          "t": "계량기함부터 손보는 게 좋아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "계량기함은 현관 밖이나 땅속 작은 상자라"
+        },
+        {
+          "t": "바깥 찬 공기를 거의 그대로 받아요."
+        },
+        {
+          "t": "집 안 수도관보다 먼저 어는 까닭이에요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "계량기함 보온재 채우는 순서"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "계량기함 보온재를 채우는 순서를 정리한 메모 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "수도계량기 동파 예방은 순서만 알면"
+        },
+        {
+          "t": "어렵지 않아요. 네 단계로 보면 이래요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "① 계량기함 안 물기를 닦아요"
+        },
+        {
+          "t": "② 헌 옷·에어캡으로 꽉 채워요"
+        },
+        {
+          "t": "③ 비닐을 넓게 붙여 막아요"
+        },
+        {
+          "t": "④ 드러난 수도관도 감싸요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "물기를 먼저 닦는 건 젖은 보온재가"
+        },
+        {
+          "t": "도리어 차갑게 얼 수 있어서예요."
+        },
+        {
+          "t": "뚜껑을 닫은 뒤 그 위를 비닐로 덮으면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "서울시 안내에 나온 보온재는"
+        },
+        {
+          "t": "헌 옷, 에어캡, 비닐 같은 것들이에요.",
+          "segs": [
+            {
+              "t": "헌 옷",
+              "s": "blue"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "t": "에어캡",
+              "s": "blue"
+            },
+            {
+              "t": ", 비닐 같은 것들이에요."
+            }
+          ]
+        },
+        {
+          "t": "집에 있는 걸로 충분하다는 뜻이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "핵심은 찬 공기가 들어올 틈을 막는 거예요.",
+          "s": "yellow"
+        },
+        {
+          "t": "채우기만 하고 겉을 안 막으면"
+        },
+        {
+          "t": "바람이 그 틈으로 다시 들어와요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "수도꼭지 조금 틀어 두기, 왜 효과 있을까"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "한겨울 밤 욕실 세면대 수도꼭지에서 물이 가늘게 흐르는 모습"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "고인 물은 흐르는 물보다 쉽게 얼어요."
+        },
+        {
+          "t": "그래서 서울시는 아주 추운 밤에는"
+        },
+        {
+          "t": "물을 조금씩 흘려 두라고 안내해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "수도꼭지는 물줄기가 가늘게 이어질 만큼만"
+        },
+        {
+          "t": "열어 두면 돼요. 세게 틀 필요는 없어요."
+        },
+        {
+          "t": "수도계량기 동파 예방에서"
+        },
+        {
+          "t": "가장 손이 덜 가는 방법이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "화장실이나 보일러 옆처럼"
+        },
+        {
+          "t": "배관이 밖으로 드러난 곳도 함께 봐요."
+        },
+        {
+          "t": "보온재로 감싸 두면 찬 공기를 덜 받아요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "열선은 왜 권하지 않을까"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "동파를 막으려고 열선을 감는 집도 있어요."
+        },
+        {
+          "t": "그런데 서울시는 열선이 과열돼"
+        },
+        {
+          "t": "불이 난 일이 잦다고 알렸어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 계량기와 이어진 배관에는",
+          "s": "red"
+        },
+        {
+          "t": "열선을 쓰지 말라고 권해요.",
+          "s": "red"
+        },
+        {
+          "t": "보온재로 채우고 막는 쪽이 더 안전해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "\"그럼 이미 얼어 버렸으면 어떡해요?\""
+        },
+        {
+          "t": "한파가 온 뒤에야 이렇게 묻게 되기 쉬워요."
+        },
+        {
+          "t": "답은 아래 순서에 있어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "얼은 수도계량기, 녹이는 법과 신고"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "물이 안 나오면 계량기가 언 경우가 많아요."
+        },
+        {
+          "t": "이때는 50~60도 따뜻한 물수건으로",
+          "segs": [
+            {
+              "t": "이때는 "
+            },
+            {
+              "t": "50~60도",
+              "s": "blue"
+            },
+            {
+              "t": " 따뜻한 물수건으로"
+            }
+          ]
+        },
+        {
+          "t": "계량기와 수도관을 골고루 감싸 녹여요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "펄펄 끓는 물을 확 부으면",
+          "s": "red"
+        },
+        {
+          "t": "열 때문에 계량기가 상할 수 있어요.",
+          "s": "red"
+        },
+        {
+          "t": "토치나 헤어드라이기는 불이 날 수 있어 피해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "물이 다시 나오면 젖은 보온재를 꺼내고"
+        },
+        {
+          "t": "마른 헌 옷으로 바꿔 채워 두세요."
+        },
+        {
+          "t": "젖은 채로 두면 다음 추운 밤에 또 얼어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "계량기 유리가 깨졌거나 부풀었다면"
+        },
+        {
+          "t": "서울은 120 다산콜재단이나",
+          "segs": [
+            {
+              "t": "서울은 "
+            },
+            {
+              "t": "120",
+              "s": "blue"
+            },
+            {
+              "t": " 다산콜재단이나"
+            }
+          ]
+        },
+        {
+          "t": "관할 수도사업소에 알려요."
+        },
+        {
+          "t": "다른 지역은 사는 곳 수도사업소에 물어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "수도계량기 동파 예방 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "수도계량기 동파 예방에 많이 묻는 두 가지예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 보온재를 따로 사야 하나요?"
+        },
+        {
+          "t": "A1: 꼭 그렇진 않아요. 서울시 안내에 나온 것도"
+        },
+        {
+          "t": "헌 옷, 에어캡, 비닐처럼 집에 있는 것들이에요."
+        },
+        {
+          "t": "틈 없이 꽉 채우고 겉을 막는 게 더 중요해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 계량기가 깨지면 교체는 누가 하나요?"
+        },
+        {
+          "t": "A2: 서울은 2021년 수도조례가 바뀐 뒤",
+          "segs": [
+            {
+              "t": "A2: 서울은 "
+            },
+            {
+              "t": "2021년",
+              "s": "blue"
+            },
+            {
+              "t": " 수도조례가 바뀐 뒤"
+            }
+          ]
+        },
+        {
+          "t": "동파된 계량기 교체비를 쓰는 사람이 내요."
+        },
+        {
+          "t": "미리 막는 편이 돈도 덜 드는 셈이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "댁의 계량기함은 지금 비어 있나요,"
+        },
+        {
+          "t": "뭔가 채워져 있나요? 댓글로 알려 주세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "수도계량기 동파 예방 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "수도계량기 동파 예방은 추워지기 전에 해 둬야"
+        },
+        {
+          "t": "의미가 있어요. 영하 10도 예보가 기준이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "계량기함은 헌 옷으로 채우고 비닐로 막고,"
+        },
+        {
+          "t": "추운 밤엔 수도꼭지를 가늘게 열어 둬요."
+        },
+        {
+          "t": "얼었으면 불 말고 따뜻한 물수건이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이번 주말, 계량기함 뚜껑부터 열어 보세요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘 정리는 서울시 상수도사업본부가"
+        },
+        {
+          "t": "겨울마다 내는 동파 예방 안내에서 골랐어요."
+        },
+        {
+          "t": "지역마다 신고처는 다를 수 있어요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "첫 영하 10도 전에 계량기함을 보온재로 채워 두세요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">얼은 수도 녹이기는 불이 아니라<br>50~60도 따뜻한 물수건으로 천천히 해야 해요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">첫 한파 소식이 들리는 날 저녁,<br>현관 옆 계량기함을 열어 보면 텅 비어 있고<br>틈으로 찬 바람이 그대로 드는 집이 많아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘은 수도계량기 동파 예방을<br>서울시 상수도사업본부 안내로 정리해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">결론부터요. 수도계량기 동파 예방은 세 가지예요.<br><span style=\"background-color: #fff8b2;\"><b>계량기함 안을 보온재로 채우고, 겉을 막고,</b></span><br><span style=\"background-color: #fff8b2;\"><b>추운 밤엔 수도꼭지를 조금 틀어 두기</b></span>예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>얼고 나서 불이나 드라이기를 대면</b></span><br><span style=\"color: #ff0010;\"><b>계량기가 깨지거나 불이 날 수 있어요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 1] 헌 옷으로 채운 계량기함 속 수도계량기 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>수도계량기 동파, 언제부터 걱정할까</h2>\n<p data-ke-size=\"size16\">[이미지 2] 수도계량기 동파 예방이 궁금한 사람의 첫머리 카드</p>\n<p data-ke-size=\"size16\">서울시는 하루 최저기온으로<br>동파예보를 4단계로 나눠 알려요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그중 3단계인 경계는 최저기온<br><span style=\"color: #0078cb;\"><b>영하 10도</b></span> 미만이 이틀 넘게 이어질 때예요.<br>서울시 분석을 보면 이런 날이 계속될 때<br>동파가 많이 생기기 시작했어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #0078cb;\"><b>영하 15도</b></span> 아래로 떨어지면<br>동파가 갑자기 늘었다고 해요.<br>그래서 첫 영하 10도 예보가 나오기 전에<br>계량기함부터 손보는 게 좋아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">계량기함은 현관 밖이나 땅속 작은 상자라<br>바깥 찬 공기를 거의 그대로 받아요.<br>집 안 수도관보다 먼저 어는 까닭이에요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>계량기함 보온재 채우는 순서</h2>\n<p data-ke-size=\"size16\">[이미지 3] 계량기함 보온재를 채우는 순서를 정리한 메모 카드</p>\n<p data-ke-size=\"size16\">수도계량기 동파 예방은 순서만 알면<br>어렵지 않아요. 네 단계로 보면 이래요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">① 계량기함 안 물기를 닦아요<br>② 헌 옷·에어캡으로 꽉 채워요<br>③ 비닐을 넓게 붙여 막아요<br>④ 드러난 수도관도 감싸요</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">물기를 먼저 닦는 건 젖은 보온재가<br>도리어 차갑게 얼 수 있어서예요.<br>뚜껑을 닫은 뒤 그 위를 비닐로 덮으면 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">서울시 안내에 나온 보온재는<br><span style=\"color: #0078cb;\"><b>헌 옷</b></span>, <span style=\"color: #0078cb;\"><b>에어캡</b></span>, 비닐 같은 것들이에요.<br>집에 있는 걸로 충분하다는 뜻이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #fff8b2;\"><b>핵심은 찬 공기가 들어올 틈을 막는 거예요.</b></span><br>채우기만 하고 겉을 안 막으면<br>바람이 그 틈으로 다시 들어와요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>수도꼭지 조금 틀어 두기, 왜 효과 있을까</h2>\n<p data-ke-size=\"size16\">[이미지 4] 한겨울 밤 욕실 세면대 수도꼭지에서 물이 가늘게 흐르는 모습</p>\n<p data-ke-size=\"size16\">고인 물은 흐르는 물보다 쉽게 얼어요.<br>그래서 서울시는 아주 추운 밤에는<br>물을 조금씩 흘려 두라고 안내해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">수도꼭지는 물줄기가 가늘게 이어질 만큼만<br>열어 두면 돼요. 세게 틀 필요는 없어요.<br>수도계량기 동파 예방에서<br>가장 손이 덜 가는 방법이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">화장실이나 보일러 옆처럼<br>배관이 밖으로 드러난 곳도 함께 봐요.<br>보온재로 감싸 두면 찬 공기를 덜 받아요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>열선은 왜 권하지 않을까</h2>\n<p data-ke-size=\"size16\">동파를 막으려고 열선을 감는 집도 있어요.<br>그런데 서울시는 열선이 과열돼<br>불이 난 일이 잦다고 알렸어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>그래서 계량기와 이어진 배관에는</b></span><br><span style=\"color: #ff0010;\"><b>열선을 쓰지 말라고 권해요.</b></span><br>보온재로 채우고 막는 쪽이 더 안전해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">&quot;그럼 이미 얼어 버렸으면 어떡해요?&quot;<br>한파가 온 뒤에야 이렇게 묻게 되기 쉬워요.<br>답은 아래 순서에 있어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>얼은 수도계량기, 녹이는 법과 신고</h2>\n<p data-ke-size=\"size16\">물이 안 나오면 계량기가 언 경우가 많아요.<br>이때는 <span style=\"color: #0078cb;\"><b>50~60도</b></span> 따뜻한 물수건으로<br>계량기와 수도관을 골고루 감싸 녹여요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>펄펄 끓는 물을 확 부으면</b></span><br><span style=\"color: #ff0010;\"><b>열 때문에 계량기가 상할 수 있어요.</b></span><br>토치나 헤어드라이기는 불이 날 수 있어 피해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">물이 다시 나오면 젖은 보온재를 꺼내고<br>마른 헌 옷으로 바꿔 채워 두세요.<br>젖은 채로 두면 다음 추운 밤에 또 얼어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">계량기 유리가 깨졌거나 부풀었다면<br>서울은 <span style=\"color: #0078cb;\"><b>120</b></span> 다산콜재단이나<br>관할 수도사업소에 알려요.<br>다른 지역은 사는 곳 수도사업소에 물어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>수도계량기 동파 예방 Q&amp;A</h2>\n<p data-ke-size=\"size16\">수도계량기 동파 예방에 많이 묻는 두 가지예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 보온재를 따로 사야 하나요?<br>A1: 꼭 그렇진 않아요. 서울시 안내에 나온 것도<br>헌 옷, 에어캡, 비닐처럼 집에 있는 것들이에요.<br>틈 없이 꽉 채우고 겉을 막는 게 더 중요해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 계량기가 깨지면 교체는 누가 하나요?<br>A2: 서울은 <span style=\"color: #0078cb;\"><b>2021년</b></span> 수도조례가 바뀐 뒤<br>동파된 계량기 교체비를 쓰는 사람이 내요.<br>미리 막는 편이 돈도 덜 드는 셈이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">댁의 계량기함은 지금 비어 있나요,<br>뭔가 채워져 있나요? 댓글로 알려 주세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>수도계량기 동파 예방 정리</h2>\n<p data-ke-size=\"size16\">수도계량기 동파 예방은 추워지기 전에 해 둬야<br>의미가 있어요. 영하 10도 예보가 기준이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">계량기함은 헌 옷으로 채우고 비닐로 막고,<br>추운 밤엔 수도꼭지를 가늘게 열어 둬요.<br>얼었으면 불 말고 따뜻한 물수건이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #fff8b2;\"><b>이번 주말, 계량기함 뚜껑부터 열어 보세요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘 정리는 서울시 상수도사업본부가<br>겨울마다 내는 동파 예방 안내에서 골랐어요.<br>지역마다 신고처는 다를 수 있어요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>첫 영하 10도 전에 계량기함을 보온재로 채워 두세요.</p>"
+}
