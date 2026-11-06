@@ -1,0 +1,93 @@
+{
+  "slug": "2026-11-07-namdaemun-adongbok",
+  "title": "남대문 아동복, 30대 엄마들이 백화점 대신 몰려가는 이유는?",
+  "source": "11/7(토) 15:20 네이버 원고 — 아침 이슈 2차(뉴스·경제·사회), 홈판형",
+  "note": "대표 = 남대문시장 CC 장면 사진(사람 작게·없음) → 손 그림. 카드 2(숫자 + 자가 체크) + 그림 3. 기사 속 일반인 이름은 쓰지 않음",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "kind": "photo",
+      "title": "남대문 아동복 소식 (대표사진)",
+      "photo": {
+        "query": "남대문시장",
+        "query_en": "Namdaemun Market",
+        "scene_en": "Namdaemun market Seoul street"
+      },
+      "note": "대표 — 위키미디어·픽사베이 CC 장면 사진, 없으면 손 그림",
+      "thumb_shot": "hands",
+      "thumb_theme": "charcoal",
+      "thumb_person": "40대 여성(손만)",
+      "thumb_mood": "놀람",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "남대문 아동복, 왜 붐빌까",
+        "focus": "center 45%",
+        "theme": "charcoal"
+      },
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Hands of a young mother holding up a small knitted toddler sweater in a bright children's clothing shop, racks softly blurred behind. Facial expression: pleasantly surprised, eyebrows up, not scared. Color theme: warm brown wood and ivory tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "kind": "card",
+      "title": "옷 시장 숫자를 한눈에 정리한 카드",
+      "card": {
+        "type": "number",
+        "title": "유아동복만 커졌어요",
+        "items": [
+          [
+            "9.1%",
+            "유아동복",
+            "1년 전보다"
+          ],
+          [
+            "4.4%",
+            "여성복",
+            "줄었어요"
+          ],
+          [
+            "2.6%",
+            "남성복",
+            "줄었어요"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "아기 옷이 걸린 밝은 매장 옷걸이",
+      "prompt": "Camera and composition: medium shot of a shop. Small colorful baby and toddler clothes hanging neatly on a rack in a bright small shop, no people. Background color: soft pastel pink, mint and cream. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "kind": "card",
+      "title": "남대문 갈 때 스스로 짚어 보는 체크 카드",
+      "card": {
+        "type": "selfcheck",
+        "title": "가기 전 확인",
+        "items": [
+          "아이 키를 재서 간다",
+          "옷 길이를 직접 본다",
+          "매장 이름 미리 찾기"
+        ],
+        "result": "아래 Q&A 부분을 꼭 보세요 👇"
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "시장 골목 끝 따뜻한 조명의 상가 입구",
+      "prompt": "Camera and composition: wide shot of a market alley. A traditional Korean market alley with closed shop shutters and warm lights at the entrance of a shopping arcade in the early morning, no people. Background color: warm amber and muted grey. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "아이 옷이 담긴 쇼핑백과 따뜻한 차",
+      "prompt": "Camera and composition: close-up of a table. A paper shopping bag with folded small children's clothes peeking out next to a cup of warm tea on a kitchen table, no people. Background color: soft cream and warm beige. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "slug": "2026-11-07-ryuhyoyoung-itaeseong-sinrangsueop",
+  "title": "류효영 이태성, 신랑수업2에서 손잡게 된 이상형 대답은?",
+  "source": "11/7(토) 21:20 네이버 원고 — 아침 이슈 2차(연예·예능), 홈판형",
+  "note": "대표 = 채널A 신랑수업2 공식 클립 표지(류효영) → 식당 전체 그림(작은 뒷모습) (류효영 위키미디어 사진 없음). 본문 1장 공식 클립. 카드 2(O·X + 메모) + 그림 2",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "kind": "photo",
+      "title": "신랑수업2 류효영 (대표사진)",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "신랑수업2 류효영 이태성",
+            "must": [
+              "신랑수업"
+            ],
+            "channels": [
+              "채널A",
+              "채널A 캔버스",
+              "Channel A",
+              "채널A Entertainment",
+              "채널A 예능"
+            ],
+            "prefer": [
+              "류효영",
+              "이태성",
+              "손"
+            ]
+          },
+          "owner": "채널A",
+          "program": "신랑수업2"
+        },
+        "person": [
+          "Ryu Hyo-young",
+          "류효영"
+        ],
+        "query": "류효영",
+        "query_en": "Ryu Hyo-young"
+      },
+      "note": "대표: 신랑수업2 공식 클립 표지 → 식당 전체 그림(작은 뒷모습)(실존 인물 그림 금지)",
+      "thumb_shot": "wide",
+      "thumb_theme": "cobalt",
+      "thumb_person": "30대 남녀(작게, 뒷모습)",
+      "thumb_mood": "반가움",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "류효영, 이태성 손잡은 이유",
+        "focus": "center 25%",
+        "theme": "cobalt"
+      },
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A cozy Korean restaurant at night seen from the entrance, two small people seen from behind sitting at a far table sharing a meal, faces not visible. Facial expression: bright happy smile. Color theme: soft coral and ivory tones with a sage green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "kind": "card",
+      "title": "방송 장면을 O·X로 짚어 보는 카드",
+      "card": {
+        "type": "quiz",
+        "title": "신랑수업2 O·X",
+        "items": [
+          "두 사람은 처음 만난 사이",
+          "호감이 있어 출연했어요",
+          "밥은 내가 살게라고 했어요"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "O"
+        ],
+        "where": "아래 Q&A"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "kind": "photo",
+      "title": "신랑수업2 공식 영상 장면 (인용)",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "신랑수업2 이태성",
+            "must": [
+              "신랑수업"
+            ],
+            "channels": [
+              "채널A",
+              "채널A 캔버스",
+              "Channel A",
+              "채널A Entertainment",
+              "채널A 예능"
+            ],
+            "prefer": [
+              "이태성",
+              "눈물",
+              "김요한"
+            ]
+          },
+          "owner": "채널A",
+          "program": "신랑수업2"
+        }
+      },
+      "prompt": "Camera and composition: medium shot of a restaurant. A cozy Korean restaurant corner with a set table for four and warm pendant lights, no people. Background color: warm amber and dark wood. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "저녁 식탁 위 두 잔의 따뜻한 차",
+      "prompt": "Camera and composition: close-up of a table. Two warm cups of tea and a small plate of fruit on a dinner table with soft candle light, no people. Background color: soft peach and warm brown. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "kind": "card",
+      "title": "이날 방송 흐름을 정리한 메모 카드",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "이날 방송 흐름",
+        "sub": "신랑수업2 이야기 순서",
+        "items": [
+          "고마움과 서운함",
+          "손잡은 장면",
+          "이태성의 눈물과 밥 약속"
+        ],
+        "memo": "방송에서 밝혀진 것이 없어요",
+        "hl": 2
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "강변 산책로의 빈 벤치와 가로등",
+      "prompt": "Camera and composition: wide shot of a riverside path. An empty bench under a glowing street lamp on a riverside walking path at night with city lights on the water, no people. Background color: deep navy night and warm lamp yellow. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}

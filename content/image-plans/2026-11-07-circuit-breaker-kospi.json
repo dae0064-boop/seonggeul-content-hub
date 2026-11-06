@@ -1,0 +1,85 @@
+{
+  "slug": "2026-11-07-circuit-breaker-kospi",
+  "title": "서킷브레이커 발동, 코스피가 20분 멈췄던 날 5000선은 지켰을까?",
+  "source": "11/7(토) 22:00 네이버 원고 — 아침 이슈 2차(뉴스·경제), 홈판형",
+  "note": "대표 = 한국거래소·주식 시세판 CC 장면 사진(사람 없음) → 탁자 그림. 카드 2(채팅 + 메모) + 그림 3. 투자 권유 없이 보도 사실만",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "kind": "photo",
+      "title": "서킷브레이커 발동 소식 (대표사진)",
+      "photo": {
+        "query": "한국거래소",
+        "query_en": "Korea Exchange Yeouido",
+        "scene_en": "stock exchange display board red and blue numbers"
+      },
+      "note": "대표 — 위키미디어·픽사베이 CC 장면 사진(사람 없음), 없으면 탁자 그림",
+      "thumb_shot": "overhead",
+      "thumb_theme": "forest",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "서킷브레이커, 시장이 멈춘 날",
+        "focus": "center 45%",
+        "theme": "forest"
+      },
+      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A smartphone with a blank glowing screen, a stopwatch, a cup of coffee and a folded newspaper with blank pages neatly arranged on a desk. Color theme: sage green plants and warm ivory tones with a butter-yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "kind": "card",
+      "title": "서킷브레이커를 묻고 답한 채팅 카드",
+      "card": {
+        "type": "check",
+        "title": "서킷브레이커 조건",
+        "ask": "서킷브레이커가 뭐야?",
+        "items": [
+          "8% 넘게 떨어진 채",
+          "1분이 이어지면",
+          "20분 동안 모든 매매"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "kind": "card",
+      "title": "이날 코스피 흐름을 순서대로 정리한 메모 카드",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "11월 6일 코스피 흐름",
+        "sub": "시간 순서로 보면",
+        "items": [
+          "서킷브레이커 발동",
+          "20분 동안 모든 매매 정지",
+          "5000선 붕괴",
+          "낙폭을 4%대로 줄임"
+        ],
+        "memo": "종가로는 5000선을 지켰어요",
+        "hl": 1
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "해 질 녘 증권가 빌딩과 빈 거리",
+      "prompt": "Camera and composition: wide shot of a city street. Tall glass office buildings in a financial district at dusk with an empty street and soft lights turning on, no people. Background color: deep blue dusk and warm window lights. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "반도체 칩이 놓인 깨끗한 작업대",
+      "prompt": "Camera and composition: close-up of a work surface. Several small computer chips neatly placed on a clean white anti-static mat, no people. Background color: clean white and cool silver blue. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "창밖 노을과 책상 위 따뜻한 차 한 잔",
+      "prompt": "Camera and composition: medium shot by a window. A cup of warm tea on a wooden desk by a window with a soft orange sunset outside, no people. Background color: soft orange sunset and warm wood. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}
