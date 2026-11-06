@@ -23,6 +23,27 @@ const OK_LICENSE = /^(cc0|public domain|pd\b|pd-|cc[ -]by(-sa)?[ -]?\d|cc by(-sa
 const BAD_LICENSE = /(nc|nd|non-?commercial|no ?deriv|fair use|non-?free)/i;
 const strip = (s) => String(s || '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
 
+/**
+ * 사진 출처 한 줄을 깨끗이 (2026-11-06 사고 — 위키미디어 Artist 칸의 HTML 조각 "&#32;This photo was taken with" 이
+ * 40자에서 잘려 "사진: Bonnielou2013 This photo was taken with / …" 가 됐고, 네이버 본문 확인이 달라진 줄로 멈췄다).
+ * 작가 이름은 설명 문장 앞에서 끊고, 숫자 문자 참조(&#32;)를 풀고, 이름은 단어 경계에서 자른다.
+ * 새로 받을 때(commonsFile)와 발행 때(publish-naver·build-tistory 가 credit.txt 를 읽을 때) 둘 다 쓴다.
+ */
+export function cleanAuthor(raw) {
+  let t = strip(String(raw || '').replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n))));
+  t = t.replace(/\s+(This|The|A|An|Photo|photo|Image|image|was|is|taken|by|own|Own)\b[\s\S]*$/, '').trim();
+  if (t.length > 30) t = t.slice(0, 30).replace(/\s+\S*$/, '').trim() || t.slice(0, 30);
+  return t;
+}
+
+export function cleanCredit(line) {
+  const s = String(line || '').replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n))).replace(/\s+/g, ' ').trim();
+  const m = /^사진:\s*(.+?)\s*\/\s*(.+)$/.exec(s);
+  if (!m) return s;
+  const author = cleanAuthor(m[1]) || '작가 미상';
+  return `사진: ${author} / ${m[2].trim()}`;
+}
+
 async function getJson(url) {
   const r = await fetch(url, { headers: { 'User-Agent': UA }, signal: AbortSignal.timeout(30000) });
   if (!r.ok) throw new Error(`HTTP ${r.status} ${url}`);
@@ -114,7 +135,7 @@ export async function commonsFile(file) {
     if (orig !== title) { const o = await commonsFile(orig); if (o.url) return { ...o, note: `잘린 파일이 작아 원본으로: ${orig}` }; }
     return { skip: `사진이 작아 흐려짐(${ii.width}×${ii.height}): ${title}` };
   }
-  const author = strip(md.Artist?.value).slice(0, 40) || '작가 미상';
+  const author = cleanAuthor(md.Artist?.value) || '작가 미상';
   return { url: ii.thumburl || ii.url, page: ii.descriptionurl, license: lic, author, title: p.title, source: '위키미디어 공용', credit: `사진: ${author} / 위키미디어 공용 (${lic})` };
 }
 
