@@ -24,6 +24,9 @@ import { fileURLToPath } from 'node:url';
 import { parsePost, flatLines } from './lib/parse-post.mjs';
 import { DISCLOSURE, MARKER, isDisclosure, isMarker, loadLinks } from './lib/coupang.mjs';
 
+const BOILER = path.join("content", "tistory-boilerplate.txt"); // scripts/tistory-boilerplate.mjs 가 만든다
+const bodyLines = (raw) => raw.replace(/^---[\s\S]*?---/, "").split(/\r?\n/).map((l) => l.trim())
+  .filter((l) => l.length >= 16 && !FIXED_LINE.test(l) && !/^\[이미지|^\[쿠팡 링크\]|^Q\d|^A\d|^\[.*\]$/.test(l));
 const OVERLAP = { err: 0.15, note: 0.08 };   // 네이버 글과 겹치는 본문 10글자 조각 비율
 const TITLE_SIM = { err: 0.4, note: 0.25 };  // 네이버 제목과의 글자 2개 조각 유사도(Dice)
 // 두 채널에 똑같이 들어가는 고정 문구 — 겹침에서 뺀다
@@ -114,8 +117,8 @@ for (const file of files) {
       const others = fs.readdirSync(path.dirname(file)).filter((f) => f.startsWith(day) && f.endsWith('.md') && f !== path.basename(file))
         .filter((f) => /^coupang:\s*\S/m.test(fs.readFileSync(path.join(path.dirname(file), f), 'utf8')));
       // 2026-11-03 원고부터 하루 10편 중 쿠팡 글 6편까지 (2026-11-01 사용자 — 쿠팡 파트너스로 수익화)
-      // 2026-11-06 원고부터 하루 5편이라 3편까지 (2026-11-03 사용자 승인 — 애드센스는 제휴 링크 위주 사이트를 '가치 낮은 콘텐츠'로 본다)
-      const cpMax = day >= '2026-11-06' ? 3 : day >= '2026-11-02' ? 6 : 1; // 11/2 도 10편 날 (2026-11-02 사용자)
+      // 2026-11-06 원고부터 하루 5편 중 쿠팡 1편까지 (2026-11-06 사용자 — 애드센스 '가치가 별로 없는 콘텐츠' 거절 뒤 제휴 링크를 줄임)
+      const cpMax = day >= '2026-11-06' ? 1 : day >= '2026-11-02' ? 6 : 1; // 11/2 도 10편 날 (2026-11-02 사용자)
       if (others.length >= cpMax) errors.push(`쿠팡 글은 하루 ${cpMax}편까지예요 (같은 날: ${others.join(', ')})`);
     } else if (iDis >= 0 || nMark) {
       errors.push('대가성 문구나 [쿠팡 링크] 가 있는데 프런트매터 coupang: 이 없습니다.');
@@ -129,6 +132,21 @@ for (const file of files) {
   else if (worst.title >= TITLE_SIM.note) notes.push(`제목이 네이버 글(${worst.titleOf})과 ${pct(worst.title)} 비슷합니다.`);
   if (worst.body >= OVERLAP.err) errors.push(`본문이 네이버 글(${worst.bodyOf})과 ${pct(worst.body)} 겹칩니다 (${pct(OVERLAP.err)} 미만). 다른 내용으로 씁니다.`);
   else if (worst.body >= OVERLAP.note) notes.push(`본문이 네이버 글(${worst.bodyOf})과 ${pct(worst.body)} 겹칩니다.`);
+
+  // 4) 애드센스 — 글마다 같은 문장 반복 금지 (2026-11-06 사용자: 150편이 같은 틀·같은 문장으로 나가 "가치가 별로 없는 콘텐츠")
+  if (raw.match(/^unique_answer:\s*\S/m) === null && path.basename(file).slice(0, 10) >= "2026-11-06") errors.push("unique_answer: 를 적습니다 — 이 글에서만 얻는 답 한 줄 (다른 글과 겹치지 않는 확인된 수치·기준·순서).");
+  {
+    const bank = fs.existsSync(BOILER) ? new Set(fs.readFileSync(BOILER, "utf8").split("\n").map((x) => x.trim()).filter(Boolean)) : new Set();
+    const own = bodyLines(raw);
+    const others = new Set();
+    for (const f of fs.readdirSync(path.dirname(file))) {
+      const p = path.join(path.dirname(file), f);
+      if (!f.endsWith(".md") || p === path.resolve(file) || f === path.basename(file)) continue;
+      for (const l of bodyLines(fs.readFileSync(p, "utf8"))) others.add(l);
+    }
+    const repeated = own.filter((l) => bank.has(l) || others.has(l));
+    if (repeated.length) errors.push(`다른 글과 같은 문장이 있습니다 (${repeated.length}줄). 이 글에 맞게 바꿉니다: "${repeated[0].slice(0, 40)}…"`);
+  }
 
   if (errors.length) failed = 1;
   console.log(`\n${errors.length ? '❌' : '✅'} ${file}`);
