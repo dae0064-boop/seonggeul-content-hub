@@ -1,0 +1,128 @@
+{
+  "slug": "2026-11-07-dubeonjjae-signal-cheotbang",
+  "title": "두번째 시그널 첫방송 12월 7일 확정, 왜 1·2회를 한꺼번에 할까?",
+  "source": "11/7(토) 12:00 네이버 원고 — 아침 이슈 1차(연예·드라마), 홈판형",
+  "note": "대표 = tvN 두번째 시그널 공식 유튜브 티저 표지(논란 배우 단독 장면은 피함) → 사람 없는 무전기 사물 그림. 본문 공식 클립 1장. 카드 2(첫머리·메모) + 그림 2",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "kind": "photo",
+      "title": "드라마 공식 영상 장면 (대표사진)",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "두번째 시그널 티저",
+            "episode": [
+              "시그널"
+            ],
+            "must": [
+              "시그널"
+            ],
+            "channels": [
+              "tvN",
+              "tvN DRAMA",
+              "tvN drama",
+              "티빙"
+            ],
+            "prefer": [
+              "티저",
+              "김혜수",
+              "이제훈"
+            ]
+          },
+          "owner": "tvN",
+          "program": "두번째 시그널"
+        }
+      },
+      "note": "대표: tvN 공식 티저 표지 → 사람 없는 사물 그림",
+      "thumb_shot": "object",
+      "thumb_theme": "plum",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "두번째 시그널, 첫방송 확정",
+        "focus": "center 30%",
+        "theme": "plum"
+      },
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). An old walkie-talkie radio with a glowing light on a dark wooden desk at night. Color theme: cocoa brown and peach tones with a cream accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "kind": "card",
+      "title": "드라마 이야기를 여는 첫머리 카드",
+      "card": {
+        "type": "lead",
+        "keyword": "두번째 시그널",
+        "title": "첫방송\n언제예요?",
+        "ask": "정말 방송하는 거야?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "kind": "photo",
+      "title": "드라마 공식 영상 장면 (인용)",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "두번째 시그널 티저",
+            "episode": [
+              "시그널"
+            ],
+            "must": [
+              "시그널"
+            ],
+            "channels": [
+              "tvN",
+              "tvN DRAMA",
+              "tvN drama",
+              "티빙"
+            ],
+            "prefer": [
+              "예고",
+              "이제훈",
+              "김혜수"
+            ]
+          },
+          "owner": "tvN",
+          "program": "두번째 시그널"
+        }
+      },
+      "prompt": "Camera and composition: eye-level medium shot. A quiet police office at night with a desk lamp and stacked case files, no people. Background color: deep navy and warm amber. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "비 오는 밤 빈 골목의 가로등",
+      "prompt": "Camera and composition: eye-level wide shot. An empty narrow alley on a rainy night lit by a single street lamp, no people. Background color: dark blue and soft yellow. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "kind": "card",
+      "title": "두번째 시그널 궁금증 메모 카드",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "첫 주 방송 순서",
+        "sub": "모두 8부작이에요",
+        "items": [
+          "1회와 2회를 이어서 방송",
+          "본격적인 이야기는 3회부터",
+          "월요일과 화요일에 한 회씩"
+        ],
+        "memo": "밤 10시 tvN",
+        "hl": 1
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "오래된 무전기가 놓인 나무 책상",
+      "prompt": "Camera and composition: close-up still life. An old walkie-talkie and a notebook on a wooden desk by a window at dusk, no people. Background color: warm brown and dusky blue. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}
