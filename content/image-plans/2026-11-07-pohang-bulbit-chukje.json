@@ -1,0 +1,91 @@
+{
+  "slug": "2026-11-07-pohang-bulbit-chukje",
+  "title": "포항불빛축제 일정, 여름 축제인 줄 알았는데 올해는 11월",
+  "source": "11/7(토) 10:40 네이버 원고 — 생활정보 홈판형(나들이 '언제'), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (첫머리 + 숫자)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "겨울 바닷가에서 밤하늘 불꽃을 올려다보며 반갑게 웃는 30대 딸과 60대 어머니 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her 30s with a long low ponytail in a cobalt blue puffer coat and her mother in her 60s with short curly hair in a cream wool coat and knit scarf stand on a winter beach promenade at night, turning to each other and smiling brightly, colorful fireworks bursting softly blurred in the dark sky over the sea behind them. Facial expression: bright happy smile. Color theme: soft coral and ivory tones with a sage green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "soft coral and ivory tones with a sage green accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "cobalt",
+      "thumb_person": "30대 딸(긴 낮은 포니테일·코발트 패딩)과 60대 어머니(짧은 곱슬머리·크림 코트)",
+      "thumb_mood": "반가움",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "cobalt",
+        "font": "jua",
+        "title": "포항불빛축제\n겨울에 열려?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "포항불빛축제 일정을 한눈에 정리한 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "포항불빛축제",
+        "title": "올해는\n언제 열려?",
+        "ask": "불빛축제 6월 아니었어?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "해 질 녘 부두 건물 벽에 화려한 빛 영상이 비치는 겨울 항구",
+      "prompt": "Camera and composition: wide view of a harbor pier at dusk. Colorful abstract light patterns are projected onto the wall of a large waterfront building at a Korean harbor pier at dusk, calm dark water reflecting the lights, small fishing boats moored nearby, no people. Background color: deep twilight blue sky with warm projected light colors. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide view of a harbor pier at dusk",
+      "bg": "deep twilight blue sky with warm projected light colors"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "포항국제불빛축제 숫자를 한눈에 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "불빛축제 한눈에",
+        "items": [
+          [
+            "19일",
+            "개막",
+            "송도부두 점등식"
+          ],
+          [
+            "21일",
+            "국제불꽃쇼",
+            "영일대해수욕장"
+          ],
+          [
+            "8시",
+            "불꽃쇼 시작",
+            "오후, 한 시간 동안"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "두꺼운 외투와 목도리, 보온병과 방석을 챙긴 나들이 가방",
+      "prompt": "Camera and composition: flat lay from above on a wooden floor. A thick padded winter coat, a knit scarf and gloves, a steel thermos, a small foldable seat cushion and a portable phone battery are neatly laid out next to an open canvas tote bag, no people. Background color: warm wooden floor with cream and orange tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "flat lay from above on a wooden floor",
+      "bg": "warm wooden floor with cream and orange tones"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "불꽃쇼가 끝난 뒤 담요를 두르고 밤바다를 걷는 50대 부부의 뒷모습",
+      "prompt": "Camera and composition: wide shot from behind on a beach at night. A Korean couple in their 50s seen from behind, sharing one plaid blanket over their shoulders, walk slowly along a sandy winter beach at night, faint smoke from finished fireworks drifting over the dark sea and city lights along the shore. Background color: dark navy night sea with soft warm city lights. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot from behind on a beach at night",
+      "bg": "dark navy night sea with soft warm city lights"
+    }
+  ]
+}
