@@ -1,0 +1,89 @@
+{
+  "slug": "2026-11-08-boheomgeum-jigeup-gihan",
+  "title": "보험금 지급 기한, 늦어지면 지연이자도 받을까 (3영업일)",
+  "source": "11/8(일) 티스토리 원고 (11/7 밤 작성) 15:00",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "휴대전화로 보험금 입금 문자를 기다리며 달력을 보는 50대 여성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her 50s with a bob haircut and a coral cardigan holding her phone and glancing at a wall calendar in a cozy living room, the calendar softly blurred behind her. Expression: curious, head slightly tilted. Color theme: cocoa brown and peach tones with a cream accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "cocoa brown and peach tones with a cream accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "plum",
+      "thumb_person": "50대 여성(단발·코랄 카디건)",
+      "thumb_mood": "궁금",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "plum",
+        "font": "jua",
+        "title": "보험금 지급 기한\n며칠 걸릴까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "3영업일·30영업일·50% 가지급을 한눈에 보여 주는 숫자 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "보험금 지급 한눈에",
+        "items": [
+          [
+            "3영업일",
+            "서류 접수부터",
+            "기본 지급"
+          ],
+          [
+            "30영업일",
+            "조사할 때",
+            "지급예정일"
+          ],
+          [
+            "50%",
+            "추정 보험금",
+            "가지급"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "보험금 조사가 길어질 때 가지급을 청구하는 순서를 적은 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "가지급 받는 순서",
+        "sub": "조사가 길어질 때",
+        "items": [
+          "지급예정일 안내를 봐요",
+          "가지급 내용을 확인해요",
+          "보험사에 가지급을 청구해요",
+          "조사 뒤 나머지를 받아요"
+        ],
+        "memo": "가지급은 청구해야 나와요",
+        "hl": 1
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "창가 책상 위 서류 봉투와 계산기, 보험 서류를 정리하는 모습",
+      "prompt": "Camera and composition: desk by a window with envelopes and a calculator. A tidy desk by a window with paper envelopes, a calculator and a pen, someone sorting documents, soft daylight. Background color: cocoa brown and peach. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "desk by a window with envelopes and a calculator",
+      "bg": "cocoa brown and peach",
+      "kind": "photo",
+      "photo": {
+        "query_en": "documents calculator desk",
+        "scene_en": "desk with documents envelopes and a calculator"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}
