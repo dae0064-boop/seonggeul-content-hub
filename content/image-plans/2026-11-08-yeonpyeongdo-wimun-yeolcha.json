@@ -1,0 +1,91 @@
+{
+  "slug": "2026-11-08-yeonpyeongdo-wimun-yeolcha",
+  "title": "연평도 위문열차 15년 만에, 해병대원 한마디가 공연이 된 이유는?",
+  "source": "11/8(일) 09:20 네이버 원고 — 아침 이슈 1차(뉴스·정책), 홈판형",
+  "note": "대표 = 연평도 CC 장면 사진(사람 없음) → 섬 바다 그림. 카드 2(메모 순서·O·X) + 그림 3. 대통령 얼굴 그림 없음",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "kind": "photo",
+      "title": "연평도 위문열차 소식 (대표사진)",
+      "photo": {
+        "query": "연평도",
+        "query_en": "Yeonpyeong Island",
+        "scene_en": "small Korean island harbor with fishing boats and calm sea"
+      },
+      "note": "대표 — 위키미디어·픽사베이 CC 장면 사진(사람 없음), 없으면 섬 그림",
+      "thumb_shot": "wide",
+      "thumb_theme": "olive",
+      "thumb_person": "없음",
+      "thumb_mood": "반가움",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "연평도 위문열차, 다시 열렸다",
+        "focus": "center 45%",
+        "theme": "olive"
+      },
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A small Korean island harbor with fishing boats and a simple outdoor stage being set up near the pier, two tiny ordinary people carrying a speaker, bright happy smile. Color theme: olive green and warm cream tones with a coral accent. Natural realistic photograph look, soft daylight, real Korean places, warm everyday mood, natural colors, clean composition. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. No military weapons. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "kind": "card",
+      "title": "연평도 위문열차가 열리기까지 흐름을 정리한 카드",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "연평도 위문열차까지",
+        "sub": "시간 순서로 보면",
+        "items": [
+          "연평부대를 찾았을 때",
+          "공연을 열어 달라고",
+          "적극적으로 검토",
+          "11월 4일"
+        ],
+        "memo": "2011년 이후 15년 만이에요",
+        "hl": 3
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "군부대 강당 무대에 켜진 조명",
+      "prompt": "An empty simple indoor auditorium stage with warm spotlights on and rows of plain chairs facing it, no people, festive but calm mood. Natural realistic photograph look, soft light, clean composition. Do not draw any written words, letters or numbers anywhere in the image; banners stay blank. No weapons. Do not depict any real or famous person."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "바다 위 작은 섬과 맑은 하늘",
+      "prompt": "A small green island in the calm western sea of Korea under a clear autumn sky, seen from a ferry deck, no people. Natural realistic photograph look, soft daylight, peaceful mood. Do not draw any written words, letters or numbers. No weapons. Do not depict any real or famous person."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "kind": "card",
+      "title": "연평도 위문열차 궁금증 O·X 카드",
+      "card": {
+        "type": "quiz",
+        "title": "연평도 위문열차 O·X",
+        "items": [
+          "15년 만에 열린 공연이다",
+          "해병대원이 건의했다",
+          "정기 공연이 발표됐다"
+        ],
+        "answers": [
+          "O",
+          "O",
+          "X"
+        ],
+        "where": "아래 본문"
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "해 질 녘 부두에 묶인 작은 배",
+      "prompt": "A small fishing boat tied at a quiet island pier at sunset, gentle waves, no people, calm warm mood. Natural realistic photograph look, soft evening light, clean composition. Do not draw any written words, letters or numbers. No weapons. Do not depict any real or famous person."
+    }
+  ]
+}
