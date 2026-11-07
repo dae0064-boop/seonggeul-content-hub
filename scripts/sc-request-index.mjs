@@ -127,6 +127,22 @@ const note = (u, r) => { done.set(u, r); fs.mkdirSync(path.dirname(STATE), { rec
 // 사람이 하는 그대로 서치 콘솔을 한 번 연 뒤 맨 위 'URL 검사' 칸에 주소를 넣고 Enter 한다 (화면이 새로 열리지 않아 이동 충돌이 없다).
 // 진행 기록(sc-request.json·log.txt)은 글 하나마다 다시 써서 도중에 창을 닫아도 어디까지 됐는지 남는다.
 const SEARCH = ['input[aria-label*="검사"]', 'input[placeholder*="검사"]', 'input[aria-label*="Inspect"]', 'input[placeholder*="Inspect"]', 'header input[type="text"]', 'input[type="text"]'];
+// 2026-11-07 고장 고침: 요청이 끝나면 '색인 생성 요청됨 … 닫기' 창이 뜨는데, 숨은 옛 창의 '닫기'(.first())를 누르려다 그냥 넘어가
+// 보이는 창이 화면을 덮은 채 남았다 → 다음 글의 검색칸 클릭이 10초 초과로 4편 연속 실패(15:02~15:05). 보이는 '닫기'·'확인'을 모두 누른다.
+async function closeDialogs(page) {
+  for (let round = 0; round < 3; round++) {
+    let clicked = 0;
+    for (const name of ['닫기', '확인', 'Got it', 'Dismiss', 'Close']) {
+      const all = page.getByRole('button', { name, exact: true });
+      const n = await all.count().catch(() => 0);
+      for (let k = n - 1; k >= 0; k--) {
+        const b = all.nth(k);
+        if (await b.isVisible().catch(() => false)) { await b.click({ timeout: 3000 }).catch(() => {}); clicked++; await sleep(500); }
+      }
+    }
+    if (!clicked) return;
+  }
+}
 async function searchBox(page) {
   for (const sel of SEARCH) {
     const el = page.locator(sel).first();
@@ -182,6 +198,7 @@ async function main() {
       try {
         // 열려 있는 창(앞 글 결과 창 등)을 닫고 검색칸에 주소 넣기
         await page.keyboard.press('Escape').catch(() => {});
+        await closeDialogs(page);
         const box = await searchBox(page);
         if (!box) { report.failed.push({ u, why: 'no-search-box' }); say(`/${n} 검색칸을 못 찾음`); await shot(`fail-${n}`); continue; }
         await box.click({ timeout: 10000 });
@@ -215,7 +232,7 @@ async function main() {
             if (QUOTA.test(r)) { report.stop = 'quota'; say('오늘 구글 용량(할당량)이 끝났어요 — 내일 이어서'); await shot('quota'); break; }
             if (/색인 생성 요청됨|Indexing requested/i.test(r)) { note(u, 'requested'); report.requested.push(u); say(`/${n} 색인 생성 요청됨`); }
             else { report.failed.push({ u, why: 'no-confirm' }); say(`/${n} 요청 결과를 확인 못 함`); await shot(`fail-${n}`); }
-            for (const name of ['확인', '닫기', 'Got it', 'Dismiss']) { const b = page.getByRole('button', { name, exact: true }).first(); if (await b.count()) { await b.click({ timeout: 5000 }).catch(() => {}); break; } }
+            await closeDialogs(page);
           }
         }
         await sleep(2000);
