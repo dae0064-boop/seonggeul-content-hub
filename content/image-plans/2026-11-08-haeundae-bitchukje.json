@@ -1,0 +1,84 @@
+{
+  "slug": "2026-11-08-haeundae-bitchukje",
+  "title": "해운대 빛축제, 올겨울엔 언제부터 불이 켜질까",
+  "source": "11/8(일) 10:40 네이버 원고 — 생활정보 홈판형(🍂 나들이 '언제'), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (첫머리 + 메모)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "겨울밤 바닷가 빛 터널 아래에서 반짝이는 불빛을 올려다보며 감탄하는 30대 여성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her 30s with long wavy hair in a mustard wool coat and a cream scarf looks up at glowing blue and gold light decorations shaped like waves over a seaside promenade at night, her face lit softly by the lights, the beach and lights blurred behind her. Mood: bright happy smile. Color theme: sage green plants and warm ivory tones with a butter-yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "sage green plants and warm ivory tones with a butter-yellow accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "forest",
+      "thumb_person": "30대 여성(긴 웨이브 머리·머스터드 코트)",
+      "thumb_mood": "반가움",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "forest",
+        "font": "jua",
+        "title": "해운대 빛축제\n바닷속이라고?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "해운대 빛축제 일정을 한눈에 정리한 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "해운대 빛축제",
+        "title": "올해는\n언제 켜져?",
+        "ask": "작년처럼 29일이야?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "푸른 빛으로 물든 대형 잠수부 모양 조형물 앞을 천천히 걷는 가족의 뒷모습",
+      "prompt": "Camera and composition: wide shot from behind at night. A family of three seen from behind walks slowly in front of a large glowing diver-shaped light sculpture in deep blue tones on a sandy beach at night, the sea dark in the distance. Background color: night beach with deep blue and teal light tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot from behind at night",
+      "bg": "night beach with deep blue and teal light tones"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "해 질 녘 불빛 장식이 줄지어 켜지기 시작한 넓은 보행자 거리",
+      "prompt": "Camera and composition: wide street view at dusk. A wide pedestrian street lined with strings of warm and blue lights just turning on at dusk, a few small people strolling far away, low buildings on both sides. Background color: dusk sky with purple and warm orange tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide street view at dusk",
+      "bg": "dusk sky with purple and warm orange tones"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "해운대 빛축제 갈 때 챙길 것을 적은 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "style": "memo",
+        "title": "빛축제 갈 때 챙길 것",
+        "sub": "겨울 바닷바람 대비",
+        "items": [
+          "목도리와 장갑",
+          "오래 걸어도 편한 신발",
+          "휴대폰 보조 배터리",
+          "점등 시간을 다시 확인"
+        ],
+        "memo": "구남로에서 바다 쪽으로",
+        "hl": 1
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "불빛이 비치는 겨울 백사장을 손잡고 걷는 60대 부부",
+      "prompt": "Camera and composition: medium shot from behind. A Korean couple in their 60s in padded coats holds hands and walks along a winter sandy beach at night, soft colorful light reflections on the wet sand ahead of them. Background color: night beach with soft navy and warm gold reflections. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot from behind",
+      "bg": "night beach with soft navy and warm gold reflections"
+    }
+  ]
+}

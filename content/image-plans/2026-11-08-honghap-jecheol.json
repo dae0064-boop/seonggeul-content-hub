@@ -1,0 +1,80 @@
+{
+  "slug": "2026-11-08-honghap-jecheol",
+  "title": "홍합 제철, 사계절 먹는 줄 알았는데 찬바람 불 때가 제맛",
+  "source": "11/8(일) 20:00 네이버 원고 — 생활정보 홈판형(🍂 제철 '언제'), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2 (첫머리 + 자가체크)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "김이 오르는 홍합탕 냄비 앞에서 국자를 들고 환하게 웃는 40대 남성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean man in his 40s with short black hair in a navy apron holds a ladle beside a steaming pot of mussel soup on a home stove, his face close to the camera, a warm kitchen blurred behind. Mood: bright happy smile. Color theme: apricot and ivory tones with a sage green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "apricot and ivory tones with a sage green accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "rose",
+      "thumb_person": "40대 남성(짧은 검은 머리·네이비 앞치마)",
+      "thumb_mood": "반가움",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "rose",
+        "font": "ptd",
+        "title": "홍합 제철\n겨울이 제맛?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "홍합 제철을 한눈에 정리한 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "홍합 제철",
+        "title": "언제가\n제맛일까?",
+        "ask": "홍합은 사계절 아니야?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "시장 좌판 얼음 위에 수북이 쌓인 검은 껍데기 홍합",
+      "prompt": "Camera and composition: close-up of a market stall. A heap of glossy black mussels piled on crushed ice at a Korean traditional market stall, a small metal scoop beside it, no people. Background color: market stall with cool silver and slate tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of a market stall",
+      "bg": "market stall with cool silver and slate tones"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "싱크대에서 홍합 껍데기에 붙은 수염을 손으로 잡아당겨 떼는 두 손",
+      "prompt": "Camera and composition: close-up of hands at a kitchen sink. Two hands pull the beard threads off a black mussel shell over a stainless sink bowl full of cleaned mussels in cold water, no faces. Background color: stainless sink with cool gray and soft white tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands at a kitchen sink",
+      "bg": "stainless sink with cool gray and soft white tones"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "홍합 먹기 전 확인할 것을 묻는 자가 체크 카드",
+      "kind": "card",
+      "card": {
+        "type": "selfcheck",
+        "title": "홍합, 이것만 확인",
+        "items": [
+          "바닷가 바위에서 땄다",
+          "입이 벌어져 안 닫힌다",
+          "껍데기가 깨졌다"
+        ],
+        "result": "아래 '패류독소' 부분을 꼭 보세요 👇"
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "저녁 식탁에서 홍합탕을 나눠 담으며 이야기하는 70대 어머니와 30대 딸",
+      "prompt": "Camera and composition: medium shot at a dinner table. A Korean mother in her 70s with short gray curly hair in a lavender sweater ladles mussel soup into a bowl held by her daughter in her 30s with a ponytail at a cozy dinner table, both smiling and talking. Background color: warm dining room with apricot and ivory tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a dinner table",
+      "bg": "warm dining room with apricot and ivory tones"
+    }
+  ]
+}
