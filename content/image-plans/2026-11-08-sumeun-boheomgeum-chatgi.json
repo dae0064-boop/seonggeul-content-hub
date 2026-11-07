@@ -1,0 +1,89 @@
+{
+  "slug": "2026-11-08-sumeun-boheomgeum-chatgi",
+  "title": "숨은 보험금 찾기, 늦게 찾아가도 이자가 붙나요 (만기 3년 뒤 0% · 2026년)",
+  "source": "11/8(일) 20:40 네이버 원고 — 생활보장 검색형(한다팀장 모양), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장)·한다팀장 모양. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "소파에서 휴대폰으로 보험 조회 화면을 넘기는 손 (대표사진)",
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Close-up of a Korean woman's hands in a coral knit sleeve holding a smartphone with a blank screen on a sofa, her thumb scrolling, a warm mug of tea softly blurred beside her. Facial expression: determined, nodding, sleeves rolled up. Color theme: soft coral and ivory tones with a sage green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "손만 크게 (얼굴 없음)",
+      "bg": "soft coral and ivory tones with a sage green accent",
+      "note": "대표",
+      "thumb_shot": "hands",
+      "thumb_theme": "cobalt",
+      "thumb_person": "40대 여성 손(코랄 니트 소매)",
+      "thumb_mood": "결심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "cobalt",
+        "font": "jua",
+        "title": "숨은 보험금 찾기\n늦어도 이자?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "숨은 보험금 찾기를 묻고 답하는 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "ask": "숨은보험금이 뭐예요?",
+        "title": "숨은 보험금 찾기",
+        "items": [
+          "아직 청구하지 않은 보험금",
+          "본인인증만 하면 24시간",
+          "가입 내역과 숨은보험금"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "식탁에서 노트북으로 조회하는 40대 부부",
+      "prompt": "Camera and composition: medium shot at a dining table. A Korean couple in their 40s, the husband in a gray hoodie and the wife in a white blouse, sitting at a dining table and looking at a laptop with a blank screen together, curious and calm. Background color: warm ivory walls and soft coral placemats. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a dining table",
+      "bg": "warm ivory walls and soft coral placemats"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "숨은보험금 이자에 대한 O·X 퀴즈 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "숨은보험금 O·X",
+        "items": [
+          "휴면보험금에도 이자가 붙는다",
+          "내보험찾아줌은 24시간 된다",
+          "고인 보험금도 여기서 청구된다"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "X"
+        ],
+        "where": "아래 Q&A"
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "은행 창구 대신 집에서 서류를 정리하는 60대 어머니와 30대 딸",
+      "prompt": "Camera and composition: medium shot at a living room table. A Korean mother in her 60s in a lavender knit and her daughter in her 30s in a denim shirt sorting blank papers into folders at a low living room table, talking calmly. Background color: soft daylight and light wood floor. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a living room table",
+      "bg": "soft daylight and light wood floor"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "저녁 거실에서 휴대폰을 보며 활짝 웃는 50대 부부",
+      "prompt": "Camera and composition: medium shot on a living room sofa in the evening. A Korean couple in their 50s sitting on a sofa in the evening, looking at a blank smartphone screen together and smiling brightly. Background color: warm lamp light and cream sofa. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on a living room sofa in the evening",
+      "bg": "warm lamp light and cream sofa"
+    }
+  ]
+}

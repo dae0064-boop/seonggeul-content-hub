@@ -1,0 +1,100 @@
+{
+  "slug": "2026-11-08-gyoyuk-geupyeo-geumaek",
+  "title": "교육급여, 고등학생은 내년에 얼마 받나요 (94만 5천 원 · 2027년)",
+  "source": "11/8(일) 10:00 네이버 원고 — 생활보장 검색형(한다팀장 모양), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장)·한다팀장 모양. 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "식탁에 앉아 가정통신문을 들고 고등학생 딸과 이야기하는 40대 엄마 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean mother in her 40s with a short bob and a gray knit sweater sitting at a kitchen table with her high school daughter in a school uniform, the mother holding a blank school notice paper and explaining it kindly, in a bright Korean apartment kitchen. Facial expression: explaining with one hand open toward the viewer. Color theme: sage green and sand beige tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "sage green and sand beige tones with a coral accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "teal",
+      "thumb_person": "40대 엄마(단발·회색 니트)와 고등학생 딸(교복)",
+      "thumb_mood": "설명",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "teal",
+        "font": "jua",
+        "title": "교육급여\n내년엔 얼마?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "2027년 교육활동지원비를 학교급별 숫자로 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "교육급여 한눈에",
+        "items": [
+          [
+            "50%",
+            "교육급여 조건",
+            "중위소득 기준"
+          ],
+          [
+            "9.9%",
+            "고등학생",
+            "1년 사이 인상"
+          ],
+          [
+            "7월 28일",
+            "2027 기준",
+            "위원회 결정"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "거실 소파에서 휴대폰으로 복지 안내를 찾아보는 40대 아빠",
+      "prompt": "Camera and composition: medium shot on a living room sofa. A Korean father in his 40s with short hair and glasses, wearing a beige cardigan, sitting on a living room sofa and looking at a blank smartphone screen with a curious face. Background color: soft sage green cushions and warm evening lamp light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on a living room sofa",
+      "bg": "soft sage green cushions and warm evening lamp light"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "교육급여에 대해 많이 헷갈리는 세 가지를 O·X 로 묻는 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "교육급여 O·X",
+        "items": [
+          "부양의무자가 있으면 못 받는다",
+          "고등학생은 수업료도 지원된다",
+          "신청하지 않아도 저절로 나온다"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "X"
+        ],
+        "where": "아래 본문"
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "학교 교무실 앞 복도에서 담임 선생님과 이야기하는 50대 아빠와 고등학생 아들",
+      "prompt": "Camera and composition: medium shot in a school hallway. A Korean father in his 50s in a navy jacket and his high school son in a school uniform standing in a school hallway, talking calmly with a homeroom teacher in her 30s holding a blank folder. Background color: pale yellow school corridor walls and large windows. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a school hallway",
+      "bg": "pale yellow school corridor walls and large windows"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "저녁 식탁에서 웃으며 숙제를 봐 주는 30대 엄마와 초등학생 아들",
+      "prompt": "Camera and composition: medium shot at a dining table in the evening. A Korean mother in her 30s with a ponytail and a mustard sweater smiling while helping her elementary school son with homework at a dining table, a blank notebook and pencils on the table. Background color: warm pendant light and light oak table. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a dining table in the evening",
+      "bg": "warm pendant light and light oak table"
+    }
+  ]
+}
