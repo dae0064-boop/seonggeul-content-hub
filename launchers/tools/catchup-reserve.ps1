@@ -72,6 +72,9 @@ if (-not (Test-Path (Join-Path $drive "ClaudeWorkspace\issues\$today\issues.json
   & (Join-Path $PSScriptRoot 'issue-scan.ps1') | Out-Null
   Note ("오늘 이슈 모으기 끝: " + $(if (Test-Path (Join-Path $drive "ClaudeWorkspace\issues\$today\issues.json")) { 'Drive 에 올림' } else { '실패 — dumps 확인' }))
 }
+# 2026-11-07 고장 고침: 멈춘 자동화 크롬을 먼저 되살린다 (홈판·통계·예약이 모두 크롬을 쓴다)
+. (Join-Path $PSScriptRoot 'lib-detach.ps1')
+try { $hn = Repair-HungChrome; if ($hn) { Note $hn } } catch {}
 try {
   $hm = $now.ToString('HHmm')
   $hfOut = Join-Path $repo "dumps\homefeed\$today\$hm"
@@ -84,6 +87,9 @@ try {
 } catch { Note "홈판 화면 읽기 실패: $($_.Exception.Message)" }
 # 2026-11-05 고장 고침: 아침 블로그 통계가 크롬이 닫혀 중간에 끊긴 날은 여기서 다시 읽는다 (다 읽은 날은 blog-stats.ps1 이 바로 끝냄)
 try { & (Join-Path $PSScriptRoot 'blog-stats.ps1') | Out-Null } catch { Note "블로그 통계 다시 읽기 실패: $($_.Exception.Message)" }
+# 2026-11-07 고장 고침: 아침에 크롬이 멈춰 티스토리 상태·구글 색인 요청을 못 한 날은 여기서 다시 한다 (오늘 이미 했으면 두 스크립트가 바로 끝냄)
+try { & (Join-Path $PSScriptRoot 'tistory-stats.ps1') | Out-Null } catch { Note "티스토리 상태 다시 읽기 실패: $($_.Exception.Message)" }
+try { & (Join-Path $PSScriptRoot 'sc-request.ps1') | Out-Null } catch { Note "색인 생성 요청 다시 하기 실패: $($_.Exception.Message)" }
 # 네이버 클립 하루 1편 (2026-11-05 사용자) — 발행된 오늘 글로 세로 영상을 만들어 올린다. 화면 확인 전에는 살펴보기·시험만 (clip-day.ps1)
 try { $cl = & (Join-Path $PSScriptRoot 'clip-day.ps1') | Select-Object -Last 1; if ($cl) { Note "$cl" } } catch { Note "클립 실패: $($_.Exception.Message)" }
 $pendingFor = {
