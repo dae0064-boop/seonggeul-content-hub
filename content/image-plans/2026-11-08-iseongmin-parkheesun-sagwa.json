@@ -1,0 +1,91 @@
+{
+  "slug": "2026-11-08-iseongmin-parkheesun-sagwa",
+  "title": "이성민 박희순 사과, 청룡영화상 1년 만에 다시 고개 숙인 이유는?",
+  "source": "11/8(일) 12:00 네이버 원고 — 아침 이슈 1차(연예·스타), 홈판형",
+  "note": "대표 = 배우 단독 CC 사진(위키미디어, photo.person) → 사람 없는 그림. 카드 2(첫머리·숫자) + 그림 3",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "kind": "photo",
+      "title": "배우 사과 소식 (대표사진)",
+      "photo": {
+        "person": [
+          "Lee Sung-min",
+          "이성민"
+        ],
+        "query": "이성민",
+        "query_en": "Lee Sung-min actor"
+      },
+      "note": "대표: 배우 단독 CC 사진 → 사람 없는 시상식 무대 그림",
+      "thumb_shot": "overhead",
+      "thumb_theme": "rose",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "이성민, 박희순에 사과",
+        "focus": "center 25%",
+        "theme": "rose"
+      },
+      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A bouquet of flowers, a small golden trophy shaped ornament without any text, an envelope and a pair of white gloves on a dark table. Color theme: apricot and ivory tones with a sage green accent. Natural realistic photograph look, soft light, warm mood, natural colors, clean composition. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "kind": "card",
+      "title": "1년 만의 사과를 여는 첫머리 카드",
+      "card": {
+        "type": "lead",
+        "keyword": "이성민 박희순",
+        "title": "1년 만에\n왜 사과?",
+        "ask": "그게 그렇게 마음에 걸려요?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "시상식장 무대와 빈 객석",
+      "prompt": "An empty grand award ceremony hall with a lit stage and rows of red seats, soft spotlights, no people, calm elegant mood. Natural realistic photograph look, clean composition. Do not draw any written words, letters or numbers anywhere in the image; screens and banners stay blank. Do not depict any real or famous person."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "탁자 위 꽃다발과 트로피 모양 장식",
+      "prompt": "A bouquet of flowers and a small golden trophy shaped ornament without any text on a wooden table near a window, no people, warm calm mood. Natural realistic photograph look, soft daylight. Do not draw any written words, letters or numbers. Do not depict any real or famous person."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "kind": "card",
+      "title": "사과까지 흐름을 숫자로 정리한 카드",
+      "card": {
+        "type": "number",
+        "title": "이성민 박희순 한눈에",
+        "items": [
+          [
+            "제46회",
+            "청룡영화상",
+            "남우조연상"
+          ],
+          [
+            "5월",
+            "백상예술대상",
+            "첫 언급"
+          ],
+          [
+            "11월 3일",
+            "핸드프린팅",
+            "공개 사과"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "저녁 창가에 놓인 두 잔의 따뜻한 차",
+      "prompt": "Two cups of warm tea side by side on a windowsill in the evening light, no people, friendly calm mood. Natural realistic photograph look, soft light, clean composition. Do not draw any written words, letters or numbers. Do not depict any real or famous person."
+    }
+  ]
+}
