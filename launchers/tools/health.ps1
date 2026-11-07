@@ -5,7 +5,8 @@
 #   ② 최신 원고를 못 받았으면(git pull 실패·밀림) 다시 받는다
 #   ③ 네이버·티스토리 로그인을 확인하고, 티스토리가 풀렸으면 혼자 다시 로그인한다 (login-check.mjs → tistoryRelogin, 비밀번호는 넣지 않음)
 #   ④ 07~09시에 아침 이슈 글이 아직 예약 안 됐으면 바로 '그날 다시 예약'(catchup-reserve)을 띄운다 — 09시까지 기다리지 않게 (11/5 09:20 글이 09:40 으로 밀림)
-#   예약·그림 작업이 도는 중이면 ①만 하고 쉰다. 글을 쓰거나 지우지 않는다. 크롬은 끄지 않는다.
+#   ①-2 크롬이 켜져는 있는데 대답하지 않으면(멈춤) 자동화용 크롬만 끄고 다시 켠다 (2026-11-07 고장 — 그날 25편이 하나도 예약 안 됨, lib-detach.ps1 Repair-HungChrome)
+#   예약·그림 작업이 도는 중이면 ①만 하고 쉰다. 글을 쓰거나 지우지 않는다. 멈춘 자동화 크롬 말고는 크롬을 끄지 않는다.
 $ErrorActionPreference = 'SilentlyContinue'
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
@@ -21,6 +22,9 @@ function Note($msg) { New-Item -ItemType Directory -Force -Path (Split-Path $not
 # ① 크롬
 function CdpUp { try { Invoke-RestMethod http://localhost:9222/json/version -TimeoutSec 3 | Out-Null; $true } catch { $false } }
 $chromeNote = '크롬 켜져 있음'
+# ①-2 멈춘 크롬 먼저 (켜져는 있는데 대답 없음 — 새로 켜도 멈춘 창으로 넘어가 버린다)
+. (Join-Path $PSScriptRoot 'lib-detach.ps1')
+$hung = Repair-HungChrome $repo
 if (-not (CdpUp)) {
   $chrome = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
   if (-not (Test-Path $chrome)) { $chrome = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe' }
@@ -29,6 +33,7 @@ if (-not (CdpUp)) {
   for ($i = 0; $i -lt 30 -and -not (CdpUp); $i++) { Start-Sleep 1 }
   $chromeNote = if (CdpUp) { '⚠ 크롬이 꺼져 있어 다시 켬' } else { '❌ 크롬을 다시 켜지 못함' }
 }
+if ($hung) { $chromeNote = $hung }
 
 # ⓪ 집 비움 모드 — 윈도우 절전·최대 절전을 '안 함'으로, 끝나면 원래대로 (원래 값은 dumps\away-power-backup.txt)
 $awayNote = ''

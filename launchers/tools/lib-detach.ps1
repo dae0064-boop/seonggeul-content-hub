@@ -23,3 +23,31 @@ function Start-Detached {
     Start-Process @sp
   }
 }
+
+# 멈춘 자동화 크롬 되살리기 (2026-11-07 고장 고침 — 크롬이 '켜져는 있는데' 대답하지 않아 그날 25편이 하나도 예약되지 않음).
+#   /json/version 은 대답하는데 실제 연결(connectOverCDP)이 시간을 넘기면 멈춘 것이다. 30초 띄워 두 번 확인하고도 멈춰 있으면
+#   자동화용 프로필(seonggeul-chrome)로 뜬 크롬만 끄고 --restore-last-session 으로 다시 켠다 (로그인은 프로필에 남는다).
+#   사용자가 평소 쓰는 크롬(다른 프로필)은 건드리지 않는다. 결과를 한 줄로 돌려준다 ('' = 할 일 없었음).
+function Repair-HungChrome {
+  param([string]$Repo = (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent))
+  $probe = Join-Path $Repo 'scripts\cdp-probe.mjs'
+  if (-not (Test-Path $probe)) { return '' }
+  $o1 = @(& node $probe 9222 20000 2>&1 | ForEach-Object { "$_" }); $c1 = $LASTEXITCODE
+  if ($c1 -ne 1) { return '' }          # 0 대답함 · 2 꺼져 있음(각 스크립트가 원래대로 켠다)
+  Start-Sleep 30
+  $o2 = @(& node $probe 9222 20000 2>&1 | ForEach-Object { "$_" }); $c2 = $LASTEXITCODE
+  if ($c2 -ne 1) { return '' }
+  $procs = @(Get-CimInstance Win32_Process -Filter "Name = 'chrome.exe'" | Where-Object { $_.CommandLine -match 'seonggeul-chrome' })
+  foreach ($p in $procs) { try { Stop-Process -Id $p.ProcessId -Force -ErrorAction Stop } catch {} }
+  Start-Sleep 5
+  $chrome = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
+  if (-not (Test-Path $chrome)) { $chrome = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe' }
+  if (-not (Test-Path $chrome)) { $chrome = "$env:LOCALAPPDATA\Google\Chrome\Application\chrome.exe" }
+  Start-Detached $chrome -ArgumentList '--remote-debugging-port=9222', "--user-data-dir=$env:LOCALAPPDATA\seonggeul-chrome", '--no-first-run', '--restore-last-session', 'about:blank'
+  for ($i = 0; $i -lt 30; $i++) { Start-Sleep 1; try { Invoke-RestMethod http://localhost:9222/json/version -TimeoutSec 3 | Out-Null; break } catch {} }
+  Start-Sleep 3
+  $o3 = @(& node $probe 9222 20000 2>&1 | ForEach-Object { "$_" }); $c3 = $LASTEXITCODE
+  $why = ($o2 | Select-Object -Last 1)
+  if ($c3 -eq 0) { "⚠ 크롬이 멈춰 있어 다시 켬 ($why → 창 $($procs.Count)개 끄고 다시 켬, 지금 대답함)" }
+  else { "❌ 크롬이 멈춰 있어 다시 켰지만 아직 대답 없음 ($($o3 | Select-Object -Last 1))" }
+}

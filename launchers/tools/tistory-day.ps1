@@ -114,6 +114,10 @@ Say "티스토리 원고 $(@($mds).Count)편 → $blog.tistory.com" 'Cyan'
 
 # 2) 자동화용 크롬 (draft-day.ps1 과 같은 크롬·프로필)
 function CdpUp { try { Invoke-RestMethod http://localhost:9222/json/version -TimeoutSec 3 | Out-Null; $true } catch { $false } }
+# 2-0) 켜져는 있는데 멈춘 크롬 (2026-11-07 고장 — /json/version 만 대답하고 연결은 30초를 넘겨 그날 글이 하나도 예약 안 됨)
+. (Join-Path $PSScriptRoot 'lib-detach.ps1')
+$hungNote = Repair-HungChrome
+if ($hungNote) { Say "  $hungNote" 'Yellow' }
 if (-not (CdpUp)) {
   Say "`n자동화용 크롬을 켜는 중..." 'Cyan'
   $chrome = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
