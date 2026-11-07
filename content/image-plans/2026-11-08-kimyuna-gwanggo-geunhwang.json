@@ -1,0 +1,105 @@
+{
+  "slug": "2026-11-08-kimyuna-gwanggo-geunhwang",
+  "title": "김연아 근황, 자기 이름 붙은 박스를 연 이유는? 광고 모델 14년째",
+  "source": "11/8(일) 21:20 네이버 원고 — 아침 이슈 2차(연예·스타), 홈판형",
+  "note": "대표·본문 = 김연아 위키미디어 단독 사진(코리아넷 2014 소치, CC BY-SA 2.0). 광고 사진·기사 사진은 쓰지 않음. 카드 2(O·X·메모) + 그림 2",
+  "images": [
+    {
+      "n": 1,
+      "kind": "photo",
+      "title": "김연아 단독 사진 (대표사진)",
+      "photo": {
+        "file": "File:Korea Kim Yuna Sochi Medal Ceremony 03 (12687436373).jpg",
+        "query": "김연아",
+        "query_en": "Kim Yuna",
+        "person": [
+          "Kim Yuna",
+          "Kim Yu-na",
+          "김연아"
+        ]
+      },
+      "note": "대표: 웃는 얼굴 단독 사진(1645×1203) → 없으면 사람 없는 커피 잔 그림",
+      "thumb_shot": "object",
+      "thumb_theme": "charcoal",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "김연아, 이름 붙은 박스 공개",
+        "focus": "center 30%",
+        "theme": "charcoal"
+      },
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A large gift box tied with a gold ribbon on a bright table next to a warm cup of coffee. Color theme: warm brown wood and ivory tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "01.png"
+    },
+    {
+      "n": 2,
+      "kind": "card",
+      "title": "사진 이야기를 짚는 O·X 카드",
+      "card": {
+        "type": "quiz",
+        "title": "근황 사진 O·X",
+        "items": [
+          "박스에 자기 이름이 적혔다",
+          "광고 모델은 올해 처음이다",
+          "남편은 포레스텔라 멤버다"
+        ],
+        "answers": [
+          "O",
+          "X",
+          "O"
+        ],
+        "where": "아래 Q&A"
+      },
+      "file": "02.png"
+    },
+    {
+      "n": 3,
+      "title": "탁자 위 리본 묶인 선물 상자",
+      "file": "03.png",
+      "prompt": "Camera and composition: close-up still life. A gift box tied with a gold ribbon and a few coffee stick packets without labels on a wooden table, no people. Background color: warm cream and soft gold. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 4,
+      "kind": "photo",
+      "title": "피겨 선수 시절 단독 사진 (인용)",
+      "photo": {
+        "file": "File:Korea Kim Yuna Sochi Medal Ceremony 08.jpg",
+        "query": "김연아",
+        "query_en": "Kim Yuna",
+        "person": [
+          "Kim Yuna",
+          "Kim Yu-na",
+          "김연아"
+        ]
+      },
+      "file": "04.png",
+      "prompt": "Camera and composition: eye-level wide shot. An empty indoor ice rink with smooth shining ice under soft lights, no people. Background color: icy blue and soft white. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 5,
+      "kind": "card",
+      "title": "근황 정리 메모 카드",
+      "card": {
+        "type": "check",
+        "style": "memo",
+        "title": "이번 근황 정리",
+        "sub": "11월 7일 SNS 사진 이야기",
+        "items": [
+          "광고 촬영 현장 사진 공개",
+          "이름 붙은 박스 속 선물",
+          "2012년부터 광고 모델"
+        ],
+        "memo": "보도로 확인된 것만 담았어요",
+        "hl": 1
+      },
+      "file": "05.png"
+    },
+    {
+      "n": 6,
+      "title": "창가 탁자 위 따뜻한 커피 한 잔",
+      "file": "06.png",
+      "prompt": "Camera and composition: close-up still life. A warm cup of coffee with steam on a windowsill table in evening light, no people. Background color: apricot and warm ivory. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}

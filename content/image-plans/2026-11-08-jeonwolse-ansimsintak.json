@@ -1,0 +1,84 @@
+{
+  "slug": "2026-11-08-jeonwolse-ansimsintak",
+  "title": "전월세 안심신탁 첫 임대인 모집, 내 보증금은 누가 맡아 줄까?",
+  "source": "11/8(일) 18:00 네이버 원고 — 아침 이슈 2차(뉴스·오늘의 정책), 홈판형",
+  "note": "대표 = 아파트 단지 장면 CC 사진(사람 없음) → 없으면 AI. 정책브리핑 기사 사진은 뉴스1 사진이라 쓰지 않음. 카드 2(자가 체크·채팅) + 그림 3",
+  "images": [
+    {
+      "n": 1,
+      "kind": "photo",
+      "title": "창밖으로 보이는 아파트 단지 (대표사진)",
+      "photo": {
+        "query": "아파트 단지",
+        "query_en": "apartment complex Seoul",
+        "scene_en": "Korean high-rise apartment complex"
+      },
+      "note": "대표: 사람 없는 아파트 단지 CC 사진 → AI 그림",
+      "thumb_shot": "hands",
+      "thumb_theme": "brick",
+      "thumb_person": "40대 여성",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "전월세 안심신탁 시작",
+        "focus": "center 45%",
+        "theme": "brick"
+      },
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Hands of a woman in her 40s gently holding a new set of house keys over a blank contract paper on a wooden table, relieved gentle smile. Color theme: terracotta and warm beige tones with a sage green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "01.png",
+      "thumb_mood": "안심"
+    },
+    {
+      "n": 2,
+      "kind": "card",
+      "title": "참여 조건 자가 체크 카드",
+      "card": {
+        "type": "selfcheck",
+        "title": "우리 집 해당될까?",
+        "items": [
+          "주택 종류는 상관없음",
+          "선순위 부채 80% 이하",
+          "예치금은 전세 시세 안",
+          "기존 계약은 끝낸 뒤"
+        ],
+        "result": "아래 '어떤 집' 부분을 꼭 보세요 👇"
+      },
+      "file": "02.png"
+    },
+    {
+      "n": 3,
+      "title": "현관 앞에 놓인 새 집 열쇠",
+      "file": "03.png",
+      "prompt": "Camera and composition: close-up still life. A new set of house keys on a small shelf by the front door of a bright apartment, no people. Background color: warm cream and soft terracotta. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 4,
+      "title": "거실 탁자 위 계약서와 펜",
+      "file": "04.png",
+      "prompt": "Camera and composition: close-up still life. A blank contract paper and a pen on a living room coffee table in soft daylight, no people. Background color: light wood and ivory. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "n": 5,
+      "kind": "card",
+      "title": "전월세 안심신탁 궁금증 채팅 카드",
+      "card": {
+        "type": "steps",
+        "ask": "세입자는 언제 들어가?",
+        "title": "입주까지 순서",
+        "items": [
+          "임대인 신청",
+          "집 검증",
+          "3자 계약",
+          "예치금 납부"
+        ]
+      },
+      "file": "05.png"
+    },
+    {
+      "n": 6,
+      "title": "햇살 드는 빈 거실과 소파",
+      "file": "06.png",
+      "prompt": "Camera and composition: eye-level wide shot. An empty bright living room with a sofa and sunlight through the window, no people. Background color: warm beige and soft gold. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}
