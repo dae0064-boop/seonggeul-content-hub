@@ -54,14 +54,18 @@ export function verdictFor(text, u) {
   const keys = new Set([u.replace('https://', '')]);
   try { keys.add(decodeURI(u).replace('https://', '')); } catch {}
   try { keys.add(decodeURIComponent(u).replace('https://', '')); } catch {}
-  let at = -1;
+  // 2026-11-07 고장 고침: 검사 결과 아래 '참조 페이지'(사이트맵 칸)에도 같은 주소가 한 번 더 나와, 마지막 자리만 보면 판정 줄을 지나쳤다
+  // (11/7 화면: 주소 3번 중 3번째가 판정 뒤). → 주소가 나온 자리마다 뒤에서부터 보고, 판정이 붙은 가장 뒤 자리를 쓴다.
+  const at = [];
   for (const key of keys) {
     const re = new RegExp(`${key.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&')}(?=\\s|$)`, 'g');
-    const hits = [...text.matchAll(re)];
-    if (hits.length) at = Math.max(at, hits.at(-1).index);
+    for (const h of text.matchAll(re)) at.push(h.index);
   }
-  const m = at >= 0 && text.slice(at, at + 600).match(/URL이 Google에 등록되어 있(?:지 않음|지만|음)|URL is (?:not )?on Google/);
-  return m ? m[0] : '';
+  for (const i of at.sort((a, b) => b - a)) {
+    const m = text.slice(i, i + 600).match(/URL이 Google에 등록되어 있(?:지 않음|지만|음)|URL is (?:not )?on Google/);
+    if (m) return m[0];
+  }
+  return '';
 }
 if (argv.includes('--selftest')) {
   const scr = 'URL 검사\nhttps://seongdaeeyo.com/entry/본인부담상한액-초과금-신청\nURL 검사\n실제 URL 테스트\ninfo\nURL이 Google에 등록되어 있지 않음\n색인 생성 요청';
@@ -69,6 +73,9 @@ if (argv.includes('--selftest')) {
   const v1 = verdictFor(scr, enc), v2 = verdictFor('https://seongdaeeyo.com/12\nURL이 Google에 등록되어 있음', 'https://seongdaeeyo.com/1');
   const flat = 'URL 검사 https://seongdaeeyo.com/entry/본인부담상한액-초과금-신청 실제 URL 테스트 URL이 Google에 등록되어 있지 않음 색인 생성 요청';
   const v3 = verdictFor(flat, 'https://seongdaeeyo.com/entry/본인부담상한액-초과금-신청');
+  // 11/7 화면 모양: 결과 뒤 '참조 페이지' 칸에 같은 주소가 한 번 더 나온다
+  const tail = flat + ' 페이지 색인 생성 검색 Sitemaps https://seongdaeeyo.com/sitemap.xml 참조 페이지 https://seongdaeeyo.com/entry/본인부담상한액-초과금-신청 ' + 'x'.repeat(700);
+  if (verdictFor(tail, enc) !== 'URL이 Google에 등록되어 있지 않음') { console.log('❌ selftest 실패(참조 페이지에 주소 한 번 더)'); process.exit(1); }
   if (v3 !== 'URL이 Google에 등록되어 있지 않음') { console.log(`❌ selftest 실패(한 줄 글자): ${JSON.stringify(v3)}`); process.exit(1); }
   if (v1 !== 'URL이 Google에 등록되어 있지 않음' || v2 !== '') { console.log(`❌ selftest 실패(판정 읽기): ${JSON.stringify([v1, v2])}`); process.exit(1); }
   const xml = `<urlset><url><loc>https://seongdaeeyo.com/entry/%EB%91%98</loc><lastmod>2026-10-20</lastmod></url>
