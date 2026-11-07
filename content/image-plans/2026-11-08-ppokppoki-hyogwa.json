@@ -1,0 +1,75 @@
+{
+  "slug": "2026-11-08-ppokppoki-hyogwa",
+  "title": "뽁뽁이 효과, 창문 외풍 막으면 난방비가 줄까 (실내 18~20℃)",
+  "source": "11/8(일) 티스토리 원고 (11/7 밤 작성) 18:20",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "거실 창가에서 뽁뽁이를 펼쳐 들고 창문을 바라보는 가족 (대표사진)",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A cozy Korean apartment living room with a large window; a small couple in their 60s, one in a gray knit and one in a mustard vest, unrolling a sheet of bubble wrap together near the window, a thick curtain and a rug in the room. Expression: bright happy smile. Color theme: terracotta and warm beige tones with a sage green accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "방·장소 전체, 사람은 작게",
+      "bg": "terracotta and warm beige tones with a sage green accent",
+      "note": "대표",
+      "thumb_shot": "wide",
+      "thumb_theme": "brick",
+      "thumb_person": "60대 부부(작게, 회색 니트·머스터드 조끼)",
+      "thumb_mood": "반가움",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "brick",
+        "font": "ptd",
+        "title": "뽁뽁이 효과\n정말 따뜻할까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "우리 집 창가에 외풍이 드는지 스스로 점검하는 자가 체크 카드",
+      "kind": "card",
+      "card": {
+        "type": "selfcheck",
+        "title": "우리 집 외풍 점검",
+        "items": [
+          "창가에서 찬바람이 느껴져요",
+          "창틀 아래 물기가 맺혀요",
+          "커튼이 바람에 흔들려요",
+          "창가 바닥만 차가워요"
+        ],
+        "result": "아래 순서대로 먼저 막아 봐요 👇"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "겨울 실내온도와 습도 기준을 묻고 답하는 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "겨울 실내 기준",
+        "ask": "몇 도에 맞추면 돼요?",
+        "items": [
+          "온도계로 18~20도를 봐요",
+          "습도는 40~60%로 맞춰요",
+          "하루 두세 번 짧게 환기해요"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "창문 유리에 투명한 뽁뽁이가 붙어 있고 커튼이 반쯤 걷힌 거실 창가",
+      "prompt": "Camera and composition: close-up of a window with bubble wrap. A living room window with clear bubble wrap insulation attached to the glass and a curtain half drawn, winter light outside. Background color: terracotta and warm beige. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of a window with bubble wrap",
+      "bg": "terracotta and warm beige",
+      "kind": "photo",
+      "photo": {
+        "query_en": "bubble wrap window",
+        "scene_en": "window glass covered with bubble wrap insulation"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}
