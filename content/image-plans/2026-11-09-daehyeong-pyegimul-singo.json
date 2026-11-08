@@ -1,0 +1,86 @@
+{
+  "slug": "2026-11-09-daehyeong-pyegimul-singo",
+  "title": "대형폐기물 신고, 스티커 대신 인터넷으로 수수료까지 낼까 (229곳 중 201곳)",
+  "source": "11/9(월) 티스토리 원고 (11/8 밤 작성) 21:00",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "이사 짐 사이에서 버릴 의자를 보며 고민하는 30대 남성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean man in his 30s wearing a coral hoodie, finger on chin, thinking while looking at an old wooden chair and a small bookshelf to throw away, moving boxes softly blurred behind him in an apartment hallway. Expression: thoughtful, finger on chin. Color theme: sage green plants and warm ivory tones with a butter-yellow accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "sage green plants and warm ivory tones with a butter-yellow accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "forest",
+      "thumb_person": "30대 남성(코랄 후드티)",
+      "thumb_mood": "생각",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "forest",
+        "font": "jua",
+        "title": "대형폐기물 신고\n인터넷으로 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "대형폐기물 신고 숫자를 한눈에 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "대형폐기물 신고 한눈에",
+        "items": [
+          [
+            "201곳",
+            "온라인 신고·납부",
+            "229곳 중"
+          ],
+          [
+            "28곳",
+            "아직 방문해서",
+            "스티커 구매"
+          ],
+          [
+            "211곳",
+            "남은 종량제봉투",
+            "쓰거나 바꾸기"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "대형폐기물 신고 순서를 묻고 답하는 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "대형폐기물 신고 순서",
+        "ask": "처음인데 뭐부터 해요?",
+        "items": [
+          "버릴 물건의 종류와 크기",
+          "시·군·구 누리집에서 신고해요",
+          "안내된 수수료를 내요",
+          "신고 번호를 붙여 정한 날"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "현관 앞에 정리해 둔 이사 짐과 종량제봉투 묶음",
+      "prompt": "Camera and composition: apartment entrance with moving boxes. Moving boxes stacked neatly by an apartment front door with a small bundle of unused garbage bags on top, an old chair waiting beside them. Background color: sage green and warm ivory. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "apartment entrance with moving boxes",
+      "bg": "sage green and warm ivory",
+      "kind": "photo",
+      "photo": {
+        "query_en": "moving boxes apartment",
+        "scene_en": "moving boxes stacked by an apartment door"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}
