@@ -1,0 +1,89 @@
+{
+  "slug": "2026-11-09-nambangkeundolgorae-anmogi",
+  "title": "남방큰돌고래 안목이, 강릉항 상처 돌고래가 내일 제주 바다로 가는 이유는?",
+  "source": "11/9(월) 22:00 네이버 원고 — 아침 이슈 2차(뉴스·사회), 홈판형",
+  "note": "대표 = 위키미디어 남방큰돌고래(Tursiops aduncus) 야생 사진(2023 호주, CC BY-SA 4.0, 4608×3456) → AI 바다 그림. 카드 2(첫머리·숫자) + 그림 3",
+  "images": [
+    {
+      "n": 1,
+      "kind": "photo",
+      "title": "바다 위로 등을 내민 남방큰돌고래 (대표사진)",
+      "photo": {
+        "file": "File:Dolphins (Tursiops aduncus) in the Serpentine River, Western Australia, November 2023 11.jpg",
+        "query": "남방큰돌고래",
+        "query_en": "Indo-Pacific bottlenose dolphin",
+        "scene_en": "Indo-Pacific bottlenose dolphin surfacing"
+      },
+      "note": "대표: 등지느러미가 잘 보이는 야생 돌고래 사진 → AI 그림",
+      "thumb_shot": "object",
+      "thumb_theme": "navy",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "안목이, 제주 바다로",
+        "focus": "center 50%",
+        "theme": "navy"
+      },
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A single small dolphin fin breaking the calm sea surface near a rocky coast, seen slightly from above. Color theme: warm ivory and walnut brown tones with a butter-yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "01.png"
+    },
+    {
+      "n": 2,
+      "kind": "card",
+      "title": "구조 이야기 첫머리 카드",
+      "card": {
+        "type": "lead",
+        "keyword": "남방큰돌고래",
+        "title": "그 돌고래\n어떻게 됐나",
+        "ask": "그 돌고래는 어떻게 됐을까?"
+      },
+      "file": "02.png"
+    },
+    {
+      "n": 3,
+      "title": "햇살이 비치는 넓은 재활 수조",
+      "prompt": "Camera and composition: eye-level wide shot. A large empty blue rehabilitation pool for marine animals with sunlight rippling on the water, no people. Background color: clear blue and white. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "03.png"
+    },
+    {
+      "n": 4,
+      "title": "제주 산방산이 보이는 잔잔한 바다",
+      "prompt": "Camera and composition: eye-level wide shot. A calm sea near a coastline with a large dome-shaped volcanic mountain in the background under a clear sky, no people. Background color: deep blue and soft green. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "04.png"
+    },
+    {
+      "n": 5,
+      "kind": "card",
+      "title": "방류 숫자 카드",
+      "card": {
+        "type": "number",
+        "title": "안목이 방류 한눈에",
+        "items": [
+          [
+            "20cm",
+            "찢어진 상처",
+            "허리 부위"
+          ],
+          [
+            "4개월",
+            "치료와 재활",
+            "장생포에서"
+          ],
+          [
+            "17시간",
+            "배로 이동",
+            "울산에서 제주로"
+          ]
+        ]
+      },
+      "file": "05.png"
+    },
+    {
+      "n": 6,
+      "title": "노을 진 제주 바닷가 빈 산책로",
+      "prompt": "Camera and composition: eye-level wide shot. An empty seaside walking path along a volcanic rock coast at sunset, no people. Background color: warm orange and navy. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "06.png"
+    }
+  ]
+}
