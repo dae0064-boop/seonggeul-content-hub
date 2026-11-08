@@ -1,0 +1,80 @@
+{
+  "slug": "2026-11-09-samchi-jecheol",
+  "title": "삼치 제철, 찬바람 불면 왜 더 고소해질까",
+  "source": "11/9(월) 10:40 네이버 원고 — 생활정보 홈판형(🍂 제철 '언제' — 이번 주 공식 확인된 나들이 행사 없음), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "수산시장 좌판 앞에서 은빛 삼치를 들어 보이며 이야기 나누는 60대 아버지와 30대 아들 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean father in his 60s with short grey hair in a grey quilted vest and his son in his 30s in a navy padded jacket stand at a fish market stall, the father holding up one long silver Spanish mackerel and both smiling and talking, ice and fish blurred behind them. Mood: bright happy smile. Color theme: soft coral and ivory tones with a sage green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "soft coral and ivory tones with a sage green accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "cobalt",
+      "thumb_person": "60대 아버지(회색 조끼)와 30대 아들(남색 패딩)",
+      "thumb_mood": "반가움",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "cobalt",
+        "font": "jua",
+        "title": "삼치 제철\n고등어 사촌?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "삼치 제철을 한눈에 정리한 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "삼치 제철",
+        "title": "왜 지금\n맛있을까?",
+        "ask": "삼치는 아무 때나 아냐?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "나무 도마 위에 나란히 놓인 길쭉한 삼치 한 마리와 고등어 한 마리",
+      "prompt": "Camera and composition: top-down view of a wooden cutting board. One long slender silver-blue Spanish mackerel with grey-blue spots and one shorter mackerel lie side by side on a wooden cutting board on a kitchen counter. Background color: light wood and soft white kitchen tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "top-down view of a wooden cutting board",
+      "bg": "light wood and soft white kitchen tones"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "노릇하게 구워진 삼치 소금구이가 담긴 흰 접시와 젓가락",
+      "prompt": "Camera and composition: close-up from a slight angle on a dining table. A golden-brown salt-grilled Spanish mackerel fillet on a white plate with a pair of chopsticks beside it and a bowl of rice softly blurred behind. Background color: warm beige table and soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up from a slight angle on a dining table",
+      "bg": "warm beige table and soft daylight"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "삼치와 고등어 차이를 묻고 답하는 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "ask": "삼치랑 고등어 같은 거야?",
+        "title": "삼치, 맞는 말은?",
+        "items": [
+          "가을부터 살에 지방이 차오른다",
+          "11월부터 겨울까지 맛이 좋다",
+          "같은 고등어과 집안이에요"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "저녁 식탁에서 삼치구이를 가운데 두고 밥을 먹는 30대 부부와 어린 딸",
+      "prompt": "Camera and composition: medium shot at eye level across a dining table. A Korean couple in their 30s and their young daughter eat dinner together at a home dining table with a plate of grilled Spanish mackerel in the center, warm smiles. Background color: warm evening home light with cream walls. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at eye level across a dining table",
+      "bg": "warm evening home light with cream walls"
+    }
+  ]
+}
