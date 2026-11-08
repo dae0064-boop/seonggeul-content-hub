@@ -1,0 +1,73 @@
+{
+  "slug": "2026-11-09-onsumaeteu-mul-gyoche",
+  "title": "온수매트 물 교체, 물빼기 전에 무엇부터 볼까 (확인 5가지)",
+  "source": "11/9(월) 티스토리 원고 (11/8 밤 작성) 10:20",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "거실 바닥에 펼친 온수매트와 본체, 호스를 위에서 내려다본 모습 (대표사진)",
+      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean living room floor seen from above: a quilted water-heated mattress pad unfolded, its small boiler unit with a water tank, a coiled connecting hose, a folded dry towel and a small water jug neatly arranged beside it. Color theme: sage green and sand beige tones with a coral accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "위에서 내려다본 탁자 (사람 없음)",
+      "bg": "sage green and sand beige tones with a coral accent",
+      "note": "대표",
+      "thumb_shot": "overhead",
+      "thumb_theme": "teal",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "teal",
+        "font": "jua",
+        "title": "온수매트 물 교체\n뭐부터 볼까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "온수매트 물 교체 전에 무엇부터 볼지 묻는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "온수매트 물",
+        "title": "무엇부터\n봐야 할까",
+        "ask": "작년 물 그대로 써도 돼?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "온수매트 꺼낸 날 누수와 조절기를 확인하는 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "style": "memo",
+        "title": "꺼낸 날 누수 체크",
+        "sub": "켜기 전 5분이면 충분해요",
+        "items": [
+          "호스가 꺾이거나 갈라진 곳",
+          "연결부에 물방울이나 물자국",
+          "매트 밑 바닥이 젖었는지",
+          "플러그가 눌리거나 탄 곳"
+        ],
+        "memo": "하나라도 걸리면 켜지 말아요",
+        "hl": 2
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "온수매트 본체의 온도조절기 버튼을 누르기 전 살펴보는 손",
+      "prompt": "Camera and composition: close-up of a hand near the control panel of a small heating unit. A hand about to press the temperature button on the control unit of a water-heated mattress pad on a bedroom floor. Background color: sage green and sand beige. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of a hand near the control panel of a small heating unit",
+      "bg": "sage green and sand beige",
+      "kind": "photo",
+      "photo": {
+        "query_en": "heated mattress pad",
+        "scene_en": "a hand adjusting the controller of a heated mattress pad on a bed"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}
