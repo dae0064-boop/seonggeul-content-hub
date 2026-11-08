@@ -1,0 +1,81 @@
+{
+  "slug": "2026-11-09-imigyeong-asian-hall-of-fame",
+  "title": "이미경 부회장 아시안 명예의 전당, 이수만이 'K-컬처의 대모'라 부른 이유는?",
+  "source": "11/9(월) 18:40 네이버 원고 — 아침 이슈 2차(연예·영화), 홈판형",
+  "note": "사진 없음 — 위키미디어에 CJ 이미경 부회장 단독 사진이 없음(같은 이름 다른 사람만). 대표 = 사람 작은 시상식장 AI 그림. 카드 2(첫머리·숫자) + 그림 3",
+  "images": [
+    {
+      "n": 1,
+      "title": "조명이 켜진 시상식 무대 (대표사진)",
+      "thumb_shot": "duo",
+      "thumb_theme": "forest",
+      "thumb_person": "30대 딸(긴 생머리·초록 니트)과 60대 아버지(회색 카디건)",
+      "thumb_mood": "반가움",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "title": "이미경\n왜 대모일까?",
+        "theme": "forest"
+      },
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her 30s with long straight hair in a green knit sweater and her father in his 60s in a gray cardigan talking about award ceremony news on a phone at the living room table. Both moods: bright happy smile, eyes bright. Color theme: sage green plants and warm ivory tones with a butter-yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "01.png"
+    },
+    {
+      "n": 2,
+      "kind": "card",
+      "title": "수상 소식 첫머리 카드",
+      "card": {
+        "type": "lead",
+        "keyword": "이미경",
+        "title": "어떤 상을\n받았을까",
+        "ask": "이 사람이 누구지?"
+      },
+      "file": "02.png"
+    },
+    {
+      "n": 3,
+      "title": "객석에서 바라본 빈 무대와 마이크",
+      "prompt": "Camera and composition: eye-level wide shot. An empty stage with a single standing microphone under a warm spotlight, seen from the audience seats, no people. Background color: deep green and gold. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "03.png"
+    },
+    {
+      "n": 4,
+      "title": "객석 의자 위에 놓인 꽃다발",
+      "prompt": "Camera and composition: close-up still life. A bouquet of flowers resting on an empty velvet theater seat, no people. Background color: sage green and ivory. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "04.png"
+    },
+    {
+      "n": 5,
+      "kind": "card",
+      "title": "명예의 전당 숫자 카드",
+      "card": {
+        "type": "number",
+        "title": "시상식 한눈에",
+        "items": [
+          [
+            "22회째",
+            "아시안 명예의 전당",
+            "올해로"
+          ],
+          [
+            "30여 년",
+            "영화·음악·방송",
+            "한국과 세계를 이어"
+          ],
+          [
+            "5일",
+            "시상식",
+            "현지 시각"
+          ]
+        ]
+      },
+      "file": "05.png"
+    },
+    {
+      "n": 6,
+      "title": "저녁 거실 TV 앞 빈 소파",
+      "prompt": "Camera and composition: eye-level medium shot. An empty living room sofa facing a turned-off TV in warm evening lamp light, no people. Background color: sage green and cream. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "06.png"
+    }
+  ]
+}

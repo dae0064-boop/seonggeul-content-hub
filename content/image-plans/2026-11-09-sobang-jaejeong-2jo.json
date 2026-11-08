@@ -1,0 +1,98 @@
+{
+  "slug": "2026-11-09-sobang-jaejeong-2jo",
+  "title": "소방의 날 64주년, 당정이 소방 재정 2조 원 지원을 꺼낸 이유는?",
+  "source": "11/9(월) 18:00 네이버 원고 — 아침 이슈 2차(오늘의 정책), 홈판형",
+  "note": "대표 = 소방차·소방서 CC 사진(사람 없음) → AI 그림(소방서 차고, 작은 사람). 카드 2(숫자·O·X) + 그림 3",
+  "images": [
+    {
+      "n": 1,
+      "kind": "photo",
+      "title": "소방차가 서 있는 소방서 차고 (대표사진)",
+      "photo": {
+        "query": "소방차",
+        "query_en": "Korean fire truck",
+        "scene_en": "Korean fire engine parked in fire station garage"
+      },
+      "note": "대표: 사람 없는 소방차 CC 사진 → AI 그림",
+      "thumb_shot": "wide",
+      "thumb_theme": "burgundy",
+      "thumb_person": "30대 소방관(작게)",
+      "thumb_mood": "결심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "소방의 날, 재정 지원 검토",
+        "focus": "center 50%",
+        "theme": "burgundy"
+      },
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A clean fire station garage with a red fire engine parked inside and one small firefighter checking a hose beside it. The person's mood: determined, nodding, sleeves rolled up. Color theme: warm terracotta and cream tones with a soft gold accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "01.png"
+    },
+    {
+      "n": 2,
+      "kind": "card",
+      "title": "소방 재정 숫자 카드",
+      "card": {
+        "type": "number",
+        "title": "소방의 날 소식",
+        "items": [
+          [
+            "2조 원",
+            "재정 지원 검토",
+            "소방 필수 투자에"
+          ],
+          [
+            "10%",
+            "국비 비중",
+            "안팎"
+          ],
+          [
+            "2020년",
+            "국가직 전환",
+            "소방공무원"
+          ]
+        ]
+      },
+      "file": "02.png"
+    },
+    {
+      "n": 3,
+      "title": "정리된 소방 장비 보관함",
+      "prompt": "Camera and composition: eye-level medium shot. Neatly hung firefighter helmets, jackets and air tanks in a fire station equipment room, no people. Background color: warm red and cream. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "03.png"
+    },
+    {
+      "n": 4,
+      "title": "회의실 탁자 위 서류와 물병",
+      "prompt": "Camera and composition: eye-level wide shot. A long meeting room table with blank documents, name plates without text and water bottles, no people. Background color: warm wood and ivory. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "04.png"
+    },
+    {
+      "n": 5,
+      "kind": "card",
+      "title": "소방 재정 O·X 카드",
+      "card": {
+        "type": "quiz",
+        "title": "소방 재정 O·X",
+        "items": [
+          "2조 원 지원은 확정됐다",
+          "2020년 국가직이 됐다",
+          "재원은 나중에 정한다"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "O"
+        ],
+        "where": "아래 본문"
+      },
+      "file": "05.png"
+    },
+    {
+      "n": 6,
+      "title": "해 질 녘 소방서 앞 빈 거리",
+      "prompt": "Camera and composition: eye-level wide shot. A quiet street in front of a small neighborhood fire station at dusk with warm lights on, no people. Background color: soft orange and navy dusk. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "06.png"
+    }
+  ]
+}

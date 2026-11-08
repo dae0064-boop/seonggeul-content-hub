@@ -1,0 +1,117 @@
+{
+  "slug": "2026-11-09-kimjanghun-gukminyeongeum-miusae",
+  "title": "김장훈 국민연금, 미우새에서 \"그렇게 많이 줘요?\" 놀란 이유는?",
+  "source": "11/9(월) 14:00 네이버 원고 — 아침 이슈 2차(연예·방송), 홈판형",
+  "note": "대표 = SBS 미운 우리 새끼 11/8 방송 공식 유튜브 클립 표지(김장훈) → 위키미디어 김장훈 단독 공연 사진(2012, CC BY 2.0) → 사람 없는 거실 탁자. 카드 2(첫머리·숫자) + 그림 3",
+  "images": [
+    {
+      "n": 1,
+      "kind": "photo",
+      "title": "김장훈 출연 미운 우리 새끼 공식 클립 (대표사진)",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "미운 우리 새끼 김장훈 국민연금",
+            "must": [
+              "김장훈"
+            ],
+            "episode": [
+              "미우새",
+              "미운 우리 새끼"
+            ],
+            "prefer": [
+              "국민연금",
+              "연금"
+            ],
+            "channels": [
+              "SBS",
+              "SBS Entertainment",
+              "스브스",
+              "SBS 예능"
+            ]
+          },
+          "owner": "SBS",
+          "program": "미운 우리 새끼"
+        },
+        "file": "File:Kim Jang-hoon in Shanghai.jpg",
+        "query": "김장훈",
+        "query_en": "Kim Jang-hoon",
+        "person": [
+          "Kim Jang-hoon",
+          "김장훈"
+        ]
+      },
+      "note": "대표: 그 회차 공식 클립 표지 → 단독 사진 → 사람 없는 그림",
+      "thumb_shot": "wide",
+      "thumb_theme": "olive",
+      "thumb_person": "60대 남성(작게)",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "김장훈, 연금 듣고 깜짝",
+        "focus": "center 30%",
+        "theme": "olive"
+      },
+      "thumb_mood": "놀람",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A cozy living room seen whole like a miniature diorama; one small man sits on the sofa talking on a phone with a notepad on the table. The person's mood: pleasantly surprised, eyebrows up, not scared. Color theme: olive green and warm cream tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "01.png"
+    },
+    {
+      "n": 2,
+      "kind": "card",
+      "title": "국민연금 장면 첫머리 카드",
+      "card": {
+        "type": "lead",
+        "keyword": "김장훈",
+        "title": "연금 받을\n나이였다?",
+        "ask": "나도 벌써 연금 받을 나이인가?"
+      },
+      "file": "02.png"
+    },
+    {
+      "n": 3,
+      "title": "거실 탁자 위 수화기와 메모지",
+      "prompt": "Camera and composition: close-up still life. A landline phone and a memo pad with a pen on a living room side table in daylight, no people. Background color: terracotta and warm beige. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "03.png"
+    },
+    {
+      "n": 4,
+      "title": "창가에 놓인 작은 선물 상자들",
+      "prompt": "Camera and composition: eye-level medium shot. Several small wrapped gift boxes with ribbons on a sunny windowsill, no people. Background color: warm beige and soft green. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "04.png"
+    },
+    {
+      "n": 5,
+      "kind": "card",
+      "title": "출생연도별 국민연금 나이 숫자 카드",
+      "card": {
+        "type": "number",
+        "title": "연금 받는 나이",
+        "items": [
+          [
+            "63세",
+            "만 나이",
+            "1961~1964년생"
+          ],
+          [
+            "64세",
+            "만 나이",
+            "1965~1968년생"
+          ],
+          [
+            "65세",
+            "만 나이",
+            "1969년생부터"
+          ]
+        ]
+      },
+      "file": "05.png"
+    },
+    {
+      "n": 6,
+      "title": "저녁 거실 소파 위 담요와 리모컨",
+      "prompt": "Camera and composition: close-up still life. A folded knit blanket and a TV remote on a living room sofa in warm evening lamp light, no people. Background color: cream and terracotta. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "06.png"
+    }
+  ]
+}
