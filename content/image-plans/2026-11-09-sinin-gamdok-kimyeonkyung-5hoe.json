@@ -1,0 +1,126 @@
+{
+  "slug": "2026-11-09-sinin-gamdok-kimyeonkyung-5hoe",
+  "title": "신인감독 김연경 5회, 0대2에서 뒤집은 원더독스의 마지막 한 점은?",
+  "source": "11/9(월) 12:00 네이버 원고 — 아침 이슈 1차(연예·방송, 예능), 홈판형",
+  "note": "대표·본문 = 신인감독 김연경2 5회 MBC 공식 유튜브 클립 표지(그 회차만) → 없으면 사람 없는 배구 코트. 주인공 위키미디어 고화질 단독 사진 없음(photo-check ❌). 카드 2(첫머리·채팅) + 그림 2",
+  "images": [
+    {
+      "kind": "photo",
+      "title": "신인감독 김연경 5회 공식 영상 장면 (대표사진)",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "신인감독 김연경2 5회",
+            "must": [
+              "신인감독"
+            ],
+            "episode": [
+              "EP.5",
+              "5회",
+              "5화"
+            ],
+            "prefer": [
+              "원더독스",
+              "역전"
+            ],
+            "channels": [
+              "MBC",
+              "MBC 엔터테인먼트",
+              "MBCentertainment"
+            ]
+          },
+          "owner": "MBC",
+          "program": "신인감독 김연경2"
+        }
+      },
+      "thumb_shot": "hands",
+      "thumb_theme": "charcoal",
+      "thumb_person": "20대 여성 선수 손(흰 손목 보호대)",
+      "thumb_mood": "결심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "원더독스, 역전의 한 점",
+        "focus": "center 35%",
+        "theme": "charcoal"
+      },
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Two hands of a young woman volleyball player with white wrist supports gripping a volleyball tightly on an indoor court, determined, nodding, sleeves rolled up. Color theme: warm brown wood and ivory tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "n": 1,
+      "file": "01.png"
+    },
+    {
+      "kind": "card",
+      "title": "원더독스 경기 5회 첫머리 카드",
+      "card": {
+        "type": "lead",
+        "keyword": "신인감독",
+        "title": "0대2에서\n뒤집었다?",
+        "ask": "마지막 한 점은 누구?"
+      },
+      "n": 2,
+      "file": "02.png"
+    },
+    {
+      "kind": "photo",
+      "title": "신인감독 김연경 5회 경기 장면 (인용)",
+      "photo": {
+        "still": {
+          "youtube_search": {
+            "query": "신인감독 김연경2 5회 이예은",
+            "must": [
+              "신인감독"
+            ],
+            "episode": [
+              "EP.5",
+              "5회",
+              "5화"
+            ],
+            "prefer": [
+              "이예은",
+              "5세트",
+              "핑크스파이더스"
+            ],
+            "channels": [
+              "MBC",
+              "MBC 엔터테인먼트",
+              "MBCentertainment"
+            ]
+          },
+          "owner": "MBC",
+          "program": "신인감독 김연경2"
+        }
+      },
+      "n": 3,
+      "file": "03.png",
+      "prompt": "Camera and composition: eye-level wide shot. An empty indoor volleyball court with a net and bright arena lights, no people. Background color: warm wood floor and soft white. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "title": "체육관 코트 위 배구공과 네트",
+      "n": 4,
+      "file": "04.png",
+      "prompt": "Camera and composition: low-angle close-up. A white and blue volleyball resting on a polished gym floor beside the bottom of a net, no people. Background color: warm wood and cool blue. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    },
+    {
+      "kind": "card",
+      "title": "원더독스 경기 궁금증 채팅 카드",
+      "card": {
+        "type": "steps",
+        "ask": "몇 대 몇으로 이겼어?",
+        "title": "경기 흐름",
+        "items": [
+          "세트 0대2로 몰림",
+          "3·4세트를 따내 2대2",
+          "5세트까지 가서 3대2"
+        ]
+      },
+      "n": 5,
+      "file": "05.png"
+    },
+    {
+      "title": "저녁 거실 탁자 위 간식과 리모컨",
+      "n": 6,
+      "file": "06.png",
+      "prompt": "Camera and composition: close-up still life. A bowl of snacks and a TV remote on a coffee table in a cozy living room in the evening, no people. Background color: warm amber and soft cream. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person."
+    }
+  ]
+}
