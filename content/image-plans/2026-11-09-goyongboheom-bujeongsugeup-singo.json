@@ -1,0 +1,92 @@
+{
+  "slug": "2026-11-09-goyongboheom-bujeongsugeup-singo",
+  "title": "실업급여 부정수급 집중신고, 오늘부터 자진신고하면 무엇이 면제될까?",
+  "source": "11/9(월) 15:20 네이버 원고 — 아침 이슈 2차(오늘의 정책), 홈판형",
+  "note": "대표 = 사람 없는 고용센터 상담 창구 그림(정책브리핑 보도자료에 사진 없음). 카드 2(숫자·자가체크) + 그림 3",
+  "images": [
+    {
+      "n": 1,
+      "title": "고용센터 상담 창구 (대표사진)",
+      "thumb_shot": "hands",
+      "thumb_theme": "teal",
+      "thumb_person": "30대(손만)",
+      "overlay": {
+        "kind": "thumb",
+        "look": "news",
+        "title": "실업급여 부정수급 신고",
+        "focus": "center 50%",
+        "theme": "teal"
+      },
+      "kind": "photo",
+      "photo": {
+        "query": "고용센터",
+        "query_en": "employment center Korea",
+        "scene_en": "public employment service office counter"
+      },
+      "thumb_mood": "결심",
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Hands filling in a blank application form with a pen at a public employment office counter. The person's mood: determined, nodding, sleeves rolled up. Color theme: sage green and sand beige tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "01.png"
+    },
+    {
+      "n": 2,
+      "kind": "card",
+      "title": "부정수급 집중신고 숫자 카드",
+      "card": {
+        "type": "number",
+        "title": "집중신고 한눈에",
+        "items": [
+          [
+            "5배",
+            "추가징수 면제",
+            "자진신고하면"
+          ],
+          [
+            "20~30%",
+            "신고포상금",
+            "부정수급액의"
+          ],
+          [
+            "3회 이상",
+            "특별점검",
+            "같은 사업장에서"
+          ]
+        ]
+      },
+      "file": "02.png"
+    },
+    {
+      "n": 3,
+      "title": "책상 위 노트북과 서류 봉투",
+      "prompt": "Camera and composition: eye-level medium shot. An open laptop with a blank screen next to a brown document envelope on a home desk, no people. Background color: sage green and sand beige. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "03.png"
+    },
+    {
+      "n": 4,
+      "title": "창가 탁자 위 계산기와 메모지",
+      "prompt": "Camera and composition: close-up still life. A calculator and a blank memo pad with a pencil on a table by a sunny window, no people. Background color: warm beige and soft green. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "04.png"
+    },
+    {
+      "n": 5,
+      "kind": "card",
+      "title": "부정수급 자가체크 카드",
+      "card": {
+        "type": "selfcheck",
+        "title": "나도 점검 대상?",
+        "items": [
+          "같은 사업장에서 3회 이상",
+          "허위 이직신고",
+          "실업인정일에 해외"
+        ],
+        "result": "사실만으로 부정수급은 아니에요 👇"
+      },
+      "file": "05.png"
+    },
+    {
+      "n": 6,
+      "title": "고용센터 대기 의자와 번호표 기계",
+      "prompt": "Camera and composition: eye-level wide shot. Rows of empty waiting chairs and a ticket number machine in a quiet public office lobby, no people. Background color: sage green and sand beige. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "file": "06.png"
+    }
+  ]
+}
