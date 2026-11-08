@@ -42,9 +42,9 @@
         ]
       },
       "note": "대표: 그 회차 공식 클립 표지 → 단독 사진 → 사람 없는 그림",
-      "thumb_shot": "hands",
+      "thumb_shot": "wide",
       "thumb_theme": "olive",
-      "thumb_person": "60대(손만)",
+      "thumb_person": "60대 남성(작게)",
       "overlay": {
         "kind": "thumb",
         "look": "news",
@@ -53,7 +53,7 @@
         "theme": "olive"
       },
       "thumb_mood": "놀람",
-      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Hands holding a cordless phone over a small notepad on a living room table. The person's mood: pleasantly surprised, eyebrows up, not scared. Color theme: olive green and warm cream tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A cozy living room seen whole like a miniature diorama; one small man sits on the sofa talking on a phone with a notepad on the table. The person's mood: pleasantly surprised, eyebrows up, not scared. Color theme: olive green and warm cream tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places, warm everyday mood, natural colors, clean composition. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere. Do not depict any real or famous person; every face is an ordinary fictional person.",
       "file": "01.png"
     },
     {
