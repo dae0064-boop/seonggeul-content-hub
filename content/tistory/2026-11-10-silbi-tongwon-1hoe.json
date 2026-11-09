@@ -1,0 +1,647 @@
+{
+  "slug": "2026-11-10-silbi-tongwon-1hoe",
+  "title": "실비 통원 1회, 병원 두 곳이면 공제금액도 한 번일까 (2만 원)",
+  "category": "생활보장",
+  "tags": [
+    "실비통원1회",
+    "공제금액",
+    "처방조제",
+    "같은치료목적",
+    "약국영수증",
+    "실비청구",
+    "실손보험통원",
+    "통원공제금액",
+    "실손보험표준약관",
+    "하루두번병원",
+    "처방조제비",
+    "실비약값",
+    "보험정보",
+    "생활보장",
+    "실손보험"
+  ],
+  "publishAt": "2026-11-10 15:00",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "약국 영수증은 조제한 날이 달라도"
+        },
+        {
+          "t": "처방받은 날 진료와 합쳐 한 번으로 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이런 날 있잖아요."
+        },
+        {
+          "t": "오전에 동네 의원에서 진료를 보고"
+        },
+        {
+          "t": "\"큰 병원 가 보세요\" 소리에"
+        },
+        {
+          "t": "오후에 종합병원까지 다녀온 날이요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "실비 앱에 영수증을 올리다 보면"
+        },
+        {
+          "t": "\"이거 두 번 빼는 거 아니야?\" 싶죠."
+        },
+        {
+          "t": "오늘은 실비 통원 1회를 어떻게 세는지"
+        },
+        {
+          "t": "표준약관 문장으로 비교해 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "결론부터 말하면요."
+        },
+        {
+          "t": "같은 치료 목적이면 하루 두 곳도",
+          "s": "yellow"
+        },
+        {
+          "t": "실비 통원 1회로 묶고, 공제는 한 번이에요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "진료 영수증을 들고 휴대폰을 보며 고개를 갸웃하는 40대 여성 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "실비 통원 1회, 왜 중요할까"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "실비 통원 1회를 묻고 답하는 채팅 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "실손보험 통원은 병원비에서"
+        },
+        {
+          "t": "정해진 공제금액을 빼고 돌려줘요."
+        },
+        {
+          "t": "그런데 이 공제금액이 통원 한 번마다 빠져요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 몇 번으로 세느냐에 따라",
+          "s": "yellow"
+        },
+        {
+          "t": "돌려받는 돈이 달라져요.",
+          "s": "yellow"
+        },
+        {
+          "t": "두 번으로 세면 두 번 빠지고,"
+        },
+        {
+          "t": "실비 통원 1회로 세면 한 번만 빠지거든요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "진료와 약값은 합쳐요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "표준약관은 외래와 처방조제를"
+        },
+        {
+          "t": "통원 1회로 합쳐서 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "같은 날 같은 병원에서 진료와 처방을"
+        },
+        {
+          "t": "함께 받았다면 처방한 날로 묶어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "약을 다음 날 지어도 처방일 기준으로",
+          "s": "red"
+        },
+        {
+          "t": "같은 실비 통원 1회예요.",
+          "s": "red"
+        },
+        {
+          "t": "조제한 날이 달라도 똑같이 적용한다고"
+        },
+        {
+          "t": "약관에 그대로 적혀 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 처방조제 영수증과 진료 영수증은"
+        },
+        {
+          "t": "같이 올리는 게 깔끔해요."
+        },
+        {
+          "t": "따로 올려도 보험사가 한 번으로 묶어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "약국 영수증만 따로 받아 두는 분이 많은데"
+        },
+        {
+          "t": "날짜가 다르면 헷갈리기 쉬워요."
+        },
+        {
+          "t": "처방전 발행일을 영수증 옆에 적어 두면"
+        },
+        {
+          "t": "어느 진료와 짝인지 바로 보여요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "하루 두 곳, 되는 경우와 안 되는 경우"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "하루 두 곳 진료가 1회로 묶이는지 맞혀 보는 퀴즈 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "하루에 병원을 두 곳 다녀왔다면"
+        },
+        {
+          "t": "같은 치료 목적인지가 갈림길이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "⭕ 같은 감기로 의원 갔다가 오후에 재진료"
+        },
+        {
+          "t": "⭕ 같은 다친 곳으로 의원·종합병원 연달아"
+        },
+        {
+          "t": "❌ 다른 날 다시 간 진료"
+        },
+        {
+          "t": "❌ 다른 질병으로 다른 과에 간 진료"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "⭕ 쪽은 하나의 질병이나 상해로"
+        },
+        {
+          "t": "하루에 같은 치료 목적으로 간 경우예요."
+        },
+        {
+          "t": "이때 실비 통원 1회로 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "❌ 쪽은 이 조항이 말하는 경우가 아니에요."
+        },
+        {
+          "t": "다른 날이면 날마다 따로 세고,"
+        },
+        {
+          "t": "다른 질병이면 따로 볼 수 있어"
+        },
+        {
+          "t": "내 약관과 보험사 안내로 확인해요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "공제금액은 높은 쪽으로"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여기서 많이들 놓치는 부분이 있어요."
+        },
+        {
+          "t": "하루 두 곳을 1회로 묶을 때"
+        },
+        {
+          "t": "공제금액은 어느 병원 기준일까요?"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "방문한 곳 중 가장 높은 공제금액을",
+          "s": "yellow"
+        },
+        {
+          "t": "한 번만 빼요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "지금 표준약관 급여 부분을 보면"
+        },
+        {
+          "t": "의원·약국은 1만 원과 비율 중 큰 금액,",
+          "segs": [
+            {
+              "t": "의원·약국은 "
+            },
+            {
+              "t": "1만 원",
+              "s": "blue"
+            },
+            {
+              "t": "과 비율 중 큰 금액,"
+            }
+          ]
+        },
+        {
+          "t": "종합병원·상급종합병원은 2만 원과",
+          "segs": [
+            {
+              "t": "종합병원·상급종합병원은 "
+            },
+            {
+              "t": "2만 원",
+              "s": "blue"
+            },
+            {
+              "t": "과"
+            }
+          ]
+        },
+        {
+          "t": "비율 중 큰 금액이 공제금액이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 같은 이유로 의원과 종합병원을"
+        },
+        {
+          "t": "같은 날 가면 종합병원 쪽 공제금액이"
+        },
+        {
+          "t": "딱 한 번만 빠져요."
+        },
+        {
+          "t": "두 곳 공제금액을 더해서 빼지는 않아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "공제가 기준 금액대로 잡히는 경우라면,"
+        },
+        {
+          "t": "따로 셀 때 1만 원과 2만 원이 각각 빠져요."
+        },
+        {
+          "t": "1회로 묶이면 2만 원 쪽 하나만 빠지니"
+        },
+        {
+          "t": "그만큼 돌려받는 몫이 커져요."
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"그럼 따로따로 청구하면 손해예요?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "손해라기보다 결과가 같아요."
+        },
+        {
+          "t": "같은 치료 목적이면 따로 올려도"
+        },
+        {
+          "t": "보험사가 실비 통원 1회로 묶어 계산해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 같은 치료 목적인지는 누가 정해요?"
+        },
+        {
+          "t": "A1: 영수증과 처방전에 적힌 진료 내용으로"
+        },
+        {
+          "t": "보험사가 판단해요."
+        },
+        {
+          "t": "애매하면 진료비 세부내역서를 같이 내요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 의원 공제가 더 높으면요?"
+        },
+        {
+          "t": "A2: 그때는 의원 쪽 공제금액이 빠져요."
+        },
+        {
+          "t": "약관은 병원 종류가 아니라"
+        },
+        {
+          "t": "방문한 곳 중 가장 높은 금액이라고 정했어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "실비 통원 1회, 청구 전에 볼 것"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "식탁 위에 펼쳐 둔 병원 영수증과 약 봉투"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 체크포인트",
+          "s": "green"
+        },
+        {
+          "t": "진료 날짜 · 처방 날짜 · 같은 병인지",
+          "s": "green"
+        },
+        {
+          "t": "이 셋을 영수증에서 먼저 맞춰 봐요.",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "공제금액과 묶는 방식은 가입 시기마다"
+        },
+        {
+          "t": "세대별 약관 문구가 조금씩 달라요."
+        },
+        {
+          "t": "오래된 실비라면 처방조제 공제를",
+          "segs": [
+            {
+              "t": "오래된 실비라면 "
+            },
+            {
+              "t": "처방조제",
+              "s": "blue"
+            },
+            {
+              "t": " 공제를"
+            }
+          ]
+        },
+        {
+          "t": "따로 두는 약관도 있어 내 약관이 먼저예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "청구할 때는 같은 날 영수증을 한 번에 모아"
+        },
+        {
+          "t": "진료비 영수증, 처방조제 영수증 순서로 올려요."
+        },
+        {
+          "t": "그러면 보험사도 실비 통원 1회로 묶기 쉬워요."
+        },
+        {
+          "t": "빠진 영수증이 있으면 나중에 따로 더 내도 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분은 하루에 병원 두 곳 가 보신 적 있으세요?"
+        },
+        {
+          "t": "\"있다\", \"없다\"로 남겨 주세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "실비 통원 1회 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "실비 통원 1회는 진료와 처방조제를 합쳐 세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "하루 두 곳도 같은 치료 목적이면 1회예요."
+        },
+        {
+          "t": "공제금액은 더하지 않고 가장 높은 곳",
+          "s": "red"
+        },
+        {
+          "t": "하나만 빠져요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "조항은 금융감독원 보험업감독업무시행세칙"
+        },
+        {
+          "t": "별표15 실손의료보험 표준약관의 통원 부분이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "내 증권·약관의 통원 보상 조항에서"
+        },
+        {
+          "t": "같은 치료 목적 문장을 한 번 찾아보세요.",
+          "segs": [
+            {
+              "t": "같은 치료 목적",
+              "s": "blue"
+            },
+            {
+              "t": " 문장을 한 번 찾아보세요."
+            }
+          ]
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "실비 통원 1회, 공제금액은 높은 쪽 한 번이에요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">약국 영수증은 조제한 날이 달라도<br>처방받은 날 진료와 합쳐 한 번으로 봐요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이런 날 있잖아요.<br>오전에 동네 의원에서 진료를 보고<br>&quot;큰 병원 가 보세요&quot; 소리에<br>오후에 종합병원까지 다녀온 날이요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">실비 앱에 영수증을 올리다 보면<br>&quot;이거 두 번 빼는 거 아니야?&quot; 싶죠.<br>오늘은 실비 통원 1회를 어떻게 세는지<br>표준약관 문장으로 비교해 볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">결론부터 말하면요.<br><span style=\"background-color: #ffe94d;\"><b>같은 치료 목적이면 하루 두 곳도</b></span><br><span style=\"background-color: #ffe94d;\"><b>실비 통원 1회로 묶고, 공제는 한 번이에요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 1] 진료 영수증을 들고 휴대폰을 보며 고개를 갸웃하는 40대 여성 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>실비 통원 1회, 왜 중요할까</h2>\n<p data-ke-size=\"size16\">[이미지 2] 실비 통원 1회를 묻고 답하는 채팅 카드</p>\n<p data-ke-size=\"size16\">실손보험 통원은 병원비에서<br>정해진 공제금액을 빼고 돌려줘요.<br>그런데 이 공제금액이 통원 한 번마다 빠져요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>그래서 몇 번으로 세느냐에 따라</b></span><br><span style=\"background-color: #ffe94d;\"><b>돌려받는 돈이 달라져요.</b></span><br>두 번으로 세면 두 번 빠지고,<br>실비 통원 1회로 세면 한 번만 빠지거든요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>진료와 약값은 합쳐요</h2>\n<p data-ke-size=\"size16\">표준약관은 외래와 처방조제를<br>통원 1회로 합쳐서 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">같은 날 같은 병원에서 진료와 처방을<br>함께 받았다면 처방한 날로 묶어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>약을 다음 날 지어도 처방일 기준으로</b></span><br><span style=\"color: #ff0010;\"><b>같은 실비 통원 1회예요.</b></span><br>조제한 날이 달라도 똑같이 적용한다고<br>약관에 그대로 적혀 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그래서 처방조제 영수증과 진료 영수증은<br>같이 올리는 게 깔끔해요.<br>따로 올려도 보험사가 한 번으로 묶어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">약국 영수증만 따로 받아 두는 분이 많은데<br>날짜가 다르면 헷갈리기 쉬워요.<br>처방전 발행일을 영수증 옆에 적어 두면<br>어느 진료와 짝인지 바로 보여요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>하루 두 곳, 되는 경우와 안 되는 경우</h2>\n<p data-ke-size=\"size16\">[이미지 3] 하루 두 곳 진료가 1회로 묶이는지 맞혀 보는 퀴즈 카드</p>\n<p data-ke-size=\"size16\">하루에 병원을 두 곳 다녀왔다면<br>같은 치료 목적인지가 갈림길이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">⭕ 같은 감기로 의원 갔다가 오후에 재진료<br>⭕ 같은 다친 곳으로 의원·종합병원 연달아<br>❌ 다른 날 다시 간 진료<br>❌ 다른 질병으로 다른 과에 간 진료</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">⭕ 쪽은 하나의 질병이나 상해로<br>하루에 같은 치료 목적으로 간 경우예요.<br>이때 실비 통원 1회로 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">❌ 쪽은 이 조항이 말하는 경우가 아니에요.<br>다른 날이면 날마다 따로 세고,<br>다른 질병이면 따로 볼 수 있어<br>내 약관과 보험사 안내로 확인해요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>공제금액은 높은 쪽으로</h2>\n<p data-ke-size=\"size16\">여기서 많이들 놓치는 부분이 있어요.<br>하루 두 곳을 1회로 묶을 때<br>공제금액은 어느 병원 기준일까요?</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>방문한 곳 중 가장 높은 공제금액을</b></span><br><span style=\"background-color: #ffe94d;\"><b>한 번만 빼요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">지금 표준약관 급여 부분을 보면<br>의원·약국은 <span style=\"color: #0078cb;\"><b>1만 원</b></span>과 비율 중 큰 금액,<br>종합병원·상급종합병원은 <span style=\"color: #0078cb;\"><b>2만 원</b></span>과<br>비율 중 큰 금액이 공제금액이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그래서 같은 이유로 의원과 종합병원을<br>같은 날 가면 종합병원 쪽 공제금액이<br>딱 한 번만 빠져요.<br>두 곳 공제금액을 더해서 빼지는 않아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">공제가 기준 금액대로 잡히는 경우라면,<br>따로 셀 때 1만 원과 2만 원이 각각 빠져요.<br>1회로 묶이면 2만 원 쪽 하나만 빠지니<br>그만큼 돌려받는 몫이 커져요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<blockquote data-ke-style=\"style3\">&quot;그럼 따로따로 청구하면 손해예요?&quot;</blockquote>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">손해라기보다 결과가 같아요.<br>같은 치료 목적이면 따로 올려도<br>보험사가 실비 통원 1회로 묶어 계산해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 같은 치료 목적인지는 누가 정해요?<br>A1: 영수증과 처방전에 적힌 진료 내용으로<br>보험사가 판단해요.<br>애매하면 진료비 세부내역서를 같이 내요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 의원 공제가 더 높으면요?<br>A2: 그때는 의원 쪽 공제금액이 빠져요.<br>약관은 병원 종류가 아니라<br>방문한 곳 중 가장 높은 금액이라고 정했어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>실비 통원 1회, 청구 전에 볼 것</h2>\n<p data-ke-size=\"size16\">[이미지 4] 식탁 위에 펼쳐 둔 병원 영수증과 약 봉투</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 체크포인트</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>진료 날짜 · 처방 날짜 · 같은 병인지</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>이 셋을 영수증에서 먼저 맞춰 봐요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">공제금액과 묶는 방식은 가입 시기마다<br>세대별 약관 문구가 조금씩 달라요.<br>오래된 실비라면 <span style=\"color: #0078cb;\"><b>처방조제</b></span> 공제를<br>따로 두는 약관도 있어 내 약관이 먼저예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">청구할 때는 같은 날 영수증을 한 번에 모아<br>진료비 영수증, 처방조제 영수증 순서로 올려요.<br>그러면 보험사도 실비 통원 1회로 묶기 쉬워요.<br>빠진 영수증이 있으면 나중에 따로 더 내도 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분은 하루에 병원 두 곳 가 보신 적 있으세요?<br>&quot;있다&quot;, &quot;없다&quot;로 남겨 주세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>실비 통원 1회 정리</h2>\n<p data-ke-size=\"size16\">실비 통원 1회는 진료와 처방조제를 합쳐 세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">하루 두 곳도 같은 치료 목적이면 1회예요.<br><span style=\"color: #ff0010;\"><b>공제금액은 더하지 않고 가장 높은 곳</b></span><br><span style=\"color: #ff0010;\"><b>하나만 빠져요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">조항은 금융감독원 보험업감독업무시행세칙<br>별표15 실손의료보험 표준약관의 통원 부분이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">내 증권·약관의 통원 보상 조항에서<br><span style=\"color: #0078cb;\"><b>같은 치료 목적</b></span> 문장을 한 번 찾아보세요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>실비 통원 1회, 공제금액은 높은 쪽 한 번이에요.</p>"
+}
