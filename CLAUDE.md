@@ -18,7 +18,8 @@ content/chulgeo/   다와이철거 홍보 블로그 (네이버 breakandbuild, 92
 content/threads/   스레드 말투 규칙(voice.md) + 글감(topics.txt)
 content/threads/blog/  스레드 블로그 유입 글 — 네이버 생활보장 글 요약 (규칙 ../blog.md, 검사 blog-set.mjs, 올리기 blog-post.mjs — 11/6~ 하루 1편 21:00 (11/4~11/5 는 3편), 작업 SeonggeulThreadsBlog, 보험글 PAUSE 와 따로, 멈춤은 PAUSE-BLOG)
 content/threads/daily/  스레드 일상 글 — 11/6~ 하루 4편 07:00 · 08:30 출근 응원 · 12:30 점심 · 19:30 수고했다 (11/5 는 6편) (규칙 ../daily.md, 검사 daily-set.mjs, 올리기 daily-post.mjs, 멈춤 PAUSE-DAILY)
-                        ✂ 11/6~ 스레드 하루 6편 = 일상 4 + 보험 심의 1(15:00, insurance/post-plan.json changes) + 블로그 유입 1(21:00), 글마다 주제 태그 1개 — 2026-11-05 사용자 "노출 0 → 6편으로 줄이고 주제 태그". 그 전 하루 12편
+                        🧵 11/10~ 스레드 하루 5편 = 일상 4 + 블로그 유입 1(21:00) — 보험 심의글은 insurance/PAUSE-POST 로 멈춤 (2026-11-09 사용자 "보험 심의글 제외하고 5개로")
+                        ✂ (지난) 11/6~ 스레드 하루 6편 = 일상 4 + 보험 심의 1(15:00, insurance/post-plan.json changes) + 블로그 유입 1(21:00), 글마다 주제 태그 1개 — 2026-11-05 사용자 "노출 0 → 6편으로 줄이고 주제 태그". 그 전 하루 12편
 content/threads/insurance/  스레드 보험 심의글 — 규칙(rules.md)·글감·10편 묶음(sets/)
 scripts/           발행·검수 자동화(.mjs) + 워크스페이스 동기화 도구(.py)
 scripts/threads/   스레드 자동 발행·댓글 답변
