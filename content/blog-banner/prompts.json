@@ -95,6 +95,26 @@
       "slug": "cat-trip",
       "size": "1024x1024",
       "prompt": "A sunny outdoor terrace table overlooking a scenic green valley and a small village in the distance: a brunch plate, an iced coffee, a vintage film camera, a straw hat and a folded paper map, a relaxed travel and day-trip mood. Square photo, clean minimal lifestyle-magazine look, soft bright natural daylight, low saturation warm beige and white tones, calm and tidy composition, shallow depth of field. No people, no faces, no hands, no text, no logos."
+    },
+    {
+      "slug": "soft-bg",
+      "size": "1536x1024",
+      "prompt": "Soft hand-painted watercolor illustration, gentle and comforting mood, warm ivory and beige paper, sage green (#6E8B6B) and soft apricot (#E2A07A) accents, light pastel, bright high-key lighting, subtle paper texture. Wide panoramic website header background: on the far left a few tall slender leafy plant stems and a small clay pot, on the far right soft leafy branches and a window with sheer curtains catching sunlight, a few faint round soft circles and two tiny pastel hearts floating, low gentle beige rolling hill along the very bottom. The whole middle 70% of the width must stay a calm, nearly plain light ivory area with no objects (reserved for a title, a photo and five buttons). No people, no faces, no text, no letters, no logos."
+    },
+    {
+      "slug": "soft-ic-bill",
+      "size": "1024x1024",
+      "prompt": "Single cute soft watercolor icon illustration centered on a plain pure white background, simple rounded shapes, sage green and soft apricot colors, no shadow, no ground, isolated sticker, no text, no letters, no numbers, no logos. A friendly paper hospital receipt with a small round apricot check mark badge and a pen."
+    },
+    {
+      "slug": "soft-ic-med",
+      "size": "1024x1024",
+      "prompt": "Single cute soft watercolor icon illustration centered on a plain pure white background, simple rounded shapes, sage green and soft apricot colors, no shadow, no ground, isolated sticker, no text, no letters, no numbers, no logos. A soft rounded first-aid kit box with an apricot plus sign and a small stethoscope beside it."
+    },
+    {
+      "slug": "soft-ic-care",
+      "size": "1024x1024",
+      "prompt": "Single cute soft watercolor icon illustration centered on a plain pure white background, simple rounded shapes, sage green and soft apricot colors, no shadow, no ground, isolated sticker, no text, no letters, no numbers, no logos. Two gentle cupped hands holding a soft apricot heart, with a small knitted blanket."
     }
   ],
   "_설명2": "2026-11-02 사용자가 블로그 전체 화면을 보내 줌 → 스킨 배경 1920×600(가운데 966px 칸에 글씨·아이콘, 오른쪽 칸 밖에 인물)으로 바꿈. 바탕 2장 + 아이콘 5장 = 7장 low.",
@@ -102,5 +122,6 @@
   "_설명4": "2026-11-02 사용자 '배경이 암울하다' → 직접 그린 장식 대신 GPT 수채화 바탕(사람 없음) 2장. 지금 배너처럼 햇살 드는 따뜻한 방.",
   "_설명5": "2026-11-02 사용자가 스크랩북(폴라로이드·테이프·찢은 종이) 예시와 흰 카드 '바로가기' 버튼 예시를 보여 줌 → scripts/blog-banner/scrap.mjs. 수채화 바탕 2장 대신 폴라로이드 사진 4장(사람 없음).",
   "_설명6": "2026-11-02 사용자 '배경부터 사진칸 카테고리 사진까지 GPT 로' → 배경 3가지(bg-g-*) + 카테고리 사진 5장(cat-*). 한글 제목·버튼 이름만 클라우드가 얹는다.",
-  "_설명7": "2026-11-02 사용자: 생활·보장은 더 전문적인 사진, 맛집·나들이는 여행·나들이 느낌도 → cat-care2·cat-trip (ChatGPT 배너 카드 사진 톤에 맞춤)"
+  "_설명7": "2026-11-02 사용자: 생활·보장은 더 전문적인 사진, 맛집·나들이는 여행·나들이 느낌도 → cat-care2·cat-trip (ChatGPT 배너 카드 사진 톤에 맞춤)",
+  "_설명8": "2026-11-09 사용자 '성글벙글이 배너를 GPT 오픈 API 로' → 수채화 바탕(soft-bg) + 카드 그림 3장(soft-ic-*), low 4장 약 $0.03. 한글·인스타·카카오 표시·사진은 클라우드가 content/consult/banner/soft.mjs 로 얹는다(그림 AI 가 한글·상표를 망가뜨림)."
 }
