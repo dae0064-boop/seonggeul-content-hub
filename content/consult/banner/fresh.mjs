@@ -22,7 +22,7 @@ const THEMES = {
   deepnavy: { bg: 'linear-gradient(120deg,#0f1f3a 0%,#152a4d 55%,#0c1830 100%)', te: '#9cc4ff', tl: '#e6eefb', hl: 'rgba(255,199,140,.55)', dark: true, glow: 'rgba(130,170,240,.28)' },
   teal: { bg: 'linear-gradient(120deg,#dcefeb 0%,#cfe7e2 45%,#bfdfd9 100%)', te: '#0d6b66', tl: '#e3f2ef', hl: '#ffc7b4' },
 };
-const TH = THEMES[A('--theme', 'greige')] || THEMES.greige;
+const TH = THEMES[A('--theme', 'deepgreen')] || THEMES.greige;
 const TE = TH.dark ? (TH === THEMES.deepgreen ? '#13493f' : '#152a4d') : TH.te, TL = TH.tl, CO = '#ff7a59', INK = '#1f2a2e';
 const IC = {
   // 보험금·실비: 병원 영수증(톱니 아래) + 돌려받는 돈(₩ 동전)
@@ -39,7 +39,7 @@ const CP = A('--cardphotos', '');
 const cph = n => { const f = CP && path.join(CP, `ph2-${n}.jpg`); return f && fs.existsSync(f) ? `data:image/jpeg;base64,${fs.readFileSync(f).toString('base64')}` : ''; };
 const PHOTOS = { bill: cph('bill'), care: cph('care'), won: cph('won') };
 // 바탕 무늬 (2026-11-09 사용자 "배경이 너무 밋밋") — 동그라미 없이: --pattern lines(빛줄기·사선 결) | waves(물결 선) | none
-const PAT = A('--pattern', 'lines');
+const PAT = A('--pattern', 'none');
 const pattern = () => {
   if (PAT === 'none') return '';
   const lineCol = TH.dark ? 'rgba(255,255,255,' : 'rgba(30,50,60,';
@@ -73,7 +73,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:J;src:url(${font('Jua-Regular.ttf')})}
 *{margin:0;box-sizing:border-box}body{width:1920px;height:600px;overflow:hidden}
 .bn{position:relative;width:1920px;height:600px;overflow:hidden;background:radial-gradient(ellipse 300px 340px at 1600px 300px,${TH.glow || 'rgba(255,255,255,.75)'} 0%,rgba(255,255,255,0) 100%),${TH.bg};font-family:GM;color:${INK}}
-${A('--chipstyle', '') === 'glass' ? `.tag{background:#ffd54f !important;color:#13493f !important;-webkit-text-stroke:0 !important}.chip{background:rgba(255,255,255,.12) !important;border:1.5px solid rgba(255,255,255,.55) !important;color:#fff !important;-webkit-text-stroke:0 !important;box-shadow:none !important}.chip b{color:#ffd54f !important;-webkit-text-stroke:0 !important}.chip svg circle{fill:#ffd54f}.chip svg path{stroke:#13493f}` : ''}
+${A('--chipstyle', 'glass') === 'glass' ? `.tag{background:#ffd54f !important;color:#13493f !important;-webkit-text-stroke:0 !important}.chip{background:rgba(255,255,255,.12) !important;border:1.5px solid rgba(255,255,255,.55) !important;color:#fff !important;-webkit-text-stroke:0 !important;box-shadow:none !important}.chip b{color:#ffd54f !important;-webkit-text-stroke:0 !important}.chip svg circle{fill:#ffd54f}.chip svg path{stroke:#13493f}` : ''}
 ${TH.dark ? `.l1{color:#ffffff !important;font-size:52px !important;text-shadow:0 2px 10px rgba(0,0,0,.25)}.l2{color:#fff !important}.l2 em{color:#ffd54f !important;background:none !important;position:relative}.l2 em:after{content:'';position:absolute;left:2px;right:2px;bottom:-12px;height:6px;border-radius:3px;background:#ff6b4a}` : ''}
 svg.deco,svg.pat{position:absolute;inset:0}
 .tag{position:absolute;left:500px;top:84px;letter-spacing:1.2px;padding:7px 18px;border-radius:20px;background:#fff;color:${TE};font-family:CF;font-size:${/Gaegu/.test(CFN) ? 25 : 22}px;-webkit-text-stroke:${CSTROKE * .6}px ${TE}}
