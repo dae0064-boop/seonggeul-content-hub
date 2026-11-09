@@ -1,7 +1,7 @@
 // 상담 배너 — 나만의 판 (2026-11-09 사용자 "한다팀장 배너 느낌이 전혀 들지 않게"). 남색·금색·금 배지·붓 서명·탄색 띠 없음.
 // 밝은 바탕 + 청록(신뢰) + 코랄(친근) 포인트, 말풍선·흰 카드. 1920×600, 아래 5칸 = 위젯 자리(x 486+186k · 가로 170 · 위 321~600).
 // node content/consult/banner/fresh.mjs --photo 사람.png [--guide] → fresh-banner.png (저장소에 올리지 않음)
-import fs from 'node:fs'; import path from 'node:path'; import { fileURLToPath } from 'node:url'; import { chromium } from 'playwright';
+import fs from 'node:fs'; import path from 'node:path'; import { fileURLToPath } from 'node:url'; import { launch } from '../../../scripts/lib/overlay.mjs';
 const HERE = path.dirname(fileURLToPath(import.meta.url)); const ROOT = path.resolve(HERE, '../../..');
 const A = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : d; };
 const GUIDE = process.argv.includes('--guide');
@@ -151,6 +151,6 @@ ${GUIDE ? [0, 1, 2, 3, 4].map(k => `<div class="guide" style="left:${X(k)}px"></
 const OUTN = A('--out', GUIDE ? 'fresh-banner-guide.png' : 'fresh-banner.png');
 // --scale 2 (2026-11-09 사용자 "흐릿해 보여") — 같은 배치를 2배 점으로 찍는다(3840×1200). 고해상도 화면에서 글씨가 또렷하다
 const SCALE = +A('--scale', 2);
-const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1920, height: H }, deviceScaleFactor: SCALE });
+const b = await launch(); const p = await b.newPage({ viewport: { width: 1920, height: H }, deviceScaleFactor: SCALE });
 await p.setContent(html); await p.waitForTimeout(400);
 await p.screenshot({ path: path.resolve(HERE, OUTN) }); await b.close(); console.log('ok');
