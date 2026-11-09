@@ -46,8 +46,9 @@ if (!c.chosen) {
     } catch { console.log(`⚠ ${it.slug} 실패 — 다음 실행 때 다시`); }
   }
 } else {
-  const base = path.join(img, `${c.chosen}.png`);
-  if (!have(c.chosen)) { console.log(`⚠ 고른 후보 ${c.chosen}.png 가 없어요 — Drive mascot 폴더를 확인`); process.exit(0); }
+  // chosen_source: 저장소에 넣어 둔 확정 캐릭터 그림 (2026-11-09 사용자가 대화로 보낸 것)
+  const base = c.chosen_source ? path.join(ROOT, c.chosen_source) : path.join(img, `${c.chosen}.png`);
+  if (!(c.chosen_source ? fs.existsSync(base) : have(c.chosen))) { console.log(`⚠ 고른 캐릭터 그림이 없어요 — ${base}`); process.exit(0); }
   for (const p of c.poses) {
     if (have(p.slug)) continue;
     console.log(`캐릭터 자세 만들기: ${p.slug}`);
@@ -55,6 +56,14 @@ if (!c.chosen) {
       execFileSync(process.execPath, [path.join(ROOT, 'scripts/image-edit.mjs'), base, c.pose_prompt.replace('{pose}', p.pose), '--quality', 'low', '--size', '1024x1536', '--out', out, '--name', p.slug], { stdio: 'inherit' });
       keep(p.slug); made++;
     } catch { console.log(`⚠ ${p.slug} 실패 — 다음 실행 때 다시`); }
+  }
+}
+// 자세가 다 있으면 진초록 카드 예시를 Drive mascot/sample 로 (없을 때만) — 사용자가 휴대폰으로 본다
+if (c.chosen && c.poses.every((p) => fs.existsSync(path.join(img, `${p.slug}.png`)))) {
+  const sd = path.join(out, 'sample');
+  if (!fs.existsSync(path.join(sd, '3-check.png'))) {
+    try { execFileSync(process.execPath, [path.join(ROOT, 'scripts/cards/green-sample.mjs'), '--out', sd], { stdio: 'inherit' }); console.log('카드 예시 3장 만듦 (Drive mascot/sample)'); }
+    catch { console.log('⚠ 카드 예시 그리기 실패'); }
   }
 }
 console.log(made ? `캐릭터 그림 ${made}장 만듦` : '캐릭터 그림 — 새로 만들 것 없음');
