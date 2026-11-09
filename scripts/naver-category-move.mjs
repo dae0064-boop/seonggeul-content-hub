@@ -12,14 +12,23 @@
  *   node scripts/naver-category-move.mjs seongdaeeyo --test           한 편만 옮겨 보고 확인
  *   node scripts/naver-category-move.mjs seongdaeeyo --all            한 편 시험 → 맞으면 나머지 전부
  *   [--out 폴더] [--plan content/archive/category-plan.tsv]
+ *   --care   2026-11-09 사용자 "현재 블로그에 있는 글위치들 다 옮겨줘" — 표 대신 블로그에서 바로 읽어,
+ *            생활·보장(과 그 하위 칸·예전 하위 칸)에 있는 글을 위 카테고리 3개(보험금·실비 / 병원비·돌봄 / 지원금·제도)로
+ *            하위 없이 옮긴다. 칸은 발행 때와 같은 규칙(careTopFor — 제목으로). 이미 새 3칸에 있는 글은 그대로 둔다.
+ *   --daily  2026-11-09 사용자 "맛집·카페, 여행·나들이 카테고리를 삭제할거야 — 맛집·카페 글들을 강팀장·일상으로":
+ *            위 카테고리 '강팀장·일상'의 하위 칸(맛집·카페·여행·나들이 등)에 있는 글을 전부 '강팀장·일상' 으로 옮긴다.
+ *            다른 위 카테고리 이름은 --daily-name <이름>.
  */
 import { chromium } from 'playwright';
+import { careTopFor, CARE_TOPS, SUBCATEGORIES } from './lib/naver-subcategory.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 
 const argv = process.argv.slice(2);
 const opt = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : d; };
-const id = argv.find((a, i) => !a.startsWith('--') && !['--out', '--cdp', '--plan', '--live'].includes(argv[i - 1]));
+const id = argv.find((a, i) => !a.startsWith('--') && !['--out', '--cdp', '--plan', '--live', '--daily-name'].includes(argv[i - 1]));
+const CARE = argv.includes('--care');
+const DAILY = argv.includes('--daily') ? opt('--daily-name', '강팀장·일상') : '';
 const MODE = argv.includes('--all') ? 'all' : argv.includes('--test') ? 'test' : 'look';
 const OUT = opt('--out', `dumps/category-move/${new Date().toISOString().slice(0, 10)}`);
 const CDP = opt('--cdp', 'http://localhost:9222');
@@ -56,6 +65,8 @@ async function readCategories(page) {
   const j = await getJson(page, `https://m.blog.naver.com/api/blogs/${id}/category-list`);
   return (j?.result?.mylogCategoryList || []).map((c) => ({ no: c.categoryNo, name: norm(c.categoryName), parent: c.parentCategoryNo, count: c.postCnt }));
 }
+const TITLES = new Map(); // logNo → 제목 (--care 가 칸을 고를 때 쓴다)
+const decode = (s) => String(s ?? '').replace(/<[^>]+>/g, '').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, '&');
 /** logNo → 지금 카테고리 번호 (블로그에서 다시 읽음) */
 async function readState(page) {
   const m = new Map();
@@ -63,7 +74,7 @@ async function readState(page) {
     const j = await getJson(page, `https://m.blog.naver.com/api/blogs/${id}/post-list?categoryNo=0&itemCount=30&page=${p}`);
     const items = j?.result?.items || [];
     if (!items.length) break;
-    for (const it of items) m.set(String(it.logNo), Number(it.categoryNo));
+    for (const it of items) { m.set(String(it.logNo), Number(it.categoryNo)); TITLES.set(String(it.logNo), norm(decode(it.titleWithInspectMessage || it.title))); }
     await sleep(250);
   }
   return m;
@@ -206,6 +217,44 @@ async function clickMove(page, frame, target) {
   return true;
 }
 
+/** --care: 블로그에서 읽은 지금 상태로 옮길 표를 만든다. 생활·보장 줄기(생활·보장, 그 하위, 예전 생활보장 하위 이름, 새 3칸의 하위)에 있는 글만 */
+const OLD_CARE_SUBS = new Set(CARE_TOPS.flatMap((t) => SUBCATEGORIES[t] || []));
+function carePlan(cats, state) {
+  const byNo = new Map(cats.map((c) => [c.no, c]));
+  const tops = new Set(cats.filter((c) => !c.parent && CARE_TOPS.includes(c.name)).map((c) => c.no));
+  const missing = CARE_TOPS.filter((t) => !cats.some((c) => !c.parent && c.name === t));
+  if (missing.length) log(`⚠ 블로그에 위 카테고리 "${missing.join('", "')}" 가 안 보여요 — 그 칸으로 갈 글은 건너뜀`);
+  const isCare = (no) => {
+    const c = byNo.get(no); if (!c) return false;
+    if (tops.has(no)) return false; // 이미 새 3칸 위 카테고리 — 그대로
+    const p = c.parent ? byNo.get(c.parent) : null;
+    return c.name === '생활·보장' || p?.name === '생활·보장' || (p && tops.has(p.no)) || OLD_CARE_SUBS.has(c.name);
+  };
+  const rows = [];
+  for (const [logNo, no] of state) {
+    if (!isCare(no)) continue;
+    const title = TITLES.get(logNo) || '';
+    rows.push({ logNo, date: '', from: byNo.get(no)?.name || '', to_parent: careTopFor({ category: '생활보장', title }), to_sub: '', title });
+  }
+  const cnt = {}; for (const r of rows) cnt[r.to_parent] = (cnt[r.to_parent] || 0) + 1;
+  log(`[생활보장 → 새 3칸] 대상 ${rows.length}편: ${Object.entries(cnt).map(([k, v]) => `${k} ${v}`).join(' · ') || '없음'}`);
+  try { fs.writeFileSync(path.join(OUT, 'care-plan.tsv'), ['logNo\tfrom\tto\ttitle', ...rows.map((r) => `${r.logNo}\t${r.from}\t${r.to_parent}\t${r.title}`)].join('\n') + '\n'); } catch { /* */ }
+  return rows;
+}
+
+/** --daily: 위 카테고리 DAILY 의 하위 칸에 있는 글을 모두 위 카테고리로 */
+function dailyPlan(cats, state) {
+  const top = cats.find((c) => !c.parent && c.name === DAILY);
+  if (!top) { log(`✖ 블로그에 위 카테고리 "${DAILY}" 가 안 보여요 — 카테고리 목록: ${cats.map((c) => c.name).join(', ')}`); return []; }
+  const kids = new Map(cats.filter((c) => c.parent === top.no).map((c) => [c.no, c]));
+  log(`[하위 칸 → ${DAILY}] 하위 칸: ${[...kids.values()].map((c) => `${c.name}(${c.count ?? '?'})`).join(' · ') || '없음'}`);
+  const rows = [];
+  for (const [logNo, no] of state) if (kids.has(no)) rows.push({ logNo, date: '', from: kids.get(no).name, to_parent: DAILY, to_sub: '', title: TITLES.get(logNo) || '' });
+  log(`옮길 대상 ${rows.length}편`);
+  try { fs.writeFileSync(path.join(OUT, 'daily-plan.tsv'), ['logNo\tfrom\tto\ttitle', ...rows.map((r) => `${r.logNo}\t${r.from}\t${r.to_parent}\t${r.title}`)].join('\n') + '\n'); } catch { /* */ }
+  return rows;
+}
+
 async function main() {
   fs.mkdirSync(OUT, { recursive: true });
   let browser;
@@ -229,8 +278,9 @@ async function main() {
     await sleep(1500);
     const cats = await readCategories(page);
     const byName = new Map(cats.map((c) => [`${c.parent ? cats.find((p) => p.no === c.parent)?.name + '>' : ''}${c.name}`, c]));
-    const plan = readPlan();
     let state = await readState(page);
+    const plan = DAILY ? dailyPlan(cats, state) : CARE ? carePlan(cats, state) : readPlan();
+    if (DAILY && !plan.length) { log('옮길 글이 없어요 (하위 칸이 이미 비었거나 위 카테고리를 못 찾음).'); return; }
     log(`[카테고리 옮기기] ${id} — ${MODE}, 블로그 글 ${state.size}편, 표 ${plan.length}줄`);
     const todo = [];
     let missingTarget = 0, gone = 0;

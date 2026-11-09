@@ -741,7 +741,7 @@ async function insertQuoteAt(page, editor, text, style) {
  */
 const BLOG_CATEGORY = { 생활정보: '생활·정보', 생활보장: '생활·보장', '맛집': '생활·정보', '맛집·카페': '생활·정보' };
 function blogCategory(post) {
-  if (post.matjip) return '맛집·나들이'; // 사용자가 다녀온 맛집 후기만 (matjip-draft.mjs). 자동 원고의 맛집·카페는 아래처럼 생활·정보로
+  if (post.matjip) return '강팀장·일상'; // 2026-11-09 사용자가 맛집·나들이 → 강팀장·일상 으로 바꾸고 하위 칸(맛집·카페·여행·나들이)을 지움. 사용자가 다녀온 맛집 후기만 (matjip-draft.mjs). 자동 원고의 맛집·카페는 아래처럼 생활·정보로
   if (post.issue === '연예') return '연예·방송';
   if (post.issue === '정책') return '이슈·뉴스';
   if (post.category === '생활보장') return careTopFor(post); // 2026-11-09 생활·보장 → 위 카테고리 3개 (하위 없이)
@@ -749,6 +749,7 @@ function blogCategory(post) {
 }
 const OLD_CATEGORY = { '생활·정보': '생활정보', '생활·보장': '생활보장', '이슈·뉴스': '생활·정보', '연예·방송': '생활·정보',
   // 2026-11-09 위 카테고리 3개를 아직 안 만들었으면 예전 생활·보장으로
+  '강팀장·일상': '맛집·나들이', // 2026-11-09 — 이름을 못 찾으면 예전 이름
   '보험금·실비': '생활·보장', '병원비·돌봄': '생활·보장', '지원금·제도': '생활·보장' };
 
 /** 고른 카테고리 이름을 돌려준다 (못 고르면 null). 이슈 글은 예전 이름(생활·정보)으로 물러서지 않는다 —
@@ -2101,9 +2102,9 @@ async function main() {
         await dump(page, 'tag-filled');
         if (post.matjip) { // 맛집 후기는 임시저장 때 카테고리·주제도 골라 둔다 (못 골라도 저장은 한다 — 발행할 때 사용자가 고른다)
           const got = (post.subcategory && await pickCategory(page, editor, post.subcategory, { noFallback: true }))
-            || await pickCategory(page, editor, blogCategory(post), { noFallback: true });
+            || await pickCategory(page, editor, blogCategory(post));
           log(got ? `카테고리: ${got}` : '⚠ 카테고리를 고르지 못함 — 발행할 때 직접 고르세요');
-          if (!got) manual.push('카테고리 맛집·나들이 > 맛집·카페 후기 고르기');
+          if (!got) manual.push('카테고리 강팀장·일상 고르기');
           if (!(await pickTopic(page, editor, post).catch(() => false))) manual.push('주제 맛집 고르기');
         }
       } catch (e) {
