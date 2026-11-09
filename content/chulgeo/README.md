@@ -1,6 +1,7 @@
 # 다와이철거 네이버 홍보 블로그 — 규칙 정본
 
-> ⏸ **2026-10-28 사용자 지시로 원고 쓰기·발행 모두 멈춤** (사용량). 밤 예약 작업 꺼짐, 아침 `auto-day.cmd` 의 철거 단계도 꺼짐. 다시 켤 때: 예약 작업 "다와이철거 다음 날 원고 5편" 켜기 + `auto-day.cmd` 의 chulgeo-day 줄 REM 떼기 + 이 줄·`routines/chulgeo-daily.md` 맨 위 상자 지우기.
+> ▶ **2026-11-09 사용자 지시로 다시 켬** — 블로그 = 네이버 `breakandbuild` ("breakandbuild 블로그에 철거 블로그로 운영할게, 자동 발행 붙여 줘"). 10/28~11/8 은 사용량 때문에 멈춰 있었다.
+> 다시 멈출 때: 예약 작업 "다와이철거 다음 날 원고 5편" 끄기 + `auto-day.cmd` 의 chulgeo-day 줄 앞에 REM + 이 줄·`routines/chulgeo-daily.md` 맨 위 상자에 멈춤 표시.
 
 2026-10-26 사용자 요청: "철거는 실사 사진으로, 네이버 홍보용으로 하나 만들어서 진행. 기존 블로그 말고 다른 블로그로 하루에 5개씩".
 성글벙글(살림 블로그)과 **완전히 따로** 운영한다. 성글벙글 규칙(CLAUDE.md 글쓰기 규칙, memory/CLAUDE.md, lint-post.mjs)은 여기에 적용하지 않는다.
@@ -112,6 +113,6 @@
 | 전날 19:43 | 클라우드 Routine (`routines/chulgeo-daily.md`) | 다음 날 원고 5편 + 그림 계획서, 검사기 통과, PR → main |
 | 당일 아침 | 사용자 PC `auto-day.cmd` 끝부분 → `launchers/tools/chulgeo-day.ps1` | 그림 만들기 → **철거 블로그 전용 크롬(9223)** 으로 예약발행. 결과 기록은 Drive run-logs `day-<날짜>-chulgeo.log` |
 
-- 철거 블로그는 **다른 네이버 계정**이라 자동화용 크롬을 따로 쓴다: 포트 9223, 프로필 `%LOCALAPPDATA%\chulgeo-chrome`.
-  처음 한 번 `launchers/chulgeo-login.cmd` 를 더블클릭해 그 창에서 철거 블로그 계정으로 로그인한다. 로그인 전에는 아침 실행이 건너뛴다.
+- 철거 블로그는 **다른 네이버 계정(`breakandbuild`)**이라 자동화용 크롬을 따로 쓴다: 포트 9223, 프로필 `%LOCALAPPDATA%\blog2-chrome`.
+  2026-11-09 사무실 PC 에서 `launchers/two-blog-test.cmd` 로 로그인하고 성글벙글(9222) → 철거(9223) → 성글벙글 이어서 작업을 확인했다. 로그인이 풀리면 같은 실행기를 다시 더블클릭해 새 크롬 창에서 로그인한다. 프로필 폴더가 없으면 아침 실행이 건너뛴다.
 - 처리 표시: Drive `ClaudeWorkspace/run-locks/chulgeo/<슬러그>.done`. 못 올린 글은 다음 날 아침 실행이 먼저 올린다(하루 5편까지).

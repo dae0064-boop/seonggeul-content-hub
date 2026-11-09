@@ -26,6 +26,12 @@
 
 ## 지금 상태
 
+### 11/9 낮 — 🏗 철거 블로그 다시 켬 = breakandbuild (사용자 "breakandbuild 블로그에 철거 블로그로 운영할게, 자동 발행 붙여 줘")
+- 블로그 2개 시험 PC 실제 결과 ✅(11:39, 코드 0): seongdaeeyo(9222) → breakandbuild(9223, 이때 처음 로그인) → seongdaeeyo, 셋 다 글쓰기 화면·로그인 유지.
+- 켠 것: `auto-day.cmd` chulgeo-day 줄 REM 뗌 · `chulgeo-day.ps1` 프로필 chulgeo-chrome → **blog2-chrome**(로그인된 곳), 알림 안내는 two-blog-test.cmd · README·routines/chulgeo-daily.md 멈춤 상자 지움 · 클라우드 예약 작업 "다와이철거 다음 날 원고 5편"(19:43) 다시 켬.
+- 흐름: 10/27 밀린 원고 5편(검사기 ✅, 그림 계획서 있음)이 남아 있어 오늘 밤 작업은 새로 안 씀(5편 이상 밀리면 안 씀) → **11/10 아침 PC 가 그 5편을 11·13·16·18·20시에 예약** → 11/10 밤부터 다음 날 5편씩.
+- [ ] 11/10 아침 확인: Drive run-logs `day-2026-11-10-chulgeo.log`, run-locks/chulgeo/*.done 5개.
+
 ### 11/9 낮 — 🧪 블로그 2개 이어서 작업 시험 도구 (사용자 "1개 블로그 작업이 끝나면 다른 블로그로 다시 로그인해서 작업 가능한지 테스트")
 - 결론(설계): 한 크롬에서 로그아웃 → 다른 아이디 로그인은 쓰지 않는다 — 블로그 1 '로그인 유지'가 풀려 매일 비밀번호·보안문자가 필요해진다. 대신 블로그마다 크롬 프로필을 따로(블로그 1 = 9222 seonggeul-chrome, 블로그 2 = 9223 blog2-chrome). 각 크롬은 처음 한 번만 로그인하면 계속 유지.
 - 만든 것: `scripts/two-blog-test.mjs`(1 → 2 → 1 순서로 로그인 쿠키·내 블로그 아이디·글쓰기 화면 확인, 같은 아이디면 코드 4) + `launchers/two-blog-test.cmd`(블로그 2 크롬을 켜고 로그인 안 돼 있으면 로그인 화면 열고 10분 기다림, 결과 Drive `run-logs/two-blog-test-*`).
