@@ -82,7 +82,7 @@ const coverSafe = cover
 // 네이버 앱 실제 화면에 맞춘 커버 (2026-11-09 사용자 앱 캡처 2장 — "글씨에 묻히네", "사진이 짤려"):
 // 앱은 정사각형을 약 1.18배 키워 가운데만 보여 준다(원본 가로 약 86~1000, 세로 약 123~1038). 그 위를 어둡게 덮고
 // 원본 세로 약 530 아래에 방문자 수·블로그명·프로필·단추를 얹는다. → 글씨·칩·얼굴은 가로 110~980, 세로 140~520 안,
-// 사람은 손까지 보이는 안쪽 상자 안에.
+// 사람은 크게(가로 350~990) — 2026-11-09 사용자 캡처: 위쪽 약 110 은 휴대폰 상태 표시줄에 가린다.
 const coverApp = cover
   .replace(".room:after{content:\'\';position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,30,26,.55),rgba(6,30,26,.15) 60%,rgba(6,30,26,.25))}", ".room:after{content:\'\';position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,30,26,.45),rgba(6,30,26,0) 60%)}")
   .replace('.t{position:absolute;left:72px;top:84px;color:#fbf5e9}', '.t{position:absolute;left:112px;top:142px;color:#fbf5e9}')
@@ -91,7 +91,7 @@ const coverApp = cover
   .replace('.s{margin-top:32px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}', '.s{margin-top:20px;display:grid;grid-template-columns:auto auto;gap:9px 8px;justify-items:start}')
   .replace('.s span{font:29px M', '.s span{font:19px M').replace('padding:10px 24px 10px 16px', 'padding:6px 14px 6px 8px')
   .replace('width:34px;height:34px;line-height:34px', 'width:24px;height:24px;line-height:24px').replace('font-size:21px;margin-right:12px', 'font-size:14px;margin-right:7px')
-  .replace('img.p{width:820px;right:-150px;top:120px}', 'img.p{width:450px;left:540px;top:186px}')
+  .replace('img.p{width:820px;right:-150px;top:120px}', 'img.p{width:640px;left:350px;top:150px}')
   .replace('<div class="fade"></div>', '')
   .replace('<div class="h">보험,<br><b class="gold">어렵지 않게</b><br>풀어 드려요</div>', '<div class="h">보험, <b class="gold">어렵지 않게</b><br>풀어 드려요</div>');
 for (const [name, html, w, h] of [['profile.png', profile, 1000, 1000], ['cover.png', cover, 1080, 1080], ['cover-safe.png', coverSafe, 1080, 1080], ['cover-app.png', coverApp, 1080, 1080]]) {
