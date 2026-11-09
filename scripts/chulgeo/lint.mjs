@@ -25,6 +25,11 @@ export const CONTACT = [
 export const PHOTO_NOTE = '글 속 사진은 이해를 돕기 위한 예시 이미지예요.';
 const PHONE = '010-3503-8923';
 const SLOTS = ['11:00', '13:00', '16:00', '18:00', '20:00'];
+// 2026-11-09 사용자: "11월 11일부터 철거·목수 관련 블로그 10개" — 11/11 원고부터 하루 10편 (철거 7~8 + 목공 2~3)
+export const TEN_FROM = '2026-11-11';
+const SLOTS10 = ['11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00'];
+const slotsFor = (d) => (d >= TEN_FROM ? SLOTS10 : SLOTS);
+const isMokgong = (k) => /목공|목수/.test(k || '');
 const REGIONS = ['서울', '인천', '경기', '수원', '시흥', '안산', '안양'];
 const VISIT_OK = ['서울', '인천', '시흥'];
 
@@ -81,7 +86,7 @@ export function lintOne(file, others = []) {
   if (!pa) errors.push('publish_at: YYYY-MM-DD HH:MM');
   else {
     if (pa[1] !== date) errors.push(`publish_at 날짜(${pa[1]})가 파일 날짜(${date})와 다름`);
-    if (!SLOTS.includes(pa[2])) errors.push(`publish_at 시각은 ${SLOTS.join('·')} 중 하나`);
+    if (!slotsFor(date).includes(pa[2])) errors.push(`publish_at 시각은 ${slotsFor(date).join('·')} 중 하나`);
   }
   if (post.tags.length < 10 || post.tags.length > 15) errors.push(`태그 10~15개 (지금 ${post.tags.length})`);
   if (!post.tags.includes('다와이철거')) errors.push('태그에 다와이철거');
@@ -232,11 +237,19 @@ function lintDay(results) {
   for (const r of results) (byDate[r.date] ||= []).push(r);
   for (const [d, rs] of Object.entries(byDate)) {
     const all = fs.readdirSync(POSTS).filter((f) => f.startsWith(d) && f.endsWith('.md'));
-    if (all.length > 5) errors.push(`${d}: 하루 5편까지 (지금 ${all.length})`);
+    const max = d >= TEN_FROM ? 10 : 5;
+    if (all.length > max) errors.push(`${d}: 하루 ${max}편까지 (지금 ${all.length})`);
     if (rs.length < all.length) continue; // 하루치를 다 넘겼을 때만 섞기를 본다
     const times = rs.map((r) => r.post.publishAt.slice(11));
     if (new Set(times).size !== times.length) errors.push(`${d}: 예약 시각이 겹침 (${times.join(', ')})`);
-    if (rs.length >= 5) {
+    if (rs.length >= 10) {
+      const regions = new Set(rs.map((r) => REGIONS.find((g) => r.post.mainKeyword.includes(g))));
+      if (regions.size < 5) errors.push(`${d}: 지역 5곳 이상 섞기 (지금 ${[...regions].join('·')})`);
+      const visit = rs.filter((r) => VISIT_OK.some((g) => r.post.mainKeyword.includes(g))).length;
+      if (visit < 5) errors.push(`${d}: 방문 견적 지역(서울·인천·시흥) 글 5편 이상 (지금 ${visit})`);
+      const mok = rs.filter((r) => isMokgong(r.post.mainKeyword)).length;
+      if (mok < 2 || mok > 3) errors.push(`${d}: 목공 글(메인 키워드에 목공·목수) 2~3편 (지금 ${mok})`);
+    } else if (rs.length >= 5) {
       const regions = new Set(rs.map((r) => REGIONS.find((g) => r.post.mainKeyword.includes(g))));
       if (regions.size < 4) errors.push(`${d}: 지역 4곳 이상 섞기 (지금 ${[...regions].join('·')})`);
       const visit = rs.filter((r) => VISIT_OK.some((g) => r.post.mainKeyword.includes(g))).length;
