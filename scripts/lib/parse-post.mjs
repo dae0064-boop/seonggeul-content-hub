@@ -31,9 +31,12 @@
  * post.marks 에 색별 표시 개수(여러 줄을 감싼 태그도 1곳)를 담는다.
  */
 
-const STYLE = { 빨간글씨: 'red', 노란배경: 'yellow', 파란글씨: 'blue' };
-const TAG_RE = /\[(\/?)(빨간글씨|노란배경|파란글씨)\]/g;
+// 초록배경 = 체크포인트·정리 덩어리 (2026-11-09 사용자 — 한다팀장 블로그보다 강조가 약하다, 11/10 네이버 원고부터)
+const STYLE = { 빨간글씨: 'red', 노란배경: 'yellow', 파란글씨: 'blue', 초록배경: 'green' };
+const TAG_RE = /\[(\/?)(빨간글씨|노란배경|파란글씨|초록배경)\]/g;
 const QUOTE_PREFIX = '인용구(소제목)';
+// 대화 한 줄을 네이버 말풍선 인용구(3번)로 (같은 날 사용자) — 소제목이 아니라 소제목 수·그림 자리 규칙에 들어가지 않는다
+const BUBBLE_PREFIX = '인용구(말풍선)';
 
 export function parsePost(raw) {
   let meta = {};
@@ -51,7 +54,7 @@ export function parsePost(raw) {
   const blocks = [];
   const warnings = [];
   let carry = null; // 줄을 넘어 이어지는 강조
-  const marks = { red: 0, yellow: 0, blue: 0 };
+  const marks = { red: 0, yellow: 0, blue: 0, green: 0 };
 
   for (const chunk of body.trim().split(/\r?\n\s*\r?\n/)) {
     const lines = chunk.split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
@@ -63,6 +66,14 @@ export function parsePost(raw) {
       blocks.push({ type: 'image', n: Number(im[1]), lines: [{ t: im[2].trim() }] });
       // 그림 바로 다음 줄(공식 사진 출처 "[사진 출처 N]")은 글로 남긴다 — 발행 때 출처 글자로 바뀐다
       if (lines.length > 1) blocks.push({ type: 'p', lines: lines.slice(1).map((t) => ({ t })) });
+      continue;
+    }
+
+    if (lines[0].startsWith(BUBBLE_PREFIX)) {
+      const text = lines[0].slice(BUBBLE_PREFIX.length).trim();
+      if (!text) warnings.push('인용구(말풍선) 뒤에 텍스트가 없습니다.');
+      if (lines.length > 1) warnings.push(`말풍선은 한 줄이어야 합니다: "${text}"`);
+      blocks.push({ type: 'bubble', lines: [{ t: text }] });
       continue;
     }
 

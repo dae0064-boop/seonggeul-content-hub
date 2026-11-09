@@ -1,0 +1,85 @@
+<title>강조 표시 비교</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&family=Noto+Serif+KR:wght@700;900&display=swap">
+<style>
+/* 레이아웃: 위에 짧은 설명, 아래 휴대폰 화면 두 개(지금 / 바꾼 뒤)를 나란히 — 좁으면 위아래로 */
+:root{
+  --bg:#eef2f0; --fg:#18231f; --muted:#5b6a64; --line:#d3ddd8; --brand:#12463D; --gold:#c9963f;
+  /* 휴대폰 속 네이버 글 화면은 언제나 흰 바탕 (실제 블로그처럼) */
+  --paper:#ffffff; --ink:#222; --ink2:#555;
+  --red:#ff0010; --blue:#0078cb; --yellowOld:#fff8b2; --yellowNew:#ffe94d; --greenBg:#dff3e4; --greenInk:#0f5a3c;
+  --display:"Noto Serif KR",serif; --body:"Noto Sans KR",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#101815; --fg:#e6eee9; --muted:#9db0a8; --line:#2a3833; color-scheme:dark } }
+:root[data-theme="dark"]{ --bg:#101815; --fg:#e6eee9; --muted:#9db0a8; --line:#2a3833; color-scheme:dark }
+body{background:var(--bg);color:var(--fg);font-family:var(--body);line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 48px}
+.wrap{max-width:900px;margin:0 auto;display:grid;gap:22px}
+h1{font-family:var(--display);font-size:1.7rem;margin:0;text-wrap:balance;color:var(--fg)}
+.lead{margin:0;color:var(--muted);max-width:62ch}
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.88rem;color:var(--muted);margin:0;padding:0;list-style:none}
+.legend b{color:var(--fg)}
+.pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px;align-items:start}
+.col{display:grid;gap:10px;min-width:0}
+.tag{font-weight:700;font-size:.95rem;display:flex;align-items:center;gap:8px}
+.tag span{font-size:.75rem;letter-spacing:.06em;padding:2px 10px;border-radius:99px;border:1px solid var(--line);color:var(--muted)}
+.tag.new span{border-color:var(--gold);color:var(--gold)}
+.phone{background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:26px;padding:26px 20px 30px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);font-size:15.5px;line-height:1.85;max-width:400px;width:100%;justify-self:center}
+.phone p{margin:0 0 1.15em}
+/* 네이버 인용구 4번(라인&따옴표) 비슷하게 */
+.q4{border-top:1px solid #ccc;border-bottom:1px solid #ccc;text-align:center;padding:14px 6px 12px;margin:0 0 14px;font-weight:700;font-size:16.5px;position:relative}
+.q4:before{content:"“";position:absolute;top:-16px;left:50%;transform:translateX(-50%);background:var(--paper);padding:0 8px;font-family:Georgia,serif;font-size:30px;color:#999;line-height:1}
+.r{color:var(--red);font-weight:700}.b{color:var(--blue);font-weight:700}
+.yo{background:var(--yellowOld);font-weight:700}
+.yn{background:var(--yellowNew);font-weight:700;padding:1px 2px}
+.gbox{background:var(--greenBg);color:var(--greenInk);font-weight:700;padding:10px 12px;border-radius:4px;margin:0 0 1.15em}
+/* 네이버 인용구 3번(말풍선) 비슷하게 */
+.bub{position:relative;border:1px solid #cfcfcf;border-radius:14px;padding:12px 14px;margin:0 0 1.4em;color:var(--ink2);text-align:center;font-size:15px}
+.bub:after{content:"";position:absolute;left:28px;bottom:-10px;width:16px;height:16px;background:var(--paper);border-right:1px solid #cfcfcf;border-bottom:1px solid #cfcfcf;transform:rotate(45deg)}
+.note{font-size:.85rem;color:var(--muted);margin:0}
+.changes{margin:0;padding-left:1.2em;display:grid;gap:6px;max-width:68ch}
+.changes b{color:var(--fg)}
+</style>
+
+<div class="wrap">
+  <h1>강조 표시, 지금과 바꾼 뒤</h1>
+  <p class="lead">11/9 「골절 진단비」 글의 한 부분을 휴대폰 화면처럼 그려 봤어요. 글자는 같고 칠하는 방법만 달라요.</p>
+
+  <div class="pair">
+    <section class="col" aria-label="지금">
+      <div class="tag">지금 <span>11/9 발행 글</span></div>
+      <div class="phone">
+        <div class="q4">골절 진단비, 깁스 풀고 청구해도 되나요</div>
+        <p>"골절 진단비, 지금 청구해도 되나?"<br>"벌써 두 달이 지났는데 늦은 건 아닐까?"<br>깁스 푼 손목만큼 마음도 뻐근하시죠?</p>
+        <p>네, 치료가 끝난 뒤에 청구해도 돼요.<br>상법 제<span class="b">662조</span>는 보험금청구권이<br><span class="b">3년</span>간 쓰지 않으면 소멸한다고 정했어요.</p>
+        <p>그래서 깁스를 풀고 한두 달 지났다고<br>골절 진단비를 포기할 이유는 없어요.<br><span class="yo">늦어도 3년 안이면 청구할 수 있어요.</span></p>
+        <p>다만 오래 미루면 서류를 다시 떼러<br>병원에 가야 하는 일이 생겨요.<br>치료가 끝난 김에 한 번에 챙기는 게 편해요.</p>
+        <p>지급 조건은 상품마다 다르니 약관으로 확인해요.</p>
+      </div>
+      <p class="note">파랑은 숫자 낱말만, 노랑은 아주 연해서 휴대폰에서 거의 안 보여요.</p>
+    </section>
+
+    <section class="col" aria-label="바꾼 뒤">
+      <div class="tag new">바꾼 뒤 <span>추천안</span></div>
+      <div class="phone">
+        <div class="q4">골절 진단비, 깁스 풀고 청구해도 되나요</div>
+        <div class="bub">"벌써 두 달 지났는데,<br>지금 청구해도 늦지 않을까요?"</div>
+        <p>깁스 푼 손목만큼 마음도 뻐근하시죠?</p>
+        <p>네, 치료가 끝난 뒤에 청구해도 돼요.<br>상법 제<span class="b">662조</span>는 보험금청구권이<br><span class="b">3년</span>간 쓰지 않으면 소멸한다고 정했어요.</p>
+        <p><span class="yn">그래서 깁스를 풀고 한두 달 지났다고</span><br><span class="yn">골절 진단비를 포기할 이유는 없어요.</span><br><span class="yn">늦어도 3년 안이면 청구할 수 있어요.</span></p>
+        <p>다만 오래 미루면 서류를 다시 떼러<br>병원에 가야 하는 일이 생겨요.<br><span class="r">치료가 끝난 김에 한 번에 챙기는 게 편해요.</span></p>
+        <div class="gbox">✔ 체크포인트<br>지급 조건은 상품마다 달라요.<br>내 증권의 골절 진단비 특약부터 확인해요.</div>
+      </div>
+      <p class="note">노랑은 진하게, 꼭 기억할 문장 덩어리를 통째로 칠해요.</p>
+    </section>
+  </div>
+
+  <ul class="changes">
+    <li><b>① 노란 배경 진하게</b> · 연노랑 대신 진한 노랑. 실제 색은 네이버 글쓰기 색상표에 있는 것 중 가장 가까운 색으로 골라요.</li>
+    <li><b>② 낱말보다 문장</b> · 노랑은 꼭 기억할 문장 1~3줄을 통째로 3~4곳, 파랑은 숫자·날짜 낱말 4~6곳, 빨강은 결론·주의 문장 전체에 2~3곳.</li>
+    <li><b>③ 초록 배경 상자</b> · 체크포인트·정리 덩어리 1~2곳. 새 배너의 초록과 이어져요.</li>
+    <li><b>④ 대화는 말풍선</b> · 글마다 있는 대화 장면을 네이버 말풍선 인용구로.</li>
+  </ul>
+</div>

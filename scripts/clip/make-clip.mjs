@@ -33,7 +33,7 @@ const raw = fs.readFileSync(src, 'utf8').replace(/\r/g, '');
 const fm = {}; let body = raw;
 const m = /^---\n([\s\S]*?)\n---\n/.exec(raw);
 if (m) { for (const l of m[1].split('\n')) { const i = l.indexOf(':'); if (i > 0) fm[l.slice(0, i).trim()] = l.slice(i + 1).trim(); } body = raw.slice(m[0].length); }
-const clean = (s) => s.replace(/\[\/?(빨간글씨|파란글씨|노란배경)\]/g, '').trim();
+const clean = (s) => s.replace(/\[\/?(빨간글씨|파란글씨|노란배경|초록배경)\]/g, '').trim();
 const lines = body.split('\n');
 const bullets = lines.filter((l) => /^•\s*/.test(l)).map((l) => clean(l.replace(/^•\s*/, ''))).slice(0, 4);
 const yellow = [];
