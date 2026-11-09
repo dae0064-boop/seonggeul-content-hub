@@ -22,6 +22,8 @@ export const CONTACT = [
   '전화·문자 010-3503-8923',
   '서울 · 인천 · 경기(수원·시흥·안산·안양)',
 ];
+// 2026-11-09 사용자: 연락처(이름·전화번호) 밑에 꼭 넣는 문구 — 11/11 발행분부터, 글 맨 끝 덩어리
+export const INQUIRY = ['철거 블로그 보고 문의했다고 말씀해 주시면', '상담이 더 원활하게 진행할 수 있습니다.'];
 export const PHOTO_NOTE = '글 속 사진은 이해를 돕기 위한 예시 이미지예요.';
 const PHONE = '010-3503-8923';
 const SLOTS = ['11:00', '13:00', '16:00', '18:00', '20:00'];
@@ -53,7 +55,7 @@ function load(file) {
 
 /** 겹침 비교용 본문 (인사·연락처·사진 안내 빼고) */
 function bodyText(post) {
-  const fixed = new Set([...GREETING, ...CONTACT, PHOTO_NOTE]);
+  const fixed = new Set([...GREETING, ...CONTACT, ...INQUIRY, PHOTO_NOTE]);
   return post.blocks.filter((b) => b.type !== 'image').flatMap((b) => b.lines.map((l) => l.t)).filter((t) => !fixed.has(t)).join('');
 }
 function shingles(s, n = 10) {
@@ -99,9 +101,10 @@ export function lintOne(file, others = []) {
   if (b0?.lines?.some((l) => l.s || l.segs)) errors.push('첫 줄에는 색 강조를 넣지 않는다');
 
   // 연락처 블록
-  const last = blocks[blocks.length - 1];
-  const lastLines = last?.lines?.map((l) => l.t) || [];
-  if (JSON.stringify(lastLines) !== JSON.stringify(CONTACT)) errors.push(`맨 끝 덩어리는 연락처 블록 그대로:\n      ${CONTACT.join('\n      ')}`);
+  const lastLines = blocks[blocks.length - 1]?.lines?.map((l) => l.t) || [];
+  const contactLines = blocks[blocks.length - 2]?.lines?.map((l) => l.t) || [];
+  if (JSON.stringify(contactLines) !== JSON.stringify(CONTACT)) errors.push(`끝에서 둘째 덩어리는 연락처 블록 그대로:\n      ${CONTACT.join('\n      ')}`);
+  if (JSON.stringify(lastLines) !== JSON.stringify(INQUIRY)) errors.push(`맨 끝 덩어리는 문의 안내 두 줄 그대로 (2026-11-09 사용자):\n      ${INQUIRY.join('\n      ')}`);
   const phones = count(all, PHONE);
   if (phones > 2) errors.push(`전화번호는 연락처 블록 + 본문 1번까지 (지금 ${phones}번)`);
   const otherPhone = /01[016789][-\s.]?\d{3,4}[-\s.]?\d{4}/g;
