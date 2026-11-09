@@ -9,6 +9,9 @@ const font = f => { const fp = fs.existsSync(path.join(ROOT, 'scripts/lib/fonts'
 // 제목 글씨체·자간 (2026-11-09 사용자 "자간 넓혀 줘, 답답해 보여") — --hfont gothic|pretendard|blackhan, --ls 자간(px)
 const HF = { gothic: 'GothicA1-ExtraBold.ttf', pretendard: 'Pretendard-Bold.otf', blackhan: 'BlackHanSans-Regular.ttf' }[A('--hfont', 'pretendard')] || 'Pretendard-Bold.otf';
 const LS = A('--ls', '2');
+// 꼬리표·체크 칩 글씨체 (2026-11-09 사용자 "너무 무난해서 눈에 안 띈다") — --cfont pretendard|jua|blackhan|gaegu
+const CFN = { pretendard: 'Pretendard-Bold.otf', jua: 'Jua-Regular.ttf', blackhan: 'BlackHanSans-Regular.ttf', gaegu: 'Gaegu-Bold.ttf' }[A('--cfont', 'jua')] || 'Jua-Regular.ttf';
+const CSTROKE = /Pretendard/.test(CFN) ? 1 : 0;
 const PH = A('--photo', ''); const photo = PH && fs.existsSync(PH) ? `data:image/png;base64,${fs.readFileSync(PH).toString('base64')}` : '';
 // 배경 색 (2026-11-09 사용자 "회색 정장과 어울리는 배경, 동그라미는 모두 빼")
 const THEMES = {
@@ -64,21 +67,23 @@ const chk = `<svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy=
 const html = `<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:XB;src:url(${font('GothicA1-ExtraBold.ttf')})}
 @font-face{font-family:HF;src:url(${font(HF)})}
+@font-face{font-family:CF;src:url(${font(CFN)})}
 @font-face{font-family:GB;src:url(${font('GothicA1-Bold.ttf')})}
 @font-face{font-family:GM;src:url(${font('GothicA1-Medium.ttf')})}
 @font-face{font-family:J;src:url(${font('Jua-Regular.ttf')})}
 *{margin:0;box-sizing:border-box}body{width:1920px;height:600px;overflow:hidden}
 .bn{position:relative;width:1920px;height:600px;overflow:hidden;background:radial-gradient(ellipse 300px 340px at 1600px 300px,${TH.glow || 'rgba(255,255,255,.75)'} 0%,rgba(255,255,255,0) 100%),${TH.bg};font-family:GM;color:${INK}}
+${A('--chipstyle', '') === 'glass' ? `.tag{background:#ffd54f !important;color:#13493f !important;-webkit-text-stroke:0 !important}.chip{background:rgba(255,255,255,.12) !important;border:1.5px solid rgba(255,255,255,.55) !important;color:#fff !important;-webkit-text-stroke:0 !important;box-shadow:none !important}.chip b{color:#ffd54f !important;-webkit-text-stroke:0 !important}.chip svg circle{fill:#ffd54f}.chip svg path{stroke:#13493f}` : ''}
 ${TH.dark ? `.l1{color:#ffffff !important;font-size:52px !important;text-shadow:0 2px 10px rgba(0,0,0,.25)}.l2{color:#fff !important}.l2 em{color:#ffd54f !important;background:none !important;position:relative}.l2 em:after{content:'';position:absolute;left:2px;right:2px;bottom:-12px;height:6px;border-radius:3px;background:#ff6b4a}` : ''}
 svg.deco,svg.pat{position:absolute;inset:0}
-.tag{position:absolute;left:500px;top:84px;letter-spacing:1.2px;padding:7px 18px;border-radius:20px;background:#fff;color:${TE};font-family:HF;font-size:21px;-webkit-text-stroke:.6px ${TE}}
+.tag{position:absolute;left:500px;top:84px;letter-spacing:1.2px;padding:7px 18px;border-radius:20px;background:#fff;color:${TE};font-family:CF;font-size:${/Gaegu/.test(CFN) ? 25 : 22}px;-webkit-text-stroke:${CSTROKE * .6}px ${TE}}
 .h{position:absolute;left:498px;font-family:HF;letter-spacing:${LS}px;word-spacing:8px}
 .l1{top:132px;font-size:46px;color:#3b474b}
 .l2{top:188px;font-size:62px;color:${INK}}
 .l2 em{font-style:normal;color:${TE};background:linear-gradient(transparent 62%,${TH.hl} 62%)}
 .chips{position:absolute;left:500px;top:291px;display:flex;gap:12px}
-.chip{display:flex;align-items:center;gap:8px;padding:8px 16px 8px 10px;border-radius:24px;background:#fff;border:1.5px solid #dfe7e4;font-family:HF;font-size:18px;letter-spacing:1px;color:#22302f;-webkit-text-stroke:.5px #22302f;box-shadow:0 4px 10px rgba(13,107,102,.06)}
-.chip b{color:${TE};font-weight:normal;font-family:HF;-webkit-text-stroke:.6px ${TE}}
+.chip{display:flex;align-items:center;gap:8px;padding:8px 16px 8px 10px;border-radius:24px;background:#fff;border:1.5px solid #dfe7e4;font-family:CF;font-size:${/Gaegu/.test(CFN) ? 22 : 19}px;letter-spacing:1px;color:#22302f;-webkit-text-stroke:${CSTROKE * .5}px #22302f;box-shadow:0 4px 10px rgba(13,107,102,.06)}
+.chip b{color:${TE};font-weight:normal;font-family:CF;-webkit-text-stroke:${CSTROKE * .6}px ${TE}}
 .col{position:absolute;top:321px;width:170px;height:279px}
 .card{position:absolute;left:4px;right:4px;top:22px;height:232px;border-radius:24px;background:#fff;box-shadow:0 10px 26px rgba(31,42,46,.10);border:1.5px solid #ece8e1;text-align:center}
 .card .ic{width:78px;height:78px;margin:24px auto 0;border-radius:50%;background:${TL};display:flex;align-items:center;justify-content:center}
