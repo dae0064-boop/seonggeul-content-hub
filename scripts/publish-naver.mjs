@@ -30,7 +30,7 @@ import { applyBrandconnect, DISCLOSURE as SHOP_DISCLOSURE } from './lib/brandcon
 import { leadBlock } from './lib/parse-post.mjs';
 import { cleanCredit } from './lib/official-photo.mjs';
 import { topicFor } from './lib/naver-topic.mjs';
-import { subcategoryFor } from './lib/naver-subcategory.mjs';
+import { subcategoryFor, parentOf } from './lib/naver-subcategory.mjs';
 
 // ---------------------------------------------------------------- args
 function parseArgs(argv) {
@@ -744,9 +744,12 @@ function blogCategory(post) {
   if (post.matjip) return '맛집·나들이'; // 사용자가 다녀온 맛집 후기만 (matjip-draft.mjs). 자동 원고의 맛집·카페는 아래처럼 생활·정보로
   if (post.issue === '연예') return '연예·방송';
   if (post.issue === '정책') return '이슈·뉴스';
+  if (post.category === '생활보장') return parentOf(subcategoryFor(post)) || '보험금·실비'; // 2026-11-09 생활·보장 → 위 카테고리 3개
   return BLOG_CATEGORY[post.category] || post.category;
 }
-const OLD_CATEGORY = { '생활·정보': '생활정보', '생활·보장': '생활보장', '이슈·뉴스': '생활·정보', '연예·방송': '생활·정보' };
+const OLD_CATEGORY = { '생활·정보': '생활정보', '생활·보장': '생활보장', '이슈·뉴스': '생활·정보', '연예·방송': '생활·정보',
+  // 2026-11-09 위 카테고리 3개를 아직 안 만들었으면 예전 생활·보장으로
+  '보험금·실비': '생활·보장', '병원비·돌봄': '생활·보장', '지원금·제도': '생활·보장' };
 
 /** 고른 카테고리 이름을 돌려준다 (못 고르면 null). 이슈 글은 예전 이름(생활·정보)으로 물러서지 않는다 —
  *  2026-11-03 사용자: 연예인 글이 생활 카테고리에 들어갔다 "카테고리에 맞게". 못 고르면 예약하지 않는다(reservePublish). */
