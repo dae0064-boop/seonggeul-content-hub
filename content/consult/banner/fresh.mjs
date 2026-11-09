@@ -132,7 +132,7 @@ ${bgimg ? `<img src="${bgimg}" style="position:absolute;inset:0;width:1920px;hei
 <div class="h l2"><em>놓치지 않게</em> 챙겨 드려요</div>
 <div class="chips"><div class="chip">${chk}보험사 <b>34개사</b> 비교·분석</div><div class="chip">${chk}보험금 청구 <b>같이</b> 챙겨 드려요</div></div>
 <div class="ph">${photo ? `<img src="${photo}">` : ''}</div>
-<div class="bub">보험에 관한 궁금증은<br><b>강팀장</b>에게 편하게 물어보세요!</div>
+<div class="bub">보험에 관한 궁금증은<br><b>${A('--name', '친근한 설계사')}</b>에게 편하게 물어보세요!</div>
 ${COLS.map(([ic, t, s], k) => `<div class="col" style="left:${X(k)}px"><div class="card ${ic === 'kakao' ? 'k' : ic === 'insta' ? 'i' : ''} ${PHOTOS[ic] ? 'p' : ''}">${PHOTOS[ic] ? `<div class="pic" style="background-image:url(${PHOTOS[ic]})"></div>` : `<div class="ic">${IC[ic]}</div>`}<div class="t">${t}</div><div class="s">${s}</div><div class="go">바로가기 ›</div></div></div>`).join('')}
 ${GUIDE ? [0, 1, 2, 3, 4].map(k => `<div class="guide" style="left:${X(k)}px"></div>`).join('') : ''}
 </div></body></html>`;
