@@ -7,7 +7,15 @@ const A = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.
 const GUIDE = process.argv.includes('--guide');
 const font = f => `data:font/ttf;base64,${fs.readFileSync(path.join(ROOT, 'scripts/lib/fonts', f)).toString('base64')}`;
 const PH = A('--photo', ''); const photo = PH && fs.existsSync(PH) ? `data:image/png;base64,${fs.readFileSync(PH).toString('base64')}` : '';
-const TE = '#0d6b66', TL = '#e3f2ef', CO = '#ff7a59', INK = '#1f2a2e';
+// 배경 색 (2026-11-09 사용자 "회색 정장과 어울리는 배경, 동그라미는 모두 빼")
+const THEMES = {
+  greige: { bg: 'linear-gradient(120deg,#f3eee7 0%,#e6ddd1 55%,#d8ccbd 100%)', te: '#33505e', tl: '#e9eef0', hl: '#f2c9a9' },
+  slate: { bg: 'linear-gradient(120deg,#eef1f4 0%,#dbe2e9 55%,#c6d0da 100%)', te: '#25496b', tl: '#e4ecf4', hl: '#ffd6a8' },
+  sage: { bg: 'linear-gradient(120deg,#f0f2ec 0%,#dfe5da 55%,#cbd5c6 100%)', te: '#3c6455', tl: '#e6eee9', hl: '#f5cbb3' },
+  teal: { bg: 'linear-gradient(120deg,#dcefeb 0%,#cfe7e2 45%,#bfdfd9 100%)', te: '#0d6b66', tl: '#e3f2ef', hl: '#ffc7b4' },
+};
+const TH = THEMES[A('--theme', 'greige')] || THEMES.greige;
+const TE = TH.te, TL = TH.tl, CO = '#ff7a59', INK = '#1f2a2e';
 const IC = {
   // 보험금·실비: 병원 영수증(톱니 아래) + 돌려받는 돈(₩ 동전)
   bill: `<svg viewBox="0 0 64 64"><path d="M14 8h30v44l-3.75-3-3.75 3-3.75-3-3.75 3-3.75-3-3.75 3-3.75-3L14 52z" fill="#fff" stroke="${TE}" stroke-width="3" stroke-linejoin="round"/><path d="M29 15v8M25 19h8" stroke="${CO}" stroke-width="3" stroke-linecap="round"/><path d="M21 30h16M21 37h12" stroke="${TE}" stroke-width="3" stroke-linecap="round"/><circle cx="46" cy="44" r="12" fill="#ffd25e" stroke="#e0a92e" stroke-width="2.5"/><path d="M40 39l2.5 9 3.5-7 3.5 7 2.5-9M39 44h14" stroke="#8a5a00" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
@@ -31,13 +39,13 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:GM;src:url(${font('GothicA1-Medium.ttf')})}
 @font-face{font-family:J;src:url(${font('Jua-Regular.ttf')})}
 *{margin:0;box-sizing:border-box}body{width:1920px;height:600px;overflow:hidden}
-.bn{position:relative;width:1920px;height:600px;overflow:hidden;background:linear-gradient(120deg,#dcefeb 0%,#cfe7e2 45%,#bfdfd9 100%);font-family:GM;color:${INK}}
+.bn{position:relative;width:1920px;height:600px;overflow:hidden;background:radial-gradient(ellipse 520px 460px at 1650px 330px,rgba(255,255,255,.75) 0%,rgba(255,255,255,0) 70%),${TH.bg};font-family:GM;color:${INK}}
 svg.deco{position:absolute;inset:0}
 .tag{position:absolute;left:500px;top:96px;padding:7px 18px;border-radius:20px;background:#fff;color:${TE};font-family:GB;font-size:20px}
 .h{position:absolute;left:498px;font-family:XB;letter-spacing:-1.5px}
 .l1{top:140px;font-size:46px;color:#3b474b}
 .l2{top:194px;font-size:62px;color:${INK}}
-.l2 em{font-style:normal;color:${TE};background:linear-gradient(transparent 62%,#ffc7b4 62%)}
+.l2 em{font-style:normal;color:${TE};background:linear-gradient(transparent 62%,${TH.hl} 62%)}
 .chips{position:absolute;left:500px;top:276px;display:flex;gap:12px}
 .chip{display:flex;align-items:center;gap:8px;padding:8px 16px 8px 10px;border-radius:24px;background:#fff;border:1.5px solid #dfe7e4;font-family:GB;font-size:17px;color:#33403f;box-shadow:0 4px 10px rgba(13,107,102,.06)}
 .chip b{color:${TE};font-weight:normal;font-family:XB}
@@ -59,21 +67,16 @@ svg.deco{position:absolute;inset:0}
 .bub b{color:${CO};font-weight:normal}
 .guide{position:absolute;top:321px;width:170px;height:279px;border:2px dashed rgba(220,40,40,.8)}
 </style></head><body><div class="bn">
-<svg class="deco" width="1920" height="600">
-<circle cx="250" cy="150" r="190" fill="#ffffff" opacity=".35"/><circle cx="330" cy="470" r="90" fill="#ffe1d6" opacity=".8"/>
-<g fill="${TE}" opacity=".18">${Array.from({ length: 36 }, (_, i) => `<circle cx="${1300 + (i % 6) * 18}" cy="${430 + Math.floor(i / 6) * 18}" r="3"/>`).join('')}</g>
-<circle cx="1840" cy="560" r="70" fill="#ffe1d6" opacity=".9"/>
-</svg>
 <div class="tag">보험, 어렵지 않게</div>
 <div class="h l1">아플 때 받을 보험금,</div>
 <div class="h l2"><em>놓치지 않게</em> 챙겨 드려요</div>
 <div class="chips"><div class="chip">${chk}보험사 <b>34개사</b> 비교·분석</div><div class="chip">${chk}보험금 청구 <b>같이</b> 챙겨 드려요</div></div>
-<div class="ring"></div><div class="circle"></div>
 <div class="ph">${photo ? `<img src="${photo}">` : ''}</div>
 <div class="bub">궁금한 건<br><b>강팀장</b>에게 편하게!</div>
 ${COLS.map(([ic, t, s], k) => `<div class="col" style="left:${X(k)}px"><div class="card ${ic === 'kakao' ? 'k' : ic === 'insta' ? 'i' : ''} ${PHOTOS[ic] ? 'p' : ''}">${PHOTOS[ic] ? `<div class="pic" style="background-image:url(${PHOTOS[ic]})"></div>` : `<div class="ic">${IC[ic]}</div>`}<div class="t">${t}</div><div class="s">${s}</div><div class="go">바로가기 ›</div></div></div>`).join('')}
 ${GUIDE ? [0, 1, 2, 3, 4].map(k => `<div class="guide" style="left:${X(k)}px"></div>`).join('') : ''}
 </div></body></html>`;
+const OUTN = A('--out', GUIDE ? 'fresh-banner-guide.png' : 'fresh-banner.png');
 const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1920, height: 600 } });
 await p.setContent(html); await p.waitForTimeout(400);
-await p.screenshot({ path: path.join(HERE, GUIDE ? 'fresh-banner-guide.png' : 'fresh-banner.png') }); await b.close(); console.log('ok');
+await p.screenshot({ path: path.join(HERE, OUTN) }); await b.close(); console.log('ok');
