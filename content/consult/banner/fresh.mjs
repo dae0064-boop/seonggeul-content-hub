@@ -18,6 +18,10 @@ const IC = {
   insta: `<svg viewBox="0 0 64 64"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".35" stop-color="#FA7E1E"/><stop offset=".65" stop-color="#D62976"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="6" y="6" width="52" height="52" rx="15" fill="url(#ig)"/><rect x="17" y="17" width="30" height="30" rx="9" fill="none" stroke="#fff" stroke-width="4"/><circle cx="32" cy="32" r="7.5" fill="none" stroke="#fff" stroke-width="4"/><circle cx="41.5" cy="22.5" r="2.5" fill="#fff"/></svg>`,
   kakao: `<svg viewBox="0 0 64 64"><rect x="6" y="6" width="52" height="52" rx="15" fill="#FEE500"/><path d="M32 17c-10 0-18 6.3-18 14 0 5 3.3 9.3 8.3 11.8l-2 7.4 8-5.2c1.2.2 2.4.3 3.7.3 10 0 18-6.3 18-14.1S42 17 32 17z" fill="#3A1D1D"/></svg>`,
 };
+// 카드 위쪽 사진 (--cardphotos 폴더에 ph2-bill.jpg·ph2-care.jpg·ph2-won.jpg 가 있으면)
+const CP = A('--cardphotos', '');
+const cph = n => { const f = CP && path.join(CP, `ph2-${n}.jpg`); return f && fs.existsSync(f) ? `data:image/jpeg;base64,${fs.readFileSync(f).toString('base64')}` : ''; };
+const PHOTOS = { bill: cph('bill'), care: cph('care'), won: cph('won') };
 const COLS = [['bill', '보험금·실비', '실비 청구·진단비'], ['care', '병원비·돌봄', '의료비·간병·요양'], ['won', '지원금·제도', '놓치기 쉬운 혜택'], ['insta', '인스타그램', '카드뉴스로 쉽게'], ['kakao', '1:1 보험상담', '카카오톡으로 편하게']];
 const X = k => 486 + k * 186;
 const chk = `<svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="11" fill="${TE}"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
@@ -44,6 +48,7 @@ svg.deco{position:absolute;inset:0}
 .card .t{margin-top:16px;font-family:XB;font-size:21px;letter-spacing:-.6px;color:${INK}}
 .card .s{margin-top:7px;font-size:14px;color:#6c7678}
 .card .go{position:absolute;left:0;right:0;bottom:16px;font-family:GB;font-size:14px;color:${TE}}
+.card.p{padding:0;overflow:hidden}.card.p .pic{height:122px;background-size:cover;background-position:center}.card.p .t{margin-top:14px}.card.p .go{bottom:14px}
 .card.k{background:#fff8c9;border-color:#f3e27a}.card.k .ic{background:#fff}.card.k .go{color:#5b4a00}
 .card.i .ic{background:#fdeef3}.card.i .go{color:#c13584}
 .circle{position:absolute;left:1440px;top:70px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#1d8a83 0%,${TE} 70%,#0a5753 100%)}
@@ -66,7 +71,7 @@ svg.deco{position:absolute;inset:0}
 <div class="ring"></div><div class="circle"></div>
 <div class="ph">${photo ? `<img src="${photo}">` : ''}</div>
 <div class="bub">궁금한 건<br><b>강팀장</b>에게 편하게!</div>
-${COLS.map(([ic, t, s], k) => `<div class="col" style="left:${X(k)}px"><div class="card ${ic === 'kakao' ? 'k' : ic === 'insta' ? 'i' : ''}"><div class="ic">${IC[ic]}</div><div class="t">${t}</div><div class="s">${s}</div><div class="go">바로가기 ›</div></div></div>`).join('')}
+${COLS.map(([ic, t, s], k) => `<div class="col" style="left:${X(k)}px"><div class="card ${ic === 'kakao' ? 'k' : ic === 'insta' ? 'i' : ''} ${PHOTOS[ic] ? 'p' : ''}">${PHOTOS[ic] ? `<div class="pic" style="background-image:url(${PHOTOS[ic]})"></div>` : `<div class="ic">${IC[ic]}</div>`}<div class="t">${t}</div><div class="s">${s}</div><div class="go">바로가기 ›</div></div></div>`).join('')}
 ${GUIDE ? [0, 1, 2, 3, 4].map(k => `<div class="guide" style="left:${X(k)}px"></div>`).join('') : ''}
 </div></body></html>`;
 const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1920, height: 600 } });
