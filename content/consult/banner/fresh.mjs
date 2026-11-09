@@ -31,13 +31,13 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:GM;src:url(${font('GothicA1-Medium.ttf')})}
 @font-face{font-family:J;src:url(${font('Jua-Regular.ttf')})}
 *{margin:0;box-sizing:border-box}body{width:1920px;height:600px;overflow:hidden}
-.bn{position:relative;width:1920px;height:600px;overflow:hidden;background:linear-gradient(180deg,#fbfaf7 0%,#f3f1ec 100%);font-family:GM;color:${INK}}
+.bn{position:relative;width:1920px;height:600px;overflow:hidden;background:linear-gradient(120deg,#dcefeb 0%,#cfe7e2 45%,#bfdfd9 100%);font-family:GM;color:${INK}}
 svg.deco{position:absolute;inset:0}
-.tag{position:absolute;left:500px;top:96px;padding:7px 18px;border-radius:20px;background:${TL};color:${TE};font-family:GB;font-size:20px}
+.tag{position:absolute;left:500px;top:96px;padding:7px 18px;border-radius:20px;background:#fff;color:${TE};font-family:GB;font-size:20px}
 .h{position:absolute;left:498px;font-family:XB;letter-spacing:-1.5px}
 .l1{top:140px;font-size:46px;color:#3b474b}
 .l2{top:194px;font-size:62px;color:${INK}}
-.l2 em{font-style:normal;color:${TE};background:linear-gradient(transparent 62%,#ffd9cc 62%)}
+.l2 em{font-style:normal;color:${TE};background:linear-gradient(transparent 62%,#ffc7b4 62%)}
 .chips{position:absolute;left:500px;top:276px;display:flex;gap:12px}
 .chip{display:flex;align-items:center;gap:8px;padding:8px 16px 8px 10px;border-radius:24px;background:#fff;border:1.5px solid #dfe7e4;font-family:GB;font-size:17px;color:#33403f;box-shadow:0 4px 10px rgba(13,107,102,.06)}
 .chip b{color:${TE};font-weight:normal;font-family:XB}
@@ -52,7 +52,7 @@ svg.deco{position:absolute;inset:0}
 .card.k{background:#fff8c9;border-color:#f3e27a}.card.k .ic{background:#fff}.card.k .go{color:#5b4a00}
 .card.i .ic{background:#fdeef3}.card.i .go{color:#c13584}
 .circle{position:absolute;left:1440px;top:70px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#1d8a83 0%,${TE} 70%,#0a5753 100%)}
-.ring{position:absolute;left:1410px;top:40px;width:500px;height:500px;border-radius:50%;border:2px dashed rgba(13,107,102,.25)}
+.ring{position:absolute;left:1410px;top:40px;width:500px;height:500px;border-radius:50%;border:2px dashed rgba(255,255,255,.7)}
 .ph{position:absolute;left:1490px;top:44px;height:556px;overflow:hidden}
 .ph img{height:630px;display:block}
 .bub{position:absolute;left:1268px;top:118px;padding:14px 22px;border-radius:22px 22px 4px 22px;background:#fff;box-shadow:0 10px 24px rgba(31,42,46,.12);font-family:J;font-size:26px;color:${INK};line-height:1.3;text-align:center}
@@ -60,9 +60,9 @@ svg.deco{position:absolute;inset:0}
 .guide{position:absolute;top:321px;width:170px;height:279px;border:2px dashed rgba(220,40,40,.8)}
 </style></head><body><div class="bn">
 <svg class="deco" width="1920" height="600">
-<circle cx="250" cy="150" r="190" fill="${TL}" opacity=".6"/><circle cx="330" cy="470" r="90" fill="#ffe8df" opacity=".7"/>
+<circle cx="250" cy="150" r="190" fill="#ffffff" opacity=".35"/><circle cx="330" cy="470" r="90" fill="#ffe1d6" opacity=".8"/>
 <g fill="${TE}" opacity=".18">${Array.from({ length: 36 }, (_, i) => `<circle cx="${1300 + (i % 6) * 18}" cy="${430 + Math.floor(i / 6) * 18}" r="3"/>`).join('')}</g>
-<circle cx="1840" cy="560" r="70" fill="#ffe8df" opacity=".8"/>
+<circle cx="1840" cy="560" r="70" fill="#ffe1d6" opacity=".9"/>
 </svg>
 <div class="tag">보험, 어렵지 않게</div>
 <div class="h l1">아플 때 받을 보험금,</div>
