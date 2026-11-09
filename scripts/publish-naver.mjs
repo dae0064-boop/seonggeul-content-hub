@@ -30,7 +30,7 @@ import { applyBrandconnect, DISCLOSURE as SHOP_DISCLOSURE } from './lib/brandcon
 import { leadBlock } from './lib/parse-post.mjs';
 import { cleanCredit } from './lib/official-photo.mjs';
 import { topicFor } from './lib/naver-topic.mjs';
-import { subcategoryFor, parentOf } from './lib/naver-subcategory.mjs';
+import { pickSubFor, careTopFor } from './lib/naver-subcategory.mjs';
 
 // ---------------------------------------------------------------- args
 function parseArgs(argv) {
@@ -379,7 +379,7 @@ async function reservePublish(page, editor, post, at) {
     // 원고 subcategory: 가 있으면 그 이름을 먼저 고르고, 블로그에 그 이름이 없으면 위 카테고리(연예·방송 등)로 간다.
     let want = blogCategory(post);
     let got = null;
-    const sub = subcategoryFor(post);
+    const sub = pickSubFor(post);
     if (sub) {
       got = await pickCategory(page, editor, sub, { noFallback: true });
       if (got) want = sub;
@@ -744,7 +744,7 @@ function blogCategory(post) {
   if (post.matjip) return '맛집·나들이'; // 사용자가 다녀온 맛집 후기만 (matjip-draft.mjs). 자동 원고의 맛집·카페는 아래처럼 생활·정보로
   if (post.issue === '연예') return '연예·방송';
   if (post.issue === '정책') return '이슈·뉴스';
-  if (post.category === '생활보장') return parentOf(subcategoryFor(post)) || '보험금·실비'; // 2026-11-09 생활·보장 → 위 카테고리 3개
+  if (post.category === '생활보장') return careTopFor(post); // 2026-11-09 생활·보장 → 위 카테고리 3개 (하위 없이)
   return BLOG_CATEGORY[post.category] || post.category;
 }
 const OLD_CATEGORY = { '생활·정보': '생활정보', '생활·보장': '생활보장', '이슈·뉴스': '생활·정보', '연예·방송': '생활·정보',
