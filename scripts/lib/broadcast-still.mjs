@@ -97,10 +97,26 @@ async function searchYoutube(q, launchBrowser) {
     const norm = (t) => t.replace(/\s+/g, '');
     const has = (t, w) => norm(t).toLowerCase().includes(norm(w).toLowerCase());
     let c = list.map((v) => ({ ...v, id: (/[?&]v=([\w-]{11})/.exec(v.href) || [])[1] })).filter((v) => v.id && !usedYoutube.has(v.id));
-    c = c.filter((v) => must.every((w) => has(v.title, w)) && (!episode.length || episode.some((w) => has(v.title, w))));
-    if (channels.length) c = c.filter((v) => !v.channel || channels.some((w) => has(v.channel, w)));
+    const chanOk = (v) => !channels.length || !v.channel || channels.some((w) => has(v.channel, w));
+    const officialChan = (v) => channels.length && v.channel && channels.some((w) => has(v.channel, w));
+    // 회차 표시가 없어도 'MBC 261108 방송' 같은 방송일 표시가 최근 4일 안이고 다른 회차 표시가 없으면 그 회차로 본다
+    // (2026-11-09 — MBC 클립 제목은 '5회' 대신 방송일만 적어 신인감독 김연경 [3] 을 못 찾음)
+    const epNum = (episode.map((w) => (/(\d+)/.exec(w) || [])[1]).find(Boolean)) || '';
+    const recentAir = (t) => {
+      const m = /(\d{2})(\d{2})(\d{2})\s*방송/.exec(t); if (!m) return false;
+      const d = Date.UTC(2000 + +m[1], +m[2] - 1, +m[3]); const now = Date.now();
+      return d <= now + 86400000 && now - d <= 4 * 86400000;
+    };
+    const otherEp = (t) => [...norm(t).matchAll(/(\d+)(?:회|화)/g)].some((x) => epNum && x[1] !== epNum);
+    const epOk = (v) => !episode.length || episode.some((w) => has(v.title, w)) || (recentAir(v.title) && !otherEp(v.title));
+    const mustOk = (v) => must.every((w) => has(v.title, w));
+    // 1순위: 프로그램 이름 + 회차. 2순위: 공식 채널 + 회차 + 인물·장면 말(prefer) 하나 — tvN 클립은 제목에 프로그램 이름이 없다
+    // (2026-11-09 — '10화 하이라이트 | … 김유정 …' 을 못 잡아 100일의 거짓말 [1]·[3] 이 AI 그림이 됨)
+    const tier1 = c.filter((v) => mustOk(v) && epOk(v) && chanOk(v));
+    const tier2 = c.filter((v) => !mustOk(v) && officialChan(v) && epOk(v) && prefer.some((w) => has(v.title, w)));
+    const byPrefer = (x, y) => prefer.filter((w) => has(y.title, w)).length - prefer.filter((w) => has(x.title, w)).length;
+    c = [...tier1.sort(byPrefer), ...tier2.sort(byPrefer)];
     if (!c.length) return { why: `검색 결과 ${list.length}개 중 맞는 제목 없음 — 앞 5개: ${list.slice(0, 5).map((v) => v.title).join(' / ')}` };
-    c.sort((x, y) => prefer.filter((w) => has(y.title, w)).length - prefer.filter((w) => has(x.title, w)).length);
     usedYoutube.add(c[0].id);
     return { ...c[0], alts: c.slice(1, 6).map((v) => v.id) }; // 고화질 표지가 없으면 다음 후보를 본다
   } finally { await browser.close().catch(() => {}); }
