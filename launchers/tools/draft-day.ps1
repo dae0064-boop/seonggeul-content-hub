@@ -115,6 +115,26 @@ if ($lockDir) {
     } else { $true }
   })
 }
+# 다른 날짜로 옮긴 원고가 그 날짜에 이미 예약돼 있으면 또 올리지 않는다 (2026-11-09 사용자 — 11/5 글 2편을 11/6 으로 옮겼는데
+# 11/5 에 이미 예약돼 있어 같은 글이 11/5·11/6 두 번 나갔다). 앞뒤 14일 run-locks 에서 날짜만 다르고 이름이 같은 글의 '예약발행' 표시를 찾는다.
+if ($lockDir -and $lockDir -notlike '*dumps\run-locks*') {
+  $locksRoot = Split-Path $lockDir -Parent
+  $base = [datetime]::ParseExact($Date, 'yyyy-MM-dd', $null)
+  $posts = @($posts | Where-Object {
+    $rest = $_.BaseName.Substring(11); $hit = $null
+    foreach ($k in -14..14) {
+      if ($k -eq 0) { continue }
+      $d = $base.AddDays($k).ToString('yyyy-MM-dd')
+      $f = Join-Path $locksRoot "$d\$d-$rest.done"
+      if ((Test-Path $f) -and ((Get-Content $f -Raw) -match '예약발행')) { $hit = "$d — $((Get-Content $f -Raw).Trim())"; break }
+    }
+    if ($hit) {
+      Say "  건너뜀 (같은 글이 다른 날에 이미 예약됨: $hit): $($_.BaseName) — 두 번 올리지 않아요" 'Yellow'
+      "$me $(Get-Date -Format 'HH:mm') 건너뜀 — 같은 글이 $hit" | Out-File (Join-Path $lockDir "$($_.BaseName).done") -Encoding utf8
+      $false
+    } else { $true }
+  })
+}
 if (-not $posts) {
   if ($lockDir) { Say "오늘 할 글이 남아 있지 않아요 (다른 PC 가 모두 처리했거나 원고가 없음)." 'Green'; Release; exit 0 }
   Say "원고가 없어요: content\posts\$Date-*.json" 'Red'; Share; exit 1
