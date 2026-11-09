@@ -115,6 +115,7 @@
 - 장면 문장 끝에 붙이는 스타일 (정본):
   `Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.`
 - 사람은 뒷모습·손·안전모 쓴 옆모습 정도로 (특정인처럼 보이지 않게). 다친 사람·위험한 장면은 그리지 않는다.
+- 정보 카드 위 제목은 `<주제> Q&A` (예 욕실철거 Q&A, 원상복구 Q&A — 2026-11-09 사용자, '성글벙글 Q&A' 아님). 메인 키워드에서 지역을 빼고 저절로 만들고, 다르게 하려면 카드에 `"qa": "인테리어"`(8자 안쪽).
 - 8장 모두 다른 장면(장소·구도). 비용: low 품질 8장 ≈ 하루 10편 80장 (11/11~).
 
 ## 5. 자동으로 도는 것
