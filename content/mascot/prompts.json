@@ -4,25 +4,53 @@
   "style": "Cute 3D clay character illustration, Pixar-like, soft matte clay texture, smooth rounded shapes, big friendly glossy eyes, gentle soft studio lighting, high detail, polished. Upper body, centered, character fills about 70% of the height. Plain pure white background (#FFFFFF), no floor, no shadow on the background, nothing else in the frame. Absolutely no text, no letters, no numbers, no logos.",
   "candidates": [
     {
-      "slug": "cand-a",
-      "who": "A friendly Korean male insurance planner in his early 30s: short black hair with soft side-swept bangs, round friendly face, warm closed-mouth smile, rosy cheeks. Wearing a deep forest green knit cardigan over a soft butter-yellow collared shirt, a small round gold pin on the cardigan. Relaxed, welcoming pose with one hand raised in a small hello."
+      "slug": "cand-1-gray",
+      "source": "content/instagram/character/profile-photo-low.png",
+      "who": "Turn this photo into a cute 3D clay character illustration, Pixar-like, soft matte clay texture, smooth rounded shapes, gentle soft studio lighting, high detail, polished. Keep his likeness closely: the same face shape, the same fair warm skin tone, the same small gently smiling eyes and calm warm closed-mouth smile, the same short black hair with soft side-swept bangs and volume on top. No glasses. A friendly Korean insurance planner in his early 30s. Wearing a light grey suit with a white shirt and a soft grey tie, both hands gently clasped in front of his waist, like a trustworthy advisor. Upper body, centered, character fills about 70% of the height. Plain light grey background (#ECEEF1), no floor, no shadow on the background, nothing else in the frame. Absolutely no text, no letters, no numbers, no logos."
     },
     {
-      "slug": "cand-b",
-      "who": "A friendly Korean male insurance planner in his early 30s: short neat black hair, thin round gold-rim glasses, round kind face, bright open smile. Wearing a deep forest green blazer over a light mint shirt, no tie. Holding a small cream-colored notebook against his chest, welcoming expression."
+      "slug": "cand-2-green",
+      "source": "content/instagram/character/profile-photo-low.png",
+      "who": "Turn this photo into a cute 3D clay character illustration, Pixar-like, soft matte clay texture, smooth rounded shapes, gentle soft studio lighting, high detail, polished. Keep his likeness closely: the same face shape, the same fair warm skin tone, the same small gently smiling eyes and calm warm closed-mouth smile, the same short black hair with soft side-swept bangs and volume on top. No glasses. A friendly Korean insurance planner in his early 30s. Wearing a light grey suit jacket over a white shirt with a deep forest green tie and a small round gold pin on the lapel, one hand raised in a small friendly hello. Upper body, centered, character fills about 70% of the height. Plain light grey background (#ECEEF1), no floor, no shadow on the background, nothing else in the frame. Absolutely no text, no letters, no numbers, no logos."
     },
     {
-      "slug": "cand-c",
-      "who": "A friendly Korean female insurance planner in her early 30s: shoulder-length soft brown hair, round friendly face, warm smile, rosy cheeks. Wearing a deep forest green knit cardigan over a light mint blouse, a small round gold pin on the cardigan. Hands lightly clasped in front, welcoming expression."
+      "slug": "cand-3-cute",
+      "source": "content/instagram/character/profile-photo-low.png",
+      "who": "Turn this photo into a cute 3D clay character illustration, Pixar-like, soft matte clay texture, smooth rounded shapes, gentle soft studio lighting, high detail, polished. Keep his likeness closely: the same face shape, the same fair warm skin tone, the same small gently smiling eyes and calm warm closed-mouth smile, the same short black hair with soft side-swept bangs and volume on top. No glasses. A friendly Korean insurance planner in his early 30s. Slightly cuter proportions (a bit bigger head, rounder cheeks with a soft blush), wearing a light grey suit, white shirt and grey tie, both hands gently clasped in front. Upper body, centered, character fills about 70% of the height. Plain light grey background (#ECEEF1), no floor, no shadow on the background, nothing else in the frame. Absolutely no text, no letters, no numbers, no logos."
     }
   ],
   "poses": [
-    { "slug": "pose-magnifier", "for": "lead·selfcheck", "pose": "holding a magnifying glass up near the face with one hand and peering through it curiously, slightly turned to the left" },
-    { "slug": "pose-think", "for": "number", "pose": "resting the chin on one hand, thinking with a gentle smile, looking slightly up to the left" },
-    { "slug": "pose-point", "for": "memo·steps", "pose": "raising the index finger as if explaining a tip, cheerful explaining expression, slightly turned to the left" },
-    { "slug": "pose-clipboard", "for": "check", "pose": "holding a small clipboard with a checklist against the chest, pointing at it with a pen, confident kind smile" },
-    { "slug": "pose-thumb", "for": "quiz·result", "pose": "giving a thumbs-up with one hand, bright happy smile" },
-    { "slug": "pose-wave", "for": "chat", "pose": "waving hello with one hand, warm welcoming smile" }
+    {
+      "slug": "pose-magnifier",
+      "for": "lead·selfcheck",
+      "pose": "holding a magnifying glass up near the face with one hand and peering through it curiously, slightly turned to the left"
+    },
+    {
+      "slug": "pose-think",
+      "for": "number",
+      "pose": "resting the chin on one hand, thinking with a gentle smile, looking slightly up to the left"
+    },
+    {
+      "slug": "pose-point",
+      "for": "memo·steps",
+      "pose": "raising the index finger as if explaining a tip, cheerful explaining expression, slightly turned to the left"
+    },
+    {
+      "slug": "pose-clipboard",
+      "for": "check",
+      "pose": "holding a small clipboard with a checklist against the chest, pointing at it with a pen, confident kind smile"
+    },
+    {
+      "slug": "pose-thumb",
+      "for": "quiz·result",
+      "pose": "giving a thumbs-up with one hand, bright happy smile"
+    },
+    {
+      "slug": "pose-wave",
+      "for": "chat",
+      "pose": "waving hello with one hand, warm welcoming smile"
+    }
   ],
-  "pose_prompt": "Keep this exact same character: the same face, hairstyle, eyes, smile, skin tone, outfit and colors, and the same cute 3D clay Pixar-like style and lighting. Change only the pose: {pose}. Upper body, centered, plain pure white background (#FFFFFF), no shadow on the background, nothing else in the frame. No text, no letters, no logos."
+  "pose_prompt": "Keep this exact same character: the same face, hairstyle, eyes, smile, skin tone, outfit and colors, and the same cute 3D clay Pixar-like style and lighting. Change only the pose: {pose}. Upper body, centered, plain light grey background (#ECEEF1), no shadow on the background, nothing else in the frame. No text, no letters, no logos.",
+  "_설명2": "2026-11-09 사용자 \"블로그 배너 느낌이 나는 남자 캐릭터, 얼굴 색감·표정·머리 모양 비슷하게, 안경은 안 씀\" → 후보를 사용자 본인 사진(source)을 클레이 3D 로 바꾸는 '사진 고치기'로 다시 만든다."
 }

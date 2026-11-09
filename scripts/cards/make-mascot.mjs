@@ -5,7 +5,7 @@
  *   node scripts/cards/make-mascot.mjs --out <Drive ClaudeWorkspace\mascot>
  *
  * content/mascot/prompts.json 을 읽는다.
- *   1단계: chosen 이 비어 있으면 후보(candidates) 3장 — low 1024x1536, 약 30원.
+ *   1단계: chosen 이 비어 있으면 후보(candidates) 3장 — low 1024x1536, 약 30원. source 가 있으면 그 사진을 클레이 3D 로 고친다.
  *   2단계: chosen 에 후보 slug 가 적히면 그 그림을 바탕으로 자세(poses) 6장을 '사진 고치기'로 — 같은 얼굴·옷이 유지된다. low, 약 60원.
  * 이미 --out 이나 content/mascot/img 에 있는 그림은 다시 만들지 않는다. 만든 그림은 둘 다에 둔다
  * (카드는 PC 의 post-images 가 그리므로 content/mascot/img 에 있으면 된다 — 저장소에는 올리지 않는다).
@@ -39,7 +39,9 @@ if (!c.chosen) {
     if (have(it.slug)) continue;
     console.log(`캐릭터 후보 만들기: ${it.slug}`);
     try {
-      execFileSync(process.execPath, [path.join(ROOT, 'scripts/image-gen.mjs'), `${c.style} ${it.who}`, '--raw', '--quality', 'low', '--size', '1024x1536', '--out', out, '--name', it.slug], { stdio: 'inherit' });
+      // source 가 있으면 그 사진을 바탕으로 '사진 고치기' (2026-11-09 사용자 — 배너 속 본인과 닮게)
+      if (it.source) execFileSync(process.execPath, [path.join(ROOT, 'scripts/image-edit.mjs'), path.join(ROOT, it.source), it.who, '--quality', 'low', '--size', '1024x1536', '--out', out, '--name', it.slug], { stdio: 'inherit' });
+      else execFileSync(process.execPath, [path.join(ROOT, 'scripts/image-gen.mjs'), `${c.style} ${it.who}`, '--raw', '--quality', 'low', '--size', '1024x1536', '--out', out, '--name', it.slug], { stdio: 'inherit' });
       keep(it.slug); made++;
     } catch { console.log(`⚠ ${it.slug} 실패 — 다음 실행 때 다시`); }
   }
