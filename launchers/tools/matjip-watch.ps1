@@ -1,6 +1,7 @@
 ﻿# 맛집 글 예약 지킴이 — 작업 스케줄러 SeonggeulMatjipWatch 가 07~23시 15분마다 부른다 (2026-11-04 사용자:
 #   "어디서나 모바일 앱으로 요청하면 PC 로 작성해서 1시간 뒤 예약발행", PC 는 15분마다 깨워 확인).
 # 새 맛집 원고(content/matjip/posts, publish_at 있음, 아직 안 한 것)가 있으면 사진·지도까지 넣어 예약한다. 크롬은 끄지 않는다.
+# 2026-11-09 사용자: 맛집은 예약발행하지 않고 임시저장만(태그·지도·사진·카테고리까지) — 대표사진은 사용자가 보고 직접 발행. publish_at 은 '이 원고를 PC 가 써 달라'는 표시로만 쓴다.
 # 2026-11-04 사용자 최종: 평소엔 원고 + 아티팩트만(원고에 publish_at 없음 → 여기서 할 일 없음). 사용자가 "직접 써 줘"라고 한 원고만 publish_at 이 붙어 예약된다.
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
@@ -37,13 +38,13 @@ if (-not ((Test-NetConnection localhost -Port 9222 -InformationLevel Quiet -Warn
 foreach ($f in $todo) {
   $stamp = Get-Date -Format 'yyyy-MM-dd_HHmm'
   $log = Join-Path $repo "dumps\matjip-$stamp.log"
-  & node scripts\matjip-draft.mjs $f.FullName --drive $drive --reserve --dump 2>&1 | ForEach-Object { Add-Content -Path $log -Value $_ -Encoding UTF8 }
+  & node scripts\matjip-draft.mjs $f.FullName --drive $drive --dump 2>&1 | ForEach-Object { Add-Content -Path $log -Value $_ -Encoding UTF8 }
   $code = $LASTEXITCODE
   $try = Join-Path $marks "$($f.BaseName).try"
   $n = 1 + [int](Get-Content $try -ErrorAction SilentlyContinue | Select-Object -First 1)
-  # 0 = 예약됨, 2 = 임시저장만(예약 확인 실패) — 둘 다 다시 하지 않는다(임시저장 글이 겹치지 않게). 1 = 실패 → 세 번까지 다시
+  # 0 = 임시저장됨 — 다시 하지 않는다(임시저장 글이 겹치지 않게). 1 = 실패 → 세 번까지 다시
   if ($code -eq 0 -or $code -eq 2 -or $n -ge 3) {
-    $what = if ($code -eq 0) { '예약됨' } elseif ($code -eq 2) { '임시저장만 (예약 확인 실패 — 앱에서 발행해 주세요)' } else { "세 번 실패 (코드 $code)" }
+    $what = if ($code -eq 0 -or $code -eq 2) { '임시저장됨 (대표사진 확인 뒤 앱에서 발행해 주세요)' } else { "세 번 실패 (코드 $code)" }
     Set-Content -Path (Join-Path $marks "$($f.BaseName).done") -Value "$stamp $env:COMPUTERNAME $what" -Encoding UTF8
     Remove-Item $try -ErrorAction SilentlyContinue
   } else { Set-Content -Path $try -Value $n -Encoding UTF8 }
