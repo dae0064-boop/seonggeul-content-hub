@@ -79,7 +79,21 @@ const coverSafe = cover
   .replace('width:34px;height:34px;line-height:34px', 'width:26px;height:26px;line-height:26px').replace('font-size:21px;margin-right:12px', 'font-size:16px;margin-right:9px')
   .replace('img.p{width:820px;right:-150px;top:120px}', 'img.p{width:600px;right:110px;top:230px}')
   .replace('.fade{position:absolute;left:0;right:0;bottom:0;height:360px', '.fade{position:absolute;left:0;right:0;bottom:0;height:260px');
-for (const [name, html, w, h] of [['profile.png', profile, 1000, 1000], ['cover.png', cover, 1080, 1080], ['cover-safe.png', coverSafe, 1080, 1080]]) {
+// 네이버 앱 실제 화면에 맞춘 커버 (2026-11-09 사용자 앱 캡처 — "글씨에 묻히네"): 앱은 정사각형 그대로 보여 주되
+// 전체를 어둡게 덮고, 세로 45% 아래에 방문자 수·블로그명·프로필·단추를 얹는다. 오른쪽 위엔 아이콘 2개.
+// → 글씨·칩은 모두 위쪽 43% 안(왼쪽), 얼굴도 그 안, 바탕은 덜 어둡게.
+const coverApp = cover
+  .replace('.room:after{content:\'\';position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,30,26,.55),rgba(6,30,26,.15) 60%,rgba(6,30,26,.25))}', '.room:after{content:\'\';position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,30,26,.45),rgba(6,30,26,0) 60%)}')
+  .replace('.t{position:absolute;left:72px;top:84px;color:#fbf5e9}', '.t{position:absolute;left:64px;top:56px;color:#fbf5e9}')
+  .replace('.chip{display:inline-block;font:26px M', '.chip{display:inline-block;font:23px M').replace('padding:10px 26px;border-radius:40px}', 'padding:7px 22px;border-radius:40px}')
+  .replace('.h{font:80px/1.24 S;margin-top:30px', '.h{font:66px/1.2 S;margin-top:18px')
+  .replace('.s{margin-top:32px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}', '.s{margin-top:22px;display:grid;grid-template-columns:auto auto;gap:10px 10px;justify-items:start}')
+  .replace('.s span{font:29px M', '.s span{font:22px M').replace('padding:10px 24px 10px 16px', 'padding:7px 16px 7px 10px')
+  .replace('width:34px;height:34px;line-height:34px', 'width:26px;height:26px;line-height:26px').replace('font-size:21px;margin-right:12px', 'font-size:16px;margin-right:8px')
+  .replace('img.p{width:820px;right:-150px;top:120px}', 'img.p{width:700px;right:-110px;top:150px}')
+  .replace('<div class="fade"></div>', '')
+  .replace('<div class="h">보험,<br><b class="gold">어렵지 않게</b><br>풀어 드려요</div>', '<div class="h">보험, <b class="gold">어렵지 않게</b><br>풀어 드려요</div>');
+for (const [name, html, w, h] of [['profile.png', profile, 1000, 1000], ['cover.png', cover, 1080, 1080], ['cover-safe.png', coverSafe, 1080, 1080], ['cover-app.png', coverApp, 1080, 1080]]) {
   const page = await browser.newPage({ viewport: { width: w, height: h } });
   await page.setContent(html);
   await page.evaluate(() => document.fonts.ready);
