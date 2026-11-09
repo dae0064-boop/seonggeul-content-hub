@@ -257,7 +257,7 @@ function planOf(file) {
 
 // 겹침 검사 (2026-11-03 원고부터, 하루 20편) — lint-tistory.mjs 와 같은 방법
 const DUP = { mainDays: 14, title: 0.6, titleNote: 0.45, body: 0.12, bodyNote: 0.06 };
-const DUP_FIXED = /^(안녕하세요|매일매일 좋은 날을 나누는 성글벙글입니다😊|좋아요·공감과 (구독|이웃추가) 부탁드려요💙|이상 성글벙글의 .+ 포스팅이었습니다😎|이 포스팅은 .+|판매 발생 시 .+)$/;
+const DUP_FIXED = /^(안녕하세요|매일매일 좋은 날을 나누는 성글벙글입니다😊|보험이 쉬워지는 이야기, 오늘도 시작할게요😊|이상 친근한 보험 이야기, .+ 편이었습니다😎|좋아요·공감과 (구독|이웃추가) 부탁드려요💙|이상 성글벙글의 .+ 포스팅이었습니다😎|이 포스팅은 .+|판매 발생 시 .+)$/;
 const dupNorm = (x) => String(x || '').replace(/[\s.,!?·~'"“”‘’()\[\]:;\-–—*|#>]/g, '');
 function gramsOf(text, n = 10) {
   const set = new Set();
@@ -352,9 +352,15 @@ const MARKS = { red: [3, 5], blue: [6, 10], yellow: [3, 5] }; // 강조 색별 �
 const BAN = ['무조건', '100%', '단언컨대', '절대로', '손실 없음', '공짜'];
 
 // 고정 인사말 — 모든 글이 이걸로 열고 닫는다
-const OPEN = ['안녕하세요', '매일매일 좋은 날을 나누는 성글벙글입니다😊'];
+const OPEN_OLD = ['안녕하세요', '매일매일 좋은 날을 나누는 성글벙글입니다😊'];
 const CLOSE_1 = '좋아요·공감과 이웃추가 부탁드려요💙';
-const CLOSE_RE = /^이상 성글벙글의 .+ 포스팅이었습니다😎$/;
+const CLOSE_RE_OLD = /^이상 성글벙글의 .+ 포스팅이었습니다😎$/;
+// 2026-11-10 네이버 원고부터 새 인사 (2026-11-09 사용자 — 블로그명 "친근한 설계사의 보험 이야기", 별명 "친근한 설계사"로 바꿈.
+// 본문에는 설계사 신분을 넣지 않는다 — 정보글 규칙, 사용자가 "설계사 빼고 친근하게"를 고름). 티스토리는 그대로.
+const GREET2_FROM = '2026-11-10';
+const OPEN_NEW = ['안녕하세요', '보험이 쉬워지는 이야기, 오늘도 시작할게요😊'];
+const CLOSE_RE_NEW = /^이상 친근한 보험 이야기, .+ 편이었습니다😎$/;
+const CLOSE_2_HINT = (newGreet) => newGreet ? '이상 친근한 보험 이야기, OO 편이었습니다😎' : '이상 성글벙글의 OO 포스팅이었습니다😎';
 // 문맥에 따라 괜찮을 수 있어 경고만 한다 ("가장 먼저" 처럼 순서를 뜻하는 경우)
 const WARN_WORDS = ['최고', '최저', '제일', '가장', '확실히', '반드시'];
 
@@ -444,6 +450,9 @@ for (const file of files) {
   const newRules = dated >= NEW_RULES_FROM;
   const tistory = forceTistory || /(^|[\\/])content[\\/]tistory[\\/]/.test(file);
   const close1 = tistory ? TISTORY_CLOSE_1 : CLOSE_1;
+  const newGreet = !tistory && dated >= GREET2_FROM;
+  const OPEN = newGreet ? OPEN_NEW : OPEN_OLD;
+  const CLOSE_RE = newGreet ? CLOSE_RE_NEW : CLOSE_RE_OLD;
   const slim = slimOf(ruleDated, tistory, post.slot, post.category);
   const nsChars = slim ? slim.chars : NS_CHARS;
   const minMain = slim ? slim.main : MIN_MAIN;
@@ -1093,7 +1102,7 @@ for (const file of files) {
     if (CLOSE_RE.test(last)) errors.push(`티스토리 닫는 줄을 "이상 성글벙글의 OO 포스팅이었습니다😎" 로 쓰지 않습니다 — 그 글에만 맞는 한 문장으로 바꿉니다.`);
     else if (!kws.some((k) => k && plain(last).includes(k))) errors.push("마지막 줄에 이 글의 메인 또는 서브 키워드를 넣어 그 글에만 맞는 한 문장으로 끝냅니다.");
   } else if (texts[texts.length - 2] !== close1 || !CLOSE_RE.test(texts[texts.length - 1]))
-    errors.push(`클로징이 고정 문구와 다릅니다. "${close1} / 이상 성글벙글의 OO 포스팅이었습니다😎" 로 끝나야 합니다.`);
+    errors.push(`클로징이 고정 문구와 다릅니다. "${close1} / ${CLOSE_2_HINT(newGreet)}" 로 끝나야 합니다.`);
 
   // 덩어리를 너무 잘게 쪼개면 글이 툭툭 끊긴다
   const textBlocks = post.blocks.filter((b) => b.type !== 'image');
