@@ -142,8 +142,8 @@ function checkHtml(S, c, o) {
       <div class="rows">${c.items.map((t, i) => `<div class="r${i === hl ? ' hl' : ''}"><i><svg width="${24 * k}" height="${24 * k}" viewBox="0 0 24 24"><path d="M5 12.5l4.2 4.2L19 7" stroke="#fff" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></i><span class="fitw">${esc(t)}</span></div>`).join('')}</div>
       ${c.where ? `<div class="ft"><span class="chip">⚠ 글에서 확인</span>『${esc(c.where)}』</div>` : ''}
     </div>
-    ${magnifier(k, 760, 330)}
-    <div class="br">${brand(c)}</div>
+    ${o.mascot ? `<img class="mascot" src="${o.mascot}" style="right:${-20 * k}px;bottom:${-10 * k}px;height:${430 * k}px">` : magnifier(k, 760, 330)}
+    <div class="br"${o.mascot ? ` style="left:${74 * k}px;right:auto"` : ''}>${brand(c)}</div>
   </div></body>`;
 }
 
@@ -159,5 +159,38 @@ export const FIT_SCRIPT = () => {
     let fs = parseFloat(getComputedStyle(el).fontSize); let guard = 40;
     const max = el.parentElement.clientWidth - 8;
     while (el.scrollWidth > max && fs > 12 && guard--) { fs *= 0.95; el.style.fontSize = fs + 'px'; }
+  }
+};
+
+/**
+ * 캐릭터 그림의 크로마키 초록 바탕(#00B140)이나 연회색 바탕을 그리는 순간 빼고, 빈 가장자리를 잘라 낸다.
+ * renderCards 에서 setContent 뒤, FIT_SCRIPT 앞에 page.evaluate(KEY_SCRIPT) 로 부른다. 이미 투명한 PNG 는 가장자리만 자른다.
+ */
+export const KEY_SCRIPT = async () => {
+  for (const el of document.querySelectorAll('img.mascot')) {
+    if (!el.complete) await new Promise((r) => { el.onload = r; el.onerror = r; });
+    const w = el.naturalWidth, h = el.naturalHeight;
+    if (!w) continue;
+    const cv = document.createElement('canvas'); cv.width = w; cv.height = h;
+    const x = cv.getContext('2d'); x.drawImage(el, 0, 0);
+    const d = x.getImageData(0, 0, w, h); const a = d.data;
+    const g0 = (i) => a[i + 1] - Math.max(a[i], a[i + 2]);
+    const greenBg = g0(0) > 60;
+    if (greenBg) {
+      for (let i = 0; i < a.length; i += 4) {
+        const g = g0(i);
+        if (g > 70) a[i + 3] = 0;
+        else if (g > 25) { a[i + 3] = Math.round(255 * (70 - g) / 45); a[i + 1] = Math.max(a[i], a[i + 2]); }
+        else if (g > 0) a[i + 1] = Math.max(a[i], a[i + 2]) + Math.round(g / 2); // 가장자리 초록 번짐 덜기
+      }
+    }
+    let x0 = w, y0 = h, x1 = 0, y1 = 0;
+    for (let y = 0; y < h; y++) for (let xx = 0; xx < w; xx++) if (a[(y * w + xx) * 4 + 3] > 20) { if (xx < x0) x0 = xx; if (xx > x1) x1 = xx; if (y < y0) y0 = y; if (y > y1) y1 = y; }
+    if (x1 <= x0) continue;
+    x.putImageData(d, 0, 0);
+    const out = document.createElement('canvas'); out.width = x1 - x0 + 1; out.height = y1 - y0 + 1;
+    out.getContext('2d').drawImage(cv, x0, y0, out.width, out.height, 0, 0, out.width, out.height);
+    el.src = out.toDataURL('image/png');
+    await new Promise((r) => { el.onload = r; });
   }
 };

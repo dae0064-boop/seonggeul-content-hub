@@ -1,6 +1,6 @@
 {
   "_설명": "성글벙글 정보 카드 캐릭터 '강팀장' — 친근한 설계사, 클레이 3D (2026-11-09 사용자 — \"친근한 설계사라는 클레이 3D 캐릭터를 하나 만들어서 쭉 밀고 가 보게\"). PC 가 scripts/cards/make-mascot.mjs 로 만들어 Drive ClaudeWorkspace/mascot/ 와 이 PC 의 content/mascot/img/ 에 둔다. 1단계 후보 3장(low 약 30원) → 사용자가 하나 고르면 chosen 에 slug 를 적는다 → 2단계 같은 캐릭터로 자세 6장(사진 고치기, low 약 60원). 이미 있는 그림은 다시 만들지 않는다.",
-  "chosen": "",
+  "chosen": "base",
   "style": "Cute 3D clay character illustration, Pixar-like, soft matte clay texture, smooth rounded shapes, big friendly glossy eyes, gentle soft studio lighting, high detail, polished. Upper body, centered, character fills about 70% of the height. Plain pure white background (#FFFFFF), no floor, no shadow on the background, nothing else in the frame. Absolutely no text, no letters, no numbers, no logos.",
   "candidates": [
     {
@@ -22,35 +22,47 @@
   "poses": [
     {
       "slug": "pose-magnifier",
-      "for": "lead·selfcheck",
-      "pose": "holding a magnifying glass up near the face with one hand and peering through it curiously, slightly turned to the left"
+      "for": "lead",
+      "pose": "holding a magnifying glass up near one eye and peering through it, curious expression with raised eyebrows and a small 'hmm?' smile, slightly turned to the left"
     },
     {
       "slug": "pose-think",
       "for": "number",
-      "pose": "resting the chin on one hand, thinking with a gentle smile, looking slightly up to the left"
+      "pose": "resting the chin on one hand, thinking, eyes looking up to the left, lips pressed in a thoughtful little smile"
     },
     {
       "slug": "pose-point",
       "for": "memo·steps",
-      "pose": "raising the index finger as if explaining a tip, cheerful explaining expression, slightly turned to the left"
+      "pose": "raising the index finger beside his face as if sharing a tip, cheerful open-mouth smile showing a little teeth, eyebrows lifted"
     },
     {
       "slug": "pose-clipboard",
       "for": "check",
-      "pose": "holding a small clipboard with a checklist against the chest, pointing at it with a pen, confident kind smile"
+      "pose": "holding a small clipboard with a checklist against the chest and pointing at it with a pen, confident nod, one eye winking"
     },
     {
       "slug": "pose-thumb",
       "for": "quiz·result",
-      "pose": "giving a thumbs-up with one hand, bright happy smile"
+      "pose": "giving a big thumbs-up toward the viewer, laughing happily with eyes curved like crescents"
+    },
+    {
+      "slug": "pose-surprise",
+      "for": "quiz·주의",
+      "pose": "both palms open near his cheeks, surprised 'oh!' expression with round eyes and a small open mouth"
+    },
+    {
+      "slug": "pose-palm",
+      "for": "chat·안내",
+      "pose": "one open palm extended to the side as if presenting something, warm explaining smile, head tilted slightly"
     },
     {
       "slug": "pose-wave",
       "for": "chat",
-      "pose": "waving hello with one hand, warm welcoming smile"
+      "pose": "waving hello with one hand raised high, bright welcoming grin"
     }
   ],
-  "pose_prompt": "Keep this exact same character: the same face, hairstyle, eyes, smile, skin tone, outfit and colors, and the same cute 3D clay Pixar-like style and lighting. Change only the pose: {pose}. Upper body, centered, plain light grey background (#ECEEF1), no shadow on the background, nothing else in the frame. No text, no letters, no logos.",
-  "_설명2": "2026-11-09 사용자 \"블로그 배너 느낌이 나는 남자 캐릭터, 얼굴 색감·표정·머리 모양 비슷하게, 안경은 안 씀\" → 후보를 사용자 본인 사진(source)을 클레이 3D 로 바꾸는 '사진 고치기'로 다시 만든다."
+  "pose_prompt": "Keep this exact same character: the same face, hairstyle, skin tone, light grey suit, white shirt and grey tie, and the same cute 3D clay Pixar-like style and lighting. Change the pose and facial expression: {pose}. Upper body, centered, the whole head and hands inside the frame. Background: one flat solid chroma-key green (#00B140) filling the entire background, evenly lit, no shadow, no gradient, nothing else in the frame. No green on the character. No text, no letters, no logos.",
+  "_설명2": "2026-11-09 사용자 \"블로그 배너 느낌이 나는 남자 캐릭터, 얼굴 색감·표정·머리 모양 비슷하게, 안경은 안 씀\" → 후보를 사용자 본인 사진(source)을 클레이 3D 로 바꾸는 '사진 고치기'로 다시 만든다.",
+  "chosen_source": "content/mascot/base.jpg",
+  "_설명3": "2026-11-09 사용자가 대화에 보낸 회색 정장·두 손 모은 캐릭터로 확정 → content/mascot/base.jpg (자세 그림의 바탕), 배경을 뺀 기본 자세 content/mascot/pose-clasp.png. 같은 날 사용자 \"자세랑 표정이 항상 똑같지 말고 표정·제스처도 바뀌게\" → 자세마다 표정을 따로 적고, 바탕은 크로마키 초록(카드에 얹을 때 그리는 순간 초록을 뺀다)."
 }
