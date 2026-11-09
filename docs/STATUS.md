@@ -5,7 +5,7 @@
 
 **이 파일에는 최근 1주 기록과 매일 쓰는 목록만 둔다.** 그 전 기록은 `docs/STATUS-archive.md` (필요할 때만 검색해서 읽는다 — 통째로 읽지 않는다).
 
-마지막 갱신: 2026-11-09 아침 확인 — 네이버 20편·티스토리 5편 모두 예약 ✅
+마지막 갱신: 2026-11-09 오후 — 상담 배너 2배 선명판 (banner-2x.cmd)
 
 ## PC 역할
 
@@ -26,6 +26,11 @@
 
 ## 지금 상태
 
+### 11/9 오후 — 🔍 상담 배너 2배 선명판 (사용자 "글씨랑 사진이 흐릿해 보여" → "2배로 다시 만들어 줘")
+- 원인: 배너를 1배(1920)로 찍어 고해상도 화면에서 늘어나 보임 + 바탕·카드 그림이 low 품질을 늘린 것 + 네이버 압축.
+- `fresh.mjs` 기본 `--scale 2`(3840×1600 으로 찍음), 카드 사진은 Drive 폴더의 consult-ph2-*.png 를 바로 읽음. 사람 = Drive consult-pose-hands.png 를 오린 `content/consult/banner/person-cut.png`(저장소에 둠 — 다시 만들 때 사진 안 받아도 됨).
+- 바탕·카드 사진은 클라우드에서 안 보여 PC 가 만든다: `launchers/banner-2x.cmd` 더블클릭 → Drive `블로그배너/fresh-banner-2x.png` (+ run-logs/banner-2x.png). 바탕은 원본 그림을 꽉 차게(cover) 깔아 예전 판과 조금 다를 수 있음.
+- [ ] 사용자 PC 실행 → run-logs/banner-2x.png 확인 → 네이버 타이틀에 올림(2배 크기를 받아 주는지 처음 확인). 바탕·카드 사진을 좋은 품질로 새로 만들지는 사용자 결정 대기(유료).
 ### 11/9 오후 — 🧸 정보 카드 캐릭터 '강팀장' (사용자 "우리 카드가 한다팀장 카드보다 허접해 보여" → "친근한 설계사 클레이 3D 캐릭터를 하나 만들어서 쭉 밀고 가 보게")
 - 프롬프트 `content/mascot/prompts.json`, 만드는 곳 `scripts/cards/make-mascot.mjs` (PC 만 — OpenAI). 1단계 후보 3장(A 남·초록 가디건+노랑 셔츠 / B 남·안경·초록 재킷 / C 여·초록 가디건), low 약 30원 → Drive `ClaudeWorkspace/mascot/cand-a·b·c.png`.
 - 저절로: catchup-reserve(10·13·16·19·22시) → instagram-to-drive.ps1 끝에서 없는 것만 만듦. 바로 하려면 `launchers/mascot.cmd`.

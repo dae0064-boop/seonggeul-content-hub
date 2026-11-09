@@ -5,7 +5,8 @@ import fs from 'node:fs'; import path from 'node:path'; import { fileURLToPath }
 const HERE = path.dirname(fileURLToPath(import.meta.url)); const ROOT = path.resolve(HERE, '../../..');
 const A = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : d; };
 const GUIDE = process.argv.includes('--guide');
-const BGI = A('--bgimg', ''); const bgimg = BGI && fs.existsSync(BGI) ? `data:image/jpeg;base64,${fs.readFileSync(BGI).toString('base64')}` : '';
+const durl = f => `data:image/${/\.png$/i.test(f) ? 'png' : 'jpeg'};base64,${fs.readFileSync(f).toString('base64')}`;
+const BGI = A('--bgimg', ''); const bgimg = BGI && fs.existsSync(BGI) ? durl(BGI) : '';
 const font = f => { const fp = fs.existsSync(path.join(ROOT, 'scripts/lib/fonts', f)) ? path.join(ROOT, 'scripts/lib/fonts', f) : path.join(ROOT, 'scripts/threads/fonts', f); return `data:font/${f.endsWith('.otf') ? 'otf' : 'ttf'};base64,${fs.readFileSync(fp).toString('base64')}`; };
 // 제목 글씨체·자간 (2026-11-09 사용자 "자간 넓혀 줘, 답답해 보여") — --hfont gothic|pretendard|blackhan, --ls 자간(px)
 const HF = { gothic: 'GothicA1-ExtraBold.ttf', pretendard: 'Pretendard-Bold.otf', blackhan: 'BlackHanSans-Regular.ttf', serif: 'NotoSerifKR-Black.ttf', batang: 'GowunBatang-Bold.ttf' }[A('--hfont', 'serif')] || 'Pretendard-Bold.otf';
@@ -13,7 +14,7 @@ const LS = A('--ls', '2');
 // 꼬리표·체크 칩 글씨체 (2026-11-09 사용자 "너무 무난해서 눈에 안 띈다") — --cfont pretendard|jua|blackhan|gaegu
 const CFN = { pretendard: 'Pretendard-Bold.otf', jua: 'Jua-Regular.ttf', blackhan: 'BlackHanSans-Regular.ttf', gaegu: 'Gaegu-Bold.ttf' }[A('--cfont', 'pretendard')] || 'Pretendard-Bold.otf';
 const CSTROKE = /Pretendard/.test(CFN) ? 1 : 0;
-const PH = A('--photo', ''); const photo = PH && fs.existsSync(PH) ? `data:image/png;base64,${fs.readFileSync(PH).toString('base64')}` : '';
+const PH = A('--photo', ''); const photo = PH && fs.existsSync(PH) ? durl(PH) : '';
 // 배경 색 (2026-11-09 사용자 "회색 정장과 어울리는 배경, 동그라미는 모두 빼")
 const THEMES = {
   greige: { bg: 'linear-gradient(120deg,#f3eee7 0%,#e6ddd1 55%,#d8ccbd 100%)', te: '#33505e', tl: '#e9eef0', hl: '#f2c9a9' },
@@ -40,7 +41,8 @@ const IC = {
 };
 // 카드 위쪽 사진 (--cardphotos 폴더에 ph2-bill.jpg·ph2-care.jpg·ph2-won.jpg 가 있으면)
 const CP = A('--cardphotos', '');
-const cph = n => { const f = CP && path.join(CP, `ph2-${n}.jpg`); return f && fs.existsSync(f) ? `data:image/jpeg;base64,${fs.readFileSync(f).toString('base64')}` : ''; };
+// Drive 블로그배너 폴더를 그대로 줘도 되게 consult-ph2-<n>.png 도 찾는다
+const cph = n => { const f = CP && [`ph2-${n}.jpg`, `consult-ph2-${n}.png`, `consult-ph2-${n}.jpg`].map(x => path.join(CP, x)).find(x => fs.existsSync(x)); return f ? durl(f) : ''; };
 const PHOTOS = { bill: cph('bill'), care: cph('care'), won: cph('won') };
 // 바탕 무늬 (2026-11-09 사용자 "배경이 너무 밋밋") — 동그라미 없이: --pattern lines(빛줄기·사선 결) | waves(물결 선) | none
 const PAT = A('--pattern', 'premium');
@@ -147,6 +149,8 @@ ${COLS.map(([ic, t, s], k) => `<div class="col" style="left:${X(k)}px"><div clas
 ${GUIDE ? [0, 1, 2, 3, 4].map(k => `<div class="guide" style="left:${X(k)}px"></div>`).join('') : ''}
 </div></body></html>`;
 const OUTN = A('--out', GUIDE ? 'fresh-banner-guide.png' : 'fresh-banner.png');
-const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1920, height: H } });
+// --scale 2 (2026-11-09 사용자 "흐릿해 보여") — 같은 배치를 2배 점으로 찍는다(3840×1200). 고해상도 화면에서 글씨가 또렷하다
+const SCALE = +A('--scale', 2);
+const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1920, height: H }, deviceScaleFactor: SCALE });
 await p.setContent(html); await p.waitForTimeout(400);
-await p.screenshot({ path: path.join(HERE, OUTN) }); await b.close(); console.log('ok');
+await p.screenshot({ path: path.resolve(HERE, OUTN) }); await b.close(); console.log('ok');
