@@ -37,6 +37,12 @@ const PAT = A('--pattern', 'lines');
 const pattern = () => {
   if (PAT === 'none') return '';
   const lineCol = TH.dark ? 'rgba(255,255,255,' : 'rgba(30,50,60,';
+  if (PAT === 'rings') { // 연한 동그라미 무늬 (2026-11-09 사용자 "동그라미로 연하게 해서 무늬로")
+    let r = 7, rnd = () => (r = (r * 9301 + 49297) % 233280) / 233280;
+    const soft = Array.from({ length: 34 }, () => { const x = rnd() * 1920, y = rnd() * 600, rr = 14 + rnd() * 60; return `<circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="${rr.toFixed(0)}" fill="${lineCol}${(0.025 + rnd() * 0.04).toFixed(3)})"/>`; }).join('');
+    const ringsAt = (cx, cy, n, gap, a) => Array.from({ length: n }, (_, i) => `<circle cx="${cx}" cy="${cy}" r="${40 + i * gap}" fill="none" stroke="${lineCol}${(a - i * a / (n + 2)).toFixed(3)})" stroke-width="1.2"/>`).join('');
+    return `<svg class="pat" width="1920" height="600">${soft}${ringsAt(170, 120, 9, 34, 0.09)}${ringsAt(1890, 560, 8, 36, 0.08)}${ringsAt(1250, 40, 5, 30, 0.06)}</svg>`;
+  }
   if (PAT === 'waves') {
     const w = Array.from({ length: 9 }, (_, i) => `<path d="M-50 ${430 + i * 22} C 300 ${360 + i * 22}, 600 ${520 + i * 22}, 980 ${440 + i * 22} S 1600 ${360 + i * 22}, 1980 ${460 + i * 22}" stroke="${lineCol}${0.05 + i * 0.008})" stroke-width="1.5" fill="none"/>`).join('');
     const w2 = Array.from({ length: 6 }, (_, i) => `<path d="M-50 ${60 + i * 18} C 400 ${0 + i * 18}, 800 ${150 + i * 18}, 1300 ${70 + i * 18} S 1800 ${10 + i * 18}, 1980 ${90 + i * 18}" stroke="${lineCol}${0.04 + i * 0.006})" stroke-width="1.2" fill="none"/>`).join('');
