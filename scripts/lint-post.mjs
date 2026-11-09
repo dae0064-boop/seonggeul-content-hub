@@ -179,6 +179,32 @@ const MAIN_MAX = 12000;
 // 생활보장 글은 2026-10-26 원고부터 30,000 까지 (2026-10-24 한다팀장 비교 — 그쪽은 본인부담상한제 18,410·사망신고·CT비용 같은 제도 이름 큰 말을 메인으로 써서 잘 된다.
 // 12,000 상한은 살림 큰 말(레시피·조리 시간) 자료에서 나온 것이라 의료비·돌봄 제도 말에는 근거가 없다. 우리 생활보장 메인은 복지용구 품목 40 처럼 너무 작았다)
 const MAIN_MAX_CARE = 30000;
+// 한다팀장 블로그와 30일 안 같은 질병·제도 이름 금지 (2026-11-10 네이버 원고부터, 2026-11-09 Claude 판단 — 사용자 위임 "원인 찾고 해결방안까지").
+//   근거: 11/6 우리 생활보장 5편이 이틀 내리 검색에서 빠졌는데, 그중 3편(장애인 등록·골다공증·안구건조증)을 한다팀장이 11/5~11/8 에
+//   같은 제목 모양("~하나요 (… · 2026년)")·같은 발행 시각(10·12·15·17·21시)으로 썼다. 같은 사무실 두 블로그가 같은 말·같은 틀이면
+//   네이버가 비슷한 문서로 묶어 한쪽(신뢰가 낮은 우리)을 뺀다. 10/24 사용자 "겹쳐도 의미 없다"로 풀었던 것을 다시 막는다(되돌릴 수 있음).
+//   비교: 띄어쓰기 뺀 메인 키워드와 한다팀장 키워드가 서로 포함되거나 앞 4글자 이상이 같으면 같은 말로 본다.
+const HANDE2_FROM = '2026-11-10';
+const HANDE2_DAYS = 30;
+export function handeClash(mainKeyword, entries, dated) {
+  const mk = String(mainKeyword || '').replace(/\s+/g, '');
+  if (!mk) return null;
+  const from = new Date(`${dated}T00:00:00Z`); from.setUTCDate(from.getUTCDate() - HANDE2_DAYS);
+  const lo = from.toISOString().slice(0, 10);
+  for (const { date, kw } of entries) {
+    if (!date || date < lo || date > dated) continue;
+    let pre = 0; while (pre < mk.length && pre < kw.length && mk[pre] === kw[pre]) pre++;
+    if (mk.includes(kw) || kw.includes(mk) || pre >= 4) return { date, kw };
+  }
+  return null;
+}
+function handeDated() {
+  try {
+    return fs.readFileSync('content/research/hande-keywords.txt', 'utf8').split(/\r?\n/)
+      .map((l) => /^(\d{4}-\d{2}-\d{2})\t(.+)$/.exec(l.replace(/#.*/, '').trim()))
+      .filter(Boolean).map((m) => ({ date: m[1], kw: m[2].replace(/\s+/g, '') }));
+  } catch { return []; }
+}
 function handeKeywords() {
   try {
     return fs.readFileSync('content/research/hande-keywords.txt', 'utf8').split(/\r?\n/)
@@ -913,6 +939,11 @@ for (const file of files) {
     const mk = post.mainKeyword.replace(/\s+/g, '');
     const hit = handeKeywords().find((k) => k === mk);
     if (hit) errors.push(`메인 키워드 "${post.mainKeyword}" 는 한다팀장 블로그가 이미 쓴 말입니다 (content/research/hande-keywords.txt) — 같은 묶음의 다른 질문으로`);
+  }
+
+  if (!tistory && dated >= HANDE2_FROM && post.mainKeyword && !post.issue) {
+    const c = handeClash(post.mainKeyword, handeDated(), dated);
+    if (c) errors.push(`메인 키워드 "${post.mainKeyword}" 가 한다팀장 글(${c.date} "${c.kw}")과 같은 말입니다 — 30일 안에는 같은 질병·제도 이름을 쓰지 않습니다. 우리 쪽 몫인 청구·보장 확인 질문(예: "○○ 실비 청구", "○○ 진단비")으로 바꾸거나 다른 글감으로 (content/research/hande-keywords.txt)`);
   }
 
   // 하루 20편 (2026-11-03 원고부터) — 말투 돌려 쓰기 + 다른 네이버 글과 겹치지 않게 (2026-11-01 사용자:
