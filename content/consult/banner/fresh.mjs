@@ -71,14 +71,14 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><style>
 .bn{position:relative;width:1920px;height:600px;overflow:hidden;background:radial-gradient(ellipse 300px 340px at 1600px 300px,${TH.glow || 'rgba(255,255,255,.75)'} 0%,rgba(255,255,255,0) 100%),${TH.bg};font-family:GM;color:${INK}}
 ${TH.dark ? `.l1{color:#ffffff !important;font-size:52px !important;text-shadow:0 2px 10px rgba(0,0,0,.25)}.l2{color:#fff !important}.l2 em{color:#ffd54f !important;background:none !important;position:relative}.l2 em:after{content:'';position:absolute;left:2px;right:2px;bottom:-12px;height:6px;border-radius:3px;background:#ff6b4a}` : ''}
 svg.deco,svg.pat{position:absolute;inset:0}
-.tag{position:absolute;left:500px;top:84px;letter-spacing:1.2px;padding:7px 18px;border-radius:20px;background:#fff;color:${TE};font-family:GB;font-size:20px}
+.tag{position:absolute;left:500px;top:84px;letter-spacing:1.2px;padding:7px 18px;border-radius:20px;background:#fff;color:${TE};font-family:HF;font-size:21px;-webkit-text-stroke:.6px ${TE}}
 .h{position:absolute;left:498px;font-family:HF;letter-spacing:${LS}px;word-spacing:8px}
 .l1{top:132px;font-size:46px;color:#3b474b}
 .l2{top:188px;font-size:62px;color:${INK}}
 .l2 em{font-style:normal;color:${TE};background:linear-gradient(transparent 62%,${TH.hl} 62%)}
 .chips{position:absolute;left:500px;top:291px;display:flex;gap:12px}
-.chip{display:flex;align-items:center;gap:8px;padding:8px 16px 8px 10px;border-radius:24px;background:#fff;border:1.5px solid #dfe7e4;font-family:GB;font-size:17px;letter-spacing:1px;color:#33403f;box-shadow:0 4px 10px rgba(13,107,102,.06)}
-.chip b{color:${TE};font-weight:normal;font-family:XB}
+.chip{display:flex;align-items:center;gap:8px;padding:8px 16px 8px 10px;border-radius:24px;background:#fff;border:1.5px solid #dfe7e4;font-family:HF;font-size:18px;letter-spacing:1px;color:#22302f;-webkit-text-stroke:.5px #22302f;box-shadow:0 4px 10px rgba(13,107,102,.06)}
+.chip b{color:${TE};font-weight:normal;font-family:HF;-webkit-text-stroke:.6px ${TE}}
 .col{position:absolute;top:321px;width:170px;height:279px}
 .card{position:absolute;left:4px;right:4px;top:22px;height:232px;border-radius:24px;background:#fff;box-shadow:0 10px 26px rgba(31,42,46,.10);border:1.5px solid #ece8e1;text-align:center}
 .card .ic{width:78px;height:78px;margin:24px auto 0;border-radius:50%;background:${TL};display:flex;align-items:center;justify-content:center}
