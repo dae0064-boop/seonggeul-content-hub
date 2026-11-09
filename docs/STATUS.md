@@ -26,6 +26,9 @@
 
 ## 지금 상태
 
+### 11/9 저녁 — 💬 카카오톡 위젯 주소 바꿈 (사용자 "이걸로 다시 투명위젯")
+- ⑤ 칸 = https://pf.kakao.com/_xixlxkxeX/chat (target="_blank"). 예전 _yMvnX 는 안 열렸음. [ ] 사용자가 위젯 코드 바꾼 뒤 열리는지.
+
 ### 11/9 저녁 — 🖍 강조 2 (사용자 "한다팀장보다 표시가 약하다" → 예시 아티팩트 https://claude.ai/artifact/5Y2ZyYZkVuWTubCatCG3hQ → "이대로 해 줘")
 - ✅ 사용자가 글 한 편 예시(https://claude.ai/artifact/NCYFkXS4aZ39HMSzFURYAh, `content/consult/post-sample.html`)를 보고 "좋아 이대로 진행해줘" — 밤 원고 작업이 이 예시를 본보기로.
 - 🅣 같은 날 사용자 "티스토리도 같은 강조로" → 11/10 티스토리 원고부터 같음(parse-tistory: 노랑 #ffe94d, 초록 상자, 말풍선 = 인용구 3번 style3 상자). [ ] 11/10 티스토리 예약 기록에서 '색 강조' 확인 줄이 통과했는지.
@@ -60,7 +63,7 @@
 - 프로필·모바일 커버 그림 `content/consult/banner/profile.mjs` 로 만들어 사용자에게 보냄. 배너 말풍선 "강팀장 → 친근한 설계사": 사용자가 준 지금 배너 위에 말풍선만 새로 얹어 보냄(오른쪽 끝 맞춤, 가로 넓힘). 프로필·커버도 사용자가 준 사무실 바탕(`--bgimg`)으로 배너와 같은 분위기로 다시 만듦. [ ] 사용자가 블로그에 올렸는지 확인.
 
 ### 11/9 오후 — 🔗 배너 위젯 5칸 바꿈 (사용자 "위젯 다 바꿨어")
-- ① 보험금·실비(categoryNo=31) ② 병원비·돌봄(32) ③ 지원금·제도(33) — `target="_top"` · ④ 인스타 https://www.instagram.com/___sd.eyo/ ⑤ 카카오톡 채널 https://pf.kakao.com/_yMvnX/chat — `target="_blank"`. 투명 그림 170×280 그대로. 정본 `content/consult/README.md` 🔗. 예전 코드는 target 이 두 번 있어 카테고리가 새 창으로 열렸다.
+- ① 보험금·실비(categoryNo=31) ② 병원비·돌봄(32) ③ 지원금·제도(33) — `target="_top"` · ④ 인스타 https://www.instagram.com/___sd.eyo/ ⑤ 카카오톡 채널 https://pf.kakao.com/_xixlxkxeX/chat — `target="_blank"`. 투명 그림 170×280 그대로. 정본 `content/consult/README.md` 🔗. 예전 코드는 target 이 두 번 있어 카테고리가 새 창으로 열렸다.
 
 ### 11/9 낮 — 🍗 맛집 '직접 써 줘' 하바드양념통닭 용호점 (목포, 반반치킨 포장)
 - 사용자 "지금 작성해서 30분 뒤 예약" → 원고 `publish_at: 2026-11-09 14:30` + 사진 8장 `content/matjip/photos/2026-11-09-하바드양념통닭-용호점/`. 지킴이는 3시간마다(다음 16:00)라 사용자가 PC 에서 matjip-watch.cmd 를 안 누르면 16:00 확인 때 40분 뒤(약 16:40)로 미뤄 예약된다(matjip-draft 가 지난 시각을 저절로 미룸).
@@ -71,7 +74,7 @@
 ### 11/9 낮 — 🎨 상담 배너 확정 ✅ (사용자 "이대로 확정")
 - 블로그 타이틀(1920×600)에 들어감. 만드는 법: `node content/consult/banner/fresh.mjs --bgimg <바탕> --photo <사람 PNG> --cardphotos <카드 사진 폴더>` (기본값 = 확정 모양: 딥그린·굵은 명조(NotoSerifKR-Black)·크림·샴페인 골드·밑줄 없음·금테 칩·말풍선 "보험에 관한 궁금증은 / 강팀장에게 편하게 물어보세요!").
 - 재료: 바탕 = Drive `블로그배너/consult-bg-room1.png`(가운데 띠를 1920×600 으로 자르고 양끝 #12463D 로 이음), 카드 사진 = `consult-ph2-bill·care·won.png`, 사람 = 사용자가 대화로 준 회색 정장·두 손 모은 사진에서 오려 냄(저장소·Drive 에 없음 — 다시 만들 땐 사용자에게 사진 요청).
-- 블로그: 메뉴 띠 아래 100px 부터 글씨, 아래 카드 5 = 위젯(x 486+186k·가로 170·위 321~600). 위젯 주소: ④ `https://www.instagram.com/___sd.eyo/` ⑤ `https://pf.kakao.com/_yMvnX/chat`, ①~③ = 보험금·실비 / 병원비·돌봄 / 지원금·제도 카테고리(사용자가 넣음). 블로그 바탕 색 #12463D 권장.
+- 블로그: 메뉴 띠 아래 100px 부터 글씨, 아래 카드 5 = 위젯(x 486+186k·가로 170·위 321~600). 위젯 주소: ④ `https://www.instagram.com/___sd.eyo/` ⑤ `https://pf.kakao.com/_xixlxkxeX/chat`, ①~③ = 보험금·실비 / 병원비·돌봄 / 지원금·제도 카테고리(사용자가 넣음). 블로그 바탕 색 #12463D 권장.
 - 정해진 것: 블로그 배너는 심의 대상 아님(사용자), 배너 그림은 늘 low(`make-gpt.mjs` 가 강제), 생활보장 글은 위 카테고리 3개에 하위 없이.
 ### 11/9 낮 — 🗂 맛집·카페 글 → 강팀장·일상 (사용자 "맛집·카페, 여행·나들이 카테고리를 삭제할거야, 맛집·카페 글들을 강팀장·일상으로")
 - 블로그: 강팀장·일상(233) 아래 맛집·카페 180 · 여행·나들이 0. `launchers/category-move.cmd`(이제 `-Daily`) → `naver-category-move.mjs --daily` 가 블로그에서 바로 읽어 강팀장·일상 하위 칸의 글을 모두 위 칸으로 — 1편 먼저 옮겨 다시 읽어 확인, 묶음마다 확인, 기록 Drive `run-logs/category-move-*`(대상 목록 daily-plan.tsv).
