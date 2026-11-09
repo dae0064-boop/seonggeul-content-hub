@@ -12,6 +12,24 @@
       "size": "1536x1024",
       "quality": "low",
       "prompt": "Wide photo of a modern, clean insurance consultation room, clearly recognizable, only slightly soft focus (light depth of field, NOT heavily blurred), no people, no text, no logos, no brand names. In the room: a neat wooden consultation desk with two comfortable chairs facing each other, a laptop and a tidy document folder and pen on the desk, a bookshelf with binders, a large window with soft daylight, a green plant, warm pendant lights. Color graded in deep emerald green (#12463D) and dark teal with warm wood highlights, calm, trustworthy and premium. Composition: the desk and chairs on the right half of the image; the left and center areas are darker and plainer (a dark green wall) to leave space for white text. Keep the main details inside the horizontal band between 30% and 70% of the image height. Variation: a slightly wider view with a round meeting table, a wall-mounted screen turned off, and bright window light."
+    },
+    {
+      "slug": "consult-ph2-bill",
+      "size": "1024x1024",
+      "quality": "low",
+      "prompt": "A clean bright lifestyle photo, square, soft natural window light, warm neutral tones with a hint of teal, shallow depth of field, calm and trustworthy mood, no faces, no readable text, no logos, no brand names. Subject: close-up of a person's hand holding a pen and filling out an insurance claim form on a desk, with a hospital receipt, a medical bill statement and a small calculator next to it; only the hand and forearm in a neat shirt sleeve are visible; the form has blank lines and checkboxes with no readable text."
+    },
+    {
+      "slug": "consult-ph2-care",
+      "size": "1024x1024",
+      "quality": "low",
+      "prompt": "A clean bright lifestyle photo, square, soft natural window light, warm neutral tones with a hint of teal, shallow depth of field, calm and trustworthy mood, no faces, no readable text, no logos, no brand names. Subject: a caregiver's hand gently holding an elderly person's hand on a hospital bed with a light blanket, an IV stand softly blurred in the background; only hands and arms are visible, warm and caring mood."
+    },
+    {
+      "slug": "consult-ph2-won",
+      "size": "1024x1024",
+      "quality": "low",
+      "prompt": "A clean bright lifestyle photo, square, soft natural window light, warm neutral tones with a hint of teal, shallow depth of field, calm and trustworthy mood, no faces, no readable text, no logos, no brand names. Subject: a white envelope with a fan of Korean 50,000 won style banknotes (yellow-orange paper money) peeking out, next to an official document folder with a red round stamp, on a clean desk; the banknotes are partly hidden and slightly out of focus, no readable numbers or text."
     }
   ],
   "_설명2": "2026-11-02 사용자가 블로그 전체 화면을 보내 줌 → 스킨 배경 1920×600(가운데 966px 칸에 글씨·아이콘, 오른쪽 칸 밖에 인물)으로 바꿈. 바탕 2장 + 아이콘 5장 = 7장 low.",
@@ -77,5 +95,6 @@
   "_설명15": "2026-11-09 사용자 '카테고리 카드 아이콘이 느낌이 안 산다' → 3D 아이콘 3장(consult-ic3d-*, high) + 사진 3장(consult-ph-*, medium) 비교용. 약 1,300원. → 같은 날 사용자 '더 저렴하게' — 6장 모두 low(약 60원).",
   "_설명16": "2026-11-09 사용자: ① 보험금 청구 서류를 작성하는 느낌 ② 병원비·돌봄은 더 돌봄다운 사진 ③ 지원금은 5만 원권 모양 → consult-ph2-* 3장, low(약 30원).",
   "_설명17": "2026-11-09 사용자 '바탕 GPT 로 그려 줘' → 딥그린 흐릿한 상담실(green1)·병원 로비(green2) 바탕 2장, low(약 20원). 클라우드가 1920×600 으로 잘라 fresh.mjs --bgimg 로 얹는다.",
-  "_설명18": "2026-11-09 사용자 '상담실이 너무 흐릿해서 상담실처럼 안 보인다' → 상담실이 알아보이게(살짝만 흐리게) 2장, low(약 20원)."
+  "_설명18": "2026-11-09 사용자 '상담실이 너무 흐릿해서 상담실처럼 안 보인다' → 상담실이 알아보이게(살짝만 흐리게) 2장, low(약 20원).",
+  "_설명19": "2026-11-09 사용자 '2배 배너에 사진이 안 들어갔어' — 낮에 폴더를 정리하며 consult-ph2-* 가 지워져 같은 프롬프트로 다시(low 약 30원). banner-2x.cmd 가 없을 때만 만든다."
 }
