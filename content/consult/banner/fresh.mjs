@@ -5,6 +5,7 @@ import fs from 'node:fs'; import path from 'node:path'; import { fileURLToPath }
 const HERE = path.dirname(fileURLToPath(import.meta.url)); const ROOT = path.resolve(HERE, '../../..');
 const A = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : d; };
 const GUIDE = process.argv.includes('--guide');
+const BGI = A('--bgimg', ''); const bgimg = BGI && fs.existsSync(BGI) ? `data:image/jpeg;base64,${fs.readFileSync(BGI).toString('base64')}` : '';
 const font = f => { const fp = fs.existsSync(path.join(ROOT, 'scripts/lib/fonts', f)) ? path.join(ROOT, 'scripts/lib/fonts', f) : path.join(ROOT, 'scripts/threads/fonts', f); return `data:font/${f.endsWith('.otf') ? 'otf' : 'ttf'};base64,${fs.readFileSync(fp).toString('base64')}`; };
 // 제목 글씨체·자간 (2026-11-09 사용자 "자간 넓혀 줘, 답답해 보여") — --hfont gothic|pretendard|blackhan, --ls 자간(px)
 const HF = { gothic: 'GothicA1-ExtraBold.ttf', pretendard: 'Pretendard-Bold.otf', blackhan: 'BlackHanSans-Regular.ttf' }[A('--hfont', 'pretendard')] || 'Pretendard-Bold.otf';
@@ -115,7 +116,7 @@ svg.deco,svg.pat{position:absolute;inset:0}
 .bub b{color:${CO};font-weight:normal}
 .guide{position:absolute;top:321px;width:170px;height:279px;border:2px dashed rgba(220,40,40,.8)}
 </style></head><body><div class="bn">
-${pattern()}
+${bgimg ? `<img src="${bgimg}" style="position:absolute;inset:0;width:1920px;height:600px">` : pattern()}
 <div class="tag">보험, 어렵지 않게</div>
 <div class="h l1">아플 때 받을 보험금,</div>
 <div class="h l2"><em>놓치지 않게</em> 챙겨 드려요</div>
