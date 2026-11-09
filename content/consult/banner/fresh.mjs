@@ -9,9 +9,12 @@ const font = f => `data:font/ttf;base64,${fs.readFileSync(path.join(ROOT, 'scrip
 const PH = A('--photo', ''); const photo = PH && fs.existsSync(PH) ? `data:image/png;base64,${fs.readFileSync(PH).toString('base64')}` : '';
 const TE = '#0d6b66', TL = '#e3f2ef', CO = '#ff7a59', INK = '#1f2a2e';
 const IC = {
-  bill: `<svg viewBox="0 0 64 64"><rect x="15" y="9" width="34" height="46" rx="6" fill="#fff" stroke="${TE}" stroke-width="3.5"/><path d="M23 21h18M23 29h18M23 37h10" stroke="${TE}" stroke-width="3.5" stroke-linecap="round"/><circle cx="46" cy="46" r="10" fill="${CO}"/><path d="M41 46l4 4 6-7" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-  care: `<svg viewBox="0 0 64 64"><path d="M32 31c-8-6-12-10-12-15 0-4 3-7 6-7 3 0 5 2 6 4 1-2 3-4 6-4 3 0 6 3 6 7 0 5-4 9-12 15z" fill="${CO}"/><path d="M8 35l8 14c2 3 5 5 9 5h3V45l-8-9c-2-2-5-2-6 0M56 35l-8 14c-2 3-5 5-9 5h-3V45l8-9c2-2 5-2 6 0" stroke="${TE}" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
-  won: `<svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="23" fill="#fff" stroke="${TE}" stroke-width="3.5"/><path d="M20 24l6 18 6-14 6 14 6-18M18 32h28" stroke="${CO}" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  // 보험금·실비: 병원 영수증(톱니 아래) + 돌려받는 돈(₩ 동전)
+  bill: `<svg viewBox="0 0 64 64"><path d="M14 8h30v44l-3.75-3-3.75 3-3.75-3-3.75 3-3.75-3-3.75 3-3.75-3L14 52z" fill="#fff" stroke="${TE}" stroke-width="3" stroke-linejoin="round"/><path d="M29 15v8M25 19h8" stroke="${CO}" stroke-width="3" stroke-linecap="round"/><path d="M21 30h16M21 37h12" stroke="${TE}" stroke-width="3" stroke-linecap="round"/><circle cx="46" cy="44" r="12" fill="#ffd25e" stroke="#e0a92e" stroke-width="2.5"/><path d="M40 39l2.5 9 3.5-7 3.5 7 2.5-9M39 44h14" stroke="#8a5a00" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
+  // 병원비·돌봄: 병원 건물(십자) + 돌봄 하트
+  care: `<svg viewBox="0 0 64 64"><path d="M10 54V24l14-8 14 8v30" fill="#fff" stroke="${TE}" stroke-width="3" stroke-linejoin="round"/><path d="M24 25v10M19 30h10" stroke="${CO}" stroke-width="3.2" stroke-linecap="round"/><path d="M17 54v-9h14v9" fill="none" stroke="${TE}" stroke-width="3" stroke-linejoin="round"/><path d="M6 54h32" stroke="${TE}" stroke-width="3" stroke-linecap="round"/><path d="M47 52c-9-6-13-10.5-13-15.5 0-4 3-7 6.5-7 2.8 0 4.8 1.6 6.5 4 1.7-2.4 3.7-4 6.5-4 3.5 0 6.5 3 6.5 7 0 5-4 9.5-13 15.5z" fill="${CO}"/></svg>`,
+  // 지원금·제도: 나라 지원 서류(도장) + 돈 봉투
+  won: `<svg viewBox="0 0 64 64"><rect x="10" y="8" width="30" height="38" rx="4" fill="#fff" stroke="${TE}" stroke-width="3"/><path d="M17 17h16M17 24h16M17 31h10" stroke="${TE}" stroke-width="3" stroke-linecap="round"/><circle cx="33" cy="38" r="6" fill="none" stroke="${CO}" stroke-width="2.6"/><rect x="28" y="34" width="30" height="22" rx="4" fill="#ffd25e" stroke="#e0a92e" stroke-width="2.5"/><path d="M28 37l15 10 15-10" fill="none" stroke="#e0a92e" stroke-width="2.5" stroke-linejoin="round"/><path d="M38 49l2 5 3-4 3 4 2-5" stroke="#8a5a00" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
   insta: `<svg viewBox="0 0 64 64"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".35" stop-color="#FA7E1E"/><stop offset=".65" stop-color="#D62976"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="6" y="6" width="52" height="52" rx="15" fill="url(#ig)"/><rect x="17" y="17" width="30" height="30" rx="9" fill="none" stroke="#fff" stroke-width="4"/><circle cx="32" cy="32" r="7.5" fill="none" stroke="#fff" stroke-width="4"/><circle cx="41.5" cy="22.5" r="2.5" fill="#fff"/></svg>`,
   kakao: `<svg viewBox="0 0 64 64"><rect x="6" y="6" width="52" height="52" rx="15" fill="#FEE500"/><path d="M32 17c-10 0-18 6.3-18 14 0 5 3.3 9.3 8.3 11.8l-2 7.4 8-5.2c1.2.2 2.4.3 3.7.3 10 0 18-6.3 18-14.1S42 17 32 17z" fill="#3A1D1D"/></svg>`,
 };
@@ -37,7 +40,7 @@ svg.deco{position:absolute;inset:0}
 .col{position:absolute;top:321px;width:170px;height:279px}
 .card{position:absolute;left:4px;right:4px;top:22px;height:232px;border-radius:24px;background:#fff;box-shadow:0 10px 26px rgba(31,42,46,.10);border:1.5px solid #ece8e1;text-align:center}
 .card .ic{width:78px;height:78px;margin:24px auto 0;border-radius:50%;background:${TL};display:flex;align-items:center;justify-content:center}
-.card .ic svg{width:50px;height:50px}
+.card .ic svg{width:58px;height:58px}
 .card .t{margin-top:16px;font-family:XB;font-size:21px;letter-spacing:-.6px;color:${INK}}
 .card .s{margin-top:7px;font-size:14px;color:#6c7678}
 .card .go{position:absolute;left:0;right:0;bottom:16px;font-family:GB;font-size:14px;color:${TE}}
