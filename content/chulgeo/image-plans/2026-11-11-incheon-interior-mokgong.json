@@ -1,0 +1,76 @@
+{
+  "slug": "2026-11-11-incheon-interior-mokgong",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "철거를 마치고 비워 둔 아파트 거실 벽과 천장 (대표사진)",
+      "scene": "wide eye-level view of an empty Korean apartment living room right after demolition, bare grey cement walls and exposed concrete ceiling, swept floor, a work lamp standing in the corner.",
+      "prompt": "Camera and composition: wide eye-level view of an empty Korean apartment living room right after demolition, bare grey cement walls and exposed concrete ceiling, swept floor, a work lamp standing in the corner. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "인천 인테리어\n목공 언제 할까"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "시멘트가 드러난 빈 방 바닥을 쓸어 정리한 모습",
+      "scene": "high angle view of a bare cement floor in an empty Korean apartment bedroom, swept clean with a broom and dustpan leaning against the wall, soft window light.",
+      "prompt": "Camera and composition: high angle view of a bare cement floor in an empty Korean apartment bedroom, swept clean with a broom and dustpan leaning against the wall, soft window light. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "새 각재로 틀을 세운 방 벽 한쪽",
+      "scene": "side view of one bedroom wall where new pale wooden studs have been fixed upright in a neat grid against grey cement, a worker's gloved hand holding a level at the edge of the frame.",
+      "prompt": "Camera and composition: side view of one bedroom wall where new pale wooden studs have been fixed upright in a neat grid against grey cement, a worker's gloved hand holding a level at the edge of the frame. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "철거부터 마감까지 공정 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "철거부터 마감까지",
+        "items": [
+          "철거와 폐기물 반출",
+          "설비·전기 자리 잡기",
+          "목공 (가벽·천장·문틀)",
+          "타일과 도장·필름",
+          "도배와 바닥 마감"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "기존 문틀만 남긴 채 벽지를 걷어 낸 방 입구",
+      "scene": "doorway of a Korean apartment room where wallpaper has been stripped off around an old wooden door frame that is kept in place, protective tape around the frame edges.",
+      "prompt": "Camera and composition: doorway of a Korean apartment room where wallpaper has been stripped off around an old wooden door frame that is kept in place, protective tape around the frame edges. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "엘리베이터 앞 바닥에 깔아 둔 회색 보양재",
+      "scene": "Korean apartment elevator lobby with grey protective sheets taped on the floor in front of the elevator doors, a hand cart parked to one side, calm indoor light.",
+      "prompt": "Camera and composition: Korean apartment elevator lobby with grey protective sheets taped on the floor in front of the elevator doors, a hand cart parked to one side, calm indoor light. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "철거가 끝난 방에 반듯하게 쌓아 둔 새 각재",
+      "scene": "a neatly stacked bundle of new pale wooden lumber lying on a clean cement floor in an empty demolished room, afternoon light from a window.",
+      "prompt": "Camera and composition: a neatly stacked bundle of new pale wooden lumber lying on a clean cement floor in an empty demolished room, afternoon light from a window. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "틀이 세워지고 정리된 방 전체 모습",
+      "scene": "wide view of a whole Korean apartment room with new wooden ceiling frame and wall studs installed over clean cement, tidy floor, soft daylight, calm and orderly.",
+      "prompt": "Camera and composition: wide view of a whole Korean apartment room with new wooden ceiling frame and wall studs installed over clean cement, tidy floor, soft daylight, calm and orderly. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}
