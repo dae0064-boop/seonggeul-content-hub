@@ -241,12 +241,12 @@ function listGreenHtml(S, c, o) {
   const sub = c.sub || c.ask || '';
   const foot = c.memo ? `<div class="ft"><span class="chip ok">💡 설계사 메모</span><span class="fitw">${esc(c.memo)}</span></div>`
     : c.where ? `<div class="ft"><span class="chip">⚠ 글에서 확인</span>『${esc(c.where)}』</div>` : '';
-  const right = o.mascot ? 250 : 40;
   return `${base(S, (k) => `
-    .h{position:absolute;left:${50 * k}px;right:${50 * k}px;top:${70 * k}px;text-align:center;font-family:"HAN";font-size:${82 * k}px;color:#fff;letter-spacing:-.03em}
+    .h{position:absolute;left:${64 * k}px;width:${(o.mascot ? 640 : 900) * k}px;top:${84 * k}px;text-align:${o.mascot ? 'left' : 'center'};font-family:"HAN";font-size:${82 * k}px;color:#fff;letter-spacing:-.03em}
     .h b{font-weight:normal;color:${G.gold2}}
-    .sub{position:absolute;left:${60 * k}px;right:${60 * k}px;top:${178 * k}px;text-align:center;font-family:"PTS";font-size:${30 * k}px;color:${G.mint2}}
-    .sheet{left:${74 * k}px;right:${74 * k}px;top:${292 * k}px;bottom:${96 * k}px;padding:${52 * k}px ${right * k}px ${28 * k}px ${40 * k}px;display:flex;flex-direction:column}
+    .sub{position:absolute;left:${66 * k}px;width:${(o.mascot ? 620 : 890) * k}px;top:${192 * k}px;text-align:${o.mascot ? 'left' : 'center'};font-family:"PTS";font-size:${30 * k}px;color:${G.mint2}}
+    .sheet{left:${74 * k}px;right:${74 * k}px;top:${292 * k}px;bottom:${96 * k}px;padding:${52 * k}px ${40 * k}px ${28 * k}px;display:flex;flex-direction:column;z-index:2}
+    .mascot{z-index:1}
     .rows{flex:1;display:flex;flex-direction:column;justify-content:center;gap:${18 * k}px}
     .r{height:${rowH}px;border-radius:${18 * k}px;background:#F2F6F4;border:${2 * k}px solid ${G.line};display:flex;align-items:center;gap:${22 * k}px;padding:0 ${30 * k}px;font-family:"PTD";font-size:${40 * k}px;color:${G.ink};white-space:nowrap;overflow:hidden}
     .r.hl{background:linear-gradient(90deg,#FFF7E3,#FDF1D2);border-color:${G.gold2}}
@@ -255,14 +255,14 @@ function listGreenHtml(S, c, o) {
     .chip{flex:none;background:#FFF1CF;color:#8A6416;border-radius:${10 * k}px;padding:${6 * k}px ${14 * k}px;font-family:"PTD";font-size:${24 * k}px}.chip.ok{background:${G.mint};color:${G.deep}}
     .br{color:${G.mint2}}
   `)}<body><div class="c dark">
-    ${sparkle(k, 90, 90, 0.7, G.gold2)}${sparkle(k, 880, 200, 0.5, G.gold2)}
-    <div class="h"><div class="fitw" style="margin:0 auto">${headOf(c.title)}</div></div>${sub ? `<div class="sub"><div class="fitw" style="margin:0 auto">${esc(sub)}</div></div>` : ''}
+    ${sparkle(k, o.mascot ? 700 : 90, o.mascot ? 40 : 90, 0.7, G.gold2)}${o.mascot ? '' : sparkle(k, 880, 200, 0.5, G.gold2)}
+    <div class="h"><div class="fitw"${o.mascot ? '' : ' style="margin:0 auto"'}>${headOf(c.title)}</div></div>${sub ? `<div class="sub"><div class="fitw"${o.mascot ? '' : ' style="margin:0 auto"'}>${esc(sub)}</div></div>` : ''}
     <div class="sheet">${rings(k, 10, 876)}
       <div class="rows">${c.items.map((t, i) => `<div class="r${i === hl ? ' hl' : ''}"><i>${steps ? i + 1 : check(k)}</i><span class="fitw">${esc(t)}</span></div>`).join('')}</div>
       ${foot}
     </div>
-    ${o.mascot ? `<img class="mascot" src="${o.mascot}" style="right:${-20 * k}px;bottom:${-10 * k}px;height:${430 * k}px">` : magnifier(k, 760, 330)}
-    <div class="br"${o.mascot ? ` style="left:${74 * k}px;right:auto"` : ''}>${brand(c)}</div>
+    ${o.mascot ? `<img class="mascot" src="${o.mascot}" style="right:${40 * k}px;top:${36 * k}px;height:${380 * k}px">` : magnifier(k, 760, 330)}
+    <div class="br">${brand(c)}</div>
   </div></body>`;
 }
 
@@ -290,10 +290,9 @@ export function poseFor(c, seed) {
   let h = 0; for (const ch of String(seed)) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
   return list[h % list.length];
 }
-/** 메모지 칸(check·steps)에서는 줄이 짧을 때만 캐릭터를 넣는다 (긴 줄을 가리지 않게). 아니면 돋보기 */
+/** 캐릭터를 넣을지 — 지금은 모든 카드 */
 export function wantsMascot(c) {
-  if (['check', 'steps'].includes(c.type)) return (c.items || []).every((t) => String(t).length <= 11) && !c.memo && !c.where;
-  return true;
+  return true; // 2026-11-09 사용자 "메모지 카드에도 캐릭터" — 메모지 뒤 오른쪽 위에 서 있게 해 줄 폭은 그대로
 }
 
 /** 글자가 칸을 넘으면 줄인다 (renderCards 의 page.evaluate 안에서 부른다) */
