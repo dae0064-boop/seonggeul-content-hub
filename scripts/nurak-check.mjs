@@ -88,8 +88,10 @@ async function viaApi(title, blogId, fetchImpl) {
   return hitInItems(j.items || [], blogId, title);
 }
 
-async function viaPage(title, blogId, fetchImpl) {
-  const url = `https://search.naver.com/search.naver?ssc=tab.blog.all&query=${encodeURIComponent(title)}`;
+async function viaPage(title, blogId, fetchImpl, { deep = false } = {}) {
+  // deep: 따옴표로 묶은 제목 + 최신순 — 같은 날 같은 이슈 글이 수백 편이면 정확도순 1페이지 밖으로 밀려 '안 보임'처럼 보인다(2026-11-09)
+  const q = deep ? `"${title}"` : title;
+  const url = `https://search.naver.com/search.naver?ssc=tab.blog.all&query=${encodeURIComponent(q)}${deep ? '&sm=tab_opt&nso=so%3Add%2Cp%3Aall' : ''}`;
   const res = await fetchImpl(url, { headers: { 'user-agent': UA, 'accept-language': 'ko-KR,ko;q=0.9' }, signal: AbortSignal.timeout(20000) });
   if (!res.ok) throw new Error(`검색 화면 ${res.status}`);
   const html = await res.text();
@@ -112,8 +114,15 @@ export async function checkAll(posts, blogId, { fetchImpl = globalThis.fetch, wa
         break;
       }
     }
-    results.push({ ...p, found, error: found === null ? error : '' });
-    log(`  ${found === true ? '✅' : found === false ? '❌ 누락?' : '⚠ 확인 못 함'} ${p.date} ${p.title}${found === null ? ` (${error})` : ''}`);
+    // 못 찾았으면 한 번 더: 따옴표 제목·최신순. 여기서 보이면 '1페이지 밖'(순위 문제), 여기서도 없으면 진짜 누락
+    let deep = null;
+    if (found === false) {
+      await sleep(wait);
+      try { deep = await viaPage(p.title, blogId, fetchImpl, { deep: true }); } catch { deep = null; }
+    }
+    results.push({ ...p, found, deep, error: found === null ? error : '' });
+    const mark = found === true ? '✅' : found === false ? (deep === true ? '△ 1페이지 밖(최신순엔 보임)' : deep === false ? '❌ 누락(최신순에도 없음)' : '❌ 누락?(다시 확인 못 함)') : '⚠ 확인 못 함';
+    log(`  ${mark} ${p.date} ${p.title}${found === null ? ` (${error})` : ''}`);
     await sleep(wait);
   }
   return { method, results };
@@ -135,18 +144,25 @@ async function main() {
   const { method, results } = await checkAll(posts, blogId, { log: console.log });
   const byDate = {};
   for (const r of results) {
-    const d = (byDate[r.date] ||= { checked: 0, found: 0, missing: 0, unknown: 0 });
-    d.checked++; if (r.found === true) d.found++; else if (r.found === false) d.missing++; else d.unknown++;
+    const d = (byDate[r.date] ||= { checked: 0, found: 0, missing: 0, outOfPage: 0, unknown: 0 });
+    d.checked++;
+    if (r.found === true) d.found++;
+    else if (r.found === false && r.deep === true) d.outOfPage++;
+    else if (r.found === false) d.missing++;
+    else d.unknown++;
   }
-  const missing = results.filter((r) => r.found === false);
+  const outOfPage = results.filter((r) => r.found === false && r.deep === true);
+  const missing = results.filter((r) => r.found === false && r.deep !== true);
   const sure = results.filter((r) => r.found !== null).length;
   const rate = sure ? Math.round((missing.length / sure) * 100) : null;
-  fs.writeFileSync(path.join(out, 'nurak.json'), JSON.stringify({ at: new Date().toISOString(), blogId, method, byDate, missingRate: rate, results }, null, 1));
+  const rate1p = sure ? Math.round(((missing.length + outOfPage.length) / sure) * 100) : null;
+  fs.writeFileSync(path.join(out, 'nurak.json'), JSON.stringify({ at: new Date().toISOString(), blogId, method, byDate, missingRate: rate, notOnPage1Rate: rate1p, results }, null, 1));
   const lines = [
     `검색 누락 검사 ${today} (방법: ${method === 'api' ? '검색 API' : '검색 화면'})`,
-    ...Object.entries(byDate).map(([d, v]) => `${d}: ${v.checked}편 중 검색됨 ${v.found} · 안 보임 ${v.missing} · 확인 못 함 ${v.unknown}`),
-    `안 보인 비율 ${rate === null ? '—' : `${rate}%`}`,
+    ...Object.entries(byDate).map(([d, v]) => `${d}: ${v.checked}편 중 검색됨 ${v.found} · 1페이지 밖 ${v.outOfPage} · 누락 ${v.missing} · 확인 못 함 ${v.unknown}`),
+    `누락 비율 ${rate === null ? '—' : `${rate}%`} (진짜 안 보임 — 판단 기준) · 1페이지에 없는 비율 ${rate1p === null ? '—' : `${rate1p}%`} (예전 '안 보인 비율')`,
     ...missing.map((r) => `❌ ${r.date} ${r.title}`),
+    ...outOfPage.map((r) => `△ ${r.date} ${r.title}`),
   ];
   fs.writeFileSync(path.join(out, 'nurak.txt'), lines.join('\n') + '\n');
   console.log(lines.join('\n'));
