@@ -1,0 +1,28 @@
+{
+  "_설명": "성글벙글 정보 카드 캐릭터 '강팀장' — 친근한 설계사, 클레이 3D (2026-11-09 사용자 — \"친근한 설계사라는 클레이 3D 캐릭터를 하나 만들어서 쭉 밀고 가 보게\"). PC 가 scripts/cards/make-mascot.mjs 로 만들어 Drive ClaudeWorkspace/mascot/ 와 이 PC 의 content/mascot/img/ 에 둔다. 1단계 후보 3장(low 약 30원) → 사용자가 하나 고르면 chosen 에 slug 를 적는다 → 2단계 같은 캐릭터로 자세 6장(사진 고치기, low 약 60원). 이미 있는 그림은 다시 만들지 않는다.",
+  "chosen": "",
+  "style": "Cute 3D clay character illustration, Pixar-like, soft matte clay texture, smooth rounded shapes, big friendly glossy eyes, gentle soft studio lighting, high detail, polished. Upper body, centered, character fills about 70% of the height. Plain pure white background (#FFFFFF), no floor, no shadow on the background, nothing else in the frame. Absolutely no text, no letters, no numbers, no logos.",
+  "candidates": [
+    {
+      "slug": "cand-a",
+      "who": "A friendly Korean male insurance planner in his early 30s: short black hair with soft side-swept bangs, round friendly face, warm closed-mouth smile, rosy cheeks. Wearing a deep forest green knit cardigan over a soft butter-yellow collared shirt, a small round gold pin on the cardigan. Relaxed, welcoming pose with one hand raised in a small hello."
+    },
+    {
+      "slug": "cand-b",
+      "who": "A friendly Korean male insurance planner in his early 30s: short neat black hair, thin round gold-rim glasses, round kind face, bright open smile. Wearing a deep forest green blazer over a light mint shirt, no tie. Holding a small cream-colored notebook against his chest, welcoming expression."
+    },
+    {
+      "slug": "cand-c",
+      "who": "A friendly Korean female insurance planner in her early 30s: shoulder-length soft brown hair, round friendly face, warm smile, rosy cheeks. Wearing a deep forest green knit cardigan over a light mint blouse, a small round gold pin on the cardigan. Hands lightly clasped in front, welcoming expression."
+    }
+  ],
+  "poses": [
+    { "slug": "pose-magnifier", "for": "lead·selfcheck", "pose": "holding a magnifying glass up near the face with one hand and peering through it curiously, slightly turned to the left" },
+    { "slug": "pose-think", "for": "number", "pose": "resting the chin on one hand, thinking with a gentle smile, looking slightly up to the left" },
+    { "slug": "pose-point", "for": "memo·steps", "pose": "raising the index finger as if explaining a tip, cheerful explaining expression, slightly turned to the left" },
+    { "slug": "pose-clipboard", "for": "check", "pose": "holding a small clipboard with a checklist against the chest, pointing at it with a pen, confident kind smile" },
+    { "slug": "pose-thumb", "for": "quiz·result", "pose": "giving a thumbs-up with one hand, bright happy smile" },
+    { "slug": "pose-wave", "for": "chat", "pose": "waving hello with one hand, warm welcoming smile" }
+  ],
+  "pose_prompt": "Keep this exact same character: the same face, hairstyle, eyes, smile, skin tone, outfit and colors, and the same cute 3D clay Pixar-like style and lighting. Change only the pose: {pose}. Upper body, centered, plain pure white background (#FFFFFF), no shadow on the background, nothing else in the frame. No text, no letters, no logos."
+}
