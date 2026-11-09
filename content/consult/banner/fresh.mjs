@@ -69,7 +69,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:J;src:url(${font('Jua-Regular.ttf')})}
 *{margin:0;box-sizing:border-box}body{width:1920px;height:600px;overflow:hidden}
 .bn{position:relative;width:1920px;height:600px;overflow:hidden;background:radial-gradient(ellipse 300px 340px at 1600px 300px,${TH.glow || 'rgba(255,255,255,.75)'} 0%,rgba(255,255,255,0) 100%),${TH.bg};font-family:GM;color:${INK}}
-${TH.dark ? `.l1{color:#d9e4e0 !important}.l2{color:#fff !important}.l2 em{color:${TH.te} !important;background:none !important;box-shadow:inset 0 -8px 0 rgba(255,122,89,.55)}` : ''}
+${TH.dark ? `.l1{color:#d9e4e0 !important}.l2{color:#fff !important}.l2 em{color:#ffd54f !important;background:linear-gradient(transparent 84%,#ff6b4a 84%) !important;box-shadow:none;padding-bottom:2px}` : ''}
 svg.deco,svg.pat{position:absolute;inset:0}
 .tag{position:absolute;left:500px;top:92px;letter-spacing:1.2px;padding:7px 18px;border-radius:20px;background:#fff;color:${TE};font-family:GB;font-size:20px}
 .h{position:absolute;left:498px;font-family:HF;letter-spacing:${LS}px;word-spacing:8px}
@@ -91,9 +91,10 @@ svg.deco,svg.pat{position:absolute;inset:0}
 .card.i .ic{background:#fdeef3}.card.i .go{color:#c13584}
 .circle{position:absolute;left:1440px;top:70px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#1d8a83 0%,${TE} 70%,#0a5753 100%)}
 .ring{position:absolute;left:1410px;top:40px;width:500px;height:500px;border-radius:50%;border:2px dashed rgba(255,255,255,.7)}
-.ph{position:absolute;left:1490px;top:44px;height:556px;overflow:hidden}
+.ph{position:absolute;left:1440px;top:44px;height:556px;overflow:hidden}
 .ph img{height:630px;display:block}
-.bub{position:absolute;left:1268px;top:118px;padding:14px 22px;border-radius:22px 22px 4px 22px;background:#fff;box-shadow:0 10px 24px rgba(31,42,46,.12);font-family:J;font-size:26px;color:${INK};line-height:1.3;text-align:center}
+.bub{position:absolute;left:1150px;top:96px;padding:16px 24px;border-radius:24px;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.18);font-family:J;font-size:25px;color:${INK};line-height:1.35;text-align:center;letter-spacing:.5px}
+.bub:after{content:'';position:absolute;right:-16px;top:58px;border-width:12px 0 12px 20px;border-style:solid;border-color:transparent transparent transparent #fff}
 .bub b{color:${CO};font-weight:normal}
 .guide{position:absolute;top:321px;width:170px;height:279px;border:2px dashed rgba(220,40,40,.8)}
 </style></head><body><div class="bn">
@@ -103,7 +104,7 @@ ${pattern()}
 <div class="h l2"><em>놓치지 않게</em> 챙겨 드려요</div>
 <div class="chips"><div class="chip">${chk}보험사 <b>34개사</b> 비교·분석</div><div class="chip">${chk}보험금 청구 <b>같이</b> 챙겨 드려요</div></div>
 <div class="ph">${photo ? `<img src="${photo}">` : ''}</div>
-<div class="bub">궁금한 건<br><b>강팀장</b>에게 편하게!</div>
+<div class="bub">궁금한 건<br><b>강팀장</b>에게 편하게 물어보세요!</div>
 ${COLS.map(([ic, t, s], k) => `<div class="col" style="left:${X(k)}px"><div class="card ${ic === 'kakao' ? 'k' : ic === 'insta' ? 'i' : ''} ${PHOTOS[ic] ? 'p' : ''}">${PHOTOS[ic] ? `<div class="pic" style="background-image:url(${PHOTOS[ic]})"></div>` : `<div class="ic">${IC[ic]}</div>`}<div class="t">${t}</div><div class="s">${s}</div><div class="go">바로가기 ›</div></div></div>`).join('')}
 ${GUIDE ? [0, 1, 2, 3, 4].map(k => `<div class="guide" style="left:${X(k)}px"></div>`).join('') : ''}
 </div></body></html>`;
