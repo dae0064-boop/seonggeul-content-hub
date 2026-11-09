@@ -12,6 +12,8 @@ if (!PH || !fs.existsSync(PH)) { console.error('사용법: node content/consult/
 const OUT = A('--out', '.');
 const photo = `data:image/png;base64,${fs.readFileSync(PH).toString('base64')}`;
 // --bgimg 사무실 바탕 (배너와 같은 그림, Drive 블로그배너/consult-bg-room1) — 없으면 딥그린 그라데이션
+// 커버 칩 (2026-11-09 사용자 "몇 개 더") — 정보 주제만, 가입·비교 권유 말 없이
+const CHIPS = ['실비·보험금 청구', '수술비·진단비', '병원비·간병·요양', '지원금·건강보험 제도'];
 const BGI = A('--bgimg', '');
 const bgimg = BGI && fs.existsSync(BGI) ? `data:image/png;base64,${fs.readFileSync(BGI).toString('base64')}` : '';
 const font = (f) => `data:font/${f.endsWith('otf') ? 'otf' : 'ttf'};base64,${fs.readFileSync(f).toString('base64')}`;
@@ -51,18 +53,18 @@ const cover = `<html><head><style>${base}
 .ring.r2{width:600px;height:600px;right:-90px;top:120px;border-color:rgba(226,196,140,.2)}
 img.p{width:820px;right:-150px;top:120px}
 .fade{position:absolute;left:0;right:0;bottom:0;height:360px;background:linear-gradient(transparent,rgba(8,40,34,.92))}
-.t{position:absolute;left:72px;top:120px;color:#fbf5e9}
+.t{position:absolute;left:72px;top:84px;color:#fbf5e9}
 .chip{display:inline-block;font:26px M;letter-spacing:1px;color:#ecd39a;border:2px solid rgba(226,196,140,.8);background:rgba(6,30,26,.45);padding:10px 26px;border-radius:40px}
 .h{font:80px/1.24 S;margin-top:30px;letter-spacing:1px;color:#fbf5e9;text-shadow:0 4px 18px rgba(0,0,0,.35)}
 .h b{font-weight:inherit;text-shadow:none}
-.s{margin-top:36px;display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.s{margin-top:32px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
 .s span{font:29px M;color:#fbf5e9;border:2px solid rgba(226,196,140,.7);background:rgba(6,30,26,.5);padding:10px 24px 10px 16px;border-radius:40px}
 .s i{font-style:normal;display:inline-block;width:34px;height:34px;line-height:34px;text-align:center;border-radius:50%;background:#d9b46a;color:#12463D;font-size:21px;margin-right:12px;vertical-align:2px}
 </style></head><body>${room('70% 30%')}${bgimg ? '' : '<div class="ring r1"></div><div class="ring r2"></div>'}
 <img class="p" src="${photo}"><div class="fade"></div>
 <div class="t"><span class="chip">친근한 설계사</span>
 <div class="h">보험,<br><b class="gold">어렵지 않게</b><br>풀어 드려요</div>
-<div class="s"><span><i>✔</i>실비·보험금 청구</span><span><i>✔</i>병원비·돌봄 제도</span></div></div>
+<div class="s">${CHIPS.map((c) => `<span><i>✔</i>${c}</span>`).join('')}</div></div>
 </body></html>`;
 
 const browser = await chromium.launch();
