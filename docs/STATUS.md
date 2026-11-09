@@ -26,6 +26,11 @@
 
 ## 지금 상태
 
+### 11/9 낮 — 🎨 성글벙글이 상담 배너 (사용자 "성대의 싱글벙글, 부드럽고 편안하게, 사진과 이름만, 아래 위젯 5칸 중 인스타·카카오톡 채널")
+- 시안 `content/consult/banner/soft.mjs --name 강성대 [--photo 배경 없는 사진]` → 1920×600, 아래 카드 5개 = 위젯 칸(x 486~ · 가로 170 · 사이 16 · 위 321~600): 실비·보험금 / 의료비·건강보험 / 돌봄·요양 / 인스타그램 / 카카오톡 채널. 전화번호·직함 뺌. 이름·결과 PNG 는 저장소에 안 올림.
+- GPT 그림: 클라우드는 api.openai.com 막힘(키 입력은 사용자가 사양) → `content/blog-banner/prompts.json` soft-bg·soft-ic-bill·med·care 4장(low 약 $0.03)을 PC catchup(13·16·19·22시) 또는 `launchers/insta-now.cmd` 가 Drive `블로그배너/` 로. [ ] 받으면 `content/blog-banner/src/` 에 넣고 soft.mjs 로 합침.
+- [ ] 사용자 사진 파일(배경 없는 PNG 가 좋음) 받기 — 대화 캡처는 파일로 안 들어옴. 상담 단추·이름이 있어 GOMS 심의 뒤 게시.
+
 ### 11/9 낮 — 🗑 생활보장 밖 글 모두 삭제 → 🚀 생활보장으로 빠르게 조회수 (사용자 "비공개 말고 다 삭제했어. 앞으로 생활보장으로만 조회수를 만들어보자 빠르게")
 - published.tsv 의 그 219줄 status private → **deleted**.
 - 11/11 원고부터: 밤 8편(실비청구 시리즈 3 · ○○ 비용 2 · 돌봄·요양 2 · 지원 제도 1) + 아침 `issue-morning` 이 생활보장 '오늘의 제도 소식' 2편(08:20·12:20, korea.kr 보도자료) = 하루 10편. naver-daily 🚀 상자, issue-morning 🩺📰 상자.
