@@ -26,6 +26,9 @@
 
 ## 지금 상태
 
+### 11/9 낮 — 📝 상담형 글 2편 심의 초안 (사용자 "상담형 글 2편 초안도 지금 만들어줘")
+- `content/consult/상담형-1-실비청구기한.md/.docx` (상법 제662조 보험금청구권 3년) · `상담형-2-수술비보험금.md/.docx` (특약 이름·약관 '수술' 정의·수술분류표 3곳). 고지 문구·약관 참조 문구는 GOMS 적격 받은 글자 그대로, [채널 이름]·[심의필번호] 빈칸. "상담하다 보면 ~ 질문이 많아요" 는 설계사 본인 문장이라 사용자 확인 필요. 금지 표현 검사 0건. lint-post 는 상담 문구를 막으므로 돌리지 않음(심의용).
+
 ### 11/9 낮 — 🏗 철거 블로그 다시 켬 = breakandbuild (사용자 "breakandbuild 블로그에 철거 블로그로 운영할게, 자동 발행 붙여 줘")
 - 블로그 2개 시험 PC 실제 결과 ✅(11:39, 코드 0): seongdaeeyo(9222) → breakandbuild(9223, 이때 처음 로그인) → seongdaeeyo, 셋 다 글쓰기 화면·로그인 유지.
 - 켠 것: `auto-day.cmd` chulgeo-day 줄 REM 뗌 · `chulgeo-day.ps1` 프로필 chulgeo-chrome → **blog2-chrome**(로그인된 곳), 알림 안내는 two-blog-test.cmd · README·routines/chulgeo-daily.md 멈춤 상자 지움 · 클라우드 예약 작업 "다와이철거 다음 날 원고 5편"(19:43) 다시 켬.
