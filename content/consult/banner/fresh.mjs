@@ -133,8 +133,8 @@ ${BIG ? `
 .h.l1{top:198px;font-size:54px !important}
 .h.l2{top:266px;font-size:68px !important}
 .chips{top:392px;gap:14px}.bn .chip{font-size:22px;padding:10px 20px 10px 12px}.chip svg{width:26px;height:26px}
-.ph{left:1290px;top:40px;height:${H - 40}px}.ph img{height:${H + 160}px}
-.bub{left:1010px;top:96px;font-size:24px;padding:17px 26px}` : ''}
+.ph{left:1330px;top:40px;height:${H - 40}px}.ph img{height:${H + 30}px}
+.bub{left:1060px;top:110px;font-size:20px;padding:13px 20px;border-radius:20px}.bub:after{top:48px}` : ''}
 </style></head><body><div class="bn">
 ${bgimg ? `<img src="${bgimg}" style="position:absolute;inset:0;width:1920px;height:${H}px;object-fit:cover">` : pattern()}
 <div class="tag">보험, 어렵지 않게</div>
