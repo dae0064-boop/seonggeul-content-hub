@@ -4,37 +4,37 @@
     {
       "slug": "consult-ic3d-bill",
       "size": "1024x1024",
-      "quality": "high",
+      "quality": "low",
       "prompt": "A single cute glossy 3D icon in soft clay render style, centered on a pure plain white background, soft studio lighting with a gentle shadow under it, color palette of deep teal (#0D6B66), warm coral (#FF7A59), soft gold (#FFD25E) and white, rounded friendly shapes, high detail, no text, no letters, no numbers except the Korean won sign where described, no logos. Subject: a hospital receipt paper with a small red cross on top, and a shiny gold coin with a won sign (₩) leaning in front of it."
     },
     {
       "slug": "consult-ic3d-care",
       "size": "1024x1024",
-      "quality": "high",
+      "quality": "low",
       "prompt": "A single cute glossy 3D icon in soft clay render style, centered on a pure plain white background, soft studio lighting with a gentle shadow under it, color palette of deep teal (#0D6B66), warm coral (#FF7A59), soft gold (#FFD25E) and white, rounded friendly shapes, high detail, no text, no letters, no numbers except the Korean won sign where described, no logos. Subject: a small friendly hospital building with a cross sign on the roof, and a big coral heart floating in front of it."
     },
     {
       "slug": "consult-ic3d-won",
       "size": "1024x1024",
-      "quality": "high",
+      "quality": "low",
       "prompt": "A single cute glossy 3D icon in soft clay render style, centered on a pure plain white background, soft studio lighting with a gentle shadow under it, color palette of deep teal (#0D6B66), warm coral (#FF7A59), soft gold (#FFD25E) and white, rounded friendly shapes, high detail, no text, no letters, no numbers except the Korean won sign where described, no logos. Subject: a gold money envelope slightly open with a few coins showing, and an official document with a round stamp behind it."
     },
     {
       "slug": "consult-ph-bill",
       "size": "1024x1024",
-      "quality": "medium",
+      "quality": "low",
       "prompt": "A clean bright lifestyle product photo, square, soft natural window light, warm neutral background with a hint of teal, shallow depth of field, tidy and calm composition, professional and trustworthy mood, no people, no faces, no hands, no readable text, no logos, no brand names. Subject: a hospital receipt and a medical bill statement on a light wooden desk next to a pen, a calculator and a cup of tea, blank papers without readable text."
     },
     {
       "slug": "consult-ph-care",
       "size": "1024x1024",
-      "quality": "medium",
+      "quality": "low",
       "prompt": "A clean bright lifestyle product photo, square, soft natural window light, warm neutral background with a hint of teal, shallow depth of field, tidy and calm composition, professional and trustworthy mood, no people, no faces, no hands, no readable text, no logos, no brand names. Subject: a cozy bright hospital room corner with a neatly made bed, a folded blanket, a small plant and a water glass on the bedside table."
     },
     {
       "slug": "consult-ph-won",
       "size": "1024x1024",
-      "quality": "medium",
+      "quality": "low",
       "prompt": "A clean bright lifestyle product photo, square, soft natural window light, warm neutral background with a hint of teal, shallow depth of field, tidy and calm composition, professional and trustworthy mood, no people, no faces, no hands, no readable text, no logos, no brand names. Subject: a neat white envelope with some Korean won banknotes peeking out, next to an official-looking document folder and a stamp, on a clean desk."
     }
   ],
@@ -87,5 +87,5 @@
   "_설명12": "2026-11-09 사용자 'GPT 가 그린 얼굴이 내 얼굴과 너무 다르다' → GPT 시안(a2·b2·c2)에서 사람만 지운 판(a3·b3·c3, images/edits)을 PC 가 만들고, 클라우드가 원본 프로필 사진에서 오려 낸 사람(얼굴 그대로)을 얹는다.",
   "_설명13": "2026-11-09 사용자 '이 사진 GPT 한테 고화질로 깔끔하게' → Drive 블로그배너/사진.* 을 images/edits(input_fidelity high, high 품질 약 350원)로 고화질 프로필 사진 consult-profile-hd.png.",
   "_설명14": "2026-11-09 사용자 '이 사진 얼굴로 사진을 몇 장' → 같은 얼굴로 자세 4가지(두 손 모음·안내 손짓·태블릿·팔짱 웃음), images/edits input_fidelity high, high 품질 장당 약 350원.",
-  "_설명15": "2026-11-09 사용자 '카테고리 카드 아이콘이 느낌이 안 산다' → 3D 아이콘 3장(consult-ic3d-*, high) + 사진 3장(consult-ph-*, medium) 비교용. 약 1,300원."
+  "_설명15": "2026-11-09 사용자 '카테고리 카드 아이콘이 느낌이 안 산다' → 3D 아이콘 3장(consult-ic3d-*, high) + 사진 3장(consult-ph-*, medium) 비교용. 약 1,300원. → 같은 날 사용자 '더 저렴하게' — 6장 모두 low(약 60원)."
 }

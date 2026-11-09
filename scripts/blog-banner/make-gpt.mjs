@@ -16,7 +16,8 @@ const photo = fs.readdirSync(out).filter(f => /^(사진|profile)/i.test(f.normal
 let made = 0, skip = 0, fail = 0;
 for (const it of items) {
   if (fs.existsSync(path.join(out, `${it.slug}.png`)) || fs.existsSync(path.join(ROOT, 'content/blog-banner/src', `${it.slug}.png`))) { skip++; continue; }
-  const q = it.quality || 'low', size = it.size || '1024x1024';
+  // 2026-11-09 사용자 "항상 low 로만" — 프롬프트에 quality 가 적혀 있어도 늘 low
+  const q = 'low', size = it.size || '1024x1024';
   const srcImg = it.source ? path.join(out, it.source) : '';
   if (it.source && !fs.existsSync(srcImg)) { console.log(`건너뜀: ${it.slug} — ${it.source} 가 없어요`); fail++; continue; }
   const usePhoto = it.photo && photo;
