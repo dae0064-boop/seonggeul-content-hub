@@ -12,7 +12,7 @@ if (!out) { console.log('사용법: node scripts/blog-banner/make-gpt.mjs --out 
 fs.mkdirSync(out, { recursive: true });
 const items = JSON.parse(fs.readFileSync(path.join(ROOT, 'content/blog-banner/prompts.json'), 'utf8')).items.filter(it => !only || it.slug.startsWith(only));
 // 사진: Drive 블로그배너/ 에 사진.png·사진.jpg·profile.png 가 있으면 그 사진으로 고쳐 그린다(얼굴 그대로)
-const photo = ['사진.png', '사진.jpg', '사진.jpeg', 'profile.png', 'profile.jpg'].map(f => path.join(out, f)).find(f => fs.existsSync(f));
+const photo = fs.readdirSync(out).filter(f => /^(사진|profile)/i.test(f.normalize('NFC')) && /\.(png|jpe?g|webp)$/i.test(f)).sort().map(f => path.join(out, f))[0]; // '사진.jpg.jpg' 처럼 이름이 겹쳐도
 let made = 0, skip = 0, fail = 0;
 for (const it of items) {
   if (fs.existsSync(path.join(out, `${it.slug}.png`)) || fs.existsSync(path.join(ROOT, 'content/blog-banner/src', `${it.slug}.png`))) { skip++; continue; }
