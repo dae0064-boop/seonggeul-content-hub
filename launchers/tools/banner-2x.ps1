@@ -14,6 +14,13 @@ if (-not $bg) { $bg = (Get-ChildItem $dir -File -ErrorAction SilentlyContinue | 
 "폴더 그림: $((Get-ChildItem $dir -File -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Name) -join ', ')" | Out-File $log -Append -Encoding utf8
 if (-not $bg) { "바탕 그림 없음" | Out-File $log -Append -Encoding utf8; Write-Host "바탕 그림(consult-bg…)을 $dir 에서 찾지 못했어요."; exit 1 }
 "바탕: $bg" | Out-File $log -Append -Encoding utf8
+# 카드 사진 3장(consult-ph2-*)이 없으면 먼저 그린다 (low, 약 30원 — 낮에 폴더 정리 때 지워짐)
+if (-not (Test-Path (Join-Path $dir 'consult-ph2-won.png'))) {
+  Write-Host '카드 사진 3장을 그리는 중이에요 (1~2분)...'
+  node (Join-Path $repo 'scripts\blog-banner\make-gpt.mjs') --out $dir --only consult-ph2- 2>&1 | Tee-Object -Variable gp | Out-Host
+  $gp | Out-File $log -Append -Encoding utf8
+}
+"카드 사진: $((Get-ChildItem $dir -File -Filter 'consult-ph2-*' -ErrorAction SilentlyContinue | Select-Object -ExpandProperty Name) -join ', ')" | Out-File $log -Append -Encoding utf8
 $out = Join-Path $dir 'fresh-banner-2x.png'
 node (Join-Path $repo 'content\consult\banner\fresh.mjs') --h 800 --scale 2 --bgimg $bg --photo (Join-Path $repo 'content\consult\banner\person-cut.png') --cardphotos $dir --out $out 2>&1 | Tee-Object -Variable res | Out-Host
 $res | Out-File $log -Append -Encoding utf8

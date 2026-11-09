@@ -31,7 +31,8 @@
 - `fresh.mjs` 기본 `--scale 2`(3840×1600 으로 찍음), 카드 사진은 Drive 폴더의 consult-ph2-*.png 를 바로 읽음. 사람 = Drive consult-pose-hands.png 를 오린 `content/consult/banner/person-cut.png`(저장소에 둠 — 다시 만들 때 사진 안 받아도 됨).
 - 바탕·카드 사진은 클라우드에서 안 보여 PC 가 만든다: `launchers/banner-2x.cmd` 더블클릭 → Drive `블로그배너/fresh-banner-2x.png` (+ run-logs/banner-2x.png). 바탕은 원본 그림을 꽉 차게(cover) 깔아 예전 판과 조금 다를 수 있음.
 - ⚠ 첫 실행 실패(사용자 "배너 안됐어", 기록 없음) → 브라우저를 overlay.mjs launch()(크롬·엣지)로, 바탕 이름 넓게 찾기, 기록 Drive run-logs/banner-2x-log.txt.
-- [ ] 사용자 PC 다시 실행 → run-logs/banner-2x.png 확인 → 네이버 타이틀에 올림(2배 크기를 받아 주는지 처음 확인). 바탕·카드 사진을 좋은 품질로 새로 만들지는 사용자 결정 대기(유료).
+- ✅ 두 번째 실행 성공(15:19, 3840×1600, 바탕 consult-bg.png) — 하지만 카드 사진 없음: 낮 폴더 정리 때 consult-ph2-* 가 지워짐 → prompts.json 에 되살리고 banner-2x 가 없으면 먼저 그림(low 약 30원).
+- [ ] 사용자 PC 세 번째 실행 → run-logs/banner-2x.png 확인 → 네이버 타이틀에 올림(2배 크기를 받아 주는지 처음 확인). 바탕·카드 사진을 좋은 품질로 새로 만들지는 사용자 결정 대기(유료).
 ### 11/9 오후 — 🎨 대표사진 다양화 3 (사용자 "다 비슷하지 않아?" → "바꿔줘")
 - 11/10 네이버 원고부터: 띠 진한 색 + 금빛, 장면 색 scene3, 1번 thumb_place·thumb_light 필수, 같은 날 한도 10편 기준으로 좁힘(검사기 VARIETY_FROM, routines/naver-daily.md 🎨). [ ] 11/10 아침 그림이 실제로 달라 보이는지 아침 확인이 대표사진 10장을 보고 알림.
 - ⚠ 같은 글 두 번 발행: 11/5 생활보장 5편을 11/6 으로 옮겼는데 안구건조증·응급안전안심서비스 2편은 이미 11/5 로 예약돼 있어 11/5·11/6 두 번 나감 → 사용자가 11/6 쪽 삭제(11/9). ✅ 막는 장치: PC `draft-day.ps1` 이 앞뒤 14일 run-locks 에 날짜만 다르고 이름이 같은 글의 '예약발행' 표시가 있으면 예약하지 않고 건너뜀(.done 에 이유) + `routines/naver-daily.md` 옮기기 전 run-locks 확인. PowerShell 문법은 클라우드에서 돌려 보지 못함 — [ ] 11/10 아침 실행 기록에 오류 없는지.
