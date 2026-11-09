@@ -234,7 +234,12 @@ function carePlan(cats, state) {
   for (const [logNo, no] of state) {
     if (!isCare(no)) continue;
     const title = TITLES.get(logNo) || '';
-    rows.push({ logNo, date: '', from: byNo.get(no)?.name || '', to_parent: careTopFor({ category: '생활보장', title }), to_sub: '', title });
+    // 2026-11-09 사용자 "생활보장도 지울거야 — 하위 카테고리 글들을 주제에 맞게": 하위 칸 글은 그 칸이 속한 새 위 칸으로
+    // (실비·보험금청구·건강검진·질병정보 → 보험금·실비 / 의료비·건강보험·돌봄·요양 → 병원비·돌봄 / 생활 지원 제도·바뀌는 제도 → 지원금·제도),
+    // 생활·보장 바로 아래 글만 제목 규칙(careTopFor)으로
+    const subName = byNo.get(no)?.name || '';
+    const bySub = CARE_TOPS.find((t) => (SUBCATEGORIES[t] || []).includes(subName));
+    rows.push({ logNo, date: '', from: subName, to_parent: bySub || careTopFor({ category: '생활보장', title }), to_sub: '', title });
   }
   const cnt = {}; for (const r of rows) cnt[r.to_parent] = (cnt[r.to_parent] || 0) + 1;
   log(`[생활보장 → 새 3칸] 대상 ${rows.length}편: ${Object.entries(cnt).map(([k, v]) => `${k} ${v}`).join(' · ') || '없음'}`);
