@@ -66,6 +66,7 @@ if (fs.existsSync(bf)) {
   const bout = path.join(path.dirname(path.dirname(out)), '블로그배너');
   fs.mkdirSync(bout, { recursive: true });
   for (const it of b.items || []) {
+    if (it.photo || it.quality) continue; // 사진·품질 지정 그림은 배너 전용 실행기(make-gpt.mjs)가 만든다
     if (fs.existsSync(path.join(bout, `${it.slug}.png`)) || fs.existsSync(path.join(ROOT, 'content/blog-banner/src', `${it.slug}.png`))) continue;
     console.log(`배너 그림 만들기: ${it.slug}`);
     try {
