@@ -2205,7 +2205,10 @@ async function main() {
       : '\n👉 --dump 를 붙여 다시 실행하면 dumps/ 에 화면과 HTML이 남습니다.');
     process.exitCode = 1;
   } finally {
-    // attach 한 브라우저는 사용자 것이다. 종료하지 않고 연결만 해제한다. 탭도 닫지 않는다.
+    // attach 한 브라우저는 사용자 것이다. 종료하지 않고 연결만 해제한다.
+    // 이 실행이 연 탭만 닫는다 (2026-11-09 고장 고침 — 글마다 탭이 하나씩 남아 하루 72개까지 쌓여 크롬이 멈췄다).
+    // 손으로 보는 --dry-run·--publish-now 는 화면을 확인할 수 있게 남긴다. 실패 화면은 위에서 덤프로 남겼다.
+    if (!args.dryRun && !args.publishNow) await Promise.race([page.close({ runBeforeUnload: false }).catch(() => {}), sleep(5000)]);
     await browser.close().catch(() => {});
   }
 }
