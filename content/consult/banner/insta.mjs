@@ -80,8 +80,14 @@ const round = `<html><head><style>${base}
 <div class="s">${CHIPS.map((c) => `<span><i>✔</i>${c}</span>`).join('')}</div></div>
 </body></html>`;
 
+// 이름판 (같은 날 사용자 "친근한 설계사라는 이름으로도 하나 — 인스타 이름") — 원 안, 이름을 크게
+const named = round
+  .replace('.w{position:absolute;left:0;right:0;top:300px;text-align:center}', '.w{position:absolute;left:0;right:0;top:250px;text-align:center}.sub{font:40px M;color:#ecd39a;letter-spacing:2px;margin-top:22px}')
+  .replace('.h{font:96px/1.2 S', '.h{font:128px/1.15 S')
+  .replace('<div class="h">보험,<br><b class="gold">어렵지 않게</b><br>풀어 드려요</div>', '<div class="h">친근한<br><b class="gold">설계사</b></div><div class="sub">보험, 어렵지 않게 풀어 드려요</div>');
+
 const browser = await chromium.launch();
-for (const [name, html, w, h] of [['insta-post.png', post, 1080, 1350], ['insta-profile.png', profile, 1080, 1080], ['insta-profile-round.png', round, 1080, 1080]]) {
+for (const [name, html, w, h] of [['insta-post.png', post, 1080, 1350], ['insta-profile.png', profile, 1080, 1080], ['insta-profile-round.png', round, 1080, 1080], ['insta-profile-name.png', named, 1080, 1080]]) {
   const page = await browser.newPage({ viewport: { width: w, height: h } });
   await page.setContent(html);
   await page.evaluate(() => document.fonts.ready);
