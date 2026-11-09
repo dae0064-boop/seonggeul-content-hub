@@ -28,6 +28,15 @@ function Start-Detached {
 #   /json/version 은 대답하는데 실제 연결(connectOverCDP)이 시간을 넘기면 멈춘 것이다. 30초 띄워 두 번 확인하고도 멈춰 있으면
 #   자동화용 프로필(seonggeul-chrome)로 뜬 크롬만 끄고 --restore-last-session 으로 다시 켠다 (로그인은 프로필에 남는다).
 #   사용자가 평소 쓰는 크롬(다른 프로필)은 건드리지 않는다. 결과를 한 줄로 돌려준다 ('' = 할 일 없었음).
+# 쌓인 탭 정리 (2026-11-09) — 다른 작업이 돌지 않을 때만 부른다. 탭이 $Over 개보다 많으면 첫 탭·로그인 화면만 남긴다.
+function Clear-ExtraTabs {
+  param([int]$Over = 15, [string]$Repo = (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent))
+  $probe = Join-Path $Repo 'scripts\cdp-probe.mjs'
+  if (-not (Test-Path $probe)) { return '' }
+  $o = @(& node $probe 9222 20000 --trim $Over 2>&1 | ForEach-Object { "$_" }) | Select-Object -Last 1
+  if ("$o" -match '정리') { "탭 정리: $o" } else { '' }
+}
+
 function Repair-HungChrome {
   param([string]$Repo = (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent))
   $probe = Join-Path $Repo 'scripts\cdp-probe.mjs'
@@ -48,6 +57,10 @@ function Repair-HungChrome {
   Start-Sleep 3
   $o3 = @(& node $probe 9222 20000 2>&1 | ForEach-Object { "$_" }); $c3 = $LASTEXITCODE
   $why = ($o2 | Select-Object -Last 1)
-  if ($c3 -eq 0) { "⚠ 크롬이 멈춰 있어 다시 켬 ($why → 창 $($procs.Count)개 끄고 다시 켬, 지금 대답함)" }
+  if ($c3 -eq 0) {
+    # --restore-last-session 이 쌓인 탭을 모두 되살리므로(11/8 72개) 다시 켠 뒤 바로 정리한다 — 그 탭들은 이미 죽은 작업의 것
+    $t = @(& node $probe 9222 20000 --trim 3 2>&1 | ForEach-Object { "$_" }) | Select-Object -Last 1
+    "⚠ 크롬이 멈춰 있어 다시 켬 ($why → 창 $($procs.Count)개 끄고 다시 켬, 지금 대답함 · $t)"
+  }
   else { "❌ 크롬이 멈춰 있어 다시 켰지만 아직 대답 없음 ($($o3 | Select-Object -Last 1))" }
 }
