@@ -51,6 +51,6 @@
       "pose": "waving hello with one hand, warm welcoming smile"
     }
   ],
-  "pose_prompt": "Keep this exact same character: the same face, hairstyle, eyes, smile, skin tone, outfit and colors, and the same cute 3D clay Pixar-like style and lighting. Change only the pose: {pose}. Upper body, centered, plain pure white background (#FFFFFF), no shadow on the background, nothing else in the frame. No text, no letters, no logos.",
+  "pose_prompt": "Keep this exact same character: the same face, hairstyle, eyes, smile, skin tone, outfit and colors, and the same cute 3D clay Pixar-like style and lighting. Change only the pose: {pose}. Upper body, centered, plain light grey background (#ECEEF1), no shadow on the background, nothing else in the frame. No text, no letters, no logos.",
   "_설명2": "2026-11-09 사용자 \"블로그 배너 느낌이 나는 남자 캐릭터, 얼굴 색감·표정·머리 모양 비슷하게, 안경은 안 씀\" → 후보를 사용자 본인 사진(source)을 클레이 3D 로 바꾸는 '사진 고치기'로 다시 만든다."
 }
