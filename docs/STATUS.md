@@ -26,6 +26,10 @@
 
 ## 지금 상태
 
+### 11/9 오후 — 🎨 대표사진 다양화 3 (사용자 "다 비슷하지 않아?" → "바꿔줘")
+- 11/10 네이버 원고부터: 띠 진한 색 + 금빛, 장면 색 scene3, 1번 thumb_place·thumb_light 필수, 같은 날 한도 10편 기준으로 좁힘(검사기 VARIETY_FROM, routines/naver-daily.md 🎨). [ ] 11/10 아침 그림이 실제로 달라 보이는지 아침 확인이 대표사진 10장을 보고 알림.
+- ⚠ 같은 글 두 번 발행: 11/5 생활보장 5편을 11/6 으로 옮겼는데 안구건조증·응급안전안심서비스 2편은 이미 11/5 로 예약돼 있어 11/5·11/6 두 번 나감 → 사용자가 11/6 쪽 삭제(11/9). [ ] 원고를 다른 날로 옮길 때 run-locks .done(이미 예약)인 글은 옮기지 못하게 막는 장치 — 아직 안 넣음.
+
 ### 11/9 오후 — 🧸 정보 카드 캐릭터 '강팀장' (사용자 "우리 카드가 한다팀장 카드보다 허접해 보여" → "친근한 설계사 클레이 3D 캐릭터를 하나 만들어서 쭉 밀고 가 보게")
 - 프롬프트 `content/mascot/prompts.json`, 만드는 곳 `scripts/cards/make-mascot.mjs` (PC 만 — OpenAI). 1단계 후보 3장(A 남·초록 가디건+노랑 셔츠 / B 남·안경·초록 재킷 / C 여·초록 가디건), low 약 30원 → Drive `ClaudeWorkspace/mascot/cand-a·b·c.png`.
 - 저절로: catchup-reserve(10·13·16·19·22시) → instagram-to-drive.ps1 끝에서 없는 것만 만듦. 바로 하려면 `launchers/mascot.cmd`.

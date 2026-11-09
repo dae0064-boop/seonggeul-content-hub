@@ -38,64 +38,94 @@
   "variety": "한 글의 8장은 모두 다른 장면이다: 장소·주인공(사물/사람)·구도·배경색이 서로 겹치지 않게, 각 장면은 그 자리 문단 내용에 맞춘다. 같은 그림에 글씨만 바꿔 얹지 않는다. (2026-10-01 사용자 지시)",
   "thumb_themes": {
     "navy": {
-      "band": "#4A3A30",
-      "key": "#FFD24D",
+      "band": "#1F2F4D",
+      "key": "#F0CF86",
       "scene": "warm ivory and walnut brown tones with a butter-yellow accent",
-      "scene_before": "cool blue and white tones with a coral-red accent"
+      "scene_before": "cool blue and white tones with a coral-red accent",
+      "band_before": "#4A3A30",
+      "key_before": "#FFD24D",
+      "scene3": "clean white and soft navy blue tones in bright daylight"
     },
     "forest": {
-      "band": "#3E6B4F",
-      "key": "#FFD24D",
+      "band": "#12463D",
+      "key": "#F0CF86",
       "scene": "sage green plants and warm ivory tones with a butter-yellow accent",
-      "scene_before": "deep green plants and warm wood tones with a mustard-yellow accent"
+      "scene_before": "deep green plants and warm wood tones with a mustard-yellow accent",
+      "band_before": "#3E6B4F",
+      "key_before": "#FFD24D",
+      "scene3": "fresh green plants and crisp white tones with natural morning light"
     },
     "burgundy": {
-      "band": "#8C4A32",
-      "key": "#FFE1A8",
+      "band": "#6B2333",
+      "key": "#F3D9A4",
       "scene": "warm terracotta and cream tones with a soft gold accent",
-      "scene_before": "warm burgundy and cream tones with a soft gold accent"
+      "scene_before": "warm burgundy and cream tones with a soft gold accent",
+      "band_before": "#8C4A32",
+      "key_before": "#FFE1A8",
+      "scene3": "soft rose and cream tones with a deep burgundy accent"
     },
     "cobalt": {
-      "band": "#E8603A",
-      "key": "#FFF3C4",
+      "band": "#1E4E8C",
+      "key": "#FFE08A",
       "scene": "soft coral and ivory tones with a sage green accent",
-      "scene_before": "bright cobalt blue and white tones with an orange accent"
+      "scene_before": "bright cobalt blue and white tones with an orange accent",
+      "band_before": "#E8603A",
+      "key_before": "#FFF3C4",
+      "scene3": "cool sky blue and white tones with a yellow accent"
     },
     "teal": {
-      "band": "#56795C",
-      "key": "#FFE08A",
+      "band": "#0F5C5C",
+      "key": "#F0CF86",
       "scene": "sage green and sand beige tones with a coral accent",
-      "scene_before": "teal and sand tones with an orange accent"
+      "scene_before": "teal and sand tones with an orange accent",
+      "band_before": "#56795C",
+      "key_before": "#FFE08A",
+      "scene3": "calm teal and light gray tones with a coral accent"
     },
     "plum": {
-      "band": "#6B4E3D",
-      "key": "#FFC9A8",
+      "band": "#4A2E5C",
+      "key": "#F3D9A4",
       "scene": "cocoa brown and peach tones with a cream accent",
-      "scene_before": "lavender and plum tones with a yellow accent"
+      "scene_before": "lavender and plum tones with a yellow accent",
+      "band_before": "#6B4E3D",
+      "key_before": "#FFC9A8",
+      "scene3": "soft lavender and white tones with a warm yellow accent"
     },
     "charcoal": {
-      "band": "#3A2D25",
-      "key": "#FF8A5B",
+      "band": "#2B2F33",
+      "key": "#F0CF86",
       "scene": "warm brown wood and ivory tones with a coral accent",
-      "scene_before": "neutral gray and white tones with a coral accent"
+      "scene_before": "neutral gray and white tones with a coral accent",
+      "band_before": "#3A2D25",
+      "key_before": "#FF8A5B",
+      "scene3": "modern light gray and white tones with a mustard accent"
     },
     "brick": {
-      "band": "#B5572A",
+      "band": "#7A3320",
       "key": "#FFE7A0",
       "scene": "terracotta and warm beige tones with a sage green accent",
-      "scene_before": "terracotta and warm beige tones with a teal accent"
+      "scene_before": "terracotta and warm beige tones with a teal accent",
+      "band_before": "#B5572A",
+      "key_before": "#FFE7A0",
+      "scene3": "terracotta and warm beige tones with a teal accent"
     },
     "olive": {
-      "band": "#5E6B3A",
-      "key": "#FFD24D",
+      "band": "#3F4A26",
+      "key": "#F3D9A4",
       "scene": "olive green and warm cream tones with a coral accent",
-      "scene_before": "olive green and warm cream tones with a red accent"
+      "scene_before": "olive green and warm cream tones with a red accent",
+      "band_before": "#5E6B3A",
+      "key_before": "#FFD24D",
+      "scene3": "olive green and pale cream tones with a red accent"
     },
     "rose": {
-      "band": "#C8744A",
-      "key": "#FFF6E0",
+      "band": "#8C3B4E",
+      "key": "#FFF0D6",
       "scene": "apricot and ivory tones with a sage green accent",
-      "scene_before": "dusty rose and white tones with a green accent"
+      "scene_before": "dusty rose and white tones with a green accent",
+      "band_before": "#C8744A",
+      "key_before": "#FFF6E0",
+      "scene3": "dusty pink and ivory tones with a green accent"
     }
   },
   "thumb_moods": {
@@ -105,7 +135,12 @@
     "안심": "relieved gentle smile",
     "반가움": "bright happy smile",
     "결심": "determined, nodding, sleeves rolled up",
-    "설명": "explaining with one hand open toward the viewer"
+    "설명": "explaining with one hand open toward the viewer",
+    "휴대폰": "smiling while checking a smartphone, hands away from the face",
+    "가리킴": "pointing at the key object with one finger and a friendly smile",
+    "팔짱": "arms loosely crossed with a confident warm smile",
+    "끄덕": "nodding with a reassuring smile, hands relaxed",
+    "인사": "waving one hand hello with a bright smile"
   },
   "thumb_variety_note": "2026-10-26 사용자 — '메인화면이 같은 색감·같은 캐릭터라 눈에 안 띈다. 상황별로 사람·색감·표정·글자를 다양하게'. 2026-10-27 네이버 원고부터 대표사진(1번)은 고정 캐릭터(characters)를 쓰지 않고 글 상황에 맞는 사람(나이·성별·옷)을 새로 정한다. 계획서 1번에 thumb_theme(위 10개 중)·thumb_person(예: 60대 남성)·thumb_mood(위 7개 중)를 적고, 같은 날 네이버 글끼리 테마·사람은 겹치지 않게, 표정은 5편 날 모두 다르게·10편 날(10/27~10/31) 같은 표정 2편까지 + 전날 같은 시각 글과 테마가 겹치지 않게(lint-post). 프롬프트에 테마 scene 문구와 표정 문구를 넣는다. overlay 에 theme(같은 값)·font(jua|ptd — 하루 두 가지 섞기).",
   "thumb_shots": {
@@ -142,5 +177,30 @@
   },
   "thumb_band_space": "Keep the top fifth of the image as softly blurred or plain background (a title band goes there).",
   "thumb_shot_note": "2026-10-28 사용자 — '글씨 배치(위쪽 색 띠)는 그대로 좋다. 사람이 너무 똑같으니 그림 구도만 바꾸고, 티스토리도 네이버와 똑같이'. 10/27~10/28 대표사진이 모두 한 사람 얼굴 가까이·종이를 든 60~70대 여성(안경·턱 괴기)이었다 (thumbnail_closeup 문구에 'looking at a paper' 가 들어 있었다). 2026-10-29 원고부터 네이버·티스토리 모두 계획서 1번에 thumb_shot(위 6개 중)을 적고, 프롬프트 맨 앞에 그 shot 의 prompt 문구 + thumb_band_space 문구를 넣는다 (thumbnail_closeup 은 쓰지 않는다). overlay 는 그대로 look band·theme·font·두 줄(둘째 줄 질문). 같은 날 5편은 구도 모두 다르게, 10편 날은 같은 구도 2편까지, 전날 같은 시각 글과 구도가 겹치지 않게. 종이·안내문을 든 대표사진은 하루 1편(10편 날 2편)까지, 60대 이상만 나오는 대표사진은 하루 2편(10편 날 4편)까지 — 돌봄 글은 자녀·보호자 쪽으로도 잡는다. 사람이 없는 구도(object·overhead)는 thumb_person 을 '없음', thumb_mood 를 적지 않는다. 티스토리도 thumb_theme·thumb_person·thumb_mood·style_v2 를 네이버와 같게 쓰고, 같은 날 겹침은 티스토리 글끼리 센다.",
-  "thumb_brand_note": "2026-11-04 사용자 '대표사진도 성글벙글 색으로' — 10가지 테마 이름은 그대로 두고 띠·글씨 색을 성글벙글 색 계열(진갈색·세이지 그린·테라코타·코랄·살구)로 바꿈. 띠 색은 내일 아침 그림부터 모든 원고에 바로 적용, 사진 장면 색(scene)은 2026-11-07 원고부터 새 문구 (그 전 원고는 scene_before 도 통과)."
+  "thumb_brand_note": "2026-11-04 사용자 '대표사진도 성글벙글 색으로' — 10가지 테마 이름은 그대로 두고 띠·글씨 색을 성글벙글 색 계열(진갈색·세이지 그린·테라코타·코랄·살구)로 바꿈. 띠 색은 내일 아침 그림부터 모든 원고에 바로 적용, 사진 장면 색(scene)은 2026-11-07 원고부터 새 문구 (그 전 원고는 scene_before 도 통과).",
+  "thumb_places": {
+    "거실": "Setting: a living room sofa.",
+    "부엌": "Setting: a home kitchen counter.",
+    "병원 접수": "Setting: a bright hospital reception desk area (no patients in pain).",
+    "약국": "Setting: a clean neighborhood pharmacy counter.",
+    "은행 창구": "Setting: a bank counter with a clerk in soft focus.",
+    "사무실": "Setting: an office desk with a laptop.",
+    "버스·지하철": "Setting: inside a city bus or subway car by the window.",
+    "공원": "Setting: a park bench outdoors with trees.",
+    "카페": "Setting: a sunny cafe table by a large window.",
+    "차 안": "Setting: inside a parked car, driver seat.",
+    "현관": "Setting: an apartment front door entrance.",
+    "침실": "Setting: a tidy bedroom by the bed.",
+    "복도·엘리베이터": "Setting: an apartment hallway or elevator lobby.",
+    "주민센터": "Setting: a community service center counter.",
+    "베란다": "Setting: a bright apartment balcony with plants."
+  },
+  "thumb_lights": {
+    "아침 햇살": "Lighting: soft early-morning sunlight.",
+    "밝은 낮": "Lighting: bright clear daylight, high key.",
+    "흰 조명": "Lighting: cool clean white indoor light.",
+    "저녁 조명": "Lighting: warm evening lamp light.",
+    "흐린 날": "Lighting: soft overcast daylight."
+  },
+  "thumb_variety3_note": "2026-11-09 사용자 — 대표사진 15장이 '색감·사람·표정·제스처가 다 비슷하다'(베이지·갈색 거실, 50~60대, 얼굴 만지기). 2026-11-10 네이버 원고부터: 띠 색 = 새 배너와 같은 진한 색 + 금빛 글씨(band·key, 예전 값은 band_before), 장면 색 = 테마 scene3(밝고 서로 다른 색, 거실 갈색 일색 금지), 계획서 1번에 thumb_place(thumb_places 중)·thumb_light(thumb_lights 중)를 적고 프롬프트에 그 문구. 같은 날: 테마 모두 다르게, 장소 모두 다르게, 같은 빛 3편까지(저녁 조명 2편까지), 같은 구도 2편까지, 같은 표정 2편까지, 얼굴 만지는 표정(생각·궁금) 합쳐 2편까지, 60대 이상만 3편까지, 종이 2편까지 (lint-post VARIETY_FROM)."
 }
