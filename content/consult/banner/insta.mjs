@@ -61,8 +61,33 @@ const profile = `<html><head><style>${base}
 <div class="c"><div class="a">친근한</div><div class="b gold">보험</div><div class="d"></div><div class="e">이야기</div></div>
 </body></html>`;
 
+
+// 프로필 원형판 (2026-11-09 사용자 캡처 — 게시물 그림을 프로필에 넣으니 원 밖이 잘림, 위쪽은 '메모' 말풍선이 가림)
+// → 모든 글씨를 원 안(지름 1080)에, 가운데보다 조금 아래로 모은다
+const round = `<html><head><style>${base}
+:root{--w:1080px;--h:1080px}
+.w{position:absolute;left:0;right:0;top:300px;text-align:center}
+.h{font:96px/1.2 S;letter-spacing:1px;text-shadow:0 4px 18px rgba(0,0,0,.3)}
+.h b{font-weight:inherit;text-shadow:none}
+.line{width:100px;height:5px;border-radius:3px;background:#d9b46a;margin:34px auto 30px}
+.s{display:grid;grid-template-columns:auto auto;gap:16px 26px;justify-content:center}
+.s span{font:33px M;display:flex;align-items:center;white-space:nowrap}
+.s i{font-style:normal;flex:none;width:40px;height:40px;line-height:40px;text-align:center;border-radius:50%;background:#d9b46a;color:#12463D;font:24px B;margin-right:12px}
+.rim{position:absolute;inset:14px;border-radius:50%;border:5px solid rgba(226,196,140,.7)}
+</style></head><body><div class="glow"></div><div class="rim"></div>
+<div class="w"><div class="h">보험,<br><b class="gold">어렵지 않게</b><br>풀어 드려요</div>
+<div class="line"></div>
+<div class="s">${CHIPS.map((c) => `<span><i>✔</i>${c}</span>`).join('')}</div></div>
+</body></html>`;
+
+// 이름판 (같은 날 사용자 "친근한 설계사라는 이름으로도 하나 — 인스타 이름") — 원 안, 이름을 크게
+const named = round
+  .replace('.w{position:absolute;left:0;right:0;top:300px;text-align:center}', '.w{position:absolute;left:0;right:0;top:250px;text-align:center}.sub{font:40px M;color:#ecd39a;letter-spacing:2px;margin-top:22px}')
+  .replace('.h{font:96px/1.2 S', '.h{font:128px/1.15 S')
+  .replace('<div class="h">보험,<br><b class="gold">어렵지 않게</b><br>풀어 드려요</div>', '<div class="h">친근한<br><b class="gold">설계사</b></div><div class="sub">보험, 어렵지 않게 풀어 드려요</div>');
+
 const browser = await chromium.launch();
-for (const [name, html, w, h] of [['insta-post.png', post, 1080, 1350], ['insta-profile.png', profile, 1080, 1080]]) {
+for (const [name, html, w, h] of [['insta-post.png', post, 1080, 1350], ['insta-profile.png', profile, 1080, 1080], ['insta-profile-round.png', round, 1080, 1080], ['insta-profile-name.png', named, 1080, 1080]]) {
   const page = await browser.newPage({ viewport: { width: w, height: h } });
   await page.setContent(html);
   await page.evaluate(() => document.fonts.ready);
