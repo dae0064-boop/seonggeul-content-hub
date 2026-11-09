@@ -26,6 +26,12 @@
 
 ## 지금 상태
 
+### 11/9 오후 — 🧸 정보 카드 캐릭터 '강팀장' (사용자 "우리 카드가 한다팀장 카드보다 허접해 보여" → "친근한 설계사 클레이 3D 캐릭터를 하나 만들어서 쭉 밀고 가 보게")
+- 프롬프트 `content/mascot/prompts.json`, 만드는 곳 `scripts/cards/make-mascot.mjs` (PC 만 — OpenAI). 1단계 후보 3장(A 남·초록 가디건+노랑 셔츠 / B 남·안경·초록 재킷 / C 여·초록 가디건), low 약 30원 → Drive `ClaudeWorkspace/mascot/cand-a·b·c.png`.
+- 저절로: catchup-reserve(10·13·16·19·22시) → instagram-to-drive.ps1 끝에서 없는 것만 만듦. 바로 하려면 `launchers/mascot.cmd`.
+- [ ] 사용자가 A·B·C 중 하나 고르면 `prompts.json` 의 `chosen` 에 적기 → 다음 실행이 같은 캐릭터로 자세 6장(돋보기·생각·손가락·클립보드·엄지·인사, 약 60원).
+- [ ] 그다음 카드 6모양을 새 디자인(한다팀장 카드처럼 큰 두 색 제목·스프링 메모지·아래 진초록 띠 '이어서 → 『다음 소제목』'·캐릭터 오른쪽)으로 다시 그림. 캐릭터 그림은 PC 의 `content/mascot/img/`(저장소에 안 올림)에서 읽는다.
+
 ### 11/9 오후 — 🔗 배너 위젯 5칸 바꿈 (사용자 "위젯 다 바꿨어")
 - ① 보험금·실비(categoryNo=31) ② 병원비·돌봄(32) ③ 지원금·제도(33) — `target="_top"` · ④ 인스타 https://www.instagram.com/___sd.eyo/ ⑤ 카카오톡 채널 https://pf.kakao.com/_yMvnX/chat — `target="_blank"`. 투명 그림 170×280 그대로. 정본 `content/consult/README.md` 🔗. 예전 코드는 target 이 두 번 있어 카테고리가 새 창으로 열렸다.
 

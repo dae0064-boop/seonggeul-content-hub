@@ -11,6 +11,9 @@ $dest = Join-Path $drive 'ClaudeWorkspace\인스타카드뉴스'
 # 바탕 AI 사진(편마다 1장, low 약 10원)이 없는 편만 만든다 — 클라우드 대화가 Drive 에서 받아 카드를 다시 그린다
 $bgOut = node (Join-Path $repo 'scripts\instagram\make-bg.mjs') --out (Join-Path $dest 'bg') 2>&1 | Select-Object -Last 1
 if ($bgOut -match '만듦') { Write-Output "$bgOut" }
+# 정보 카드 캐릭터 '강팀장' (2026-11-09 사용자 — 클레이 3D 친근한 설계사). 없는 것만 만든다: 후보 3장 → 사용자가 고르면 자세 6장
+$mcOut = node (Join-Path $repo 'scripts\cards\make-mascot.mjs') --out (Join-Path $drive 'ClaudeWorkspace\mascot') 2>&1 | Select-Object -Last 1
+if ($mcOut -match '만듦') { Write-Output "$mcOut" }
 $copied = 0
 foreach ($srcRoot in @('content\instagram\word', 'content\instagram\images')) {
   $base = Join-Path $repo $srcRoot
