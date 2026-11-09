@@ -28,6 +28,7 @@
 
 ### 11/9 저녁 — 🖍 강조 2 (사용자 "한다팀장보다 표시가 약하다" → 예시 아티팩트 https://claude.ai/artifact/5Y2ZyYZkVuWTubCatCG3hQ → "이대로 해 줘")
 - ✅ 사용자가 글 한 편 예시(https://claude.ai/artifact/NCYFkXS4aZ39HMSzFURYAh, `content/consult/post-sample.html`)를 보고 "좋아 이대로 진행해줘" — 밤 원고 작업이 이 예시를 본보기로.
+- 🅣 같은 날 사용자 "티스토리도 같은 강조로" → 11/10 티스토리 원고부터 같음(parse-tistory: 노랑 #ffe94d, 초록 상자, 말풍선 = 인용구 3번 style3 상자). [ ] 11/10 티스토리 예약 기록에서 '색 강조' 확인 줄이 통과했는지.
 - 11/10 네이버 원고부터: 노랑 진하게(#ffe94d)·문장 통째로 3~4곳, 빨강 문장 2~4, 파랑 낱말 4~6, `[초록배경]` 1~2, `인용구(말풍선)` 1 (검사기 EMPH2_FROM, CLAUDE.md 🖍, routines/naver-daily.md 🖍).
 - 발행: 붙여넣기 HTML 에 새 색이 그대로 들어가고, 안 들어가 팔레트로 다시 칠할 때는 팔레트에서 가장 가까운 색을 눌러 로그에 "가장 가까운 … 로 칠함" 남김(clickSwatch). 말풍선은 인용구 3번(quotation_bubble). 실제 화면은 처음 — [ ] 11/10 아침 기록에서 노랑·초록·말풍선이 들어갔는지, 실패 줄이 없는지 확인.
 
