@@ -86,7 +86,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:J;src:url(${font('Jua-Regular.ttf')})}
 *{margin:0;box-sizing:border-box}body{width:1920px;height:600px;overflow:hidden}
 .bn{position:relative;width:1920px;height:600px;overflow:hidden;background:radial-gradient(ellipse 300px 340px at 1600px 300px,${TH.glow || 'rgba(255,255,255,.75)'} 0%,rgba(255,255,255,0) 100%),${TH.bg};font-family:GM;color:${INK}}
-${A('--chipstyle', 'glass') === 'glass' ? `.tag{background:#ffd54f !important;color:#13493f !important;-webkit-text-stroke:0 !important}.chip{background:rgba(255,255,255,.12) !important;border:1.5px solid rgba(255,255,255,.55) !important;color:#fff !important;-webkit-text-stroke:0 !important;box-shadow:none !important}.chip b{color:#ffd54f !important;-webkit-text-stroke:0 !important}.chip svg circle{fill:#ffd54f}.chip svg path{stroke:#13493f}` : ''}
+${A('--chipstyle', 'glass') === 'glass' ? `.tag{background:#ffd54f !important;color:#13493f !important;-webkit-text-stroke:0 !important}.chip{background:rgba(8,40,34,.82) !important;border:1.5px solid rgba(255,213,79,.85) !important;color:#fff !important;-webkit-text-stroke:0 !important;box-shadow:0 6px 16px rgba(0,0,0,.35) !important}.chip b{color:#ffd54f !important;-webkit-text-stroke:0 !important}.chip svg circle{fill:#ffd54f}.chip svg path{stroke:#13493f}` : ''}
 ${TH.dark ? `.l1{color:#ffffff !important;font-size:46px !important;text-shadow:0 2px 10px rgba(0,0,0,.25)}.l2{color:#fff !important}.l2 em{color:#ffd54f !important;background:none !important;position:relative}.l2 em:after{content:'';position:absolute;left:2px;right:2px;bottom:-10px;height:6px;border-radius:3px;background:#ff6b4a}` : ''}
 svg.deco,svg.pat{position:absolute;inset:0}
 .tag{position:absolute;left:500px;top:100px;letter-spacing:1.2px;padding:7px 18px;border-radius:20px;background:#fff;color:${TE};font-family:CF;font-size:${/Gaegu/.test(CFN) ? 25 : 22}px;-webkit-text-stroke:${CSTROKE * .6}px ${TE}}
@@ -122,7 +122,7 @@ ${bgimg ? `<img src="${bgimg}" style="position:absolute;inset:0;width:1920px;hei
 <div class="h l2"><em>놓치지 않게</em> 챙겨 드려요</div>
 <div class="chips"><div class="chip">${chk}보험사 <b>34개사</b> 비교·분석</div><div class="chip">${chk}보험금 청구 <b>같이</b> 챙겨 드려요</div></div>
 <div class="ph">${photo ? `<img src="${photo}">` : ''}</div>
-<div class="bub">궁금한 건<br><b>강팀장</b>에게 편하게 물어보세요!</div>
+<div class="bub">보험에 관한 궁금증은<br><b>강팀장</b>에게 편하게 물어보세요!</div>
 ${COLS.map(([ic, t, s], k) => `<div class="col" style="left:${X(k)}px"><div class="card ${ic === 'kakao' ? 'k' : ic === 'insta' ? 'i' : ''} ${PHOTOS[ic] ? 'p' : ''}">${PHOTOS[ic] ? `<div class="pic" style="background-image:url(${PHOTOS[ic]})"></div>` : `<div class="ic">${IC[ic]}</div>`}<div class="t">${t}</div><div class="s">${s}</div><div class="go">바로가기 ›</div></div></div>`).join('')}
 ${GUIDE ? [0, 1, 2, 3, 4].map(k => `<div class="guide" style="left:${X(k)}px"></div>`).join('') : ''}
 </div></body></html>`;
