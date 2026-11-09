@@ -74,14 +74,14 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><style>
 *{margin:0;box-sizing:border-box}body{width:1920px;height:600px;overflow:hidden}
 .bn{position:relative;width:1920px;height:600px;overflow:hidden;background:radial-gradient(ellipse 300px 340px at 1600px 300px,${TH.glow || 'rgba(255,255,255,.75)'} 0%,rgba(255,255,255,0) 100%),${TH.bg};font-family:GM;color:${INK}}
 ${A('--chipstyle', 'glass') === 'glass' ? `.tag{background:#ffd54f !important;color:#13493f !important;-webkit-text-stroke:0 !important}.chip{background:rgba(255,255,255,.12) !important;border:1.5px solid rgba(255,255,255,.55) !important;color:#fff !important;-webkit-text-stroke:0 !important;box-shadow:none !important}.chip b{color:#ffd54f !important;-webkit-text-stroke:0 !important}.chip svg circle{fill:#ffd54f}.chip svg path{stroke:#13493f}` : ''}
-${TH.dark ? `.l1{color:#ffffff !important;font-size:52px !important;text-shadow:0 2px 10px rgba(0,0,0,.25)}.l2{color:#fff !important}.l2 em{color:#ffd54f !important;background:none !important;position:relative}.l2 em:after{content:'';position:absolute;left:2px;right:2px;bottom:-12px;height:6px;border-radius:3px;background:#ff6b4a}` : ''}
+${TH.dark ? `.l1{color:#ffffff !important;font-size:46px !important;text-shadow:0 2px 10px rgba(0,0,0,.25)}.l2{color:#fff !important}.l2 em{color:#ffd54f !important;background:none !important;position:relative}.l2 em:after{content:'';position:absolute;left:2px;right:2px;bottom:-10px;height:6px;border-radius:3px;background:#ff6b4a}` : ''}
 svg.deco,svg.pat{position:absolute;inset:0}
-.tag{position:absolute;left:500px;top:84px;letter-spacing:1.2px;padding:7px 18px;border-radius:20px;background:#fff;color:${TE};font-family:CF;font-size:${/Gaegu/.test(CFN) ? 25 : 22}px;-webkit-text-stroke:${CSTROKE * .6}px ${TE}}
+.tag{position:absolute;left:500px;top:100px;letter-spacing:1.2px;padding:7px 18px;border-radius:20px;background:#fff;color:${TE};font-family:CF;font-size:${/Gaegu/.test(CFN) ? 25 : 22}px;-webkit-text-stroke:${CSTROKE * .6}px ${TE}}
 .h{position:absolute;left:498px;font-family:HF;letter-spacing:${LS}px;word-spacing:8px}
-.l1{top:132px;font-size:46px;color:#3b474b}
-.l2{top:188px;font-size:62px;color:${INK}}
+.l1{top:146px;font-size:44px;color:#3b474b}
+.l2{top:194px;font-size:56px;color:${INK}}
 .l2 em{font-style:normal;color:${TE};background:linear-gradient(transparent 62%,${TH.hl} 62%)}
-.chips{position:absolute;left:500px;top:291px;display:flex;gap:12px}
+.chips{position:absolute;left:500px;top:286px;display:flex;gap:12px}
 .chip{display:flex;align-items:center;gap:8px;padding:8px 16px 8px 10px;border-radius:24px;background:#fff;border:1.5px solid #dfe7e4;font-family:CF;font-size:${/Gaegu/.test(CFN) ? 22 : 19}px;letter-spacing:1px;color:#22302f;-webkit-text-stroke:${CSTROKE * .5}px #22302f;box-shadow:0 4px 10px rgba(13,107,102,.06)}
 .chip b{color:${TE};font-weight:normal;font-family:CF;-webkit-text-stroke:${CSTROKE * .6}px ${TE}}
 .col{position:absolute;top:321px;width:170px;height:279px}
@@ -98,7 +98,7 @@ svg.deco,svg.pat{position:absolute;inset:0}
 .ring{position:absolute;left:1410px;top:40px;width:500px;height:500px;border-radius:50%;border:2px dashed rgba(255,255,255,.7)}
 .ph{position:absolute;left:1440px;top:44px;height:556px;overflow:hidden}
 .ph img{height:630px;display:block}
-.bub{position:absolute;left:1150px;top:96px;padding:16px 24px;border-radius:24px;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.18);font-family:J;font-size:25px;color:${INK};line-height:1.35;text-align:center;letter-spacing:.5px}
+.bub{position:absolute;left:1150px;top:112px;padding:16px 24px;border-radius:24px;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.18);font-family:J;font-size:25px;color:${INK};line-height:1.35;text-align:center;letter-spacing:.5px}
 .bub:after{content:'';position:absolute;right:-16px;top:58px;border-width:12px 0 12px 20px;border-style:solid;border-color:transparent transparent transparent #fff}
 .bub b{color:${CO};font-weight:normal}
 .guide{position:absolute;top:321px;width:170px;height:279px;border:2px dashed rgba(220,40,40,.8)}
