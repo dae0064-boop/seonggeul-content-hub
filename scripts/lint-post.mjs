@@ -150,6 +150,11 @@ const THUMB2_FROM = '2026-10-27';
 //   1번에 thumb_shot(얼굴·두 사람·손·사물·탁자·방 전체). 같은 날 겹치지 않게, 종이 든 장면·60대 이상만 나오는 장면은 하루 몇 편까지.
 //   티스토리도 같은 날부터 네이버와 같은 대표사진 규칙(위쪽 색 띠·테마·새 사람·표정·style_v2)을 따른다 ("티스토리도 그림체가 너무 비슷하다").
 const THUMB3_FROM = '2026-10-29';
+// 대표사진 다양화 3 (2026-11-09 사용자 — 15장이 "색감·사람·표정·제스처가 다 비슷하다", 2026-11-10 네이버 원고부터):
+//   진한 띠 + 금빛 글씨(image-style.json band), 장면 색 scene3, 1번에 thumb_place·thumb_light, 같은 날 한도를 10편 기준으로 좁힘.
+const VARIETY_FROM = '2026-11-10';
+const VAR = { theme: 1, place: 1, light: 3, evening: 2, shot: 2, mood: 2, faceTouch: 2, olds: 3, papers: 2 };
+const FACE_TOUCH = ['생각', '궁금'];
 const PAPER = /\b(paper|papers|letter|brochure|document|leaflet|notice|pamphlet|booklet|form)\b/i;
 // 공통 끝 문장("…signs, labels, screens and papers stay blank…")은 빼고 본다
 const hasPaper = (prompt) => PAPER.test(String(prompt || '').replace(/Do not draw any written words[^.]*\./gi, ''));
@@ -886,7 +891,9 @@ for (const file of files) {
           if (ov.theme !== t.thumb_theme) errors.push(`대표사진 overlay "theme" 을 thumb_theme 과 같게 ("${t.thumb_theme}")`);
           // 2026-11-04 사용자 "대표사진도 성글벙글 색으로" — 11/7 원고부터 새 장면 색 문구, 그 전 원고는 예전 문구(scene_before)도 통과
           const oldOk = writtenFor < '2026-11-07' && theme.scene_before && (t.prompt || '').includes(theme.scene_before);
-          if (!(t.prompt || '').includes(theme.scene) && !oldOk) errors.push(`대표사진 프롬프트에 테마 색 문구가 없습니다 — "${theme.scene}"`);
+          const var3 = !tistory && dated >= VARIETY_FROM && t.kind !== 'photo';
+          if (var3) { if (!(t.prompt || '').includes(theme.scene3)) errors.push(`대표사진 프롬프트에 테마 색 문구가 없습니다 — "${theme.scene3}" (${VARIETY_FROM} 원고부터 scene3)`); }
+          else if (!(t.prompt || '').includes(theme.scene) && !oldOk) errors.push(`대표사진 프롬프트에 테마 색 문구가 없습니다 — "${theme.scene}"`);
         }
         const people = !v3 || !shot || shot.사람;
         if (!t.thumb_person) errors.push(`대표사진(1번)에 thumb_person(예: "60대 남성", "30대 엄마와 아이"${v3 ? ', 사람 없는 구도는 "없음"' : ''})이 없습니다 — 글 상황에 맞는 사람`);
@@ -942,6 +949,27 @@ for (const file of files) {
           const pLim = tw ? TW.papers : ten ? 2 : 1, oLim = tw ? TW.olds : ten ? 4 : 2;
           if (papers > pLim) errors.push(`같은 날 종이·안내문을 든 대표사진이 ${papers}편 — ${pLim}편까지 (주제 사물을 바꾸세요)`);
           if (olds > oLim) errors.push(`같은 날 60대 이상만 나오는 대표사진이 ${olds}편 — ${oLim}편까지 (자녀·보호자·젊은 층이나 사람 없는 구도로)`);
+        }
+        // 대표사진 다양화 3 (VARIETY_FROM 네이버 원고부터) — 장소·빛·테마·구도·표정·나이를 하루 10편 기준으로 더 섞는다
+        if (!tistory && dated >= VARIETY_FROM && t.kind !== 'photo' && !post.extra) {
+          const places = st.thumb_places || {}, lights = st.thumb_lights || {};
+          if (!places[t.thumb_place]) errors.push(`대표사진(1번)에 thumb_place 가 없거나 목록 밖입니다 (${Object.keys(places).join('·')}) — ${VARIETY_FROM} 원고부터`);
+          else if (!(t.prompt || '').includes(places[t.thumb_place])) errors.push(`대표사진 프롬프트에 장소 문구가 없습니다 — "${places[t.thumb_place]}"`);
+          if (!lights[t.thumb_light]) errors.push(`대표사진(1번)에 thumb_light 가 없거나 목록 밖입니다 (${Object.keys(lights).join('·')})`);
+          else if (!(t.prompt || '').includes(lights[t.thumb_light])) errors.push(`대표사진 프롬프트에 빛 문구가 없습니다 — "${lights[t.thumb_light]}"`);
+          const sib = daySibs(dir, dated).filter((f) => f !== me).map((f) => [f, planOf(dir + f)?.images?.find((im) => im.n === 1)]).filter(([, o]) => o && o.kind !== 'photo');
+          const cnt = (fn) => sib.filter(([, o]) => fn(o)).map(([f]) => f);
+          const say = (what, list, lim) => errors.push(`같은 날 대표사진 ${what}이 ${list.length + 1}편 (${list.join(', ')} 와 같음) — ${lim}편까지 (2026-11-09 사용자 "다 비슷하다")`);
+          let l;
+          if ((l = cnt((o) => o.thumb_theme === t.thumb_theme)).length >= VAR.theme) say(`테마(${t.thumb_theme})`, l, VAR.theme);
+          if (t.thumb_place && (l = cnt((o) => o.thumb_place === t.thumb_place)).length >= VAR.place) say(`장소(${t.thumb_place})`, l, VAR.place);
+          if (t.thumb_light && (l = cnt((o) => o.thumb_light === t.thumb_light)).length >= VAR.light) say(`빛(${t.thumb_light})`, l, VAR.light);
+          if (t.thumb_light === '저녁 조명' && (l = cnt((o) => o.thumb_light === '저녁 조명')).length >= VAR.evening) say('저녁 조명', l, VAR.evening);
+          if ((l = cnt((o) => o.thumb_shot === t.thumb_shot)).length >= VAR.shot) say(`구도(${t.thumb_shot})`, l, VAR.shot);
+          if (t.thumb_mood && (l = cnt((o) => o.thumb_mood === t.thumb_mood)).length >= VAR.mood) say(`표정(${t.thumb_mood})`, l, VAR.mood);
+          if (FACE_TOUCH.includes(t.thumb_mood) && (l = cnt((o) => FACE_TOUCH.includes(o.thumb_mood))).length >= VAR.faceTouch) say('얼굴 만지는 표정(생각·궁금)', l, VAR.faceTouch);
+          if (people && OLD_ONLY(t.thumb_person) && (l = cnt((o) => OLD_ONLY(o.thumb_person) && st.thumb_shots?.[o.thumb_shot]?.사람 !== false)).length >= VAR.olds) say('60대 이상만 나오는 사람', l, VAR.olds);
+          if (hasPaper(t.prompt) && (l = cnt((o) => hasPaper(o.prompt))).length >= VAR.papers) say('종이·안내문', l, VAR.papers);
         }
       }
       // 실사풍 글(REAL_AFTER 넘은 편)은 style_care·style_life 라 style_v2 문구를 보지 않는다 (2026-11-01 사용자 — 실사풍 전환)
