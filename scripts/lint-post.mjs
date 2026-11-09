@@ -112,6 +112,10 @@ const ISSUE12_FROM = '2026-11-05';
 const SPLIT_ISSUE12 = { 생활정보: 15, 생활보장: 5 };
 const ISSUE12 = { 연예: 6, 정책: 6 };
 const SEASON_FROM = '2026-11-06';
+// 2026-11-11 원고부터 하루 10편 = 생활보장 10 (생활정보·이슈·연예 0) — 2026-11-09 사용자 "상담 손님이 더 중요해", "생활정보도 빼고 생활보장으로만"
+//   (standards/상담-유입-계획.md). 이슈 글은 쓰지 않고, 보장과 이어지는 제도 소식은 생활보장 글로 쓴다.
+const CARE10_FROM = '2026-11-11';
+const SPLIT_CARE10 = { 생활정보: 0, 생활보장: 10 };
 const SPLIT_SEASON = { 생활정보: 10, 생활보장: 10 };
 const HF_SEASON = { 생활정보: 9, 생활보장: 6 };
 // 같은 날 같은 값 몇 편까지 (20편 날)
@@ -186,6 +190,7 @@ const MAIN_MAX_CARE = 30000;
 //   비교: 띄어쓰기 뺀 메인 키워드와 한다팀장 키워드가 서로 포함되거나 앞 4글자 이상이 같으면 같은 말로 본다.
 const HANDE2_FROM = '2026-11-10';
 const HANDE2_DAYS = 30;
+const HANDE2_ON = false;
 export function handeClash(mainKeyword, entries, dated) {
   const mk = String(mainKeyword || '').replace(/\s+/g, '');
   if (!mk) return null;
@@ -761,14 +766,15 @@ for (const file of files) {
     const sib = daySibs(dir, dated);
     const split3 = dated >= SPLIT3_FROM;
     const twenty = isTwenty(dated);
-    const full = twenty ? 20 : isTen(dated) ? 10 : split3 ? DAY_TOTAL3 : 5;
+    const care10 = dated >= CARE10_FROM;
+    const full = care10 ? 10 : twenty ? 20 : isTen(dated) ? 10 : split3 ? DAY_TOTAL3 : 5;
     if (sib.length >= (split3 ? 1 : 5)) {
       const sibs = sib.map((f) => { try { return parsePost(fs.readFileSync(dir + f, 'utf8')); } catch { return {}; } });
       const cats = sibs.map((p) => p.category || '');
       const season = twenty && dated >= SEASON_FROM;
-      const i12 = twenty && dated >= ISSUE12_FROM;
-      const split = i12 ? SPLIT_ISSUE12 : season ? SPLIT_SEASON : twenty ? SPLIT_TWENTY : isTen(dated) ? SPLIT_TEN : split3 ? SPLIT3 : dated >= SPLIT2_FROM ? SPLIT2 : SHIFT_SPLIT;
-      const why = i12 ? '2026-11-04 사용자 결정 — 생활보장 5 · 생활정보 3 · 이슈·뉴스 6 · 연예·방송 6' : season ? '2026-11-03 사용자 결정 — 생활보장 10 그대로, 제철·나들이 홈판형 2편' : twenty ? '2026-11-01 사용자 결정 — 하루 20편' : split3 ? '2026-10-26 사용자 결정' : dated >= SPLIT2_FROM ? '2026-10-24 사용자 결정' : '2026-10-19 사용자 결정';
+      const i12 = twenty && dated >= ISSUE12_FROM && !care10;
+      const split = care10 ? SPLIT_CARE10 : i12 ? SPLIT_ISSUE12 : season ? SPLIT_SEASON : twenty ? SPLIT_TWENTY : isTen(dated) ? SPLIT_TEN : split3 ? SPLIT3 : dated >= SPLIT2_FROM ? SPLIT2 : SHIFT_SPLIT;
+      const why = care10 ? '2026-11-09 사용자 결정 — 생활보장만 하루 10편 (standards/상담-유입-계획.md)' : i12 ? '2026-11-04 사용자 결정 — 생활보장 5 · 생활정보 3 · 이슈·뉴스 6 · 연예·방송 6' : season ? '2026-11-03 사용자 결정 — 생활보장 10 그대로, 제철·나들이 홈판형 2편' : twenty ? '2026-11-01 사용자 결정 — 하루 20편' : split3 ? '2026-10-26 사용자 결정' : dated >= SPLIT2_FROM ? '2026-10-24 사용자 결정' : '2026-10-19 사용자 결정';
       const done = sib.length >= full;
       if (split3 && sib.length > full) errors.push(`같은 날(${dated}) 네이버 원고 ${sib.length}편 — 하루 ${full}편까지 (${why})`);
       for (const [c, n] of Object.entries(split)) {
@@ -941,10 +947,14 @@ for (const file of files) {
     if (hit) errors.push(`메인 키워드 "${post.mainKeyword}" 는 한다팀장 블로그가 이미 쓴 말입니다 (content/research/hande-keywords.txt) — 같은 묶음의 다른 질문으로`);
   }
 
-  if (!tistory && dated >= HANDE2_FROM && post.mainKeyword && !post.issue) {
+  // 2026-11-09 같은 날 사용자: "이제 같은 사무실에서 일 안 하니까 신경 안 써도 돼" → 끔 (HANDE2_ON). 제목 틀은 그대로 다르게 쓴다(naver-daily 🤝)
+  if (HANDE2_ON && !tistory && dated >= HANDE2_FROM && post.mainKeyword && !post.issue) {
     const c = handeClash(post.mainKeyword, handeDated(), dated);
     if (c) errors.push(`메인 키워드 "${post.mainKeyword}" 가 한다팀장 글(${c.date} "${c.kw}")과 같은 말입니다 — 30일 안에는 같은 질병·제도 이름을 쓰지 않습니다. 우리 쪽 몫인 청구·보장 확인 질문(예: "○○ 실비 청구", "○○ 진단비")으로 바꾸거나 다른 글감으로 (content/research/hande-keywords.txt)`);
   }
+
+  if (!tistory && dated >= CARE10_FROM && post.category !== '생활보장' && !post.extra) errors.push(`${CARE10_FROM} 원고부터 네이버는 생활보장 글만 씁니다 (category: 생활보장 — 2026-11-09 사용자 "생활보장으로만", standards/상담-유입-계획.md)`);
+  if (!tistory && dated >= CARE10_FROM && post.issue) errors.push(`${CARE10_FROM} 원고부터 이슈·연예 글(issue:)은 쓰지 않습니다 — 보장과 이어지는 제도 소식은 생활보장 글로`);
 
   // 하루 20편 (2026-11-03 원고부터) — 말투 돌려 쓰기 + 다른 네이버 글과 겹치지 않게 (2026-11-01 사용자:
   //   "같은 주제여도 다른 느낌 다른 말투 다른 내용으로… 최대한 겹치지 않고 중복 컨텐츠가 되지 않도록")
