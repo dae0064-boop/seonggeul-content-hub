@@ -41,6 +41,7 @@
 - ⏩ 같은 날 사용자 "철거 원고 11월 11일 오전부터 진행, 예시로 하나 만들어서 저장해봐": `chulgeo-day.ps1` 이 2026-11-11 전에는 건너뜀(`$StartDate`). 11/11 아침이 10/27 밀린 5편을 먼저 예약.
 - 예시 원고 `content/chulgeo/posts/2026-11-11-seoul-yoksil-cheolgeo.md`(서울 욕실 철거, 집에 있어도 될까 — 검사기 ✅) + 그림 계획서. PC `launchers/chulgeo-draft.cmd` 더블클릭 → breakandbuild 에 그림까지 **임시저장만**(`content/chulgeo/draft.txt` 의 슬러그, .done 남겨 아침 예약에서 빠짐).
 - 📞 같은 날 사용자: 연락처(이름·전화번호) 밑에 꼭 "철거 블로그 보고 문의했다고 말씀해 주시면 / 상담이 더 원활하게 진행할 수 있습니다." — 검사기 `INQUIRY`(글 맨 끝 덩어리), README 3, 남은 원고 6편 모두 넣음.
+- 🗂 같은 날 사용자: 정보 카드 위 '성글벙글 Q&A' → '<주제> Q&A'(욕실철거 Q&A·실비청구 Q&A·인테리어 Q&A) — 성글벙글·철거 모두, `overlay.mjs` qaLabel(card.qa 또는 메인 키워드 − 지역), 이미 만든 그림은 그대로.
 - [ ] 사용자가 chulgeo-draft.cmd 실행 → Drive run-logs `day-<날짜>-chulgeo.log` 확인 · [ ] 11/11 아침 day-2026-11-11-chulgeo.log, run-locks/chulgeo/*.done.
 
 ### 11/9 낮 — 💬 카카오톡 채널 심의 초안 (사용자 "카카오톡 채널 심의 초안 지금 만들어줘")

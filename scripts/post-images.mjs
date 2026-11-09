@@ -124,7 +124,7 @@ for (const im of todo) {
     const name = im.file ? im.file.replace(/\.png$/i, "") : String(im.n).padStart(2, "0");
     const target = join(outDir, `${name}.png`);
     if (existsSync(target) && !opt.force && !opt["overlay-only"]) { console.log(`⏭  ${name}.png 이미 있음 — ${im.title}`); skipped++; }
-    else cardJobs.push({ n: im.n, dest: target, card: { ...im.card, brand: plan.brand, theme: im.card.theme || cardThemeOf(postMeta), category: im.card.category || postMeta?.category } });
+    else cardJobs.push({ n: im.n, dest: target, card: { ...im.card, brand: plan.brand, key: postMeta?.mainKeyword || "", theme: im.card.theme || cardThemeOf(postMeta), category: im.card.category || postMeta?.category } });
     continue;
   }
   const name = im.file ? im.file.replace(/\.png$/i, "") : String(im.n).padStart(2, "0");

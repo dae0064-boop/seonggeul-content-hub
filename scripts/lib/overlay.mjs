@@ -318,6 +318,7 @@ export function checkCard(c) {
   if (String(c?.title || '').length > 16) bad.push('card.title 은 16자 안쪽');
   if (['number', 'quiz', 'selfcheck'].includes(c?.type) && String(c?.title || '').length > 12) bad.push(`${c.type} 카드 title 은 12자 안쪽 (큰 제목 한 줄)`);
   if (c?.ask && String(c.ask).length > 18) bad.push('card.ask(질문 말풍선)는 18자 안쪽');
+  if (c?.qa && String(c.qa).replace(/\s*Q&A$/i, '').length > 8) bad.push('card.qa(카드 위 "<주제> Q&A" 의 주제, 예 욕실철거·실비청구)는 8자 안쪽');
   if (c?.theme && !CARD_THEMES[c.theme]) bad.push(`card.theme 은 ${Object.keys(CARD_THEMES).join('/')} 중 하나`);
   if (c?.style === 'memo') {
     if (!['check', 'steps'].includes(c.type)) bad.push('memo 모양은 check·steps 카드만');
@@ -331,9 +332,20 @@ export function checkCard(c) {
 }
 
 // 2026-11-02 사용자 — "8번(채팅)으로 통일, 채팅 느낌이 제일 깔끔하고 눈에 들어온다". 질문 말풍선(오른쪽, 노랑) + 성글벙글 답 말풍선(왼쪽, 흰색).
-//   카카오톡 화면처럼 보이지 않게 바탕·말풍선은 우리 색(따뜻한 연보라 바탕, 버터 노랑 질문), 위에 '성글벙글 Q&A' 를 단다 — 실제 대화 캡처로 오해받지 않게.
+//   카카오톡 화면처럼 보이지 않게 바탕·말풍선은 우리 색(따뜻한 연보라 바탕, 버터 노랑 질문), 위에 '<주제> Q&A' 를 단다 (qaLabel — 2026-11-09 전엔 '성글벙글 Q&A') — 실제 대화 캡처로 오해받지 않게.
 //   질문은 card.ask (18자 안쪽, 없으면 제목으로 "○○ 알려 줘!").  steps 는 번호 말풍선, compare 는 ⭕/❌ 두 말풍선에 줄을 나눠 담는다.
 //   예전 크림색·파스텔 동그라미 카드는 cardHtmlClassic (card.style: "classic" 일 때만).
+// 채팅 카드 위 제목 '<주제> Q&A' (2026-11-09 사용자 — "성글벙글 Q&A 로 하지 말고 욕실철거 Q&A · 실비청구 Q&A · 인테리어 Q&A 이런 식으로").
+//   계획서 card.qa(8자 안쪽)가 있으면 그것, 없으면 원고 메인 키워드에서 지역 이름을 빼고 띄어쓰기 없이 (8자 넘으면 앞 두 낱말).
+const REGION_WORDS = new Set(['서울', '인천', '경기', '수원', '시흥', '안산', '안양', '부천', '광명', '부평', '강남', '강서구']);
+export function qaLabel(c) {
+  const own = String(c?.qa || '').trim().replace(/\s*Q&A$/i, '');
+  if (own) return own;
+  const words = String(c?.key || '').trim().split(/\s+/).filter((w) => w && !REGION_WORDS.has(w));
+  if (!words.length) return '';
+  const all = words.join('');
+  return all.length <= 8 ? all : words.slice(0, 2).join('').slice(0, 8);
+}
 const askOf = (c) => {
   const a = String(c.ask || '').trim();
   if (a) return a;
@@ -553,7 +565,7 @@ function cardHtml(S, c) {
     .mh{font-size:${fz}px;margin-bottom:${S * 0.01}px}
     .ml{font-size:${fz * 0.95}px;color:${P.dk2};padding:${S * 0.002}px 0;white-space:nowrap;overflow:hidden}
   </style><body>
-    <div class="top">성글벙글 Q&amp;A<b><span class="fit">${esc(c.title)}</span></b></div>
+    <div class="top">${esc(qaLabel(c) || c.brand || '성글벙글')} Q&amp;A<b><span class="fit">${esc(c.title)}</span></b></div>
     <div class="q"><span class="fit">${esc(askOf(c))}</span></div>
     <div class="a"><div class="av" style="background:${P.gr};color:#fff">⌂</div><div class="bb"><div class="nm">${esc(c.brand || '성글벙글')}</div>${answers}</div></div>
   </body>`;
