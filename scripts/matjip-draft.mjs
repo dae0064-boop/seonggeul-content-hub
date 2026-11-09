@@ -11,7 +11,7 @@
  * - 사진 순서는 원고 프런트매터 `photos: 파일1.jpg | 파일2.jpg | …` ([사진 1]부터 차례로). 없으면 폴더의 사진을 이름 순서로.
  * - 지도는 프런트매터 `place: 검색어 | 주소에 들어 있는 말` (예: `place: 불란서찐빵 | 대부황금로 1488`).
  *   검색 결과 중 이름에 검색어가 있고 주소에 둘째 말이 들어 있는 곳 하나만 고른다. 못 고르면 [지도] 줄을 남기고 사용자가 넣는다.
- * - 카테고리는 맛집·나들이 > 맛집·카페 후기 (`subcategory:` 로 바꿀 수 있다), 주제는 맛집.
+ * - 카테고리는 강팀장·일상, 하위 칸 없이 (2026-11-09 사용자가 맛집·카페·여행·나들이 칸을 지움. `subcategory:` 로 바꿀 수 있다), 주제는 맛집.
  * 실제 입력·확인은 publish-naver.mjs --save-draft 가 한다 (같은 안전장치: 글이 사라지면 되돌리고 멈춘다).
  */
 import fs from 'node:fs';
@@ -95,7 +95,7 @@ const json = {
   title: meta.title,
   category: '맛집·나들이',
   matjip: true,
-  subcategory: meta.subcategory || '맛집·카페 후기',
+  subcategory: meta.subcategory || '', // 2026-11-09 하위 칸 없이 강팀장·일상 바로
   topic: '맛집',
   tags: post.tags,
   // 장소 검색어: 원고 그대로 → 띄어쓰기 없이 → 주소(address:) 순서로 해 본다 (2026-11-04 사용자)

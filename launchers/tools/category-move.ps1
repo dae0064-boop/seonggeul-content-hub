@@ -1,4 +1,5 @@
 ﻿# 발행 글 카테고리 옮기기 — category-move.cmd 가 부른다 (2026-11-04). 한 편 시험 → 확인되면 나머지. 크롬은 끄지 않는다.
+param([switch]$Care, [switch]$Daily)
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo
@@ -22,7 +23,8 @@ $drive = Find-MyDrive
 # 진행 기록을 Drive 에 바로 쓴다 (창이 닫혀도 어디까지 했는지 남게)
 $live = @()
 if ($drive) { $live = @('--live', (Join-Path $drive "ClaudeWorkspace\run-logs\category-move-live\$stamp-$env:COMPUTERNAME.txt")) }
-& node scripts\naver-category-move.mjs $blog --all --out $out @live 2>&1 | ForEach-Object { Write-Host $_ }
+$mode = @(); if ($Care) { $mode = @('--care') }; if ($Daily) { $mode = @('--daily') }  # 2026-11-09 맛집·카페·여행·나들이 → 강팀장·일상, Care = 생활·보장 → 새 3칸
+& node scripts\naver-category-move.mjs $blog --all @mode --out $out @live 2>&1 | ForEach-Object { Write-Host $_ }
 if ($drive -and (Test-Path $out)) {
   $dest = Join-Path $drive "ClaudeWorkspace\run-logs\category-move-$stamp-$env:COMPUTERNAME"
   New-Item -ItemType Directory -Force -Path $dest | Out-Null
