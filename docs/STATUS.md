@@ -31,7 +31,7 @@
 - GPT 그림: 클라우드는 api.openai.com 막힘(키 입력은 사용자가 사양) → `content/blog-banner/prompts.json` 상담 배너 3가지 consult-a·b·c(medium 약 270원, Drive 블로그배너/사진.png 있으면 그 사진으로)을 `launchers/banner-now.cmd`(배너 전용) 가 Drive `블로그배너/` 로. [ ] 받으면 `content/blog-banner/src/` 에 넣고 soft.mjs 로 합침.
 - ✅ 하늘색판 `content/consult/banner/blue.mjs --name 강성대 --photo <배경 없는 사진>` — GPT 시안 C 색 + 한다팀장 배너 틀(큰 제목·성글벙글 서명·파란 띠·아이콘 5칸·오른쪽 인물), '성대의 싱글벙글'·카톡 단추 뺌. 사람은 사용자가 대화에 준 프로필 사진에서 오려 냄(사진·결과 PNG 는 저장소에 안 올림).
 - 🆕 사용자 '사진 깨짐·너무 부드러움 → GPT 로 전문적으로' → `prompts.json` consult-a2·b2·c2(남색·금 / 흰색·남색 / 남색·탄, 사진 크게, 왼쪽 3칸 카테고리·인스타 로고·카카오톡 로고 '1:1 보험상담'). 사진 필수: Drive `블로그배너/사진.jpg` → `banner-now.cmd` 또는 catchup(13·16·19·22시)이 저절로. [ ] 생기면 1920×600 으로 자르고 위젯 칸 맞춤.
-- [ ] (옛) 사용자 사진 파일 받기 — 대화 캡처는 파일로 안 들어옴. 상담 단추·이름이 있어 GOMS 심의 뒤 게시.
+- 🆕 사용자 'GPT 얼굴이 내 얼굴과 다르다' → GPT 시안에서 사람만 지운 판 consult-a3·b3·c3(images/edits, PC) + 원본 프로필 사진(대화로 받은 1080×1920)에서 오려 낸 사람을 클라우드가 얹는다. [ ] a3~c3 생기면 합성. — 대화 캡처는 파일로 안 들어옴. 상담 단추·이름이 있어 GOMS 심의 뒤 게시.
 
 ### 11/9 낮 — 🗑 생활보장 밖 글 모두 삭제 → 🚀 생활보장으로 빠르게 조회수 (사용자 "비공개 말고 다 삭제했어. 앞으로 생활보장으로만 조회수를 만들어보자 빠르게")
 - published.tsv 의 그 219줄 status private → **deleted**.
