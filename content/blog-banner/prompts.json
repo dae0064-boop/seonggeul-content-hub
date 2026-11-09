@@ -2,12 +2,36 @@
   "_설명": "네이버 블로그 PC 타이틀 배너 시안 (2026-11-02 사용자 — 'GPT 에 요청해서 만들어와 봐'). 카테고리 5개(생활·정보/생활·보장/이슈·뉴스/연예·방송/맛집·나들이). PC 의 make-bg.mjs 가 low 로 만들어 Drive ClaudeWorkspace/블로그배너/ 로 올린다(이미 있으면 다시 만들지 않음). 한글 글씨는 그림에 넣지 않고 클라우드가 scripts/blog-banner/render.mjs 로 얹는다. 8장 low 약 $0.05.",
   "items": [
     {
-      "slug": "consult-profile-hd",
+      "slug": "consult-pose-hands",
       "size": "1024x1536",
       "quality": "high",
       "photo": true,
       "photo_required": true,
-      "prompt": "Retouch this exact photo into a high-resolution, clean professional studio profile portrait. IDENTITY IS CRITICAL: keep this exact same man — identical face shape, eyes, eyelids, nose, mouth, eyebrows, ears, skin tone, hairstyle and expression. Do not beautify, slim, enlarge eyes or change any facial proportion. Only improve quality: sharp high-resolution detail, clean natural skin (remove small blemishes and shine, keep real skin texture), neatly groomed hair with natural shine, soft even studio lighting with a gentle rim light on hair and shoulders, crisp black suit with smooth fabric, neat white shirt collar and black tie. Same pose with arms crossed, same framing from the top of the head to the waist, centered. Pure clean white background, no shadow. No text, no logo, no watermark."
+      "prompt": "Use the man in the attached photo. IDENTITY IS CRITICAL: keep exactly the same face — face shape, eyes, eyelids, eyebrows, nose, mouth, ears, skin tone, hairstyle and hair parting must be identical; do not beautify, slim the face or enlarge the eyes. Same dark charcoal suit, white shirt and dark grey tie. Professional studio portrait, soft even studio lighting, sharp high-resolution detail, natural skin texture. Waist-up framing, centered, pure clean white background with no shadow. No text, no logo, no watermark. Pose: standing straight, both hands lightly clasped in front of the waist, warm friendly smile showing teeth, body turned very slightly to his right, looking at the camera."
+    },
+    {
+      "slug": "consult-pose-guide",
+      "size": "1024x1536",
+      "quality": "high",
+      "photo": true,
+      "photo_required": true,
+      "prompt": "Use the man in the attached photo. IDENTITY IS CRITICAL: keep exactly the same face — face shape, eyes, eyelids, eyebrows, nose, mouth, ears, skin tone, hairstyle and hair parting must be identical; do not beautify, slim the face or enlarge the eyes. Same dark charcoal suit, white shirt and dark grey tie. Professional studio portrait, soft even studio lighting, sharp high-resolution detail, natural skin texture. Waist-up framing, centered, pure clean white background with no shadow. No text, no logo, no watermark. Pose: body turned slightly to his right, his right hand raised to chest height with the open palm pointing to the left side of the frame as if politely introducing something, friendly smile showing teeth, looking at the camera."
+    },
+    {
+      "slug": "consult-pose-tablet",
+      "size": "1024x1536",
+      "quality": "high",
+      "photo": true,
+      "photo_required": true,
+      "prompt": "Use the man in the attached photo. IDENTITY IS CRITICAL: keep exactly the same face — face shape, eyes, eyelids, eyebrows, nose, mouth, ears, skin tone, hairstyle and hair parting must be identical; do not beautify, slim the face or enlarge the eyes. Same dark charcoal suit, white shirt and dark grey tie. Professional studio portrait, soft even studio lighting, sharp high-resolution detail, natural skin texture. Waist-up framing, centered, pure clean white background with no shadow. No text, no logo, no watermark. Pose: holding a slim tablet against his chest with both hands, the screen facing away from the camera, warm friendly smile, looking at the camera."
+    },
+    {
+      "slug": "consult-pose-arms",
+      "size": "1024x1536",
+      "quality": "high",
+      "photo": true,
+      "photo_required": true,
+      "prompt": "Use the man in the attached photo. IDENTITY IS CRITICAL: keep exactly the same face — face shape, eyes, eyelids, eyebrows, nose, mouth, ears, skin tone, hairstyle and hair parting must be identical; do not beautify, slim the face or enlarge the eyes. Same dark charcoal suit, white shirt and dark grey tie. Professional studio portrait, soft even studio lighting, sharp high-resolution detail, natural skin texture. Waist-up framing, centered, pure clean white background with no shadow. No text, no logo, no watermark. Pose: arms crossed confidently, bright friendly smile showing teeth, looking at the camera."
     }
   ],
   "_설명2": "2026-11-02 사용자가 블로그 전체 화면을 보내 줌 → 스킨 배경 1920×600(가운데 966px 칸에 글씨·아이콘, 오른쪽 칸 밖에 인물)으로 바꿈. 바탕 2장 + 아이콘 5장 = 7장 low.",
@@ -48,9 +72,11 @@
     "consult-c2",
     "consult-a3",
     "consult-b3",
-    "consult-c3"
+    "consult-c3",
+    "consult-profile-hd"
   ],
   "_설명11": "2026-11-09 사용자 'Drive 블로그배너 폴더에서 방금 만든 시안 빼고 다 지워' → 지난 그림 목록을 items 에서 빼 done_slugs 로 옮김(지운 뒤 PC 가 다시 만들지 않게).",
   "_설명12": "2026-11-09 사용자 'GPT 가 그린 얼굴이 내 얼굴과 너무 다르다' → GPT 시안(a2·b2·c2)에서 사람만 지운 판(a3·b3·c3, images/edits)을 PC 가 만들고, 클라우드가 원본 프로필 사진에서 오려 낸 사람(얼굴 그대로)을 얹는다.",
-  "_설명13": "2026-11-09 사용자 '이 사진 GPT 한테 고화질로 깔끔하게' → Drive 블로그배너/사진.* 을 images/edits(input_fidelity high, high 품질 약 350원)로 고화질 프로필 사진 consult-profile-hd.png."
+  "_설명13": "2026-11-09 사용자 '이 사진 GPT 한테 고화질로 깔끔하게' → Drive 블로그배너/사진.* 을 images/edits(input_fidelity high, high 품질 약 350원)로 고화질 프로필 사진 consult-profile-hd.png.",
+  "_설명14": "2026-11-09 사용자 '이 사진 얼굴로 사진을 몇 장' → 같은 얼굴로 자세 4가지(두 손 모음·안내 손짓·태블릿·팔짱 웃음), images/edits input_fidelity high, high 품질 장당 약 350원."
 }
