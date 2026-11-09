@@ -114,7 +114,7 @@ const ISSUE12 = { 연예: 6, 정책: 6 };
 const SEASON_FROM = '2026-11-06';
 // 2026-11-11 원고부터 하루 10편 = 생활보장 10 (생활정보·이슈·연예 0) — 2026-11-09 사용자 "상담 손님이 더 중요해", "생활정보도 빼고 생활보장으로만"
 //   (standards/상담-유입-계획.md). 이슈 글은 쓰지 않고, 보장과 이어지는 제도 소식은 생활보장 글로 쓴다.
-const CARE10_FROM = '2026-11-11';
+const CARE10_FROM = '2026-11-10'; // 11/9 사용자가 생활보장 밖 카테고리를 모두 비공개로 → 하루 앞당김
 const SPLIT_CARE10 = { 생활정보: 0, 생활보장: 10 };
 const SPLIT_SEASON = { 생활정보: 10, 생활보장: 10 };
 const HF_SEASON = { 생활정보: 9, 생활보장: 6 };
@@ -307,6 +307,8 @@ function publishedNaverRows() {
 }
 
 let publishedCache = null;
+// 2026-11-09 사용자: 생활보장 밖 네이버 카테고리(생활·정보·이슈·연예·맛집)를 모두 비공개로 돌림 → 그 글은 링크·겹침·누락 검사에서 뺀다
+export const naverHidden = (c) => c[1] === 'naver' && (c[5] || '') !== '생활보장';
 function publishedNaverTitles(channel = 'naver') {
   publishedCache ||= {};
   if (publishedCache[channel]) return publishedCache[channel];
@@ -314,7 +316,7 @@ function publishedNaverTitles(channel = 'naver') {
   try {
     for (const row of fs.readFileSync('content/archive/published.tsv', 'utf8').split(/\r?\n/).slice(1)) {
       const c = row.split('\t');
-      if (c[1] === channel && c[4] && c[6] !== 'deleted') set.add(normTitle(c[4]));
+      if (c[1] === channel && c[4] && c[6] !== 'deleted' && c[6] !== 'private' && !naverHidden(c)) set.add(normTitle(c[4]));
     }
   } catch { /* 목록이 없으면 모두 못 찾음으로 나온다 */ }
   return set;
