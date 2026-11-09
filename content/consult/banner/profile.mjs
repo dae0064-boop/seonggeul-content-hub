@@ -11,6 +11,9 @@ const PH = A('--photo', '');
 if (!PH || !fs.existsSync(PH)) { console.error('사용법: node content/consult/banner/profile.mjs --photo 사람.png [--out 폴더]'); process.exit(1); }
 const OUT = A('--out', '.');
 const photo = `data:image/png;base64,${fs.readFileSync(PH).toString('base64')}`;
+// --bgimg 사무실 바탕 (배너와 같은 그림, Drive 블로그배너/consult-bg-room1) — 없으면 딥그린 그라데이션
+const BGI = A('--bgimg', '');
+const bgimg = BGI && fs.existsSync(BGI) ? `data:image/png;base64,${fs.readFileSync(BGI).toString('base64')}` : '';
 const font = (f) => `data:font/${f.endsWith('otf') ? 'otf' : 'ttf'};base64,${fs.readFileSync(f).toString('base64')}`;
 const SERIF = font('scripts/lib/fonts/NotoSerifKR-Black.ttf');
 const BOLD = font('scripts/threads/fonts/Pretendard-Bold.otf');
@@ -27,7 +30,11 @@ body{width:var(--w);height:var(--h);overflow:hidden;position:relative;
   linear-gradient(115deg,transparent 0 38%,rgba(255,236,190,.07) 38% 46%,transparent 46% 60%,rgba(255,236,190,.05) 60% 64%,transparent 64%)}
 .ring{position:absolute;border-radius:50%;border:2px solid rgba(226,196,140,.35)}
 img.p{position:absolute;filter:drop-shadow(0 18px 30px rgba(0,0,0,.35))}
+.room{position:absolute;inset:0;background-size:cover;background-repeat:no-repeat}
+.room:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(6,30,26,.55),rgba(6,30,26,.15) 60%,rgba(6,30,26,.25))}
+.gold{background:linear-gradient(180deg,#f6e2b0 0%,#d9b46a 55%,#b88a3c 100%);-webkit-background-clip:text;color:transparent}
 `;
+const room = (pos, blur = 0) => bgimg ? `<div class="room" style="background-image:url(${bgimg});background-position:${pos};${blur ? `filter:blur(${blur}px);transform:scale(1.05)` : ''}"></div>` : '<div class="glow"></div>';
 
 // 프로필: 얼굴이 가운데(모바일은 동그랗게 잘린다), 글씨 없음(161px 로 줄어든다)
 const profile = `<html><head><style>${base}
@@ -35,7 +42,7 @@ const profile = `<html><head><style>${base}
 .halo{position:absolute;left:50%;top:44%;width:640px;height:640px;transform:translate(-50%,-50%);border-radius:50%;
   background:radial-gradient(circle,rgba(255,240,210,.28) 0%,rgba(255,240,210,.12) 45%,rgba(255,240,210,0) 70%)}
 img.p{width:1180px;left:50%;top:70px;transform:translateX(-50%)}
-</style></head><body><div class="glow"></div><div class="halo"></div><img class="p" src="${photo}"></body></html>`;
+</style></head><body>${room('62% 40%', 6)}<div class="halo"></div><img class="p" src="${photo}"></body></html>`;
 
 // 모바일앱 커버: 네이버가 아래쪽에 블로그명·별명을 흰 글씨로 얹는다 → 아래 30% 는 비워 두고, 글씨는 왼쪽 위
 const cover = `<html><head><style>${base}
@@ -45,16 +52,17 @@ const cover = `<html><head><style>${base}
 img.p{width:820px;right:-150px;top:120px}
 .fade{position:absolute;left:0;right:0;bottom:0;height:360px;background:linear-gradient(transparent,rgba(8,40,34,.92))}
 .t{position:absolute;left:72px;top:120px;color:#fbf5e9}
-.chip{display:inline-block;font:24px M;letter-spacing:1px;color:#12463D;background:#e2c48c;padding:10px 22px;border-radius:40px}
-.h{font:78px/1.22 S;margin-top:30px;letter-spacing:1px}
-.h b{color:#e8cf9c;font-weight:inherit}
-.s{margin-top:34px;font:31px/1.75 M;color:rgba(251,245,233,.92)}
-.s i{font-style:normal;color:#e2c48c;margin-right:12px}
-</style></head><body><div class="glow"></div><div class="ring r1"></div><div class="ring r2"></div>
+.chip{display:inline-block;font:26px M;letter-spacing:1px;color:#ecd39a;border:2px solid rgba(226,196,140,.8);background:rgba(6,30,26,.45);padding:10px 26px;border-radius:40px}
+.h{font:80px/1.24 S;margin-top:30px;letter-spacing:1px;color:#fbf5e9;text-shadow:0 4px 18px rgba(0,0,0,.35)}
+.h b{font-weight:inherit;text-shadow:none}
+.s{margin-top:36px;display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+.s span{font:29px M;color:#fbf5e9;border:2px solid rgba(226,196,140,.7);background:rgba(6,30,26,.5);padding:10px 24px 10px 16px;border-radius:40px}
+.s i{font-style:normal;display:inline-block;width:34px;height:34px;line-height:34px;text-align:center;border-radius:50%;background:#d9b46a;color:#12463D;font-size:21px;margin-right:12px;vertical-align:2px}
+</style></head><body>${room('70% 30%')}${bgimg ? '' : '<div class="ring r1"></div><div class="ring r2"></div>'}
 <img class="p" src="${photo}"><div class="fade"></div>
 <div class="t"><span class="chip">친근한 설계사</span>
-<div class="h">보험,<br><b>어렵지 않게</b><br>풀어 드려요</div>
-<div class="s"><i>✔</i>실비·보험금 청구<br><i>✔</i>병원비·돌봄 제도</div></div>
+<div class="h">보험,<br><b class="gold">어렵지 않게</b><br>풀어 드려요</div>
+<div class="s"><span><i>✔</i>실비·보험금 청구</span><span><i>✔</i>병원비·돌봄 제도</span></div></div>
 </body></html>`;
 
 const browser = await chromium.launch();
