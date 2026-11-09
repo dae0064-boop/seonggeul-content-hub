@@ -30,7 +30,9 @@
 - 블로그 2개 시험 PC 실제 결과 ✅(11:39, 코드 0): seongdaeeyo(9222) → breakandbuild(9223, 이때 처음 로그인) → seongdaeeyo, 셋 다 글쓰기 화면·로그인 유지.
 - 켠 것: `auto-day.cmd` chulgeo-day 줄 REM 뗌 · `chulgeo-day.ps1` 프로필 chulgeo-chrome → **blog2-chrome**(로그인된 곳), 알림 안내는 two-blog-test.cmd · README·routines/chulgeo-daily.md 멈춤 상자 지움 · 클라우드 예약 작업 "다와이철거 다음 날 원고 5편"(19:43) 다시 켬.
 - 흐름: 10/27 밀린 원고 5편(검사기 ✅, 그림 계획서 있음)이 남아 있어 오늘 밤 작업은 새로 안 씀(5편 이상 밀리면 안 씀) → **11/10 아침 PC 가 그 5편을 11·13·16·18·20시에 예약** → 11/10 밤부터 다음 날 5편씩.
-- [ ] 11/10 아침 확인: Drive run-logs `day-2026-11-10-chulgeo.log`, run-locks/chulgeo/*.done 5개.
+- ⏩ 같은 날 사용자 "철거 원고 11월 11일 오전부터 진행, 예시로 하나 만들어서 저장해봐": `chulgeo-day.ps1` 이 2026-11-11 전에는 건너뜀(`$StartDate`). 11/11 아침이 10/27 밀린 5편을 먼저 예약.
+- 예시 원고 `content/chulgeo/posts/2026-11-11-seoul-yoksil-cheolgeo.md`(서울 욕실 철거, 집에 있어도 될까 — 검사기 ✅) + 그림 계획서. PC `launchers/chulgeo-draft.cmd` 더블클릭 → breakandbuild 에 그림까지 **임시저장만**(`content/chulgeo/draft.txt` 의 슬러그, .done 남겨 아침 예약에서 빠짐).
+- [ ] 사용자가 chulgeo-draft.cmd 실행 → Drive run-logs `day-<날짜>-chulgeo.log` 확인 · [ ] 11/11 아침 day-2026-11-11-chulgeo.log, run-locks/chulgeo/*.done.
 
 ### 11/9 낮 — 💬 카카오톡 채널 심의 초안 (사용자 "카카오톡 채널 심의 초안 지금 만들어줘")
 - `content/consult/kakao-channel-draft.md` + Word `content/consult/카카오톡채널-심의초안.docx`: 채널 이름(추천 "성글벙글 보험금 청구 안내")·아이디·소개·친구 추가 인사말·블로그/인스타 연결 문구·고지 문구(GOMS 적격 받은 스레드 배너와 같은 글자). '청구 대행·보험금 받아 드림'은 손해사정 영역이라 뺌.
