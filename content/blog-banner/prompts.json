@@ -2,16 +2,16 @@
   "_설명": "네이버 블로그 PC 타이틀 배너 시안 (2026-11-02 사용자 — 'GPT 에 요청해서 만들어와 봐'). 카테고리 5개(생활·정보/생활·보장/이슈·뉴스/연예·방송/맛집·나들이). PC 의 make-bg.mjs 가 low 로 만들어 Drive ClaudeWorkspace/블로그배너/ 로 올린다(이미 있으면 다시 만들지 않음). 한글 글씨는 그림에 넣지 않고 클라우드가 scripts/blog-banner/render.mjs 로 얹는다. 8장 low 약 $0.05.",
   "items": [
     {
-      "slug": "consult-bg-green1",
+      "slug": "consult-bg-room1",
       "size": "1536x1024",
       "quality": "low",
-      "prompt": "Wide cinematic background photo for a website header, no people, no text, no logos. A softly blurred (strong bokeh, out of focus) modern premium consultation office interior: large windows with soft daylight on the right side, a few warm round light bokeh dots, a blurred plant and wooden shelf, glass partition. The whole image is color graded in deep emerald green (#12463D) and dark teal tones with subtle warm highlights, calm, trustworthy and premium. The left and center areas are darker and smooth (space for white text), the right third slightly brighter. Keep all interesting details inside the horizontal band between 30% and 70% of the image height."
+      "prompt": "Wide photo of a modern, clean insurance consultation room, clearly recognizable, only slightly soft focus (light depth of field, NOT heavily blurred), no people, no text, no logos, no brand names. In the room: a neat wooden consultation desk with two comfortable chairs facing each other, a laptop and a tidy document folder and pen on the desk, a bookshelf with binders, a large window with soft daylight, a green plant, warm pendant lights. Color graded in deep emerald green (#12463D) and dark teal with warm wood highlights, calm, trustworthy and premium. Composition: the desk and chairs on the right half of the image; the left and center areas are darker and plainer (a dark green wall) to leave space for white text. Keep the main details inside the horizontal band between 30% and 70% of the image height."
     },
     {
-      "slug": "consult-bg-green2",
+      "slug": "consult-bg-room2",
       "size": "1536x1024",
       "quality": "low",
-      "prompt": "Wide cinematic background photo for a website header, no people, no text, no logos. A softly blurred (strong bokeh, out of focus) modern premium consultation office interior: large windows with soft daylight on the right side, a few warm round light bokeh dots, a blurred plant and wooden shelf, glass partition. The whole image is color graded in deep emerald green (#12463D) and dark teal tones with subtle warm highlights, calm, trustworthy and premium. The left and center areas are darker and smooth (space for white text), the right third slightly brighter. Keep all interesting details inside the horizontal band between 30% and 70% of the image height. Variation: instead of an office, a softly blurred modern clinic/hospital lobby with gentle green tint and warm light bokeh."
+      "prompt": "Wide photo of a modern, clean insurance consultation room, clearly recognizable, only slightly soft focus (light depth of field, NOT heavily blurred), no people, no text, no logos, no brand names. In the room: a neat wooden consultation desk with two comfortable chairs facing each other, a laptop and a tidy document folder and pen on the desk, a bookshelf with binders, a large window with soft daylight, a green plant, warm pendant lights. Color graded in deep emerald green (#12463D) and dark teal with warm wood highlights, calm, trustworthy and premium. Composition: the desk and chairs on the right half of the image; the left and center areas are darker and plainer (a dark green wall) to leave space for white text. Keep the main details inside the horizontal band between 30% and 70% of the image height. Variation: a slightly wider view with a round meeting table, a wall-mounted screen turned off, and bright window light."
     }
   ],
   "_설명2": "2026-11-02 사용자가 블로그 전체 화면을 보내 줌 → 스킨 배경 1920×600(가운데 966px 칸에 글씨·아이콘, 오른쪽 칸 밖에 인물)으로 바꿈. 바탕 2장 + 아이콘 5장 = 7장 low.",
@@ -66,7 +66,9 @@
     "consult-ph-won",
     "consult-ph2-bill",
     "consult-ph2-care",
-    "consult-ph2-won"
+    "consult-ph2-won",
+    "consult-bg-green1",
+    "consult-bg-green2"
   ],
   "_설명11": "2026-11-09 사용자 'Drive 블로그배너 폴더에서 방금 만든 시안 빼고 다 지워' → 지난 그림 목록을 items 에서 빼 done_slugs 로 옮김(지운 뒤 PC 가 다시 만들지 않게).",
   "_설명12": "2026-11-09 사용자 'GPT 가 그린 얼굴이 내 얼굴과 너무 다르다' → GPT 시안(a2·b2·c2)에서 사람만 지운 판(a3·b3·c3, images/edits)을 PC 가 만들고, 클라우드가 원본 프로필 사진에서 오려 낸 사람(얼굴 그대로)을 얹는다.",
@@ -74,5 +76,6 @@
   "_설명14": "2026-11-09 사용자 '이 사진 얼굴로 사진을 몇 장' → 같은 얼굴로 자세 4가지(두 손 모음·안내 손짓·태블릿·팔짱 웃음), images/edits input_fidelity high, high 품질 장당 약 350원.",
   "_설명15": "2026-11-09 사용자 '카테고리 카드 아이콘이 느낌이 안 산다' → 3D 아이콘 3장(consult-ic3d-*, high) + 사진 3장(consult-ph-*, medium) 비교용. 약 1,300원. → 같은 날 사용자 '더 저렴하게' — 6장 모두 low(약 60원).",
   "_설명16": "2026-11-09 사용자: ① 보험금 청구 서류를 작성하는 느낌 ② 병원비·돌봄은 더 돌봄다운 사진 ③ 지원금은 5만 원권 모양 → consult-ph2-* 3장, low(약 30원).",
-  "_설명17": "2026-11-09 사용자 '바탕 GPT 로 그려 줘' → 딥그린 흐릿한 상담실(green1)·병원 로비(green2) 바탕 2장, low(약 20원). 클라우드가 1920×600 으로 잘라 fresh.mjs --bgimg 로 얹는다."
+  "_설명17": "2026-11-09 사용자 '바탕 GPT 로 그려 줘' → 딥그린 흐릿한 상담실(green1)·병원 로비(green2) 바탕 2장, low(약 20원). 클라우드가 1920×600 으로 잘라 fresh.mjs --bgimg 로 얹는다.",
+  "_설명18": "2026-11-09 사용자 '상담실이 너무 흐릿해서 상담실처럼 안 보인다' → 상담실이 알아보이게(살짝만 흐리게) 2장, low(약 20원)."
 }
