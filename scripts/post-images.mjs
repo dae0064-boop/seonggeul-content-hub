@@ -30,6 +30,7 @@ import { fileURLToPath } from "node:url";
 import { spawnSync } from "node:child_process";
 import { parseArgs } from "node:util";
 import { renderOverlays, renderCards, checkCard, launch as launchBrowser } from "./lib/overlay.mjs";
+import * as greenLib from "./lib/cards-green.mjs";
 
 /** 진한 남색 그라데이션 1024×1024 PNG (인물 사진을 못 찾은 대표사진 바탕) */
 async function plainBackground(dest, launch) {
@@ -82,10 +83,30 @@ if (QUALITY_IGNORED.length) console.log(`ℹ  계획서의 quality 는 무시하
 const outDir = join(ROOT, "content", "images", plan.slug);
 
 // 카드 틀 대표사진에 넣을 메인 키워드·분류 — 같은 슬러그 원고에서 읽는다
-let postMeta = null;
+let postMeta = null, postDir = "", postRaw = "";
 for (const d of ["posts", "tistory", "chulgeo/posts"]) {
   const md = join(ROOT, "content", d, `${plan.slug}.md`);
-  if (existsSync(md)) { postMeta = parsePost(readFileSync(md, "utf8")); break; }
+  if (existsSync(md)) { postRaw = readFileSync(md, "utf8"); postMeta = parsePost(postRaw); postDir = d; break; }
+}
+// 진초록 카드 + 캐릭터 '친근한 설계사' (2026-11-09 사용자 "적용해") — 네이버 성글벙글 원고만 (티스토리·철거는 예전 카드)
+const GREEN = postDir === "posts" && (!plan.brand || plan.brand === "성글벙글");
+/** [이미지 n] 다음에 나오는 소제목 — 카드 아래 띠 '이어서 → 『…』' */
+function nextHeading(n) {
+  const lines = postRaw.split(/\r?\n/);
+  const at = lines.findIndex((l) => l.trim().startsWith(`[이미지 ${n}]`));
+  if (at < 0) return "";
+  const h = lines.slice(at + 1).find((l) => l.trim().startsWith("인용구(소제목)"));
+  const t = h ? h.trim().replace(/^인용구\(소제목\)\s*/, "").trim() : "";
+  return t.length > 20 ? "" : t;
+}
+const mascotCache = {};
+function mascotOf(card, n) {
+  const g = greenLib;
+  if (!g.wantsMascot(card)) return "";
+  const pose = g.poseFor(card, `${plan.slug}-${n}`);
+  const f = [join(ROOT, "content/mascot/img", `${pose}.png`), join(ROOT, "content/mascot/pose-clasp.png")].find((x) => existsSync(x));
+  if (!f) return "";
+  return (mascotCache[f] ??= "data:image/png;base64," + readFileSync(f).toString("base64"));
 }
 // 그림 속 블로그 이름: 계획서 brand (철거 블로그 = "다와이철거", 2026-10-26). 없으면 성글벙글
 const overlayOf = (im) => im.overlay && (im.frame === "card"
@@ -124,6 +145,7 @@ for (const im of todo) {
     const name = im.file ? im.file.replace(/\.png$/i, "") : String(im.n).padStart(2, "0");
     const target = join(outDir, `${name}.png`);
     if (existsSync(target) && !opt.force && !opt["overlay-only"]) { console.log(`⏭  ${name}.png 이미 있음 — ${im.title}`); skipped++; }
+    else if (GREEN) cardJobs.push({ n: im.n, dest: target, mascot: mascotOf(im.card, im.n), card: { ...im.card, green: true, next: im.card.next || nextHeading(im.n), key: postMeta?.mainKeyword || "" } });
     else cardJobs.push({ n: im.n, dest: target, card: { ...im.card, brand: plan.brand, key: postMeta?.mainKeyword || "", theme: im.card.theme || cardThemeOf(postMeta), category: im.card.category || postMeta?.category } });
     continue;
   }
