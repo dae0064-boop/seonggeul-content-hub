@@ -1,0 +1,81 @@
+{
+  "slug": "2026-11-10-ingamjeungmyeongseo-daeri-balgeup",
+  "title": "인감증명서 대리 발급, 부모님 신분증 원본도 챙겨야 하나요 (대리인 17세 이상)",
+  "source": "11/10(화) 17:00 네이버 원고 — 생활보장 검색형(청구·서류), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "주민센터 창구 위에 놓인 인감도장과 인주 (대표사진)",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a community service center counter. Lighting: soft overcast daylight. A traditional Korean wooden seal stamp standing beside a small round red ink pad on a clean community service center counter, no people. Color theme: modern light gray and white tones with a mustard accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "object",
+      "bg": "modern light gray and white tones with a mustard accent",
+      "note": "대표",
+      "thumb_shot": "object",
+      "thumb_theme": "charcoal",
+      "thumb_person": "없음",
+      "thumb_place": "주민센터",
+      "thumb_light": "흐린 날",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "charcoal",
+        "font": "jua",
+        "title": "인감증명서 대리 발급\n신분증도 필요?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "인감증명서 대리 발급 질문을 크게 던지는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "대리 발급",
+        "title": "아버지 대신\n떼도 될까?",
+        "ask": "아빠 대신 떼도 돼?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "병실 침대에서 아버지가 볼펜으로 서류에 서명하는 것을 지켜보는 30대 아들",
+      "prompt": "Camera and composition: medium shot in a hospital room. A Korean man in his 30s in a mustard sweater sitting beside a hospital bed while his father in his 70s in light gray patient clothes signs a blank sheet with a pen on a bed tray, both calm. Background color: bright hospital room with light gray walls and window light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a hospital room",
+      "bg": "bright hospital room with light gray walls and window light"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "인감증명서와 본인서명사실확인서를 견주는 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "ask": "둘 중 뭘 떼야 해?",
+        "title": "대리로 되는 것",
+        "items": [
+          "인감증명서 대리 발급",
+          "본인서명사실확인서",
+          "보험사가 받는 서류"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "흐린 날 주민센터 대기 의자에서 번호표를 들고 기다리는 40대 딸",
+      "prompt": "Camera and composition: medium shot in a public office waiting area. A Korean woman in her 40s in a mustard coat sitting on a waiting bench in a community service center, holding a small blank ticket and waiting calmly. Background color: modern light gray public office with mustard accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a public office waiting area",
+      "bg": "modern light gray public office with mustard accents"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "집 현관에서 서류 봉투를 건네받으며 웃는 70대 아버지와 40대 아들",
+      "prompt": "Camera and composition: medium shot at an apartment entrance. A Korean man in his 40s in a charcoal coat handing a plain envelope to his father in his 70s in a beige cardigan at an apartment front door, both smiling. Background color: apartment entrance with light gray walls and warm light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at an apartment entrance",
+      "bg": "apartment entrance with light gray walls and warm light"
+    }
+  ]
+}
