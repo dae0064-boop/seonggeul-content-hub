@@ -68,7 +68,18 @@ img.p{width:820px;right:-150px;top:120px}
 </body></html>`;
 
 const browser = await chromium.launch();
-for (const [name, html, w, h] of [['profile.png', profile, 1000, 1000], ['cover.png', cover, 1080, 1080]]) {
+// 잘림에 안전한 커버 (2026-11-09 사용자 "모바일앱 배너로 만들려니까 사진이 잘려") — 앱이 위아래·양옆을 잘라도
+// 얼굴·글씨가 가운데 상자(가로 200~880, 세로 170~910) 안에 남게 작게 모은다
+const coverSafe = cover
+  .replace('.t{position:absolute;left:72px;top:84px;color:#fbf5e9}', '.t{position:absolute;left:200px;top:190px;color:#fbf5e9}')
+  .replace('.chip{display:inline-block;font:26px M', '.chip{display:inline-block;font:20px M')
+  .replace('.h{font:80px/1.24 S;margin-top:30px', '.h{font:54px/1.24 S;margin-top:20px')
+  .replace('.s{margin-top:32px;display:flex;flex-direction:column;gap:12px', '.s{margin-top:24px;display:flex;flex-direction:column;gap:9px')
+  .replace('.s span{font:29px M', '.s span{font:21px M').replace('padding:10px 24px 10px 16px', 'padding:7px 18px 7px 11px')
+  .replace('width:34px;height:34px;line-height:34px', 'width:26px;height:26px;line-height:26px').replace('font-size:21px;margin-right:12px', 'font-size:16px;margin-right:9px')
+  .replace('img.p{width:820px;right:-150px;top:120px}', 'img.p{width:600px;right:110px;top:230px}')
+  .replace('.fade{position:absolute;left:0;right:0;bottom:0;height:360px', '.fade{position:absolute;left:0;right:0;bottom:0;height:260px');
+for (const [name, html, w, h] of [['profile.png', profile, 1000, 1000], ['cover.png', cover, 1080, 1080], ['cover-safe.png', coverSafe, 1080, 1080]]) {
   const page = await browser.newPage({ viewport: { width: w, height: h } });
   await page.setContent(html);
   await page.evaluate(() => document.fonts.ready);
