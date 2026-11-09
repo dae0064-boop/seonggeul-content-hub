@@ -10,7 +10,7 @@ const font = f => { const fp = fs.existsSync(path.join(ROOT, 'scripts/lib/fonts'
 const HF = { gothic: 'GothicA1-ExtraBold.ttf', pretendard: 'Pretendard-Bold.otf', blackhan: 'BlackHanSans-Regular.ttf' }[A('--hfont', 'pretendard')] || 'Pretendard-Bold.otf';
 const LS = A('--ls', '2');
 // 꼬리표·체크 칩 글씨체 (2026-11-09 사용자 "너무 무난해서 눈에 안 띈다") — --cfont pretendard|jua|blackhan|gaegu
-const CFN = { pretendard: 'Pretendard-Bold.otf', jua: 'Jua-Regular.ttf', blackhan: 'BlackHanSans-Regular.ttf', gaegu: 'Gaegu-Bold.ttf' }[A('--cfont', 'jua')] || 'Jua-Regular.ttf';
+const CFN = { pretendard: 'Pretendard-Bold.otf', jua: 'Jua-Regular.ttf', blackhan: 'BlackHanSans-Regular.ttf', gaegu: 'Gaegu-Bold.ttf' }[A('--cfont', 'pretendard')] || 'Pretendard-Bold.otf';
 const CSTROKE = /Pretendard/.test(CFN) ? 1 : 0;
 const PH = A('--photo', ''); const photo = PH && fs.existsSync(PH) ? `data:image/png;base64,${fs.readFileSync(PH).toString('base64')}` : '';
 // 배경 색 (2026-11-09 사용자 "회색 정장과 어울리는 배경, 동그라미는 모두 빼")
@@ -39,8 +39,20 @@ const CP = A('--cardphotos', '');
 const cph = n => { const f = CP && path.join(CP, `ph2-${n}.jpg`); return f && fs.existsSync(f) ? `data:image/jpeg;base64,${fs.readFileSync(f).toString('base64')}` : ''; };
 const PHOTOS = { bill: cph('bill'), care: cph('care'), won: cph('won') };
 // 바탕 무늬 (2026-11-09 사용자 "배경이 너무 밋밋") — 동그라미 없이: --pattern lines(빛줄기·사선 결) | waves(물결 선) | none
-const PAT = A('--pattern', 'none');
+const PAT = A('--pattern', 'premium');
+const premium = () => `<svg class="pat" width="1920" height="600"><defs>
+<radialGradient id="g1" cx="62%" cy="38%" r="55%"><stop offset="0" stop-color="#2a7a66" stop-opacity=".55"/><stop offset="1" stop-color="#2a7a66" stop-opacity="0"/></radialGradient>
+<radialGradient id="g2" cx="30%" cy="0%" r="45%"><stop offset="0" stop-color="#3d9c84" stop-opacity=".22"/><stop offset="1" stop-color="#3d9c84" stop-opacity="0"/></radialGradient>
+<linearGradient id="sheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+<linearGradient id="edgeL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#12463d"/><stop offset="1" stop-color="#12463d" stop-opacity="0"/></linearGradient>
+<linearGradient id="edgeR" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#12463d"/><stop offset="1" stop-color="#12463d" stop-opacity="0"/></linearGradient>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="2" seed="5"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .05 0"/></filter></defs>
+<rect width="1920" height="600" fill="url(#g1)"/><rect width="1920" height="600" fill="url(#g2)"/>
+<polygon points="980,0 1260,0 900,600 620,600" fill="url(#sheen)"/>
+<rect width="1920" height="600" filter="url(#grain)"/>
+<rect x="0" y="0" width="300" height="600" fill="url(#edgeL)"/><rect x="1620" y="0" width="300" height="600" fill="url(#edgeR)"/></svg>`;
 const pattern = () => {
+  if (PAT === 'premium') return premium();
   if (PAT === 'none') return '';
   const lineCol = TH.dark ? 'rgba(255,255,255,' : 'rgba(30,50,60,';
   if (PAT === 'rings') { // 연한 동그라미 무늬 (2026-11-09 사용자 "동그라미로 연하게 해서 무늬로")
@@ -98,7 +110,7 @@ svg.deco,svg.pat{position:absolute;inset:0}
 .ring{position:absolute;left:1410px;top:40px;width:500px;height:500px;border-radius:50%;border:2px dashed rgba(255,255,255,.7)}
 .ph{position:absolute;left:1440px;top:44px;height:556px;overflow:hidden}
 .ph img{height:630px;display:block}
-.bub{position:absolute;left:1150px;top:112px;padding:16px 24px;border-radius:24px;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.18);font-family:J;font-size:25px;color:${INK};line-height:1.35;text-align:center;letter-spacing:.5px}
+.bub{position:absolute;left:1150px;top:112px;padding:16px 24px;border-radius:24px;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.18);font-family:HF;font-size:23px;color:${INK};line-height:1.45;text-align:center;letter-spacing:.8px}
 .bub:after{content:'';position:absolute;right:-16px;top:58px;border-width:12px 0 12px 20px;border-style:solid;border-color:transparent transparent transparent #fff}
 .bub b{color:${CO};font-weight:normal}
 .guide{position:absolute;top:321px;width:170px;height:279px;border:2px dashed rgba(220,40,40,.8)}
