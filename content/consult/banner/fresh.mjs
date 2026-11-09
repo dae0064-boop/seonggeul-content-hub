@@ -23,6 +23,9 @@ const THEMES = {
   deepnavy: { bg: 'linear-gradient(120deg,#0f1f3a 0%,#152a4d 55%,#0c1830 100%)', te: '#9cc4ff', tl: '#e6eefb', hl: 'rgba(255,199,140,.55)', dark: true, glow: 'rgba(130,170,240,.28)' },
   teal: { bg: 'linear-gradient(120deg,#dcefeb 0%,#cfe7e2 45%,#bfdfd9 100%)', te: '#0d6b66', tl: '#e3f2ef', hl: '#ffc7b4' },
 };
+// 세로 크기 (2026-11-09 사용자 "한다팀장만큼은 아니어도 조금 더 키워줘") — --h 800 이면 카드 5칸은 가로 위치·크기 그대로 200px 아래로,
+// 제목·사람·말풍선을 키운다. 네이버에서는 타이틀 높이를 지금보다 (H-600)px 늘려야 위젯 칸이 카드에 맞는다.
+const H = +A('--h', 600), D = H - 600, BIG = D > 0;
 const TH = THEMES[A('--theme', 'deepgreen')] || THEMES.greige;
 const TE = TH.dark ? (TH === THEMES.deepgreen ? '#13493f' : '#152a4d') : TH.te, TL = TH.tl, CO = '#ff7a59', INK = '#1f2a2e';
 const IC = {
@@ -84,8 +87,8 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:GB;src:url(${font('GothicA1-Bold.ttf')})}
 @font-face{font-family:GM;src:url(${font('GothicA1-Medium.ttf')})}
 @font-face{font-family:J;src:url(${font('Jua-Regular.ttf')})}
-*{margin:0;box-sizing:border-box}body{width:1920px;height:600px;overflow:hidden}
-.bn{position:relative;width:1920px;height:600px;overflow:hidden;background:radial-gradient(ellipse 300px 340px at 1600px 300px,${TH.glow || 'rgba(255,255,255,.75)'} 0%,rgba(255,255,255,0) 100%),${TH.bg};font-family:GM;color:${INK}}
+*{margin:0;box-sizing:border-box}body{width:1920px;height:${H}px;overflow:hidden}
+.bn{position:relative;width:1920px;height:${H}px;overflow:hidden;background:radial-gradient(ellipse 300px 340px at 1600px 300px,${TH.glow || 'rgba(255,255,255,.75)'} 0%,rgba(255,255,255,0) 100%),${TH.bg};font-family:GM;color:${INK}}
 ${A('--chipstyle', 'glass') === 'glass' ? `.tag{background:#ffd54f !important;color:#13493f !important;-webkit-text-stroke:0 !important}.chip{background:rgba(8,40,34,.82) !important;border:1.5px solid rgba(255,213,79,.85) !important;color:#fff !important;-webkit-text-stroke:0 !important;box-shadow:0 6px 16px rgba(0,0,0,.35) !important}.chip b{color:#ffd54f !important;-webkit-text-stroke:0 !important}.chip svg circle{fill:#ffd54f}.chip svg path{stroke:#13493f}` : ''}
 ${TH.dark ? `.l1{color:#ffffff !important;font-size:46px !important;text-shadow:0 2px 10px rgba(0,0,0,.25)}.l2{color:#fff !important}.l2 em{color:#ffd54f !important;background:none !important;position:relative}.l2 em:after{content:'';position:absolute;left:2px;right:2px;bottom:-10px;height:6px;border-radius:3px;background:#ff6b4a}` : ''}
 svg.deco,svg.pat{position:absolute;inset:0}
@@ -97,7 +100,7 @@ svg.deco,svg.pat{position:absolute;inset:0}
 .chips{position:absolute;left:500px;top:286px;display:flex;gap:12px}
 .chip{display:flex;align-items:center;gap:8px;padding:8px 16px 8px 10px;border-radius:24px;background:#fff;border:1.5px solid #dfe7e4;font-family:CF;font-size:${/Gaegu/.test(CFN) ? 22 : 19}px;letter-spacing:1px;color:#22302f;-webkit-text-stroke:${CSTROKE * .5}px #22302f;box-shadow:0 4px 10px rgba(13,107,102,.06)}
 .chip b{color:${TE};font-weight:normal;font-family:CF;-webkit-text-stroke:${CSTROKE * .6}px ${TE}}
-.col{position:absolute;top:321px;width:170px;height:279px}
+.col{position:absolute;top:${321 + D}px;width:170px;height:279px}
 .card{position:absolute;left:4px;right:4px;top:22px;height:232px;border-radius:24px;background:#fff;box-shadow:0 10px 26px rgba(31,42,46,.10);border:1.5px solid #ece8e1;text-align:center}
 .card .ic{width:78px;height:78px;margin:24px auto 0;border-radius:50%;background:${TL};display:flex;align-items:center;justify-content:center}
 .card .ic svg{width:58px;height:58px}
@@ -114,7 +117,7 @@ svg.deco,svg.pat{position:absolute;inset:0}
 .bub{position:absolute;left:1150px;top:112px;padding:16px 24px;border-radius:24px;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.18);font-family:HF;font-size:23px;color:${INK};line-height:1.45;text-align:center;letter-spacing:.8px}
 .bub:after{content:'';position:absolute;right:-16px;top:58px;border-width:12px 0 12px 20px;border-style:solid;border-color:transparent transparent transparent #fff}
 .bub b{color:${CO};font-weight:normal}
-.guide{position:absolute;top:321px;width:170px;height:279px;border:2px dashed rgba(220,40,40,.8)}
+.guide{position:absolute;top:${321 + D}px;width:170px;height:279px;border:2px dashed rgba(220,40,40,.8)}
 ${A('--look', 'lux') === 'lux' ? `
 .l1{color:#f6efe2 !important;text-shadow:0 3px 14px rgba(0,0,0,.55) !important}
 .l2{color:#f6efe2 !important;text-shadow:0 3px 14px rgba(0,0,0,.55)}
@@ -125,8 +128,15 @@ ${A('--look', 'lux') === 'lux' ? `
 .bn .chip b{color:#f0cf86 !important}.bn .chip svg circle{fill:#d9b26a !important}
 .bub b{color:#b8862f !important}` : ''}
 ${A('--look', 'lux') === 'lux' && /Serif|Batang/.test(HF) ? `.h{letter-spacing:0 !important;word-spacing:2px !important}.l1{font-size:42px !important}.l2{font-size:54px !important}` : ''}
+${BIG ? `
+.bn .tag{top:140px;font-size:26px !important;padding:9px 24px}
+.h.l1{top:198px;font-size:54px !important}
+.h.l2{top:266px;font-size:68px !important}
+.chips{top:392px;gap:14px}.bn .chip{font-size:22px;padding:10px 20px 10px 12px}.chip svg{width:26px;height:26px}
+.ph{left:1290px;top:40px;height:${H - 40}px}.ph img{height:${H + 160}px}
+.bub{left:1010px;top:96px;font-size:24px;padding:17px 26px}` : ''}
 </style></head><body><div class="bn">
-${bgimg ? `<img src="${bgimg}" style="position:absolute;inset:0;width:1920px;height:600px">` : pattern()}
+${bgimg ? `<img src="${bgimg}" style="position:absolute;inset:0;width:1920px;height:${H}px;object-fit:cover">` : pattern()}
 <div class="tag">보험, 어렵지 않게</div>
 <div class="h l1">아플 때 받을 보험금,</div>
 <div class="h l2"><em>놓치지 않게</em> 챙겨 드려요</div>
@@ -137,6 +147,6 @@ ${COLS.map(([ic, t, s], k) => `<div class="col" style="left:${X(k)}px"><div clas
 ${GUIDE ? [0, 1, 2, 3, 4].map(k => `<div class="guide" style="left:${X(k)}px"></div>`).join('') : ''}
 </div></body></html>`;
 const OUTN = A('--out', GUIDE ? 'fresh-banner-guide.png' : 'fresh-banner.png');
-const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1920, height: 600 } });
+const b = await chromium.launch(); const p = await b.newPage({ viewport: { width: 1920, height: H } });
 await p.setContent(html); await p.waitForTimeout(400);
 await p.screenshot({ path: path.join(HERE, OUTN) }); await b.close(); console.log('ok');
