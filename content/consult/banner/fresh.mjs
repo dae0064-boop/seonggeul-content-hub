@@ -12,10 +12,12 @@ const THEMES = {
   greige: { bg: 'linear-gradient(120deg,#f3eee7 0%,#e6ddd1 55%,#d8ccbd 100%)', te: '#33505e', tl: '#e9eef0', hl: '#f2c9a9' },
   slate: { bg: 'linear-gradient(120deg,#eef1f4 0%,#dbe2e9 55%,#c6d0da 100%)', te: '#25496b', tl: '#e4ecf4', hl: '#ffd6a8' },
   sage: { bg: 'linear-gradient(120deg,#f0f2ec 0%,#dfe5da 55%,#cbd5c6 100%)', te: '#3c6455', tl: '#e6eee9', hl: '#f5cbb3' },
+  deepgreen: { bg: 'linear-gradient(120deg,#0f3b33 0%,#13493f 55%,#0c3029 100%)', te: '#9fe0c9', tl: '#e6f3ee', hl: 'rgba(255,199,140,.55)', dark: true, glow: 'rgba(120,200,170,.28)' },
+  deepnavy: { bg: 'linear-gradient(120deg,#0f1f3a 0%,#152a4d 55%,#0c1830 100%)', te: '#9cc4ff', tl: '#e6eefb', hl: 'rgba(255,199,140,.55)', dark: true, glow: 'rgba(130,170,240,.28)' },
   teal: { bg: 'linear-gradient(120deg,#dcefeb 0%,#cfe7e2 45%,#bfdfd9 100%)', te: '#0d6b66', tl: '#e3f2ef', hl: '#ffc7b4' },
 };
 const TH = THEMES[A('--theme', 'greige')] || THEMES.greige;
-const TE = TH.te, TL = TH.tl, CO = '#ff7a59', INK = '#1f2a2e';
+const TE = TH.dark ? (TH === THEMES.deepgreen ? '#13493f' : '#152a4d') : TH.te, TL = TH.tl, CO = '#ff7a59', INK = '#1f2a2e';
 const IC = {
   // 보험금·실비: 병원 영수증(톱니 아래) + 돌려받는 돈(₩ 동전)
   bill: `<svg viewBox="0 0 64 64"><path d="M14 8h30v44l-3.75-3-3.75 3-3.75-3-3.75 3-3.75-3-3.75 3-3.75-3L14 52z" fill="#fff" stroke="${TE}" stroke-width="3" stroke-linejoin="round"/><path d="M29 15v8M25 19h8" stroke="${CO}" stroke-width="3" stroke-linecap="round"/><path d="M21 30h16M21 37h12" stroke="${TE}" stroke-width="3" stroke-linecap="round"/><circle cx="46" cy="44" r="12" fill="#ffd25e" stroke="#e0a92e" stroke-width="2.5"/><path d="M40 39l2.5 9 3.5-7 3.5 7 2.5-9M39 44h14" stroke="#8a5a00" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
@@ -39,7 +41,8 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:GM;src:url(${font('GothicA1-Medium.ttf')})}
 @font-face{font-family:J;src:url(${font('Jua-Regular.ttf')})}
 *{margin:0;box-sizing:border-box}body{width:1920px;height:600px;overflow:hidden}
-.bn{position:relative;width:1920px;height:600px;overflow:hidden;background:radial-gradient(ellipse 520px 460px at 1650px 330px,rgba(255,255,255,.75) 0%,rgba(255,255,255,0) 70%),${TH.bg};font-family:GM;color:${INK}}
+.bn{position:relative;width:1920px;height:600px;overflow:hidden;background:radial-gradient(ellipse 520px 460px at 1650px 330px,${TH.glow || 'rgba(255,255,255,.75)'} 0%,rgba(255,255,255,0) 70%),${TH.bg};font-family:GM;color:${INK}}
+${TH.dark ? `.l1{color:#d9e4e0 !important}.l2{color:#fff !important}.l2 em{color:${TH.te} !important;background:none !important;box-shadow:inset 0 -8px 0 rgba(255,122,89,.55)}` : ''}
 svg.deco{position:absolute;inset:0}
 .tag{position:absolute;left:500px;top:96px;padding:7px 18px;border-radius:20px;background:#fff;color:${TE};font-family:GB;font-size:20px}
 .h{position:absolute;left:498px;font-family:XB;letter-spacing:-1.5px}
