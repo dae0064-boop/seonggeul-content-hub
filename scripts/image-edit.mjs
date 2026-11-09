@@ -35,7 +35,7 @@ async function send(m, fidelity) {
   fd.append('size', opt.size);
   fd.append('quality', opt.quality);
   if (fidelity) fd.append('input_fidelity', 'high');
-  fd.append('image[]', new Blob([img], { type: 'image/png' }), basename(src));
+  fd.append('image[]', new Blob([img], { type: /\.jpe?g$/i.test(src) ? 'image/jpeg' : /\.webp$/i.test(src) ? 'image/webp' : 'image/png' }), 'photo' + (/\.jpe?g$/i.test(src) ? '.jpg' : /\.webp$/i.test(src) ? '.webp' : '.png'));
   const res = await fetch(`${API_BASE}/images/edits`, { method: 'POST', headers: { Authorization: `Bearer ${key}` }, body: fd })
     .catch((e) => die(`OpenAI 에 접속하지 못했어요 (${e.cause?.code || e.message})`));
   return { res, text: await res.text() };
