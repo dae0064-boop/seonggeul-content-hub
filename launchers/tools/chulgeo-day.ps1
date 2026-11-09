@@ -1,11 +1,12 @@
 ﻿# 다와이철거 홍보 블로그 (2026-10-26) — 원고 그림 만들기 → 철거 블로그 전용 크롬(9223)으로 예약발행.
-# 성글벙글과 다른 네이버 계정이라 크롬도 따로 쓴다: 포트 9223, 프로필 %LOCALAPPDATA%\chulgeo-chrome.
+# 성글벙글과 다른 네이버 계정(breakandbuild)이라 크롬도 따로 쓴다: 포트 9223, 프로필 %LOCALAPPDATA%\blog2-chrome
+# (2026-11-09 사용자 — two-blog-test.cmd 로 로그인·1→2→1 이어서 작업 확인, 예전 chulgeo-chrome 프로필은 로그인한 적 없음).
 # 규칙 정본: content\chulgeo\README.md
 #
 #   powershell -ExecutionPolicy Bypass -File launchers\tools\chulgeo-day.ps1          (auto-day.cmd 가 부른다)
 #   -DraftOnly   예약 대신 임시저장만
 #
-# - 로그인 전(프로필 폴더 없음)이면 조용히 건너뛴다. launchers\chulgeo-login.cmd 로 처음 한 번 로그인한다.
+# - 로그인 전(프로필 폴더 없음)이면 조용히 건너뛴다. launchers\two-blog-test.cmd 로 처음 한 번 로그인한다.
 # - 오늘까지 날짜의 원고 중 아직 처리 표시(.done)가 없는 것을 오래된 것부터 하루 5편까지 한다
 #   (PC 가 안 켜진 날 원고는 다음 날 먼저 나간다).
 # - 처리 표시: Drive ClaudeWorkspace\run-locks\chulgeo\<슬러그>.done (두 PC 가 같은 글을 두 번 올리지 않게)
@@ -26,9 +27,9 @@ function Run($argsList) {
 }
 
 $Port = 9223
-$ChromeProfile = Join-Path $env:LOCALAPPDATA 'chulgeo-chrome'
+$ChromeProfile = Join-Path $env:LOCALAPPDATA 'blog2-chrome'
 if (-not (Test-Path $ChromeProfile)) {
-  Say '다와이철거: 이 PC 에는 철거 블로그 로그인이 아직 없어요 (launchers\chulgeo-login.cmd 를 처음 한 번 실행). 건너뜁니다.' 'Yellow'
+  Say '다와이철거: 이 PC 에는 철거 블로그 로그인이 아직 없어요 (launchers\two-blog-test.cmd 를 처음 한 번 실행). 건너뜁니다.' 'Yellow'
   exit 0
 }
 
@@ -71,7 +72,7 @@ if (-not (CdpUp)) {
 }
 if (-not (CdpUp)) {
   Say '다와이철거: 철거 블로그용 크롬을 켜지 못했어요.' 'Red'
-  & (Join-Path $PSScriptRoot 'alert.ps1') -Title '다와이철거 - 예약 안 됨' -Message "철거 블로그용 크롬을 켜지 못했어요.`n launchers 폴더의 chulgeo-login.cmd 를 더블클릭한 뒤 다시 해 주세요."
+  & (Join-Path $PSScriptRoot 'alert.ps1') -Title '다와이철거 - 예약 안 됨' -Message "철거 블로그용 크롬을 켜지 못했어요.`n launchers 폴더의 two-blog-test.cmd 를 더블클릭한 뒤 다시 해 주세요."
   Release; exit 1
 }
 
@@ -116,7 +117,7 @@ Say "`n==================== 다와이철거 결과 ====================" 'Cyan'
 $result | Format-Table -AutoSize | Out-String | ForEach-Object { Say $_ }
 $bad = @($result | Where-Object { $_.결과 -notlike '예약발행*' })
 if ($bad.Count -and -not $DraftOnly) {
-  $why = if (Select-String -Path $log -Pattern '로그인 페이지로 이동' -Quiet) { "철거 블로그 네이버 로그인이 풀렸어요.`n launchers 폴더의 chulgeo-login.cmd 를 더블클릭해 로그인해 주세요." } else { '내일 아침 실행이 남은 글을 먼저 다시 올려요.' }
+  $why = if (Select-String -Path $log -Pattern '로그인 페이지로 이동' -Quiet) { "철거 블로그 네이버 로그인이 풀렸어요.`n launchers 폴더의 two-blog-test.cmd 를 더블클릭해, 새로 열린 크롬 창에서 breakandbuild 로 로그인해 주세요." } else { '내일 아침 실행이 남은 글을 먼저 다시 올려요.' }
   & (Join-Path $PSScriptRoot 'alert.ps1') -Title '다와이철거 - 예약 안 된 글 있음' -Message "철거 블로그 글 $($bad.Count)편이 예약되지 않았어요.`n`n$why"
 }
 if (-not $NoShare) { & (Join-Path $PSScriptRoot 'share-run.ps1') -Date $Date -Since $started }
