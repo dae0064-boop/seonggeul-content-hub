@@ -8,7 +8,7 @@ const GUIDE = process.argv.includes('--guide');
 const BGI = A('--bgimg', ''); const bgimg = BGI && fs.existsSync(BGI) ? `data:image/jpeg;base64,${fs.readFileSync(BGI).toString('base64')}` : '';
 const font = f => { const fp = fs.existsSync(path.join(ROOT, 'scripts/lib/fonts', f)) ? path.join(ROOT, 'scripts/lib/fonts', f) : path.join(ROOT, 'scripts/threads/fonts', f); return `data:font/${f.endsWith('.otf') ? 'otf' : 'ttf'};base64,${fs.readFileSync(fp).toString('base64')}`; };
 // 제목 글씨체·자간 (2026-11-09 사용자 "자간 넓혀 줘, 답답해 보여") — --hfont gothic|pretendard|blackhan, --ls 자간(px)
-const HF = { gothic: 'GothicA1-ExtraBold.ttf', pretendard: 'Pretendard-Bold.otf', blackhan: 'BlackHanSans-Regular.ttf' }[A('--hfont', 'pretendard')] || 'Pretendard-Bold.otf';
+const HF = { gothic: 'GothicA1-ExtraBold.ttf', pretendard: 'Pretendard-Bold.otf', blackhan: 'BlackHanSans-Regular.ttf', serif: 'NotoSerifKR-Black.ttf', batang: 'GowunBatang-Bold.ttf' }[A('--hfont', 'serif')] || 'Pretendard-Bold.otf';
 const LS = A('--ls', '2');
 // 꼬리표·체크 칩 글씨체 (2026-11-09 사용자 "너무 무난해서 눈에 안 띈다") — --cfont pretendard|jua|blackhan|gaegu
 const CFN = { pretendard: 'Pretendard-Bold.otf', jua: 'Jua-Regular.ttf', blackhan: 'BlackHanSans-Regular.ttf', gaegu: 'Gaegu-Bold.ttf' }[A('--cfont', 'pretendard')] || 'Pretendard-Bold.otf';
@@ -115,6 +115,16 @@ svg.deco,svg.pat{position:absolute;inset:0}
 .bub:after{content:'';position:absolute;right:-16px;top:58px;border-width:12px 0 12px 20px;border-style:solid;border-color:transparent transparent transparent #fff}
 .bub b{color:${CO};font-weight:normal}
 .guide{position:absolute;top:321px;width:170px;height:279px;border:2px dashed rgba(220,40,40,.8)}
+${A('--look', 'lux') === 'lux' ? `
+.l1{color:#f6efe2 !important;text-shadow:0 3px 14px rgba(0,0,0,.55) !important}
+.l2{color:#f6efe2 !important;text-shadow:0 3px 14px rgba(0,0,0,.55)}
+.h.l2 em{color:transparent !important;background:linear-gradient(180deg,#fff3cf 0%,#f0cf86 45%,#c9963f 80%,#e8c37a 100%) !important;-webkit-background-clip:text !important;text-shadow:none !important;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}
+.h.l2 em:after{display:none !important}
+.bn .tag{background:rgba(10,30,26,.75) !important;color:#f0cf86 !important;border:1.5px solid #d9b26a !important;-webkit-text-stroke:0 !important;letter-spacing:2px !important}
+.bn .chip{background:rgba(10,30,26,.8) !important;border:1px solid rgba(217,178,106,.9) !important}
+.bn .chip b{color:#f0cf86 !important}.bn .chip svg circle{fill:#d9b26a !important}
+.bub b{color:#b8862f !important}` : ''}
+${A('--look', 'lux') === 'lux' && /Serif|Batang/.test(HF) ? `.h{letter-spacing:0 !important;word-spacing:2px !important}.l1{font-size:42px !important}.l2{font-size:54px !important}` : ''}
 </style></head><body><div class="bn">
 ${bgimg ? `<img src="${bgimg}" style="position:absolute;inset:0;width:1920px;height:600px">` : pattern()}
 <div class="tag">보험, 어렵지 않게</div>
