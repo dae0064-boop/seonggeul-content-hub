@@ -23,6 +23,19 @@
 - 제목 "성글벙글" 은 그대로 (지금까지 쌓인 이웃·검색이 이 이름으로 기억한다).
 - 부제: **"병원비·보험금, 혼자 헤매지 않게"** (정보 안내 — 상담 권유가 아니라 심의 전에도 쓸 수 있다).
 - ChatGPT 에 넣을 문장: `content/blog-banner/chatgpt-prompt-care.md`. 받은 그림은 클라우드 대화가 1920×600 으로 맞추고 깨진 한글을 고친다.
+
+### 🔗 위젯 칸 주소 (2026-11-09 — 카테고리를 4개로 정리한 뒤, 인스타 칸은 사용자가 따로)
+블로그 카테고리 = 보험금·실비(31) · 병원비·돌봄(32) · 지원금·제도(33) · 강팀장·일상(4). 숫자는 13:33 글 이동 창에서 읽은 카테고리 번호.
+
+| 칸 | 배너 글씨 | 위젯 주소 |
+|---|---|---|
+| ① | 보험금·실비 | https://blog.naver.com/PostList.naver?blogId=seongdaeeyo&categoryNo=31&from=postList |
+| ② | 병원비·돌봄 | https://blog.naver.com/PostList.naver?blogId=seongdaeeyo&categoryNo=32&from=postList |
+| ③ | 지원금·제도 | https://blog.naver.com/PostList.naver?blogId=seongdaeeyo&categoryNo=33&from=postList |
+| ④ | 인스타그램 | (사용자가 따로) |
+| ⑤ | 1:1 보험상담(카카오톡) | 채널을 만들면 `https://pf.kakao.com/_xxxx` 주소 |
+
+위젯 코드의 `href="…"` 만 바꾸고 `target="_top"` 은 둔다(블로그가 틀 안에 떠서 없으면 작은 틀 안에서 열린다).
 - **2단계(카카오톡 채널 심의 뒤)**: 오른쪽 끝(가로 80~95%)에 "카카오톡 상담" 단추 칸을 하나 더한 판을 다시 만든다.
 
 ## 2. 블로그 소개글 (모바일에서 가장 먼저 보이는 글 — 배너는 모바일 앱에 안 나온다)
