@@ -61,6 +61,7 @@ Say "다와이철거 원고 $($posts.Count)편: $(($posts | ForEach-Object { $_.
 # ---- 1) 그림 (실사풍, low). 이미 만든 그림은 건너뛴다
 foreach ($p in $posts) {
   $plan = "content\chulgeo\image-plans\$($p.BaseName).json"
+  if (Test-Path "content\chulgeo\photos\$($p.BaseName)") { Say "  실제 작업 사진 글: $($p.BaseName) (그림 만들지 않음)" 'Cyan'; continue }
   if (-not (Test-Path $plan)) { Say "  그림 계획서 없음: $($p.BaseName)" 'Yellow'; continue }
   Say "`n[그림] $($p.BaseName)" 'Cyan'
   $null = Run @('scripts/post-images.mjs', $plan)
@@ -100,7 +101,7 @@ $result = @()
 foreach ($p in $posts) {
   $slug = $p.BaseName
   Say "`n[철거 블로그] $slug" 'Cyan'
-  $base = @('scripts/publish-naver.mjs', '--post', $p.FullName, '--images', "content\images\$slug", '--color', '--cdp', "http://localhost:$Port", '--no-related', '--no-source-link', '--dump')
+  $base = @('scripts/publish-naver.mjs', '--post', $p.FullName, '--images', $(if (Test-Path "content\chulgeo\photos\$slug") { "content\chulgeo\photos\$slug" } else { "content\images\$slug" }), '--color', '--cdp', "http://localhost:$Port", '--no-related', '--no-source-link', '--dump')
   if ($DraftOnly) { $code = Run ($base + @('--save-draft')); $msg = if ($code -eq 0) { '임시저장' } else { '실패' } }
   else {
     $slot = NextSlot
