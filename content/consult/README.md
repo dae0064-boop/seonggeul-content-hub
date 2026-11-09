@@ -41,7 +41,7 @@
 | ② | 병원비·돌봄 | https://blog.naver.com/PostList.naver?blogId=seongdaeeyo&categoryNo=32&from=postList |
 | ③ | 지원금·제도 | https://blog.naver.com/PostList.naver?blogId=seongdaeeyo&categoryNo=33&from=postList |
 | ④ | 인스타그램 | https://www.instagram.com/___sd.eyo/ |
-| ⑤ | 1:1 보험상담(카카오톡) | https://pf.kakao.com/_yMvnX/chat (채팅 바로 열림) |
+| ⑤ | 1:1 보험상담(카카오톡) | https://pf.kakao.com/_xixlxkxeX/chat (채팅 바로 열림) |
 
 위젯 코드의 `href="…"` 만 바꾼다. ①~③(내 블로그)은 `target="_top"`, ④·⑤(인스타·카카오톡 — 바깥 사이트)는 `target="_blank"`(새 창, 블로그가 그대로 남는다).
 - **2단계(카카오톡 채널 심의 뒤)**: 오른쪽 끝(가로 80~95%)에 "카카오톡 상담" 단추 칸을 하나 더한 판을 다시 만든다.
@@ -62,7 +62,7 @@
 - 대표 카테고리(블로그 들어오면 처음 보이는 칸): **생활·보장** 전체.
 
 ## 3. 카카오톡 채널 (상담 창구)
-- **2026-11-09 사용자가 만듦**: 채팅 바로 열기 `https://pf.kakao.com/_yMvnX/chat` (배너 위젯 5번 '1:1 보험상담'). 인스타 `https://www.instagram.com/___sd.eyo/` (위젯 4번).
+- **2026-11-09 사용자가 만듦**: 채팅 바로 열기 `https://pf.kakao.com/_xixlxkxeX/chat` (배너 위젯 5번 '1:1 보험상담'). 인스타 `https://www.instagram.com/___sd.eyo/` (위젯 4번).
 1. 카카오톡 채널 관리자센터에서 채널을 만든다 (채널 이름·프로필 사진·소개).
 2. 채널 이름·소개·자동 인사말도 보험 상담 광고라 **심의를 받는다** — 문구 초안은 Claude 가 `content/consult/` 에 만든다(11/11).
 3. 심의 뒤: 블로그 소개글(2단계)·배너 단추·상담형 글 끝에 채널 링크. 정보글(매일 10편)에는 넣지 않는다 — 정보글은 지금처럼 "내 증권·약관에서 확인해 보세요"로 닫는다.
