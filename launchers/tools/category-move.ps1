@@ -23,8 +23,16 @@ $drive = Find-MyDrive
 # 진행 기록을 Drive 에 바로 쓴다 (창이 닫혀도 어디까지 했는지 남게)
 $live = @()
 if ($drive) { $live = @('--live', (Join-Path $drive "ClaudeWorkspace\run-logs\category-move-live\$stamp-$env:COMPUTERNAME.txt")) }
-$mode = @(); if ($Care) { $mode = @('--care') }; if ($Daily) { $mode = @('--daily') }  # 2026-11-09 맛집·카페·여행·나들이 → 강팀장·일상, Care = 생활·보장 → 새 3칸
-& node scripts\naver-category-move.mjs $blog --all @mode --out $out @live 2>&1 | ForEach-Object { Write-Host $_ }
+# 2026-11-09: -Daily = 맛집·카페·여행·나들이 → 강팀장·일상, -Care = 생활·보장(과 하위 칸) → 보험금·실비 / 병원비·돌봄 / 지원금·제도. 둘 다 주면 차례로
+$runs = @()
+if ($Daily) { $runs += ,@('--daily') }
+if ($Care) { $runs += ,@('--care') }
+if (-not $runs.Count) { $runs += ,@() }
+foreach ($m in $runs) {
+  Write-Host "`n=== $($m -join ' ') ==="
+  & node scripts\naver-category-move.mjs $blog --all @m --out $out @live 2>&1 | ForEach-Object { Write-Host $_ }
+  if (Test-Path (Join-Path $out 'move-log.txt')) { Copy-Item (Join-Path $out 'move-log.txt') (Join-Path $out "move-log$($m -join '').txt") -Force }
+}
 if ($drive -and (Test-Path $out)) {
   $dest = Join-Path $drive "ClaudeWorkspace\run-logs\category-move-$stamp-$env:COMPUTERNAME"
   New-Item -ItemType Directory -Force -Path $dest | Out-Null
