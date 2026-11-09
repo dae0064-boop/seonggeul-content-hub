@@ -5,7 +5,10 @@ import fs from 'node:fs'; import path from 'node:path'; import { fileURLToPath }
 const HERE = path.dirname(fileURLToPath(import.meta.url)); const ROOT = path.resolve(HERE, '../../..');
 const A = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : d; };
 const GUIDE = process.argv.includes('--guide');
-const font = f => `data:font/ttf;base64,${fs.readFileSync(path.join(ROOT, 'scripts/lib/fonts', f)).toString('base64')}`;
+const font = f => { const fp = fs.existsSync(path.join(ROOT, 'scripts/lib/fonts', f)) ? path.join(ROOT, 'scripts/lib/fonts', f) : path.join(ROOT, 'scripts/threads/fonts', f); return `data:font/${f.endsWith('.otf') ? 'otf' : 'ttf'};base64,${fs.readFileSync(fp).toString('base64')}`; };
+// 제목 글씨체·자간 (2026-11-09 사용자 "자간 넓혀 줘, 답답해 보여") — --hfont gothic|pretendard|blackhan, --ls 자간(px)
+const HF = { gothic: 'GothicA1-ExtraBold.ttf', pretendard: 'Pretendard-Bold.otf', blackhan: 'BlackHanSans-Regular.ttf' }[A('--hfont', 'pretendard')] || 'Pretendard-Bold.otf';
+const LS = A('--ls', '0.5');
 const PH = A('--photo', ''); const photo = PH && fs.existsSync(PH) ? `data:image/png;base64,${fs.readFileSync(PH).toString('base64')}` : '';
 // 배경 색 (2026-11-09 사용자 "회색 정장과 어울리는 배경, 동그라미는 모두 빼")
 const THEMES = {
@@ -60,6 +63,7 @@ const X = k => 486 + k * 186;
 const chk = `<svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="11" fill="${TE}"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
 const html = `<!doctype html><html><head><meta charset="utf-8"><style>
 @font-face{font-family:XB;src:url(${font('GothicA1-ExtraBold.ttf')})}
+@font-face{font-family:HF;src:url(${font(HF)})}
 @font-face{font-family:GB;src:url(${font('GothicA1-Bold.ttf')})}
 @font-face{font-family:GM;src:url(${font('GothicA1-Medium.ttf')})}
 @font-face{font-family:J;src:url(${font('Jua-Regular.ttf')})}
@@ -67,20 +71,20 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><style>
 .bn{position:relative;width:1920px;height:600px;overflow:hidden;background:radial-gradient(ellipse 300px 340px at 1600px 300px,${TH.glow || 'rgba(255,255,255,.75)'} 0%,rgba(255,255,255,0) 100%),${TH.bg};font-family:GM;color:${INK}}
 ${TH.dark ? `.l1{color:#d9e4e0 !important}.l2{color:#fff !important}.l2 em{color:${TH.te} !important;background:none !important;box-shadow:inset 0 -8px 0 rgba(255,122,89,.55)}` : ''}
 svg.deco,svg.pat{position:absolute;inset:0}
-.tag{position:absolute;left:500px;top:96px;padding:7px 18px;border-radius:20px;background:#fff;color:${TE};font-family:GB;font-size:20px}
-.h{position:absolute;left:498px;font-family:XB;letter-spacing:-1.5px}
-.l1{top:140px;font-size:46px;color:#3b474b}
-.l2{top:194px;font-size:62px;color:${INK}}
+.tag{position:absolute;left:500px;top:92px;letter-spacing:.5px;padding:7px 18px;border-radius:20px;background:#fff;color:${TE};font-family:GB;font-size:20px}
+.h{position:absolute;left:498px;font-family:HF;letter-spacing:${LS}px;word-spacing:4px}
+.l1{top:136px;font-size:46px;color:#3b474b}
+.l2{top:188px;font-size:62px;color:${INK}}
 .l2 em{font-style:normal;color:${TE};background:linear-gradient(transparent 62%,${TH.hl} 62%)}
-.chips{position:absolute;left:500px;top:276px;display:flex;gap:12px}
-.chip{display:flex;align-items:center;gap:8px;padding:8px 16px 8px 10px;border-radius:24px;background:#fff;border:1.5px solid #dfe7e4;font-family:GB;font-size:17px;color:#33403f;box-shadow:0 4px 10px rgba(13,107,102,.06)}
+.chips{position:absolute;left:500px;top:284px;display:flex;gap:12px}
+.chip{display:flex;align-items:center;gap:8px;padding:8px 16px 8px 10px;border-radius:24px;background:#fff;border:1.5px solid #dfe7e4;font-family:GB;font-size:17px;letter-spacing:.4px;color:#33403f;box-shadow:0 4px 10px rgba(13,107,102,.06)}
 .chip b{color:${TE};font-weight:normal;font-family:XB}
 .col{position:absolute;top:321px;width:170px;height:279px}
 .card{position:absolute;left:4px;right:4px;top:22px;height:232px;border-radius:24px;background:#fff;box-shadow:0 10px 26px rgba(31,42,46,.10);border:1.5px solid #ece8e1;text-align:center}
 .card .ic{width:78px;height:78px;margin:24px auto 0;border-radius:50%;background:${TL};display:flex;align-items:center;justify-content:center}
 .card .ic svg{width:58px;height:58px}
-.card .t{margin-top:16px;font-family:XB;font-size:21px;letter-spacing:-.6px;color:${INK}}
-.card .s{margin-top:7px;font-size:14px;color:#6c7678}
+.card .t{margin-top:16px;font-family:HF;font-size:21px;letter-spacing:.3px;color:${INK}}
+.card .s{margin-top:7px;font-size:14px;letter-spacing:.3px;color:#6c7678}
 .card .go{position:absolute;left:0;right:0;bottom:16px;font-family:GB;font-size:14px;color:${TE}}
 .card.p{padding:0;overflow:hidden}.card.p .pic{height:122px;background-size:cover;background-position:center}.card.p .t{margin-top:14px}.card.p .go{bottom:14px}
 .card.k{background:#fff8c9;border-color:#f3e27a}.card.k .ic{background:#fff}.card.k .go{color:#5b4a00}
