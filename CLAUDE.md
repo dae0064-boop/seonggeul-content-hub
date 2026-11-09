@@ -14,7 +14,7 @@ content/calendar/  발행 캘린더(publish-calendar.html — 밤 원고 작업�
 content/affiliate/ 제휴 링크 — 네이버=쇼핑 커넥트(brandconnect-links.tsv, 2026-10-26~ 자동 하루 1편), 티스토리=쿠팡 파트너스 (README.md)
 content/archive/published.tsv  발행이 끝나 지운 원고 목록 (날짜·채널·슬러그·메인 키워드·제목). 같은 키워드를 다시 쓰지 않게
 content/matjip/    맛집 후기 (사용자 사진 5~10장 → 원고는 Claude 가 전부, 지도·발행은 사용자). README.md = 규칙, template.md = 빈 틀, posts/ = 원고
-content/chulgeo/   다와이철거 홍보 블로그 (⏸ 2026-10-28 사용자 지시로 원고·발행 모두 멈춤. 2026-10-26~, 성글벙글과 별개·다른 네이버 계정). 규칙 정본 README.md, 원고 posts/, 검사 scripts/chulgeo/lint.mjs
+content/chulgeo/   다와이철거 홍보 블로그 (네이버 breakandbuild, 9223 크롬 blog2-chrome — 2026-11-09 사용자 지시로 다시 켬, 10/28~11/8 멈춤. 2026-10-26~, 성글벙글과 별개·다른 네이버 계정). **11/11 원고부터 하루 10편 — 철거 위주 + 목공 간혹(하루 1편까지)**, 글감은 철거·목공 궁금한 점, 사용자가 사진과 함께 요청하면 📸 실제 작업 글(`real_photos: yes`, 사진 `content/chulgeo/photos/`) (2026-11-09 사용자, 밤 19:43·20:13 두 회차). 규칙 정본 README.md, 원고 posts/, 검사 scripts/chulgeo/lint.mjs
 content/threads/   스레드 말투 규칙(voice.md) + 글감(topics.txt)
 content/threads/blog/  스레드 블로그 유입 글 — 네이버 생활보장 글 요약 (규칙 ../blog.md, 검사 blog-set.mjs, 올리기 blog-post.mjs — 11/6~ 하루 1편 21:00 (11/4~11/5 는 3편), 작업 SeonggeulThreadsBlog, 보험글 PAUSE 와 따로, 멈춤은 PAUSE-BLOG)
 content/threads/daily/  스레드 일상 글 — 11/6~ 하루 4편 07:00 · 08:30 출근 응원 · 12:30 점심 · 19:30 수고했다 (11/5 는 6편) (규칙 ../daily.md, 검사 daily-set.mjs, 올리기 daily-post.mjs, 멈춤 PAUSE-DAILY)

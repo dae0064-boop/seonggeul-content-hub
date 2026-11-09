@@ -1,0 +1,76 @@
+{
+  "slug": "2026-11-11-seoul-yoksil-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "타일을 걷어 내기 시작한 아파트 욕실 입구와 복도 보양재 (대표사진)",
+      "scene": "eye-level view through an open bathroom door in a Korean apartment, wall tiles half removed showing grey cement, grey protective sheets taped on the hallway floor leading to the door.",
+      "prompt": "Camera and composition: eye-level view through an open bathroom door in a Korean apartment, wall tiles half removed showing grey cement, grey protective sheets taped on the hallway floor leading to the door. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "서울 욕실 철거\n집에 있어도 될까"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "욕실 문 앞 복도 바닥에 깔아 둔 회색 보양재",
+      "scene": "low angle view along a Korean apartment hallway floor covered with taped grey protective sheets running from the front door toward a bathroom, soft morning light.",
+      "prompt": "Camera and composition: low angle view along a Korean apartment hallway floor covered with taped grey protective sheets running from the front door toward a bathroom, soft morning light. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "벽 타일이 걷혀 시멘트가 드러난 욕실 벽",
+      "scene": "close view of a bathroom wall where ceramic tiles have been chipped off to bare cement, a small neat pile of tile shards on the floor below, a worker's gloved hand resting a hammer drill at the edge of the frame.",
+      "prompt": "Camera and composition: close view of a bathroom wall where ceramic tiles have been chipped off to bare cement, a small neat pile of tile shards on the floor below, a worker's gloved hand resting a hammer drill at the edge of the frame. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "욕실 철거 하루 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "욕실 철거 하루 순서",
+        "items": [
+          "복도·현관 보양",
+          "수전·세면대·변기 떼기",
+          "욕조·수납장 철거",
+          "벽·바닥 타일 철거",
+          "폐기물 반출과 정리"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "거실 소파와 가전을 비닐로 덮어 둔 모습",
+      "scene": "a Korean apartment living room where a sofa, TV cabinet and air purifier are wrapped in clear plastic covers, door to a quiet bedroom closed in the background, calm daylight.",
+      "prompt": "Camera and composition: a Korean apartment living room where a sofa, TV cabinet and air purifier are wrapped in clear plastic covers, door to a quiet bedroom closed in the background, calm daylight. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "엘리베이터 옆 벽에 붙은 빈 공사 안내 종이",
+      "scene": "a Korean apartment elevator hall with a single plain blank sheet of paper taped on the wall beside the elevator doors, polished stone floor, soft light.",
+      "prompt": "Camera and composition: a Korean apartment elevator hall with a single plain blank sheet of paper taped on the wall beside the elevator doors, polished stone floor, soft light. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "철거를 마치고 쓸어 정리한 빈 욕실 바닥",
+      "scene": "wide view of an emptied small bathroom after demolition, bare cement walls and floor swept clean, drain opening visible, a worker seen from behind in a safety helmet carrying a sealed debris bag out the door.",
+      "prompt": "Camera and composition: wide view of an emptied small bathroom after demolition, bare cement walls and floor swept clean, drain opening visible, a worker seen from behind in a safety helmet carrying a sealed debris bag out the door. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "보양재를 걷어 내고 깨끗해진 욕실 앞 복도",
+      "scene": "clean Korean apartment hallway outside a bathroom after protective sheets were removed, tidy floor, bathroom door open showing bare cement walls ready for new tiles.",
+      "prompt": "Camera and composition: clean Korean apartment hallway outside a bathroom after protective sheets were removed, tidy floor, bathroom door open showing bare cement walls ready for new tiles. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

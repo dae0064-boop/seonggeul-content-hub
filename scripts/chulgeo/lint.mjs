@@ -22,9 +22,16 @@ export const CONTACT = [
   '전화·문자 010-3503-8923',
   '서울 · 인천 · 경기(수원·시흥·안산·안양)',
 ];
+// 2026-11-09 사용자: 연락처(이름·전화번호) 밑에 꼭 넣는 문구 — 11/11 발행분부터, 글 맨 끝 덩어리
+export const INQUIRY = ['철거 블로그 보고 문의했다고 말씀해 주시면', '상담이 더 원활하게 진행할 수 있습니다.'];
 export const PHOTO_NOTE = '글 속 사진은 이해를 돕기 위한 예시 이미지예요.';
 const PHONE = '010-3503-8923';
 const SLOTS = ['11:00', '13:00', '16:00', '18:00', '20:00'];
+// 2026-11-09 사용자: "11월 11일부터 철거·목수 관련 블로그 10개" → 같은 날 "아직은 철거 위주, 간혹 목공" — 11/11 원고부터 하루 10편, 목공은 하루 1편까지
+export const TEN_FROM = '2026-11-11';
+const SLOTS10 = ['11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00'];
+const slotsFor = (d) => (d >= TEN_FROM ? SLOTS10 : SLOTS);
+const isMokgong = (k) => /목공|목수/.test(k || '');
 const REGIONS = ['서울', '인천', '경기', '수원', '시흥', '안산', '안양'];
 const VISIT_OK = ['서울', '인천', '시흥'];
 
@@ -53,7 +60,7 @@ function load(file) {
 
 /** 겹침 비교용 본문 (인사·연락처·사진 안내 빼고) */
 function bodyText(post) {
-  const fixed = new Set([...GREETING, ...CONTACT, PHOTO_NOTE]);
+  const fixed = new Set([...GREETING, ...CONTACT, ...INQUIRY, PHOTO_NOTE]);
   return post.blocks.filter((b) => b.type !== 'image').flatMap((b) => b.lines.map((l) => l.t)).filter((t) => !fixed.has(t)).join('');
 }
 function shingles(s, n = 10) {
@@ -65,6 +72,10 @@ function shingles(s, n = 10) {
 export function lintOne(file, others = []) {
   const errors = [], warns = [];
   const { post, meta, slug } = load(file);
+  // 실제 작업 글 (2026-11-09 사용자 — "간혹 실제 사진으로 어떤 작업했는지 알려줄 테니 요청하면 써 줘"):
+  // 사용자가 준 사진 content/chulgeo/photos/<슬러그>/NN.jpg 를 쓰고, 예시 이미지 안내·그림 계획서는 없다
+  const real = meta.real_photos === 'yes';
+  const PHOTOS = path.join(ROOT, 'content', 'chulgeo', 'photos', slug);
   const date = /^(\d{4}-\d{2}-\d{2})-/.exec(slug)?.[1];
   if (!date) errors.push('파일 이름은 <날짜>-<슬러그>.md');
 
@@ -81,7 +92,7 @@ export function lintOne(file, others = []) {
   if (!pa) errors.push('publish_at: YYYY-MM-DD HH:MM');
   else {
     if (pa[1] !== date) errors.push(`publish_at 날짜(${pa[1]})가 파일 날짜(${date})와 다름`);
-    if (!SLOTS.includes(pa[2])) errors.push(`publish_at 시각은 ${SLOTS.join('·')} 중 하나`);
+    if (!slotsFor(date).includes(pa[2])) errors.push(`publish_at 시각은 ${slotsFor(date).join('·')} 중 하나`);
   }
   if (post.tags.length < 10 || post.tags.length > 15) errors.push(`태그 10~15개 (지금 ${post.tags.length})`);
   if (!post.tags.includes('다와이철거')) errors.push('태그에 다와이철거');
@@ -99,9 +110,10 @@ export function lintOne(file, others = []) {
   if (b0?.lines?.some((l) => l.s || l.segs)) errors.push('첫 줄에는 색 강조를 넣지 않는다');
 
   // 연락처 블록
-  const last = blocks[blocks.length - 1];
-  const lastLines = last?.lines?.map((l) => l.t) || [];
-  if (JSON.stringify(lastLines) !== JSON.stringify(CONTACT)) errors.push(`맨 끝 덩어리는 연락처 블록 그대로:\n      ${CONTACT.join('\n      ')}`);
+  const lastLines = blocks[blocks.length - 1]?.lines?.map((l) => l.t) || [];
+  const contactLines = blocks[blocks.length - 2]?.lines?.map((l) => l.t) || [];
+  if (JSON.stringify(contactLines) !== JSON.stringify(CONTACT)) errors.push(`끝에서 둘째 덩어리는 연락처 블록 그대로:\n      ${CONTACT.join('\n      ')}`);
+  if (JSON.stringify(lastLines) !== JSON.stringify(INQUIRY)) errors.push(`맨 끝 덩어리는 문의 안내 두 줄 그대로 (2026-11-09 사용자):\n      ${INQUIRY.join('\n      ')}`);
   const phones = count(all, PHONE);
   if (phones > 2) errors.push(`전화번호는 연락처 블록 + 본문 1번까지 (지금 ${phones}번)`);
   const otherPhone = /01[016789][-\s.]?\d{3,4}[-\s.]?\d{4}/g;
@@ -110,11 +122,12 @@ export function lintOne(file, others = []) {
   // 사진 안내
   const i1 = blocks.findIndex((b) => b.type === 'image' && b.n === 1);
   const after1 = blocks[i1 + 1];
-  if (i1 < 0 || !(after1?.type === 'p' && after1.lines[0].t === PHOTO_NOTE)) errors.push(`[이미지 1] 바로 다음 줄: ${PHOTO_NOTE}`);
+  if (real) { if (all.includes(PHOTO_NOTE)) errors.push('실제 작업 글(real_photos: yes)에는 예시 이미지 안내를 넣지 않는다'); }
+  else if (i1 < 0 || !(after1?.type === 'p' && after1.lines[0].t === PHOTO_NOTE)) errors.push(`[이미지 1] 바로 다음 줄: ${PHOTO_NOTE}`);
 
   // 금지어·금액·사실
   for (const t of texts) {
-    for (const [re, name] of BANNED) if (re.test(t)) errors.push(`쓰면 안 되는 말 — ${name}: "${t}"`);
+    for (const [re, name] of BANNED) if (!(real && /실제 현장 사진/.test(name)) && re.test(t)) errors.push(`쓰면 안 되는 말 — ${name}: "${t}"`);
     if (MONEY.test(t)) errors.push(`금액은 쓰지 않는다 (받은 금액 없음): "${t}"`);
     for (const m of t.matchAll(/([\d,]+)\s*건/g)) if (m[1].replace(/,/g, '') !== '1400') errors.push(`건수는 1,400건 그대로: "${t}"`);
     for (const m of t.matchAll(/(\d+)\s*년\s*(차|경력|동안|째|넘게|간)/g)) if (m[1] !== '7') errors.push(`경력은 7년 그대로: "${t}"`);
@@ -156,7 +169,10 @@ export function lintOne(file, others = []) {
   for (const q of quotes) if (/^\d|단계/.test(q.lines[0].t)) errors.push(`소제목에 번호를 붙이지 않는다: "${q.lines[0].t}"`);
   const imgs = blocks.filter((b) => b.type === 'image');
   const ns = imgs.map((b) => b.n);
-  if (JSON.stringify(ns) !== JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8])) errors.push(`그림 자리 [이미지 1]~[이미지 8] 순서대로 (지금 ${ns.join(',')})`);
+  if (real) {
+    if (ns.length < 3 || ns.length > 12 || ns.some((n, i) => n !== i + 1)) errors.push(`실제 작업 글: 사진 자리 [이미지 1]~[이미지 N] 순서대로 3~12장 (지금 ${ns.join(',')})`);
+    for (const n of ns) if (!['.jpg', '.jpeg', '.png'].some((x) => fs.existsSync(path.join(PHOTOS, String(n).padStart(2, '0') + x)))) errors.push(`사진 없음: content/chulgeo/photos/${slug}/${String(n).padStart(2, '0')}.jpg`);
+  } else if (JSON.stringify(ns) !== JSON.stringify([1, 2, 3, 4, 5, 6, 7, 8])) errors.push(`그림 자리 [이미지 1]~[이미지 8] 순서대로 (지금 ${ns.join(',')})`);
   blocks.forEach((b, i) => { if (b.type === 'image' && b.n >= 2 && blocks[i - 1]?.type !== 'quote') errors.push(`[이미지 ${b.n}] 은 소제목 바로 다음 줄`); });
   if (i1 >= 0 && blocks.slice(0, i1).some((b) => b.type === 'quote')) errors.push('[이미지 1] 은 첫 소제목 앞');
 
@@ -174,7 +190,8 @@ export function lintOne(file, others = []) {
 
   // 그림 계획서
   const planFile = path.join(PLANS, `${slug}.json`);
-  if (!fs.existsSync(planFile)) errors.push(`그림 계획서 없음: content/chulgeo/image-plans/${slug}.json`);
+  if (real) { if (fs.existsSync(planFile)) errors.push('실제 작업 글에는 그림 계획서를 두지 않는다 (사진을 그대로 쓴다)'); }
+  else if (!fs.existsSync(planFile)) errors.push(`그림 계획서 없음: content/chulgeo/image-plans/${slug}.json`);
   else {
     const plan = JSON.parse(fs.readFileSync(planFile, 'utf8'));
     if (plan.slug !== slug) errors.push(`계획서 slug 가 ${slug} 가 아님`);
@@ -232,11 +249,19 @@ function lintDay(results) {
   for (const r of results) (byDate[r.date] ||= []).push(r);
   for (const [d, rs] of Object.entries(byDate)) {
     const all = fs.readdirSync(POSTS).filter((f) => f.startsWith(d) && f.endsWith('.md'));
-    if (all.length > 5) errors.push(`${d}: 하루 5편까지 (지금 ${all.length})`);
+    const max = d >= TEN_FROM ? 10 : 5;
+    if (all.length > max) errors.push(`${d}: 하루 ${max}편까지 (지금 ${all.length})`);
     if (rs.length < all.length) continue; // 하루치를 다 넘겼을 때만 섞기를 본다
     const times = rs.map((r) => r.post.publishAt.slice(11));
+    const mok = rs.filter((r) => isMokgong(r.post.mainKeyword)).length;
+    if (d >= TEN_FROM && mok > 1) errors.push(`${d}: 목공 글(메인 키워드에 목공·목수)은 하루 1편까지 — 철거 위주, 목공은 간혹 (지금 ${mok})`);
     if (new Set(times).size !== times.length) errors.push(`${d}: 예약 시각이 겹침 (${times.join(', ')})`);
-    if (rs.length >= 5) {
+    if (rs.length >= 10) {
+      const regions = new Set(rs.map((r) => REGIONS.find((g) => r.post.mainKeyword.includes(g))));
+      if (regions.size < 5) errors.push(`${d}: 지역 5곳 이상 섞기 (지금 ${[...regions].join('·')})`);
+      const visit = rs.filter((r) => VISIT_OK.some((g) => r.post.mainKeyword.includes(g))).length;
+      if (visit < 5) errors.push(`${d}: 방문 견적 지역(서울·인천·시흥) 글 5편 이상 (지금 ${visit})`);
+    } else if (rs.length >= 5) {
       const regions = new Set(rs.map((r) => REGIONS.find((g) => r.post.mainKeyword.includes(g))));
       if (regions.size < 4) errors.push(`${d}: 지역 4곳 이상 섞기 (지금 ${[...regions].join('·')})`);
       const visit = rs.filter((r) => VISIT_OK.some((g) => r.post.mainKeyword.includes(g))).length;
