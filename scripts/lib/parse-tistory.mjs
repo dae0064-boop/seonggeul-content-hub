@@ -8,7 +8,9 @@
  *   덩어리 사이                → 빈 문단 한 줄 (인용구·이미지 위아래는 빼서 붙인다 — 네이버와 같은 규칙)
  *   인용구(소제목)             → <h2> 를 인용구 모양(따옴표 + 밑줄)으로. 구글은 소제목(H2)으로 읽는다
  *   [빨간글씨] [파란글씨]      → 글자색 + 굵게 (#ff0010 / #0078cb)
- *   [노란배경]                 → 배경색 + 굵게 (#fff8b2)
+ *   [노란배경]                 → 배경색 + 굵게 (#ffe94d — 2026-11-09 사용자 "티스토리도 같은 강조로", 그 전 #fff8b2)
+ *   [초록배경]                 → 연초록 배경 + 진초록 글씨 + 굵게 (체크포인트 상자, 같은 날)
+ *   인용구(말풍선) "…"         → 티스토리 인용구 3번(<blockquote data-ke-style="style3">, 상자) — 티스토리에는 말풍선 모양이 없다
  *   [이미지 N] 설명            → 표시 문단으로 남긴다 (사진 넣기는 아직 손으로)
  *   인사말 앞 사실 한 문장     → 티스토리 인용구 1번(<blockquote data-ke-style="style1">) — 2026-10-13 사용자 지시
  *   [쿠팡 링크]                → opts.coupang 이 있으면 rel="sponsored" 링크 한 줄 (구글: 제휴 링크는 sponsored 로 표시)
@@ -21,7 +23,8 @@ export { parsePost };
 const COLOR = {
   red: 'color: #ff0010;',
   blue: 'color: #0078cb;',
-  yellow: 'background-color: #fff8b2;',
+  yellow: 'background-color: #ffe94d;',
+  green: 'background-color: #dff3e4; color: #0f5a3c;',
 };
 // 네이버 인용구 4번(라인&따옴표)과 비슷하게: 가운데 정렬, 위에 따옴표, 아래 밑줄
 const QUOTE_H2 = 'text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;';
@@ -44,6 +47,7 @@ export function toHtml(post, opts = {}) {
   const lead = leadBlock(blocks);
   for (const b of blocks) {
     const tight = b.type === 'quote' || b.type === 'image' || prev === 'quote' || prev === 'image';
+    // 말풍선(상자 인용구) 위아래 빈 줄은 그대로 둔다 — 소제목처럼 붙이지 않는다
     if (prev && !tight) out.push(BLANK);
     if (b === lead) {
       out.push(`<blockquote data-ke-style="style1">${b.lines.map(lineHtml).join('<br>')}</blockquote>`);
@@ -53,7 +57,9 @@ export function toHtml(post, opts = {}) {
       out.push(`<p data-ke-size="size16"><a href="${esc(opts.coupang.url)}" target="_blank" rel="sponsored noopener"><b>▶ 쿠팡에서 ${esc(opts.coupang.label)} 보기</b></a></p>`);
       prev = b.type; continue;
     }
-    if (b.type === 'quote') {
+    if (b.type === 'bubble') {
+      out.push(`<blockquote data-ke-style="style3">${esc(b.lines[0].t)}</blockquote>`);
+    } else if (b.type === 'quote') {
       out.push(`<h2 data-ke-size="size26" style="${QUOTE_H2}"><span style="${QUOTE_MARK}">“</span>${esc(b.lines[0].t)}</h2>`);
     } else if (b.type === 'image') {
       out.push(`<p data-ke-size="size16">[이미지 ${b.n}] ${esc(b.lines[0]?.t || '')}</p>`);

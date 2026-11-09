@@ -1178,12 +1178,13 @@ for (const file of files) {
   const marks = post.marks || { red: 0, yellow: 0, blue: 0 };
   const { red, yellow, blue } = marks;
   const green = marks.green || 0;
-  const emph2 = !tistory && dated >= EMPH2_FROM && !post.matjip;
+  // 티스토리도 같은 강조 (2026-11-09 사용자 "티스토리도 같은 강조로 바꿔줘") — 11/10 원고부터
+  const emph2 = dated >= EMPH2_FROM && !post.matjip;
   const MK = emph2 ? MARKS2 : MARKS;
   const bubbles = post.blocks.filter((b) => b.type === 'bubble');
   if (!emph2) {
-    if (green) errors.push(`[초록배경] 은 ${EMPH2_FROM} 네이버 원고부터만 씁니다`);
-    if (bubbles.length) errors.push(`인용구(말풍선) 은 ${EMPH2_FROM} 네이버 원고부터만 씁니다`);
+    if (green) errors.push(`[초록배경] 은 ${EMPH2_FROM} 원고부터만 씁니다`);
+    if (bubbles.length) errors.push(`인용구(말풍선) 은 ${EMPH2_FROM} 원고부터만 씁니다`);
   } else {
     if (green < MK.green[0] || green > MK.green[1]) errors.push(`초록배경 ${green}곳 — ${MK.green[0]}~${MK.green[1]}곳 (체크포인트·정리 덩어리, 문장 통째로)`);
     if (bubbles.length !== 1) errors.push(`인용구(말풍선) ${bubbles.length}곳 — 대화 한 줄을 정확히 1곳 (예: 인용구(말풍선) "벌써 두 달 지났는데, 지금 청구해도 될까요?")`);
@@ -1199,7 +1200,6 @@ for (const file of files) {
       if (part.length) errors.push(`${{ red: '빨간글씨', yellow: '노란배경', green: '초록배경' }[part[0]]} 는 줄 통째로 칠합니다 (줄 일부만 칠함): "${l.t}"`);
     }
   }
-  if (emph2 && post.blocks.some((b) => b.type === 'bubble') && tistory) errors.push('티스토리 원고에는 말풍선을 쓰지 않습니다');
   for (const [name, n, [lo, hi]] of [['빨간글씨', red, MK.red], ['파란글씨', blue, MK.blue], ['노란배경', yellow, MK.yellow]]) {
     if (n < lo) errors.push(`${name} ${n}곳 — ${lo}곳 이상 필요 (권장 ${lo}~${hi})`);
     else if (n > hi) notes.push(`${name} ${n}곳 — 권장 ${lo}~${hi}곳보다 많아요. 다 칠하면 강조가 안 보입니다`);
