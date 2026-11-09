@@ -207,9 +207,34 @@ const imageLabel = (block) => `[이미지 ${block.n}]`;
 // 규칙 [11] 색상: 빨강 #ff0010 (글자색), 연한 노랑 #fff8b2 (배경색)
 const COLORS = {
   red:    { hex: '#ff0010', rgb: [255, 0, 16],    prop: 'color',           name: '빨간글씨' },
-  yellow: { hex: '#fff8b2', rgb: [255, 248, 178], prop: 'backgroundColor', name: '노란배경' },
+  // 2026-11-09 사용자 "한다팀장보다 강조가 약하다" — 연노랑 #fff8b2 → 진한 노랑, 초록배경(체크포인트) 추가.
+  // 붙여넣기 때 이 색이 그대로 들어가고, 안 들어가 팔레트로 다시 칠할 때는 팔레트에서 가장 가까운 색을 고른다(clickSwatch).
+  yellow: { hex: '#ffe94d', rgb: [255, 233, 77],  prop: 'backgroundColor', name: '노란배경' },
   blue:   { hex: '#0078cb', rgb: [0, 120, 203],   prop: 'color',           name: '파란글씨' },
+  green:  { hex: '#dff3e4', rgb: [223, 243, 228], prop: 'backgroundColor', name: '초록배경' },
 };
+/** 팔레트에서 hex 칸을 누른다. 같은 칸이 없으면 열린 팔레트에서 가장 가까운 색을 눌러 그 색을 돌려준다. */
+async function clickSwatch(editor, color) {
+  try { await clickFirst(editor, swatchSelectors(color.hex), { timeout: 1500 }); return color; } catch { /* 가까운 색으로 */ }
+  const pick = await editor.evaluate((want) => {
+    const hexOf = (b) => (b.getAttribute('title') || b.getAttribute('data-color') || '').trim();
+    const cands = [...document.querySelectorAll('button.se-color-palette, [class*="palette"] button')]
+      .filter((b) => /^#[0-9a-f]{6}$/i.test(hexOf(b)) && b.offsetParent);
+    let best = null, bd = 1e9;
+    for (const b of cands) {
+      const h = hexOf(b), r = [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+      const d = r.reduce((a, v, i) => a + (v - want[i]) ** 2, 0);
+      if (d < bd) { bd = d; best = b; }
+    }
+    if (!best) return null;
+    best.click();
+    return hexOf(best);
+  }, color.rgb);
+  if (!pick) throw new Error(`팔레트에 ${color.hex} 와 비슷한 색이 없음`);
+  log(`팔레트에 ${color.hex} 이 없어 가장 가까운 ${pick} 로 칠함 (${color.name})`);
+  const rgb = [1, 3, 5].map((i) => parseInt(pick.slice(i, i + 2), 16));
+  return { ...color, hex: pick, rgb };
+}
 const swatchSelectors = (hex) => [
   `button.se-color-palette[title="${hex}"]`,
   `button.se-color-palette[data-color="${hex}"]`,
@@ -477,6 +502,12 @@ const TOOLBAR = {
     'button[class*="background-color"]',
     'button[title*="배경색"]',
   ],
+  green: [
+    'button.se-background-color-toolbar-button',
+    'button[data-name="background-color"]',
+    'button[class*="background-color"]',
+    'button[title*="배경색"]',
+  ],
   quote: [
     'button.se-insert-quotation-default-toolbar-button',
     'button[data-name="quotation"]',
@@ -611,7 +642,7 @@ async function collapseSelection(page, editor) {
 
 /** 한 줄에 색을 입힌다. 성공 여부를 돌려주고, 글자가 사라지면 되돌린다. */
 async function applyColor(page, editor, text, nth, style) {
-  const color = COLORS[style];
+  let color = COLORS[style];
   const before = await checkStyled(editor, text, nth, color);
   if (!before.present) return { ok: false, why: '본문에서 글자를 찾지 못함' };
   if (before.styled) return { ok: true, already: true };
@@ -627,7 +658,7 @@ async function applyColor(page, editor, text, nth, style) {
       await page.keyboard.press('Escape').catch(() => {});
       return { ok: false, why: '팔레트를 여는 순간 선택이 풀림' };
     }
-    await clickFirst(editor, swatchSelectors(color.hex), { timeout: 3000 });
+    color = await clickSwatch(editor, color);
     await sleep(350);
   } catch (e) {
     await page.keyboard.press('Escape').catch(() => {});
@@ -1888,7 +1919,8 @@ async function main() {
 
     // ---- 소제목 → 인용구
     if (args.quote) {
-      const quotes = post.blocks.filter((b) => b.type === 'quote').map((b) => ({ q: b.lines[0].t, style: args.quoteStyle }));
+      const quotes = post.blocks.filter((b) => b.type === 'quote' || b.type === 'bubble')
+        .map((b) => ({ q: b.lines[0].t, style: b.type === 'bubble' ? 'quotation_bubble' : args.quoteStyle }));
       if (lead) quotes.unshift({ q: lead.lines[0].t, style: args.leadQuoteStyle, lead: true });
       if (quotes.length) step(`6-2. 소제목을 인용구로 (${quotes.length}개, 모양 ${args.quoteStyle}${lead ? ` · 첫 문장 ${args.leadQuoteStyle}` : ''})`);
       for (const { q, style } of quotes) {

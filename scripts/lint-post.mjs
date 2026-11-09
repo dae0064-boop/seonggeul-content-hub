@@ -245,7 +245,7 @@ const ISSUE_NOT_SOURCE = /(^|\.)(blog\.naver\.com|m\.blog\.naver\.com|cafe\.nave
 const SOURCE_ONE = /확인한 정보를 바탕으로/;
 const FILE_DOWNLOAD = /(flDownload|fileDown|[Dd]ownload\.do|\.(pdf|hwpx?|docx?|xlsx?|zip)(\?|$))/i;
 const NOT_PRIMARY = /(^|\.)(blog\.naver\.com|m\.blog\.naver\.com|cafe\.naver\.com|post\.naver\.com|n\.news\.naver\.com|news\.naver\.com|tistory\.com|brunch\.co\.kr|youtube\.com|youtu\.be|namu\.wiki|wikipedia\.org|instagram\.com|threads\.net|search\.naver\.com|google\.com|daum\.net)$/i;
-const plain = (s) => String(s).replace(/\[\/?(빨간글씨|파란글씨|노란배경)\]/g, '').replace(/[\s①-⑧✔⭕❌·,.!?()~\-]/g, '');
+const plain = (s) => String(s).replace(/\[\/?(빨간글씨|파란글씨|노란배경|초록배경)\]/g, '').replace(/[\s①-⑧✔⭕❌·,.!?()~\-]/g, '');
 const titleBracket = (t) => /\s\(([^()]*)\)\s*$/.exec(t);
 let imageStyleCache;
 function imageStyle() {
@@ -352,6 +352,11 @@ const MIN_SUB = 5;            // 서브 키워드 각각 최소 등장 횟수
 const MIN_TAGS = 15;          // 해시태그 최소 개수 (주제 태그)
 const FIXED_TAGS = ['서이추', '이웃추가', '서이추환영']; // 모든 글 끝에 붙이는 태그 (사용자 지시 2026-10-01)
 const MARKS = { red: [3, 5], blue: [6, 10], yellow: [3, 5] }; // 강조 색별 권장 개수 (한 편 기준)
+// 강조 2 (2026-11-09 사용자 — 한다팀장 블로그보다 강조가 약하다 → 예시 화면 보고 "이대로 해 줘", 11/10 네이버 원고부터):
+//   노랑은 진하게 + 꼭 기억할 문장 1~3줄 통째로, 빨강은 결론·주의 문장 통째로, 파랑은 숫자·날짜 낱말만 줄여서,
+//   초록배경 = 체크포인트·정리 덩어리 1~2곳, 대화 한 줄은 말풍선 인용구 1곳.
+const EMPH2_FROM = '2026-11-10';
+const MARKS2 = { red: [2, 4], blue: [4, 6], yellow: [3, 4], green: [1, 2] };
 
 // 단정적 우위 표현 — 쓰면 안 된다
 const BAN = ['무조건', '100%', '단언컨대', '절대로', '손실 없음', '공짜'];
@@ -558,7 +563,7 @@ for (const file of files) {
   {
     const NOTE = '음주, 무면허, 도주 사고는 보상에서 제외됩니다.';
     const all = `${post.title} ${post.mainKeyword}\n${texts.join('\n')}`;
-    const plain = texts.join('').replace(/\[\/?(빨간글씨|파란글씨|노란배경)\]/g, '').replace(/\s/g, '');
+    const plain = texts.join('').replace(/\[\/?(빨간글씨|파란글씨|노란배경|초록배경)\]/g, '').replace(/\s/g, '');
     if (/운전자\s*보험/.test(all) && !plain.includes(NOTE.replace(/\s/g, ''))) errors.push(`운전자보험 글에는 "${NOTE}" 를 글자 그대로 넣습니다`);
   }
   if (!tistory && dated >= VOLUME_FROM && post.mainKeyword) {
@@ -1135,7 +1140,7 @@ for (const file of files) {
   // 덩어리를 너무 잘게 쪼개면 글이 툭툭 끊긴다
   const textBlocks = post.blocks.filter((b) => b.type !== 'image');
   // 평균은 본문 덩어리만으로 낸다. 소제목(한 줄)을 덩어리로 세면 소제목이 많은 글이 잘게 쪼갠 글처럼 보인다
-  const bodyBlocks = textBlocks.filter((b) => b.type !== 'quote');
+  const bodyBlocks = textBlocks.filter((b) => b.type !== 'quote' && b.type !== 'bubble');
   const perBlock = bodyBlocks.reduce((a, b) => a + b.lines.length, 0) / (bodyBlocks.length || 1);
   for (const b of textBlocks) if (b.lines.length > MAX_BLOCK)
     errors.push(`덩어리가 ${b.lines.length}줄 — ${MAX_BLOCK}줄 이하로 끊으세요 (2·2·3, 4·3 처럼): "${b.lines[0].t}"`);
@@ -1172,7 +1177,30 @@ for (const file of files) {
   //   빨강 = 결론·주의(처음과 끝), 파랑 = 날짜·나이·기관명·숫자 같은 사실, 노랑 배경 = 꼭 기억할 한 문장
   const marks = post.marks || { red: 0, yellow: 0, blue: 0 };
   const { red, yellow, blue } = marks;
-  for (const [name, n, [lo, hi]] of [['빨간글씨', red, MARKS.red], ['파란글씨', blue, MARKS.blue], ['노란배경', yellow, MARKS.yellow]]) {
+  const green = marks.green || 0;
+  const emph2 = !tistory && dated >= EMPH2_FROM && !post.matjip;
+  const MK = emph2 ? MARKS2 : MARKS;
+  const bubbles = post.blocks.filter((b) => b.type === 'bubble');
+  if (!emph2) {
+    if (green) errors.push(`[초록배경] 은 ${EMPH2_FROM} 네이버 원고부터만 씁니다`);
+    if (bubbles.length) errors.push(`인용구(말풍선) 은 ${EMPH2_FROM} 네이버 원고부터만 씁니다`);
+  } else {
+    if (green < MK.green[0] || green > MK.green[1]) errors.push(`초록배경 ${green}곳 — ${MK.green[0]}~${MK.green[1]}곳 (체크포인트·정리 덩어리, 문장 통째로)`);
+    if (bubbles.length !== 1) errors.push(`인용구(말풍선) ${bubbles.length}곳 — 대화 한 줄을 정확히 1곳 (예: 인용구(말풍선) "벌써 두 달 지났는데, 지금 청구해도 될까요?")`);
+    for (const b of bubbles) {
+      const t = b.lines[0]?.t || '';
+      if (!/^["“]/.test(t)) errors.push(`말풍선은 따옴표 대화로 시작합니다: "${t}"`);
+      if (t.replace(/\s/g, '').length > 36) errors.push(`말풍선이 ${t.replace(/\s/g, '').length}자 — 공백 빼고 36자 안쪽 한 줄로: "${t}"`);
+      if (/\[\/?(빨간글씨|파란글씨|노란배경|초록배경)\]/.test(t)) errors.push('말풍선에는 색 강조를 넣지 않습니다');
+    }
+    // 노랑·빨강·초록은 문장(줄) 통째로 — 줄 일부만 칠하면 휴대폰에서 강조가 흩어져 보인다 (파랑만 낱말)
+    for (const b of post.blocks) for (const l of b.lines || []) {
+      const part = (l.segs || []).filter((g) => g.s && g.s !== 'blue').map((g) => g.s);
+      if (part.length) errors.push(`${{ red: '빨간글씨', yellow: '노란배경', green: '초록배경' }[part[0]]} 는 줄 통째로 칠합니다 (줄 일부만 칠함): "${l.t}"`);
+    }
+  }
+  if (emph2 && post.blocks.some((b) => b.type === 'bubble') && tistory) errors.push('티스토리 원고에는 말풍선을 쓰지 않습니다');
+  for (const [name, n, [lo, hi]] of [['빨간글씨', red, MK.red], ['파란글씨', blue, MK.blue], ['노란배경', yellow, MK.yellow]]) {
     if (n < lo) errors.push(`${name} ${n}곳 — ${lo}곳 이상 필요 (권장 ${lo}~${hi})`);
     else if (n > hi) notes.push(`${name} ${n}곳 — 권장 ${lo}~${hi}곳보다 많아요. 다 칠하면 강조가 안 보입니다`);
   }
@@ -1196,7 +1224,7 @@ for (const file of files) {
   console.log(`  덩어리당    : ${perBlock.toFixed(1)}줄 (최소 ${MIN_BLOCK_LINES})`);
   console.log(`  인용구      : ${quotes}개`);
   console.log(`  이미지 자리 : ${images.length}개`);
-  console.log(`  강조        : 빨강 ${red}곳 / 파랑 ${blue}곳 / 노랑 ${yellow}곳`);
+  console.log(`  강조        : 빨강 ${red}곳 / 파랑 ${blue}곳 / 노랑 ${yellow}곳${emph2 ? ` / 초록 ${green}곳 · 말풍선 ${bubbles.length}곳` : ''}`);
   console.log(`  태그        : ${post.tags.join(', ') || '(없음)'}`);
   if (post.publishAt) console.log(`  예약발행    : ${post.publishAt}`);
 
