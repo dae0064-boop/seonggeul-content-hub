@@ -43,6 +43,8 @@
 | ④ | 인스타그램 | https://www.instagram.com/___sd.eyo/ |
 | ⑤ | 1:1 보험상담(카카오톡) | https://pf.kakao.com/_yMvnX/chat (채팅 바로 열림) |
 
+**사이드 위젯 카카오톡 단추 (2026-11-09 사용자)**: 새 채널 `http://pf.kakao.com/_xixlxkxeX/chat`, 그림 `content/consult/widget/kakao-chat.png`(170×200, `kakao.mjs`), 그림 주소는 커밋 고정 raw 주소(b59ae57).
+
 위젯 코드의 `href="…"` 만 바꾼다. ①~③(내 블로그)은 `target="_top"`, ④·⑤(인스타·카카오톡 — 바깥 사이트)는 `target="_blank"`(새 창, 블로그가 그대로 남는다).
 - **2단계(카카오톡 채널 심의 뒤)**: 오른쪽 끝(가로 80~95%)에 "카카오톡 상담" 단추 칸을 하나 더한 판을 다시 만든다.
 

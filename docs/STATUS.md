@@ -26,6 +26,9 @@
 
 ## 지금 상태
 
+### 11/9 저녁 — 💬 카카오톡 상담 사이드 위젯 (사용자가 준 새 채널 http://pf.kakao.com/_xixlxkxeX/chat)
+- 노란 단추 그림 `content/consult/widget/kakao-chat.png`(170×200) + 위젯 코드를 대화로 드림. 배너 ⑤칸(_yMvnX)도 이 채널로 바꿀지는 사용자 결정. 같은 날 모바일 커버(cover-app.png)도 다시 만들어 드림.
+
 ### 11/9 저녁 — 🖍 강조 2 (사용자 "한다팀장보다 표시가 약하다" → 예시 아티팩트 https://claude.ai/artifact/5Y2ZyYZkVuWTubCatCG3hQ → "이대로 해 줘")
 - ✅ 사용자가 글 한 편 예시(https://claude.ai/artifact/NCYFkXS4aZ39HMSzFURYAh, `content/consult/post-sample.html`)를 보고 "좋아 이대로 진행해줘" — 밤 원고 작업이 이 예시를 본보기로.
 - 🅣 같은 날 사용자 "티스토리도 같은 강조로" → 11/10 티스토리 원고부터 같음(parse-tistory: 노랑 #ffe94d, 초록 상자, 말풍선 = 인용구 3번 style3 상자). [ ] 11/10 티스토리 예약 기록에서 '색 강조' 확인 줄이 통과했는지.
