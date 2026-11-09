@@ -17,10 +17,12 @@ let made = 0, skip = 0, fail = 0;
 for (const it of items) {
   if (fs.existsSync(path.join(out, `${it.slug}.png`)) || fs.existsSync(path.join(ROOT, 'content/blog-banner/src', `${it.slug}.png`))) { skip++; continue; }
   const q = it.quality || 'low', size = it.size || '1024x1024';
+  const srcImg = it.source ? path.join(out, it.source) : '';
+  if (it.source && !fs.existsSync(srcImg)) { console.log(`건너뜀: ${it.slug} — ${it.source} 가 없어요`); fail++; continue; }
   const usePhoto = it.photo && photo;
   if (it.photo_required && !photo) { console.log(`건너뜀: ${it.slug} — Drive 블로그배너 폴더에 사진.jpg(또는 사진.png)를 먼저 넣어 주세요.`); fail++; continue; }
   console.log(`그림 만드는 중: ${it.slug} (${size}, ${q}${it.photo ? (usePhoto ? ', 사진: ' + path.basename(photo) : ', 사진 없음 — 비슷한 사람으로') : ''})`);
-  const args = usePhoto ? [path.join(ROOT, 'scripts/image-edit.mjs'), photo, it.prompt] : [path.join(ROOT, 'scripts/image-gen.mjs'), it.prompt_no_photo || it.prompt];
+  const args = srcImg ? [path.join(ROOT, 'scripts/image-edit.mjs'), srcImg, it.prompt] : usePhoto ? [path.join(ROOT, 'scripts/image-edit.mjs'), photo, it.prompt] : [path.join(ROOT, 'scripts/image-gen.mjs'), it.prompt_no_photo || it.prompt];
   try { execFileSync(process.execPath, [...args, '--quality', q, '--size', size, '--out', out, '--name', it.slug], { stdio: 'inherit' }); made++; }
   catch (e) { fail++; console.log(`  실패: ${it.slug} — ${e.message.split('\n')[0]}`); }
 }
