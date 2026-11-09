@@ -32,6 +32,23 @@ const IC = {
 const CP = A('--cardphotos', '');
 const cph = n => { const f = CP && path.join(CP, `ph2-${n}.jpg`); return f && fs.existsSync(f) ? `data:image/jpeg;base64,${fs.readFileSync(f).toString('base64')}` : ''; };
 const PHOTOS = { bill: cph('bill'), care: cph('care'), won: cph('won') };
+// 바탕 무늬 (2026-11-09 사용자 "배경이 너무 밋밋") — 동그라미 없이: --pattern lines(빛줄기·사선 결) | waves(물결 선) | none
+const PAT = A('--pattern', 'lines');
+const pattern = () => {
+  if (PAT === 'none') return '';
+  const lineCol = TH.dark ? 'rgba(255,255,255,' : 'rgba(30,50,60,';
+  if (PAT === 'waves') {
+    const w = Array.from({ length: 9 }, (_, i) => `<path d="M-50 ${430 + i * 22} C 300 ${360 + i * 22}, 600 ${520 + i * 22}, 980 ${440 + i * 22} S 1600 ${360 + i * 22}, 1980 ${460 + i * 22}" stroke="${lineCol}${0.05 + i * 0.008})" stroke-width="1.5" fill="none"/>`).join('');
+    const w2 = Array.from({ length: 6 }, (_, i) => `<path d="M-50 ${60 + i * 18} C 400 ${0 + i * 18}, 800 ${150 + i * 18}, 1300 ${70 + i * 18} S 1800 ${10 + i * 18}, 1980 ${90 + i * 18}" stroke="${lineCol}${0.04 + i * 0.006})" stroke-width="1.2" fill="none"/>`).join('');
+    return `<svg class="pat" width="1920" height="600">${w}${w2}</svg>`;
+  }
+  const diag = Array.from({ length: 70 }, (_, i) => `<path d="M${i * 34 - 400} 600 L${i * 34} 0" stroke="${lineCol}.035)" stroke-width="1"/>`).join('');
+  return `<svg class="pat" width="1920" height="600"><defs><linearGradient id="beam" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><linearGradient id="beam2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9fe0c9" stop-opacity=".12"/><stop offset="1" stop-color="#9fe0c9" stop-opacity="0"/></linearGradient></defs>${diag}
+<polygon points="1180,0 1420,0 1000,600 760,600" fill="url(#beam)"/><polygon points="1470,0 1560,0 1180,600 1090,600" fill="url(#beam)" opacity=".7"/>
+<polygon points="0,0 260,0 0,330" fill="url(#beam2)"/>
+<path d="M0 560 L520 300" stroke="#e6c58a" stroke-opacity=".35" stroke-width="1.5"/><path d="M0 590 L600 290" stroke="#e6c58a" stroke-opacity=".18" stroke-width="1"/>
+<path d="M1900 20 L1980 0" stroke="#e6c58a" stroke-opacity=".3"/></svg>`;
+};
 const COLS = [['bill', '보험금·실비', '실비 청구·진단비'], ['care', '병원비·돌봄', '의료비·간병·요양'], ['won', '지원금·제도', '놓치기 쉬운 혜택'], ['insta', '인스타그램', '카드뉴스로 쉽게'], ['kakao', '1:1 보험상담', '카카오톡으로 편하게']];
 const X = k => 486 + k * 186;
 const chk = `<svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="11" fill="${TE}"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
@@ -43,7 +60,7 @@ const html = `<!doctype html><html><head><meta charset="utf-8"><style>
 *{margin:0;box-sizing:border-box}body{width:1920px;height:600px;overflow:hidden}
 .bn{position:relative;width:1920px;height:600px;overflow:hidden;background:radial-gradient(ellipse 520px 460px at 1650px 330px,${TH.glow || 'rgba(255,255,255,.75)'} 0%,rgba(255,255,255,0) 70%),${TH.bg};font-family:GM;color:${INK}}
 ${TH.dark ? `.l1{color:#d9e4e0 !important}.l2{color:#fff !important}.l2 em{color:${TH.te} !important;background:none !important;box-shadow:inset 0 -8px 0 rgba(255,122,89,.55)}` : ''}
-svg.deco{position:absolute;inset:0}
+svg.deco,svg.pat{position:absolute;inset:0}
 .tag{position:absolute;left:500px;top:96px;padding:7px 18px;border-radius:20px;background:#fff;color:${TE};font-family:GB;font-size:20px}
 .h{position:absolute;left:498px;font-family:XB;letter-spacing:-1.5px}
 .l1{top:140px;font-size:46px;color:#3b474b}
@@ -70,6 +87,7 @@ svg.deco{position:absolute;inset:0}
 .bub b{color:${CO};font-weight:normal}
 .guide{position:absolute;top:321px;width:170px;height:279px;border:2px dashed rgba(220,40,40,.8)}
 </style></head><body><div class="bn">
+${pattern()}
 <div class="tag">보험, 어렵지 않게</div>
 <div class="h l1">아플 때 받을 보험금,</div>
 <div class="h l2"><em>놓치지 않게</em> 챙겨 드려요</div>
