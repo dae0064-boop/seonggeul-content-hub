@@ -14,7 +14,22 @@ export const SUBCATEGORIES = {
   '맛집·나들이': ['맛집·카페 후기', '여행·숙소', '명소·축제 시기'],
 };
 export const ALL_SUBCATEGORIES = Object.values(SUBCATEGORIES).flat();
+// 2026-11-09 사용자: "하위 카테고리 없이" — 생활보장 글은 위 카테고리 3개(보험금·실비 / 병원비·돌봄 / 지원금·제도)에 바로 넣는다.
+//   예전 하위 카테고리(실비·보험금청구 등)는 지난 글이 들어 있어 남겨 두지만 새 글은 넣지 않는다.
+export const CARE_TOPS = ['보험금·실비', '병원비·돌봄', '지원금·제도'];
+export const NO_SUB_PARENTS = new Set(CARE_TOPS);
 export const parentOf = (sub) => Object.keys(SUBCATEGORIES).find((k) => SUBCATEGORIES[k].includes(sub)) || '';
+
+export function careTopFor(post) {
+  const s = subcategoryFor({ ...post, subcategory: '' });
+  return parentOf(s) || '보험금·실비';
+}
+
+/** 실제로 고를 하위 카테고리 — 위 카테고리 3개는 하위 없이 (2026-11-09) */
+export function pickSubFor(post) {
+  if (post.category === '생활보장' && !post.subcategory) return '';
+  return subcategoryFor(post);
+}
 
 export function subcategoryFor(post) {
   if (post.subcategory) return post.subcategory;
