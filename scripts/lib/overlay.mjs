@@ -625,6 +625,17 @@ export async function renderCards(jobs) {
     for (const j of jobs) {
       const size = j.size || 1024;
       const page = await browser.newPage({ viewport: { width: size, height: size } });
+      // 진초록 카드 + 캐릭터 (2026-11-09 사용자 "적용해") — post-images 가 card.green·mascot 을 넣는다
+      if (j.card.green) {
+        const g = await import('./cards-green.mjs');
+        await page.setContent(g.greenCardHtml(size, j.card, { mascot: j.mascot || '' }), { waitUntil: 'load' });
+        await page.evaluate(() => document.fonts.ready);
+        await page.evaluate(g.KEY_SCRIPT);
+        await page.evaluate(g.FIT_SCRIPT);
+        await page.screenshot({ path: j.dest, type: 'png' });
+        await page.close();
+        continue;
+      }
       await page.setContent(cardHtml(size, j.card), { waitUntil: 'load' });
       await page.evaluate(() => document.fonts.ready);
       // 칸을 넘는 글자는 넘지 않을 때까지 줄인다
