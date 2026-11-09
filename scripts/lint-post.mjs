@@ -809,7 +809,8 @@ for (const file of files) {
           if (done ? got !== n : got > n) errors.push(`같은 날(${dated}) 이슈 ${k} ${got}편 — 하루 연예·방송 ${ISSUE12.연예} + 이슈·뉴스 ${ISSUE12.정책} (${why})`);
         }
         const hf = season ? HF_SEASON : HF_TWENTY;
-        if (!i12) for (const [c, n] of Object.entries(hf)) {
+        // 생활보장만 10편 날(CARE10_FROM)은 홈판형 칸이 없다 — 생활보장은 HANDE_FROM 부터 검색형만 (2026-11-09 고장 고침: care10 날에 홈판 6편을 요구해 막혔다)
+        if (!i12 && !care10) for (const [c, n] of Object.entries(hf)) {
           const got = sibs.filter((p) => p.category === c && p.slot === '홈판').length;
           if (done ? got !== n : got > n) errors.push(`같은 날(${dated}) ${c} 홈판형(slot: 홈판) ${got}편 — 하루 생활정보 ${hf.생활정보} + 생활보장 ${hf.생활보장}편 (나머지는 검색형)`);
         }
