@@ -1,0 +1,621 @@
+{
+  "slug": "2026-11-22-beopjeongsangsokin-boheomgeum",
+  "title": "법정상속인 보험금, 대표자 한 명이 청구할까 (표준약관 제12조)",
+  "category": "생활보장",
+  "tags": [
+    "법정상속인보험금",
+    "대표자",
+    "상속순위",
+    "수익자",
+    "실종선고",
+    "법정상속인",
+    "상속인보험금청구",
+    "보험수익자지정",
+    "생명보험표준약관",
+    "상법733조",
+    "민법1000조",
+    "사망진단서",
+    "보험정보",
+    "생활보장",
+    "보험금청구서류"
+  ],
+  "publishAt": "2026-11-22 21:00",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "실종선고를 받으면 법원이 정한 실종기간이"
+        },
+        {
+          "t": "끝나는 때 사망한 걸로 보고 사망보험금이 나와요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "장례를 마친 주말, 형제들이 거실에 모여"
+        },
+        {
+          "t": "아버지 보험증권을 펼쳐 봤다고 해 볼게요."
+        },
+        {
+          "t": "수익자 칸에 이름 대신 '법정상속인'이라고"
+        },
+        {
+          "t": "적혀 있으면 막막해지기 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘은 법정상속인 보험금이 누구에게 가고"
+        },
+        {
+          "t": "여럿이면 어떻게 청구하는지 질문으로 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "먼저 결론이에요."
+        },
+        {
+          "t": "법정상속인 보험금은 상속인이 여럿이면",
+          "s": "yellow"
+        },
+        {
+          "t": "대표자 한 명을 정해 청구하는 게 약관 순서예요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "넓은 거실에서 탁자를 사이에 두고 이야기하는 50대 남매를 멀리서 본 모습 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "법정상속인 보험금, 언제 상속인이 받을까"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "법정상속인 보험금을 누가 받는지 묻는 첫머리 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "계약자는 수익자를 정하거나 바꿀 수 있어요."
+        },
+        {
+          "t": "상법 제733조 제1항에 적힌 권리예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "정해 두지 않았다면 약관이 대신 정해요."
+        },
+        {
+          "t": "생명보험 표준약관 제11조는 사망보험금의"
+        },
+        {
+          "t": "수익자를 피보험자의 법정상속인으로 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "수익자 칸이 비었거나 '법정상속인'이면",
+          "s": "red"
+        },
+        {
+          "t": "상속인 모두가 수익자가 된다는 뜻이에요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "상속 순위, 누가 법정상속인일까"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "법정상속인 순위와 청구 기한을 숫자로 정리한 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "민법 제1000조가 상속 순위를 정해요."
+        },
+        {
+          "t": "법정상속인 보험금도 이 순서를 따라가요."
+        },
+        {
+          "t": "1순위는 자녀·손자녀 같은 직계비속이에요.",
+          "segs": [
+            {
+              "t": "1순위",
+              "s": "blue"
+            },
+            {
+              "t": "는 자녀·손자녀 같은 직계비속이에요."
+            }
+          ]
+        },
+        {
+          "t": "2순위는 부모·조부모 같은 직계존속이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "배우자는 제1003조로 따로 정해요."
+        },
+        {
+          "t": "직계비속이나 직계존속과 같은 순위로"
+        },
+        {
+          "t": "함께 상속인이 되고, 없으면 혼자예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "형제자매는 3순위라서 앞 순위가",
+          "segs": [
+            {
+              "t": "형제자매는 "
+            },
+            {
+              "t": "3순위",
+              "s": "blue"
+            },
+            {
+              "t": "라서 앞 순위가"
+            }
+          ]
+        },
+        {
+          "t": "아무도 없을 때만 상속인이 돼요."
+        },
+        {
+          "t": "같은 순위에선 가까운 촌수가 먼저예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "상속분은 제1009조로 같은 순위끼리 똑같고,"
+        },
+        {
+          "t": "배우자는 5할을 더해요.",
+          "segs": [
+            {
+              "t": "배우자는 "
+            },
+            {
+              "t": "5할",
+              "s": "blue"
+            },
+            {
+              "t": "을 더해요."
+            }
+          ]
+        },
+        {
+          "t": "이건 상속재산을 나누는 민법 기준이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보험금을 나누는 몫은 보험사가 약관과",
+          "s": "yellow"
+        },
+        {
+          "t": "법에 따라 따로 안내하니 꼭 물어보세요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 배우자와 자녀 둘이 남았다면"
+        },
+        {
+          "t": "상속 순위로는 셋이 함께 1순위예요."
+        },
+        {
+          "t": "부모님은 이때 상속인이 되지 않아요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "실종선고도 사망으로 볼까"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "표준약관 제4조는 실종선고를 받으면"
+        },
+        {
+          "t": "법원이 정한 실종기간이 끝나는 때"
+        },
+        {
+          "t": "사망한 걸로 본다고 적어 뒀어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "관공서가 수해·화재 같은 재난을 조사해"
+        },
+        {
+          "t": "사망으로 통보하면 가족관계등록부의"
+        },
+        {
+          "t": "사망 날짜를 기준으로 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "사망 기준일이 서류마다 다르게 보이면",
+          "s": "red"
+        },
+        {
+          "t": "청구 전에 그 날짜부터 맞춰 봐야 해요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "상속인이 여럿이면 대표자 한 명"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "생명보험 표준약관 제12조 제1항은"
+        },
+        {
+          "t": "수익자가 2명 이상이면 대표자 1명을"
+        },
+        {
+          "t": "지정하라고 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "대표자는 나머지 수익자를",
+          "s": "yellow"
+        },
+        {
+          "t": "대리하는 것으로 봐요.",
+          "s": "yellow"
+        },
+        {
+          "t": "그래서 창구에서 형제가 다 모일 필요가 줄어요."
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"막내가 외국에 사는데 어떡하죠?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "대표자를 정하는 데 동의하는 서류는"
+        },
+        {
+          "t": "보험사가 안내하는 양식을 따르면 돼요."
+        },
+        {
+          "t": "멀리 사는 형제도 이 서류로 함께해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "같은 조 제2항은 지정된 수익자의 소재가"
+        },
+        {
+          "t": "확실하지 않을 때를 따로 정해 뒀어요."
+        },
+        {
+          "t": "회사가 수익자 한 명에게 한 일이"
+        },
+        {
+          "t": "다른 수익자에게도 효력이 있다고 봐요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "법정상속인 보험금 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "탁자 위에 놓인 보험증권 봉투와 안경, 국화 한 송이"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "상속 서류를 앞두고 많이 묻는 네 가지예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 수익자를 배우자로 정해 뒀다면요?"
+        },
+        {
+          "t": "A1: 그때는 정해 둔 수익자가 받아요."
+        },
+        {
+          "t": "법정상속인 보험금이 아니라서"
+        },
+        {
+          "t": "대표자를 따로 정할 일도 없어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 수익자가 먼저 세상을 떠났다면요?"
+        },
+        {
+          "t": "A2: 상법 제733조 제3항은 계약자가 다시"
+        },
+        {
+          "t": "지정할 수 있다고 해요. 그 전에 계약자도"
+        },
+        {
+          "t": "사망하면 수익자의 상속인이 수익자가 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q3: 청구 서류는 무엇이 기본인가요?"
+        },
+        {
+          "t": "A3: 표준약관 제7조는 회사 양식 청구서와"
+        },
+        {
+          "t": "사망진단서 같은 증명서, 신분증을 적어 둬요."
+        },
+        {
+          "t": "대표자가 내면 인감증명서 등이 더 붙어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q4: 언제까지 청구해야 하나요?"
+        },
+        {
+          "t": "A4: 상법 제662조는 보험금청구권을"
+        },
+        {
+          "t": "3년 동안 쓰지 않으면 소멸한다고 해요.",
+          "segs": [
+            {
+              "t": "3년",
+              "s": "blue"
+            },
+            {
+              "t": " 동안 쓰지 않으면 소멸한다고 해요."
+            }
+          ]
+        },
+        {
+          "t": "장례 뒤 정신이 없어도 기한은 흘러가요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "법정상속인 보험금 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "장례 뒤 한 번에 볼 것만 모았어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 체크포인트",
+          "s": "green"
+        },
+        {
+          "t": "증권 수익자 칸 확인",
+          "s": "green"
+        },
+        {
+          "t": "상속 순위로 수익자 확인",
+          "s": "green"
+        },
+        {
+          "t": "대표자 1명 정하고 3년 안 청구",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "법정상속인 보험금은 순위로 사람을 정하고"
+        },
+        {
+          "t": "대표자로 창구를 하나로 모으는 게 순서예요."
+        },
+        {
+          "t": "가족끼리 대표자부터 먼저 의논해 보세요."
+        },
+        {
+          "t": "연락이 뜸한 형제가 있다면 더 일찍 시작해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분 댁은 증권 수익자 칸을 채워 두셨나요?"
+        },
+        {
+          "t": "\"채움\", \"비움\"으로 남겨 주세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "조문은 생명보험 표준약관 제4·7·11·12조,"
+        },
+        {
+          "t": "상법 제662·733조와 민법 제1000조 이하를"
+        },
+        {
+          "t": "국가법령정보센터에서 하나씩 열어 확인했어요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "내 증권·약관에서 수익자 칸을 한 번 찾아보세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "법정상속인 보험금, 대표자 한 명으로 모아요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">실종선고를 받으면 법원이 정한 실종기간이<br>끝나는 때 사망한 걸로 보고 사망보험금이 나와요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">장례를 마친 주말, 형제들이 거실에 모여<br>아버지 보험증권을 펼쳐 봤다고 해 볼게요.<br>수익자 칸에 이름 대신 '법정상속인'이라고<br>적혀 있으면 막막해지기 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘은 법정상속인 보험금이 누구에게 가고<br>여럿이면 어떻게 청구하는지 질문으로 볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">먼저 결론이에요.<br><span style=\"background-color: #ffe94d;\"><b>법정상속인 보험금은 상속인이 여럿이면</b></span><br><span style=\"background-color: #ffe94d;\"><b>대표자 한 명을 정해 청구하는 게 약관 순서예요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 1] 넓은 거실에서 탁자를 사이에 두고 이야기하는 50대 남매를 멀리서 본 모습 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>법정상속인 보험금, 언제 상속인이 받을까</h2>\n<p data-ke-size=\"size16\">[이미지 2] 법정상속인 보험금을 누가 받는지 묻는 첫머리 카드</p>\n<p data-ke-size=\"size16\">계약자는 수익자를 정하거나 바꿀 수 있어요.<br>상법 제733조 제1항에 적힌 권리예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">정해 두지 않았다면 약관이 대신 정해요.<br>생명보험 표준약관 제11조는 사망보험금의<br>수익자를 피보험자의 법정상속인으로 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>수익자 칸이 비었거나 '법정상속인'이면</b></span><br><span style=\"color: #ff0010;\"><b>상속인 모두가 수익자가 된다는 뜻이에요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>상속 순위, 누가 법정상속인일까</h2>\n<p data-ke-size=\"size16\">[이미지 3] 법정상속인 순위와 청구 기한을 숫자로 정리한 카드</p>\n<p data-ke-size=\"size16\">민법 제1000조가 상속 순위를 정해요.<br>법정상속인 보험금도 이 순서를 따라가요.<br><span style=\"color: #0078cb;\"><b>1순위</b></span>는 자녀·손자녀 같은 직계비속이에요.<br>2순위는 부모·조부모 같은 직계존속이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">배우자는 제1003조로 따로 정해요.<br>직계비속이나 직계존속과 같은 순위로<br>함께 상속인이 되고, 없으면 혼자예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">형제자매는 <span style=\"color: #0078cb;\"><b>3순위</b></span>라서 앞 순위가<br>아무도 없을 때만 상속인이 돼요.<br>같은 순위에선 가까운 촌수가 먼저예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">상속분은 제1009조로 같은 순위끼리 똑같고,<br>배우자는 <span style=\"color: #0078cb;\"><b>5할</b></span>을 더해요.<br>이건 상속재산을 나누는 민법 기준이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>보험금을 나누는 몫은 보험사가 약관과</b></span><br><span style=\"background-color: #ffe94d;\"><b>법에 따라 따로 안내하니 꼭 물어보세요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 배우자와 자녀 둘이 남았다면<br>상속 순위로는 셋이 함께 1순위예요.<br>부모님은 이때 상속인이 되지 않아요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>실종선고도 사망으로 볼까</h2>\n<p data-ke-size=\"size16\">표준약관 제4조는 실종선고를 받으면<br>법원이 정한 실종기간이 끝나는 때<br>사망한 걸로 본다고 적어 뒀어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">관공서가 수해·화재 같은 재난을 조사해<br>사망으로 통보하면 가족관계등록부의<br>사망 날짜를 기준으로 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>사망 기준일이 서류마다 다르게 보이면</b></span><br><span style=\"color: #ff0010;\"><b>청구 전에 그 날짜부터 맞춰 봐야 해요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>상속인이 여럿이면 대표자 한 명</h2>\n<p data-ke-size=\"size16\">생명보험 표준약관 제12조 제1항은<br>수익자가 2명 이상이면 대표자 1명을<br>지정하라고 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>대표자는 나머지 수익자를</b></span><br><span style=\"background-color: #ffe94d;\"><b>대리하는 것으로 봐요.</b></span><br>그래서 창구에서 형제가 다 모일 필요가 줄어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<blockquote data-ke-style=\"style3\">&quot;막내가 외국에 사는데 어떡하죠?&quot;</blockquote>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">대표자를 정하는 데 동의하는 서류는<br>보험사가 안내하는 양식을 따르면 돼요.<br>멀리 사는 형제도 이 서류로 함께해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">같은 조 제2항은 지정된 수익자의 소재가<br>확실하지 않을 때를 따로 정해 뒀어요.<br>회사가 수익자 한 명에게 한 일이<br>다른 수익자에게도 효력이 있다고 봐요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>법정상속인 보험금 Q&amp;A</h2>\n<p data-ke-size=\"size16\">[이미지 4] 탁자 위에 놓인 보험증권 봉투와 안경, 국화 한 송이</p>\n<p data-ke-size=\"size16\">상속 서류를 앞두고 많이 묻는 네 가지예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 수익자를 배우자로 정해 뒀다면요?<br>A1: 그때는 정해 둔 수익자가 받아요.<br>법정상속인 보험금이 아니라서<br>대표자를 따로 정할 일도 없어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 수익자가 먼저 세상을 떠났다면요?<br>A2: 상법 제733조 제3항은 계약자가 다시<br>지정할 수 있다고 해요. 그 전에 계약자도<br>사망하면 수익자의 상속인이 수익자가 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q3: 청구 서류는 무엇이 기본인가요?<br>A3: 표준약관 제7조는 회사 양식 청구서와<br>사망진단서 같은 증명서, 신분증을 적어 둬요.<br>대표자가 내면 인감증명서 등이 더 붙어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q4: 언제까지 청구해야 하나요?<br>A4: 상법 제662조는 보험금청구권을<br><span style=\"color: #0078cb;\"><b>3년</b></span> 동안 쓰지 않으면 소멸한다고 해요.<br>장례 뒤 정신이 없어도 기한은 흘러가요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>법정상속인 보험금 정리</h2>\n<p data-ke-size=\"size16\">장례 뒤 한 번에 볼 것만 모았어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 체크포인트</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>증권 수익자 칸 확인</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>상속 순위로 수익자 확인</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>대표자 1명 정하고 3년 안 청구</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">법정상속인 보험금은 순위로 사람을 정하고<br>대표자로 창구를 하나로 모으는 게 순서예요.<br>가족끼리 대표자부터 먼저 의논해 보세요.<br>연락이 뜸한 형제가 있다면 더 일찍 시작해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분 댁은 증권 수익자 칸을 채워 두셨나요?<br>&quot;채움&quot;, &quot;비움&quot;으로 남겨 주세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">조문은 생명보험 표준약관 제4·7·11·12조,<br>상법 제662·733조와 민법 제1000조 이하를<br>국가법령정보센터에서 하나씩 열어 확인했어요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">내 증권·약관에서 수익자 칸을 한 번 찾아보세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>법정상속인 보험금, 대표자 한 명으로 모아요.</p>"
+}

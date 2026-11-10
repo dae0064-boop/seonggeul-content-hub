@@ -1,0 +1,641 @@
+{
+  "slug": "2026-11-22-yeonmaljeongsan-hwangeup-sigi",
+  "title": "연말정산 환급 시기, 2월 급여일까 아니면 3월일까 (2월분 근로소득)",
+  "category": "생활정보",
+  "tags": [
+    "연말정산환급시기",
+    "2월급여",
+    "추가납부",
+    "경정청구",
+    "13월의월급",
+    "연말정산환급",
+    "연말정산환급일",
+    "연말정산분납",
+    "연말정산퇴사자",
+    "원천징수세액환급",
+    "소득세법137조",
+    "종합소득세확정신고",
+    "직장인세금",
+    "생활제도",
+    "연말정산"
+  ],
+  "publishAt": "2026-11-22 12:40",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "13월의 월급은 법으로 날짜가 정해진 게 아니라"
+        },
+        {
+          "t": "'2월분 월급을 줄 때' 정산하게 돼 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "2월 말 월급 명세서를 열었는데"
+        },
+        {
+          "t": "환급 칸이 비어 있으면 \"나만 빠졌나?\" 싶죠."
+        },
+        {
+          "t": "옆자리 동료는 벌써 받았다는데 말이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘은 연말정산 환급 시기를"
+        },
+        {
+          "t": "소득세법 조문 순서대로 정리해 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "먼저 결론이에요."
+        },
+        {
+          "t": "연말정산 환급 시기는 회사가 2월분 월급을",
+          "s": "yellow"
+        },
+        {
+          "t": "주는 날이라, 회사마다 2월이기도 3월이기도 해요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "월급 명세서와 달력, 계산기, 볼펜이 놓인 책상을 위에서 내려다본 모습 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "연말정산 환급 시기, 법에는 2월분"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "연말정산 환급 시기와 분납 기준을 숫자로 정리한 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "소득세법 제137조 제1항은 회사가"
+        },
+        {
+          "t": "다음 연도 2월분 근로소득을 지급할 때",
+          "segs": [
+            {
+              "t": "다음 연도 2월분",
+              "s": "blue"
+            },
+            {
+              "t": " 근로소득을 지급할 때"
+            }
+          ]
+        },
+        {
+          "t": "연말정산 세금을 계산하라고 정해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여기서 핵심은 '2월에'가 아니라"
+        },
+        {
+          "t": "'2월분'이라는 낱말이에요."
+        },
+        {
+          "t": "2월에 일한 몫의 월급을 줄 때라는 뜻이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "같은 조 제2항은 이미 뗀 세금이"
+        },
+        {
+          "t": "계산한 세금보다 많으면 그 차이를"
+        },
+        {
+          "t": "근로자에게 돌려주라고 해요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "2월 급여일이 3월이면 환급도 3월"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "월급날이 25일인 회사라면"
+        },
+        {
+          "t": "2월 25일 2월 급여에 환급이 같이 들어와요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "월급을 다음 달 10일에 주는 회사라면",
+          "s": "yellow"
+        },
+        {
+          "t": "2월분은 3월 10일에 나가니 환급도 3월이에요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "입사 첫 달 월급을 다음 달에 받았다면"
+        },
+        {
+          "t": "우리 회사는 이 경우라고 보면 돼요."
+        },
+        {
+          "t": "환급 날짜는 그해 3월 10일 언저리가 돼요.",
+          "segs": [
+            {
+              "t": "환급 날짜는 그해 "
+            },
+            {
+              "t": "3월 10일",
+              "s": "blue"
+            },
+            {
+              "t": " 언저리가 돼요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 같은 해 연말정산이라도"
+        },
+        {
+          "t": "연말정산 환급 시기는 회사마다 달라요."
+        },
+        {
+          "t": "명세서의 '귀속월'을 보면 바로 구분돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "퇴사한 사람은 기다릴 필요가 없어요."
+        },
+        {
+          "t": "제137조는 퇴직하는 달의 근로소득을 줄 때"
+        },
+        {
+          "t": "그해 몫을 정산하라고 따로 적어 뒀어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "다만 퇴사 때는 간소화 자료가 다 모이기 전이라"
+        },
+        {
+          "t": "공제가 덜 들어가기 쉬워요."
+        },
+        {
+          "t": "이건 아래 5월 신고로 채우면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "환급이 늦게 들어오는 경우"
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"환급은 회사가 따로 보내 주나요?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "회사는 환급액을 따로 송금하지 않아요."
+        },
+        {
+          "t": "시행령 제201조는 회사가 그달 내야 할"
+        },
+        {
+          "t": "원천징수 세금에서 빼서 돌려주게 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그런데 직원 환급액이 그달 낼 세금보다"
+        },
+        {
+          "t": "크면 모자라죠. 이때 시행규칙 제93조는"
+        },
+        {
+          "t": "다음 달 이후 세금에서 나눠 조정하게 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "회사가 세무서에 환급신청을 하면"
+        },
+        {
+          "t": "그 넘는 금액은 세무서가 돌려줘요."
+        },
+        {
+          "t": "그래서 환급이 한두 달쯤 늦게 들어오기도 해요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "회사가 폐업·부도로 연락이 끊기면"
+        },
+        {
+          "t": "근로자가 세무서에 지급을 직접 신청할 수 있어요."
+        },
+        {
+          "t": "신청하는 곳은 회사를 맡은 원천징수 관할 세무서예요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "더 내야 하면 추가 납부를 나눌까"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "연말정산 환급 시기에 대해 맞는지 틀리는지 풀어 보는 퀴즈 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "반대로 세금을 더 내야 할 때도 있어요."
+        },
+        {
+          "t": "이 추가 납부도 2월분 월급에서 떼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "추가 납부세액이 10만 원을 넘으면",
+          "s": "yellow"
+        },
+        {
+          "t": "2월분부터 4월분까지 나눠 낼 수 있어요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 더 낼 세금이 30만 원이라면",
+          "segs": [
+            {
+              "t": "예를 들어 더 낼 세금이 "
+            },
+            {
+              "t": "30만 원",
+              "s": "blue"
+            },
+            {
+              "t": "이라면"
+            }
+          ]
+        },
+        {
+          "t": "2·3·4월분 월급에서 10만 원씩 떼는 식이에요."
+        },
+        {
+          "t": "나누는 방식은 회사와 정하면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "제137조 제4항에 적힌 내용이에요."
+        },
+        {
+          "t": "나눠 낼지 회사에 미리 말해 두면"
+        },
+        {
+          "t": "2월 급여가 한꺼번에 줄어드는 걸 막아요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "놓친 공제는 5월과 경정청구로"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "창가 책상에서 노트북을 열어 두고 서류를 정리하는 손과 머그잔"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "공제를 빠뜨렸다면 환급은 끝난 게 아니에요."
+        },
+        {
+          "t": "제70조는 다음 해 5월 1일부터 31일까지",
+          "segs": [
+            {
+              "t": "제70조는 다음 해 "
+            },
+            {
+              "t": "5월 1일부터 31일",
+              "s": "blue"
+            },
+            {
+              "t": "까지"
+            }
+          ]
+        },
+        {
+          "t": "종합소득세 확정신고를 하게 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그 기간도 놓쳤다면 경정청구가 있어요."
+        },
+        {
+          "t": "국세기본법 제45조의2 제5항은"
+        },
+        {
+          "t": "연말정산을 받은 근로자에게도 길을 열어 뒀어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "경정청구는 법정신고기한이 지난 뒤",
+          "s": "red"
+        },
+        {
+          "t": "5년 안에만 할 수 있어요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "간소화 자료에 없던 영수증을"
+        },
+        {
+          "t": "뒤늦게 찾았다면"
+        },
+        {
+          "t": "5년 안에 경정청구로 고칠 수 있다는 뜻이에요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "연말정산 환급 시기 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이맘때 많이 묻는 두 가지예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 퀴즈 답부터 알려 주세요."
+        },
+        {
+          "t": "A1: 첫째는 틀려요, 2월분 지급일이 기준이에요."
+        },
+        {
+          "t": "둘째와 셋째는 맞아요."
+        },
+        {
+          "t": "퇴사 달 정산, 5년 경정청구 그대로예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 회사 두 곳에서 월급을 받았다면요?"
+        },
+        {
+          "t": "A2: 제137조의2대로 종된 회사 영수증을"
+        },
+        {
+          "t": "2월분 급여 전에 주된 회사에 내면 합쳐서 정산해요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "연말정산 환급 시기 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘 볼 곳을 세 줄로 줄였어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 체크포인트",
+          "s": "green"
+        },
+        {
+          "t": "명세서 귀속월로 2월분 지급일 확인",
+          "s": "green"
+        },
+        {
+          "t": "추가 납부 10만 원 넘으면 분납 요청",
+          "s": "green"
+        },
+        {
+          "t": "놓친 공제는 5월 신고나 경정청구",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "연말정산 환급 시기는 달력이 아니라"
+        },
+        {
+          "t": "우리 회사 2월 급여 지급일이 정해요."
+        },
+        {
+          "t": "늦어지면 회사 세금 조정부터 물어보면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분 회사는 월급을 언제 주세요?"
+        },
+        {
+          "t": "\"당월\", \"익월\" 중 하나로 남겨 주세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "날짜와 기한은 소득세법 제70조·제137조,"
+        },
+        {
+          "t": "시행령 제201조, 시행규칙 제93조와"
+        },
+        {
+          "t": "국세기본법 제45조의2 조문을 그대로 읽었어요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "연말정산 환급 시기, 2월분 급여일을 먼저 봐요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">13월의 월급은 법으로 날짜가 정해진 게 아니라<br>'2월분 월급을 줄 때' 정산하게 돼 있어요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">2월 말 월급 명세서를 열었는데<br>환급 칸이 비어 있으면 &quot;나만 빠졌나?&quot; 싶죠.<br>옆자리 동료는 벌써 받았다는데 말이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘은 연말정산 환급 시기를<br>소득세법 조문 순서대로 정리해 볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">먼저 결론이에요.<br><span style=\"background-color: #ffe94d;\"><b>연말정산 환급 시기는 회사가 2월분 월급을</b></span><br><span style=\"background-color: #ffe94d;\"><b>주는 날이라, 회사마다 2월이기도 3월이기도 해요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 1] 월급 명세서와 달력, 계산기, 볼펜이 놓인 책상을 위에서 내려다본 모습 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>연말정산 환급 시기, 법에는 2월분</h2>\n<p data-ke-size=\"size16\">[이미지 2] 연말정산 환급 시기와 분납 기준을 숫자로 정리한 카드</p>\n<p data-ke-size=\"size16\">소득세법 제137조 제1항은 회사가<br><span style=\"color: #0078cb;\"><b>다음 연도 2월분</b></span> 근로소득을 지급할 때<br>연말정산 세금을 계산하라고 정해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여기서 핵심은 '2월에'가 아니라<br>'2월분'이라는 낱말이에요.<br>2월에 일한 몫의 월급을 줄 때라는 뜻이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">같은 조 제2항은 이미 뗀 세금이<br>계산한 세금보다 많으면 그 차이를<br>근로자에게 돌려주라고 해요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>2월 급여일이 3월이면 환급도 3월</h2>\n<p data-ke-size=\"size16\">월급날이 25일인 회사라면<br>2월 25일 2월 급여에 환급이 같이 들어와요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>월급을 다음 달 10일에 주는 회사라면</b></span><br><span style=\"background-color: #ffe94d;\"><b>2월분은 3월 10일에 나가니 환급도 3월이에요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">입사 첫 달 월급을 다음 달에 받았다면<br>우리 회사는 이 경우라고 보면 돼요.<br>환급 날짜는 그해 <span style=\"color: #0078cb;\"><b>3월 10일</b></span> 언저리가 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그래서 같은 해 연말정산이라도<br>연말정산 환급 시기는 회사마다 달라요.<br>명세서의 '귀속월'을 보면 바로 구분돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">퇴사한 사람은 기다릴 필요가 없어요.<br>제137조는 퇴직하는 달의 근로소득을 줄 때<br>그해 몫을 정산하라고 따로 적어 뒀어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">다만 퇴사 때는 간소화 자료가 다 모이기 전이라<br>공제가 덜 들어가기 쉬워요.<br>이건 아래 5월 신고로 채우면 돼요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>환급이 늦게 들어오는 경우</h2>\n<blockquote data-ke-style=\"style3\">&quot;환급은 회사가 따로 보내 주나요?&quot;</blockquote>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">회사는 환급액을 따로 송금하지 않아요.<br>시행령 제201조는 회사가 그달 내야 할<br>원천징수 세금에서 빼서 돌려주게 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그런데 직원 환급액이 그달 낼 세금보다<br>크면 모자라죠. 이때 시행규칙 제93조는<br>다음 달 이후 세금에서 나눠 조정하게 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">회사가 세무서에 환급신청을 하면<br>그 넘는 금액은 세무서가 돌려줘요.<br><span style=\"color: #ff0010;\"><b>그래서 환급이 한두 달쯤 늦게 들어오기도 해요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">회사가 폐업·부도로 연락이 끊기면<br>근로자가 세무서에 지급을 직접 신청할 수 있어요.<br>신청하는 곳은 회사를 맡은 원천징수 관할 세무서예요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>더 내야 하면 추가 납부를 나눌까</h2>\n<p data-ke-size=\"size16\">[이미지 3] 연말정산 환급 시기에 대해 맞는지 틀리는지 풀어 보는 퀴즈 카드</p>\n<p data-ke-size=\"size16\">반대로 세금을 더 내야 할 때도 있어요.<br>이 추가 납부도 2월분 월급에서 떼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>추가 납부세액이 10만 원을 넘으면</b></span><br><span style=\"background-color: #ffe94d;\"><b>2월분부터 4월분까지 나눠 낼 수 있어요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 더 낼 세금이 <span style=\"color: #0078cb;\"><b>30만 원</b></span>이라면<br>2·3·4월분 월급에서 10만 원씩 떼는 식이에요.<br>나누는 방식은 회사와 정하면 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">제137조 제4항에 적힌 내용이에요.<br>나눠 낼지 회사에 미리 말해 두면<br>2월 급여가 한꺼번에 줄어드는 걸 막아요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>놓친 공제는 5월과 경정청구로</h2>\n<p data-ke-size=\"size16\">[이미지 4] 창가 책상에서 노트북을 열어 두고 서류를 정리하는 손과 머그잔</p>\n<p data-ke-size=\"size16\">공제를 빠뜨렸다면 환급은 끝난 게 아니에요.<br>제70조는 다음 해 <span style=\"color: #0078cb;\"><b>5월 1일부터 31일</b></span>까지<br>종합소득세 확정신고를 하게 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그 기간도 놓쳤다면 경정청구가 있어요.<br>국세기본법 제45조의2 제5항은<br>연말정산을 받은 근로자에게도 길을 열어 뒀어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>경정청구는 법정신고기한이 지난 뒤</b></span><br><span style=\"color: #ff0010;\"><b>5년 안에만 할 수 있어요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">간소화 자료에 없던 영수증을<br>뒤늦게 찾았다면<br>5년 안에 경정청구로 고칠 수 있다는 뜻이에요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>연말정산 환급 시기 Q&amp;A</h2>\n<p data-ke-size=\"size16\">이맘때 많이 묻는 두 가지예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 퀴즈 답부터 알려 주세요.<br>A1: 첫째는 틀려요, 2월분 지급일이 기준이에요.<br>둘째와 셋째는 맞아요.<br>퇴사 달 정산, 5년 경정청구 그대로예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 회사 두 곳에서 월급을 받았다면요?<br>A2: 제137조의2대로 종된 회사 영수증을<br>2월분 급여 전에 주된 회사에 내면 합쳐서 정산해요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>연말정산 환급 시기 정리</h2>\n<p data-ke-size=\"size16\">오늘 볼 곳을 세 줄로 줄였어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 체크포인트</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>명세서 귀속월로 2월분 지급일 확인</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>추가 납부 10만 원 넘으면 분납 요청</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>놓친 공제는 5월 신고나 경정청구</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">연말정산 환급 시기는 달력이 아니라<br>우리 회사 2월 급여 지급일이 정해요.<br>늦어지면 회사 세금 조정부터 물어보면 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분 회사는 월급을 언제 주세요?<br>&quot;당월&quot;, &quot;익월&quot; 중 하나로 남겨 주세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">날짜와 기한은 소득세법 제70조·제137조,<br>시행령 제201조, 시행규칙 제93조와<br>국세기본법 제45조의2 조문을 그대로 읽었어요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>연말정산 환급 시기, 2월분 급여일을 먼저 봐요.</p>"
+}

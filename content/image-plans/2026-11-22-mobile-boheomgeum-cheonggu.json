@@ -1,0 +1,79 @@
+{
+  "slug": "2026-11-22-mobile-boheomgeum-cheonggu",
+  "title": "모바일 보험청구, 앱으로 내면 예상 지급일도 알려 줄까 (청구 단계 4가지)",
+  "source": "11/22(일) 티스토리 원고 (11/10 낮 미리 작성) 15:00",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "지하철 좌석에서 두 손으로 휴대폰을 들고 사진을 찍는 손 클로즈업 (대표사진)",
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Close-up of a Korean woman's hands in coral sleeves holding a smartphone level above a blank hospital receipt on her lap, taking a photo of it on a subway seat, the subway car softly blurred. Expression: determined, nodding, sleeves rolled up. Color theme: soft coral and ivory tones with a sage green accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "손만 크게 (얼굴 없음)",
+      "bg": "soft coral and ivory tones with a sage green accent",
+      "note": "대표",
+      "thumb_shot": "hands",
+      "thumb_theme": "cobalt",
+      "thumb_person": "30대 여성의 손(코랄 소매)",
+      "thumb_mood": "결심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "cobalt",
+        "font": "jua",
+        "title": "모바일 보험청구\n접수됐을까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "모바일 보험청구 서류를 묻고 답하는 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "청구 서류 4가지",
+        "ask": "앱도 서류가 같아요?",
+        "items": [
+          "청구서",
+          "사고증명서",
+          "신분증",
+          "그 밖의 서류"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "보험금 청구 단계에 설명받는 4가지를 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "style": "memo",
+        "title": "청구 단계 설명 4가지",
+        "sub": "청구할 때 설명받는 항목",
+        "items": [
+          "담당 부서와 연락처",
+          "보험금 청구 서류",
+          "심사 절차와 예상 심사기간",
+          "예상 지급일"
+        ],
+        "memo": "동의하면 문자로 받아요",
+        "hl": 4
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "식탁 위에 휴대폰과 병원 영수증, 볼펜이 나란히 놓인 모습",
+      "prompt": "Camera and composition: a smartphone, a receipt and a pen side by side on a dining table. A smartphone, a blank receipt and a pen lie side by side on a dining table, soft daylight, no readable text. Background color: cool sky blue and white. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a smartphone, a receipt and a pen side by side on a dining table",
+      "bg": "cool sky blue and white",
+      "kind": "photo",
+      "photo": {
+        "query_en": "smartphone receipt table",
+        "scene_en": "a smartphone and a receipt on a table"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}

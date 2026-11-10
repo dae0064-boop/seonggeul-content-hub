@@ -1,0 +1,633 @@
+{
+  "slug": "2026-11-22-mobile-boheomgeum-cheonggu",
+  "title": "모바일 보험청구, 앱으로 내면 예상 지급일도 알려 줄까 (청구 단계 4가지)",
+  "category": "생활보장",
+  "tags": [
+    "모바일보험청구",
+    "접수증",
+    "예상지급일",
+    "청구서류",
+    "가지급금",
+    "보험금청구앱",
+    "보험금청구방법",
+    "보험금접수확인",
+    "보험금심사기간",
+    "보험업법시행령",
+    "표준약관",
+    "보험금청구서",
+    "보험정보",
+    "생활보장",
+    "보험금"
+  ],
+  "publishAt": "2026-11-22 15:00",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보험금 심사가 길어지면 회사가 추정한 금액의"
+        },
+        {
+          "t": "절반 안에서 가지급금을 먼저 받을 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 퇴근길 지하철에서 영수증을 찍어"
+        },
+        {
+          "t": "앱으로 청구 버튼을 눌렀다면"
+        },
+        {
+          "t": "\"이거 진짜 들어간 거 맞아?\" 싶기 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "창구처럼 직원 얼굴을 보지 못하니"
+        },
+        {
+          "t": "접수됐는지, 언제 들어오는지 더 궁금해요."
+        },
+        {
+          "t": "오늘은 모바일 보험청구에서 챙길 것을 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "먼저 결론이에요."
+        },
+        {
+          "t": "모바일 보험청구도 창구와 똑같이",
+          "s": "yellow"
+        },
+        {
+          "t": "예상 지급일까지 설명받을 수 있어요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "지하철 좌석에서 두 손으로 휴대폰을 들고 사진을 찍는 손 클로즈업 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "모바일 보험청구, 서류는 같아요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "모바일 보험청구 서류를 묻고 답하는 채팅 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "앱이라고 청구 서류가 줄지는 않아요."
+        },
+        {
+          "t": "금융감독원 표준약관 제7조가 정한"
+        },
+        {
+          "t": "서류는 이렇게 네 가지예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 청구서 (회사 양식, 앱 화면이 대신해요)"
+        },
+        {
+          "t": "✔ 사고증명서 (진단서·입원치료확인서 등)"
+        },
+        {
+          "t": "✔ 신분증"
+        },
+        {
+          "t": "✔ 보험금 받는 데 필요한 그 밖의 서류"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "사고증명서는 의료법 제3조의"
+        },
+        {
+          "t": "병원·의원 같은 의료기관이 뗀 것이어야 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "찍을 때는 종이를 평평한 탁자에 펴고"
+        },
+        {
+          "t": "네 귀퉁이와 병원 직인이 다 보이게 담아요."
+        },
+        {
+          "t": "글자가 흐리면 심사하는 쪽이 읽지 못해"
+        },
+        {
+          "t": "다시 내 달라는 연락이 오기 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러 장이면 한 장씩 따로 찍는 게 알아보기 좋아요."
+        },
+        {
+          "t": "앞뒤가 있는 영수증은 뒷면도 꼭 빠뜨리지 마세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "앱으로 내면 접수증은 문자로"
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"누르긴 했는데 접수된 거 맞아요?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "표준약관 제8조는 회사가 서류를 받으면"
+        },
+        {
+          "t": "접수증을 드리라고 정해요."
+        },
+        {
+          "t": "휴대전화 문자나 전자우편으로도 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "접수증 문자가 오지 않았다면",
+          "s": "red"
+        },
+        {
+          "t": "청구가 끝나지 않은 걸로 보고 확인해야 해요.",
+          "s": "red"
+        },
+        {
+          "t": "앱의 청구 내역 화면도 함께 봐 두면 좋아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "문자가 늦는 날도 있으니 접수 화면을"
+        },
+        {
+          "t": "캡처해 두면 나중에 확인할 때 편해요."
+        },
+        {
+          "t": "접수 번호가 있으면 콜센터 문의도 빨라져요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "청구 단계에 설명받는 4가지"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "보험금 청구 단계에 설명받는 4가지를 정리한 메모 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보험업법 제95조의2는 보험금을 청구하면"
+        },
+        {
+          "t": "지급 절차와 지급 내역을 설명하라고 해요."
+        },
+        {
+          "t": "깎거나 안 주면 그 사유도 설명해야 해요."
+        },
+        {
+          "t": "시행령 제42조의2 제3항이 그 내용을 적어 뒀어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 담당 부서와 연락처"
+        },
+        {
+          "t": "✔ 보험금 청구 서류"
+        },
+        {
+          "t": "✔ 심사 절차와 예상 심사기간"
+        },
+        {
+          "t": "✔ 예상 지급일"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예상 지급일은 물어봐야 알려 주는 게 아니라",
+          "s": "yellow"
+        },
+        {
+          "t": "청구 단계에서 설명받는 항목이에요.",
+          "s": "yellow"
+        },
+        {
+          "t": "청구할 때 동의했다면 문자·전자우편으로 와요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "사본으로 될지는 회사가 알려요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "식탁 위에 휴대폰과 병원 영수증, 볼펜이 나란히 놓인 모습"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "금융감독원 시행세칙 제2-34조의2는"
+        },
+        {
+          "t": "청구 단계 안내 항목을 14가지로 풀어 놨어요.",
+          "segs": [
+            {
+              "t": "청구 단계 안내 항목을 "
+            },
+            {
+              "t": "14가지",
+              "s": "blue"
+            },
+            {
+              "t": "로 풀어 놨어요."
+            }
+          ]
+        },
+        {
+          "t": "모바일 보험청구와 맞닿은 것만 골랐어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 청구 접수가 끝났는지"
+        },
+        {
+          "t": "✔ 청구 서류 내는 방법과 사본 허용 기준"
+        },
+        {
+          "t": "✔ 심사 진행을 인터넷으로 조회하는 법"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "사진으로 낸 사본이 될지 안 될지는",
+          "s": "yellow"
+        },
+        {
+          "t": "회사가 기준을 안내하게 돼 있어요.",
+          "s": "yellow"
+        },
+        {
+          "t": "원본을 다시 달라는 연락이 와도 당황하지 않아도 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 모바일 보험청구로 사진만 냈더라도"
+        },
+        {
+          "t": "종이 청구 서류는 지급이 끝날 때까지"
+        },
+        {
+          "t": "버리지 말고 봉투에 모아 두는 게 좋아요."
+        },
+        {
+          "t": "원본 요청이 오면 그 봉투째 보내면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "청구권이 언제 사라지는지 알리는 것도"
+        },
+        {
+          "t": "14가지 안에 들어 있어요."
+        },
+        {
+          "t": "상법 제662조의 소멸시효는 3년이에요.",
+          "segs": [
+            {
+              "t": "상법 제662조의 소멸시효는 "
+            },
+            {
+              "t": "3년",
+              "s": "blue"
+            },
+            {
+              "t": "이에요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "예상 지급일이 늦어질 때"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "표준약관 제8조는 서류 접수 뒤"
+        },
+        {
+          "t": "3영업일 안 지급을 원칙으로 해요.",
+          "segs": [
+            {
+              "t": "3영업일",
+              "s": "blue"
+            },
+            {
+              "t": " 안 지급을 원칙으로 해요."
+            }
+          ]
+        },
+        {
+          "t": "조사가 필요하면 10영업일 안이에요.",
+          "segs": [
+            {
+              "t": "조사가 필요하면 "
+            },
+            {
+              "t": "10영업일",
+              "s": "blue"
+            },
+            {
+              "t": " 안이에요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그보다 늦어질 것 같으면 회사가"
+        },
+        {
+          "t": "지급 예정일과 가지급제도를 알려야 해요."
+        },
+        {
+          "t": "예정일은 접수일부터 30영업일 안에서 정해요."
+        },
+        {
+          "t": "소송이나 분쟁조정처럼 사정이 있으면 예외예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "가지급제도는 회사가 추정한 보험금의"
+        },
+        {
+          "t": "50% 안에서 먼저 받는 제도예요."
+        },
+        {
+          "t": "심사가 길어질 때 병원비 부담을 덜어 줘요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "같은 시행령은 심사·지급 단계에서도"
+        },
+        {
+          "t": "심사가 늦어지면 지연 사유와 새 예상 지급일을"
+        },
+        {
+          "t": "설명하라고 정해 뒀어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예정일 안내도 없이 늦어진다면",
+          "s": "red"
+        },
+        {
+          "t": "청구 내역에서 진행 상태부터 확인해 보세요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "모바일 보험청구 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "버튼을 누른 뒤 볼 것만 모았어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 체크포인트",
+          "s": "green"
+        },
+        {
+          "t": "접수증 문자·메일이 왔는지",
+          "s": "green"
+        },
+        {
+          "t": "예상 지급일을 안내받았는지",
+          "s": "green"
+        },
+        {
+          "t": "사본 허용 기준을 확인했는지",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "모바일 보험청구는 버튼을 누른 뒤가 시작이에요."
+        },
+        {
+          "t": "접수증과 예상 지급일, 두 가지만 챙겨도"
+        },
+        {
+          "t": "\"들어간 거 맞나\" 하는 불안이 확 줄어들어요."
+        },
+        {
+          "t": "사본 기준은 회사가 보내는 안내를 따르면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분은 청구할 때 앱파세요, 창구파세요?"
+        },
+        {
+          "t": "한 단어로 남겨 주시면 반가울 것 같아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "조문은 보험업법 제95조의2와 시행령,"
+        },
+        {
+          "t": "금감원 감독규정·시행세칙과 별표 표준약관을"
+        },
+        {
+          "t": "국가법령정보센터에서 열어 옮겼어요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "내 증권·약관에서 청구 서류 조항을 한 번 찾아보세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "모바일 보험청구, 접수증부터 확인해요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">보험금 심사가 길어지면 회사가 추정한 금액의<br>절반 안에서 가지급금을 먼저 받을 수 있어요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 퇴근길 지하철에서 영수증을 찍어<br>앱으로 청구 버튼을 눌렀다면<br>&quot;이거 진짜 들어간 거 맞아?&quot; 싶기 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">창구처럼 직원 얼굴을 보지 못하니<br>접수됐는지, 언제 들어오는지 더 궁금해요.<br>오늘은 모바일 보험청구에서 챙길 것을 볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">먼저 결론이에요.<br><span style=\"background-color: #ffe94d;\"><b>모바일 보험청구도 창구와 똑같이</b></span><br><span style=\"background-color: #ffe94d;\"><b>예상 지급일까지 설명받을 수 있어요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 1] 지하철 좌석에서 두 손으로 휴대폰을 들고 사진을 찍는 손 클로즈업 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>모바일 보험청구, 서류는 같아요</h2>\n<p data-ke-size=\"size16\">[이미지 2] 모바일 보험청구 서류를 묻고 답하는 채팅 카드</p>\n<p data-ke-size=\"size16\">앱이라고 청구 서류가 줄지는 않아요.<br>금융감독원 표준약관 제7조가 정한<br>서류는 이렇게 네 가지예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">✔ 청구서 (회사 양식, 앱 화면이 대신해요)<br>✔ 사고증명서 (진단서·입원치료확인서 등)<br>✔ 신분증<br>✔ 보험금 받는 데 필요한 그 밖의 서류</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">사고증명서는 의료법 제3조의<br>병원·의원 같은 의료기관이 뗀 것이어야 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">찍을 때는 종이를 평평한 탁자에 펴고<br>네 귀퉁이와 병원 직인이 다 보이게 담아요.<br>글자가 흐리면 심사하는 쪽이 읽지 못해<br>다시 내 달라는 연락이 오기 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러 장이면 한 장씩 따로 찍는 게 알아보기 좋아요.<br>앞뒤가 있는 영수증은 뒷면도 꼭 빠뜨리지 마세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>앱으로 내면 접수증은 문자로</h2>\n<blockquote data-ke-style=\"style3\">&quot;누르긴 했는데 접수된 거 맞아요?&quot;</blockquote>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">표준약관 제8조는 회사가 서류를 받으면<br>접수증을 드리라고 정해요.<br>휴대전화 문자나 전자우편으로도 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>접수증 문자가 오지 않았다면</b></span><br><span style=\"color: #ff0010;\"><b>청구가 끝나지 않은 걸로 보고 확인해야 해요.</b></span><br>앱의 청구 내역 화면도 함께 봐 두면 좋아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">문자가 늦는 날도 있으니 접수 화면을<br>캡처해 두면 나중에 확인할 때 편해요.<br>접수 번호가 있으면 콜센터 문의도 빨라져요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>청구 단계에 설명받는 4가지</h2>\n<p data-ke-size=\"size16\">[이미지 3] 보험금 청구 단계에 설명받는 4가지를 정리한 메모 카드</p>\n<p data-ke-size=\"size16\">보험업법 제95조의2는 보험금을 청구하면<br>지급 절차와 지급 내역을 설명하라고 해요.<br>깎거나 안 주면 그 사유도 설명해야 해요.<br>시행령 제42조의2 제3항이 그 내용을 적어 뒀어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">✔ 담당 부서와 연락처<br>✔ 보험금 청구 서류<br>✔ 심사 절차와 예상 심사기간<br>✔ 예상 지급일</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>예상 지급일은 물어봐야 알려 주는 게 아니라</b></span><br><span style=\"background-color: #ffe94d;\"><b>청구 단계에서 설명받는 항목이에요.</b></span><br>청구할 때 동의했다면 문자·전자우편으로 와요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>사본으로 될지는 회사가 알려요</h2>\n<p data-ke-size=\"size16\">[이미지 4] 식탁 위에 휴대폰과 병원 영수증, 볼펜이 나란히 놓인 모습</p>\n<p data-ke-size=\"size16\">금융감독원 시행세칙 제2-34조의2는<br>청구 단계 안내 항목을 <span style=\"color: #0078cb;\"><b>14가지</b></span>로 풀어 놨어요.<br>모바일 보험청구와 맞닿은 것만 골랐어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">✔ 청구 접수가 끝났는지<br>✔ 청구 서류 내는 방법과 사본 허용 기준<br>✔ 심사 진행을 인터넷으로 조회하는 법</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>사진으로 낸 사본이 될지 안 될지는</b></span><br><span style=\"background-color: #ffe94d;\"><b>회사가 기준을 안내하게 돼 있어요.</b></span><br>원본을 다시 달라는 연락이 와도 당황하지 않아도 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그래서 모바일 보험청구로 사진만 냈더라도<br>종이 청구 서류는 지급이 끝날 때까지<br>버리지 말고 봉투에 모아 두는 게 좋아요.<br>원본 요청이 오면 그 봉투째 보내면 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">청구권이 언제 사라지는지 알리는 것도<br>14가지 안에 들어 있어요.<br>상법 제662조의 소멸시효는 <span style=\"color: #0078cb;\"><b>3년</b></span>이에요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>예상 지급일이 늦어질 때</h2>\n<p data-ke-size=\"size16\">표준약관 제8조는 서류 접수 뒤<br><span style=\"color: #0078cb;\"><b>3영업일</b></span> 안 지급을 원칙으로 해요.<br>조사가 필요하면 <span style=\"color: #0078cb;\"><b>10영업일</b></span> 안이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그보다 늦어질 것 같으면 회사가<br>지급 예정일과 가지급제도를 알려야 해요.<br>예정일은 접수일부터 30영업일 안에서 정해요.<br>소송이나 분쟁조정처럼 사정이 있으면 예외예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">가지급제도는 회사가 추정한 보험금의<br>50% 안에서 먼저 받는 제도예요.<br>심사가 길어질 때 병원비 부담을 덜어 줘요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">같은 시행령은 심사·지급 단계에서도<br>심사가 늦어지면 지연 사유와 새 예상 지급일을<br>설명하라고 정해 뒀어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>예정일 안내도 없이 늦어진다면</b></span><br><span style=\"color: #ff0010;\"><b>청구 내역에서 진행 상태부터 확인해 보세요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>모바일 보험청구 정리</h2>\n<p data-ke-size=\"size16\">버튼을 누른 뒤 볼 것만 모았어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 체크포인트</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>접수증 문자·메일이 왔는지</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>예상 지급일을 안내받았는지</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>사본 허용 기준을 확인했는지</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">모바일 보험청구는 버튼을 누른 뒤가 시작이에요.<br>접수증과 예상 지급일, 두 가지만 챙겨도<br>&quot;들어간 거 맞나&quot; 하는 불안이 확 줄어들어요.<br>사본 기준은 회사가 보내는 안내를 따르면 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분은 청구할 때 앱파세요, 창구파세요?<br>한 단어로 남겨 주시면 반가울 것 같아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">조문은 보험업법 제95조의2와 시행령,<br>금감원 감독규정·시행세칙과 별표 표준약관을<br>국가법령정보센터에서 열어 옮겼어요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">내 증권·약관에서 청구 서류 조항을 한 번 찾아보세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>모바일 보험청구, 접수증부터 확인해요.</p>"
+}

@@ -1,0 +1,89 @@
+{
+  "slug": "2026-11-22-yeonmaljeongsan-hwangeup-sigi",
+  "title": "연말정산 환급 시기, 2월 급여일까 아니면 3월일까 (2월분 근로소득)",
+  "source": "11/22(일) 티스토리 원고 (11/10 낮 미리 작성) 12:40",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "월급 명세서와 달력, 계산기, 볼펜이 놓인 책상을 위에서 내려다본 모습 (대표사진)",
+      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A pay slip with blank lines, a wall calendar page, a small calculator, a pen and a cup of tea neatly arranged on a light wooden desk. Color theme: sage green plants and warm ivory tones with a butter-yellow accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "위에서 내려다본 탁자 (사람 없음)",
+      "bg": "sage green plants and warm ivory tones with a butter-yellow accent",
+      "note": "대표",
+      "thumb_shot": "overhead",
+      "thumb_theme": "forest",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "forest",
+        "font": "ptd",
+        "title": "연말정산 환급\n언제 들어올까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "연말정산 환급 시기와 분납 기준을 숫자로 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "환급·분납 한눈에",
+        "items": [
+          [
+            "2월분",
+            "월급 줄 때",
+            "연말정산"
+          ],
+          [
+            "3월 10일",
+            "익월 지급 회사",
+            "환급 받는 때"
+          ],
+          [
+            "5년",
+            "경정청구",
+            "놓친 공제"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "연말정산 환급 시기에 대해 맞는지 틀리는지 풀어 보는 퀴즈 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "환급 시기 O·X",
+        "items": [
+          "환급은 무조건 2월에 받는다",
+          "퇴사하면 퇴사 달에 정산한다",
+          "놓친 공제는 5년 안에 고친다"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "O"
+        ],
+        "where": "아래 Q&A"
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "창가 책상에서 노트북을 열어 두고 서류를 정리하는 손과 머그잔",
+      "prompt": "Camera and composition: hands organizing papers next to an open laptop and a mug. Hands sorting a few blank papers beside an open laptop and a mug on a desk by the window, soft daylight, no readable text. Background color: fresh green and crisp white. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "hands organizing papers next to an open laptop and a mug",
+      "bg": "fresh green and crisp white",
+      "kind": "photo",
+      "photo": {
+        "query_en": "laptop papers desk hands",
+        "scene_en": "hands organizing papers beside a laptop on a desk"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}
