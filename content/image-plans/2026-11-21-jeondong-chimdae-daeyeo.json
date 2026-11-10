@@ -1,0 +1,94 @@
+{
+  "slug": "2026-11-21-jeondong-chimdae-daeyeo",
+  "title": "전동침대 대여, 장기요양 등급이 있으면 한 달에 얼마 내나요 (본인부담 15%)",
+  "source": "11/21(토) 16:20 네이버 원고 — 생활보장 검색형(돌봄·요양), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "아침 햇살이 드는 침실에 놓인 등받이를 올린 전동침대와 정돈된 이불 (대표사진)",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a tidy bedroom by the bed. Lighting: soft early-morning sunlight. A home care electric bed with its backrest gently raised, neatly made with an olive green blanket, standing in a tidy bedroom, no people. Color theme: olive green and pale cream tones with a red accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "object",
+      "bg": "olive green and pale cream tones with a red accent",
+      "note": "대표",
+      "thumb_shot": "object",
+      "thumb_theme": "olive",
+      "thumb_person": "없음",
+      "thumb_place": "침실",
+      "thumb_light": "아침 햇살",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "olive",
+        "font": "ptd",
+        "title": "전동침대 대여\n한 달 얼마?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "전동침대 대여를 두고 많이 헷갈리는 세 문장을 담은 O·X 퀴즈 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "전동침대 대여 퀴즈",
+        "items": [
+          "전동침대는 살 수 있다",
+          "배송비는 따로 낸다",
+          "수동침대와 같은 품목이다"
+        ],
+        "answers": [
+          "X",
+          "X",
+          "O"
+        ],
+        "where": "아래 본문"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "거실 소파에 앉은 어머니 옆에서 달력을 짚어 보는 40대 아들",
+      "prompt": "Camera and composition: medium shot in a living room. A Korean man in his 40s in an olive knit sweater sitting next to his elderly mother on a living room sofa, pointing at a blank wall calendar with a calm smile. Background color: cream walls with a light wood floor. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a living room",
+      "bg": "cream walls with a light wood floor"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "전동침대 대여 순서를 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "전동침대 대여 순서",
+        "sub": "급여확인서부터 확인해요",
+        "items": [
+          "전동침대가 있는지 확인하기",
+          "복지용구사업소에 대여 요청",
+          "제품을 고르고 대여 계약 맺기",
+          "매달 본인부담만 내고"
+        ],
+        "memo": "배송·설치·소독은 대여료에 포함",
+        "hl": 1
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "깔끔하게 소독 포장된 전동침대 매트리스를 세워 둔 복지용구 창고",
+      "prompt": "Camera and composition: wide shot inside a clean storage room. A clean bright welfare equipment storage room with a few mattresses wrapped in clear plastic standing upright along the wall, no people. Background color: white shelves with soft gray floor. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot inside a clean storage room",
+      "bg": "white shelves with soft gray floor"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "침대 옆 협탁 위에 놓인 물컵과 안경, 접힌 담요",
+      "prompt": "Camera and composition: close-up still life on a nightstand. Close-up of a bedside nightstand with a glass of water, a pair of reading glasses and a folded soft blanket, no people. Background color: warm beige wall with a small lamp. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up still life on a nightstand",
+      "bg": "warm beige wall with a small lamp"
+    }
+  ]
+}

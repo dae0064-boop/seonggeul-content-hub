@@ -1,0 +1,85 @@
+{
+  "slug": "2026-11-21-gukminyeongeum-banhwan-ilsigeum",
+  "title": "국민연금 반환일시금, 10년 못 채우면 이자도 받나요 (청구 10년)",
+  "source": "11/21(토) 21:00 네이버 원고 — 생활보장 검색형(돈·제도), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "주민센터 상담 창구 앞에서 안내문을 함께 보며 고개를 끄덕이는 60대 어머니와 30대 딸 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a community service center counter. Lighting: cool clean white indoor light. A Korean mother in her 60s in a brick red cardigan and her daughter in her 30s in a white blouse standing at a community center counter, looking at a blank notice together and nodding. Expression: nodding with a reassuring smile, hands relaxed. Color theme: terracotta and warm beige tones with a teal accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "duo",
+      "bg": "terracotta and warm beige tones with a teal accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "brick",
+      "thumb_person": "60대 어머니와 30대 딸",
+      "thumb_place": "주민센터",
+      "thumb_light": "흰 조명",
+      "thumb_mood": "끄덕",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "brick",
+        "font": "jua",
+        "title": "국민연금\n반환일시금은?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "국민연금 반환일시금 질문을 크게 던지는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "반환일시금",
+        "title": "이자까지\n돌려받을까?",
+        "ask": "10년 못 채웠는데?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "집 거실 탁자에 펼친 납부 내역서 위에 돋보기를 올려 둔 모습",
+      "prompt": "Camera and composition: top-down still life on a living room table. Top-down view of a living room table with a blank statement sheet spread out and a magnifying glass resting on it, no people. Background color: light oak table with a soft beige runner. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "top-down still life on a living room table",
+      "bg": "light oak table with a soft beige runner"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "국민연금 반환일시금을 받기 전 확인 순서를 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "style": "memo",
+        "title": "반환일시금 전 확인",
+        "sub": "일시금 받기 전에 순서대로",
+        "items": [
+          "몇 년 몇 개월인지",
+          "임의계속가입으로 10년을",
+          "연금과 일시금을 견줘 보세요"
+        ],
+        "memo": "65세까지 임의계속가입 신청 가능",
+        "hl": 1
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "아파트 베란다 창가 의자에서 휴대폰으로 가입 내역을 보는 60대 어머니",
+      "prompt": "Camera and composition: medium shot by a balcony window. A Korean woman in her 60s in a soft brick colored sweater sitting on a chair by an apartment balcony window, looking at her smartphone with a blank screen, calm expression. Background color: bright window light with green potted plants. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot by a balcony window",
+      "bg": "bright window light with green potted plants"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "흰 조명이 켜진 상담실 탁자 위에 놓인 서류 봉투와 볼펜",
+      "prompt": "Camera and composition: close-up still life on a consultation table. Close-up of a plain document envelope and a ballpoint pen on a white consultation table under bright white lighting, no people. Background color: white table with a pale gray wall. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up still life on a consultation table",
+      "bg": "white table with a pale gray wall"
+    }
+  ]
+}

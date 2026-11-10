@@ -1,0 +1,82 @@
+{
+  "slug": "2026-11-21-janggiyoyang-1deunggeup",
+  "title": "장기요양 1등급, 집에서 모시면 무엇이 더 되나요 (월 8일 270분)",
+  "source": "11/21(토) 17:40 네이버 원고 — 생활보장 검색형(돌봄·요양), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "아파트 현관에서 신발을 신겨 드리는 40대 아들과 80대 아버지의 손 (대표사진)",
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: an apartment front door entrance. Lighting: bright clear daylight, high key. Close-up of a Korean son's hands in a burgundy sweater gently helping his elderly father's feet into slippers at an apartment entryway, only hands and feet in the frame. Expression: relieved gentle smile. Color theme: soft rose and cream tones with a deep burgundy accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "hands",
+      "bg": "soft rose and cream tones with a deep burgundy accent",
+      "note": "대표",
+      "thumb_shot": "hands",
+      "thumb_theme": "burgundy",
+      "thumb_person": "40대 아들과 80대 아버지의 손",
+      "thumb_place": "현관",
+      "thumb_light": "밝은 낮",
+      "thumb_mood": "안심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "burgundy",
+        "font": "jua",
+        "title": "장기요양\n집이면 뭐가 더?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "장기요양 1등급 질문을 크게 던지는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "장기요양 1등급",
+        "title": "집에서 뭐가\n더 될까?",
+        "ask": "요양원 말고 집이면?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "햇살이 드는 거실에서 요양보호사가 어르신의 팔을 주물러 드리는 모습",
+      "prompt": "Camera and composition: medium shot in a sunny living room. A Korean caregiver in a light pink uniform gently massaging the forearm of an elderly man sitting in an armchair in a sunny living room, both calm. Background color: soft yellow sunlight on a white wall. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a sunny living room",
+      "bg": "soft yellow sunlight on a white wall"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "장기요양 1등급 가족이 스스로 확인할 것을 담은 자가 체크 카드",
+      "kind": "card",
+      "card": {
+        "type": "selfcheck",
+        "title": "1등급 집 돌봄 체크",
+        "items": [
+          "긴 방문요양이 필요한 날",
+          "방문간호를 처음 쓰는지",
+          "가족휴가제를 썼는지"
+        ],
+        "result": "아래 '방문간호' 부분을 꼭 보세요 👇"
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "주민센터 상담 창구 앞에서 서류를 내려다보는 60대 어머니",
+      "prompt": "Camera and composition: medium shot at a community center counter. A Korean woman in her 60s in a camel coat standing at a community center counter, calmly looking down at a few blank papers. Background color: light wood counter with a pale blue wall. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a community center counter",
+      "bg": "light wood counter with a pale blue wall"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "저녁 식탁 위에 놓인 돌봄 일정표와 펜",
+      "prompt": "Camera and composition: top-down still life on a dining table. Top-down view of a dining table in the evening with a blank weekly schedule sheet and a pen, a cup of tea at the edge, no people. Background color: dark wood table under warm pendant light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "top-down still life on a dining table",
+      "bg": "dark wood table under warm pendant light"
+    }
+  ]
+}
