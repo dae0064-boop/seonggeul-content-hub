@@ -1,0 +1,100 @@
+{
+  "slug": "2026-11-18-pet-ct-biyong",
+  "title": "PET-CT 비용, 암 검사 목적이면 건강보험이 될까요 (산정특례 5%)",
+  "source": "11/18(수) 13:40 네이버 원고 — 생활보장 검색형(비용), 실사풍 (11/10 미리 씀)",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "밝은 부엌 조리대 위에 놓인 병원 예약 봉투와 탁상 달력, 머그잔 (대표사진)",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a home kitchen counter. Lighting: bright clear daylight, high key. A plain white hospital appointment envelope leaning against a small blank desk calendar with a ceramic mug beside it on a clean kitchen counter, no people. Color theme: modern light gray and white tones with a mustard accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "object",
+      "bg": "modern light gray and white tones with a mustard accent",
+      "note": "대표",
+      "thumb_shot": "object",
+      "thumb_theme": "charcoal",
+      "thumb_person": "없음",
+      "thumb_place": "부엌",
+      "thumb_light": "밝은 낮",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "charcoal",
+        "font": "ptd",
+        "title": "PET-CT 비용\n건강보험 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "PET-CT 비용에 쓰이는 숫자 셋을 보여 주는 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "PET-CT 숫자 셋",
+        "items": [
+          [
+            "5%",
+            "산정특례 암",
+            "급여 본인부담"
+          ],
+          [
+            "20%",
+            "입원",
+            "일반 본인부담"
+          ],
+          [
+            "30일",
+            "산정특례 신청",
+            "확진일부터"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "대학병원 복도 의자에 나란히 앉아 서류 봉투를 든 60대 부부",
+      "prompt": "Camera and composition: medium shot in a hospital corridor. A Korean married couple in their 60s sitting side by side on chairs in a bright university hospital corridor, the wife holding a plain envelope, both calm and talking quietly. Background color: bright hospital corridor with light wood benches and soft blue walls. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a hospital corridor",
+      "bg": "bright hospital corridor with light wood benches and soft blue walls"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "PET-CT 비용을 줄이는 순서를 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "비용 확인 순서",
+        "sub": "목적부터 보면 금액이 보여요",
+        "items": [
+          "검사 목적 확인하기",
+          "산정특례 등록하기",
+          "영수증 급여 칸 보기",
+          "실비 청구하기"
+        ],
+        "memo": "검진 목적은 비급여예요",
+        "hl": 1
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "아침 햇살 드는 침실 창가에서 휴대폰으로 보험 앱을 보는 40대 남성",
+      "prompt": "Camera and composition: medium shot by a bedroom window. A Korean man in his 40s in a soft blue sweater sitting by a bedroom window in the morning, looking at his smartphone with a calm face. Background color: soft morning sunlight with white curtains and a light gray bedspread. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot by a bedroom window",
+      "bg": "soft morning sunlight with white curtains and a light gray bedspread"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "병원 접수대에서 검사 안내문을 건네받는 손",
+      "prompt": "Camera and composition: close-up of hands at a hospital desk. Close-up of a Korean person's hands in a burgundy sweater sleeve receiving a blank folded guide sheet across a hospital reception desk, no face in the frame. Background color: white hospital desk with a soft lavender accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands at a hospital desk",
+      "bg": "white hospital desk with a soft lavender accent"
+    }
+  ]
+}
