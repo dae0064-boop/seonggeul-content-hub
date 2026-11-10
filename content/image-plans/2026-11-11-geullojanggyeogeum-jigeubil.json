@@ -1,0 +1,100 @@
+{
+  "slug": "2026-11-11-geullojanggyeogeum-jigeubil",
+  "title": "근로장려금 지급일, 9월에 신청했다면 언제 들어오나요 (결정 뒤 15일 이내)",
+  "source": "11/11(수) 16:20 네이버 원고 — 생활보장 검색형(돈·생활 제도), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "밝은 낮 차 안 운전석에서 휴대폰 알림을 보고 웃는 30대 남성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: inside a parked car, driver seat. Lighting: bright clear daylight, high key. A Korean man in his 30s in a navy work jacket sitting in the driver seat of a parked car, smiling at his smartphone. Expression: smiling while checking a smartphone, hands away from the face. Color theme: clean white and soft navy blue tones in bright daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "face",
+      "bg": "clean white and soft navy blue tones in bright daylight",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "navy",
+      "thumb_person": "30대 남성 운전자",
+      "thumb_place": "차 안",
+      "thumb_light": "밝은 낮",
+      "thumb_mood": "휴대폰",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "navy",
+        "font": "ptd",
+        "title": "근로장려금 지급일\n언제 들어올까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "근로장려금 지급일 기한 숫자 셋을 보여 주는 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "근로장려금 기한 셋",
+        "items": [
+          [
+            "15일",
+            "반기 신청분",
+            "결정 뒤 지급"
+          ],
+          [
+            "30일",
+            "정기 신청분",
+            "결정 뒤 지급"
+          ],
+          [
+            "35%",
+            "상반기분",
+            "먼저 받는 몫"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "세무서 민원실 의자에 앉아 번호표를 쥐고 기다리는 50대 여성",
+      "prompt": "Camera and composition: medium shot in a public service office. A Korean woman in her 50s in a beige knit sitting on a waiting chair in a tax office service hall, holding a small blank number ticket. Background color: bright public office with white walls and navy chairs. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a public service office",
+      "bg": "bright public office with white walls and navy chairs"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "근로장려금 지급 순서를 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "9월 반기 신청 순서",
+        "sub": "근로장려금 지급일까지",
+        "items": [
+          "9월 15일 반기 신청 기한",
+          "세무서가 금액을 결정",
+          "결정일부터 15일 안에"
+        ],
+        "memo": "정산은 다음 해 6월 30일까지",
+        "hl": 3
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "은행 창구 앞에서 통장을 펼쳐 보는 손",
+      "prompt": "Camera and composition: close-up of hands at a bank counter. Close-up of a Korean person's hands opening a blank bankbook at a bank counter, no face in the frame. Background color: bank counter with white and soft blue tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands at a bank counter",
+      "bg": "bank counter with white and soft blue tones"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "저녁 현관 신발장 위에 놓인 우편 봉투와 열쇠",
+      "prompt": "Camera and composition: still life at an apartment entrance in the evening. A blank paper envelope and a set of house keys placed on a shoe cabinet by an apartment front door, no people. Background color: warm entrance hall under evening light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "still life at an apartment entrance in the evening",
+      "bg": "warm entrance hall under evening light"
+    }
+  ]
+}

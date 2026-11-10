@@ -1,0 +1,84 @@
+{
+  "slug": "2026-11-19-suwon-byeok-cutting",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "콘크리트 벽에 곧은 선을 따라 자르는 컷팅 장비 (대표사진)",
+      "scene": "a concrete wall inside an empty Korean apartment with a wall saw mounted on a rail cutting a straight vertical line, a worker seen from behind in a safety helmet, protective sheets below.",
+      "prompt": "Camera and composition: a concrete wall inside an empty Korean apartment with a wall saw mounted on a rail cutting a straight vertical line, a worker seen from behind in a safety helmet, protective sheets below. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "수원 벽 컷팅\n깨기와 차이"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "반듯하게 잘린 콘크리트 벽 단면",
+      "scene": "close view of a cleanly cut concrete wall edge showing a smooth flat section with small aggregate stones visible, soft side light.",
+      "prompt": "Camera and composition: close view of a cleanly cut concrete wall edge showing a smooth flat section with small aggregate stones visible, soft side light. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "벽 컷팅과 깨는 철거를 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "벽 컷팅과 깨는 철거",
+        "items": [
+          [
+            "단면이 반듯함",
+            "가장자리가 거침"
+          ],
+          [
+            "진동이 적음",
+            "진동이 크게 전해짐"
+          ],
+          [
+            "필요한 만큼만",
+            "통째로 없앨 때"
+          ]
+        ],
+        "qa": "벽컷팅"
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "좁은 방문 옆 벽에 넓힐 자리를 표시한 모습",
+      "scene": "a narrow interior doorway in a bare concrete wall with blank masking tape lines marking a wider opening on both sides, empty room.",
+      "prompt": "Camera and composition: a narrow interior doorway in a bare concrete wall with blank masking tape lines marking a wider opening on both sides, empty room. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "벽 안 배선을 확인하는 손과 탐지 도구",
+      "scene": "a gloved hand holding a handheld wire detector against a bare wall, a capped electrical box nearby, no screen text visible.",
+      "prompt": "Camera and composition: a gloved hand holding a handheld wire detector against a bare wall, a capped electrical box nearby, no screen text visible. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "컷팅할 벽 아래 넓게 깔아 둔 보양재",
+      "scene": "the floor along a concrete wall covered with wide grey waterproof sheets taped down, a few tool cases placed neatly on top.",
+      "prompt": "Camera and composition: the floor along a concrete wall covered with wide grey waterproof sheets taped down, a few tool cases placed neatly on top. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "작업자가 잘라 낸 벽 조각을 옮기는 뒷모습",
+      "scene": "a worker seen from behind in a safety helmet carrying a cut block of concrete on a hand cart through an empty apartment hallway.",
+      "prompt": "Camera and composition: a worker seen from behind in a safety helmet carrying a cut block of concrete on a hand cart through an empty apartment hallway. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "넓혀진 문 자리와 반듯한 벽 끝",
+      "scene": "a widened doorway opening in a concrete wall with straight clean edges, the floor swept and dry, light coming from the next room.",
+      "prompt": "Camera and composition: a widened doorway opening in a concrete wall with straight clean edges, the floor swept and dry, light coming from the next room. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

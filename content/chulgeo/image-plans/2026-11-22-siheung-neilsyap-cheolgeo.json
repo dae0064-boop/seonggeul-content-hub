@@ -1,0 +1,75 @@
+{
+  "slug": "2026-11-22-siheung-neilsyap-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "시술 테이블과 선반이 빽빽한 작은 네일샵 (대표사진)",
+      "scene": "a small nail salon interior crowded with manicure tables, small lamps and wall shelves, ready to be cleared, soft light.",
+      "prompt": "Camera and composition: a small nail salon interior crowded with manicure tables, small lamps and wall shelves, ready to be cleared, soft light. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "시흥 네일샵\n작은 매장"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "매장 바닥에 남길 것과 버릴 것을 나눠 놓은 상자들",
+      "scene": "cardboard boxes on a small shop floor sorted into two groups, some labeled with blank stickers, ready for keep or discard.",
+      "prompt": "Camera and composition: cardboard boxes on a small shop floor sorted into two groups, some labeled with blank stickers, ready for keep or discard. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "벽면에 붙은 진열 선반과 거울",
+      "scene": "a shop wall with mounted display shelves and a mirror, the shelves empty.",
+      "prompt": "Camera and composition: a shop wall with mounted display shelves and a mirror, the shelves empty. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "네일샵 원상복구 전 정할 것을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "네일샵 원상복구 전",
+        "items": [
+          "계약서 원상복구 문구",
+          "입주 때 사진 찾기",
+          "남길 조명·에어컨",
+          "간판·시트지 처리"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "좁은 상가 복도와 작은 매장 출입문",
+      "scene": "a narrow commercial building corridor with a small glass shop door, the shop inside empty.",
+      "prompt": "Camera and composition: a narrow commercial building corridor with a small glass shop door, the shop inside empty. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "매장 안을 둘러보며 메모하는 사람의 옆모습",
+      "scene": "side view of a person standing inside a small shop holding a blank notepad, looking around, face not visible.",
+      "prompt": "Camera and composition: side view of a person standing inside a small shop holding a blank notepad, looking around, face not visible. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "해체한 선반 판재를 묶어 옮기는 작업자 뒷모습",
+      "scene": "a worker seen from behind in a safety helmet carrying a bundle of dismantled shelf boards tied together.",
+      "prompt": "Camera and composition: a worker seen from behind in a safety helmet carrying a bundle of dismantled shelf boards tied together. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "집기가 모두 빠지고 텅 빈 작은 매장",
+      "scene": "a completely empty small shop interior with plain walls and clean floor, daylight through the front glass.",
+      "prompt": "Camera and composition: a completely empty small shop interior with plain walls and clean floor, daylight through the front glass. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

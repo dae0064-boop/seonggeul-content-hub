@@ -1,0 +1,76 @@
+{
+  "slug": "2026-11-11-anyang-cheonjang-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "석고보드를 걷어 내 틀이 드러난 거실 천장 (대표사진)",
+      "scene": "low angle view of a Korean apartment living room ceiling with gypsum boards partly removed, exposing a grid of wooden battens, a worker in a safety helmet seen from the side on a small step ladder, floor covered with grey sheets.",
+      "prompt": "Camera and composition: low angle view of a Korean apartment living room ceiling with gypsum boards partly removed, exposing a grid of wooden battens, a worker in a safety helmet seen from the side on a small step ladder, floor covered with grey sheets. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "안양 천장 철거\n먼지 얼마나 날까"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "천장 아래 바닥과 벽을 비닐로 덮어 둔 거실",
+      "scene": "wide view of an empty Korean apartment living room where the floor and lower walls are fully wrapped in clear plastic sheeting taped at the seams, soft daylight from the balcony window.",
+      "prompt": "Camera and composition: wide view of an empty Korean apartment living room where the floor and lower walls are fully wrapped in clear plastic sheeting taped at the seams, soft daylight from the balcony window. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "천장재를 뜯어 낸 자리의 각재 틀과 전선",
+      "scene": "close upward view of an opened ceiling showing wooden battens, a loose electrical cable and a removed light fixture hole, dust in the air lit by a work lamp.",
+      "prompt": "Camera and composition: close upward view of an opened ceiling showing wooden battens, a loose electrical cable and a removed light fixture hole, dust in the air lit by a work lamp. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "오래된 사무실의 무늬 있는 천장 텍스 판",
+      "scene": "close view of old patterned acoustic ceiling tiles in an aging office corridor, slightly yellowed, fluorescent light fittings, no people.",
+      "prompt": "Camera and composition: close view of old patterned acoustic ceiling tiles in an aging office corridor, slightly yellowed, fluorescent light fittings, no people. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "천장 철거 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "천장 철거 하루 순서",
+        "items": [
+          "가구 옮기고 보양",
+          "조명·환풍기 떼기",
+          "천장재 걷어 내기",
+          "필요하면 틀 철거",
+          "반출과 바닥 정리"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "비닐로 감싼 붙박이장과 테이프로 막은 방문 틈",
+      "scene": "a built-in wardrobe wrapped in plastic film and a bedroom door with its gaps sealed by masking tape, apartment interior, calm light.",
+      "prompt": "Camera and composition: a built-in wardrobe wrapped in plastic film and a bedroom door with its gaps sealed by masking tape, apartment interior, calm light. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "철거 뒤 바닥을 쓸어 담는 작업자 뒷모습",
+      "scene": "a worker seen from behind in a safety helmet sweeping fine white dust into a dustpan on a bare concrete floor under an opened ceiling, debris bags lined up by the wall.",
+      "prompt": "Camera and composition: a worker seen from behind in a safety helmet sweeping fine white dust into a dustpan on a bare concrete floor under an opened ceiling, debris bags lined up by the wall. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "천장 틀만 남기고 깨끗하게 비운 거실",
+      "scene": "a clean empty living room after ceiling demolition, only the wooden ceiling frame left above, swept concrete floor, daylight through the windows.",
+      "prompt": "Camera and composition: a clean empty living room after ceiling demolition, only the wooden ceiling frame left above, swept concrete floor, daylight through the windows. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

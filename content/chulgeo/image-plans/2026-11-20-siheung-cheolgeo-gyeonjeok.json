@@ -1,0 +1,76 @@
+{
+  "slug": "2026-11-20-siheung-cheolgeo-gyeonjeok",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "휴대폰으로 빈 거실을 찍어 보는 손 (대표사진)",
+      "scene": "a hand holding a smartphone up to photograph an empty Korean apartment living room, the phone screen dark and blank, room in soft focus behind.",
+      "prompt": "Camera and composition: a hand holding a smartphone up to photograph an empty Korean apartment living room, the phone screen dark and blank, room in soft focus behind. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "시흥 철거 견적\n사진 찍는 법"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "문 앞에서 집 안 전체가 보이게 찍는 구도",
+      "scene": "view from an apartment front door looking down the hallway into the living room, showing the full path from entrance to rooms.",
+      "prompt": "Camera and composition: view from an apartment front door looking down the hallway into the living room, showing the full path from entrance to rooms. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "철거 견적이 달라지는 네 가지를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "철거 견적 네 가지",
+        "items": [
+          "작업량",
+          "반출 동선",
+          "엘리베이터 유무",
+          "사다리차 진입"
+        ],
+        "qa": "철거견적"
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "방 모서리에서 대각선으로 찍은 방 사진",
+      "scene": "a bedroom photographed diagonally from one corner, showing two walls, the floor and the ceiling, empty and evenly lit.",
+      "prompt": "Camera and composition: a bedroom photographed diagonally from one corner, showing two walls, the floor and the ceiling, empty and evenly lit. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "줄자로 벽 길이를 재는 작업자의 손",
+      "scene": "gloved hands stretching a yellow tape measure along a bare wall in an empty apartment, no numbers readable.",
+      "prompt": "Camera and composition: gloved hands stretching a yellow tape measure along a bare wall in an empty apartment, no numbers readable. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "거실 탁자 위에 놓인 빈 메모지와 펜",
+      "scene": "a blank notepad and a pen lying on a wooden coffee table in a living room, morning light.",
+      "prompt": "Camera and composition: a blank notepad and a pen lying on a wooden coffee table in a living room, morning light. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "철거 상담 메모를 정리하는 작업자의 옆모습",
+      "scene": "side view of a worker in a safety helmet looking over a clipboard with a blank sheet at a quiet apartment entrance.",
+      "prompt": "Camera and composition: side view of a worker in a safety helmet looking over a clipboard with a blank sheet at a quiet apartment entrance. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "정리된 사진 목록을 보며 상담 준비를 마친 모습",
+      "scene": "a tidy table with a few printed blank photos laid out in a row next to a closed notebook, warm indoor light.",
+      "prompt": "Camera and composition: a tidy table with a few printed blank photos laid out in a row next to a closed notebook, warm indoor light. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

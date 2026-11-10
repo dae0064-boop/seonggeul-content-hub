@@ -1,0 +1,79 @@
+{
+  "slug": "2026-11-14-juhyusudang-gyeolgeun",
+  "title": "주휴수당 결근, 개근 못 한 주는 유급휴일도 없을까 (165,120원)",
+  "source": "11/14(토) 티스토리 원고 (11/10 미리 씀) 12:40",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "카페 앞치마를 두른 20대 여성이 휴대폰 급여 알림을 보며 고개를 갸웃하는 얼굴 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her 20s wearing a cafe apron over a coral shirt, holding a smartphone and looking at it with her head slightly tilted, a softly blurred cafe counter behind her. Expression: curious, head slightly tilted. Color theme: sage green and sand beige tones with a coral accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "sage green and sand beige tones with a coral accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "teal",
+      "thumb_person": "20대 여성(카페 앞치마, 코랄 셔츠)",
+      "thumb_mood": "궁금",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "teal",
+        "font": "jua",
+        "title": "주휴수당 결근\n하루 빠지면?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "주휴수당 결근 오해를 맞혀 보는 O·X 퀴즈 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "주휴수당 O·X",
+        "items": [
+          "결근한 주에도 주휴가 생긴다",
+          "지난주 결근이 이번 주로 번진다",
+          "원래 쉬는 날은 결근이 아니다"
+        ],
+        "answers": [
+          "X",
+          "X",
+          "O"
+        ],
+        "where": "본문 비교 부분"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "주휴수당 결근 기준을 묻고 답하는 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "이럴 땐 주휴가 생겨요",
+        "ask": "하루 빠지면 주휴도 없어?",
+        "items": [
+          "개근이라 주휴수당이 생겨요",
+          "주휴수당은 생기지 않아요",
+          "다음 주 개근이면 다시 생겨요"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "카페 카운터 위에 놓인 앞치마와 근무표",
+      "prompt": "Camera and composition: a cafe apron and a paper schedule on a cafe counter. Cafe apron hanging near a coffee counter, calm natural light, no readable text. Background color: warm beige and teal. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a cafe apron and a paper schedule on a cafe counter",
+      "bg": "warm beige and teal",
+      "kind": "photo",
+      "photo": {
+        "query_en": "cafe apron counter",
+        "scene_en": "cafe apron hanging near a coffee counter"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}

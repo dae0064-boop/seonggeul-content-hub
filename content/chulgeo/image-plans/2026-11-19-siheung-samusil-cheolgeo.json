@@ -1,0 +1,76 @@
+{
+  "slug": "2026-11-19-siheung-samusil-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "칸막이 가벽과 천장 마감을 걷어 내는 사무실 (대표사진)",
+      "scene": "a Korean office floor during demolition, a partition wall half removed showing metal studs, several ceiling panels taken down revealing the grid, protective sheets on the floor.",
+      "prompt": "Camera and composition: a Korean office floor during demolition, a partition wall half removed showing metal studs, several ceiling panels taken down revealing the grid, protective sheets on the floor. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "시흥 사무실\n가벽·천장 순서"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "책상과 의자를 모두 빼낸 빈 사무실",
+      "scene": "an empty open-plan office with all desks and chairs removed, grey carpet tiles, rows of ceiling panels and fluorescent lights above, daylight from windows.",
+      "prompt": "Camera and composition: an empty open-plan office with all desks and chairs removed, grey carpet tiles, rows of ceiling panels and fluorescent lights above, daylight from windows. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "석고보드와 금속 틀이 드러난 가벽 단면",
+      "scene": "close view of a cut section of an office partition wall showing gypsum boards on both sides of light metal studs, a cable running inside.",
+      "prompt": "Camera and composition: close view of a cut section of an office partition wall showing gypsum boards on both sides of light metal studs, a cable running inside. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "사무실 철거 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "사무실 철거 순서",
+        "items": [
+          "집기·가구 반출",
+          "전기 정리·조명 철거",
+          "사무실 가벽 철거",
+          "사무실 천장 철거",
+          "바닥재·폐기물 반출"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "서랍을 비우고 상자에 담아 둔 사무 서류",
+      "scene": "a row of taped cardboard boxes filled with blank folders on an empty office desk, drawers pulled open and empty.",
+      "prompt": "Camera and composition: a row of taped cardboard boxes filled with blank folders on an empty office desk, drawers pulled open and empty. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "건물 화물용 엘리베이터 앞에 깔아 둔 보양재",
+      "scene": "a commercial building freight elevator lobby with grey protective sheets taped on the floor and blank padding on the elevator door frame.",
+      "prompt": "Camera and composition: a commercial building freight elevator lobby with grey protective sheets taped on the floor and blank padding on the elevator door frame. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "작업자가 석고보드 조각을 모아 나르는 뒷모습",
+      "scene": "a worker seen from behind in a safety helmet carrying a stack of broken gypsum board pieces across an emptied office floor.",
+      "prompt": "Camera and composition: a worker seen from behind in a safety helmet carrying a stack of broken gypsum board pieces across an emptied office floor. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "가벽과 천장 마감을 걷어 내 넓어진 빈 사무실",
+      "scene": "a wide empty office space after demolition, partition walls and ceiling panels gone, exposed ceiling grid and clean swept concrete floor.",
+      "prompt": "Camera and composition: a wide empty office space after demolition, partition walls and ceiling panels gone, exposed ceiling grid and clean swept concrete floor. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

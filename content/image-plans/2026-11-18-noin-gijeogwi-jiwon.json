@@ -1,0 +1,106 @@
+{
+  "slug": "2026-11-18-noin-gijeogwi-jiwon",
+  "title": "노인 기저귀 지원, 장기요양등급으로도 받을 수 있나요 (연 160만 원 한도)",
+  "source": "11/18(수) 17:40 네이버 원고 — 생활보장 검색형(돌봄·요양), 실사풍 (11/10 미리 씀)",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "아침 햇살 드는 침실 협탁 위에 가지런히 놓인 수건과 물컵, 안경 (대표사진)",
+      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a tidy bedroom by the bed. Lighting: soft early-morning sunlight. A bedside table in a tidy bedroom seen from above with a neatly folded white towel, a glass of water, a pair of reading glasses and a small potted plant arranged neatly, no people. Color theme: soft lavender and white tones with a warm yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "overhead",
+      "bg": "soft lavender and white tones with a warm yellow accent",
+      "note": "대표",
+      "thumb_shot": "overhead",
+      "thumb_theme": "plum",
+      "thumb_person": "없음",
+      "thumb_place": "침실",
+      "thumb_light": "아침 햇살",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "plum",
+        "font": "ptd",
+        "title": "노인 기저귀 지원\n공단도 줄까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "공단 복지용구로 되는 것과 안 되는 것을 나눈 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "복지용구로 되는 것",
+        "heads": [
+          "되는 것",
+          "안 되는 것"
+        ],
+        "items": [
+          [
+            "요실금팬티",
+            "일반 기저귀"
+          ],
+          [
+            "간이변기",
+            "한도 넘긴 금액"
+          ]
+        ],
+        "ask": "공단에서 기저귀도 줘?",
+        "qa": "기저귀 지원"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "복지용구 한도에 쓰이는 숫자를 보여 주는 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "복지용구 숫자 셋",
+        "items": [
+          [
+            "15%",
+            "본인부담",
+            "재가급여 기준"
+          ],
+          [
+            "1년",
+            "한도 기간",
+            "유효기간 시작일부터"
+          ],
+          [
+            "2가지",
+            "받는 길",
+            "공단·지자체"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "주민센터 창구에서 상담을 받는 70대 아버지와 40대 아들",
+      "prompt": "Camera and composition: medium shot at a community service center counter. A Korean father in his 70s in a brown flat cap and his son in his 40s in a dark green jacket sitting together at a community service center counter, talking calmly with a staff member seen from behind. Background color: bright public office with light gray walls and a warm orange accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a community service center counter",
+      "bg": "bright public office with light gray walls and a warm orange accent"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "현관 앞에서 택배 상자를 들고 들어오는 50대 딸",
+      "prompt": "Camera and composition: medium shot at an apartment entrance. A Korean woman in her 50s in a beige trench coat stepping into an apartment front door entrance carrying a plain cardboard box, smiling softly. Background color: clean apartment entrance with white walls and a light wood shoe cabinet. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at an apartment entrance",
+      "bg": "clean apartment entrance with white walls and a light wood shoe cabinet"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "저녁 부엌 식탁에서 노트에 장보기 목록을 적는 60대 어머니의 손",
+      "prompt": "Camera and composition: close-up of hands writing at a kitchen table. Close-up of the hands of a Korean woman in her 60s in a lavender cardigan sleeve writing in a small notebook with blank lines on a wooden kitchen table in the evening, a cup of tea beside it. Background color: warm kitchen table with a soft yellow lamp glow. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands writing at a kitchen table",
+      "bg": "warm kitchen table with a soft yellow lamp glow"
+    }
+  ]
+}

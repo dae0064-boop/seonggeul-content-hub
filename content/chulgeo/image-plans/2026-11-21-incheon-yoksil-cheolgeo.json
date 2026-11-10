@@ -1,0 +1,87 @@
+{
+  "slug": "2026-11-21-incheon-yoksil-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "벽 타일 위로 새 타일을 대어 보는 욕실 벽 (대표사진)",
+      "scene": "a Korean apartment bathroom wall with old white tiles where a new grey tile is being held against the old surface by a gloved hand, demonstrating overlay tiling.",
+      "prompt": "Camera and composition: a Korean apartment bathroom wall with old white tiles where a new grey tile is being held against the old surface by a gloved hand, demonstrating overlay tiling. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "인천 욕실 철거\n덧방 vs 철거"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "기존 타일 위에 접착제를 바른 욕실 벽 가까이",
+      "scene": "close view of an old bathroom wall tile surface with grey tile adhesive spread in ridges by a notched trowel, the trowel resting at the edge.",
+      "prompt": "Camera and composition: close view of an old bathroom wall tile surface with grey tile adhesive spread in ridges by a notched trowel, the trowel resting at the edge. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "들뜬 타일을 손으로 두드려 보는 모습",
+      "scene": "a gloved hand knocking on a slightly loose old bathroom wall tile, a small hairline crack visible in the grout line, side lighting.",
+      "prompt": "Camera and composition: a gloved hand knocking on a slightly loose old bathroom wall tile, a small hairline crack visible in the grout line, side lighting. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "덧방과 전체 철거를 견준 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "덧방과 전체 철거",
+        "heads": [
+          "덧방",
+          "전체 철거"
+        ],
+        "items": [
+          [
+            "소음·먼지 적음",
+            "소음·먼지 큼"
+          ],
+          [
+            "폐기물 적음",
+            "폐기물 많음"
+          ],
+          [
+            "타일 뒤 못 봄",
+            "방수층 확인 가능"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "타일을 걷어 낸 욕실 바닥의 회색 방수층",
+      "scene": "top-down view of a bathroom floor after tiles were removed, showing a smooth grey waterproofing layer and a central floor drain, clean and dry.",
+      "prompt": "Camera and composition: top-down view of a bathroom floor after tiles were removed, showing a smooth grey waterproofing layer and a central floor drain, clean and dry. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "현관에서 욕실까지 이어 깐 보양재와 마대",
+      "scene": "a Korean apartment entrance and hallway with grey protective sheets laid from the front door toward a bathroom, several white debris sacks lined up by the door.",
+      "prompt": "Camera and composition: a Korean apartment entrance and hallway with grey protective sheets laid from the front door toward a bathroom, several white debris sacks lined up by the door. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "철거를 마치고 비워진 욕실을 쓸고 있는 작업자 뒷모습",
+      "scene": "a worker seen from behind in a safety helmet sweeping the bare cement floor of an emptied small bathroom, dust pan beside him.",
+      "prompt": "Camera and composition: a worker seen from behind in a safety helmet sweeping the bare cement floor of an emptied small bathroom, dust pan beside him. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "철거를 마치고 방수 공사를 기다리는 빈 욕실",
+      "scene": "wide view of an emptied bathroom with bare cement walls and grey waterproofed floor, drain visible, waiting for the next stage, calm daylight from a small window.",
+      "prompt": "Camera and composition: wide view of an emptied bathroom with bare cement walls and grey waterproofed floor, drain visible, waiting for the next stage, calm daylight from a small window. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

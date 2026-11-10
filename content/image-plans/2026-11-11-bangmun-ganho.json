@@ -1,0 +1,91 @@
+{
+  "slug": "2026-11-11-bangmun-ganho",
+  "title": "방문간호, 지시서는 어디서 받고 얼마를 내나요 (지시서 본인부담 20%)",
+  "source": "11/11(수) 19:00 네이버 원고 — 생활보장 검색형(돌봄·요양), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "저녁 조명이 켜진 침실에서 방문 간호사가 80대 아버지에게 설명하며 웃는 모습 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a tidy bedroom by the bed. Lighting: warm evening lamp light. A Korean visiting nurse in her 50s in a teal scrub top sitting beside the bed of a Korean man in his 80s in a gray cardigan, explaining something kindly while both smile. Expression: explaining with one hand open toward the viewer. Color theme: calm teal and light gray tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "duo",
+      "bg": "calm teal and light gray tones with a coral accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "teal",
+      "thumb_person": "50대 여성 방문 간호사와 80대 아버지",
+      "thumb_place": "침실",
+      "thumb_light": "저녁 조명",
+      "thumb_mood": "설명",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "teal",
+        "font": "ptd",
+        "title": "방문간호\n지시서는 어디서?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "방문간호 이용 조건 자가 체크 카드",
+      "kind": "card",
+      "card": {
+        "type": "selfcheck",
+        "title": "방문간호 받을까?",
+        "items": [
+          "방문간호지시서",
+          "치매 수급자인지",
+          "처음 쓰는 방문간호인지"
+        ],
+        "result": "아래 '덜 내요' 부분을 꼭 보세요 👇"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "침대 옆 탁자에서 혈압계와 혈당 측정기를 정리하는 손",
+      "prompt": "Camera and composition: close-up of hands on a bedside table. Close-up of a Korean person's hands neatly arranging a blood pressure monitor and a small glucose meter on a bedside table, no face in the frame. Background color: bedside table with calm teal and white tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands on a bedside table",
+      "bg": "bedside table with calm teal and white tones"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "방문간호 비용 O·X 퀴즈 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "방문간호 O·X",
+        "items": [
+          "지시서 없이도 시작된다",
+          "재료비는 금액 안에 들어 있다",
+          "15분 이상부터 금액이 있다"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "O"
+        ],
+        "where": "아래 본문"
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "거실 소파에서 장기요양인정서를 펴 놓고 메모하는 40대 아들",
+      "prompt": "Camera and composition: medium shot on a living room sofa. A Korean man in his 40s in a light gray sweater sitting on a sofa, writing notes beside an open blank document. Background color: bright living room with light gray and coral cushions. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on a living room sofa",
+      "bg": "bright living room with light gray and coral cushions"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "현관 앞에서 간호 가방을 든 간호사를 맞이하는 50대 딸의 뒷모습",
+      "prompt": "Camera and composition: medium shot from behind at a front door. A Korean woman in her 50s seen from behind, opening an apartment front door to greet a nurse carrying a medical bag. Background color: apartment entrance with white walls and teal accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot from behind at a front door",
+      "bg": "apartment entrance with white walls and teal accents"
+    }
+  ]
+}

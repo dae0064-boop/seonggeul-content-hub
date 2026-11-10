@@ -1,0 +1,647 @@
+{
+  "slug": "2026-11-11-jonghapsodeukse-singo-gigan",
+  "title": "종합소득세 신고 기간, 11월 중간예납 고지서도 신고일까 (11월 30일)",
+  "category": "생활정보",
+  "tags": [
+    "종합소득세신고기간",
+    "중간예납",
+    "5월",
+    "고지서",
+    "개인사업자세금",
+    "종합소득세",
+    "종소세",
+    "중간예납고지서",
+    "종합소득세중간예납",
+    "성실신고확인",
+    "프리랜서세금",
+    "소득세법",
+    "추계액신고",
+    "홈택스",
+    "생활제도",
+    "세금일정"
+  ],
+  "publishAt": "2026-11-11 18:20",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "개인사업자 세금은 5월 확정신고 전에"
+        },
+        {
+          "t": "11월에 절반을 미리 내는 구조예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 가게 문을 닫고 우편함을 열었는데"
+        },
+        {
+          "t": "세무서 봉투가 들어 있다면"
+        },
+        {
+          "t": "\"5월에 다 냈는데 또 신고하라고?\""
+        },
+        {
+          "t": "하고 놀라기 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘은 종합소득세 신고 기간과"
+        },
+        {
+          "t": "11월 중간예납이 어떻게 다른지 나눠 볼게요."
+        },
+        {
+          "t": "소득세법 조문을 그대로 따라갔어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "먼저 답이에요."
+        },
+        {
+          "t": "11월 중간예납은 신고가 아니라",
+          "s": "yellow"
+        },
+        {
+          "t": "고지서대로 11월 30일까지 내는 거예요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "위에서 내려다본 책상 위 세무서 봉투와 계산기, 찻잔 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "종합소득세 신고 기간, 날짜 세 개"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "종합소득세 신고 기간과 중간예납 날짜를 숫자로 보여 주는 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "종합소득세 신고 기간은"
+        },
+        {
+          "t": "소득세법 제70조가 정해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "번 해의 다음 해 5월 1일부터 31일까지예요.",
+          "segs": [
+            {
+              "t": "번 해의 다음 해 "
+            },
+            {
+              "t": "5월 1일",
+              "s": "blue"
+            },
+            {
+              "t": "부터 31일까지예요."
+            }
+          ]
+        },
+        {
+          "t": "성실신고확인대상자는 제70조의2에 따라"
+        },
+        {
+          "t": "6월 30일까지 늘어나요.",
+          "segs": [
+            {
+              "t": "6월 30일",
+              "s": "blue"
+            },
+            {
+              "t": "까지 늘어나요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그리고 그 사이 11월에 중간예납이 있어요."
+        },
+        {
+          "t": "5월은 신고하고 내는 달,"
+        },
+        {
+          "t": "11월은 미리 나눠 내는 달이라고 보면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "5월 신고 때는 11월에 미리 낸 금액을",
+          "s": "yellow"
+        },
+        {
+          "t": "빼고 남은 세금만 내요.",
+          "s": "yellow"
+        },
+        {
+          "t": "그래서 11월에 내 두면 5월 부담이 가벼워져요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "11월 중간예납은 무엇일까"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "중간예납은 제65조에 있어요."
+        },
+        {
+          "t": "1월 1일부터 6월 30일까지를"
+        },
+        {
+          "t": "중간예납기간으로 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "세무서는 11월 1일부터 15일 사이에",
+          "segs": [
+            {
+              "t": "세무서는 "
+            },
+            {
+              "t": "11월 1일",
+              "s": "blue"
+            },
+            {
+              "t": "부터 15일 사이에"
+            }
+          ]
+        },
+        {
+          "t": "고지서를 보내요."
+        },
+        {
+          "t": "금액은 직전 해 세액을 바탕으로 한"
+        },
+        {
+          "t": "중간예납기준액의 절반이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "고지서 금액은 11월 30일까지 내야",
+          "s": "red"
+        },
+        {
+          "t": "가산세가 붙지 않아요.",
+          "s": "red"
+        },
+        {
+          "t": "올해 11월 30일은 월요일이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여기서 낸 돈은 사라지지 않아요."
+        },
+        {
+          "t": "다음 해 5월 확정신고 때"
+        },
+        {
+          "t": "이미 낸 세금으로 빼 줘요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "고지서는 우편으로 오지만"
+        },
+        {
+          "t": "전자고지를 신청했다면 홈택스로 와요."
+        },
+        {
+          "t": "어느 쪽이든 홈택스에서 다시 볼 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "고지서가 오는 사람, 안 오는 사람"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "중간예납 고지서 대상인지 스스로 짚어 보는 자가 체크 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "중간예납 고지서는 모두에게 오지 않아요."
+        },
+        {
+          "t": "대상인지 아닌지는 이렇게 갈려요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "⭕ 지난해 사업소득으로 종합소득세를 낸 분"
+        },
+        {
+          "t": "⭕ 고지 금액이 50만 원 이상인 분"
+        },
+        {
+          "t": "❌ 고지 금액이 50만 원 미만인 분"
+        },
+        {
+          "t": "❌ 올해 새로 사업을 시작한 분"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "50만 원 미만은 제86조 소액 부징수라"
+        },
+        {
+          "t": "걷지 않아요."
+        },
+        {
+          "t": "근로소득만 있는 직장인도 대상이 아니에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "고지서가 안 왔다면 낼 중간예납이",
+          "s": "yellow"
+        },
+        {
+          "t": "없다는 뜻일 수 있어요.",
+          "s": "yellow"
+        },
+        {
+          "t": "홈택스에서 고지 내역을 한 번 조회해 봐요."
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"올해 장사가 반 토막인데 그대로 내요?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그럴 때를 위한 길이 따로 있어요."
+        },
+        {
+          "t": "아래 추계액 신고를 보세요."
+        },
+        {
+          "t": "조건이 맞으면 고지 금액보다 적게 낼 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "올해 실적이 줄었다면 추계액 신고"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "제65조 3항은 올해 상반기 실적으로 계산한"
+        },
+        {
+          "t": "중간예납추계액이 기준액의"
+        },
+        {
+          "t": "100분의 30에 못 미치면 신고를 열어 둬요.",
+          "segs": [
+            {
+              "t": "100분의 30",
+              "s": "blue"
+            },
+            {
+              "t": "에 못 미치면 신고를 열어 둬요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이때는 11월 1일부터 30일까지"
+        },
+        {
+          "t": "추계액을 직접 신고하고 그 금액을 내요."
+        },
+        {
+          "t": "신고하면 고지된 금액은 없던 것으로 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "고지 금액이나 추계액이 1,000만 원을 넘으면"
+        },
+        {
+          "t": "나눠 내는 분납도 할 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "추계액을 일부러 낮게 적으면",
+          "s": "red"
+        },
+        {
+          "t": "나중에 세무서가 다시 정할 수 있어요.",
+          "s": "red"
+        },
+        {
+          "t": "제65조 9항이 신고에 틀린 곳이 있으면"
+        },
+        {
+          "t": "세무서장이 고칠 수 있다고 정해 뒀거든요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "추계액은 상반기 소득금액을 두 배로 늘려"
+        },
+        {
+          "t": "1년 치처럼 놓고 세율을 곱한 뒤,"
+        },
+        {
+          "t": "그 세액의 절반을 잡는 방식이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "장부가 있다면 그 숫자로 계산해 보고,"
+        },
+        {
+          "t": "어렵다면 홈택스 신고 화면의 계산 순서를 따라가요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "종합소득세 신고 기간 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "헷갈리기 쉬운 두 가지를 묶었어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 직장인도 5월에 신고해요?"
+        },
+        {
+          "t": "A1: 근로소득만 있고 연말정산을 마쳤다면"
+        },
+        {
+          "t": "5월 확정신고를 따로 하지 않아도 돼요."
+        },
+        {
+          "t": "다른 소득이 섞여 있으면 5월에 합쳐 신고해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 5월 신고를 놓치면요?"
+        },
+        {
+          "t": "A2: 기한 뒤에도 신고할 수 있어요."
+        },
+        {
+          "t": "다만 무신고 가산세가 붙을 수 있어"
+        },
+        {
+          "t": "5월 안에 하는 게 부담이 적어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "지금 해 둘 것"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "가게 우편함에서 봉투를 꺼내는 손"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 체크포인트",
+          "s": "green"
+        },
+        {
+          "t": "11월 15일 뒤 홈택스에서 고지서 조회",
+          "s": "green"
+        },
+        {
+          "t": "11월 30일 납부, 실적이 줄었으면 추계액 신고",
+          "s": "green"
+        },
+        {
+          "t": "5월 1일~31일 확정신고 때 낸 금액 빼기",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분은 고지서를 우편으로 받으세요?"
+        },
+        {
+          "t": "\"우편\", \"전자\" 중 하나로 남겨 주세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "종합소득세 신고 기간 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "종합소득세 신고 기간은 5월 한 달이고,"
+        },
+        {
+          "t": "11월 중간예납은 그 사이 미리 내는 절반이에요."
+        },
+        {
+          "t": "고지서가 오면 11월 30일 안에 내면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "날짜와 금액 기준은 소득세법 제65조·제70조·"
+        },
+        {
+          "t": "제70조의2·제86조를 한 조씩 펼쳐 맞췄어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "세금 사정이 복잡하면 세무서나 세무사에게"
+        },
+        {
+          "t": "내 경우를 꼭 물어보세요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "종합소득세 신고 기간은 5월, 중간예납은 11월이에요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">개인사업자 세금은 5월 확정신고 전에<br>11월에 절반을 미리 내는 구조예요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 가게 문을 닫고 우편함을 열었는데<br>세무서 봉투가 들어 있다면<br>&quot;5월에 다 냈는데 또 신고하라고?&quot;<br>하고 놀라기 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘은 종합소득세 신고 기간과<br>11월 중간예납이 어떻게 다른지 나눠 볼게요.<br>소득세법 조문을 그대로 따라갔어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">먼저 답이에요.<br><span style=\"background-color: #ffe94d;\"><b>11월 중간예납은 신고가 아니라</b></span><br><span style=\"background-color: #ffe94d;\"><b>고지서대로 11월 30일까지 내는 거예요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 1] 위에서 내려다본 책상 위 세무서 봉투와 계산기, 찻잔 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>종합소득세 신고 기간, 날짜 세 개</h2>\n<p data-ke-size=\"size16\">[이미지 2] 종합소득세 신고 기간과 중간예납 날짜를 숫자로 보여 주는 카드</p>\n<p data-ke-size=\"size16\">종합소득세 신고 기간은<br>소득세법 제70조가 정해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">번 해의 다음 해 <span style=\"color: #0078cb;\"><b>5월 1일</b></span>부터 31일까지예요.<br>성실신고확인대상자는 제70조의2에 따라<br><span style=\"color: #0078cb;\"><b>6월 30일</b></span>까지 늘어나요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그리고 그 사이 11월에 중간예납이 있어요.<br>5월은 신고하고 내는 달,<br>11월은 미리 나눠 내는 달이라고 보면 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>5월 신고 때는 11월에 미리 낸 금액을</b></span><br><span style=\"background-color: #ffe94d;\"><b>빼고 남은 세금만 내요.</b></span><br>그래서 11월에 내 두면 5월 부담이 가벼워져요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>11월 중간예납은 무엇일까</h2>\n<p data-ke-size=\"size16\">중간예납은 제65조에 있어요.<br>1월 1일부터 6월 30일까지를<br>중간예납기간으로 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">세무서는 <span style=\"color: #0078cb;\"><b>11월 1일</b></span>부터 15일 사이에<br>고지서를 보내요.<br>금액은 직전 해 세액을 바탕으로 한<br>중간예납기준액의 절반이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>고지서 금액은 11월 30일까지 내야</b></span><br><span style=\"color: #ff0010;\"><b>가산세가 붙지 않아요.</b></span><br>올해 11월 30일은 월요일이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여기서 낸 돈은 사라지지 않아요.<br>다음 해 5월 확정신고 때<br>이미 낸 세금으로 빼 줘요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">고지서는 우편으로 오지만<br>전자고지를 신청했다면 홈택스로 와요.<br>어느 쪽이든 홈택스에서 다시 볼 수 있어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>고지서가 오는 사람, 안 오는 사람</h2>\n<p data-ke-size=\"size16\">[이미지 3] 중간예납 고지서 대상인지 스스로 짚어 보는 자가 체크 카드</p>\n<p data-ke-size=\"size16\">중간예납 고지서는 모두에게 오지 않아요.<br>대상인지 아닌지는 이렇게 갈려요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">⭕ 지난해 사업소득으로 종합소득세를 낸 분<br>⭕ 고지 금액이 50만 원 이상인 분<br>❌ 고지 금액이 50만 원 미만인 분<br>❌ 올해 새로 사업을 시작한 분</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">50만 원 미만은 제86조 소액 부징수라<br>걷지 않아요.<br>근로소득만 있는 직장인도 대상이 아니에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>고지서가 안 왔다면 낼 중간예납이</b></span><br><span style=\"background-color: #ffe94d;\"><b>없다는 뜻일 수 있어요.</b></span><br>홈택스에서 고지 내역을 한 번 조회해 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<blockquote data-ke-style=\"style3\">&quot;올해 장사가 반 토막인데 그대로 내요?&quot;</blockquote>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그럴 때를 위한 길이 따로 있어요.<br>아래 추계액 신고를 보세요.<br>조건이 맞으면 고지 금액보다 적게 낼 수 있어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>올해 실적이 줄었다면 추계액 신고</h2>\n<p data-ke-size=\"size16\">제65조 3항은 올해 상반기 실적으로 계산한<br>중간예납추계액이 기준액의<br><span style=\"color: #0078cb;\"><b>100분의 30</b></span>에 못 미치면 신고를 열어 둬요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이때는 11월 1일부터 30일까지<br>추계액을 직접 신고하고 그 금액을 내요.<br>신고하면 고지된 금액은 없던 것으로 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">고지 금액이나 추계액이 1,000만 원을 넘으면<br>나눠 내는 분납도 할 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>추계액을 일부러 낮게 적으면</b></span><br><span style=\"color: #ff0010;\"><b>나중에 세무서가 다시 정할 수 있어요.</b></span><br>제65조 9항이 신고에 틀린 곳이 있으면<br>세무서장이 고칠 수 있다고 정해 뒀거든요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">추계액은 상반기 소득금액을 두 배로 늘려<br>1년 치처럼 놓고 세율을 곱한 뒤,<br>그 세액의 절반을 잡는 방식이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">장부가 있다면 그 숫자로 계산해 보고,<br>어렵다면 홈택스 신고 화면의 계산 순서를 따라가요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>종합소득세 신고 기간 Q&amp;A</h2>\n<p data-ke-size=\"size16\">헷갈리기 쉬운 두 가지를 묶었어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 직장인도 5월에 신고해요?<br>A1: 근로소득만 있고 연말정산을 마쳤다면<br>5월 확정신고를 따로 하지 않아도 돼요.<br>다른 소득이 섞여 있으면 5월에 합쳐 신고해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 5월 신고를 놓치면요?<br>A2: 기한 뒤에도 신고할 수 있어요.<br>다만 무신고 가산세가 붙을 수 있어<br>5월 안에 하는 게 부담이 적어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>지금 해 둘 것</h2>\n<p data-ke-size=\"size16\">[이미지 4] 가게 우편함에서 봉투를 꺼내는 손</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 체크포인트</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>11월 15일 뒤 홈택스에서 고지서 조회</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>11월 30일 납부, 실적이 줄었으면 추계액 신고</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>5월 1일~31일 확정신고 때 낸 금액 빼기</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분은 고지서를 우편으로 받으세요?<br>&quot;우편&quot;, &quot;전자&quot; 중 하나로 남겨 주세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>종합소득세 신고 기간 정리</h2>\n<p data-ke-size=\"size16\">종합소득세 신고 기간은 5월 한 달이고,<br>11월 중간예납은 그 사이 미리 내는 절반이에요.<br>고지서가 오면 11월 30일 안에 내면 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">날짜와 금액 기준은 소득세법 제65조·제70조·<br>제70조의2·제86조를 한 조씩 펼쳐 맞췄어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">세금 사정이 복잡하면 세무서나 세무사에게<br>내 경우를 꼭 물어보세요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>종합소득세 신고 기간은 5월, 중간예납은 11월이에요.</p>"
+}

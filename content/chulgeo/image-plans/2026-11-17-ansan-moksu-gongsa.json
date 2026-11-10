@@ -1,0 +1,76 @@
+{
+  "slug": "2026-11-17-ansan-moksu-gongsa",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "벽지와 몰딩을 걷어 내고 비워 둔 거실 벽 (대표사진)",
+      "scene": "a Korean apartment living room wall with wallpaper and crown molding stripped away, bare surface ready for carpentry.",
+      "prompt": "Camera and composition: a Korean apartment living room wall with wallpaper and crown molding stripped away, bare surface ready for carpentry. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "안산 목수 공사\n무엇을 비울까"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "천장재를 걷어 내 각재 틀이 드러난 방 천장",
+      "scene": "a room ceiling with finishing panels removed exposing the wooden batten framework above.",
+      "prompt": "Camera and composition: a room ceiling with finishing panels removed exposing the wooden batten framework above. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "문틀을 떼어 내고 벽 속 틀이 보이는 방 입구",
+      "scene": "a room doorway where the old door frame has been removed, showing the rough opening in the wall.",
+      "prompt": "Camera and composition: a room doorway where the old door frame has been removed, showing the rough opening in the wall. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "철거부터 마감까지 공정 순서를 담은 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "인테리어 공정 순서",
+        "items": [
+          "철거·폐기물 반출",
+          "설비·전기 자리 잡기",
+          "목수 공사",
+          "타일·도장·필름",
+          "도배·바닥 마감"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "철거가 끝난 방 바닥에 전선 자리를 분필로 표시한 모습",
+      "scene": "a cleared room with chalk lines marked on the bare cement floor indicating where wiring will run.",
+      "prompt": "Camera and composition: a cleared room with chalk lines marked on the bare cement floor indicating where wiring will run. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "거실 입구에서 벽과 천장이 함께 보이게 찍은 장면",
+      "scene": "view from a living room entrance showing a bare wall and stripped ceiling together.",
+      "prompt": "Camera and composition: view from a living room entrance showing a bare wall and stripped ceiling together. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "철거 후 정리된 바닥에 새 각재를 가지런히 쌓아 둔 모습",
+      "scene": "new wooden studs and battens stacked neatly on a swept floor after demolition.",
+      "prompt": "Camera and composition: new wooden studs and battens stacked neatly on a swept floor after demolition. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "철거와 목공 준비를 마친 깔끔한 거실 전체",
+      "scene": "a clean, empty living room ready for carpentry, bare walls and ceiling, orderly tools in a corner.",
+      "prompt": "Camera and composition: a clean, empty living room ready for carpentry, bare walls and ceiling, orderly tools in a corner. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

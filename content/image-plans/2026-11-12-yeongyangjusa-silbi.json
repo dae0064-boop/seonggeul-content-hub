@@ -1,0 +1,87 @@
+{
+  "slug": "2026-11-12-yeongyangjusa-silbi",
+  "title": "영양주사 실비, 피곤해서 맞은 주사도 돌려받을 수 있나요 (치료 목적 4가지)",
+  "source": "11/12(목) 10:00 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "사무실 책상 위에서 휴대폰을 든 30대 여성 직장인의 손 (대표사진)",
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: an office desk with a laptop. Lighting: bright clear daylight, high key. Close-up of a Korean woman's hands in a soft gray knit cardigan sleeve holding a smartphone above an office desk next to a laptop and a cup of tea. Expression: curious, head slightly tilted. Color theme: dusty pink and ivory tones with a green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "hands",
+      "bg": "dusty pink and ivory tones with a green accent",
+      "note": "대표",
+      "thumb_shot": "hands",
+      "thumb_theme": "rose",
+      "thumb_person": "30대 여성 직장인의 손",
+      "thumb_place": "사무실",
+      "thumb_light": "밝은 낮",
+      "thumb_mood": "궁금",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "rose",
+        "font": "jua",
+        "title": "영양주사 실비\n피곤해도 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "영양주사 실비 질문을 크게 던지는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "영양주사 실비",
+        "title": "이 주사도\n돌아올까?",
+        "ask": "비타민 주사도 돼?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "진료실에서 의사가 설명하고 환자가 고개를 끄덕이는 장면",
+      "prompt": "Camera and composition: medium shot in a doctor's consultation room. A Korean doctor in a white coat explaining calmly to a Korean man in his 40s in a navy sweater, who nods, both seated at a clean desk with a blank monitor. Background color: bright white consultation room with soft rose accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a doctor's consultation room",
+      "bg": "bright white consultation room with soft rose accents"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "영양주사 실비를 O와 X로 짚어 보는 퀴즈 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "영양주사 실비 O·X",
+        "items": [
+          "피곤해서 맞아도 된다",
+          "허가사항대로면 볼 여지",
+          "새 약관도 똑같다"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "X"
+        ],
+        "where": "아래 본문"
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "약국 같은 밝은 접수대에서 영수증을 받는 손",
+      "prompt": "Camera and composition: close-up of hands at a reception counter. Close-up of a Korean woman's hands in a beige coat sleeve receiving a small blank receipt across a bright clinic reception counter, no face in the frame. Background color: white counter with dusty pink accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands at a reception counter",
+      "bg": "white counter with dusty pink accents"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "저녁 식탁에서 휴대폰 앱으로 서류 사진을 찍는 손",
+      "prompt": "Camera and composition: close-up of hands over a dining table. Close-up of Korean hands holding a smartphone above a dining table in the evening, taking a photo of a blank receipt, no face in the frame. Background color: warm wooden dining table with a green mug. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands over a dining table",
+      "bg": "warm wooden dining table with a green mug"
+    }
+  ]
+}

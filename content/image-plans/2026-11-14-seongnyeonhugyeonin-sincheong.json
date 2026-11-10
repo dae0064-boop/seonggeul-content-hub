@@ -1,0 +1,86 @@
+{
+  "slug": "2026-11-14-seongnyeonhugyeonin-sincheong",
+  "title": "성년후견인 신청, 치매 부모님은 누가 할 수 있나요 (4촌 이내 친족)",
+  "source": "11/14(토) 16:20 네이버 원고 — 생활보장 검색형(돌봄·요양), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "주민센터 창구 옆에서 70대 어머니에게 서류 내용을 설명하는 40대 아들 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a community service center counter. Lighting: soft early-morning sunlight. A Korean man in his 40s in a lavender sweater explaining something kindly with one open hand to his mother in her 70s with short gray hair in a cream cardigan, both seated near a community center counter, one blank folder on the counter. Expression: explaining with one hand open toward the viewer. Color theme: soft lavender and white tones with a warm yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "duo",
+      "bg": "soft lavender and white tones with a warm yellow accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "plum",
+      "thumb_person": "40대 아들과 70대 어머니",
+      "thumb_place": "주민센터",
+      "thumb_light": "아침 햇살",
+      "thumb_mood": "설명",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "plum",
+        "font": "ptd",
+        "title": "성년후견인 신청\n누가 할 수 있을까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "성년후견인 신청 질문을 크게 던지는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "성년후견인 신청",
+        "title": "누가 할 수\n있을까?",
+        "ask": "가족이 없으면 어떡해?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "성년후견인 신청 순서를 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "성년후견인 신청 순서",
+        "sub": "이야기 속 아들이라면 이렇게",
+        "items": [
+          "부모님 진단 서류 준비하기",
+          "청구할 가족 정하기",
+          "가정법원에 심판 청구하기",
+          "후견인 선임 뒤 사무 시작"
+        ],
+        "memo": "후견인은 가정법원이 정해요",
+        "hl": 1
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "아침 햇살 드는 주민센터 상담 창구에 놓인 빈 서류철과 펜",
+      "prompt": "Camera and composition: still life on a counter, slightly from above. A tidy community service center counter with an empty closed folder and a pen, soft morning sunlight, a small plant, no people. Background color: soft lavender and white tones with a warm yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "still life on a counter, slightly from above",
+      "bg": "soft lavender and white tones with a warm yellow accent"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "거실 탁자에서 어머니의 통장과 빈 노트를 정리하는 40대 남성의 손",
+      "prompt": "Camera and composition: close-up of hands on a living room table. Close-up of a Korean man's hands in a gray sweater sleeve arranging a closed plain bankbook-like booklet with a blank cover and an open blank notebook on a living room table, no face in the frame. Background color: warm living room table with soft lavender cushions. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands on a living room table",
+      "bg": "warm living room table with soft lavender cushions"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "공원 벤치에서 어머니의 손을 잡고 나란히 앉은 아들의 뒷모습",
+      "prompt": "Camera and composition: medium shot from behind on a park bench. A Korean man in his 40s and his elderly mother seen from behind sitting side by side on a park bench, he gently holds her hand, autumn trees ahead, peaceful mood. Background color: quiet park with golden leaves and pale sky. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot from behind on a park bench",
+      "bg": "quiet park with golden leaves and pale sky"
+    }
+  ]
+}

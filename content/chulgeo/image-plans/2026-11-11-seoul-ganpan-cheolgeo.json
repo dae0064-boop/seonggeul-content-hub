@@ -1,0 +1,76 @@
+{
+  "slug": "2026-11-11-seoul-ganpan-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "상가 외벽에서 내려지는 빈 간판 틀 (대표사진)",
+      "scene": "street-level view of a closed ground-floor shop in Seoul, a blank empty signboard frame being lowered from the facade by two workers seen from behind on a lift platform, quiet morning street.",
+      "prompt": "Camera and composition: street-level view of a closed ground-floor shop in Seoul, a blank empty signboard frame being lowered from the facade by two workers seen from behind on a lift platform, quiet morning street. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "서울 간판 철거\n언제 떼면 좋을까"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "셔터가 내려간 1층 상가 앞 인도",
+      "scene": "a ground-floor shop with its rolling metal shutter pulled down, empty sidewalk in front, autumn leaves on the pavement, overcast daylight.",
+      "prompt": "Camera and composition: a ground-floor shop with its rolling metal shutter pulled down, empty sidewalk in front, autumn leaves on the pavement, overcast daylight. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "2층 외벽에 붙은 긴 간판과 아래 좁은 골목",
+      "scene": "looking up from a narrow alley at a long blank signboard fixed on a second-floor building facade, tangled overhead wires, tight alley width visible.",
+      "prompt": "Camera and composition: looking up from a narrow alley at a long blank signboard fixed on a second-floor building facade, tangled overhead wires, tight alley width visible. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "폐업 철거와 간판 철거 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "폐업 철거 날 순서",
+        "items": [
+          "남길 집기 나누기",
+          "매장 안 철거",
+          "바깥 간판 철거",
+          "폐기물 반출",
+          "바닥 정리·확인"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "비어 있는 상가 내부와 열린 출입문",
+      "scene": "inside an emptied small shop, bare concrete floor, removed counters, front glass door open to the street, soft daylight coming in.",
+      "prompt": "Camera and composition: inside an emptied small shop, bare concrete floor, removed counters, front glass door open to the street, soft daylight coming in. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "트럭 짐칸에 정리해 실은 간판 틀과 자재",
+      "scene": "the open cargo bed of a small Korean work truck neatly loaded with dismantled blank signboard frames, aluminum channels and bundled cables, parked on a side street.",
+      "prompt": "Camera and composition: the open cargo bed of a small Korean work truck neatly loaded with dismantled blank signboard frames, aluminum channels and bundled cables, parked on a side street. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "간판 높이를 가늠하며 건물 앞에서 올려다보는 작업자 뒷모습",
+      "scene": "a worker in a safety helmet seen from behind standing on the sidewalk and looking up at a shop facade with a blank signboard, measuring tape in hand.",
+      "prompt": "Camera and composition: a worker in a safety helmet seen from behind standing on the sidewalk and looking up at a shop facade with a blank signboard, measuring tape in hand. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "간판을 내린 뒤 깨끗하게 비워진 상가 외벽",
+      "scene": "a clean shop facade after the signboard was removed, a few small screw holes on the plain wall, empty storefront glass reflecting the street.",
+      "prompt": "Camera and composition: a clean shop facade after the signboard was removed, a few small screw holes on the plain wall, empty storefront glass reflecting the street. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

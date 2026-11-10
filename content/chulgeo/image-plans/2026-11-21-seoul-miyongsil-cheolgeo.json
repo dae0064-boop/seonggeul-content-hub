@@ -1,0 +1,87 @@
+{
+  "slug": "2026-11-21-seoul-miyongsil-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "영업을 마치고 정리를 시작한 미용실 내부 (대표사진)",
+      "scene": "interior of a Korean hair salon after closing, chairs pushed together, mirrors still on the wall, a few boxes on the floor, evening light.",
+      "prompt": "Camera and composition: interior of a Korean hair salon after closing, chairs pushed together, mirrors still on the wall, a few boxes on the floor, evening light. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "서울 미용실\n어디까지 뜯나"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "탁자 위에 펼쳐 둔 임대차 계약서와 볼펜",
+      "scene": "a lease contract paper lying blank-faced on a wooden table with a ballpoint pen beside it, the paper shows no readable text.",
+      "prompt": "Camera and composition: a lease contract paper lying blank-faced on a wooden table with a ballpoint pen beside it, the paper shows no readable text. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "벽면 거울과 선반이 붙어 있는 미용실 벽",
+      "scene": "a salon wall with large mirrors and floating wooden shelves mounted on it, empty shelves, soft light.",
+      "prompt": "Camera and composition: a salon wall with large mirrors and floating wooden shelves mounted on it, empty shelves, soft light. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "집기 철거와 인테리어 철거를 나눈 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "집기와 인테리어 철거",
+        "heads": [
+          "집기 철거",
+          "인테리어 철거"
+        ],
+        "items": [
+          [
+            "의자·거울",
+            "벽 장식"
+          ],
+          [
+            "카운터",
+            "천장 마감"
+          ],
+          [
+            "소형 가구",
+            "바닥재"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "깔끔한 인테리어가 남아 있는 빈 미용실",
+      "scene": "an empty hair salon with neat interior finishes still intact, wooden floor and pendant lights, no furniture.",
+      "prompt": "Camera and composition: an empty hair salon with neat interior finishes still intact, wooden floor and pendant lights, no furniture. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "상가 복도에 깔아 둔 보양재와 엘리베이터",
+      "scene": "a commercial building corridor with grey protective sheets on the floor leading to an elevator with padded walls.",
+      "prompt": "Camera and composition: a commercial building corridor with grey protective sheets on the floor leading to an elevator with padded walls. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "폐기물 자루를 손수레에 싣는 작업자 옆모습",
+      "scene": "side view of a worker in a safety helmet loading debris bags onto a hand cart in a shop interior, face not visible.",
+      "prompt": "Camera and composition: side view of a worker in a safety helmet loading debris bags onto a hand cart in a shop interior, face not visible. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "원상복구를 마치고 비워진 매장 앞 유리문",
+      "scene": "the glass front door of an emptied ground-floor shop seen from outside, clean empty interior visible through the glass, no signs.",
+      "prompt": "Camera and composition: the glass front door of an emptied ground-floor shop seen from outside, clean empty interior visible through the glass, no signs. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

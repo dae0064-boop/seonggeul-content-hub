@@ -1,0 +1,75 @@
+{
+  "slug": "2026-11-15-ansan-pyegimul-sugeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "빌라 계단참에 정리해 둔 폐기물 마대들 (대표사진)",
+      "scene": "a stairwell landing in an old Korean low-rise villa building with several tied white woven debris sacks lined up neatly against the wall, narrow concrete stairs going down.",
+      "prompt": "Camera and composition: a stairwell landing in an old Korean low-rise villa building with several tied white woven debris sacks lined up neatly against the wall, narrow concrete stairs going down. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "안산 폐기물 수거\n계단 건물"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "베란다 한쪽에 쌓인 타일 조각과 뜯어낸 문짝",
+      "scene": "a corner of an apartment balcony with a pile of broken tile pieces, an old removed wooden door and loose moulding strips.",
+      "prompt": "Camera and composition: a corner of an apartment balcony with a pile of broken tile pieces, an old removed wooden door and loose moulding strips. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "좁은 빌라 계단을 마대를 들고 내려가는 작업자의 뒷모습",
+      "scene": "a worker seen from behind in a safety helmet carrying a debris sack down a narrow concrete villa staircase, handrail on one side.",
+      "prompt": "Camera and composition: a worker seen from behind in a safety helmet carrying a debris sack down a narrow concrete villa staircase, handrail on one side. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "폐기물 종류별로 나눈 확인 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "폐기물 나눠 두기",
+        "items": [
+          "타일·시멘트는 마대 반",
+          "나무·문짝은 한곳에",
+          "비닐·종이는 따로",
+          "페인트·약품은 빼 두기"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "계단 입구 앞 길가에 비워 둔 차 댈 자리",
+      "scene": "street view in front of the entrance of a small Korean villa building with an empty curbside space for a truck to park, quiet morning.",
+      "prompt": "Camera and composition: street view in front of the entrance of a small Korean villa building with an empty curbside space for a truck to park, quiet morning. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "쌓인 폐기물을 휴대폰으로 찍는 손",
+      "scene": "a hand holding a blank-screened smartphone photographing a pile of renovation debris sacks in an apartment hallway.",
+      "prompt": "Camera and composition: a hand holding a blank-screened smartphone photographing a pile of renovation debris sacks in an apartment hallway. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "트럭 짐칸에 종류별로 나눠 실은 폐기물",
+      "scene": "the open cargo bed of a small truck with debris loaded in separated groups: sacks, wood pieces and tied plastic bundles.",
+      "prompt": "Camera and composition: the open cargo bed of a small truck with debris loaded in separated groups: sacks, wood pieces and tied plastic bundles. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "폐기물을 모두 내린 뒤 깨끗해진 빌라 계단",
+      "scene": "a clean, empty concrete staircase in an old villa building after debris removal, swept steps and soft daylight from a small window.",
+      "prompt": "Camera and composition: a clean, empty concrete staircase in an old villa building after debris removal, swept steps and soft daylight from a small window. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

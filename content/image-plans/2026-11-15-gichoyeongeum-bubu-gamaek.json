@@ -1,0 +1,90 @@
+{
+  "slug": "2026-11-15-gichoyeongeum-bubu-gamaek",
+  "title": "기초연금 부부감액, 20%를 빼고도 더 줄어드는 경우는 언제인가요 (기준액 160%)",
+  "source": "11/15(일) 21:00 네이버 원고 — 생활보장 검색형(돈·생활 제도), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "아침 햇살 드는 베란다 탁자 위 찻잔 두 개와 돋보기안경 두 개 (대표사진)",
+      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a bright apartment balcony with plants. Lighting: soft early-morning sunlight. Two teacups and two pairs of reading glasses neatly arranged with a small potted plant on a balcony table. Color theme: dusty pink and ivory tones with a green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "overhead",
+      "bg": "dusty pink and ivory tones with a green accent",
+      "note": "대표",
+      "thumb_shot": "overhead",
+      "thumb_theme": "rose",
+      "thumb_person": "없음",
+      "thumb_place": "베란다",
+      "thumb_light": "아침 햇살",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "rose",
+        "font": "jua",
+        "title": "기초연금 부부감액\n더 줄어들까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "기초연금 부부감액 오해를 맞혀 보는 O·X 퀴즈 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "부부감액 O·X",
+        "items": [
+          "한 분만 받아도 20% 깎인다",
+          "둘 다 받으면 각각 20% 감액",
+          "부부 기준액은 단독의 두 배"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "X"
+        ],
+        "where": "아래 Q&A"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "거실 소파에서 휴대폰 계산기를 함께 보는 30대 딸과 60대 아버지",
+      "prompt": "Camera and composition: medium shot on a living room sofa. A Korean daughter in her 30s in a dusty pink sweater and her father in his 60s in a gray cardigan sitting on a sofa, looking at a calculator app on a smartphone together. Background color: bright living room with ivory walls and soft green cushions. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on a living room sofa",
+      "bg": "bright living room with ivory walls and soft green cushions"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "기초연금 부부감액 계산 순서를 묻고 답하는 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "ask": "부부감액 어떻게 계산해?",
+        "title": "부부감액 계산 순서",
+        "items": [
+          "두 분 모두 수급권자인지 확인",
+          "기초연금액에서 20% 빼기",
+          "기준액 넘는지 보기"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "아파트 복도에서 우편함을 함께 여는 70대 부부",
+      "prompt": "Camera and composition: medium shot in an apartment hallway. A Korean couple in their 70s in warm coats opening a mailbox together in a bright apartment hallway, smiling calmly. Background color: clean apartment hallway with ivory walls and rose accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in an apartment hallway",
+      "bg": "clean apartment hallway with ivory walls and rose accents"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "베란다 화분 옆에서 통장을 정리하는 손",
+      "prompt": "Camera and composition: close-up of hands on a balcony table. Close-up of a Korean woman's hands organizing a plain bankbook and a pen beside a potted plant on a balcony table, no face in the frame. Background color: bright balcony with green plants and pink pots. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands on a balcony table",
+      "bg": "bright balcony with green plants and pink pots"
+    }
+  ]
+}

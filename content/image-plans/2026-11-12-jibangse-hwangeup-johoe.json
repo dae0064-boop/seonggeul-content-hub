@@ -1,0 +1,75 @@
+{
+  "slug": "2026-11-12-jibangse-hwangeup-johoe",
+  "title": "지방세 환급 조회, 남은 환급금 소멸시효는 언제부터 셀까 (5년)",
+  "source": "11/12(목) 티스토리 원고 (11/10 미리 쓰기) 18:20",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "휴대폰 문자 화면을 보며 반가운 듯 웃는 30대 여성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her 30s wearing a coral blouse smiles while checking a smartphone with a blank screen, a bright kitchen counter softly blurred behind her. Expression: smiling while checking a smartphone, hands away from the face. Color theme: warm ivory and walnut brown tones with a butter-yellow accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "warm ivory and walnut brown tones with a butter-yellow accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "navy",
+      "thumb_person": "30대 여성(코랄 블라우스)",
+      "thumb_mood": "휴대폰",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "navy",
+        "font": "jua",
+        "title": "지방세 환급 조회\n나도 있을까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "지방세 환급금이 생기는 경우를 알려 주는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "지방세 환급",
+        "title": "더 낸 세금\n돌려받기",
+        "ask": "나도 환급금 있을까?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "지방세 환급금에 대해 잘못 알기 쉬운 것을 맞혀 보는 퀴즈 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "지방세 환급 O·X",
+        "items": [
+          "환급 안내를 받으면 시효가 멈춘다",
+          "작은 환급금은 충당될 수 있다",
+          "체납이 있으면 먼저 충당된다"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "O"
+        ],
+        "where": "본문 6개월 부분"
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "노트북 앞에서 통장을 옆에 두고 화면을 보는 손",
+      "prompt": "Camera and composition: hands at a laptop with a bankbook beside it. Hands typing on a laptop with a blank screen on a wooden desk, a closed bankbook and a pen beside it, soft window light, no readable text. Background color: soft white and pale wood. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "hands at a laptop with a bankbook beside it",
+      "bg": "soft white and pale wood",
+      "kind": "photo",
+      "photo": {
+        "query_en": "laptop bankbook desk",
+        "scene_en": "hands on a laptop with a bankbook on the desk"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}

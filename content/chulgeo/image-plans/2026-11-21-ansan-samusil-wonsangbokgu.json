@@ -1,0 +1,75 @@
+{
+  "slug": "2026-11-21-ansan-samusil-wonsangbokgu",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "책상이 빠지고 칸막이만 남은 사무실 (대표사진)",
+      "scene": "a Korean office floor with desks removed, gypsum and glass partitions still standing, carpet tile floor, fluorescent ceiling lights.",
+      "prompt": "Camera and composition: a Korean office floor with desks removed, gypsum and glass partitions still standing, carpet tile floor, fluorescent ceiling lights. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "안산 사무실\n원상복구 범위"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "유리 칸막이로 나뉜 회의실과 사무 공간",
+      "scene": "a meeting room enclosed by glass partitions with aluminum frames next to an open office area, no people.",
+      "prompt": "Camera and composition: a meeting room enclosed by glass partitions with aluminum frames next to an open office area, no people. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "석고보드 칸막이와 유리 파티션이 함께 있는 사무실",
+      "scene": "an office with a white gypsum board partition wall and a low modular partition system side by side, empty floor.",
+      "prompt": "Camera and composition: an office with a white gypsum board partition wall and a low modular partition system side by side, empty floor. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "사무실 원상복구 범위를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "사무실 원상복구 범위",
+        "items": [
+          "회의실·대표실 칸막이",
+          "카펫 타일·덧깐 바닥",
+          "덧단 조명·간접등",
+          "벽 선반·화이트보드"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "천장 위로 모아 둔 랜선 다발",
+      "scene": "a ceiling tile lifted open showing a bundle of network cables gathered and tied above the ceiling grid.",
+      "prompt": "Camera and composition: a ceiling tile lifted open showing a bundle of network cables gathered and tied above the ceiling grid. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "사무실 구석구석을 휴대폰으로 찍는 손",
+      "scene": "a hand holding a smartphone toward a corner of an empty office to take a photo, the phone screen facing away from the camera.",
+      "prompt": "Camera and composition: a hand holding a smartphone toward a corner of an empty office to take a photo, the phone screen facing away from the camera. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "걷어 낸 카펫 타일을 묶어 쌓아 둔 모습",
+      "scene": "removed grey carpet tiles stacked and tied in bundles on a bare concrete office floor.",
+      "prompt": "Camera and composition: removed grey carpet tiles stacked and tied in bundles on a bare concrete office floor. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "원상복구를 마치고 넓게 비워진 사무실",
+      "scene": "a wide empty office space after restoration, bare concrete floor, plain ceiling grid, windows letting in daylight.",
+      "prompt": "Camera and composition: a wide empty office space after restoration, bare concrete floor, plain ceiling grid, windows letting in daylight. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

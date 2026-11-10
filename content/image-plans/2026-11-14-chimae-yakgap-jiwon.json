@@ -1,0 +1,86 @@
+{
+  "slug": "2026-11-14-chimae-yakgap-jiwon",
+  "title": "치매 약값 지원, 보건소에서 한 달 얼마까지 받나요 (월 3만 원)",
+  "source": "11/14(토) 17:40 네이버 원고 — 생활보장 검색형(돌봄·요양), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "저녁 조명 아래 부엌 식탁 위에 놓인 약봉투와 탁상 달력, 따뜻한 차 한 잔 (대표사진)",
+      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a home kitchen counter. Lighting: warm evening lamp light. A plain white paper medicine bag, a small desk calendar with blank pages, a pill organizer and a cup of warm tea neatly arranged on a home kitchen table, no people. Color theme: olive green and pale cream tones with a red accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "overhead",
+      "bg": "olive green and pale cream tones with a red accent",
+      "note": "대표",
+      "thumb_shot": "overhead",
+      "thumb_theme": "olive",
+      "thumb_person": "없음",
+      "thumb_place": "부엌",
+      "thumb_light": "저녁 조명",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "olive",
+        "font": "jua",
+        "title": "치매 약값 지원\n한 달 얼마까지?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "치매 약값 지원 대상을 스스로 확인해 보는 자가 체크 카드",
+      "kind": "card",
+      "card": {
+        "type": "selfcheck",
+        "title": "치매 약값 지원 대상?",
+        "items": [
+          "60세 이상이다",
+          "치매 상병코드 진단이 있다",
+          "치매 치료약을 먹고 있다",
+          "중위소득 120% 이하다"
+        ],
+        "result": "아래 '한 달에 얼마' 부분도 보세요 👇"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "아침 거실 소파에 앉아 아버지의 약 복용 수첩을 함께 보는 50대 딸과 80대 아버지의 손",
+      "prompt": "Camera and composition: close-up of two people's hands on a sofa. Close-up of the hands of a Korean woman in her 50s and her elderly father side by side on a living room sofa, holding an open small notebook with blank pages, morning light, faces not shown. Background color: olive green and pale cream living room with a red cushion. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of two people's hands on a sofa",
+      "bg": "olive green and pale cream living room with a red cushion"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "치매 약값 지원 신청 준비물을 묻고 답하는 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "신청 준비물",
+        "ask": "뭘 들고 가면 돼?",
+        "items": [
+          "처방전 사본",
+          "약제비 영수증",
+          "건강보험료 고지서"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "치매안심센터 상담 창구 앞에서 안내문을 읽는 60대 여성",
+      "prompt": "Camera and composition: medium shot at a public counseling counter. A Korean woman in her 60s with short permed hair in an olive cardigan standing at a bright public health center counter, calmly reading a blank leaflet. Background color: bright public office with cream walls and green plants. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a public counseling counter",
+      "bg": "bright public office with cream walls and green plants"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "저녁 베란다 화분 옆 의자에 앉아 쉬는 80대 아버지의 뒷모습",
+      "prompt": "Camera and composition: medium shot from behind on a balcony. An elderly Korean man in his 80s seen from behind sitting on a chair on an apartment balcony next to potted plants in the evening, wrapped in a warm cardigan, peaceful mood. Background color: warm evening balcony with olive plants. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot from behind on a balcony",
+      "bg": "warm evening balcony with olive plants"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "slug": "2026-11-12-yakgap-silbi-cheonggu",
+  "title": "약값 실비청구, 약국 영수증만 따로 내도 되나요 (병원비와 합쳐 1회)",
+  "source": "11/12(목) 13:40 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "약국 계산대 위에서 손가락으로 약봉투를 가리키는 손 (대표사진)",
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a clean neighborhood pharmacy counter. Lighting: cool clean white indoor light. Close-up of a Korean man's hands in a light blue shirt sleeve on a pharmacy counter, one finger pointing at a small white medicine bag next to a smartphone. Expression: pointing at the key object with one finger and a friendly smile. Color theme: cool sky blue and white tones with a yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "hands",
+      "bg": "cool sky blue and white tones with a yellow accent",
+      "note": "대표",
+      "thumb_shot": "hands",
+      "thumb_theme": "cobalt",
+      "thumb_person": "40대 남성의 손",
+      "thumb_place": "약국",
+      "thumb_light": "흰 조명",
+      "thumb_mood": "가리킴",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "cobalt",
+        "font": "jua",
+        "title": "약값 실비청구\n따로 내도 돼?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "약값 실비청구 궁금증에 답하는 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "약값 실비 한 번에",
+        "ask": "약값만 따로 내도 돼?",
+        "items": [
+          "통원 1회로 계산해요",
+          "처방일자 기준으로",
+          "약을 하루 늦게 지어도"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "약국 카운터 너머로 약사가 약봉투를 건네는 장면",
+      "prompt": "Camera and composition: medium shot across a pharmacy counter. A Korean pharmacist in a white gown handing a small white medicine bag across a clean pharmacy counter to a Korean woman in her 30s in a mustard scarf. Background color: bright pharmacy with sky blue shelves. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot across a pharmacy counter",
+      "bg": "bright pharmacy with sky blue shelves"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "약값 실비청구에 나오는 숫자를 모은 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "약값 실비 숫자 셋",
+        "items": [
+          [
+            "30%",
+            "약국 본인부담",
+            "처방전대로"
+          ],
+          [
+            "1회",
+            "병원비와 약값",
+            "같은 날 처방"
+          ],
+          [
+            "3년",
+            "청구 기간",
+            "상법"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "저녁 부엌 식탁에서 약봉투를 정리하는 50대 여성",
+      "prompt": "Camera and composition: medium shot at a kitchen table. A Korean woman in her 50s in a mustard cardigan sorting small white medicine bags into a basket at a kitchen table in the evening. Background color: warm kitchen with cool blue tiles. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a kitchen table",
+      "bg": "warm kitchen with cool blue tiles"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "현관 신발장 위 바구니에 영수증을 모아 두는 손",
+      "prompt": "Camera and composition: close-up of hands at an entrance shelf. Close-up of Korean hands placing a few small blank receipts into a woven basket on top of a shoe cabinet by an apartment front door, no face in the frame. Background color: bright entrance with white walls and a blue umbrella. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands at an entrance shelf",
+      "bg": "bright entrance with white walls and a blue umbrella"
+    }
+  ]
+}

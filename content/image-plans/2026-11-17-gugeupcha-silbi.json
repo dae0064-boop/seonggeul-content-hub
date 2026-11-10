@@ -1,0 +1,97 @@
+{
+  "slug": "2026-11-17-gugeupcha-silbi",
+  "title": "구급차 실비, 이송비 영수증도 청구할 수 있나요 (일반 기본 4만 원)",
+  "source": "11/17(화) 11:20 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "병원 엘리베이터 앞 복도에서 안심한 표정으로 서 있는 40대 아들과 70대 어머니 (대표사진)",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: an apartment hallway or elevator lobby. Lighting: cool clean white indoor light. A Korean man in his 40s in a navy jacket and his mother in her 70s in a cream cardigan stand together near the elevator lobby of a hospital hallway, small in a wide frame, calmly talking. Expression: relieved gentle smile. Color theme: clean white and soft navy blue tones in bright daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide",
+      "bg": "clean white and soft navy blue tones in bright daylight",
+      "note": "대표",
+      "thumb_shot": "wide",
+      "thumb_theme": "navy",
+      "thumb_person": "40대 아들(남색 점퍼)과 70대 어머니(크림 카디건)",
+      "thumb_place": "복도·엘리베이터",
+      "thumb_light": "흰 조명",
+      "thumb_mood": "안심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "navy",
+        "font": "jua",
+        "title": "구급차 실비\n이송비도 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "이송처치료 기준을 숫자로 보여 주는 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "이송처치료 숫자 셋",
+        "items": [
+          [
+            "10km",
+            "일반구급차",
+            "기본요금 거리"
+          ],
+          [
+            "20%",
+            "할증",
+            "밤·토요일·공휴일"
+          ],
+          [
+            "30분",
+            "대기요금",
+            "병원 도착 뒤부터"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "구급차 뒷문 앞에서 서류 봉투를 건네받는 보호자의 손",
+      "prompt": "Camera and composition: close-up of hands at the back door of an ambulance. Close-up of a Korean guardian's hands in a gray coat sleeve receiving a blank paper envelope near the open back door of a white ambulance parked at a hospital, no face in the frame. Background color: clean hospital entrance with soft navy accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands at the back door of an ambulance",
+      "bg": "clean hospital entrance with soft navy accents"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "구급차 실비 청구 전 확인할 것을 정리한 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "ask": "구급차 비용도 청구돼?",
+        "title": "청구 전 챙길 것",
+        "items": [
+          "이송처치료 영수증",
+          "출동·처치 기록",
+          "병원 진료비 영수증"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "거실 소파에서 휴대폰으로 보험 앱을 보며 영수증을 사진 찍는 50대 남성",
+      "prompt": "Camera and composition: medium shot on a living room sofa. A Korean man in his 50s in a light blue sweater sitting on a living room sofa, calmly taking a photo of a blank receipt with his smartphone. Background color: bright living room with white walls and a navy throw blanket. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on a living room sofa",
+      "bg": "bright living room with white walls and a navy throw blanket"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "맑은 날 병원 앞 벤치에 나란히 앉아 쉬는 노부부의 뒷모습",
+      "prompt": "Camera and composition: wide shot from behind on a bench. An elderly Korean couple seen from behind, sitting side by side on a bench in front of a hospital garden on a clear day, relaxed. Background color: green trees and bright clear sky. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot from behind on a bench",
+      "bg": "green trees and bright clear sky"
+    }
+  ]
+}
