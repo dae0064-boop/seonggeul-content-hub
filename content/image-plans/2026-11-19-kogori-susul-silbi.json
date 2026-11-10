@@ -1,0 +1,86 @@
+{
+  "slug": "2026-11-19-kogori-susul-silbi",
+  "title": "코골이 수술 실비, 수면무호흡증 진단이 있어야 되나요 (G47.3)",
+  "source": "11/19(목) 19:00 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "저녁 조명이 켜진 침실의 가지런한 침대와 베개 두 개 (대표사진)",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a tidy bedroom by the bed. Lighting: warm evening lamp light. A neatly made double bed with two soft pillows and a small glowing bedside lamp, no people. Color theme: soft rose and cream tones with a deep burgundy accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "object",
+      "bg": "soft rose and cream tones with a deep burgundy accent",
+      "note": "대표",
+      "thumb_shot": "object",
+      "thumb_theme": "burgundy",
+      "thumb_person": "없음",
+      "thumb_place": "침실",
+      "thumb_light": "저녁 조명",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "burgundy",
+        "font": "ptd",
+        "title": "코골이 수술\n실비 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "코골이 수술 실비 질문을 크게 던지는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "코골이 수술",
+        "title": "수술하면\n돌려받을까?",
+        "ask": "이거 실비는 될까?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "수면 클리닉 상담실 책상 위의 빈 상담지와 펜",
+      "prompt": "Camera and composition: close-up of a consultation desk. A blank consultation sheet and a pen on a clean desk in a bright sleep clinic consultation room, no people. Background color: white desk with soft rose curtains. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of a consultation desk",
+      "bg": "white desk with soft rose curtains"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "코골이 수술 실비 O·X 퀴즈 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "코골이 실비 O·X",
+        "items": [
+          "코골이 수술은 모두 실비 된다",
+          "수면무호흡증은 따로 본다",
+          "진단서 질병코드가 중요하다"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "O"
+        ],
+        "where": "아래 본문"
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "거실 탁자 위에서 진료비 영수증을 접어 봉투에 넣는 손",
+      "prompt": "Camera and composition: close-up of hands on a table. Close-up of a Korean woman's hands in a burgundy knit sleeve folding blank receipts and putting them into a plain envelope on a living room table, no face in the frame. Background color: cream table with a small green plant. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands on a table",
+      "bg": "cream table with a small green plant"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "아침 햇살이 드는 침실에서 기지개를 켜는 40대 부부",
+      "prompt": "Camera and composition: medium shot in a bedroom. A Korean couple in their 40s sitting up in bed and stretching their arms with relaxed smiles in the morning. Background color: bright bedroom with ivory bedding and soft rose curtains. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a bedroom",
+      "bg": "bright bedroom with ivory bedding and soft rose curtains"
+    }
+  ]
+}
