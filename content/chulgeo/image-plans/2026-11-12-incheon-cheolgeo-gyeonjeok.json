@@ -1,0 +1,75 @@
+{
+  "slug": "2026-11-12-incheon-cheolgeo-gyeonjeok",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "아파트 단지 앞에 선 사다리차와 빈 트럭 (대표사진)",
+      "scene": "outside a mid-rise Korean apartment building, a ladder truck parked at the curb with its ladder resting at a window, an empty small work truck behind it, clear day.",
+      "prompt": "Camera and composition: outside a mid-rise Korean apartment building, a ladder truck parked at the curb with its ladder resting at a window, an empty small work truck behind it, clear day. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "인천 철거 견적\n왜 다르게 나올까"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "철거 견적 기준 네 가지를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "철거 견적 기준 네 가지",
+        "items": [
+          "작업량·겹수",
+          "반출 동선",
+          "엘리베이터 유무",
+          "사다리차 진입"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "바닥재가 여러 겹 겹쳐 있는 문턱 단면",
+      "scene": "macro view of a doorway threshold where several layers of flooring are visible in cross-section, wood, vinyl and tile stacked.",
+      "prompt": "Camera and composition: macro view of a doorway threshold where several layers of flooring are visible in cross-section, wood, vinyl and tile stacked. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "긴 복도 끝 엘리베이터까지 깔린 보양재",
+      "scene": "a long apartment corridor with grey protective sheets laid all the way to an elevator at the far end, elevator walls padded.",
+      "prompt": "Camera and composition: a long apartment corridor with grey protective sheets laid all the way to an elevator at the far end, elevator walls padded. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "건물 외벽 창가에 닿아 있는 사다리차 사다리",
+      "scene": "looking up along a building facade where a ladder truck's ladder reaches a third-floor window, overhead wires and a street tree nearby.",
+      "prompt": "Camera and composition: looking up along a building facade where a ladder truck's ladder reaches a third-floor window, overhead wires and a street tree nearby. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "휴대폰으로 현관에서 집 안을 찍는 손",
+      "scene": "a hand holding a smartphone at an apartment entrance, framing a photo of the hallway and living room inside.",
+      "prompt": "Camera and composition: a hand holding a smartphone at an apartment entrance, framing a photo of the hallway and living room inside. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "철거를 마치고 트럭에 실린 폐기물 포대",
+      "scene": "the cargo bed of a small work truck loaded with neatly stacked sealed debris sacks, parked beside an apartment building.",
+      "prompt": "Camera and composition: the cargo bed of a small work truck loaded with neatly stacked sealed debris sacks, parked beside an apartment building. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "견적 상담을 위해 정리해 둔 집 안 사진들이 보이는 휴대폰",
+      "scene": "a smartphone lying on a table showing a gallery grid of interior room photos as small blurred thumbnails without any text, notepad beside it.",
+      "prompt": "Camera and composition: a smartphone lying on a table showing a gallery grid of interior room photos as small blurred thumbnails without any text, notepad beside it. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}
