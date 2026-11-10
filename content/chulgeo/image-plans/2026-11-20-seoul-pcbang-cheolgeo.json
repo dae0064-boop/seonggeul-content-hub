@@ -1,0 +1,77 @@
+{
+  "slug": "2026-11-20-seoul-pcbang-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "컴퓨터를 빼고 책상만 길게 남은 PC방 (대표사진)",
+      "scene": "a dim Korean internet cafe room with all computers removed, long rows of empty desks with low dividers remaining, protective sheet on the aisle floor.",
+      "prompt": "Camera and composition: a dim Korean internet cafe room with all computers removed, long rows of empty desks with low dividers remaining, protective sheet on the aisle floor. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "서울 PC방 철거\n책상과 전선"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "모니터와 본체를 빼낸 빈 책상 줄",
+      "scene": "a row of empty computer desks with marks where monitors stood, loose cables coiled neatly on top, no screens or logos.",
+      "prompt": "Camera and composition: a row of empty computer desks with marks where monitors stood, loose cables coiled neatly on top, no screens or logos. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "책상 칸막이를 하나씩 풀어 내리는 손",
+      "scene": "gloved hands unscrewing a desk divider panel from a long computer desk, cables bundled underneath.",
+      "prompt": "Camera and composition: gloved hands unscrewing a desk divider panel from a long computer desk, cables bundled underneath. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "PC방 폐업 철거 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "PC방 폐업 철거 순서",
+        "items": [
+          "컴퓨터·의자 처분",
+          "전기 내리고 멀티탭 정리",
+          "컴퓨터 책상 철거",
+          "바닥 전선·몰딩 걷기",
+          "부스·마감재 반출"
+        ],
+        "qa": "PC방철거"
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "유리로 된 흡연 부스를 해체하는 모습",
+      "scene": "a glass smoking booth inside an empty internet cafe being dismantled, one glass panel removed and leaning on padded blocks.",
+      "prompt": "Camera and composition: a glass smoking booth inside an empty internet cafe being dismantled, one glass panel removed and leaning on padded blocks. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "상가 지하 계단과 좁은 출입구",
+      "scene": "a narrow stairway leading down to a basement shop entrance in a Korean commercial building, plain walls without readable signs.",
+      "prompt": "Camera and composition: a narrow stairway leading down to a basement shop entrance in a Korean commercial building, plain walls without readable signs. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "작업자가 책상 상판을 차곡차곡 쌓는 뒷모습",
+      "scene": "a worker seen from behind in a safety helmet stacking long desk tops neatly against a wall in an emptied shop.",
+      "prompt": "Camera and composition: a worker seen from behind in a safety helmet stacking long desk tops neatly against a wall in an emptied shop. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "책상과 부스를 걷어 내고 비워 둔 넓은 매장",
+      "scene": "a wide empty commercial room after internet cafe demolition, desks and booths gone, floor swept with faint lines where cable covers were.",
+      "prompt": "Camera and composition: a wide empty commercial room after internet cafe demolition, desks and booths gone, floor swept with faint lines where cable covers were. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

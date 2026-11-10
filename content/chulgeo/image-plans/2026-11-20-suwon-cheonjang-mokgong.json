@@ -1,0 +1,87 @@
+{
+  "slug": "2026-11-20-suwon-cheonjang-mokgong",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "천장을 걷어 내고 배선이 드러난 거실 (대표사진)",
+      "scene": "a Korean apartment living room with the ceiling stripped to bare concrete slab, loose electrical cables hanging in neat coils, a stepladder in the middle, protective sheet on the floor.",
+      "prompt": "Camera and composition: a Korean apartment living room with the ceiling stripped to bare concrete slab, loose electrical cables hanging in neat coils, a stepladder in the middle, protective sheet on the floor. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "수원 천장 목공\n언제 들어갈까"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "천장 위로 늘어진 전선을 정리해 둔 모습",
+      "scene": "close view of electrical cables bundled and taped neatly against a bare concrete ceiling, capped wire ends, soft light from below.",
+      "prompt": "Camera and composition: close view of electrical cables bundled and taped neatly against a bare concrete ceiling, capped wire ends, soft light from below. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "천장 목공 전에 정할 것을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "천장 목공 전에 정할 것",
+        "items": [
+          "조명 자리와 개수",
+          "천장 에어컨 여부",
+          "환기구·감지기 위치",
+          "천장 높이"
+        ],
+        "qa": "천장목공"
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "천장 바닥에 분필로 표시한 조명 위치",
+      "scene": "chalk cross marks drawn on a bare cement floor of an empty living room showing future light positions, a piece of chalk lying nearby.",
+      "prompt": "Camera and composition: chalk cross marks drawn on a bare cement floor of an empty living room showing future light positions, a piece of chalk lying nearby. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "철거 후 목공 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "철거 후 목공 순서",
+        "items": [
+          "천장 철거와 정리",
+          "전기 배선·조명 자리",
+          "설비·에어컨 배관",
+          "천장 목공",
+          "도장·도배 마감"
+        ],
+        "qa": "천장목공"
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "천장에 남은 못과 철물을 정리하는 손",
+      "scene": "a gloved hand pulling an old nail from a wooden ceiling batten with a claw tool, small pile of removed nails in a tray below.",
+      "prompt": "Camera and composition: a gloved hand pulling an old nail from a wooden ceiling batten with a claw tool, small pile of removed nails in a tray below. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "목재를 내려놓는 작업자의 뒷모습",
+      "scene": "a worker seen from behind in a safety helmet setting down a bundle of long wooden battens on a protected floor in an empty apartment.",
+      "prompt": "Camera and composition: a worker seen from behind in a safety helmet setting down a bundle of long wooden battens on a protected floor in an empty apartment. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "새 천장 틀을 올리기 전 정리가 끝난 깨끗한 거실",
+      "scene": "a clean empty living room with a prepared bare ceiling and organized wiring, floor swept, ready for carpentry work, daylight.",
+      "prompt": "Camera and composition: a clean empty living room with a prepared bare ceiling and organized wiring, floor swept, ready for carpentry work, daylight. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}
