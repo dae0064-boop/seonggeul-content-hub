@@ -1,0 +1,91 @@
+{
+  "slug": "2026-11-13-daesangpojin-silbi",
+  "title": "대상포진 실비, 예방접종도 돌려받을 수 있나요 (질병코드 B02)",
+  "source": "11/13(금) 13:40 네이버 원고 — 생활보장, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "약국 계산대에서 처방약 봉투를 건네받는 손 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a clean neighborhood pharmacy counter. Lighting: cool clean white indoor light. A Korean woman in her 50s in a cream knit sweater standing at a clean pharmacy counter holding a small white pharmacy bag. Expression: relieved gentle smile. Color theme: soft rose and cream tones with a deep burgundy accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "face",
+      "bg": "soft rose and cream tones with a deep burgundy accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "burgundy",
+      "thumb_person": "50대 여성",
+      "thumb_place": "약국",
+      "thumb_light": "흰 조명",
+      "thumb_mood": "안심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "burgundy",
+        "font": "jua",
+        "title": "대상포진 실비\n접종비도 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "대상포진 실비 질문에 답하는 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "ask": "예방접종도 돌려받아?",
+        "title": "대상포진 실비 갈래",
+        "items": [
+          "질병 치료라서 실비 대상",
+          "약국 약값이 바로 약제비",
+          "보상하지 않는 비용"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "피부과 대기실 창가 의자에서 휴대폰으로 청구 앱을 보는 50대 여성",
+      "prompt": "Camera and composition: medium shot by a clinic window. A Korean woman in her 50s in a burgundy scarf sitting on a waiting room chair by the window and checking her smartphone calmly. Background color: clinic waiting area with rose-toned chairs. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot by a clinic window",
+      "bg": "clinic waiting area with rose-toned chairs"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "대상포진 실비 O·X 퀴즈 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "대상포진 실비 O·X",
+        "items": [
+          "예방접종비도 실비로 된다",
+          "약국 약제비도 청구된다",
+          "청구는 3년 안에 하면 된다"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "O"
+        ],
+        "where": "아래 Q&A"
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "거실 탁자 위에 영수증과 약봉투를 날짜순으로 나란히 놓은 모습",
+      "prompt": "Camera and composition: top-down flat lay on a table. Top-down view of a living room table with several blank receipts and small white medicine bags lined up neatly in a row, no people. Background color: warm cream table surface. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "top-down flat lay on a table",
+      "bg": "warm cream table surface"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "집 현관 신발장 위에 놓인 병원 서류 봉투와 차 키",
+      "prompt": "Camera and composition: still life on a shoe cabinet. A plain paper document envelope and a car key placed on a wooden shoe cabinet by an apartment entrance, no people. Background color: apartment entrance with light wood and white walls. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "still life on a shoe cabinet",
+      "bg": "apartment entrance with light wood and white walls"
+    }
+  ]
+}

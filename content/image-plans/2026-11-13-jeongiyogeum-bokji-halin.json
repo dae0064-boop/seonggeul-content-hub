@@ -1,0 +1,91 @@
+{
+  "slug": "2026-11-13-jeongiyogeum-bokji-halin",
+  "title": "전기요금 복지할인, 우리 집은 한 달 얼마 깎이나요 (월 1만 6천 원)",
+  "source": "11/13(금) 21:00 네이버 원고 — 생활보장, 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "저녁 조명 아래 아파트 현관에서 아기를 안고 반갑게 웃는 30대 부부를 넓게 담은 모습 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: an apartment front door entrance. Lighting: warm evening lamp light. A Korean couple in their 30s at an apartment front door facing each other, the mother holding a baby, both smiling warmly. Expression: bright happy smile. Color theme: cool sky blue and white tones with a yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "duo",
+      "bg": "cool sky blue and white tones with a yellow accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "cobalt",
+      "thumb_person": "30대 부부와 아기",
+      "thumb_place": "현관",
+      "thumb_light": "저녁 조명",
+      "thumb_mood": "반가움",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "cobalt",
+        "font": "ptd",
+        "title": "전기요금 복지할인\n얼마 깎일까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "전기요금 복지할인 O·X 퀴즈 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "복지할인 O·X",
+        "items": [
+          "신청 안 해도 저절로 깎인다",
+          "여름엔 할인 한도가 늘어난다",
+          "5인 가구도 할인 대상이다"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "O"
+        ],
+        "where": "아래 Q&A"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "거실 바닥에서 아이 셋과 블록 놀이를 하며 웃는 40대 아빠",
+      "prompt": "Camera and composition: medium shot on a living room floor. A Korean father in his 40s sitting on the living room floor and playing with toy blocks with his three young children, everyone smiling. Background color: living room with a sky blue rug. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on a living room floor",
+      "bg": "living room with a sky blue rug"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "전기요금 복지할인 대상인지 스스로 점검하는 카드",
+      "kind": "card",
+      "card": {
+        "type": "selfcheck",
+        "title": "우리 집 대상일까?",
+        "items": [
+          "3년이 안 된 아기",
+          "가구원이 5인 이상이면",
+          "장애인, 유공자"
+        ],
+        "result": "아래 '신청' 부분을 꼭 보세요 👇"
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "저녁 식탁 위에 놓인 전기요금 고지서를 손가락으로 짚는 손",
+      "prompt": "Camera and composition: close-up of a hand on a dining table. Close-up of a hand pointing with one finger at a blank utility bill on a dining table under a warm lamp, no face in the frame. Background color: wooden dining table with a yellow mug. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of a hand on a dining table",
+      "bg": "wooden dining table with a yellow mug"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "베란다 창가에 놓인 가습기와 아기 이불을 담은 모습",
+      "prompt": "Camera and composition: still life by a balcony window. A small white humidifier and a folded soft baby blanket placed by a bright balcony window, no people. Background color: bright balcony with white curtains. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "still life by a balcony window",
+      "bg": "bright balcony with white curtains"
+    }
+  ]
+}
