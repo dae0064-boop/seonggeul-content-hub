@@ -1,0 +1,82 @@
+{
+  "slug": "2026-11-15-jangaein-yeongeum-geumaek",
+  "title": "장애인연금 금액, 부가급여까지 합치면 얼마인가요 (월 최대 43만 9,700원)",
+  "source": "11/15(일) 19:00 네이버 원고 — 생활보장 검색형(돈·생활 제도), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "아파트 복도 엘리베이터 앞에서 아들에게 차분히 설명하는 휠체어 탄 40대 아버지 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: an apartment hallway or elevator lobby. Lighting: warm evening lamp light. A Korean father in his 40s sitting in a wheelchair and his teenage son standing beside him in an apartment elevator lobby, the father calmly explaining something. Expression: explaining with one hand open toward the viewer. Color theme: calm teal and light gray tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "duo",
+      "bg": "calm teal and light gray tones with a coral accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "teal",
+      "thumb_person": "40대 아버지(휠체어 사용)와 10대 아들",
+      "thumb_place": "복도·엘리베이터",
+      "thumb_light": "저녁 조명",
+      "thumb_mood": "설명",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "teal",
+        "font": "ptd",
+        "title": "장애인연금 금액\n얼마 받을까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "장애인연금 금액 질문을 크게 던지는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "장애인연금 금액",
+        "title": "두 급여 더해\n얼마일까?",
+        "ask": "한 달에 얼마 나와요?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "거실 탁자 위 달력에 지급일을 표시하는 손",
+      "prompt": "Camera and composition: close-up of hands on a living room table. Close-up of a Korean woman's hands circling a date with a pen on a blank wall calendar laid on a living room table, no face in the frame. Background color: light gray table with a teal mug. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands on a living room table",
+      "bg": "light gray table with a teal mug"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "장애인연금 대상인지 스스로 보는 자가 체크 카드",
+      "kind": "card",
+      "card": {
+        "type": "selfcheck",
+        "title": "장애인연금 대상일까?",
+        "items": [
+          "18세 이상",
+          "중증장애인으로 등록",
+          "소득인정액 기준 이하"
+        ],
+        "result": "아래 '누가 받을 수 있나요'를 보세요 👇"
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "주민센터 창구 앞에서 서류 봉투를 든 30대 딸",
+      "prompt": "Camera and composition: medium shot at a community service center. A Korean woman in her 30s in a camel coat standing at a community service center counter holding a plain envelope, calm and composed. Background color: bright community center with light wood and teal accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a community service center",
+      "bg": "bright community center with light wood and teal accents"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "저녁 창가에서 휴대폰으로 복지로 화면을 보는 40대 남성의 옆모습",
+      "prompt": "Camera and composition: side view by a window. Side view of a Korean man in his 40s sitting by a window in the evening, looking at his smartphone calmly. Background color: quiet room with gray curtains and warm lamp light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "side view by a window",
+      "bg": "quiet room with gray curtains and warm lamp light"
+    }
+  ]
+}

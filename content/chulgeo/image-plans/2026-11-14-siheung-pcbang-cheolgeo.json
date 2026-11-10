@@ -1,0 +1,75 @@
+{
+  "slug": "2026-11-14-siheung-pcbang-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "컴퓨터를 뺀 PC방 좌석 줄과 빈 책상 (대표사진)",
+      "scene": "a Korean internet cafe interior with long rows of empty computer desks separated by low partitions, computers removed, chairs gone.",
+      "prompt": "Camera and composition: a Korean internet cafe interior with long rows of empty computer desks separated by low partitions, computers removed, chairs gone. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "시흥 PC방 철거\n책상·전선 정리"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "상자에 담아 한쪽에 쌓아 둔 모니터들",
+      "scene": "boxed computer monitors stacked neatly against a wall on the floor.",
+      "prompt": "Camera and composition: boxed computer monitors stacked neatly against a wall on the floor. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "칸막이로 나뉜 긴 컴퓨터 책상 줄",
+      "scene": "a long row of computer desks with partition panels between seats, viewed down the aisle.",
+      "prompt": "Camera and composition: a long row of computer desks with partition panels between seats, viewed down the aisle. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "책상을 걷어 낸 뒤 바닥에 드러난 전선 줄",
+      "scene": "a floor after desks were removed with bundles of power and network cables exposed along the floor.",
+      "prompt": "Camera and composition: a floor after desks were removed with bundles of power and network cables exposed along the floor. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "PC방 폐업 정리 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "PC방 폐업 정리 순서",
+        "items": [
+          "컴퓨터·모니터 빼기",
+          "의자·소품 정리",
+          "컴퓨터 책상 철거",
+          "카운터·천장·바닥 정리"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "상가 건물 계단과 유리 출입문",
+      "scene": "the stairway and glass entrance door of a commercial building upper floor, plain walls.",
+      "prompt": "Camera and composition: the stairway and glass entrance door of a commercial building upper floor, plain walls. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "비워진 PC방 바닥을 쓸고 있는 작업자 뒷모습",
+      "scene": "a worker seen from behind sweeping the empty floor of a large room after desks were removed.",
+      "prompt": "Camera and composition: a worker seen from behind sweeping the empty floor of a large room after desks were removed. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "빈 PC방 입구의 유리문",
+      "scene": "an empty glass entrance door of a closed business, plain blank glass, quiet corridor.",
+      "prompt": "Camera and composition: an empty glass entrance door of a closed business, plain blank glass, quiet corridor. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

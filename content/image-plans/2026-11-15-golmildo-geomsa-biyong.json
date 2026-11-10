@@ -1,0 +1,97 @@
+{
+  "slug": "2026-11-15-golmildo-geomsa-biyong",
+  "title": "골밀도 검사 비용, 건강보험은 몇 살부터 되나요 (65세 이상 여성)",
+  "source": "11/15(일) 15:00 네이버 원고 — 생활보장 검색형(비용), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "흐린 날 부엌에서 어머니 말에 고개를 끄덕이는 50대 딸 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a home kitchen counter. Lighting: soft overcast daylight. A Korean woman in her 50s in a lavender blouse and her mother in her 70s in a cream cardigan talking at a home kitchen counter, the daughter nodding. Expression: nodding with a reassuring smile, hands relaxed. Color theme: soft lavender and white tones with a warm yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "duo",
+      "bg": "soft lavender and white tones with a warm yellow accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "plum",
+      "thumb_person": "50대 딸과 70대 어머니",
+      "thumb_place": "부엌",
+      "thumb_light": "흐린 날",
+      "thumb_mood": "끄덕",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "plum",
+        "font": "jua",
+        "title": "골밀도 검사 비용\n몇 살부터?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "골밀도 검사 건강보험 적용 대상인지 스스로 보는 자가 체크 카드",
+      "kind": "card",
+      "card": {
+        "type": "selfcheck",
+        "title": "건강보험 대상일까?",
+        "items": [
+          "65세 이상 여성",
+          "70세 이상 남성",
+          "비외상성 골절이 있는 경우"
+        ],
+        "result": "아래 기준 부분을 꼭 보세요 👇"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "거실 탁자 위에 놓인 우유 한 잔과 멸치 반찬 접시",
+      "prompt": "Camera and composition: overhead view of a living room table. Top-down view of a glass of milk and a small plate of Korean anchovy side dish on a light wood living room table, no people. Background color: light wood table with a lavender placemat. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "overhead view of a living room table",
+      "bg": "light wood table with a lavender placemat"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "골밀도 검사 숫자를 한눈에 보여 주는 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "골밀도 검사 숫자",
+        "items": [
+          [
+            "54세",
+            "국가건강검진",
+            "여성"
+          ],
+          [
+            "66세",
+            "국가건강검진",
+            "여성"
+          ],
+          [
+            "1회",
+            "진단 시 급여",
+            "추가는 결과 따라"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "병원 복도 의자에서 대기 순서를 함께 기다리는 70대 어머니와 40대 아들",
+      "prompt": "Camera and composition: medium shot in a hospital hallway. A Korean mother in her 70s in a beige coat and her son in his 40s in a navy jacket sitting side by side on hallway chairs in a hospital, waiting calmly. Background color: bright hospital hallway with white walls and lavender chairs. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a hospital hallway",
+      "bg": "bright hospital hallway with white walls and lavender chairs"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "약국 계산대 앞에서 영수증을 지갑에 넣는 손",
+      "prompt": "Camera and composition: close-up of hands at a pharmacy counter. Close-up of a Korean woman's hands putting a small blank receipt into a wallet at a pharmacy counter, no face in the frame. Background color: clean white pharmacy counter with soft lavender accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands at a pharmacy counter",
+      "bg": "clean white pharmacy counter with soft lavender accents"
+    }
+  ]
+}
