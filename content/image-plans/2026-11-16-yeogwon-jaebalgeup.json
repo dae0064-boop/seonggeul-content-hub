@@ -1,0 +1,76 @@
+{
+  "slug": "2026-11-16-yeogwon-jaebalgeup",
+  "title": "여권 재발급 유효기간, 분실하면 남은 기간만 받을까 (사유 3가지)",
+  "source": "11/16(월) 티스토리 원고 (11/10 낮 미리 작성) 12:40",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "테이블 위에 놓인 표지만 보이는 빈 여권 수첩과 여행 가방 손잡이 (대표사진)",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A plain dark-red passport-like booklet with a blank cover lies large on a wooden table, the handle of a small travel suitcase softly visible behind it. Color theme: terracotta and warm beige tones with a sage green accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "핵심 사물 하나 크게 (사람 없음)",
+      "bg": "terracotta and warm beige tones with a sage green accent",
+      "note": "대표",
+      "thumb_shot": "object",
+      "thumb_theme": "brick",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "brick",
+        "font": "ptd",
+        "title": "여권 재발급\n언제 받을까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "여권 재발급 사유 3가지를 묻고 답하는 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "재발급 사유 3가지",
+        "ask": "기간 끝나도 재발급이에요?",
+        "items": [
+          "정보를 고쳐야 할 때",
+          "여권을 분실했을 때",
+          "여권이 훼손됐을 때"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "여권 재발급 서류 세 가지를 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "style": "memo",
+        "title": "재발급 서류 챙기기",
+        "sub": "시행령 제18조가 정한 것",
+        "items": [
+          "여권 재발급신청서",
+          "기존 여권 (분실했다면 빼요)",
+          "여권용 사진 1장"
+        ],
+        "memo": "사진은 6개월 안에 찍은 것",
+        "hl": 3
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "공항 출국장 의자에 놓인 여행 가방과 외투",
+      "prompt": "Camera and composition: a suitcase and a coat on an airport departure lounge seat. A small travel suitcase and a folded coat rest on a seat in a bright airport departure lounge, large windows behind, no readable text. Background color: soft sky blue and warm beige. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a suitcase and a coat on an airport departure lounge seat",
+      "bg": "soft sky blue and warm beige",
+      "kind": "photo",
+      "photo": {
+        "query_en": "airport lounge suitcase",
+        "scene_en": "suitcase on a seat in an airport departure lounge"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}
