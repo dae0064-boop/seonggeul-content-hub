@@ -59,6 +59,9 @@ export function collectTitles(today, days, { root = '.' } = {}) {
     if (out.has(slug)) continue;
     try {
       const p = parsePost(fs.readFileSync(path.join(dir, f), 'utf8'));
+      // 2026-11-10: 생활보장 밖 네이버 글은 11/9 사용자가 모두 지웠다 — 위 published.tsv 와 같이 생활보장만 본다
+      // (11/10 nurak 이 지운 11/9 이슈·생활정보 15편을 '누락'으로 세어 64% 로 나왔다)
+      if ((p.category || '') !== '생활보장') continue;
       if (p.title && !/^draft_only\s*:/m.test(fs.readFileSync(path.join(dir, f), 'utf8'))) out.set(slug, { date: m[1], title: p.title, slug });
     } catch { /* 읽지 못한 원고는 건너뜀 */ }
   }
