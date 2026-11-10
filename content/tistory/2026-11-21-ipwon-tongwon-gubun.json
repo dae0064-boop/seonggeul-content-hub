@@ -1,0 +1,665 @@
+{
+  "slug": "2026-11-21-ipwon-tongwon-gubun",
+  "title": "입원 통원 구분, 실손 통원 1회는 어떻게 셀까 (6시간·20만 원)",
+  "category": "생활보장",
+  "tags": [
+    "입원통원구분",
+    "통원1회",
+    "입원의료비",
+    "실손표준약관",
+    "실비입원기준",
+    "실손6시간",
+    "통원한도",
+    "실손공제금액",
+    "외래처방합산",
+    "하루두번통원",
+    "자의입원",
+    "실손입원80%",
+    "실비청구",
+    "보험정보",
+    "생활보장"
+  ],
+  "publishAt": "2026-11-21 15:00",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "실비 입원 기준은 병원에 계속해서"
+        },
+        {
+          "t": "6시간 이상 머물며 치료받았는지예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 밤에 응급실에서 수액을 맞고"
+        },
+        {
+          "t": "새벽에 집으로 돌아왔다고 해 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "영수증을 보면 이런 생각이 들기 쉬워요."
+        },
+        {
+          "t": "\"이건 입원일까, 통원일까?\""
+        },
+        {
+          "t": "청구할 때 제일 막막한 순간이죠."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘은 입원 통원 구분을"
+        },
+        {
+          "t": "실손 표준약관 문장 그대로 풀어 볼게요."
+        },
+        {
+          "t": "입원 통원 구분만 알아도 청구서가 쉬워져요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "결론부터요."
+        },
+        {
+          "t": "입원은 머문 시간과 의사의 판단,",
+          "s": "yellow"
+        },
+        {
+          "t": "통원은 하루 단위 횟수로 따로 셈해요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "병원 로비 의자에 앉아 영수증을 함께 보며 이야기하는 50대 딸과 70대 어머니 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "입원 통원 구분, 약관은 이렇게 적어요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "입원 통원 구분을 묻고 답하는 채팅 비교 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "실손 표준약관은 입원을 이렇게 적어요."
+        },
+        {
+          "t": "의사가 치료가 필요하다고 인정하고,"
+        },
+        {
+          "t": "집에서 치료하기 어려운 경우예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그 상태로 의료기관에 들어가"
+        },
+        {
+          "t": "계속해서 6시간 이상 머물며",
+          "segs": [
+            {
+              "t": "계속해서 "
+            },
+            {
+              "t": "6시간",
+              "s": "blue"
+            },
+            {
+              "t": " 이상 머물며"
+            }
+          ]
+        },
+        {
+          "t": "의사의 관찰과 관리를 받아야 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "통원은 입원하지 않고 의료기관을 찾아"
+        },
+        {
+          "t": "의사의 관리 아래 치료받는 거예요."
+        },
+        {
+          "t": "외래 진료와 그 처방으로 받은 약이 여기에 들어가요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "⭕ 6시간 넘게 머물며 의사 관리를 받음 → 입원"
+        },
+        {
+          "t": "⭕ 진료받고 같은 날 돌아옴 → 통원"
+        },
+        {
+          "t": "❌ 요양원·노인요양원 같은 시설 → 입원 아님"
+        },
+        {
+          "t": "❌ 통원이 된다는데 스스로 입원 → 보상 제외"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "입원 정의 속 '동등한 의료기관'에는"
+        },
+        {
+          "t": "보건소·보건의료원·보건지소가 들어가요."
+        },
+        {
+          "t": "요양원·복지시설은 의료기관이 아니라 빠져요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "의사가 통원치료가 된다고 했는데",
+          "s": "red"
+        },
+        {
+          "t": "스스로 입원하면 그 입원의료비는 빠져요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "입원의료비는 이렇게 계산돼요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "지금 표준약관 기본형(급여) 기준이에요."
+        },
+        {
+          "t": "입원의료비는 건강보험 급여 중"
+        },
+        {
+          "t": "본인부담금의 80%를 보상해요.",
+          "segs": [
+            {
+              "t": "본인부담금의 "
+            },
+            {
+              "t": "80%",
+              "s": "blue"
+            },
+            {
+              "t": "를 보상해요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 입원해서 급여 본인부담금이"
+        },
+        {
+          "t": "100만 원 나왔다면 80만 원이 보상 대상이에요."
+        },
+        {
+          "t": "남는 20만 원은 내 몫이 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이렇게 남는 20%가 한 해 200만 원을 넘으면",
+          "segs": [
+            {
+              "t": "이렇게 남는 20%가 한 해 "
+            },
+            {
+              "t": "200만 원",
+              "s": "blue"
+            },
+            {
+              "t": "을 넘으면"
+            }
+          ]
+        },
+        {
+          "t": "넘는 금액은 한도 안에서 다시 보상해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "입원과 통원을 합친 한 해 한도는"
+        },
+        {
+          "t": "계약자가 고른 금액으로 5천만 원 이내예요.",
+          "segs": [
+            {
+              "t": "계약자가 고른 금액으로 "
+            },
+            {
+              "t": "5천만 원",
+              "s": "blue"
+            },
+            {
+              "t": " 이내예요."
+            }
+          ]
+        },
+        {
+          "t": "그래서 입원의료비가 큰 해에도 이 선을 봐요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "통원 1회는 이렇게 세요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "통원 1회는 날짜와 병원으로 묶어 세요."
+        },
+        {
+          "t": "같은 날 같은 병원에서 진료받고"
+        },
+        {
+          "t": "그 처방전으로 약을 타면 합쳐서 1회예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "실손 표준약관은 약을 다른 날 지어도"
+        },
+        {
+          "t": "처방한 날짜를 기준으로 합친다고 적었어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "하루에 같은 치료로 두 번 갔다면"
+        },
+        {
+          "t": "그것도 1회로 봐요."
+        },
+        {
+          "t": "아침에 의원, 오후에 큰 병원을 간 경우예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이때 공제금액은 두 곳 중",
+          "s": "yellow"
+        },
+        {
+          "t": "가장 높은 쪽을 적용해요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"통원은 한 번에 얼마까지예요?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "통원 1회당 20만 원 이내에서",
+          "segs": [
+            {
+              "t": "통원 1회당 "
+            },
+            {
+              "t": "20만 원",
+              "s": "blue"
+            },
+            {
+              "t": " 이내에서"
+            }
+          ]
+        },
+        {
+          "t": "계약자가 고른 금액까지예요."
+        },
+        {
+          "t": "입원의료비처럼 80%로 계산하는 방식이 아니에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "공제금액도 병원 종류마다 달라요."
+        },
+        {
+          "t": "종합병원이 아닌 병원·의원은 1만 원,"
+        },
+        {
+          "t": "종합병원·상급종합병원은 2만 원이 기준이에요."
+        },
+        {
+          "t": "여기에 20% 등과 견줘 큰 금액을 빼요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "세대마다 다를 수 있어요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘 숫자는 지금 실손 표준약관 기준이에요."
+        },
+        {
+          "t": "예전에 가입한 실손은 한도와 공제금액이"
+        },
+        {
+          "t": "지금과 다르게 적혀 있을 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "입원 통원 구분의 큰 틀은 비슷해도"
+        },
+        {
+          "t": "금액 기준은 내 약관 문장이 우선이에요."
+        },
+        {
+          "t": "증권에 적힌 가입일부터 먼저 찾아보세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "헷갈리기 쉬운 장면 두 가지"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "입원과 통원에 대해 헷갈리는 것을 맞혀 보는 퀴즈 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "응급실에 몇 시간 있다가 돌아왔다면"
+        },
+        {
+          "t": "머문 시간과 의사 관리 여부를 먼저 봐요."
+        },
+        {
+          "t": "6시간이 안 됐다면 약관의",
+          "s": "red"
+        },
+        {
+          "t": "입원 정의에는 들지 않아요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "입원으로 청구할 때는 표준약관의 서류 목록에"
+        },
+        {
+          "t": "입원치료확인서도 들어 있어요."
+        },
+        {
+          "t": "퇴원할 때 함께 받아 두면 다시 가지 않아도 돼요."
+        },
+        {
+          "t": "퇴원 날짜와 입원 날짜가 적혀 있는지도 봐요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "청구 전 확인할 것"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "병원 수납 창구 앞에서 영수증 봉투를 받아 드는 손"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "표준약관 제7조가 적은 청구 서류는"
+        },
+        {
+          "t": "청구서와 진료비 계산서·영수증,"
+        },
+        {
+          "t": "세부산정내역, 처방전 같은 사고증명서예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "입원이었다면 입원치료확인서를,"
+        },
+        {
+          "t": "통원이었다면 같은 날 약제비 영수증을"
+        },
+        {
+          "t": "한 봉투에 묶어 두면 빠지는 게 없어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 체크포인트",
+          "s": "green"
+        },
+        {
+          "t": "영수증의 입원·외래 칸, 머문 시간,",
+          "s": "green"
+        },
+        {
+          "t": "같은 날 약국 영수증까지 함께 챙겨요.",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "입원 통원 구분이 헷갈렸던 적 있으세요?"
+        },
+        {
+          "t": "\"응급실\" 또는 \"외래\"처럼 한 단어로 남겨 주세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "입원 통원 구분은 머문 시간과 의사 관리,"
+        },
+        {
+          "t": "통원 1회는 날짜와 병원으로 갈라져요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "같은 날 병원과 약국 영수증은",
+          "s": "yellow"
+        },
+        {
+          "t": "한 묶음으로 내면 1회로 계산돼요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "금융감독원 보험업감독업무시행세칙 별표에 실린"
+        },
+        {
+          "t": "실손 표준약관 기본형(급여)을 읽고 옮겼어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "가입 시기마다 약관이 달라 세대별로 다를 수 있어요."
+        },
+        {
+          "t": "내 증권·약관에서 입원·통원 한도를 확인해 보세요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "입원 통원 구분, 통원 1회 세는 법부터 확인해요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">실비 입원 기준은 병원에 계속해서<br>6시간 이상 머물며 치료받았는지예요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 밤에 응급실에서 수액을 맞고<br>새벽에 집으로 돌아왔다고 해 볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">영수증을 보면 이런 생각이 들기 쉬워요.<br>&quot;이건 입원일까, 통원일까?&quot;<br>청구할 때 제일 막막한 순간이죠.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘은 입원 통원 구분을<br>실손 표준약관 문장 그대로 풀어 볼게요.<br>입원 통원 구분만 알아도 청구서가 쉬워져요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">결론부터요.<br><span style=\"background-color: #ffe94d;\"><b>입원은 머문 시간과 의사의 판단,</b></span><br><span style=\"background-color: #ffe94d;\"><b>통원은 하루 단위 횟수로 따로 셈해요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 1] 병원 로비 의자에 앉아 영수증을 함께 보며 이야기하는 50대 딸과 70대 어머니 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>입원 통원 구분, 약관은 이렇게 적어요</h2>\n<p data-ke-size=\"size16\">[이미지 2] 입원 통원 구분을 묻고 답하는 채팅 비교 카드</p>\n<p data-ke-size=\"size16\">실손 표준약관은 입원을 이렇게 적어요.<br>의사가 치료가 필요하다고 인정하고,<br>집에서 치료하기 어려운 경우예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그 상태로 의료기관에 들어가<br>계속해서 <span style=\"color: #0078cb;\"><b>6시간</b></span> 이상 머물며<br>의사의 관찰과 관리를 받아야 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">통원은 입원하지 않고 의료기관을 찾아<br>의사의 관리 아래 치료받는 거예요.<br>외래 진료와 그 처방으로 받은 약이 여기에 들어가요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">⭕ 6시간 넘게 머물며 의사 관리를 받음 → 입원<br>⭕ 진료받고 같은 날 돌아옴 → 통원<br>❌ 요양원·노인요양원 같은 시설 → 입원 아님<br>❌ 통원이 된다는데 스스로 입원 → 보상 제외</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">입원 정의 속 '동등한 의료기관'에는<br>보건소·보건의료원·보건지소가 들어가요.<br>요양원·복지시설은 의료기관이 아니라 빠져요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>의사가 통원치료가 된다고 했는데</b></span><br><span style=\"color: #ff0010;\"><b>스스로 입원하면 그 입원의료비는 빠져요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>입원의료비는 이렇게 계산돼요</h2>\n<p data-ke-size=\"size16\">지금 표준약관 기본형(급여) 기준이에요.<br>입원의료비는 건강보험 급여 중<br>본인부담금의 <span style=\"color: #0078cb;\"><b>80%</b></span>를 보상해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 입원해서 급여 본인부담금이<br>100만 원 나왔다면 80만 원이 보상 대상이에요.<br>남는 20만 원은 내 몫이 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이렇게 남는 20%가 한 해 <span style=\"color: #0078cb;\"><b>200만 원</b></span>을 넘으면<br>넘는 금액은 한도 안에서 다시 보상해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">입원과 통원을 합친 한 해 한도는<br>계약자가 고른 금액으로 <span style=\"color: #0078cb;\"><b>5천만 원</b></span> 이내예요.<br>그래서 입원의료비가 큰 해에도 이 선을 봐요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>통원 1회는 이렇게 세요</h2>\n<p data-ke-size=\"size16\">통원 1회는 날짜와 병원으로 묶어 세요.<br>같은 날 같은 병원에서 진료받고<br>그 처방전으로 약을 타면 합쳐서 1회예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">실손 표준약관은 약을 다른 날 지어도<br>처방한 날짜를 기준으로 합친다고 적었어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">하루에 같은 치료로 두 번 갔다면<br>그것도 1회로 봐요.<br>아침에 의원, 오후에 큰 병원을 간 경우예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>이때 공제금액은 두 곳 중</b></span><br><span style=\"background-color: #ffe94d;\"><b>가장 높은 쪽을 적용해요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<blockquote data-ke-style=\"style3\">&quot;통원은 한 번에 얼마까지예요?&quot;</blockquote>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">통원 1회당 <span style=\"color: #0078cb;\"><b>20만 원</b></span> 이내에서<br>계약자가 고른 금액까지예요.<br>입원의료비처럼 80%로 계산하는 방식이 아니에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">공제금액도 병원 종류마다 달라요.<br>종합병원이 아닌 병원·의원은 1만 원,<br>종합병원·상급종합병원은 2만 원이 기준이에요.<br>여기에 20% 등과 견줘 큰 금액을 빼요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>세대마다 다를 수 있어요</h2>\n<p data-ke-size=\"size16\">오늘 숫자는 지금 실손 표준약관 기준이에요.<br>예전에 가입한 실손은 한도와 공제금액이<br>지금과 다르게 적혀 있을 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">입원 통원 구분의 큰 틀은 비슷해도<br>금액 기준은 내 약관 문장이 우선이에요.<br>증권에 적힌 가입일부터 먼저 찾아보세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>헷갈리기 쉬운 장면 두 가지</h2>\n<p data-ke-size=\"size16\">[이미지 3] 입원과 통원에 대해 헷갈리는 것을 맞혀 보는 퀴즈 카드</p>\n<p data-ke-size=\"size16\">응급실에 몇 시간 있다가 돌아왔다면<br>머문 시간과 의사 관리 여부를 먼저 봐요.<br><span style=\"color: #ff0010;\"><b>6시간이 안 됐다면 약관의</b></span><br><span style=\"color: #ff0010;\"><b>입원 정의에는 들지 않아요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">입원으로 청구할 때는 표준약관의 서류 목록에<br>입원치료확인서도 들어 있어요.<br>퇴원할 때 함께 받아 두면 다시 가지 않아도 돼요.<br>퇴원 날짜와 입원 날짜가 적혀 있는지도 봐요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>청구 전 확인할 것</h2>\n<p data-ke-size=\"size16\">[이미지 4] 병원 수납 창구 앞에서 영수증 봉투를 받아 드는 손</p>\n<p data-ke-size=\"size16\">표준약관 제7조가 적은 청구 서류는<br>청구서와 진료비 계산서·영수증,<br>세부산정내역, 처방전 같은 사고증명서예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">입원이었다면 입원치료확인서를,<br>통원이었다면 같은 날 약제비 영수증을<br>한 봉투에 묶어 두면 빠지는 게 없어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 체크포인트</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>영수증의 입원·외래 칸, 머문 시간,</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>같은 날 약국 영수증까지 함께 챙겨요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">입원 통원 구분이 헷갈렸던 적 있으세요?<br>&quot;응급실&quot; 또는 &quot;외래&quot;처럼 한 단어로 남겨 주세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>정리</h2>\n<p data-ke-size=\"size16\">입원 통원 구분은 머문 시간과 의사 관리,<br>통원 1회는 날짜와 병원으로 갈라져요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>같은 날 병원과 약국 영수증은</b></span><br><span style=\"background-color: #ffe94d;\"><b>한 묶음으로 내면 1회로 계산돼요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">금융감독원 보험업감독업무시행세칙 별표에 실린<br>실손 표준약관 기본형(급여)을 읽고 옮겼어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">가입 시기마다 약관이 달라 세대별로 다를 수 있어요.<br>내 증권·약관에서 입원·통원 한도를 확인해 보세요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>입원 통원 구분, 통원 1회 세는 법부터 확인해요.</p>"
+}

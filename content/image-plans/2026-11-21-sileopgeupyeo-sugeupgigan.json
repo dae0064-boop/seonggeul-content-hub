@@ -1,0 +1,71 @@
+{
+  "slug": "2026-11-21-sileopgeupyeo-sugeupgigan",
+  "title": "실업급여 수급기간, 늦게 신청하면 소정급여일수를 다 받을까 (12개월)",
+  "source": "11/21(토) 티스토리 원고 (11/10 미리 작성) 18:20",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "고용센터 대기 공간에서 번호표를 기다리는 사람들이 작게 보이는 넓은 풍경 (대표사진)",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A bright public employment center waiting area seen as a whole like a miniature diorama: rows of light wooden chairs, a blank number display on the wall, green potted plants, a Korean man in his 30s in a khaki jacket holding a small blank ticket and a young woman in her 20s with a mustard-yellow bag sitting a few seats apart. Expression: determined, nodding, sleeves rolled up. Color theme: sage green plants and warm ivory tones with a butter-yellow accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "방·장소 전체, 사람은 작게",
+      "bg": "sage green plants and warm ivory tones with a butter-yellow accent",
+      "note": "대표",
+      "thumb_shot": "wide",
+      "thumb_theme": "forest",
+      "thumb_person": "30대 남성(카키 점퍼)과 20대 여성(노란 가방), 작게",
+      "thumb_mood": "결심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "forest",
+        "font": "ptd",
+        "title": "실업급여 수급기간\n늦으면 줄까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "실업급여 수급기간을 묻는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "수급기간",
+        "title": "늦게 내면\n줄어들까?",
+        "ask": "천천히 신청해도 돼?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "수급기간 연기 사유에 해당하는지 스스로 체크하는 카드",
+      "kind": "card",
+      "card": {
+        "type": "selfcheck",
+        "title": "연기 신청 사유 체크",
+        "items": [
+          "임신·출산·육아",
+          "배우자의 질병·부상",
+          "부모와 자녀의 질병·부상",
+          "배우자 국외발령"
+        ],
+        "result": "아래 '어디에 낼까'를 꼭 보세요 👇"
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "탁상 달력 앞에서 퇴사 날짜부터 손가락으로 세어 보는 모습",
+      "prompt": "Camera and composition: a finger counting days on a desk calendar. Close-up of a person's index finger tracing days on a blank desk calendar on a light wooden desk, a mug and a notebook nearby, soft morning light, no readable text. Background color: sage green plants and warm ivory. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a finger counting days on a desk calendar",
+      "bg": "sage green plants and warm ivory",
+      "kind": "photo",
+      "photo": {
+        "query_en": "desk calendar finger",
+        "scene_en": "a finger pointing at days on a desk calendar"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}
