@@ -1,0 +1,633 @@
+{
+  "slug": "2026-11-14-juhyusudang-gyeolgeun",
+  "title": "주휴수당 결근, 개근 못 한 주는 유급휴일도 없을까 (165,120원)",
+  "category": "생활정보",
+  "tags": [
+    "주휴수당결근",
+    "개근",
+    "소정근로일",
+    "유급휴일",
+    "알바주휴",
+    "주휴수당",
+    "주휴수당조건",
+    "결근주휴수당",
+    "근로기준법제55조",
+    "근로기준법시행령제30조",
+    "최저임금",
+    "알바수당",
+    "단시간근로자",
+    "생활제도",
+    "월급계산"
+  ],
+  "publishAt": "2026-11-14 12:40",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "알바 주휴는 한 주씩 따로 따져서"
+        },
+        {
+          "t": "지난주에 빠졌어도 이번 주를 채우면 다시 생겨요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "감기 기운에 수요일 하루를 쉬었는데"
+        },
+        {
+          "t": "월급날 명세서를 보니 생각보다 덜 들어왔다,"
+        },
+        {
+          "t": "이런 얘기 은근 자주 들려요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "\"하루 쉰 것만 빠진 게 아니라고요?\""
+        },
+        {
+          "t": "네, 주휴수당 결근 규칙 때문이에요."
+        },
+        {
+          "t": "오늘은 이걸 되는 경우, 안 되는 경우로 나눠 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "결론부터 말하면요."
+        },
+        {
+          "t": "소정근로일에 하루라도 결근하면",
+          "s": "yellow"
+        },
+        {
+          "t": "그 주 주휴수당은 생기지 않아요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "카페 앞치마를 두른 20대 여성이 휴대폰 급여 알림을 보며 고개를 갸웃하는 얼굴 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "주휴수당 결근, 법은 뭐라고 할까"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "주휴수당 결근 오해를 맞혀 보는 O·X 퀴즈 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "근로기준법 제55조는 1주에 평균 1회 이상"
+        },
+        {
+          "t": "유급휴일을 주라고 정해 뒀어요."
+        },
+        {
+          "t": "이 유급휴일이 흔히 말하는 주휴예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그런데 시행령 제30조가 조건을 붙였어요."
+        },
+        {
+          "t": "1주 동안의 소정근로일을 개근한 사람에게",
+          "s": "red"
+        },
+        {
+          "t": "유급휴일을 줘야 한다는 거예요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 주휴수당 결근 문제는 결국"
+        },
+        {
+          "t": "그 주 소정근로일을 다 나왔느냐로 갈려요."
+        },
+        {
+          "t": "개근이냐 아니냐, 이게 전부예요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "소정근로일이 뭔데요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "소정근로일은 근로계약서에서"
+        },
+        {
+          "t": "일하기로 약속한 날이에요."
+        },
+        {
+          "t": "월~금 근무라면 그 닷새가 소정근로일이죠."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "원래 쉬는 토요일에 안 나간 건"
+        },
+        {
+          "t": "소정근로일이 아니라 결근이 아니에요."
+        },
+        {
+          "t": "반대로 약속한 수요일에 빠지면 결근이고요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "근무 요일이 주마다 바뀐다면"
+        },
+        {
+          "t": "그 주 근무표에 잡힌 날이 기준이 돼요."
+        },
+        {
+          "t": "그래서 근무표는 사진으로 남겨 두면 좋아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그리고 하나 더, 제18조 3항이 있어요."
+        },
+        {
+          "t": "4주 평균 1주 소정근로시간이 15시간 미만이면",
+          "segs": [
+            {
+              "t": "4주 평균 1주 소정근로시간이 "
+            },
+            {
+              "t": "15시간",
+              "s": "blue"
+            },
+            {
+              "t": " 미만이면"
+            }
+          ]
+        },
+        {
+          "t": "유급휴일 규정 자체가 적용되지 않아요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "주휴가 생기는 주, 안 생기는 주"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "주휴수당 결근 기준을 묻고 답하는 채팅 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "⭕ 월~금 약속한 닷새를 모두 나온 주"
+        },
+        {
+          "t": "⭕ 지난주 결근했지만 이번 주는 다 나온 주"
+        },
+        {
+          "t": "❌ 약속한 수요일 하루를 빠진 주"
+        },
+        {
+          "t": "❌ 4주 평균 주 15시간이 안 되는 경우"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "⭕ 쪽은 그 주 개근이라 주휴수당이 생겨요."
+        },
+        {
+          "t": "주휴는 한 주씩 따로 봐서",
+          "s": "yellow"
+        },
+        {
+          "t": "지난주 결근이 이번 주까지 번지지 않아요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "❌ 쪽 첫 줄은 주휴수당 결근의 대표적인 경우예요."
+        },
+        {
+          "t": "둘째 줄은 개근과 상관없이"
+        },
+        {
+          "t": "처음부터 주휴 대상이 아니에요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "하루 빠지면 얼마가 줄어들까"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "2026년 최저시급은 10,320원이에요.",
+          "segs": [
+            {
+              "t": "2026년 최저시급은 "
+            },
+            {
+              "t": "10,320원",
+              "s": "blue"
+            },
+            {
+              "t": "이에요."
+            }
+          ]
+        },
+        {
+          "t": "하루 8시간이면 일급은 82,560원이고요.",
+          "segs": [
+            {
+              "t": "하루 8시간이면 일급은 "
+            },
+            {
+              "t": "82,560원",
+              "s": "blue"
+            },
+            {
+              "t": "이고요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "주 40시간 일하는 사람이 하루 결근하면"
+        },
+        {
+          "t": "그날 일급 82,560원이 먼저 빠져요."
+        },
+        {
+          "t": "여기에 그 주 주휴 8시간분도 사라지죠."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 결근 하루에 165,120원이 줄어요.",
+          "s": "red"
+        },
+        {
+          "t": "하루 쉬었는데 이틀치가 빠진 느낌이 드는 게"
+        },
+        {
+          "t": "바로 이 계산 때문이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "서로 다른 네 주에 하루씩 빠지면"
+        },
+        {
+          "t": "66만 480원이 줄어드는 셈이라 작지 않아요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "주 20시간 알바라면 얼마일까"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "단시간 알바도 계산 틀은 같아요."
+        },
+        {
+          "t": "시행령 별표2는 단시간근로자에게도"
+        },
+        {
+          "t": "제55조 유급휴일을 주라고 정했어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이때 주휴 하루치는 1일 소정근로시간으로 줘요."
+        },
+        {
+          "t": "4주 소정근로시간을 통상 근로자의"
+        },
+        {
+          "t": "4주 소정근로일 수로 나눈 시간이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "월~금 하루 4시간, 주 20시간이라면",
+          "segs": [
+            {
+              "t": "월~금 하루 4시간, 주 "
+            },
+            {
+              "t": "20시간",
+              "s": "blue"
+            },
+            {
+              "t": "이라면"
+            }
+          ]
+        },
+        {
+          "t": "1일 소정근로시간은 4시간이 돼요."
+        },
+        {
+          "t": "시급을 곱하면 주휴수당은 41,280원이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이 알바가 하루 결근하면 그날 41,280원과",
+          "s": "yellow"
+        },
+        {
+          "t": "그 주 주휴 41,280원이 함께 빠져요.",
+          "s": "yellow"
+        },
+        {
+          "t": "주휴수당 결근 하루가 82,560원인 셈이에요."
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"지각이나 조퇴도 결근이 되나요?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이건 법 조문에 따로 적혀 있지 않아요."
+        },
+        {
+          "t": "회사 규정과 사정에 따라 다툼이 생기기도 해서"
+        },
+        {
+          "t": "고용노동부 1350 상담으로 확인하는 게 안전해요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "명세서 받기 전에 볼 것"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "카페 카운터 위에 놓인 앞치마와 근무표"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 체크포인트",
+          "s": "green"
+        },
+        {
+          "t": "계약서의 근무 요일 · 빠진 날짜 · 주 근무시간",
+          "s": "green"
+        },
+        {
+          "t": "이 셋을 달력에 표시해 두면 계산이 쉬워요.",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "근로계약서에 근무 요일이 적혀 있지 않으면"
+        },
+        {
+          "t": "어느 날이 소정근로일인지부터 헷갈려요."
+        },
+        {
+          "t": "처음 일할 때 요일을 꼭 적어 두면 좋아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 한 달에 결근이 두 번이면요?"
+        },
+        {
+          "t": "A1: 두 번이 같은 주면 그 주 주휴만,"
+        },
+        {
+          "t": "다른 주면 두 주의 주휴가 빠져요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 결근한 주에 남은 날 일한 돈은요?"
+        },
+        {
+          "t": "A2: 일한 날 임금은 그대로 받아요."
+        },
+        {
+          "t": "빠지는 건 결근한 날과 그 주 주휴예요."
+        },
+        {
+          "t": "결근이 잦다면 주 단위로 세어 보세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분은 결근 때문에 명세서가 줄어 본 적 있으세요?"
+        },
+        {
+          "t": "\"있다\", \"없다\"로 알려 주세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "주휴수당 결근 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "주휴수당 결근 규칙은 한 줄이면 돼요."
+        },
+        {
+          "t": "그 주 소정근로일을 개근해야 유급휴일이 생겨요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "조문은 근로기준법 제18조·제55조와"
+        },
+        {
+          "t": "시행령 제30조를 국가법령정보센터에서 읽었고,"
+        },
+        {
+          "t": "최저시급은 고용노동부 고시 금액이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "내 계약서의 근무 요일과 주 근무시간을"
+        },
+        {
+          "t": "오늘 한 번 펼쳐서 맞춰 보세요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "주휴수당 결근, 다음 주 개근이면 다시 생겨요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">알바 주휴는 한 주씩 따로 따져서<br>지난주에 빠졌어도 이번 주를 채우면 다시 생겨요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">감기 기운에 수요일 하루를 쉬었는데<br>월급날 명세서를 보니 생각보다 덜 들어왔다,<br>이런 얘기 은근 자주 들려요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">&quot;하루 쉰 것만 빠진 게 아니라고요?&quot;<br>네, 주휴수당 결근 규칙 때문이에요.<br>오늘은 이걸 되는 경우, 안 되는 경우로 나눠 볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">결론부터 말하면요.<br><span style=\"background-color: #ffe94d;\"><b>소정근로일에 하루라도 결근하면</b></span><br><span style=\"background-color: #ffe94d;\"><b>그 주 주휴수당은 생기지 않아요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 1] 카페 앞치마를 두른 20대 여성이 휴대폰 급여 알림을 보며 고개를 갸웃하는 얼굴 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>주휴수당 결근, 법은 뭐라고 할까</h2>\n<p data-ke-size=\"size16\">[이미지 2] 주휴수당 결근 오해를 맞혀 보는 O·X 퀴즈 카드</p>\n<p data-ke-size=\"size16\">근로기준법 제55조는 1주에 평균 1회 이상<br>유급휴일을 주라고 정해 뒀어요.<br>이 유급휴일이 흔히 말하는 주휴예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그런데 시행령 제30조가 조건을 붙였어요.<br><span style=\"color: #ff0010;\"><b>1주 동안의 소정근로일을 개근한 사람에게</b></span><br><span style=\"color: #ff0010;\"><b>유급휴일을 줘야 한다는 거예요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그래서 주휴수당 결근 문제는 결국<br>그 주 소정근로일을 다 나왔느냐로 갈려요.<br>개근이냐 아니냐, 이게 전부예요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>소정근로일이 뭔데요</h2>\n<p data-ke-size=\"size16\">소정근로일은 근로계약서에서<br>일하기로 약속한 날이에요.<br>월~금 근무라면 그 닷새가 소정근로일이죠.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">원래 쉬는 토요일에 안 나간 건<br>소정근로일이 아니라 결근이 아니에요.<br>반대로 약속한 수요일에 빠지면 결근이고요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">근무 요일이 주마다 바뀐다면<br>그 주 근무표에 잡힌 날이 기준이 돼요.<br>그래서 근무표는 사진으로 남겨 두면 좋아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그리고 하나 더, 제18조 3항이 있어요.<br>4주 평균 1주 소정근로시간이 <span style=\"color: #0078cb;\"><b>15시간</b></span> 미만이면<br>유급휴일 규정 자체가 적용되지 않아요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>주휴가 생기는 주, 안 생기는 주</h2>\n<p data-ke-size=\"size16\">[이미지 3] 주휴수당 결근 기준을 묻고 답하는 채팅 카드</p>\n<p data-ke-size=\"size16\">⭕ 월~금 약속한 닷새를 모두 나온 주<br>⭕ 지난주 결근했지만 이번 주는 다 나온 주<br>❌ 약속한 수요일 하루를 빠진 주<br>❌ 4주 평균 주 15시간이 안 되는 경우</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">⭕ 쪽은 그 주 개근이라 주휴수당이 생겨요.<br><span style=\"background-color: #ffe94d;\"><b>주휴는 한 주씩 따로 봐서</b></span><br><span style=\"background-color: #ffe94d;\"><b>지난주 결근이 이번 주까지 번지지 않아요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">❌ 쪽 첫 줄은 주휴수당 결근의 대표적인 경우예요.<br>둘째 줄은 개근과 상관없이<br>처음부터 주휴 대상이 아니에요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>하루 빠지면 얼마가 줄어들까</h2>\n<p data-ke-size=\"size16\">2026년 최저시급은 <span style=\"color: #0078cb;\"><b>10,320원</b></span>이에요.<br>하루 8시간이면 일급은 <span style=\"color: #0078cb;\"><b>82,560원</b></span>이고요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">주 40시간 일하는 사람이 하루 결근하면<br>그날 일급 82,560원이 먼저 빠져요.<br>여기에 그 주 주휴 8시간분도 사라지죠.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>그래서 결근 하루에 165,120원이 줄어요.</b></span><br>하루 쉬었는데 이틀치가 빠진 느낌이 드는 게<br>바로 이 계산 때문이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">서로 다른 네 주에 하루씩 빠지면<br>66만 480원이 줄어드는 셈이라 작지 않아요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>주 20시간 알바라면 얼마일까</h2>\n<p data-ke-size=\"size16\">단시간 알바도 계산 틀은 같아요.<br>시행령 별표2는 단시간근로자에게도<br>제55조 유급휴일을 주라고 정했어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이때 주휴 하루치는 1일 소정근로시간으로 줘요.<br>4주 소정근로시간을 통상 근로자의<br>4주 소정근로일 수로 나눈 시간이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">월~금 하루 4시간, 주 <span style=\"color: #0078cb;\"><b>20시간</b></span>이라면<br>1일 소정근로시간은 4시간이 돼요.<br>시급을 곱하면 주휴수당은 41,280원이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>이 알바가 하루 결근하면 그날 41,280원과</b></span><br><span style=\"background-color: #ffe94d;\"><b>그 주 주휴 41,280원이 함께 빠져요.</b></span><br>주휴수당 결근 하루가 82,560원인 셈이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<blockquote data-ke-style=\"style3\">&quot;지각이나 조퇴도 결근이 되나요?&quot;</blockquote>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이건 법 조문에 따로 적혀 있지 않아요.<br>회사 규정과 사정에 따라 다툼이 생기기도 해서<br>고용노동부 1350 상담으로 확인하는 게 안전해요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>명세서 받기 전에 볼 것</h2>\n<p data-ke-size=\"size16\">[이미지 4] 카페 카운터 위에 놓인 앞치마와 근무표</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 체크포인트</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>계약서의 근무 요일 · 빠진 날짜 · 주 근무시간</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>이 셋을 달력에 표시해 두면 계산이 쉬워요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">근로계약서에 근무 요일이 적혀 있지 않으면<br>어느 날이 소정근로일인지부터 헷갈려요.<br>처음 일할 때 요일을 꼭 적어 두면 좋아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 한 달에 결근이 두 번이면요?<br>A1: 두 번이 같은 주면 그 주 주휴만,<br>다른 주면 두 주의 주휴가 빠져요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 결근한 주에 남은 날 일한 돈은요?<br>A2: 일한 날 임금은 그대로 받아요.<br>빠지는 건 결근한 날과 그 주 주휴예요.<br>결근이 잦다면 주 단위로 세어 보세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분은 결근 때문에 명세서가 줄어 본 적 있으세요?<br>&quot;있다&quot;, &quot;없다&quot;로 알려 주세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>주휴수당 결근 정리</h2>\n<p data-ke-size=\"size16\">주휴수당 결근 규칙은 한 줄이면 돼요.<br>그 주 소정근로일을 개근해야 유급휴일이 생겨요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">조문은 근로기준법 제18조·제55조와<br>시행령 제30조를 국가법령정보센터에서 읽었고,<br>최저시급은 고용노동부 고시 금액이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">내 계약서의 근무 요일과 주 근무시간을<br>오늘 한 번 펼쳐서 맞춰 보세요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>주휴수당 결근, 다음 주 개근이면 다시 생겨요.</p>"
+}

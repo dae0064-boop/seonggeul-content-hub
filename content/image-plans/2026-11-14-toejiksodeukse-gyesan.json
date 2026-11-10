@@ -1,0 +1,88 @@
+{
+  "slug": "2026-11-14-toejiksodeukse-gyesan",
+  "title": "퇴직소득세 계산, 근속연수공제 빼면 5천만 원에 얼마일까 (68만 원)",
+  "source": "11/14(토) 티스토리 원고 (11/10 미리 씀) 10:20",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "위에서 내려다본 탁자 위 계산기와 안경, 머그잔, 작은 화분 (대표사진)",
+      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Top-down flat lay of a light wooden table with a calculator, reading glasses, a ceramic mug and a small potted plant, neatly arranged, no people. Color theme: warm brown wood and ivory tones with a coral accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "위에서 내려다본 탁자 (사람 없음)",
+      "bg": "warm brown wood and ivory tones with a coral accent",
+      "note": "대표",
+      "thumb_shot": "overhead",
+      "thumb_theme": "charcoal",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "charcoal",
+        "font": "ptd",
+        "title": "퇴직소득세\n얼마 낼까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "퇴직소득세 계산 예시 숫자를 한눈에 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "퇴직소득세 예시",
+        "items": [
+          [
+            "10년",
+            "근속연수",
+            "예시 기준"
+          ],
+          [
+            "60%",
+            "환산급여공제",
+            "800만 초과분"
+          ],
+          [
+            "6%",
+            "기본세율",
+            "과세표준 구간"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "퇴직소득세 계산 네 단계를 메모처럼 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "퇴직소득세 순서",
+        "sub": "퇴직소득세 계산, 네 단계로",
+        "items": [
+          "근속연수공제를 뺀다",
+          "근속연수로 나누고",
+          "환산급여공제를 뺀다",
+          "세율을 곱하고 12로 나눠"
+        ],
+        "memo": "환산급여공제까지 빼야 해요",
+        "hl": 3
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "창가 책상 위에 놓인 계산기와 펜, 노트",
+      "prompt": "Camera and composition: a calculator, a pen and a notebook on a desk by a window. Calculator, notebook and pen on a desk by a window, calm natural light, no readable text. Background color: clean white and soft gray. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a calculator, a pen and a notebook on a desk by a window",
+      "bg": "clean white and soft gray",
+      "kind": "photo",
+      "photo": {
+        "query_en": "calculator notebook pen desk",
+        "scene_en": "calculator, notebook and pen on a desk by a window"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "2026-11-16-daejangnaesigyeong-silbi",
+  "title": "대장내시경 실비, 건강검진으로 받으면 안 나오나요 (청구 3년)",
+  "source": "11/16(월) 10:00 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "검사를 마치고 병원 접수대 앞에서 웃으며 이야기하는 40대 딸과 70대 어머니 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a bright hospital reception desk area (no patients in pain). Lighting: soft early-morning sunlight. A Korean woman in her 40s in a camel wool coat and her mother in her 70s in a cream cardigan standing at a hospital reception desk, talking to each other after a check-up. Expression: bright happy smile. Color theme: olive green and pale cream tones with a red accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "duo",
+      "bg": "olive green and pale cream tones with a red accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "olive",
+      "thumb_person": "40대 딸과 70대 어머니",
+      "thumb_place": "병원 접수",
+      "thumb_light": "아침 햇살",
+      "thumb_mood": "반가움",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "olive",
+        "font": "ptd",
+        "title": "대장내시경 실비\n검진도 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "대장내시경 실비 질문을 크게 던지는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "대장내시경 실비",
+        "title": "검진이면\n안 나올까?",
+        "ask": "검진도 실비 돼요?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "진료실 책상 위 노트북 화면을 보며 설명을 듣는 50대 남성의 옆모습",
+      "prompt": "Camera and composition: medium side shot at a consultation desk. A Korean man in his 50s in a gray cardigan sitting at a clinic consultation desk, listening calmly while looking at a laptop screen, seen from the side; the doctor is out of frame. Background color: soft olive green wall and light wood desk. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium side shot at a consultation desk",
+      "bg": "soft olive green wall and light wood desk"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "대장내시경 실비 되는 경우를 정리한 O·X 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "대장내시경 O·X",
+        "items": [
+          "희망 검진도 실비가 된다",
+          "이상 소견 추가비용은 된다",
+          "청구 기한은 3년이다"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "O"
+        ],
+        "where": "아래 본문"
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "약국 카운터 옆에서 서류 봉투를 가방에 넣는 30대 남성의 손",
+      "prompt": "Camera and composition: close-up of hands beside a pharmacy counter. Close-up of a Korean man's hands in a navy padded jacket sleeve putting a plain envelope into a shoulder bag beside a pharmacy counter, no face in the frame. Background color: white pharmacy counter with pale green accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands beside a pharmacy counter",
+      "bg": "white pharmacy counter with pale green accents"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "거실 탁자에서 영수증을 날짜별로 정리하는 60대 여성의 손",
+      "prompt": "Camera and composition: top-down view of hands on a coffee table. Close-up of a Korean woman's hands in her 60s in a lavender sweater sleeve arranging small blank slips in neat rows on a living room coffee table, no face in the frame. Background color: warm beige wooden coffee table with a small plant. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "top-down view of hands on a coffee table",
+      "bg": "warm beige wooden coffee table with a small plant"
+    }
+  ]
+}

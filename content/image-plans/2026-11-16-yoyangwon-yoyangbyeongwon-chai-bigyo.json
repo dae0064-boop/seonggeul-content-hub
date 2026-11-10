@@ -1,0 +1,89 @@
+{
+  "slug": "2026-11-16-yoyangwon-yoyangbyeongwon-chai-bigyo",
+  "title": "요양원 요양병원 차이, 실비는 어디서 나올까요 (시설급여 20%)",
+  "source": "11/16(월) 16:20 네이버 원고 — 생활보장 비교형(돌봄·요양), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "단풍 든 공원 전체 풍경 속 벤치에 나란히 앉아 이야기하는 50대 아들과 80대 아버지 (대표사진)",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a park bench outdoors with trees. Lighting: soft early-morning sunlight. A whole park scene with autumn trees; small in the frame, a Korean son in his 50s in a forest green fleece and his father in his 80s in a beige cardigan sit side by side on a bench and talk. Expression: explaining with one hand open toward the viewer. Color theme: fresh green plants and crisp white tones with natural morning light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide",
+      "bg": "fresh green plants and crisp white tones with natural morning light",
+      "note": "대표",
+      "thumb_shot": "wide",
+      "thumb_theme": "forest",
+      "thumb_person": "50대 아들과 80대 아버지",
+      "thumb_place": "공원",
+      "thumb_light": "아침 햇살",
+      "thumb_mood": "설명",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "forest",
+        "font": "jua",
+        "title": "요양원 요양병원\n뭐가 달라?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "요양원 요양병원 차이를 묻고 답하는 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "요양원 요양병원 차이",
+        "ask": "둘이 뭐가 달라요?",
+        "items": [
+          "요양원은 돌봄 시설",
+          "요양병원은 의료기관",
+          "실비가 나오는 쪽은 요양병원"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "요양시설 거실에서 요양보호사와 어르신이 함께 퍼즐을 맞추는 장면",
+      "prompt": "Camera and composition: medium shot in a care facility lounge. A Korean care worker in a light green uniform and an elderly Korean woman doing a jigsaw puzzle together at a table in a bright care facility lounge. Background color: bright lounge with light wood and fresh green plants. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a care facility lounge",
+      "bg": "bright lounge with light wood and fresh green plants"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "요양원과 요양병원 고를 때 볼 것을 적은 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "style": "memo",
+        "title": "고를 때 볼 것",
+        "sub": "요양원 요양병원 차이",
+        "items": [
+          "치료가 계속 필요한지",
+          "장기요양등급을 받았는지",
+          "입원 보장이 남아 있는지"
+        ],
+        "memo": "판단은 의사와 함께",
+        "hl": 1
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "주민센터 상담 창구 앞에서 휴대폰 메모를 보며 기다리는 40대 딸",
+      "prompt": "Camera and composition: medium shot at a service counter. A Korean woman in her 40s in a navy coat waiting in front of a community service center counter, looking at notes on her smartphone. Background color: clean public office with white and green tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a service counter",
+      "bg": "clean public office with white and green tones"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "거실 소파에서 노트북으로 시설 정보를 함께 보는 30대 부부",
+      "prompt": "Camera and composition: medium shot on a living room sofa. A Korean couple in their 30s sitting together on a living room sofa looking at a laptop with a blank screen, calm and focused. Background color: cozy living room with olive cushions. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on a living room sofa",
+      "bg": "cozy living room with olive cushions"
+    }
+  ]
+}

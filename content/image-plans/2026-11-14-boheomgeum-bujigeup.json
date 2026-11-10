@@ -1,0 +1,71 @@
+{
+  "slug": "2026-11-14-boheomgeum-bujigeup",
+  "title": "보험금 부지급, 고지의무 이유면 다 끝일까 (해지 3년)",
+  "source": "11/14(토) 티스토리 원고 (11/10 미리 씀) 21:00",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "창가 책상 앞에서 턱을 괴고 생각에 잠긴 40대 남성이 작게 보이는 방 전경 (대표사진)",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Wide view of a cozy study room like a miniature diorama, a small Korean man in his 40s in a mustard cardigan sitting at an empty desk by the window, thinking with a finger on his chin. Expression: thoughtful, finger on chin. Color theme: cocoa brown and peach tones with a cream accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "방·장소 전체, 사람은 작게",
+      "bg": "cocoa brown and peach tones with a cream accent",
+      "note": "대표",
+      "thumb_shot": "wide",
+      "thumb_theme": "plum",
+      "thumb_person": "40대 남성(머스터드 카디건)",
+      "thumb_mood": "생각",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "plum",
+        "font": "ptd",
+        "title": "보험금 부지급\n이대로 끝?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "보험금 부지급 통보를 받은 마음을 묻는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "보험금 부지급",
+        "title": "통보 받으면\n끝일까?",
+        "ask": "알리지 않은 병력 때문에?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "보험금 부지급 사유를 스스로 점검하는 카드",
+      "kind": "card",
+      "card": {
+        "type": "selfcheck",
+        "title": "부지급 사유 점검",
+        "items": [
+          "사유를 글로 받고",
+          "계약일부터 3년 안에만",
+          "고의인지 중과실인지",
+          "손해사정서를 받으면"
+        ],
+        "result": "아래 '사고와 상관없으면'을 보세요 👇"
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "창가 책상 위에 놓인 서류철과 안경, 볼펜",
+      "prompt": "Camera and composition: a file folder, glasses and a pen on a desk by a window. File folder, glasses and pen on a desk, calm natural light, no readable text. Background color: soft lavender and white. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a file folder, glasses and a pen on a desk by a window",
+      "bg": "soft lavender and white",
+      "kind": "photo",
+      "photo": {
+        "query_en": "documents glasses pen desk",
+        "scene_en": "file folder, glasses and pen on a desk"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}
