@@ -1,0 +1,74 @@
+{
+  "slug": "2026-11-18-anyang-ganpan-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "빈 상가 출입문 위에 남아 있는 글자 없는 간판 틀 (대표사진)",
+      "scene": "an empty storefront in a Korean shopping street with a blank sign frame above the entrance, no letters, shutter closed.",
+      "prompt": "Camera and composition: an empty storefront in a Korean shopping street with a blank sign frame above the entrance, no letters, shutter closed. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "안양 간판 철거\n언제 뗄까"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "상가 건물 앞 인도에서 올려다본 간판 줄",
+      "scene": "looking up from a sidewalk at a row of blank shop sign boards on a low commercial building.",
+      "prompt": "Camera and composition: looking up from a sidewalk at a row of blank shop sign boards on a low commercial building. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "벽에서 수직으로 튀어나온 돌출 간판 받침",
+      "scene": "a projecting sign bracket sticking out horizontally from a building wall, blank and without any text.",
+      "prompt": "Camera and composition: a projecting sign bracket sticking out horizontally from a building wall, blank and without any text. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "간판 철거 전 확인할 것을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "간판 철거 전 확인",
+        "items": [
+          "스위치·차단기 위치",
+          "전선이 들어가는 구멍",
+          "간판 높이·아래 통행"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "건물 2층 높이 외벽에 붙은 큰 간판과 아래 인도",
+      "scene": "a large blank sign board mounted on the second-floor exterior wall of a commercial building, sidewalk below.",
+      "prompt": "Camera and composition: a large blank sign board mounted on the second-floor exterior wall of a commercial building, sidewalk below. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "길 건너편에서 상가 건물 전체를 정면으로 찍은 모습",
+      "scene": "front view from across the street of a small two-story commercial building with blank signs.",
+      "prompt": "Camera and composition: front view from across the street of a small two-story commercial building with blank signs. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "떼어 낸 간판 판재와 철물을 나눠 정리한 모습",
+      "scene": "removed sign panels and metal brackets sorted separately on the ground beside a building.",
+      "prompt": "Camera and composition: removed sign panels and metal brackets sorted separately on the ground beside a building. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "간판을 떼어 내고 깔끔해진 상가 외벽",
+      "scene": "a clean exterior wall of a shop after the sign was removed, small bolt holes visible, tidy sidewalk.",
+      "prompt": "Camera and composition: a clean exterior wall of a shop after the sign was removed, small bolt holes visible, tidy sidewalk. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

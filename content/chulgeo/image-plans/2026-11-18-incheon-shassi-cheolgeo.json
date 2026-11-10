@@ -1,0 +1,83 @@
+{
+  "slug": "2026-11-18-incheon-shassi-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "낡은 샷시를 떼어 낸 아파트 베란다 창 자리 (대표사진)",
+      "scene": "a Korean apartment balcony with the old window frames removed, leaving a wide open rectangular opening to the outside, overcast sky.",
+      "prompt": "Camera and composition: a Korean apartment balcony with the old window frames removed, leaving a wide open rectangular opening to the outside, overcast sky. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "인천 샷시 철거\n창이 빈 날은"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "오래된 알루미늄 샷시가 달린 아파트 베란다",
+      "scene": "an old aluminum sliding window frame on a Korean apartment balcony, slightly dirty glass, plants nearby.",
+      "prompt": "Camera and composition: an old aluminum sliding window frame on a Korean apartment balcony, slightly dirty glass, plants nearby. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "창틀과 유리문, 방충망이 겹쳐 있는 창호 단면",
+      "scene": "close view of a window frame corner showing the sliding glass door, insect screen and outer frame layered together.",
+      "prompt": "Camera and composition: close view of a window frame corner showing the sliding glass door, insect screen and outer frame layered together. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "사다리차 필요 여부를 가르는 조건 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "사다리차가 필요할까",
+        "items": [
+          [
+            "필요한 경우",
+            "필요 없는 경우"
+          ],
+          [
+            "큰 창이 많을 때",
+            "작은 창 몇 개"
+          ],
+          [
+            "계단이 좁을 때",
+            "설 자리가 없을 때"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "베란다 창 앞 바닥과 거실 가구를 비닐로 덮어 둔 모습",
+      "scene": "furniture near a balcony window and the living room floor covered with clear plastic sheets.",
+      "prompt": "Camera and composition: furniture near a balcony window and the living room floor covered with clear plastic sheets. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "아파트 단지 안 건물 앞 도로와 주차 공간",
+      "scene": "street-level view in front of a Korean apartment building showing the access road and parking spaces.",
+      "prompt": "Camera and composition: street-level view in front of a Korean apartment building showing the access road and parking spaces. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "떼어 낸 창틀과 유리를 따로 나눠 정리한 모습",
+      "scene": "removed window frames and glass panels sorted separately and leaned against a wall on protective sheets.",
+      "prompt": "Camera and composition: removed window frames and glass panels sorted separately and leaned against a wall on protective sheets. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "새 창 설치를 기다리며 깨끗이 정리된 창 자리와 베란다",
+      "scene": "a clean empty window opening on a balcony with the surrounding area tidied, waiting for new windows.",
+      "prompt": "Camera and composition: a clean empty window opening on a balcony with the surrounding area tidied, waiting for new windows. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

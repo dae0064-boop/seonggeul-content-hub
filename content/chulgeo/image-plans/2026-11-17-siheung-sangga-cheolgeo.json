@@ -1,0 +1,74 @@
+{
+  "slug": "2026-11-17-siheung-sangga-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "셔터를 반쯤 올린 빈 상가 안에서 집기를 정리하는 모습 (대표사진)",
+      "scene": "inside an empty small Korean retail shop with the rolling shutter half raised, a few tables and shelves being gathered in the middle, workers seen from behind.",
+      "prompt": "Camera and composition: inside an empty small Korean retail shop with the rolling shutter half raised, a few tables and shelves being gathered in the middle, workers seen from behind. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "시흥 상가 철거\n옆 가게 영업중"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "나란히 붙은 상가 점포들의 앞쪽 인도 풍경",
+      "scene": "street-level view of a row of small Korean shop fronts side by side along a sidewalk, one shop empty with a blank window.",
+      "prompt": "Camera and composition: street-level view of a row of small Korean shop fronts side by side along a sidewalk, one shop empty with a blank window. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "상가 복도 벽에 테이프로 붙인 빈 안내 종이",
+      "scene": "a shared corridor in a Korean commercial building with a plain blank sheet of paper taped on the wall.",
+      "prompt": "Camera and composition: a shared corridor in a Korean commercial building with a plain blank sheet of paper taped on the wall. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "상가 철거 하루 작업 시간 나누기 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "상가 철거 시간 나누기",
+        "items": [
+          "문 열기 전 큰 소리 작업",
+          "영업 중 집기 해체",
+          "마감 뒤 반출·정리"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "상가 출입문과 환기구를 비닐로 막아 둔 모습",
+      "scene": "a shop entrance door and a ceiling vent covered and sealed with clear plastic sheeting and tape.",
+      "prompt": "Camera and composition: a shop entrance door and a ceiling vent covered and sealed with clear plastic sheeting and tape. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "빈 상가 카운터 위에 펼쳐 둔 서류와 볼펜",
+      "scene": "an empty shop counter with a stack of blank papers and a pen laid on it, empty shelves behind.",
+      "prompt": "Camera and composition: an empty shop counter with a stack of blank papers and a pen laid on it, empty shelves behind. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "집기를 모두 비운 상가 바닥과 모아 둔 공구",
+      "scene": "bare floor of an emptied shop with a neat group of tools and debris sacks by the wall.",
+      "prompt": "Camera and composition: bare floor of an emptied shop with a neat group of tools and debris sacks by the wall. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "철거를 마치고 셔터를 내리기 전 깨끗한 빈 점포",
+      "scene": "a clean, completely empty small shop interior with bare walls, seen from the entrance before the shutter is lowered.",
+      "prompt": "Camera and composition: a clean, completely empty small shop interior with bare walls, seen from the entrance before the shutter is lowered. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "slug": "2026-11-17-suwon-oneroom-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "세입자가 나간 뒤 텅 빈 원룸과 낡은 바닥재 (대표사진)",
+      "scene": "an empty Korean studio apartment after tenants moved out, worn vinyl flooring with scuffs, bare walls, a small window with afternoon light, no furniture.",
+      "prompt": "Camera and composition: an empty Korean studio apartment after tenants moved out, worn vinyl flooring with scuffs, bare walls, a small window with afternoon light, no furniture. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "수원 원룸 철거\n사진으로 범위"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "빈 원룸 현관에 서서 방 전체를 내려다본 모습",
+      "scene": "view from the entrance doorway of a vacant studio apartment looking into the whole room, shoes-off entry step in the foreground.",
+      "prompt": "Camera and composition: view from the entrance doorway of a vacant studio apartment looking into the whole room, shoes-off entry step in the foreground. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "방 모서리에서 대각선으로 찍은 원룸 전경",
+      "scene": "diagonal view from one corner of an empty studio apartment showing two walls, the floor and a small kitchenette at the far side.",
+      "prompt": "Camera and composition: diagonal view from one corner of an empty studio apartment showing two walls, the floor and a small kitchenette at the far side. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "원룸 내부 철거 범위를 고르는 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "원룸 내부 철거 범위",
+        "items": [
+          "바닥·벽지만 새로",
+          "주방·욕실 한 곳만",
+          "바닥부터 설비까지 전체"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "엘리베이터 없는 빌라 계단을 위에서 내려다본 모습",
+      "scene": "looking down a narrow concrete stairwell in an older Korean villa building without an elevator, metal railing spiraling down.",
+      "prompt": "Camera and composition: looking down a narrow concrete stairwell in an older Korean villa building without an elevator, metal railing spiraling down. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "원룸 건물 우편함 옆 벽에 붙은 빈 공지 종이",
+      "scene": "entrance hall of a small Korean multi-unit building with metal mailboxes and a blank sheet of paper taped on the wall beside them.",
+      "prompt": "Camera and composition: entrance hall of a small Korean multi-unit building with metal mailboxes and a blank sheet of paper taped on the wall beside them. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "철거 후 마대에 담아 묶어 둔 폐기물과 쓸어 둔 바닥",
+      "scene": "several white woven debris sacks tied and lined up near a studio apartment door, the floor inside freshly swept.",
+      "prompt": "Camera and composition: several white woven debris sacks tied and lined up near a studio apartment door, the floor inside freshly swept. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "벽지와 장판을 걷어 낸 깔끔한 빈 원룸",
+      "scene": "a clean empty studio apartment with wallpaper and flooring removed, bare cement surfaces, soft daylight, orderly.",
+      "prompt": "Camera and composition: a clean empty studio apartment with wallpaper and flooring removed, bare cement surfaces, soft daylight, orderly. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "slug": "2026-11-18-ansan-cheonjang-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "방 천장 한쪽에 번진 누런 물 얼룩 (대표사진)",
+      "scene": "a bedroom ceiling with a large faded yellow-brown water stain spreading in one corner, plain walls.",
+      "prompt": "Camera and composition: a bedroom ceiling with a large faded yellow-brown water stain spreading in one corner, plain walls. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "안산 천장 철거\n물 자국만?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "얼룩 둘레를 연필 선으로 표시한 천장 마감면",
+      "scene": "a ceiling surface with a pencil line drawn around a water stain to mark a cutting area.",
+      "prompt": "Camera and composition: a ceiling surface with a pencil line drawn around a water stain to mark a cutting area. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "작은 사각형으로 잘라 낸 천장 마감재 구멍",
+      "scene": "a neat small square opening cut into a ceiling board, dark cavity visible inside.",
+      "prompt": "Camera and composition: a neat small square opening cut into a ceiling board, dark cavity visible inside. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "누수 자국 확인 체크 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "누수 자국 확인",
+        "items": [
+          "얼룩이 넓어지는지",
+          "축축하거나 말랑한지",
+          "천장이 처졌는지",
+          "곰팡이 냄새"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "방 문가에서 천장 전체가 보이게 위로 찍은 모습",
+      "scene": "upward view from a bedroom doorway showing the whole ceiling with a stain on one side.",
+      "prompt": "Camera and composition: upward view from a bedroom doorway showing the whole ceiling with a stain on one side. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "잘라 낸 천장 구멍 안으로 보이는 마른 틀과 배관",
+      "scene": "looking up into a cut ceiling opening, dry wooden battens and a pipe visible inside.",
+      "prompt": "Camera and composition: looking up into a cut ceiling opening, dry wooden battens and a pipe visible inside. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "천장 조각이 떨어질 자리에 깔아 둔 보양 비닐과 사다리",
+      "scene": "protective plastic sheet spread on a bedroom floor under a ceiling work area with a step ladder standing on it.",
+      "prompt": "Camera and composition: protective plastic sheet spread on a bedroom floor under a ceiling work area with a step ladder standing on it. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "얼룩 난 부분을 걷어 내고 깔끔하게 정리된 천장 아래 방",
+      "scene": "a tidy bedroom after a stained ceiling section was removed, clean opening edges and swept floor.",
+      "prompt": "Camera and composition: a tidy bedroom after a stained ceiling section was removed, clean opening edges and swept floor. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}
