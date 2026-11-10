@@ -60,7 +60,14 @@ for (const [n, a] of [...approvals].sort((x, y) => x[0] - y[0])) {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'insta-final-'));
   const one = { ...hit.set, posts: [{ ...hit.post, approval: text }] };
   fs.writeFileSync(path.join(tmp, 'set.json'), JSON.stringify(one));
-  execFileSync('node', [path.join(ROOT, 'scripts/instagram/render-cards.mjs'), path.join(tmp, 'set.json'), '--out', path.join(tmp, 'out')], { stdio: 'inherit' });
+  // 2026-11-10: 한 편이 그리기 검사(옛 원고 bg_prompt 등)에 걸려도 뒤 편은 계속 만든다 — 1~6편 때문에 8~10편이 막혔다
+  try {
+    execFileSync('node', [path.join(ROOT, 'scripts/instagram/render-cards.mjs'), path.join(tmp, 'set.json'), '--out', path.join(tmp, 'out')], { stdio: ['ignore', 'inherit', 'pipe'] });
+  } catch (e) {
+    const why = String(e.stderr || e.message).split('\n').find((l) => /Error:/.test(l)) || e.message;
+    console.log(`⚠ ${n}편: 마지막 장을 다시 그리지 못했어요 — ${why.trim()} — 건너뜀`);
+    continue;
+  }
   const redrawn = path.join(tmp, 'out', `${n}-${hit.post.slug}`);
   const last = pngs[pngs.length - 1];
   if (!fs.existsSync(path.join(redrawn, last))) throw new Error(`${n}편: 다시 그린 마지막 장(${last})이 없어요`);
