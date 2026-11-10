@@ -1,0 +1,99 @@
+{
+  "slug": "2026-11-20-hoejeongeungae-susul-biyong",
+  "title": "회전근개 수술비용, 입원하면 내 몫은 얼마일까요 (입원 본인부담 20%)",
+  "source": "11/20(금) 15:00 네이버 원고 — 생활보장 검색형(비용), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "흐린 날 침실 침대 위에 단정히 놓인 어깨 보조기 (대표사진)",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a tidy bedroom by the bed. Lighting: soft overcast daylight. A neatly folded dark gray shoulder arm sling resting alone on a smooth light gray bed blanket. Color theme: modern light gray and white tones with a mustard accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "object",
+      "bg": "modern light gray and white tones with a mustard accent",
+      "note": "대표",
+      "thumb_shot": "object",
+      "thumb_theme": "charcoal",
+      "thumb_person": "없음",
+      "thumb_place": "침실",
+      "thumb_light": "흐린 날",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "charcoal",
+        "font": "jua",
+        "title": "회전근개 수술비용\n얼마나 낼까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "회전근개 수술비용에 나오는 숫자를 한눈에 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "회전근개 수술비용 숫자",
+        "items": [
+          [
+            "20%",
+            "입원 본인부담",
+            "급여 진료비"
+          ],
+          [
+            "50%",
+            "입원 식대",
+            "본인부담"
+          ],
+          [
+            "50%",
+            "상급종합병원 2인실",
+            "입원료"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "정형외과 입원 병동 창가에서 팔걸이를 한 채 창밖을 보는 50대 남성",
+      "prompt": "Camera and composition: medium shot by a hospital ward window. A Korean man in his 50s in a light blue patient gown with his left arm in a gray shoulder sling, standing calmly by a bright orthopedic ward window and looking outside. Background color: clean white ward with soft gray curtains and a mustard accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot by a hospital ward window",
+      "bg": "clean white ward with soft gray curtains and a mustard accent"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "회전근개 수술비용 확인할 것을 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "style": "memo",
+        "title": "본인부담상한제 체크",
+        "sub": "1년 낸 급여 본인부담금이 기준이에요",
+        "items": [
+          "급여 본인부담금만 더해요",
+          "비급여는 빠져요",
+          "상급병실 차액은 빠져요"
+        ],
+        "memo": "넘은 만큼 공단이 돌려줘요",
+        "hl": 1
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "정형외과 원무과 창구에서 상담을 듣는 60대 여성",
+      "prompt": "Camera and composition: medium shot at a hospital billing counter. A Korean woman in her 60s in a beige quilted jacket listening calmly to a staff member in soft focus at a hospital billing counter. Background color: modern light gray counter with warm wood panels. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a hospital billing counter",
+      "bg": "modern light gray counter with warm wood panels"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "탁자 위 달력에 수술 날짜를 표시하는 손",
+      "prompt": "Camera and composition: close-up of hands on a table. Close-up of a person's hand drawing a small circle with a pen on a blank wall calendar laid on a wooden table, no face in the frame. Background color: light wood table with a charcoal gray mug. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands on a table",
+      "bg": "light wood table with a charcoal gray mug"
+    }
+  ]
+}

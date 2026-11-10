@@ -1,0 +1,105 @@
+{
+  "slug": "2026-11-20-chimae-gajok-hyugaje",
+  "title": "치매가족휴가제, 돌보는 가족은 1년에 며칠 쉴 수 있나요 (연간 12일)",
+  "source": "11/20(금) 17:40 네이버 원고 — 생활보장 검색형(돌봄·요양), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "밝은 베란다 화분 사이 작은 탁자 위에 놓인 따뜻한 찻잔과 담요 (대표사진)",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a bright apartment balcony with plants. Lighting: bright clear daylight, high key. A single steaming ceramic teacup with a folded soft lavender blanket beside it on a small round table among potted plants on a bright apartment balcony. Color theme: soft lavender and white tones with a warm yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "object",
+      "bg": "soft lavender and white tones with a warm yellow accent",
+      "note": "대표",
+      "thumb_shot": "object",
+      "thumb_theme": "plum",
+      "thumb_person": "없음",
+      "thumb_place": "베란다",
+      "thumb_light": "밝은 낮",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "plum",
+        "font": "jua",
+        "title": "치매가족휴가제\n며칠 쉴까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "치매가족휴가제에 나오는 숫자를 한눈에 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "치매가족휴가제 숫자",
+        "items": [
+          [
+            "12일",
+            "연간 이용",
+            "가족휴가제"
+          ],
+          [
+            "12시간",
+            "종일 방문요양",
+            "1회"
+          ],
+          [
+            "1·2등급",
+            "치매가 없어도",
+            "이용 가능"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "단기보호 시설의 밝은 거실에서 요양보호사와 퍼즐을 맞추는 80대 할머니",
+      "prompt": "Camera and composition: medium shot in a bright care facility lounge. An elderly Korean woman in her 80s with short white hair in a soft lilac sweater doing a large wooden puzzle at a table with a caregiver in a light green uniform in a bright short-term care facility lounge, both smiling calmly. Background color: soft lavender and white lounge with warm yellow accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a bright care facility lounge",
+      "bg": "soft lavender and white lounge with warm yellow accents"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "단기보호와 종일 방문요양을 비교한 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "단기보호 vs 종일 방문요양",
+        "heads": [
+          "단기보호",
+          "종일 방문요양"
+        ],
+        "items": [
+          [
+            "며칠 비운다면",
+            "하루 낮에만 비운다면"
+          ],
+          [
+            "시설에 며칠 머무는",
+            "집으로 오는"
+          ]
+        ],
+        "ask": "뭐가 우리 집에 맞아?"
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "장기요양기관 상담 창구에서 안내를 듣는 40대 딸",
+      "prompt": "Camera and composition: medium shot at a care center counter. A Korean woman in her 40s in a camel coat listening to a staff member in soft focus at the counter of a long-term care center, nodding calmly. Background color: tidy counter with light wood and plum purple accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a care center counter",
+      "bg": "tidy counter with light wood and plum purple accents"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "저녁 식탁에서 메모지에 이용 날짜를 적는 손",
+      "prompt": "Camera and composition: close-up of hands on a dining table. Close-up of a person's hand writing on a small blank sticky note on a dining table in warm evening light, next to a teacup, no face in the frame. Background color: warm wood dining table with a soft plum placemat. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands on a dining table",
+      "bg": "warm wood dining table with a soft plum placemat"
+    }
+  ]
+}

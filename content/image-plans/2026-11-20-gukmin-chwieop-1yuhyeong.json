@@ -1,0 +1,86 @@
+{
+  "slug": "2026-11-20-gukmin-chwieop-1yuhyeong",
+  "title": "국민취업지원제도 1유형, 실업급여 끝나면 바로 신청되나요 (6개월 뒤)",
+  "source": "11/20(금) 21:00 네이버 원고 — 생활보장 검색형(돈·생활 제도), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "아침 햇살이 드는 카페 창가에서 노트북을 열고 결심한 표정을 짓는 30대 남성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a sunny cafe table by a large window. Lighting: soft early-morning sunlight. A Korean man in his 30s with short black hair in an olive green crewneck sweater sitting at a sunny cafe table by a large window with an open laptop, looking ahead. Expression: determined, nodding, sleeves rolled up. Color theme: olive green and pale cream tones with a red accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "face",
+      "bg": "olive green and pale cream tones with a red accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "olive",
+      "thumb_person": "30대 남성 구직자",
+      "thumb_place": "카페",
+      "thumb_light": "아침 햇살",
+      "thumb_mood": "결심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "olive",
+        "font": "jua",
+        "title": "국민취업지원\n언제 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "국민취업지원제도 1유형 질문을 크게 던지는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "국민취업지원",
+        "title": "실업급여 뒤\n바로 될까?",
+        "ask": "실업급여 끝나면 바로?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "고용센터 상담 창구에서 상담사와 이야기하는 40대 여성",
+      "prompt": "Camera and composition: medium shot at an employment center counter. A Korean woman in her 40s in a cream trench coat talking calmly with a counselor in soft focus across a desk at a public employment center. Background color: bright public office with olive green partitions and white walls. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at an employment center counter",
+      "bg": "bright public office with olive green partitions and white walls"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "국민취업지원제도 1유형 신청 순서를 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "1유형 신청 순서",
+        "sub": "실업급여 뒤 6개월부터 확인해요",
+        "items": [
+          "6개월 지났는지 보기",
+          "가구 소득과 재산 기준",
+          "신청서 내기",
+          "취업활동계획 세우기"
+        ],
+        "memo": "소득이 생기면 꼭 신고해요",
+        "hl": 1
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "거실 책상에서 이력서 초안을 출력해 들고 있는 20대 여성의 손",
+      "prompt": "Camera and composition: close-up of hands holding papers at a desk. Close-up of a young Korean woman's hands holding a few freshly printed blank sheets above a home desk with a laptop, no face in the frame. Background color: light wood desk with olive green plant. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands holding papers at a desk",
+      "bg": "light wood desk with olive green plant"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "공원 산책길 벤치에서 메모장에 날짜를 적는 손",
+      "prompt": "Camera and composition: close-up of hands on a park bench. Close-up of a person's hand writing in a small blank notepad on a wooden park bench with soft autumn leaves around, no face in the frame. Background color: soft green park with warm morning light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands on a park bench",
+      "bg": "soft green park with warm morning light"
+    }
+  ]
+}
