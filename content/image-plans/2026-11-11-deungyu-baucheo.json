@@ -1,0 +1,100 @@
+{
+  "slug": "2026-11-11-deungyu-baucheo",
+  "title": "등유 바우처, 국민행복카드로 언제 들어오나요 (12월 9일부터)",
+  "source": "11/11(수) 12:20 네이버 원고 — 생활보장 제도 소식(기후에너지환경부 에너지바우처 겨울 대책), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "아침 햇살 드는 은행 창구에서 빈 카드를 두 손으로 받아 드는 손 (대표사진)",
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a bank counter with a clerk in soft focus. Lighting: soft early-morning sunlight. The wrinkled hands of a Korean woman in her 70s in a lavender knit sleeve receiving a plain blank card with both hands across a bank counter. Expression: relieved gentle smile. Color theme: olive green and pale cream tones with a red accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "hands",
+      "bg": "olive green and pale cream tones with a red accent",
+      "note": "대표",
+      "thumb_shot": "hands",
+      "thumb_theme": "olive",
+      "thumb_person": "70대 어머니 손(라벤더 니트 소매)",
+      "thumb_place": "은행 창구",
+      "thumb_light": "아침 햇살",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "olive",
+        "font": "ptd",
+        "title": "등유 바우처\n언제 들어올까?"
+      },
+      "thumb_mood": "안심"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "등유 바우처 숫자 셋을 보여 주는 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "등유 바우처 숫자 셋",
+        "items": [
+          [
+            "21만",
+            "등유·LPG 가구",
+            "추가 지원 대상"
+          ],
+          [
+            "12월 9일",
+            "국민행복카드",
+            "지급 시작"
+          ],
+          [
+            "144만",
+            "에너지바우처",
+            "올해 지원 가구"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "시골집 마당 한쪽 기름 탱크 옆에서 보일러실 문을 여는 손",
+      "prompt": "Camera and composition: close-up of a hand opening a small boiler room door. Close-up of a Korean person's hand in a work glove opening a small wooden boiler room door next to a plain oil tank in a rural house yard, no face in the frame. Background color: rural yard with weathered wood and soft lavender morning sky. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of a hand opening a small boiler room door",
+      "bg": "rural yard with weathered wood and soft lavender morning sky"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "등유 바우처 받는 순서를 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "등유 바우처 받는 길",
+        "sub": "국민행복카드까지",
+        "items": [
+          "에너지바우처 대상",
+          "등유·LPG로 난방",
+          "국민행복카드로 지급"
+        ],
+        "memo": "행정복지센터에 가서 받을 필요 없어요",
+        "hl": 3
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "흐린 날 시골 마을회관 앞에서 집배원과 이야기하는 80대 아버지",
+      "prompt": "Camera and composition: medium shot in front of a village hall. A Korean man in his 80s in a brown padded vest talking with a mail carrier in a plain uniform in front of a small rural village hall on an overcast day, both calm and smiling. Background color: overcast village street with muted gray and olive tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in front of a village hall",
+      "bg": "overcast village street with muted gray and olive tones"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "저녁 거실 소파에서 무릎 담요를 덮고 차를 마시는 60대 부부",
+      "prompt": "Camera and composition: wide shot of a cozy living room sofa. A Korean couple in their 60s sitting on a sofa under a knee blanket, holding warm mugs of tea and smiling in a cozy living room. Background color: cozy living room with warm amber lamp light and cream walls. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a cozy living room sofa",
+      "bg": "cozy living room with warm amber lamp light and cream walls"
+    }
+  ]
+}
