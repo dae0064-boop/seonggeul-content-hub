@@ -1,0 +1,101 @@
+{
+  "slug": "2026-11-17-jaega-geupyeo-jongnyu",
+  "title": "재가급여 종류, 집에서 받는 장기요양은 몇 가지일까요 (6가지 · 본인부담 15%)",
+  "source": "11/17(화) 17:40 네이버 원고 — 생활보장 검색형(돌봄), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "아침 햇살 드는 거실 소파에서 70대 어머니와 50대 딸이 이야기하며 고개를 끄덕이는 장면 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a living room sofa. Lighting: soft early-morning sunlight. A Korean mother in her 70s in a light green cardigan and her daughter in her 50s in a white shirt sit side by side on a living room sofa, talking and nodding warmly. Expression: nodding with a reassuring smile, hands relaxed. Color theme: fresh green plants and crisp white tones with natural morning light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "duo",
+      "bg": "fresh green plants and crisp white tones with natural morning light",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "forest",
+      "thumb_person": "70대 어머니(연두 카디건)와 50대 딸(흰 셔츠)",
+      "thumb_place": "거실",
+      "thumb_light": "아침 햇살",
+      "thumb_mood": "끄덕",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "forest",
+        "font": "ptd",
+        "title": "재가급여 종류\n집에서 몇 가지?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "재가급여 숫자를 보여 주는 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "재가급여 숫자 셋",
+        "items": [
+          [
+            "6가지",
+            "재가급여 종류",
+            "법 제23조"
+          ],
+          [
+            "15%",
+            "재가급여",
+            "본인부담금"
+          ],
+          [
+            "월 9일",
+            "단기보호",
+            "이내"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "현관에서 요양보호사를 웃으며 맞이하는 70대 아버지",
+      "prompt": "Camera and composition: medium shot at an apartment front door. A Korean man in his 70s in a beige knit vest smiling as he opens his apartment front door to greet a care worker in a light green uniform whose back is to the camera. Background color: bright apartment entrance with white walls and a green plant. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at an apartment front door",
+      "bg": "bright apartment entrance with white walls and a green plant"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "재가급여 고르는 순서를 적은 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "재가급여 고르는 순서",
+        "sub": "재가급여 종류",
+        "items": [
+          "낮에 집이 비면",
+          "집에서 지내시면",
+          "방문목욕",
+          "복지용구"
+        ],
+        "memo": "본인부담금은 15%",
+        "hl": 1
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "주간보호센터 창가 탁자에서 색연필로 그림을 그리는 어르신의 손",
+      "prompt": "Camera and composition: close-up of hands at a day care center table. Close-up of an elderly Korean person's hands drawing with colored pencils on blank paper at a bright day care center table by a window, no face in the frame. Background color: bright room with light wood table and fresh green accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands at a day care center table",
+      "bg": "bright room with light wood table and fresh green accents"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "베란다 화분에 함께 물을 주는 할머니와 손녀",
+      "prompt": "Camera and composition: medium shot on an apartment balcony. A Korean grandmother and her granddaughter in elementary school watering potted plants together on a bright apartment balcony, both smiling. Background color: sunny balcony with green plants and white railings. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on an apartment balcony",
+      "bg": "sunny balcony with green plants and white railings"
+    }
+  ]
+}
