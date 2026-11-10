@@ -1,0 +1,83 @@
+{
+  "slug": "2026-11-15-suwon-cafe-wonsangbokgu",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "의자와 테이블을 빼낸 카페 내부와 남은 바 테이블 (대표사진)",
+      "scene": "interior of a closed Korean cafe with chairs and tables removed, a wooden bar counter still standing, pendant lights hanging, protective sheet on the floor.",
+      "prompt": "Camera and composition: interior of a closed Korean cafe with chairs and tables removed, a wooden bar counter still standing, pendant lights hanging, protective sheet on the floor. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "수원 카페\n원상복구 범위"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "빈 카페 벽면과 천장 조명, 바닥이 한눈에 보이는 공간",
+      "scene": "wide view of an empty small cafe space showing a decorative brick-look wall, ceiling track lights and a patterned tile floor, no furniture.",
+      "prompt": "Camera and composition: wide view of an empty small cafe space showing a decorative brick-look wall, ceiling track lights and a patterned tile floor, no furniture. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "바 테이블 아래 싱크대와 급배수 배관이 드러난 모습",
+      "scene": "low close view under a cafe bar counter with the cabinet doors removed, showing a sink, water supply lines and a drain pipe.",
+      "prompt": "Camera and composition: low close view under a cafe bar counter with the cabinet doors removed, showing a sink, water supply lines and a drain pipe. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "카페 원상복구 범위를 나눈 비교 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "원상복구 범위",
+        "items": [
+          [
+            "처음부터 있던 것",
+            "그대로 두기"
+          ],
+          [
+            "내가 더한 것",
+            "걷어 내기"
+          ],
+          [
+            "애매한 것",
+            "건물주와 문자로"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "떼어 낸 바 상판과 목재 수납장을 쌓아 둔 모습",
+      "scene": "a removed wooden bar countertop and stacked wooden cabinet boxes leaning against a bare wall in an empty shop.",
+      "prompt": "Camera and composition: a removed wooden bar countertop and stacked wooden cabinet boxes leaning against a bare wall in an empty shop. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "카페 입구에서 내부 전체를 사진으로 찍는 손",
+      "scene": "a hand holding a blank-screened smartphone at a cafe glass entrance, framing the empty interior to take a photo.",
+      "prompt": "Camera and composition: a hand holding a blank-screened smartphone at a cafe glass entrance, framing the empty interior to take a photo. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "비워진 카페 바닥을 쓸고 있는 작업자의 뒷모습",
+      "scene": "a worker seen from behind in a safety helmet sweeping the bare floor of an emptied cafe, dust pan nearby.",
+      "prompt": "Camera and composition: a worker seen from behind in a safety helmet sweeping the bare floor of an emptied cafe, dust pan nearby. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "처음처럼 비워진 깨끗한 상가 공간",
+      "scene": "a clean, empty small storefront space with plain white walls and bare concrete floor, sunlight through the front glass.",
+      "prompt": "Camera and composition: a clean, empty small storefront space with plain white walls and bare concrete floor, sunlight through the front glass. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "slug": "2026-11-11-bangmun-mogyok-seobiseu",
+  "title": "방문목욕서비스, 한 번 받으면 얼마를 내나요 (본인부담 7,515원부터)",
+  "source": "11/11(수) 13:40 네이버 원고 — 생활보장 검색형(돌봄·요양), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "밝은 거실에서 70대 어머니와 40대 딸이 마주 보고 웃으며 이야기하는 모습 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a living room sofa. Lighting: bright clear daylight, high key. A Korean woman in her 70s in a dusty pink cardigan and her daughter in her 40s in an ivory blouse sitting together on a living room sofa, facing each other and talking. Expression: bright happy smile. Color theme: dusty pink and ivory tones with a green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "duo",
+      "bg": "dusty pink and ivory tones with a green accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "rose",
+      "thumb_person": "70대 어머니와 40대 딸",
+      "thumb_place": "거실",
+      "thumb_light": "밝은 낮",
+      "thumb_mood": "반가움",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "rose",
+        "font": "ptd",
+        "title": "방문목욕서비스\n한 번에 얼마?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "방문목욕서비스 비용 질문을 크게 던지는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "방문목욕",
+        "title": "한 번에\n얼마 낼까?",
+        "ask": "엄마 목욕, 얼마 들어?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "방문목욕서비스 금액 숫자 셋을 보여 주는 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "방문목욕 숫자 셋",
+        "items": [
+          [
+            "2명",
+            "요양보호사",
+            "이상"
+          ],
+          [
+            "60분",
+            "목욕 시간",
+            "이상"
+          ],
+          [
+            "15%",
+            "본인부담금",
+            "재가급여"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "아파트 앞에 선 하얀 승합차와 정리된 목욕 장비",
+      "prompt": "Camera and composition: wide shot outdoors. A white minivan parked in front of an apartment building entrance with its back door open, showing neatly arranged bathing equipment such as a folded portable tub and hose reel, no people. Background color: clean apartment entrance with green trees. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot outdoors",
+      "bg": "clean apartment entrance with green trees"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "욕실 앞 복도에서 미끄럼 방지 매트를 까는 요양보호사의 손",
+      "prompt": "Camera and composition: close-up of hands on a bathroom floor. Close-up of a caregiver's hands in a light blue uniform sleeve laying a non-slip mat on a bathroom floor by the door, no face in the frame. Background color: white bathroom tiles with soft pink towels. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands on a bathroom floor",
+      "bg": "white bathroom tiles with soft pink towels"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "저녁 조명 아래 탁자에서 장기요양인정서를 펴 놓고 달력에 표시하는 손",
+      "prompt": "Camera and composition: close-up of hands on a table in the evening. Close-up of a Korean person's hands marking a date on a wall-style paper calendar laid on a table beside a blank document, no face in the frame. Background color: warm wooden table under an evening lamp. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands on a table in the evening",
+      "bg": "warm wooden table under an evening lamp"
+    }
+  ]
+}

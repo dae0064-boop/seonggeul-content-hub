@@ -1,0 +1,76 @@
+{
+  "slug": "2026-11-16-ansan-bang-hwakjang-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "방과 발코니 사이 창과 아랫벽이 보이는 아파트 방 (대표사진)",
+      "scene": "inside an empty Korean apartment bedroom looking toward the balcony, an inner sliding window frame sitting on a low half-wall, the balcony and outer windows beyond.",
+      "prompt": "Camera and composition: inside an empty Korean apartment bedroom looking toward the balcony, an inner sliding window frame sitting on a low half-wall, the balcony and outer windows beyond. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "안산 방 확장\n트기 전 확인"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "방에서 발코니로 이어지는 창호와 그 아래 낮은 벽",
+      "scene": "close view of the inner window frame between a room and balcony and the low concrete half-wall beneath it, plain painted surfaces.",
+      "prompt": "Camera and composition: close view of the inner window frame between a room and balcony and the low concrete half-wall beneath it, plain painted surfaces. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "관리사무소 창구 앞에 놓인 빈 신청 서류와 펜",
+      "scene": "a counter at an apartment management office with a blank application form and a pen lying on it, no visible writing, soft indoor light.",
+      "prompt": "Camera and composition: a counter at an apartment management office with a blank application form and a pen lying on it, no visible writing, soft indoor light. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "방 확장 철거 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "방 확장 철거 순서",
+        "items": [
+          "가구 비우고 보양",
+          "창호 유리 떼기",
+          "창호 틀 해체",
+          "창 아래 벽 철거",
+          "발코니 마감 정리"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "비워 둔 발코니에 남은 빨래 건조대 자리와 수도꼭지",
+      "scene": "an emptied apartment balcony with a bare wall-mounted laundry rack spot, a water faucet and floor drain, plain tiled floor.",
+      "prompt": "Camera and composition: an emptied apartment balcony with a bare wall-mounted laundry rack spot, a water faucet and floor drain, plain tiled floor. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "방 안쪽에서 발코니 창 전체를 사진으로 찍는 손",
+      "scene": "a hand holding a blank-screened smartphone inside a bedroom, framing the whole balcony window to take a photo.",
+      "prompt": "Camera and composition: a hand holding a blank-screened smartphone inside a bedroom, framing the whole balcony window to take a photo. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "창호를 걷어 내고 방과 이어진 발코니 공간",
+      "scene": "view of a bedroom opened up into the former balcony area after the inner window and half-wall were removed, rough edges, protective sheets on the floor.",
+      "prompt": "Camera and composition: view of a bedroom opened up into the former balcony area after the inner window and half-wall were removed, rough edges, protective sheets on the floor. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "확장 공사를 기다리는 넓어진 빈 방",
+      "scene": "a wide, bright, empty room extended to the outer windows, bare floor swept clean and waiting for finishing work.",
+      "prompt": "Camera and composition: a wide, bright, empty room extended to the outer windows, bare floor swept clean and waiting for finishing work. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

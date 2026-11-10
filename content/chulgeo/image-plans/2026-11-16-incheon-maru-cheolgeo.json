@@ -1,0 +1,75 @@
+{
+  "slug": "2026-11-16-incheon-maru-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "벽 쪽 걸레받이와 맞닿은 마루 끝을 걷어 내는 장면 (대표사진)",
+      "scene": "close low view along a wall where a white baseboard has been pried off and the edge row of wood flooring is being lifted with a pry bar by a gloved hand.",
+      "prompt": "Camera and composition: close low view along a wall where a white baseboard has been pried off and the edge row of wood flooring is being lifted with a pry bar by a gloved hand. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "인천 마루 철거\n가장자리 정리"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "벽 아래 하얀 걸레받이와 마루가 만나는 모서리",
+      "scene": "macro view of the corner where a white baseboard meets wood flooring, small gap and dust along the joint.",
+      "prompt": "Camera and composition: macro view of the corner where a white baseboard meets wood flooring, small gap and dust along the joint. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "방문 아래 나무 문턱과 양쪽 바닥의 높이 차이",
+      "scene": "close view at a bedroom doorway showing a wooden door threshold strip and a slight height difference between the floors on each side.",
+      "prompt": "Camera and composition: close view at a bedroom doorway showing a wooden door threshold strip and a slight height difference between the floors on each side. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "마루 철거 가장자리 확인 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "가장자리 확인",
+        "items": [
+          "걸레받이 새로 할지",
+          "문턱 없앨지",
+          "붙박이장 둘지",
+          "욕실 문턱은 따로"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "떼어 낸 걸레받이와 문턱 조각을 따로 모아 둔 모습",
+      "scene": "removed baseboard strips and door threshold pieces sorted into a separate neat pile on a protective sheet, apart from floor planks.",
+      "prompt": "Camera and composition: removed baseboard strips and door threshold pieces sorted into a separate neat pile on a protective sheet, apart from floor planks. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "거실 바닥을 둘러보며 가장자리를 살피는 작업자의 뒷모습",
+      "scene": "a worker seen from behind in a safety helmet crouching in an apartment living room, looking at the floor edge along the wall.",
+      "prompt": "Camera and composition: a worker seen from behind in a safety helmet crouching in an apartment living room, looking at the floor edge along the wall. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "마루와 걸레받이를 걷어 내고 깨끗이 쓴 방",
+      "scene": "a bedroom with flooring and baseboards removed, bare cement floor swept clean right up to the walls, a built-in wardrobe still standing.",
+      "prompt": "Camera and composition: a bedroom with flooring and baseboards removed, bare cement floor swept clean right up to the walls, a built-in wardrobe still standing. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "가장자리까지 깔끔하게 비운 빈 방 바닥",
+      "scene": "an empty bedroom with clean bare cement floor and smooth wall bottoms, ready for new flooring, daylight from a window.",
+      "prompt": "Camera and composition: an empty bedroom with clean bare cement floor and smooth wall bottoms, ready for new flooring, daylight from a window. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}
