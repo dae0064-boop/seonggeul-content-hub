@@ -1,0 +1,97 @@
+{
+  "slug": "2026-11-19-juyaganboho-sigan",
+  "title": "주야간보호 시간, 몇 시간 이용하느냐에 따라 비용이 달라지나요 (8~10시간)",
+  "source": "11/19(목) 17:40 네이버 원고 — 생활보장 검색형(돌봄), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "저녁 조명이 켜진 현관에서 주간보호센터에서 돌아온 70대 아버지를 맞는 40대 딸 (대표사진)",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: an apartment front door entrance. Lighting: warm evening lamp light. A Korean daughter in her 40s in a coral coat welcoming her father in his 70s in a gray padded jacket who has just come home, at the apartment entrance. Expression: relieved gentle smile. Color theme: calm teal and light gray tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide",
+      "bg": "calm teal and light gray tones with a coral accent",
+      "note": "대표",
+      "thumb_shot": "wide",
+      "thumb_theme": "teal",
+      "thumb_person": "40대 딸(코랄 코트)과 70대 아버지(회색 점퍼)",
+      "thumb_place": "현관",
+      "thumb_light": "저녁 조명",
+      "thumb_mood": "안심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "teal",
+        "font": "jua",
+        "title": "주야간보호\n몇 시간이 맞을까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "주야간보호 시간 구간을 숫자로 보여 주는 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "시간 구간 한눈에",
+        "items": [
+          [
+            "3시간",
+            "가장 짧은 구간",
+            "6시간 미만까지"
+          ],
+          [
+            "15%",
+            "본인부담금",
+            "재가급여"
+          ],
+          [
+            "13시간",
+            "가장 긴 구간",
+            "초과부터"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "주간보호센터 활동실에서 어르신들이 함께 체조하는 모습",
+      "prompt": "Camera and composition: wide shot of a day care activity room. Several Korean seniors in their 70s doing light stretching exercises together in a bright day care center activity room, a care worker leading with a smile. Background color: bright room with teal mats and white walls. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a day care activity room",
+      "bg": "bright room with teal mats and white walls"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "주야간보호 시간 고를 때 볼 것을 말풍선으로 정리한 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "ask": "몇 시간이 좋을까?",
+        "title": "시간 고를 때 볼 것",
+        "items": [
+          "가족 출근·퇴근 시간",
+          "송영 차량 도착 시간",
+          "월 한도액 안에서 며칠"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "저녁 식탁에서 달력을 보며 일정을 맞추는 40대 부부",
+      "prompt": "Camera and composition: medium shot at a dinner table. A Korean couple in their 40s sitting at a dinner table in the evening, looking at a blank wall calendar together and talking calmly. Background color: warm wood table with a light gray wall. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a dinner table",
+      "bg": "warm wood table with a light gray wall"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "주간보호센터 송영 차량 앞에서 손을 흔드는 70대 아버지",
+      "prompt": "Camera and composition: medium shot beside a small van. A Korean man in his 70s in a navy cap waving one hand with a smile beside a white day care shuttle van parked in front of an apartment. Background color: apartment parking area with autumn trees. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot beside a small van",
+      "bg": "apartment parking area with autumn trees"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "2026-11-21-geongang-geomjin-silbi",
+  "title": "건강검진 실비, 재검사 비용은 돌려받을 수 있나요 (청구 3년 안)",
+  "source": "11/21(토) 11:20 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "사무실 책상 앞에서 휴대폰으로 검진 결과 알림을 확인하는 30대 직장인 남성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: an office desk with a laptop. Lighting: bright clear daylight, high key. A Korean man in his 30s with short black hair in a light teal shirt and dark tie loosened, sitting at an office desk with a monitor in soft focus, looking at his smartphone with a calm curious face. Expression: smiling while checking a smartphone, hands away from the face. Color theme: calm teal and light gray tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "face",
+      "bg": "calm teal and light gray tones with a coral accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "teal",
+      "thumb_person": "30대 남성 직장인",
+      "thumb_place": "사무실",
+      "thumb_light": "밝은 낮",
+      "thumb_mood": "휴대폰",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "teal",
+        "font": "jua",
+        "title": "건강검진 실비\n재검사도 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "건강검진 실비 질문을 크게 던지는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "건강검진 실비",
+        "title": "재검사도\n돌아올까?",
+        "ask": "재검 요망, 실비 돼?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "동네 내과 진료실 책상 위에 놓인 빈 검진 결과지와 청진기",
+      "prompt": "Camera and composition: top-down still life on a clinic desk. Top-down view of a tidy neighborhood clinic desk with a blank checkup report sheet and a stethoscope laid beside it, no people. Background color: white desk with soft mint accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "top-down still life on a clinic desk",
+      "bg": "white desk with soft mint accents"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "건강검진 실비에 대해 많이 헷갈리는 세 문장을 담은 O·X 퀴즈 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "건강검진 실비 퀴즈",
+        "items": [
+          "검진비 자체도 보상된다",
+          "이상 소견 뒤 추가 검사도 본다",
+          "회사가 낸 검진비도 청구된다"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "X"
+        ],
+        "where": "아래 본문"
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "집 현관 신발장 위 서류 봉투에 검진 결과지를 넣는 30대 여성의 손",
+      "prompt": "Camera and composition: close-up of hands at an entryway. Close-up of a Korean woman's hands in a cream knit sleeve slipping a blank report sheet into a plain document envelope on top of an apartment entryway shoe cabinet, no face in the frame. Background color: light oak shoe cabinet with a pale gray wall. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands at an entryway",
+      "bg": "light oak shoe cabinet with a pale gray wall"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "카페 창가 테이블에서 노트북으로 청구 화면을 보는 직장인의 손",
+      "prompt": "Camera and composition: close-up of hands on a laptop in a cafe. Close-up of an office worker's hands typing on a laptop with a blank screen at a cafe window table next to a paper coffee cup, no face in the frame. Background color: warm cafe wood with soft window light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands on a laptop in a cafe",
+      "bg": "warm cafe wood with soft window light"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "slug": "2026-11-22-goyongboheom-pibohomjagyeok",
+  "title": "고용보험 피보험자격, 신고 안 된 피보험기간 몇 년까지 쳐 줄까 (소급 3년)",
+  "source": "11/22(일) 티스토리 원고 (11/10 낮 미리 작성) 10:20",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "저녁 식탁에서 휴대폰으로 고용보험 가입 이력을 확인하며 미소 짓는 20대 남성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean man in his 20s wearing a mustard-yellow knit sweater sits at a dining table in the evening, smiling while checking his smartphone, a mug and a small lamp softly blurred behind him. Expression: smiling while checking a smartphone, hands away from the face. Color theme: apricot and ivory tones with a sage green accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "apricot and ivory tones with a sage green accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "rose",
+      "thumb_person": "20대 남성(머스터드 니트)",
+      "thumb_mood": "휴대폰",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "rose",
+        "font": "jua",
+        "title": "고용보험 피보험자격\n늦게 찾아도 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "고용보험 피보험자격을 늦게 찾을 때를 묻는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "피보험자격",
+        "title": "늦게 찾아도\n인정될까?",
+        "ask": "이력에 회사가 없어요"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "고용보험 확인청구 순서를 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "확인청구 순서",
+        "sub": "빠진 기간을 되찾는 네 단계",
+        "items": [
+          "빠진 회사·기간 적기",
+          "근로계약서·급여 이체 내역",
+          "확인청구서 내기",
+          "확인 결과 통지 받아 보기"
+        ],
+        "memo": "소급 3년 선 안에 서둘러요",
+        "hl": 3
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "창가 책상 위에 놓인 근로계약서 봉투와 계산기, 머그잔",
+      "prompt": "Camera and composition: an envelope, a calculator and a mug on a desk by a window. An employment contract envelope, a small calculator and a mug rest on a wooden desk by a bright window, soft daylight, no readable text. Background color: soft rose and warm ivory. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "an envelope, a calculator and a mug on a desk by a window",
+      "bg": "soft rose and warm ivory",
+      "kind": "photo",
+      "photo": {
+        "query_en": "desk envelope calculator window",
+        "scene_en": "an envelope and a calculator on a desk by a window"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}

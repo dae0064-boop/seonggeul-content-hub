@@ -1,0 +1,88 @@
+{
+  "slug": "2026-11-17-jadongcha-jeonggigeomsa-gigan",
+  "title": "자동차 정기검사 검사기간, 검사유효기간 90일 전에 받아도 괜찮을까 (후 31일)",
+  "source": "11/17(화) 티스토리 원고 (11/10 미리 작성) 10:20",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "아파트 지하주차장 전체 모습과 차 옆에서 휴대폰 문자를 확인하는 작은 사람 (대표사진)",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A bright underground apartment parking garage seen whole like a miniature diorama, a small Korean man in his 30s in a green windbreaker standing beside his compact car checking a smartphone, rows of parked cars, clean painted lines. Expression: smiling while checking a smartphone, hands away from the face. Color theme: sage green plants and warm ivory tones with a butter-yellow accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "방·장소 전체, 사람은 작게",
+      "bg": "sage green plants and warm ivory tones with a butter-yellow accent",
+      "note": "대표",
+      "thumb_shot": "wide",
+      "thumb_theme": "forest",
+      "thumb_person": "30대 남성 직장인(초록 바람막이)",
+      "thumb_mood": "휴대폰",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "forest",
+        "font": "jua",
+        "title": "자동차 정기검사\n언제 가야 할까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "자동차 정기검사 검사기간과 첫 검사유효기간 숫자를 한눈에 보는 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "정기검사 숫자 셋",
+        "items": [
+          [
+            "90일",
+            "만료일 전부터",
+            "검사 시작"
+          ],
+          [
+            "31일",
+            "만료일 뒤까지",
+            "검사 끝"
+          ],
+          [
+            "5년",
+            "새 승용차",
+            "첫 검사"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "자동차 정기검사 날짜를 놓치지 않는 순서를 적은 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "늦지 않게 챙겨요",
+        "sub": "만료일부터 거꾸로 세어 봐요",
+        "items": [
+          "등록증에서 만료일 확인",
+          "90일 전부터 예약",
+          "부적합이면 10일 안 재검사"
+        ],
+        "memo": "30일 넘게 늦으면 과태료가 커져요",
+        "hl": 1
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "정비소 리프트 위에 올라간 승용차와 밝은 작업장",
+      "prompt": "Camera and composition: a sedan raised on a lift in a bright car service garage. A clean sedan raised on a hydraulic lift in a bright tidy car service garage, tools neatly on the wall, no readable text. Background color: fresh green and crisp white. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a sedan raised on a lift in a bright car service garage",
+      "bg": "fresh green and crisp white",
+      "kind": "photo",
+      "photo": {
+        "query_en": "car service garage",
+        "scene_en": "a car on a lift in a bright auto service garage"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}

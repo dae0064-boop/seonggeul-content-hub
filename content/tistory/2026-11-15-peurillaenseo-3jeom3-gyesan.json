@@ -1,0 +1,637 @@
+{
+  "slug": "2026-11-15-peurillaenseo-3jeom3-gyesan",
+  "title": "프리랜서 3.3% 계산, 실수령액에서 거꾸로 구하는 법 (나누기 0.967)",
+  "category": "생활정보",
+  "tags": [
+    "프리랜서3.3%계산",
+    "실수령액",
+    "사업소득",
+    "원천징수",
+    "인적용역",
+    "프리랜서세금",
+    "3.3%세금",
+    "사업소득세",
+    "3.3%역산",
+    "프리랜서실수령액",
+    "강사료세금",
+    "외주비세금",
+    "종합소득세",
+    "소득세법",
+    "생활계산",
+    "생활제도"
+  ],
+  "publishAt": "2026-11-15 12:40",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "인적용역 대가는 1천 원이 안 되는 세금도"
+        },
+        {
+          "t": "그냥 넘기지 않고 떼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 강의 한 번, 외주 한 건을 마치고"
+        },
+        {
+          "t": "\"100만 원이라더니 왜 96만 7천 원이지?\" 하고"
+        },
+        {
+          "t": "입금 문자를 다시 보기 쉬워요."
+        },
+        {
+          "t": "빠진 3만 3천 원이 바로 3.3%예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘은 프리랜서 3.3% 계산을"
+        },
+        {
+          "t": "받을 돈에서, 또 받고 싶은 돈에서"
+        },
+        {
+          "t": "양쪽으로 해 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "받은 돈은 곱하기 0.967,",
+          "s": "yellow"
+        },
+        {
+          "t": "받고 싶은 돈은 나누기 0.967이에요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "위에서 내려다본 프리랜서 작업 책상 위 노트북과 계산기와 수첩 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "프리랜서 3.3% 계산, 3%와 0.3%"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "프리랜서 3.3% 계산 순서를 정리한 메모 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "3.3%는 세금 두 개를 더한 숫자예요."
+        },
+        {
+          "t": "사업소득에 붙는 소득세 3%와",
+          "segs": [
+            {
+              "t": "사업소득에 붙는 소득세 "
+            },
+            {
+              "t": "3%",
+              "s": "blue"
+            },
+            {
+              "t": "와"
+            }
+          ]
+        },
+        {
+          "t": "그 소득세의 10%인 지방소득세예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "3%의 10%가 0.3%라서"
+        },
+        {
+          "t": "둘을 더하면 3.3%가 돼요."
+        },
+        {
+          "t": "일한 대가를 주는 쪽이 미리 떼서 내요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이렇게 미리 떼는 걸 원천징수라고 해요."
+        },
+        {
+          "t": "주는 쪽이 사업자일 때 떼는 게 원칙이라"
+        },
+        {
+          "t": "개인끼리 주고받은 돈은 다를 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "입금 내역이나 원천징수영수증에"
+        },
+        {
+          "t": "사업소득이라고 적혀 있다면"
+        },
+        {
+          "t": "오늘 계산을 그대로 쓰면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "받을 돈에서 실수령액 구하기"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "프리랜서 3.3% 계산은 네 단계로 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "① 계약 금액을 확인해요."
+        },
+        {
+          "t": "② 3%를 곱해 소득세를 구해요."
+        },
+        {
+          "t": "③ 소득세의 10%로 지방소득세를 구해요."
+        },
+        {
+          "t": "④ 계약 금액에서 둘을 빼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "100만 원이면 소득세 3만 원,"
+        },
+        {
+          "t": "지방소득세 3천 원이에요."
+        },
+        {
+          "t": "실수령액은 96만 7천 원이에요.",
+          "segs": [
+            {
+              "t": "실수령액은 "
+            },
+            {
+              "t": "96만 7천 원",
+              "s": "blue"
+            },
+            {
+              "t": "이에요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "한 번에 하려면 계약 금액에"
+        },
+        {
+          "t": "0.967을 곱하면 같은 실수령액이 나와요."
+        },
+        {
+          "t": "250만 원이면 241만 7,500원이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "30만 원짜리 일이라면 원천징수 세금은"
+        },
+        {
+          "t": "소득세 9천 원과 지방소득세 900원이에요."
+        },
+        {
+          "t": "실수령액은 29만 100원이 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "금액이 달라도 떼는 비율은 3.3% 그대로라",
+          "s": "yellow"
+        },
+        {
+          "t": "곱하는 숫자 0.967만 기억하면 돼요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "실수령액에서 거꾸로 구하기"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "계약 금액과 실수령액, 떼는 세금을 숫자로 보여 주는 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "통장에 딱 100만 원이 들어오게 하고 싶다면"
+        },
+        {
+          "t": "거꾸로 0.967로 나눠야 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "100만 원 ÷ 0.967은 약 103만 4천 원이고,"
+        },
+        {
+          "t": "이 금액으로 계약해야 3.3%를 떼고"
+        },
+        {
+          "t": "100만 원 가까이 남아요."
+        },
+        {
+          "t": "200만 원을 받고 싶다면 약 206만 8천 원이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "100만 원에 3.3%를 더한 103만 3천 원으로",
+          "s": "red"
+        },
+        {
+          "t": "정하면 실수령액이 조금 모자라요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "계산해 보면 99만 8,911원이 들어와요."
+        },
+        {
+          "t": "떼는 비율이 더 큰 금액에 붙기 때문이에요."
+        },
+        {
+          "t": "차이는 1천 원 남짓이지만 건이 쌓이면"
+        },
+        {
+          "t": "그만큼 실수령액이 계속 모자라요."
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"견적은 세전으로 말해요, 세후로 말해요?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "정해진 답은 없어서 계약서에 적는 게 안전해요."
+        },
+        {
+          "t": "\"세전 ○○원\" 또는 \"세후 ○○원\"을",
+          "s": "yellow"
+        },
+        {
+          "t": "금액 옆에 한 단어로 붙여 두면 다툼이 줄어요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "1만 원짜리 일도 떼는 이유"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보통 원천징수 세금이 1천 원 미만이면"
+        },
+        {
+          "t": "걷지 않는 소액부징수 규정이 있어요."
+        },
+        {
+          "t": "그런데 프리랜서 대가는 원천징수에서 예외예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "소득세법 시행령 제149조의3이"
+        },
+        {
+          "t": "계속·반복하는 인적용역 사업소득은"
+        },
+        {
+          "t": "이 예외에서 뺀다고 적어 두었어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 1만 원짜리 일도 소득세 300원과",
+          "s": "red"
+        },
+        {
+          "t": "지방소득세 30원, 모두 330원을 떼요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "설문 응답이나 짧은 원고처럼"
+        },
+        {
+          "t": "적은 금액을 여러 번 받는 일이라면"
+        },
+        {
+          "t": "건마다 330원씩 빠지는 게 맞는 계산이에요."
+        },
+        {
+          "t": "프리랜서 3.3% 계산은 금액이 작아도 같아요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "프리랜서 3.3% 계산 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "3.3%를 떼고 나서"
+        },
+        {
+          "t": "자주 묻는 두 가지예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 3.3%를 떼면 세금은 끝난 건가요?"
+        },
+        {
+          "t": "A1: 아니에요. 사업소득은 다음 해 5월에",
+          "segs": [
+            {
+              "t": "A1: 아니에요. 사업소득은 다음 해 "
+            },
+            {
+              "t": "5월",
+              "s": "blue"
+            },
+            {
+              "t": "에"
+            }
+          ]
+        },
+        {
+          "t": "종합소득세로 한 번 더 정산해요."
+        },
+        {
+          "t": "그때 더 내기도, 돌려받기도 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 떼인 금액은 어디서 확인해요?"
+        },
+        {
+          "t": "A2: 준 쪽은 다음 해 3월 10일까지",
+          "segs": [
+            {
+              "t": "A2: 준 쪽은 다음 해 "
+            },
+            {
+              "t": "3월 10일",
+              "s": "blue"
+            },
+            {
+              "t": "까지"
+            }
+          ]
+        },
+        {
+          "t": "지급명세서를 내요."
+        },
+        {
+          "t": "그 자료로 내 사업소득과 원천징수 금액이 잡혀요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "프리랜서 3.3% 계산 정리"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "카페 창가에서 노트북으로 외주 작업을 하는 프리랜서"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "프리랜서 3.3% 계산은 곱하기와 나누기 둘이면 돼요."
+        },
+        {
+          "t": "받은 금액에는 0.967을 곱하고,"
+        },
+        {
+          "t": "받고 싶은 실수령액은 0.967로 나눠요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "한 달에 세 건, 각각 50만 원을 받았다면"
+        },
+        {
+          "t": "떼인 돈은 건마다 1만 6,500원씩"
+        },
+        {
+          "t": "모두 4만 9,500원이에요."
+        },
+        {
+          "t": "5월 정산 때 이 합계를 그대로 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 계약 전에 볼 것",
+          "s": "green"
+        },
+        {
+          "t": "금액 옆에 세전·세후 적기",
+          "s": "green"
+        },
+        {
+          "t": "실수령액 정했으면 0.967로 나누기",
+          "s": "green"
+        },
+        {
+          "t": "1만 원짜리 일도 330원은 빠짐",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분은 견적을 세전으로 말하세요?"
+        },
+        {
+          "t": "\"세전\", \"세후\" 중 하나로 남겨 주세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "3%와 10%는 소득세법 제129조와"
+        },
+        {
+          "t": "지방세법 제103조의13에서 숫자를 옮겼어요."
+        },
+        {
+          "t": "소액부징수 예외는 시행령 조문 그대로예요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "프리랜서 3.3% 계산, 0.967로 나눠 봐요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">인적용역 대가는 1천 원이 안 되는 세금도<br>그냥 넘기지 않고 떼요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 강의 한 번, 외주 한 건을 마치고<br>&quot;100만 원이라더니 왜 96만 7천 원이지?&quot; 하고<br>입금 문자를 다시 보기 쉬워요.<br>빠진 3만 3천 원이 바로 3.3%예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘은 프리랜서 3.3% 계산을<br>받을 돈에서, 또 받고 싶은 돈에서<br>양쪽으로 해 볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>받은 돈은 곱하기 0.967,</b></span><br><span style=\"background-color: #ffe94d;\"><b>받고 싶은 돈은 나누기 0.967이에요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 1] 위에서 내려다본 프리랜서 작업 책상 위 노트북과 계산기와 수첩 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>프리랜서 3.3% 계산, 3%와 0.3%</h2>\n<p data-ke-size=\"size16\">[이미지 2] 프리랜서 3.3% 계산 순서를 정리한 메모 카드</p>\n<p data-ke-size=\"size16\">3.3%는 세금 두 개를 더한 숫자예요.<br>사업소득에 붙는 소득세 <span style=\"color: #0078cb;\"><b>3%</b></span>와<br>그 소득세의 10%인 지방소득세예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">3%의 10%가 0.3%라서<br>둘을 더하면 3.3%가 돼요.<br>일한 대가를 주는 쪽이 미리 떼서 내요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이렇게 미리 떼는 걸 원천징수라고 해요.<br>주는 쪽이 사업자일 때 떼는 게 원칙이라<br>개인끼리 주고받은 돈은 다를 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">입금 내역이나 원천징수영수증에<br>사업소득이라고 적혀 있다면<br>오늘 계산을 그대로 쓰면 돼요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>받을 돈에서 실수령액 구하기</h2>\n<p data-ke-size=\"size16\">프리랜서 3.3% 계산은 네 단계로 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">① 계약 금액을 확인해요.<br>② 3%를 곱해 소득세를 구해요.<br>③ 소득세의 10%로 지방소득세를 구해요.<br>④ 계약 금액에서 둘을 빼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">100만 원이면 소득세 3만 원,<br>지방소득세 3천 원이에요.<br>실수령액은 <span style=\"color: #0078cb;\"><b>96만 7천 원</b></span>이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">한 번에 하려면 계약 금액에<br>0.967을 곱하면 같은 실수령액이 나와요.<br>250만 원이면 241만 7,500원이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">30만 원짜리 일이라면 원천징수 세금은<br>소득세 9천 원과 지방소득세 900원이에요.<br>실수령액은 29만 100원이 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>금액이 달라도 떼는 비율은 3.3% 그대로라</b></span><br><span style=\"background-color: #ffe94d;\"><b>곱하는 숫자 0.967만 기억하면 돼요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>실수령액에서 거꾸로 구하기</h2>\n<p data-ke-size=\"size16\">[이미지 3] 계약 금액과 실수령액, 떼는 세금을 숫자로 보여 주는 카드</p>\n<p data-ke-size=\"size16\">통장에 딱 100만 원이 들어오게 하고 싶다면<br>거꾸로 0.967로 나눠야 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">100만 원 ÷ 0.967은 약 103만 4천 원이고,<br>이 금액으로 계약해야 3.3%를 떼고<br>100만 원 가까이 남아요.<br>200만 원을 받고 싶다면 약 206만 8천 원이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>100만 원에 3.3%를 더한 103만 3천 원으로</b></span><br><span style=\"color: #ff0010;\"><b>정하면 실수령액이 조금 모자라요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">계산해 보면 99만 8,911원이 들어와요.<br>떼는 비율이 더 큰 금액에 붙기 때문이에요.<br>차이는 1천 원 남짓이지만 건이 쌓이면<br>그만큼 실수령액이 계속 모자라요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<blockquote data-ke-style=\"style3\">&quot;견적은 세전으로 말해요, 세후로 말해요?&quot;</blockquote>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">정해진 답은 없어서 계약서에 적는 게 안전해요.<br><span style=\"background-color: #ffe94d;\"><b>&quot;세전 ○○원&quot; 또는 &quot;세후 ○○원&quot;을</b></span><br><span style=\"background-color: #ffe94d;\"><b>금액 옆에 한 단어로 붙여 두면 다툼이 줄어요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>1만 원짜리 일도 떼는 이유</h2>\n<p data-ke-size=\"size16\">보통 원천징수 세금이 1천 원 미만이면<br>걷지 않는 소액부징수 규정이 있어요.<br>그런데 프리랜서 대가는 원천징수에서 예외예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">소득세법 시행령 제149조의3이<br>계속·반복하는 인적용역 사업소득은<br>이 예외에서 뺀다고 적어 두었어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>그래서 1만 원짜리 일도 소득세 300원과</b></span><br><span style=\"color: #ff0010;\"><b>지방소득세 30원, 모두 330원을 떼요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">설문 응답이나 짧은 원고처럼<br>적은 금액을 여러 번 받는 일이라면<br>건마다 330원씩 빠지는 게 맞는 계산이에요.<br>프리랜서 3.3% 계산은 금액이 작아도 같아요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>프리랜서 3.3% 계산 Q&amp;A</h2>\n<p data-ke-size=\"size16\">3.3%를 떼고 나서<br>자주 묻는 두 가지예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 3.3%를 떼면 세금은 끝난 건가요?<br>A1: 아니에요. 사업소득은 다음 해 <span style=\"color: #0078cb;\"><b>5월</b></span>에<br>종합소득세로 한 번 더 정산해요.<br>그때 더 내기도, 돌려받기도 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 떼인 금액은 어디서 확인해요?<br>A2: 준 쪽은 다음 해 <span style=\"color: #0078cb;\"><b>3월 10일</b></span>까지<br>지급명세서를 내요.<br>그 자료로 내 사업소득과 원천징수 금액이 잡혀요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>프리랜서 3.3% 계산 정리</h2>\n<p data-ke-size=\"size16\">[이미지 4] 카페 창가에서 노트북으로 외주 작업을 하는 프리랜서</p>\n<p data-ke-size=\"size16\">프리랜서 3.3% 계산은 곱하기와 나누기 둘이면 돼요.<br>받은 금액에는 0.967을 곱하고,<br>받고 싶은 실수령액은 0.967로 나눠요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">한 달에 세 건, 각각 50만 원을 받았다면<br>떼인 돈은 건마다 1만 6,500원씩<br>모두 4만 9,500원이에요.<br>5월 정산 때 이 합계를 그대로 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 계약 전에 볼 것</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>금액 옆에 세전·세후 적기</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>실수령액 정했으면 0.967로 나누기</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>1만 원짜리 일도 330원은 빠짐</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분은 견적을 세전으로 말하세요?<br>&quot;세전&quot;, &quot;세후&quot; 중 하나로 남겨 주세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">3%와 10%는 소득세법 제129조와<br>지방세법 제103조의13에서 숫자를 옮겼어요.<br>소액부징수 예외는 시행령 조문 그대로예요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>프리랜서 3.3% 계산, 0.967로 나눠 봐요.</p>"
+}

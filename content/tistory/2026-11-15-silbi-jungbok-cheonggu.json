@@ -1,0 +1,659 @@
+{
+  "slug": "2026-11-15-silbi-jungbok-cheonggu",
+  "title": "실비 중복 청구, 연대책임으로 한 곳만 내도 될까 (2009년 10월 이후)",
+  "category": "생활보장",
+  "tags": [
+    "실비중복청구",
+    "연대책임",
+    "비례보상",
+    "다수보험",
+    "우체국보험",
+    "실비중복",
+    "실손중복가입",
+    "실비2개",
+    "실손보험청구",
+    "비례분담",
+    "중복보험",
+    "실손표준약관",
+    "공제실손",
+    "보험금청구",
+    "보험정보",
+    "생활보장"
+  ],
+  "publishAt": "2026-11-15 21:00",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "우체국보험이나 각종 공제로 든 실손도"
+        },
+        {
+          "t": "중복 계산에 함께 들어가요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "회사 단체 실비에 개인 실비까지 있는 분이"
+        },
+        {
+          "t": "병원비 영수증을 들고"
+        },
+        {
+          "t": "\"두 군데 다 따로 내야 하나?\" 하고"
+        },
+        {
+          "t": "앱 두 개를 번갈아 열어 보기 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘은 실비 중복 청구를"
+        },
+        {
+          "t": "약관 문장 그대로 풀어 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "조건이 맞으면 한 곳에만 내도",
+          "s": "yellow"
+        },
+        {
+          "t": "받을 몫을 그 회사가 먼저 줘요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "책상 위에 나란히 놓인 두 개의 보험 서류 봉투와 병원 영수증 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "실비 중복 청구, 한 곳만 내도 될까"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "실비 중복 청구를 묻는 첫머리 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "실손의료보험 표준약관 제38조가"
+        },
+        {
+          "t": "이 경우를 연대책임이라고 불러요."
+        },
+        {
+          "t": "두 가지 조건이 맞으면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "첫째, 2009년 10월 1일 이후",
+          "segs": [
+            {
+              "t": "첫째, "
+            },
+            {
+              "t": "2009년 10월 1일",
+              "s": "blue"
+            },
+            {
+              "t": " 이후"
+            }
+          ]
+        },
+        {
+          "t": "새로 맺은 계약이어야 해요."
+        },
+        {
+          "t": "둘째, 계약들의 보험수익자가 같아야 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "두 조건이 맞으면 한 회사에 청구해도",
+          "s": "red"
+        },
+        {
+          "t": "그 회사가 가입금액 한도 안에서 지급해요.",
+          "s": "red"
+        },
+        {
+          "t": "나머지 회사 몫은 회사끼리 정리해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "약관은 이를 지급한 회사가"
+        },
+        {
+          "t": "다른 회사에 대한 청구권을 넘겨받는다고 적어요."
+        },
+        {
+          "t": "그래서 실비 중복 청구라도 내 쪽 일은 한 번이에요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "다수보험에 들어가는 계약"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "약관이 말하는 다수보험은"
+        },
+        {
+          "t": "실손을 보상하는 계약이 2개 이상"
+        },
+        {
+          "t": "같은 사고에 각각 책임이 있는 경우예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "동시에 들었든 순서대로 들었든 같아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "회사 단체 실비와 개인 실비가 겹쳐도"
+        },
+        {
+          "t": "같은 병원비에 둘 다 책임이 있으면 해당돼요."
+        },
+        {
+          "t": "우체국보험, 각종 공제, 제3보험처럼"
+        },
+        {
+          "t": "의료비를 실제 쓴 만큼 주는 계약도 포함돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "회사 이름이 달라도, 공제여도",
+          "s": "yellow"
+        },
+        {
+          "t": "실손이면 다수보험으로 묶여요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "비례보상, 몫은 이렇게 나눠요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "내 실비가 다수보험에 해당하는지 스스로 보는 체크 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "받는 돈이 두 배가 되는 건 아니에요."
+        },
+        {
+          "t": "약관 제37조가 비례보상 방식을 정해 두었어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "먼저 각 계약의 보장대상의료비 중 최고액에서"
+        },
+        {
+          "t": "공제금액 중 최소액을 빼요."
+        },
+        {
+          "t": "이게 모두 합쳐 받을 수 있는 한도예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보장대상의료비는 그 계약이 보상 대상으로 보는"
+        },
+        {
+          "t": "병원비를 말해요."
+        },
+        {
+          "t": "계약마다 보장 범위가 다르면 이 숫자도 달라져요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 의료비가 100만 원이고"
+        },
+        {
+          "t": "조건이 같은 두 계약의 공제금액이 각 20만 원이라면"
+        },
+        {
+          "t": "한도는 80만 원이에요.",
+          "segs": [
+            {
+              "t": "한도는 "
+            },
+            {
+              "t": "80만 원",
+              "s": "blue"
+            },
+            {
+              "t": "이에요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "각 계약의 책임액도 80만 원으로 같으니"
+        },
+        {
+          "t": "비율대로 나눠 한 곳당 40만 원이에요.",
+          "segs": [
+            {
+              "t": "비율대로 나눠 한 곳당 "
+            },
+            {
+              "t": "40만 원",
+              "s": "blue"
+            },
+            {
+              "t": "이에요."
+            }
+          ]
+        },
+        {
+          "t": "합치면 80만 원, 실제로 든 돈을 넘지 않아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "공제금액이 다르면 계산이 조금 달라져요."
+        },
+        {
+          "t": "한 계약은 10만 원, 다른 계약은 30만 원이라면"
+        },
+        {
+          "t": "한도는 가장 적은 10만 원을 뺀 90만 원이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "책임액은 각각 90만 원과 70만 원이라"
+        },
+        {
+          "t": "90만 원을 9 대 7로 나눠요."
+        },
+        {
+          "t": "약 50만 6천 원과 39만 4천 원이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "다수보험의 총액은 공제금액이",
+          "s": "yellow"
+        },
+        {
+          "t": "가장 적은 계약 쪽으로 맞춰져요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"그럼 하나는 괜히 들고 있는 거예요?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "비례보상이라 받는 총액이 늘지 않는 건 맞아요.",
+          "s": "red"
+        },
+        {
+          "t": "다만 보장 범위나 한도가 다른 계약이라면"
+        },
+        {
+          "t": "한쪽이 못 주는 부분을 다른 쪽이 채우기도 해요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "한 곳에 낼 때 챙길 서류"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "서류는 실비 하나를 청구할 때와 같아요."
+        },
+        {
+          "t": "청구서에 병원 영수증·세부내역서를 붙이고"
+        },
+        {
+          "t": "신분증을 더하면 기본은 끝나요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "연대책임으로 한 곳에 냈다면"
+        },
+        {
+          "t": "보험금도 그 회사 한 곳에서 들어와요."
+        },
+        {
+          "t": "다른 회사 몫은 회사끼리 정리하니"
+        },
+        {
+          "t": "따로 입금이 없어도 놀라지 않아도 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "2009년 10월 전 계약이 섞였다면",
+          "s": "red"
+        },
+        {
+          "t": "그 계약은 따로 내야 몫을 받을 수 있어요.",
+          "s": "red"
+        },
+        {
+          "t": "계약일이 헷갈리면 증권 첫 장을 먼저 봐요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "실비 중복 청구 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "두 개를 가진 분들이"
+        },
+        {
+          "t": "자주 묻는 두 가지예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 2009년 10월 전에 든 계약이면요?"
+        },
+        {
+          "t": "A1: 제38조 연대책임은 그 뒤 새 계약만 적어요."
+        },
+        {
+          "t": "예전 계약이 섞여 있다면"
+        },
+        {
+          "t": "각 회사에 따로 내는 게 확실해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 중복인 줄 모르고 가입했다면요?"
+        },
+        {
+          "t": "A2: 회사는 가입 때 다른 실손이 있는지 확인하고"
+        },
+        {
+          "t": "보상 방식을 설명해야 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이걸 지키지 않아 다수보험에 들게 됐다면"
+        },
+        {
+          "t": "손해배상을 청구할 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "최초계약일부터 5년 안에 청구하고,",
+          "segs": [
+            {
+              "t": "최초계약일부터 "
+            },
+            {
+              "t": "5년",
+              "s": "blue"
+            },
+            {
+              "t": " 안에 청구하고,"
+            }
+          ]
+        },
+        {
+          "t": "낸 보험료와 이자를 합친 금액이에요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "실비 중복 청구 정리"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "병원 수납 창구 앞에서 영수증을 받아 드는 사람"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 체크포인트",
+          "s": "green"
+        },
+        {
+          "t": "실손이 2개 이상",
+          "s": "green"
+        },
+        {
+          "t": "보험수익자가 같음",
+          "s": "green"
+        },
+        {
+          "t": "2009년 10월 뒤 가입",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분은 실비가 몇 개인지 알고 계세요?"
+        },
+        {
+          "t": "\"한 개\", \"두 개\" 중 하나로 남겨 주세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "실비 중복 청구는 조건이 맞으면 한 곳으로 충분하고,"
+        },
+        {
+          "t": "받는 총액은 비례보상 한도 안이에요."
+        },
+        {
+          "t": "한도는 공제금액이 가장 적은 계약이 정해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "계약일과 보험수익자 두 가지만 맞춰 보면"
+        },
+        {
+          "t": "어디에 낼지 바로 정할 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "연대책임과 계산식은 실손의료보험 표준약관"
+        },
+        {
+          "t": "제37조·제38조와 붙임 용어 풀이를 옮겼어요."
+        },
+        {
+          "t": "내 증권에서 계약일과 보험수익자를 확인해 보세요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "실비 중복 청구, 연대책임 조건부터 맞춰 봐요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">우체국보험이나 각종 공제로 든 실손도<br>중복 계산에 함께 들어가요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">회사 단체 실비에 개인 실비까지 있는 분이<br>병원비 영수증을 들고<br>&quot;두 군데 다 따로 내야 하나?&quot; 하고<br>앱 두 개를 번갈아 열어 보기 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘은 실비 중복 청구를<br>약관 문장 그대로 풀어 볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>조건이 맞으면 한 곳에만 내도</b></span><br><span style=\"background-color: #ffe94d;\"><b>받을 몫을 그 회사가 먼저 줘요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 1] 책상 위에 나란히 놓인 두 개의 보험 서류 봉투와 병원 영수증 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>실비 중복 청구, 한 곳만 내도 될까</h2>\n<p data-ke-size=\"size16\">[이미지 2] 실비 중복 청구를 묻는 첫머리 카드</p>\n<p data-ke-size=\"size16\">실손의료보험 표준약관 제38조가<br>이 경우를 연대책임이라고 불러요.<br>두 가지 조건이 맞으면 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">첫째, <span style=\"color: #0078cb;\"><b>2009년 10월 1일</b></span> 이후<br>새로 맺은 계약이어야 해요.<br>둘째, 계약들의 보험수익자가 같아야 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>두 조건이 맞으면 한 회사에 청구해도</b></span><br><span style=\"color: #ff0010;\"><b>그 회사가 가입금액 한도 안에서 지급해요.</b></span><br>나머지 회사 몫은 회사끼리 정리해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">약관은 이를 지급한 회사가<br>다른 회사에 대한 청구권을 넘겨받는다고 적어요.<br>그래서 실비 중복 청구라도 내 쪽 일은 한 번이에요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>다수보험에 들어가는 계약</h2>\n<p data-ke-size=\"size16\">약관이 말하는 다수보험은<br>실손을 보상하는 계약이 2개 이상<br>같은 사고에 각각 책임이 있는 경우예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">동시에 들었든 순서대로 들었든 같아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">회사 단체 실비와 개인 실비가 겹쳐도<br>같은 병원비에 둘 다 책임이 있으면 해당돼요.<br>우체국보험, 각종 공제, 제3보험처럼<br>의료비를 실제 쓴 만큼 주는 계약도 포함돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>회사 이름이 달라도, 공제여도</b></span><br><span style=\"background-color: #ffe94d;\"><b>실손이면 다수보험으로 묶여요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>비례보상, 몫은 이렇게 나눠요</h2>\n<p data-ke-size=\"size16\">[이미지 3] 내 실비가 다수보험에 해당하는지 스스로 보는 체크 카드</p>\n<p data-ke-size=\"size16\">받는 돈이 두 배가 되는 건 아니에요.<br>약관 제37조가 비례보상 방식을 정해 두었어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">먼저 각 계약의 보장대상의료비 중 최고액에서<br>공제금액 중 최소액을 빼요.<br>이게 모두 합쳐 받을 수 있는 한도예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">보장대상의료비는 그 계약이 보상 대상으로 보는<br>병원비를 말해요.<br>계약마다 보장 범위가 다르면 이 숫자도 달라져요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 의료비가 100만 원이고<br>조건이 같은 두 계약의 공제금액이 각 20만 원이라면<br>한도는 <span style=\"color: #0078cb;\"><b>80만 원</b></span>이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">각 계약의 책임액도 80만 원으로 같으니<br>비율대로 나눠 한 곳당 <span style=\"color: #0078cb;\"><b>40만 원</b></span>이에요.<br>합치면 80만 원, 실제로 든 돈을 넘지 않아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">공제금액이 다르면 계산이 조금 달라져요.<br>한 계약은 10만 원, 다른 계약은 30만 원이라면<br>한도는 가장 적은 10만 원을 뺀 90만 원이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">책임액은 각각 90만 원과 70만 원이라<br>90만 원을 9 대 7로 나눠요.<br>약 50만 6천 원과 39만 4천 원이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>다수보험의 총액은 공제금액이</b></span><br><span style=\"background-color: #ffe94d;\"><b>가장 적은 계약 쪽으로 맞춰져요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<blockquote data-ke-style=\"style3\">&quot;그럼 하나는 괜히 들고 있는 거예요?&quot;</blockquote>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>비례보상이라 받는 총액이 늘지 않는 건 맞아요.</b></span><br>다만 보장 범위나 한도가 다른 계약이라면<br>한쪽이 못 주는 부분을 다른 쪽이 채우기도 해요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>한 곳에 낼 때 챙길 서류</h2>\n<p data-ke-size=\"size16\">서류는 실비 하나를 청구할 때와 같아요.<br>청구서에 병원 영수증·세부내역서를 붙이고<br>신분증을 더하면 기본은 끝나요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">연대책임으로 한 곳에 냈다면<br>보험금도 그 회사 한 곳에서 들어와요.<br>다른 회사 몫은 회사끼리 정리하니<br>따로 입금이 없어도 놀라지 않아도 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>2009년 10월 전 계약이 섞였다면</b></span><br><span style=\"color: #ff0010;\"><b>그 계약은 따로 내야 몫을 받을 수 있어요.</b></span><br>계약일이 헷갈리면 증권 첫 장을 먼저 봐요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>실비 중복 청구 Q&amp;A</h2>\n<p data-ke-size=\"size16\">두 개를 가진 분들이<br>자주 묻는 두 가지예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 2009년 10월 전에 든 계약이면요?<br>A1: 제38조 연대책임은 그 뒤 새 계약만 적어요.<br>예전 계약이 섞여 있다면<br>각 회사에 따로 내는 게 확실해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 중복인 줄 모르고 가입했다면요?<br>A2: 회사는 가입 때 다른 실손이 있는지 확인하고<br>보상 방식을 설명해야 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이걸 지키지 않아 다수보험에 들게 됐다면<br>손해배상을 청구할 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">최초계약일부터 <span style=\"color: #0078cb;\"><b>5년</b></span> 안에 청구하고,<br>낸 보험료와 이자를 합친 금액이에요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>실비 중복 청구 정리</h2>\n<p data-ke-size=\"size16\">[이미지 4] 병원 수납 창구 앞에서 영수증을 받아 드는 사람</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 체크포인트</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>실손이 2개 이상</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>보험수익자가 같음</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>2009년 10월 뒤 가입</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분은 실비가 몇 개인지 알고 계세요?<br>&quot;한 개&quot;, &quot;두 개&quot; 중 하나로 남겨 주세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">실비 중복 청구는 조건이 맞으면 한 곳으로 충분하고,<br>받는 총액은 비례보상 한도 안이에요.<br>한도는 공제금액이 가장 적은 계약이 정해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">계약일과 보험수익자 두 가지만 맞춰 보면<br>어디에 낼지 바로 정할 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">연대책임과 계산식은 실손의료보험 표준약관<br>제37조·제38조와 붙임 용어 풀이를 옮겼어요.<br>내 증권에서 계약일과 보험수익자를 확인해 보세요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>실비 중복 청구, 연대책임 조건부터 맞춰 봐요.</p>"
+}

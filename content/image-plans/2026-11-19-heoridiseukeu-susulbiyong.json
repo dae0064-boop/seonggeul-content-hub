@@ -1,0 +1,101 @@
+{
+  "slug": "2026-11-19-heoridiseukeu-susulbiyong",
+  "title": "허리디스크 수술비용, 건강보험이 되면 얼마를 내나요 (입원 20%)",
+  "source": "11/19(목) 15:00 네이버 원고 — 생활보장 검색형(비용), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "병원 접수대에서 입원 안내 서류를 손으로 짚어 보는 50대 남성의 손 (대표사진)",
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a bright hospital reception desk area (no patients in pain). Lighting: cool clean white indoor light. Close-up of a Korean man in his 50s, navy jacket sleeves, pointing with one finger at a blank admission form on a hospital reception counter, no face in the frame. Expression: determined, nodding, sleeves rolled up. Color theme: clean white and soft navy blue tones in bright daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "hands",
+      "bg": "clean white and soft navy blue tones in bright daylight",
+      "note": "대표",
+      "thumb_shot": "hands",
+      "thumb_theme": "navy",
+      "thumb_person": "50대 남성 손(남색 점퍼 소매)",
+      "thumb_place": "병원 접수",
+      "thumb_light": "흰 조명",
+      "thumb_mood": "결심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "navy",
+        "font": "jua",
+        "title": "허리디스크\n수술비 얼마?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "허리디스크 수술비용 숫자를 한눈에 보여 주는 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "수술비 비율 셋",
+        "items": [
+          [
+            "20%",
+            "입원 진료비",
+            "급여 본인부담"
+          ],
+          [
+            "50%",
+            "입원 식대",
+            "본인부담"
+          ],
+          [
+            "40%",
+            "2인실 입원료",
+            "종합병원·병원"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "병원 상담실에서 간호사의 설명을 듣는 50대 부부",
+      "prompt": "Camera and composition: medium shot in a hospital consultation room. A Korean couple in their 50s sitting at a desk in a bright hospital consultation room, listening to a nurse in a white uniform who explains with a blank sheet. Background color: white room with soft navy chairs. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot in a hospital consultation room",
+      "bg": "white room with soft navy chairs"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "허리디스크 수술 전 확인 순서를 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "수술 전 확인 순서",
+        "sub": "허리디스크 수술비용 정리",
+        "items": [
+          "급여인지 비급여인지 묻기",
+          "비급여 항목과 가격",
+          "병실 종류와 입원료 비율",
+          "진료비 세부내역서 받기"
+        ],
+        "memo": "세부내역서는 실비에도 써요",
+        "hl": 2
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "거실 탁자에서 영수증 묶음을 정리하는 60대 남성",
+      "prompt": "Camera and composition: medium shot at a living room table. A Korean man in his 60s in an olive cardigan sorting a small stack of blank receipts on a living room table, calm expression. Background color: light wood table with a pale green vase. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a living room table",
+      "bg": "light wood table with a pale green vase"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "병원 복도 창가에서 휴대폰으로 일정을 확인하는 40대 딸",
+      "prompt": "Camera and composition: medium shot by a hospital corridor window. A Korean woman in her 40s in a camel coat standing by a bright hospital corridor window, checking her smartphone calmly. Background color: bright corridor with white walls and soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot by a hospital corridor window",
+      "bg": "bright corridor with white walls and soft daylight"
+    }
+  ]
+}

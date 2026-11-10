@@ -1,0 +1,639 @@
+{
+  "slug": "2026-11-18-boheomgeum-jiyeonija",
+  "title": "보험금 지연이자, 지급기일 넘기면 가산이율 얼마나 붙을까 (8%)",
+  "category": "생활보장",
+  "tags": [
+    "보험금지연이자",
+    "지급기일",
+    "가산이율",
+    "보험계약대출이율",
+    "보험금가지급",
+    "보험금지급지연",
+    "보험금이자",
+    "표준약관",
+    "보험금청구",
+    "지급예정일",
+    "30영업일",
+    "보험금조사",
+    "실손보험",
+    "보험정보",
+    "생활보장"
+  ],
+  "publishAt": "2026-11-18 15:00",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보험금 가지급은 추가 조사가 길어질 때"
+        },
+        {
+          "t": "회사가 추정한 보험금의 50%를 먼저 받는 제도예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 입원비 서류를 낸 지 한 달이 넘었는데"
+        },
+        {
+          "t": "\"조사 중이에요\"라는 문자만 왔다면"
+        },
+        {
+          "t": "기다린 만큼 이자라도 붙는지 궁금해지죠."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘은 보험금 지연이자가 늦어진 기간마다"
+        },
+        {
+          "t": "어떻게 달라지는지 표준약관 표로 짚어 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "지급기일을 넘긴 날부터 이자가 붙고,",
+          "s": "yellow"
+        },
+        {
+          "t": "오래 늦어질수록 가산이율이 커져요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "아침 햇살이 드는 식탁 위에 놓인 입원 서류 봉투와 달력, 휴대폰 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "보험금 지연이자, 지급기일부터 세요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "보험금 지연이자 구간별 이율을 한눈에 보는 숫자 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "표준약관 제8조는 서류를 접수한 날부터"
+        },
+        {
+          "t": "3영업일 안에 보험금을 주도록 정했어요.",
+          "segs": [
+            {
+              "t": "3영업일",
+              "s": "blue"
+            },
+            {
+              "t": " 안에 보험금을 주도록 정했어요."
+            }
+          ]
+        },
+        {
+          "t": "조사나 확인이 필요하면 10영업일까지예요.",
+          "segs": [
+            {
+              "t": "조사나 확인이 필요하면 "
+            },
+            {
+              "t": "10영업일",
+              "s": "blue"
+            },
+            {
+              "t": "까지예요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이 날짜가 바로 지급기일이에요."
+        },
+        {
+          "t": "접수증은 문자나 전자우편으로도 보내 주니"
+        },
+        {
+          "t": "받은 날짜를 지워지지 않게 남겨 두세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보험금 지연이자는 지급기일 다음 날부터"
+        },
+        {
+          "t": "실제로 돈이 들어온 날까지 계산해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "지급기일 안에 못 줄 것 같으면 회사는"
+        },
+        {
+          "t": "그 이유와 지급예정일, 가지급제도를"
+        },
+        {
+          "t": "바로 알려 줘야 한다고 약관에 적혀 있어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "늦어진 기간마다 이율이 달라요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "약관 맨 뒤 부표에 이율 표가 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 다음 날부터 30일까지 보험계약대출이율"
+        },
+        {
+          "t": "✔ 31일부터 60일까지는 가산이율 4% 더하기"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 61일부터 90일까지는 가산이율 6% 더하기"
+        },
+        {
+          "t": "✔ 91일부터는 가산이율 8% 더하기"
+        },
+        {
+          "t": "✔ 이자는 연단위 복리로 계산"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보험계약대출이율은 보험개발원이"
+        },
+        {
+          "t": "공시하는 이율을 쓴다고 실손 약관에 나와요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 오래 늦어질수록 보험금 지연이자가",
+          "s": "red"
+        },
+        {
+          "t": "계단처럼 더 크게 붙어요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 지급기일보다 45일 늦게 받았다면"
+        },
+        {
+          "t": "앞 30일은 보험계약대출이율만 붙어요."
+        },
+        {
+          "t": "나머지 15일은 보험계약대출이율에"
+        },
+        {
+          "t": "가산이율 4%를 더한 이율로 계산해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "100일 늦었다면 구간이 네 개로 나뉘어요."
+        },
+        {
+          "t": "30일·30일·30일·10일씩"
+        },
+        {
+          "t": "각각 다른 이율을 붙여 더하는 방식이에요."
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"그럼 일부러 늦게 받으면 이득이에요?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그렇게 보기는 어려워요."
+        },
+        {
+          "t": "계약자 쪽 책임으로 늦어진 기간은"
+        },
+        {
+          "t": "이자가 붙지 않을 수 있다고 약관에 있어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "가산이율이 붙지 않는 기간도 있어요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "가산이율이 붙지 않는 경우를 맞혀 보는 O·X 퀴즈 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "약관은 지급예정일을 30영업일 안에서 정하되,",
+          "segs": [
+            {
+              "t": "약관은 지급예정일을 "
+            },
+            {
+              "t": "30영업일",
+              "s": "blue"
+            },
+            {
+              "t": " 안에서 정하되,"
+            }
+          ]
+        },
+        {
+          "t": "몇 가지 경우는 예외로 두었어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 소송을 제기한 경우"
+        },
+        {
+          "t": "✔ 분쟁조정을 신청한 경우"
+        },
+        {
+          "t": "✔ 수사기관이 조사하는 경우"
+        },
+        {
+          "t": "✔ 해외에서 난 사고를 조사하는 경우"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이런 사유로 늦어진 기간에는"
+        },
+        {
+          "t": "가산이율을 적용하지 않는다고 부표 주석에 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "정당한 이유 없이 서면 조사 동의를 거부하면",
+          "s": "red"
+        },
+        {
+          "t": "확인이 끝날 때까지 지연이자를 받지 못해요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "회사가 서면 조사 동의를 구할 때는"
+        },
+        {
+          "t": "조사 목적과 사용처를 밝히고 설명해야 해요."
+        },
+        {
+          "t": "어디에 쓰는지 듣고 동의해도 늦지 않아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "다만 분쟁조정을 신청했다는 이유만으로"
+        },
+        {
+          "t": "회사가 이자 지급을 거절하지는 않는다는"
+        },
+        {
+          "t": "단서도 2020년에 새로 들어갔어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "보험금 가지급도 함께 챙겨요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "창가 책상 위의 서류철과 달력, 펜"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "추가 조사로 지급이 늦어지면"
+        },
+        {
+          "t": "보험수익자가 청구할 때 회사가 추정한"
+        },
+        {
+          "t": "보험금의 50%를 먼저 받을 수 있어요.",
+          "segs": [
+            {
+              "t": "보험금의 "
+            },
+            {
+              "t": "50%",
+              "s": "blue"
+            },
+            {
+              "t": "를 먼저 받을 수 있어요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "장해지급률을 두고 다투느라 늦어질 때도 있어요."
+        },
+        {
+          "t": "이때는 이미 확정된 장해지급률만큼의 보험금을"
+        },
+        {
+          "t": "청구하면 먼저 가지급한다고 약관에 나와요."
+        },
+        {
+          "t": "다투는 부분은 그 뒤에 따로 정리하는 거예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보험금 지연이자를 기다리기보다",
+          "s": "yellow"
+        },
+        {
+          "t": "가지급을 먼저 청구하는 편이 생활비엔 나아요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 체크포인트",
+          "s": "green"
+        },
+        {
+          "t": "서류 접수일과 접수증 문자 저장",
+          "s": "green"
+        },
+        {
+          "t": "지급예정일 안내를 받았는지 확인",
+          "s": "green"
+        },
+        {
+          "t": "조사가 길어지면 가지급 청구",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "보험금 지연이자 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보험금 지연이자에 대해 많이 묻는 두 가지예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 지연이자는 따로 청구해야 하나요?"
+        },
+        {
+          "t": "A1: 약관은 보험금에 이자를 더해 주는 구조예요."
+        },
+        {
+          "t": "받은 금액에 이자가 들어갔는지"
+        },
+        {
+          "t": "지급 안내에서 한 번 확인해 보세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 지급기일은 접수한 날부터 세나요?"
+        },
+        {
+          "t": "A2: 서류를 접수한 날부터 영업일로 세요."
+        },
+        {
+          "t": "주말과 공휴일은 빼고 계산해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분은 보험금을 기다려 본 가장 긴 기간이"
+        },
+        {
+          "t": "며칠쯤이었나요? 숫자로 남겨 주세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "보험금 지연이자 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보험금 지연이자는 지급기일 다음 날부터 붙고,"
+        },
+        {
+          "t": "31일·61일·91일을 지날 때마다"
+        },
+        {
+          "t": "가산이율이 한 계단씩 올라가요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "약관 사유로 늦어진 기간은 가산이율이 빠지니",
+          "s": "yellow"
+        },
+        {
+          "t": "지급예정일 안내 문자를 꼭 챙겨 두세요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이율 표는 금융감독원 보험업감독업무시행세칙"
+        },
+        {
+          "t": "별표15 표준약관의 생명보험·실손보험 부표에서"
+        },
+        {
+          "t": "숫자를 그대로 옮겨 왔어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "상품마다 세부 문구는 다를 수 있어"
+        },
+        {
+          "t": "내 증권·약관의 보험금 지급절차 조항도 함께 보세요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "보험금 지연이자, 지급기일과 가산이율부터 확인해요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">보험금 가지급은 추가 조사가 길어질 때<br>회사가 추정한 보험금의 50%를 먼저 받는 제도예요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 입원비 서류를 낸 지 한 달이 넘었는데<br>&quot;조사 중이에요&quot;라는 문자만 왔다면<br>기다린 만큼 이자라도 붙는지 궁금해지죠.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘은 보험금 지연이자가 늦어진 기간마다<br>어떻게 달라지는지 표준약관 표로 짚어 볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>지급기일을 넘긴 날부터 이자가 붙고,</b></span><br><span style=\"background-color: #ffe94d;\"><b>오래 늦어질수록 가산이율이 커져요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 1] 아침 햇살이 드는 식탁 위에 놓인 입원 서류 봉투와 달력, 휴대폰 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>보험금 지연이자, 지급기일부터 세요</h2>\n<p data-ke-size=\"size16\">[이미지 2] 보험금 지연이자 구간별 이율을 한눈에 보는 숫자 카드</p>\n<p data-ke-size=\"size16\">표준약관 제8조는 서류를 접수한 날부터<br><span style=\"color: #0078cb;\"><b>3영업일</b></span> 안에 보험금을 주도록 정했어요.<br>조사나 확인이 필요하면 <span style=\"color: #0078cb;\"><b>10영업일</b></span>까지예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이 날짜가 바로 지급기일이에요.<br>접수증은 문자나 전자우편으로도 보내 주니<br>받은 날짜를 지워지지 않게 남겨 두세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">보험금 지연이자는 지급기일 다음 날부터<br>실제로 돈이 들어온 날까지 계산해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">지급기일 안에 못 줄 것 같으면 회사는<br>그 이유와 지급예정일, 가지급제도를<br>바로 알려 줘야 한다고 약관에 적혀 있어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>늦어진 기간마다 이율이 달라요</h2>\n<p data-ke-size=\"size16\">약관 맨 뒤 부표에 이율 표가 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">✔ 다음 날부터 30일까지 보험계약대출이율<br>✔ 31일부터 60일까지는 가산이율 4% 더하기</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">✔ 61일부터 90일까지는 가산이율 6% 더하기<br>✔ 91일부터는 가산이율 8% 더하기<br>✔ 이자는 연단위 복리로 계산</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">보험계약대출이율은 보험개발원이<br>공시하는 이율을 쓴다고 실손 약관에 나와요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>그래서 오래 늦어질수록 보험금 지연이자가</b></span><br><span style=\"color: #ff0010;\"><b>계단처럼 더 크게 붙어요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 지급기일보다 45일 늦게 받았다면<br>앞 30일은 보험계약대출이율만 붙어요.<br>나머지 15일은 보험계약대출이율에<br>가산이율 4%를 더한 이율로 계산해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">100일 늦었다면 구간이 네 개로 나뉘어요.<br>30일·30일·30일·10일씩<br>각각 다른 이율을 붙여 더하는 방식이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<blockquote data-ke-style=\"style3\">&quot;그럼 일부러 늦게 받으면 이득이에요?&quot;</blockquote>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그렇게 보기는 어려워요.<br>계약자 쪽 책임으로 늦어진 기간은<br>이자가 붙지 않을 수 있다고 약관에 있어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>가산이율이 붙지 않는 기간도 있어요</h2>\n<p data-ke-size=\"size16\">[이미지 3] 가산이율이 붙지 않는 경우를 맞혀 보는 O·X 퀴즈 카드</p>\n<p data-ke-size=\"size16\">약관은 지급예정일을 <span style=\"color: #0078cb;\"><b>30영업일</b></span> 안에서 정하되,<br>몇 가지 경우는 예외로 두었어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">✔ 소송을 제기한 경우<br>✔ 분쟁조정을 신청한 경우<br>✔ 수사기관이 조사하는 경우<br>✔ 해외에서 난 사고를 조사하는 경우</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이런 사유로 늦어진 기간에는<br>가산이율을 적용하지 않는다고 부표 주석에 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>정당한 이유 없이 서면 조사 동의를 거부하면</b></span><br><span style=\"color: #ff0010;\"><b>확인이 끝날 때까지 지연이자를 받지 못해요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">회사가 서면 조사 동의를 구할 때는<br>조사 목적과 사용처를 밝히고 설명해야 해요.<br>어디에 쓰는지 듣고 동의해도 늦지 않아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">다만 분쟁조정을 신청했다는 이유만으로<br>회사가 이자 지급을 거절하지는 않는다는<br>단서도 2020년에 새로 들어갔어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>보험금 가지급도 함께 챙겨요</h2>\n<p data-ke-size=\"size16\">[이미지 4] 창가 책상 위의 서류철과 달력, 펜</p>\n<p data-ke-size=\"size16\">추가 조사로 지급이 늦어지면<br>보험수익자가 청구할 때 회사가 추정한<br>보험금의 <span style=\"color: #0078cb;\"><b>50%</b></span>를 먼저 받을 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">장해지급률을 두고 다투느라 늦어질 때도 있어요.<br>이때는 이미 확정된 장해지급률만큼의 보험금을<br>청구하면 먼저 가지급한다고 약관에 나와요.<br>다투는 부분은 그 뒤에 따로 정리하는 거예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>보험금 지연이자를 기다리기보다</b></span><br><span style=\"background-color: #ffe94d;\"><b>가지급을 먼저 청구하는 편이 생활비엔 나아요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 체크포인트</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>서류 접수일과 접수증 문자 저장</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>지급예정일 안내를 받았는지 확인</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>조사가 길어지면 가지급 청구</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>보험금 지연이자 Q&amp;A</h2>\n<p data-ke-size=\"size16\">보험금 지연이자에 대해 많이 묻는 두 가지예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 지연이자는 따로 청구해야 하나요?<br>A1: 약관은 보험금에 이자를 더해 주는 구조예요.<br>받은 금액에 이자가 들어갔는지<br>지급 안내에서 한 번 확인해 보세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 지급기일은 접수한 날부터 세나요?<br>A2: 서류를 접수한 날부터 영업일로 세요.<br>주말과 공휴일은 빼고 계산해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분은 보험금을 기다려 본 가장 긴 기간이<br>며칠쯤이었나요? 숫자로 남겨 주세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>보험금 지연이자 정리</h2>\n<p data-ke-size=\"size16\">보험금 지연이자는 지급기일 다음 날부터 붙고,<br>31일·61일·91일을 지날 때마다<br>가산이율이 한 계단씩 올라가요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>약관 사유로 늦어진 기간은 가산이율이 빠지니</b></span><br><span style=\"background-color: #ffe94d;\"><b>지급예정일 안내 문자를 꼭 챙겨 두세요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이율 표는 금융감독원 보험업감독업무시행세칙<br>별표15 표준약관의 생명보험·실손보험 부표에서<br>숫자를 그대로 옮겨 왔어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">상품마다 세부 문구는 다를 수 있어<br>내 증권·약관의 보험금 지급절차 조항도 함께 보세요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>보험금 지연이자, 지급기일과 가산이율부터 확인해요.</p>"
+}

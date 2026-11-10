@@ -1,0 +1,101 @@
+{
+  "slug": "2026-11-22-teulni-biyong",
+  "title": "틀니 비용, 65세부터 건강보험 되면 얼마 내나요 (본인부담 30%)",
+  "source": "11/22(일) 16:20 네이버 원고 — 생활보장 검색형(돌봄·요양), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "저녁 조명이 켜진 부엌에서 70대 어머니와 40대 딸이 마주 보고 웃는 모습 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a home kitchen counter. Lighting: warm evening lamp light. A Korean mother in her 70s with short gray hair in a brick red cardigan and her daughter in her 40s in a cream sweater sitting at a kitchen table facing each other, the daughter gently holding her mother's hand, both smiling with relief. Expression: relieved gentle smile. Color theme: terracotta and warm beige tones with a teal accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "duo",
+      "bg": "terracotta and warm beige tones with a teal accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "brick",
+      "thumb_person": "70대 어머니와 40대 딸",
+      "thumb_place": "부엌",
+      "thumb_light": "저녁 조명",
+      "thumb_mood": "안심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "brick",
+        "font": "ptd",
+        "title": "틀니 비용\n얼마 낼까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "틀니 비용 본인부담을 숫자로 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "틀니 본인부담 한눈에",
+        "items": [
+          [
+            "30%",
+            "만 65세 이상",
+            "기본"
+          ],
+          [
+            "5%",
+            "희귀난치성질환",
+            "차상위"
+          ],
+          [
+            "7년",
+            "급여 적용 기간",
+            "한 번"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "치과 진료 의자 옆 작은 쟁반 위의 빈 틀니 케이스와 거울을 정리하는 손",
+      "prompt": "Camera and composition: close-up of hands at a dental clinic. Close-up of a dental hygienist's gloved hands arranging an empty denture case and a small hand mirror on a tray beside a dental chair, no face in the frame. Background color: clean dental clinic with white and warm brick accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands at a dental clinic",
+      "bg": "clean dental clinic with white and warm brick accents"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "노인 틀니 등록부터 시술까지 순서를 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "노인 틀니 받는 순서",
+        "sub": "등록이 먼저예요",
+        "items": [
+          "치과에서 급여 대상 판정받기",
+          "시술 동의 후 등록 신청하기",
+          "공단의 등록 결과 받기",
+          "등록 확인 뒤 시술 받기"
+        ],
+        "memo": "시술 전에 등록부터",
+        "hl": 2
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "거실 소파에서 휴대폰으로 치과 예약을 하는 40대 아들",
+      "prompt": "Camera and composition: medium shot on a living room sofa. A Korean man in his 40s in a navy hoodie sitting on a living room sofa, holding a smartphone to his ear and talking with a calm friendly face. Background color: warm living room with terracotta cushions. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on a living room sofa",
+      "bg": "warm living room with terracotta cushions"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "저녁 식탁에서 부드러운 반찬을 앞에 두고 웃는 70대 아버지",
+      "prompt": "Camera and composition: medium shot at a dinner table. A Korean man in his 70s with white hair in a beige knit vest sitting at a dinner table with soft side dishes in front of him, smiling warmly. Background color: cozy dining room with warm lamp light and brick red tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a dinner table",
+      "bg": "cozy dining room with warm lamp light and brick red tones"
+    }
+  ]
+}

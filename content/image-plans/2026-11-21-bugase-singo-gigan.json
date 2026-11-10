@@ -1,0 +1,75 @@
+{
+  "slug": "2026-11-21-bugase-singo-gigan",
+  "title": "부가세 신고 기간, 확정신고는 1년에 몇 번 할까 (1월·7월 25일)",
+  "source": "11/21(토) 티스토리 원고 (11/10 미리 작성) 10:20",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "계산기 옆 탁상 달력에 마감일을 동그라미 치는 자영업자의 손 (대표사진)",
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Close-up of the hands of a Korean shop owner in his 40s, mustard-yellow apron sleeves, circling one date on a blank desk calendar with a red marker, a calculator and a neat bundle of blank invoices beside it on a wooden shop counter. Expression: determined, nodding, sleeves rolled up. Color theme: warm brown wood and ivory tones with a coral accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "손만 크게 (얼굴 없음)",
+      "bg": "warm brown wood and ivory tones with a coral accent",
+      "note": "대표",
+      "thumb_shot": "hands",
+      "thumb_theme": "charcoal",
+      "thumb_person": "40대 남성 자영업자의 손(머스터드 앞치마 소매)",
+      "thumb_mood": "결심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "charcoal",
+        "font": "jua",
+        "title": "부가세 신고 기간\n언제까지 할까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "개인사업자 부가세 신고 기간을 묻는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "부가세 신고",
+        "title": "1년에\n몇 번 할까?",
+        "ask": "석 달마다 내는 거야?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "홈택스 부가세 신고 순서를 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "홈택스 신고 순서",
+        "sub": "세무서에 가지 않고도 끝낼 수 있어요",
+        "items": [
+          "홈택스나 손택스에 로그인",
+          "부가가치세신고를 골라요",
+          "신고도움 서비스로 내 자료",
+          "미리채움 내용을 맞춰 보고",
+          "같은 기한 안에 세액을 납부"
+        ],
+        "memo": "미리채움 숫자도 장부와 대조해요",
+        "hl": 1
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "벽걸이 달력에 표시해 둔 다음 달 마감일과 메모지",
+      "prompt": "Camera and composition: a wall calendar with one date circled and sticky notes. A blank wall calendar hanging on a light wall with one day circled in red marker and two small sticky notes beside it, soft daylight, no readable text. Background color: warm ivory and walnut brown. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a wall calendar with one date circled and sticky notes",
+      "bg": "warm ivory and walnut brown",
+      "kind": "photo",
+      "photo": {
+        "query_en": "wall calendar",
+        "scene_en": "a wall calendar with a circled date and sticky notes"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}

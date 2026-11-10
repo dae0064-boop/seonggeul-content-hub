@@ -1,0 +1,633 @@
+{
+  "slug": "2026-11-19-boheomryo-napipmyeonje",
+  "title": "보험료 납입면제, 약관 어디서 확인하고 장해진단서는 언제 낼까 (180일)",
+  "category": "생활보장",
+  "tags": [
+    "보험료납입면제",
+    "약관",
+    "장해분류표",
+    "장해진단서",
+    "보험증권특약",
+    "납입면제조건",
+    "납입면제신청",
+    "장해판정",
+    "보험료면제",
+    "표준약관",
+    "소멸시효",
+    "보험정보",
+    "보험서류",
+    "생활보장",
+    "보험금"
+  ],
+  "publishAt": "2026-11-19 15:00",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보험 증권 특약 목록에 납입면제가 있는지가"
+        },
+        {
+          "t": "보험료를 멈출 수 있는지 아는 첫 단서예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "큰 병을 진단받거나 다친 뒤라면"
+        },
+        {
+          "t": "매달 빠져나가는 보험료가 더 무겁게 느껴져요."
+        },
+        {
+          "t": "\"이럴 때 안 내도 되는 건 없나?\" 싶어지기 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보험료 납입면제는 저절로 되기보다",
+          "s": "yellow"
+        },
+        {
+          "t": "내가 알리고 서류를 내야 시작돼요.",
+          "s": "yellow"
+        },
+        {
+          "t": "오늘은 어디서 확인하고 어떻게 낼지 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "식탁에 마주 앉아 차를 마시며 이야기를 나누는 50대 부부 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "보험료 납입면제, 어떤 제도일까"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "보험료 납입면제를 어디서 확인하는지 묻는 첫머리 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보험료 납입면제는 약관에서 정한 일이 생기면"
+        },
+        {
+          "t": "그 뒤 보험료를 내지 않아도 계약이"
+        },
+        {
+          "t": "이어지게 해 주는 장치예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "면제 조건은 상품과 특약마다 달라서",
+          "s": "red"
+        },
+        {
+          "t": "내 약관을 펼쳐 봐야 정확히 알 수 있어요.",
+          "s": "red"
+        },
+        {
+          "t": "표준약관에도 공통 면제 조건은 따로 없어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "다만 표준약관은 '보험금'이라는 말에"
+        },
+        {
+          "t": "보험료 납입면제를 포함해 함께 다뤄요."
+        },
+        {
+          "t": "그래서 알리는 방법도 보험금 청구와 비슷해요."
+        },
+        {
+          "t": "면제 뒤 보장이 어떻게 이어지는지도 함께 봐요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "내 약관에서 찾는 순서"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "보험료 납입면제 조건을 찾는 순서를 정리한 메모 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "처음엔 증권의 특약 목록을 봐요."
+        },
+        {
+          "t": "'납입면제'라는 말이 붙은 특약이 있는지,"
+        },
+        {
+          "t": "주계약에 면제 조항이 들어 있는지 살펴요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "다음은 약관 본문의 납입면제 조항이에요."
+        },
+        {
+          "t": "어떤 진단이나 장해가 사유인지"
+        },
+        {
+          "t": "그 조항에 하나씩 적혀 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "약관 책자를 잃어버렸다면 회사 누리집이나"
+        },
+        {
+          "t": "고객센터에서 다시 받을 수 있는지 물어봐요."
+        },
+        {
+          "t": "가입한 날짜의 약관이어야 기준이 맞아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "장해가 사유라면 약관 뒤쪽의",
+          "s": "yellow"
+        },
+        {
+          "t": "장해분류표를 같이 펼쳐 봐야 해요.",
+          "s": "yellow"
+        },
+        {
+          "t": "몇 퍼센트 장해인지는 이 표로 판단해요."
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"장해 판정은 언제 받는 거예요?\""
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "장해분류표와 180일"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "표준약관은 장해지급률을 정하는 때를 따로 둬요."
+        },
+        {
+          "t": "상해 발생일이나 질병 진단확정일부터"
+        },
+        {
+          "t": "180일 안에 정해지지 않으면",
+          "segs": [
+            {
+              "t": "180일",
+              "s": "blue"
+            },
+            {
+              "t": " 안에 정해지지 않으면"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "180일이 되는 날의 의사 진단으로"
+        },
+        {
+          "t": "고정될 상태를 보고 정한다고 적어요."
+        },
+        {
+          "t": "장해진단서를 언제 받을지 가늠하는 기준이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 다친 지 얼마 안 됐을 때는"
+        },
+        {
+          "t": "장해분류표 기준을 미리 맞춰 보며"
+        },
+        {
+          "t": "진단 시기를 의사와 상의하는 게 좋아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "장해진단서는 의료법에 따른 의료기관에서",
+          "s": "yellow"
+        },
+        {
+          "t": "받은 것이어야 서류로 인정돼요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "장해 판정이 서로 다를 때"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "내 장해진단서와 회사 판단이 다르면"
+        },
+        {
+          "t": "속이 답답해지기 쉬워요."
+        },
+        {
+          "t": "표준약관에는 이때 쓰는 방법이 적혀 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "두 쪽이 합의하지 못하면 함께 제3자를 정해"
+        },
+        {
+          "t": "그 의견을 따를 수 있어요."
+        },
+        {
+          "t": "제3자는 종합병원 소속 전문의 중에서 정해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이 판정에 드는 의료비용은",
+          "s": "red"
+        },
+        {
+          "t": "회사가 전부 낸다고 정해져 있어요.",
+          "s": "red"
+        },
+        {
+          "t": "비용 걱정으로 미리 포기하지 않아도 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "같은 질병이나 상해로 장해가 둘 이상 생기면"
+        },
+        {
+          "t": "지급률을 더한다는 문장도 표준약관에 있어요."
+        },
+        {
+          "t": "면제 기준이 '합산'인지 약관에서 함께 봐요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "보험료 납입면제 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "많이 궁금해하시는 네 가지를 모았어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 보험사가 알아서 면제해 주지 않나요?"
+        },
+        {
+          "t": "A1: 진단이나 장해 사실은 내가 알려야"
+        },
+        {
+          "t": "회사가 알 수 있어요. 표준약관도 사유를 안 때"
+        },
+        {
+          "t": "지체 없이 알리라고 정해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 어떤 서류를 내요?"
+        },
+        {
+          "t": "A2: 표준약관 제7조 기준으로",
+          "segs": [
+            {
+              "t": "A2: 표준약관 "
+            },
+            {
+              "t": "제7조",
+              "s": "blue"
+            },
+            {
+              "t": " 기준으로"
+            }
+          ]
+        },
+        {
+          "t": "청구서, 진단서·장해진단서 같은 사고증명서,"
+        },
+        {
+          "t": "신분증이 기본이에요. 회사가 더 요청할 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q3: 몇 년 지나도 신청할 수 있나요?"
+        },
+        {
+          "t": "A3: 상법 제662조는 보험금청구권을",
+          "segs": [
+            {
+              "t": "A3: 상법 "
+            },
+            {
+              "t": "제662조",
+              "s": "blue"
+            },
+            {
+              "t": "는 보험금청구권을"
+            }
+          ]
+        },
+        {
+          "t": "3년 동안 쓰지 않으면 소멸한다고 정해요.",
+          "segs": [
+            {
+              "t": "3년",
+              "s": "blue"
+            },
+            {
+              "t": " 동안 쓰지 않으면 소멸한다고 정해요."
+            }
+          ]
+        },
+        {
+          "t": "면제 사유를 알았다면 미루지 않는 게 안전해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q4: 면제 전 낸 보험료는 어떻게 돼요?"
+        },
+        {
+          "t": "A4: 처리 방법은 회사와 약관마다 달라요."
+        },
+        {
+          "t": "보험금 청구를 할 때 사유가 생긴 날 뒤로"
+        },
+        {
+          "t": "낸 보험료가 있는지 함께 물어봐요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "신청 전에 꼭 볼 것"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "햇살 드는 거실 소파 옆 탁자 위의 안경과 빈 서류철"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 증권에 납입면제 특약이 있는지",
+          "s": "green"
+        },
+        {
+          "t": "✔ 약관의 면제 사유와 내 진단이 맞는지",
+          "s": "green"
+        },
+        {
+          "t": "✔ 장해라면 장해분류표 기준을 확인했는지",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "면제를 받으려고 서류를 사실과 다르게 쓰면",
+          "s": "red"
+        },
+        {
+          "t": "계약이 해지될 수 있어요.",
+          "s": "red"
+        },
+        {
+          "t": "표준약관 제32조가 정한 중대사유예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "서류를 냈다면 접수증을 꼭 받아 두세요."
+        },
+        {
+          "t": "표준약관은 서류를 받으면 접수증을 주고"
+        },
+        {
+          "t": "문자나 전자우편으로도 보낸다고 정해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분 증권에는 납입면제 특약이 있었나요?"
+        },
+        {
+          "t": "\"특약 있음\", \"모름\" 중 하나로 남겨 주세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "보험료 납입면제 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보험료 납입면제는 약관에 사유가 있고"
+        },
+        {
+          "t": "내가 알리고 서류를 낼 때 시작돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "장해가 사유라면 장해분류표와 180일 기준,"
+        },
+        {
+          "t": "그리고 장해진단서 받을 때를 같이 챙겨요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보험업감독업무시행세칙의 표준약관과"
+        },
+        {
+          "t": "상법 제662조 조문을"
+        },
+        {
+          "t": "나란히 놓고 정리했어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "면제 사유와 서류는 내 증권·약관에서"
+        },
+        {
+          "t": "한 번 더 확인해 보세요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "보험료 납입면제, 약관 조항부터 펼쳐 봐요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">보험 증권 특약 목록에 납입면제가 있는지가<br>보험료를 멈출 수 있는지 아는 첫 단서예요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">큰 병을 진단받거나 다친 뒤라면<br>매달 빠져나가는 보험료가 더 무겁게 느껴져요.<br>&quot;이럴 때 안 내도 되는 건 없나?&quot; 싶어지기 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>보험료 납입면제는 저절로 되기보다</b></span><br><span style=\"background-color: #ffe94d;\"><b>내가 알리고 서류를 내야 시작돼요.</b></span><br>오늘은 어디서 확인하고 어떻게 낼지 볼게요.</p>\n<p data-ke-size=\"size16\">[이미지 1] 식탁에 마주 앉아 차를 마시며 이야기를 나누는 50대 부부 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>보험료 납입면제, 어떤 제도일까</h2>\n<p data-ke-size=\"size16\">[이미지 2] 보험료 납입면제를 어디서 확인하는지 묻는 첫머리 카드</p>\n<p data-ke-size=\"size16\">보험료 납입면제는 약관에서 정한 일이 생기면<br>그 뒤 보험료를 내지 않아도 계약이<br>이어지게 해 주는 장치예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>면제 조건은 상품과 특약마다 달라서</b></span><br><span style=\"color: #ff0010;\"><b>내 약관을 펼쳐 봐야 정확히 알 수 있어요.</b></span><br>표준약관에도 공통 면제 조건은 따로 없어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">다만 표준약관은 '보험금'이라는 말에<br>보험료 납입면제를 포함해 함께 다뤄요.<br>그래서 알리는 방법도 보험금 청구와 비슷해요.<br>면제 뒤 보장이 어떻게 이어지는지도 함께 봐요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>내 약관에서 찾는 순서</h2>\n<p data-ke-size=\"size16\">[이미지 3] 보험료 납입면제 조건을 찾는 순서를 정리한 메모 카드</p>\n<p data-ke-size=\"size16\">처음엔 증권의 특약 목록을 봐요.<br>'납입면제'라는 말이 붙은 특약이 있는지,<br>주계약에 면제 조항이 들어 있는지 살펴요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">다음은 약관 본문의 납입면제 조항이에요.<br>어떤 진단이나 장해가 사유인지<br>그 조항에 하나씩 적혀 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">약관 책자를 잃어버렸다면 회사 누리집이나<br>고객센터에서 다시 받을 수 있는지 물어봐요.<br>가입한 날짜의 약관이어야 기준이 맞아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>장해가 사유라면 약관 뒤쪽의</b></span><br><span style=\"background-color: #ffe94d;\"><b>장해분류표를 같이 펼쳐 봐야 해요.</b></span><br>몇 퍼센트 장해인지는 이 표로 판단해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<blockquote data-ke-style=\"style3\">&quot;장해 판정은 언제 받는 거예요?&quot;</blockquote>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>장해분류표와 180일</h2>\n<p data-ke-size=\"size16\">표준약관은 장해지급률을 정하는 때를 따로 둬요.<br>상해 발생일이나 질병 진단확정일부터<br><span style=\"color: #0078cb;\"><b>180일</b></span> 안에 정해지지 않으면</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">180일이 되는 날의 의사 진단으로<br>고정될 상태를 보고 정한다고 적어요.<br>장해진단서를 언제 받을지 가늠하는 기준이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그래서 다친 지 얼마 안 됐을 때는<br>장해분류표 기준을 미리 맞춰 보며<br>진단 시기를 의사와 상의하는 게 좋아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>장해진단서는 의료법에 따른 의료기관에서</b></span><br><span style=\"background-color: #ffe94d;\"><b>받은 것이어야 서류로 인정돼요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>장해 판정이 서로 다를 때</h2>\n<p data-ke-size=\"size16\">내 장해진단서와 회사 판단이 다르면<br>속이 답답해지기 쉬워요.<br>표준약관에는 이때 쓰는 방법이 적혀 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">두 쪽이 합의하지 못하면 함께 제3자를 정해<br>그 의견을 따를 수 있어요.<br>제3자는 종합병원 소속 전문의 중에서 정해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>이 판정에 드는 의료비용은</b></span><br><span style=\"color: #ff0010;\"><b>회사가 전부 낸다고 정해져 있어요.</b></span><br>비용 걱정으로 미리 포기하지 않아도 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">같은 질병이나 상해로 장해가 둘 이상 생기면<br>지급률을 더한다는 문장도 표준약관에 있어요.<br>면제 기준이 '합산'인지 약관에서 함께 봐요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>보험료 납입면제 Q&amp;A</h2>\n<p data-ke-size=\"size16\">많이 궁금해하시는 네 가지를 모았어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 보험사가 알아서 면제해 주지 않나요?<br>A1: 진단이나 장해 사실은 내가 알려야<br>회사가 알 수 있어요. 표준약관도 사유를 안 때<br>지체 없이 알리라고 정해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 어떤 서류를 내요?<br>A2: 표준약관 <span style=\"color: #0078cb;\"><b>제7조</b></span> 기준으로<br>청구서, 진단서·장해진단서 같은 사고증명서,<br>신분증이 기본이에요. 회사가 더 요청할 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q3: 몇 년 지나도 신청할 수 있나요?<br>A3: 상법 <span style=\"color: #0078cb;\"><b>제662조</b></span>는 보험금청구권을<br><span style=\"color: #0078cb;\"><b>3년</b></span> 동안 쓰지 않으면 소멸한다고 정해요.<br>면제 사유를 알았다면 미루지 않는 게 안전해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q4: 면제 전 낸 보험료는 어떻게 돼요?<br>A4: 처리 방법은 회사와 약관마다 달라요.<br>보험금 청구를 할 때 사유가 생긴 날 뒤로<br>낸 보험료가 있는지 함께 물어봐요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>신청 전에 꼭 볼 것</h2>\n<p data-ke-size=\"size16\">[이미지 4] 햇살 드는 거실 소파 옆 탁자 위의 안경과 빈 서류철</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 증권에 납입면제 특약이 있는지</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 약관의 면제 사유와 내 진단이 맞는지</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 장해라면 장해분류표 기준을 확인했는지</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>면제를 받으려고 서류를 사실과 다르게 쓰면</b></span><br><span style=\"color: #ff0010;\"><b>계약이 해지될 수 있어요.</b></span><br>표준약관 제32조가 정한 중대사유예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">서류를 냈다면 접수증을 꼭 받아 두세요.<br>표준약관은 서류를 받으면 접수증을 주고<br>문자나 전자우편으로도 보낸다고 정해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분 증권에는 납입면제 특약이 있었나요?<br>&quot;특약 있음&quot;, &quot;모름&quot; 중 하나로 남겨 주세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>보험료 납입면제 정리</h2>\n<p data-ke-size=\"size16\">보험료 납입면제는 약관에 사유가 있고<br>내가 알리고 서류를 낼 때 시작돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">장해가 사유라면 장해분류표와 180일 기준,<br>그리고 장해진단서 받을 때를 같이 챙겨요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">보험업감독업무시행세칙의 표준약관과<br>상법 제662조 조문을<br>나란히 놓고 정리했어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">면제 사유와 서류는 내 증권·약관에서<br>한 번 더 확인해 보세요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>보험료 납입면제, 약관 조항부터 펼쳐 봐요.</p>"
+}

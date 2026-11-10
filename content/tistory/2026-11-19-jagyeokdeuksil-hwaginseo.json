@@ -1,0 +1,633 @@
+{
+  "slug": "2026-11-19-jagyeokdeuksil-hwaginseo",
+  "title": "건강보험 자격득실확인서, 퇴사하면 상실일은 언제로 찍힐까 (다음 날·14일)",
+  "category": "생활보장",
+  "tags": [
+    "건강보험자격득실확인서",
+    "상실일",
+    "취득일",
+    "건강보험25시",
+    "건강보험가입이력",
+    "자격득실확인서발급",
+    "퇴사상실일",
+    "직장가입자상실",
+    "지역가입자",
+    "국민건강보험법",
+    "증명서발급",
+    "건강보험공단",
+    "팩스발급",
+    "생활정보",
+    "생활제도"
+  ],
+  "publishAt": "2026-11-19 10:20",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "건강보험 가입 이력은 2000년 7월 1일"
+        },
+        {
+          "t": "통합 이후의 자격부터 조회할 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이직하거나 대출 서류를 낼 때"
+        },
+        {
+          "t": "건강보험 자격득실확인서를 내라는 말을 들어요."
+        },
+        {
+          "t": "막상 떼 보면 날짜가 생각과 달라 놀라기도 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "먼저 결론부터 짚어 볼게요."
+        },
+        {
+          "t": "퇴사하면 직장가입자 상실일은",
+          "s": "yellow"
+        },
+        {
+          "t": "마지막 근무일의 다음 날로 찍혀요.",
+          "s": "yellow"
+        },
+        {
+          "t": "발급은 공단 홈페이지와 앱에서 바로 돼요."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "위에서 내려다본 탁자 위 노트북과 휴대폰, 펜과 안경 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "건강보험 자격득실확인서, 무엇이 적혀 있나"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "건강보험 자격득실확인서 날짜 기준을 숫자로 정리한 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이 서류는 내 건강보험 자격이 언제 생기고"
+        },
+        {
+          "t": "언제 바뀌고 없어졌는지를 보여 줘요."
+        },
+        {
+          "t": "회사마다 취득일과 상실일이 줄지어 적혀요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "가족의 피부양자로 올라 있던 기간도"
+        },
+        {
+          "t": "자격 기록이라 같은 표에서 확인돼요."
+        },
+        {
+          "t": "한 사람의 건강보험 이력서라고 보면 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "국민건강보험법 제11조는 가입자였던 사람도",
+          "segs": [
+            {
+              "t": "국민건강보험법 "
+            },
+            {
+              "t": "제11조",
+              "s": "blue"
+            },
+            {
+              "t": "는 가입자였던 사람도"
+            }
+          ]
+        },
+        {
+          "t": "자격 확인을 청구할 수 있다고 정해요."
+        },
+        {
+          "t": "그래서 지금은 지역가입자여도"
+        },
+        {
+          "t": "예전 회사 기록까지 한 장에 나와요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "취득일과 상실일은 이렇게 정해져요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "법 제9조는 직장가입자인 근로자가"
+        },
+        {
+          "t": "사용관계가 끝난 날의 다음 날에"
+        },
+        {
+          "t": "자격이 바뀐다고 정해 두었어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 10월 31일까지 일했다면",
+          "segs": [
+            {
+              "t": "예를 들어 "
+            },
+            {
+              "t": "10월 31일",
+              "s": "blue"
+            },
+            {
+              "t": "까지 일했다면"
+            }
+          ]
+        },
+        {
+          "t": "직장 자격의 상실일은 11월 1일이 돼요."
+        },
+        {
+          "t": "바로 다른 회사에 가지 않으면 그날부터"
+        },
+        {
+          "t": "지역가입자나 피부양자로 이어지는 셈이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "새 회사에 들어간 날은 그 회사의 취득일이에요."
+        },
+        {
+          "t": "회사는 14일 안에 공단에 신고하면 돼요.",
+          "segs": [
+            {
+              "t": "회사는 "
+            },
+            {
+              "t": "14일",
+              "s": "blue"
+            },
+            {
+              "t": " 안에 공단에 신고하면 돼요."
+            }
+          ]
+        },
+        {
+          "t": "그래서 입사 직후엔 새 취득일이",
+          "s": "red"
+        },
+        {
+          "t": "아직 안 보일 수도 있어요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "같은 해에 이직을 두세 번 하면"
+        },
+        {
+          "t": "줄이 여러 개라 헷갈리기 쉬워요."
+        },
+        {
+          "t": "회사 이름과 날짜를 한 줄씩 짚어 보면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "건강보험 자격득실확인서 떼는 순서"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "건강보험 자격득실확인서를 떼는 순서를 정리한 메모 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "① 공단 홈페이지나 건강보험25시 앱을 연다"
+        },
+        {
+          "t": "② 간편인증이나 인증서로 로그인한다"
+        },
+        {
+          "t": "③ 증명서 발급에서 자격득실확인서를 고른다"
+        },
+        {
+          "t": "④ 출력·팩스·전자증명서 중 하나로 받는다"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "홈페이지에서는 민원여기요 메뉴 아래"
+        },
+        {
+          "t": "개인민원의 증명서 발급 칸에 들어 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "건강보험25시 앱은 종이 출력 대신",
+          "s": "yellow"
+        },
+        {
+          "t": "팩스와 전자증명서로 받는 방식이에요.",
+          "s": "yellow"
+        },
+        {
+          "t": "전자증명서는 정부 전자문서지갑이 있어야 열려요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "건강보험25시 앱으로 팩스를 보낼 땐"
+        },
+        {
+          "t": "받는 곳의 팩스 번호를 미리 받아 두면 편해요."
+        },
+        {
+          "t": "제출할 곳이 여러 곳이면 한 번씩 따로 보내요."
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"컴퓨터가 없으면 못 떼요?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그럴 땐 고객센터 1577-1000의 디지털 ARS로",
+          "segs": [
+            {
+              "t": "그럴 땐 고객센터 "
+            },
+            {
+              "t": "1577-1000",
+              "s": "blue"
+            },
+            {
+              "t": "의 디지털 ARS로"
+            }
+          ]
+        },
+        {
+          "t": "팩스 발급을 받을 수 있어요."
+        },
+        {
+          "t": "상담사 발급은 만 65세 이상이나"
+        },
+        {
+          "t": "등록 장애인만 된다고 공단은 안내해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "가까운 공단 지사에 직접 가도 돼요."
+        },
+        {
+          "t": "정부24 민원 안내로는 수수료가 없고"
+        },
+        {
+          "t": "근무시간 안이면 바로 처리돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "갈 때는 신분증 하나면 충분해요."
+        },
+        {
+          "t": "만 14세 이상은 본인이 주민등록증이나"
+        },
+        {
+          "t": "청소년증을 들고 가면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "건강보험 자격득실확인서 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "창구에서 많이 묻는 두 가지예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 2000년 전 직장 기록도 나와요?"
+        },
+        {
+          "t": "A1: 2000년 7월 1일 건강보험 통합 이전 자격은",
+          "segs": [
+            {
+              "t": "A1: "
+            },
+            {
+              "t": "2000년 7월 1일",
+              "s": "blue"
+            },
+            {
+              "t": " 건강보험 통합 이전 자격은"
+            }
+          ]
+        },
+        {
+          "t": "확인할 수 없다고 공단이 안내해요."
+        },
+        {
+          "t": "그 전 경력은 다른 서류로 챙겨야 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 가족이 온라인으로 대신 떼 줄 수 있나요?"
+        },
+        {
+          "t": "A2: 정부24 안내로는 온라인 대리 신청이 안 돼요."
+        },
+        {
+          "t": "만 14세 미만 자녀는 법정대리인이"
+        },
+        {
+          "t": "지사에서 신분증과 기본증명서로 떼요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "떼기 전에 맞춰 볼 것"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "창가 책상 위 노트북 옆에 놓인 빈 서류철과 머그잔"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 주민등록번호나 이름을 바꾼 적이 있는지",
+          "s": "green"
+        },
+        {
+          "t": "✔ 상실일이 마지막 근무일 다음 날인지",
+          "s": "green"
+        },
+        {
+          "t": "✔ 새 회사의 취득일이 들어왔는지",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "번호나 이름이 바뀌었다면 예전 자료가"
+        },
+        {
+          "t": "조회되지 않을 수 있어 지사에 물어봐야 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이 서류는 건강보험 자격을 확인하는 용도라",
+          "s": "yellow"
+        },
+        {
+          "t": "경력증명으로 쓸 땐 받는 곳에 먼저 물어봐요.",
+          "s": "yellow"
+        },
+        {
+          "t": "공단도 다른 용도의 책임은 지지 않는다고 적어 둬요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "건강보험25시 앱에서 먼저 내 기록을 열어"
+        },
+        {
+          "t": "날짜를 맞춰 본 뒤 제출용을 떼면"
+        },
+        {
+          "t": "두 번 일하는 수고를 덜 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분은 이 서류를 어디에 내 보셨나요?"
+        },
+        {
+          "t": "\"이직\", \"대출\"처럼 짧게 알려 주세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "건강보험 자격득실확인서 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "건강보험 자격득실확인서는 앱과 홈페이지에서"
+        },
+        {
+          "t": "수수료 없이 바로 뗄 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이직 서류라면 마지막 회사의 상실일을,"
+        },
+        {
+          "t": "지금 회사 확인용이라면 취득일을 먼저 봐요."
+        },
+        {
+          "t": "보는 칸이 정해지면 서류 읽기가 훨씬 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "퇴사 상실일은 마지막 근무일",
+          "s": "red"
+        },
+        {
+          "t": "다음 날이라는 점만 기억해 두세요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "국민건강보험법 제8조부터 제11조까지와"
+        },
+        {
+          "t": "공단의 자격득실확인서 발급 안내,"
+        },
+        {
+          "t": "정부24 민원 안내를 나란히 놓고 봤어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "내 날짜가 이상하면 가까운 지사에"
+        },
+        {
+          "t": "한 번 더 물어보세요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "건강보험 자격득실확인서, 상실일부터 맞춰 봐요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">건강보험 가입 이력은 2000년 7월 1일<br>통합 이후의 자격부터 조회할 수 있어요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이직하거나 대출 서류를 낼 때<br>건강보험 자격득실확인서를 내라는 말을 들어요.<br>막상 떼 보면 날짜가 생각과 달라 놀라기도 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">먼저 결론부터 짚어 볼게요.<br><span style=\"background-color: #ffe94d;\"><b>퇴사하면 직장가입자 상실일은</b></span><br><span style=\"background-color: #ffe94d;\"><b>마지막 근무일의 다음 날로 찍혀요.</b></span><br>발급은 공단 홈페이지와 앱에서 바로 돼요.</p>\n<p data-ke-size=\"size16\">[이미지 1] 위에서 내려다본 탁자 위 노트북과 휴대폰, 펜과 안경 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>건강보험 자격득실확인서, 무엇이 적혀 있나</h2>\n<p data-ke-size=\"size16\">[이미지 2] 건강보험 자격득실확인서 날짜 기준을 숫자로 정리한 카드</p>\n<p data-ke-size=\"size16\">이 서류는 내 건강보험 자격이 언제 생기고<br>언제 바뀌고 없어졌는지를 보여 줘요.<br>회사마다 취득일과 상실일이 줄지어 적혀요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">가족의 피부양자로 올라 있던 기간도<br>자격 기록이라 같은 표에서 확인돼요.<br>한 사람의 건강보험 이력서라고 보면 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">국민건강보험법 <span style=\"color: #0078cb;\"><b>제11조</b></span>는 가입자였던 사람도<br>자격 확인을 청구할 수 있다고 정해요.<br>그래서 지금은 지역가입자여도<br>예전 회사 기록까지 한 장에 나와요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>취득일과 상실일은 이렇게 정해져요</h2>\n<p data-ke-size=\"size16\">법 제9조는 직장가입자인 근로자가<br>사용관계가 끝난 날의 다음 날에<br>자격이 바뀐다고 정해 두었어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 <span style=\"color: #0078cb;\"><b>10월 31일</b></span>까지 일했다면<br>직장 자격의 상실일은 11월 1일이 돼요.<br>바로 다른 회사에 가지 않으면 그날부터<br>지역가입자나 피부양자로 이어지는 셈이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">새 회사에 들어간 날은 그 회사의 취득일이에요.<br>회사는 <span style=\"color: #0078cb;\"><b>14일</b></span> 안에 공단에 신고하면 돼요.<br><span style=\"color: #ff0010;\"><b>그래서 입사 직후엔 새 취득일이</b></span><br><span style=\"color: #ff0010;\"><b>아직 안 보일 수도 있어요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">같은 해에 이직을 두세 번 하면<br>줄이 여러 개라 헷갈리기 쉬워요.<br>회사 이름과 날짜를 한 줄씩 짚어 보면 돼요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>건강보험 자격득실확인서 떼는 순서</h2>\n<p data-ke-size=\"size16\">[이미지 3] 건강보험 자격득실확인서를 떼는 순서를 정리한 메모 카드</p>\n<p data-ke-size=\"size16\">① 공단 홈페이지나 건강보험25시 앱을 연다<br>② 간편인증이나 인증서로 로그인한다<br>③ 증명서 발급에서 자격득실확인서를 고른다<br>④ 출력·팩스·전자증명서 중 하나로 받는다</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">홈페이지에서는 민원여기요 메뉴 아래<br>개인민원의 증명서 발급 칸에 들어 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>건강보험25시 앱은 종이 출력 대신</b></span><br><span style=\"background-color: #ffe94d;\"><b>팩스와 전자증명서로 받는 방식이에요.</b></span><br>전자증명서는 정부 전자문서지갑이 있어야 열려요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">건강보험25시 앱으로 팩스를 보낼 땐<br>받는 곳의 팩스 번호를 미리 받아 두면 편해요.<br>제출할 곳이 여러 곳이면 한 번씩 따로 보내요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<blockquote data-ke-style=\"style3\">&quot;컴퓨터가 없으면 못 떼요?&quot;</blockquote>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그럴 땐 고객센터 <span style=\"color: #0078cb;\"><b>1577-1000</b></span>의 디지털 ARS로<br>팩스 발급을 받을 수 있어요.<br>상담사 발급은 만 65세 이상이나<br>등록 장애인만 된다고 공단은 안내해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">가까운 공단 지사에 직접 가도 돼요.<br>정부24 민원 안내로는 수수료가 없고<br>근무시간 안이면 바로 처리돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">갈 때는 신분증 하나면 충분해요.<br>만 14세 이상은 본인이 주민등록증이나<br>청소년증을 들고 가면 돼요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>건강보험 자격득실확인서 Q&amp;A</h2>\n<p data-ke-size=\"size16\">창구에서 많이 묻는 두 가지예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 2000년 전 직장 기록도 나와요?<br>A1: <span style=\"color: #0078cb;\"><b>2000년 7월 1일</b></span> 건강보험 통합 이전 자격은<br>확인할 수 없다고 공단이 안내해요.<br>그 전 경력은 다른 서류로 챙겨야 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 가족이 온라인으로 대신 떼 줄 수 있나요?<br>A2: 정부24 안내로는 온라인 대리 신청이 안 돼요.<br>만 14세 미만 자녀는 법정대리인이<br>지사에서 신분증과 기본증명서로 떼요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>떼기 전에 맞춰 볼 것</h2>\n<p data-ke-size=\"size16\">[이미지 4] 창가 책상 위 노트북 옆에 놓인 빈 서류철과 머그잔</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 주민등록번호나 이름을 바꾼 적이 있는지</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 상실일이 마지막 근무일 다음 날인지</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 새 회사의 취득일이 들어왔는지</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">번호나 이름이 바뀌었다면 예전 자료가<br>조회되지 않을 수 있어 지사에 물어봐야 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>이 서류는 건강보험 자격을 확인하는 용도라</b></span><br><span style=\"background-color: #ffe94d;\"><b>경력증명으로 쓸 땐 받는 곳에 먼저 물어봐요.</b></span><br>공단도 다른 용도의 책임은 지지 않는다고 적어 둬요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">건강보험25시 앱에서 먼저 내 기록을 열어<br>날짜를 맞춰 본 뒤 제출용을 떼면<br>두 번 일하는 수고를 덜 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분은 이 서류를 어디에 내 보셨나요?<br>&quot;이직&quot;, &quot;대출&quot;처럼 짧게 알려 주세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>건강보험 자격득실확인서 정리</h2>\n<p data-ke-size=\"size16\">건강보험 자격득실확인서는 앱과 홈페이지에서<br>수수료 없이 바로 뗄 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이직 서류라면 마지막 회사의 상실일을,<br>지금 회사 확인용이라면 취득일을 먼저 봐요.<br>보는 칸이 정해지면 서류 읽기가 훨씬 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>퇴사 상실일은 마지막 근무일</b></span><br><span style=\"color: #ff0010;\"><b>다음 날이라는 점만 기억해 두세요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">국민건강보험법 제8조부터 제11조까지와<br>공단의 자격득실확인서 발급 안내,<br>정부24 민원 안내를 나란히 놓고 봤어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">내 날짜가 이상하면 가까운 지사에<br>한 번 더 물어보세요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>건강보험 자격득실확인서, 상실일부터 맞춰 봐요.</p>"
+}

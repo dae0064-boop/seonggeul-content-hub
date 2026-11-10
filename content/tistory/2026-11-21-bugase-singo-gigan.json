@@ -1,0 +1,635 @@
+{
+  "slug": "2026-11-21-bugase-singo-gigan",
+  "title": "부가세 신고 기간, 확정신고는 1년에 몇 번 할까 (1월·7월 25일)",
+  "category": "생활정보",
+  "tags": [
+    "부가세신고기간",
+    "부가세확정신고",
+    "예정고지",
+    "간이과세자",
+    "부가가치세납부",
+    "개인사업자부가세",
+    "부가세1월25일",
+    "부가세7월25일",
+    "부가가치세법49조",
+    "홈택스부가세신고",
+    "신고도움서비스",
+    "무실적신고",
+    "납부기한연장",
+    "세금달력",
+    "생활정보"
+  ],
+  "publishAt": "2026-11-21 10:20",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "부가가치세 납부 기한이 토요일이나 일요일이면"
+        },
+        {
+          "t": "그다음 날로 늦춰져요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "가게를 연 첫해에는 세금 달력부터 헷갈려요."
+        },
+        {
+          "t": "\"부가세는 석 달마다 내는 거 아니었어?\""
+        },
+        {
+          "t": "이렇게 묻는 분도 많고요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘은 개인사업자의 부가세 신고 기간을"
+        },
+        {
+          "t": "부가가치세법 조문으로 정리해 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "결론부터 말씀드리면요."
+        },
+        {
+          "t": "개인 일반과세자의 확정신고는",
+          "s": "yellow"
+        },
+        {
+          "t": "1월과 7월, 1년에 두 번이에요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "계산기 옆 탁상 달력에 마감일을 동그라미 치는 자영업자의 손 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "일반과세자의 부가세 신고 기간"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "개인사업자 부가세 신고 기간을 묻는 첫머리 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "일반과세자는 한 해를 둘로 나눠요."
+        },
+        {
+          "t": "1월부터 6월까지가 1기예요."
+        },
+        {
+          "t": "7월부터 12월까지는 2기고요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "부가가치세법 제49조는 과세기간이 끝난 뒤"
+        },
+        {
+          "t": "25일 안에 확정신고를 하라고 정했어요.",
+          "segs": [
+            {
+              "t": "25일",
+              "s": "blue"
+            },
+            {
+              "t": " 안에 확정신고를 하라고 정했어요."
+            }
+          ]
+        },
+        {
+          "t": "그래서 7월 25일과 다음 해 1월 25일이"
+        },
+        {
+          "t": "일반과세자의 부가세 신고 기간이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "신고와 납부는 같은 날까지 함께 마쳐야 해요.",
+          "s": "red"
+        },
+        {
+          "t": "신고만 하고 세금을 늦게 내도 안 돼요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "4월과 10월엔 고지서만 와요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "개인사업자에게는 4월과 10월에"
+        },
+        {
+          "t": "예정고지 고지서가 따로 와요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "직접 신고하지 않고 고지된 세액만 내요."
+        },
+        {
+          "t": "고지서를 받았다면 그달 25일까지 내면 돼요."
+        },
+        {
+          "t": "이 돈은 다음 확정신고 때 빼고 계산해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예정고지 세액은 직전 과세기간에 낸"
+        },
+        {
+          "t": "납부세액의 50퍼센트예요.",
+          "segs": [
+            {
+              "t": "납부세액의 "
+            },
+            {
+              "t": "50퍼센트",
+              "s": "blue"
+            },
+            {
+              "t": "예요."
+            }
+          ]
+        },
+        {
+          "t": "그 금액이 50만 원 미만이면",
+          "s": "yellow"
+        },
+        {
+          "t": "예정고지를 하지 않아요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "휴업이나 사업 부진처럼 정해진 사유가 있으면"
+        },
+        {
+          "t": "고지 대신 직접 예정신고를 할 수도 있어요."
+        },
+        {
+          "t": "이때는 그 고지 결정이 없던 것으로 봐요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "간이과세자는 1년에 한 번"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "간이과세자는 과세기간이 1년이에요."
+        },
+        {
+          "t": "1월 1일부터 12월 31일까지를 묶어"
+        },
+        {
+          "t": "다음 해 1월 25일까지 확정신고해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "대신 7월에 직전 납부세액의 절반을"
+        },
+        {
+          "t": "예정부과로 먼저 걷어요."
+        },
+        {
+          "t": "이 금액도 50만 원 미만이면 걷지 않아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "1월 신고 때는 매출·매입처별 세금계산서합계표도"
+        },
+        {
+          "t": "함께 내야 한다는 점도 챙겨 두세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 간이과세자의 부가세 신고 기간은"
+        },
+        {
+          "t": "1월 한 번이라고 기억해 두면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "처음 시작하거나 문 닫을 때"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "새로 사업을 시작했다면 첫 과세기간은"
+        },
+        {
+          "t": "사업을 시작한 날부터 그 기의 마지막 날까지예요."
+        },
+        {
+          "t": "10월에 열었다면 12월 31일까지가 첫 기간이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그 첫 확정신고는 다음 해 1월 25일까지예요."
+        },
+        {
+          "t": "개업이 늦었다고 신고를 건너뛰지 않아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "폐업했다면 부가세 신고 기간이 따로 정해져요."
+        },
+        {
+          "t": "폐업일이 속한 달의 다음 달 25일까지",
+          "s": "yellow"
+        },
+        {
+          "t": "확정신고를 해야 해요.",
+          "s": "yellow"
+        },
+        {
+          "t": "예를 들어 11월에 닫으면 12월 25일까지예요."
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"올해 1월엔 왜 26일까지였어요?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "2026년 1월 25일이 일요일이었거든요."
+        },
+        {
+          "t": "국세기본법 제5조는 기한이 토요일·일요일,"
+        },
+        {
+          "t": "공휴일이면 그다음 날을 기한으로 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "국세청도 그해 2기 확정신고 기한을"
+        },
+        {
+          "t": "1월 26일(월)로 안내했어요.",
+          "segs": [
+            {
+              "t": "1월 26일(월)",
+              "s": "blue"
+            },
+            {
+              "t": "로 안내했어요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "홈택스로 신고하는 순서"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "홈택스 부가세 신고 순서를 정리한 메모 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "국세청 보도자료에 적힌 길을 따라가면"
+        },
+        {
+          "t": "세무서에 가지 않고도 끝낼 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "① 홈택스나 손택스에 로그인해요"
+        },
+        {
+          "t": "② 세금신고에서 부가가치세신고를 골라요"
+        },
+        {
+          "t": "③ 신고도움 서비스로 내 자료를 봐요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "④ 미리채움 내용을 맞춰 보고 제출해요"
+        },
+        {
+          "t": "⑤ 같은 기한 안에 세액을 납부해요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "미리채움 숫자도 내 장부와 맞는지",
+          "s": "red"
+        },
+        {
+          "t": "꼭 한 번 대조한 뒤 제출해요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 매출이 없어도 신고해야 하나요?"
+        },
+        {
+          "t": "A1: 과세사업자는 모두 신고 대상이에요."
+        },
+        {
+          "t": "실적이 없으면 ARS(1544-9944)로도 된다고"
+        },
+        {
+          "t": "국세청이 안내했어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 납부기한이 늘면 신고도 늦춰지나요?"
+        },
+        {
+          "t": "A2: 아니에요. 2026년 1월 직권연장 때도"
+        },
+        {
+          "t": "늘어난 건 납부기한뿐이라"
+        },
+        {
+          "t": "신고는 1월 26일까지 마치라고 했어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "올해 2기 부가세 신고 기간"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "벽걸이 달력에 표시해 둔 다음 달 마감일과 메모지"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "2026년 7월부터 12월까지 2기 실적은"
+        },
+        {
+          "t": "2027년 1월 25일까지 확정신고해요.",
+          "segs": [
+            {
+              "t": "2027년 1월 25일",
+              "s": "blue"
+            },
+            {
+              "t": "까지 확정신고해요."
+            }
+          ]
+        },
+        {
+          "t": "이날은 월요일이라 늦춰지지 않아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 체크포인트",
+          "s": "green"
+        },
+        {
+          "t": "일반과세자는 1월·7월 25일에 확정신고,",
+          "s": "green"
+        },
+        {
+          "t": "간이과세자는 1월 25일 한 번이에요.",
+          "s": "green"
+        },
+        {
+          "t": "4월·10월 예정고지서는 금액만 보고 내요.",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분은 일반과세자세요, 간이과세자세요?"
+        },
+        {
+          "t": "한 단어로 남겨 주시면 다음 글에 참고할게요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "부가세 신고 기간은 과세유형마다 달라요."
+        },
+        {
+          "t": "내가 어느 쪽인지 먼저 알아야 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "달력에 1월 25일과 7월 25일을",
+          "s": "yellow"
+        },
+        {
+          "t": "지금 미리 표시해 두면 놓치지 않아요.",
+          "s": "yellow"
+        },
+        {
+          "t": "마감 직전엔 홈택스도 붐비니"
+        },
+        {
+          "t": "부가세 신고 기간 첫 주에 미리 내 두면 편해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "부가가치세법의 과세기간·신고 조문과"
+        },
+        {
+          "t": "국세청의 2026년 1월 보도자료를 함께 봤어요."
+        },
+        {
+          "t": "내 과세유형과 고지 세액은 홈택스에서 확인해 보세요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "부가세 신고 기간, 확정신고 날짜부터 챙겨요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">부가가치세 납부 기한이 토요일이나 일요일이면<br>그다음 날로 늦춰져요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">가게를 연 첫해에는 세금 달력부터 헷갈려요.<br>&quot;부가세는 석 달마다 내는 거 아니었어?&quot;<br>이렇게 묻는 분도 많고요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘은 개인사업자의 부가세 신고 기간을<br>부가가치세법 조문으로 정리해 볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">결론부터 말씀드리면요.<br><span style=\"background-color: #ffe94d;\"><b>개인 일반과세자의 확정신고는</b></span><br><span style=\"background-color: #ffe94d;\"><b>1월과 7월, 1년에 두 번이에요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 1] 계산기 옆 탁상 달력에 마감일을 동그라미 치는 자영업자의 손 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>일반과세자의 부가세 신고 기간</h2>\n<p data-ke-size=\"size16\">[이미지 2] 개인사업자 부가세 신고 기간을 묻는 첫머리 카드</p>\n<p data-ke-size=\"size16\">일반과세자는 한 해를 둘로 나눠요.<br>1월부터 6월까지가 1기예요.<br>7월부터 12월까지는 2기고요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">부가가치세법 제49조는 과세기간이 끝난 뒤<br><span style=\"color: #0078cb;\"><b>25일</b></span> 안에 확정신고를 하라고 정했어요.<br>그래서 7월 25일과 다음 해 1월 25일이<br>일반과세자의 부가세 신고 기간이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>신고와 납부는 같은 날까지 함께 마쳐야 해요.</b></span><br>신고만 하고 세금을 늦게 내도 안 돼요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>4월과 10월엔 고지서만 와요</h2>\n<p data-ke-size=\"size16\">개인사업자에게는 4월과 10월에<br>예정고지 고지서가 따로 와요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">직접 신고하지 않고 고지된 세액만 내요.<br>고지서를 받았다면 그달 25일까지 내면 돼요.<br>이 돈은 다음 확정신고 때 빼고 계산해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예정고지 세액은 직전 과세기간에 낸<br>납부세액의 <span style=\"color: #0078cb;\"><b>50퍼센트</b></span>예요.<br><span style=\"background-color: #ffe94d;\"><b>그 금액이 50만 원 미만이면</b></span><br><span style=\"background-color: #ffe94d;\"><b>예정고지를 하지 않아요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">휴업이나 사업 부진처럼 정해진 사유가 있으면<br>고지 대신 직접 예정신고를 할 수도 있어요.<br>이때는 그 고지 결정이 없던 것으로 봐요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>간이과세자는 1년에 한 번</h2>\n<p data-ke-size=\"size16\">간이과세자는 과세기간이 1년이에요.<br>1월 1일부터 12월 31일까지를 묶어<br>다음 해 1월 25일까지 확정신고해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">대신 7월에 직전 납부세액의 절반을<br>예정부과로 먼저 걷어요.<br>이 금액도 50만 원 미만이면 걷지 않아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">1월 신고 때는 매출·매입처별 세금계산서합계표도<br>함께 내야 한다는 점도 챙겨 두세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그래서 간이과세자의 부가세 신고 기간은<br>1월 한 번이라고 기억해 두면 돼요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>처음 시작하거나 문 닫을 때</h2>\n<p data-ke-size=\"size16\">새로 사업을 시작했다면 첫 과세기간은<br>사업을 시작한 날부터 그 기의 마지막 날까지예요.<br>10월에 열었다면 12월 31일까지가 첫 기간이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그 첫 확정신고는 다음 해 1월 25일까지예요.<br>개업이 늦었다고 신고를 건너뛰지 않아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">폐업했다면 부가세 신고 기간이 따로 정해져요.<br><span style=\"background-color: #ffe94d;\"><b>폐업일이 속한 달의 다음 달 25일까지</b></span><br><span style=\"background-color: #ffe94d;\"><b>확정신고를 해야 해요.</b></span><br>예를 들어 11월에 닫으면 12월 25일까지예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<blockquote data-ke-style=\"style3\">&quot;올해 1월엔 왜 26일까지였어요?&quot;</blockquote>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">2026년 1월 25일이 일요일이었거든요.<br>국세기본법 제5조는 기한이 토요일·일요일,<br>공휴일이면 그다음 날을 기한으로 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">국세청도 그해 2기 확정신고 기한을<br><span style=\"color: #0078cb;\"><b>1월 26일(월)</b></span>로 안내했어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>홈택스로 신고하는 순서</h2>\n<p data-ke-size=\"size16\">[이미지 3] 홈택스 부가세 신고 순서를 정리한 메모 카드</p>\n<p data-ke-size=\"size16\">국세청 보도자료에 적힌 길을 따라가면<br>세무서에 가지 않고도 끝낼 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">① 홈택스나 손택스에 로그인해요<br>② 세금신고에서 부가가치세신고를 골라요<br>③ 신고도움 서비스로 내 자료를 봐요</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">④ 미리채움 내용을 맞춰 보고 제출해요<br>⑤ 같은 기한 안에 세액을 납부해요</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>미리채움 숫자도 내 장부와 맞는지</b></span><br><span style=\"color: #ff0010;\"><b>꼭 한 번 대조한 뒤 제출해요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 매출이 없어도 신고해야 하나요?<br>A1: 과세사업자는 모두 신고 대상이에요.<br>실적이 없으면 ARS(1544-9944)로도 된다고<br>국세청이 안내했어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 납부기한이 늘면 신고도 늦춰지나요?<br>A2: 아니에요. 2026년 1월 직권연장 때도<br>늘어난 건 납부기한뿐이라<br>신고는 1월 26일까지 마치라고 했어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>올해 2기 부가세 신고 기간</h2>\n<p data-ke-size=\"size16\">[이미지 4] 벽걸이 달력에 표시해 둔 다음 달 마감일과 메모지</p>\n<p data-ke-size=\"size16\">2026년 7월부터 12월까지 2기 실적은<br><span style=\"color: #0078cb;\"><b>2027년 1월 25일</b></span>까지 확정신고해요.<br>이날은 월요일이라 늦춰지지 않아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 체크포인트</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>일반과세자는 1월·7월 25일에 확정신고,</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>간이과세자는 1월 25일 한 번이에요.</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>4월·10월 예정고지서는 금액만 보고 내요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분은 일반과세자세요, 간이과세자세요?<br>한 단어로 남겨 주시면 다음 글에 참고할게요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>정리</h2>\n<p data-ke-size=\"size16\">부가세 신고 기간은 과세유형마다 달라요.<br>내가 어느 쪽인지 먼저 알아야 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>달력에 1월 25일과 7월 25일을</b></span><br><span style=\"background-color: #ffe94d;\"><b>지금 미리 표시해 두면 놓치지 않아요.</b></span><br>마감 직전엔 홈택스도 붐비니<br>부가세 신고 기간 첫 주에 미리 내 두면 편해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">부가가치세법의 과세기간·신고 조문과<br>국세청의 2026년 1월 보도자료를 함께 봤어요.<br>내 과세유형과 고지 세액은 홈택스에서 확인해 보세요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>부가세 신고 기간, 확정신고 날짜부터 챙겨요.</p>"
+}

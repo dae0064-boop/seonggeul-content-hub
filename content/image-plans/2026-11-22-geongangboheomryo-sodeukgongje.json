@@ -1,0 +1,83 @@
+{
+  "slug": "2026-11-22-geongangboheomryo-sodeukgongje",
+  "title": "건강보험료 소득공제, 퇴사 뒤 지역가입자로 낸 돈도 될까 (제52조)",
+  "source": "11/22(일) 티스토리 원고 (11/10 낮 미리 작성) 18:20",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "거실 소파에서 노트북을 함께 보며 이야기하는 50대 엄마와 20대 딸 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean mother in her 50s in a lavender cardigan and her daughter in her 20s in a mustard shirt sit on a living room sofa facing each other, the daughter explaining with one hand open while an open laptop rests on the coffee table. Expression: explaining with one hand open toward the viewer. Color theme: warm brown wood and ivory tones with a coral accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "warm brown wood and ivory tones with a coral accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "charcoal",
+      "thumb_person": "50대 엄마(라벤더 가디건)와 20대 딸(머스터드 셔츠)",
+      "thumb_mood": "설명",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "charcoal",
+        "font": "ptd",
+        "title": "건강보험료 소득공제\n쉬는 동안 낸 돈은?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "건강보험료 소득공제 되는 돈과 안 되는 돈을 비교하는 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "되는 돈과 안 되는 돈",
+        "ask": "쉬는 동안 낸 것도?",
+        "heads": [
+          "공제 돼요",
+          "공제 안 돼요"
+        ],
+        "items": [
+          [
+            "건강보험료 근로자 몫",
+            "지역가입자 기간 고지서"
+          ],
+          [
+            "고용보험료",
+            "사용자 몫 보험료"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "쉬는 동안 낸 건강보험료가 공제되는지 스스로 점검하는 카드",
+      "kind": "card",
+      "card": {
+        "type": "selfcheck",
+        "title": "쉬는 동안 낸 건보료",
+        "items": [
+          "지역가입자 기간 고지서",
+          "사업소득이 있다면",
+          "월급에서 뗀 근로자 부담분"
+        ],
+        "result": "아래 '지역가입자 기간'을 보세요 👇"
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "작업실 책상 위에 노트북과 장부, 커피잔이 놓인 모습",
+      "prompt": "Camera and composition: a laptop, a ledger notebook and a coffee cup on a studio desk. An open laptop, a ledger notebook and a coffee cup on a small home studio desk, soft daylight, no readable text. Background color: modern light gray and white. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a laptop, a ledger notebook and a coffee cup on a studio desk",
+      "bg": "modern light gray and white",
+      "kind": "photo",
+      "photo": {
+        "query_en": "laptop notebook coffee desk",
+        "scene_en": "a laptop and a notebook on a work desk"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}

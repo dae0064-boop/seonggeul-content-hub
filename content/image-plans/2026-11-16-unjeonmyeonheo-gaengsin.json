@@ -1,0 +1,79 @@
+{
+  "slug": "2026-11-16-unjeonmyeonheo-gaengsin",
+  "title": "운전면허 갱신기간, 생일 기준으로 바뀌면 적성검사는 언제 받을까 (전후 6개월)",
+  "source": "11/16(월) 티스토리 원고 (11/10 낮 미리 작성) 18:20",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "거실 소파에서 면허증 뒷면을 보며 고개를 끄덕이는 60대 남성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean man in his 60s with gray hair in an olive cardigan sits on a living room sofa holding a small blank plastic card, with a calm expression. Expression: nodding with a reassuring smile, hands relaxed. Color theme: sage green plants and warm ivory tones with a butter-yellow accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "sage green plants and warm ivory tones with a butter-yellow accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "forest",
+      "thumb_person": "60대 남성(올리브 카디건, 회색 머리)",
+      "thumb_mood": "끄덕",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "forest",
+        "font": "jua",
+        "title": "운전면허 갱신\n언제 할까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "운전면허 갱신기간이 언제인지 묻는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "운전면허 갱신",
+        "title": "생일 기준\n바뀌었나요?",
+        "ask": "올해가 갱신하는 해인가요?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "정기 적성검사 대상을 나눠 보는 비교 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "적성검사 받을까",
+        "ask": "2종도 적성검사 받아요?",
+        "heads": [
+          "받아요",
+          "안 받아요"
+        ],
+        "items": [
+          [
+            "1종 운전면허",
+            "70세 미만 2종"
+          ],
+          [
+            "70세 이상 2종",
+            "갱신 해가 아닌 분"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "운전면허시험장 주차장에 세워 둔 작은 차와 가을 나무",
+      "prompt": "Camera and composition: a small car parked in a quiet lot with autumn trees. A small compact car is parked in a quiet parking lot lined with yellow autumn trees, soft afternoon light, no readable text or license plate. Background color: warm yellow and soft green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a small car parked in a quiet lot with autumn trees",
+      "bg": "warm yellow and soft green",
+      "kind": "photo",
+      "photo": {
+        "query_en": "parking lot autumn trees",
+        "scene_en": "small car parked under autumn trees"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}

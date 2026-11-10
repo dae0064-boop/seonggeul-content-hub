@@ -1,0 +1,87 @@
+{
+  "slug": "2026-11-18-gukminyeongeum-yesangsuryeongaek",
+  "title": "국민연금 예상수령액, 가입기간 20년 못 채우면 얼마나 줄까 (50%)",
+  "source": "11/18(수) 티스토리 원고 (11/10 미리 작성) 12:40",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "저녁 거실 소파에서 휴대폰으로 연금 안내를 보며 미소 짓는 50대 남성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean man in his 50s wearing a cobalt blue knit sweater sits on a living room sofa holding a smartphone with a blank screen, a cup of tea on the side table softly blurred behind him. Expression: smiling while checking a smartphone, hands away from the face. Setting: a living room sofa. Lighting: warm evening lamp light. Color theme: warm ivory and walnut brown tones with a butter-yellow accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "한 사람 얼굴 가까이",
+      "bg": "warm ivory and walnut brown tones with a butter-yellow accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "navy",
+      "thumb_person": "50대 남성(코발트 블루 니트)",
+      "thumb_mood": "휴대폰",
+      "thumb_place": "거실",
+      "thumb_light": "저녁 조명",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "navy",
+        "font": "ptd",
+        "title": "국민연금 예상수령액\n얼마나 받을까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "국민연금 예상수령액을 정하는 숫자를 한눈에 보는 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "가입기간별 받는 비율",
+        "items": [
+          [
+            "50%",
+            "가입기간 10년",
+            "기본연금액의"
+          ],
+          [
+            "75%",
+            "가입기간 15년",
+            "50%에 25% 더해"
+          ],
+          [
+            "7.2%",
+            "연기연금 1년",
+            "늘어나는 비율"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "국민연금 예상수령액을 늘리는 방법을 묻고 답하는 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "연금액이 움직이는 때",
+        "ask": "받은 뒤에도 바뀌어?",
+        "items": [
+          "해마다 전국소비자물가변동률만큼",
+          "1년이면 7.2%씩 늘어나요",
+          "부양가족연금액이 붙어요"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "거실 탁자 위에 놓인 계산기와 노트, 따뜻한 차 한 잔",
+      "prompt": "Camera and composition: a calculator, a notebook and a cup of tea on a living room table. A calculator, an open blank notebook and a cup of tea on a wooden living room table, warm evening light, no readable text. Background color: warm ivory and walnut brown. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a calculator, a notebook and a cup of tea on a living room table",
+      "bg": "warm ivory and walnut brown",
+      "kind": "photo",
+      "photo": {
+        "query_en": "calculator notebook tea",
+        "scene_en": "calculator and notebook with tea on a table"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}

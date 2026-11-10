@@ -1,0 +1,622 @@
+{
+  "slug": "2026-11-20-jinryobi-yeongsujeung-jaebalgeup",
+  "title": "진료비 영수증 재발급, 세부산정내역까지 몇 년 지나도 받을까 (5년 보존)",
+  "category": "생활보장",
+  "tags": [
+    "진료비영수증재발급",
+    "세부산정내역",
+    "진료비납입확인서",
+    "약제비영수증",
+    "병원영수증분실",
+    "진료비계산서",
+    "진료비세부내역서",
+    "실손보험청구",
+    "보험금청구서류",
+    "의료비공제",
+    "간이외래영수증",
+    "원무과",
+    "보험정보",
+    "생활보장",
+    "보험금청구"
+  ],
+  "publishAt": "2026-11-20 15:00",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "병원 영수증 분실로 걱정이라면, 병원은"
+        },
+        {
+          "t": "영수증 부본을 5년 동안 보존해야 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 보험금을 청구하려고 서랍을 열었는데"
+        },
+        {
+          "t": "지난봄 통원 영수증만 쏙 빠져 있다면"
+        },
+        {
+          "t": "\"이제 못 받는 건가\" 싶어 마음이 급해지죠."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘은 진료비 영수증 재발급을"
+        },
+        {
+          "t": "어디까지, 어떻게 받는지 정리해 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "요점은 이거예요."
+        },
+        {
+          "t": "진료비 영수증 재발급은 진료받은 병원에서,",
+          "s": "yellow"
+        },
+        {
+          "t": "약값은 약국에서 따로 받아요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "원무과 접수대 위에서 서류 봉투를 건네받는 손 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "진료비 영수증 재발급, 근거가 있어요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "진료비 영수증 재발급에서 기억할 숫자를 정리한 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "병원은 진료 뒤 계산서·영수증을 줘야 해요."
+        },
+        {
+          "t": "국민건강보험 요양급여의 기준에 관한 규칙"
+        },
+        {
+          "t": "제7조가 정한 일이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "같은 조 제5항은 영수증 부본을"
+        },
+        {
+          "t": "요양급여가 끝난 날부터 5년간",
+          "segs": [
+            {
+              "t": "요양급여가 끝난 날부터 "
+            },
+            {
+              "t": "5년",
+              "s": "blue"
+            },
+            {
+              "t": "간"
+            }
+          ]
+        },
+        {
+          "t": "보존하라고 정해 두었어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 5년 안의 영수증이라면",
+          "s": "yellow"
+        },
+        {
+          "t": "진료비 영수증 재발급을 요청해 볼 수 있어요.",
+          "s": "yellow"
+        },
+        {
+          "t": "본인부담금 수납대장으로 대신 남기는 병원도 있어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "영수증은 종류가 3가지예요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "같은 규칙은 영수증 서식을 3가지로 나눠요.",
+          "segs": [
+            {
+              "t": "같은 규칙은 영수증 서식을 "
+            },
+            {
+              "t": "3가지",
+              "s": "blue"
+            },
+            {
+              "t": "로 나눠요."
+            }
+          ]
+        },
+        {
+          "t": "진료비, 한방진료비, 약제비"
+        },
+        {
+          "t": "계산서·영수증이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "한의원 진료라면 한방진료비 영수증을,"
+        },
+        {
+          "t": "처방받은 약값은 약제비 영수증을 챙겨요."
+        },
+        {
+          "t": "같은 날 진료라도 영수증은 따로 나와요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "입원 영수증 서식에는 퇴원과 중간이 나뉘어 있어요."
+        },
+        {
+          "t": "오래 입원해 중간에 정산했다면"
+        },
+        {
+          "t": "중간 영수증까지 모두 다시 받아야 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "동네 의원의 외래 진료라면"
+        },
+        {
+          "t": "간이 외래 진료비 영수증을 받았을 수 있어요."
+        },
+        {
+          "t": "보험금 청구에 이 양식이 되는지는 보험사 안내를 봐요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "약제비 영수증은 약국에서 받아요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "약국에서 낸 약값은 약제비 영수증이라",
+          "s": "red"
+        },
+        {
+          "t": "병원에서 다시 받을 수 없어요.",
+          "s": "red"
+        },
+        {
+          "t": "약제비 영수증은 그 약을 받은 약국에 요청해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "약국도 건강보험 요양기관이에요."
+        },
+        {
+          "t": "그래서 약제비 영수증 부본도 병원처럼"
+        },
+        {
+          "t": "5년 보존 의무가 같이 적용돼요.",
+          "segs": [
+            {
+              "t": "5년",
+              "s": "blue"
+            },
+            {
+              "t": " 보존 의무가 같이 적용돼요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "병원 영수증과 약제비 영수증을",
+          "s": "yellow"
+        },
+        {
+          "t": "한 묶음으로 챙겨야 빠지는 돈이 없어요.",
+          "s": "yellow"
+        },
+        {
+          "t": "처방전 날짜를 적어 가면 약국에서 찾기 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "세부산정내역도 다시 받을 수 있어요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "환자가 영수증의 세부산정내역을 요구하면"
+        },
+        {
+          "t": "병원은 제공해야 해요. 제7조 제3항이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "세부산정내역에는 항목별 단가와 횟수,"
+        },
+        {
+          "t": "본인부담금과 공단부담금이 나뉘어 적혀요."
+        },
+        {
+          "t": "비급여가 많은 진료라면 함께 받아 두면 좋아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "다만 질병군별로 묶어 값을 매기는 진료는"
+        },
+        {
+          "t": "제공 범위가 정해진 항목으로 줄어요."
+        },
+        {
+          "t": "같은 조 제4항에 나오는 예외예요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "연말정산용은 진료비 납입확인서예요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "진료비 영수증 재발급을 묻는 질문에 답하는 채팅 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "연말정산 의료비공제가 목적이라면"
+        },
+        {
+          "t": "진료비 납입확인서를 요청할 수 있어요."
+        },
+        {
+          "t": "한 해 동안 낸 진료비를 한 장에 모아 줘요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "규칙 제7조 제2항이 근거예요."
+        },
+        {
+          "t": "소득세법 의료비공제를 받으려고 확인을 요청하면"
+        },
+        {
+          "t": "병원은 이 확인서를 발급해야 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "진료비 납입확인서는 연말정산용이라"
+        },
+        {
+          "t": "보험금 청구 서류와 목적이 달라요."
+        },
+        {
+          "t": "보험금 청구에 써도 되는지는 보험사에 먼저 물어봐요."
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"작년 영수증도 다시 떼 줄까요?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "5년 보존 기간 안이라면 요청해 볼 수 있어요."
+        },
+        {
+          "t": "비용은 병원 원무과 안내를 확인해요."
+        },
+        {
+          "t": "진료 날짜와 진료과를 함께 말하면 찾기 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "진료비 영수증 재발급 전 확인"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "병원 대기실 의자 위에 놓인 빈 서류 봉투와 볼펜"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보험금 청구 기간은 상법 제662조대로 3년이에요.",
+          "segs": [
+            {
+              "t": "보험금 청구 기간은 상법 제662조대로 "
+            },
+            {
+              "t": "3년",
+              "s": "blue"
+            },
+            {
+              "t": "이에요."
+            }
+          ]
+        },
+        {
+          "t": "병원 보존 기간 5년보다 짧으니"
+        },
+        {
+          "t": "청구할 생각이라면 3년 안에 챙겨요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "진료 날짜를 모르면 재발급이 늦어질 수 있어요.",
+          "s": "red"
+        },
+        {
+          "t": "카드 결제 내역으로 날짜부터 찾아요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "재발급 비용은 보건복지부 제증명수수료 고시 표에"
+        },
+        {
+          "t": "영수증 항목이 따로 없어 병원마다 달라요."
+        },
+        {
+          "t": "원무과에 전화로 먼저 물어보면 헛걸음이 줄어요."
+        },
+        {
+          "t": "다시 받은 영수증은 바로 사진으로 남겨 둬요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 가족 영수증도 대신 받을 수 있나요?"
+        },
+        {
+          "t": "A1: 병원마다 요구하는 서류가 달라요."
+        },
+        {
+          "t": "신분증, 가족관계 서류를 미리 물어봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 세부산정내역만 따로 받아도 되나요?"
+        },
+        {
+          "t": "A2: 영수증에 대한 세부산정내역이라"
+        },
+        {
+          "t": "보통 영수증과 함께 요청하는 편이 편해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 체크포인트",
+          "s": "green"
+        },
+        {
+          "t": "진료 날짜 · 병원인지 약국인지 · 청구 목적",
+          "s": "green"
+        },
+        {
+          "t": "이 세 가지를 정하고 원무과에 연락해요.",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분은 영수증을 종이로 모으세요, 사진으로 모으세요?"
+        },
+        {
+          "t": "\"종이\", \"사진\"처럼 짧게 남겨 주세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "진료비 영수증 재발급 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "진료비 영수증 재발급은 5년 안에 요청해요."
+        },
+        {
+          "t": "약값은 약국에서 약제비 영수증으로 받아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "세부산정내역은 요구하면 받을 수 있고,"
+        },
+        {
+          "t": "연말정산용은 진료비 납입확인서예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "요양급여 기준 규칙 제7조와 상법 제662조,"
+        },
+        {
+          "t": "제증명수수료 고시를 원문으로 찾아 맞췄어요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "진료비 영수증 재발급, 세부산정내역도 함께 받아 둬요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">병원 영수증 분실로 걱정이라면, 병원은<br>영수증 부본을 5년 동안 보존해야 해요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 보험금을 청구하려고 서랍을 열었는데<br>지난봄 통원 영수증만 쏙 빠져 있다면<br>&quot;이제 못 받는 건가&quot; 싶어 마음이 급해지죠.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘은 진료비 영수증 재발급을<br>어디까지, 어떻게 받는지 정리해 볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">요점은 이거예요.<br><span style=\"background-color: #ffe94d;\"><b>진료비 영수증 재발급은 진료받은 병원에서,</b></span><br><span style=\"background-color: #ffe94d;\"><b>약값은 약국에서 따로 받아요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 1] 원무과 접수대 위에서 서류 봉투를 건네받는 손 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>진료비 영수증 재발급, 근거가 있어요</h2>\n<p data-ke-size=\"size16\">[이미지 2] 진료비 영수증 재발급에서 기억할 숫자를 정리한 카드</p>\n<p data-ke-size=\"size16\">병원은 진료 뒤 계산서·영수증을 줘야 해요.<br>국민건강보험 요양급여의 기준에 관한 규칙<br>제7조가 정한 일이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">같은 조 제5항은 영수증 부본을<br>요양급여가 끝난 날부터 <span style=\"color: #0078cb;\"><b>5년</b></span>간<br>보존하라고 정해 두었어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>그래서 5년 안의 영수증이라면</b></span><br><span style=\"background-color: #ffe94d;\"><b>진료비 영수증 재발급을 요청해 볼 수 있어요.</b></span><br>본인부담금 수납대장으로 대신 남기는 병원도 있어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>영수증은 종류가 3가지예요</h2>\n<p data-ke-size=\"size16\">같은 규칙은 영수증 서식을 <span style=\"color: #0078cb;\"><b>3가지</b></span>로 나눠요.<br>진료비, 한방진료비, 약제비<br>계산서·영수증이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">한의원 진료라면 한방진료비 영수증을,<br>처방받은 약값은 약제비 영수증을 챙겨요.<br>같은 날 진료라도 영수증은 따로 나와요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">입원 영수증 서식에는 퇴원과 중간이 나뉘어 있어요.<br>오래 입원해 중간에 정산했다면<br>중간 영수증까지 모두 다시 받아야 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">동네 의원의 외래 진료라면<br>간이 외래 진료비 영수증을 받았을 수 있어요.<br>보험금 청구에 이 양식이 되는지는 보험사 안내를 봐요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>약제비 영수증은 약국에서 받아요</h2>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>약국에서 낸 약값은 약제비 영수증이라</b></span><br><span style=\"color: #ff0010;\"><b>병원에서 다시 받을 수 없어요.</b></span><br>약제비 영수증은 그 약을 받은 약국에 요청해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">약국도 건강보험 요양기관이에요.<br>그래서 약제비 영수증 부본도 병원처럼<br><span style=\"color: #0078cb;\"><b>5년</b></span> 보존 의무가 같이 적용돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>병원 영수증과 약제비 영수증을</b></span><br><span style=\"background-color: #ffe94d;\"><b>한 묶음으로 챙겨야 빠지는 돈이 없어요.</b></span><br>처방전 날짜를 적어 가면 약국에서 찾기 쉬워요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>세부산정내역도 다시 받을 수 있어요</h2>\n<p data-ke-size=\"size16\">환자가 영수증의 세부산정내역을 요구하면<br>병원은 제공해야 해요. 제7조 제3항이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">세부산정내역에는 항목별 단가와 횟수,<br>본인부담금과 공단부담금이 나뉘어 적혀요.<br>비급여가 많은 진료라면 함께 받아 두면 좋아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">다만 질병군별로 묶어 값을 매기는 진료는<br>제공 범위가 정해진 항목으로 줄어요.<br>같은 조 제4항에 나오는 예외예요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>연말정산용은 진료비 납입확인서예요</h2>\n<p data-ke-size=\"size16\">[이미지 3] 진료비 영수증 재발급을 묻는 질문에 답하는 채팅 카드</p>\n<p data-ke-size=\"size16\">연말정산 의료비공제가 목적이라면<br>진료비 납입확인서를 요청할 수 있어요.<br>한 해 동안 낸 진료비를 한 장에 모아 줘요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">규칙 제7조 제2항이 근거예요.<br>소득세법 의료비공제를 받으려고 확인을 요청하면<br>병원은 이 확인서를 발급해야 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">진료비 납입확인서는 연말정산용이라<br>보험금 청구 서류와 목적이 달라요.<br>보험금 청구에 써도 되는지는 보험사에 먼저 물어봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<blockquote data-ke-style=\"style3\">&quot;작년 영수증도 다시 떼 줄까요?&quot;</blockquote>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">5년 보존 기간 안이라면 요청해 볼 수 있어요.<br>비용은 병원 원무과 안내를 확인해요.<br>진료 날짜와 진료과를 함께 말하면 찾기 쉬워요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>진료비 영수증 재발급 전 확인</h2>\n<p data-ke-size=\"size16\">[이미지 4] 병원 대기실 의자 위에 놓인 빈 서류 봉투와 볼펜</p>\n<p data-ke-size=\"size16\">보험금 청구 기간은 상법 제662조대로 <span style=\"color: #0078cb;\"><b>3년</b></span>이에요.<br>병원 보존 기간 5년보다 짧으니<br>청구할 생각이라면 3년 안에 챙겨요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>진료 날짜를 모르면 재발급이 늦어질 수 있어요.</b></span><br><span style=\"color: #ff0010;\"><b>카드 결제 내역으로 날짜부터 찾아요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">재발급 비용은 보건복지부 제증명수수료 고시 표에<br>영수증 항목이 따로 없어 병원마다 달라요.<br>원무과에 전화로 먼저 물어보면 헛걸음이 줄어요.<br>다시 받은 영수증은 바로 사진으로 남겨 둬요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 가족 영수증도 대신 받을 수 있나요?<br>A1: 병원마다 요구하는 서류가 달라요.<br>신분증, 가족관계 서류를 미리 물어봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 세부산정내역만 따로 받아도 되나요?<br>A2: 영수증에 대한 세부산정내역이라<br>보통 영수증과 함께 요청하는 편이 편해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 체크포인트</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>진료 날짜 · 병원인지 약국인지 · 청구 목적</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>이 세 가지를 정하고 원무과에 연락해요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분은 영수증을 종이로 모으세요, 사진으로 모으세요?<br>&quot;종이&quot;, &quot;사진&quot;처럼 짧게 남겨 주세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>진료비 영수증 재발급 정리</h2>\n<p data-ke-size=\"size16\">진료비 영수증 재발급은 5년 안에 요청해요.<br>약값은 약국에서 약제비 영수증으로 받아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">세부산정내역은 요구하면 받을 수 있고,<br>연말정산용은 진료비 납입확인서예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">요양급여 기준 규칙 제7조와 상법 제662조,<br>제증명수수료 고시를 원문으로 찾아 맞췄어요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>진료비 영수증 재발급, 세부산정내역도 함께 받아 둬요.</p>"
+}

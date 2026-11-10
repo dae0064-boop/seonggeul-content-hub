@@ -1,0 +1,73 @@
+{
+  "slug": "2026-11-20-janghae-jindanseo-balgeup",
+  "title": "장해진단서 발급, 장해지급률은 언제 정해질까 (180일)",
+  "source": "11/20(금) 티스토리 원고 (11/10 미리 쓰기) 21:00",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "테이블 위에 놓인 무릎 보호대와 작은 달력, 찻잔 (대표사진)",
+      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). On a light table: a soft knee brace, a small desk calendar without numbers, a cup of tea and a pair of glasses, neatly arranged. Color theme: olive green and warm cream tones with a coral accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "overhead",
+      "bg": "olive green and warm cream tones with a coral accent",
+      "note": "대표",
+      "thumb_shot": "overhead",
+      "thumb_theme": "olive",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "olive",
+        "font": "jua",
+        "title": "장해진단서\n언제 뗄까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "장해진단서 발급 시기를 묻는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "장해진단서",
+        "title": "180일\n기준부터",
+        "ask": "언제 떼야 하지?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "후유장해진단서에 꼭 들어갈 4가지를 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "style": "memo",
+        "title": "꼭 들어갈 4가지",
+        "sub": "장해분류표 총칙이 정한 필수 기재",
+        "items": [
+          "장해진단명과 발생 시기",
+          "장해의 내용과 그 정도",
+          "사고와의 인과관계와 관여도",
+          "앞으로의 치료와 호전 정도"
+        ],
+        "memo": "빠졌으면 병원에서 바로 보완해요",
+        "hl": 1
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "진료실 책상 위 청진기와 빈 진료 기록지",
+      "prompt": "Camera and composition: a stethoscope and a blank chart on a clinic desk. A stethoscope and a blank medical chart on a tidy clinic desk, no readable text. Background color: clean white and olive green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a stethoscope and a blank chart on a clinic desk",
+      "bg": "clean white and olive green",
+      "kind": "photo",
+      "photo": {
+        "query_en": "stethoscope desk",
+        "scene_en": "a stethoscope and a blank chart on a clinic desk"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}
