@@ -1,0 +1,623 @@
+{
+  "slug": "2026-11-19-sanghae-jilbyeong-gubun",
+  "title": "상해 질병 구분, 보험 재해분류표와 상해급여는 어떻게 볼까 (S00~Y84)",
+  "category": "생활보장",
+  "tags": [
+    "상해질병구분",
+    "재해분류표",
+    "질병분류코드",
+    "상해급여",
+    "급격하고우연한사고",
+    "상해뜻",
+    "재해뜻",
+    "질병급여",
+    "외래의사고",
+    "상해보험",
+    "질병보험",
+    "표준약관",
+    "진단서코드",
+    "보험정보",
+    "생활보장"
+  ],
+  "publishAt": "2026-11-19 21:00",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "급격하고 우연한 사고, 그리고 바깥에서 온 사고."
+        },
+        {
+          "t": "보험에서 상해는 이 세 가지를 함께 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 계단에서 발을 헛디뎌 허리를 삐끗했는데"
+        },
+        {
+          "t": "\"질병으로 보입니다\"라는 답을 받았다면"
+        },
+        {
+          "t": "고개가 갸웃해지기 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "상해 질병 구분은 다친 장소보다",
+          "s": "yellow"
+        },
+        {
+          "t": "'바깥 사고가 원인인지'를 먼저 봐요.",
+          "s": "yellow"
+        },
+        {
+          "t": "오늘은 약관 문장으로 그 기준을 짚어 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "나무 탁자 위에 놓인 구급상자와 붕대, 얼음주머니 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "상해 질병 구분, 약관 문장부터"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "상해와 질병 구분에서 헷갈리는 말을 맞혀 보는 O·X 퀴즈 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "질병·상해보험 표준약관은 상해를"
+        },
+        {
+          "t": "보험기간 중 급격하고도 우연한 외래의 사고로"
+        },
+        {
+          "t": "신체에 입은 상해라고 적어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "급격은 갑자기, 우연은 뜻하지 않게,"
+        },
+        {
+          "t": "외래는 몸 바깥에서 왔다는 뜻이에요."
+        },
+        {
+          "t": "셋 중 하나라도 빠지면",
+          "s": "red"
+        },
+        {
+          "t": "상해로 보기 어려워져요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "의수, 의족, 의치 같은 보조장구는"
+        },
+        {
+          "t": "신체에서 빠지지만, 몸에 이식돼 기능을"
+        },
+        {
+          "t": "대신하는 인공장기는 신체로 본다고 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "같은 약관의 상해 사망보험금은"
+        },
+        {
+          "t": "질병으로 인한 사망은 빼고 준다고 적어요."
+        },
+        {
+          "t": "상해 질병 구분이 보험금 자체를 가르는 셈이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "법도 둘을 나눠 둬요. 상법 제737조는"
+        },
+        {
+          "t": "상해보험을, 제739조의2는 질병보험을"
+        },
+        {
+          "t": "따로 정한 조문이에요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "생명보험은 재해분류표로 봐요"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "생명보험 표준약관은 '재해'라는 말을 쓰고"
+        },
+        {
+          "t": "그 범위를 재해분류표에 정해 둬요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보장 대상은 한국표준질병·사인분류의"
+        },
+        {
+          "t": "S00~Y84에 해당하는 우발적인 외래 사고예요.",
+          "segs": [
+            {
+              "t": "S00~Y84",
+              "s": "blue"
+            },
+            {
+              "t": "에 해당하는 우발적인 외래 사고예요."
+            }
+          ]
+        },
+        {
+          "t": "감염병예방법의 제1급감염병도 재해에 들어가요.",
+          "segs": [
+            {
+              "t": "감염병예방법의 "
+            },
+            {
+              "t": "제1급감염병",
+              "s": "blue"
+            },
+            {
+              "t": "도 재해에 들어가요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "진단서의 질병분류코드가 S나 T로 시작하면"
+        },
+        {
+          "t": "손상을 뜻하는 장에 들어가는 코드예요."
+        },
+        {
+          "t": "그래서 상해 질병 구분의 첫 단서가 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "질병분류코드는 진단서나 진료확인서에 적혀요."
+        },
+        {
+          "t": "같은 허리 통증이라도 M으로 시작하는 코드는"
+        },
+        {
+          "t": "근골격계 질환 장이라 질병 쪽으로 읽힐 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "재해분류표에는 재해에서 빼는 경우도",
+          "s": "yellow"
+        },
+        {
+          "t": "따로 적혀 있어요. 이 부분이 핵심이에요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "상해로 보는 경우와 아닌 경우"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "상해로 보는 경우와 보기 어려운 경우를 비교한 채팅 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "⭕ 길에서 미끄러져 넘어져 다친 경우"
+        },
+        {
+          "t": "⭕ 부엌칼에 손을 베인 경우"
+        },
+        {
+          "t": "❌ 원래 있던 질병이 가벼운 외부 요인으로 악화"
+        },
+        {
+          "t": "❌ 과도한 운동이나 반복 동작으로 생긴 경우"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "재해분류표는 질병이나 체질적 요인이 있는 사람이"
+        },
+        {
+          "t": "경미한 외부 요인으로 발병하거나 증상이"
+        },
+        {
+          "t": "더 나빠진 경우를 재해에서 뺀다고 적어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "과잉노력, 격심하거나 반복적인 운동은"
+        },
+        {
+          "t": "코드 X50로 따로 제외돼요.",
+          "segs": [
+            {
+              "t": "코드 "
+            },
+            {
+              "t": "X50",
+              "s": "blue"
+            },
+            {
+              "t": "로 따로 제외돼요."
+            }
+          ]
+        },
+        {
+          "t": "고의적 자해인 X60~X84도 마찬가지예요.",
+          "segs": [
+            {
+              "t": "고의적 자해인 "
+            },
+            {
+              "t": "X60~X84",
+              "s": "blue"
+            },
+            {
+              "t": "도 마찬가지예요."
+            }
+          ]
+        },
+        {
+          "t": "이 목록은 재해분류표 둘째 항목에 모여 있어요."
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"그럼 허리 삐끗한 건 어느 쪽이에요?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "한 줄로 답하기는 어려워요."
+        },
+        {
+          "t": "원래 허리 질환이 있었는지, 사고가 얼마나"
+        },
+        {
+          "t": "갑작스러웠는지에 따라 판단이 갈리기 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 다친 날 바로 진료를 받고"
+        },
+        {
+          "t": "어디서 어떻게 다쳤는지 기록에 남기는 게"
+        },
+        {
+          "t": "나중에 설명할 때 가장 든든한 자료가 돼요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "실손에서는 상해급여와 질병급여"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "실손의료보험 기본형도 상해와 질병을 나눠요."
+        },
+        {
+          "t": "표준약관은 상해급여와 질병급여,"
+        },
+        {
+          "t": "두 보장종목으로 짜여 있다고 적어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "상해급여는 다쳐서, 질병급여는 아파서",
+          "s": "yellow"
+        },
+        {
+          "t": "병원에 간 의료비를 각각 보상해요.",
+          "s": "yellow"
+        },
+        {
+          "t": "한도도 보장종목마다 따로 정해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 증권에 두 종목이 모두 있는지"
+        },
+        {
+          "t": "먼저 확인해 두면 마음이 놓여요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "다친 뒤 통증이 오래가면 어느 종목인지"
+        },
+        {
+          "t": "헷갈리기 쉬워요. 진단서에 적힌 원인을"
+        },
+        {
+          "t": "들고 회사에 먼저 물어보는 게 빨라요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "상해 질병 구분 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "자주 받는 질문 두 가지를 골랐어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 질병분류코드만 보면 다 정해지나요?"
+        },
+        {
+          "t": "A1: 코드는 중요한 단서지만 전부는 아니에요."
+        },
+        {
+          "t": "사고가 어떻게 났는지도 함께 봐요."
+        },
+        {
+          "t": "응급실 기록이나 사고 경위를 남겨 두세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 상해로 알았는데 질병이라고 하면요?"
+        },
+        {
+          "t": "A2: 약관의 상해 정의와 재해분류표 문장을"
+        },
+        {
+          "t": "놓고 회사에 이유를 문서로 받아 보세요."
+        },
+        {
+          "t": "그래야 분쟁조정 같은 다음 단계를 정할 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 진단서의 질병분류코드 확인하기",
+          "s": "green"
+        },
+        {
+          "t": "✔ 사고 날짜·장소·경위 적어 두기",
+          "s": "green"
+        },
+        {
+          "t": "✔ 증권에서 상해급여·질병급여 둘 다 보기",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분은 다쳤을 때 코드를 확인해 보셨나요?"
+        },
+        {
+          "t": "\"봤다\", \"처음 듣는다\" 중 하나로 남겨 주세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "상해 질병 구분 정리"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "병원 대기실 창가 의자에 놓인 빈 서류봉투와 목발"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "상해 질병 구분은 급격, 우연, 외래"
+        },
+        {
+          "t": "세 가지가 함께 있는지를 먼저 봐요."
+        },
+        {
+          "t": "진단서의 질병분류코드와 사고 기록을"
+        },
+        {
+          "t": "한 묶음으로 챙겨 두면 설명이 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "원래 질병이 가벼운 사고로 나빠진 경우는",
+          "s": "red"
+        },
+        {
+          "t": "재해에서 빠질 수 있어요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보험업감독업무시행세칙의 생명보험·질병상해보험·"
+        },
+        {
+          "t": "실손의료보험 표준약관을 차례로 맞대 봤어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "내 계약 기준은 증권·약관에서"
+        },
+        {
+          "t": "한 번 더 확인해 보세요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "상해 질병 구분, 재해분류표 제외 문장부터 봐요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">급격하고 우연한 사고, 그리고 바깥에서 온 사고.<br>보험에서 상해는 이 세 가지를 함께 봐요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 계단에서 발을 헛디뎌 허리를 삐끗했는데<br>&quot;질병으로 보입니다&quot;라는 답을 받았다면<br>고개가 갸웃해지기 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>상해 질병 구분은 다친 장소보다</b></span><br><span style=\"background-color: #ffe94d;\"><b>'바깥 사고가 원인인지'를 먼저 봐요.</b></span><br>오늘은 약관 문장으로 그 기준을 짚어 볼게요.</p>\n<p data-ke-size=\"size16\">[이미지 1] 나무 탁자 위에 놓인 구급상자와 붕대, 얼음주머니 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>상해 질병 구분, 약관 문장부터</h2>\n<p data-ke-size=\"size16\">[이미지 2] 상해와 질병 구분에서 헷갈리는 말을 맞혀 보는 O·X 퀴즈 카드</p>\n<p data-ke-size=\"size16\">질병·상해보험 표준약관은 상해를<br>보험기간 중 급격하고도 우연한 외래의 사고로<br>신체에 입은 상해라고 적어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">급격은 갑자기, 우연은 뜻하지 않게,<br>외래는 몸 바깥에서 왔다는 뜻이에요.<br><span style=\"color: #ff0010;\"><b>셋 중 하나라도 빠지면</b></span><br><span style=\"color: #ff0010;\"><b>상해로 보기 어려워져요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">의수, 의족, 의치 같은 보조장구는<br>신체에서 빠지지만, 몸에 이식돼 기능을<br>대신하는 인공장기는 신체로 본다고 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">같은 약관의 상해 사망보험금은<br>질병으로 인한 사망은 빼고 준다고 적어요.<br>상해 질병 구분이 보험금 자체를 가르는 셈이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">법도 둘을 나눠 둬요. 상법 제737조는<br>상해보험을, 제739조의2는 질병보험을<br>따로 정한 조문이에요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>생명보험은 재해분류표로 봐요</h2>\n<p data-ke-size=\"size16\">생명보험 표준약관은 '재해'라는 말을 쓰고<br>그 범위를 재해분류표에 정해 둬요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">보장 대상은 한국표준질병·사인분류의<br><span style=\"color: #0078cb;\"><b>S00~Y84</b></span>에 해당하는 우발적인 외래 사고예요.<br>감염병예방법의 <span style=\"color: #0078cb;\"><b>제1급감염병</b></span>도 재해에 들어가요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">진단서의 질병분류코드가 S나 T로 시작하면<br>손상을 뜻하는 장에 들어가는 코드예요.<br>그래서 상해 질병 구분의 첫 단서가 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">질병분류코드는 진단서나 진료확인서에 적혀요.<br>같은 허리 통증이라도 M으로 시작하는 코드는<br>근골격계 질환 장이라 질병 쪽으로 읽힐 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>재해분류표에는 재해에서 빼는 경우도</b></span><br><span style=\"background-color: #ffe94d;\"><b>따로 적혀 있어요. 이 부분이 핵심이에요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>상해로 보는 경우와 아닌 경우</h2>\n<p data-ke-size=\"size16\">[이미지 3] 상해로 보는 경우와 보기 어려운 경우를 비교한 채팅 카드</p>\n<p data-ke-size=\"size16\">⭕ 길에서 미끄러져 넘어져 다친 경우<br>⭕ 부엌칼에 손을 베인 경우<br>❌ 원래 있던 질병이 가벼운 외부 요인으로 악화<br>❌ 과도한 운동이나 반복 동작으로 생긴 경우</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">재해분류표는 질병이나 체질적 요인이 있는 사람이<br>경미한 외부 요인으로 발병하거나 증상이<br>더 나빠진 경우를 재해에서 뺀다고 적어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">과잉노력, 격심하거나 반복적인 운동은<br>코드 <span style=\"color: #0078cb;\"><b>X50</b></span>로 따로 제외돼요.<br>고의적 자해인 <span style=\"color: #0078cb;\"><b>X60~X84</b></span>도 마찬가지예요.<br>이 목록은 재해분류표 둘째 항목에 모여 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<blockquote data-ke-style=\"style3\">&quot;그럼 허리 삐끗한 건 어느 쪽이에요?&quot;</blockquote>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">한 줄로 답하기는 어려워요.<br>원래 허리 질환이 있었는지, 사고가 얼마나<br>갑작스러웠는지에 따라 판단이 갈리기 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그래서 다친 날 바로 진료를 받고<br>어디서 어떻게 다쳤는지 기록에 남기는 게<br>나중에 설명할 때 가장 든든한 자료가 돼요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>실손에서는 상해급여와 질병급여</h2>\n<p data-ke-size=\"size16\">실손의료보험 기본형도 상해와 질병을 나눠요.<br>표준약관은 상해급여와 질병급여,<br>두 보장종목으로 짜여 있다고 적어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>상해급여는 다쳐서, 질병급여는 아파서</b></span><br><span style=\"background-color: #ffe94d;\"><b>병원에 간 의료비를 각각 보상해요.</b></span><br>한도도 보장종목마다 따로 정해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그래서 증권에 두 종목이 모두 있는지<br>먼저 확인해 두면 마음이 놓여요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">다친 뒤 통증이 오래가면 어느 종목인지<br>헷갈리기 쉬워요. 진단서에 적힌 원인을<br>들고 회사에 먼저 물어보는 게 빨라요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>상해 질병 구분 Q&amp;A</h2>\n<p data-ke-size=\"size16\">자주 받는 질문 두 가지를 골랐어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 질병분류코드만 보면 다 정해지나요?<br>A1: 코드는 중요한 단서지만 전부는 아니에요.<br>사고가 어떻게 났는지도 함께 봐요.<br>응급실 기록이나 사고 경위를 남겨 두세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 상해로 알았는데 질병이라고 하면요?<br>A2: 약관의 상해 정의와 재해분류표 문장을<br>놓고 회사에 이유를 문서로 받아 보세요.<br>그래야 분쟁조정 같은 다음 단계를 정할 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 진단서의 질병분류코드 확인하기</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 사고 날짜·장소·경위 적어 두기</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 증권에서 상해급여·질병급여 둘 다 보기</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분은 다쳤을 때 코드를 확인해 보셨나요?<br>&quot;봤다&quot;, &quot;처음 듣는다&quot; 중 하나로 남겨 주세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>상해 질병 구분 정리</h2>\n<p data-ke-size=\"size16\">[이미지 4] 병원 대기실 창가 의자에 놓인 빈 서류봉투와 목발</p>\n<p data-ke-size=\"size16\">상해 질병 구분은 급격, 우연, 외래<br>세 가지가 함께 있는지를 먼저 봐요.<br>진단서의 질병분류코드와 사고 기록을<br>한 묶음으로 챙겨 두면 설명이 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>원래 질병이 가벼운 사고로 나빠진 경우는</b></span><br><span style=\"color: #ff0010;\"><b>재해에서 빠질 수 있어요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">보험업감독업무시행세칙의 생명보험·질병상해보험·<br>실손의료보험 표준약관을 차례로 맞대 봤어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">내 계약 기준은 증권·약관에서<br>한 번 더 확인해 보세요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>상해 질병 구분, 재해분류표 제외 문장부터 봐요.</p>"
+}
