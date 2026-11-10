@@ -13,20 +13,13 @@ $out = "dumps\blog-stats\$date"
 $nurak = Join-Path $out 'nurak.txt'
 $statsDone = Test-Path (Join-Path $out 'index.json')
 $nurakNew = (Test-Path $nurak) -and ((Get-Content $nurak -Raw -Encoding UTF8) -match '1페이지 밖')
-$neighborsDone = Test-Path (Join-Path $out 'neighbors.txt')
-if ($statsDone -and $nurakNew -and $neighborsDone) { exit 0 }  # 오늘 이미 했음
+if ($statsDone -and $nurakNew) { exit 0 }  # 오늘 이미 했음
 if (-not $statsDone) {
   Write-Host "`n[내 블로그 통계] $id" -ForegroundColor Cyan
   & node scripts/blog-stats.mjs $id --out $out 2>&1 | ForEach-Object { Write-Host $_ }
 }
 # 검색 누락 검사 (2026-11-03 사용자 승인) — 어제·그제 글이 네이버 블로그 검색에 나오는지. 결과 nurak.txt 가 같은 폴더로 Drive 에 올라간다. 실패해도 넘어간다
-if (-not ($statsDone -and $nurakNew)) {
-  & node scripts/nurak-check.mjs $id --out $out 2>&1 | ForEach-Object { Write-Host $_ }
-}
-# 이웃 소통 목록 (2026-11-10 사용자) — 사용자가 본인 아이디로 찾아갈 같은 주제 블로그 새 글 15편. 읽기만, 실패해도 넘어간다
-if (-not $neighborsDone) {
-  & node scripts/neighbor-list.mjs $id --out $out 2>&1 | ForEach-Object { Write-Host $_ }
-}
+& node scripts/nurak-check.mjs $id --out $out 2>&1 | ForEach-Object { Write-Host $_ }
 . (Join-Path $PSScriptRoot 'lib-drive.ps1')
 $drive = Find-MyDrive
 if ($drive -and (Test-Path $out)) {
