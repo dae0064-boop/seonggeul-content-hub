@@ -1,0 +1,83 @@
+{
+  "slug": "2026-11-15-yukahyujik-sahujigeupgeum",
+  "title": "육아휴직 사후지급금, 복직 후 계속 근무 몇 달 채워야 받을까 (6개월)",
+  "source": "11/15(일) 티스토리 원고 (11/10 낮 미리 작성) 18:20",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "아기의 작은 손을 감싸 쥔 아빠의 두 손 (대표사진)",
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A father's two hands in navy knit sleeves gently hold a baby's tiny hand on a soft blanket. Expression: relieved gentle smile. Color theme: warm brown wood and ivory tones with a coral accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "손만 크게 (얼굴 없음)",
+      "bg": "warm brown wood and ivory tones with a coral accent",
+      "note": "대표",
+      "thumb_shot": "hands",
+      "thumb_theme": "charcoal",
+      "thumb_person": "30대 아빠 손(네이비 니트 소매)",
+      "thumb_mood": "안심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "charcoal",
+        "font": "ptd",
+        "title": "육아휴직 사후지급금\n아직 남았을까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "내 휴직 기간에 육아휴직 사후지급금이 남아 있는지 스스로 보는 체크 카드",
+      "kind": "card",
+      "card": {
+        "type": "selfcheck",
+        "title": "내 몫 남았을까?",
+        "items": [
+          "2025년 전 휴직 시작",
+          "2024년에 쉰 달 있음",
+          "복직 뒤 6개월 안 됨"
+        ],
+        "result": "아래 '2025년 전' 부분을 보세요 👇"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "육아휴직 사후지급금을 묻는 질문에 대상과 아닌 경우를 나눠 답하는 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "사후지급 대상일까",
+        "ask": "나도 받을 게 남았어?",
+        "heads": [
+          "2024년까지 쉰 달",
+          "2025년 이후 쉰 달"
+        ],
+        "items": [
+          [
+            "6개월 계속 근무",
+            "매달 다 받아요"
+          ],
+          [
+            "예전 규정대로",
+            "사후지급 없음"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "아이를 안고 아침 햇살 비치는 거실 창가에 선 부모",
+      "prompt": "Camera and composition: a living room window in morning sunlight, eye level. A Korean mother and father stand by a bright living room window holding their baby, gentle morning light, relaxed smiles. Background color: warm cream and soft sage green. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a living room window in morning sunlight, eye level",
+      "bg": "warm cream and soft sage green",
+      "kind": "photo",
+      "photo": {
+        "query_en": "parents holding baby window",
+        "scene_en": "parents holding their baby by a sunny window at home"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}

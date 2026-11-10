@@ -1,0 +1,90 @@
+{
+  "slug": "2026-11-15-ilyongjik-segeum-gyesan",
+  "title": "일용직 세금 계산, 일당 얼마부터 떼일까 (18만 7천 원)",
+  "source": "11/15(일) 티스토리 원고 (11/10 낮 미리 작성) 10:20",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "아침 물류센터에서 상자를 옮기며 하루 일을 시작하는 단기 근로자들 (대표사진)",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A bright Korean logistics warehouse in the morning like a miniature diorama, rows of blank cardboard boxes on shelves, two small workers in safety vests carrying boxes onto a cart, no readable labels. Expression: determined, nodding, sleeves rolled up. Color theme: terracotta and warm beige tones with a sage green accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "방·장소 전체, 사람은 작게",
+      "bg": "terracotta and warm beige tones with a sage green accent",
+      "note": "대표",
+      "thumb_shot": "wide",
+      "thumb_theme": "brick",
+      "thumb_person": "30대 남성(머스터드 조끼)과 40대 여성(코발트 작업복)",
+      "thumb_mood": "결심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "brick",
+        "font": "jua",
+        "title": "일용직 세금\n얼마 떼일까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "일당 20만 원과 25만 원일 때 일용직 세금 계산 결과를 숫자로 보여 주는 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "일당 세금 비율",
+        "items": [
+          [
+            "6%",
+            "세율",
+            "일용직 세율"
+          ],
+          [
+            "55%",
+            "세액공제",
+            "산출세액에서 빼요"
+          ],
+          [
+            "2.7%",
+            "최종 비율",
+            "남은 돈에 곱해요"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "일당과 원천징수에 대해 자주 헷갈리는 것을 맞혀 보는 O·X 퀴즈 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "일당 세금 O·X",
+        "items": [
+          "일당 전부에 세금이 붙는다",
+          "소액 세금은 걷지 않는다",
+          "며칠 치도 하루씩 따진다"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "X"
+        ],
+        "where": "본문 중간"
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "공사 현장 앞에서 안전모를 쓰고 하루 일을 준비하는 작업자",
+      "prompt": "Camera and composition: a construction site entrance in the morning, eye level. A worker in a yellow safety helmet and reflective vest stands at a construction site gate getting ready for the day, scaffolding in soft focus, no readable signs. Background color: warm orange and sky blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a construction site entrance in the morning, eye level",
+      "bg": "warm orange and sky blue",
+      "kind": "photo",
+      "photo": {
+        "query_en": "construction worker helmet",
+        "scene_en": "a construction worker wearing a safety helmet at a building site in the morning"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}
