@@ -1,0 +1,86 @@
+{
+  "slug": "2026-11-22-sanmo-sinsaengah-geonganggwalli",
+  "title": "산모신생아 건강관리, 언제까지 신청해야 하나요 (출산 후 60일)",
+  "source": "11/22(일) 21:00 네이버 원고 — 생활보장 검색형(돈·생활 제도), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "저녁 조명 아래 침대 위에 가지런히 놓인 아기 옷과 속싸개 (대표사진)",
+      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a tidy bedroom by the bed. Lighting: warm evening lamp light. Top-down view of tiny folded baby clothes, a soft swaddle blanket and a small knitted hat neatly arranged on a bed with a forest green blanket, no people. Color theme: fresh green plants and crisp white tones with natural morning light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "overhead",
+      "bg": "fresh green plants and crisp white tones with natural morning light",
+      "note": "대표",
+      "thumb_shot": "overhead",
+      "thumb_theme": "forest",
+      "thumb_person": "없음",
+      "thumb_place": "침실",
+      "thumb_light": "저녁 조명",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "forest",
+        "font": "jua",
+        "title": "산모신생아\n언제 신청?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "산모신생아 건강관리를 두고 많이 헷갈리는 세 가지를 묻는 퀴즈 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "산모신생아 O·X",
+        "items": [
+          "큰아이 돌봄도 표준 서비스",
+          "16주 이후 사산도 대상",
+          "기간은 나중에 바꿀 수 있다"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "X"
+        ],
+        "where": "아래 본문"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "보건소 상담 창구에서 직원과 이야기하는 30대 임신부",
+      "prompt": "Camera and composition: medium shot at a public health center counter. A Korean pregnant woman in her 30s in a long beige coat talking with a staff member across a public health center counter, calm friendly faces. Background color: clean public health center lobby with soft green accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a public health center counter",
+      "bg": "clean public health center lobby with soft green accents"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "산모신생아 건강관리 신청 시기를 크게 묻는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "산모신생아",
+        "title": "언제까지\n신청할까?",
+        "ask": "출산 준비로 정신없어요"
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "거실 소파에서 신생아를 안고 미소 짓는 20대 엄마",
+      "prompt": "Camera and composition: medium shot on a living room sofa. A Korean mother in her 20s in a soft gray loungewear sitting on a living room sofa, holding a sleeping newborn wrapped in a white blanket and smiling gently. Background color: cozy living room with sage green cushions. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on a living room sofa",
+      "bg": "cozy living room with sage green cushions"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "아침 햇살이 드는 부엌에서 미역국 냄비를 젓는 30대 아빠의 손",
+      "prompt": "Camera and composition: close-up of hands at a kitchen stove. Close-up of a man's hands stirring a pot of seaweed soup with a wooden ladle on a kitchen stove in morning light, no face in the frame. Background color: bright kitchen with white tiles and green plants. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands at a kitchen stove",
+      "bg": "bright kitchen with white tiles and green plants"
+    }
+  ]
+}
