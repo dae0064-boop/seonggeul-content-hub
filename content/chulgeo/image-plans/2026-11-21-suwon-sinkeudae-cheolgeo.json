@@ -1,0 +1,75 @@
+{
+  "slug": "2026-11-21-suwon-sinkeudae-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "상부장을 떼어 내고 벽이 드러난 아파트 주방 (대표사진)",
+      "scene": "a Korean apartment kitchen where the upper wall cabinets have been removed, leaving a bare tiled wall with mounting rails and screw holes above the lower cabinets, soft daylight.",
+      "prompt": "Camera and composition: a Korean apartment kitchen where the upper wall cabinets have been removed, leaving a bare tiled wall with mounting rails and screw holes above the lower cabinets, soft daylight. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "수원 싱크대\n상부장만 될까"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "하부장은 그대로 두고 상부장 자리만 빈 주방 벽",
+      "scene": "side view of a kitchen with the lower cabinets and countertop still in place, covered with protective cardboard, while the wall above is empty where upper cabinets used to hang.",
+      "prompt": "Camera and composition: side view of a kitchen with the lower cabinets and countertop still in place, covered with protective cardboard, while the wall above is empty where upper cabinets used to hang. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "상판을 들어낸 하부장과 드러난 배수 배관",
+      "scene": "close view under a removed kitchen countertop showing open lower cabinet boxes and the grey drain pipe and water supply valves on the back wall.",
+      "prompt": "Camera and composition: close view under a removed kitchen countertop showing open lower cabinet boxes and the grey drain pipe and water supply valves on the back wall. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "싱크대 철거 전 주방 정리를 담은 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "싱크대 철거 전 주방 정리",
+        "items": [
+          "장 안 그릇 모두 빼기",
+          "냉장고는 주방 밖으로",
+          "정수기·식세기 연결 확인",
+          "가스 밸브 잠그기"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "벽 위쪽 걸이 철물만 남은 주방 벽면",
+      "scene": "close view of the upper part of a kitchen wall with only metal hanging rails and a few screws left, tile surface slightly chipped around them.",
+      "prompt": "Camera and composition: close view of the upper part of a kitchen wall with only metal hanging rails and a few screws left, tile surface slightly chipped around them. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "문자로 보낼 주방 사진을 찍는 손과 휴대폰",
+      "scene": "a hand holding a smartphone horizontally toward a Korean apartment kitchen, the phone screen facing away from the camera, kitchen cabinets in soft focus behind.",
+      "prompt": "Camera and composition: a hand holding a smartphone horizontally toward a Korean apartment kitchen, the phone screen facing away from the camera, kitchen cabinets in soft focus behind. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "떼어 낸 싱크대 문짝을 묶어 옮기는 작업자 뒷모습",
+      "scene": "a worker seen from behind in a safety helmet carrying a bundle of removed kitchen cabinet doors tied with straps through an apartment hallway covered with protective sheets.",
+      "prompt": "Camera and composition: a worker seen from behind in a safety helmet carrying a bundle of removed kitchen cabinet doors tied with straps through an apartment hallway covered with protective sheets. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "싱크대가 빠지고 깨끗이 비워진 주방 벽 앞 바닥",
+      "scene": "an emptied kitchen corner after sink cabinets were removed, bare wall with capped pipes, floor swept clean, a broom leaning against the wall.",
+      "prompt": "Camera and composition: an emptied kitchen corner after sink cabinets were removed, bare wall with capped pipes, floor swept clean, a broom leaning against the wall. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

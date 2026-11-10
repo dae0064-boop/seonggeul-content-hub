@@ -1,0 +1,76 @@
+{
+  "slug": "2026-11-22-seoul-changgo-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "앵글 선반이 줄지어 선 빈 창고 내부 (대표사진)",
+      "scene": "a storage warehouse interior with rows of grey steel angle shelving units, mostly empty, concrete floor.",
+      "prompt": "Camera and composition: a storage warehouse interior with rows of grey steel angle shelving units, mostly empty, concrete floor. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "서울 창고 철거\n선반도 같이"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "창고 바닥에 남길 짐과 버릴 짐을 나눠 둔 모습",
+      "scene": "a warehouse floor where boxes are divided into two areas, one section marked off with yellow floor tape.",
+      "prompt": "Camera and composition: a warehouse floor where boxes are divided into two areas, one section marked off with yellow floor tape. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "볼트를 풀어 분해 중인 철제 앵글 선반",
+      "scene": "close view of a gloved hand loosening bolts on a grey steel angle shelf frame with a wrench.",
+      "prompt": "Camera and composition: close view of a gloved hand loosening bolts on a grey steel angle shelf frame with a wrench. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "창고 비우는 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "창고 비우는 순서",
+        "items": [
+          "남길 짐 빼고 표시",
+          "선반 위 짐 내리기",
+          "앵글 선반 분해",
+          "칸막이·조명 철거",
+          "폐기물 반출과 정리"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "창고 출입구 앞에 선 작은 트럭",
+      "scene": "a small truck parked in front of a warehouse roll-up door, open entrance, daytime.",
+      "prompt": "Camera and composition: a small truck parked in front of a warehouse roll-up door, open entrance, daytime. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "창고 안쪽 깊이를 둘러보는 안전모 쓴 사람 옆모습",
+      "scene": "side view of a person in a safety helmet looking into the depth of a long warehouse aisle, face not visible.",
+      "prompt": "Camera and composition: side view of a person in a safety helmet looking into the depth of a long warehouse aisle, face not visible. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "분해한 앵글 기둥을 묶어 트럭에 싣는 작업자 뒷모습",
+      "scene": "a worker seen from behind in a safety helmet loading bundled steel angle posts onto a small truck bed.",
+      "prompt": "Camera and composition: a worker seen from behind in a safety helmet loading bundled steel angle posts onto a small truck bed. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "선반과 짐이 모두 빠지고 텅 빈 창고 바닥",
+      "scene": "an empty warehouse with bare concrete floor and walls after shelves and items were removed, light from the open door.",
+      "prompt": "Camera and composition: an empty warehouse with bare concrete floor and walls after shelves and items were removed, light from the open door. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

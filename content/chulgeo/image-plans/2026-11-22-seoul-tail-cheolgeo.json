@@ -1,0 +1,76 @@
+{
+  "slug": "2026-11-22-seoul-tail-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "큰 바닥 타일 몇 장을 들어낸 아파트 거실 (대표사진)",
+      "scene": "a Korean apartment living room with large light grey floor tiles, several tiles removed near the center showing grey screed beneath, furniture cleared.",
+      "prompt": "Camera and composition: a Korean apartment living room with large light grey floor tiles, several tiles removed near the center showing grey screed beneath, furniture cleared. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "서울 타일 철거\n거실 바닥도?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "금이 간 거실 바닥 타일을 가까이 본 모습",
+      "scene": "close view of a cracked large porcelain floor tile in a living room, a thin crack running diagonally.",
+      "prompt": "Camera and composition: close view of a cracked large porcelain floor tile in a living room, a thin crack running diagonally. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "타일을 걷어 낸 자리에 드러난 회색 바닥면",
+      "scene": "a section of living room floor where tiles have been removed, revealing uneven grey adhesive and cement surface.",
+      "prompt": "Camera and composition: a section of living room floor where tiles have been removed, revealing uneven grey adhesive and cement surface. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "거실 바닥 타일 철거 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "거실 타일 철거 순서",
+        "items": [
+          "가구 비우고 보양",
+          "걸레받이·문지방 떼기",
+          "바닥 타일 들어내기",
+          "남은 접착층 긁기",
+          "마대 반출과 정리"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "닫힌 방문과 문틈을 막은 테이프",
+      "scene": "a closed bedroom door with masking tape sealing the gap underneath and along the frame, hallway floor protected.",
+      "prompt": "Camera and composition: a closed bedroom door with masking tape sealing the gap underneath and along the frame, hallway floor protected. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "타일을 걷고 마루 자재를 쌓아 둔 거실 한쪽",
+      "scene": "one side of an empty living room with boxes of wooden flooring planks stacked neatly on bare cement floor.",
+      "prompt": "Camera and composition: one side of an empty living room with boxes of wooden flooring planks stacked neatly on bare cement floor. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "접착층까지 긁어내고 쓸어 둔 거실 바닥",
+      "scene": "a smooth swept cement living room floor after tile and adhesive were scraped off, a scraper tool lying near the wall.",
+      "prompt": "Camera and composition: a smooth swept cement living room floor after tile and adhesive were scraped off, a scraper tool lying near the wall. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "타일을 걷고 다음 공정을 기다리는 넓은 거실",
+      "scene": "a wide view of an empty Korean apartment living room with bare cement floor ready for new flooring, bright window light.",
+      "prompt": "Camera and composition: a wide view of an empty Korean apartment living room with bare cement floor ready for new flooring, bright window light. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

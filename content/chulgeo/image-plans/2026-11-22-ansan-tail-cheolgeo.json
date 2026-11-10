@@ -1,0 +1,76 @@
+{
+  "slug": "2026-11-22-ansan-tail-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "상판 위 벽 타일 일부를 걷어 낸 아파트 주방 (대표사진)",
+      "scene": "a Korean apartment kitchen where part of the wall tiles above the countertop have been removed, countertop covered with thick protective board.",
+      "prompt": "Camera and composition: a Korean apartment kitchen where part of the wall tiles above the countertop have been removed, countertop covered with thick protective board. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "안산 타일 철거\n주방 벽만?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "싱크대 상판과 벽 타일이 만나는 모서리 가까이",
+      "scene": "close view of the corner where a kitchen countertop meets the wall tiles, a silicone line along the joint.",
+      "prompt": "Camera and composition: close view of the corner where a kitchen countertop meets the wall tiles, a silicone line along the joint. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "기름때와 누런 줄눈이 보이는 주방 벽 타일",
+      "scene": "old kitchen wall tiles with yellowed grout lines and grease stains near the stove area.",
+      "prompt": "Camera and composition: old kitchen wall tiles with yellowed grout lines and grease stains near the stove area. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "주방 벽 타일 철거 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "주방 벽 타일 철거",
+        "items": [
+          "상판·상부장 덮기",
+          "콘센트·수전 둘레 정리",
+          "벽 타일 떼어 내기",
+          "남은 접착층 긁기",
+          "조각 반출과 정리"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "그릇과 조리 도구를 상자에 담아 둔 식탁",
+      "scene": "a dining table with kitchen utensils and dishes packed into open cardboard boxes.",
+      "prompt": "Camera and composition: a dining table with kitchen utensils and dishes packed into open cardboard boxes. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "주방 벽 전체를 휴대폰으로 찍는 손",
+      "scene": "a hand holding a smartphone toward a kitchen wall to photograph it, the phone screen facing away from the camera.",
+      "prompt": "Camera and composition: a hand holding a smartphone toward a kitchen wall to photograph it, the phone screen facing away from the camera. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "타일을 떼어 낸 뒤 매끈하게 정리된 주방 벽",
+      "scene": "a smooth kitchen wall after tiles were removed and adhesive scraped evenly, outlet box covers removed.",
+      "prompt": "Camera and composition: a smooth kitchen wall after tiles were removed and adhesive scraped evenly, outlet box covers removed. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "새 타일을 기다리는 주방 벽과 덮어 둔 상판",
+      "scene": "a kitchen with bare smooth wall above the countertop and the countertop still covered with protective board, waiting for new tiles.",
+      "prompt": "Camera and composition: a kitchen with bare smooth wall above the countertop and the countertop still covered with protective board, waiting for new tiles. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

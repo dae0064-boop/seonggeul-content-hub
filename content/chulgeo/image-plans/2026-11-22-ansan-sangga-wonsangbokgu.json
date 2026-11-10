@@ -1,0 +1,75 @@
+{
+  "slug": "2026-11-22-ansan-sangga-wonsangbokgu",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "인테리어를 걷어 내기 시작한 빈 상가 (대표사진)",
+      "scene": "an empty ground-floor shop with interior finishes partly removed, wall panels stacked, ceiling grid exposed.",
+      "prompt": "Camera and composition: an empty ground-floor shop with interior finishes partly removed, wall panels stacked, ceiling grid exposed. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "안산 상가\n원상복구 특약"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "임대차 계약서 특약 부분을 손가락으로 짚는 모습",
+      "scene": "a finger pointing at a paragraph on a lease contract paper, the paper text is blurred and unreadable.",
+      "prompt": "Camera and composition: a finger pointing at a paragraph on a lease contract paper, the paper text is blurred and unreadable. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "휴대폰 사진첩에서 예전 매장 사진을 넘겨 보는 손",
+      "scene": "a hand holding a smartphone with the screen turned away, standing in an empty shop as if comparing old photos.",
+      "prompt": "Camera and composition: a hand holding a smartphone with the screen turned away, standing in an empty shop as if comparing old photos. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "원상복구 때 확인할 곳을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "원상복구 확인할 곳",
+        "items": [
+          "바닥: 덧깐 타일·장판",
+          "천장: 마감재·조명",
+          "벽: 가벽·선반·장식",
+          "밖: 간판·시트지"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "상가 벽에 붙은 계량기와 차단기함",
+      "scene": "a shop wall with an electrical breaker box and utility meters mounted on it, plain grey covers.",
+      "prompt": "Camera and composition: a shop wall with an electrical breaker box and utility meters mounted on it, plain grey covers. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "매장 구석구석을 휴대폰으로 찍는 손",
+      "scene": "a hand holding a smartphone toward a corner of an empty shop to take a photo, the phone screen facing away.",
+      "prompt": "Camera and composition: a hand holding a smartphone toward a corner of an empty shop to take a photo, the phone screen facing away. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "철거를 마치고 바닥을 쓸어 정리한 빈 상가",
+      "scene": "an empty shop interior after demolition with floor swept clean and debris removed, a broom against the wall.",
+      "prompt": "Camera and composition: an empty shop interior after demolition with floor swept clean and debris removed, a broom against the wall. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "원상복구를 마치고 열쇠를 돌려줄 준비가 된 빈 매장",
+      "scene": "an emptied shop with a single set of keys placed on a windowsill, clean bare interior, daylight.",
+      "prompt": "Camera and composition: an emptied shop with a single set of keys placed on a windowsill, clean bare interior, daylight. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "slug": "2026-11-21-siheung-gongjang-cheolgeo",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "기계가 빠지고 넓게 비어 가는 공장 내부 (대표사진)",
+      "scene": "a wide interior of a small Korean factory building with high ceiling, most machines removed, a few work tables left, concrete floor with marks where machines stood.",
+      "prompt": "Camera and composition: a wide interior of a small Korean factory building with high ceiling, most machines removed, a few work tables left, concrete floor with marks where machines stood. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "시흥 공장 철거\n무엇부터 뺄까"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "공장 한쪽에 줄지어 선 작업대와 기계",
+      "scene": "a row of metal workbenches and medium-sized industrial machines along one side of a factory floor, cables neatly coiled, daylight from high windows.",
+      "prompt": "Camera and composition: a row of metal workbenches and medium-sized industrial machines along one side of a factory floor, cables neatly coiled, daylight from high windows. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "샌드위치 패널 칸막이로 나뉜 공장 안 사무 공간",
+      "scene": "a small office space inside a factory built with white sandwich panel partitions and a window, viewed from the factory floor.",
+      "prompt": "Camera and composition: a small office space inside a factory built with white sandwich panel partitions and a window, viewed from the factory floor. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "공장 비우는 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "공장 비우는 순서",
+        "items": [
+          "옮길 기계·설비 빼기",
+          "팔거나 버릴 기계 정리",
+          "칸막이·천장·선반 철거",
+          "바닥 받침·철물 제거",
+          "폐기물 반출과 정리"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "공장 출입문 앞 넓은 마당에 선 집게차",
+      "scene": "an open factory gate with a wide concrete yard where a grapple truck is parked, ready to load debris, overcast daylight.",
+      "prompt": "Camera and composition: an open factory gate with a wide concrete yard where a grapple truck is parked, ready to load debris, overcast daylight. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "넓은 공장 바닥을 둘러보는 안전모 쓴 사람 옆모습",
+      "scene": "side view of a person wearing a safety helmet walking across a large empty factory floor, looking around, face not visible.",
+      "prompt": "Camera and composition: side view of a person wearing a safety helmet walking across a large empty factory floor, looking around, face not visible. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "철거 폐기물을 종류별로 나눠 쌓아 둔 공장 바닥",
+      "scene": "demolition debris on a factory floor sorted into separate piles of metal scraps, wood panels and sandwich panel pieces, tidy arrangement.",
+      "prompt": "Camera and composition: demolition debris on a factory floor sorted into separate piles of metal scraps, wood panels and sandwich panel pieces, tidy arrangement. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "비워진 공장 내부를 넓게 바라본 모습",
+      "scene": "a wide view of an emptied factory interior with clean concrete floor and steel columns, light coming in from high windows.",
+      "prompt": "Camera and composition: a wide view of an emptied factory interior with clean concrete floor and steel columns, light coming in from high windows. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}
