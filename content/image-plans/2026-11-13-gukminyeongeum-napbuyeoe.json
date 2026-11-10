@@ -1,0 +1,84 @@
+{
+  "slug": "2026-11-13-gukminyeongeum-napbuyeoe",
+  "title": "국민연금 납부예외, 실직 중엔 실업크레딧과 무엇이 나을까 (75%)",
+  "source": "11/13(금) 티스토리 원고 (11/10 미리 작성) 12:40",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "거실 탁자에 마주 앉아 국민연금 고지서 이야기를 나누는 40대 남편과 아내 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean husband in his 40s in an olive knit sweater and his wife in a mustard blouse sit facing each other at a small table by a window full of green plants, the wife explaining with one hand open, two mugs of tea between them. Expression: explaining with one hand open toward the viewer. Color theme: sage green plants and warm ivory tones with a butter-yellow accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "sage green plants and warm ivory tones with a butter-yellow accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "forest",
+      "thumb_person": "40대 남편(올리브 니트)과 아내(머스터드 블라우스)",
+      "thumb_mood": "설명",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "forest",
+        "font": "ptd",
+        "title": "국민연금 납부예외\n쉬어도 괜찮을까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "국민연금 납부예외 대상인지 스스로 짚어 보는 자가 체크 카드",
+      "kind": "card",
+      "card": {
+        "type": "selfcheck",
+        "title": "납부예외 대상일까",
+        "items": [
+          "실직, 휴직",
+          "학교에 다니는 중",
+          "1년 미만 행방불명",
+          "소득이 줄어든 경우"
+        ],
+        "result": "아래 '되는 경우' 부분을 꼭 보세요 👇"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "납부예외와 실업크레딧 차이를 묻고 답하는 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "납부예외와 실업크레딧",
+        "ask": "실직하면 뭐가 나아?",
+        "heads": [
+          "납부예외",
+          "실업크레딧"
+        ],
+        "items": [
+          [
+            "가입기간에서 비어요",
+            "가입기간으로 들어가요"
+          ],
+          [
+            "추후납부",
+            "75%는 국가가 지원"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "창가 책상 위에 놓인 노트와 펜, 따뜻한 차 한 잔",
+      "prompt": "Camera and composition: a notebook, pen and a cup of tea on a desk by a window. An open blank notebook, a pen and a cup of tea on a wooden desk by a bright window with a small plant, no readable text. Background color: fresh green plants and crisp white. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a notebook, pen and a cup of tea on a desk by a window",
+      "bg": "fresh green plants and crisp white",
+      "kind": "photo",
+      "photo": {
+        "query_en": "notebook pen tea",
+        "scene_en": "notebook and tea on a desk by the window"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}
