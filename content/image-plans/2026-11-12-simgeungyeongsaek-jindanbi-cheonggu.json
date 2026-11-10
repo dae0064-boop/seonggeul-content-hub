@@ -1,0 +1,74 @@
+{
+  "slug": "2026-11-12-simgeungyeongsaek-jindanbi-cheonggu",
+  "title": "급성심근경색 진단비 청구, 질병코드 I21이면 다 될까 (3년 안)",
+  "source": "11/12(목) 티스토리 원고 (11/10 미리 쓰기) 15:00",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "식탁 위에 놓인 빨간 하트 쿠션과 따뜻한 차 한 잔 (대표사진)",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A soft red heart-shaped cushion sits on a dining table next to a warm cup of tea and a small potted plant, simple and calm. Color theme: cocoa brown and peach tones with a cream accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "핵심 사물 하나 크게 (사람 없음)",
+      "bg": "cocoa brown and peach tones with a cream accent",
+      "note": "대표",
+      "thumb_shot": "object",
+      "thumb_theme": "plum",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "plum",
+        "font": "ptd",
+        "title": "급성심근경색\n서류는 뭘까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "급성심근경색 진단비 청구 때 무엇부터 볼지 묻고 답하는 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "먼저 볼 것",
+        "ask": "진단서만 내면 돼?",
+        "items": [
+          "진단서 질병코드",
+          "특약 분류표",
+          "진단 확정일"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "급성심근경색 진단비 청구 전에 내 서류를 스스로 점검하는 카드",
+      "kind": "card",
+      "card": {
+        "type": "selfcheck",
+        "title": "청구 전 셀프 체크",
+        "items": [
+          "질병코드가 적힌 진단서",
+          "특약 이름",
+          "진단 확정일",
+          "보험사 청구 안내"
+        ],
+        "result": "아래 '청구 서류' 부분을 꼭 보세요 👇"
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "창가 책상 위에 펼쳐 둔 다이어리와 펜, 안경",
+      "prompt": "Camera and composition: an open diary, a pen and glasses on a desk by the window. An open blank diary, a pen and reading glasses on a wooden desk by a bright window, no readable text. Background color: warm ivory and light wood. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "an open diary, a pen and glasses on a desk by the window",
+      "bg": "warm ivory and light wood",
+      "kind": "photo",
+      "photo": {
+        "query_en": "diary pen glasses",
+        "scene_en": "open diary with pen and glasses on a desk"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}
