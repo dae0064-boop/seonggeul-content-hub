@@ -1,0 +1,91 @@
+{
+  "slug": "2026-11-18-boheomgeum-jiyeonija",
+  "title": "보험금 지연이자, 지급기일 넘기면 가산이율 얼마나 붙을까 (8%)",
+  "source": "11/18(수) 티스토리 원고 (11/10 미리 작성) 15:00",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "아침 햇살이 드는 식탁 위에 놓인 입원 서류 봉투와 달력, 휴대폰 (대표사진)",
+      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A blank hospital document envelope, a small desk calendar with blank pages, a smartphone with a blank screen and a pen arranged on a kitchen table. Setting: a home kitchen counter. Lighting: soft early-morning sunlight. Color theme: warm terracotta and cream tones with a soft gold accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "위에서 내려다본 탁자 (사람 없음)",
+      "bg": "warm terracotta and cream tones with a soft gold accent",
+      "note": "대표",
+      "thumb_shot": "overhead",
+      "thumb_theme": "burgundy",
+      "thumb_person": "없음",
+      "thumb_place": "부엌",
+      "thumb_light": "아침 햇살",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "burgundy",
+        "font": "jua",
+        "title": "보험금 지연이자\n얼마나 붙을까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "보험금 지연이자 구간별 이율을 한눈에 보는 숫자 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "늦어지면 더하는 이율",
+        "items": [
+          [
+            "4%",
+            "31일부터",
+            "가산이율"
+          ],
+          [
+            "6%",
+            "61일부터",
+            "가산이율"
+          ],
+          [
+            "8%",
+            "91일부터",
+            "가산이율"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "가산이율이 붙지 않는 경우를 맞혀 보는 O·X 퀴즈 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "가산이율 O·X",
+        "items": [
+          "소송 중인 기간도 붙는다",
+          "분쟁조정만으론 이자 거절 못 해",
+          "서면 조사 거부해도 붙는다"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "X"
+        ],
+        "where": "본문 가산이율 부분"
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "창가 책상 위의 서류철과 달력, 펜",
+      "prompt": "Camera and composition: a file folder, a calendar and a pen on a desk by a window. A closed file folder, a blank desk calendar and a pen on a desk by a bright window, no readable text. Background color: warm terracotta and cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a file folder, a calendar and a pen on a desk by a window",
+      "bg": "warm terracotta and cream",
+      "kind": "photo",
+      "photo": {
+        "query_en": "file folder calendar desk",
+        "scene_en": "file folder and calendar on a desk by the window"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}
