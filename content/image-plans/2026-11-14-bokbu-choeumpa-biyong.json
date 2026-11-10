@@ -1,0 +1,98 @@
+{
+  "slug": "2026-11-14-bokbu-choeumpa-biyong",
+  "title": "복부초음파 비용, 다시 찍으면 더 내나요 (본인부담 80%)",
+  "source": "11/14(토) 15:00 네이버 원고 — 생활보장 검색형(비용), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "밝은 사무실 책상 앞에서 건강검진 결과를 휴대폰으로 보고 놀라는 50대 남성 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: an office desk with a laptop. Lighting: bright clear daylight, high key. A Korean man in his 50s with short gray-streaked hair in a sky blue shirt at an office desk with a laptop, looking at his smartphone. Expression: pleasantly surprised, eyebrows up, not scared. Color theme: cool sky blue and white tones with a yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "face",
+      "bg": "cool sky blue and white tones with a yellow accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "cobalt",
+      "thumb_person": "50대 남성 직장인",
+      "thumb_place": "사무실",
+      "thumb_light": "밝은 낮",
+      "thumb_mood": "놀람",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "cobalt",
+        "font": "jua",
+        "title": "복부초음파 비용\n다시 찍으면 더 낼까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "복부초음파 비용과 관련된 숫자를 모은 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "상복부 초음파 숫자",
+        "items": [
+          [
+            "2018",
+            "건강보험 확대",
+            "4월 1일부터"
+          ],
+          [
+            "40세",
+            "만성 B·C형 간염",
+            "정밀 초음파 대상"
+          ],
+          [
+            "80%",
+            "증상 변화 없이",
+            "본인부담률"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "진료실 모니터 옆 빈 책상과 의자, 창밖으로 들어오는 밝은 햇빛",
+      "prompt": "Camera and composition: wide shot of an empty clinic consultation room. An empty, tidy clinic consultation room with a desk, a blank monitor, two chairs and an examination bed with a white sheet, bright sunlight from the window, no people. Background color: cool sky blue and white room with a yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of an empty clinic consultation room",
+      "bg": "cool sky blue and white room with a yellow accent"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "복부초음파 비용 급여 여부를 스스로 따져 보는 자가 체크 카드",
+      "kind": "card",
+      "card": {
+        "type": "selfcheck",
+        "title": "이럴 땐 급여일까?",
+        "items": [
+          "황달 기운이 있다",
+          "복통이 계속된다",
+          "간 수치가 높게 나왔다",
+          "간이나 비장이 커 보인다"
+        ],
+        "result": "아래 '80%' 부분도 꼭 보세요 👇"
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "동네 내과 수납 창구에서 영수증을 받아 드는 손",
+      "prompt": "Camera and composition: close-up of hands at a clinic payment counter. Close-up of a Korean man's hands in a sky blue shirt sleeve taking a blank receipt from a clinic payment counter, no face in the frame. Background color: white counter with soft blue accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands at a clinic payment counter",
+      "bg": "white counter with soft blue accents"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "공원 산책로에서 가벼운 차림으로 걷는 50대 부부의 뒷모습",
+      "prompt": "Camera and composition: wide shot from behind on a park path. A Korean couple in their 50s seen from behind walking side by side on a park path in light jackets, autumn trees, calm and healthy mood. Background color: bright park with blue sky and yellow leaves. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot from behind on a park path",
+      "bg": "bright park with blue sky and yellow leaves"
+    }
+  ]
+}

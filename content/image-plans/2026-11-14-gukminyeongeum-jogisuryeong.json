@@ -1,0 +1,102 @@
+{
+  "slug": "2026-11-14-gukminyeongeum-jogisuryeong",
+  "title": "국민연금 조기수령, 5년 당기면 얼마나 줄어드나요 (70% 지급)",
+  "source": "11/14(토) 19:00 네이버 원고 — 생활보장 검색형(돈·생활 제도), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "은행 창구 앞 상담 탁자에서 연금 안내문을 손가락으로 짚어 보는 50대 남성의 손 (대표사진)",
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a bank counter with a clerk in soft focus. Lighting: cool clean white indoor light. Close-up of a Korean man's hands in a charcoal suit jacket sleeve pointing with one finger at a blank printed leaflet on a bank consultation desk, a pen beside it. Expression: pointing at the key object with one finger and a friendly smile. Color theme: modern light gray and white tones with a mustard accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "hands",
+      "bg": "modern light gray and white tones with a mustard accent",
+      "note": "대표",
+      "thumb_shot": "hands",
+      "thumb_theme": "charcoal",
+      "thumb_person": "50대 남성(손)",
+      "thumb_place": "은행 창구",
+      "thumb_light": "흰 조명",
+      "thumb_mood": "가리킴",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "charcoal",
+        "font": "ptd",
+        "title": "국민연금 조기수령\n얼마나 줄어들까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "국민연금 조기수령 숫자를 모은 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "조기수령 숫자 셋",
+        "items": [
+          [
+            "70%",
+            "5년 앞당기면",
+            "원래 연금 대비"
+          ],
+          [
+            "0.5%",
+            "1개월마다",
+            "덜 깎여요"
+          ],
+          [
+            "0.6%",
+            "연기 1개월마다",
+            "더 받아요"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "거실 탁자 위 빈 가계부와 계산기, 안경이 나란히 놓인 모습",
+      "prompt": "Camera and composition: top-down view of a living room table. A blank open household account notebook, a simple calculator with a blank display and a pair of reading glasses neatly placed on a light gray living room table, no people. Background color: modern light gray and white tones with a mustard accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "top-down view of a living room table",
+      "bg": "modern light gray and white tones with a mustard accent"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "국민연금 조기수령을 O와 X로 맞혀 보는 퀴즈 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "조기수령 O·X",
+        "items": [
+          "10년 안 내도 된다",
+          "1년마다 6%씩 덜 깎인다",
+          "부양가족연금도 깎인다"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "X"
+        ],
+        "where": "아래 Q&A"
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "공원 산책로 벤치에서 신문 대신 휴대폰으로 연금 안내를 보는 60세 남성",
+      "prompt": "Camera and composition: medium shot on a park bench. A Korean man around 60 with gray hair in a mustard knit vest sitting on a park bench and calmly looking at his smartphone, autumn trees behind. Background color: calm park with golden trees and gray path. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on a park bench",
+      "bg": "calm park with golden trees and gray path"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "저녁 무렵 아파트 베란다에서 차를 마시며 쉬는 60대 부부",
+      "prompt": "Camera and composition: medium shot on an apartment balcony. A Korean couple in their 60s sitting together on a bright apartment balcony at dusk with cups of tea, smiling gently, potted plants around. Background color: warm balcony with gray tiles and mustard cushions. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on an apartment balcony",
+      "bg": "warm balcony with gray tiles and mustard cushions"
+    }
+  ]
+}
