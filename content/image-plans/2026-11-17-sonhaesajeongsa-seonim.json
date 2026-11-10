@@ -1,0 +1,74 @@
+{
+  "slug": "2026-11-17-sonhaesajeongsa-seonim",
+  "title": "손해사정사 선임, 보험회사 동의를 거절당하면 어떻게 될까 (2024년 개정)",
+  "source": "11/17(화) 티스토리 원고 (11/10 미리 작성) 15:00",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "식탁에 마주 앉아 보험금 이야기를 나누는 40대 딸과 70대 아버지 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean woman in her 40s in a sky-blue shirt and her father in his 70s in a beige vest sit facing each other at a dining table, a closed blank folder between them, she explains gently. Expression: explaining with one hand open toward the viewer. Color theme: warm ivory and walnut brown tones with a butter-yellow accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "warm ivory and walnut brown tones with a butter-yellow accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "navy",
+      "thumb_person": "40대 딸(하늘색 셔츠)과 70대 아버지(베이지 조끼)",
+      "thumb_mood": "설명",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "navy",
+        "font": "jua",
+        "title": "손해사정사 선임\n내가 해도 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "손해사정사 선임 전 확인할 것을 묻고 답하는 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "선임 전에 볼 것",
+        "ask": "제가 따로 맡겨도 돼요?",
+        "items": [
+          "질병·상해보험이 제3보험",
+          "보증보험은 빠져요",
+          "보험회사 동의를 받으면"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "손해사정사 선임 전에 내 상황을 짚어 보는 자가 체크 카드",
+      "kind": "card",
+      "card": {
+        "type": "selfcheck",
+        "title": "선임 전 자가 체크",
+        "items": [
+          "손해보험·제3보험인지",
+          "보험회사 동의 확인",
+          "손해사정서 받기"
+        ],
+        "result": "아래 '하면 안 되는 일'을 보세요 👇"
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "창가 탁자 위 서류철과 안경, 따뜻한 차 한 잔",
+      "prompt": "Camera and composition: a folder, glasses and a cup of tea on a table by a window. A closed plain document folder, reading glasses and a warm cup of tea on a table by a bright window, no readable text. Background color: clean white and soft navy blue. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a folder, glasses and a cup of tea on a table by a window",
+      "bg": "clean white and soft navy blue",
+      "kind": "photo",
+      "photo": {
+        "query_en": "documents glasses tea",
+        "scene_en": "a folder, reading glasses and tea on a table"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}

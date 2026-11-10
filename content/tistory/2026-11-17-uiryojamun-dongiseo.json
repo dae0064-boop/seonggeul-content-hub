@@ -1,0 +1,649 @@
+{
+  "slug": "2026-11-17-uiryojamun-dongiseo",
+  "title": "의료자문 동의서, 보험금 감액 뒤 다시 자문받을 수 있을까 (안내 3가지)",
+  "category": "생활보장",
+  "tags": [
+    "의료자문동의서",
+    "보험금감액",
+    "제3자의료자문",
+    "자문의견",
+    "보험금지급심사",
+    "의료자문",
+    "보험금부지급",
+    "의료자문비용",
+    "종합병원전문의",
+    "보험금청구",
+    "개인정보동의",
+    "보험업감독업무시행세칙",
+    "보험정보",
+    "생활보장",
+    "내보험확인"
+  ],
+  "publishAt": "2026-11-17 21:00",
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보험금 지급 심사에 쓰인 의료자문 결과가"
+        },
+        {
+          "t": "걸리면 다른 전문의 의견을 다시 들을 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 수술비를 청구하고 며칠 뒤"
+        },
+        {
+          "t": "보험사에서 서류 한 장이 더 왔다고 해 볼게요."
+        },
+        {
+          "t": "'의료자문 동의서'라는 낯선 제목에"
+        },
+        {
+          "t": "서명해도 되나 손이 멈추기 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘은 의료자문 동의서가 무엇이고"
+        },
+        {
+          "t": "그 뒤 무엇을 챙길 수 있는지 차근차근 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "먼저 결론이에요."
+        },
+        {
+          "t": "의료자문 결과로 보험금 감액이 나와도",
+          "s": "yellow"
+        },
+        {
+          "t": "제3자 의료자문을 다시 요청할 수 있어요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "거실 소파에 앉아 서류를 내려놓고 생각에 잠긴 50대 남성 얼굴 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "의료자문 동의서는 무엇일까"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "의료자문 동의서를 받은 뒤 할 일을 묻는 첫머리 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "의료자문은 보험사가 내 진료 기록을"
+        },
+        {
+          "t": "다른 전문의에게 보내 의견을 듣는 일이에요."
+        },
+        {
+          "t": "그러려면 개인정보 처리에 동의가 필요해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보험업감독업무시행세칙 제2-34조의2는"
+        },
+        {
+          "t": "보험사가 청구 때 이 동의가 필요하다는 사실을"
+        },
+        {
+          "t": "알려 주도록 정해 두었어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "의료자문 동의서에는 어떤 자료를",
+          "s": "red"
+        },
+        {
+          "t": "누구에게 보내는지부터 확인해요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "같은 세칙은 청구 때 알려 줄 것을 더 적었어요."
+        },
+        {
+          "t": "지급이 거절되면 그 사유를, 늦어지면"
+        },
+        {
+          "t": "지연 사유를 안내한다는 사실이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "지급 심사 진행 과정과 결과를"
+        },
+        {
+          "t": "인터넷으로 볼 수 있다는 것도 알려 줘요."
+        },
+        {
+          "t": "동의서를 낸 뒤엔 그 화면을 자주 열어 봐요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "동의하지 않으면 어떻게 될까"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "동의하지 않는 것도 내 선택이에요."
+        },
+        {
+          "t": "다만 표준약관에는 이런 조항이 있어요."
+        },
+        {
+          "t": "지급 기한과 이어진 조항이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "회사의 조사 요청에 동의를 거부해"
+        },
+        {
+          "t": "조사가 늦어지면 그 기간은"
+        },
+        {
+          "t": "보험금 지급 기한 계산에서 빠질 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "동의를 미루면 그만큼 심사가 길어질 수 있어",
+          "s": "yellow"
+        },
+        {
+          "t": "내 상황과 함께 따져 보는 게 좋아요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "조사가 필요한 청구라면 표준약관은"
+        },
+        {
+          "t": "지급예정일을 서류 접수일부터"
+        },
+        {
+          "t": "30영업일 안에서 정하도록 했어요.",
+          "segs": [
+            {
+              "t": "30영업일",
+              "s": "blue"
+            },
+            {
+              "t": " 안에서 정하도록 했어요."
+            }
+          ]
+        },
+        {
+          "t": "이 날짜가 안내되었는지도 함께 봐요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "보험금 감액 통보를 받았다면"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "의료자문 뒤 제3자 의료자문을 요청하는 순서를 적은 채팅 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "세칙은 보험사가 의료자문 뒤"
+        },
+        {
+          "t": "보험금 감액이나 부지급을 하려 할 때"
+        },
+        {
+          "t": "안내할 내용을 3가지로 정했어요.",
+          "segs": [
+            {
+              "t": "안내할 내용을 "
+            },
+            {
+              "t": "3가지",
+              "s": "blue"
+            },
+            {
+              "t": "로 정했어요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "① 자문 결과에 동의하는지 정하기"
+        },
+        {
+          "t": "② 종합병원 소속 전문의 중 제3자 함께 정하기"
+        },
+        {
+          "t": "③ 의뢰 내용·제공 자료 받기"
+        },
+        {
+          "t": "④ 제3자 자문 의견 받아 보기"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "제3자 의료자문 비용은",
+          "s": "red"
+        },
+        {
+          "t": "보험사가 전액 부담해요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "제3자는 의료법 제3조의 종합병원에"
+        },
+        {
+          "t": "소속된 전문의 가운데서 정해요."
+        },
+        {
+          "t": "보험사가 혼자 고르는 게 아니라 함께 정해요."
+        },
+        {
+          "t": "그래서 누구에게 맡길지 내 의견도 낼 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"다시 자문받으면 제 돈이 드나요?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "아니요, 비용은 보험사가 내도록 돼 있어요."
+        },
+        {
+          "t": "세칙이 이 사실을 꼭 안내하도록 정해 두었어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "자문 의견은 어떻게 받나"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "병원 복도 끝 밝은 창가와 빈 대기 의자"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "제3자 의료자문이 끝나면 보험사는"
+        },
+        {
+          "t": "그 자문 의견을 안내해야 해요."
+        },
+        {
+          "t": "제3자에게 직접 설명을 들었다면 예외예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "의뢰할 때도 무엇을 물었는지,"
+        },
+        {
+          "t": "어떤 자료를 보냈는지 알려 줘야 해요."
+        },
+        {
+          "t": "의뢰 내용과 제공 자료를 꼭 받아 봐요.",
+          "segs": [
+            {
+              "t": "의뢰 내용",
+              "s": "blue"
+            },
+            {
+              "t": "과 "
+            },
+            {
+              "t": "제공 자료",
+              "s": "blue"
+            },
+            {
+              "t": "를 꼭 받아 봐요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "질문이 어떻게 적혔는지에 따라",
+          "s": "yellow"
+        },
+        {
+          "t": "자문 의견이 달라질 수 있기 때문이에요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "받은 자료는 내 진료 기록과 나란히 놓고"
+        },
+        {
+          "t": "빠진 검사나 기간이 없는지 살펴봐요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "장해 보험금이라면 한 가지 더"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "장해보험금을 청구할 때도 비슷한 장치가 있어요."
+        },
+        {
+          "t": "세칙은 약관에 따라 양쪽이 합의하면"
+        },
+        {
+          "t": "장해상태를 의료 재심사할 수 있다고 안내하게 했어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "의료 재심사 비용도 보험사가 부담한다는",
+          "segs": [
+            {
+              "t": "의료 재심사",
+              "s": "blue"
+            },
+            {
+              "t": " 비용도 보험사가 부담한다는"
+            }
+          ]
+        },
+        {
+          "t": "사실을 함께 알려 주도록 돼 있어요."
+        },
+        {
+          "t": "장해 정도를 두고 의견이 갈릴 때 떠올려요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "의료자문 동의서 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "동의서를 앞에 두고 많이 묻는 두 가지예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 제3자 의견은 꼭 따라야 하나요?"
+        },
+        {
+          "t": "A1: 표준약관은 합의하지 못할 때"
+        },
+        {
+          "t": "함께 정한 제3자 의견을 따를 수 있다고 해요."
+        },
+        {
+          "t": "어떻게 할지 미리 같이 정해 두는 게 좋아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 지급 기한은 언제부터 다시 세나요?"
+        },
+        {
+          "t": "A2: 제3자 의견을 따르기로 한 경우도"
+        },
+        {
+          "t": "지급 기한 예외 사유에 들어가 있어요."
+        },
+        {
+          "t": "지연 안내를 받았다면 그 사유가 무엇인지 꼭 확인해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 체크포인트",
+          "s": "green"
+        },
+        {
+          "t": "동의서의 자료 범위·받는 곳 확인",
+          "s": "green"
+        },
+        {
+          "t": "감액이면 제3자 의료자문 요청 가능",
+          "s": "green"
+        },
+        {
+          "t": "비용 보험사 부담 · 의뢰 내용 받기",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분은 의료자문 동의서를 받아 보셨어요?"
+        },
+        {
+          "t": "\"받았어요\", \"처음 봐요\" 중 하나로 남겨 주세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "의료자문 동의서 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "의료자문 동의서는 내 기록을 보내는 데 대한 동의예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "보험금 감액 통보 뒤에는 제3자 의료자문과"
+        },
+        {
+          "t": "자문 의견 안내를 요청할 수 있어요."
+        },
+        {
+          "t": "비용은 보험사가 전액 내요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이 글은 보험업감독업무시행세칙 제2-34조의2와"
+        },
+        {
+          "t": "보험업감독업무시행세칙 별표 15의 표준약관 중"
+        },
+        {
+          "t": "지급 절차 조항을 겹쳐 보고 정리했어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "내 증권·약관의 보험금 지급 절차 조항을 찾아보세요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "의료자문 동의서 뒤 보험금 감액엔 제3자 의료자문을."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">보험금 지급 심사에 쓰인 의료자문 결과가<br>걸리면 다른 전문의 의견을 다시 들을 수 있어요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 수술비를 청구하고 며칠 뒤<br>보험사에서 서류 한 장이 더 왔다고 해 볼게요.<br>'의료자문 동의서'라는 낯선 제목에<br>서명해도 되나 손이 멈추기 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘은 의료자문 동의서가 무엇이고<br>그 뒤 무엇을 챙길 수 있는지 차근차근 볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">먼저 결론이에요.<br><span style=\"background-color: #ffe94d;\"><b>의료자문 결과로 보험금 감액이 나와도</b></span><br><span style=\"background-color: #ffe94d;\"><b>제3자 의료자문을 다시 요청할 수 있어요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 1] 거실 소파에 앉아 서류를 내려놓고 생각에 잠긴 50대 남성 얼굴 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>의료자문 동의서는 무엇일까</h2>\n<p data-ke-size=\"size16\">[이미지 2] 의료자문 동의서를 받은 뒤 할 일을 묻는 첫머리 카드</p>\n<p data-ke-size=\"size16\">의료자문은 보험사가 내 진료 기록을<br>다른 전문의에게 보내 의견을 듣는 일이에요.<br>그러려면 개인정보 처리에 동의가 필요해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">보험업감독업무시행세칙 제2-34조의2는<br>보험사가 청구 때 이 동의가 필요하다는 사실을<br>알려 주도록 정해 두었어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>의료자문 동의서에는 어떤 자료를</b></span><br><span style=\"color: #ff0010;\"><b>누구에게 보내는지부터 확인해요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">같은 세칙은 청구 때 알려 줄 것을 더 적었어요.<br>지급이 거절되면 그 사유를, 늦어지면<br>지연 사유를 안내한다는 사실이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">지급 심사 진행 과정과 결과를<br>인터넷으로 볼 수 있다는 것도 알려 줘요.<br>동의서를 낸 뒤엔 그 화면을 자주 열어 봐요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>동의하지 않으면 어떻게 될까</h2>\n<p data-ke-size=\"size16\">동의하지 않는 것도 내 선택이에요.<br>다만 표준약관에는 이런 조항이 있어요.<br>지급 기한과 이어진 조항이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">회사의 조사 요청에 동의를 거부해<br>조사가 늦어지면 그 기간은<br>보험금 지급 기한 계산에서 빠질 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>동의를 미루면 그만큼 심사가 길어질 수 있어</b></span><br><span style=\"background-color: #ffe94d;\"><b>내 상황과 함께 따져 보는 게 좋아요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">조사가 필요한 청구라면 표준약관은<br>지급예정일을 서류 접수일부터<br><span style=\"color: #0078cb;\"><b>30영업일</b></span> 안에서 정하도록 했어요.<br>이 날짜가 안내되었는지도 함께 봐요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>보험금 감액 통보를 받았다면</h2>\n<p data-ke-size=\"size16\">[이미지 3] 의료자문 뒤 제3자 의료자문을 요청하는 순서를 적은 채팅 카드</p>\n<p data-ke-size=\"size16\">세칙은 보험사가 의료자문 뒤<br>보험금 감액이나 부지급을 하려 할 때<br>안내할 내용을 <span style=\"color: #0078cb;\"><b>3가지</b></span>로 정했어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">① 자문 결과에 동의하는지 정하기<br>② 종합병원 소속 전문의 중 제3자 함께 정하기<br>③ 의뢰 내용·제공 자료 받기<br>④ 제3자 자문 의견 받아 보기</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>제3자 의료자문 비용은</b></span><br><span style=\"color: #ff0010;\"><b>보험사가 전액 부담해요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">제3자는 의료법 제3조의 종합병원에<br>소속된 전문의 가운데서 정해요.<br>보험사가 혼자 고르는 게 아니라 함께 정해요.<br>그래서 누구에게 맡길지 내 의견도 낼 수 있어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<blockquote data-ke-style=\"style3\">&quot;다시 자문받으면 제 돈이 드나요?&quot;</blockquote>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">아니요, 비용은 보험사가 내도록 돼 있어요.<br>세칙이 이 사실을 꼭 안내하도록 정해 두었어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>자문 의견은 어떻게 받나</h2>\n<p data-ke-size=\"size16\">[이미지 4] 병원 복도 끝 밝은 창가와 빈 대기 의자</p>\n<p data-ke-size=\"size16\">제3자 의료자문이 끝나면 보험사는<br>그 자문 의견을 안내해야 해요.<br>제3자에게 직접 설명을 들었다면 예외예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">의뢰할 때도 무엇을 물었는지,<br>어떤 자료를 보냈는지 알려 줘야 해요.<br><span style=\"color: #0078cb;\"><b>의뢰 내용</b></span>과 <span style=\"color: #0078cb;\"><b>제공 자료</b></span>를 꼭 받아 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>질문이 어떻게 적혔는지에 따라</b></span><br><span style=\"background-color: #ffe94d;\"><b>자문 의견이 달라질 수 있기 때문이에요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">받은 자료는 내 진료 기록과 나란히 놓고<br>빠진 검사나 기간이 없는지 살펴봐요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>장해 보험금이라면 한 가지 더</h2>\n<p data-ke-size=\"size16\">장해보험금을 청구할 때도 비슷한 장치가 있어요.<br>세칙은 약관에 따라 양쪽이 합의하면<br>장해상태를 의료 재심사할 수 있다고 안내하게 했어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #0078cb;\"><b>의료 재심사</b></span> 비용도 보험사가 부담한다는<br>사실을 함께 알려 주도록 돼 있어요.<br>장해 정도를 두고 의견이 갈릴 때 떠올려요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>의료자문 동의서 Q&amp;A</h2>\n<p data-ke-size=\"size16\">동의서를 앞에 두고 많이 묻는 두 가지예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 제3자 의견은 꼭 따라야 하나요?<br>A1: 표준약관은 합의하지 못할 때<br>함께 정한 제3자 의견을 따를 수 있다고 해요.<br>어떻게 할지 미리 같이 정해 두는 게 좋아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 지급 기한은 언제부터 다시 세나요?<br>A2: 제3자 의견을 따르기로 한 경우도<br>지급 기한 예외 사유에 들어가 있어요.<br>지연 안내를 받았다면 그 사유가 무엇인지 꼭 확인해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 체크포인트</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>동의서의 자료 범위·받는 곳 확인</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>감액이면 제3자 의료자문 요청 가능</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>비용 보험사 부담 · 의뢰 내용 받기</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분은 의료자문 동의서를 받아 보셨어요?<br>&quot;받았어요&quot;, &quot;처음 봐요&quot; 중 하나로 남겨 주세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>의료자문 동의서 정리</h2>\n<p data-ke-size=\"size16\">의료자문 동의서는 내 기록을 보내는 데 대한 동의예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">보험금 감액 통보 뒤에는 제3자 의료자문과<br>자문 의견 안내를 요청할 수 있어요.<br>비용은 보험사가 전액 내요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이 글은 보험업감독업무시행세칙 제2-34조의2와<br>보험업감독업무시행세칙 별표 15의 표준약관 중<br>지급 절차 조항을 겹쳐 보고 정리했어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">내 증권·약관의 보험금 지급 절차 조항을 찾아보세요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>의료자문 동의서 뒤 보험금 감액엔 제3자 의료자문을.</p>"
+}
