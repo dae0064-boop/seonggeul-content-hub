@@ -1,0 +1,79 @@
+{
+  "slug": "2026-11-20-jumindeungrokchobon-balgeup",
+  "title": "주민등록초본 발급, 주소변동사항까지 넣어야 할 때는 언제일까 (400원)",
+  "source": "11/20(금) 티스토리 원고 (11/10 미리 쓰기) 18:20",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "나무 책상 위에 놓인 붉은 도장과 돋보기 안경 (대표사진)",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A red round seal stamp with its ink pad and a pair of reading glasses on a warm wooden desk. Color theme: terracotta and warm beige tones with a sage green accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "object",
+      "bg": "terracotta and warm beige tones with a sage green accent",
+      "note": "대표",
+      "thumb_shot": "object",
+      "thumb_theme": "brick",
+      "thumb_person": "없음",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "brick",
+        "font": "ptd",
+        "title": "주민등록초본\n뭘 넣을까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "주민등록초본 발급에서 많이 헷갈리는 세 가지를 묻는 O·X 퀴즈 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "주민등록초본 O·X",
+        "items": [
+          "초본엔 세대원이 다 나온다",
+          "인터넷 발급은 무료다",
+          "무인기는 수수료가 절반"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "O"
+        ],
+        "where": "아래 Q&A"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "주민등록초본 발급 수수료 면제 대상인지 스스로 확인하는 체크 카드",
+      "kind": "card",
+      "card": {
+        "type": "selfcheck",
+        "title": "수수료 면제일까?",
+        "items": [
+          "기초생활수급자",
+          "한부모가족 지원대상",
+          "미성년 자녀 2명 이상",
+          "출생신고 뒤 첫 초본"
+        ],
+        "result": "아래 '수수료' 부분을 꼭 보세요 👇"
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "주민센터 로비에 놓인 무인 민원 발급 기계",
+      "prompt": "Camera and composition: a self-service document kiosk in a community center lobby. A self-service document issuing kiosk with a blank screen in a bright community service center lobby. Background color: light gray and warm beige. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a self-service document kiosk in a community center lobby",
+      "bg": "light gray and warm beige",
+      "kind": "photo",
+      "photo": {
+        "query_en": "self service kiosk",
+        "scene_en": "a self-service document kiosk in a community center lobby"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}
