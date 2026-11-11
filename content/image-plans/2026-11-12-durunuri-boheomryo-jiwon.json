@@ -1,0 +1,97 @@
+{
+  "slug": "2026-11-12-durunuri-boheomryo-jiwon",
+  "title": "두루누리, 10명 미만 가게 직원도 보험료를 지원받나요 (80% · 270만 원)",
+  "source": "11/12(목) 12:20 네이버 원고 — 생활보장 제도 소식(근로복지공단 두루누리 보도자료·국민연금법 시행령), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "은행 창구 앞에서 설명을 듣고 고개를 끄덕이는 50대 여성 가게 사장 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a bank counter with a clerk in soft focus. Lighting: bright clear daylight, high key. A Korean woman in her 50s, a small restaurant owner in a terracotta cardigan over a white apron collar, listening at a bank counter. Expression: nodding with a reassuring smile, hands relaxed. Color theme: terracotta and warm beige tones with a teal accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "face",
+      "bg": "terracotta and warm beige tones with a teal accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "brick",
+      "thumb_person": "50대 여성 가게 사장",
+      "thumb_place": "은행 창구",
+      "thumb_light": "밝은 낮",
+      "thumb_mood": "끄덕",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "brick",
+        "font": "jua",
+        "title": "두루누리\n우리 가게도 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "두루누리 숫자 셋을 보여 주는 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "두루누리 숫자 셋",
+        "items": [
+          [
+            "80%",
+            "보험료 지원",
+            "고용보험·국민연금"
+          ],
+          [
+            "10명",
+            "미만 사업장",
+            "근로자 수"
+          ],
+          [
+            "3개월",
+            "연속 10명 이상",
+            "지원이 멈춰요"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "분식집 주방에서 직원과 함께 재료를 준비하는 사장님의 손",
+      "prompt": "Camera and composition: close-up of two pairs of hands in a small restaurant kitchen. Close-up of the hands of a Korean restaurant owner and a young employee preparing vegetables together on a clean stainless counter in a small snack shop kitchen, no faces in the frame. Background color: warm beige tiles and terracotta accents in a small kitchen. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of two pairs of hands in a small restaurant kitchen",
+      "bg": "warm beige tiles and terracotta accents in a small kitchen"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "두루누리 받으려면 확인할 것을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "두루누리 확인할 것",
+        "ask": "우리 가게도 될까?",
+        "items": [
+          "근로자 10명 미만",
+          "사용자 본인은 빼고",
+          "직전 석 달"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "저녁 무렵 가게 문을 닫으며 셔터 앞에 선 50대 사장님",
+      "prompt": "Camera and composition: medium shot outside a small shop at dusk. A Korean man in his 50s in a dark padded jacket standing calmly in front of a small neighborhood shop with a half-lowered plain shutter, warm street light. Background color: soft dusk street with warm shop lights and teal shadows. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot outside a small shop at dusk",
+      "bg": "soft dusk street with warm shop lights and teal shadows"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "가게 테이블에서 휴대폰으로 안내를 살펴보는 30대 직원",
+      "prompt": "Camera and composition: medium shot at a restaurant table. A Korean woman in her 30s in a work apron sitting at an empty restaurant table during a break, calmly checking a smartphone with a blank screen. Background color: bright small restaurant with light wood tables and beige walls. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a restaurant table",
+      "bg": "bright small restaurant with light wood tables and beige walls"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "slug": "2026-11-14-uiryogeupyeo-sincheong",
+  "title": "의료급여 신청, 누가 대신해도 되고 결과는 언제 나오나요 (30일)",
+  "source": "11/14(토) 12:20 네이버 원고 — 생활보장 제도 소식(국민기초생활 보장법·2027년도 기준 중위소득 보도자료), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "흐린 날 거실 탁자 위에 놓인 돋보기안경과 약봉투, 따뜻한 차 한 잔 (대표사진)",
+      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a living room sofa. Lighting: soft overcast daylight. Top-down view of a low living room table with reading glasses, a small plain white medicine bag, a cup of warm tea and a small potted plant neatly arranged. Color theme: calm teal and light gray tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "overhead",
+      "bg": "calm teal and light gray tones with a coral accent",
+      "note": "대표",
+      "thumb_shot": "overhead",
+      "thumb_theme": "teal",
+      "thumb_person": "없음",
+      "thumb_place": "거실",
+      "thumb_light": "흐린 날",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "teal",
+        "font": "jua",
+        "title": "의료급여 신청\n누가 해도 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "의료급여 신청 전 확인할 것을 묻는 자가 체크 카드",
+      "kind": "card",
+      "card": {
+        "type": "selfcheck",
+        "title": "의료급여 받을까?",
+        "items": [
+          "소득인정액이 선정기준 이하",
+          "부양의무자가 없거나",
+          "기준 중위소득의 40%"
+        ],
+        "result": "아래 '순서' 부분을 꼭 보세요 👇"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "부엌 식탁에서 병원비 영수증을 정리하는 60대 아버지의 손",
+      "prompt": "Camera and composition: close-up of hands on a kitchen table. Close-up of a Korean man's weathered hands in a gray knit sleeve stacking a few blank paper slips neatly on a kitchen table next to reading glasses, no face in the frame. Background color: sage green and sand beige kitchen with a coral mug. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands on a kitchen table",
+      "bg": "sage green and sand beige kitchen with a coral mug"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "의료급여 신청 순서를 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "의료급여 신청 순서",
+        "sub": "의료급여 신청이라면",
+        "items": [
+          "급여를 신청해요",
+          "제공 동의서를 내요",
+          "소득·재산 등을 조사해요",
+          "결과를 서면으로 통지받아요"
+        ],
+        "memo": "급여는 신청한 날부터",
+        "hl": 4
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "행정복지센터 창구에서 서류를 건네는 30대 딸의 뒷모습",
+      "prompt": "Camera and composition: medium shot from behind at a community center counter. A Korean woman in her 30s in a beige coat seen from behind at a community service center counter, handing a blank paper folder to a staff member in soft focus. Background color: bright community center with light wood and calm teal partitions. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot from behind at a community center counter",
+      "bg": "bright community center with light wood and calm teal partitions"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "공원 벤치에서 딸과 나란히 앉아 웃는 60대 아버지",
+      "prompt": "Camera and composition: medium shot on a park bench. A Korean father in his 60s in a padded vest and his daughter in her 30s sitting side by side on a park bench in late autumn, both smiling gently. Background color: soft autumn park with sage green trees and sand beige path. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on a park bench",
+      "bg": "soft autumn park with sage green trees and sand beige path"
+    }
+  ]
+}
