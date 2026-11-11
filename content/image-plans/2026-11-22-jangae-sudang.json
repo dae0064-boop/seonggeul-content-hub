@@ -1,0 +1,95 @@
+{
+  "slug": "2026-11-22-jangae-sudang",
+  "title": "장애수당, 신청한 달부터 받을 수 있나요 (월 6만 원)",
+  "source": "11/22(일) 08:20 네이버 원고 — 생활보장 제도 소식(장애수당), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "아침 햇살이 드는 주민센터에서 담당자 설명에 고개를 끄덕이는 어머니와 아들 (대표사진)",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a community service center counter. Lighting: soft early-morning sunlight. A wide view of a bright community service center like a miniature diorama; a Korean mother in her 50s in a cobalt blue cardigan and her son in his 20s in a white hoodie stand small at the counter, listening to a staff member. Expression and gesture: nodding with a reassuring smile, hands relaxed. Color theme: cool sky blue and white tones with a yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide",
+      "bg": "cool sky blue and white tones with a yellow accent",
+      "note": "대표",
+      "thumb_shot": "wide",
+      "thumb_theme": "cobalt",
+      "thumb_person": "50대 어머니와 20대 아들",
+      "thumb_place": "주민센터",
+      "thumb_light": "아침 햇살",
+      "thumb_mood": "끄덕",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "cobalt",
+        "font": "jua",
+        "title": "장애수당\n언제부터 받아?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "장애수당 O·X 퀴즈 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "장애수당 O·X",
+        "items": [
+          "중증이어도 함께 받는다",
+          "신청한 달부터 나온다",
+          "65세 이상은 심사 제외"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "O"
+        ],
+        "where": "아래 본문"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "거실 탁자에서 통장과 달력을 나란히 놓고 보는 50대 어머니",
+      "prompt": "Camera and composition: close-up of a living room table. A Korean woman in her 50s sitting at a living room table, looking at a blank bankbook and a wall calendar with a calm, thoughtful face. Background color: clean white living room with soft navy cushions. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of a living room table",
+      "bg": "clean white living room with soft navy cushions"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "장애수당 신청 순서를 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "장애수당 신청 순서",
+        "sub": "경증장애인이라면",
+        "items": [
+          "장애 정도를 먼저 확인해요",
+          "차상위계층인지 확인해요",
+          "장애수당 지급을 신청해요",
+          "제공 동의서를 함께 내요"
+        ],
+        "memo": "신청한 달부터 지급돼요",
+        "hl": 3
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "은행 창구에서 직원에게 통장 개설을 묻는 20대 남성",
+      "prompt": "Camera and composition: medium shot at a bank counter. A Korean man in his 20s in a light gray sweater asking a bank clerk about opening an account, the clerk seen in soft focus behind the counter. Background color: bright bank branch with white counters and sky blue accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a bank counter",
+      "bg": "bright bank branch with white counters and sky blue accents"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "저녁 공원 산책로를 나란히 걷는 50대 어머니와 20대 아들의 뒷모습",
+      "prompt": "Camera and composition: wide shot from behind on a park path. A Korean mother in her 50s and her son in his 20s walking side by side on a park path at dusk, seen from behind, relaxed. Background color: evening park with warm street lamps and autumn trees. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot from behind on a park path",
+      "bg": "evening park with warm street lamps and autumn trees"
+    }
+  ]
+}
