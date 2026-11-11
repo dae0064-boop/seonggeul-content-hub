@@ -5,7 +5,8 @@
 #     1) goms-login.ps1 — 이미 로그인돼 있으면 문자 없이 통과. 아니면 [인증번호받기] → 사용자가 Claude 에 번호 → Drive goms-otp\code.txt (최대 6분)
 #     2) 스레드 보험글 N편 (goms-register-auto.ps1 -IgnorePause -Exact, 등록 안 한 가장 작은 번호부터)
 #     3) 인스타 카드뉴스 M편 (insta-goms.ps1 -Exact, 바탕 사진이 있는 편만)
-#     4) 결과 한 줄씩 → Drive ClaudeWorkspace\goms-request-result.txt, 요청 파일은 지운다
+#     4) 스레드 승인 결과 읽기(goms-approved.ps1) — 아침에는 GOMS 를 열지 않는다
+#     5) 결과 한 줄씩 → Drive ClaudeWorkspace\goms-request-result.txt, 요청 파일은 지운다
 #   파일이 없으면 바로 끝난다 (몇 초). 처리 중에는 PC 가 잠들지 않게 붙잡는다.
 $ErrorActionPreference = 'Continue'
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
@@ -52,7 +53,9 @@ if ($login -notmatch '^성공') {
   $before = @{}
   foreach ($d in 'goms-done', 'goms-done-insta') { $before[$d] = @(Get-ChildItem (Join-Path $ws $d) -Filter '*.done' -ErrorAction SilentlyContinue | ForEach-Object Name) }
   if ($nThreads -gt 0) { & (Join-Path $PSScriptRoot 'goms-register-auto.ps1') -Count $nThreads -IgnorePause -Exact | Out-Null }
-  if ($nInsta -gt 0) { & (Join-Path $PSScriptRoot 'insta-goms.ps1') -Count $nInsta -Exact | Out-Null }
+  if ($nInsta -gt 0) { & (Join-Path $PSScriptRoot 'insta-goms.ps1') -Count $nInsta -Exact | Out-Null } else { & (Join-Path $PSScriptRoot 'insta-goms.ps1') -NoRegister | Out-Null }
+  # 승인 결과(심의필 번호)도 이때만 읽는다 — 2026-11-11 사용자: 아침 GOMS 확인은 뺐다 (인스타는 insta-goms 가 위에서 같이 읽음)
+  & (Join-Path $PSScriptRoot 'goms-approved.ps1') | Out-Null
   foreach ($d in 'goms-done', 'goms-done-insta') {
     $new = @(Get-ChildItem (Join-Path $ws $d) -Filter '*.done' -ErrorAction SilentlyContinue | ForEach-Object Name | Where-Object { $before[$d] -notcontains $_ } | ForEach-Object { $_ -replace '\.done$', '' })
     $label = if ($d -eq 'goms-done') { '스레드' } else { '인스타' }
