@@ -10,11 +10,14 @@ title Naver + Tistory reserve next 6 days
 git checkout -q -- "content/posts/*.json" "content/tistory/*.json" "content/tistory/*.html" 2>nul
 git checkout -q main
 git pull -q
+REM Fix 2026-11-11: take today's date ONCE. The 11/10 run crossed midnight, so Tistory day +6 became 11/17 and 11/16 was skipped.
+for /f %%d in ('powershell -NoProfile -Command "Get-Date -Format yyyy-MM-dd"') do set BASE=%%d
+echo  Base date: %BASE%
 for /L %%i in (1,1,6) do (
   echo.
   echo ===== day +%%i =====
-  powershell -NoProfile -ExecutionPolicy Bypass -Command "& '%~dp0tools\draft-day.ps1' -Reserve -Date (Get-Date).AddDays(%%i).ToString('yyyy-MM-dd')"
-  powershell -NoProfile -ExecutionPolicy Bypass -Command "& '%~dp0tools\tistory-day.ps1' -Reserve -RetryDrafts -Date (Get-Date).AddDays(%%i).ToString('yyyy-MM-dd')"
+  powershell -NoProfile -ExecutionPolicy Bypass -Command "& '%~dp0tools\draft-day.ps1' -Reserve -Date ([datetime]'%BASE%').AddDays(%%i).ToString('yyyy-MM-dd')"
+  powershell -NoProfile -ExecutionPolicy Bypass -Command "& '%~dp0tools\tistory-day.ps1' -Reserve -RetryDrafts -Date ([datetime]'%BASE%').AddDays(%%i).ToString('yyyy-MM-dd')"
 )
 echo.
 echo  Done. Tell Claude: "done" (results are uploaded to Google Drive run-logs).
