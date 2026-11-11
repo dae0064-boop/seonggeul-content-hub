@@ -1,0 +1,110 @@
+{
+  "slug": "2026-11-15-jugeogeupyeo-suseonyuji",
+  "title": "주거급여 수선유지, 우리 집은 얼마까지 고쳐 주나요 (대보수 1,601만 원)",
+  "source": "11/15(일) 08:20 네이버 원고 — 생활보장 제도 소식(주거급여 수선유지급여, 2026년 고시), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "흐린 날 거실 창가에서 낡은 창틀 실리콘을 손으로 짚어 보는 손 (대표사진)",
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a living room sofa. Lighting: soft overcast daylight. The hands of a Korean man in his 50s in a gray fleece sleeve pressing along an old cracked window frame seal beside a living room sofa, checking where the cold draft comes in. Expression: determined, nodding, sleeves rolled up. Color theme: modern light gray and white tones with a mustard accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "hands",
+      "bg": "modern light gray and white tones with a mustard accent",
+      "note": "대표",
+      "thumb_shot": "hands",
+      "thumb_theme": "charcoal",
+      "thumb_person": "50대 남성 손(회색 플리스 소매)",
+      "thumb_place": "거실",
+      "thumb_light": "흐린 날",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "charcoal",
+        "font": "jua",
+        "title": "주거급여 수선유지\n얼마까지 고칠까?"
+      },
+      "thumb_mood": "결심"
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "주거급여 수선유지 숫자 셋을 보여 주는 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "수선유지 숫자 셋",
+        "items": [
+          [
+            "590만",
+            "경보수",
+            "3년에 한 번"
+          ],
+          [
+            "1,095만",
+            "중보수",
+            "5년에 한 번"
+          ],
+          [
+            "1,601만",
+            "대보수",
+            "7년에 한 번"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "거실 바닥에 공구 상자를 펼쳐 둔 수리 기사의 무릎 아래 모습",
+      "prompt": "Camera and composition: low angle close-up of a worker kneeling on a floor. A Korean repair worker in navy work pants kneeling on a living room floor next to an open toolbox, only from the knees down, measuring a floor board with a tape measure. Background color: warm light wood floor and pale gray wall. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "low angle close-up of a worker kneeling on a floor",
+      "bg": "warm light wood floor and pale gray wall"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "수선유지급여 되는 경우와 안 되는 경우를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "ask": "우리 집도 고쳐 줄까?",
+        "title": "수선유지급여 갈림길",
+        "heads": [
+          "되는 경우",
+          "안 되는 경우"
+        ],
+        "items": [
+          [
+            "내 집에 사는 자가가구",
+            "비닐하우스 같은 비주택"
+          ],
+          [
+            "집 안 전용부분",
+            "공용부분"
+          ],
+          [
+            "수급자 동의",
+            "공동 소유자 반대"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "행정복지센터 창구에서 상담받는 50대 아들과 70대 어머니",
+      "prompt": "Camera and composition: medium shot at a counter. A Korean man in his 50s in a beige jacket and his mother in her 70s in a plum cardigan sitting side by side at a community service center counter, listening to a staff member whose back is to the camera. Background color: bright community center with light wood and soft green partitions. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a counter",
+      "bg": "bright community center with light wood and soft green partitions"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "공사를 마친 거실 창가에서 차를 마시는 70대 어머니",
+      "prompt": "Camera and composition: medium wide shot by a window. A Korean woman in her 70s in a cream knit sweater sitting by a newly repaired bright window in a small house, holding a warm cup of tea and smiling softly. Background color: fresh white window frame and warm afternoon light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium wide shot by a window",
+      "bg": "fresh white window frame and warm afternoon light"
+    }
+  ]
+}

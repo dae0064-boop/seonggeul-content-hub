@@ -1,0 +1,93 @@
+{
+  "slug": "2026-11-13-chulsan-credit",
+  "title": "출산크레딧, 둘째는 내년부터 몇 개월 더해 주나요 (15개월)",
+  "source": "11/13(금) 12:20 네이버 원고 — 생활보장 제도 소식(보건복지부 국민연금법 개정안 국회 통과 보도자료·국민연금법), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "밝은 낮 침실에서 아기 발을 손바닥에 올린 30대 엄마의 손 (대표사진)",
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a tidy bedroom by the bed. Lighting: bright clear daylight, high key. Close-up of a Korean mother's hands in a soft lavender sleeve gently holding a sleeping baby's tiny feet on a white bed blanket. Expression: bright happy smile. Color theme: soft lavender and white tones with a warm yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "hands",
+      "bg": "soft lavender and white tones with a warm yellow accent",
+      "note": "대표",
+      "thumb_shot": "hands",
+      "thumb_theme": "plum",
+      "thumb_person": "30대 엄마의 손",
+      "thumb_place": "침실",
+      "thumb_light": "밝은 낮",
+      "thumb_mood": "반가움",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "plum",
+        "font": "jua",
+        "title": "출산크레딧\n둘째는 몇 개월?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "출산크레딧을 묻는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "출산크레딧",
+        "title": "둘째는\n몇 개월?",
+        "ask": "연금도 더 쳐줘요?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "거실 소파에서 아기를 안고 마주 보며 웃는 30대 부부",
+      "prompt": "Camera and composition: medium shot on a living room sofa. A Korean couple in their 30s sitting on a living room sofa, the father holding a baby while they smile at each other. Background color: soft lavender cushions and warm white walls with a yellow lamp. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on a living room sofa",
+      "bg": "soft lavender cushions and warm white walls with a yellow lamp"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "출산크레딧 개월 수와 연금 효과를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "출산크레딧 개월 수",
+        "items": [
+          [
+            "12개월",
+            "첫째",
+            "올해부터"
+          ],
+          [
+            "15개월",
+            "둘째",
+            "2027년부터"
+          ],
+          [
+            "18개월",
+            "셋째부터",
+            "1명마다"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "은행 창구에서 국민연금 안내를 듣는 40대 여성",
+      "prompt": "Camera and composition: medium shot at a bank counter. A Korean woman in her 40s in a beige coat sitting at a bank counter, nodding calmly while a clerk in soft focus explains something on a blank screen. Background color: bright bank lobby with cream walls and soft peach accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a bank counter",
+      "bg": "bright bank lobby with cream walls and soft peach accents"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "아이 방 창가에서 둘째 아기 옷을 정리하는 30대 아빠",
+      "prompt": "Camera and composition: medium shot by a window in a child's room. A Korean man in his 30s folding tiny baby clothes into a small drawer by a sunny window in a child's room, a toddler's toy nearby. Background color: warm cream child's room with soft lavender curtains. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot by a window in a child's room",
+      "bg": "warm cream child's room with soft lavender curtains"
+    }
+  ]
+}

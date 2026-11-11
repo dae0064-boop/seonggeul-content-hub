@@ -1,0 +1,99 @@
+{
+  "slug": "2026-11-17-cheongnyeonwolse-jiwon",
+  "title": "청년월세 지원, 지금 신청할 수 있나요 (올해 신청 5월 29일 마감)",
+  "source": "11/17(화) 08:20 네이버 원고 — 생활보장 제도 소식(청년월세 지원 2026년 신청 안내, 복지로 공지), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "아침 햇살 드는 원룸 침대 옆 협탁에 놓인 현관 열쇠와 작은 화분 (대표사진)",
+      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a tidy bedroom by the bed. Lighting: soft early-morning sunlight. A small bedside table in a tidy one-room studio holding a single apartment door key on a simple key ring next to a tiny potted green plant, the bed softly blurred behind. Color theme: olive green and pale cream tones with a red accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "object",
+      "bg": "olive green and pale cream tones with a red accent",
+      "note": "대표",
+      "thumb_shot": "object",
+      "thumb_theme": "olive",
+      "thumb_person": "없음",
+      "thumb_place": "침실",
+      "thumb_light": "아침 햇살",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "olive",
+        "font": "jua",
+        "title": "청년월세 지원\n지금 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "청년월세 지원 숫자 셋을 보여 주는 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "청년월세 숫자 셋",
+        "items": [
+          [
+            "24회",
+            "최대 지급",
+            "생애 한 번"
+          ],
+          [
+            "19~34세",
+            "대상 나이",
+            "무주택 청년"
+          ],
+          [
+            "60%",
+            "청년가구",
+            "중위소득 이하"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "청년월세 지원 대상을 확인하는 체크 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "style": "memo",
+        "title": "청년월세 대상 확인",
+        "sub": "2026년 신청 기준",
+        "items": [
+          "따로 사는 무주택 청년",
+          "원가구 기준 중위소득 이하",
+          "청년가구 60% 이하"
+        ],
+        "memo": "다음 신청은 복지로 공지로",
+        "hl": 2
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "저녁 원룸 책상에서 휴대폰으로 서류를 확인하는 20대 남성",
+      "prompt": "Camera and composition: medium shot at a small desk. A Korean man in his 20s in a gray hoodie sitting at a small desk in a studio apartment in the evening, checking his smartphone with a blank screen, a desk lamp glowing. Background color: compact studio room with warm desk lamp light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a small desk",
+      "bg": "compact studio room with warm desk lamp light"
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "아침 버스 정류장에서 출근길에 서 있는 20대 여성의 옆모습",
+      "prompt": "Camera and composition: side view medium shot outdoors. A Korean woman in her 20s in a beige coat with a backpack standing at a city bus stop on a crisp morning, seen from the side, calm expression. Background color: city street bus stop in fresh morning light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "side view medium shot outdoors",
+      "bg": "city street bus stop in fresh morning light"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "복지로 공지를 확인하려고 노트북을 여는 손과 머그잔",
+      "prompt": "Camera and composition: close-up of hands opening a laptop. Close-up of a young Korean person's hands opening a laptop with a blank screen on a small wooden table next to a ceramic mug, no face visible. Background color: light wood table and soft olive green wall. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands opening a laptop",
+      "bg": "light wood table and soft olive green wall"
+    }
+  ]
+}

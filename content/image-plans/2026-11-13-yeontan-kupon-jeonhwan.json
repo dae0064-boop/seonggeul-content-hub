@@ -1,0 +1,100 @@
+{
+  "slug": "2026-11-13-yeontan-kupon-jeonhwan",
+  "title": "연탄쿠폰, 보일러를 바꾸면 지원은 어떻게 되나요 (4.2만 가구)",
+  "source": "11/13(금) 08:20 네이버 원고 — 생활보장 제도 소식(기후에너지환경부 연탄사용가구 전환·에너지바우처 보도자료), 실사풍",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "흐린 날 베란다 새 보일러 앞에서 안심한 표정의 70대 어머니와 40대 아들 (대표사진)",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a bright apartment balcony with plants. Lighting: soft overcast daylight. A small Korean mother in her 70s in a green cardigan and her son in his 40s standing together on a bright apartment balcony next to a new plain white wall boiler, small in the frame. Expression: relieved gentle smile. Color theme: fresh green plants and crisp white tones with natural morning light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide",
+      "bg": "fresh green plants and crisp white tones with natural morning light",
+      "note": "대표",
+      "thumb_shot": "wide",
+      "thumb_theme": "forest",
+      "thumb_person": "70대 어머니와 40대 아들",
+      "thumb_place": "베란다",
+      "thumb_light": "흐린 날",
+      "thumb_mood": "안심",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "forest",
+        "font": "ptd",
+        "title": "연탄쿠폰\n보일러 바꾸면?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "연탄쿠폰 가구 전환 숫자를 보여 주는 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "연탄쿠폰 전환 숫자",
+        "items": [
+          [
+            "4.2만",
+            "연탄쿠폰 가구",
+            "전환 조사 대상"
+          ],
+          [
+            "1만",
+            "가구",
+            "최대 전환 지원"
+          ],
+          [
+            "3.7만",
+            "가구",
+            "난방 지원 목표"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "베란다에서 작업자가 새 보일러 배관을 살펴보는 손",
+      "prompt": "Camera and composition: close-up of gloved hands checking boiler pipes. Close-up of a Korean technician's gloved hands checking the pipes under a new plain white wall boiler on a home balcony, no face in the frame. Background color: fresh green plants and crisp white balcony walls in soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of gloved hands checking boiler pipes",
+      "bg": "fresh green plants and crisp white balcony walls in soft daylight"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "연탄보일러 전환 순서를 정리한 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "연탄보일러 전환 순서",
+        "sub": "연탄쿠폰 가구라면",
+        "items": [
+          "전화로 의향을 물어요",
+          "단열과 집 상태를 봐요",
+          "고효율 보일러로 바꾸고"
+        ],
+        "memo": "바꾼 집엔 에너지바우처",
+        "hl": 3
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "행정복지센터 창구에서 안내를 받는 40대 아들의 뒷모습",
+      "prompt": "Camera and composition: medium shot from behind at a community center counter. A Korean man in his 40s in a navy padded jacket seen from behind at a community service center counter, talking calmly with a staff member in soft focus. Background color: bright community center with light wood counters and sage green partitions. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot from behind at a community center counter",
+      "bg": "bright community center with light wood counters and sage green partitions"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "따뜻한 거실에서 담요를 덮고 차를 마시는 70대 어머니",
+      "prompt": "Camera and composition: medium shot on a living room floor cushion. A Korean woman in her 70s sitting on a warm living room floor cushion with a knitted blanket over her knees, holding a cup of tea and smiling gently. Background color: warm ivory living room with soft green plants. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot on a living room floor cushion",
+      "bg": "warm ivory living room with soft green plants"
+    }
+  ]
+}
