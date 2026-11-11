@@ -3,7 +3,8 @@
 #   약관 참조 문구를 미리 넣고(반려 9건 중 8건이 이 문구 요구 — 이미 있으면 그대로) scripts\goms-ad.mjs --submit 으로 등록한다.
 #   등록한 편은 goms-done 에 .done 이 남아 다시 하지 않는다. GOMS 로그인이 안 되면 아무것도 하지 않는다.
 #   아침 auto-day 끝(승인 결과 읽기 다음)에서 돈다. 바로 돌릴 땐 launchers\goms-register.cmd (번호를 직접 고름).
-param([int]$Count = 10, [switch]$IgnorePause)
+param([int]$Count = 10, [switch]$IgnorePause, [switch]$Exact)
+# 2026-11-11 사용자 "심의는 내가 요청할 때만" — goms-request.ps1 이 -IgnorePause -Exact 로 부른다 (-Exact: 오늘 이미 올린 편수를 빼지 않고 꼭 Count 편)
 # 2026-11-01 사용자: "스레드 자동발행 우선 다 중단 — 새로 구성해서 시작" — content\threads\PAUSE 가 있으면 아무것도 하지 않는다
 # 2026-11-02 사용자: 스레드는 멈춘 채 31~115편 심의만 한꺼번에 올린다 → launchers\goms-register-all.cmd 가 -IgnorePause 로 부른다
 if (-not $IgnorePause -and (Test-Path (Join-Path (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent) 'content\threads\PAUSE'))) { Write-Host '스레드 멈춤(content\threads\PAUSE) — 건너뛰어요'; exit 0 }
@@ -30,7 +31,7 @@ $reviewed = @()
 $approvedTsv = Join-Path $drive 'ClaudeWorkspace\goms-approved.tsv'
 if (Test-Path $approvedTsv) { $reviewed = @(Get-Content $approvedTsv -Encoding UTF8 | ForEach-Object { $c = ($_ -replace '^\uFEFF', '') -split "`t"; if ($c[0] -match '^\d+$') { [int]$c[0] } }) }
 # 2026-11-02 사용자: 하루 30편까지 — 같은 날 다시 실행해도 오늘 이미 올린 만큼 뺀다 (goms-done 의 오늘 날짜 .done)
-if ($IgnorePause) {
+if ($IgnorePause -and -not $Exact) {
   $today = @(Get-ChildItem $doneDir -Filter '스레드 *편.done' -ErrorAction SilentlyContinue | Where-Object { $_.LastWriteTime.Date -eq (Get-Date).Date }).Count
   $Count = [Math]::Max(0, $Count - $today)
   if ($Count -eq 0) { Write-Host "오늘은 이미 $today 편을 올렸어요 (하루 30편까지). 내일 다시 더블클릭해 주세요." -ForegroundColor Yellow; exit 0 }

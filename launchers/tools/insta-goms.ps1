@@ -5,7 +5,8 @@
 #   ③ 아직 안 올린 편을 번호 순서로 하루 $Count 편까지 GOMS 에 등록 (goms-done-insta\인스타 카드뉴스 N편.done 이 남는다)
 #   스레드 보험글(goms-approved.ps1·goms-register-auto.ps1)과 따로 돈다 — 스레드 PAUSE 와 상관없고, content\instagram\PAUSE 로 멈춘다.
 #   아침 auto-day 끝에서 돈다. 바로 돌릴 땐 launchers\insta-now.cmd. GOMS 로그인이 안 되면 아무것도 하지 않는다.
-param([int]$Count = 3, [switch]$NoRegister)
+param([int]$Count = 2, [switch]$NoRegister, [switch]$Exact)
+# 2026-11-11 사용자: 인스타 2편 + 스레드 3편 = 하루 5편, 등록은 사용자가 요청할 때만 (goms-request.ps1 이 -Exact 로 부른다 — 오늘 이미 올린 편수를 빼지 않음)
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo
@@ -71,7 +72,7 @@ if ($code -ne 3 -and -not $NoRegister) {
   if (Test-Path $tsv) { $reviewed = @(Get-Content $tsv -Encoding UTF8 | ForEach-Object { $c = ($_ -replace '^\uFEFF', '') -split "`t"; if ($c[0] -match '^\d+$') { [int]$c[0] } }) }
   $done = @(Get-ChildItem $doneDir -Filter "$prefix *편.done" -ErrorAction SilentlyContinue | ForEach-Object { if ($_.Name -match '(\d+)편\.done$') { [int]$Matches[1] } })
   $todayDone = @(Get-ChildItem $doneDir -Filter "$prefix *편.done" -ErrorAction SilentlyContinue | Where-Object { $_.LastWriteTime.Date -eq (Get-Date).Date }).Count
-  $todo = @($have | Where-Object { $done -notcontains $_ -and $reviewed -notcontains $_ } | Select-Object -First ([Math]::Max(0, $Count - $todayDone)))
+  $todo = @($have | Where-Object { $done -notcontains $_ -and $reviewed -notcontains $_ } | Select-Object -First $(if ($Exact) { $Count } else { [Math]::Max(0, $Count - $todayDone) }))
   if ($todo.Count) {
     $log += "GOMS 등록: $prefix $($todo -join ', ')편"
     foreach ($n in $todo) {   # 한 편씩 따로 — 사이에 Word 가 빠진 번호가 있어도 멈추지 않게

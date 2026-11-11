@@ -8,7 +8,7 @@
 | 순서 | 언제 · 어디서 | 무엇 |
 |---|---|---|
 | ① 카드뉴스 만들기 | 클라우드 Claude (사용자가 설계안·요청을 보낼 때) | 원고 → 카드 그림 → Word 「인스타 카드뉴스 N편.docx」 (`content/instagram/README.md`) |
-| ② GOMS 등록 | 아침 PC (`auto-day` 끝 → `launchers/tools/insta-goms.ps1`) | Word 를 Drive `ClaudeWorkspace/인스타심의/` 로 모으고, 아직 안 올린 편을 번호 순서로 **하루 3편까지** GOMS 광고심의에 등록 (광고제목 「인스타 카드뉴스 N편」, 신규·업무광고·SNS). 등록한 편은 Drive `goms-done-insta/` 에 표시가 남아 다시 하지 않는다 |
+| ② GOMS 등록 | 사용자가 "심의 올려줘" 할 때 PC (`launchers/tools/goms-request.ps1` → `insta-goms.ps1 -Count 2 -Exact`, 2026-11-11~ — 아침 `auto-day` 는 승인 읽기만) | Word 를 Drive `ClaudeWorkspace/인스타심의/` 로 모으고, 아직 안 올린 편을 번호 순서로 **요청 한 번에 2편** GOMS 광고심의에 등록 (광고제목 「인스타 카드뉴스 N편」, 신규·업무광고·SNS). 등록한 편은 Drive `goms-done-insta/` 에 표시가 남아 다시 하지 않는다 |
 | ③ 승인 읽기 | 같은 아침 실행 | GOMS 목록의 승인완료 「인스타 카드뉴스 N편」 → 심의필 번호·유효기간을 Drive `goms-approved-insta.tsv` 에 적는다 (반려도 적는다) |
 | ④ 올릴 그림 | 클라우드 아침 확인 (`routines/morning-check.md` 5-3) | 승인 난 편의 마지막 장(심의 고지)에 **그 편의 심의필 번호**를 넣고, 심의받은 1~6장은 그대로 JPEG 로 → `content/instagram/final/<N>/` → main |
 | ⑤ 인스타 게시 | PC 19시 실행 (못 하면 22시) — `catchup-reserve.ps1` → `insta-post.ps1` | **하루 1편**, 번호 순서. 글은 심의받은 Word 의 [게시물 본문] 그대로, 그림은 ④ 의 공개 주소 |
