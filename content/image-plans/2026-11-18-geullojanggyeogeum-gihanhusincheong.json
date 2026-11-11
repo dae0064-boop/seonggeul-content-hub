@@ -1,0 +1,83 @@
+{
+  "slug": "2026-11-18-geullojanggyeogeum-gihanhusincheong",
+  "title": "근로장려금 기한후신청, 지금 해도 얼마나 받나요 (산정액의 95%)",
+  "source": "11/18(수) 08:20 네이버 제도 소식 — 생활보장(돈·생활 제도), 실사풍 (11/11 미리 씀)",
+  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "흰 조명 사무실 책상에서 휴대폰을 보는 30대 여성 직장인 (대표사진)",
+      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: an office desk with a laptop. Lighting: cool clean white indoor light. A Korean woman office worker in her 30s in a burgundy knit sweater sitting at her office desk, looking at her smartphone with a small relieved smile, the laptop softly blurred behind her. Expression: smiling while checking a smartphone, hands away from the face. Color theme: soft rose and cream tones with a deep burgundy accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "face",
+      "bg": "soft rose and cream tones with a deep burgundy accent",
+      "note": "대표",
+      "thumb_shot": "face",
+      "thumb_theme": "burgundy",
+      "thumb_person": "30대 여성 직장인(버건디 니트)",
+      "thumb_place": "사무실",
+      "thumb_light": "흰 조명",
+      "thumb_mood": "휴대폰",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "burgundy",
+        "font": "ptd",
+        "title": "근로장려금\n지금도 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "근로장려금 기한후신청 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "근로장려금",
+        "title": "지금 내도\n받을까?",
+        "ask": "5월에 못 냈는데 어떡해?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "흐린 날 베란다 탁자에서 계산기를 두드리는 손",
+      "prompt": "Camera and composition: close-up of hands on a balcony table. Close-up of a Korean man's hands in a gray sweater pressing a simple calculator with blank keys on a small wooden balcony table, a mug beside it. Background color: soft overcast light on a bright apartment balcony with green plants. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "close-up of hands on a balcony table",
+      "bg": "soft overcast light on a bright apartment balcony with green plants"
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "근로장려금 기한후신청 뒤 돈이 들어오는 순서 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "ask": "언제 돈이 들어와?",
+        "title": "기한 후 신청 순서",
+        "items": [
+          "관할 세무서에 신청",
+          "신청한 달의 말일",
+          "3개월 안에 금액이 결정",
+          "결정일부터 30일 안"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "저녁 식탁에서 노트북으로 서류를 정리하는 30대 부부",
+      "prompt": "Camera and composition: medium shot at a dining table. A Korean couple in their 30s sitting side by side at a dining table in the evening, the wife typing on a laptop and the husband sorting a small stack of blank envelopes, calm and focused. Background color: warm evening dining room with a pendant lamp and wooden table. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "medium shot at a dining table",
+      "bg": "warm evening dining room with a pendant lamp and wooden table"
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "아침 햇살 공원 벤치에 앉아 휴대폰을 보는 50대 남성",
+      "prompt": "Camera and composition: wide shot of a park bench. A Korean man in his 50s in a navy padded jacket sitting on a park bench in the early morning, checking his smartphone with a calm face, seen small in the frame. Background color: early morning park with bare trees and golden sunlight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "wide shot of a park bench",
+      "bg": "early morning park with bare trees and golden sunlight"
+    }
+  ]
+}
