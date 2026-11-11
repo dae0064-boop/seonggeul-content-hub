@@ -17,7 +17,7 @@ draft-test.cmd        원고를 그림까지 넣어 네이버 '임시저장'만 
                       Claude 가 "draft-test.cmd 눌러 주세요"라고 할 때. 확인용.
 
 reserve-tomorrow.cmd  내일 글(네이버·티스토리)을 오늘 밤 미리 예약
-reserve-week.cmd      앞으로 6일치 글(네이버·티스토리)을 지금 한꺼번에 예약
+reserve-week.cmd      앞으로 7일치 글(네이버·티스토리)을 지금 한꺼번에 예약
                       다음 날 아침 PC 를 못 켤 때.
 
 chrome-login.cmd      로그인 확인 (네이버·티스토리)
