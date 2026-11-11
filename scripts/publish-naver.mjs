@@ -1131,7 +1131,15 @@ async function insertImageAt(page, editor, label, file) {
       if (await input.count()) { await input.setInputFiles(file); chosen = true; }
     } catch { /* 아래에서 실패 처리 */ }
     if (!chosen) {
-      await page.keyboard.insertText(label); // 표시 줄을 되살린다
+      // 표시 줄을 되살린다. 2026-11-11 철거 11/12 글: 파일 선택 창 대기 시간 초과 뒤 커서가 에디터 밖이라
+      // 글자가 들어가지 않아, 다시 시도가 '표시 줄을 찾지 못함'으로 끝나 예약을 못 했다 → 안 되살아났으면 되돌리기로 살린다.
+      await page.keyboard.press('Escape').catch(() => {});
+      await sleep(300);
+      if (!(await snapshot(editor)).includes(label)) {
+        await page.keyboard.insertText(label);
+        await sleep(400);
+        if (!(await snapshot(editor)).includes(label)) await undoUntilRestored(page, editor, snap0);
+      }
       return { ok: false, why: `사진 버튼/파일 선택 실패 — ${e.message.split('\n')[0]}` };
     }
   }
