@@ -29,21 +29,7 @@ $ig = & (Join-Path $PSScriptRoot 'instagram-to-drive.ps1'); if ($ig) { Note "$ig
 try { $d = Find-MyDrive; if ($d) { $bd = Join-Path $d 'ClaudeWorkspace\블로그배너'; if (Get-ChildItem $bd -Filter '사진.*' -ErrorAction SilentlyContinue) { $bo = node (Join-Path (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent) 'scripts\blog-banner\make-gpt.mjs') --out $bd --only consult- 2>&1 | Select-Object -Last 1; if ($bo -match '새로 [1-9]') { Note "배너 시안: $bo" } } } } catch { }
 # 인스타 카드뉴스 자동 게시 (2026-11-02) — GOMS 적격 편을 하루 1편, 18~22시 (보통 19시 실행). 키가 없는 PC 는 조용히 넘어간다
 try { & (Join-Path $PSScriptRoot 'insta-post.ps1') | Out-Null; Note '인스타 게시 확인 끝 (기록: run-logs\instagram)' } catch { Note "인스타 게시 실패: $($_.Exception.Message)" }
-# GOMS 혼자 로그인 확인 (2026-11-02 사용자 "곰스 로그인 다시 테스트, 너 혼자서 되는지") — 저녁(19시~) 하루 한 번, 사람 손 없이
-#   승인 결과만 읽는다(등록 안 함, insta-goms -NoRegister). 결과 한 줄을 Drive run-logs\goms-login-<날짜>.txt 에 남긴다
-if ($drive -and $now.Hour -ge 19) {
-  $gl = Join-Path $drive "ClaudeWorkspace\run-logs\goms-login-$today.txt"
-  if (-not (Test-Path $gl)) {
-    try {
-      & (Join-Path $PSScriptRoot 'insta-goms.ps1') -NoRegister | Out-Null
-      $r = Get-ChildItem (Join-Path $repo 'dumps') -Directory -Filter 'insta-goms-*' -ErrorAction SilentlyContinue | Sort-Object LastWriteTime -Descending | Select-Object -First 1
-      $txt = if ($r -and (Test-Path (Join-Path $r.FullName 'result.txt'))) { Get-Content (Join-Path $r.FullName 'result.txt') -Raw -Encoding UTF8 } else { '' }
-      $res = if ($txt -match '종료 코드: 3') { '실패 — 로그인 안 됨' + $(if ($txt -match '본인인증') { ' (휴대폰 본인인증 필요)' } else { '' }) } elseif ($txt -match '승인상태') { '성공 — 사람 손 없이 들어가 승인 목록까지 읽음' } else { '확인 못 함 (기록 없음 — 다른 PC 가 돌던 중일 수 있음)' }
-      "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') [$env:COMPUTERNAME] GOMS 혼자 로그인: $res" | Set-Content -Encoding UTF8 $gl
-      Note "GOMS 혼자 로그인: $res"
-    } catch { Note "GOMS 로그인 확인 실패: $($_.Exception.Message)" }
-  }
-}
+# (2026-11-11 사용자) 저녁 GOMS 혼자 로그인 확인은 뺐다 — GOMS 는 "심의 올려줘" 요청 때만 (goms-request.ps1)
 # 사진 찾기 곳(위키미디어·오픈버스·픽사베이)이 되는지 하루 한 번 (2026-11-03 사용자 — "신경 안 쓰면 알아서 확인되는 건가?") → 아침 확인이 읽는다
 if ($drive) {
   $pt = Join-Path $drive "ClaudeWorkspace\run-logs\photo-test-$today.txt"
