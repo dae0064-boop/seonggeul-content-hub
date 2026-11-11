@@ -6,13 +6,14 @@
 #   powershell -ExecutionPolicy Bypass -File launchers\tools\chulgeo-day.ps1          (auto-day.cmd 가 부른다)
 #   -DraftOnly   예약 대신 임시저장만
 #   -Only <슬러그> -DraftOnly -Force   그 원고 하나만 임시저장 (launchers\chulgeo-draft.cmd — 날짜와 상관없이)
+#   -Date YYYY-MM-DD   그 날짜 원고만 그날 시각으로 미리 예약 (2026-11-11 사용자 — reserve-week.cmd 가 7일치를 부른다. 7일 안만)
 #
 # - 로그인 전(프로필 폴더 없음)이면 조용히 건너뛴다. launchers\two-blog-test.cmd 로 처음 한 번 로그인한다.
 # - 오늘까지 날짜의 원고 중 아직 처리 표시(.done)가 없는 것을 오래된 것부터 하루 10편까지 한다 (2026-11-11~, 그 전 5편)
 #   (PC 가 안 켜진 날 원고는 다음 날 먼저 나간다).
 # - 처리 표시: Drive ClaudeWorkspace\run-locks\chulgeo\<슬러그>.done (두 PC 가 같은 글을 두 번 올리지 않게)
 # - 예약 시각: 오늘 11:00~20:00 매시 정각(10자리) 중 지금부터 30분 넘게 남은 빈 자리. 없으면 22:30 전까지 10분 단위로.
-param([switch]$DraftOnly, [switch]$NoShare, [string]$Only = '', [switch]$Force)
+param([switch]$DraftOnly, [switch]$NoShare, [string]$Only = '', [switch]$Force, [string]$Date = '')
 # 2026-11-09 사용자: "철거 원고 11월 11일 오전부터 진행" — 그 전 아침 실행은 건너뛴다 (-Force 는 손으로 돌릴 때만)
 $StartDate = '2026-11-11'
 $started = Get-Date
@@ -20,7 +21,9 @@ $ErrorActionPreference = 'Continue'
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 Set-Location (Join-Path $PSScriptRoot '..\..')
 New-Item -ItemType Directory -Force -Path dumps | Out-Null
-$Date = Get-Date -Format 'yyyy-MM-dd'
+$Today = Get-Date -Format 'yyyy-MM-dd'
+$Ahead = [bool]$Date -and $Date -gt $Today   # 앞날 미리 예약: 그 날짜 원고만, 밀린 원고는 섞지 않는다
+if (-not $Date) { $Date = $Today }
 $log = "dumps\day-$Date-chulgeo.log"
 "=== $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') 다와이철거 시작" | Out-File $log -Append -Encoding utf8
 function Say($s, $c = 'Gray') { Write-Host $s -ForegroundColor $c; $s | Out-File $log -Append -Encoding utf8 }
@@ -52,7 +55,7 @@ function Release { Remove-Item $running -ErrorAction SilentlyContinue }
 
 # ---- 오늘 할 원고: 날짜 <= 오늘, .done 없음, 오래된 것부터 10편 (2026-11-09 사용자 "11월 11일부터 철거·목수 블로그 10개")
 $posts = @(Get-ChildItem 'content\chulgeo\posts\*.json' -ErrorAction SilentlyContinue |
-  Where-Object { ($(if ($Only) { $_.BaseName -eq $Only } else { $_.BaseName.Substring(0, 10) -le $Date })) -and -not (Test-Path (Join-Path $lockDir "$($_.BaseName).done")) } |
+  Where-Object { ($(if ($Only) { $_.BaseName -eq $Only } elseif ($Ahead) { $_.BaseName.Substring(0, 10) -eq $Date } else { $_.BaseName.Substring(0, 10) -le $Date })) -and -not (Test-Path (Join-Path $lockDir "$($_.BaseName).done")) } |
   Sort-Object @{ Expression = { (Get-Content $_.FullName -Raw -Encoding UTF8 | ConvertFrom-Json).publishAt } }, Name |
   Select-Object -First 10)
 if (-not $posts.Count) { Say '다와이철거: 오늘 올릴 원고가 없어요 (모두 처리했거나 원고가 아직 없음).' 'Green'; Release; exit 0 }
