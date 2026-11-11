@@ -30,7 +30,7 @@ $nInsta = Num '인스타' 2
 $resFile = Join-Path $ws 'goms-request-result.txt'
 function Res($m) { "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') [$env:COMPUTERNAME] $m" | Add-Content -Encoding UTF8 $resFile; Write-Host $m }
 Remove-Item $resFile -ErrorAction SilentlyContinue
-Res "요청 받음 — 스레드 $nThreads편 · 인스타 $nInsta편"
+Res "요청 받음 — 스레드 ${nThreads}편 · 인스타 ${nInsta}편"
 
 Add-Type @'
 using System; using System.Runtime.InteropServices;
@@ -57,7 +57,7 @@ if ($login -notmatch '^성공') {
     $new = @(Get-ChildItem (Join-Path $ws $d) -Filter '*.done' -ErrorAction SilentlyContinue | ForEach-Object Name | Where-Object { $before[$d] -notcontains $_ } | ForEach-Object { $_ -replace '\.done$', '' })
     $label = if ($d -eq 'goms-done') { '스레드' } else { '인스타' }
     $want = if ($d -eq 'goms-done') { $nThreads } else { $nInsta }
-    if ($new.Count) { Res "$label 등록 $($new.Count)/$want편: $($new -join ', ')" } elseif ($want -gt 0) { Res "$label 등록 0/$want편 — 올릴 Word 가 없거나 중간에 멈춤 (기록: run-logs\goms-register-* / insta-goms-*)" }
+    if ($new.Count) { Res "$label 등록 $($new.Count)/${want}편: $($new -join ', ')" } elseif ($want -gt 0) { Res "$label 등록 0/${want}편 — 올릴 Word 가 없거나 중간에 멈춤 (기록: run-logs\goms-register-* / insta-goms-*)" }
   }
 }
 Remove-Item $req -Force -ErrorAction SilentlyContinue
