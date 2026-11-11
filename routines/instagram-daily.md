@@ -1,16 +1,19 @@
-# 인스타 카드뉴스 하루 3편 (심의만 받아 두기)
+# 인스타 카드뉴스 하루 2편 (심의만 받아 두기)
 
 2026-11-05 사용자 — "인스타 카드뉴스는 게시하지 않지만 심의는 하루에 3개씩 받아 놓으려고 한다".
-게시는 지금처럼 멈춤(`content/instagram/PAUSE-POST`). 이 작업은 **원고·그림·Word 를 매일 3편 만들어 PC 가 GOMS 에 등록하게** 하는 것까지다.
+**📝 2026-11-11 사용자: 하루 2편** ("인스타 카드뉴스 2개, 스레드 3개 — 하루 5개씩 심의. 매일 아침 올릴 필요는 없고 내가 요청할 때마다").
+**등록은 사용자가 "심의 올려줘" 할 때만** PC `goms-request.ps1` 이 한다 (아침 자동 등록·08:30 자동 로그인은 끔).
+**쌓임이 많으면 새 편을 쓰지 않는다**: Word 까지 만들었거나 원고가 있는데 GOMS 에 안 올린 편(sets 의 편 수 − Drive `goms-done-insta` 의 `.done` 수)이 **6편 이상**(3일 치)이면 ② 를 건너뛰고 ① 만 한다 (11/11 기준 11~27편 대기).
+게시는 지금처럼 멈춤(`content/instagram/PAUSE-POST`). 이 작업은 **원고·그림·Word 를 만들어 두어 요청 때 PC 가 GOMS 에 등록하게** 하는 것까지다.
 `routines/tistory-daily.md` 작업 대화가 티스토리 원고를 끝낸 뒤 이어서 한다 (따로 Routine 을 만들지 않았다). `content/instagram/PAUSE` 가 있으면 하지 않는다.
 
 ## 흐름 (하루에 두 가지를 같이 한다)
 
 ```
-D 밤   이 작업: ① 어제 쓴 편의 AI 바탕 사진을 Drive 에서 받아 그림·Word 를 다시 그림  ② 새 3편 원고(임시 바탕)
-D+1    PC catchup(10·13·16·19·22시) → make-bg 로 새 3편 바탕 사진 → Drive 인스타카드뉴스/bg/
+D 밤   이 작업: ① 어제 쓴 편의 AI 바탕 사진을 Drive 에서 받아 그림·Word 를 다시 그림  ② 새 2편 원고(임시 바탕, 대기 6편 미만일 때)
+D+1    PC catchup(10·13·16·19·22시) → make-bg 로 새 2편 바탕 사진 → Drive 인스타카드뉴스/bg/
 D+1 밤 이 작업 ① 로 그 3편 Word 완성 → main
-D+2    아침 PC insta-goms.ps1 이 Word 를 모아 GOMS 에 하루 3편 등록 (바탕 사진이 없는 편은 모으지 않는다)
+요청 때 PC goms-request.ps1 → insta-goms.ps1 -Count 2 -Exact 가 Word 를 모아 GOMS 에 2편 등록 (바탕 사진이 없는 편은 모으지 않는다)
 ```
 
 ## ① 바탕 사진 받아 다시 그리기
@@ -21,7 +24,7 @@ D+2    아침 PC insta-goms.ps1 이 Word 를 모아 GOMS 에 하루 3편 등록 
 3. `node scripts/instagram/render-cards.mjs` → `python3 scripts/instagram/word-cards.py` (README "만드는 법" 2·3).
    이미 GOMS 에 등록한 편(Drive `goms-done-insta/인스타 카드뉴스 N편.done`)의 Word 는 다시 만들지 않는다 — 심의받은 Word 가 정본이다.
 
-## ② 새 3편
+## ② 새 2편
 
 1. 번호는 지난 편 다음부터 이어 붙인다 (반려 번호 다시 쓰지 않음). 새 파일 `content/instagram/sets/<내일 날짜>.json`.
 2. 모양·말투·금지는 **`content/instagram/README.md` 그대로** — "최종 모양"(style magazine, 카드 6장 + 고지), "따라 하지 않을 것", "심의 반려 사례",
@@ -55,5 +58,5 @@ D+2    아침 PC insta-goms.ps1 이 Word 를 모아 GOMS 에 하루 3편 등록 
 
 ## 끝내기
 
-- docs/STATUS.md 에 "📸 인스타 심의 준비: 새 N~N+2편(<제목 줄임>) · 바탕 받아 Word 완성 M편" 한 줄. 티스토리와 같은 PR 에 넣는다.
+- docs/STATUS.md 에 "📸 인스타 심의 준비: 새 N~N+1편(또는 '대기 N편이라 쓰지 않음')(<제목 줄임>) · 바탕 받아 Word 완성 M편" 한 줄. 티스토리와 같은 PR 에 넣는다.
 - 보고(티스토리 보고 끝에 한 줄): 새 편 번호·주제, Word 완성된 편 번호, 바탕 사진을 못 받아 미룬 편.

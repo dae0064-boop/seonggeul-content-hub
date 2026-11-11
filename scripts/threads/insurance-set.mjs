@@ -16,6 +16,8 @@ import { guard, similarity } from './guard.mjs';
 export const SETS_DIR = path.join(ROOT, 'content', 'threads', 'insurance', 'sets');
 // 2026-10-04 묶음까지는 5편, 그 뒤로는 10편씩 (2026-10-02 사용자 지시). 역할은 묶음 크기/5 번씩 쓴다
 export const SET_SIZES = [5, 10];
+// 2026-11-11 사용자 "스레드 3편 + 인스타 2편, 하루 5개씩 심의" — 2026-11-11 뒤에 쓴 묶음은 하루 3편
+export const DAILY3_FROM = '2026-11-11';
 export const ROLES = ['오해풀기', '숨은권리', '증권한줄', '생활장면', '마음이야기'];
 export const TYPES = [
   '실손', '자동차', '운전자', '진단비', '배상책임', '종신·정기',
@@ -103,7 +105,8 @@ export function checkSet(set, previous = []) {
   const notes = [];
   const { posts } = set;
 
-  if (!SET_SIZES.includes(posts.length)) errors.push(`글이 ${posts.length}편입니다. 한 묶음은 10편입니다 (옛 묶음은 5편).`);
+  const daily3 = String(set.meta?.written || set.meta?.date || '') > DAILY3_FROM;
+  if (daily3 ? posts.length !== 3 : !SET_SIZES.includes(posts.length)) errors.push(`글이 ${posts.length}편입니다. 한 묶음은 ${daily3 ? '3편입니다 (2026-11-11 사용자 — 스레드 하루 3편)' : '10편입니다 (옛 묶음은 5편)'}.`);
   const perRole = Math.max(1, Math.round(posts.length / ROLES.length));
 
   // ---- 역할·보험 종류가 묶음 안에서 겹치지 않는가
