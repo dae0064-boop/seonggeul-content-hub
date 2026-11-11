@@ -24,6 +24,8 @@ export const CONTACT = [
 ];
 // 2026-11-09 사용자: 연락처(이름·전화번호) 밑에 꼭 넣는 문구 — 11/11 발행분부터, 글 맨 끝 덩어리
 export const INQUIRY = ['철거 블로그 보고 문의했다고 말씀해 주시면', '상담이 더 원활하게 진행할 수 있습니다.'];
+// 2026-11-11 사용자: "이 문구 색깔은 빨간색으로" — 11/12 원고부터 문의 안내 두 줄을 한 번에 빨간글씨로 감싼다 (빨강 1~4 셈에서는 뺀다)
+export const RED_INQ_FROM = '2026-11-12';
 export const PHOTO_NOTE = '글 속 사진은 이해를 돕기 위한 예시 이미지예요.';
 const PHONE = '010-3503-8923';
 const SLOTS = ['11:00', '13:00', '16:00', '18:00', '20:00'];
@@ -114,6 +116,9 @@ export function lintOne(file, others = []) {
   const contactLines = blocks[blocks.length - 2]?.lines?.map((l) => l.t) || [];
   if (JSON.stringify(contactLines) !== JSON.stringify(CONTACT)) errors.push(`끝에서 둘째 덩어리는 연락처 블록 그대로:\n      ${CONTACT.join('\n      ')}`);
   if (JSON.stringify(lastLines) !== JSON.stringify(INQUIRY)) errors.push(`맨 끝 덩어리는 문의 안내 두 줄 그대로 (2026-11-09 사용자):\n      ${INQUIRY.join('\n      ')}`);
+  const lastObjs = blocks[blocks.length - 1]?.lines || [];
+  const inqRed = lastObjs.length === 2 && lastObjs.every((l) => l.s === 'red');
+  if (date >= RED_INQ_FROM && !inqRed) errors.push('문의 안내 두 줄은 빨간글씨로 (2026-11-11 사용자): [빨간글씨]첫 줄 / 둘째 줄[/빨간글씨]');
   const phones = count(all, PHONE);
   if (phones > 2) errors.push(`전화번호는 연락처 블록 + 본문 1번까지 (지금 ${phones}번)`);
   const otherPhone = /01[016789][-\s.]?\d{3,4}[-\s.]?\d{4}/g;
@@ -182,7 +187,8 @@ export function lintOne(file, others = []) {
   if (qa < 2 || qa > 4 || qa !== qaA) errors.push(`Q&A 2~4쌍 (Q ${qa} / A ${qaA})`);
 
   // 강조
-  const { red, blue, yellow } = post.marks;
+  const { blue, yellow } = post.marks;
+  const red = post.marks.red - (inqRed ? 1 : 0); // 문의 안내 빨강은 셈에서 뺀다
   if (red < 1 || red > 4) errors.push(`빨간글씨 1~4곳 (지금 ${red})`);
   if (blue < 3 || blue > 10) errors.push(`파란글씨 3~10곳 (지금 ${blue})`);
   if (yellow < 1 || yellow > 4) errors.push(`노란배경 1~4곳 (지금 ${yellow})`);
