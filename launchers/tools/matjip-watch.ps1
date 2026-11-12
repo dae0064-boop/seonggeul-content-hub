@@ -3,6 +3,7 @@
 # 새 맛집 원고(content/matjip/posts, publish_at 있음, 아직 안 한 것)가 있으면 사진·지도까지 넣어 예약한다. 크롬은 끄지 않는다.
 # 2026-11-09 사용자: 맛집은 예약발행하지 않고 임시저장만(태그·지도·사진·카테고리까지) — 대표사진은 사용자가 보고 직접 발행. publish_at 은 '이 원고를 PC 가 써 달라'는 표시로만 쓴다.
 # 2026-11-04 사용자 최종: 평소엔 원고 + 아티팩트만(원고에 publish_at 없음 → 여기서 할 일 없음). 사용자가 "직접 써 줘"라고 한 원고만 publish_at 이 붙어 예약된다.
+. (Join-Path $PSScriptRoot 'lib-boot.ps1'); Exit-IfJustBooted '맛집 확인'   # 2026-11-12 사용자: 껐다 켰을 때 뜨는 창 빼기
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo

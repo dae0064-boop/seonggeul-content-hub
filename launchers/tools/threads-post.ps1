@@ -4,6 +4,7 @@
 #   -Test 면 올리지 않고 다음에 올릴 글만 보여 준다 (launchers\threads-post-test.cmd).
 # 기록은 Drive ClaudeWorkspace\run-logs\threads\<날짜>.log 에 이어 붙인다.
 param([switch]$Test, [switch]$Now)
+. (Join-Path $PSScriptRoot 'lib-boot.ps1'); Exit-IfJustBooted '스레드 보험글'   # 2026-11-12 사용자: 껐다 켰을 때 뜨는 창 빼기
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo

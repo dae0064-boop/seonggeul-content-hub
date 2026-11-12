@@ -7,6 +7,14 @@
 #   4) 결과: Drive goms-otp\result.txt (한 줄) + run-logs\goms-login-otp-<시각>-<PC>\ (화면 캡처·기록). 번호는 기록에 남기지 않는다.
 #   이미 로그인돼 있으면 문자를 보내지 않고 "인증 없이 로그인 상태" 로 끝낸다.
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
+# 2026-11-12 사용자 "곰스 로그인도 따로 이야기하지 않으면 자동으로 켜지 말아줘": 작업 스케줄러가 이 파일을 바로 부른 것(예전 08:30 SeonggeulGomsLogin)이면 그 작업을 지우고 끝낸다.
+# "심의 올려줘" 요청(goms-request.ps1 안에서 부름)과 goms-login.cmd 더블클릭은 그대로 돈다.
+$me = Get-CimInstance Win32_Process -Filter "ProcessId=$PID" -ErrorAction SilentlyContinue
+$myParent = (Get-CimInstance Win32_Process -Filter "ProcessId=$($me.ParentProcessId)" -ErrorAction SilentlyContinue).Name
+if ($me.CommandLine -match 'goms-login\.ps1' -and $myParent -eq 'svchost.exe') {
+  Unregister-ScheduledTask -TaskName 'SeonggeulGomsLogin' -Confirm:$false -ErrorAction SilentlyContinue
+  exit 0
+}
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo
 . (Join-Path $PSScriptRoot 'lib-drive.ps1')

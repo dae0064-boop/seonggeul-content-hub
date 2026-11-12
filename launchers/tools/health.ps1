@@ -7,6 +7,7 @@
 #   ④ 07~09시에 아침 이슈 글이 아직 예약 안 됐으면 바로 '그날 다시 예약'(catchup-reserve)을 띄운다 — 09시까지 기다리지 않게 (11/5 09:20 글이 09:40 으로 밀림)
 #   ①-2 크롬이 켜져는 있는데 대답하지 않으면(멈춤) 자동화용 크롬만 끄고 다시 켠다 (2026-11-07 고장 — 그날 25편이 하나도 예약 안 됨, lib-detach.ps1 Repair-HungChrome)
 #   예약·그림 작업이 도는 중이면 ①만 하고 쉰다. 글을 쓰거나 지우지 않는다. 멈춘 자동화 크롬 말고는 크롬을 끄지 않는다.
+. (Join-Path $PSScriptRoot 'lib-boot.ps1'); Exit-IfJustBooted '지킴이'   # 2026-11-12 사용자: 껐다 켰을 때 뜨는 창 빼기
 $ErrorActionPreference = 'SilentlyContinue'
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent

@@ -26,6 +26,13 @@
 
 ## 지금 상태
 
+### 11/12 저녁 — 🖥 껐다 켰을 때 창 없음 · GOMS 는 말할 때만 · 🧵 스레드 다시 6편 (사용자)
+- "PC 는 항상 절전, 껐다 켰을 때 뜨는 창 모두 제외": `launchers/tools/lib-boot.ps1` — 부팅·로그인 10분 안이면 작업 스케줄러의 놓친 실행을 건너뜀(아침 auto-day — 손으로 더블클릭은 그대로, 지킴이, 스레드 보험·일상·블로그, 맛집 확인, 이슈 모으기). 건너뛴 기록 Drive `run-logs/boot-skip-<날짜>.txt`. 절전에서 깰 때는 평소대로. 사용량 막대 시작프로그램 바로가기도 지움(usage-autostart 는 이제 -Enable 때만).
+- "곰스 로그인도 따로 이야기하지 않으면 켜지 말아줘": goms-login.ps1 을 작업 스케줄러가 바로 부르면(예전 08:30 SeonggeulGomsLogin 이 남아 있을 때) 그 작업을 지우고 끝냄. "심의 올려줘"·goms-login.cmd 더블클릭만 돈다.
+- 🧵 "일상 + 보험 + 심의글 계속 올리라고 했는데 왜 안 올라가?": 원인 ① 일상 글 — 19:47 작업이 사용자 "좋아"를 받아야 main 에 넣는 규칙이라 11/8~11/12 묶음이 하나도 없었다(PC 기록 "오늘 일상 묶음이 없어요"). ② 보험 심의글 — 11/9 결정으로 PAUSE-POST. 블로그 유입 21:00 은 매일 올라가고 있었다.
+  고침: 19:47 작업(trig_012YBUabjL2nNajtq9Hik5dM) 프롬프트·`routines/threads-daily-preview.md` → 확인 없이 바로 main. 11/13 묶음 지금 씀(daily-set ✅). PAUSE-POST 지움 → 11/13 부터 15:00 보험 심의글 1편(post-plan.json changes). **11/13~ 스레드 하루 6편.**
+- [ ] 11/13 아침 확인: run-logs/threads/2026-11-13.log 에 07:00 일상·15:00 보험글이 올라갔는지.
+
 ### 11/12 — ⏸ PC 켜면 저절로 시작하는 것 멈춤 (사용자 "컴퓨터 키면 자동으로 작업하는 내용 중지시켜줘")
 - `SeonggeulMorningStart`(켜기·로그인·잠금 풀기·깨우기 → on-wake.ps1 → auto-day)를 `launchers/PAUSE-ON-WAKE` 로 멈춤. on-wake.ps1 은 이 파일이 로컬이나 origin/main 에 있으면 바로 끝난다.
 - 09:00 아침 실행·catchup·스레드 블로그 글 같은 **고정 시각 작업은 그대로**. 다시 켜려면 PAUSE-ON-WAKE 를 지운다.

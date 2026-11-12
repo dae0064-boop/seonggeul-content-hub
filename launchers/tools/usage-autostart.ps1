@@ -2,11 +2,12 @@
 #   켜기: powershell -File usage-autostart.ps1        끄기: powershell -File usage-autostart.ps1 -Remove
 # usage-widget.cmd 와 아침 실행의 ensure-retry.ps1 이 부른다 — 사람이 따로 할 일 없음. 이미 있으면 주소만 고쳐 둔다.
 # 이 PC 에서 자동 시작을 쓰지 않으려면 dumps\no-usage-autostart.txt 를 만든다 (있으면 바로가기를 지우고 다시 만들지 않는다).
-param([switch]$Remove)
+param([switch]$Remove, [switch]$Enable)
 $ErrorActionPreference = 'SilentlyContinue'
 $root = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
 $lnk = Join-Path ([Environment]::GetFolderPath('Startup')) '성글벙글 클로드 사용량.lnk'
-if ($Remove -or (Test-Path (Join-Path $root 'dumps\no-usage-autostart.txt'))) {
+# 2026-11-12 사용자 "컴퓨터를 껐다 켰을 때 뜨는 창들은 모두 제외" — 자동 시작을 끈다(사용량 막대는 usage-widget.cmd 더블클릭으로만). 다시 켜려면 -Enable
+if ($Remove -or -not $Enable -or (Test-Path (Join-Path $root 'dumps\no-usage-autostart.txt'))) {
   if (Test-Path $lnk) { Remove-Item $lnk -Force; Write-Host '사용량 막대 자동 시작을 껐어요.' }
   exit 0
 }
