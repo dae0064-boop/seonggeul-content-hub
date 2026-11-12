@@ -37,6 +37,23 @@ function Clear-ExtraTabs {
   if ("$o" -match '정리') { "탭 정리: $o" } else { '' }
 }
 
+# 자동화용 크롬 켜기 (2026-11-12 사용자 "컴퓨터 키자마자 크롬 창 엄청나게 켜지는 것도 멈춰줘 — 너무 조잡해").
+#   --restore-last-session 은 카카오·네이버 로그인(세션 쿠키)을 살리려고 쓰지만, 지난 작업이 남긴 탭·창을 모두 되살린다(11/8 72개).
+#   그래서 작게(최소화) 띄우고, 대답하자마자 첫 탭·로그인 화면만 남기고 나머지 탭을 닫는다. 크롬을 켜는 .ps1 은 모두 이 함수를 쓴다.
+function Start-AutoChrome {
+  param([string]$Chrome = '', [int]$Port = 9222, [string]$UserDataDir = "$env:LOCALAPPDATA\seonggeul-chrome",
+        [string]$Repo = (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent))
+  if (-not $Chrome -or -not (Test-Path $Chrome)) {
+    $Chrome = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
+    if (-not (Test-Path $Chrome)) { $Chrome = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe' }
+    if (-not (Test-Path $Chrome)) { $Chrome = "$env:LOCALAPPDATA\Google\Chrome\Application\chrome.exe" }
+  }
+  Start-Detached $Chrome -ArgumentList "--remote-debugging-port=$Port", "--user-data-dir=$UserDataDir", '--no-first-run', '--restore-last-session', '--start-minimized', 'about:blank'
+  for ($i = 0; $i -lt 30; $i++) { Start-Sleep 1; try { Invoke-RestMethod "http://localhost:$Port/json/version" -TimeoutSec 3 | Out-Null; break } catch {} }
+  $probe = Join-Path $Repo 'scripts\cdp-probe.mjs'
+  if (Test-Path $probe) { Start-Sleep 2; & node $probe $Port 20000 --trim 1 2>&1 | Out-Null }   # 되살아난 지난 탭 정리 (첫 탭·로그인 화면은 남김)
+}
+
 function Repair-HungChrome {
   param([string]$Repo = (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent))
   $probe = Join-Path $Repo 'scripts\cdp-probe.mjs'
@@ -52,8 +69,7 @@ function Repair-HungChrome {
   $chrome = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
   if (-not (Test-Path $chrome)) { $chrome = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe' }
   if (-not (Test-Path $chrome)) { $chrome = "$env:LOCALAPPDATA\Google\Chrome\Application\chrome.exe" }
-  Start-Detached $chrome -ArgumentList '--remote-debugging-port=9222', "--user-data-dir=$env:LOCALAPPDATA\seonggeul-chrome", '--no-first-run', '--restore-last-session', 'about:blank'
-  for ($i = 0; $i -lt 30; $i++) { Start-Sleep 1; try { Invoke-RestMethod http://localhost:9222/json/version -TimeoutSec 3 | Out-Null; break } catch {} }
+  Start-AutoChrome $chrome -Repo $Repo
   Start-Sleep 3
   $o3 = @(& node $probe 9222 20000 2>&1 | ForEach-Object { "$_" }); $c3 = $LASTEXITCODE
   $why = ($o2 | Select-Object -Last 1)
