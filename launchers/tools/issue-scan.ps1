@@ -1,6 +1,7 @@
 ﻿# 아침 이슈 모으기 — 작업 스케줄러 SeonggeulIssueScan 이 매일 06:50 에 부른다(절전이면 깨움, 꺼져 있으면 켤 때) (2026-11-02 사용자).
 # 구글 트렌드·네이버 연예 랭킹·많이 본 뉴스를 읽어 Drive ClaudeWorkspace\issues\<날짜>\ 로 올린다.
 # 07:17 클라우드 작업(routines/issue-morning.md)이 이걸 읽고 오늘 이슈 글 4편을 쓴다. 다른 PC 가 이미 올렸으면 건너뛴다.
+. (Join-Path $PSScriptRoot 'lib-boot.ps1'); Exit-IfJustBooted '이슈 모으기'   # 2026-11-12 사용자: 껐다 켰을 때 뜨는 창 빼기
 $ErrorActionPreference = 'Continue'
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent

@@ -2,6 +2,7 @@
 #   언제 무엇을 올릴지는 content\threads\blog\<날짜>.md 의 '시각:' 이 정한다. 시각이 지난 글 중 블로그가 공개된 것 한 편 (scripts\threads\blog-post.mjs 가 모두 확인).
 #   -Test 면 올리지 않고 보여 주기만 한다.
 param([switch]$Test)
+. (Join-Path $PSScriptRoot 'lib-boot.ps1'); Exit-IfJustBooted '스레드 일상·블로그 글'   # 2026-11-12 사용자: 껐다 켰을 때 뜨는 창 빼기
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo
