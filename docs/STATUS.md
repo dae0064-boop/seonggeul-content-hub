@@ -26,6 +26,10 @@
 
 ## 지금 상태
 
+### 11/12 — ⏸ PC 켜면 저절로 시작하는 것 멈춤 (사용자 "컴퓨터 키면 자동으로 작업하는 내용 중지시켜줘")
+- `SeonggeulMorningStart`(켜기·로그인·잠금 풀기·깨우기 → on-wake.ps1 → auto-day)를 `launchers/PAUSE-ON-WAKE` 로 멈춤. on-wake.ps1 은 이 파일이 로컬이나 origin/main 에 있으면 바로 끝난다.
+- 09:00 아침 실행·catchup·스레드 블로그 글 같은 **고정 시각 작업은 그대로**. 다시 켜려면 PAUSE-ON-WAKE 를 지운다.
+
 ### 11/11 밤 — 📝 심의 하루 5편 = 인스타 2 + 스레드 3, 등록은 "심의 올려줘" 때만 (사용자 "매일 아침 올릴 필요 없고 요청할 때마다 / 매일 아침 알림, 곰스 매일 자동 로그인은 쉽지 않다")
 - 쓰기: 스레드 보험글 Routine(21:41) 다시 켬 — **하루 3편**(검사기 `DAILY3_FROM`), 안 올린 편 9편 이상이면 재확인만. 인스타 **하루 2편**, 대기 6편 이상이면 새 편 안 씀. 게시(스레드·인스타)는 계속 멈춤.
 - 등록: 아침 auto-day 의 GOMS 자동 등록 뺌(인스타 승인 읽기만 `-NoRegister`), **08:30 자동 로그인(SeonggeulGomsLogin) 지움**. 새 PC 작업 `SeonggeulGomsRequest`(07~23시 10분마다, 깨우지 않음) → Drive `goms-request.txt` 가 있으면 로그인(필요하면 인증 문자) → 스레드 3 · 인스타 2 등록 → `goms-request-result.txt`. 대화에서 "심의 올려줘" → Claude 가 요청 파일을 만든다 (CLAUDE.md 📝).
