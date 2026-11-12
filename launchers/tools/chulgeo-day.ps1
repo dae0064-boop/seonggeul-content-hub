@@ -75,7 +75,7 @@ function CdpUp { try { Invoke-RestMethod "http://localhost:$Port/json/version" -
 if (-not (CdpUp)) {
   $chrome = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
   if (-not (Test-Path $chrome)) { $chrome = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe' }
-  . (Join-Path $PSScriptRoot 'lib-detach.ps1'); Start-Detached $chrome -ArgumentList "--remote-debugging-port=$Port", "--user-data-dir=$ChromeProfile", '--no-first-run', '--restore-last-session', 'about:blank'
+  . (Join-Path $PSScriptRoot 'lib-detach.ps1'); Start-AutoChrome $chrome -Port $Port -UserDataDir $ChromeProfile
   Start-Sleep 6
 }
 if (-not (CdpUp)) {

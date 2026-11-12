@@ -122,7 +122,7 @@ if (-not (CdpUp)) {
   Say "`n자동화용 크롬을 켜는 중..." 'Cyan'
   $chrome = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
   if (-not (Test-Path $chrome)) { $chrome = 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe' }
-  . (Join-Path $PSScriptRoot 'lib-detach.ps1'); Start-Detached $chrome -ArgumentList '--remote-debugging-port=9222', "--user-data-dir=$env:LOCALAPPDATA\seonggeul-chrome", '--no-first-run', '--restore-last-session', 'about:blank'
+  . (Join-Path $PSScriptRoot 'lib-detach.ps1'); Start-AutoChrome $chrome
   Start-Sleep 6
 }
 if (-not (CdpUp)) { Say '자동화용 크롬을 켜지 못했어요. launchers\chrome-login.cmd 를 먼저 실행해 주세요.' 'Red'; Share; exit 1 }
