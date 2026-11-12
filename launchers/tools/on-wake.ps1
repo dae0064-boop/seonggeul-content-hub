@@ -8,6 +8,9 @@
 $ErrorActionPreference = 'SilentlyContinue'
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo
+# 2026-11-12 사용자: "컴퓨터 키면 자동으로 작업하는 내용 중지시켜줘" — launchers\PAUSE-ON-WAKE 가 있으면 켜기·잠금 풀기·깨우기로는 아무것도 띄우지 않는다.
+# 고정 시각 실행(SeonggeulDailyReserve 09:00 등)은 그대로. 다시 켜려면 그 파일을 지운다.
+if (Test-Path (Join-Path $repo 'launchers\PAUSE-ON-WAKE')) { exit 0 }
 $now = Get-Date
 if ($now.Hour -lt 5 -or $now.Hour -ge 21) { exit 0 }
 $busy = Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -ne $PID -and $_.CommandLine -match 'auto-day\.cmd|draft-day\.ps1|tistory-day\.ps1' }
@@ -17,6 +20,7 @@ if ((Test-Path $stamp) -and ($now - (Get-Item $stamp).LastWriteTime).TotalMinute
 
 $today = $now.ToString('yyyy-MM-dd')
 git fetch -q origin main 2>$null
+git cat-file -e origin/main:launchers/PAUSE-ON-WAKE 2>$null; if ($LASTEXITCODE -eq 0) { exit 0 }   # 아직 받지 않았어도 main 에 멈춤 표시가 있으면 멈춘다
 $naver = @(git ls-tree --name-only origin/main content/posts/ 2>$null | Where-Object { $_ -match "/$today-.*\.md$" })
 $tistory = @(git ls-tree --name-only origin/main content/tistory/ 2>$null | Where-Object { $_ -match "/$today-.*\.md$" })
 if (-not $naver.Count -and -not $tistory.Count) { exit 0 }   # 오늘 원고가 없으면 할 일이 없다
