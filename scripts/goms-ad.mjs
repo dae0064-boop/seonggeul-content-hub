@@ -498,6 +498,7 @@ async function openList(page) {
   await structure(page, 'menu-work');
   await clickText(page, ['광고심의']);
   await sleep(3000);
+  await setDateRange(page); // 기본은 이번 달 신청분만 — 지난달에 올린 편도 보이게
   await shot(page, 'ad-review');
   await structure(page, 'ad-review');
   return true;
@@ -766,19 +767,24 @@ async function listRows(page) {
   await sleep(2500);
   const seen = new Map(); let total = null;
   await scrollList(page, 'top'); await sleep(500);
-  for (let pass = 0; pass < 40; pass++) {
+  let still = 0;
+  for (let pass = 0; pass < 80 && still < 3; pass++) {
     const v = await visibleRows(page);
     if (v.total != null) total = v.total;
+    const before = seen.size;
     for (const r of v.rows) seen.set(r.title.replace(/\s/g, ''), r);
     if (total != null && seen.size >= total) break;
-    if (!(await scrollList(page, 'down'))) break;
-    await sleep(800);
+    // scrollTop 으로 내려 보고, 새 줄이 안 나오면 마우스 휠로 (2026-11-12 — 40건 중 4줄에서 멈췄다)
+    const moved = await scrollList(page, 'down');
+    if (!moved || seen.size === before) await wheelList(page, 300);
+    still = seen.size === before ? still + 1 : 0;
+    await sleep(700);
   }
-  await scrollList(page, 'top'); await sleep(500);
+  await scrollList(page, 'top'); await wheelList(page, -20000); await sleep(500);
   const rows = [...seen.values()];
   rows.total = total;
-  if (total != null && total > rows.length) log(`  ⚠ 목록 ${total}건 중 ${rows.length}건만 읽혔어요 (표를 끝까지 내려도 더 안 나와요)`);
-  else log(`  목록 ${rows.length}건 읽음`);
+  // 전체 조회 건수에는 다른 글(인스타 카드뉴스 등)도 들어 있어, 「${PREFIX} N편」 줄 수와 바로 견주지 않는다
+  log(`  목록 「${PREFIX} N편」 ${rows.length}줄 읽음${total != null ? ` (전체 조회 건수 ${total})` : ''}`);
   return rows;
 }
 const isRejected = (row) => row.cells.includes('반려');
@@ -807,6 +813,79 @@ async function filterStatus(page, label) {
   return false;
 }
 const numOf = (title) => Number(title.match(/(\d+)/)[1]);
+
+/**
+ * 목록 위 "조회기준일" 기간 칸을 넓힌다 (2026-11-12 — 기본이 이번 달(2026/11/01 ~ 2026/11/30) 신청분만이라
+ * 10월에 신청한 1~30편(반려 뒤 다시 올린 편 포함)이 목록에 아예 안 나왔다. 04-ad-review.png).
+ * 칸 글자는 "YYYY/MM/DD ~ YYYY/MM/DD". 시작일만 LIST_FROM 으로 바꾸고 끝날은 그대로 둔다. 바꿨으면 true.
+ */
+const LIST_FROM = arg('--list-from', '2026/09/01').trim();
+async function setDateRange(page) {
+  for (const f of page.frames()) {
+    const cur = await f.evaluate(() => {
+      const vis = (e) => !!(e.offsetWidth || e.offsetHeight || e.getClientRects().length);
+      document.querySelectorAll('[data-goms-date]').forEach((x) => x.removeAttribute('data-goms-date'));
+      const inp = [...document.querySelectorAll('input')].find((x) => vis(x) && /\d{4}[./-]\d{2}[./-]\d{2}\s*~\s*\d{4}[./-]\d{2}[./-]\d{2}/.test(x.value || ''));
+      if (!inp) return null;
+      inp.setAttribute('data-goms-date', '1');
+      return inp.value;
+    }).catch(() => null);
+    if (!cur) continue;
+    const m = cur.match(/^\s*(\d{4})([./-])(\d{2})\2(\d{2})\s*~\s*(.+?)\s*$/);
+    if (!m) { log(`  ⚠ 조회 기간 칸 글자가 낯설어요 (${cur}) — 그대로 조회해요`); return false; }
+    const want = `${LIST_FROM.replace(/[./-]/g, m[2])} ~ ${m[5]}`;
+    if (cur.replace(/\s/g, '') === want.replace(/\s/g, '')) return true;
+    const inp = f.locator('[data-goms-date="1"]');
+    const read = () => inp.inputValue().catch(() => '');
+    const same = async () => (await read()).replace(/\s/g, '') === want.replace(/\s/g, '');
+    // ① 사람처럼 칸을 비우고 글자를 친다  ② 안 되면(읽기 전용 달력 칸) 값을 바로 넣고 input·change 를 알린다
+    try { await inp.click({ timeout: 3000 }); await inp.fill(want, { timeout: 3000 }); await inp.press('Enter').catch(() => {}); } catch { /* 읽기 전용 */ }
+    await page.keyboard.press('Escape').catch(() => {}); // 달력 창이 열렸으면 닫는다
+    await sleep(500);
+    if (!(await same())) {
+      await inp.evaluate((x, v) => {
+        const set = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set;
+        set.call(x, v);
+        x.dispatchEvent(new Event('input', { bubbles: true }));
+        x.dispatchEvent(new Event('change', { bubbles: true }));
+        x.dispatchEvent(new Event('blur', { bubbles: true }));
+      }, want).catch(() => {});
+      await sleep(500);
+    }
+    if (await same()) { log(`  조회 기간: ${want} ✓`); return true; }
+    log(`  ⚠ 조회 기간을 넓히지 못했어요 (지금 ${await read()}) — 그 기간 안의 편만 보여요`);
+    return false;
+  }
+  log('  ⚠ 조회 기간 칸을 찾지 못했어요 — 화면 기본 기간으로 조회해요');
+  return false;
+}
+
+/** 표 위에 마우스를 두고 휠을 굴린다 — GOMS 표는 자체 스크롤바라 scrollTop 이 안 먹을 때가 있다 (2026-11-12 승인완료 목록에서 4줄만 읽힘). */
+async function wheelList(page, dy) {
+  for (const f of page.frames()) {
+    // 목록 표(광고제목 칸이 있는 표, 없으면 「스레드 N편」 줄이 있는 표)의 보이는 칸 하나 — 화면에 없으면 바로 다음 창으로 (기다리지 않는다)
+    const pt = await f.evaluate((re) => {
+      const vis = (r) => r.width > 0 && r.height > 0 && r.bottom > 0 && r.top < innerHeight;
+      const tables = [...document.querySelectorAll('table')];
+      const t = tables.find((x) => [...x.querySelectorAll('th')].some((th) => (th.innerText || '').replace(/\s/g, '') === '광고제목'))
+        || tables.find((x) => [...x.querySelectorAll('td')].some((td) => new RegExp(re).test((td.innerText || '').trim())));
+      for (const tb of t ? [t, ...tables] : tables) {
+        const td = [...tb.querySelectorAll('td')].find((c) => vis(c.getBoundingClientRect()));
+        if (td) { const r = td.getBoundingClientRect(); return { x: r.left + Math.min(40, r.width / 2), y: r.top + r.height / 2 }; }
+      }
+      return null;
+    }, TITLE_RE).catch(() => null);
+    if (!pt) continue;
+    let ox = 0, oy = 0; // 창 안 창(iframe)이면 그 위치만큼 더한다
+    const fe = await f.frameElement().catch(() => null);
+    if (fe) { const b = await fe.boundingBox().catch(() => null); if (b) { ox = b.x; oy = b.y; } }
+    await page.mouse.move(pt.x + ox, pt.y + oy);
+    await page.mouse.wheel(0, dy);
+    await sleep(400);
+    return true;
+  }
+  return false;
+}
 
 async function detailOpen(page) {
   return (await Promise.all(page.frames().map((f) => f.evaluate(() => [...document.querySelectorAll('*')]
