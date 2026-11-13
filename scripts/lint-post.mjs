@@ -153,6 +153,11 @@ const THUMB3_FROM = '2026-10-29';
 // 대표사진 다양화 3 (2026-11-09 사용자 — 15장이 "색감·사람·표정·제스처가 다 비슷하다", 2026-11-10 네이버 원고부터):
 //   진한 띠 + 금빛 글씨(image-style.json band), 장면 색 scene3, 1번에 thumb_place·thumb_light, 같은 날 한도를 10편 기준으로 좁힘.
 const VARIETY_FROM = '2026-11-10';
+// 주제 사진 (2026-11-13 사용자 "사진이 다 비슷하고 주제랑 너무 동떨어졌다" → "다 넣어서 16일부터"):
+//   2026-11-16 원고부터 AI 그림마다 anchor(그 글에만 있는 주제 사물·장소)를 적고 프롬프트에 그대로 넣는다. 장소는 주제에서(thumb_place "주제"),
+//   테마 색은 대표사진 띠에만(장면 색 scene3 문구 안 씀), 같은 날 장소·종이 한도는 보지 않는다(같은 병원·서류 글이 하루 10편이라 순번이 주제를 밀어냈다).
+const TOPIC_IMG_FROM = '2026-11-16';
+const OLD_TAIL = /hospital waiting room, pharmacy counter, community center, home living room|do not add other large objects/i;
 const VAR = { theme: 1, place: 1, light: 3, evening: 2, shot: 2, mood: 2, faceTouch: 2, olds: 3, papers: 2 };
 const FACE_TOUCH = ['생각', '궁금'];
 const PAPER = /\b(paper|papers|letter|brochure|document|leaflet|notice|pamphlet|booklet|form)\b/i;
@@ -898,7 +903,8 @@ for (const file of files) {
           // 2026-11-04 사용자 "대표사진도 성글벙글 색으로" — 11/7 원고부터 새 장면 색 문구, 그 전 원고는 예전 문구(scene_before)도 통과
           const oldOk = writtenFor < '2026-11-07' && theme.scene_before && (t.prompt || '').includes(theme.scene_before);
           const var3 = !tistory && dated >= VARIETY_FROM && t.kind !== 'photo';
-          if (var3) { if (!(t.prompt || '').includes(theme.scene3)) errors.push(`대표사진 프롬프트에 테마 색 문구가 없습니다 — "${theme.scene3}" (${VARIETY_FROM} 원고부터 scene3)`); }
+          if (var3 && dated >= TOPIC_IMG_FROM) { /* 테마 색은 띠에만 */ }
+          else if (var3) { if (!(t.prompt || '').includes(theme.scene3)) errors.push(`대표사진 프롬프트에 테마 색 문구가 없습니다 — "${theme.scene3}" (${VARIETY_FROM} 원고부터 scene3)`); }
           else if (!(t.prompt || '').includes(theme.scene) && !oldOk) errors.push(`대표사진 프롬프트에 테마 색 문구가 없습니다 — "${theme.scene}"`);
         }
         const people = !v3 || !shot || shot.사람;
@@ -953,13 +959,15 @@ for (const file of files) {
           const lim = tw ? (hfFace ? TW.shotHf : TW.shot) : ten || hfFace ? 2 : 1;
           if (shotSame.length >= lim) errors.push(`같은 날 ${shotSame.join(', ')} 와 대표사진 구도(${t.thumb_shot})가 같습니다 — ${tw ? `20편 날은 같은 구도 ${lim}편까지` : ten ? '10편 날은 같은 구도 2편까지' : hfFace ? '홈판형 얼굴 구도는 2편까지' : '5편 모두 다르게'}`);
           const pLim = tw ? TW.papers : ten ? 2 : 1, oLim = tw ? TW.olds : ten ? 4 : 2;
-          if (papers > pLim) errors.push(`같은 날 종이·안내문을 든 대표사진이 ${papers}편 — ${pLim}편까지 (주제 사물을 바꾸세요)`);
+          if (dated < TOPIC_IMG_FROM && papers > pLim) errors.push(`같은 날 종이·안내문을 든 대표사진이 ${papers}편 — ${pLim}편까지 (주제 사물을 바꾸세요)`);
           if (olds > oLim) errors.push(`같은 날 60대 이상만 나오는 대표사진이 ${olds}편 — ${oLim}편까지 (자녀·보호자·젊은 층이나 사람 없는 구도로)`);
         }
         // 대표사진 다양화 3 (VARIETY_FROM 네이버 원고부터) — 장소·빛·테마·구도·표정·나이를 하루 10편 기준으로 더 섞는다
         if (!tistory && dated >= VARIETY_FROM && t.kind !== 'photo' && !post.extra) {
           const places = st.thumb_places || {}, lights = st.thumb_lights || {};
-          if (!places[t.thumb_place]) errors.push(`대표사진(1번)에 thumb_place 가 없거나 목록 밖입니다 (${Object.keys(places).join('·')}) — ${VARIETY_FROM} 원고부터`);
+          const topicPlace = dated >= TOPIC_IMG_FROM && t.thumb_place === '주제';
+          if (topicPlace) { /* 주제에서 고른 장소 — 프롬프트에 직접 */ }
+          else if (!places[t.thumb_place]) errors.push(`대표사진(1번)에 thumb_place 가 없거나 목록 밖입니다 (${Object.keys(places).join('·')}) — ${VARIETY_FROM} 원고부터`);
           else if (!(t.prompt || '').includes(places[t.thumb_place])) errors.push(`대표사진 프롬프트에 장소 문구가 없습니다 — "${places[t.thumb_place]}"`);
           if (!lights[t.thumb_light]) errors.push(`대표사진(1번)에 thumb_light 가 없거나 목록 밖입니다 (${Object.keys(lights).join('·')})`);
           else if (!(t.prompt || '').includes(lights[t.thumb_light])) errors.push(`대표사진 프롬프트에 빛 문구가 없습니다 — "${lights[t.thumb_light]}"`);
@@ -968,14 +976,21 @@ for (const file of files) {
           const say = (what, list, lim) => errors.push(`같은 날 대표사진 ${what}이 ${list.length + 1}편 (${list.join(', ')} 와 같음) — ${lim}편까지 (2026-11-09 사용자 "다 비슷하다")`);
           let l;
           if ((l = cnt((o) => o.thumb_theme === t.thumb_theme)).length >= VAR.theme) say(`테마(${t.thumb_theme})`, l, VAR.theme);
-          if (t.thumb_place && (l = cnt((o) => o.thumb_place === t.thumb_place)).length >= VAR.place) say(`장소(${t.thumb_place})`, l, VAR.place);
+          if (dated < TOPIC_IMG_FROM && t.thumb_place && (l = cnt((o) => o.thumb_place === t.thumb_place)).length >= VAR.place) say(`장소(${t.thumb_place})`, l, VAR.place);
           if (t.thumb_light && (l = cnt((o) => o.thumb_light === t.thumb_light)).length >= VAR.light) say(`빛(${t.thumb_light})`, l, VAR.light);
           if (t.thumb_light === '저녁 조명' && (l = cnt((o) => o.thumb_light === '저녁 조명')).length >= VAR.evening) say('저녁 조명', l, VAR.evening);
           if ((l = cnt((o) => o.thumb_shot === t.thumb_shot)).length >= VAR.shot) say(`구도(${t.thumb_shot})`, l, VAR.shot);
           if (t.thumb_mood && (l = cnt((o) => o.thumb_mood === t.thumb_mood)).length >= VAR.mood) say(`표정(${t.thumb_mood})`, l, VAR.mood);
           if (FACE_TOUCH.includes(t.thumb_mood) && (l = cnt((o) => FACE_TOUCH.includes(o.thumb_mood))).length >= VAR.faceTouch) say('얼굴 만지는 표정(생각·궁금)', l, VAR.faceTouch);
           if (people && OLD_ONLY(t.thumb_person) && (l = cnt((o) => OLD_ONLY(o.thumb_person) && st.thumb_shots?.[o.thumb_shot]?.사람 !== false)).length >= VAR.olds) say('60대 이상만 나오는 사람', l, VAR.olds);
-          if (hasPaper(t.prompt) && (l = cnt((o) => hasPaper(o.prompt))).length >= VAR.papers) say('종이·안내문', l, VAR.papers);
+          if (dated < TOPIC_IMG_FROM && hasPaper(t.prompt) && (l = cnt((o) => hasPaper(o.prompt))).length >= VAR.papers) say('종이·안내문', l, VAR.papers);
+        }
+      }
+      if (!tistory && dated >= TOPIC_IMG_FROM) {
+        for (const im of plan.images.filter((x) => x.kind !== 'card' && x.kind !== 'photo' && x.prompt)) {
+          if (!String(im.anchor || '').trim()) errors.push(`그림 ${im.n}번에 anchor(그 글에만 있는 주제 사물·장소, 영어)가 없습니다 — ${TOPIC_IMG_FROM} 원고부터 (2026-11-13 사용자 "사진이 주제랑 동떨어졌다")`);
+          else if (!im.prompt.toLowerCase().includes(String(im.anchor).toLowerCase().trim())) errors.push(`그림 ${im.n}번 프롬프트에 anchor "${im.anchor}" 가 그대로 들어 있지 않습니다`);
+          if (OLD_TAIL.test(im.prompt)) errors.push(`그림 ${im.n}번에 옛 끝 문장(장소 목록·"큰 물건 넣지 마라")이 있습니다 — standards/image-style.json style_care·topic_tail 로`);
         }
       }
       // 실사풍 글(REAL_AFTER 넘은 편)은 style_care·style_life 라 style_v2 문구를 보지 않는다 (2026-11-01 사용자 — 실사풍 전환)
