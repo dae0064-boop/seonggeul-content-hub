@@ -1,100 +1,104 @@
 {
-  "slug": "2026-11-22-2insil-ipwonbi-silbi",
-  "title": "병실료 실비, 2인실 입원비도 돌려받을 수 있나요 (본인부담 40%)",
-  "source": "11/22(일) 11:20 네이버 원고 — 생활보장 검색형(실비청구·입원비), 실사풍",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "흰 조명 아래 병원 복도에 놓인 빈 병실 침대와 링거 걸이 (대표사진)",
-      "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: an apartment hallway or elevator lobby. Lighting: cool clean white indoor light. An empty neatly made hospital bed with a folded white blanket and an IV pole beside it, seen through the open door of a two-bed hospital room from the hallway, no people. Color theme: clean white and soft navy blue tones in bright daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "object",
-      "bg": "clean white and soft navy blue tones in bright daylight",
-      "note": "대표",
-      "thumb_shot": "object",
-      "thumb_theme": "navy",
-      "thumb_person": "없음",
-      "thumb_place": "복도·엘리베이터",
-      "thumb_light": "흰 조명",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "navy",
-        "font": "jua",
-        "title": "병실료 실비\n얼마나 돼?"
-      }
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "2인실 입원료 본인부담을 숫자로 정리한 카드",
-      "kind": "card",
-      "card": {
-        "type": "number",
-        "title": "2인실 본인부담",
-        "items": [
-          [
-            "50%",
-            "상급종합병원",
-            "2인실"
-          ],
-          [
-            "40%",
-            "종합병원·병원",
-            "2인실"
-          ],
-          [
-            "80%",
-            "실손 기본형",
-            "급여 보상"
-          ]
-        ]
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "병실 창가 의자에 앉아 보호자와 이야기하는 70대 남성과 40대 딸",
-      "prompt": "Camera and composition: medium shot by a hospital room window. A Korean man in his 70s in a light blue patient gown sitting on a chair by a hospital room window, talking calmly with his daughter in her 40s in a navy cardigan who sits beside him. Background color: bright hospital room with navy and white tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot by a hospital room window",
-      "bg": "bright hospital room with navy and white tones"
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "2인실 병실료 실비 청구 순서를 정리한 메모 카드",
-      "kind": "card",
-      "card": {
-        "type": "check",
-        "style": "memo",
-        "title": "2인실 실비 확인 순서",
-        "sub": "칸부터 나눠 보면 쉬워요",
-        "items": [
-          "입원료가 급여 칸인지 본다",
-          "비급여 병실료 칸을 본다",
-          "진료비 세부내역서를 받는다",
-          "입원 기간 서류를 챙긴다"
-        ],
-        "memo": "비급여 병실료는 따로 봐요",
-        "hl": 2
-      }
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "거실 탁자에서 노트북으로 병원비를 정리하는 50대 여성",
-      "prompt": "Camera and composition: medium shot at a dining table. A Korean woman in her 50s with short permed hair in a mustard knit sitting at a home dining table, typing on a laptop next to a few blank papers, calm focused face. Background color: warm wood dining room with soft navy accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot at a dining table",
-      "bg": "warm wood dining room with soft navy accents"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "병원 원무과 창구에서 서류 봉투를 받아 드는 손",
-      "prompt": "Camera and composition: close-up of hands at a hospital desk. Close-up of a person's hands receiving a plain white document envelope across a hospital admission desk, no face in the frame. Background color: clean hospital counter with white and gray tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "close-up of hands at a hospital desk",
-      "bg": "clean hospital counter with white and gray tones"
-    }
-  ]
+ "slug": "2026-11-22-2insil-ipwonbi-silbi",
+ "title": "병실료 실비, 2인실 입원비도 돌려받을 수 있나요 (본인부담 40%)",
+ "source": "11/22(일) 11:20 네이버 원고 — 생활보장 검색형(실비청구·입원비), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "커튼으로 나뉜 침대 두 개가 놓인 빈 2인실 병실 (대표사진)",
+   "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Setting: a bright two-bed hospital room. An empty two-bed hospital room with two neatly made hospital beds separated by a curtain, an IV pole and a small bedside cabinet, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: cool clean white indoor light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "object",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "object",
+   "thumb_theme": "navy",
+   "thumb_person": "없음",
+   "thumb_place": "주제",
+   "thumb_light": "흰 조명",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "navy",
+    "font": "jua",
+    "title": "병실료 실비\n얼마나 돼?"
+   },
+   "anchor": "two neatly made hospital beds separated by a curtain"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "2인실 입원료 본인부담을 숫자로 정리한 카드",
+   "kind": "card",
+   "card": {
+    "type": "number",
+    "title": "2인실 본인부담",
+    "items": [
+     [
+      "50%",
+      "상급종합병원",
+      "2인실"
+     ],
+     [
+      "40%",
+      "종합병원·병원",
+      "2인실"
+     ],
+     [
+      "80%",
+      "실손 기본형",
+      "급여 보상"
+     ]
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "2인실 병실 창가 침대에 앉아 딸과 이야기하는 70대 남성",
+   "prompt": "Camera and composition: medium shot in a two-bed hospital room. A Korean man in his 70s in a light blue patient gown sitting on the window-side bed in a two-bed hospital room, talking calmly with his daughter in her 40s in a cream cardigan seated beside him. Background: white hospital room walls, pale curtain and soft window daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a two-bed hospital room",
+   "bg": "white hospital room walls, pale curtain and soft window daylight",
+   "anchor": "window-side bed in a two-bed hospital room"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "2인실 병실료 실비 청구 순서를 정리한 메모 카드",
+   "kind": "card",
+   "card": {
+    "type": "check",
+    "style": "memo",
+    "title": "2인실 실비 확인 순서",
+    "sub": "칸부터 나눠 보면 쉬워요",
+    "items": [
+     "입원료가 급여 칸인지 본다",
+     "비급여 병실료 칸을 본다",
+     "진료비 세부내역서를 받는다",
+     "입원 기간 서류를 챙긴다"
+    ],
+    "memo": "비급여 병실료는 따로 봐요",
+    "hl": 2
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "식탁에서 글자 없는 병원 영수증 묶음을 정리하는 50대 여성",
+   "prompt": "Camera and composition: medium shot at a home dining table. A Korean woman in her 50s with short permed hair in a mustard knit sitting at a home dining table, sorting a stack of blank hospital receipts beside an open laptop. Background: natural wood dining table and white walls with soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a home dining table",
+   "bg": "natural wood dining table and white walls with soft daylight",
+   "anchor": "stack of blank hospital receipts"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "병원 입·퇴원 수납 창구에서 서류 봉투를 받는 손",
+   "prompt": "Camera and composition: close-up of hands at a hospital desk. Close-up of a person's hands receiving a plain white document envelope across a hospital admission and discharge desk, no face in the frame. Background: clean white hospital counter and light gray lobby. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands at a hospital desk",
+   "bg": "clean white hospital counter and light gray lobby",
+   "anchor": "hospital admission and discharge desk"
+  }
+ ]
 }
