@@ -145,7 +145,11 @@ export async function otpLogin(page, { dir, log, shot, stillLogin, waitMin = 6 }
   let tries = 0;
   while (Date.now() < until && tries < 3) {
     const files = codeFiles(dir).filter((f) => { try { return fs.statSync(f).mtimeMs >= askedAt - 60000; } catch { return false; } });
-    if (!files.length) { await sleep(3000); continue; }
+    if (!files.length) {
+      // 2026-11-13 사용자가 PC 크롬에서 직접 인증해 로그인했는데 번호 파일만 기다리다 6분을 넘겼다 — 로그인 화면이 사라졌으면 통과로 본다
+      if (stillLogin && !(await stillLogin().catch(() => true))) { result(true, '사용자가 화면에서 직접 로그인'); log('  ✅ 화면에서 직접 로그인됨 — GOMS 로그인 ✓'); return true; }
+      await sleep(3000); continue;
+    }
     let code = '';
     for (const f of files) { try { code = (fs.readFileSync(f, 'utf8').match(/\d{4,8}/) || [''])[0] || code; } catch {} }
     clearCodes(dir);
