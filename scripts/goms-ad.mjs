@@ -1072,9 +1072,14 @@ async function setTitleFilter(page, text) {
 async function findMissing(page, rows, have) {
   const seen = new Set(rows.map((r) => numOf(r.title)));
   // GOMS 에 올린 편만 — 목록에 보인 가장 큰 번호까지 (Word 는 80편까지 있어도 심의 신청은 30편까지, 2026-10-26 14:45)
-  const max = Math.max(0, ...seen, ...have);
+  // 2026-11-13: 목록 40건 중 4줄만 읽히고 61~115편은 찾지도 않았다(가장 큰 번호를 적격 표 60편까지로만 봄) →
+  // Word 폴더에 있는 가장 큰 번호까지 찾는다. 올리지 않은 번호는 0건으로 지나가고, need 만큼 찾으면 멈춘다.
+  let wordMax = 0;
+  try { for (const x of fs.readdirSync(fileDir || '.')) { const m = x.match(new RegExp(`^${PREFIX} (\\d+)편\\.docx$`)); if (m) wordMax = Math.max(wordMax, Number(m[1])); } } catch {}
+  const max = Math.max(0, ...seen, ...have, wordMax);
   const need = rows.total != null ? rows.total - rows.length : Infinity;
   const missing = [];
+  // 반려로 적힌 편(재심의로 승인됐을 수 있음)과 아직 결과를 모르는 편을 모두 본다
   for (let n = 1; n <= max; n++) if (!seen.has(n) && !have.has(n)) missing.push(n);
   if (!missing.length || need <= 0) return [];
   log(`  목록에 안 보인 편을 제목으로 하나씩 찾아요: ${missing.join(', ')}편`);
