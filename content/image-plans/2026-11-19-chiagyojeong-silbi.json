@@ -8,10 +8,10 @@
    "n": 1,
    "file": "01.png",
    "title": "치과 상담 책상에서 교정 장치 치아 모형을 든 20대 여성의 손 (대표사진)",
-   "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Setting: a bright orthodontic clinic consultation desk. Close-up of a Korean woman's hands in her 20s in mustard knit sleeves holding a dental model with metal braces at an orthodontic clinic consultation desk. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: bright clear daylight, high key. Expression: smiling while checking a smartphone, hands away from the face. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Setting: a bright orthodontic clinic consultation desk. Close-up of a Korean woman's hands in her 20s in mustard knit sleeves holding a dental model with metal braces at an orthodontic clinic consultation desk. Make it bold and eye-catching like a magazine cover photo: the dental model with metal braces is large, sharp and brightly lit in the middle of the frame, with a soft round spotlight glow around it and the edges slightly darker, strong contrast and vivid but natural colors. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Nothing important in the bottom tenth. Lighting: bright clear daylight, high key. Expression: smiling while checking a smartphone, hands away from the face. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
    "shot": "hands",
    "bg": "natural colors of the real place",
-   "note": "대표",
+   "note": "대표 — 강조 대표사진 시험 (overlay style pop, 2026-11-13 사용자). 11/16 안과 실비는 11/10 에 이미 예약돼 여기로 옮김",
    "thumb_shot": "hands",
    "thumb_theme": "cobalt",
    "thumb_person": "20대 여성 직장인 손(머스터드 니트 소매)",
@@ -23,7 +23,8 @@
     "look": "band",
     "theme": "cobalt",
     "font": "ptd",
-    "title": "치아교정 실비\n교정비도 될까?"
+    "title": "치아교정 실비\n교정비도 될까?",
+    "style": "pop"
    },
    "anchor": "dental model with metal braces"
   },
