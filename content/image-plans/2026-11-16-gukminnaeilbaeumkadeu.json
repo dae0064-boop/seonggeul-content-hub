@@ -1,101 +1,105 @@
 {
-  "slug": "2026-11-16-gukminnaeilbaeumkadeu",
-  "title": "국민내일배움카드, 직장인도 받을 수 있나요 (5년 300만 원)",
-  "source": "11/16(월) 12:20 네이버 원고 — 생활보장 제도 소식(국민내일배움카드 지원제외·계좌한도, 고용노동부 고시), 실사풍",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "아침 햇살 드는 지하철 창가에서 휴대폰을 보며 웃는 30대 여성 직장인 (대표사진)",
-      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: inside a city bus or subway car by the window. Lighting: soft early-morning sunlight. A Korean office worker woman in her 30s in a khaki trench coat with a canvas tote bag, seated by the window of a subway car on her morning commute, looking at her smartphone with a hopeful smile. Expression: smiling while checking a smartphone, hands away from the face. Color theme: clean white and soft navy blue tones in bright daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "face",
-      "bg": "clean white and soft navy blue tones in bright daylight",
-      "note": "대표",
-      "thumb_shot": "face",
-      "thumb_theme": "navy",
-      "thumb_person": "30대 여성 직장인(카키 트렌치코트)",
-      "thumb_place": "버스·지하철",
-      "thumb_light": "아침 햇살",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "navy",
-        "font": "ptd",
-        "title": "국민내일배움카드\n직장인도 될까?"
-      },
-      "thumb_mood": "휴대폰"
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "국민내일배움카드 숫자 셋을 보여 주는 카드",
-      "kind": "card",
-      "card": {
-        "type": "number",
-        "title": "내일배움카드 숫자 셋",
-        "items": [
-          [
-            "5년",
-            "유효기간",
-            "발급한 날부터"
-          ],
-          [
-            "80%",
-            "수료 기준",
-            "진도율·출석"
-          ],
-          [
-            "45세",
-            "대규모기업",
-            "미만이면 확인"
-          ]
-        ]
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "국민내일배움카드 지원제외를 확인하는 체크 카드",
-      "kind": "card",
-      "card": {
-        "type": "check",
-        "style": "memo",
-        "title": "지원제외 확인",
-        "sub": "자주 걸리는 경우",
-        "items": [
-          "재직 중인 공무원",
-          "생계급여 수급자",
-          "초·중·고·대학 재학생",
-          "대규모기업 45세 미만"
-        ],
-        "memo": "직장인이라고 무조건 빠지지 않아요",
-        "hl": 4
-      }
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "퇴근 뒤 거실 책상에서 노트북으로 강의를 듣는 30대 남성",
-      "prompt": "Camera and composition: medium shot from the side at a desk. A Korean man in his 30s in a dark green hoodie sitting at a small desk in a living room after work, wearing earphones and watching an online lecture on a laptop with a blank screen, taking notes. Background color: cozy evening living room with a warm desk lamp. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot from the side at a desk",
-      "bg": "cozy evening living room with a warm desk lamp"
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "저녁 식탁 위 벽걸이 달력에 동그라미를 치는 손",
-      "prompt": "Camera and composition: close-up of a hand at a wall calendar. Close-up of a Korean person's hand circling a date with a red pen on a blank wall calendar hanging above a dining table, no face visible. Background color: pale yellow kitchen wall in soft evening light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "close-up of a hand at a wall calendar",
-      "bg": "pale yellow kitchen wall in soft evening light"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "강의실 창가 자리에서 필기하는 40대 여성 수강생의 옆모습",
-      "prompt": "Camera and composition: side view medium shot in a classroom. A Korean woman in her 40s in a cream blouse seated by the window in a bright vocational training classroom, writing notes in a notebook, other students blurred in the background. Background color: bright training classroom with large windows. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "side view medium shot in a classroom",
-      "bg": "bright training classroom with large windows"
-    }
-  ]
+ "slug": "2026-11-16-gukminnaeilbaeumkadeu",
+ "title": "국민내일배움카드, 직장인도 받을 수 있나요 (5년 300만 원)",
+ "source": "11/16(월) 12:20 네이버 원고 — 생활보장 제도 소식(국민내일배움카드 지원제외·계좌한도, 고용노동부 고시), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "직업훈련 교실 앞에 선 30대 직장인 여성 (대표사진)",
+   "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Setting: a bright vocational training classroom with computers. Close-up of a Korean woman office worker in her 30s in a khaki trench coat, calm and hopeful, with a vocational training classroom of computers softly blurred behind her. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft early-morning sunlight. Expression: smiling while checking a smartphone, hands away from the face. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "face",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "face",
+   "thumb_theme": "navy",
+   "thumb_person": "30대 여성 직장인(카키 트렌치코트)",
+   "thumb_place": "주제",
+   "thumb_light": "아침 햇살",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "navy",
+    "font": "ptd",
+    "title": "국민내일배움카드\n직장인도 될까?"
+   },
+   "thumb_mood": "휴대폰",
+   "anchor": "vocational training classroom"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "국민내일배움카드 숫자 셋을 보여 주는 카드",
+   "kind": "card",
+   "card": {
+    "type": "number",
+    "title": "내일배움카드 숫자 셋",
+    "items": [
+     [
+      "5년",
+      "유효기간",
+      "발급한 날부터"
+     ],
+     [
+      "80%",
+      "수료 기준",
+      "진도율·출석"
+     ],
+     [
+      "45세",
+      "대규모기업",
+      "미만이면 확인"
+     ]
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "국민내일배움카드 지원제외를 확인하는 체크 카드",
+   "kind": "card",
+   "card": {
+    "type": "check",
+    "style": "memo",
+    "title": "지원제외 확인",
+    "sub": "자주 걸리는 경우",
+    "items": [
+     "재직 중인 공무원",
+     "생계급여 수급자",
+     "초·중·고·대학 재학생",
+     "대규모기업 45세 미만"
+    ],
+    "memo": "직장인이라고 무조건 빠지지 않아요",
+    "hl": 4
+   }
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "저녁 코딩 수업을 듣는 30대 직장인",
+   "prompt": "Camera and composition: medium shot in a training academy classroom. A Korean man in his 30s in a gray hoodie learning at an evening coding class with laptops, an instructor pointing at a screen with blank code shapes. Background: modern classroom with white desks and soft overhead light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a training academy classroom",
+   "bg": "modern classroom with white desks and soft overhead light",
+   "anchor": "evening coding class with laptops"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "바리스타 훈련 교실 커피 머신 앞에서 실습하는 40대 여성",
+   "prompt": "Camera and composition: medium shot at a cafe training academy. A Korean woman in her 40s in a brown apron practicing at a barista training counter with an espresso machine while an instructor watches. Background: clean training cafe with wood counter and warm daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a cafe training academy",
+   "bg": "clean training cafe with wood counter and warm daylight",
+   "anchor": "barista training counter with an espresso machine"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "요리 학원 실습대에서 채소를 써는 50대 여성",
+   "prompt": "Camera and composition: medium shot in a cooking academy kitchen. A Korean woman in her 50s in a white chef apron chopping vegetables at a cooking class kitchen station, smiling calmly. Background: bright stainless steel teaching kitchen. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a cooking academy kitchen",
+   "bg": "bright stainless steel teaching kitchen",
+   "anchor": "cooking class kitchen station"
+  }
+ ]
 }

@@ -1,100 +1,104 @@
 {
-  "slug": "2026-11-17-gichoyeongeum-sincheong",
-  "title": "기초연금 신청, 떨어졌다면 다시 해야 하나요 (이력관리 5년)",
-  "source": "11/17(화) 12:20 네이버 원고 — 생활보장 제도 소식(기초연금 신청방법·수급희망 이력관리 2026년 개정), 실사풍",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "흐린 날 주민센터 창구에서 신청서에 이름을 적는 60대 여성의 손 (대표사진)",
-      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a community service center counter. Lighting: soft overcast daylight. The hands of a Korean woman in her 60s in a camel coat sleeve writing her name with a pen on a blank application sheet on the counter, a staff member softly blurred across the counter. Expression: relieved gentle smile. Color theme: soft rose and cream tones with a deep burgundy accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "hands",
-      "bg": "soft rose and cream tones with a deep burgundy accent",
-      "note": "대표",
-      "thumb_shot": "hands",
-      "thumb_theme": "burgundy",
-      "thumb_person": "60대 여성 손(카멜 코트 소매)",
-      "thumb_place": "주민센터",
-      "thumb_light": "흐린 날",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "burgundy",
-        "font": "jua",
-        "title": "기초연금 신청\n떨어졌다면?"
-      },
-      "thumb_mood": "안심"
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "기초연금 신청 순서를 정리한 메모 카드",
-      "kind": "card",
-      "card": {
-        "type": "steps",
-        "style": "memo",
-        "title": "기초연금 신청 순서",
-        "sub": "시·군·구에 내요",
-        "items": [
-          "신청서와 소득·재산신고서",
-          "금융정보 제공 동의서",
-          "신분증 보여 주고 접수"
-        ],
-        "memo": "배우자 동의도 함께 받아요",
-        "hl": 2
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "거실 소파에서 70대 어머니와 서류를 함께 보는 40대 아들",
-      "prompt": "Camera and composition: medium shot on a sofa. A Korean man in his 40s in a navy sweater sitting on a living room sofa beside his mother in her 70s in a burgundy cardigan, both looking at a blank folder of papers and talking calmly. Background color: soft rose and cream living room. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot on a sofa",
-      "bg": "soft rose and cream living room"
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "기초연금 신청 숫자 셋을 보여 주는 카드",
-      "kind": "card",
-      "card": {
-        "type": "number",
-        "title": "기초연금 신청 숫자 셋",
-        "items": [
-          [
-            "5년",
-            "이력관리",
-            "신청서 유효기간"
-          ],
-          [
-            "90일",
-            "이의신청",
-            "안 날부터"
-          ],
-          [
-            "65세",
-            "안내 대상",
-            "서면·전화로"
-          ]
-        ]
-      }
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "저녁 식탁에서 휴대폰 문자를 확인하며 웃는 70대 아버지",
-      "prompt": "Camera and composition: medium close-up at a dining table. A Korean man in his 70s in a gray cardigan sitting at a dining table in the evening, reading a message on a smartphone with a blank screen and smiling with relief. Background color: warm evening kitchen with wooden cabinets. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium close-up at a dining table",
-      "bg": "warm evening kitchen with wooden cabinets"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "공원 벤치에 나란히 앉아 웃는 70대 부부의 뒷모습",
-      "prompt": "Camera and composition: wide shot from behind in a park. An elderly Korean couple in their 70s in warm coats sitting side by side on a park bench seen from behind, leaning toward each other, autumn trees around them. Background color: late autumn park with red and yellow leaves. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "wide shot from behind in a park",
-      "bg": "late autumn park with red and yellow leaves"
-    }
-  ]
+ "slug": "2026-11-17-gichoyeongeum-sincheong",
+ "title": "기초연금 신청, 떨어졌다면 다시 해야 하나요 (이력관리 5년)",
+ "source": "11/17(화) 12:20 네이버 원고 — 생활보장 제도 소식(기초연금 신청방법·수급희망 이력관리 2026년 개정), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "주민센터 창구에서 기초연금 신청서를 쓰는 60대 여성의 손 (대표사진)",
+   "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Setting: a community center service counter. Close-up of a Korean woman's hands in her 60s in a camel coat sleeve filling in a blank basic pension application form at a community center counter with a pen. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft overcast daylight. Expression: relieved gentle smile. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "hands",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "hands",
+   "thumb_theme": "burgundy",
+   "thumb_person": "60대 여성 손(카멜 코트 소매)",
+   "thumb_place": "주제",
+   "thumb_light": "흐린 날",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "burgundy",
+    "font": "jua",
+    "title": "기초연금 신청\n떨어졌다면?"
+   },
+   "thumb_mood": "안심",
+   "anchor": "blank basic pension application form"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "기초연금 신청 순서를 정리한 메모 카드",
+   "kind": "card",
+   "card": {
+    "type": "steps",
+    "style": "memo",
+    "title": "기초연금 신청 순서",
+    "sub": "시·군·구에 내요",
+    "items": [
+     "신청서와 소득·재산신고서",
+     "금융정보 제공 동의서",
+     "신분증 보여 주고 접수"
+    ],
+    "memo": "배우자 동의도 함께 받아요",
+    "hl": 2
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "주민센터 창구에서 부모님 대신 신청하는 40대 아들",
+   "prompt": "Camera and composition: medium shot in a community center. A Korean son in his 40s in a navy coat handing blank papers and an ID card face down at a community center service counter on behalf of his parents. Background: bright public office with light wood counters and plants. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a community center",
+   "bg": "bright public office with light wood counters and plants",
+   "anchor": "community center service counter"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "기초연금 신청 숫자 셋을 보여 주는 카드",
+   "kind": "card",
+   "card": {
+    "type": "number",
+    "title": "기초연금 신청 숫자 셋",
+    "items": [
+     [
+      "5년",
+      "이력관리",
+      "신청서 유효기간"
+     ],
+     [
+      "90일",
+      "이의신청",
+      "안 날부터"
+     ],
+     [
+      "65세",
+      "안내 대상",
+      "서면·전화로"
+     ]
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "국민연금공단 지사에서 상담하는 60대 여성",
+   "prompt": "Camera and composition: medium shot in a pension service branch office. A Korean woman in her 60s in a brown cardigan talking with a staff member at a pension service branch office desk, holding a blank leaflet. Background: calm public office with white walls and soft light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a pension service branch office",
+   "bg": "calm public office with white walls and soft light",
+   "anchor": "pension service branch office"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "집에서 연금 안내 우편을 함께 보는 60대 부부",
+   "prompt": "Camera and composition: close-up at a home table. A Korean couple in their 60s reading a blank letter from the pension office together at a home table, calm. Background: warm living room table with soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up at a home table",
+   "bg": "warm living room table with soft daylight",
+   "anchor": "blank letter from the pension office"
+  }
+ ]
 }

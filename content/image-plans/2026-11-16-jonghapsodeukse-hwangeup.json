@@ -1,97 +1,101 @@
 {
-  "slug": "2026-11-16-jonghapsodeukse-hwangeup",
-  "title": "종합소득세 환급, 3.3% 떼인 돈은 5월을 놓쳐도 받나요 (5년)",
-  "source": "11/16(월) 19:00 네이버 원고 — 생활보장 순서형(돈·제도), 실사풍",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "저녁 사무실 책상에서 노트북 옆 휴대폰을 확인하는 20대 프리랜서 여성의 손 (대표사진)",
-      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: an office desk with a laptop. Lighting: warm evening lamp light. Close-up of a Korean woman's hands in her 20s in a mustard sweater sleeve holding a smartphone next to an open laptop on an office desk. Expression: smiling while checking a smartphone, hands away from the face. Color theme: modern light gray and white tones with a mustard accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "hands",
-      "bg": "modern light gray and white tones with a mustard accent",
-      "note": "대표",
-      "thumb_shot": "hands",
-      "thumb_theme": "charcoal",
-      "thumb_person": "20대 프리랜서 여성 손",
-      "thumb_place": "사무실",
-      "thumb_light": "저녁 조명",
-      "thumb_mood": "휴대폰",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "charcoal",
-        "font": "jua",
-        "title": "종합소득세 환급\n아직 될까?"
-      }
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "종합소득세 환급 흐름을 묻는 채팅 카드",
-      "kind": "card",
-      "card": {
-        "type": "steps",
-        "title": "종합소득세 환급 흐름",
-        "ask": "5월 놓쳤는데 돼요?",
-        "items": [
-          "지급명세서를 확인해요",
-          "종합소득세를 신고했는지",
-          "신고서를 내요"
-        ]
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "거실 소파 옆 협탁에서 계산기와 수첩을 정리하는 30대 남성의 손",
-      "prompt": "Camera and composition: close-up of hands on a side table. Close-up of a Korean man's hands in his 30s in a gray hoodie sleeve placing a calculator next to a small notebook on a living room side table, no face in the frame. Background color: light gray side table with a mustard cushion nearby. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "close-up of hands on a side table",
-      "bg": "light gray side table with a mustard cushion nearby"
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "종합소득세 환급 순서를 한눈에 보여 주는 숫자 카드",
-      "kind": "card",
-      "card": {
-        "type": "number",
-        "title": "3.3% 환급 숫자",
-        "items": [
-          [
-            "3%",
-            "사업소득",
-            "원천징수"
-          ],
-          [
-            "0.3%",
-            "지방소득세",
-            "소득세의 10%"
-          ],
-          [
-            "5년",
-            "환급 권리",
-            "소멸시효"
-          ]
-        ]
-      }
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "은행 창구 대기석에서 번호표를 들고 기다리는 40대 여성",
-      "prompt": "Camera and composition: medium shot in a bank waiting area. A Korean woman in her 40s in a beige coat sitting in a bank waiting area holding a small number ticket, calm expression. Background color: clean bank lobby with gray and mustard tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot in a bank waiting area",
-      "bg": "clean bank lobby with gray and mustard tones"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "주민센터 대기석에서 서류 봉투를 무릎에 올리고 휴대폰을 보는 60대 남성",
-      "prompt": "Camera and composition: medium shot in a community center waiting area. A Korean man in his 60s in a navy jacket sitting in a community service center waiting chair with a closed envelope on his lap, looking at his smartphone. Background color: bright public office with white walls and wooden benches. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot in a community center waiting area",
-      "bg": "bright public office with white walls and wooden benches"
-    }
-  ]
+ "slug": "2026-11-16-jonghapsodeukse-hwangeup",
+ "title": "종합소득세 환급, 3.3% 떼인 돈은 5월을 놓쳐도 받나요 (5년)",
+ "source": "11/16(월) 19:00 네이버 원고 — 생활보장 순서형(돈·제도), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "노트북으로 종합소득세 환급을 조회하는 20대 프리랜서의 손 (대표사진)",
+   "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Setting: a cozy freelancer home desk. Close-up of a Korean woman freelancer's hands in her 20s typing on a laptop with a blank tax refund screen, a blank payment statement and a coffee cup beside it. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: warm evening lamp light. Expression: smiling while checking a smartphone, hands away from the face. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "hands",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "hands",
+   "thumb_theme": "charcoal",
+   "thumb_person": "20대 프리랜서 여성 손",
+   "thumb_place": "주제",
+   "thumb_light": "저녁 조명",
+   "thumb_mood": "휴대폰",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "charcoal",
+    "font": "jua",
+    "title": "종합소득세 환급\n아직 될까?"
+   },
+   "anchor": "laptop with a blank tax refund screen"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "종합소득세 환급 흐름을 묻는 채팅 카드",
+   "kind": "card",
+   "card": {
+    "type": "steps",
+    "title": "종합소득세 환급 흐름",
+    "ask": "5월 놓쳤는데 돼요?",
+    "items": [
+     "지급명세서를 확인해요",
+     "종합소득세를 신고했는지",
+     "신고서를 내요"
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "5월 달력을 가리키며 신고 기간을 확인하는 30대 남성",
+   "prompt": "Camera and composition: medium shot at a home office desk. A Korean man in his 30s in a gray knit pointing at a desk calendar opened to May with blank dates while holding a blank payment statement. Background: calm home office with white walls and wood desk. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a home office desk",
+   "bg": "calm home office with white walls and wood desk",
+   "anchor": "desk calendar opened to May"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "종합소득세 환급 순서를 한눈에 보여 주는 숫자 카드",
+   "kind": "card",
+   "card": {
+    "type": "number",
+    "title": "3.3% 환급 숫자",
+    "items": [
+     [
+      "3%",
+      "사업소득",
+      "원천징수"
+     ],
+     [
+      "0.3%",
+      "지방소득세",
+      "소득세의 10%"
+     ],
+     [
+      "5년",
+      "환급 권리",
+      "소멸시효"
+     ]
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "경비 영수증을 파일에 모아 정리한 책상",
+   "prompt": "Camera and composition: overhead view of a desk. Blank receipts sorted into a folder beside a calculator and a pen on a wooden desk, no people. Background: natural light wood desk. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "overhead view of a desk",
+   "bg": "natural light wood desk",
+   "anchor": "blank receipts sorted into a folder"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "세무서 상담 창구에서 묻는 20대 프리랜서",
+   "prompt": "Camera and composition: medium shot in a tax office. A Korean woman in her 20s in a beige coat asking calmly at a tax office help desk while a staff member looks at a blank monitor. Background: bright public office with light wood counters. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a tax office",
+   "bg": "bright public office with light wood counters",
+   "anchor": "tax office help desk"
+  }
+ ]
 }
