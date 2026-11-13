@@ -184,7 +184,47 @@ function thumbTheme(name) {
 }
 const rgba = (hex, a) => { const n = parseInt(hex.slice(1), 16); return `rgba(${n >> 16},${(n >> 8) & 255},${n & 255},${a})`; };
 
+// 강조 대표사진 style "pop" (2026-11-13 사용자 — 예시를 보고 "이런 느낌으로, 글씨랑 그림이 모두 강조되게", 11/16 원고 한 편 시험):
+//   위쪽 3분의 1 진한 띠(그러데이션 없이 딱 나눔) + 아래 금빛 줄, 첫 줄 = 아주 굵은 금빛 글씨(검은한산스) + 진한 테두리·그림자,
+//   둘째 줄 = 흰 상자 안 진한 글씨, 마지막 낱말만 빨강. 그림은 조금 더 선명하게. 주제 사물 강조(동그란 초점)는 그림 프롬프트가 맡는다.
+const BHS = new URL('./fonts/BlackHanSans-Regular.ttf', import.meta.url);
+let bhsCache;
+const bhsFace = () => {
+  if (bhsCache === undefined) {
+    try { bhsCache = `@font-face{font-family:"BHS";src:url(data:font/ttf;base64,${fs.readFileSync(BHS).toString('base64')}) format("truetype")}`; }
+    catch { bhsCache = ''; }
+  }
+  return bhsCache;
+};
+function popThumbHtml(imgDataUrl, S, o) {
+  const tl = String(o.title).split('\n');
+  const th = thumbTheme(o.theme);
+  const key = '#FFD24D';
+  const dark = '#0d1b2e';
+  const top = Math.round(S * 0.33);
+  const q = (tl[1] || '').trim().split(' ');
+  const last = q.pop() || '';
+  return `<!doctype html><meta charset="utf-8"><style>
+    ${bhsFace()}${ptdFace()}
+    *{margin:0;box-sizing:border-box}
+    body{width:${S}px;height:${S}px;position:relative;overflow:hidden;background:${th.band}}
+    .ph{position:absolute;left:0;right:0;top:${top}px;bottom:0;overflow:hidden}
+    .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 62%;display:block;filter:contrast(1.1) saturate(1.15)}
+    .top{position:absolute;left:0;right:0;top:0;height:${top}px;background:${th.band};border-bottom:${S * 0.014}px solid ${key};
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:${S * 0.014}px;padding:0 ${S * 0.05}px}
+    .title{white-space:nowrap;line-height:1}
+    .k{font-family:"BHS","PTD",${STYLE.font};font-size:${S * 0.165}px;color:${key};-webkit-text-stroke:${S * 0.006}px ${dark};paint-order:stroke fill;
+      text-shadow:0 ${S * 0.01}px 0 ${dark},0 ${S * 0.014}px ${S * 0.024}px rgba(0,0,0,.45)}
+    .q{font-family:"PTD",${STYLE.font};font-weight:800;font-size:${S * 0.074}px;color:${dark};background:#fff;padding:${S * 0.013}px ${S * 0.036}px ${S * 0.016}px;
+      border-radius:${S * 0.018}px;box-shadow:0 ${S * 0.008}px 0 ${dark}}
+    .q b{color:#E2332E}
+  </style><body><div class="ph"><img src="${imgDataUrl}"></div>
+    <div class="top"><div class="title k">${esc(tl[0] || '')}</div>${tl[1] ? `<div class="title q">${esc(q.join(' '))}${q.length ? ' ' : ''}<b>${esc(last)}</b></div>` : ''}</div>
+  </body>`;
+}
+
 function lookThumbHtml(imgDataUrl, S, o) {
+  if (o.style === 'pop' && o.look === 'band') return popThumbHtml(imgDataUrl, S, o);
   const tl = String(o.title).split('\n');
   const th = thumbTheme(o.theme);
   const jua = o.font === 'jua' && juaFace();
