@@ -6,6 +6,8 @@
 자동 작업(Routine)은 회차마다 새 작업 대화를 만든다(구조는 `routines/README.md`). 그 대화들이 사용자 목록에 쌓이지 않도록
 **이 대화가 하루치를 모아 한 번 보고하고, 끝난 작업 대화는 보관(archive)해 목록에서 치운다.** 사용자가 보는 창은 이 대화 하나다.
 
+**날짜**: 이 대화는 자정 넘어(00:53) 돈다. 어젯밤 작업이 쓴 원고 날짜 = **실행하는 날(오늘)** 이다. 아래 `<원고 날짜>` 는 오늘 날짜, 보고 제목의 날은 어제 밤.
+
 ## 1. 모을 대상
 
 `mcp__claude-code-remote__list_sessions`(`mine: true`, 필요하면 `after_id` 로 넘겨 보기)에서 아래를 모두 고른다.
@@ -23,10 +25,10 @@
 ## 3. 결과 확인 — 대화 요약만 믿지 않는다
 
 1. `git fetch origin main` 후 main 에서 확인한다.
-   - 네이버: `content/posts/<내일>-*.md` 편수와 `node scripts/lint-post.mjs` 통과 수 (목표 편수는 `routines/naver-daily.md` 기준).
-   - 티스토리: `content/tistory/<내일>-*.md` 편수, `node scripts/lint-tistory.mjs` 통과 수.
-   - 철거: `content/chulgeo/posts/<내일>-*` 편수, `node scripts/chulgeo/lint.mjs` 통과 수.
-   - 스레드: `content/threads/daily/<내일>.md`·`content/threads/blog/<내일>.md` 있는지, 보험 심의글 15:00 차례(STATUS 기준).
+   - 네이버: `content/posts/<원고 날짜>-*.md` 편수와 `node scripts/lint-post.mjs` 통과 수 (목표 편수는 `routines/naver-daily.md` 기준).
+   - 티스토리: `content/tistory/<원고 날짜>-*.md` 편수, `node scripts/lint-tistory.mjs` 통과 수.
+   - 철거: `content/chulgeo/posts/<원고 날짜>-*` 편수, `node scripts/chulgeo/lint.mjs` 통과 수.
+   - 스레드: `content/threads/daily/<원고 날짜>.md`·`content/threads/blog/<원고 날짜>.md` 있는지, 보험 심의글 15:00 차례(STATUS 기준).
    - 인스타: 오늘 밤 원고를 썼는지 / 멈춤 지시로 건너뛰었는지(티스토리 원고 대화 요약·`routines/instagram-daily.md` 맨 위).
 2. 각 작업 대화의 마지막 보고(`post_turn_summary`, 모자라면 `list_events` 의 마지막 assistant 메시지)에서 **사용자 확인이 필요하다고 한 것**을 모은다.
 3. 오늘 아침 확인(10:47) 대화의 핵심(예약 결과·조회수·고친 것)은 두세 줄로 옮긴다.
