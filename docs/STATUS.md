@@ -26,9 +26,9 @@
 
 ## 지금 상태
 
-### 11/13 밤 — ⏹ 심의·맛집 지킴이 끔 (사용자 "내가 요청할 때만 작업, 꺼 줘")
-- PC 작업 SeonggeulGomsRequest(10분마다)·SeonggeulMatjipWatch(3시간마다, PC 깨움) — 다음 catchup·아침 실행 때 `-Remove` 로 지워진다. 요청(goms-request.txt, 맛집 publish_at 원고)은 13·16·19·22시 catchup 끝에서 한 번 본다. 곰스 오래된 요청 기준 2→5시간. health.ps1 의 맛집 쉬기 단계 뺌.
-- [ ] 11/14 catchup 기록에서 두 작업이 지워졌는지(작업 스케줄러에 남아 있으면 ensure-retry 다음 실행 때 지워짐).
+### 11/13 밤 — ⚡ 심의·맛집 "말하면 바로" (사용자 "요청할 때만" → "가장 가까운 시간은 필요 없어, 바로 진행")
+- PC 맛집 지킴이(SeonggeulMatjipWatch, 3시간마다 PC 깨움)는 지움. 요청 지킴이 SeonggeulGomsRequest 를 **2분마다·07~24시·창 없이(hidden.vbs)·깨우지 않음**으로 다시 등록(catchup·ensure-retry `-IfMissing`, 예전 10분 등록이면 다시) — 요청 파일 `goms-request.txt`(심의)·`matjip-request.txt`(맛집)·예약 글 찾기/다시 하기 요청만 본다. 곰스 오래된 요청 기준 2시간 그대로.
+- [ ] 다음 PC 작업 뒤 작업 스케줄러에 SeonggeulMatjipWatch 가 없고 SeonggeulGomsRequest 가 2분·wscript 인지 (catchup 기록).
 
 ### 11/13 밤 — 🧹 안 쓰는 것 정리 (사용자 "오래됐거나 지금 작업과 관계없는 것, cmd, 보험 심의글·배너 그림 중 안 쓰는 것 다 지워줘")
 - 실행기 `.cmd` 37 → **11개**(auto-day·auto-setup·sync·chrome-login·two-blog-test·threads-key·reserve-tomorrow·reserve-week·reserved-redo·matjip + READ-ME-FIRST 새로 씀). 작업 스케줄러는 .ps1 을 바로 부르므로 영향 없음. 그 실행기만 부르던 tools .ps1 9개도 지움.

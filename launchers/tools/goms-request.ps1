@@ -31,13 +31,16 @@ if (Test-Path $rrq) {
     Start-Detached powershell.exe -ArgumentList '-NoProfile', '-WindowStyle', 'Hidden', '-ExecutionPolicy', 'Bypass', '-File', "`"$ps1`"", '-Dates', $dates, '-SkipDelete'
   } catch { }
 }
+# 2026-11-13 사용자 "맛집 올려줘라고 하면 바로": 클라우드가 맛집 원고를 main 에 넣으며 Drive matjip-request.txt 를 남긴다 → 최신 원고 받아 임시저장
+$mjq = Join-Path $ws 'matjip-request.txt'
+if (Test-Path $mjq) { try { & (Join-Path $PSScriptRoot 'matjip-watch.ps1') -Requested; if ($LASTEXITCODE -ne 9) { Remove-Item $mjq -Force -ErrorAction SilentlyContinue } } catch { } }
 if (-not (Test-Path $req)) { exit 0 }
 # 오래된 요청은 버린다 (2026-11-13 사용자 "아침에 곰스 로그인 하지 말라니까 또 하네" — 11/12 20:54 요청이 PC 절전으로 21:00 에 끊겨 남았다가
-#   다음 날 09:27 아침에 다시 돌아 인증 문자가 갔다). 요청 시각(없으면 파일 시각)이 5시간 넘게 지났으면 (2026-11-13: 10분 지킴이를 없애고 13·16·19·22시에만 보니 2→5시간 — 밤 요청이 다음 날 아침에 돌지는 않는다) 로그인하지 않고 지운다.
+#   다음 날 09:27 아침에 다시 돌아 인증 문자가 갔다). 요청 시각(없으면 파일 시각)이 2시간 넘게 지났으면 로그인하지 않고 지운다.
 $reqAt = $null
 try { if ((Get-Content $req -Raw -Encoding UTF8) -match '요청\s*[:：]\s*(\d{4}-\d{2}-\d{2} \d{2}:\d{2})') { $reqAt = [datetime]::ParseExact($Matches[1], 'yyyy-MM-dd HH:mm', $null) } } catch { }
 if (-not $reqAt) { $reqAt = (Get-Item $req).LastWriteTime }
-if (((Get-Date) - $reqAt).TotalHours -gt 5) {
+if (((Get-Date) - $reqAt).TotalHours -gt 2) {
   "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') [$env:COMPUTERNAME] 오래된 요청($($reqAt.ToString('MM-dd HH:mm')))이라 곰스를 열지 않고 지웠어요 — 다시 '심의 올려줘' 라고 하시면 해요" | Set-Content -Encoding UTF8 (Join-Path $ws 'goms-request-result.txt')
   Remove-Item $req, (Join-Path $ws 'goms-request.running') -Force -ErrorAction SilentlyContinue
   exit 0
