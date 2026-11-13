@@ -64,6 +64,14 @@ if (-not (Test-Path (Join-Path $drive "ClaudeWorkspace\issues\$today\issues.json
 # 2026-11-07 고장 고침: 멈춘 자동화 크롬을 먼저 되살린다 (홈판·통계·예약이 모두 크롬을 쓴다)
 . (Join-Path $PSScriptRoot 'lib-detach.ps1')
 try { $hn = Repair-HungChrome; if ($hn) { Note $hn } } catch {}
+# 2026-11-13 고장 고침: PC 를 켠 직후라 아침 실행·지킴이를 건너뛴 날(lib-boot)은 자동화 크롬이 꺼져 있어
+#   10:03 블로그 통계·티스토리 상태가 연결 실패로 비고, 10:16 색인 요청이 그제야 크롬을 켰다. 오늘 통계가 아직 없으면 먼저 켠다(최소화, Start-AutoChrome)
+try {
+  if (-not (Test-Path (Join-Path $repo "dumps\blog-stats\$today\index.json"))) {
+    & node (Join-Path $repo 'scripts\cdp-probe.mjs') 9222 8000 2>&1 | Out-Null
+    if ($LASTEXITCODE -eq 2) { Start-AutoChrome -Repo $repo; Note '자동화 크롬이 꺼져 있어 켬 (오늘 통계를 아직 못 읽음, 최소화)' }
+  }
+} catch { Note "자동화 크롬 켜기 실패: $($_.Exception.Message)" }
 # 2026-11-09: 위에서 다른 작업이 돌지 않는 것을 확인했으니 쌓인 탭을 정리한다 (11/8 72개로 크롬 멈춤)
 try { $tn = Clear-ExtraTabs 15; if ($tn) { Note $tn } } catch {}
 try {
