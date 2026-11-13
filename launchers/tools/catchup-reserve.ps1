@@ -23,10 +23,7 @@ try { & (Join-Path $PSScriptRoot 'matjip-watch-setup.ps1') -IfMissing | Out-Null
 try { & (Join-Path $PSScriptRoot 'goms-request-setup.ps1') -IfMissing | Out-Null } catch { }  # '심의 올려줘' 요청 지킴이 + 08:30 자동 로그인 지움 (2026-11-11)
 # 2026-11-03 사용자 — 보험글 09·15·21시: 올리기 작업 시각이 바뀌었으면 다시 등록 (다음 날 아침을 기다리지 않게)
 try { & (Join-Path $PSScriptRoot 'threads-setup.ps1') -IfMissing | Out-Null } catch { Note "스레드 올리기 작업 등록 실패: $($_.Exception.Message)" }
-# 인스타 카드뉴스 Word·그림을 Drive 로 (2026-11-02 — 클라우드가 큰 파일을 Drive 로 못 보낸다)
-$ig = & (Join-Path $PSScriptRoot 'instagram-to-drive.ps1'); if ($ig) { Note "$ig" }
-# 블로그 상담 배너 GPT 시안 (2026-11-09) — Drive 블로그배너\사진.jpg 가 있고 아직 안 만든 시안만. 사진이 없으면 아무것도 안 함
-try { $d = Find-MyDrive; if ($d) { $bd = Join-Path $d 'ClaudeWorkspace\블로그배너'; if (Get-ChildItem $bd -Filter '사진.*' -ErrorAction SilentlyContinue) { $bo = node (Join-Path (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent) 'scripts\blog-banner\make-gpt.mjs') --out $bd --only consult- 2>&1 | Select-Object -Last 1; if ($bo -match '새로 [1-9]') { Note "배너 시안: $bo" } } } } catch { }
+# (2026-11-13 사용자 정리: 인스타 Word·그림을 Drive 로 옮기기·블로그 배너 시안 만들기는 끝남 — 뺌))
 # 인스타 카드뉴스 자동 게시 (2026-11-02) — GOMS 적격 편을 하루 1편, 18~22시 (보통 19시 실행). 키가 없는 PC 는 조용히 넘어간다
 try { & (Join-Path $PSScriptRoot 'insta-post.ps1') | Out-Null; Note '인스타 게시 확인 끝 (기록: run-logs\instagram)' } catch { Note "인스타 게시 실패: $($_.Exception.Message)" }
 # (2026-11-11 사용자) 저녁 GOMS 혼자 로그인 확인은 뺐다 — GOMS 는 "심의 올려줘" 요청 때만 (goms-request.ps1)

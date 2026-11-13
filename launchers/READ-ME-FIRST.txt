@@ -2,56 +2,33 @@
 =====================================================
 
 아침에 PC 를 켜거나 잠금을 풀면 오늘 글 예약발행이 저절로 시작돼요.
-작업이 다 끝나면 "10분 뒤 절전으로 재웁니다" 창이 떠요. [끄지 않기] 를 누르지 않으면 절전으로 들어가요.
-(2026-11-03 정리 — 안 쓰는 실행기 16개를 지웠어요. 필요하면 Claude 가 되살려요.)
+(2026-11-13 정리 — 안 쓰는 실행기를 모두 지우고 11개만 남겼어요. 지운 것은 Claude 가 언제든 되살려요.)
 
 
-■ 자주 쓰는 것
+■ 가끔 누르는 것
 auto-day.cmd          오늘 글 예약발행 (네이버 → 티스토리)
                       아침 자동 실행이 안 됐을 때 더블클릭. 이미 된 글은 건너뛰어요.
 
-now.cmd               지금 바로 — 그림 만들기 + 예약 + 홈판 확인
-                      Claude 가 "now.cmd 눌러 주세요"라고 할 때.
-
-draft-test.cmd        원고를 그림까지 넣어 네이버 '임시저장'만 (발행 안 함)
-                      Claude 가 "draft-test.cmd 눌러 주세요"라고 할 때. 확인용.
-
 reserve-tomorrow.cmd  내일 글(네이버·티스토리)을 오늘 밤 미리 예약
-reserve-week.cmd      앞으로 7일치 글(네이버·티스토리·철거)을 지금 한꺼번에 예약
-                      다음 날 아침 PC 를 못 켤 때.
+reserve-week.cmd      앞으로 7일치 글(네이버·티스토리·철거)을 한꺼번에 예약
 
-chrome-login.cmd      로그인 확인 (네이버·티스토리)
-away-check.cmd        집 비우기 전 한 번 — 작업 등록·윈도우 업데이트 7일 멈춤·로그인 확인 (2026-11-05)
-                      "로그인이 풀렸다"는 알림을 받았을 때.
+reserved-redo.cmd     이미 예약한 글을 새 그림으로 다시 예약 (Claude 가 말할 때만)
 
-sync.cmd              최신 내용 받기
-                      Claude 가 "받아 주세요"라고 할 때.
+matjip.cmd            맛집 글 네이버 임시저장 (Claude 가 말할 때만)
 
-usage-widget.cmd      클로드 사용량 위젯 (화면 오른쪽 위 둥근 막대)
+sync.cmd              최신 내용 받기 (Claude 가 "받아 주세요"라고 할 때)
 
 
-■ Claude 가 말할 때만
-index-check.cmd       구글 색인 확인 (티스토리) — 구글에서 "색인이 생성되지 않습니다" 메일이 왔을 때
-category-check.cmd    블로그 카테고리 확인 — 올라간 글 전부와 지금 카테고리를 읽기만 해 Drive 로 (11/4~)
-category-move.cmd     발행 글 카테고리 옮기기 — 표(content\archive\category-plan.tsv)대로 하위 카테고리로 (11/4~)
-post-check.cmd        목록에 안 나오는 글 찾기 — 전체보기에 없는 발행 글의 카테고리·상태를 읽기만 (11/4~)
-coupang-test.cmd      쿠팡 파트너스 로그인이 풀렸을 때 (열린 크롬에서 로그인)
-insta-now.cmd         인스타 카드뉴스 GOMS 등록 지금 하기
-insta-post-now.cmd    인스타 카드뉴스 지금 올리기
-goms-register-all.cmd GOMS 광고심의 여러 편 등록 (하루 30편까지)
-goms-revise.cmd       GOMS 반려 재심사
-goms-approved.cmd     GOMS 심의 결과(심의필 번호) 읽기 — 읽기만 해요
-goms-login.cmd        GOMS 로그인 + 휴대폰 인증 — 문자가 오면 Claude 에게 "GOMS 인증번호 123456" 이라고 알려 주세요
-threads-post-now.cmd  스레드 보험글 다음 편 지금 올리기 (하루 3편 안에서)
-banner-styles.cmd     스레드 심의필 배너 새 시안 3장 (GPT 그림, 약 30원) → Drive banner-styles 폴더
-banner-swap.cmd       Drive 보험글 Word 의 배너를 새 배너로 바꾸기 (자동으로도 한 번 함)
+■ 로그인이 풀렸다는 알림을 받았을 때
+chrome-login.cmd      네이버·티스토리 로그인 확인
+two-blog-test.cmd     다와이철거 블로그(breakandbuild) 로그인
+threads-key.cmd       스레드 키 다시 넣기 (스레드 글이 안 올라간다는 알림 때)
 
 
-■ 처음 한 번만 (키·등록)
-auto-setup.cmd        아침 자동 실행 등록 (PC 마다 처음 한 번)
-openverse-key.cmd     사진 찾기(오픈버스) 가입·키 저장
-insta-key.cmd         인스타 연결 키 넣기 (키가 맞지 않다는 알림이 왔을 때도)
-threads-key.cmd       스레드 연결 키 넣기
+■ 처음 한 번만
+auto-setup.cmd        작업 스케줄러 등록 (새 PC 를 쓸 때)
 
 
-tools 폴더            위 실행기가 쓰는 부품이에요. 열거나 누를 필요 없어요.
+■ 건드리지 않는 것
+PAUSE-ON-WAKE         PC 를 켰을 때 자동 작업을 멈추는 표시 (2026-11-12 사용자)
+tools 폴더            위 실행기와 작업 스케줄러가 쓰는 부품
