@@ -7,15 +7,15 @@ $name = 'SeonggeulGomsRequest'
 Unregister-ScheduledTask -TaskName 'SeonggeulGomsLogin' -Confirm:$false -ErrorAction SilentlyContinue
 if ($Remove) { Unregister-ScheduledTask -TaskName $name -Confirm:$false -ErrorAction SilentlyContinue; Write-Host '심의 요청 지킴이를 껐어요.'; exit 0 }
 $old = Get-ScheduledTask -TaskName $name -ErrorAction SilentlyContinue
-if ($IfMissing -and $old -and ($old.Triggers[0].Repetition.Interval -eq 'PT2M') -and ($old.Actions[0].Execute -eq 'wscript.exe')) { exit 0 }   # 예전 10분 등록이면 2분으로 다시
+if ($IfMissing -and $old -and ($old.Triggers[0].Repetition.Interval -eq 'PT2M') -and ($old.Actions[0].Execute -eq 'wscript.exe') -and ($old.Triggers[0].Repetition.Duration -eq 'P1D')) { exit 0 }   # 예전 10분 등록이면 2분으로 다시
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 $ps1 = Join-Path $PSScriptRoot 'goms-request.ps1'
 $vbs = Join-Path $PSScriptRoot 'hidden.vbs'   # 창 깜빡임 없이 (2026-11-13)
 $action = New-ScheduledTaskAction -Execute 'wscript.exe' -Argument "`"$vbs`" `"$ps1`"" -WorkingDirectory $repo
-$trigger = New-ScheduledTaskTrigger -Daily -At '07:00'
-$trigger.Repetition = (New-ScheduledTaskTrigger -Once -At '07:00' -RepetitionInterval (New-TimeSpan -Minutes 2) -RepetitionDuration (New-TimeSpan -Hours 17)).Repetition
+$trigger = New-ScheduledTaskTrigger -Daily -At '00:00'   # 2026-11-14 사용자가 새벽에도 요청 — 하루 종일 (깨우지는 않음)
+$trigger.Repetition = (New-ScheduledTaskTrigger -Once -At '00:00' -RepetitionInterval (New-TimeSpan -Minutes 2) -RepetitionDuration (New-TimeSpan -Days 1)).Repetition
 $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Minutes 90) -MultipleInstances IgnoreNew
 $principal = New-ScheduledTaskPrincipal -UserId "$env:USERDOMAIN\$env:USERNAME" -LogonType Interactive -RunLevel Limited
 Register-ScheduledTask -TaskName $name -Action $action -Trigger $trigger -Settings $settings -Principal $principal `
   -Description '성글벙글: 사용자가 요청하면 GOMS 광고심의 등록 (Drive goms-request.txt)' -Force | Out-Null
-Write-Host '요청 지킴이를 등록했어요: 매일 07:00~24:00, 2분마다 요청 파일만 봐요 (PC 를 깨우지는 않음)'
+Write-Host '요청 지킴이를 등록했어요: 하루 종일, 2분마다 요청 파일만 봐요 (PC 를 깨우지는 않음)'
