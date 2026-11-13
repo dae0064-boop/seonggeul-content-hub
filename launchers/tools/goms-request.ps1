@@ -20,6 +20,17 @@ $req = Join-Path $ws 'goms-request.txt'
 # 2026-11-13 사용자 "PC 켜놨어 지금 바로 해봐": 10분마다 도는 이 작업이 예약 글 찾기(읽기만) 요청도 본다 (catchup 22시를 기다리지 않게)
 $rlq = Join-Path $ws 'reserved-look-request.txt'
 if (Test-Path $rlq) { try { Remove-Item $rlq -Force; & (Join-Path $PSScriptRoot 'reserved-look.ps1') | Out-Null } catch { } }
+# 같은 날 사용자 "모두 수정해": reserved-redo-request.txt (첫 줄 = 날짜들, 쉼표) → 예약 글 지우고 새 그림으로 다시 예약. 오래 걸려 따로 띄운다(작업 시간 제한에 같이 꺼지지 않게)
+$rrq = Join-Path $ws 'reserved-redo-request.txt'
+if (Test-Path $rrq) {
+  try {
+    $dates = ((Get-Content $rrq -Encoding UTF8 | Select-Object -First 1) -replace '[^0-9,\-]', '')
+    Remove-Item $rrq -Force
+    . (Join-Path $PSScriptRoot 'lib-detach.ps1')
+    $ps1 = Join-Path $PSScriptRoot 'reserved-redo.ps1'
+    Start-Detached powershell.exe -ArgumentList '-NoProfile', '-WindowStyle', 'Hidden', '-ExecutionPolicy', 'Bypass', '-File', "`"$ps1`"", '-Dates', $dates
+  } catch { }
+}
 if (-not (Test-Path $req)) { exit 0 }
 # 오래된 요청은 버린다 (2026-11-13 사용자 "아침에 곰스 로그인 하지 말라니까 또 하네" — 11/12 20:54 요청이 PC 절전으로 21:00 에 끊겨 남았다가
 #   다음 날 09:27 아침에 다시 돌아 인증 문자가 갔다). 요청 시각(없으면 파일 시각)이 2시간 넘게 지났으면 로그인하지 않고 지운다.
