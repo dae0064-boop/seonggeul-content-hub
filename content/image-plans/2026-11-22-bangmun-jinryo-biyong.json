@@ -2,7 +2,7 @@
  "slug": "2026-11-22-bangmun-jinryo-biyong",
  "title": "방문진료 비용, 의사가 집에 오면 얼마를 내나요 (본인부담 30%)",
  "source": "11/22(일) 12:20 네이버 원고 — 생활보장 검색형(일차의료 방문진료 수가 시범사업 본인부담, 보건복지부 공고·지침), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -29,14 +29,11 @@
   {
    "n": 2,
    "file": "02.png",
-   "title": "방문진료 비용을 묻는 첫머리 카드",
-   "kind": "card",
-   "card": {
-    "type": "lead",
-    "keyword": "방문진료 비용",
-    "title": "집으로 오면\n얼마?",
-    "ask": "병원 가기 힘든데…"
-   }
+   "title": "동네 의원 접수대에서 방문진료가 되는지 묻는 50대 딸",
+   "prompt": "Camera and composition: medium shot at a neighborhood clinic reception desk. A Korean woman in her 50s in a camel trench coat standing at a neighborhood clinic reception desk and asking a receptionist in a light blue uniform about a home visit, a doctor's house-call bag resting on the counter, both calm and polite. Background: small bright Korean neighborhood clinic lobby with light wood counter and white walls. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a neighborhood clinic reception desk",
+   "bg": "small bright Korean neighborhood clinic lobby with light wood counter and white walls",
+   "anchor": "neighborhood clinic reception desk"
   },
   {
    "n": 3,

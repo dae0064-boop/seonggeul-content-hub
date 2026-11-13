@@ -2,7 +2,7 @@
  "slug": "2026-11-21-gukminyeongeum-banhwan-ilsigeum",
  "title": "국민연금 반환일시금, 10년 못 채우면 이자도 받나요 (청구 10년)",
  "source": "11/21(토) 21:00 네이버 원고 — 생활보장 검색형(돈·제도), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -51,21 +51,11 @@
   {
    "n": 4,
    "file": "04.png",
-   "title": "국민연금 반환일시금을 받기 전 확인 순서를 정리한 메모 카드",
-   "kind": "card",
-   "card": {
-    "type": "check",
-    "style": "memo",
-    "title": "반환일시금 전 확인",
-    "sub": "일시금 받기 전에 순서대로",
-    "items": [
-     "몇 년 몇 개월인지",
-     "임의계속가입으로 10년을",
-     "연금과 일시금을 견줘 보세요"
-    ],
-    "memo": "65세까지 임의계속가입 신청 가능",
-    "hl": 1
-   }
+   "title": "새 직장 책상에서 글자 없는 입사 서류를 받는 50대 남성",
+   "prompt": "Camera and composition: medium shot at an office desk. A Korean man in his 50s on his first day at a new job receiving blank new-hire enrollment papers on an office desk from a colleague. Background: bright small office with natural light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at an office desk",
+   "bg": "bright small office with natural light",
+   "anchor": "blank new-hire enrollment papers on an office desk"
   },
   {
    "n": 5,

@@ -7,6 +7,11 @@ sub_keywords: 경증장애인, 차상위계층, 수급자
 lead_keyword: 장애인연금
 format: 순서형
 tone: 정리형
+greet: 1
+close: 1
+heads: 기본
+emph: A
+title_type: 질문
 publish_at: 2026-11-22 08:20
 related: 장애인 등록 방법, 부모님 장애 정도 판정은 어떤 순서로 받나요 (준비물 · 2026년) | 의료급여 1종, 어떤 가구가 1종이 되나요 (65세 이상 세대 · 2026년)
 source_url: https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&list_no=1488505&act=view | https://www.law.go.kr/법령/장애인복지법시행령

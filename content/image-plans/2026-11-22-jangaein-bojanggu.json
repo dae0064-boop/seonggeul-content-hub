@@ -2,7 +2,7 @@
  "slug": "2026-11-22-jangaein-bojanggu",
  "title": "장애인 보조기기, 휠체어 살 때 건강보험은 얼마나 내주나요 (기준액의 90%)",
  "source": "11/22(일) 21:00 네이버 원고 — 생활보장 검색형(장애인 보조기기 건강보험 급여 90%·장애아동 보조기기 신설, 보건복지부), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -29,14 +29,11 @@
   {
    "n": 2,
    "file": "02.png",
-   "title": "장애인 보조기기 지원을 묻는 첫머리 카드",
-   "kind": "card",
-   "card": {
-    "type": "lead",
-    "keyword": "장애인 보조기기",
-    "title": "휠체어 살 때\n지원될까?",
-    "ask": "그냥 사야 하나요?"
-   }
+   "title": "보장구 판매점에서 수동휠체어를 살펴보는 60대 아버지와 30대 딸",
+   "prompt": "Camera and composition: medium shot in a mobility aid store. A Korean man in his 60s in a gray fleece jacket sitting in a manual wheelchair display in a mobility aid store while his daughter in her 30s in a mustard sweater checks the armrest beside him, both calm and attentive. Background: bright mobility aid store with rows of wheelchairs and walking canes, natural light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a mobility aid store",
+   "bg": "bright mobility aid store with rows of wheelchairs and walking canes, natural light",
+   "anchor": "manual wheelchair display in a mobility aid store"
   },
   {
    "n": 3,

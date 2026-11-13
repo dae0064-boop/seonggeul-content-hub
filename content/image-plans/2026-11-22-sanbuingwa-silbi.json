@@ -2,7 +2,7 @@
  "slug": "2026-11-22-sanbuingwa-silbi",
  "title": "산부인과 실비, 질염·근종 치료도 청구되나요 (분만예정일 280일)",
  "source": "11/22(일) 10:00 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -51,31 +51,11 @@
   {
    "n": 4,
    "file": "04.png",
-   "title": "산부인과 실비 되는 경우와 안 되는 경우를 정리한 채팅 카드",
-   "kind": "card",
-   "card": {
-    "type": "compare",
-    "title": "실비 되는 경우",
-    "ask": "산부인과 실비 돼?",
-    "heads": [
-     "되는 경우",
-     "안 되는 경우"
-    ],
-    "items": [
-     [
-      "병을 치료한 진료",
-      "원해서 받은 검진"
-     ],
-     [
-      "근종 검사와 치료",
-      "불임 검사·수술"
-     ],
-     [
-      "이상 소견 추가 검사",
-      "권고 없는 인공유산"
-     ]
-    ]
-   }
+   "title": "산부인과 상담 책상에서 글자 없는 처방전과 진료비 영수증을 나란히 놓고 보는 손",
+   "prompt": "Camera and composition: close-up of hands at a gynecology consultation desk. Close-up of a Korean woman's hands in a soft beige cardigan laying a blank prescription and a blank medical receipt side by side on a tidy gynecology consultation desk, a pen resting nearby, no face in the frame. Background: bright gynecology clinic consultation room with white walls and a potted plant. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands at a gynecology consultation desk",
+   "bg": "bright gynecology clinic consultation room with white walls and a potted plant",
+   "anchor": "blank prescription and a blank medical receipt"
   },
   {
    "n": 5,

@@ -2,7 +2,7 @@
  "slug": "2026-11-21-saenggye-geupyeo-2027",
  "title": "생계급여 금액, 내년 1인 가구는 얼마로 오르나요 (87만 5,533원)",
  "source": "11/21(토) 12:20 네이버 원고 — 생활보장 제도 소식(2027 생계급여 금액, 보건복지부 7/28 보도자료), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -29,14 +29,11 @@
   {
    "n": 2,
    "file": "02.png",
-   "title": "생계급여 금액을 묻는 첫머리 카드",
-   "kind": "card",
-   "card": {
-    "type": "lead",
-    "keyword": "생계급여 금액",
-    "title": "내년엔\n얼마 받을까?",
-    "ask": "올해보다 오르나요?"
-   }
+   "title": "주방 조리대에 장바구니를 내려놓는 70대 어머니와 50대 딸",
+   "prompt": "Camera and composition: medium shot in a small kitchen. A Korean mother in her 70s and her daughter in her 50s unpacking a grocery basket with rice and vegetables on a kitchen counter, talking calmly. Background: modest Korean apartment kitchen with warm daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a small kitchen",
+   "bg": "modest Korean apartment kitchen with warm daylight",
+   "anchor": "grocery basket with rice and vegetables"
   },
   {
    "n": 3,

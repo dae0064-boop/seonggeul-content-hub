@@ -2,7 +2,7 @@
  "slug": "2026-11-22-injijiwon-deunggeup-sincheong",
  "title": "인지지원등급 신청, 잘 걸으시는 치매 어르신도 받을 수 있나요 (45점 미만)",
  "source": "11/22(일) 19:00 네이버 원고 — 생활보장 검색형(장기요양 인지지원등급 신청·2026 월 한도액, 보건복지부 정책 안내·보도자료), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -51,29 +51,11 @@
   {
    "n": 4,
    "file": "04.png",
-   "title": "2026년 인지지원등급 숫자를 정리한 숫자 카드",
-   "kind": "card",
-   "card": {
-    "type": "number",
-    "title": "인지지원등급 숫자",
-    "items": [
-     [
-      "45점",
-      "인정점수",
-      "미만이면"
-     ],
-     [
-      "12일",
-      "가족휴가제",
-      "연간"
-     ],
-     [
-      "15%",
-      "재가급여",
-      "본인부담"
-     ]
-    ]
-   }
+   "title": "거실 탁자에서 글자 없는 장기요양인정서 봉투와 달력을 펼쳐 보는 50대 딸의 손",
+   "prompt": "Camera and composition: close-up of hands at a living room table. Close-up of a Korean woman in her 50s, hands only in a navy knit sleeve, opening a blank long-term care certificate envelope next to a blank wall calendar laid flat on a light wood living room table, a cup of tea nearby, no face in the frame. Background: warm apartment living room with soft afternoon daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands at a living room table",
+   "bg": "warm apartment living room with soft afternoon daylight",
+   "anchor": "blank long-term care certificate envelope"
   },
   {
    "n": 5,

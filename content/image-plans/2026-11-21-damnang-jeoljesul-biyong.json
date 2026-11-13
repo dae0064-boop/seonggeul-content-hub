@@ -2,7 +2,7 @@
  "slug": "2026-11-21-damnang-jeoljesul-biyong",
  "title": "담낭절제술 비용, 병실에 따라 왜 달라질까요 (식대 50%)",
  "source": "11/21(토) 15:00 네이버 원고 — 생활보장 검색형(비용), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -66,19 +66,11 @@
   {
    "n": 4,
    "file": "04.png",
-   "title": "담낭절제술 비용 준비 순서를 정리한 채팅 카드",
-   "kind": "card",
-   "card": {
-    "type": "steps",
-    "title": "담낭 수술 준비 순서",
-    "items": [
-     "병실 종류와 병실료 묻기",
-     "비급여로 잡힐 항목",
-     "세부내역서 함께 떼기",
-     "수술비 담보 약관 확인하기"
-    ],
-    "ask": "수술 전 뭐부터 해?"
-   }
+   "title": "입원 수속 창구에서 병실료를 묻는 50대 여성",
+   "prompt": "Camera and composition: medium shot at a hospital admission counter. A Korean woman in her 50s asking a staff member about room options at a hospital admission desk, a blank admission form on the counter. Background: clean hospital admission office with soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a hospital admission counter",
+   "bg": "clean hospital admission office with soft daylight",
+   "anchor": "hospital admission desk"
   },
   {
    "n": 5,

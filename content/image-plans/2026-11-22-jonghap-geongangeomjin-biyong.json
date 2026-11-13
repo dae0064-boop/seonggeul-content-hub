@@ -2,7 +2,7 @@
  "slug": "2026-11-22-jonghap-geongangeomjin-biyong",
  "title": "종합건강검진 비용, 공단이 내주는 건 어디까지인가요 (결과 통보 15일)",
  "source": "11/22(일) 15:00 네이버 원고 — 생활보장 검색형(비용), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -55,21 +55,11 @@
   {
    "n": 4,
    "file": "04.png",
-   "title": "종합건강검진 비용 확인 순서를 정리한 메모 카드",
-   "kind": "card",
-   "card": {
-    "type": "check",
-    "style": "memo",
-    "title": "종합검진 예약 전 체크",
-    "sub": "견적은 두 덩어리로 나눠요",
-    "items": [
-     "패키지에 국가검진이 들었는지",
-     "추가 검사가 각각 얼마인지",
-     "수면 같은 선택 항목인지"
-    ],
-    "memo": "추가 검사 몫은 내가 내요",
-    "hl": 2
-   }
+   "title": "검진센터 상담실에서 글자 없는 내시경 화면을 보며 설명을 듣는 50대 남성",
+   "prompt": "Camera and composition: medium shot in a health screening center consultation room. A Korean man in his 50s in a navy cardigan sitting across from a doctor in a white coat who points at a blank endoscopy result monitor in a health screening center consultation room, listening calmly. Background: clean health screening center consultation room with white walls and soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a health screening center consultation room",
+   "bg": "clean health screening center consultation room with white walls and soft daylight",
+   "anchor": "blank endoscopy result monitor"
   },
   {
    "n": 5,
