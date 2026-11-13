@@ -14,6 +14,8 @@
  *   source_url: https://… | https://…    ← 출처 ①(기관 자료) 글의 원문 주소 1~2개. 발행 때 출처 줄 아래 링크 카드 (2026-10-19 원고부터)
  *   slot: 홈판                            ← 하루 2편 홈판형 글 표시. 제목을 공감형으로 쓴다 (2026-10-26 원고부터)
  *   title_test: 반전 | 기본               ← 홈판형 제목 시험 (2026-11-06~11-19 원고, 생활 홈판형만 — lint-post TITLE_TEST)
+ *   greet: 1~6 · close: 1~5 · emph: A|B|C · title_type: 질문|숫자|상황|비교 · heads: 짧은형|기본|긴형
+ *                                         ← 글 모양 돌려 쓰기 2 (2026-11-23 네이버 원고부터, lint-post VARY2_FROM)
  *   issue: 연예 | 정책                    ← 이슈 글 (2026-11-06 원고부터, 사용자 — 연예·방송·정책 이슈로 홈판 조회수). slot: 홈판 과 함께
  *   ---
  *
@@ -132,6 +134,12 @@ export function parsePost(raw) {
     subcategory: (meta.subcategory || '').trim(), // 블로그 하위 카테고리 (2026-11-04 사용자 — 연예·방송 안에서도 드라마·예능, 뉴스도 정책·이슈로). 못 찾으면 위 카테고리로
     titleTest: (meta.title_test || '').trim(),   // 홈판형 제목 시험 반전 | 기본 (2026-11-02 사용자)
     people: (meta.people || '').trim(),   // 이슈 글에 나오는 실존 인물 이름 (그림 계획서 검사용)   // 이슈 글 (연예·정책) — lint-post ISSUE_FROM
+    // 글 모양 돌려 쓰기 2 (2026-11-23 네이버 원고부터 — lint-post VARY2_FROM): 인사 1~6 · 닫는 인사 1~5 · 강조 팔레트 A·B·C · 제목 모양 · 소제목 길이
+    greet: (meta.greet || '').trim(),
+    close: (meta.close || '').trim(),
+    emph: (meta.emph || '').trim().toUpperCase(),
+    titleType: (meta.title_type || '').trim(),
+    heads: (meta.heads || '').trim(),
     tone: (meta.tone || '').trim(),   // 말투 (2026-11-03 원고부터 — 하루 20편, 같은 주제라도 다른 느낌으로. lint-post TONES)
     extra: (meta.extra || '').trim(),
     draftOnly: (meta.draft_only || '').trim(),   // 확인용 원고 (2026-11-03 사용자 "써서 임시저장해줘") — draft-test 로 임시저장만, 아침 예약은 건너뛴다   // 하루 5편 밖에 사용자가 따로 부탁한 글 (2026-10-26 쇼핑 커넥트 시험) — 하루 배분 검사에서 뺀다
@@ -151,7 +159,9 @@ export function parsePost(raw) {
  */
 export const OPEN_GREETING = '안녕하세요';
 export function leadBlock(blocks) {
-  const [a, b] = blocks || [];
+  // 2026-11-19 네이버 원고부터 대표사진 [이미지 1] 이 사실 한 문장 바로 다음에 온다 (lint-post TOP_IMG_FROM) — 그림은 건너뛰고 다음 글 덩어리를 본다
+  const a = (blocks || [])[0];
+  const b = (blocks || []).slice(1).find((x) => x.type !== 'image');
   if (!(a?.type === 'p' && a.lines.length <= 2 && a.lines[0]?.t !== OPEN_GREETING && b)) return null;
   if (b.type === 'p' && b.lines[0]?.t === OPEN_GREETING) return a;
   // 홈판형은 고정 인사 없이 첫 문장 → 바로 본론 (2026-11-01 사용자). 인사가 어디에도 없으면 첫 덩어리가 첫 문장이다

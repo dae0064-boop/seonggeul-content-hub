@@ -18,6 +18,7 @@
    - 제목은 그 제도 이름(검색되는 말)으로 시작, "언제부터·누가·얼마·어떻게 신청" 질문 + 괄호 기준.
    - 출처는 그 보도자료(1차 원문, ① 글 + `source_url`).
    - `issue:` 줄은 쓰지 않는다. category 생활보장, subcategory 는 주제에 맞게.
+   - **🎨 2026-11-23 원고부터 글 모양 돌려 쓰기 2** (`routines/naver-daily.md` 🎨, 검사기 `VARY2_FROM`): 두 편도 `greet`·`close`·`heads`·`emph`·`title_type` 를 적고, 밤 원고 8편이 이미 쓴 번호·팔레트·카드 모양을 세어 **같은 날 한도(같은 인사·닫는 인사 2편, 같은 소제목 수 4편, A·B·C 2편씩, 괄호 숫자 제목 5편, 같은 카드 모양 2장, 홈판형 3편)** 안에서 남은 것을 고른다 — 그날 원고 전부 lint 가 막는다. 대표사진 `[이미지 1]` 은 글 맨 위(사실 한 문장 바로 다음 줄, 11/19 원고부터 `TOP_IMG_FROM`).
    - 파일 이름 `content/posts/<오늘>-<슬러그>.md`, `publish_at: <오늘> 08:20` / `12:20`. 대표사진 테마·구도는 그날 다른 원고와 겹치지 않게(검사기).
    - `node scripts/lint-post.mjs` → `node scripts/build-post.mjs` 로 .json. 그날 원고 전부 lint 다시.
 

@@ -157,6 +157,45 @@ const VARIETY_FROM = '2026-11-10';
 //   2026-11-16 원고부터 AI 그림마다 anchor(그 글에만 있는 주제 사물·장소)를 적고 프롬프트에 그대로 넣는다. 장소는 주제에서(thumb_place "주제"),
 //   테마 색은 대표사진 띠에만(장면 색 scene3 문구 안 씀), 같은 날 장소·종이 한도는 보지 않는다(같은 병원·서류 글이 하루 10편이라 순번이 주제를 밀어냈다).
 const TOPIC_IMG_FROM = '2026-11-16';
+// 글 모양 돌려 쓰기 2 (2026-11-13 사용자 — 하루 10편이 모두 같은 틀(같은 인사·닫는 인사·소제목 6~7·강조 4색·카드 2장·"키워드, 질문 (숫자)")이고
+//   홈판 유입이 10월 초 50~60% 에서 1% 로 무너졌다 → "인사말·소제목 개수·강조 색·카드 그림·끝맺음 등을 다양하게"). 2026-11-23 네이버 원고부터.
+//   편수(하루 10편)·주제(생활보장)·광고심의 금지·출처 규칙은 그대로. 정본 routines/naver-daily.md 🎨 상자.
+//   ① greet 1~6 (같은 날 같은 번호 2편까지, 6 = 인사 없이 바로 본론)  ② close 1~5 (같은 날 같은 번호 2편까지, 이웃추가 부탁은 1·3·4 에만)
+//   ③ heads 짧은형 4~5 · 기본 6~7 · 긴형 8 (소제목 수, 같은 날 같은 개수 4편까지)  ④ emph A·B·C (같은 날 팔레트마다 2편 이상)
+//   ⑤ title_type 질문·숫자·상황·비교 (괄호 숫자 제목 하루 5편까지, 같은 모양 4편까지)  ⑥ 정보 카드 글마다 1~3장, 같은 날 같은 카드 모양 2장까지
+//   ⑦ 홈판형(slot: 홈판) 하루 3편 — 상황 제목, 첫 덩어리 뒤 장면, 얼굴 보이는 대표사진
+const VARY2_FROM = '2026-11-23';
+// 대표사진 맨 위 (2026-11-13 사용자 "대표사진을 글 맨 위로 진행해") — 2026-11-19 네이버 원고부터 [이미지 1] 은 첫 덩어리(사실 한 문장, 발행 때 인용구 1번) 바로 다음 줄.
+//   인사 있는 글: [사실 한 문장] → [이미지 1] → [인사] → 도입 / 인사 없는 글: [사실 한 문장] → [이미지 1] → 장면 도입. 티스토리는 그대로.
+const TOP_IMG_FROM = '2026-11-19';
+const VARY2_GREETS = {
+  1: ['안녕하세요', '보험이 쉬워지는 이야기, 오늘도 시작할게요😊'],
+  2: ['안녕하세요, 친근한 보험 이야기예요', /^오늘은 (.+) 이야기 하나 들고 왔어요🙂$/], // ○○ = 메인 키워드
+  3: ['반가워요😊', '병원비 걱정 덜어 드리는 친근한 보험 이야기입니다'],
+  4: ['오늘도 들러 주셔서 고마워요', '친근한 보험 이야기, 바로 시작할게요'],
+  5: ['안녕하세요🙂', '부모님 병원비, 내 보험금 이야기를 쉽게 풀어 드려요'],
+  6: null, // 인사 없이 첫 문장(인용구) → 바로 본론 (홈판형에 권장)
+};
+const VARY2_GREET_HINT = (n) => n === '2' ? '안녕하세요, 친근한 보험 이야기예요 / 오늘은 <메인 키워드> 이야기 하나 들고 왔어요🙂' : (VARY2_GREETS[n] || []).join(' / ');
+// 닫는 인사 — l1 은 글자 그대로, l2 는 모양 검사. 이웃추가 부탁은 1·3·4 에만 (2·5 는 없음)
+const VARY2_CLOSES = {
+  1: { l1: '좋아요·공감과 이웃추가 부탁드려요💙', l2: /^이상 친근한 보험 이야기, .+ 편이었습니다😎$/, hint: '이상 친근한 보험 이야기, OO 편이었습니다😎', name: '지금 인사' },
+  2: { l1: '끝까지 읽어 주셔서 고마워요💙', l2: 'question', hint: '<메인·서브 키워드가 든 질문 한 줄>?', name: '질문으로 끝내기' },
+  3: { l1: '좋아요·공감과 이웃추가 부탁드려요💙', l2: /^다음 글에서는 .+ 정리해 볼게요😊$/, hint: '다음 글에서는 ○○을 정리해 볼게요😊', name: '다음 글 예고' },
+  4: { l1: '이웃추가 해 두시면 다음 글도 바로 보여요💙', l2: '친근한 보험 이야기였어요, 오늘도 건강하세요😊', hint: '친근한 보험 이야기였어요, 오늘도 건강하세요😊', name: '짧은 인사' },
+  5: { l1: '오늘 내용, 한 줄로 정리하면요👇', l2: 'summary', hint: '<메인 키워드가 든 한 줄 요약>', name: '한 줄 요약' },
+};
+const VARY2_HEADS = { 짧은형: [4, 5], 기본: [6, 7], 긴형: [8, 8] };
+const VARY2_EMPH = {
+  A: { red: [2, 4], blue: [4, 6], yellow: [3, 4], green: [1, 2], bubble: [1, 1], name: '지금 규칙' },
+  B: { red: [1, 2], blue: [3, 5], yellow: [2, 3], green: [0, 0], bubble: [0, 0], name: '절제형' },
+  C: { red: [0, 1], blue: [2, 4], yellow: [4, 6], green: [1, 1], bubble: [0, 1], name: '형광형' },
+};
+const VARY2_TITLE_TYPES = ['질문', '숫자', '상황', '비교'];
+const VARY2_COMPARE_RE = /(차이|비교|vs|VS|다른 점|뭐가 (더 )?(나을|낫|유리)|어느 (쪽|게|것)|중 (뭐|어느|무엇))/;
+// 홈판형 첫 덩어리 뒤 장면 — 조건·때를 그리는 말 ("…받으면", "…날", "…순간", "예를 들어")
+const VARY2_SCENE_RE = /(면[\s,.]|면$|예를 들어|이맘때|이런 분|기 쉬워요|경우가 많아요|순간|그때|[가-힣] 날|때[\s,.]|때$)/;
+const VARY2 = { greet: 2, close: 2, heads: 4, emphMin: 2, bracket: 5, titleType: 4, cardShape: 2, homefeed: 3, day: 10 };
 const OLD_TAIL = /hospital waiting room, pharmacy counter, community center, home living room|do not add other large objects/i;
 const VAR = { theme: 1, place: 1, light: 3, evening: 2, shot: 2, mood: 2, faceTouch: 2, olds: 3, papers: 2 };
 const FACE_TOUCH = ['생각', '궁금'];
@@ -267,7 +306,7 @@ function planOf(file) {
 
 // 겹침 검사 (2026-11-03 원고부터, 하루 20편) — lint-tistory.mjs 와 같은 방법
 const DUP = { mainDays: 14, title: 0.6, titleNote: 0.45, body: 0.12, bodyNote: 0.06 };
-const DUP_FIXED = /^(안녕하세요|매일매일 좋은 날을 나누는 성글벙글입니다😊|보험이 쉬워지는 이야기, 오늘도 시작할게요😊|이상 친근한 보험 이야기, .+ 편이었습니다😎|좋아요·공감과 (구독|이웃추가) 부탁드려요💙|이상 성글벙글의 .+ 포스팅이었습니다😎|이 포스팅은 .+|판매 발생 시 .+)$/;
+const DUP_FIXED = /^(안녕하세요|매일매일 좋은 날을 나누는 성글벙글입니다😊|보험이 쉬워지는 이야기, 오늘도 시작할게요😊|이상 친근한 보험 이야기, .+ 편이었습니다😎|좋아요·공감과 (구독|이웃추가) 부탁드려요💙|이상 성글벙글의 .+ 포스팅이었습니다😎|이 포스팅은 .+|판매 발생 시 .+|안녕하세요, 친근한 보험 이야기예요|오늘은 .+ 이야기 하나 들고 왔어요🙂|반가워요😊|병원비 걱정 덜어 드리는 친근한 보험 이야기입니다|오늘도 들러 주셔서 고마워요|친근한 보험 이야기, 바로 시작할게요|안녕하세요🙂|부모님 병원비, 내 보험금 이야기를 쉽게 풀어 드려요|끝까지 읽어 주셔서 고마워요💙|다음 글에서는 .+ 정리해 볼게요😊|이웃추가 해 두시면 다음 글도 바로 보여요💙|친근한 보험 이야기였어요, 오늘도 건강하세요😊|오늘 내용, 한 줄로 정리하면요👇)$/;
 const dupNorm = (x) => String(x || '').replace(/[\s.,!?·~'"“”‘’()\[\]:;\-–—*|#>]/g, '');
 function gramsOf(text, n = 10) {
   const set = new Set();
@@ -343,7 +382,7 @@ const MAX_BLOCK = 4;          // 한 덩어리 최대 줄 수. 넘으면 2·2·3
 const MAX_AFTER_QUOTE = 3;
 const AFTER_QUOTE_FROM = '2026-10-02';
 // 그림은 소제목(인용구) 바로 아래에만 둔다 (사용자 지시 2026-10-03 — 소제목 → 그림 → 글, 일정한 패턴이 깔끔하다).
-// 대표사진(이미지 1)은 도입 뒤 첫 소제목 앞이라 뺀다. 소제목마다 그림이 있어야 하는 것은 아니다.
+// 대표사진(이미지 1)은 도입 뒤 첫 소제목 앞이라 뺀다 (2026-11-19 네이버 원고부터는 글 맨 위 — TOP_IMG_FROM). 소제목마다 그림이 있어야 하는 것은 아니다.
 const IMAGE_UNDER_QUOTE_FROM = '2026-10-05';
 const MAX_QUOTES = 9; // 2026-10-05 원고부터 (2026-10-03 사용자 지시)
 const MIN_CHARS = 2300;       // 본문 최소 (공백 포함) — 2026-10-01 발행분까지
@@ -472,10 +511,25 @@ for (const file of files) {
   const nsChars = slim ? slim.chars : NS_CHARS;
   const minMain = slim ? slim.main : MIN_MAIN;
   const minSub = slim ? slim.sub : MIN_SUB;
-  const maxQuotes = slim ? slim.quotes : MAX_QUOTES;
+  // 글 모양 돌려 쓰기 2 (VARY2_FROM 네이버 원고부터) — 인사·닫는 인사·소제목 수·강조·제목·카드·홈판형을 글마다 다르게
+  const vary2 = !tistory && dated >= VARY2_FROM && !post.matjip;
+  const maxQuotes = vary2 ? VARY2_HEADS.긴형[1] : slim ? slim.quotes : MAX_QUOTES;
   const errors = [];
-  // 한다팀장 모양 (HANDE_FROM) — 생활보장은 홈판형 칸 없이 검색형, 제목은 질문 + 괄호 기준
-  if (!tistory && post.category === '생활보장' && dated >= HANDE_FROM && !post.issue) {
+  const notes = [];
+  if (vary2) {
+    if (!(post.greet in VARY2_GREETS)) errors.push(`프런트매터 greet(인사말 번호)가 없거나 1~6 밖입니다 ("${post.greet}") — ${VARY2_FROM} 원고부터 (routines/naver-daily.md 🎨)`);
+    if (!VARY2_CLOSES[post.close]) errors.push(`프런트매터 close(닫는 인사 번호)가 없거나 1~5 밖입니다 ("${post.close}") — ${VARY2_FROM} 원고부터`);
+    if (!VARY2_EMPH[post.emph]) errors.push(`프런트매터 emph(강조 팔레트)가 없거나 A·B·C 밖입니다 ("${post.emph}") — A 지금 규칙 · B 절제형 · C 형광형`);
+    if (!VARY2_TITLE_TYPES.includes(post.titleType)) errors.push(`프런트매터 title_type 이 없거나 모르는 값입니다 ("${post.titleType}") — ${VARY2_TITLE_TYPES.join(' / ')}`);
+    if (!VARY2_HEADS[post.heads]) errors.push(`프런트매터 heads(소제목 길이)가 없거나 모르는 값입니다 ("${post.heads}") — 짧은형(4~5) / 기본(6~7) / 긴형(8)`);
+    if (post.slot && post.slot !== '홈판') errors.push(`slot 은 "홈판" 만 씁니다 (지금 "${post.slot}")`);
+    if (post.slot === '홈판') {
+      if (post.titleType && post.titleType !== '상황') errors.push(`홈판형(slot: 홈판) 제목은 title_type: 상황 — 상황·감정 제목으로 (지금 "${post.titleType}")`);
+      if (post.greet && post.greet !== '6') notes.push(`홈판형은 인사 없이 바로 본론(greet: 6)을 권해요 — 지금 greet: ${post.greet}`);
+    }
+  }
+  // 한다팀장 모양 (HANDE_FROM) — 생활보장은 홈판형 칸 없이 검색형, 제목은 질문 + 괄호 기준 (VARY2_FROM 원고부터는 title_type·홈판형 3편 규칙으로)
+  if (!tistory && post.category === '생활보장' && dated >= HANDE_FROM && !post.issue && !vary2) {
     if (post.slot === '홈판') errors.push('2026-11-07 원고부터 생활보장은 홈판형(slot: 홈판)을 쓰지 않습니다 — slot 줄을 지우고 검색형으로 (한다팀장 모양, routines/naver-daily.md 🩺👩‍💼)');
     const t = String(post.title || '');
     if (!/\([^)]*\)\s*$/.test(t)) errors.push('생활보장 제목 끝에 괄호 기준이 없습니다 — "(크기별 추적 기준 · 2026년)"처럼 답의 기준을 괄호로 (한다팀장 모양)');
@@ -483,7 +537,6 @@ for (const file of files) {
   }
   // 하위 카테고리 (2026-11-04 사용자) — 적었으면 블로그에 있는 이름이어야 한다 (scripts/lib/naver-subcategory.mjs)
   if (post.subcategory && !ALL_SUBCATEGORIES.includes(post.subcategory)) errors.push(`subcategory "${post.subcategory}" 는 블로그에 없는 이름 — ${ALL_SUBCATEGORIES.join(' / ')} 중 하나 (비우면 저절로 고른다)`);
-  const notes = [];
 
   if (!post.title) errors.push('title 이 없습니다.');
   if (!post.mainKeyword) errors.push('main_keyword 가 없습니다.');
@@ -649,7 +702,9 @@ for (const file of files) {
   // 제목은 메인 키워드로 시작해야 한다 (타깃 키워드를 첫 어절에)
   if (post.mainKeyword) {
     const t = post.title.replace(/\s/g, ''), k = post.mainKeyword.replace(/\s/g, '');
-    if (!t.startsWith(k)) errors.push(`제목이 메인 키워드로 시작하지 않습니다: "${post.title}"`);
+    // 상황형 제목(VARY2_FROM 원고부터)만 메인 키워드가 제목 안 어디에 있어도 된다 — 대신 반드시 있게
+    if (vary2 && post.titleType === '상황') { if (!t.includes(k)) errors.push(`상황형 제목에도 메인 키워드 "${post.mainKeyword}" 가 그대로 들어가야 합니다: "${post.title}"`); }
+    else if (!t.startsWith(k)) errors.push(`제목이 메인 키워드로 시작하지 않습니다: "${post.title}"${vary2 ? ' (상황형만 예외)' : ''}`);
   }
   // 제목 키워드 비율: 제목(공백 제외) 글자 중 메인·서브 키워드가 덮는 비율
   let titleKw = null;
@@ -665,7 +720,14 @@ for (const file of files) {
     const subsIn = post.subKeywords.filter((kw) => t.includes(kw.replace(/\s/g, '')));
     titleKw = { ratio: t.length ? cover.filter(Boolean).length / t.length : 0, subs: subsIn };
     const homefeedSlot = !tistory && dated >= SPLIT2_FROM && post.slot === '홈판';
-    if (homefeedSlot) {
+    if (vary2) {
+      // 제목 모양 4가지 (VARY2_FROM) — 질문 · 숫자 · 상황 · 비교. 괄호 숫자는 하루 5편까지(아래 하루 검사), 괄호·제목 숫자는 본문에 있어야(아래)
+      const head = (tb ? post.title.slice(0, tb.index) : post.title).trim();
+      if (post.titleType === '질문' && !/(\?|까요?|[나가]요|될까|할까|일까|인가요)$/.test(head)) errors.push(`title_type: 질문 — 괄호 앞이 질문(…나요/…까요/…?)으로 끝나야 합니다: "${post.title}"`);
+      if (post.titleType === '숫자' && !/\d/.test(post.title)) errors.push(`title_type: 숫자 — 제목에 본문에서 확인한 숫자(기한·금액 기준·횟수·가지 수)가 있어야 합니다: "${post.title}"`);
+      if (post.titleType === '상황' && tb) errors.push(`title_type: 상황 — 끝 괄호 없이 장면·감정으로 씁니다 (예: "부모님 병원비 영수증, 버리기 전에 이것만 보세요"): "${post.title}"`);
+      if (post.titleType === '비교' && !VARY2_COMPARE_RE.test(post.title)) errors.push(`title_type: 비교 — 제목에 견주는 말(차이·비교·뭐가 나을까·어느 쪽…)이 있어야 합니다: "${post.title}"`);
+    } else if (homefeedSlot) {
       if (tb) notes.push(`홈판형(slot: 홈판) 제목은 괄호 숫자 없이 공감형으로 씁니다: "${post.title}"`);
       if (!post.issue && !post.extra && writtenFor >= TITLE_TEST.from && writtenFor <= TITLE_TEST.to) {
         const twist = TWIST_RE.test(post.title);
@@ -842,6 +904,29 @@ for (const file of files) {
         } else if (hf.some((p) => p.category !== '생활정보')) errors.push(`홈판형(slot: 홈판)은 생활정보 글에만 붙입니다`);
       }
     }
+  }
+  // 글 모양 돌려 쓰기 2 — 같은 날 네이버 원고끼리 (VARY2_FROM 원고부터, 하루 10편 기준. extra: 글은 세지 않는다)
+  if (vary2 && !post.extra) {
+    const dir = file.replace(/[^\\/]+$/, '') || './';
+    const sib = daySibs(dir, dated);
+    const sibs = sib.map((f) => { try { return parsePost(fs.readFileSync(dir + f, 'utf8')); } catch { return { blocks: [] }; } });
+    const done = sib.length >= VARY2.day;
+    const qn = (p) => (p.blocks || []).filter((b) => b.type === 'quote').length;
+    const myQ = qn(post);
+    const same = (fn) => sibs.filter(fn).length;
+    let n;
+    if (post.greet && (n = same((p) => p.greet === post.greet)) > VARY2.greet) errors.push(`같은 날(${dated}) 인사 ${post.greet}번이 ${n}편 — 같은 번호 ${VARY2.greet}편까지 (greet 1~6 을 돌려 쓰세요)`);
+    if (post.close && (n = same((p) => p.close === post.close)) > VARY2.close) errors.push(`같은 날(${dated}) 닫는 인사 ${post.close}번이 ${n}편 — 같은 번호 ${VARY2.close}편까지 (close 1~5 를 돌려 쓰세요)`);
+    if ((n = same((p) => qn(p) === myQ)) > VARY2.heads) errors.push(`같은 날(${dated}) 소제목 ${myQ}개 글이 ${n}편 — 같은 개수 ${VARY2.heads}편까지 (짧은형 4~5 · 기본 6~7 · 긴형 8)`);
+    if (post.titleType && (n = same((p) => p.titleType === post.titleType)) > VARY2.titleType) errors.push(`같은 날(${dated}) 제목 모양 '${post.titleType}' ${n}편 — 같은 모양 ${VARY2.titleType}편까지 (질문·숫자·상황·비교)`);
+    const brNum = (p) => { const tb = titleBracket(p.title || ''); return !!tb && /\d/.test(tb[1]); };
+    if (brNum(post) && (n = same(brNum)) > VARY2.bracket) errors.push(`같은 날(${dated}) 끝 괄호 숫자 제목이 ${n}편 — 하루 ${VARY2.bracket}편까지 (나머지는 괄호 없이)`);
+    const hf = same((p) => p.slot === '홈판');
+    if (done ? hf !== VARY2.homefeed : hf > VARY2.homefeed) errors.push(`같은 날(${dated}) 홈판형(slot: 홈판) ${hf}편 — 하루 ${VARY2.homefeed}편 (나머지 ${VARY2.day - VARY2.homefeed}편은 검색형)`);
+    const em = { A: 0, B: 0, C: 0 };
+    for (const p of sibs) if (p.emph in em) em[p.emph]++;
+    const need = Object.values(em).reduce((a, x) => a + Math.max(0, VARY2.emphMin - x), 0);
+    if (need > Math.max(0, VARY2.day - sib.length)) errors.push(`같은 날(${dated}) 강조 팔레트 A ${em.A} · B ${em.B} · C ${em.C}편 — 하루 ${VARY2.day}편에서 A·B·C 를 ${VARY2.emphMin}편 이상씩 (남은 칸으로 못 채웁니다)`);
   }
   // 그림 계획서 slug 는 원고 이름과 같아야 한다 (2026-11-03 — 과천 글을 -v2 로 바꿨는데 계획서 slug 가 옛 이름이라 PC 가 옛 그림 폴더를 썼다)
   { const pl = planOf(file); const me = file.split(/[\\/]/).pop().replace(/\.md$/, '');
@@ -1048,17 +1133,45 @@ for (const file of files) {
 
   // 고정 인사말. 2026-10-12 원고부터는 그 앞에 사실 한 문장(1~2줄) 덩어리가 먼저 온다
   if (bundle) {
-    const [first, second] = post.blocks;
+    // 대표사진이 맨 위(TOP_IMG_FROM)면 사실 한 문장 다음이 그림이라, 인사·도입은 그림을 건너뛴 다음 글 덩어리에서 본다
+    const first = post.blocks[0];
+    const textAfter = post.blocks.slice(1).filter((b) => b.type !== 'image');
+    const second = textAfter[0];
     const greet = second?.lines.map((l) => l.t) || [];
     const greetOk = greet.length === 2 && greet[0] === OPEN[0] && greet[1] === OPEN[1];
     // 홈판형은 고정 인사 없이 바로 본론 (2026-11-01 사용자 — 11/2 원고부터 빼도 되고, 11/3 원고부터는 빼야 한다)
     const hfNoGreet = !tistory && post.slot === '홈판' && dated >= HOMEFEED4_FROM;
-    if (!first || first.type !== 'p' || first.lines.length > 2 || first.lines[0].t === OPEN[0])
-      errors.push(`첫 덩어리는 ${hfNoGreet ? '' : '고정 인사말 앞의 '}"확인된 사실 한 문장"(1~2줄)이어야 합니다 (2026-10-12 원고부터)${hfNoGreet ? '' : ` — 빈 줄 다음에 "${OPEN[0]} / ${OPEN[1]}"`}`);
+    // 인사 6가지 (VARY2_FROM 원고부터) — greet 번호의 두 줄이 사실 한 문장 바로 다음, 6 은 인사 없이 바로 본론
+    const sqz = (x) => String(x || '').replace(/\s+/g, '');
+    const v2GreetOk = (n, b) => {
+      const g = VARY2_GREETS[n];
+      if (!g || b?.type !== 'p' || b.lines.length !== 2 || b.lines[0].t !== g[0]) return false;
+      if (typeof g[1] === 'string') return b.lines[1].t === g[1];
+      const m = g[1].exec(b.lines[1].t);
+      return !!m && !!post.mainKeyword && sqz(m[1]).includes(sqz(post.mainKeyword));
+    };
+    const looksGreet = (b) => b?.type === 'p' && (b.lines[0]?.t === OPEN[0] || Object.values(VARY2_GREETS).some((g) => g && b.lines[0]?.t === g[0]));
+    let firstErr = null, greetErr = null;
+    if (vary2) {
+      if (!first || first.type !== 'p' || first.lines.length > 2 || looksGreet(first))
+        firstErr = `첫 덩어리는 "확인된 사실 한 문장"(1~2줄)이어야 합니다 — 그다음에 인사 ${post.greet || '?'}번${post.greet === '6' ? '(인사 없이 바로 본론)' : ''}`;
+      else if (post.greet === '6') { if (looksGreet(second)) greetErr = `greet: 6 은 인사 없이 첫 문장 다음 바로 본론입니다 — 인사 두 줄 "${second.lines.map((l) => l.t).join(' / ')}" 을 빼세요`; }
+      else if (VARY2_GREETS[post.greet] && !v2GreetOk(post.greet, second))
+        greetErr = `사실 한 문장 다음 덩어리가 인사 ${post.greet}번 "${VARY2_GREET_HINT(post.greet)}" 이어야 합니다${post.greet === '2' ? ' (○○ 자리는 메인 키워드 그대로)' : ''}`;
+    } else if (!first || first.type !== 'p' || first.lines.length > 2 || first.lines[0].t === OPEN[0])
+      firstErr = `첫 덩어리는 ${hfNoGreet ? '' : '고정 인사말 앞의 '}"확인된 사실 한 문장"(1~2줄)이어야 합니다 (2026-10-12 원고부터)${hfNoGreet ? '' : ` — 빈 줄 다음에 "${OPEN[0]} / ${OPEN[1]}"`}`;
     else if (!greetOk && !hfNoGreet)
-      errors.push(`사실 한 문장 다음 덩어리가 고정 인사말 "${OPEN[0]} / ${OPEN[1]}" 이어야 합니다`);
+      greetErr = `사실 한 문장 다음 덩어리가 고정 인사말 "${OPEN[0]} / ${OPEN[1]}" 이어야 합니다`;
     else if (greetOk && hfNoGreet && ruleDated >= HF_STYLE_FROM)
-      errors.push(`홈판형(slot: 홈판)은 고정 인사말 없이 첫 문장 다음 바로 본론으로 씁니다 (2026-11-03 원고부터) — "${OPEN[0]} / ${OPEN[1]}" 두 줄을 빼세요 (닫는 인사는 그대로)`);
+      greetErr = `홈판형(slot: 홈판)은 고정 인사말 없이 첫 문장 다음 바로 본론으로 씁니다 (2026-11-03 원고부터) — "${OPEN[0]} / ${OPEN[1]}" 두 줄을 빼세요 (닫는 인사는 그대로)`;
+    // 홈판형(VARY2_FROM) — 첫 문장(·인사) 다음 덩어리는 독자가 겪을 법한 장면 ("병원비 영수증을 정리하다 보면…", "결과지를 받은 날…")
+    if (vary2 && post.slot === '홈판' && !firstErr && !greetErr) {
+      const sc = textAfter[post.greet === '6' ? 0 : 1];
+      if (!sc || sc.type !== 'p' || !VARY2_SCENE_RE.test(sc.lines.map((l) => l.t).join(' ')))
+        errors.push(`홈판형 첫 본문 덩어리는 장면 묘사로 씁니다 — "…받으면", "…한 날", "예를 들어 …" 처럼 독자가 겪을 법한 순간 (지금: "${sc?.lines?.[0]?.t || '없음'}")`);
+    }
+    if (firstErr) errors.push(firstErr);
+    else if (greetErr) errors.push(greetErr);
     else {
       const lead = first.lines.map((l) => l.t).join(' ');
       notes.push(`첫 줄 사실(발행 때 인용구): ${lead}`);
@@ -1082,7 +1195,14 @@ for (const file of files) {
     errors.push(`오프닝이 고정 문구와 다릅니다. "${OPEN[0]} / ${OPEN[1]}" 로 시작해야 합니다.`);
 
   // 제목 끝 괄호에 구체 숫자·기준 (2026-10-12 원고부터). 원고에서 확인한 숫자만 — 괄호 속 숫자가 본문에 있어야 한다
-  if (bundle && !(!tistory && dated >= SPLIT2_FROM && post.slot === '홈판')) {
+  if (bundle && vary2) {
+    // VARY2_FROM 원고부터 끝 괄호는 모양에 따라 있어도 없어도 된다 — 제목에 쓴 숫자는 모두 본문에서 확인한 숫자여야
+    const bodyNums = new Set((texts.join(' ').match(/\d+(\.\d+)?/g) || []));
+    const miss = (post.title.match(/\d+(\.\d+)?/g) || []).filter((n) => !bodyNums.has(n));
+    if (miss.length) errors.push(`제목의 숫자 ${miss.join(', ')} 가 본문에 없습니다 — 본문에서 확인한 숫자만 씁니다`);
+    const tb = titleBracket(post.title);
+    if (tb && !/\d/.test(tb[1])) errors.push(`제목 끝 괄호에는 숫자·기준을 담습니다 (숫자 없는 괄호는 빼세요): "${post.title}"`);
+  } else if (bundle && !(!tistory && dated >= SPLIT2_FROM && post.slot === '홈판')) {
     const tb = titleBracket(post.title);
     if (!tb || !/\d/.test(tb[1])) errors.push(`제목 끝에 숫자·기준을 담은 괄호를 붙입니다 (2026-10-12 원고부터, 예: "… (중불 20~30분)"): "${post.title}"`);
     else {
@@ -1098,7 +1218,7 @@ for (const file of files) {
     if (!plan) notes.push('이미지 계획서가 아직 없어 정보 카드 검사를 건너뜁니다 — 계획서를 쓴 뒤 다시 돌리세요');
     else {
       const cards = plan.images.filter((im) => im.kind === 'card');
-      const want = slim ? slim.cards : !tistory && dated >= WEEK_TEST_FROM ? CARDS_WEEK_TEST : CARDS;
+      const want = vary2 ? [1, 3] : slim ? slim.cards : !tistory && dated >= WEEK_TEST_FROM ? CARDS_WEEK_TEST : CARDS;
       if (slim && plan.images.length !== slim.imgs) errors.push(`이미지 계획서가 ${plan.images.length}장 — ${slim.imgs}장이어야 합니다 (원고 [이미지 N] 자리와 같게)`);
       if (cards.length < want[0] || cards.length > want[1]) errors.push(`정보 카드(kind "card")는 ${plan.images.length}장 중 ${want[0]}~${want[1]}장 (지금 ${cards.length}장)`);
       const bodyPlain = plain(texts.join(''));
@@ -1118,11 +1238,20 @@ for (const file of files) {
         const ds = cards.map((im) => cardDesign(im.card));
         if (new Set(ds).size < ds.length) errors.push(`한 글의 카드 ${ds.length}장이 같은 모양(${ds.join('·')})입니다 — 서로 다른 모양으로 (채팅·메모·첫머리·숫자·퀴즈·자가체크, standards/이미지-기준.md)`);
         const dir = file.replace(/[^\\/]+$/, '') || './';
+        if (vary2) {
+          // 카드 그림 (VARY2_FROM 원고부터) — 같은 날 같은 카드 모양(card.type: 첫머리·숫자·퀴즈·자가체크·비교·순서·확인) 2장까지
+          const me = file.split(/[\\/]/).pop();
+          const mine = cards.map((im) => im.card?.type).filter(Boolean);
+          if (new Set(mine).size < mine.length) errors.push(`한 글의 카드가 같은 type(${mine.join('·')})입니다 — 서로 다른 모양으로`);
+          const day = {};
+          for (const f of daySibs(dir, dated).filter((f) => f !== me)) for (const im of planOf(dir + f)?.images || []) if (im.kind === 'card' && im.card?.type) day[im.card.type] = (day[im.card.type] || []).concat(f);
+          for (const t of new Set(mine)) if ((day[t] || []).length + 1 > VARY2.cardShape) errors.push(`같은 날 '${t}' 카드가 ${(day[t] || []).length + 1}장 (${day[t].join(', ')}) — 같은 모양은 하루 ${VARY2.cardShape}장까지 (lead·number·quiz·selfcheck·compare·steps·check 를 돌려 쓰세요)`);
+        }
         const count = {}; let total = 0;
         for (const f of fs.readdirSync(dir).filter((f) => f.startsWith(dated) && f.endsWith('.md'))) {
           for (const im of planOf(dir + f)?.images || []) if (im.kind === 'card') { count[cardDesign(im.card)] = (count[cardDesign(im.card)] || 0) + 1; total++; }
         }
-        if (total >= 10) {
+        if (total >= 10 && !vary2) {
           const cap = Math.ceil(total * CARD_MIX_MAX);
           for (const d of ds) if (count[d] > cap) errors.push(`${dated} 카드 ${total}장 중 '${d}' 모양이 ${count[d]}장 — ${cap}장까지 (${Math.round(CARD_MIX_MAX * 100)}%). 원고에 맞는 다른 모양으로`);
           if (total >= 20 && Object.keys(count).length < 5) notes.push(`${dated} 카드 모양이 ${Object.keys(count).length}가지예요 — 5가지 이상 섞어 주세요 (${JSON.stringify(count)})`);
@@ -1150,6 +1279,26 @@ for (const file of files) {
     if (texts[texts.length - 2] !== close1) errors.push(`마지막에서 두 번째 줄은 "${close1}" 이어야 합니다.`);
     if (CLOSE_RE.test(last)) errors.push(`티스토리 닫는 줄을 "이상 성글벙글의 OO 포스팅이었습니다😎" 로 쓰지 않습니다 — 그 글에만 맞는 한 문장으로 바꿉니다.`);
     else if (!kws.some((k) => k && plain(last).includes(k))) errors.push("마지막 줄에 이 글의 메인 또는 서브 키워드를 넣어 그 글에만 맞는 한 문장으로 끝냅니다.");
+  } else if (vary2) {
+    // 닫는 인사 5가지 (VARY2_FROM 원고부터) — 마지막 두 줄. 이웃추가 부탁은 1·3·4 에만
+    const c = VARY2_CLOSES[post.close];
+    const l1 = texts[texts.length - 2] || '', l2 = texts[texts.length - 1] || '';
+    if (c) {
+      const kws = [post.mainKeyword, ...(post.subKeywords || [])].filter(Boolean).map(plain);
+      if (l1 !== c.l1) errors.push(`닫는 인사 ${post.close}번(${c.name}) — 마지막에서 두 번째 줄은 "${c.l1}" 입니다 (지금 "${l1}")`);
+      const l2ok = c.l2 instanceof RegExp ? c.l2.test(l2) : ['question', 'summary'].includes(c.l2) ? true : l2 === c.l2;
+      if (!l2ok)
+        errors.push(`닫는 인사 ${post.close}번(${c.name}) — 마지막 줄은 "${c.hint}" 모양입니다 (지금 "${l2}")`);
+      if (c.l2 === 'question') {
+        if (!/[?？]$/.test(l2)) errors.push(`닫는 인사 2번(질문으로 끝내기) — 마지막 줄은 독자에게 묻는 질문(?로 끝남)입니다: "${l2}"`);
+        if (!kws.some((k) => k && plain(l2).includes(k))) errors.push(`닫는 인사 2번 — 마지막 질문에 메인 또는 서브 키워드를 넣어 그 글에만 맞는 질문으로: "${l2}"`);
+      }
+      if (c.l2 === 'summary') {
+        if (/[?？]$/.test(l2)) errors.push(`닫는 인사 5번(한 줄 요약) — 마지막 줄은 질문이 아니라 요약 문장입니다: "${l2}"`);
+        if (!post.mainKeyword || !plain(l2).includes(plain(post.mainKeyword))) errors.push(`닫는 인사 5번 — 요약 줄에 메인 키워드 "${post.mainKeyword}" 를 넣습니다: "${l2}"`);
+      }
+      if (['2', '5'].includes(post.close) && /이웃|구독|공감/.test(l2)) errors.push(`닫는 인사 ${post.close}번에는 이웃추가·공감 부탁을 넣지 않습니다 (부탁은 1·3·4번에만): "${l2}"`);
+    }
   } else if (texts[texts.length - 2] !== close1 || !CLOSE_RE.test(texts[texts.length - 1]))
     errors.push(`클로징이 고정 문구와 다릅니다. "${close1} / ${CLOSE_2_HINT(newGreet)}" 로 끝나야 합니다.`);
 
@@ -1169,18 +1318,31 @@ for (const file of files) {
         errors.push(`소제목 바로 아래 덩어리가 ${next.lines.length}줄 — ${MAX_AFTER_QUOTE}줄 이하로 끊으세요 (소제목과 붙어 보입니다, 1·3 이나 2·2 로): "${next.lines[0].t}"`);
     });
   }
+  if (!tistory && dated >= TOP_IMG_FROM && images.length) {
+    const i1 = post.blocks.findIndex((b) => b.type === 'image' && b.n === 1);
+    if (i1 !== 1 || post.blocks[0]?.type !== 'p')
+      errors.push(`[이미지 1](대표사진)은 글 맨 위 — 첫 덩어리(사실 한 문장) 바로 다음 줄에 둡니다 (${TOP_IMG_FROM} 원고부터, 2026-11-13 사용자 "대표사진을 글 맨 위로"). 사실 한 문장 → [이미지 1] → 인사(있으면) → 도입`);
+  }
   if (dated >= IMAGE_UNDER_QUOTE_FROM) {
+    const quotes = post.blocks.filter((b) => b.type === 'quote').length;
+    // 소제목 4개 글(VARY2 짧은형)은 그림 자리 5개(대표 빼고)를 다 받을 소제목이 모자라 — 한 소제목 아래 그림 두 장(장면 → 카드처럼)을 연달아 한 곳까지
+    const stackOk = vary2 && quotes < images.filter((b) => b.n !== 1).length;
+    let stacked = 0;
     post.blocks.forEach((b, i) => {
       if (b.type !== 'image' || b.n === 1) return;
       const prev = post.blocks[i - 1];
+      if (stackOk && prev?.type === 'image' && prev.n !== 1 && post.blocks[i - 2]?.type === 'quote' && ++stacked === 1) return;
       if (!prev || prev.type !== 'quote')
-        errors.push(`[이미지 ${b.n}] 은 소제목(인용구) 바로 아래에 두세요 — 소제목 → 그림 → 글 순서: "${b.lines[0].t}"`);
+        errors.push(`[이미지 ${b.n}] 은 소제목(인용구) 바로 아래에 두세요 — 소제목 → 그림 → 글 순서${stackOk ? ' (소제목 4개 글만 한 소제목 아래 그림 두 장을 한 곳까지)' : ''}: "${b.lines[0].t}"`);
     });
-    const quotes = post.blocks.filter((b) => b.type === 'quote').length;
+    if (vary2 && VARY2_HEADS[post.heads]) {
+      const [lo, hi] = VARY2_HEADS[post.heads];
+      if (quotes < lo || quotes > hi) errors.push(`heads: ${post.heads} — 인용구(소제목) ${lo === hi ? lo : `${lo}~${hi}`}개여야 합니다 (지금 ${quotes}개). 짧은형 4~5 · 기본 6~7 · 긴형 8`);
+    }
     const under = post.blocks.filter((b, i) => b.type === 'image' && b.n !== 1 && post.blocks[i - 1]?.type === 'quote').length;
     if (!slim && quotes - under > 3) notes.push(`그림 없는 소제목이 ${quotes - under}개예요 — 소제목 수를 그림 수(7)에 가깝게 맞추면 패턴이 더 고르게 보여요`);
     // 인용구 소제목이 너무 많다 (2026-10-03 사용자 지시 — 10~12개에서 2~3개 빼기). 그림 7 + Q&A + 정리 = 9개까지
-    if (quotes > maxQuotes) errors.push(`인용구(소제목)가 ${quotes}개 — ${maxQuotes}개 이하로 줄이세요${slim ? ' (2026-11-03 원고부터 6~7개 — 일부 소제목에만 그림)' : ' (그림 7개 자리 + Q&A + 정리)'}. 그림 없는 소제목은 앞 덩어리와 합칩니다`);
+    if (quotes > maxQuotes && !vary2) errors.push(`인용구(소제목)가 ${quotes}개 — ${maxQuotes}개 이하로 줄이세요${slim ? ' (2026-11-03 원고부터 6~7개 — 일부 소제목에만 그림)' : ' (그림 7개 자리 + Q&A + 정리)'}. 그림 없는 소제목은 앞 덩어리와 합칩니다`);
   }
   if (perBlock < MIN_BLOCK_LINES)
     errors.push(`덩어리가 잘게 쪼개졌습니다: 덩어리당 ${perBlock.toFixed(1)}줄 (최소 ${MIN_BLOCK_LINES})`);
@@ -1196,14 +1358,18 @@ for (const file of files) {
   const green = marks.green || 0;
   // 티스토리도 같은 강조 (2026-11-09 사용자 "티스토리도 같은 강조로 바꿔줘") — 11/10 원고부터
   const emph2 = dated >= EMPH2_FROM && !post.matjip;
-  const MK = emph2 ? MARKS2 : MARKS;
+  // 강조 팔레트 A·B·C (VARY2_FROM 원고부터) — 개수의 아래·위 모두 막는다 (팔레트끼리 달라 보여야 하므로)
+  const pal = vary2 ? VARY2_EMPH[post.emph] : null;
+  const MK = pal || (emph2 ? MARKS2 : MARKS);
   const bubbles = post.blocks.filter((b) => b.type === 'bubble');
   if (!emph2) {
     if (green) errors.push(`[초록배경] 은 ${EMPH2_FROM} 원고부터만 씁니다`);
     if (bubbles.length) errors.push(`인용구(말풍선) 은 ${EMPH2_FROM} 원고부터만 씁니다`);
   } else {
-    if (green < MK.green[0] || green > MK.green[1]) errors.push(`초록배경 ${green}곳 — ${MK.green[0]}~${MK.green[1]}곳 (체크포인트·정리 덩어리, 문장 통째로)`);
-    if (bubbles.length !== 1) errors.push(`인용구(말풍선) ${bubbles.length}곳 — 대화 한 줄을 정확히 1곳 (예: 인용구(말풍선) "벌써 두 달 지났는데, 지금 청구해도 될까요?")`);
+    const palTag = pal ? ` (emph ${post.emph} ${pal.name})` : '';
+    if (green < MK.green[0] || green > MK.green[1]) errors.push(`초록배경 ${green}곳 — ${MK.green[0] === MK.green[1] ? MK.green[0] : `${MK.green[0]}~${MK.green[1]}`}곳${palTag} (체크포인트·정리 덩어리, 문장 통째로)`);
+    const bub = pal ? pal.bubble : [1, 1];
+    if (bubbles.length < bub[0] || bubbles.length > bub[1]) errors.push(pal ? `인용구(말풍선) ${bubbles.length}곳 — ${bub[0] === bub[1] ? bub[0] : `${bub[0]}~${bub[1]}`}곳${palTag}` : `인용구(말풍선) ${bubbles.length}곳 — 대화 한 줄을 정확히 1곳 (예: 인용구(말풍선) "벌써 두 달 지났는데, 지금 청구해도 될까요?")`);
     for (const b of bubbles) {
       const t = b.lines[0]?.t || '';
       if (!/^["“]/.test(t)) errors.push(`말풍선은 따옴표 대화로 시작합니다: "${t}"`);
@@ -1217,7 +1383,8 @@ for (const file of files) {
     }
   }
   for (const [name, n, [lo, hi]] of [['빨간글씨', red, MK.red], ['파란글씨', blue, MK.blue], ['노란배경', yellow, MK.yellow]]) {
-    if (n < lo) errors.push(`${name} ${n}곳 — ${lo}곳 이상 필요 (권장 ${lo}~${hi})`);
+    if (n < lo) errors.push(`${name} ${n}곳 — ${lo}곳 이상 필요 (권장 ${lo}~${hi})${pal ? ` · emph ${post.emph} ${pal.name}` : ''}`);
+    else if (n > hi && pal) errors.push(`${name} ${n}곳 — emph ${post.emph}(${pal.name})는 ${lo}~${hi}곳입니다`);
     else if (n > hi) notes.push(`${name} ${n}곳 — 권장 ${lo}~${hi}곳보다 많아요. 다 칠하면 강조가 안 보입니다`);
   }
   const avg = (texts.reduce((a, t) => a + t.length, 0) / texts.length).toFixed(1);
