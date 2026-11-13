@@ -26,6 +26,10 @@
 
 ## 지금 상태
 
+### 11/13 밤 — ⏹ 심의·맛집 지킴이 끔 (사용자 "내가 요청할 때만 작업, 꺼 줘")
+- PC 작업 SeonggeulGomsRequest(10분마다)·SeonggeulMatjipWatch(3시간마다, PC 깨움) — 다음 catchup·아침 실행 때 `-Remove` 로 지워진다. 요청(goms-request.txt, 맛집 publish_at 원고)은 13·16·19·22시 catchup 끝에서 한 번 본다. 곰스 오래된 요청 기준 2→5시간. health.ps1 의 맛집 쉬기 단계 뺌.
+- [ ] 11/14 catchup 기록에서 두 작업이 지워졌는지(작업 스케줄러에 남아 있으면 ensure-retry 다음 실행 때 지워짐).
+
 ### 11/13 밤 — 🧹 안 쓰는 것 정리 (사용자 "오래됐거나 지금 작업과 관계없는 것, cmd, 보험 심의글·배너 그림 중 안 쓰는 것 다 지워줘")
 - 실행기 `.cmd` 37 → **11개**(auto-day·auto-setup·sync·chrome-login·two-blog-test·threads-key·reserve-tomorrow·reserve-week·reserved-redo·matjip + READ-ME-FIRST 새로 씀). 작업 스케줄러는 .ps1 을 바로 부르므로 영향 없음. 그 실행기만 부르던 tools .ps1 9개도 지움.
 - 보험 심의: `sets-retired`(옛 묶음), 이미 올린 편 배너 10장(1·2·3·5~10·12) 지움. **남김**: 1~60편 원고(sets — 15:00 게시가 12/23 까지 씀), 15편 배너(3일 안 2/2 답글용), 아직 안 올린 적격 편 배너 40장, base·art-d-warm(배너 만들 때 씀).
