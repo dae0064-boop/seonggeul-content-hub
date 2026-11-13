@@ -37,6 +37,15 @@ async function main() {
   const due = items.filter((it) => it['시각'] <= hhmm && mins(hhmm) - mins(it['시각']) <= 180);
   log(`오늘 일상 ${items.length}편 · 지금 올릴 차례 ${due.length}편`);
   if (!due.length) return 0;
+  // 스레드 웹 예약(web-schedule.mjs)으로 걸어 둔 글은 스레드가 직접 올린다 — 여기서 또 올리지 않는다 (2026-11-14)
+  const marks = arg('--marks') ? path.join(arg('--marks'), `${today}.tsv`) : '';
+  if (marks && fs.existsSync(marks)) {
+    const sch = new Set(fs.readFileSync(marks, 'utf8').split(/\r?\n/).filter(Boolean).map((l) => { const [t, f] = l.split('\t'); return `${t}|${head(f)}`; }));
+    const left = due.filter((it) => !sch.has(`${it['시각']}|${head(it.body)}`));
+    if (left.length < due.length) log(`스레드 예약으로 걸어 둔 글 ${due.length - left.length}편은 건너뛰어요`);
+    due.splice(0, due.length, ...left);
+    if (!due.length) return 0;
+  }
 
   const token = process.env.THREADS_ACCESS_TOKEN;
   if (!token) { log('스레드 연결 키(THREADS_ACCESS_TOKEN)가 이 PC 에 없어요 — launchers\\threads-key.cmd'); return 1; }
