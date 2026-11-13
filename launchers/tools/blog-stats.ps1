@@ -13,13 +13,20 @@ $out = "dumps\blog-stats\$date"
 $nurak = Join-Path $out 'nurak.txt'
 $statsDone = Test-Path (Join-Path $out 'index.json')
 $nurakNew = (Test-Path $nurak) -and ((Get-Content $nurak -Raw -Encoding UTF8) -match '1페이지 밖')
-if ($statsDone -and $nurakNew) { exit 0 }  # 오늘 이미 했음
+$rankDone = Test-Path (Join-Path $out 'rank.txt')   # 2026-11-13 새 글 검색 순위 추적
+if ($statsDone -and $nurakNew -and $rankDone) { exit 0 }  # 오늘 이미 했음
 if (-not $statsDone) {
   Write-Host "`n[내 블로그 통계] $id" -ForegroundColor Cyan
   & node scripts/blog-stats.mjs $id --out $out 2>&1 | ForEach-Object { Write-Host $_ }
 }
 # 검색 누락 검사 (2026-11-03 사용자 승인) — 어제·그제 글이 네이버 블로그 검색에 나오는지. 결과 nurak.txt 가 같은 폴더로 Drive 에 올라간다. 실패해도 넘어간다
-& node scripts/nurak-check.mjs $id --out $out 2>&1 | ForEach-Object { Write-Host $_ }
+if (-not ($statsDone -and $nurakNew)) { & node scripts/nurak-check.mjs $id --out $out 2>&1 | ForEach-Object { Write-Host $_ } }
+# 새 글 검색 순위 (2026-11-13 사용자 "순위 추적도 진행해줘") — 1·3·7일 전 생활보장 글의 메인 키워드 블로그 탭 순위·통합검색. rank.txt 가 같은 폴더로, 누적은 Drive research\rank-log.tsv. 실패해도 넘어간다
+if (-not $rankDone) {
+  . (Join-Path $PSScriptRoot 'lib-drive.ps1'); $rd = Find-MyDrive
+  $rlog = if ($rd) { Join-Path $rd 'ClaudeWorkspace\research\rank-log.tsv' } else { 'dumps\rank-log.tsv' }
+  & node scripts/rank-track.mjs $id --out $out --log $rlog 2>&1 | ForEach-Object { Write-Host $_ }
+}
 . (Join-Path $PSScriptRoot 'lib-drive.ps1')
 $drive = Find-MyDrive
 if ($drive -and (Test-Path $out)) {
