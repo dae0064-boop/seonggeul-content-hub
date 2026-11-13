@@ -1161,6 +1161,53 @@ async function insertImageAt(page, editor, label, file) {
 }
 
 /**
+ * 그림마다 오른쪽 아래 'AI 활용 설정' 스위치를 켠다 (2026-11-14 사용자 — "앞으로 다 넣어줘, 저렇게 활용표기해야 할 것 같아".
+ * 네이버 가이드: 생성형 AI 를 쓴 문서는 그 사실을 밝히라고 권고). 실제 화면에서 처음 쓰는 스위치라 상태를 읽을 수 있을 때만 누르고,
+ * 누른 뒤 다시 읽어 켜졌는지 확인한다. 상태를 못 읽으면 누르지 않고 화면을 남긴다(ai-toggle 덤프) — 이 단계 때문에 발행이 멈추지는 않는다.
+ */
+async function setAiUsage(page, editor) {
+  const read = () => editor.evaluate(() => {
+    const imgs = [...document.querySelectorAll('.se-component.se-image')];
+    return imgs.map((im, i) => {
+      const cands = [...im.querySelectorAll('button, label, [role="switch"], [role="checkbox"], [aria-checked], [aria-pressed], input[type="checkbox"], span, div')]
+        .filter((e) => /AI\s*활용/.test((e.innerText || e.getAttribute('aria-label') || '').trim()) && (e.innerText || '').length < 30);
+      const el = cands[cands.length - 1] || null;
+      if (!el) return { i, found: false };
+      const scope = el.closest('button, label, [role="switch"], [role="checkbox"]') || el;
+      const box = scope.querySelector('input[type="checkbox"]') || el.parentElement?.querySelector('input[type="checkbox"]');
+      let on = null;
+      const aria = scope.getAttribute('aria-checked') ?? scope.getAttribute('aria-pressed') ?? scope.querySelector('[aria-checked]')?.getAttribute('aria-checked');
+      if (aria === 'true' || aria === 'false') on = aria === 'true';
+      else if (box) on = !!box.checked;
+      else {
+        const cls = [scope, ...scope.querySelectorAll('*')].map((e) => (e.className && e.className.baseVal === undefined ? e.className : '')).join(' ');
+        if (/(^|[\s_-])(on|checked|active|is-on|selected)($|[\s_-])/i.test(cls)) on = true;
+        else if (/(^|[\s_-])(off|unchecked)($|[\s_-])/i.test(cls)) on = false;
+      }
+      scope.setAttribute('data-sg-ai', String(i));
+      return { i, found: true, on, html: scope.outerHTML.slice(0, 300) };
+    });
+  }).catch(() => []);
+  const first = await read();
+  const res = { total: first.length, on: 0, turned: 0, unknown: 0, missing: 0 };
+  for (const r of first) {
+    if (!r.found) { res.missing++; continue; }
+    if (r.on === true) { res.on++; continue; }
+    if (r.on === null) { res.unknown++; continue; }
+    const loc = editor.locator(`[data-sg-ai="${r.i}"]`).first();
+    await loc.scrollIntoViewIfNeeded().catch(() => {});
+    await loc.hover({ force: true }).catch(() => {});
+    await loc.click({ force: true, timeout: 4000 }).catch(() => {});
+    await sleep(600);
+    const again = (await read())[r.i];
+    if (again && again.on === true) { res.turned++; res.on++; }
+    else res.unknown++;
+  }
+  if (res.unknown || res.missing) { await dump(page, 'ai-toggle'); res.sample = first.find((r) => r.found && r.on !== true)?.html || ''; }
+  return res;
+}
+
+/**
  * 글 맨 끝(닫는 인사 아래)에 "▶ 함께 보면 좋은 글" 과 내 지난 글 링크 1~2개를 넣는다 (2026-10-07 사용자 승인).
  * 2026-10-08: 가짜 붙여넣기(스크립트가 만든 paste 이벤트)는 에디터가 카드로 바꾸지 않아 주소가 '글자'로만 들어갔다
  * (사용자: "링크가 글자로 붙으면 클릭도 안 된다", "링크 카드로 넣어줘"). 그래서 카드가 될 때까지 두 가지를 차례로 해 본다:
@@ -1975,6 +2022,12 @@ async function main() {
         if (r.lost) throw new Error(`이미지를 넣다가 글이 사라졌고 되돌리지 못했습니다: ${r.lost.slice(0, 3).join(' / ')}. 저장하지 않고 멈춥니다.`);
         manual.push(`이미지 ${b.n} → "${label}" 자리에 ${path.basename(file)} 직접 넣기  [${r.why}]`);
       }
+    }
+    // ---- 그림마다 'AI 활용 설정' 켜기 (2026-11-14 사용자)
+    if (report.image.ok) {
+      const ai = await setAiUsage(page, editor);
+      log(`AI 활용 설정: 그림 ${ai.total}장 중 켜짐 ${ai.on} (이번에 켬 ${ai.turned})${ai.unknown ? ` · 상태 못 읽음 ${ai.unknown}` : ''}${ai.missing ? ` · 스위치 못 찾음 ${ai.missing}` : ''}${ai.sample ? ` · 모양: ${ai.sample.replace(/\s+/g, ' ').slice(0, 160)}` : ''}`);
+      if (ai.on < ai.total) manual.push(`그림 ${ai.total - ai.on}장의 'AI 활용 설정' 켜기 (자동으로 못 켬)`);
     }
     // ---- 인용구 위, 그림 위·아래 빈 줄 지우기 (사용자 지시 2026-10-02)
     {
