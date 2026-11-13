@@ -9,7 +9,7 @@
   "style_v2": "Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood.",
   "palette_v2": "Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object.",
   "v2_note": "2026-10-27 네이버 원고부터 (2026-10-26 사용자 — 시험 그림 close4-02 '이 느낌으로'): 네이버 그림 장면은 style_v2·palette_v2, 대표사진(1번)은 thumbnail_closeup + overlay look band + 둘째 줄 질문. 티스토리는 style·palette 그대로. 실사풍(style_care·style_life)은 쓰지 않는다 — 생활보장도 클레이.",
-  "style_care": "Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition.",
+  "style_care": "Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition.",
   "palette_care": "Natural colors of the real scene. No pastel clay look.",
   "style_life": "Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean homes (kitchen, laundry room, veranda, living room) and real seasonal places, warm cozy everyday mood, natural colors, clean composition.",
   "palette_life": "Natural colors of the real scene. No pastel clay look.",
@@ -193,7 +193,8 @@
     "침실": "Setting: a tidy bedroom by the bed.",
     "복도·엘리베이터": "Setting: an apartment hallway or elevator lobby.",
     "주민센터": "Setting: a community service center counter.",
-    "베란다": "Setting: a bright apartment balcony with plants."
+    "베란다": "Setting: a bright apartment balcony with plants.",
+    "주제": "(주제에서 고른 장소 — 2026-11-16 원고부터, 프롬프트에 장소 문구를 직접 씀)"
   },
   "thumb_lights": {
     "아침 햇살": "Lighting: soft early-morning sunlight.",
@@ -202,5 +203,7 @@
     "저녁 조명": "Lighting: warm evening lamp light.",
     "흐린 날": "Lighting: soft overcast daylight."
   },
-  "thumb_variety3_note": "2026-11-09 사용자 — 대표사진 15장이 '색감·사람·표정·제스처가 다 비슷하다'(베이지·갈색 거실, 50~60대, 얼굴 만지기). 2026-11-10 네이버 원고부터: 띠 색 = 새 배너와 같은 진한 색 + 금빛 글씨(band·key, 예전 값은 band_before), 장면 색 = 테마 scene3(밝고 서로 다른 색, 거실 갈색 일색 금지), 계획서 1번에 thumb_place(thumb_places 중)·thumb_light(thumb_lights 중)를 적고 프롬프트에 그 문구. 같은 날: 테마 모두 다르게, 장소 모두 다르게, 같은 빛 3편까지(저녁 조명 2편까지), 같은 구도 2편까지, 같은 표정 2편까지, 얼굴 만지는 표정(생각·궁금) 합쳐 2편까지, 60대 이상만 3편까지, 종이 2편까지 (lint-post VARIETY_FROM)."
+  "thumb_variety3_note": "2026-11-09 사용자 — 대표사진 15장이 '색감·사람·표정·제스처가 다 비슷하다'(베이지·갈색 거실, 50~60대, 얼굴 만지기). 2026-11-10 네이버 원고부터: 띠 색 = 새 배너와 같은 진한 색 + 금빛 글씨(band·key, 예전 값은 band_before), 장면 색 = 테마 scene3(밝고 서로 다른 색, 거실 갈색 일색 금지), 계획서 1번에 thumb_place(thumb_places 중)·thumb_light(thumb_lights 중)를 적고 프롬프트에 그 문구. 같은 날: 테마 모두 다르게, 장소 모두 다르게, 같은 빛 3편까지(저녁 조명 2편까지), 같은 구도 2편까지, 같은 표정 2편까지, 얼굴 만지는 표정(생각·궁금) 합쳐 2편까지, 60대 이상만 3편까지, 종이 2편까지 (lint-post VARIETY_FROM).",
+  "topic_scene_note": "2026-11-13 사용자 '사진이 다 비슷하고 주제랑 동떨어졌다' → 2026-11-16 원고부터: 그림마다 anchor(그 글에만 있는 주제 사물·장소, 영어)를 프롬프트 앞부분에 그대로 넣는다. 장소는 주제에서 고르고(thumb_place '주제' 가능), 테마 색은 대표사진 띠에만 — 장면 색을 테마로 물들이지 않는다. 글자 없는 서류·영수증·검사 기계·병실·깁스 같은 주제 사물은 그려도 된다. 끝 문장은 topic_tail.",
+  "topic_tail": "Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere."
 }

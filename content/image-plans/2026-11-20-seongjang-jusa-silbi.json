@@ -1,91 +1,95 @@
 {
-  "slug": "2026-11-20-seongjang-jusa-silbi",
-  "title": "성장주사 실비, 우리 아이 키 주사도 청구되나요 (약관 2곳 확인)",
-  "source": "11/20(금) 11:20 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "저녁 조명이 켜진 거실 소파에서 초등학생 아들에게 차분히 설명하는 40대 엄마 (대표사진)",
-      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a living room sofa. Lighting: warm evening lamp light. A small Korean mother in her 40s in a dusty pink sweater and her elementary school son in a green hoodie sitting together on a sofa in a cozy living room, the mother explaining something with one open hand while the son listens. Expression: explaining with one hand open toward the viewer. Color theme: dusty pink and ivory tones with a green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "wide",
-      "bg": "dusty pink and ivory tones with a green accent",
-      "note": "대표",
-      "thumb_shot": "wide",
-      "thumb_theme": "rose",
-      "thumb_person": "40대 여성 엄마와 초등학생 아들",
-      "thumb_place": "거실",
-      "thumb_light": "저녁 조명",
-      "thumb_mood": "설명",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "rose",
-        "font": "jua",
-        "title": "성장주사 실비\n누가 받을까?"
-      }
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "성장주사 실비를 O·X 로 풀어 보는 퀴즈 카드",
-      "kind": "card",
-      "card": {
-        "type": "quiz",
-        "title": "성장주사 실비 퀴즈",
-        "items": [
-          "키 성장 목적 주사도 된다",
-          "급여 처방은 따져 볼 수 있다",
-          "영수증 급여 칸이 첫 단서다"
-        ],
-        "answers": [
-          "X",
-          "O",
-          "O"
-        ],
-        "where": "아래 본문"
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "소아청소년과 진료실 책상에서 성장 곡선 그래프를 짚는 의사의 손",
-      "prompt": "Camera and composition: close-up of hands on a desk. Close-up of a pediatric doctor's hands in a white coat sleeve pointing with a pen at a simple blank line chart on a tablet on a clinic desk, no face in the frame. Background color: light wood desk with soft sky-blue accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "close-up of hands on a desk",
-      "bg": "light wood desk with soft sky-blue accents"
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "성장주사 실비 확인 순서를 정리한 채팅 카드",
-      "kind": "card",
-      "card": {
-        "type": "check",
-        "title": "성장주사 실비 확인 순서",
-        "items": [
-          "급여 칸인지 비급여 칸인지",
-          "질병 이름이 적힌 진단서",
-          "보상하지 않는 사항"
-        ],
-        "ask": "키 주사 실비 돼?"
-      }
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "약국 창구에서 냉장 보관 약 봉투를 받는 40대 아빠",
-      "prompt": "Camera and composition: medium shot at a pharmacy counter. A Korean father in his 40s in a charcoal wool coat receiving a small white insulated medicine bag across a clean neighborhood pharmacy counter from a pharmacist in soft focus, calm expression. Background color: white pharmacy shelves with soft green accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot at a pharmacy counter",
-      "bg": "white pharmacy shelves with soft green accents"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "침실 책상에서 노트에 아이 키를 적어 두는 엄마의 손",
-      "prompt": "Camera and composition: close-up of hands writing in a notebook. Close-up of a mother's hands writing small marks in a blank notebook on a tidy bedroom desk next to a soft measuring tape, no face in the frame. Background color: cream desk with a dusty rose lamp. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "close-up of hands writing in a notebook",
-      "bg": "cream desk with a dusty rose lamp"
-    }
-  ]
+ "slug": "2026-11-20-seongjang-jusa-silbi",
+ "title": "성장주사 실비, 우리 아이 키 주사도 청구되나요 (약관 2곳 확인)",
+ "source": "11/20(금) 11:20 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "소아 내분비 진료실 키 측정기 위의 초등학생 아들과 엄마 (대표사진)",
+   "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Setting: a bright pediatric endocrinology clinic. A Korean boy in elementary school standing on a height measuring stadiometer while his mother in her 40s watches beside a nurse. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: warm evening lamp light. Expression: explaining with one hand open toward the viewer. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "wide",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "wide",
+   "thumb_theme": "rose",
+   "thumb_person": "40대 여성 엄마와 초등학생 아들",
+   "thumb_place": "주제",
+   "thumb_light": "저녁 조명",
+   "thumb_mood": "설명",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "rose",
+    "font": "jua",
+    "title": "성장주사 실비\n누가 받을까?"
+   },
+   "anchor": "height measuring stadiometer"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "성장주사 실비를 O·X 로 풀어 보는 퀴즈 카드",
+   "kind": "card",
+   "card": {
+    "type": "quiz",
+    "title": "성장주사 실비 퀴즈",
+    "items": [
+     "키 성장 목적 주사도 된다",
+     "급여 처방은 따져 볼 수 있다",
+     "영수증 급여 칸이 첫 단서다"
+    ],
+    "answers": [
+     "X",
+     "O",
+     "O"
+    ],
+    "where": "아래 본문"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "간호사가 엄마에게 성장호르몬 주사 펜 쓰는 법을 알려 주는 모습",
+   "prompt": "Camera and composition: close-up in a pediatric clinic. A nurse showing a Korean mother in her 40s how to hold a growth hormone injection pen at a clinic table. Background: clean white clinic table. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up in a pediatric clinic",
+   "bg": "clean white clinic table",
+   "anchor": "growth hormone injection pen"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "성장주사 실비 확인 순서를 정리한 채팅 카드",
+   "kind": "card",
+   "card": {
+    "type": "check",
+    "title": "성장주사 실비 확인 순서",
+    "items": [
+     "급여 칸인지 비급여 칸인지",
+     "질병 이름이 적힌 진단서",
+     "보상하지 않는 사항"
+    ],
+    "ask": "키 주사 실비 돼?"
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "진료실에서 손 엑스레이 사진을 보는 아빠와 딸",
+   "prompt": "Camera and composition: medium shot in a pediatric consultation room. A Korean doctor pointing at a child's hand X-ray light box while a Korean father in his 40s and his daughter listen. Background: clean consultation room with white walls. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a pediatric consultation room",
+   "bg": "clean consultation room with white walls",
+   "anchor": "hand X-ray light box"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "문틀 키 눈금에 서 있는 아들과 엄마",
+   "prompt": "Camera and composition: medium shot in a home hallway. A Korean boy standing against door frame height marks while his mother draws a pencil line above his head. Background: real apartment hallway with a white door frame. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a home hallway",
+   "bg": "real apartment hallway with a white door frame",
+   "anchor": "door frame height marks"
+  }
+ ]
 }

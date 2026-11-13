@@ -1,91 +1,95 @@
 {
-  "slug": "2026-11-22-yoyangbyeongwon-ganbyeongbi",
-  "title": "요양병원 간병비, 실비나 장기요양으로 받을 수 있나요 (조항 2곳 확인)",
-  "source": "11/22(일) 17:40 네이버 원고 — 생활보장 검색형(돌봄·요양), 실사풍",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "흐린 날 베란다 창가에서 팔짱을 끼고 생각을 정리하는 50대 남성 (대표사진)",
-      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a bright apartment balcony with plants. Lighting: soft overcast daylight. A Korean man in his 50s with short salt-and-pepper hair in a charcoal knit sweater standing by a large apartment veranda window with plants, arms crossed, looking calm and thoughtful. Expression: arms loosely crossed with a confident warm smile. Color theme: modern light gray and white tones with a mustard accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "wide",
-      "bg": "modern light gray and white tones with a mustard accent",
-      "note": "대표",
-      "thumb_shot": "wide",
-      "thumb_theme": "charcoal",
-      "thumb_person": "50대 남성",
-      "thumb_place": "베란다",
-      "thumb_light": "흐린 날",
-      "thumb_mood": "팔짱",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "charcoal",
-        "font": "jua",
-        "title": "요양병원 간병비\n실비 될까?"
-      }
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "요양병원 간병비 질문을 크게 던지는 첫머리 카드",
-      "kind": "card",
-      "card": {
-        "type": "lead",
-        "keyword": "요양병원 간병비",
-        "title": "실비로\n돌려받을까?",
-        "ask": "간병비가 병원비보다 커요"
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "요양병원 병실 침대 옆에서 간병인이 70대 여성의 담요를 정리하는 모습",
-      "prompt": "Camera and composition: medium shot beside a hospital bed. A Korean female caregiver in her 50s in a light gray uniform gently straightening a blanket for a Korean woman in her 70s resting on a hospital bed in a nursing hospital room, both calm. Background color: soft nursing hospital room with white walls and charcoal gray accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot beside a hospital bed",
-      "bg": "soft nursing hospital room with white walls and charcoal gray accents"
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "요양병원 간병비 되는 곳과 안 되는 곳을 비교한 채팅 카드",
-      "kind": "card",
-      "card": {
-        "type": "compare",
-        "title": "의료비와 간병비",
-        "ask": "간병비는 어디서 나와?",
-        "heads": [
-          "의료비",
-          "간병비"
-        ],
-        "items": [
-          [
-            "요양병원 의료비",
-            "요양병원 간병비"
-          ],
-          [
-            "건강보험·실손보험 약관",
-            "실손보험 보상 제외"
-          ]
-        ]
-      }
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "거실 탁자에 증권 파일을 펼쳐 놓고 형제가 함께 보는 모습",
-      "prompt": "Camera and composition: medium shot at a living room table. Two Korean brothers in their 40s and 50s sitting side by side at a living room table looking at an open blank binder together, calm discussing faces. Background color: tidy living room with gray sofa and warm wood table. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot at a living room table",
-      "bg": "tidy living room with gray sofa and warm wood table"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "요양병원 휴게실 의자에 앉아 휴대폰으로 통화하는 40대 딸",
-      "prompt": "Camera and composition: medium shot in a hospital lounge. A Korean woman in her 40s in a camel coat sitting on a chair in a quiet nursing hospital lounge, talking on her smartphone with a calm face. Background color: quiet hospital lounge with light gray walls and a window. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot in a hospital lounge",
-      "bg": "quiet hospital lounge with light gray walls and a window"
-    }
-  ]
+ "slug": "2026-11-22-yoyangbyeongwon-ganbyeongbi",
+ "title": "요양병원 간병비, 실비나 장기요양으로 받을 수 있나요 (조항 2곳 확인)",
+ "source": "11/22(일) 17:40 네이버 원고 — 생활보장 검색형(돌봄·요양), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "요양병원 다인실 병실에서 어머니 침대 곁에 선 50대 아들 (대표사진)",
+   "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Setting: a nursing hospital multi-bed ward. Wide view of a nursing hospital ward with several beds, a Korean man in his 50s standing by his elderly mother's bed and a caregiver in a light uniform nearby. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft overcast daylight. Expression: arms loosely crossed with a confident warm smile. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "wide",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "wide",
+   "thumb_theme": "charcoal",
+   "thumb_person": "50대 남성",
+   "thumb_place": "주제",
+   "thumb_light": "흐린 날",
+   "thumb_mood": "팔짱",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "charcoal",
+    "font": "jua",
+    "title": "요양병원 간병비\n실비 될까?"
+   },
+   "anchor": "nursing hospital ward with several beds"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "요양병원 간병비 질문을 크게 던지는 첫머리 카드",
+   "kind": "card",
+   "card": {
+    "type": "lead",
+    "keyword": "요양병원 간병비",
+    "title": "실비로\n돌려받을까?",
+    "ask": "간병비가 병원비보다 커요"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "요양병원 침대 곁에서 70대 여성의 담요를 정리하는 간병인",
+   "prompt": "Camera and composition: medium shot in a nursing hospital room. A Korean female caregiver in her 50s in a light gray uniform standing as a caregiver beside a hospital bed, gently straightening a blanket for a Korean woman in her 70s resting calmly. Background: white hospital room with pale curtains and window daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a nursing hospital room",
+   "bg": "white hospital room with pale curtains and window daylight",
+   "anchor": "caregiver beside a hospital bed"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "요양병원 간병비 되는 곳과 안 되는 곳을 비교한 채팅 카드",
+   "kind": "card",
+   "card": {
+    "type": "compare",
+    "title": "의료비와 간병비",
+    "ask": "간병비는 어디서 나와?",
+    "heads": [
+     "의료비",
+     "간병비"
+    ],
+    "items": [
+     [
+      "요양병원 의료비",
+      "요양병원 간병비"
+     ],
+     [
+      "건강보험·실손보험 약관",
+      "실손보험 보상 제외"
+     ]
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "거실 탁자에서 빈 보험 증권 파일을 함께 보는 형제",
+   "prompt": "Camera and composition: medium shot at a living room table. Two Korean brothers in their 40s and 50s sitting side by side at a living room table looking at an open blank insurance policy binder together, calm discussion. Background: warm home living room in natural colors. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a living room table",
+   "bg": "warm home living room in natural colors",
+   "anchor": "open blank insurance policy binder"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "요양병원 휴게실에서 통화하는 40대 딸",
+   "prompt": "Camera and composition: medium shot in a hospital lounge. A Korean woman in her 40s in a camel coat sitting in a nursing hospital lounge with a wheelchair parked nearby, talking on her smartphone with a calm face. Background: quiet bright lounge with beige walls and plants. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a hospital lounge",
+   "bg": "quiet bright lounge with beige walls and plants",
+   "anchor": "nursing hospital lounge with a wheelchair"
+  }
+ ]
 }

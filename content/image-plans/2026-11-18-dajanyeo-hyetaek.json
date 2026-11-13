@@ -1,87 +1,91 @@
 {
-  "slug": "2026-11-18-dajanyeo-hyetaek",
-  "title": "다자녀 혜택, 아이 둘이면 무엇이 달라지나요 (취득세 50% 경감)",
-  "source": "11/18(수) 12:20 네이버 제도 소식 — 생활보장(돈·생활 제도), 실사풍 (11/11 미리 씀)",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "밝은 낮 거실 탁자 위 아이 운동화 두 켤레와 장난감 차·자동차 열쇠 (대표사진)",
-      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a living room sofa. Lighting: bright clear daylight, high key. On a low living room table in front of the sofa: two pairs of small children's sneakers, a toy car, a real car key and a smartphone with simple blank icons, neatly arranged. Color theme: dusty pink and ivory tones with a green accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "overhead",
-      "bg": "dusty pink and ivory tones with a green accent",
-      "note": "대표",
-      "thumb_shot": "overhead",
-      "thumb_theme": "rose",
-      "thumb_person": "없음",
-      "thumb_place": "거실",
-      "thumb_light": "밝은 낮",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "rose",
-        "font": "ptd",
-        "title": "다자녀 혜택\n둘이면 될까?"
-      }
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "다자녀 혜택이 둘부터인지 셋부터인지 묻는 첫머리 카드",
-      "kind": "card",
-      "card": {
-        "type": "lead",
-        "keyword": "다자녀 혜택",
-        "title": "둘부터?\n셋부터?",
-        "ask": "아이 둘도 다자녀야?"
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "밝은 낮 식탁에서 연말정산 서류를 정리하는 30대 아빠",
-      "prompt": "Camera and composition: medium shot at a dining table. A Korean father in his 30s in a light blue shirt sitting at a dining table in bright daylight, sorting a few blank papers into a folder with a calm face. Background color: bright white kitchen with natural daylight and a small plant. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot at a dining table",
-      "bg": "bright white kitchen with natural daylight and a small plant"
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "다자녀 혜택 자동차 취득세를 둘과 셋으로 나눈 숫자 카드",
-      "kind": "card",
-      "card": {
-        "type": "number",
-        "title": "자동차 취득세",
-        "items": [
-          [
-            "50%",
-            "18세 미만 2명",
-            "1대 취득세 경감"
-          ],
-          [
-            "면제",
-            "18세 미만 3명",
-            "1대 취득세 면제"
-          ]
-        ]
-      }
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "흐린 날 아파트 단지 산책로를 걷는 30대 부부와 두 아이",
-      "prompt": "Camera and composition: wide shot of an apartment walkway. A Korean couple in their 30s walking on an apartment complex walkway with two young children holding their hands, seen small in the frame, relaxed mood. Background color: apartment complex walkway under soft overcast sky with autumn trees. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "wide shot of an apartment walkway",
-      "bg": "apartment complex walkway under soft overcast sky with autumn trees"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "밝은 낮 공원 놀이터에서 두 아이와 노는 40대 아빠",
-      "prompt": "Camera and composition: wide shot of a playground. A Korean father in his 40s in a mustard jacket playing with two children at a park playground, smiling, seen small in the frame. Background color: bright park playground with blue sky and yellow leaves. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "wide shot of a playground",
-      "bg": "bright park playground with blue sky and yellow leaves"
-    }
-  ]
+ "slug": "2026-11-18-dajanyeo-hyetaek",
+ "title": "다자녀 혜택, 아이 둘이면 무엇이 달라지나요 (취득세 50% 경감)",
+ "source": "11/18(수) 12:20 네이버 제도 소식 — 생활보장(돈·생활 제도), 실사풍 (11/11 미리 씀)",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "거실 탁자 위 아이 운동화 두 켤레와 자동차 열쇠·글자 없는 주택 계약서 (대표사진)",
+   "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Setting: a family living room table. Two pairs of small kids' sneakers beside a car key and a blank house contract neatly arranged on a living room table, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: bright clear daylight, high key. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "overhead",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "overhead",
+   "thumb_theme": "rose",
+   "thumb_person": "없음",
+   "thumb_place": "주제",
+   "thumb_light": "밝은 낮",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "rose",
+    "font": "ptd",
+    "title": "다자녀 혜택\n둘이면 될까?"
+   },
+   "anchor": "two pairs of small kids' sneakers beside a car key"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "다자녀 혜택이 둘부터인지 셋부터인지 묻는 첫머리 카드",
+   "kind": "card",
+   "card": {
+    "type": "lead",
+    "keyword": "다자녀 혜택",
+    "title": "둘부터?\n셋부터?",
+    "ask": "아이 둘도 다자녀야?"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "식탁에서 글자 없는 연말정산 서류를 정리하는 30대 아빠",
+   "prompt": "Camera and composition: medium shot at a dining table. A Korean father in his 30s at a dining table sorting blank year-end tax settlement forms with a calculator while two children's drawings lie nearby. Background: bright home dining room with daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a dining table",
+   "bg": "bright home dining room with daylight",
+   "anchor": "blank year-end tax settlement forms"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "다자녀 혜택 자동차 취득세를 둘과 셋으로 나눈 숫자 카드",
+   "kind": "card",
+   "card": {
+    "type": "number",
+    "title": "자동차 취득세",
+    "items": [
+     [
+      "50%",
+      "18세 미만 2명",
+      "1대 취득세 경감"
+     ],
+     [
+      "면제",
+      "18세 미만 3명",
+      "1대 취득세 면제"
+     ]
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "새 아파트 견본주택을 둘러보는 30대 부부와 두 아이",
+   "prompt": "Camera and composition: wide shot inside an apartment model house. A Korean couple in their 30s with two young children looking around the living room of a new apartment model house. Background: bright staged apartment interior with white walls and light wood floor. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "wide shot inside an apartment model house",
+   "bg": "bright staged apartment interior with white walls and light wood floor",
+   "anchor": "apartment model house"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "두 아이를 카시트에 태우는 40대 아빠와 가족 차",
+   "prompt": "Camera and composition: medium shot in an apartment parking lot. A Korean father in his 40s buckling two children into a family car with two child car seats in an apartment parking lot. Background: daytime apartment parking lot with natural light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in an apartment parking lot",
+   "bg": "daytime apartment parking lot with natural light",
+   "anchor": "family car with two child car seats"
+  }
+ ]
 }

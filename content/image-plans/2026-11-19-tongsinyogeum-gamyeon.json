@@ -1,87 +1,91 @@
 {
-  "slug": "2026-11-19-tongsinyogeum-gamyeon",
-  "title": "통신요금 감면, 기초연금 받으면 휴대폰 요금이 얼마나 줄까요 (22,000원 한도)",
-  "source": "11/19(목) 16:20 네이버 원고 — 생활보장 검색형(돈·제도), 실사풍",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "주민센터 창구 앞에서 어머니에게 설명하는 30대 아들과 70대 어머니 (대표사진)",
-      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a community service center counter. Lighting: bright clear daylight, high key. A Korean son in his 30s in an olive jacket explaining something with one open hand to his mother in her 70s in a terracotta cardigan, standing near a community service center counter. Expression: explaining with one hand open toward the viewer. Color theme: terracotta and warm beige tones with a teal accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "duo",
-      "bg": "terracotta and warm beige tones with a teal accent",
-      "note": "대표",
-      "thumb_shot": "duo",
-      "thumb_theme": "brick",
-      "thumb_person": "30대 아들(올리브 점퍼)과 70대 어머니(테라코타 카디건)",
-      "thumb_place": "주민센터",
-      "thumb_light": "밝은 낮",
-      "thumb_mood": "설명",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "brick",
-        "font": "ptd",
-        "title": "통신요금 감면\n엄마 폰도 될까?"
-      }
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "우리 집 통신요금 감면 대상인지 보는 자가 체크 카드",
-      "kind": "card",
-      "card": {
-        "type": "selfcheck",
-        "title": "우리 집 감면 대상?",
-        "items": [
-          "기초연금 수급자",
-          "생계급여 수급자",
-          "차상위계층 확인서",
-          "등록 장애인"
-        ],
-        "result": "아래 '감면 폭' 부분을 꼭 보세요 👇"
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "거실 소파에서 휴대폰 고지서 화면을 함께 보는 40대 부부",
-      "prompt": "Camera and composition: medium shot on a living room sofa. A Korean couple in their 40s sitting on a sofa and looking together at a smartphone screen that shows only simple blank blocks. Background color: warm beige sofa with a teal cushion. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot on a living room sofa",
-      "bg": "warm beige sofa with a teal cushion"
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "통신요금 감면 신청 순서를 말풍선으로 정리한 채팅 카드",
-      "kind": "card",
-      "card": {
-        "type": "steps",
-        "ask": "신청은 어떻게 해?",
-        "title": "통신요금 감면 신청 순서",
-        "items": [
-          "어느 감면 대상인지 확인하기",
-          "통신사에 감면 신청하기",
-          "고지서에서 감면 금액 확인하기"
-        ]
-      }
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "현관 신발장 위에 놓인 휴대폰 두 대와 충전기",
-      "prompt": "Camera and composition: close-up of objects on a shoe cabinet. Two plain smartphones and a white charger cable placed on top of a wooden shoe cabinet at an apartment entrance, no people. Background color: light wood cabinet with a white wall. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "close-up of objects on a shoe cabinet",
-      "bg": "light wood cabinet with a white wall"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "공원 산책길 벤치에서 휴대폰으로 가족과 영상통화하는 70대 어머니",
-      "prompt": "Camera and composition: medium shot on a park bench. A Korean woman in her 70s in a cream padded jacket sitting on a park bench and smiling while video calling on her smartphone. Background color: park path with autumn trees and soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot on a park bench",
-      "bg": "park path with autumn trees and soft daylight"
-    }
-  ]
+ "slug": "2026-11-19-tongsinyogeum-gamyeon",
+ "title": "통신요금 감면, 기초연금 받으면 휴대폰 요금이 얼마나 줄까요 (22,000원 한도)",
+ "source": "11/19(목) 16:20 네이버 원고 — 생활보장 검색형(돈·제도), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "휴대폰 대리점 상담대에서 이야기하는 30대 아들과 70대 어머니 (대표사진)",
+   "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Setting: a mobile phone store. A Korean son in his 30s in an olive jumper and his mother in her 70s in a terracotta cardigan facing each other and talking at a mobile phone store counter. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: bright clear daylight, high key. Expression: explaining with one hand open toward the viewer. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "duo",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "duo",
+   "thumb_theme": "brick",
+   "thumb_person": "30대 아들(올리브 점퍼)과 70대 어머니(테라코타 카디건)",
+   "thumb_place": "주제",
+   "thumb_light": "밝은 낮",
+   "thumb_mood": "설명",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "brick",
+    "font": "ptd",
+    "title": "통신요금 감면\n엄마 폰도 될까?"
+   },
+   "anchor": "mobile phone store counter"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "우리 집 통신요금 감면 대상인지 보는 자가 체크 카드",
+   "kind": "card",
+   "card": {
+    "type": "selfcheck",
+    "title": "우리 집 감면 대상?",
+    "items": [
+     "기초연금 수급자",
+     "생계급여 수급자",
+     "차상위계층 확인서",
+     "등록 장애인"
+    ],
+    "result": "아래 '감면 폭' 부분을 꼭 보세요 👇"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "거실 소파에서 휴대폰 요금 화면을 함께 보는 40대 부부",
+   "prompt": "Camera and composition: medium shot on a living room sofa. A Korean couple in their 40s on a living room sofa looking together at a phone showing a blank bill screen. Background: cozy living room with natural light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot on a living room sofa",
+   "bg": "cozy living room with natural light",
+   "anchor": "phone showing a blank bill screen"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "통신요금 감면 신청 순서를 말풍선으로 정리한 채팅 카드",
+   "kind": "card",
+   "card": {
+    "type": "steps",
+    "ask": "신청은 어떻게 해?",
+    "title": "통신요금 감면 신청 순서",
+    "items": [
+     "어느 감면 대상인지 확인하기",
+     "통신사에 감면 신청하기",
+     "고지서에서 감면 금액 확인하기"
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "현관 신발장 위에 놓인 휴대폰 두 대와 충전기",
+   "prompt": "Camera and composition: close-up of objects on a shoe cabinet. Two smartphones and a charger on a wooden shoe cabinet at the home entrance, no people. Background: home entrance with natural wood tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of objects on a shoe cabinet",
+   "bg": "home entrance with natural wood tones",
+   "anchor": "two smartphones and a charger"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "공원 벤치에서 휴대폰으로 영상통화하는 70대 어머니",
+   "prompt": "Camera and composition: medium shot on a park bench. A Korean mother in her 70s on a park bench smiling during a video call on a smartphone with a blank screen. Background: park path with natural greenery. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot on a park bench",
+   "bg": "park path with natural greenery",
+   "anchor": "video call on a smartphone"
+  }
+ ]
 }

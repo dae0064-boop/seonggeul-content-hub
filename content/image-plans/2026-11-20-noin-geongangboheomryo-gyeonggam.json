@@ -1,87 +1,91 @@
 {
-  "slug": "2026-11-20-noin-geongangboheomryo-gyeonggam",
-  "title": "노인 건강보험료 경감, 65세 이상 세대는 얼마나 줄어드나요 (최대 30%)",
-  "source": "11/20(금) 12:20 네이버 제도 소식 — 생활보장(돈·생활 제도), 실사풍 (11/11 미리 씀)",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "흐린 날 공원 산책로를 나란히 걸으며 안심한 표정의 70대 부부 (대표사진)",
-      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a park bench outdoors with trees. Lighting: soft overcast daylight. A Korean couple in their 70s, the wife in a burgundy coat and the husband in a gray padded jacket, walking side by side on a park path with relieved gentle smiles, seen small in the frame. Expression: relieved gentle smile. Color theme: soft rose and cream tones with a deep burgundy accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "wide",
-      "bg": "soft rose and cream tones with a deep burgundy accent",
-      "note": "대표",
-      "thumb_shot": "wide",
-      "thumb_theme": "burgundy",
-      "thumb_person": "70대 부부(버건디 코트·회색 점퍼)",
-      "thumb_place": "공원",
-      "thumb_light": "흐린 날",
-      "thumb_mood": "안심",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "burgundy",
-        "font": "ptd",
-        "title": "노인 건강보험료\n얼마나 줄까?"
-      }
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "노인 건강보험료 경감이 무엇인지 묻는 첫머리 카드",
-      "kind": "card",
-      "card": {
-        "type": "lead",
-        "keyword": "노인 건강보험료",
-        "title": "얼마나\n줄어들까?",
-        "ask": "부모님 건보료 줄일 수 있어?"
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "흰 조명 거실 소파에서 고지서를 보며 계산기를 두드리는 50대 딸",
-      "prompt": "Camera and composition: medium shot on a sofa. A Korean woman in her 50s in a lavender sweater sitting on a living room sofa, looking at a blank bill and pressing a simple calculator with blank keys, calm face. Background color: living room with cool white light and a gray sofa. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot on a sofa",
-      "bg": "living room with cool white light and a gray sofa"
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "노인 건강보험료 경감 신청이 필요한지 묻는 퀴즈 카드",
-      "kind": "card",
-      "card": {
-        "type": "quiz",
-        "title": "건보료 경감 O·X",
-        "items": [
-          "따로 신청해야 경감된다",
-          "직장가입자도 대상이다",
-          "70세 이상 세대는 최대 30%"
-        ],
-        "answers": [
-          "X",
-          "X",
-          "O"
-        ],
-        "where": "아래 본문"
-      }
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "아침 햇살 부엌 식탁에서 건강보험 앱 화면을 함께 보는 40대 아들과 70대 어머니",
-      "prompt": "Camera and composition: medium shot at a kitchen table. A Korean son in his 40s and his mother in her 70s sitting together at a kitchen table in the morning, looking at a smartphone screen with simple blank icons, smiling. Background color: home kitchen with soft early-morning sunlight and cream tiles. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot at a kitchen table",
-      "bg": "home kitchen with soft early-morning sunlight and cream tiles"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "밝은 낮 주민센터 대기석에서 순서를 기다리는 60대 남성",
-      "prompt": "Camera and composition: medium shot in a waiting area. A Korean man in his 60s in a brown jacket sitting in a community center waiting area chair, waiting calmly for his turn. Background color: bright community center waiting area with light wood benches. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot in a waiting area",
-      "bg": "bright community center waiting area with light wood benches"
-    }
-  ]
+ "slug": "2026-11-20-noin-geongangboheomryo-gyeonggam",
+ "title": "노인 건강보험료 경감, 65세 이상 세대는 얼마나 줄어드나요 (최대 30%)",
+ "source": "11/20(금) 12:20 네이버 제도 소식 — 생활보장(돈·생활 제도), 실사풍 (11/11 미리 씀)",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "건강보험공단 지사 창구에서 상담받는 70대 부부 (대표사진)",
+   "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Setting: a bright public health insurance branch office. A Korean couple in their 70s in a burgundy coat and a grey jumper talking with a staff member at the National Health Insurance branch office counter. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft overcast daylight. Expression: relieved gentle smile. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "wide",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "wide",
+   "thumb_theme": "burgundy",
+   "thumb_person": "70대 부부(버건디 코트·회색 점퍼)",
+   "thumb_place": "주제",
+   "thumb_light": "흐린 날",
+   "thumb_mood": "안심",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "burgundy",
+    "font": "ptd",
+    "title": "노인 건강보험료\n얼마나 줄까?"
+   },
+   "anchor": "National Health Insurance branch office counter"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "노인 건강보험료 경감이 무엇인지 묻는 첫머리 카드",
+   "kind": "card",
+   "card": {
+    "type": "lead",
+    "keyword": "노인 건강보험료",
+    "title": "얼마나\n줄어들까?",
+    "ask": "부모님 건보료 줄일 수 있어?"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "거실에서 글자 없는 건강보험료 고지서를 보는 70대 남성",
+   "prompt": "Camera and composition: medium shot at a living room table. A Korean man in his 70s looking at a blank health insurance premium notice with reading glasses at the living room table. Background: warm living room with wooden furniture. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a living room table",
+   "bg": "warm living room with wooden furniture",
+   "anchor": "blank health insurance premium notice"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "노인 건강보험료 경감 신청이 필요한지 묻는 퀴즈 카드",
+   "kind": "card",
+   "card": {
+    "type": "quiz",
+    "title": "건보료 경감 O·X",
+    "items": [
+     "따로 신청해야 경감된다",
+     "직장가입자도 대상이다",
+     "70세 이상 세대는 최대 30%"
+    ],
+    "answers": [
+     "X",
+     "X",
+     "O"
+    ],
+    "where": "아래 본문"
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "은행 ATM 앞에서 공과금을 내는 60대 여성",
+   "prompt": "Camera and composition: medium shot in a bank lobby. A Korean woman in her 60s using a bank ATM with a blank screen to pay a bill. Background: bright bank lobby with grey floors. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a bank lobby",
+   "bg": "bright bank lobby with grey floors",
+   "anchor": "bank ATM with a blank screen"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "식탁에서 가계부 수첩을 적는 70대 여성",
+   "prompt": "Camera and composition: close-up at a kitchen table. A Korean woman in her 70s writing in a household account notebook with blank pages beside a cup of tea. Background: kitchen table with natural light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up at a kitchen table",
+   "bg": "kitchen table with natural light",
+   "anchor": "household account notebook"
+  }
+ ]
 }

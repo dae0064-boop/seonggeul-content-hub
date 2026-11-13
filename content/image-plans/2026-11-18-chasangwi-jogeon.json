@@ -1,91 +1,95 @@
 {
-  "slug": "2026-11-18-chasangwi-jogeon",
-  "title": "차상위계층 조건, 1인 가구는 소득이 얼마까지인가요 (기준중위소득 50%)",
-  "source": "11/18(수) 21:00 네이버 원고 — 생활보장 검색형(돈·생활 제도), 실사풍 (11/10 미리 씀)",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "저녁 카페 창가 탁자에서 서류를 가리키며 설명하는 40대 남편과 듣는 아내 (대표사진)",
-      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a sunny cafe table by a large window. Lighting: warm evening lamp light. A Korean married couple in their 40s sitting face to face at a cafe table by a large window in the evening, the husband in a terracotta sweater explaining with one open hand over a blank sheet, the wife in a beige blouse listening. Expression: explaining with one hand open toward the viewer. Color theme: terracotta and warm beige tones with a teal accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "duo",
-      "bg": "terracotta and warm beige tones with a teal accent",
-      "note": "대표",
-      "thumb_shot": "duo",
-      "thumb_theme": "brick",
-      "thumb_person": "40대 부부",
-      "thumb_place": "카페",
-      "thumb_light": "저녁 조명",
-      "thumb_mood": "설명",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "brick",
-        "font": "ptd",
-        "title": "차상위계층 조건\n우리 집도 될까?"
-      }
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "우리 집이 차상위계층에 해당하는지 보는 자가 체크 카드",
-      "kind": "card",
-      "card": {
-        "type": "selfcheck",
-        "title": "우리 집 차상위?",
-        "items": [
-          "기초생활수급자가 아닌지",
-          "소득인정액 50% 이하",
-          "재산도 함께 따져 봤는지"
-        ],
-        "result": "아래 '소득인정액' 부분을 꼭 보세요 👇"
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "저녁 부엌 식탁에서 계산기와 노트를 앞에 두고 생각하는 60대 어머니",
-      "prompt": "Camera and composition: medium shot at a kitchen table. A Korean woman in her 60s in a moss green cardigan sitting at a kitchen table in the evening with a simple calculator with blank keys and a notebook in front of her, calm and thoughtful. Background color: warm kitchen with a pendant lamp and cream tiles. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot at a kitchen table",
-      "bg": "warm kitchen with a pendant lamp and cream tiles"
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "차상위계층 조건에서 헷갈리는 것을 O·X 로 묻는 퀴즈 카드",
-      "kind": "card",
-      "card": {
-        "type": "quiz",
-        "title": "차상위 O·X",
-        "items": [
-          "월급만 보면 된다",
-          "부양의무자 재산은 안 본다",
-          "복지로로 신청할 수 있다"
-        ],
-        "answers": [
-          "X",
-          "O",
-          "O"
-        ],
-        "where": "아래 본문"
-      }
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "은행 창구 대기석에서 휴대폰으로 복지로 화면을 보는 50대 남성",
-      "prompt": "Camera and composition: medium shot in a bank waiting area. A Korean man in his 50s in a gray quilted jacket sitting in a bank waiting area chair, looking at his smartphone with a calm face, the counters softly blurred. Background color: clean bank lobby with light gray seats and a navy accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot in a bank waiting area",
-      "bg": "clean bank lobby with light gray seats and a navy accent"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "공원 산책로를 나란히 걷는 70대 어머니와 40대 딸",
-      "prompt": "Camera and composition: wide shot of a park path. A Korean mother in her 70s in a burgundy coat and her daughter in her 40s in a camel coat walking side by side on a park path in late autumn, smiling, seen small in the frame. Background color: late autumn park with orange leaves and soft sunlight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "wide shot of a park path",
-      "bg": "late autumn park with orange leaves and soft sunlight"
-    }
-  ]
+ "slug": "2026-11-18-chasangwi-jogeon",
+ "title": "차상위계층 조건, 1인 가구는 소득이 얼마까지인가요 (기준중위소득 50%)",
+ "source": "11/18(수) 21:00 네이버 원고 — 생활보장 검색형(돈·생활 제도), 실사풍 (11/10 미리 씀)",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "주민센터 복지 상담 창구에서 이야기하는 40대 부부 (대표사진)",
+   "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Setting: a community service center welfare counseling area. A Korean husband in his 40s and his wife facing each other and talking at a welfare counseling desk in a community service center, a blank application form between them. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: warm evening lamp light. Expression: explaining with one hand open toward the viewer. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "duo",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "duo",
+   "thumb_theme": "brick",
+   "thumb_person": "40대 부부",
+   "thumb_place": "주제",
+   "thumb_light": "저녁 조명",
+   "thumb_mood": "설명",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "brick",
+    "font": "ptd",
+    "title": "차상위계층 조건\n우리 집도 될까?"
+   },
+   "anchor": "welfare counseling desk"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "우리 집이 차상위계층에 해당하는지 보는 자가 체크 카드",
+   "kind": "card",
+   "card": {
+    "type": "selfcheck",
+    "title": "우리 집 차상위?",
+    "items": [
+     "기초생활수급자가 아닌지",
+     "소득인정액 50% 이하",
+     "재산도 함께 따져 봤는지"
+    ],
+    "result": "아래 '소득인정액' 부분을 꼭 보세요 👇"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "식탁에서 계산기와 글자 없는 통장·임대차계약서를 보는 60대 어머니",
+   "prompt": "Camera and composition: medium shot at a kitchen table. A Korean mother in her 60s at a kitchen table thinking calmly with a calculator beside a blank bank passbook and a blank lease contract. Background: warm home kitchen with a wood table. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a kitchen table",
+   "bg": "warm home kitchen with a wood table",
+   "anchor": "calculator beside a blank bank passbook"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "차상위계층 조건에서 헷갈리는 것을 O·X 로 묻는 퀴즈 카드",
+   "kind": "card",
+   "card": {
+    "type": "quiz",
+    "title": "차상위 O·X",
+    "items": [
+     "월급만 보면 된다",
+     "부양의무자 재산은 안 본다",
+     "복지로로 신청할 수 있다"
+    ],
+    "answers": [
+     "X",
+     "O",
+     "O"
+    ],
+    "where": "아래 본문"
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "집 책상에서 노트북으로 복지 신청 화면을 보는 50대 남성",
+   "prompt": "Camera and composition: medium shot at a home desk. A Korean man in his 50s sitting at a home desk and looking at a laptop showing a blank welfare application page. Background: quiet home study with soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a home desk",
+   "bg": "quiet home study with soft daylight",
+   "anchor": "laptop showing a blank welfare application page"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "주민센터 창구에서 글자 없는 안내문을 받는 70대 어머니와 40대 딸",
+   "prompt": "Camera and composition: medium shot at a community service center counter. A Korean woman in her 70s and her daughter in her 40s receiving a blank eligibility notice from a staff member at a community service center counter. Background: bright public office with white counters and partitions. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a community service center counter",
+   "bg": "bright public office with white counters and partitions",
+   "anchor": "blank eligibility notice"
+  }
+ ]
 }

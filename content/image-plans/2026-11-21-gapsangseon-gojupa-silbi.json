@@ -1,90 +1,94 @@
 {
-  "slug": "2026-11-21-gapsangseon-gojupa-silbi",
-  "title": "갑상선 고주파 실비, 당일 시술이면 얼마까지 받나요 (통원 1회 20만 원 안)",
-  "source": "11/21(토) 13:40 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "흐린 날 카페 창가에서 시술 안내문 봉투를 내려다보는 40대 여성의 탁자 (대표사진)",
-      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a sunny cafe table by a large window. Lighting: soft overcast daylight. Top-down view of a cafe table by a window on a cloudy day with a plain blank envelope, a cup of herbal tea and a woman's hands in a plum colored sweater resting beside them, no face in the frame. Color theme: soft lavender and white tones with a warm yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "overhead",
-      "bg": "soft lavender and white tones with a warm yellow accent",
-      "note": "대표",
-      "thumb_shot": "overhead",
-      "thumb_theme": "plum",
-      "thumb_person": "40대 여성 손",
-      "thumb_place": "카페",
-      "thumb_light": "흐린 날",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "plum",
-        "font": "ptd",
-        "title": "갑상선 고주파\n실비 얼마나?"
-      }
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "갑상선 고주파 실비 전에 스스로 확인할 것을 담은 자가 체크 카드",
-      "kind": "card",
-      "card": {
-        "type": "selfcheck",
-        "title": "고주파 전 체크",
-        "items": [
-          "치료 목적",
-          "급여인지 비급여인지",
-          "당일 퇴원인지",
-          "질병명과 소견"
-        ],
-        "result": "아래 '통원 한도' 부분을 꼭 보세요 👇"
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "병원 회복실 침대 옆 의자에 놓인 가방과 담요",
-      "prompt": "Camera and composition: medium shot of a recovery room corner. A quiet hospital recovery room corner with a neatly made bed, a chair beside it holding a small handbag and a folded light blanket, no people. Background color: pale lavender curtain with white bedding. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot of a recovery room corner",
-      "bg": "pale lavender curtain with white bedding"
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "갑상선 고주파 실비 서류를 정리한 메모 카드",
-      "kind": "card",
-      "card": {
-        "type": "check",
-        "style": "memo",
-        "title": "고주파 실비 서류",
-        "sub": "청구 전에 이것부터 챙겨요",
-        "items": [
-          "진단서나 소견서",
-          "진료비 세부내역서",
-          "입원했다면 입퇴원 확인서",
-          "수술확인서"
-        ],
-        "memo": "영수증은 날짜별로 모아 두기",
-        "hl": 1
-      }
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "거실 소파에서 노트북으로 서류 사진을 올리는 40대 여성의 손",
-      "prompt": "Camera and composition: close-up of hands on a laptop on a sofa. Close-up of a Korean woman's hands in a gray sweater taking a photo of a blank document with a smartphone next to an open laptop on a living room sofa, no face in the frame. Background color: soft gray sofa with a muted plum cushion. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "close-up of hands on a laptop on a sofa",
-      "bg": "soft gray sofa with a muted plum cushion"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "주차장에 세운 차 안에서 안전벨트를 매는 40대 여성의 옆모습",
-      "prompt": "Camera and composition: side view inside a parked car. Side view of a Korean woman in her 40s in a dark plum coat fastening her seat belt inside a parked car in a calm underground parking lot, relaxed expression. Background color: dim gray parking garage seen through the car window. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "side view inside a parked car",
-      "bg": "dim gray parking garage seen through the car window"
-    }
-  ]
+ "slug": "2026-11-21-gapsangseon-gojupa-silbi",
+ "title": "갑상선 고주파 실비, 당일 시술이면 얼마까지 받나요 (통원 1회 20만 원 안)",
+ "source": "11/21(토) 13:40 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "시술실 탁자 위 초음파 프로브와 환자복 (대표사진)",
+   "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Setting: a clean thyroid clinic procedure room table. An ultrasound probe, a folded patient gown, a blank appointment card and a glass of water neatly arranged on a white table, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft overcast daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "overhead",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "overhead",
+   "thumb_theme": "plum",
+   "thumb_person": "40대 여성 손",
+   "thumb_place": "주제",
+   "thumb_light": "흐린 날",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "plum",
+    "font": "ptd",
+    "title": "갑상선 고주파\n실비 얼마나?"
+   },
+   "anchor": "ultrasound probe"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "갑상선 고주파 실비 전에 스스로 확인할 것을 담은 자가 체크 카드",
+   "kind": "card",
+   "card": {
+    "type": "selfcheck",
+    "title": "고주파 전 체크",
+    "items": [
+     "치료 목적",
+     "급여인지 비급여인지",
+     "당일 퇴원인지",
+     "질병명과 소견"
+    ],
+    "result": "아래 '통원 한도' 부분을 꼭 보세요 👇"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "갑상선 초음파 검사를 받는 40대 여성",
+   "prompt": "Camera and composition: medium shot in a thyroid clinic room. A Korean woman in her 40s lying calmly while a doctor checks her neck with a thyroid ultrasound machine. Background: dim clean ultrasound room with a blank monitor. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a thyroid clinic room",
+   "bg": "dim clean ultrasound room with a blank monitor",
+   "anchor": "thyroid ultrasound machine"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "갑상선 고주파 실비 서류를 정리한 메모 카드",
+   "kind": "card",
+   "card": {
+    "type": "check",
+    "style": "memo",
+    "title": "고주파 실비 서류",
+    "sub": "청구 전에 이것부터 챙겨요",
+    "items": [
+     "진단서나 소견서",
+     "진료비 세부내역서",
+     "입원했다면 입퇴원 확인서",
+     "수술확인서"
+    ],
+    "memo": "영수증은 날짜별로 모아 두기",
+    "hl": 1
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "당일 시술 뒤 회복 의자에서 쉬는 40대 여성",
+   "prompt": "Camera and composition: medium shot in a day procedure recovery room. A Korean woman in her 40s resting in a recovery recliner chair with an ice pack on her neck after a day procedure. Background: calm recovery room with beige curtains. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a day procedure recovery room",
+   "bg": "calm recovery room with beige curtains",
+   "anchor": "recovery recliner chair"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "당일 시술을 마치고 병원 문을 나서는 40대 부부",
+   "prompt": "Camera and composition: medium shot at a clinic entrance. A Korean woman in her 40s walking out through the clinic exit door with her husband on the same day, relaxed. Background: bright clinic lobby with glass doors. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a clinic entrance",
+   "bg": "bright clinic lobby with glass doors",
+   "anchor": "clinic exit door"
+  }
+ ]
 }

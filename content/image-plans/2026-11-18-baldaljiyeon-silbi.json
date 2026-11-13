@@ -1,87 +1,91 @@
 {
-  "slug": "2026-11-18-baldaljiyeon-silbi",
-  "title": "발달지연 실비, 진단코드에 따라 결과가 달라지나요 (R62·F80)",
-  "source": "11/18(수) 16:20 네이버 원고 — 생활보장 검색형(실비청구), 실사풍 (11/10 미리 씀)",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "공원 놀이터에서 4살 아이와 손을 잡고 걷는 30대 엄마 (대표사진)",
-      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a park bench outdoors with trees. Lighting: bright clear daylight, high key. A wide view of a neighborhood park playground, a Korean mother in her 30s in a white knit sweater walking hand in hand with her 4-year-old child in a green jacket, both small in the frame, trees and a slide around. Expression: bright happy smile. Color theme: fresh green plants and crisp white tones with natural morning light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "wide",
-      "bg": "fresh green plants and crisp white tones with natural morning light",
-      "note": "대표",
-      "thumb_shot": "wide",
-      "thumb_theme": "forest",
-      "thumb_person": "30대 엄마와 4살 아이",
-      "thumb_place": "공원",
-      "thumb_light": "밝은 낮",
-      "thumb_mood": "반가움",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "forest",
-        "font": "ptd",
-        "title": "발달지연 실비\n코드 따라 다를까?"
-      }
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "발달지연 실비 질문을 크게 던지는 첫머리 카드",
-      "kind": "card",
-      "card": {
-        "type": "lead",
-        "keyword": "발달지연 실비",
-        "title": "코드 따라\n달라질까?",
-        "ask": "치료비 실비 될까요?"
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "발달지연 실비에서 헷갈리는 것을 O·X 로 묻는 퀴즈 카드",
-      "kind": "card",
-      "card": {
-        "type": "quiz",
-        "title": "발달지연 실비 O·X",
-        "items": [
-          "진단코드는 상관없다",
-          "F90~F98은 급여만 본다",
-          "가입 시기마다 약관이 다르다"
-        ],
-        "answers": [
-          "X",
-          "O",
-          "O"
-        ],
-        "where": "아래 Q&A"
-      }
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "저녁 거실 바닥에 앉아 아이 그림책을 함께 보는 30대 아빠와 아이",
-      "prompt": "Camera and composition: medium shot on a living room floor. A Korean father in his 30s in a navy sweatshirt sitting on a living room rug in the evening with his young child, the two looking at a picture book without visible words, both smiling. Background color: warm living room with a floor lamp and a soft yellow rug. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot on a living room floor",
-      "bg": "warm living room with a floor lamp and a soft yellow rug"
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "소아과 접수대에서 아이 손을 잡고 서류를 받는 엄마의 손",
-      "prompt": "Camera and composition: close-up of hands at a clinic counter. Close-up of a Korean mother's hand in a coral sleeve holding a small child's hand while her other hand receives a blank sheet across a pediatric clinic counter, no faces in the frame. Background color: bright pediatric clinic counter with pastel blue and white tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "close-up of hands at a clinic counter",
-      "bg": "bright pediatric clinic counter with pastel blue and white tones"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "아침 햇살 드는 아이 방에서 블록 놀이를 지켜보는 엄마의 뒷모습",
-      "prompt": "Camera and composition: wide shot of a kids room from behind. A Korean mother seen from behind sitting on the floor of a sunny kids room watching her young child play with colorful wooden blocks, warm morning light. Background color: sunny kids room with white walls and a mint green shelf. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "wide shot of a kids room from behind",
-      "bg": "sunny kids room with white walls and a mint green shelf"
-    }
-  ]
+ "slug": "2026-11-18-baldaljiyeon-silbi",
+ "title": "발달지연 실비, 진단코드에 따라 결과가 달라지나요 (R62·F80)",
+ "source": "11/18(수) 16:20 네이버 원고 — 생활보장 검색형(실비청구), 실사풍 (11/10 미리 씀)",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "언어치료실 그림카드 앞에 앉은 30대 엄마와 4살 아이 (대표사진)",
+   "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Setting: a bright children's speech therapy center. A wide view of a bright speech therapy room with picture cards on a low table, where a Korean mother in her 30s and her 4-year-old child sit small in the frame beside a therapist. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: bright clear daylight, high key. Expression: bright happy smile. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "wide",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "wide",
+   "thumb_theme": "forest",
+   "thumb_person": "30대 엄마와 4살 아이",
+   "thumb_place": "주제",
+   "thumb_light": "밝은 낮",
+   "thumb_mood": "반가움",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "forest",
+    "font": "ptd",
+    "title": "발달지연 실비\n코드 따라 다를까?"
+   },
+   "anchor": "speech therapy room with picture cards"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "발달지연 실비 질문을 크게 던지는 첫머리 카드",
+   "kind": "card",
+   "card": {
+    "type": "lead",
+    "keyword": "발달지연 실비",
+    "title": "코드 따라\n달라질까?",
+    "ask": "치료비 실비 될까요?"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "발달지연 실비에서 헷갈리는 것을 O·X 로 묻는 퀴즈 카드",
+   "kind": "card",
+   "card": {
+    "type": "quiz",
+    "title": "발달지연 실비 O·X",
+    "items": [
+     "진단코드는 상관없다",
+     "F90~F98은 급여만 본다",
+     "가입 시기마다 약관이 다르다"
+    ],
+    "answers": [
+     "X",
+     "O",
+     "O"
+    ],
+    "where": "아래 Q&A"
+   }
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "발달 검사실에서 검사 교구를 함께 보는 30대 아빠와 아이",
+   "prompt": "Camera and composition: medium shot in a pediatric development clinic. A Korean father in his 30s sitting beside his young child while a pediatric therapist lays out developmental assessment toys on a small clinic table. Background: clean white clinic room with soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a pediatric development clinic",
+   "bg": "clean white clinic room with soft daylight",
+   "anchor": "developmental assessment toys"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "소아청소년과 접수대에서 글자 없는 진단서를 받는 엄마의 손",
+   "prompt": "Camera and composition: close-up of hands at a pediatric clinic reception counter. Close-up of a Korean mother's hands receiving a blank diagnosis certificate at a pediatric clinic reception counter while holding her child's small hand. Background: bright clinic reception with white counter. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands at a pediatric clinic reception counter",
+   "bg": "bright clinic reception with white counter",
+   "anchor": "blank diagnosis certificate"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "감각통합 치료실 그네에서 노는 아이를 지켜보는 엄마",
+   "prompt": "Camera and composition: wide shot of a sensory therapy room from behind. A Korean mother in her 30s seen from behind, watching her child play calmly on a sensory integration therapy swing with a therapist nearby. Background: bright therapy room with soft beige mats and white walls. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "wide shot of a sensory therapy room from behind",
+   "bg": "bright therapy room with soft beige mats and white walls",
+   "anchor": "sensory integration therapy swing"
+  }
+ ]
 }

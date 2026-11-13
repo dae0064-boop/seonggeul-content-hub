@@ -1,106 +1,110 @@
 {
-  "slug": "2026-11-21-noryeong-yeongeum-gamaek",
-  "title": "노령연금 감액, 일하면서 받으면 얼마나 깎이나요 (초과소득 200만 원)",
-  "source": "11/21(토) 19:00 네이버 원고 — 생활보장 검색형(돈·제도), 실사풍",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "흐린 날 공원 산책로에서 팔짱을 끼고 생각에 잠긴 60대 남성 (대표사진)",
-      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a park bench outdoors with trees. Lighting: soft overcast daylight. A Korean man in his 60s with short gray hair in a navy padded jacket standing on a park walking path on a cloudy day, arms crossed, thinking calmly. Expression: arms loosely crossed with a confident warm smile. Color theme: clean white and soft navy blue tones in bright daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "face",
-      "bg": "clean white and soft navy blue tones in bright daylight",
-      "note": "대표",
-      "thumb_shot": "face",
-      "thumb_theme": "navy",
-      "thumb_person": "60대 남성",
-      "thumb_place": "공원",
-      "thumb_light": "흐린 날",
-      "thumb_mood": "팔짱",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "navy",
-        "font": "ptd",
-        "title": "노령연금 감액\n얼마나 깎여?"
-      }
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "노령연금 감액 구간의 기준 숫자를 정리한 숫자 카드",
-      "kind": "card",
-      "card": {
-        "type": "number",
-        "title": "노령연금 감액 구간",
-        "items": [
-          [
-            "15%",
-            "첫 감액 구간",
-            "넘는 부분에"
-          ],
-          [
-            "20%",
-            "둘째 구간",
-            "넘는 부분에"
-          ],
-          [
-            "25%",
-            "셋째 구간",
-            "넘는 부분에"
-          ]
-        ]
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "동네 사무실 책상에서 노트에 숫자를 적어 보는 60대 남성의 손",
-      "prompt": "Camera and composition: close-up of hands writing at an office desk. Close-up of an older man's hands writing small marks in a blank notebook on a small office desk next to a closed laptop, no face in the frame. Background color: light gray desk with a navy pen holder. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "close-up of hands writing at an office desk",
-      "bg": "light gray desk with a navy pen holder"
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "노령연금 감액이 되는 쪽과 안 되는 쪽을 비교한 채팅 카드",
-      "kind": "card",
-      "card": {
-        "type": "compare",
-        "title": "깎일까 안 깎일까",
-        "heads": [
-          "안 깎여요",
-          "깎여요"
-        ],
-        "items": [
-          [
-            "부양가족연금액 부분",
-            "소득 있는 업무"
-          ],
-          [
-            "그 기간이 지나면",
-            "감액 기간 안에"
-          ]
-        ],
-        "ask": "일하면 연금 깎여?"
-      }
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "은행 창구 옆 상담 의자에 앉아 안내문을 읽는 60대 부부",
-      "prompt": "Camera and composition: medium shot in a bank lobby seating area. A Korean couple in their 60s sitting side by side on lobby chairs near a bank counter, reading a blank leaflet together with calm faces. Background color: bright lobby with soft beige panels. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot in a bank lobby seating area",
-      "bg": "bright lobby with soft beige panels"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "아침 햇살이 드는 공원 벤치에 놓인 보온병과 접힌 신문",
-      "prompt": "Camera and composition: still life on a park bench in morning light. A wooden park bench in morning sunlight with a thermos bottle and a folded newspaper with blank pages, no people. Background color: soft green trees and warm morning light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "still life on a park bench in morning light",
-      "bg": "soft green trees and warm morning light"
-    }
-  ]
+ "slug": "2026-11-21-noryeong-yeongeum-gamaek",
+ "title": "노령연금 감액, 일하면서 받으면 얼마나 깎이나요 (초과소득 200만 원)",
+ "source": "11/21(토) 19:00 네이버 원고 — 생활보장 검색형(돈·제도), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "작은 공방 작업대 앞의 60대 남성 (대표사진)",
+   "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Setting: a tidy small workshop. A Korean man in his 60s in a work apron at a small workshop workbench, calmly smiling, the workshop softly blurred. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft overcast daylight. Expression: arms loosely crossed with a confident warm smile. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "face",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "face",
+   "thumb_theme": "navy",
+   "thumb_person": "60대 남성",
+   "thumb_place": "주제",
+   "thumb_light": "흐린 날",
+   "thumb_mood": "팔짱",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "navy",
+    "font": "ptd",
+    "title": "노령연금 감액\n얼마나 깎여?"
+   },
+   "anchor": "small workshop workbench"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "노령연금 감액 구간의 기준 숫자를 정리한 숫자 카드",
+   "kind": "card",
+   "card": {
+    "type": "number",
+    "title": "노령연금 감액 구간",
+    "items": [
+     [
+      "15%",
+      "첫 감액 구간",
+      "넘는 부분에"
+     ],
+     [
+      "20%",
+      "둘째 구간",
+      "넘는 부분에"
+     ],
+     [
+      "25%",
+      "셋째 구간",
+      "넘는 부분에"
+     ]
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "아파트 경비실에서 일하는 60대 남성",
+   "prompt": "Camera and composition: medium shot at an apartment complex. A Korean man in his 60s in a uniform working calmly at an apartment security guard booth. Background: apartment complex with trees and daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at an apartment complex",
+   "bg": "apartment complex with trees and daylight",
+   "anchor": "apartment security guard booth"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "노령연금 감액이 되는 쪽과 안 되는 쪽을 비교한 채팅 카드",
+   "kind": "card",
+   "card": {
+    "type": "compare",
+    "title": "깎일까 안 깎일까",
+    "heads": [
+     "안 깎여요",
+     "깎여요"
+    ],
+    "items": [
+     [
+      "부양가족연금액 부분",
+      "소득 있는 업무"
+     ],
+     [
+      "그 기간이 지나면",
+      "감액 기간 안에"
+     ]
+    ],
+    "ask": "일하면 연금 깎여?"
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "식탁에서 글자 없는 연금 안내문을 읽는 60대 남성",
+   "prompt": "Camera and composition: close-up at a dining table. A Korean man in his 60s reading a blank pension notice letter at the dining table with reading glasses. Background: warm kitchen with wood tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up at a dining table",
+   "bg": "warm kitchen with wood tones",
+   "anchor": "pension notice letter"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "주말농장 텃밭을 함께 가꾸는 60대 부부",
+   "prompt": "Camera and composition: medium shot in a community garden. A Korean couple in their 60s tending a community garden plot together on a sunny day. Background: natural garden greenery and soil. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a community garden",
+   "bg": "natural garden greenery and soil",
+   "anchor": "community garden plot"
+  }
+ ]
 }
