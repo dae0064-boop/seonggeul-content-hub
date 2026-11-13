@@ -31,6 +31,18 @@ if (Test-Path $rrq) {
     Start-Detached powershell.exe -ArgumentList '-NoProfile', '-WindowStyle', 'Hidden', '-ExecutionPolicy', 'Bypass', '-File', "`"$ps1`"", '-Dates', $dates, '-SkipDelete'
   } catch { }
 }
+# 2026-11-14 사용자 "스레드도 예약발행이 가능해, 확인해 보고 20일까지 예약": threads-probe-request.txt → 스레드 웹 글쓰기 창의 '예약' 화면을 살펴보기만(올리지 않음) → Drive threads-web\<시각>
+$tpq = Join-Path $ws 'threads-probe-request.txt'
+if (Test-Path $tpq) {
+  try {
+    Remove-Item $tpq -Force
+    git -C $repo pull -q --ff-only 2>$null
+    $st = Get-Date -Format 'yyyy-MM-dd_HHmm'; $po = Join-Path $repo "dumps\threads-web\$st"
+    & node (Join-Path $repo 'scripts\threads\web-probe.mjs') --out $po 2>&1 | Out-File (Join-Path $repo "dumps\threads-web-$st.log") -Encoding utf8
+    $pd = Join-Path $ws "threads-web\$st-$env:COMPUTERNAME"; New-Item -ItemType Directory -Force -Path $pd | Out-Null
+    if (Test-Path $po) { Copy-Item (Join-Path $po '*') $pd -Force }; Copy-Item (Join-Path $repo "dumps\threads-web-$st.log") $pd -Force -ErrorAction SilentlyContinue
+  } catch { }
+}
 # 2026-11-14 사용자 "20일까지 원고 모두 만들어서 예약발행": reserve-request.txt (첫 줄 = 날짜들, 쉼표) → 네이버·티스토리·철거를 그 날짜로 예약. 오래 걸려 따로 띄운다
 $rsq = Join-Path $ws 'reserve-request.txt'
 if (Test-Path $rsq) {
