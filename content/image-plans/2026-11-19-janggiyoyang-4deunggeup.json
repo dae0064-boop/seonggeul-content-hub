@@ -1,102 +1,106 @@
 {
-  "slug": "2026-11-19-janggiyoyang-4deunggeup",
-  "title": "장기요양 4등급, 한 달에 서비스를 얼마까지 쓸 수 있나요 (140만 9,700원)",
-  "source": "11/19(목) 11:20 네이버 원고 — 생활보장 검색형(돌봄), 실사풍",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "아침 햇살이 드는 거실에서 서류를 보며 고개를 끄덕이는 40대 딸과 70대 어머니 (대표사진)",
-      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a living room sofa. Lighting: soft early-morning sunlight. A Korean daughter in her 40s in a coral knit and her mother in her 70s in a cream cardigan sitting together on a living room sofa, the daughter holding a blank envelope. Expression: nodding with a reassuring smile, hands relaxed. Color theme: fresh green plants and crisp white tones with natural morning light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "duo",
-      "bg": "fresh green plants and crisp white tones with natural morning light",
-      "note": "대표",
-      "thumb_shot": "duo",
-      "thumb_theme": "forest",
-      "thumb_person": "40대 딸(코랄 니트)과 70대 어머니(크림 카디건)",
-      "thumb_place": "거실",
-      "thumb_light": "아침 햇살",
-      "thumb_mood": "끄덕",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "forest",
-        "font": "jua",
-        "title": "장기요양\n한 달 얼마나?"
-      }
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "장기요양 4등급 숫자를 한눈에 보여 주는 카드",
-      "kind": "card",
-      "card": {
-        "type": "number",
-        "title": "장기요양 4등급 숫자",
-        "items": [
-          [
-            "51점",
-            "장기요양인정점수",
-            "60점 미만까지"
-          ],
-          [
-            "15%",
-            "재가급여 본인부담",
-            "쓴 만큼"
-          ],
-          [
-            "4년",
-            "갱신 뒤 유효기간",
-            "2~4등급"
-          ]
-        ]
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "현관에서 방문한 요양보호사를 반갑게 맞는 70대 어머니",
-      "prompt": "Camera and composition: medium shot at an apartment entrance. A Korean woman in her 70s in a gray knit greeting a visiting care worker in a light green uniform at an apartment front door, both smiling. Background color: bright entrance with white walls and a small green plant. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot at an apartment entrance",
-      "bg": "bright entrance with white walls and a small green plant"
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "장기요양 4등급 서비스 고르는 메모 카드",
-      "kind": "card",
-      "card": {
-        "type": "check",
-        "style": "memo",
-        "title": "4등급 서비스 고르기",
-        "sub": "월 한도액 안에서 섞어 쓰기",
-        "items": [
-          "방문요양",
-          "주야간보호",
-          "단기보호",
-          "방문목욕",
-          "방문간호"
-        ],
-        "memo": "넘친 만큼은 전부 본인 부담",
-        "hl": 1
-      }
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "거실 달력 옆에서 휴대폰 메모를 확인하는 40대 딸",
-      "prompt": "Camera and composition: medium close-up beside a wall calendar. A Korean woman in her 40s in a mustard blouse standing next to a blank wall calendar in a living room, checking a memo on her smartphone. Background color: pale yellow wall with light wood shelf. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium close-up beside a wall calendar",
-      "bg": "pale yellow wall with light wood shelf"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "공원 벤치에서 나란히 산책 후 쉬는 70대 어머니와 40대 딸",
-      "prompt": "Camera and composition: wide shot in a park. A Korean daughter in her 40s and her mother in her 70s sitting side by side on a park bench after a walk, talking calmly. Background color: autumn park with yellow leaves and soft blue sky. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "wide shot in a park",
-      "bg": "autumn park with yellow leaves and soft blue sky"
-    }
-  ]
+ "slug": "2026-11-19-janggiyoyang-4deunggeup",
+ "title": "장기요양 4등급, 한 달에 서비스를 얼마까지 쓸 수 있나요 (140만 9,700원)",
+ "source": "11/19(목) 11:20 네이버 원고 — 생활보장 검색형(돌봄), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "거실에서 글자 없는 장기요양 인정서를 두고 이야기하는 40대 딸과 70대 어머니 (대표사진)",
+   "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Setting: a bright home living room. A Korean daughter in her 40s in a coral knit and her mother in her 70s in a cream cardigan facing each other and talking at a living room table over a blank long-term care certificate. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft early-morning sunlight. Expression: nodding with a reassuring smile, hands relaxed. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "duo",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "duo",
+   "thumb_theme": "forest",
+   "thumb_person": "40대 딸(코랄 니트)과 70대 어머니(크림 카디건)",
+   "thumb_place": "주제",
+   "thumb_light": "아침 햇살",
+   "thumb_mood": "끄덕",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "forest",
+    "font": "jua",
+    "title": "장기요양\n한 달 얼마나?"
+   },
+   "anchor": "blank long-term care certificate"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "장기요양 4등급 숫자를 한눈에 보여 주는 카드",
+   "kind": "card",
+   "card": {
+    "type": "number",
+    "title": "장기요양 4등급 숫자",
+    "items": [
+     [
+      "51점",
+      "장기요양인정점수",
+      "60점 미만까지"
+     ],
+     [
+      "15%",
+      "재가급여 본인부담",
+      "쓴 만큼"
+     ],
+     [
+      "4년",
+      "갱신 뒤 유효기간",
+      "2~4등급"
+     ]
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "현관에서 방문요양 요양보호사를 맞는 70대 어머니",
+   "prompt": "Camera and composition: medium shot at an apartment entrance. A Korean mother in her 70s greeting a home care aide in a light blue uniform carrying a care bag at the apartment entrance. Background: home entrance with natural wood floor. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at an apartment entrance",
+   "bg": "home entrance with natural wood floor",
+   "anchor": "home care aide in a light blue uniform"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "장기요양 4등급 서비스 고르는 메모 카드",
+   "kind": "card",
+   "card": {
+    "type": "check",
+    "style": "memo",
+    "title": "4등급 서비스 고르기",
+    "sub": "월 한도액 안에서 섞어 쓰기",
+    "items": [
+     "방문요양",
+     "주야간보호",
+     "단기보호",
+     "방문목욕",
+     "방문간호"
+    ],
+    "memo": "넘친 만큼은 전부 본인 부담",
+    "hl": 1
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "거실에서 등급 갱신 방문 조사를 받는 70대 어머니와 40대 딸",
+   "prompt": "Camera and composition: medium shot in a living room. A long-term care assessor with a blank tablet visiting a Korean mother in her 70s and her daughter in her 40s in their living room. Background: warm home living room with daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a living room",
+   "bg": "warm home living room with daylight",
+   "anchor": "long-term care assessor with a blank tablet"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "집 앞에 선 방문목욕 차량과 요양보호사",
+   "prompt": "Camera and composition: wide shot of a residential street. Two Korean caregivers unloading a folding bathtub from a mobile bathing van parked in front of a low-rise house. Background: quiet residential street in daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "wide shot of a residential street",
+   "bg": "quiet residential street in daylight",
+   "anchor": "mobile bathing van"
+  }
+ ]
 }

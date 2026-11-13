@@ -1,92 +1,96 @@
 {
-  "slug": "2026-11-18-chuna-silbi-cheonggu",
-  "title": "추나요법 실비청구, 한의원 영수증도 돌려받을 수 있나요 (연 20회)",
-  "source": "11/18(수) 10:00 네이버 원고 — 생활보장 검색형(실비청구), 실사풍 (11/10 미리 씀)",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "아침 지하철 객차 창가에서 휴대폰으로 실비 앱을 보며 웃는 30대 남성 직장인 (대표사진)",
-      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: inside a city bus or subway car by the window. Lighting: soft early-morning sunlight. A wide view of a quiet subway car in the morning, a Korean man in his 30s in an olive green padded jacket standing small by the window holding a smartphone, standing up straight and relaxed, empty seats around. Expression: smiling while checking a smartphone, hands away from the face. Color theme: olive green and pale cream tones with a red accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "wide",
-      "bg": "olive green and pale cream tones with a red accent",
-      "note": "대표",
-      "thumb_shot": "wide",
-      "thumb_theme": "olive",
-      "thumb_person": "30대 남성 직장인",
-      "thumb_place": "버스·지하철",
-      "thumb_light": "아침 햇살",
-      "thumb_mood": "휴대폰",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "olive",
-        "font": "ptd",
-        "title": "추나요법 실비청구\n한의원도 될까?"
-      }
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "추나요법 실비청구 질문을 크게 던지는 첫머리 카드",
-      "kind": "card",
-      "card": {
-        "type": "lead",
-        "keyword": "추나요법 실비",
-        "title": "한의원 추나\n돌아올까?",
-        "ask": "한의원 영수증도 돼요?"
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "한의원 접수대에서 진료비 영수증을 두 손으로 받는 손",
-      "prompt": "Camera and composition: close-up of hands at a reception counter. Close-up of a Korean person's hands in a mustard knit sleeve receiving a blank receipt with both hands across a wooden clinic reception counter, no face in the frame. Background color: warm wooden counter with a small green plant. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "close-up of hands at a reception counter",
-      "bg": "warm wooden counter with a small green plant"
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "한의원 추나 실비가 되는 경우와 안 되는 경우를 나눈 채팅 카드",
-      "kind": "card",
-      "card": {
-        "type": "compare",
-        "title": "추나 실비 되는 경우",
-        "heads": [
-          "되는 경우",
-          "안 되는 경우"
-        ],
-        "items": [
-          [
-            "급여 본인부담",
-            "약침·첩약"
-          ],
-          [
-            "연 20회 안에서",
-            "연 20회를 넘겨"
-          ]
-        ],
-        "ask": "한의원 추나도 실비 돼?",
-        "qa": "추나 실비"
-      }
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "저녁 거실 소파에서 영수증 사진을 휴대폰으로 찍는 40대 여성",
-      "prompt": "Camera and composition: medium shot on a living room sofa. A Korean woman in her 40s in a soft gray hoodie sitting on a living room sofa in the evening, taking a photo of a blank receipt on the coffee table with her smartphone, calm. Background color: cozy living room with a warm lamp and a teal cushion. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot on a living room sofa",
-      "bg": "cozy living room with a warm lamp and a teal cushion"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "공원 벤치에서 허리를 펴고 가볍게 스트레칭하는 50대 남성",
-      "prompt": "Camera and composition: wide shot in a park. A Korean man in his 50s in a navy windbreaker standing beside a park bench and gently stretching his back with both hands on his waist, smiling, autumn trees around. Background color: autumn park with yellow ginkgo trees and a clear sky. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "wide shot in a park",
-      "bg": "autumn park with yellow ginkgo trees and a clear sky"
-    }
-  ]
+ "slug": "2026-11-18-chuna-silbi-cheonggu",
+ "title": "추나요법 실비청구, 한의원 영수증도 돌려받을 수 있나요 (연 20회)",
+ "source": "11/18(수) 10:00 네이버 원고 — 생활보장 검색형(실비청구), 실사풍 (11/10 미리 씀)",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "한의원 치료실 추나 치료대에 누운 30대 남성 직장인 (대표사진)",
+   "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Setting: a bright Korean medicine clinic treatment room. A wide view of a bright Korean medicine clinic treatment room where a Korean office worker in his 30s lies calmly on a chuna treatment table while a doctor in a white coat gently adjusts his back. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft early-morning sunlight. Expression: smiling while checking a smartphone, hands away from the face. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "wide",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "wide",
+   "thumb_theme": "olive",
+   "thumb_person": "30대 남성 직장인",
+   "thumb_place": "주제",
+   "thumb_light": "아침 햇살",
+   "thumb_mood": "휴대폰",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "olive",
+    "font": "ptd",
+    "title": "추나요법 실비청구\n한의원도 될까?"
+   },
+   "anchor": "chuna treatment table"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "추나요법 실비청구 질문을 크게 던지는 첫머리 카드",
+   "kind": "card",
+   "card": {
+    "type": "lead",
+    "keyword": "추나요법 실비",
+    "title": "한의원 추나\n돌아올까?",
+    "ask": "한의원 영수증도 돼요?"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "한의원 접수대에서 글자 없는 영수증을 받는 손과 약장",
+   "prompt": "Camera and composition: close-up of hands at a Korean medicine clinic reception. Close-up of hands receiving a blank medical receipt at a Korean medicine clinic reception with wooden herbal medicine drawers behind. Background: warm wood clinic interior. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands at a Korean medicine clinic reception",
+   "bg": "warm wood clinic interior",
+   "anchor": "herbal medicine drawers"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "한의원 추나 실비가 되는 경우와 안 되는 경우를 나눈 채팅 카드",
+   "kind": "card",
+   "card": {
+    "type": "compare",
+    "title": "추나 실비 되는 경우",
+    "heads": [
+     "되는 경우",
+     "안 되는 경우"
+    ],
+    "items": [
+     [
+      "급여 본인부담",
+      "약침·첩약"
+     ],
+     [
+      "연 20회 안에서",
+      "연 20회를 넘겨"
+     ]
+    ],
+    "ask": "한의원 추나도 실비 돼?",
+    "qa": "추나 실비"
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "거실 소파에서 한의원 영수증을 휴대폰으로 찍는 40대 여성",
+   "prompt": "Camera and composition: medium shot on a living room sofa. A Korean woman in her 40s sitting on a living room sofa and holding her phone camera over a blank Korean medicine receipt. Background: cozy living room with soft lamp light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot on a living room sofa",
+   "bg": "cozy living room with soft lamp light",
+   "anchor": "phone camera over a blank Korean medicine receipt"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "한의원 데스크에서 한약 파우치 상자를 받는 50대 남성",
+   "prompt": "Camera and composition: medium shot at a Korean medicine clinic counter. A Korean man in his 50s receiving a box of herbal medicine pouches from a staff member at a Korean medicine clinic counter. Background: warm wood interior with traditional herbal drawers. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a Korean medicine clinic counter",
+   "bg": "warm wood interior with traditional herbal drawers",
+   "anchor": "box of herbal medicine pouches"
+  }
+ ]
 }

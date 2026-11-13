@@ -1,85 +1,89 @@
 {
-  "slug": "2026-11-18-singyeongchadansul-silbi",
-  "title": "신경차단술 실비, 당일 입원으로 받으면 입원비가 나오나요 (입원 판단 6시간)",
-  "source": "11/18(수) 11:20 네이버 원고 — 생활보장 검색형(실비청구), 실사풍 (11/10 미리 씀)",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "병원 접수 창구 앞에서 서류 한 줄을 손가락으로 짚어 보는 50대 여성의 손 (대표사진)",
-      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a bright hospital reception desk area (no patients in pain). Lighting: cool clean white indoor light. Close-up of the hands of a Korean woman in her 50s in a cobalt blue cardigan sleeve, one finger pointing at a line on a blank sheet resting on a hospital reception counter. Expression: pointing at the key object with one finger and a friendly smile. Color theme: cool sky blue and white tones with a yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "hands",
-      "bg": "cool sky blue and white tones with a yellow accent",
-      "note": "대표",
-      "thumb_shot": "hands",
-      "thumb_theme": "cobalt",
-      "thumb_person": "50대 여성의 손",
-      "thumb_place": "병원 접수",
-      "thumb_light": "흰 조명",
-      "thumb_mood": "가리킴",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "cobalt",
-        "font": "ptd",
-        "title": "신경차단술 실비\n입원일까 통원일까?"
-      }
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "신경차단술 실비 질문을 크게 던지는 첫머리 카드",
-      "kind": "card",
-      "card": {
-        "type": "lead",
-        "keyword": "신경차단술 실비",
-        "title": "잠깐 누우면\n입원일까?",
-        "ask": "입원비도 나와요?"
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "병실 침대 옆 의자에 앉아 조용히 쉬는 60대 남성",
-      "prompt": "Camera and composition: medium shot in a hospital room. A Korean man in his 60s in a light gray sweater sitting calmly on a chair beside a neatly made hospital bed, resting with a gentle face. Background color: bright hospital room with pale mint walls and white bedding. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot in a hospital room",
-      "bg": "bright hospital room with pale mint walls and white bedding"
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "신경차단술 실비 청구 전에 볼 것을 정리한 메모 카드",
-      "kind": "card",
-      "card": {
-        "type": "check",
-        "style": "memo",
-        "title": "청구 전에 볼 것",
-        "sub": "영수증 칸부터 확인해요",
-        "items": [
-          "영수증이 입원인지 외래인지",
-          "세부내역서에 시술 이름",
-          "날짜별로 따로 받았는지"
-        ],
-        "memo": "날짜마다 공제가 빠져요",
-        "hl": 1
-      }
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "저녁 버스 창가에 앉아 달력 앱을 보며 고개를 끄덕이는 40대 여성",
-      "prompt": "Camera and composition: medium shot by a bus window. A Korean woman in her 40s in a camel coat sitting by a city bus window in the evening, looking at her smartphone and nodding calmly, city lights softly blurred outside. Background color: warm evening city lights with a deep blue sky. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot by a bus window",
-      "bg": "warm evening city lights with a deep blue sky"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "약국 계산대에서 약 봉투와 영수증을 받는 손",
-      "prompt": "Camera and composition: close-up of hands at a pharmacy counter. Close-up of a Korean person's hands in a beige coat sleeve receiving a white paper medicine bag and a blank receipt across a clean pharmacy counter, no face in the frame. Background color: clean white pharmacy counter with soft green shelves behind. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "close-up of hands at a pharmacy counter",
-      "bg": "clean white pharmacy counter with soft green shelves behind"
-    }
-  ]
+ "slug": "2026-11-18-singyeongchadansul-silbi",
+ "title": "신경차단술 실비, 당일 입원으로 받으면 입원비가 나오나요 (입원 판단 6시간)",
+ "source": "11/18(수) 11:20 네이버 원고 — 생활보장 검색형(실비청구), 실사풍 (11/10 미리 씀)",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "통증의학과 시술 침대 가장자리에 놓인 50대 여성의 손 (대표사진)",
+   "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Setting: a pain clinic procedure room. Close-up of a Korean woman's hands in her 50s resting calmly on the edge of a pain clinic procedure bed with a C-arm X-ray machine softly blurred behind. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: cool clean white indoor light. Expression: pointing at the key object with one finger and a friendly smile. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "hands",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "hands",
+   "thumb_theme": "cobalt",
+   "thumb_person": "50대 여성의 손",
+   "thumb_place": "주제",
+   "thumb_light": "흰 조명",
+   "thumb_mood": "가리킴",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "cobalt",
+    "font": "ptd",
+    "title": "신경차단술 실비\n입원일까 통원일까?"
+   },
+   "anchor": "pain clinic procedure bed"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "신경차단술 실비 질문을 크게 던지는 첫머리 카드",
+   "kind": "card",
+   "card": {
+    "type": "lead",
+    "keyword": "신경차단술 실비",
+    "title": "잠깐 누우면\n입원일까?",
+    "ask": "입원비도 나와요?"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "병원 당일 입원실 회복 침대에서 쉬는 60대 남성",
+   "prompt": "Camera and composition: medium shot in a hospital day ward. A Korean man in his 60s resting calmly on a day ward recovery bed with an IV stand nearby. Background: clean hospital ward with white curtains. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a hospital day ward",
+   "bg": "clean hospital ward with white curtains",
+   "anchor": "day ward recovery bed"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "신경차단술 실비 청구 전에 볼 것을 정리한 메모 카드",
+   "kind": "card",
+   "card": {
+    "type": "check",
+    "style": "memo",
+    "title": "청구 전에 볼 것",
+    "sub": "영수증 칸부터 확인해요",
+    "items": [
+     "영수증이 입원인지 외래인지",
+     "세부내역서에 시술 이름",
+     "날짜별로 따로 받았는지"
+    ],
+    "memo": "날짜마다 공제가 빠져요",
+    "hl": 1
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "통증의학과 대기실에서 글자 없는 예약 카드를 든 40대 여성",
+   "prompt": "Camera and composition: medium shot in a clinic waiting room. A Korean woman in her 40s sitting in a pain clinic waiting room holding a blank appointment card. Background: bright clinic waiting room with light wood chairs. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a clinic waiting room",
+   "bg": "bright clinic waiting room with light wood chairs",
+   "anchor": "pain clinic waiting room"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "병원 수납 창구에서 글자 없는 세부내역서와 영수증을 받는 손",
+   "prompt": "Camera and composition: close-up of hands at a hospital billing counter. Close-up of hands receiving a blank detailed bill and medical receipt at a hospital billing counter. Background: bright hospital counter with white surfaces. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands at a hospital billing counter",
+   "bg": "bright hospital counter with white surfaces",
+   "anchor": "blank detailed bill and medical receipt"
+  }
+ ]
 }

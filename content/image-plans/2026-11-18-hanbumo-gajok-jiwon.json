@@ -1,85 +1,89 @@
 {
-  "slug": "2026-11-18-hanbumo-gajok-jiwon",
-  "title": "한부모가족 지원, 아동양육비는 한 달에 얼마인가요 (자녀 1인당 월 23만 원)",
-  "source": "11/18(수) 19:00 네이버 원고 — 생활보장 검색형(돈·생활 제도), 실사풍 (11/10 미리 씀)",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "저녁 아파트 현관에서 손을 흔들며 웃는 30대 아빠 (대표사진)",
-      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: an apartment front door entrance. Lighting: warm evening lamp light. A Korean father in his 30s in a navy padded jacket over a gray hoodie standing at an apartment front door entrance in the evening, a small child's backpack hanging on the hook behind him. Expression: waving one hand hello with a bright smile. Color theme: clean white and soft navy blue tones in bright daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "face",
-      "bg": "clean white and soft navy blue tones in bright daylight",
-      "note": "대표",
-      "thumb_shot": "face",
-      "thumb_theme": "navy",
-      "thumb_person": "30대 아빠",
-      "thumb_place": "현관",
-      "thumb_light": "저녁 조명",
-      "thumb_mood": "인사",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "navy",
-        "font": "ptd",
-        "title": "한부모가족 지원\n한 달 얼마?"
-      }
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "한부모가족 지원 질문을 크게 던지는 첫머리 카드",
-      "kind": "card",
-      "card": {
-        "type": "lead",
-        "keyword": "한부모가족 지원",
-        "title": "우리 집도\n받을까?",
-        "ask": "일해도 받을 수 있어요?"
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "아이 운동화 끈을 묶어 주는 엄마의 손과 작은 발",
-      "prompt": "Camera and composition: close-up of hands tying a child shoe. Close-up of a Korean mother's hands in a cream knit sleeve tying the laces of a small child's sneaker at a doorway, only hands and small feet in the frame. Background color: light wood entrance floor with soft morning light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "close-up of hands tying a child shoe",
-      "bg": "light wood entrance floor with soft morning light"
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "한부모가족 지원 신청 순서를 정리한 메모 카드",
-      "kind": "card",
-      "card": {
-        "type": "steps",
-        "style": "memo",
-        "title": "신청 전에 할 일",
-        "sub": "세 가지만 챙기면 돼요",
-        "items": [
-          "소득인정액 기준 확인",
-          "복지로에서 신청하기",
-          "학용품비도 함께 물어보기"
-        ],
-        "memo": "근로소득은 30% 빼고 봐요",
-        "hl": 1
-      }
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "거실 탁자에서 노트북으로 신청 화면을 보는 30대 엄마",
-      "prompt": "Camera and composition: medium shot at a living room table. A Korean woman in her 30s in a sky blue sweater sitting at a low living room table at night, looking at a laptop with a blank screen, calm, a child's drawing on the wall behind. Background color: cozy living room with a warm lamp and a soft blue throw. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot at a living room table",
-      "bg": "cozy living room with a warm lamp and a soft blue throw"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "놀이터 그네 앞에서 아이를 기다리며 미소 짓는 40대 아빠",
-      "prompt": "Camera and composition: medium shot at a playground. A Korean man in his 40s in a khaki jacket standing beside a playground swing in the afternoon, smiling as he waits, trees and a slide softly blurred behind. Background color: bright playground with green trees and yellow play equipment. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot at a playground",
-      "bg": "bright playground with green trees and yellow play equipment"
-    }
-  ]
+ "slug": "2026-11-18-hanbumo-gajok-jiwon",
+ "title": "한부모가족 지원, 아동양육비는 한 달에 얼마인가요 (자녀 1인당 월 23만 원)",
+ "source": "11/18(수) 19:00 네이버 원고 — 생활보장 검색형(돈·생활 제도), 실사풍 (11/10 미리 씀)",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "주민센터 복지 창구를 뒤로한 30대 아빠 (대표사진)",
+   "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Setting: a community service center welfare counter. A Korean father in his 30s with a calm smile, his face close to the camera, with a community service center welfare counter softly blurred behind him. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: warm evening lamp light. Expression: waving one hand hello with a bright smile. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "face",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "face",
+   "thumb_theme": "navy",
+   "thumb_person": "30대 아빠",
+   "thumb_place": "주제",
+   "thumb_light": "저녁 조명",
+   "thumb_mood": "인사",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "navy",
+    "font": "ptd",
+    "title": "한부모가족 지원\n한 달 얼마?"
+   },
+   "anchor": "community service center welfare counter"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "한부모가족 지원 질문을 크게 던지는 첫머리 카드",
+   "kind": "card",
+   "card": {
+    "type": "lead",
+    "keyword": "한부모가족 지원",
+    "title": "우리 집도\n받을까?",
+    "ask": "일해도 받을 수 있어요?"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "현관에서 아이 어린이집 가방을 챙기는 엄마의 손",
+   "prompt": "Camera and composition: close-up of hands at an apartment entrance. Close-up of a Korean mother's hands zipping a child's daycare backpack at the apartment entrance while her child waits in small sneakers. Background: home entrance with natural wood floor. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands at an apartment entrance",
+   "bg": "home entrance with natural wood floor",
+   "anchor": "child's daycare backpack"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "한부모가족 지원 신청 순서를 정리한 메모 카드",
+   "kind": "card",
+   "card": {
+    "type": "steps",
+    "style": "memo",
+    "title": "신청 전에 할 일",
+    "sub": "세 가지만 챙기면 돼요",
+    "items": [
+     "소득인정액 기준 확인",
+     "복지로에서 신청하기",
+     "학용품비도 함께 물어보기"
+    ],
+    "memo": "근로소득은 30% 빼고 봐요",
+    "hl": 1
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "주민센터 상담 자리에서 사회복지 담당자와 이야기하는 30대 엄마",
+   "prompt": "Camera and composition: medium shot at a community service center. A Korean mother in her 30s talking calmly with a social worker at a social worker counseling desk in a community service center. Background: bright public office with white desks. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a community service center",
+   "bg": "bright public office with white desks",
+   "anchor": "social worker counseling desk"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "퇴근길 어린이집 현관에서 아이를 데리러 온 40대 아빠",
+   "prompt": "Camera and composition: medium shot at a daycare center entrance in the evening. A Korean father in his 40s in work clothes picking up his child at a daycare center entrance in the evening. Background: warm evening light at a small daycare building. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a daycare center entrance in the evening",
+   "bg": "warm evening light at a small daycare building",
+   "anchor": "daycare center entrance"
+  }
+ ]
 }

@@ -1,86 +1,90 @@
 {
-  "slug": "2026-11-19-talmo-silbi",
-  "title": "탈모 실비, 피부과 치료비도 실손에서 받을 수 있나요 (별표 2 노화 탈모)",
-  "source": "11/19(목) 13:40 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "사무실 책상 앞에서 휴대폰을 보고 놀란 표정을 짓는 30대 남성 (대표사진)",
-      "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: an office desk with a laptop. Lighting: cool clean white indoor light. A Korean man in his 30s in a lavender shirt sitting at an office desk and looking at his smartphone. Expression: pleasantly surprised, eyebrows up, not scared. Color theme: soft lavender and white tones with a warm yellow accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "face",
-      "bg": "soft lavender and white tones with a warm yellow accent",
-      "note": "대표",
-      "thumb_shot": "face",
-      "thumb_theme": "plum",
-      "thumb_person": "30대 남성 직장인(라벤더 셔츠)",
-      "thumb_place": "사무실",
-      "thumb_light": "흰 조명",
-      "thumb_mood": "놀람",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "plum",
-        "font": "ptd",
-        "title": "탈모 실비\n피부과도 될까?"
-      }
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "탈모 실비 질문에 답하는 채팅 카드",
-      "kind": "card",
-      "card": {
-        "type": "check",
-        "ask": "탈모 치료도 실비 돼?",
-        "title": "약관이 빼는 탈모",
-        "items": [
-          "노화현상으로 인한 탈모",
-          "일상생활에 지장이 없는 경우",
-          "비급여 치료비"
-        ]
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "피부과 대기실 의자에 앉아 순서를 기다리는 30대 여성",
-      "prompt": "Camera and composition: medium shot in a clinic waiting area. A Korean woman in her 30s in a beige coat sitting calmly on a dermatology clinic waiting room chair, holding a small handbag. Background color: clean white waiting room with soft lavender cushions. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot in a clinic waiting area",
-      "bg": "clean white waiting room with soft lavender cushions"
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "내 탈모 영수증을 스스로 확인하는 자가 체크 카드",
-      "kind": "card",
-      "card": {
-        "type": "selfcheck",
-        "title": "내 탈모 영수증 체크",
-        "items": [
-          "급여 칸에 금액이 있는지",
-          "진단명이 적힌 서류",
-          "노화현상 탈모"
-        ],
-        "result": "아래 '급여 칸' 부분을 꼭 보세요 👇"
-      }
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "책상 위에서 진료비 세부내역서에 형광펜을 긋는 손",
-      "prompt": "Camera and composition: close-up of hands on a desk. Close-up of a Korean man's hands in a gray sweater sleeve drawing a line with a yellow highlighter on a blank printed sheet on a wooden desk, no face in the frame. Background color: light wood desk with a white mug. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "close-up of hands on a desk",
-      "bg": "light wood desk with a white mug"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "저녁 거실 소파에서 노트북으로 보험 약관을 찾아보는 30대 부부",
-      "prompt": "Camera and composition: medium shot in a living room at night. A Korean couple in their 30s sitting on a sofa in the evening, looking together at a laptop screen that shows only simple blank blocks. Background color: warm lamp light with a dusty pink throw blanket. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot in a living room at night",
-      "bg": "warm lamp light with a dusty pink throw blanket"
-    }
-  ]
+ "slug": "2026-11-19-talmo-silbi",
+ "title": "탈모 실비, 피부과 치료비도 실손에서 받을 수 있나요 (별표 2 노화 탈모)",
+ "source": "11/19(목) 13:40 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "피부과 두피 확대경을 뒤로한 30대 남성 직장인 (대표사진)",
+   "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Setting: a dermatology clinic exam room. A Korean office worker in his 30s in a lavender shirt, his calm face close to the camera, with a dermatologist's scalp microscope softly blurred behind him. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: cool clean white indoor light. Expression: pleasantly surprised, eyebrows up, not scared. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "face",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "face",
+   "thumb_theme": "plum",
+   "thumb_person": "30대 남성 직장인(라벤더 셔츠)",
+   "thumb_place": "주제",
+   "thumb_light": "흰 조명",
+   "thumb_mood": "놀람",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "plum",
+    "font": "ptd",
+    "title": "탈모 실비\n피부과도 될까?"
+   },
+   "anchor": "scalp microscope"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "탈모 실비 질문에 답하는 채팅 카드",
+   "kind": "card",
+   "card": {
+    "type": "check",
+    "ask": "탈모 치료도 실비 돼?",
+    "title": "약관이 빼는 탈모",
+    "items": [
+     "노화현상으로 인한 탈모",
+     "일상생활에 지장이 없는 경우",
+     "비급여 치료비"
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "피부과 진료 의자에서 두피 진찰을 받는 30대 여성",
+   "prompt": "Camera and composition: medium shot in a dermatology exam room. A Korean woman in her 30s sitting calmly in a dermatology exam chair while a dermatologist looks at her scalp. Background: clean white clinic room with soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a dermatology exam room",
+   "bg": "clean white clinic room with soft daylight",
+   "anchor": "dermatology exam chair"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "내 탈모 영수증을 스스로 확인하는 자가 체크 카드",
+   "kind": "card",
+   "card": {
+    "type": "selfcheck",
+    "title": "내 탈모 영수증 체크",
+    "items": [
+     "급여 칸에 금액이 있는지",
+     "진단명이 적힌 서류",
+     "노화현상 탈모"
+    ],
+    "result": "아래 '급여 칸' 부분을 꼭 보세요 👇"
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "책상 위 글자 없는 세부내역서에 형광펜을 긋는 손",
+   "prompt": "Camera and composition: close-up of hands on a desk. Close-up of hands marking a blank detailed bill with a highlighter on a desk. Background: plain home desk with natural daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands on a desk",
+   "bg": "plain home desk with natural daylight",
+   "anchor": "blank detailed bill with a highlighter"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "드럭스토어 선반의 라벨 없는 샴푸를 보는 30대 부부",
+   "prompt": "Camera and composition: medium shot in a drugstore aisle. A Korean couple in their 30s looking at plain unlabeled shampoo bottles on a drugstore shelf. Background: bright drugstore with white shelves. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a drugstore aisle",
+   "bg": "bright drugstore with white shelves",
+   "anchor": "plain unlabeled shampoo bottles"
+  }
+ ]
 }
