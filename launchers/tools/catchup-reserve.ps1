@@ -103,7 +103,7 @@ $pendingFor = {
 }
 
 $did = @()
-foreach ($i in 0..2) {
+foreach ($i in 0..0) {   # 2026-11-13 사용자 "오전에 그날 것 예약" — 내일·모레는 미리 걸지 않는다 (그날 아침이 한다)
   if ($late -and $i -eq 0) { Note '21시 이후라 오늘 글은 건너뜀'; continue }
   $d = $now.AddDays($i).ToString('yyyy-MM-dd')
   $n = & $pendingFor $d 'content\posts' ''
