@@ -1,8 +1,8 @@
 {
  "slug": "2026-11-19-chimae-jogigeomjin",
- "title": "치매 조기검진, 선별검사부터 감별검사까지 무엇을 하나요 (3단계)",
+ "title": "치매 조기검진, 선별검사부터 감별검사까지 3단계로 받아요",
  "source": "11/19(목) 21:00 네이버 원고 — 생활보장 검색형(돌봄·검진 제도), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -29,14 +29,11 @@
   {
    "n": 2,
    "file": "02.png",
-   "title": "치매 조기검진을 묻는 첫머리 카드",
-   "kind": "card",
-   "card": {
-    "type": "lead",
-    "keyword": "치매 조기검진",
-    "title": "어디서\n받을까?",
-    "ask": "아버지 검사받아 볼까?"
-   }
+   "title": "동네 치매안심센터 입구로 함께 들어서는 70대 부부",
+   "prompt": "Camera and composition: medium shot at a building entrance. A Korean couple in their 70s walking calmly side by side through the glass door of a neighborhood dementia care center entrance. Background: clean public building entrance with a small garden and daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a building entrance",
+   "bg": "clean public building entrance with a small garden and daylight",
+   "anchor": "dementia care center entrance"
   },
   {
    "n": 3,

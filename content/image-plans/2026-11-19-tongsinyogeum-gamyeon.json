@@ -1,8 +1,8 @@
 {
  "slug": "2026-11-19-tongsinyogeum-gamyeon",
- "title": "통신요금 감면, 기초연금 받으면 휴대폰 요금이 얼마나 줄까요 (22,000원 한도)",
+ "title": "부모님 휴대폰 고지서, 통신요금 감면 줄부터 찾아보세요",
  "source": "11/19(목) 16:20 네이버 원고 — 생활보장 검색형(돈·제도), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -56,18 +56,11 @@
   {
    "n": 4,
    "file": "04.png",
-   "title": "통신요금 감면 신청 순서를 말풍선으로 정리한 채팅 카드",
-   "kind": "card",
-   "card": {
-    "type": "steps",
-    "ask": "신청은 어떻게 해?",
-    "title": "통신요금 감면 신청 순서",
-    "items": [
-     "어느 감면 대상인지 확인하기",
-     "통신사에 감면 신청하기",
-     "고지서에서 감면 금액 확인하기"
-    ]
-   }
+   "title": "집 거실에서 휴대폰으로 통신사 고객센터에 전화하는 40대 딸",
+   "prompt": "Camera and composition: medium shot in a living room. A Korean daughter in her 40s sitting at a living room table, calmly making a call with a smartphone held to her ear while her elderly mother sits beside her. Background: bright apartment living room with natural light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a living room",
+   "bg": "bright apartment living room with natural light",
+   "anchor": "smartphone held to her ear"
   },
   {
    "n": 5,

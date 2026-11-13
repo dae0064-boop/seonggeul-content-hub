@@ -1,8 +1,8 @@
 {
  "slug": "2026-11-19-juyaganboho-sigan",
- "title": "주야간보호 시간, 몇 시간 이용하느냐에 따라 비용이 달라지나요 (8~10시간)",
+ "title": "주야간보호 시간, 짧게 다닐 때와 길게 다닐 때 비용 차이",
  "source": "11/19(목) 17:40 네이버 원고 — 생활보장 검색형(돌봄), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -66,18 +66,11 @@
   {
    "n": 4,
    "file": "04.png",
-   "title": "주야간보호 시간 고를 때 볼 것을 말풍선으로 정리한 채팅 카드",
-   "kind": "card",
-   "card": {
-    "type": "check",
-    "ask": "몇 시간이 좋을까?",
-    "title": "시간 고를 때 볼 것",
-    "items": [
-     "가족 출근·퇴근 시간",
-     "송영 차량 도착 시간",
-     "월 한도액 안에서 며칠"
-    ]
-   }
+   "title": "주간보호센터 상담실에서 이용 시간을 상담하는 40대 딸",
+   "prompt": "Camera and composition: medium shot at a day care center counseling desk. A Korean daughter in her 40s sitting at a day care center counseling desk, calmly talking with a staff member over a blank weekly schedule sheet. Background: warm and tidy counseling room of a senior day care center. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a day care center counseling desk",
+   "bg": "warm and tidy counseling room of a senior day care center",
+   "anchor": "day care center counseling desk"
   },
   {
    "n": 5,

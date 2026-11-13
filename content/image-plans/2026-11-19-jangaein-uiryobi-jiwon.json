@@ -2,7 +2,7 @@
  "slug": "2026-11-19-jangaein-uiryobi-jiwon",
  "title": "장애인 의료비 지원, 병원비는 얼마나 줄어드나요 (1차 외래 750원)",
  "source": "11/19(목) 08:20 네이버 제도 소식 — 생활보장(돈·생활 제도), 실사풍 (11/11 미리 씀)",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -55,21 +55,11 @@
   {
    "n": 4,
    "file": "04.png",
-   "title": "장애인 의료비 지원을 받기 전 챙길 것을 적은 메모 카드",
-   "kind": "card",
-   "card": {
-    "type": "check",
-    "style": "memo",
-    "title": "병원 가기 전 체크",
-    "sub": "진료 전에 챙기면 편해요",
-    "items": [
-     "장애인 등록이 끝났는지",
-     "장애인등록증을 챙겼는지",
-     "의료급여증이나 건강보험증"
-    ],
-    "memo": "자격 없으면 행정복지센터부터",
-    "hl": 1
-   }
+   "title": "동네 의원 진료실 앞 대기 의자에서 복지카드를 꺼내 보는 60대 아버지",
+   "prompt": "Camera and composition: medium shot in a neighborhood clinic waiting area. A Korean father in his 60s with a walking cane sitting on a waiting chair in a neighborhood clinic, calmly taking a blank welfare card out of his wallet. Background: small clinic waiting area with soft natural light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a neighborhood clinic waiting area",
+   "bg": "small clinic waiting area with soft natural light",
+   "anchor": "blank welfare card"
   },
   {
    "n": 5,
