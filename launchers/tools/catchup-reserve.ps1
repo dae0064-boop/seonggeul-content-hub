@@ -72,6 +72,11 @@ try {
     if ($LASTEXITCODE -eq 2) { Start-AutoChrome -Repo $repo; Note '자동화 크롬이 꺼져 있어 켬 (오늘 통계를 아직 못 읽음, 최소화)' }
   }
 } catch { Note "자동화 크롬 켜기 실패: $($_.Exception.Message)" }
+# 2026-11-13 사용자 "16일부터 다시, 모두 수정해": Claude 가 Drive 에 reserved-look-request.txt 를 두면 예약 글이 어디 보이는지 읽기만 한다(reserved-look.ps1)
+try {
+  $rq = Join-Path $drive 'ClaudeWorkspace\reserved-look-request.txt'
+  if (Test-Path $rq) { Remove-Item $rq -Force; Note '예약 글 찾기(읽기만) 시작'; & (Join-Path $PSScriptRoot 'reserved-look.ps1') | Out-Null; Note '예약 글 찾기 끝 → Drive run-logs\reserved-look-*' }
+} catch { Note "예약 글 찾기 실패: $($_.Exception.Message)" }
 # 2026-11-09: 위에서 다른 작업이 돌지 않는 것을 확인했으니 쌓인 탭을 정리한다 (11/8 72개로 크롬 멈춤)
 try { $tn = Clear-ExtraTabs 15; if ($tn) { Note $tn } } catch {}
 try {
