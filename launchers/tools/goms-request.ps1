@@ -28,7 +28,7 @@ if (Test-Path $rrq) {
     Remove-Item $rrq -Force
     . (Join-Path $PSScriptRoot 'lib-detach.ps1')
     $ps1 = Join-Path $PSScriptRoot 'reserved-redo.ps1'
-    Start-Detached powershell.exe -ArgumentList '-NoProfile', '-WindowStyle', 'Hidden', '-ExecutionPolicy', 'Bypass', '-File', "`"$ps1`"", '-Dates', $dates
+    Start-Detached powershell.exe -ArgumentList '-NoProfile', '-WindowStyle', 'Hidden', '-ExecutionPolicy', 'Bypass', '-File', "`"$ps1`"", '-Dates', $dates, '-SkipDelete'
   } catch { }
 }
 if (-not (Test-Path $req)) { exit 0 }

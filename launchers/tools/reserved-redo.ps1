@@ -3,7 +3,8 @@
 #   2) 지운 원고의 그림(content\images\<원고>)과 Drive run-locks 의 .done 을 지운다 — 새 그림 지시서(주제 사진·강조 대표사진)로 다시 만들게
 #   3) 날짜마다 draft-day.ps1 -Reserve 로 새 그림을 만들어 같은 시각에 다시 예약한다
 #   기록은 Drive run-logs\reserved-redo-*. 크롬은 끄지 않는다.
-param([string]$Dates = '2026-11-16,2026-11-17,2026-11-18')
+param([string]$Dates = '2026-11-16,2026-11-17,2026-11-18', [switch]$SkipDelete)
+# -SkipDelete: 2026-11-13 사용자 "30편은 내가 이미 지웠어, 새 그림으로 다시 예약만" — 지우기 단계 없이 그 날짜 네이버 원고 전부를 다시 예약
 [Console]::OutputEncoding = [Text.Encoding]::UTF8
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 Set-Location $repo
@@ -22,7 +23,13 @@ function CdpUp { try { Invoke-RestMethod http://localhost:9222/json/version -Tim
 if (-not (CdpUp)) { Start-AutoChrome -Repo $repo; for ($i = 0; $i -lt 25 -and -not (CdpUp); $i++) { Start-Sleep -Seconds 1 } }
 $blog = $env:NAVER_BLOG_ID; if (-not $blog) { $blog = [Environment]::GetEnvironmentVariable('NAVER_BLOG_ID', 'User') }; if (-not $blog) { $blog = 'seongdaeeyo' }
 Say "예약 글 다시 하기 시작 — $Dates"
+if ($SkipDelete) {
+  $lines = foreach ($d in ($Dates -split ',')) { Get-ChildItem (Join-Path $repo "content\posts\$d-*.md") | ForEach-Object { "$d`t$($_.BaseName)`t" } }
+  Set-Content -Path (Join-Path $out 'deleted.tsv') -Value $lines -Encoding UTF8
+  Say "지우기 건너뜀 (사용자가 직접 지움) — 원고 $(@($lines).Count)편 다시 예약"
+} else {
 & node scripts\naver-reserved.mjs $blog --delete --dates $Dates --out $out 2>&1 | ForEach-Object { Say $_ }
+}
 $tsv = Join-Path $out 'deleted.tsv'
 $rows = @(); if (Test-Path $tsv) { $rows = @(Get-Content $tsv -Encoding UTF8 | Where-Object { $_ } | ForEach-Object { $c = $_ -split "`t"; [pscustomobject]@{ Date = $c[0]; Slug = $c[1] } }) }
 if (-not $rows.Count) { Say '지운 예약 글이 없어 다시 예약하지 않아요 (redo.log·캡처 확인)'; Share; exit 0 }
