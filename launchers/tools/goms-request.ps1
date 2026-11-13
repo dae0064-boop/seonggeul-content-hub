@@ -31,6 +31,16 @@ if (Test-Path $rrq) {
     Start-Detached powershell.exe -ArgumentList '-NoProfile', '-WindowStyle', 'Hidden', '-ExecutionPolicy', 'Bypass', '-File', "`"$ps1`"", '-Dates', $dates, '-SkipDelete'
   } catch { }
 }
+# 2026-11-14 사용자 "20일까지 원고 모두 만들어서 예약발행": reserve-request.txt (첫 줄 = 날짜들, 쉼표) → 네이버·티스토리·철거를 그 날짜로 예약. 오래 걸려 따로 띄운다
+$rsq = Join-Path $ws 'reserve-request.txt'
+if (Test-Path $rsq) {
+  try {
+    $dates = ((Get-Content $rsq -Encoding UTF8 | Select-Object -First 1) -replace '[^0-9,\-]', '')
+    Remove-Item $rsq -Force
+    . (Join-Path $PSScriptRoot 'lib-detach.ps1')
+    Start-Detached powershell.exe -ArgumentList '-NoProfile', '-WindowStyle', 'Hidden', '-ExecutionPolicy', 'Bypass', '-File', "`"$(Join-Path $PSScriptRoot 'reserve-dates.ps1')`"", '-Dates', $dates
+  } catch { }
+}
 # 2026-11-13 사용자 "맛집 올려줘라고 하면 바로": 클라우드가 맛집 원고를 main 에 넣으며 Drive matjip-request.txt 를 남긴다 → 최신 원고 받아 임시저장
 $mjq = Join-Path $ws 'matjip-request.txt'
 if (Test-Path $mjq) { try { & (Join-Path $PSScriptRoot 'matjip-watch.ps1') -Requested; if ($LASTEXITCODE -ne 9) { Remove-Item $mjq -Force -ErrorAction SilentlyContinue } } catch { } }
