@@ -154,14 +154,24 @@ async function scheduleOne(ctx, it) {
     await sleep(1500);
     await shot(page, `${it.time.replace(':', '')}-after-done`);
     const dtext = (await dlg.innerText().catch(() => '')) || '';
-    // 창 안에 예약 날짜·시각이 보여야 한다 (예: '11월 15일 오전 7:00' / '7:00') — 형식을 모르니 날짜 숫자와 분을 함께 본다
+    // 창 위쪽 줄에 예약 날짜·시각이 나온다 — 2026-11-14 실제: '내일 오전 7:00 GMT+9에 게시 예정'
     const h12 = String(((Number(hh) + 11) % 12) + 1);
-    const seesDate = new RegExp(`${M}\\s*월\\s*${D}\\s*일|${M}/${D}|${M}\\.\\s*${D}`).test(dtext);
-    const seesTime = new RegExp(`(${Number(hh)}|${h12}|${hh})\\s*:\\s*${mm}`).test(dtext);
+    const ampm = Number(hh) < 12 ? '오전' : '오후';
+    const kstToday = new Date(Date.now() + 9 * 3600000).toISOString().slice(0, 10);
+    const kstTomorrow = new Date(Date.now() + 33 * 3600000).toISOString().slice(0, 10);
+    const dayWords = [`${M}\\s*월\\s*${D}\\s*일`]; if (it.date === kstTomorrow) dayWords.push('내일'); if (it.date === kstToday) dayWords.push('오늘');
+    // 2~6일 뒤는 요일로 나온다 — 실제: '월요일 오후 7:30 GMT+9에 게시 예정' (11/14 에 11/16 글)
+    const ahead = Math.round((Date.parse(`${it.date}T00:00:00Z`) - Date.parse(`${kstToday}T00:00:00Z`)) / 86400000);
+    if (ahead >= 2 && ahead <= 6) dayWords.push(['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'][new Date(`${it.date}T12:00:00Z`).getUTCDay()]);
+    const bar = (dtext.split('\n').find((l) => /게시 예정/.test(l)) || '');
+    const seesDate = new RegExp(`(${dayWords.join('|')})`).test(bar);
+    const seesTime = new RegExp(`${ampm}\\s*${h12}\\s*:\\s*${mm}`).test(bar);
+    if (!seesDate || !seesTime) log(`  예약 줄: '${bar}'`);
     const btns = [];
     const cb = dlg.locator('[role="button"], button');
     for (let i = 0; i < await cb.count(); i++) { const t = ((await cb.nth(i).innerText().catch(() => '')) || '').trim(); if (t) btns.push(t); }
     const finalBtn = btns.find((t) => /^(예약|예약하기|Schedule)$/i.test(t));
+    topicOk = !it.topic || norm(dtext).includes(norm(it.topic));
     const info = { seesDate, seesTime, selOk, topicOk, finalBtn: finalBtn || null, buttons: btns.slice(-6) };
     if (DRY) { await discard(page); return { ok: true, dry: true, info }; }
     if (!(seesDate && seesTime && finalBtn)) { await discard(page); return { ok: false, why: `예약 확인 안 됨 ${JSON.stringify(info)}` }; }
@@ -184,7 +194,8 @@ try {
   browser = await chromium.connectOverCDP(CDP);
   const ctx = browser.contexts()[0];
   for (const d of dates) {
-    const items = readDaily(d);
+    const only = opt('--only', '');
+    const items = readDaily(d).filter((x) => !only || x.time === only);
     log(`${d} 일상 ${items.length}편`);
     for (const it of items) {
       if (marked(it)) { log(`  ${it.time} 이미 예약됨`); result.push({ ...it, ok: true, skip: true }); continue; }
