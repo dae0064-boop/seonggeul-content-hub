@@ -1,0 +1,88 @@
+{
+ "slug": "2026-11-22-jangaein-bojanggu",
+ "title": "장애인 보조기기, 휠체어 살 때 건강보험은 얼마나 내주나요 (기준액의 90%)",
+ "source": "11/22(일) 21:00 네이버 원고 — 생활보장 검색형(장애인 보조기기 건강보험 급여 90%·장애아동 보조기기 신설, 보건복지부), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "저녁 거실 바닥에 놓인 접이식 수동휠체어와 지팡이 (대표사진)",
+   "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Setting: a cozy living room floor at home. Top-down view of a folded manual wheelchair and a walking cane laid on a living room rug with a pair of crutches and a blank folder, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: warm evening lamp light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "overhead",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "overhead",
+   "thumb_theme": "forest",
+   "thumb_person": "없음",
+   "thumb_place": "주제",
+   "thumb_light": "저녁 조명",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "forest",
+    "font": "jua",
+    "title": "장애인 보조기기\n얼마 받을까?"
+   },
+   "anchor": "folded manual wheelchair and a walking cane"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "장애인 보조기기 지원을 묻는 첫머리 카드",
+   "kind": "card",
+   "card": {
+    "type": "lead",
+    "keyword": "장애인 보조기기",
+    "title": "휠체어 살 때\n지원될까?",
+    "ask": "그냥 사야 하나요?"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "재활병원 복도에서 수동휠체어를 밀어 주는 30대 아들",
+   "prompt": "Camera and composition: medium shot in a rehabilitation hospital corridor. A Korean man in his 30s pushing his father in his 60s sitting in a manual wheelchair in a rehabilitation hospital corridor, both calm and talking. Background: bright hospital corridor with handrails and soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a rehabilitation hospital corridor",
+   "bg": "bright hospital corridor with handrails and soft daylight",
+   "anchor": "manual wheelchair in a rehabilitation hospital corridor"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "장애인 보조기기 받는 순서를 정리한 메모 카드",
+   "kind": "card",
+   "card": {
+    "type": "steps",
+    "style": "memo",
+    "title": "장애인 보조기기 순서",
+    "sub": "사기 전에 꼭",
+    "items": [
+     "의사에게 보조기기 처방전 받기",
+     "공단에 등록된 업소에서 구입",
+     "공단에 보조기기 급여비 청구"
+    ],
+    "memo": "처방전부터 받아요",
+    "hl": 1
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "장애인용 유모차형 휠체어에 앉은 아이와 엄마",
+   "prompt": "Camera and composition: medium shot in a park. A Korean mother in her 30s smiling at her young child sitting comfortably in a stroller-type pediatric wheelchair with posture support on a park path. Background: sunny park path with green trees. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a park",
+   "bg": "sunny park path with green trees",
+   "anchor": "stroller-type pediatric wheelchair"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "저녁 식탁에서 보조기기 서류를 정리하는 50대 부부",
+   "prompt": "Camera and composition: medium shot at a dining table. A Korean couple in their 50s sorting blank assistive device forms and a walking cane on the dining table, calm and focused. Background: warm home dining room in evening lamp light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a dining table",
+   "bg": "warm home dining room in evening lamp light",
+   "anchor": "blank assistive device forms and a walking cane on the dining table"
+  }
+ ]
+}

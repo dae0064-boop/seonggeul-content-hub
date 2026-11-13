@@ -1,0 +1,88 @@
+{
+ "slug": "2026-11-21-saenggye-geupyeo-2027",
+ "title": "생계급여 금액, 내년 1인 가구는 얼마로 오르나요 (87만 5,533원)",
+ "source": "11/21(토) 12:20 네이버 원고 — 생활보장 제도 소식(2027 생계급여 금액, 보건복지부 7/28 보도자료), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "식탁 위 쌀과 반찬통, 글자 없는 안내 봉투 (대표사진)",
+   "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Setting: a modest home kitchen table. A bag of rice and side dish containers, a blank notice envelope and a folded reusable shopping bag arranged on a wooden kitchen table, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft early-morning sunlight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "overhead",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "overhead",
+   "thumb_theme": "charcoal",
+   "thumb_person": "없음",
+   "thumb_place": "주제",
+   "thumb_light": "아침 햇살",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "charcoal",
+    "font": "jua",
+    "title": "생계급여 금액\n내년엔 얼마?"
+   },
+   "anchor": "rice and side dish containers"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "생계급여 금액을 묻는 첫머리 카드",
+   "kind": "card",
+   "card": {
+    "type": "lead",
+    "keyword": "생계급여 금액",
+    "title": "내년엔\n얼마 받을까?",
+    "ask": "올해보다 오르나요?"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "소박한 저녁 식탁에 둘러앉은 세 식구",
+   "prompt": "Camera and composition: medium shot in a small apartment. A Korean family of three eating a simple dinner at a family dinner table. Background: small warm apartment kitchen. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a small apartment",
+   "bg": "small warm apartment kitchen",
+   "anchor": "family dinner table"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "생계급여 계산 순서를 정리한 메모 카드",
+   "kind": "card",
+   "card": {
+    "type": "steps",
+    "style": "memo",
+    "title": "생계급여 계산 순서",
+    "sub": "실제로 받는 금액은",
+    "items": [
+     "선정기준액을 찾아요",
+     "소득인정액을 확인해요",
+     "소득인정액을 빼요"
+    ],
+    "memo": "차이만큼 생계급여가 나와요",
+    "hl": 3
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "행정복지센터 복지 창구에서 상담하는 60대 여성",
+   "prompt": "Camera and composition: medium shot in a public office. A Korean woman in her 60s talking calmly with a social worker at a community center welfare counter. Background: bright public office with grey desks. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a public office",
+   "bg": "bright public office with grey desks",
+   "anchor": "community center welfare counter"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "동네 시장에서 채소를 고르는 70대 남성",
+   "prompt": "Camera and composition: medium shot at a traditional market. A Korean man in his 70s choosing vegetables at a neighborhood market stall. Background: real traditional market with produce boxes. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a traditional market",
+   "bg": "real traditional market with produce boxes",
+   "anchor": "neighborhood market stall"
+  }
+ ]
+}
