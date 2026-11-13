@@ -28,6 +28,8 @@ REM 다음 원고 키워드 후보의 월간 검색량을 조회해 Drive 로 �
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\keyword-volume.ps1"
 REM 다른 블로그 살펴보기 요청이 있으면 (content\research\blog-snapshot.txt) 읽기만 하고 Drive 로 올린다
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\blog-snapshot.ps1"
+REM 내 블로그 댓글을 읽기만 하고 Drive 로 올린다 — 아침 확인이 답글 초안을 쓴다 (2026-11-13)
+powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\blog-comments.ps1"
 REM 다와이철거 홍보 블로그 (breakandbuild): 2026-11-09 사용자 지시로 다시 켬 — 블로그 2 전용 크롬(9223, blog2-chrome)으로 예약발행
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\chulgeo-day.ps1"
 REM 2026-11-11 user: no GOMS in the morning at all. GOMS login/register/approval reads only when the user asks (goms-request.ps1).
