@@ -22,7 +22,8 @@ const OUT = opt('--out', `dumps/threads-web/${today}`);
 const CDP = opt('--cdp', 'http://localhost:9222');
 if (argv.includes('--help')) { console.log(fs.readFileSync(new URL(import.meta.url)).toString().split('*/')[0]); process.exit(0); }
 
-const TEST_TEXT = '예약 화면 시험 (올리지 않는 글)';
+// '예약' 글자를 넣지 않는다 — 2026-11-14 첫 실행에서 메뉴 대신 이 글자를 눌렀다
+const TEST_TEXT = '화면 시험 (올리지 않는 글)';
 // 절대 누르지 않는 버튼 — 게시·올리기·공유·확정
 const POST_DENY = /^(게시|게시하기|올리기|공유|Post|Share|Publish|예약하기|완료|Done|확인|Confirm)$|게시|Post$/i;
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -90,11 +91,12 @@ try {
   step('로그인', true);
 
   // 글쓰기 창 열기: 위쪽 '새로운 소식이 있나요?' 칸 또는 왼쪽 + (만들기)
-  let opened = await clickBy(page, [/^새로운 소식이 있나요\??$/, /^What's new\??$/i, /^(만들기|Create|새 스레드|New thread)$/i]);
+  // 2026-11-14 화면: 위쪽 칸 글자 '새로운 소식을 공유해보세요.', 위쪽 + 버튼 aria '새로운 스레드'
+  let opened = await clickBy(page, [/^새로운 스레드$/, /^새로운 소식(이 있나요\??|을 공유해보세요\.?)$/, /^What's new\??$/i, /^(만들기|Create|새 스레드|New thread)$/i]);
   await sleep(1500);
   let dialog = page.locator('[role="dialog"]').last();
   if (!(await dialog.isVisible().catch(() => false))) {
-    opened = (await clickBy(page, [/만들기|Create|새 스레드|New thread/i])) || opened;
+    opened = (await clickBy(page, [/새로운 스레드|새로운 소식을 공유|만들기|Create|새 스레드|New thread/i])) || opened;
     await sleep(1500);
     dialog = page.locator('[role="dialog"]').last();
   }
@@ -116,7 +118,7 @@ try {
   const more = await clickBy(dialog, [/^(더 보기|더보기|More|옵션 더 보기|More options|추가 옵션)$/i, /더 보기|More/i]);
   await dump(page, 'more-menu');
   step('더 보기 메뉴', !!more, more || '못 찾음');
-  const sched = await clickBy(page, [/^예약/, /^Schedule/i]);
+  const sched = await clickBy(page, [/^예약(\.{3}|…)?$/, /^Schedule(\.{3}|…)?$/i]);
   await sleep(1500);
   await dump(page, 'schedule');
   step('예약 메뉴', !!sched, sched || '못 찾음 — 화면을 보고 위치를 찾는다');
