@@ -26,6 +26,10 @@
 
 ## 지금 상태
 
+### 11/14 새벽 — 🌐 허용 목록 확인 · 📈 첫 순위 측정 (사용자 "네트워크 허용 목록 넣었어")
+- 열림 15: nps·nid·fsc·klia·data.go.kr·kosis·easylaw·hf·blog.naver·m.blog.naver·search.naver·datalab·help.naver·navercorp. 막힘(사이트 쪽): nts·hometax(접속 끊음)·nip.kdca(옛 보안 방식)·ssis·e-gen·knia(403)·e-health(400)·nmc·kmhc(502). 클라우드 node 는 `NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt` 를 붙여야 프록시를 탄다.
+- 📈 첫 측정(클라우드, 블로그 탭 1페이지): **1일째(11/13) 10편 — 1~3위 6 · 4~10위 1 · 11~30위 3, 통합검색 9편 / 3일째(11/11) 10편 모두 1페이지 밖 / 7일째(11/7) 5편 모두 밖.** → 새 글은 하루 동안 신선도로 위에 뜨다가 사흘 안에 1페이지에서 밀려난다. 글이 자리를 지키지 못하는 것이 검색 유입이 쌓이지 않는 핵심. [ ] 2~3일 더 재서 확인하고 원인(경쟁 블로그·주제 신뢰·글 품질) 찾기.
+
 ### 11/13 밤 — 📈 새 글 검색 순위 추적 · 📝 블로그 소개글 A안 (사용자 "A안으로, 순위 추적도 진행해줘" · AI 장면 그림 하루 약 40원 더 → "괜찮아")
 - `scripts/rank-track.mjs` (blog-stats.ps1 안, 하루 한 번): 1·3·7일 전 생활보장 글 메인 키워드 → 블로그 탭 정확도순 순위(검색 API 100개 또는 화면 주소 순서)·통합검색 첫 화면 보임 여부 → Drive `blog-stats/<날짜>/rank.txt`, 누적 `research/rank-log.tsv`. 가짜 화면으로 순위 세기 확인, 실제 네이버는 [ ] 11/14 아침 PC 첫 실행. 아침 확인이 📈 줄로 보고(`routines/morning-check.md`).
 - 소개글 A안 `content/consult/README.md` 2-1단계 — [x] 11/13 밤 사용자가 블로그에 붙여 넣음.
