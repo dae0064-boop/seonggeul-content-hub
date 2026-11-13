@@ -2,7 +2,7 @@
  "slug": "2026-11-20-gajok-dolbom-hyujik",
  "title": "가족돌봄휴직, 부모님 곁에 몇 달까지 있을 수 있나요 (연 90일)",
  "source": "11/20(금) 16:20 네이버 원고 — 생활보장 검색형(돌봄·요양), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -55,19 +55,11 @@
   {
    "n": 4,
    "file": "04.png",
-   "title": "돌봄휴직 신청 순서를 정리한 채팅 카드",
-   "kind": "card",
-   "card": {
-    "type": "steps",
-    "title": "돌봄휴직 신청서에 적을 것",
-    "items": [
-     "돌볼 가족의 이름과 생년월일",
-     "돌봄이 필요한 사유",
-     "시작일과 종료일",
-     "신청한 날짜와 신청인"
-    ],
-    "ask": "신청서에 뭐 적어?"
-   }
+   "title": "병원 서류 발급 창구에서 글자 없는 진단서 봉투를 받는 40대 여성",
+   "prompt": "Camera and composition: medium shot at a hospital records counter. A Korean woman in her 40s calmly receiving a blank document envelope at a hospital certificate issuance counter. Background: bright hospital lobby with natural colors. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a hospital records counter",
+   "bg": "bright hospital lobby with natural colors",
+   "anchor": "hospital certificate issuance counter"
   },
   {
    "n": 5,

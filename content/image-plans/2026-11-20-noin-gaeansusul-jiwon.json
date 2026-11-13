@@ -2,7 +2,7 @@
  "slug": "2026-11-20-noin-gaeansusul-jiwon",
  "title": "노인 개안수술 지원, 백내장 수술비 본인부담금도 나오나요 (만 60세 이상)",
  "source": "11/20(금) 19:00 네이버 원고 — 생활보장 검색형(의료비 제도), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -55,22 +55,11 @@
   {
    "n": 4,
    "file": "04.png",
-   "title": "노인 개안수술 지원 신청 서류를 정리한 메모 카드",
-   "kind": "card",
-   "card": {
-    "type": "check",
-    "style": "memo",
-    "title": "보건소에 낼 서류",
-    "sub": "1개월 안에 뗀 서류로",
-    "items": [
-     "수술비 지원 신청서",
-     "개인정보 수집·이용 동의서",
-     "수술할 병원의 진단서나 소견서",
-     "수급자·차상위·한부모 증명서"
-    ],
-    "memo": "수술 전에 내야 해요",
-    "hl": 3
-   }
+   "title": "집 책상에서 글자 없는 서류를 투명 파일에 정리하는 40대 딸",
+   "prompt": "Camera and composition: medium shot at a home desk. A Korean woman in her 40s neatly putting blank documents into a clear file folder on a home desk, her mother's reading glasses beside it. Background: bright home study corner with natural daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a home desk",
+   "bg": "bright home study corner with natural daylight",
+   "anchor": "clear file folder"
   },
   {
    "n": 5,
