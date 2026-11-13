@@ -22,6 +22,9 @@ function Share { if ($drive) { $dest = Join-Path $drive "ClaudeWorkspace\run-log
 function CdpUp { try { Invoke-RestMethod http://localhost:9222/json/version -TimeoutSec 3 | Out-Null; $true } catch { $false } }
 if (-not (CdpUp)) { Start-AutoChrome -Repo $repo; for ($i = 0; $i -lt 25 -and -not (CdpUp); $i++) { Start-Sleep -Seconds 1 } }
 $blog = $env:NAVER_BLOG_ID; if (-not $blog) { $blog = [Environment]::GetEnvironmentVariable('NAVER_BLOG_ID', 'User') }; if (-not $blog) { $blog = 'seongdaeeyo' }
+# 2026-11-13 사용자 "절전이어도 작업 진행되냐?" — 도는 동안 윈도우 절전을 막는다 (끝나면 풀림)
+Add-Type -Namespace SgRedo -Name Awake -MemberDefinition '[DllImport("kernel32.dll")] public static extern uint SetThreadExecutionState(uint f);'
+[SgRedo.Awake]::SetThreadExecutionState([uint32]'0x80000001') | Out-Null
 Say "예약 글 다시 하기 시작 — $Dates"
 if ($SkipDelete) {
   $lines = foreach ($d in ($Dates -split ',')) { Get-ChildItem (Join-Path $repo "content\posts\$d-*.md") | ForEach-Object { "$d`t$($_.BaseName)`t" } }

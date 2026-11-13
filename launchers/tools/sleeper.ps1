@@ -20,7 +20,7 @@ public static class SgIdle {
   public static uint Seconds() { var l = new LII(); l.cbSize = (uint)Marshal.SizeOf(l); GetLastInputInfo(ref l); return ((uint)Environment.TickCount - l.dwTime) / 1000; }
 }
 '@
-$pat = 'auto-day|draft-day|tistory-day|reserve-tomorrow|publish-naver|publish-tistory|post-images|catchup-reserve|threads-|daily-post|blog-post|insurance-post|insta-|goms-|issue-scan|matjip|category-|blog-stats|tistory-stats|sc-request|keyword-volume|blog-snapshot|login-check|login-test|health\.ps1|away-check|chrome-login|now\.cmd|share-run|cleanup\.ps1|image-gen|build-|stay-awake'
+$pat = 'auto-day|draft-day|tistory-day|reserve-tomorrow|publish-naver|publish-tistory|post-images|catchup-reserve|threads-|daily-post|blog-post|insurance-post|insta-|goms-|issue-scan|matjip|category-|blog-stats|tistory-stats|sc-request|keyword-volume|blog-snapshot|login-check|login-test|health\.ps1|away-check|chrome-login|now\.cmd|share-run|cleanup\.ps1|image-gen|build-|stay-awake|reserved-'
 function Busy { @(Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -ne $PID -and $_.CommandLine -and $_.CommandLine -match $pat -and $_.CommandLine -notmatch 'sleeper' }) }
 if ((Busy).Count) { exit 0 }
 if ([SgIdle]::Seconds() -lt 600) { exit 0 }
