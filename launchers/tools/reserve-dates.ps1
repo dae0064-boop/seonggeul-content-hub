@@ -22,10 +22,21 @@ function CdpUp { try { Invoke-RestMethod http://localhost:9222/json/version -Tim
 if (-not (CdpUp)) { Start-AutoChrome -Repo $repo; for ($i = 0; $i -lt 25 -and -not (CdpUp); $i++) { Start-Sleep -Seconds 1 } }
 Add-Type -Namespace SgResv -Name Awake -MemberDefinition '[DllImport("kernel32.dll")] public static extern uint SetThreadExecutionState(uint f);'
 [SgResv.Awake]::SetThreadExecutionState([uint32]'0x80000001') | Out-Null
+# 아침 실행·다시 예약과 같은 크롬을 동시에 쓰지 않게 — 10:30 전이면 기다리고, 다른 발행 작업이 돌면 끝날 때까지 기다린다 (2026-11-14)
+function Wait-Quiet {
+  for ($k = 0; $k -lt 240; $k++) {
+    $busy = @(Get-CimInstance Win32_Process -ErrorAction SilentlyContinue | Where-Object { $_.ProcessId -ne $PID -and $_.CommandLine -match 'auto-day\.cmd|catchup-reserve\.ps1|draft-day\.ps1|tistory-day\.ps1|chulgeo-day\.ps1|blog-stats|sc-request|matjip-draft' })
+    $early = (Get-Date).TimeOfDay -lt [TimeSpan]'10:30:00' -and (Get-Date).TimeOfDay -gt [TimeSpan]'06:00:00'
+    if (-not $busy.Count -and -not $early) { return }
+    if ($k % 10 -eq 0) { Say "다른 작업이 돌거나 아침 시간이라 기다려요 ($($busy.Count)개)" }
+    Start-Sleep -Seconds 60
+  }
+}
 $list = @($Dates -split ',' | ForEach-Object { $_.Trim() } | Where-Object { $_ -match '^\d{4}-\d{2}-\d{2}$' } | Sort-Object -Unique)
 Say "날짜 지정 예약 시작 — $($list -join ', ') (코드 $(git rev-parse --short HEAD 2>$null))"
 Share
 foreach ($d in $list) {
+  Wait-Quiet
   Say "$d 네이버"
   & (Join-Path $PSScriptRoot 'draft-day.ps1') -Reserve -Date $d 2>&1 | Select-Object -Last 8 | ForEach-Object { Say "  $_" }
   Say "$d 티스토리"
