@@ -2,7 +2,7 @@
  "slug": "2026-11-21-jeondong-chimdae-daeyeo",
  "title": "전동침대 대여, 장기요양 등급이 있으면 한 달에 얼마 내나요 (본인부담 15%)",
  "source": "11/21(토) 16:20 네이버 원고 — 생활보장 검색형(돌봄·요양), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -59,22 +59,11 @@
   {
    "n": 4,
    "file": "04.png",
-   "title": "전동침대 대여 순서를 정리한 메모 카드",
-   "kind": "card",
-   "card": {
-    "type": "steps",
-    "style": "memo",
-    "title": "전동침대 대여 순서",
-    "sub": "급여확인서부터 확인해요",
-    "items": [
-     "전동침대가 있는지 확인하기",
-     "복지용구사업소에 대여 요청",
-     "제품을 고르고 대여 계약 맺기",
-     "매달 본인부담만 내고"
-    ],
-    "memo": "배송·설치·소독은 대여료에 포함",
-    "hl": 1
-   }
+   "title": "아파트 현관으로 전동침대를 들여오는 복지용구사업소 직원",
+   "prompt": "Camera and composition: wide shot at an apartment front door. Two Korean delivery staff in work uniforms carrying a folded electric care bed through an apartment front door while a woman in her 50s holds the door open. Background: bright Korean apartment hallway with natural light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "wide shot at an apartment front door",
+   "bg": "bright Korean apartment hallway with natural light",
+   "anchor": "folded electric care bed"
   },
   {
    "n": 5,

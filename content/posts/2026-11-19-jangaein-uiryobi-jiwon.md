@@ -7,6 +7,11 @@ sub_keywords: 의료급여 2종, 차상위 경감, 등록장애인
 lead_keyword: 장애인 병원비
 format: 체크리스트형
 tone: 설명형
+greet: 1
+close: 1
+heads: 긴형
+emph: A
+title_type: 질문
 publish_at: 2026-11-19 08:20
 related: 장애인 등록 방법, 부모님 장애 정도 판정은 어떤 순서로 받나요 (준비물 · 2026년) | 의료급여 2종, 병원비는 얼마나 내나요 (의원 1회 1,000원 · 2026년)
 source_url: https://www.mohw.go.kr/menu.es?mid=a10710060700 | https://www.gov.kr/portal/service/serviceInfo/SPE000000070
@@ -108,7 +113,7 @@ tags: 장애인 의료비 지원, 장애인의료비지원, 장애인 의료비,
 
 인용구(소제목) 병원 가기 전 확인할 것
 
-[이미지 4] 장애인 의료비 지원을 받기 전 챙길 것을 적은 메모 카드
+[이미지 4] 동네 의원 진료실 앞 대기 의자에서 복지카드를 꺼내 보는 60대 아버지
 
 장애인 의료비 지원을 제대로 받으려면
 진료 전에 아래 다섯 가지를 확인해 두면 편해요.

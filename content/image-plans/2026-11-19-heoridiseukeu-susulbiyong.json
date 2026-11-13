@@ -2,7 +2,7 @@
  "slug": "2026-11-19-heoridiseukeu-susulbiyong",
  "title": "허리디스크 수술비용, 건강보험이 되면 얼마를 내나요 (입원 20%)",
  "source": "11/19(목) 15:00 네이버 원고 — 생활보장 검색형(비용), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -66,22 +66,11 @@
   {
    "n": 4,
    "file": "04.png",
-   "title": "허리디스크 수술 전 확인 순서를 정리한 메모 카드",
-   "kind": "card",
-   "card": {
-    "type": "steps",
-    "style": "memo",
-    "title": "수술 전 확인 순서",
-    "sub": "허리디스크 수술비용 정리",
-    "items": [
-     "급여인지 비급여인지 묻기",
-     "비급여 항목과 가격",
-     "병실 종류와 입원료 비율",
-     "진료비 세부내역서 받기"
-    ],
-    "memo": "세부내역서는 실비에도 써요",
-    "hl": 2
-   }
+   "title": "척추병원 원무과 창구에서 수술 전 비용 안내를 듣는 50대 부부",
+   "prompt": "Camera and composition: medium shot at a spine hospital admission counter. A Korean couple in their 50s standing at a spine hospital admission counter, calmly listening to a staff member who points to a blank cost estimate sheet. Background: bright hospital lobby with natural light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a spine hospital admission counter",
+   "bg": "bright hospital lobby with natural light",
+   "anchor": "spine hospital admission counter"
   },
   {
    "n": 5,

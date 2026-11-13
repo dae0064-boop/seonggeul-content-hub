@@ -2,7 +2,7 @@
  "slug": "2026-11-20-noin-geongangboheomryo-gyeonggam",
  "title": "노인 건강보험료 경감, 65세 이상 세대는 얼마나 줄어드나요 (최대 30%)",
  "source": "11/20(금) 12:20 네이버 제도 소식 — 생활보장(돈·생활 제도), 실사풍 (11/11 미리 씀)",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -30,14 +30,11 @@
   {
    "n": 2,
    "file": "02.png",
-   "title": "노인 건강보험료 경감이 무엇인지 묻는 첫머리 카드",
-   "kind": "card",
-   "card": {
-    "type": "lead",
-    "keyword": "노인 건강보험료",
-    "title": "얼마나\n줄어들까?",
-    "ask": "부모님 건보료 줄일 수 있어?"
-   }
+   "title": "아파트 우편함에서 글자 없는 고지서 봉투를 꺼내는 70대 남성의 손",
+   "prompt": "Camera and composition: close-up of hands at an apartment mailbox. A Korean man in his 70s taking a blank envelope out of an apartment mailbox, his hands and the mailbox in focus. Background: apartment entrance hall with natural daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands at an apartment mailbox",
+   "bg": "apartment entrance hall with natural daylight",
+   "anchor": "apartment mailbox"
   },
   {
    "n": 3,

@@ -2,7 +2,7 @@
  "slug": "2026-11-21-janggiyoyang-1deunggeup",
  "title": "장기요양 1등급, 집에서 모시면 무엇이 더 되나요 (월 8일 270분)",
  "source": "11/21(토) 17:40 네이버 원고 — 생활보장 검색형(돌봄·요양), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -30,14 +30,11 @@
   {
    "n": 2,
    "file": "02.png",
-   "title": "장기요양 1등급 질문을 크게 던지는 첫머리 카드",
-   "kind": "card",
-   "card": {
-    "type": "lead",
-    "keyword": "장기요양 1등급",
-    "title": "집에서 뭐가\n더 될까?",
-    "ask": "요양원 말고 집이면?"
-   }
+   "title": "집에 찾아와 등급 조사를 하는 공단 직원과 80대 아버지",
+   "prompt": "Camera and composition: medium shot in a home bedroom. A Korean assessor in her 40s holding a blank clipboard sits beside an elderly man in his 80s resting on a home care bed during a long-term care assessment visit, his son in his 40s sitting nearby. Background: tidy Korean apartment bedroom with soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a home bedroom",
+   "bg": "tidy Korean apartment bedroom with soft daylight",
+   "anchor": "home care bed during a long-term care assessment visit"
   },
   {
    "n": 3,

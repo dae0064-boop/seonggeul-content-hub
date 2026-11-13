@@ -2,7 +2,7 @@
  "slug": "2026-11-20-dokgam-geomsa-silbi",
  "title": "독감검사 실비, 검사만 받고 온 날도 청구되나요 (통원 1회)",
  "source": "11/20(금) 13:40 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -30,14 +30,11 @@
   {
    "n": 2,
    "file": "02.png",
-   "title": "독감검사 실비 질문을 크게 던지는 첫머리 카드",
-   "kind": "card",
-   "card": {
-    "type": "lead",
-    "keyword": "독감검사 실비",
-    "title": "검사만 한 날\n청구될까?",
-    "ask": "독감 검사비, 실비 돼?"
-   }
+   "title": "약국 계산대에서 글자 없는 약 봉투를 받는 20대 여성",
+   "prompt": "Camera and composition: medium shot at a neighborhood pharmacy counter. A Korean woman in her 20s wearing a scarf calmly receiving a blank medicine bag from a pharmacist across the pharmacy counter. Background: clean neighborhood pharmacy with shelves softly blurred. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a neighborhood pharmacy counter",
+   "bg": "clean neighborhood pharmacy with shelves softly blurred",
+   "anchor": "pharmacy counter"
   },
   {
    "n": 3,

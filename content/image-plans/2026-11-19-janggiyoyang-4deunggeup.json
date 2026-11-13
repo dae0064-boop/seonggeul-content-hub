@@ -1,8 +1,8 @@
 {
  "slug": "2026-11-19-janggiyoyang-4deunggeup",
- "title": "장기요양 4등급, 한 달에 서비스를 얼마까지 쓸 수 있나요 (140만 9,700원)",
+ "title": "부모님 장기요양 4등급 통지서를 받은 날, 먼저 볼 것들",
  "source": "11/19(목) 11:20 네이버 원고 — 생활보장 검색형(돌봄), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -30,29 +30,11 @@
   {
    "n": 2,
    "file": "02.png",
-   "title": "장기요양 4등급 숫자를 한눈에 보여 주는 카드",
-   "kind": "card",
-   "card": {
-    "type": "number",
-    "title": "장기요양 4등급 숫자",
-    "items": [
-     [
-      "51점",
-      "장기요양인정점수",
-      "60점 미만까지"
-     ],
-     [
-      "15%",
-      "재가급여 본인부담",
-      "쓴 만큼"
-     ],
-     [
-      "4년",
-      "갱신 뒤 유효기간",
-      "2~4등급"
-     ]
-    ]
-   }
+   "title": "집 욕실 문 앞에서 70대 어머니의 걸음을 곁에서 돕는 40대 딸",
+   "prompt": "Camera and composition: medium shot at a bathroom doorway at home. A Korean daughter in her 40s calmly walking beside her mother in her 70s at a home bathroom doorway with a handrail, gently holding her arm. Background: clean bright apartment hallway. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a bathroom doorway at home",
+   "bg": "clean bright apartment hallway",
+   "anchor": "bathroom doorway with a handrail"
   },
   {
    "n": 3,

@@ -2,7 +2,7 @@
  "slug": "2026-11-21-sanggeup-byeongwon-silbi",
  "title": "상급병원 실비, 대학병원 외래는 덜 돌려받나요 (공제 2만 원)",
  "source": "11/21(토) 10:00 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -30,29 +30,11 @@
   {
    "n": 2,
    "file": "02.png",
-   "title": "상급종합병원 외래 본인부담을 숫자로 정리한 카드",
-   "kind": "card",
-   "card": {
-    "type": "number",
-    "title": "외래 본인부담 비율",
-    "items": [
-     [
-      "60%",
-      "상급종합병원",
-      "진찰료 뺀 나머지"
-     ],
-     [
-      "50%",
-      "동 지역 종합병원",
-      "외래"
-     ],
-     [
-      "30%",
-      "의원",
-      "외래"
-     ]
-    ]
-   }
+   "title": "대학병원 외래 접수 창구에서 진료의뢰서를 내는 50대 여성",
+   "prompt": "Camera and composition: medium shot at a hospital reception counter. A Korean woman in her 50s handing a blank referral letter across a university hospital outpatient reception desk while her father waits beside her. Background: bright university hospital lobby with natural light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a hospital reception counter",
+   "bg": "bright university hospital lobby with natural light",
+   "anchor": "university hospital outpatient reception desk"
   },
   {
    "n": 3,

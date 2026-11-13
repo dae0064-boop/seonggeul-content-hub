@@ -2,7 +2,7 @@
  "slug": "2026-11-20-maeumtuja-jiwonsaeop",
  "title": "마음투자 지원사업, 심리상담 8회는 얼마에 받나요 (1회 8만 원 기준)",
  "source": "11/20(금) 21:00 네이버 원고 — 생활보장 검색형(정신건강 제도), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -30,14 +30,11 @@
   {
    "n": 2,
    "file": "02.png",
-   "title": "마음투자 지원사업을 묻는 첫머리 카드",
-   "kind": "card",
-   "card": {
-    "type": "lead",
-    "keyword": "마음투자",
-    "title": "상담 8회\n얼마일까?",
-    "ask": "상담 받아 볼까?"
-   }
+   "title": "행정복지센터 창구에서 글자 없는 이용권 카드를 받는 30대 여성의 손",
+   "prompt": "Camera and composition: close-up of hands at a community service center counter. A Korean woman in her 30s receiving a blank voucher card from a staff member across the counter, only hands and the counter in focus. Background: bright community service center with soft natural colors. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands at a community service center counter",
+   "bg": "bright community service center with soft natural colors",
+   "anchor": "blank voucher card"
   },
   {
    "n": 3,

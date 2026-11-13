@@ -2,7 +2,7 @@
  "slug": "2026-11-20-eunggeupuiryobi-daejigeup",
  "title": "응급의료비 대지급, 응급실 진료비를 당장 못 내면 어떻게 하나요 (최대 48개월)",
  "source": "11/20(금) 08:20 네이버 원고 — 생활보장 검색형(의료비 제도), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -51,21 +51,11 @@
   {
    "n": 4,
    "file": "04.png",
-   "title": "응급의료비 대지급 상환의무자를 정리한 메모 카드",
-   "kind": "card",
-   "card": {
-    "type": "check",
-    "style": "memo",
-    "title": "상환의무자는 누구?",
-    "sub": "나라가 나중에 돌려받는 사람",
-    "items": [
-     "환자 본인과 배우자",
-     "1촌 이내 직계혈족",
-     "직계혈족의 배우자"
-    ],
-    "memo": "최대 48개월 분할",
-    "hl": 1
-   }
+   "title": "거실 탁자에서 상환 안내문을 함께 보는 30대 아들과 60대 어머니",
+   "prompt": "Camera and composition: medium shot at a living room table. A Korean son in his 30s and his mother in her 60s calmly talking over a blank installment payment notice on a living room table. Background: bright apartment living room with natural daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a living room table",
+   "bg": "bright apartment living room with natural daylight",
+   "anchor": "blank installment payment notice on a living room table"
   },
   {
    "n": 5,

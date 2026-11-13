@@ -2,7 +2,7 @@
  "slug": "2026-11-21-sanjae-yoyang-geupyeo",
  "title": "산재 요양급여 신청, 병원이 대신 해 줄 수 있나요 (7일 안 결정)",
  "source": "11/21(토) 08:20 네이버 원고 — 생활보장 제도 소식(산재 요양급여), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -30,29 +30,11 @@
   {
    "n": 2,
    "file": "02.png",
-   "title": "산재 요양급여 숫자 셋을 보여 주는 카드",
-   "kind": "card",
-   "card": {
-    "type": "number",
-    "title": "산재 요양급여 숫자",
-    "items": [
-     [
-      "3일",
-      "이내 요양",
-      "급여 없음"
-     ],
-     [
-      "7일",
-      "신청 뒤",
-      "결정 기한"
-     ],
-     [
-      "3년",
-      "권리",
-      "시효"
-     ]
-    ]
-   }
+   "title": "정형외과 진료실에서 의사 설명을 듣는 허리 보호대를 찬 40대 남성",
+   "prompt": "Camera and composition: medium shot in a clinic consultation room. A Korean man in his 40s wearing a lumbar support belt sits calmly at an orthopedic clinic consultation desk while a doctor explains the treatment plan. Background: clean orthopedic clinic room with soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a clinic consultation room",
+   "bg": "clean orthopedic clinic room with soft daylight",
+   "anchor": "orthopedic clinic consultation desk"
   },
   {
    "n": 3,

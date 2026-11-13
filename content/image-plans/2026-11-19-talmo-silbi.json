@@ -1,8 +1,8 @@
 {
  "slug": "2026-11-19-talmo-silbi",
- "title": "탈모 실비, 피부과 치료비도 실손에서 받을 수 있나요 (별표 2 노화 탈모)",
+ "title": "머리 감을 때 부쩍 빠진다면, 탈모 실비 되는 경우부터 보세요",
  "source": "11/19(목) 13:40 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -55,18 +55,11 @@
   {
    "n": 4,
    "file": "04.png",
-   "title": "내 탈모 영수증을 스스로 확인하는 자가 체크 카드",
-   "kind": "card",
-   "card": {
-    "type": "selfcheck",
-    "title": "내 탈모 영수증 체크",
-    "items": [
-     "급여 칸에 금액이 있는지",
-     "진단명이 적힌 서류",
-     "노화현상 탈모"
-    ],
-    "result": "아래 '급여 칸' 부분을 꼭 보세요 👇"
-   }
+   "title": "약국 계산대에서 처방받은 약 봉투를 받는 30대 남성",
+   "prompt": "Camera and composition: medium shot at a pharmacy counter. A Korean man in his 30s in office clothes calmly receiving a blank paper medicine bag from a pharmacist across a pharmacy counter. Background: bright neighborhood pharmacy with tidy shelves. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a pharmacy counter",
+   "bg": "bright neighborhood pharmacy with tidy shelves",
+   "anchor": "pharmacy counter"
   },
   {
    "n": 5,

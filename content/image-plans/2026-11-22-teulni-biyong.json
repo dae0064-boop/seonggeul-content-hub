@@ -2,7 +2,7 @@
  "slug": "2026-11-22-teulni-biyong",
  "title": "틀니 비용, 65세부터 건강보험 되면 얼마 내나요 (본인부담 30%)",
  "source": "11/22(일) 16:20 네이버 원고 — 생활보장 검색형(돌봄·요양), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -66,22 +66,11 @@
   {
    "n": 4,
    "file": "04.png",
-   "title": "노인 틀니 등록부터 시술까지 순서를 정리한 메모 카드",
-   "kind": "card",
-   "card": {
-    "type": "steps",
-    "style": "memo",
-    "title": "노인 틀니 받는 순서",
-    "sub": "등록이 먼저예요",
-    "items": [
-     "치과에서 급여 대상 판정받기",
-     "시술 동의 후 등록 신청하기",
-     "공단의 등록 결과 받기",
-     "등록 확인 뒤 시술 받기"
-    ],
-    "memo": "시술 전에 등록부터",
-    "hl": 2
-   }
+   "title": "치과 접수대에서 글자 없는 노인 틀니 등록 신청서를 건네받는 70대 어머니",
+   "prompt": "Camera and composition: medium shot at a dental clinic reception counter. A Korean woman in her 70s with short permed gray hair in a lavender knit cardigan receiving a blank denture registration form across a dental clinic reception counter from a staff member in a mint uniform, a denture model sitting on the counter, both smiling gently. Background: bright dental clinic lobby with white counter and soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a dental clinic reception counter",
+   "bg": "bright dental clinic lobby with white counter and soft daylight",
+   "anchor": "blank denture registration form"
   },
   {
    "n": 5,

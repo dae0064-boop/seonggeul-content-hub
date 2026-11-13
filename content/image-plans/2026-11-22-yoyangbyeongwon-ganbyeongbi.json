@@ -2,7 +2,7 @@
  "slug": "2026-11-22-yoyangbyeongwon-ganbyeongbi",
  "title": "요양병원 간병비, 실비나 장기요양으로 받을 수 있나요 (조항 2곳 확인)",
  "source": "11/22(일) 17:40 네이버 원고 — 생활보장 검색형(돌봄·요양), 실사풍",
- "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
  "images": [
   {
    "n": 1,
@@ -30,14 +30,11 @@
   {
    "n": 2,
    "file": "02.png",
-   "title": "요양병원 간병비 질문을 크게 던지는 첫머리 카드",
-   "kind": "card",
-   "card": {
-    "type": "lead",
-    "keyword": "요양병원 간병비",
-    "title": "실비로\n돌려받을까?",
-    "ask": "간병비가 병원비보다 커요"
-   }
+   "title": "요양병원 원무과 창구에서 한 달 청구서 봉투를 받아 드는 40대 딸",
+   "prompt": "Camera and composition: medium shot at a nursing hospital billing counter. A Korean woman in her 40s in a dark green padded jacket receiving a plain bill envelope at a nursing hospital billing counter from a staff member in a white blouse, calm and attentive. Background: quiet nursing hospital lobby with beige walls, a wheelchair parked near the window and soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a nursing hospital billing counter",
+   "bg": "quiet nursing hospital lobby with beige walls, a wheelchair parked near the window and soft daylight",
+   "anchor": "nursing hospital billing counter"
   },
   {
    "n": 3,
