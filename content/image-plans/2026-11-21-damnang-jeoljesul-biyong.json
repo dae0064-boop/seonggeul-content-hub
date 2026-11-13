@@ -1,98 +1,102 @@
 {
-  "slug": "2026-11-21-damnang-jeoljesul-biyong",
-  "title": "담낭절제술 비용, 병실에 따라 왜 달라질까요 (식대 50%)",
-  "source": "11/21(토) 15:00 네이버 원고 — 생활보장 검색형(비용), 실사풍",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "저녁 조명이 켜진 병원 복도에서 서로를 보며 고개를 끄덕이는 50대 부부 (대표사진)",
-      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: an apartment hallway or elevator lobby. Lighting: warm evening lamp light. Wide view of a calm hospital corridor near the elevators in the evening, a Korean couple in their 50s, the wife in a dark green coat and the husband in a gray jacket, looking at each other and nodding gently. Expression: nodding with a reassuring smile, hands relaxed. Color theme: fresh green plants and crisp white tones with natural morning light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "wide",
-      "bg": "fresh green plants and crisp white tones with natural morning light",
-      "note": "대표",
-      "thumb_shot": "wide",
-      "thumb_theme": "forest",
-      "thumb_person": "50대 부부",
-      "thumb_place": "복도·엘리베이터",
-      "thumb_light": "저녁 조명",
-      "thumb_mood": "끄덕",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "forest",
-        "font": "jua",
-        "title": "담낭절제술 비용\n병실 따라 달라?"
-      }
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "담낭절제술 비용의 기준 숫자를 정리한 숫자 카드",
-      "kind": "card",
-      "card": {
-        "type": "number",
-        "title": "담낭 수술 내 몫",
-        "items": [
-          [
-            "20%",
-            "입원 진료비",
-            "건강보험 적용분"
-          ],
-          [
-            "50%",
-            "입원 중 식대",
-            "환자 식사"
-          ],
-          [
-            "50%",
-            "상급종합 2인실",
-            "입원료"
-          ]
-        ]
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "창가 쪽 다인실 병상 옆 의자에 개어 둔 담요와 보호자 가방",
-      "prompt": "Camera and composition: medium shot of a multi-bed hospital room corner. A tidy corner of a multi-bed hospital ward by the window, a bedside chair with a neatly folded blanket and a caregiver's tote bag, no people. Background color: pale green curtains with afternoon window light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot of a multi-bed hospital room corner",
-      "bg": "pale green curtains with afternoon window light"
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "담낭절제술 비용 준비 순서를 정리한 채팅 카드",
-      "kind": "card",
-      "card": {
-        "type": "steps",
-        "title": "담낭 수술 준비 순서",
-        "items": [
-          "병실 종류와 병실료 묻기",
-          "비급여로 잡힐 항목",
-          "세부내역서 함께 떼기",
-          "수술비 담보 약관 확인하기"
-        ],
-        "ask": "수술 전 뭐부터 해?"
-      }
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "거실 탁자에서 계산기 없이 메모지에 항목을 적는 50대 아들의 손",
-      "prompt": "Camera and composition: close-up of hands writing at a coffee table. Close-up of a Korean man's hands in a forest green sweater writing short marks on a small blank notepad on a living room coffee table, no face in the frame. Background color: walnut table with a cream rug. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "close-up of hands writing at a coffee table",
-      "bg": "walnut table with a cream rug"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "해 질 녘 병원 앞 벤치에 나란히 놓인 퇴원 가방과 서류 봉투",
-      "prompt": "Camera and composition: wide still life outdoors at dusk. A bench in front of a hospital entrance at dusk with a small packed travel bag and a plain document envelope placed side by side, no people. Background color: warm dusk sky with soft building lights. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "wide still life outdoors at dusk",
-      "bg": "warm dusk sky with soft building lights"
-    }
-  ]
+ "slug": "2026-11-21-damnang-jeoljesul-biyong",
+ "title": "담낭절제술 비용, 병실에 따라 왜 달라질까요 (식대 50%)",
+ "source": "11/21(토) 15:00 네이버 원고 — 생활보장 검색형(비용), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "병동 복도를 천천히 걷는 50대 부부 (대표사진)",
+   "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Setting: a bright university hospital ward corridor. A Korean couple in their 50s walking slowly along a hospital ward corridor with patient rooms, the husband in a patient gown holding a drip stand. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: warm evening lamp light. Expression: nodding with a reassuring smile, hands relaxed. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "wide",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "wide",
+   "thumb_theme": "forest",
+   "thumb_person": "50대 부부",
+   "thumb_place": "주제",
+   "thumb_light": "저녁 조명",
+   "thumb_mood": "끄덕",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "forest",
+    "font": "jua",
+    "title": "담낭절제술 비용\n병실 따라 달라?"
+   },
+   "anchor": "hospital ward corridor with patient rooms"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "담낭절제술 비용의 기준 숫자를 정리한 숫자 카드",
+   "kind": "card",
+   "card": {
+    "type": "number",
+    "title": "담낭 수술 내 몫",
+    "items": [
+     [
+      "20%",
+      "입원 진료비",
+      "건강보험 적용분"
+     ],
+     [
+      "50%",
+      "입원 중 식대",
+      "환자 식사"
+     ],
+     [
+      "50%",
+      "상급종합 2인실",
+      "입원료"
+     ]
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "창가 2인실 병실에서 쉬는 60대 여성",
+   "prompt": "Camera and composition: medium shot in a hospital room. A Korean woman in her 60s resting in a two-bed hospital room with a curtain half open by the window. Background: clean hospital room with white walls. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a hospital room",
+   "bg": "clean hospital room with white walls",
+   "anchor": "two-bed hospital room"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "담낭절제술 비용 준비 순서를 정리한 채팅 카드",
+   "kind": "card",
+   "card": {
+    "type": "steps",
+    "title": "담낭 수술 준비 순서",
+    "items": [
+     "병실 종류와 병실료 묻기",
+     "비급여로 잡힐 항목",
+     "세부내역서 함께 떼기",
+     "수술비 담보 약관 확인하기"
+    ],
+    "ask": "수술 전 뭐부터 해?"
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "병실 탁자 위 죽과 반찬이 담긴 병원 식판",
+   "prompt": "Camera and composition: close-up on a hospital bedside table. A hospital meal tray with rice porridge and side dishes on a bedside table, a Korean man's hands holding a spoon. Background: white bed sheets and soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up on a hospital bedside table",
+   "bg": "white bed sheets and soft daylight",
+   "anchor": "hospital meal tray"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "수술 뒤 회복 병상에 앉은 50대 남성과 아내",
+   "prompt": "Camera and composition: medium shot in a hospital ward. A Korean man in his 50s sitting up calmly in a laparoscopic surgery recovery bed while his wife adjusts his pillow. Background: multi-bed ward with white curtains. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a hospital ward",
+   "bg": "multi-bed ward with white curtains",
+   "anchor": "laparoscopic surgery recovery bed"
+  }
+ ]
 }

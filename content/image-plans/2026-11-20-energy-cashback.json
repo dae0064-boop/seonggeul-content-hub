@@ -1,85 +1,89 @@
 {
-  "slug": "2026-11-20-energy-cashback",
-  "title": "에너지 캐시백, 12월 검침분까지 1%만 줄여도 되나요 (최대 120원)",
-  "source": "11/20(금) 08:20 네이버 제도 소식 — 생활보장(돈·생활 제도), 실사풍 (11/11 미리 씀)",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "아침 햇살이 드는 아파트 엘리베이터 앞에서 설명하는 30대 딸과 듣는 60대 아버지 (대표사진)",
-      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: an apartment hallway or elevator lobby. Lighting: soft early-morning sunlight. A Korean daughter in her 30s in a teal knit sweater explaining something with an open hand to her father in his 60s in a gray vest, standing face to face in front of an apartment elevator in the morning. Expression: explaining with one hand open toward the viewer. Color theme: calm teal and light gray tones with a coral accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "duo",
-      "bg": "calm teal and light gray tones with a coral accent",
-      "note": "대표",
-      "thumb_shot": "duo",
-      "thumb_theme": "teal",
-      "thumb_person": "30대 딸(청록 니트)과 60대 아버지(회색 조끼)",
-      "thumb_place": "복도·엘리베이터",
-      "thumb_light": "아침 햇살",
-      "thumb_mood": "설명",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "teal",
-        "font": "ptd",
-        "title": "에너지 캐시백\n조금만 아껴도?"
-      }
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "에너지 캐시백이 무엇인지 묻는 첫머리 카드",
-      "kind": "card",
-      "card": {
-        "type": "lead",
-        "keyword": "에너지 캐시백",
-        "title": "1%만\n줄여도?",
-        "ask": "전기 아끼면 돌려줘?"
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "흐린 날 베란다 옆 벽의 전기 계량기를 바라보는 30대 남성",
-      "prompt": "Camera and composition: medium shot by a wall. A Korean man in his 30s in a gray hoodie looking at an electricity meter box with blank dials on the wall next to an apartment balcony door, curious calm face. Background color: apartment balcony door area with soft overcast light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot by a wall",
-      "bg": "apartment balcony door area with soft overcast light"
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "에너지 캐시백 신청 방법 세 가지를 적은 메모 카드",
-      "kind": "card",
-      "card": {
-        "type": "check",
-        "style": "memo",
-        "title": "캐시백 신청하는 곳",
-        "sub": "세 곳 중 편한 곳에서",
-        "items": [
-          "한전ON 앱에서 온라인 신청",
-          "에너지마켓플레이스",
-          "가까운 한전 지사 방문"
-        ],
-        "memo": "12월 검침분까지 1% 기준",
-        "hl": 1
-      }
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "밝은 낮 식탁 위 휴대폰과 탁상 조명을 내려다본 장면",
-      "prompt": "Camera and composition: top-down view of a table. Top-down view of a dining table with a smartphone showing blank icons, a small desk lamp switched off, and a mug, neatly arranged, no people. Background color: light wooden table in bright daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "top-down view of a table",
-      "bg": "light wooden table in bright daylight"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "저녁 조명 거실에서 안 쓰는 조명을 끄는 40대 여성",
-      "prompt": "Camera and composition: medium shot in a living room. A Korean woman in her 40s in a mustard cardigan switching off a floor lamp in an unused corner of the living room in the evening, calm smile. Background color: warm evening living room with soft lamp light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot in a living room",
-      "bg": "warm evening living room with soft lamp light"
-    }
-  ]
+ "slug": "2026-11-20-energy-cashback",
+ "title": "에너지 캐시백, 12월 검침분까지 1%만 줄여도 되나요 (최대 120원)",
+ "source": "11/20(금) 08:20 네이버 제도 소식 — 생활보장(돈·생활 제도), 실사풍 (11/11 미리 씀)",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "전기 계량기 앞에서 이야기하는 30대 딸과 60대 아버지 (대표사진)",
+   "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Setting: an apartment utility corridor with an electricity meter box. A Korean daughter in her 30s in a teal knit and her father in his 60s in a grey vest talking face to face beside the electricity meter box on the wall. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft early-morning sunlight. Expression: explaining with one hand open toward the viewer. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "duo",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "duo",
+   "thumb_theme": "teal",
+   "thumb_person": "30대 딸(청록 니트)과 60대 아버지(회색 조끼)",
+   "thumb_place": "주제",
+   "thumb_light": "아침 햇살",
+   "thumb_mood": "설명",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "teal",
+    "font": "ptd",
+    "title": "에너지 캐시백\n조금만 아껴도?"
+   },
+   "anchor": "electricity meter box"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "에너지 캐시백이 무엇인지 묻는 첫머리 카드",
+   "kind": "card",
+   "card": {
+    "type": "lead",
+    "keyword": "에너지 캐시백",
+    "title": "1%만\n줄여도?",
+    "ask": "전기 아끼면 돌려줘?"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "거실 TV 아래 멀티탭 스위치를 끄는 40대 여성",
+   "prompt": "Camera and composition: close-up in a living room. A Korean woman in her 40s turning off a multi-tap power strip with switches under the TV stand. Background: real living room floor with wood tones. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up in a living room",
+   "bg": "real living room floor with wood tones",
+   "anchor": "multi-tap power strip with switches"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "에너지 캐시백 신청 방법 세 가지를 적은 메모 카드",
+   "kind": "card",
+   "card": {
+    "type": "check",
+    "style": "memo",
+    "title": "캐시백 신청하는 곳",
+    "sub": "세 곳 중 편한 곳에서",
+    "items": [
+     "한전ON 앱에서 온라인 신청",
+     "에너지마켓플레이스",
+     "가까운 한전 지사 방문"
+    ],
+    "memo": "12월 검침분까지 1% 기준",
+    "hl": 1
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "식탁에서 글자 없는 전기요금 고지서를 펼치는 50대 남성",
+   "prompt": "Camera and composition: medium shot at a home dining table. A Korean man in his 50s opening a blank electricity bill envelope at the dining table, a phone with a blank screen beside it. Background: warm kitchen table and white walls. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a home dining table",
+   "bg": "warm kitchen table and white walls",
+   "anchor": "blank electricity bill envelope"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "천장등을 끄고 LED 스탠드 아래 책 읽는 60대 여성",
+   "prompt": "Camera and composition: medium shot in a small study room. A Korean woman in her 60s reading a book under an LED desk lamp with the ceiling light switched off at night. Background: cozy room with natural wood and warm lamplight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a small study room",
+   "bg": "cozy room with natural wood and warm lamplight",
+   "anchor": "LED desk lamp"
+  }
+ ]
 }

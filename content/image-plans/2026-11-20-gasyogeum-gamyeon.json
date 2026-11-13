@@ -1,85 +1,89 @@
 {
-  "slug": "2026-11-20-gasyogeum-gamyeon",
-  "title": "가스요금 감면, 우리 집도 겨울 할인받을 수 있나요 (12~3월 동절기)",
-  "source": "11/20(금) 19:00 네이버 원고 — 생활보장 검색형(돈·생활 제도), 실사풍",
-  "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
-  "images": [
-    {
-      "n": 1,
-      "file": "01.png",
-      "title": "탁자 위에 놓인 빈 고지서 봉투와 보일러 리모컨, 따뜻한 머그잔 (대표사진)",
-      "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Setting: a home kitchen counter. Lighting: cool clean white indoor light. A blank white envelope, a small white boiler remote control, a steaming ceramic mug and a pair of knitted mittens neatly arranged on a home kitchen counter. Color theme: terracotta and warm beige tones with a teal accent. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "overhead",
-      "bg": "terracotta and warm beige tones with a teal accent",
-      "note": "대표",
-      "thumb_shot": "overhead",
-      "thumb_theme": "brick",
-      "thumb_person": "없음",
-      "thumb_place": "부엌",
-      "thumb_light": "흰 조명",
-      "overlay": {
-        "kind": "thumb",
-        "look": "band",
-        "theme": "brick",
-        "font": "ptd",
-        "title": "가스요금 감면\n우리 집도 될까?"
-      }
-    },
-    {
-      "n": 2,
-      "file": "02.png",
-      "title": "가스요금 감면 질문을 크게 던지는 첫머리 카드",
-      "kind": "card",
-      "card": {
-        "type": "lead",
-        "keyword": "가스요금 감면",
-        "title": "우리 집도\n할인될까?",
-        "ask": "가스비 할인, 누가 돼?"
-      }
-    },
-    {
-      "n": 3,
-      "file": "03.png",
-      "title": "주민센터 창구에서 신청서를 쓰는 30대 아빠의 손",
-      "prompt": "Camera and composition: close-up of hands at a community center counter. Close-up of a Korean man's hands in a brown corduroy jacket sleeve filling out a blank form with a pen at a community service center counter, no face in the frame. Background color: warm beige counter with terracotta accents. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "close-up of hands at a community center counter",
-      "bg": "warm beige counter with terracotta accents"
-    },
-    {
-      "n": 4,
-      "file": "04.png",
-      "title": "가스요금 감면 신청 전에 챙길 것을 정리한 메모 카드",
-      "kind": "card",
-      "card": {
-        "type": "check",
-        "style": "memo",
-        "title": "가스요금 감면 신청 전에",
-        "sub": "한 줄이라도 맞으면 신청해 보세요",
-        "items": [
-          "기초생활수급자나 차상위계층",
-          "장애의 정도가 심한 장애인",
-          "자녀나 손자녀가 3명 이상",
-          "주민등록 주소지 기준"
-        ],
-        "memo": "겨울이 오기 전에 신청해요",
-        "hl": 3
-      }
-    },
-    {
-      "n": 5,
-      "file": "05.png",
-      "title": "거실 소파에서 노트북으로 정부24 화면을 보는 60대 부부",
-      "prompt": "Camera and composition: medium shot on a living room sofa. A Korean couple in their 60s sitting side by side on a living room sofa, the wife in a terracotta cardigan and the husband in a beige sweater, looking at a laptop screen together with calm smiles. Background color: warm beige living room with a teal cushion. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "medium shot on a living room sofa",
-      "bg": "warm beige living room with a teal cushion"
-    },
-    {
-      "n": 6,
-      "file": "06.png",
-      "title": "저녁 부엌 가스레인지 위에서 김이 나는 냄비",
-      "prompt": "Camera and composition: close-up of a stovetop. Close-up of a pot with gentle steam rising on a gas stove burner with a small blue flame in a cozy home kitchen in the evening, no people. Background color: warm kitchen tiles in terracotta and cream. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people and real Korean places (hospital waiting room, pharmacy counter, community center, home living room), calm and trustworthy mood, muted natural colors, clean composition. Natural colors of the real scene. Korean everyday settings. Show only what is described above as the main subject; do not add other large objects that are not described. Everyone shown looks calm and relaxed; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
-      "shot": "close-up of a stovetop",
-      "bg": "warm kitchen tiles in terracotta and cream"
-    }
-  ]
+ "slug": "2026-11-20-gasyogeum-gamyeon",
+ "title": "가스요금 감면, 우리 집도 겨울 할인받을 수 있나요 (12~3월 동절기)",
+ "source": "11/20(금) 19:00 네이버 원고 — 생활보장 검색형(돈·생활 제도), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "식탁 위 보일러 조절기와 글자 없는 가스요금 고지서 (대표사진)",
+   "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Setting: a kitchen table with heating items. A gas boiler controller, a blank gas bill, a pair of warm wool socks and a mug of tea neatly arranged on a wooden table, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: cool clean white indoor light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "overhead",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "overhead",
+   "thumb_theme": "brick",
+   "thumb_person": "없음",
+   "thumb_place": "주제",
+   "thumb_light": "흰 조명",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "brick",
+    "font": "ptd",
+    "title": "가스요금 감면\n우리 집도 될까?"
+   },
+   "anchor": "gas boiler controller"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "가스요금 감면 질문을 크게 던지는 첫머리 카드",
+   "kind": "card",
+   "card": {
+    "type": "lead",
+    "keyword": "가스요금 감면",
+    "title": "우리 집도\n할인될까?",
+    "ask": "가스비 할인, 누가 돼?"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "가스레인지 불에 국을 데우는 70대 여성",
+   "prompt": "Camera and composition: medium shot in a home kitchen. A Korean woman in her 70s in a cardigan heating a pot of soup on a gas stove burner with a blue flame. Background: real kitchen with white cabinets. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a home kitchen",
+   "bg": "real kitchen with white cabinets",
+   "anchor": "gas stove burner"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "가스요금 감면 신청 전에 챙길 것을 정리한 메모 카드",
+   "kind": "card",
+   "card": {
+    "type": "check",
+    "style": "memo",
+    "title": "가스요금 감면 신청 전에",
+    "sub": "한 줄이라도 맞으면 신청해 보세요",
+    "items": [
+     "기초생활수급자나 차상위계층",
+     "장애의 정도가 심한 장애인",
+     "자녀나 손자녀가 3명 이상",
+     "주민등록 주소지 기준"
+    ],
+    "memo": "겨울이 오기 전에 신청해요",
+    "hl": 3
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "행정복지센터 창구에서 글자 없는 신청서를 내는 60대 남성",
+   "prompt": "Camera and composition: medium shot inside a community service center. A Korean man in his 60s in a brown jacket handing a blank form to a staff member at the community center service counter. Background: bright public office with numbered queue screen showing no text. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot inside a community service center",
+   "bg": "bright public office with numbered queue screen showing no text",
+   "anchor": "community center service counter"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "다용도실 벽걸이 가스보일러를 살피는 40대 남성",
+   "prompt": "Camera and composition: medium shot in a utility room. A Korean man in his 40s checking a wall-mounted gas boiler in a small utility room. Background: plain utility room with white tiles. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a utility room",
+   "bg": "plain utility room with white tiles",
+   "anchor": "wall-mounted gas boiler"
+  }
+ ]
 }
