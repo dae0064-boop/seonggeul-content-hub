@@ -1,0 +1,90 @@
+{
+ "slug": "2026-11-20-maeumtuja-jiwonsaeop",
+ "title": "마음투자 지원사업, 심리상담 8회는 얼마에 받나요 (1회 8만 원 기준)",
+ "source": "11/20(금) 21:00 네이버 원고 — 생활보장 검색형(정신건강 제도), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "상담실 안락의자에 앉은 30대 여성 직장인 (대표사진)",
+   "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Setting: a quiet psychological counseling room. A Korean woman in her 30s office worker in an olive knit sitting in an armchair in a psychological counseling room, her calm face close to the camera, with a second armchair and a small plant softly blurred behind her. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft early-morning sunlight. Expression: determined, nodding, sleeves rolled up. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "face",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "face",
+   "thumb_theme": "olive",
+   "thumb_person": "30대 여성 직장인(올리브 니트)",
+   "thumb_place": "주제",
+   "thumb_light": "아침 햇살",
+   "thumb_mood": "결심",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "olive",
+    "font": "jua",
+    "title": "마음투자 지원사업\n얼마에 받나?"
+   },
+   "anchor": "psychological counseling room"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "마음투자 지원사업을 묻는 첫머리 카드",
+   "kind": "card",
+   "card": {
+    "type": "lead",
+    "keyword": "마음투자",
+    "title": "상담 8회\n얼마일까?",
+    "ask": "상담 받아 볼까?"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "정신건강복지센터 상담 창구에서 이야기하는 40대 남성",
+   "prompt": "Camera and composition: medium shot at a mental health welfare center reception. A Korean man in his 40s talking calmly with a staff member at a mental health welfare center reception desk. Background: bright public office with soft green plants. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a mental health welfare center reception",
+   "bg": "bright public office with soft green plants",
+   "anchor": "mental health welfare center reception desk"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "마음투자 지원사업 신청 순서를 정리한 메모 카드",
+   "kind": "card",
+   "card": {
+    "type": "steps",
+    "style": "memo",
+    "title": "마음투자 신청 순서",
+    "sub": "증빙서류가 먼저예요",
+    "items": [
+     "증빙서류 하나 준비",
+     "행정복지센터나 복지로 신청",
+     "바우처 유형 결정",
+     "제공기관 골라 상담 시작"
+    ],
+    "memo": "상담은 총 8회",
+    "hl": 1
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "창가 쪽 상담실 탁자 위 찻잔 두 개와 티슈 상자",
+   "prompt": "Camera and composition: close-up of objects on a counseling room table. Two cups of tea and a tissue box on a small round table between two armchairs in a counseling room by the window, no people. Background: calm counseling room with soft window light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of objects on a counseling room table",
+   "bg": "calm counseling room with soft window light",
+   "anchor": "two cups of tea and a tissue box"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "저녁 공원 벤치에서 편안히 쉬는 30대 여성",
+   "prompt": "Camera and composition: medium shot on a park bench in the evening. A Korean woman in her 30s sitting relaxed on a park bench in the early evening, breathing calmly with a gentle smile. Background: park with warm evening light and trees. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot on a park bench in the evening",
+   "bg": "park with warm evening light and trees",
+   "anchor": "park bench in the early evening"
+  }
+ ]
+}

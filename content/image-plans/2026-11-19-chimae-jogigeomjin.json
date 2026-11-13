@@ -1,0 +1,85 @@
+{
+ "slug": "2026-11-19-chimae-jogigeomjin",
+ "title": "치매 조기검진, 선별검사부터 감별검사까지 무엇을 하나요 (3단계)",
+ "source": "11/19(목) 21:00 네이버 원고 — 생활보장 검색형(돌봄·검진 제도), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "식탁 위 글자 없는 검사지와 연필·돋보기·탁상달력 (대표사진)",
+   "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Setting: a dining table at home. A blank cognitive screening worksheet with a pencil, a magnifying glass, a small blank desk calendar and a cup of tea neatly arranged on a wooden dining table, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft overcast daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "overhead",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "overhead",
+   "thumb_theme": "charcoal",
+   "thumb_person": "없음",
+   "thumb_place": "주제",
+   "thumb_light": "흐린 날",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "charcoal",
+    "font": "jua",
+    "title": "치매 조기검진\n뭐부터 받지?"
+   },
+   "anchor": "blank cognitive screening worksheet"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "치매 조기검진을 묻는 첫머리 카드",
+   "kind": "card",
+   "card": {
+    "type": "lead",
+    "keyword": "치매 조기검진",
+    "title": "어디서\n받을까?",
+    "ask": "아버지 검사받아 볼까?"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "치매안심센터 상담실에서 검사자와 마주 앉은 70대 남성",
+   "prompt": "Camera and composition: medium shot at a table in a dementia care center counseling room. A Korean man in his 70s sitting calmly across a small table from a female staff member who holds a blank question sheet in a dementia care center counseling room. Background: bright counseling room with plants and soft light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a table in a dementia care center counseling room",
+   "bg": "bright counseling room with plants and soft light",
+   "anchor": "dementia care center counseling room"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "치매 조기검진 3단계를 정리한 단계 카드",
+   "kind": "card",
+   "card": {
+    "type": "steps",
+    "ask": "검사는 몇 단계야?",
+    "title": "치매 조기검진 3단계",
+    "items": [
+     "선별검사",
+     "진단검사",
+     "감별검사"
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "치매안심센터 프로그램실에서 색칠 활동을 하는 60대 여성",
+   "prompt": "Camera and composition: medium shot at a program room table. A Korean woman in her 60s calmly coloring a simple picture with colored pencils at a program room table in a dementia care center. Background: bright program room with soft wooden furniture. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a program room table",
+   "bg": "bright program room with soft wooden furniture",
+   "anchor": "colored pencils at a program room table"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "거실에서 아버지 손을 잡고 이야기하는 40대 딸",
+   "prompt": "Camera and composition: medium shot on a living room sofa. A Korean woman in her 40s holding her father's hand while he, in his 70s, listens with a calm smile on a living room sofa. Background: cozy living room with natural light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot on a living room sofa",
+   "bg": "cozy living room with natural light",
+   "anchor": "living room sofa"
+  }
+ ]
+}

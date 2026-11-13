@@ -1,0 +1,94 @@
+{
+ "slug": "2026-11-20-noin-gaeansusul-jiwon",
+ "title": "노인 개안수술 지원, 백내장 수술비 본인부담금도 나오나요 (만 60세 이상)",
+ "source": "11/20(금) 19:00 네이버 원고 — 생활보장 검색형(의료비 제도), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "식탁 위 안약·돋보기·안경과 글자 없는 서류 봉투 (대표사진)",
+   "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Setting: a dining table at home. A small bottle of eye drops, a magnifying glass, a pair of reading glasses and a plain document envelope neatly arranged on a wooden dining table, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: cool clean white indoor light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "overhead",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "overhead",
+   "thumb_theme": "brick",
+   "thumb_person": "없음",
+   "thumb_place": "주제",
+   "thumb_light": "흰 조명",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "brick",
+    "font": "ptd",
+    "title": "노인 개안수술 지원\n수술비 될까?"
+   },
+   "anchor": "bottle of eye drops"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "노인 개안수술 지원 대상인지 보는 자가 체크 카드",
+   "kind": "card",
+   "card": {
+    "type": "selfcheck",
+    "title": "우리 부모님 대상?",
+    "items": [
+     "만 60세 이상",
+     "국민기초생활보장 수급자",
+     "차상위계층",
+     "한부모가족"
+    ],
+    "result": "아래 '수술 전 신청'을 보세요 👇"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "안과 검사실 세극등 현미경 앞에 앉은 70대 남성",
+   "prompt": "Camera and composition: medium shot in an eye examination room. A Korean man in his 70s calmly resting his chin on a slit lamp microscope while an ophthalmologist in a white coat adjusts it. Background: clean eye examination room with soft lighting. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in an eye examination room",
+   "bg": "clean eye examination room with soft lighting",
+   "anchor": "slit lamp microscope"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "노인 개안수술 지원 신청 서류를 정리한 메모 카드",
+   "kind": "card",
+   "card": {
+    "type": "check",
+    "style": "memo",
+    "title": "보건소에 낼 서류",
+    "sub": "1개월 안에 뗀 서류로",
+    "items": [
+     "수술비 지원 신청서",
+     "개인정보 수집·이용 동의서",
+     "수술할 병원의 진단서나 소견서",
+     "수급자·차상위·한부모 증명서"
+    ],
+    "memo": "수술 전에 내야 해요",
+    "hl": 3
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "보건소 창구에 서류 봉투를 내미는 60대 여성의 손",
+   "prompt": "Camera and composition: close-up of hands at a public health center counter. Close-up of the hands of a Korean woman in her 60s handing a plain document envelope across a public health center counter. Background: bright public office with a white counter. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands at a public health center counter",
+   "bg": "bright public office with a white counter",
+   "anchor": "public health center counter"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "공원 산책로에서 밝은 얼굴로 걷는 70대 부부",
+   "prompt": "Camera and composition: medium shot on a park walking path. A Korean couple in their 70s walking calmly on a park walking path, the wife wearing clear glasses and looking at autumn trees with bright eyes. Background: park path with autumn trees and natural greenery. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot on a park walking path",
+   "bg": "park path with autumn trees and natural greenery",
+   "anchor": "park walking path"
+  }
+ ]
+}
