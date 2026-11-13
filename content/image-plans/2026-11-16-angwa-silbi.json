@@ -8,10 +8,10 @@
    "n": 1,
    "file": "01.png",
    "title": "안과 검사실 세극등 앞에 앉은 50대 어머니와 곁의 20대 딸 (대표사진)",
-   "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Setting: a bright ophthalmology exam room. A Korean daughter in her 20s in a white hoodie sitting beside her mother in her 50s in a sky blue cardigan, who rests her chin on an eye exam slit lamp while they talk about the eye clinic visit. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: bright clear daylight, high key. Expression: curious, head slightly tilted. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Setting: a bright ophthalmology exam room. A Korean daughter in her 20s in a white hoodie sitting beside her mother in her 50s in a sky blue cardigan, who rests her chin on an eye exam slit lamp while they talk about the eye clinic visit. Make it bold and eye-catching like a magazine cover photo: the eye exam slit lamp and the mother's eye resting at it are large, sharp and brightly lit in the middle of the frame, with a soft round spotlight glow around them and the edges of the room slightly darker, strong contrast and vivid but natural colors. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Nothing important in the bottom tenth. Lighting: bright clear daylight, high key. Expression: curious, head slightly tilted. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
    "shot": "duo",
    "bg": "natural colors of the real place",
-   "note": "대표",
+   "note": "대표 — 강조 대표사진 시험 (overlay style pop, 2026-11-13 사용자)",
    "thumb_shot": "duo",
    "thumb_theme": "cobalt",
    "thumb_person": "20대 딸과 50대 어머니",
@@ -23,7 +23,8 @@
     "look": "band",
     "theme": "cobalt",
     "font": "jua",
-    "title": "안과 실비\n라식도 될까?"
+    "title": "안과 실비\n라식도 될까?",
+    "style": "pop"
    },
    "anchor": "eye exam slit lamp"
   },
