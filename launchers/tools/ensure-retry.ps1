@@ -27,7 +27,7 @@ if (-not $scanTask) {
 & (Join-Path $PSScriptRoot 'threads-blog-setup.ps1') -IfMissing | Out-Null
 try { & (Join-Path $PSScriptRoot 'matjip-watch-setup.ps1') -Remove | Out-Null } catch { }  # 2026-11-13 사용자: 맛집은 요청할 때만 — 지킴이 작업 지움 (catchup 끝에서 봄)
 try { & (Join-Path $PSScriptRoot 'health-setup.ps1') -IfMissing | Out-Null } catch { }
-try { & (Join-Path $PSScriptRoot 'goms-request-setup.ps1') -Remove | Out-Null } catch { }  # 2026-11-13 사용자: 심의는 요청할 때만 — 10분마다 지킴이 지움 (catchup 끝에서 봄)
+try { & (Join-Path $PSScriptRoot 'goms-request-setup.ps1') -IfMissing | Out-Null } catch { }  # 2026-11-13 사용자 "말하면 바로": 요청 지킴이 2분마다 (요청 파일만 봄, 깨우지 않음)
 try { & (Join-Path $PSScriptRoot 'sleeper-setup.ps1') -IfMissing | Out-Null } catch { }  # 작업 뒤 바로 절전 담당 5분마다 (2026-11-05)  # GOMS 로그인 + 휴대폰 인증 매일 08:30 (2026-11-05)  # 지킴이 — 크롬·원고·로그인·늦은 이슈 글 (2026-11-05)
 # 2026-10-05: 켜거나 잠금을 풀면 바로 시작하는 작업(SeonggeulMorningStart)이 없으면 다시 등록한다
 $wake = Get-ScheduledTask -TaskName 'SeonggeulMorningStart'
