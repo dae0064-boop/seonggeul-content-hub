@@ -7,7 +7,7 @@
  *
  * 읽는 곳 (로그인 없이 공개 화면만):
  *   ① 구글 트렌드 한국 실시간 (RSS) — 검색량(approx_traffic) + 관련 기사
- *   ② 네이버 연예 랭킹 (많이 본 뉴스)
+ *   (② 네이버 연예 랭킹 — 2026-11-14 사용자 지시로 뺐다. 이제 블로그 주제와 이어지는 항목만 남긴다)
  *   ③ 네이버 뉴스 많이 본 뉴스 (언론사별)
  * 그리고 위에서 겹치거나 순위 높은 기사 최대 24개는 본문 앞부분(사실 확인용, 2,000자)을 같이 저장한다.
  * 기사 글·사진을 블로그에 그대로 옮기지 않는다 — 클라우드 작업이 사실만 확인해 우리 말로 새로 쓴다(언론사 저작권).
@@ -92,28 +92,24 @@ async function articleText(page, url) {
   });
 }
 
-const result = { date: today, scannedAt: new Date().toISOString(), trends: [], naverEnt: [], naverNews: [], articles: [], notes };
-try { result.trends = await googleTrends(); } catch (e) { notes.push(`구글 트렌드 실패: ${e.message}`); }
+// 2026-11-14 사용자 "연예 랭킹은 모두 제외, 지금 쓰는 블로그랑 연관 없는 건 검은 창에 표시할 필요 없어"
+//   → 연예 랭킹은 읽지 않고, 블로그 주제(보험금·실비 / 병원비·돌봄 / 지원금·제도 + 노년 생활 제도)와 이어지는 것만 남긴다
+const RELATED = /보험|실비|실손|병원|의료|진료|건강보험|건보|요양|돌봄|간병|치매|암환자|암 진단|질병|수술|입원|응급|장애인|장애 등록|연금|노인|어르신|복지|지원금|지원사업|지원 사업|급여|수당|감면|환급|보건|질병청|복지부|건강검진|검진|독감|백신|접종|약값|본인부담|산재|상병/;
+const related = (...ts) => ts.some((t) => RELATED.test(String(t || '')));
+const result = { date: today, scannedAt: new Date().toISOString(), trends: [], naverNews: [], articles: [], notes };
+try { result.trends = (await googleTrends()).filter((t) => related(t.keyword, ...t.news.map((n) => n.title))); } catch (e) { notes.push(`구글 트렌드 실패: ${e.message}`); }
 
 const browser = await launch();
 try {
   const ctx = await browser.newContext({ userAgent: UA, locale: 'ko-KR' });
   const page = await ctx.newPage();
-  try { result.naverEnt = await rankingLinks(page, 'https://m.entertain.naver.com/ranking', /(entertain\.naver\.com\/(home\/|ranking\/)?article\/|n\.news\.naver\.com\/(m?entertain|mnews\/entertain)\/article\/)/); }
-  catch (e) { notes.push(`네이버 연예 랭킹 실패: ${e.message.split('\n')[0]}`); }
-  if (!result.naverEnt.length) {
-    try { result.naverEnt = await rankingLinks(page, 'https://entertain.naver.com/ranking', /(entertain\.naver\.com\/(home\/|ranking\/)?article\/|n\.news\.naver\.com\/(m?entertain|mnews\/entertain)\/article\/)/); }
-    catch (e) { notes.push(`네이버 연예 랭킹(PC) 실패: ${e.message.split('\n')[0]}`); }
-  }
-  try { result.naverNews = await rankingLinks(page, 'https://news.naver.com/main/ranking/popularDay.naver', /n\.news\.naver\.com\/(mnews\/)?article\//); }
+  try { result.naverNews = (await rankingLinks(page, 'https://news.naver.com/main/ranking/popularDay.naver', /n\.news\.naver\.com\/(mnews\/)?article\//)).filter((x) => related(x.title)); }
   catch (e) { notes.push(`네이버 많이 본 뉴스 실패: ${e.message.split('\n')[0]}`); }
-  if (!result.naverEnt.length) notes.push('네이버 연예 랭킹에서 기사를 못 찾음 — 화면 모양이 바뀌었을 수 있음');
-  if (!result.naverNews.length) notes.push('네이버 많이 본 뉴스에서 기사를 못 찾음 — 화면 모양이 바뀌었을 수 있음');
 
-  // 본문을 읽을 기사: 트렌드 상위 키워드의 기사 + 연예 랭킹 상위 + 많이 본 뉴스 상위 (번갈아)
+  // 본문을 읽을 기사: 블로그 주제와 이어지는 트렌드 기사 + 많이 본 뉴스 (번갈아)
   const queue = [];
   const trendNews = result.trends.slice(0, 10).flatMap((t) => t.news.slice(0, 2).map((n) => ({ ...n, from: `트렌드 ${t.rank}위 ${t.keyword} (${t.traffic})` })));
-  const lists = [trendNews, result.naverEnt.slice(0, 12).map((x) => ({ ...x, from: `연예 랭킹 ${x.rank}위` })), result.naverNews.slice(0, 12).map((x) => ({ ...x, from: `많이 본 뉴스 ${x.rank}위` }))];
+  const lists = [trendNews, result.naverNews.slice(0, 12).map((x) => ({ ...x, from: `많이 본 뉴스 ${x.rank}위` }))];
   for (let i = 0; queue.length < maxArticles && i < 20; i++) for (const l of lists) if (l[i] && queue.length < maxArticles && !queue.some((q) => q.url === l[i].url)) queue.push(l[i]);
   for (const a of queue) {
     try { result.articles.push({ ...a, ...(await articleText(page, a.url)), url: a.url, from: a.from }); }
@@ -125,11 +121,13 @@ fs.mkdirSync(out.replace(/[^/\\]+$/, '') || '.', { recursive: true });
 fs.writeFileSync(`${out}.json`, JSON.stringify(result, null, 2));
 const txt = [
   `# 아침 이슈 ${today} (모은 시각 ${new Date().toLocaleString('ko-KR', { timeZone: 'Asia/Seoul' })})`,
-  '', '## 구글 트렌드 (한국, 검색량)', ...result.trends.slice(0, 20).map((t) => `${t.rank}. ${t.keyword} — ${t.traffic} · ${t.news.map((n) => `${n.press}「${n.title}」`).join(' / ')}`),
-  '', '## 네이버 연예 랭킹', ...result.naverEnt.slice(0, 20).map((x) => `${x.rank}. ${x.title} ${x.press ? `(${x.press})` : ''}`),
-  '', '## 네이버 많이 본 뉴스', ...result.naverNews.slice(0, 20).map((x) => `${x.rank}. ${x.title} ${x.press ? `(${x.press})` : ''}`),
+  '', '## 구글 트렌드 (한국, 검색량) — 블로그 주제와 이어지는 것만', ...result.trends.slice(0, 20).map((t) => `${t.rank}. ${t.keyword} — ${t.traffic} · ${t.news.map((n) => `${n.press}「${n.title}」`).join(' / ')}`),
+  '', '## 네이버 많이 본 뉴스 — 블로그 주제와 이어지는 것만', ...result.naverNews.slice(0, 20).map((x) => `${x.rank}. ${x.title} ${x.press ? `(${x.press})` : ''}`),
   '', `## 본문 저장한 기사 ${result.articles.filter((a) => a.body).length}개`, ...result.articles.map((a) => `- [${a.from}] ${a.title}${a.error ? ` ⚠ ${a.error}` : ''}`),
   ...(notes.length ? ['', '## 알림', ...notes] : []),
 ].join('\n');
 fs.writeFileSync(`${out}.txt`, txt + '\n');
-console.log(txt);
+// 검은 창에는 짧게 — 블로그와 이어지는 제목만 (2026-11-14 사용자)
+console.log(`이슈 모으기 끝 — 블로그 주제와 이어지는 것: 트렌드 ${result.trends.length} · 많이 본 뉴스 ${result.naverNews.length} · 본문 ${result.articles.filter((a) => a.body).length}`);
+for (const a of result.articles.filter((x) => x.body).slice(0, 8)) console.log(`  - ${a.title}`);
+for (const n of notes) console.log(`  ⚠ ${n}`);
