@@ -17,6 +17,7 @@ New-Item -ItemType Directory -Force -Path $dir | Out-Null
 # 일상 글(07:00 러닝·응원, 19:00 하루 마무리 — 2026-11-02 사용자)을 먼저. 링크 없음, 시각에서 3시간 안에만
 $dailyArgs = @('scripts\threads\daily-post.mjs')
 if (-not $Test) { $dailyArgs += '--post' }
+if ($drive) { $dailyArgs += @('--marks', (Join-Path $drive 'ClaudeWorkspace\threads-scheduled')) }   # 스레드 웹 예약해 둔 글은 건너뜀 (2026-11-14)
 $dailyLog = @(& node @dailyArgs 2>&1 | ForEach-Object { "$_" })
 $dailyCode = $LASTEXITCODE
 $dailyLog | ForEach-Object { Write-Host $_ }
