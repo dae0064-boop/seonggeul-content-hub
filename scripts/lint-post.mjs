@@ -196,6 +196,8 @@ const VARY2_COMPARE_RE = /(차이|비교|vs|VS|다른 점|뭐가 (더 )?(나을|
 // 홈판형 첫 덩어리 뒤 장면 — 조건·때를 그리는 말 ("…받으면", "…날", "…순간", "예를 들어")
 const VARY2_SCENE_RE = /(면[\s,.]|면$|예를 들어|이맘때|이런 분|기 쉬워요|경우가 많아요|순간|그때|[가-힣] 날|때[\s,.]|때$)/;
 const VARY2 = { greet: 2, close: 2, heads: 4, emphMin: 2, bracket: 5, titleType: 4, cardShape: 2, homefeed: 3, day: 10 };
+// 2026-11-14 사용자 "앞으로 블로그 조회수 홈판 유입되도록 시도해보자" — 11/23 원고부터 홈판형 하루 5편(검색형 5편), 상황 제목도 5편까지. 일요일 주간 보고에서 판정
+const HF5_FROM = '2026-11-23';
 const OLD_TAIL = /hospital waiting room, pharmacy counter, community center, home living room|do not add other large objects/i;
 const VAR = { theme: 1, place: 1, light: 3, evening: 2, shot: 2, mood: 2, faceTouch: 2, olds: 3, papers: 2 };
 const FACE_TOUCH = ['생각', '궁금'];
@@ -911,6 +913,7 @@ for (const file of files) {
     const sib = daySibs(dir, dated);
     const sibs = sib.map((f) => { try { return parsePost(fs.readFileSync(dir + f, 'utf8')); } catch { return { blocks: [] }; } });
     const done = sib.length >= VARY2.day;
+    const hfN = dated >= HF5_FROM ? 5 : VARY2.homefeed;
     const qn = (p) => (p.blocks || []).filter((b) => b.type === 'quote').length;
     const myQ = qn(post);
     const same = (fn) => sibs.filter(fn).length;
@@ -918,11 +921,12 @@ for (const file of files) {
     if (post.greet && (n = same((p) => p.greet === post.greet)) > VARY2.greet) errors.push(`같은 날(${dated}) 인사 ${post.greet}번이 ${n}편 — 같은 번호 ${VARY2.greet}편까지 (greet 1~6 을 돌려 쓰세요)`);
     if (post.close && (n = same((p) => p.close === post.close)) > VARY2.close) errors.push(`같은 날(${dated}) 닫는 인사 ${post.close}번이 ${n}편 — 같은 번호 ${VARY2.close}편까지 (close 1~5 를 돌려 쓰세요)`);
     if ((n = same((p) => qn(p) === myQ)) > VARY2.heads) errors.push(`같은 날(${dated}) 소제목 ${myQ}개 글이 ${n}편 — 같은 개수 ${VARY2.heads}편까지 (짧은형 4~5 · 기본 6~7 · 긴형 8)`);
-    if (post.titleType && (n = same((p) => p.titleType === post.titleType)) > VARY2.titleType) errors.push(`같은 날(${dated}) 제목 모양 '${post.titleType}' ${n}편 — 같은 모양 ${VARY2.titleType}편까지 (질문·숫자·상황·비교)`);
+    const ttMax = post.titleType === '상황' ? Math.max(VARY2.titleType, hfN) : VARY2.titleType;
+    if (post.titleType && (n = same((p) => p.titleType === post.titleType)) > ttMax) errors.push(`같은 날(${dated}) 제목 모양 '${post.titleType}' ${n}편 — 같은 모양 ${ttMax}편까지 (질문·숫자·상황·비교)`);
     const brNum = (p) => { const tb = titleBracket(p.title || ''); return !!tb && /\d/.test(tb[1]); };
     if (brNum(post) && (n = same(brNum)) > VARY2.bracket) errors.push(`같은 날(${dated}) 끝 괄호 숫자 제목이 ${n}편 — 하루 ${VARY2.bracket}편까지 (나머지는 괄호 없이)`);
     const hf = same((p) => p.slot === '홈판');
-    if (done ? hf !== VARY2.homefeed : hf > VARY2.homefeed) errors.push(`같은 날(${dated}) 홈판형(slot: 홈판) ${hf}편 — 하루 ${VARY2.homefeed}편 (나머지 ${VARY2.day - VARY2.homefeed}편은 검색형)`);
+    if (done ? hf !== hfN : hf > hfN) errors.push(`같은 날(${dated}) 홈판형(slot: 홈판) ${hf}편 — 하루 ${hfN}편 (나머지 ${VARY2.day - hfN}편은 검색형)`);
     const em = { A: 0, B: 0, C: 0 };
     for (const p of sibs) if (p.emph in em) em[p.emph]++;
     const need = Object.values(em).reduce((a, x) => a + Math.max(0, VARY2.emphMin - x), 0);
