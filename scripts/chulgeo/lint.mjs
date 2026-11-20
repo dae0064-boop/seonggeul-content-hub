@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { fileURLToPath } from 'node:url';
 /**
  * 다와이철거 홍보 블로그 원고 검사기 (2026-10-26). 규칙 정본은 content/chulgeo/README.md.
  * 성글벙글 검사기(lint-post.mjs)와 따로 돈다 — 기준이 다르다.
@@ -11,7 +12,7 @@ import path from 'node:path';
 import { parsePost } from '../lib/parse-post.mjs';
 import { checkCard } from '../lib/overlay.mjs';
 
-const ROOT = path.join(path.dirname(new URL(import.meta.url).pathname), '..', '..');
+const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const POSTS = path.join(ROOT, 'content', 'chulgeo', 'posts');
 const PLANS = path.join(ROOT, 'content', 'chulgeo', 'image-plans');
 
@@ -43,7 +44,7 @@ const BANNED = [
   [/무조건/, '무조건'], [/100\s*%/, '100%'], [/완벽/, '완벽'], [/국내\s*유일|유일한 업체/, '유일'],
   [/무료/, '무료 (확인 안 됨)'], [/추가\s*(금|비용|요금)\s*(이\s*)?(없|0|제로|절대)/, '추가금 없음 (확인 안 됨)'],
   [/면허|허가\s*(업체|받은|를 받|번호)/, '면허·허가 (확인 안 됨)'], [/보험\s*(가입|에 가입|처리)/, '배상 보험 (확인 안 됨)'],
-  [/후기/, '후기 (받은 후기가 없다)'], [/카카오톡|카톡/, '카카오톡 (ID 없음 — 전화·문자만)'],
+  [/후기/, '후기 (받은 후기가 없다)'], [/카카오톡\s*(ID|아이디)\s*[:：]|pf\.kakao|open\.kakao/, '카카오톡 ID·주소 (받지 않았다 — "블로그 메인 카카오톡 버튼"으로만 안내)'],
   [/저희가 (작업|시공)한 (현장|사진)|실제 (작업|시공) 사진/, '실제 현장 사진처럼 쓰기 (예시 이미지다)'],
 ];
 const MONEY = /\d[\d,.]*\s*(만\s*|천\s*|억\s*)?원|￦|₩/;
