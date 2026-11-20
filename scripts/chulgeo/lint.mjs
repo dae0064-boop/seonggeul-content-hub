@@ -11,6 +11,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { parsePost } from '../lib/parse-post.mjs';
 import { checkCard } from '../lib/overlay.mjs';
+import { VARY_FROM, MOODS, SHOTS, THEMES, GREETINGS, lookOf } from './vary.mjs';
 
 const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const POSTS = path.join(ROOT, 'content', 'chulgeo', 'posts');
@@ -63,7 +64,7 @@ function load(file) {
 
 /** 겹침 비교용 본문 (인사·연락처·사진 안내 빼고) */
 function bodyText(post) {
-  const fixed = new Set([...GREETING, ...CONTACT, ...INQUIRY, PHOTO_NOTE]);
+  const fixed = new Set([...GREETING, ...GREETINGS.flat(), ...CONTACT, ...INQUIRY, PHOTO_NOTE]);
   return post.blocks.filter((b) => b.type !== 'image').flatMap((b) => b.lines.map((l) => l.t)).filter((t) => !fixed.has(t)).join('');
 }
 function shingles(s, n = 10) {
@@ -89,7 +90,9 @@ export function lintOne(file, others = []) {
   if (post.mainKeyword && !REGIONS.some((r) => post.mainKeyword.includes(r))) errors.push(`main_keyword 에 지역이 없음 (${REGIONS.join('·')})`);
   if (post.mainKeyword && !post.title.startsWith(post.mainKeyword)) errors.push('제목은 메인 키워드로 시작');
   if (post.title.length > 40) errors.push(`제목 40자 안쪽 (지금 ${post.title.length})`);
-  if (post.category) errors.push(`category 는 비워 둔다 (블로그에 카테고리를 만든 뒤 README 를 고치고 쓴다): ${post.category}`);
+  if (post.category) errors.push(`category 는 비워 둔다 (발행 때 제목으로 저절로 고른다 — scripts/chulgeo/category.mjs): ${post.category}`);
+  const vary = date && date >= VARY_FROM; // 2026-11-23 원고부터 글 모양 돌려 쓰기 (vary.mjs)
+  const v = { greet: meta.greet || '' };
   if (meta.topic !== '인테리어·DIY') errors.push('topic: 인테리어·DIY');
   const pa = /^(\d{4}-\d{2}-\d{2}) (\d{2}:\d{2})$/.exec(post.publishAt);
   if (!pa) errors.push('publish_at: YYYY-MM-DD HH:MM');
@@ -109,7 +112,9 @@ export function lintOne(file, others = []) {
   const [b0, b1] = blocks;
   if (!(b0?.type === 'p' && b0.lines.length <= 2 && b0.lines[0].t !== '안녕하세요')) errors.push('맨 앞은 질문·사실 1~2줄 (발행 때 인용구가 된다)');
   else if (!noSpace(b0.lines.map((l) => l.t).join('')).includes(noSpace(post.mainKeyword))) errors.push('첫 1~2줄에 메인 키워드');
-  if (!(b1?.type === 'p' && b1.lines.length === 2 && b1.lines[0].t === GREETING[0] && b1.lines[1].t === GREETING[1])) errors.push(`둘째 덩어리는 인사 두 줄 그대로: ${GREETING.join(' / ')}`);
+  const G = vary ? GREETINGS[Number(meta.greet) - 1] : GREETING;
+  if (vary && !G) errors.push(`greet: 1~${GREETINGS.length} 를 프런트매터에 (인사 돌려 쓰기 — vary.mjs GREETINGS)`);
+  else if (!(b1?.type === 'p' && b1.lines.length === 2 && b1.lines[0].t === G[0] && b1.lines[1].t === G[1])) errors.push(`둘째 덩어리는 인사 두 줄 그대로: ${G.join(' / ')}`);
   if (b0?.lines?.some((l) => l.s || l.segs)) errors.push('첫 줄에는 색 강조를 넣지 않는다');
 
   // 연락처 블록
@@ -221,6 +226,14 @@ export function lintOne(file, others = []) {
     else {
       const tl = String(first.overlay.title || '').split('\n');
       if (tl.length !== 2 || tl.some((t) => t.length > 10)) errors.push('대표사진 글씨는 두 줄, 한 줄 10자 안쪽');
+      if (vary) {
+        v.mood = plan.mood; v.shot = first.shot; v.look = lookOf(first.overlay); v.theme = v.look === 'hl' ? '' : first.overlay.theme || '';
+        if (!MOODS[plan.mood]) errors.push(`계획서 mood: ${Object.keys(MOODS).join('·')} 중 하나 (글 전체 빛·분위기)`);
+        else if (pi.some((im) => im.kind !== 'card' && !(im.prompt || '').includes(MOODS[plan.mood]))) errors.push('그림 문장에 mood 가 안 들어감 — node scripts/chulgeo/plan.mjs 로 다시 채우기');
+        if (!SHOTS[first.shot]) errors.push(`1번 shot: ${Object.keys(SHOTS).join('·')} 중 하나 (대표사진 구도)`);
+        else if (!(first.prompt || '').includes(SHOTS[first.shot])) errors.push('1번 그림 문장에 shot 이 안 들어감 — plan.mjs 로 다시 채우기');
+        if (v.look !== 'hl' && !THEMES.includes(v.theme)) errors.push(`대표사진 글씨 모양 ${v.look} 은 theme: ${THEMES.join('·')} 중 하나`);
+      }
     }
   }
 
@@ -246,7 +259,7 @@ export function lintOne(file, others = []) {
   }
   if (worst.r > 0.2) errors.push(`본문이 ${worst.slug} 와 ${(worst.r * 100).toFixed(0)}% 겹침 (20% 이하 — 유사문서)`);
 
-  return { file, slug, date, post, errors, warns, stats: { chars: chars.length, mk, red, blue, yellow, quotes: quotes.length, qa, overlap: Math.round(worst.r * 100) } };
+  return { file, slug, date, post, errors, warns, vary: vary ? v : null, stats: { chars: chars.length, mk, red, blue, yellow, quotes: quotes.length, qa, overlap: Math.round(worst.r * 100) } };
 }
 
 /** 같은 날 원고 섞기 (README 3) */
@@ -263,6 +276,16 @@ function lintDay(results) {
     const mok = rs.filter((r) => isMokgong(r.post.mainKeyword)).length;
     if (d >= TEN_FROM && mok > 1) errors.push(`${d}: 목공 글(메인 키워드에 목공·목수)은 하루 1편까지 — 철거 위주, 목공은 간혹 (지금 ${mok})`);
     if (new Set(times).size !== times.length) errors.push(`${d}: 예약 시각이 겹침 (${times.join(', ')})`);
+    if (d >= VARY_FROM) { // 글 모양 돌려 쓰기 — 같은 날 같은 것이 몰리지 않게 (vary.mjs)
+      const vs = rs.map((r) => r.vary).filter(Boolean);
+      const top = (k) => { const c = {}; for (const x of vs) if (x[k]) c[x[k]] = (c[x[k]] || 0) + 1; return Object.entries(c).sort((a, b) => b[1] - a[1]); };
+      const cap = (k, n, name) => { const [w] = top(k); if (w && w[1] > n) errors.push(`${d}: 같은 ${name}(${w[0]}) ${w[1]}편 — ${n}편까지`); };
+      cap('shot', 2, '대표사진 구도'); cap('look', 3, '대표사진 글씨 모양'); cap('mood', 3, '빛·분위기'); cap('theme', 2, '글씨 색'); cap('greet', 4, '인사');
+      if (vs.filter((x) => x.shot).length >= 8) {
+        if (top('shot').length < 5) errors.push(`${d}: 대표사진 구도 5가지 이상 (지금 ${top('shot').length})`);
+        if (top('look').length < 3) errors.push(`${d}: 대표사진 글씨 모양 3가지 이상 (지금 ${top('look').length})`);
+      }
+    }
     if (rs.length >= 10) {
       const regions = new Set(rs.map((r) => REGIONS.find((g) => r.post.mainKeyword.includes(g))));
       if (regions.size < 5) errors.push(`${d}: 지역 5곳 이상 섞기 (지금 ${[...regions].join('·')})`);

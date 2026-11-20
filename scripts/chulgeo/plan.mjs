@@ -11,17 +11,24 @@
  *       { "n": 1, "scene": "wide view of ...", "overlay": { "kind": "thumb", "title": "인천 아파트\n철거 기간" } },
  *       { "n": 4, "kind": "card", "card": { "type": "steps", "title": "...", "items": [...] } }, ... ] }
  * 다시 돌려도 된다 (scene 이 그대로면 prompt 도 같다).
+ *
+ * 2026-11-23 원고부터 (2026-11-20 사용자 — "철거 글이 너무 똑같은 느낌"):
+ *   계획서 "mood" (글 전체 빛·분위기, MOODS 중 하나) · 1번 "shot" (대표사진 구도, SHOTS 중 하나)
+ *   · 1번 overlay look/style/theme (대표사진 글씨 모양 — content/chulgeo/README.md 4 "돌려 쓰기") 를 적는다.
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { parsePost } from '../lib/parse-post.mjs';
 
-export const STYLE = 'Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops.';
+export { MOODS, SHOTS, styleFor } from './vary.mjs';
+import { SHOTS, styleFor } from './vary.mjs';
+export const STYLE = styleFor('day');
 export const PEOPLE = 'If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly.';
 export const NO_TEXT = 'Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.';
 const THUMB = 'Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds.';
 
-const ROOT = path.join(path.dirname(new URL(import.meta.url).pathname), '..', '..');
+const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const files = process.argv.slice(2);
 if (!files.length) { console.error('사용법: node scripts/chulgeo/plan.mjs content/chulgeo/image-plans/<슬러그>.json'); process.exit(1); }
 
@@ -36,7 +43,9 @@ for (const f of files) {
     if (im.kind === 'card') return { ...out, kind: 'card', card: im.card };
     const scene = im.scene || '';
     out.scene = scene;
-    out.prompt = [`Camera and composition: ${scene}`, im.overlay?.kind === 'thumb' ? THUMB : '', STYLE, PEOPLE, NO_TEXT].filter(Boolean).join(' ');
+    if (im.shot) out.shot = im.shot;
+    const shot = im.shot && SHOTS[im.shot] ? `Shot type: ${SHOTS[im.shot]}` : '';
+    out.prompt = [`Camera and composition: ${scene}`, shot, im.overlay?.kind === 'thumb' ? THUMB : '', styleFor(plan.mood), PEOPLE, NO_TEXT].filter(Boolean).join(' ');
     if (im.overlay) out.overlay = im.overlay;
     return out;
   });

@@ -33,6 +33,7 @@
    - 실제 있었던 현장처럼 지어내지 않는다. 법령·안전 수치는 1차 원문으로 확인한 것만.
    - 같은 날·지난 글과 같은 문장을 쓰지 않는다 (검사기가 겹침 20% 넘으면 막는다). 도입·강점 문단도 글마다 다른 말로.
 5. 그림 계획서 `content/chulgeo/image-plans/<같은 슬러그>.json` — 장면(scene)만 영어로 짧게, 1번은 overlay thumb(두 줄, 한 줄 10자 안쪽), 정보 카드 0~3장(kind card).
+   **🎨 11/23 원고부터 돌려 쓰기** (2026-11-20 사용자 "철거 글이 너무 똑같은 느낌", README 4 "돌려 쓰기"): 계획서 `mood`(빛), 1번 `shot`(구도 — scene 도 그 구도로), 1번 overlay 글씨 모양(look·style·theme), 원고 `greet: 1~4`(인사). 같은 날 구도·글씨 모양·빛·인사가 몰리지 않게 섞는다 — 검사기가 센다.
    `node scripts/chulgeo/plan.mjs <계획서>` 로 title·prompt 를 채운다. 8장 모두 다른 장소·구도.
 6. `node scripts/build-post.mjs content/chulgeo/posts/D-*.md` → `node scripts/chulgeo/lint.mjs content/chulgeo/posts/D-*.md` 가 모두 ✅ 일 때까지 고친다.
 7. `docs/STATUS.md` 의 "다와이철거" 항목에 한 줄(날짜·회차, 쓴 편 메인 키워드) 갱신. 커밋 → PR → `검사` 통과 → merge.
