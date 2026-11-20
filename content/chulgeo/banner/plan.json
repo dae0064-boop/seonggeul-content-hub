@@ -1,0 +1,36 @@
+{
+  "slug": "chulgeo-banner",
+  "brand": "다와이철거",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "카드 1 주거 철거 — 타일을 걷어 낸 아파트 욕실",
+      "prompt": "Camera and composition: eye-level view into a Korean apartment bathroom during demolition, wall tiles removed showing bare grey cement, bathtub taken out, a few rubble bags and a work lamp on the floor, tidy and organized site. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. No people. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "카드 2 상가·원상복구 — 비워진 빈 상가",
+      "prompt": "Camera and composition: wide view of an empty Korean ground-floor shop after restoration to its original state, bare white walls, clean concrete floor swept clean, glass storefront letting in soft daylight, nothing left inside. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. No people. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "카드 3 목공 — 새 각재로 짠 벽 틀 (손만)",
+      "prompt": "Camera and composition: interior of a Korean apartment room after demolition, a new light-colored wooden stud frame for a partition wall being built, neat stacks of lumber and a circular saw on sawhorses, fine sawdust on the floor, warm daylight. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. Only a pair of hands in white work gloves appears at the edge of the frame, measuring a wooden board with a tape measure; no head, no face, no shoulders, no body visible. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "배너 바탕 — 어둡고 차분한 철거가 끝난 빈 거실",
+      "prompt": "Camera and composition: wide, low-key moody view of an empty Korean apartment living room after full demolition, bare concrete walls and floor swept clean, dim evening light from one window on the right side, deep charcoal shadows on the left half so text can be placed there, calm and clean atmosphere. Realistic documentary photograph taken with a full-frame camera, true-to-life textures of cement, honest on-site look. No people. Do not draw any written words, letters, numbers or logos anywhere in the image. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "배너 바탕 (목공) — 어둡고 차분한 목공 현장",
+      "prompt": "Camera and composition: wide, low-key moody view of a Korean apartment interior during carpentry work after demolition, a new light wooden stud partition frame and neat stacks of lumber on the right side catching warm light from one window, a sawhorse with a circular saw, fine sawdust on a clean concrete floor, the left half of the image falls into deep charcoal shadow with plain dark wall so text can be placed there, calm and tidy atmosphere. Realistic documentary photograph taken with a full-frame camera, true-to-life textures of wood and cement, honest on-site look. No people. Do not draw any written words, letters, numbers or logos anywhere in the image. No company names or brand marks."
+    }
+  ]
+}
