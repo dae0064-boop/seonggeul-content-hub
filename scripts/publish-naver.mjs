@@ -31,6 +31,7 @@ import { leadBlock } from './lib/parse-post.mjs';
 import { cleanCredit } from './lib/official-photo.mjs';
 import { topicFor } from './lib/naver-topic.mjs';
 import { pickSubFor, careTopFor } from './lib/naver-subcategory.mjs';
+import { chulgeoCategory } from './chulgeo/category.mjs';
 
 // ---------------------------------------------------------------- args
 function parseArgs(argv) {
@@ -1759,6 +1760,11 @@ async function main() {
   const post = JSON.parse(fs.readFileSync(args.post, 'utf8'));
   if (!post.title || !Array.isArray(post.blocks)) {
     throw new Error(`${args.post}: title 과 blocks 가 필요합니다. build-post.mjs 로 생성하세요.`);
+  }
+  // 다와이철거 글은 제목으로 파트 카테고리(주거 철거·상가·원상복구·목공)를 고른다 (2026-11-20 사용자). 공통 글은 게시판 그대로
+  if (/content[\\/]chulgeo[\\/]posts[\\/]/.test(path.resolve(args.post)) && !post.category) {
+    const c = chulgeoCategory(post.title);
+    if (c) { post.category = c; log(`철거 카테고리: ${c}`); }
   }
   // 쇼핑 커넥트 링크는 발행할 때 목록(content/affiliate/brandconnect-links.tsv)에서 찾는다. 없으면 대가성 문구·링크 자리를 빼고 낸다
   const shop = applyBrandconnect(post);
