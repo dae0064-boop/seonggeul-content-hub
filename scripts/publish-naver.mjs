@@ -1167,26 +1167,36 @@ async function insertImageAt(page, editor, label, file) {
  * 누른 뒤 다시 읽어 켜졌는지 확인한다. 상태를 못 읽으면 누르지 않고 화면을 남긴다(ai-toggle 덤프) — 이 단계 때문에 발행이 멈추지는 않는다.
  */
 async function setAiUsage(page, editor) {
+  // 2026-11-21: 11/21·11/22 예약 20편 모두 '스위치 못 찾음' — 실제 화면 모양은
+  // <div class="se-set-ai-mark-button"><p class="se-set-ai-mark-button-text">AI 활용 설정</p><button class="se-set-ai-mark-button-toggle">.
+  // 그림을 고르지 않으면 숨어 있어 innerText 가 비어 글자로 못 찾았다 → 이 단추를 직접 찾고(글자는 textContent 로), 숨어 있으면 그림을 눌러 보이게 한다.
   const read = () => editor.evaluate(() => {
+    const ON = /(^|[\s_-])(on|checked|active|is-on|selected|activated)($|[\s_-])/i;
+    const OFF = /(^|[\s_-])(off|unchecked|inactive)($|[\s_-])/i;
     const imgs = [...document.querySelectorAll('.se-component.se-image')];
     return imgs.map((im, i) => {
-      const cands = [...im.querySelectorAll('button, label, [role="switch"], [role="checkbox"], [aria-checked], [aria-pressed], input[type="checkbox"], span, div')]
-        .filter((e) => /AI\s*활용/.test((e.innerText || e.getAttribute('aria-label') || '').trim()) && (e.innerText || '').length < 30);
-      const el = cands[cands.length - 1] || null;
-      if (!el) return { i, found: false };
-      const scope = el.closest('button, label, [role="switch"], [role="checkbox"]') || el;
-      const box = scope.querySelector('input[type="checkbox"]') || el.parentElement?.querySelector('input[type="checkbox"]');
+      let scope = im.querySelector('.se-set-ai-mark-button-toggle');
+      const known = !!scope;
+      if (!scope) {
+        const cands = [...im.querySelectorAll('button, label, [role="switch"], [role="checkbox"], [aria-checked], [aria-pressed], input[type="checkbox"], span, div, p')]
+          .filter((e) => /AI\s*활용/.test((e.textContent || e.getAttribute('aria-label') || '').trim()) && (e.textContent || '').length < 30);
+        const el = cands[cands.length - 1] || null;
+        if (!el) return { i, found: false };
+        scope = el.closest('.se-set-ai-mark-button')?.querySelector('button') || el.closest('button, label, [role="switch"], [role="checkbox"]') || el;
+      }
+      const wrap = scope.closest('.se-set-ai-mark-button') || scope;
+      const box = wrap.querySelector('input[type="checkbox"]');
       let on = null;
-      const aria = scope.getAttribute('aria-checked') ?? scope.getAttribute('aria-pressed') ?? scope.querySelector('[aria-checked]')?.getAttribute('aria-checked');
+      const aria = scope.getAttribute('aria-checked') ?? scope.getAttribute('aria-pressed') ?? wrap.querySelector('[aria-checked]')?.getAttribute('aria-checked');
+      const cls = [wrap, ...wrap.querySelectorAll('*')].map((e) => (typeof e.className === 'string' ? e.className : '')).join(' ');
       if (aria === 'true' || aria === 'false') on = aria === 'true';
       else if (box) on = !!box.checked;
-      else {
-        const cls = [scope, ...scope.querySelectorAll('*')].map((e) => (e.className && e.className.baseVal === undefined ? e.className : '')).join(' ');
-        if (/(^|[\s_-])(on|checked|active|is-on|selected)($|[\s_-])/i.test(cls)) on = true;
-        else if (/(^|[\s_-])(off|unchecked)($|[\s_-])/i.test(cls)) on = false;
-      }
+      else if (ON.test(cls)) on = true;
+      else if (OFF.test(cls)) on = false;
+      else if (known) on = false; // 알려진 단추에 켜짐 표시(클래스·aria)가 없으면 꺼진 것으로 본다 — 누른 뒤 다시 읽어 확인한다
       scope.setAttribute('data-sg-ai', String(i));
-      return { i, found: true, on, html: scope.outerHTML.slice(0, 300) };
+      const r = scope.getBoundingClientRect();
+      return { i, found: true, on, known, cls, visible: r.width > 0 && r.height > 0, html: wrap.outerHTML.slice(0, 300) };
     });
   }).catch(() => []);
   const first = await read();
@@ -1195,15 +1205,25 @@ async function setAiUsage(page, editor) {
     if (!r.found) { res.missing++; continue; }
     if (r.on === true) { res.on++; continue; }
     if (r.on === null) { res.unknown++; continue; }
+    if (!r.visible) {
+      // 그림을 눌러 골라야 단추가 보인다
+      await editor.locator('.se-component.se-image').nth(r.i).locator('img').first().click({ timeout: 4000 }).catch(() => {});
+      await sleep(500);
+    }
     const loc = editor.locator(`[data-sg-ai="${r.i}"]`).first();
     await loc.scrollIntoViewIfNeeded().catch(() => {});
     await loc.hover({ force: true }).catch(() => {});
-    await loc.click({ force: true, timeout: 4000 }).catch(() => {});
+    await loc.click({ timeout: 4000 }).catch(() => loc.click({ force: true, timeout: 4000 }).catch(() => {}));
     await sleep(600);
     const again = (await read())[r.i];
     if (again && again.on === true) { res.turned++; res.on++; }
-    else res.unknown++;
+    else {
+      res.unknown++;
+      // 클래스가 바뀌었는데 켜짐 표시를 못 읽은 경우: 다음에 고칠 수 있게 바뀐 모양을 남긴다
+      if (again && again.cls !== r.cls && !res.after) res.after = again.html;
+    }
   }
+  await page.keyboard.press('Escape').catch(() => {});
   if (res.unknown || res.missing) { await dump(page, 'ai-toggle'); res.sample = first.find((r) => r.found && r.on !== true)?.html || ''; }
   return res;
 }
@@ -2032,7 +2052,7 @@ async function main() {
     // ---- 그림마다 'AI 활용 설정' 켜기 (2026-11-14 사용자)
     if (report.image.ok) {
       const ai = await setAiUsage(page, editor);
-      log(`AI 활용 설정: 그림 ${ai.total}장 중 켜짐 ${ai.on} (이번에 켬 ${ai.turned})${ai.unknown ? ` · 상태 못 읽음 ${ai.unknown}` : ''}${ai.missing ? ` · 스위치 못 찾음 ${ai.missing}` : ''}${ai.sample ? ` · 모양: ${ai.sample.replace(/\s+/g, ' ').slice(0, 160)}` : ''}`);
+      log(`AI 활용 설정: 그림 ${ai.total}장 중 켜짐 ${ai.on} (이번에 켬 ${ai.turned})${ai.unknown ? ` · 상태 못 읽음 ${ai.unknown}` : ''}${ai.missing ? ` · 스위치 못 찾음 ${ai.missing}` : ''}${ai.sample ? ` · 모양: ${ai.sample.replace(/\s+/g, ' ').slice(0, 160)}` : ''}${ai.after ? ` · 누른 뒤: ${ai.after.replace(/\s+/g, ' ').slice(0, 200)}` : ''}`);
       if (ai.on < ai.total) manual.push(`그림 ${ai.total - ai.on}장의 'AI 활용 설정' 켜기 (자동으로 못 켬)`);
     }
     // ---- 인용구 위, 그림 위·아래 빈 줄 지우기 (사용자 지시 2026-10-02)
