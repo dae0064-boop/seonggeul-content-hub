@@ -1,0 +1,78 @@
+{
+ "slug": "2026-11-23-micheonggu-boheomgeum-chatgi",
+ "title": "미청구 보험금 찾기, 지난 3년 병원비 실손도 받을 수 있나요",
+ "source": "11/23(월) 12:20 네이버 원고 — 생활보장 검색형(제도 소식 · 금융위원회 11/19 보도자료), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 + 정보 카드. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "저녁 식탁 위에 펼쳐 둔 병원 영수증 묶음과 휴대폰 (대표사진)",
+   "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Setting: a Korean home dining table in the daytime. A small bundle of blank hospital receipts, a smartphone with a blank screen, a plain credit card and a pen neatly arranged on a soft rose-colored tablecloth. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: bright clear daylight, high key. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "overhead",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "overhead",
+   "thumb_theme": "rose",
+   "thumb_person": "없음",
+   "thumb_place": "주제",
+   "thumb_light": "밝은 낮",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "rose",
+    "font": "ptd",
+    "title": "미청구 보험금 찾기\n지금 해 볼까?"
+   },
+   "anchor": "small bundle of blank hospital receipts"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "미청구 보험금 찾기를 묻는 첫머리 카드",
+   "kind": "card",
+   "card": {
+    "type": "lead",
+    "keyword": "미청구 보험금",
+    "title": "지난 병원비\n실비 될까?",
+    "ask": "실손24 앱에서"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "달력을 넘기며 지난 병원 날짜를 짚어 보는 60대 여성",
+   "prompt": "Camera and composition: medium shot at a kitchen wall calendar. A Korean woman in her 60s in a lavender cardigan flipping back the pages of a plain wall calendar with blank squares and pointing at one day, calm and thoughtful. Background: bright kitchen with white cabinets. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a kitchen wall calendar",
+   "bg": "bright kitchen with white cabinets",
+   "anchor": "plain wall calendar"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "거실에서 휴대폰으로 카드 결제 내역을 넘겨 보는 50대 남성",
+   "prompt": "Camera and composition: medium shot on a living room sofa. A Korean man in his 50s in a dark green sweater scrolling a smartphone with a blank screen while holding a plain credit card, sitting on a sofa, calm. Background: cozy living room with a floor lamp. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot on a living room sofa",
+   "bg": "cozy living room with a floor lamp",
+   "anchor": "smartphone with a blank screen"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "동네 의원 접수대에서 휴대폰 화면을 보여 주는 70대 남성",
+   "prompt": "Camera and composition: medium shot at a clinic reception desk. A Korean man in his 70s in a beige padded jacket showing a smartphone with a blank screen to a smiling receptionist at a small neighborhood clinic reception desk. Background: clean small clinic lobby with light wood counter. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a clinic reception desk",
+   "bg": "clean small clinic lobby with light wood counter",
+   "anchor": "smartphone with a blank screen to a smiling receptionist"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "약국 계산대 앞에서 영수증 봉투를 받아 드는 40대 여성",
+   "prompt": "Camera and composition: medium shot at a pharmacy counter. A Korean woman in her 40s in a camel coat receiving a small paper envelope with a blank receipt at a neighborhood pharmacy counter, the pharmacist softly blurred, both calm. Background: bright pharmacy with neat shelves. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a pharmacy counter",
+   "bg": "bright pharmacy with neat shelves",
+   "anchor": "small paper envelope"
+  }
+ ]
+}
