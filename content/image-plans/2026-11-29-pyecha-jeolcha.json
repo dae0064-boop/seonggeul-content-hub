@@ -1,0 +1,82 @@
+{
+  "slug": "2026-11-29-pyecha-jeolcha",
+  "title": "폐차 절차, 폐차인수증명서 받은 뒤 말소등록은 언제까지 할까 (1개월)",
+  "source": "11/29 티스토리 원고 (11/22 저녁 미리 작성) 15:00",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "오래 탄 승용차 보닛 위에 가만히 얹은 60대 남성의 두 손 (대표사진)",
+      "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Close-up of a Korean man's weathered hands resting gently on the hood of an old sedan, a parking lot softly blurred behind. Expression: nodding with a reassuring smile, hands relaxed. Color theme: warm terracotta and cream tones with a soft gold accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "손만 크게 (얼굴 없음)",
+      "bg": "warm terracotta and cream tones with a soft gold accent",
+      "note": "대표",
+      "thumb_shot": "hands",
+      "thumb_theme": "burgundy",
+      "thumb_person": "60대 남성의 손",
+      "thumb_mood": "끄덕",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "burgundy",
+        "font": "jua",
+        "title": "폐차 절차\n차 보낸 뒤엔?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "폐차 절차에 대해 맞는지 틀리는지 풀어 보는 퀴즈 카드",
+      "kind": "card",
+      "card": {
+        "type": "quiz",
+        "title": "폐차 절차 O·X",
+        "items": [
+          "차만 넘기면 말소 끝",
+          "폐차장이 말소를 대신한다",
+          "번호판은 내가 챙긴다"
+        ],
+        "answers": [
+          "X",
+          "O",
+          "X"
+        ],
+        "where": "본문"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "폐차 절차에서 차를 보낸 뒤 챙길 순서를 적은 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "style": "memo",
+        "title": "차 보낸 뒤 순서",
+        "sub": "말소까지 마쳐야 끝",
+        "items": [
+          "등록된 해체재활용업자인지 확인",
+          "폐차인수증명서 꼭 받아 두기",
+          "말소등록 됐는지 조회"
+        ],
+        "memo": "한 달 안에 말소 확인해요",
+        "hl": 2
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "해 질 무렵 주차장 빈 칸에 내려앉은 노을빛",
+      "prompt": "Camera and composition: an empty parking space at sunset. An empty parking space in a quiet lot glowing in warm sunset light. Background color: warm terracotta and cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "an empty parking space at sunset",
+      "bg": "warm terracotta and cream",
+      "kind": "photo",
+      "photo": {
+        "query_en": "empty parking lot sunset",
+        "scene_en": "an empty parking space at sunset"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}

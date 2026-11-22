@@ -1,0 +1,635 @@
+{
+  "slug": "2026-11-26-toejikgeum-junganjeongsan",
+  "title": "퇴직금 중간정산, 전세금으로도 받을 수 있을까 (1회 한정)",
+  "category": "생활정보",
+  "tags": [
+    "퇴직금중간정산",
+    "전세금",
+    "무주택자",
+    "계속근로기간",
+    "퇴직금미리받기",
+    "중간정산사유",
+    "퇴직금중간정산조건",
+    "전세보증금",
+    "근로자퇴직급여보장법",
+    "퇴직금중도인출",
+    "의료비중간정산",
+    "퇴직금",
+    "직장인",
+    "생활제도",
+    "주택구입"
+  ],
+  "publishAt": "2026-11-26 12:40",
+  "relatedUrls": [
+    "https://seongdaeeyo.com/entry/%ED%87%B4%EC%A7%81%EA%B8%88-%EA%B3%84%EC%82%B0-%EB%B0%A9%EB%B2%95-%ED%8F%89%EA%B7%A0%EC%9E%84%EA%B8%88-3%EA%B0%9C%EC%9B%94%EB%A1%9C-%EA%B5%AC%ED%95%98%EA%B3%A0-%EC%9E%AC%EC%A7%81%EC%9D%BC%EC%88%98-%EB%84%A3%EB%8A%94-%EA%B3%B5%EC%8B%9D-30%EC%9D%BC%EB%B6%84",
+    "https://seongdaeeyo.com/entry/%ED%87%B4%EC%A7%81%EC%86%8C%EB%93%9D%EC%84%B8-%EA%B3%84%EC%82%B0-%EA%B7%BC%EC%86%8D%EC%97%B0%EC%88%98%EA%B3%B5%EC%A0%9C-%EB%B9%BC%EB%A9%B4-5%EC%B2%9C%EB%A7%8C-%EC%9B%90%EC%97%90-%EC%96%BC%EB%A7%88%EC%9D%BC%EA%B9%8C-68%EB%A7%8C-%EC%9B%90"
+  ],
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "퇴직금 미리 받기는 법이 정한 사유가 있을 때"
+        },
+        {
+          "t": "근로자가 요구해야 할 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "전세 계약 날짜는 다가오는데"
+        },
+        {
+          "t": "보증금이 조금 모자랄 때가 있죠."
+        },
+        {
+          "t": "그때 떠오르는 게 회사에 쌓인 퇴직금이에요."
+        },
+        {
+          "t": "\"이걸 지금 받을 수는 없을까?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘은 퇴직금 중간정산이"
+        },
+        {
+          "t": "어떤 사유에서만 되는지"
+        },
+        {
+          "t": "시행령 목록 그대로 정리해 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "먼저 결론이에요."
+        },
+        {
+          "t": "무주택자가 전세금을 부담할 때는",
+          "s": "yellow"
+        },
+        {
+          "t": "한 회사에서 한 번 퇴직금 중간정산이 돼요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "거실 탁자에 마주 앉아 계약서를 보며 이야기하는 30대 부부 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "퇴직금 중간정산, 언제나 되는 건 아니에요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "퇴직금 중간정산 사유를 확인하는 메모 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "근로자퇴직급여 보장법 제8조 제2항은"
+        },
+        {
+          "t": "주택구입 등 대통령령이 정한 사유로"
+        },
+        {
+          "t": "근로자가 요구하면 퇴직 전에 미리"
+        },
+        {
+          "t": "정산해 줄 수 있다고 적어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "정해진 사유가 없으면 회사와 합의해도",
+          "s": "red"
+        },
+        {
+          "t": "퇴직금 중간정산을 할 수 없어요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "사유는 시행령 제3조 제1항에 모여 있어요."
+        },
+        {
+          "t": "아래 체크 목록으로 하나씩 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "조문은 회사가 '지급할 수 있다'고 적어요."
+        },
+        {
+          "t": "사유가 맞으면 근로자가 요구하고"
+        },
+        {
+          "t": "회사가 정산해 주는 순서예요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "중간정산 사유 체크"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "시행령 제3조 제1항의 사유를 두 묶음으로 나눴어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 무주택자가 본인 명의로 집을 살 때"
+        },
+        {
+          "t": "✔ 무주택자가 전세금·보증금을 낼 때"
+        },
+        {
+          "t": "✔ 6개월 이상 요양 의료비가 클 때"
+        },
+        {
+          "t": "✔ 5년 안에 파산·개인회생 결정을 받았을 때"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 임금피크제를 시행할 때"
+        },
+        {
+          "t": "✔ 근로시간을 1일 1시간·1주 5시간 이상 줄일 때"
+        },
+        {
+          "t": "✔ 근로시간 단축 법 시행으로 퇴직금이 줄 때"
+        },
+        {
+          "t": "✔ 고용노동부가 고시한 재난 피해를 입었을 때"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이 가운데 하나라도 맞아야"
+        },
+        {
+          "t": "퇴직금 중간정산을 요구할 수 있어요."
+        },
+        {
+          "t": "위 목록 밖의 사정은 사유가 되지 않아요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "전세금과 주택 구입의 조건"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "퇴직금 중간정산이 되는 경우와 안 되는 경우를 비교한 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "두 사유 모두 '무주택자'가 출발점이에요."
+        },
+        {
+          "t": "집이 이미 있다면 전세금이든 구입이든"
+        },
+        {
+          "t": "이 사유로는 받을 수 없어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "주택 구입은 근로자 본인 명의여야 해요."
+        },
+        {
+          "t": "배우자 명의로 사는 집은 조문에 없어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "정리하면 무주택자 전세금, 본인 명의 주택은"
+        },
+        {
+          "t": "사유가 되고, 집이 이미 있을 때와"
+        },
+        {
+          "t": "배우자 명의는 이 두 사유로 볼 수 없어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "전세금·보증금 사유는 한 회사에서",
+          "s": "yellow"
+        },
+        {
+          "t": "일하는 동안 1회로 한정돼요.",
+          "s": "yellow"
+        },
+        {
+          "t": "그래서 다음 전세 때는 같은 사유로 다시 못 받아요."
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"부모님 병원비도 사유가 되나요?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "배우자와 부양가족도 들어가요."
+        },
+        {
+          "t": "다만 6개월 이상 요양과 금액 조건이 함께 붙어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "의료비 사유, 연봉의 12.5%"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "병원 복도 창가의 빈 의자와 햇살"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "의료비 사유는 계산이 하나 붙어요."
+        },
+        {
+          "t": "근로자 본인, 배우자, 부양가족이"
+        },
+        {
+          "t": "6개월 이상 요양이 필요한 질병·부상일 때예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그 의료비를 근로자가 부담한 금액이"
+        },
+        {
+          "t": "본인 연간 임금총액의 1천분의 125,",
+          "segs": [
+            {
+              "t": "본인 연간 임금총액의 "
+            },
+            {
+              "t": "1천분의 125",
+              "s": "blue"
+            },
+            {
+              "t": ","
+            }
+          ]
+        },
+        {
+          "t": "곧 12.5%를 넘어야 해요.",
+          "segs": [
+            {
+              "t": "곧 "
+            },
+            {
+              "t": "12.5%",
+              "s": "blue"
+            },
+            {
+              "t": "를 넘어야 해요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "연봉 4천만 원이라면 500만 원이 기준이에요."
+        },
+        {
+          "t": "요양 기간과 의료비 영수증을 함께 준비해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "요양이 6개월 이상 필요하다는 건"
+        },
+        {
+          "t": "의사의 진단서나 소견서로 보여 줘요."
+        },
+        {
+          "t": "의료비는 근로자가 실제로 낸 금액만 세요."
+        },
+        {
+          "t": "보험으로 돌려받은 몫을 빼고 계산하는 게 안전해요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "받은 뒤 달라지는 것"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "중간정산을 받으면 계속근로기간이"
+        },
+        {
+          "t": "정산한 때부터 새로 시작해요."
+        },
+        {
+          "t": "나중에 퇴직금은 그 뒤 기간으로 계산해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 8년 일하고 중간정산을 받은 뒤",
+          "segs": [
+            {
+              "t": "예를 들어 "
+            },
+            {
+              "t": "8년",
+              "s": "blue"
+            },
+            {
+              "t": " 일하고 중간정산을 받은 뒤"
+            }
+          ]
+        },
+        {
+          "t": "3년 더 일하고 퇴직했다면"
+        },
+        {
+          "t": "퇴직금은 남은 3년 계속근로기간 몫이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "계속근로기간이 새로 시작되면",
+          "s": "yellow"
+        },
+        {
+          "t": "나중에 오른 평균임금이 앞 기간에는 안 붙어요.",
+          "s": "yellow"
+        },
+        {
+          "t": "연봉이 앞으로 오를 회사라면 이 점까지 따져 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그만큼 퇴직할 때 받는 금액은 줄어든다는 뜻이에요.",
+          "s": "red"
+        },
+        {
+          "t": "회사는 퇴직 뒤 5년까지 증명 서류를 보관해요.",
+          "segs": [
+            {
+              "t": "회사는 퇴직 뒤 "
+            },
+            {
+              "t": "5년",
+              "s": "blue"
+            },
+            {
+              "t": "까지 증명 서류를 보관해요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "회사가 퇴직연금 확정기여형(DC)이라면"
+        },
+        {
+          "t": "중간정산이 아니라 같은 법 제22조의"
+        },
+        {
+          "t": "적립금 중도인출 규정을 따로 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "우리 회사가 어떤 퇴직급여 제도인지는"
+        },
+        {
+          "t": "인사팀이나 퇴직연금 가입 안내문에서 확인돼요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "퇴직금 중간정산 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "회사에 말하기 전에 이 세 가지만 봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 체크포인트",
+          "s": "green"
+        },
+        {
+          "t": "시행령 제3조 사유에 들어가는지",
+          "s": "green"
+        },
+        {
+          "t": "무주택자·본인 명의·1회 조건",
+          "s": "green"
+        },
+        {
+          "t": "받으면 계속근로기간이 새로 시작",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "퇴직금 중간정산은 '필요할 때'가 아니라"
+        },
+        {
+          "t": "'법이 정한 사유가 있을 때'만 열려요."
+        },
+        {
+          "t": "내 사유가 목록에 있는지부터 확인해 보세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분이라면 어떤 사유가 가장 가까우세요?"
+        },
+        {
+          "t": "\"전세\", \"의료비\" 중 하나로 남겨 주세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "사유와 조건은 근로자퇴직급여 보장법"
+        },
+        {
+          "t": "제8조·제22조와 같은 법 시행령 제3조를"
+        },
+        {
+          "t": "항목별로 옮겨 적으며 확인했어요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "퇴직금 중간정산, 사유 목록부터 대 봐요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">퇴직금 미리 받기는 법이 정한 사유가 있을 때<br>근로자가 요구해야 할 수 있어요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">전세 계약 날짜는 다가오는데<br>보증금이 조금 모자랄 때가 있죠.<br>그때 떠오르는 게 회사에 쌓인 퇴직금이에요.<br>&quot;이걸 지금 받을 수는 없을까?&quot;</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘은 퇴직금 중간정산이<br>어떤 사유에서만 되는지<br>시행령 목록 그대로 정리해 볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">먼저 결론이에요.<br><span style=\"background-color: #ffe94d;\"><b>무주택자가 전세금을 부담할 때는</b></span><br><span style=\"background-color: #ffe94d;\"><b>한 회사에서 한 번 퇴직금 중간정산이 돼요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 1] 거실 탁자에 마주 앉아 계약서를 보며 이야기하는 30대 부부 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>퇴직금 중간정산, 언제나 되는 건 아니에요</h2>\n<p data-ke-size=\"size16\">[이미지 2] 퇴직금 중간정산 사유를 확인하는 메모 카드</p>\n<p data-ke-size=\"size16\">근로자퇴직급여 보장법 제8조 제2항은<br>주택구입 등 대통령령이 정한 사유로<br>근로자가 요구하면 퇴직 전에 미리<br>정산해 줄 수 있다고 적어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>정해진 사유가 없으면 회사와 합의해도</b></span><br><span style=\"color: #ff0010;\"><b>퇴직금 중간정산을 할 수 없어요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">사유는 시행령 제3조 제1항에 모여 있어요.<br>아래 체크 목록으로 하나씩 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">조문은 회사가 '지급할 수 있다'고 적어요.<br>사유가 맞으면 근로자가 요구하고<br>회사가 정산해 주는 순서예요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>중간정산 사유 체크</h2>\n<p data-ke-size=\"size16\">시행령 제3조 제1항의 사유를 두 묶음으로 나눴어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">✔ 무주택자가 본인 명의로 집을 살 때<br>✔ 무주택자가 전세금·보증금을 낼 때<br>✔ 6개월 이상 요양 의료비가 클 때<br>✔ 5년 안에 파산·개인회생 결정을 받았을 때</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">✔ 임금피크제를 시행할 때<br>✔ 근로시간을 1일 1시간·1주 5시간 이상 줄일 때<br>✔ 근로시간 단축 법 시행으로 퇴직금이 줄 때<br>✔ 고용노동부가 고시한 재난 피해를 입었을 때</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이 가운데 하나라도 맞아야<br>퇴직금 중간정산을 요구할 수 있어요.<br>위 목록 밖의 사정은 사유가 되지 않아요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>전세금과 주택 구입의 조건</h2>\n<p data-ke-size=\"size16\">[이미지 3] 퇴직금 중간정산이 되는 경우와 안 되는 경우를 비교한 카드</p>\n<p data-ke-size=\"size16\">두 사유 모두 '무주택자'가 출발점이에요.<br>집이 이미 있다면 전세금이든 구입이든<br>이 사유로는 받을 수 없어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">주택 구입은 근로자 본인 명의여야 해요.<br>배우자 명의로 사는 집은 조문에 없어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">정리하면 무주택자 전세금, 본인 명의 주택은<br>사유가 되고, 집이 이미 있을 때와<br>배우자 명의는 이 두 사유로 볼 수 없어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>전세금·보증금 사유는 한 회사에서</b></span><br><span style=\"background-color: #ffe94d;\"><b>일하는 동안 1회로 한정돼요.</b></span><br>그래서 다음 전세 때는 같은 사유로 다시 못 받아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<blockquote data-ke-style=\"style3\">&quot;부모님 병원비도 사유가 되나요?&quot;</blockquote>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">배우자와 부양가족도 들어가요.<br>다만 6개월 이상 요양과 금액 조건이 함께 붙어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>의료비 사유, 연봉의 12.5%</h2>\n<p data-ke-size=\"size16\">[이미지 4] 병원 복도 창가의 빈 의자와 햇살</p>\n<p data-ke-size=\"size16\">의료비 사유는 계산이 하나 붙어요.<br>근로자 본인, 배우자, 부양가족이<br>6개월 이상 요양이 필요한 질병·부상일 때예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그 의료비를 근로자가 부담한 금액이<br>본인 연간 임금총액의 <span style=\"color: #0078cb;\"><b>1천분의 125</b></span>,<br>곧 <span style=\"color: #0078cb;\"><b>12.5%</b></span>를 넘어야 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">연봉 4천만 원이라면 500만 원이 기준이에요.<br>요양 기간과 의료비 영수증을 함께 준비해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">요양이 6개월 이상 필요하다는 건<br>의사의 진단서나 소견서로 보여 줘요.<br>의료비는 근로자가 실제로 낸 금액만 세요.<br>보험으로 돌려받은 몫을 빼고 계산하는 게 안전해요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>받은 뒤 달라지는 것</h2>\n<p data-ke-size=\"size16\">중간정산을 받으면 계속근로기간이<br>정산한 때부터 새로 시작해요.<br>나중에 퇴직금은 그 뒤 기간으로 계산해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 <span style=\"color: #0078cb;\"><b>8년</b></span> 일하고 중간정산을 받은 뒤<br>3년 더 일하고 퇴직했다면<br>퇴직금은 남은 3년 계속근로기간 몫이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>계속근로기간이 새로 시작되면</b></span><br><span style=\"background-color: #ffe94d;\"><b>나중에 오른 평균임금이 앞 기간에는 안 붙어요.</b></span><br>연봉이 앞으로 오를 회사라면 이 점까지 따져 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>그만큼 퇴직할 때 받는 금액은 줄어든다는 뜻이에요.</b></span><br>회사는 퇴직 뒤 <span style=\"color: #0078cb;\"><b>5년</b></span>까지 증명 서류를 보관해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">회사가 퇴직연금 확정기여형(DC)이라면<br>중간정산이 아니라 같은 법 제22조의<br>적립금 중도인출 규정을 따로 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">우리 회사가 어떤 퇴직급여 제도인지는<br>인사팀이나 퇴직연금 가입 안내문에서 확인돼요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>퇴직금 중간정산 정리</h2>\n<p data-ke-size=\"size16\">회사에 말하기 전에 이 세 가지만 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 체크포인트</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>시행령 제3조 사유에 들어가는지</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>무주택자·본인 명의·1회 조건</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>받으면 계속근로기간이 새로 시작</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">퇴직금 중간정산은 '필요할 때'가 아니라<br>'법이 정한 사유가 있을 때'만 열려요.<br>내 사유가 목록에 있는지부터 확인해 보세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분이라면 어떤 사유가 가장 가까우세요?<br>&quot;전세&quot;, &quot;의료비&quot; 중 하나로 남겨 주세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">사유와 조건은 근로자퇴직급여 보장법<br>제8조·제22조와 같은 법 시행령 제3조를<br>항목별로 옮겨 적으며 확인했어요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>퇴직금 중간정산, 사유 목록부터 대 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><b>▶ 함께 보면 좋은 글</b><br><a href=\"https://seongdaeeyo.com/entry/%ED%87%B4%EC%A7%81%EA%B8%88-%EA%B3%84%EC%82%B0-%EB%B0%A9%EB%B2%95-%ED%8F%89%EA%B7%A0%EC%9E%84%EA%B8%88-3%EA%B0%9C%EC%9B%94%EB%A1%9C-%EA%B5%AC%ED%95%98%EA%B3%A0-%EC%9E%AC%EC%A7%81%EC%9D%BC%EC%88%98-%EB%84%A3%EB%8A%94-%EA%B3%B5%EC%8B%9D-30%EC%9D%BC%EB%B6%84\">퇴직금 계산 방법, 평균임금 3개월로 구하고 재직일수 넣는 공식 (30일분)</a><br><a href=\"https://seongdaeeyo.com/entry/%ED%87%B4%EC%A7%81%EC%86%8C%EB%93%9D%EC%84%B8-%EA%B3%84%EC%82%B0-%EA%B7%BC%EC%86%8D%EC%97%B0%EC%88%98%EA%B3%B5%EC%A0%9C-%EB%B9%BC%EB%A9%B4-5%EC%B2%9C%EB%A7%8C-%EC%9B%90%EC%97%90-%EC%96%BC%EB%A7%88%EC%9D%BC%EA%B9%8C-68%EB%A7%8C-%EC%9B%90\">퇴직소득세 계산, 근속연수공제 빼면 5천만 원에 얼마일까 (68만 원)</a></p>"
+}

@@ -1,0 +1,91 @@
+{
+ "slug": "2026-11-29-yubang-jojikgeomsa-silbi",
+ "title": "유방 조직검사 실비, 결과가 양성일 때와 암일 때 차이",
+ "source": "11/29(일) 15:00 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 + 정보 카드. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "유방외과 진료실 창가 탁자에 놓인 빈 검사 결과 봉투와 따뜻한 차 한 잔 (대표사진)",
+   "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Setting: a calm breast clinic consultation room by the window. A plain test result envelope, a cup of warm tea, a folded pastel scarf and a small notebook neatly arranged on a wooden table by the window of a breast clinic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft overcast daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "overhead",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "overhead",
+   "thumb_theme": "forest",
+   "thumb_person": "없음",
+   "thumb_place": "주제",
+   "thumb_light": "흐린 날",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "forest",
+    "font": "jua",
+    "title": "유방 조직검사\n결과 따라?"
+   },
+   "anchor": "plain test result envelope"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "조직검사 결과가 양성일 때와 암일 때 실손 계산을 비교한 카드",
+   "kind": "card",
+   "card": {
+    "type": "compare",
+    "title": "결과에 따라 달라요",
+    "ask": "결과 따라 달라져?",
+    "heads": [
+     "양성",
+     "암"
+    ],
+    "items": [
+     [
+      "일반 질병",
+      "산정특례"
+     ],
+     [
+      "가입한 특약",
+      "중증 비급여"
+     ]
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "유방외과 처치실 앞 대기 의자에 앉아 순서를 기다리는 40대 여성",
+   "prompt": "Camera and composition: medium shot in a clinic waiting area. A Korean woman in her 40s sitting calmly on a waiting chair outside a breast clinic procedure room. Background: soft beige clinic hallway with plants. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a clinic waiting area",
+   "bg": "soft beige clinic hallway with plants",
+   "anchor": "breast clinic procedure room"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "병원 원무과 창구에서 산정특례 등록 서류를 건네받는 50대 남편의 손",
+   "prompt": "Camera and composition: close-up of hands at a hospital counter. A Korean husband's hands receiving a plain registration form across a hospital billing counter. Background: clean hospital administration area. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands at a hospital counter",
+   "bg": "clean hospital administration area",
+   "anchor": "hospital billing counter"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "집 거실 탁자에 진료비 영수증과 세부내역서를 날짜순으로 펼친 모습",
+   "prompt": "Camera and composition: top-down view of a living room table. Blank medical receipts and itemized bills spread in date order on a living room table with a pen. Background: light wood table. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "top-down view of a living room table",
+   "bg": "light wood table",
+   "anchor": "blank medical receipts"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "햇살 드는 창가에서 머그잔을 들고 편안하게 웃는 40대 여성",
+   "prompt": "Camera and composition: medium shot by a sunny window. A Korean woman in her 40s holding a mug by a sunny window, smiling comfortably. Background: bright living room with sheer curtains. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot by a sunny window",
+   "bg": "bright living room with sheer curtains",
+   "anchor": "mug"
+  }
+ ]
+}

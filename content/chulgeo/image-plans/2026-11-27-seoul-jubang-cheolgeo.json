@@ -1,0 +1,86 @@
+{
+  "slug": "2026-11-27-seoul-jubang-cheolgeo",
+  "brand": "다와이철거",
+  "mood": "morning",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "상부장을 떼어 내는 장갑 낀 손 (대표사진)",
+      "scene": "two gloved hands unscrewing and lifting an old wall-mounted kitchen upper cabinet off the wall in a Korean apartment kitchen.",
+      "shot": "hands",
+      "prompt": "Camera and composition: two gloved hands unscrewing and lifting an old wall-mounted kitchen upper cabinet off the wall in a Korean apartment kitchen. Shot type: close-up of two hands in work gloves doing the work; only the hands and forearms are visible, no face or body. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "서울 주방 철거\n타일도 뜯을까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "싱크대와 상부장이 그대로 있는 오래된 주방",
+      "scene": "an old Korean apartment kitchen with a worn sink counter and upper cabinets still in place, before any work.",
+      "prompt": "Camera and composition: an old Korean apartment kitchen with a worn sink counter and upper cabinets still in place, before any work. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "싱크대를 떼어 낸 자리에 드러난 벽 타일",
+      "scene": "the wall behind a removed sink cabinet showing old white tiles with stains and capped water pipes.",
+      "prompt": "Camera and composition: the wall behind a removed sink cabinet showing old white tiles with stains and capped water pipes. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "주방 철거 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "주방 철거 순서",
+        "items": [
+          "수도·가스 확인",
+          "상부장 철거",
+          "상판·싱크대 철거",
+          "주방 타일 걷기",
+          "배관 막음과 반출"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "상부장을 뗀 벽에 남은 고정 자국과 전선",
+      "scene": "a kitchen wall after the upper cabinets are removed, showing screw holes, anchor marks and a coiled wire for the range hood.",
+      "prompt": "Camera and composition: a kitchen wall after the upper cabinets are removed, showing screw holes, anchor marks and a coiled wire for the range hood. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "보양재를 깔아 둔 거실과 주방 사이 통로",
+      "scene": "protective boards laid on the floor making a path from the kitchen through the living room to the front door.",
+      "prompt": "Camera and composition: protective boards laid on the floor making a path from the kitchen through the living room to the front door. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "주방 철거 궁금한 점을 담은 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "주방 철거 궁금한 점",
+        "items": [
+          "싱크대만 떼도 되나",
+          "타일 걷을 때 소음",
+          "키큰장도 떼나"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "싱크대와 상부장을 모두 뗀 빈 주방 벽",
+      "scene": "a completely empty kitchen wall with bare cement where the sink and cabinets used to be, floor swept clean.",
+      "prompt": "Camera and composition: a completely empty kitchen wall with bare cement where the sink and cabinets used to be, floor swept clean. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

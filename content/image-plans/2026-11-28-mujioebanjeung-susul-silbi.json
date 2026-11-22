@@ -1,0 +1,88 @@
+{
+ "slug": "2026-11-28-mujioebanjeung-susul-silbi",
+ "title": "무지외반증 수술 실비, 모양 교정이면 빠지나요 (입원 6시간)",
+ "source": "11/28(토) 11:20 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 + 정보 카드. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "정형외과 진료실에서 발 모형을 손가락으로 가리키는 손 (대표사진)",
+   "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Setting: a tidy orthopedic clinic consultation desk. Close-up of a doctor's hands in white coat sleeves pointing with one finger at the big toe joint of an anatomical foot model on an orthopedic clinic desk. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: cool clean white indoor light. Expression: pointing at the key object with one finger and a friendly smile. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "hands",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "hands",
+   "thumb_theme": "olive",
+   "thumb_person": "50대 정형외과 의사의 손",
+   "thumb_place": "주제",
+   "thumb_light": "흰 조명",
+   "thumb_mood": "가리킴",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "olive",
+    "font": "jua",
+    "title": "무지외반증\n외모개선일까?"
+   },
+   "anchor": "anatomical foot model"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "무지외반증 수술 실비를 묻는 O·X 퀴즈 카드",
+   "kind": "card",
+   "card": {
+    "type": "quiz",
+    "title": "무지외반증 O·X",
+    "items": [
+     "치료 목적이면 질병 수술",
+     "6시간 넘게 머물면 입원",
+     "보조기 값도 같이 나온다"
+    ],
+    "answers": [
+     "O",
+     "O",
+     "X"
+    ],
+    "where": "본문 아래"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "정형외과 진료실에서 의사가 빈 발 엑스레이 판독 화면을 펜으로 가리키는 장면",
+   "prompt": "Camera and composition: medium close-up at an orthopedic consultation desk. A Korean orthopedic doctor pointing with a pen at a blank foot x-ray image on a monitor, a patient's hands resting on the desk in the foreground. Background: clean white orthopedic consultation room with daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium close-up at an orthopedic consultation desk",
+   "bg": "clean white orthopedic consultation room with daylight",
+   "anchor": "blank foot x-ray image on a monitor"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "정형외과 병동 침대에 발에 붕대를 감고 앉아 있는 50대 여성",
+   "prompt": "Camera and composition: medium shot in a hospital ward. A Korean woman in her 50s sitting calmly on a hospital ward bed with her foot wrapped in a white bandage after bunion surgery, resting on a pillow. Background: bright orthopedic hospital ward with pale curtains. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a hospital ward",
+   "bg": "bright orthopedic hospital ward with pale curtains",
+   "anchor": "foot wrapped in a white bandage"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "집 책상 위에 빈 수술확인서와 진료비 영수증을 정리하는 손",
+   "prompt": "Camera and composition: close-up of hands at a home desk. Hands sorting a blank surgery confirmation form and a blank medical receipt into a clear file folder on a home desk. Background: tidy home desk with a lamp and soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands at a home desk",
+   "bg": "tidy home desk with a lamp and soft daylight",
+   "anchor": "blank surgery confirmation form"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "공원 산책로에서 편한 운동화를 신고 천천히 걷는 60대 부부",
+   "prompt": "Camera and composition: wide shot on a park walking path. A Korean couple in their 60s walking slowly side by side on a park walking path wearing comfortable sneakers, smiling. Background: autumn park path with trees and soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "wide shot on a park walking path",
+   "bg": "autumn park path with trees and soft daylight",
+   "anchor": "comfortable sneakers"
+  }
+ ]
+}

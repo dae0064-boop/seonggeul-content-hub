@@ -1,0 +1,79 @@
+{
+  "slug": "2026-11-28-anyang-sikdang-cheolgeo",
+  "brand": "다와이철거",
+  "mood": "evening",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "천장 위로 드러난 식당 후드 덕트 (대표사진)",
+      "scene": "close-up of a silver kitchen exhaust duct running above an opened restaurant ceiling.",
+      "shot": "detail",
+      "prompt": "Camera and composition: close-up of a silver kitchen exhaust duct running above an opened restaurant ceiling. Shot type: close-up detail of exposed pipes, ducts or wiring left after removal. No people in the image. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, evening scene, the room lit mainly by a bright work lamp, warm pools of light and deep shadows, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "덕트 남길까\n걷어 낼까",
+        "look": "band",
+        "theme": "olive"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "화구와 후드가 달린 식당 주방",
+      "scene": "a small Korean restaurant kitchen with burners, a stainless hood and work tables.",
+      "prompt": "Camera and composition: a small Korean restaurant kitchen with burners, a stainless hood and work tables. Realistic documentary photograph taken with a full-frame camera, evening scene, the room lit mainly by a bright work lamp, warm pools of light and deep shadows, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "한쪽에 모아 둔 스테인리스 작업대와 냉장고",
+      "scene": "stainless steel work tables and a commercial refrigerator gathered in one corner of a closed restaurant.",
+      "prompt": "Camera and composition: stainless steel work tables and a commercial refrigerator gathered in one corner of a closed restaurant. Realistic documentary photograph taken with a full-frame camera, evening scene, the room lit mainly by a bright work lamp, warm pools of light and deep shadows, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "천장재를 열어 드러난 은색 후드 덕트",
+      "scene": "an opened ceiling above a restaurant kitchen exposing a long exhaust duct.",
+      "prompt": "Camera and composition: an opened ceiling above a restaurant kitchen exposing a long exhaust duct. Realistic documentary photograph taken with a full-frame camera, evening scene, the room lit mainly by a bright work lamp, warm pools of light and deep shadows, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "주방 바닥 배수로와 덮개",
+      "scene": "a floor drain channel with a metal grate in a restaurant kitchen floor.",
+      "prompt": "Camera and composition: a floor drain channel with a metal grate in a restaurant kitchen floor. Realistic documentary photograph taken with a full-frame camera, evening scene, the room lit mainly by a bright work lamp, warm pools of light and deep shadows, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "저녁 작업등 아래 비워진 식당 홀",
+      "scene": "an emptied restaurant dining hall under a single bright work lamp in the evening.",
+      "prompt": "Camera and composition: an emptied restaurant dining hall under a single bright work lamp in the evening. Realistic documentary photograph taken with a full-frame camera, evening scene, the room lit mainly by a bright work lamp, warm pools of light and deep shadows, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "식당 철거 궁금한 점을 담은 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "식당 철거 궁금한 점",
+        "items": [
+          "후드 덕트만 떼기",
+          "기름때 심할 때",
+          "남은 집기 처리",
+          "영업 끝나고 바로"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "설비를 모두 떼고 쓸어 둔 식당 주방 바닥",
+      "scene": "a restaurant kitchen floor swept clean after all equipment was removed, drain covered.",
+      "prompt": "Camera and composition: a restaurant kitchen floor swept clean after all equipment was removed, drain covered. Realistic documentary photograph taken with a full-frame camera, evening scene, the room lit mainly by a bright work lamp, warm pools of light and deep shadows, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

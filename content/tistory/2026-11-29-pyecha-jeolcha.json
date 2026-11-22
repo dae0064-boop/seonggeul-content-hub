@@ -1,0 +1,647 @@
+{
+  "slug": "2026-11-29-pyecha-jeolcha",
+  "title": "폐차 절차, 폐차인수증명서 받은 뒤 말소등록은 언제까지 할까 (1개월)",
+  "category": "생활정보",
+  "tags": [
+    "폐차절차",
+    "폐차인수증명서",
+    "말소등록",
+    "해체재활용업자",
+    "자동차말소",
+    "폐차서류",
+    "폐차장",
+    "자동차폐차방법",
+    "자동차등록령31조",
+    "자동차관리법13조",
+    "자동차세환급",
+    "자동차보험해지",
+    "상속차량폐차",
+    "생활제도",
+    "자동차"
+  ],
+  "publishAt": "2026-11-29 15:00",
+  "relatedUrls": [
+    "https://seongdaeeyo.com/entry/%EC%9E%90%EB%8F%99%EC%B0%A8%EC%84%B8-%EC%97%B0%EB%82%A9-1%EC%9B%94-%EA%B3%B5%EC%A0%9C%EC%95%A1%EC%9D%80-%EC%97%B0%EC%84%B8%EC%95%A1%EC%9D%98-%EB%AA%87-%EC%9D%BC%EA%B9%8C-%EC%95%BD-46",
+    "https://seongdaeeyo.com/entry/%EC%9E%90%EB%8F%99%EC%B0%A8-%EC%A0%95%EA%B8%B0%EA%B2%80%EC%82%AC-%EA%B2%80%EC%82%AC%EA%B8%B0%EA%B0%84-%EA%B2%80%EC%82%AC%EC%9C%A0%ED%9A%A8%EA%B8%B0%EA%B0%84-90%EC%9D%BC-%EC%A0%84%EC%97%90-%EB%B0%9B%EC%95%84%EB%8F%84-%EA%B4%9C%EC%B0%AE%EC%9D%84%EA%B9%8C-%ED%9B%84-31%EC%9D%BC"
+  ],
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "자동차 말소는 폐차장에 차를 넘기면"
+        },
+        {
+          "t": "그 업자가 주인을 대신해 신청하게 돼 있어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 20년 탄 차를 보내기로 하고"
+        },
+        {
+          "t": "견인차가 와서 차를 끌고 가 버리면"
+        },
+        {
+          "t": "\"이제 뭘 더 하면 되지?\" 하고 멍해지기 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "차는 떠났는데 서류는 아직 내 이름일 수 있거든요."
+        },
+        {
+          "t": "오늘은 폐차 절차를 차가 떠난 뒤까지"
+        },
+        {
+          "t": "순서대로 따라가 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "먼저 결론이에요."
+        },
+        {
+          "t": "폐차장이 폐차인수증명서를 주고",
+          "s": "yellow"
+        },
+        {
+          "t": "말소등록도 대신 해 주는 게 원칙이에요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "오래 탄 승용차 보닛 위에 가만히 얹은 60대 남성의 두 손 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "폐차 절차, 누가 무엇을 하나"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "폐차 절차에 대해 맞는지 틀리는지 풀어 보는 퀴즈 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "폐차 절차의 중심은 말소등록이에요."
+        },
+        {
+          "t": "자동차관리법 제13조가 이걸 정해요."
+        },
+        {
+          "t": "원래는 차 주인이 등록증과 번호판을"
+        },
+        {
+          "t": "반납하면서 직접 신청하는 구조예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그런데 폐차를 해체재활용업자에게"
+        },
+        {
+          "t": "맡긴 경우는 달라요."
+        },
+        {
+          "t": "그 업자가 주인을 대신해 말소등록을 신청해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "폐차장에 맡겼다면 구청에 따로 가지 않아도",
+          "s": "yellow"
+        },
+        {
+          "t": "말소등록까지 이어지는 구조예요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "해체재활용업자는 흔히 폐차장이라고 부르는"
+        },
+        {
+          "t": "자동차관리사업 등록 업체예요."
+        },
+        {
+          "t": "그래서 맡기기 전에 등록 업체인지가 중요해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "차를 보내기 전에는 안을 한 번 비워 두세요."
+        },
+        {
+          "t": "하이패스 단말기, 블랙박스 메모리,"
+        },
+        {
+          "t": "트렁크 속 짐은 차와 함께 떠나면 되찾기 어려워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "등록증과 열쇠, 주인 신분증 사본도"
+        },
+        {
+          "t": "미리 한곳에 모아 두면"
+        },
+        {
+          "t": "견인차가 왔을 때 허둥대지 않아요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "폐차인수증명서는 꼭 받아요"
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"차만 넘기면 끝 아니에요?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "제58조는 해체재활용업자가 차와 등록증,"
+        },
+        {
+          "t": "번호판을 넘겨받으면 그 증명서를 내주게 해요."
+        },
+        {
+          "t": "이게 흔히 말하는 폐차인수증명서예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "폐차인수증명서를 받지 않고 차만 넘기면",
+          "s": "red"
+        },
+        {
+          "t": "말소가 됐는지 확인할 길이 막혀요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "증명서에는 차량 번호와 넘겨받은 날이 적혀요."
+        },
+        {
+          "t": "그날부터 이 차는 더 이상 도로에 나가지 않는다는"
+        },
+        {
+          "t": "기록이 되는 셈이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "같은 조문은 넘겨받은 등록증과 번호판을"
+        },
+        {
+          "t": "다시 쓰지 못하게 없애도록 정해 뒀어요."
+        },
+        {
+          "t": "그래서 번호판이 엉뚱한 데 쓰일 걱정은 줄어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "말소등록은 1개월 안에"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "폐차 절차에서 차를 보낸 뒤 챙길 순서를 적은 메모 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "자동차등록령 제31조는 말소등록을"
+        },
+        {
+          "t": "사유가 생긴 날부터 1개월 안에 하게 해요.",
+          "segs": [
+            {
+              "t": "사유가 생긴 날부터 "
+            },
+            {
+              "t": "1개월",
+              "s": "blue"
+            },
+            {
+              "t": " 안에 하게 해요."
+            }
+          ]
+        },
+        {
+          "t": "폐차라면 차를 넘긴 날이 기준이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "상속받은 차를 폐차한다면 기한이 길어요."
+        },
+        {
+          "t": "상속인은 상속개시일이 속한 달 말일부터"
+        },
+        {
+          "t": "6개월 안에 신청하면 돼요.",
+          "segs": [
+            {
+              "t": "6개월",
+              "s": "blue"
+            },
+            {
+              "t": " 안에 신청하면 돼요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "폐차장이 대신 신청했더라도 며칠 뒤",
+          "s": "yellow"
+        },
+        {
+          "t": "자동차365에서 말소됐는지 꼭 확인해요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "말소가 끝나면 등록원부에 말소 사실이 남아요."
+        },
+        {
+          "t": "보험회사나 구청에서 증명이 필요할 때"
+        },
+        {
+          "t": "말소사실증명서를 따로 뗄 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "말소 뒤 챙길 두 가지"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "해 질 무렵 주차장 빈 칸에 내려앉은 노을빛"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "폐차 절차가 끝나면 정리할 게 두 가지 남아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "첫째는 자동차보험이에요."
+        },
+        {
+          "t": "차가 없어졌으니 보험회사에 말소 사실을 알리고"
+        },
+        {
+          "t": "남은 기간 보험료 정산을 물어봐요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이때 폐차인수증명서나 말소 확인 화면을"
+        },
+        {
+          "t": "보여 달라는 경우가 있어요."
+        },
+        {
+          "t": "받은 서류를 사진으로 찍어 두면 편해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "둘째는 자동차세예요."
+        },
+        {
+          "t": "1월에 1년 치를 미리 냈다면"
+        },
+        {
+          "t": "말소 뒤 남은 기간이 환급 대상인지 위택스에서 봐요.",
+          "segs": [
+            {
+              "t": "말소 뒤 남은 기간이 "
+            },
+            {
+              "t": "환급",
+              "s": "blue"
+            },
+            {
+              "t": " 대상인지 위택스에서 봐요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "연납을 안 했다면 다음 고지서가"
+        },
+        {
+          "t": "말소 날짜에 맞게 줄어 나오는지만 보면 돼요."
+        },
+        {
+          "t": "이것도 위택스 납부 내역에서 바로 보여요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "등록되지 않은 업체에 차를 넘기면",
+          "s": "red"
+        },
+        {
+          "t": "말소 처리가 늦어질 수 있어요.",
+          "s": "red"
+        },
+        {
+          "t": "맡기기 전에 등록 업체인지 먼저 보세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "폐차 절차 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "차를 보내는 날 자주 묻는 두 가지예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 직접 구청에서 말소해도 되나요?"
+        },
+        {
+          "t": "A1: 네, 제13조는 주인이 직접 하는 길도"
+        },
+        {
+          "t": "열어 둬요. 이때는 폐차인수증명서와"
+        },
+        {
+          "t": "등록증을 들고 가요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 번호판은 내가 떼어 가야 하나요?"
+        },
+        {
+          "t": "A2: 폐차장이 차와 함께 번호판을 넘겨받아"
+        },
+        {
+          "t": "다시 못 쓰게 폐기하게 돼 있어요."
+        },
+        {
+          "t": "그래서 번호판을 따로 챙길 필요는 없어요.",
+          "segs": [
+            {
+              "t": "그래서 "
+            },
+            {
+              "t": "번호판",
+              "s": "blue"
+            },
+            {
+              "t": "을 따로 챙길 필요는 없어요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "폐차 절차 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "차를 보내는 날 볼 세 줄이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 체크포인트",
+          "s": "green"
+        },
+        {
+          "t": "등록된 해체재활용업자인지 확인",
+          "s": "green"
+        },
+        {
+          "t": "폐차인수증명서 꼭 받아 두기",
+          "s": "green"
+        },
+        {
+          "t": "1개월 안 말소등록 됐는지 조회",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "폐차 절차는 차가 떠난 뒤에 끝나요."
+        },
+        {
+          "t": "증명서 한 장과 말소 확인까지 마쳐야"
+        },
+        {
+          "t": "내 이름에서 그 차가 깨끗이 빠져요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "정든 차를 보내는 날은 마음이 허전하죠."
+        },
+        {
+          "t": "서류만큼은 깔끔하게 마무리해 두면"
+        },
+        {
+          "t": "다음 차를 들일 때도 한결 가벼워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분은 첫 차를 몇 년이나 타셨어요?"
+        },
+        {
+          "t": "숫자로 남겨 주시면 반가워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "말소 주체와 증명서는 자동차관리법 제13조·제58조,"
+        },
+        {
+          "t": "기한은 자동차등록령 제31조를 찾아"
+        },
+        {
+          "t": "조문 그대로 읽고 정리했어요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "폐차 절차, 폐차인수증명서부터 꼭 받아요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">자동차 말소는 폐차장에 차를 넘기면<br>그 업자가 주인을 대신해 신청하게 돼 있어요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 20년 탄 차를 보내기로 하고<br>견인차가 와서 차를 끌고 가 버리면<br>&quot;이제 뭘 더 하면 되지?&quot; 하고 멍해지기 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">차는 떠났는데 서류는 아직 내 이름일 수 있거든요.<br>오늘은 폐차 절차를 차가 떠난 뒤까지<br>순서대로 따라가 볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">먼저 결론이에요.<br><span style=\"background-color: #ffe94d;\"><b>폐차장이 폐차인수증명서를 주고</b></span><br><span style=\"background-color: #ffe94d;\"><b>말소등록도 대신 해 주는 게 원칙이에요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 1] 오래 탄 승용차 보닛 위에 가만히 얹은 60대 남성의 두 손 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>폐차 절차, 누가 무엇을 하나</h2>\n<p data-ke-size=\"size16\">[이미지 2] 폐차 절차에 대해 맞는지 틀리는지 풀어 보는 퀴즈 카드</p>\n<p data-ke-size=\"size16\">폐차 절차의 중심은 말소등록이에요.<br>자동차관리법 제13조가 이걸 정해요.<br>원래는 차 주인이 등록증과 번호판을<br>반납하면서 직접 신청하는 구조예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그런데 폐차를 해체재활용업자에게<br>맡긴 경우는 달라요.<br>그 업자가 주인을 대신해 말소등록을 신청해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>폐차장에 맡겼다면 구청에 따로 가지 않아도</b></span><br><span style=\"background-color: #ffe94d;\"><b>말소등록까지 이어지는 구조예요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">해체재활용업자는 흔히 폐차장이라고 부르는<br>자동차관리사업 등록 업체예요.<br>그래서 맡기기 전에 등록 업체인지가 중요해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">차를 보내기 전에는 안을 한 번 비워 두세요.<br>하이패스 단말기, 블랙박스 메모리,<br>트렁크 속 짐은 차와 함께 떠나면 되찾기 어려워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">등록증과 열쇠, 주인 신분증 사본도<br>미리 한곳에 모아 두면<br>견인차가 왔을 때 허둥대지 않아요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>폐차인수증명서는 꼭 받아요</h2>\n<blockquote data-ke-style=\"style3\">&quot;차만 넘기면 끝 아니에요?&quot;</blockquote>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">제58조는 해체재활용업자가 차와 등록증,<br>번호판을 넘겨받으면 그 증명서를 내주게 해요.<br>이게 흔히 말하는 폐차인수증명서예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>폐차인수증명서를 받지 않고 차만 넘기면</b></span><br><span style=\"color: #ff0010;\"><b>말소가 됐는지 확인할 길이 막혀요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">증명서에는 차량 번호와 넘겨받은 날이 적혀요.<br>그날부터 이 차는 더 이상 도로에 나가지 않는다는<br>기록이 되는 셈이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">같은 조문은 넘겨받은 등록증과 번호판을<br>다시 쓰지 못하게 없애도록 정해 뒀어요.<br>그래서 번호판이 엉뚱한 데 쓰일 걱정은 줄어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>말소등록은 1개월 안에</h2>\n<p data-ke-size=\"size16\">[이미지 3] 폐차 절차에서 차를 보낸 뒤 챙길 순서를 적은 메모 카드</p>\n<p data-ke-size=\"size16\">자동차등록령 제31조는 말소등록을<br>사유가 생긴 날부터 <span style=\"color: #0078cb;\"><b>1개월</b></span> 안에 하게 해요.<br>폐차라면 차를 넘긴 날이 기준이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">상속받은 차를 폐차한다면 기한이 길어요.<br>상속인은 상속개시일이 속한 달 말일부터<br><span style=\"color: #0078cb;\"><b>6개월</b></span> 안에 신청하면 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>폐차장이 대신 신청했더라도 며칠 뒤</b></span><br><span style=\"background-color: #ffe94d;\"><b>자동차365에서 말소됐는지 꼭 확인해요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">말소가 끝나면 등록원부에 말소 사실이 남아요.<br>보험회사나 구청에서 증명이 필요할 때<br>말소사실증명서를 따로 뗄 수 있어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>말소 뒤 챙길 두 가지</h2>\n<p data-ke-size=\"size16\">[이미지 4] 해 질 무렵 주차장 빈 칸에 내려앉은 노을빛</p>\n<p data-ke-size=\"size16\">폐차 절차가 끝나면 정리할 게 두 가지 남아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">첫째는 자동차보험이에요.<br>차가 없어졌으니 보험회사에 말소 사실을 알리고<br>남은 기간 보험료 정산을 물어봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이때 폐차인수증명서나 말소 확인 화면을<br>보여 달라는 경우가 있어요.<br>받은 서류를 사진으로 찍어 두면 편해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">둘째는 자동차세예요.<br>1월에 1년 치를 미리 냈다면<br>말소 뒤 남은 기간이 <span style=\"color: #0078cb;\"><b>환급</b></span> 대상인지 위택스에서 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">연납을 안 했다면 다음 고지서가<br>말소 날짜에 맞게 줄어 나오는지만 보면 돼요.<br>이것도 위택스 납부 내역에서 바로 보여요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>등록되지 않은 업체에 차를 넘기면</b></span><br><span style=\"color: #ff0010;\"><b>말소 처리가 늦어질 수 있어요.</b></span><br>맡기기 전에 등록 업체인지 먼저 보세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>폐차 절차 Q&amp;A</h2>\n<p data-ke-size=\"size16\">차를 보내는 날 자주 묻는 두 가지예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 직접 구청에서 말소해도 되나요?<br>A1: 네, 제13조는 주인이 직접 하는 길도<br>열어 둬요. 이때는 폐차인수증명서와<br>등록증을 들고 가요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 번호판은 내가 떼어 가야 하나요?<br>A2: 폐차장이 차와 함께 번호판을 넘겨받아<br>다시 못 쓰게 폐기하게 돼 있어요.<br>그래서 <span style=\"color: #0078cb;\"><b>번호판</b></span>을 따로 챙길 필요는 없어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>폐차 절차 정리</h2>\n<p data-ke-size=\"size16\">차를 보내는 날 볼 세 줄이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 체크포인트</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>등록된 해체재활용업자인지 확인</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>폐차인수증명서 꼭 받아 두기</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>1개월 안 말소등록 됐는지 조회</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">폐차 절차는 차가 떠난 뒤에 끝나요.<br>증명서 한 장과 말소 확인까지 마쳐야<br>내 이름에서 그 차가 깨끗이 빠져요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">정든 차를 보내는 날은 마음이 허전하죠.<br>서류만큼은 깔끔하게 마무리해 두면<br>다음 차를 들일 때도 한결 가벼워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분은 첫 차를 몇 년이나 타셨어요?<br>숫자로 남겨 주시면 반가워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">말소 주체와 증명서는 자동차관리법 제13조·제58조,<br>기한은 자동차등록령 제31조를 찾아<br>조문 그대로 읽고 정리했어요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>폐차 절차, 폐차인수증명서부터 꼭 받아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><b>▶ 함께 보면 좋은 글</b><br><a href=\"https://seongdaeeyo.com/entry/%EC%9E%90%EB%8F%99%EC%B0%A8%EC%84%B8-%EC%97%B0%EB%82%A9-1%EC%9B%94-%EA%B3%B5%EC%A0%9C%EC%95%A1%EC%9D%80-%EC%97%B0%EC%84%B8%EC%95%A1%EC%9D%98-%EB%AA%87-%EC%9D%BC%EA%B9%8C-%EC%95%BD-46\">자동차세 연납, 1월 공제액은 연세액의 몇 %일까 (약 4.6%)</a><br><a href=\"https://seongdaeeyo.com/entry/%EC%9E%90%EB%8F%99%EC%B0%A8-%EC%A0%95%EA%B8%B0%EA%B2%80%EC%82%AC-%EA%B2%80%EC%82%AC%EA%B8%B0%EA%B0%84-%EA%B2%80%EC%82%AC%EC%9C%A0%ED%9A%A8%EA%B8%B0%EA%B0%84-90%EC%9D%BC-%EC%A0%84%EC%97%90-%EB%B0%9B%EC%95%84%EB%8F%84-%EA%B4%9C%EC%B0%AE%EC%9D%84%EA%B9%8C-%ED%9B%84-31%EC%9D%BC\">자동차 정기검사 검사기간, 검사유효기간 90일 전에 받아도 괜찮을까 (후 31일)</a></p>"
+}

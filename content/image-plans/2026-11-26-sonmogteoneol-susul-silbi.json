@@ -1,0 +1,79 @@
+{
+ "slug": "2026-11-26-sonmogteoneol-susul-silbi",
+ "title": "손목 저림에 밤잠 설치는 엄마, 손목터널증후군 수술 실비는 될까요",
+ "source": "11/26(목) 16:20 네이버 원고 — 생활보장 홈판형(실비청구), 실사풍 (11/22 미리 작성)",
+ "note": "6장 = 대표사진 1 + 장면 + 정보 카드. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "정형외과 진료실에서 손목 보호대를 찬 손을 들어 보이는 60대 엄마 (대표사진)",
+   "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Setting: an orthopedic clinic consultation room. A Korean mother in her 60s with short permed hair in a coral cardigan raising her hand wearing a soft wrist brace and smiling gently, the clinic desk softly blurred behind her. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: bright clear daylight, high key. Expression: explaining with one hand open toward the viewer. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "face",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "face",
+   "thumb_theme": "teal",
+   "thumb_person": "60대 엄마",
+   "thumb_place": "주제",
+   "thumb_light": "밝은 낮",
+   "thumb_mood": "설명",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "teal",
+    "font": "ptd",
+    "title": "손목터널증후군\n수술 실비?"
+   },
+   "anchor": "soft wrist brace"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "손목터널증후군 수술 실비를 묻는 첫머리 카드",
+   "kind": "card",
+   "card": {
+    "type": "lead",
+    "keyword": "손목터널증후군",
+    "title": "수술 실비\n될까요?",
+    "ask": "하루 만에 끝난대요"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "병원 회복실 의자에서 붕대를 감은 손목을 무릎에 올린 60대 여성",
+   "prompt": "Camera and composition: medium shot in a clinic recovery area. A Korean woman in her 60s in a lilac cardigan sitting on a recovery room chair with a neatly bandaged wrist resting on her lap, relaxed. Background: calm clinic recovery room with daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a clinic recovery area",
+   "bg": "calm clinic recovery room with daylight",
+   "anchor": "bandaged wrist"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "거실 소파에서 증권과 진료비 영수증을 함께 보는 30대 딸과 60대 엄마",
+   "prompt": "Camera and composition: medium shot on a living room sofa. A Korean daughter in her 30s and her mother in her 60s sitting together on a sofa looking at a plain insurance policy booklet and a blank medical receipt. The insurance policy booklet and medical receipt is clearly visible. Background: warm living room with soft cushions. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot on a living room sofa",
+   "bg": "warm living room with soft cushions",
+   "anchor": "insurance policy booklet and medical receipt"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "진료비 영수증과 세부내역서를 클립으로 묶는 손",
+   "prompt": "Camera and composition: close-up of hands at a table. Close-up of hands fastening a blank medical receipt and a blank itemized bill together with a metal clip on a table, no face in the frame. The medical receipt clipped with itemized bill is clearly visible. Background: light wood table with soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands at a table",
+   "bg": "light wood table with soft daylight",
+   "anchor": "medical receipt clipped with itemized bill"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "공원 산책길에서 손목을 가볍게 돌리며 웃는 60대 엄마와 딸",
+   "prompt": "Camera and composition: medium shot on a park path. A Korean mother in her 60s gently rotating her wrist and smiling while walking with her daughter on a park path with autumn trees. The park walking path is clearly visible. Background: park path with soft autumn colors. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot on a park path",
+   "bg": "park path with soft autumn colors",
+   "anchor": "park walking path"
+  }
+ ]
+}

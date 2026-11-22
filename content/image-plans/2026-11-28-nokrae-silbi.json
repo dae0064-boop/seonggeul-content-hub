@@ -1,0 +1,79 @@
+{
+ "slug": "2026-11-28-nokrae-silbi",
+ "title": "엄마가 녹내장 진단을 받은 날, 녹내장 실비부터 보세요",
+ "source": "11/28(토) 10:00 네이버 원고 — 생활보장 홈판형(실비청구), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 + 정보 카드. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "안과 검사 장비 앞에서 안심한 얼굴로 앉아 있는 60대 어머니 (대표사진)",
+   "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Setting: a bright ophthalmology clinic examination room. A Korean woman in her 60s with short permed gray hair in a mint cardigan sitting in front of an eye pressure tonometer in an ophthalmology clinic, relieved after her check-up, the tonometer softly blurred behind her. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft early-morning sunlight. Expression: relieved gentle smile. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "face",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "face",
+   "thumb_theme": "teal",
+   "thumb_person": "60대 어머니",
+   "thumb_place": "주제",
+   "thumb_light": "아침 햇살",
+   "thumb_mood": "안심",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "teal",
+    "font": "ptd",
+    "title": "녹내장 실비\n받을 수 있나?"
+   },
+   "anchor": "eye pressure tonometer"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "녹내장 실비를 묻는 첫머리 카드",
+   "kind": "card",
+   "card": {
+    "type": "lead",
+    "keyword": "녹내장 실비",
+    "title": "매번 검사비\n돌려받을까?",
+    "ask": "평생 다녀야 한대"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "안과 진료실에서 안압 측정기 앞에 턱을 대고 검사받는 60대 여성",
+   "prompt": "Camera and composition: medium close-up at an eye examination desk. A Korean woman in her 60s resting her chin on the chin rest of a tonometer machine while a nurse's hand adjusts it in a clean ophthalmology clinic. Background: white ophthalmology examination room with soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium close-up at an eye examination desk",
+   "bg": "white ophthalmology examination room with soft daylight",
+   "anchor": "tonometer machine"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "거실 탁자에 안약 병과 빈 진료비 영수증을 나란히 놓은 모습",
+   "prompt": "Camera and composition: top-down view of a living room table. Small eye drop bottles placed neatly next to a blank medical receipt and a blank pharmacy receipt on a light wooden living room table. Background: light wood table with a soft fabric runner. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "top-down view of a living room table",
+   "bg": "light wood table with a soft fabric runner",
+   "anchor": "eye drop bottles"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "건강검진센터 대기 의자에서 결과를 기다리는 50대 딸과 어머니",
+   "prompt": "Camera and composition: medium shot in a health checkup center waiting area. A Korean woman in her 50s and her mother in her 70s sitting side by side on chairs in a health checkup center waiting area near an eye exam room door, calmly waiting. Background: clean bright health checkup center corridor with soft light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a health checkup center waiting area",
+   "bg": "clean bright health checkup center corridor with soft light",
+   "anchor": "eye exam room door"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "저녁 식탁에서 안약을 넣어 드리는 30대 딸과 웃는 60대 어머니",
+   "prompt": "Camera and composition: medium shot at a dining table in the evening. A Korean woman in her 30s gently putting eye drops into her smiling mother's eye at a home dining table, the eye drop bottle clearly visible. Background: warm home dining room with evening lamp light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a dining table in the evening",
+   "bg": "warm home dining room with evening lamp light",
+   "anchor": "eye drop bottle"
+  }
+ ]
+}

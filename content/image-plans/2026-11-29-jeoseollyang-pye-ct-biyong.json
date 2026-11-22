@@ -1,0 +1,101 @@
+{
+ "slug": "2026-11-29-jeoseollyang-pye-ct-biyong",
+ "title": "저선량 폐CT 비용, 국가검진이면 10%만 내요 (54~74세)",
+ "source": "11/29(일) 13:40 네이버 원고 — 생활보장 검색형(비용), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 + 정보 카드. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "건강검진센터 CT실 앞 복도에서 검진복을 입고 순서를 기다리는 사람들 (대표사진)",
+   "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Setting: a health checkup center corridor in front of a CT room. A wide view of a bright health checkup center corridor in front of a CT scanner room door, two small Korean people in their 50s and 60s in checkup gowns waiting with determined calm faces. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: bright clear daylight, high key. Expression: determined, nodding, sleeves rolled up. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "wide",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "wide",
+   "thumb_theme": "olive",
+   "thumb_person": "50~60대 검진자들, 작게",
+   "thumb_place": "주제",
+   "thumb_light": "밝은 낮",
+   "thumb_mood": "결심",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "olive",
+    "font": "ptd",
+    "title": "저선량 폐CT\n얼마 낼까?"
+   },
+   "anchor": "CT scanner room door"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "국가 폐암검진 비용 부담을 숫자로 정리한 카드",
+   "kind": "card",
+   "card": {
+    "type": "number",
+    "title": "폐암검진 비용 부담",
+    "items": [
+     [
+      "90%",
+      "공단",
+      "국가 폐암검진"
+     ],
+     [
+      "10%",
+      "검진받는 사람",
+      "국가 폐암검진"
+     ],
+     [
+      "2년",
+      "검진 주기",
+      "54세부터 74세"
+     ]
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "거실 탁자 위 빈 담뱃갑과 달력을 앞에 두고 흡연 햇수를 세어 보는 60대 남성의 손",
+   "prompt": "Camera and composition: close-up of hands at a living room table. A man's hands counting on a desk calendar beside an empty cigarette pack on a living room table. Background: plain living room table with daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands at a living room table",
+   "bg": "plain living room table with daylight",
+   "anchor": "empty cigarette pack"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "국가 폐암검진 대상과 받는 것을 정리한 확인 카드",
+   "kind": "card",
+   "card": {
+    "type": "check",
+    "ask": "폐암검진 뭐 받아?",
+    "title": "폐암검진에서 받는 것",
+    "items": [
+     "저선량 흉부 CT",
+     "사후 결과 상담",
+     "2년마다"
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "집 현관에서 우편함의 건강검진 안내문 봉투를 꺼내는 70대 남성",
+   "prompt": "Camera and composition: medium shot at an apartment mailbox. A Korean man in his 70s taking a plain health checkup notice envelope out of an apartment mailbox. Background: apartment lobby with mailboxes and soft light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at an apartment mailbox",
+   "bg": "apartment lobby with mailboxes and soft light",
+   "anchor": "apartment mailbox"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "공원 산책길에서 운동화를 신고 가볍게 걷는 60대 부부",
+   "prompt": "Camera and composition: wide shot on a park path. A Korean couple in their 60s walking briskly in sneakers on a park path, smiling. Background: open park with trees and clear daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "wide shot on a park path",
+   "bg": "open park with trees and clear daylight",
+   "anchor": "sneakers"
+  }
+ ]
+}

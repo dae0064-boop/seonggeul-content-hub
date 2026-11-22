@@ -38,6 +38,11 @@ const slotsFor = (d) => (d >= TEN_FROM ? SLOTS10 : SLOTS);
 const isMokgong = (k) => /목공|목수/.test(k || '');
 const REGIONS = ['서울', '인천', '경기', '수원', '시흥', '안산', '안양'];
 const VISIT_OK = ['서울', '인천', '시흥'];
+// 2026-11-24 원고부터 제목·키워드 섞기 (2026-11-22 사용자 "철거는 메인이 너무 똑같은 느낌" → 추천안 "제목·키워드 둘 다 섞기")
+const TITLE2_FROM = '2026-11-24';
+const TITLE_TYPES = ['질문', '상황', '숫자', '비교'];
+/** 글의 지역: 메인 키워드 → 없으면(검색형) sub_keywords 에서 */
+const regionOf = (post) => REGIONS.find((g) => post.mainKeyword.includes(g)) || REGIONS.find((g) => post.subKeywords.some((k) => k.includes(g)));
 
 // 받지 못했거나 광고에 쓰면 안 되는 말 (README 2)
 const BANNED = [
@@ -87,8 +92,24 @@ export function lintOne(file, others = []) {
   if (!post.title) errors.push('title 없음');
   if (!post.mainKeyword) errors.push('main_keyword 없음');
   if (post.subKeywords.length < 2 || post.subKeywords.length > 3) errors.push(`sub_keywords 2~3개 (지금 ${post.subKeywords.length})`);
-  if (post.mainKeyword && !REGIONS.some((r) => post.mainKeyword.includes(r))) errors.push(`main_keyword 에 지역이 없음 (${REGIONS.join('·')})`);
-  if (post.mainKeyword && !post.title.startsWith(post.mainKeyword)) errors.push('제목은 메인 키워드로 시작');
+  const title2 = date && date >= TITLE2_FROM;
+  const tt = meta.title_type || '';
+  if (!title2) {
+    if (post.mainKeyword && !REGIONS.some((r) => post.mainKeyword.includes(r))) errors.push(`main_keyword 에 지역이 없음 (${REGIONS.join('·')})`);
+    if (post.mainKeyword && !post.title.startsWith(post.mainKeyword)) errors.push('제목은 메인 키워드로 시작');
+  } else if (post.mainKeyword) {
+    // 메인 키워드는 '지역형'(인천 빌라 철거) 또는 '검색형'(욕실 철거 기간 — 지역은 sub_keywords·제목에)
+    const reg = regionOf(post);
+    if (!reg) errors.push(`지역이 없음 — 메인 키워드나 sub_keywords 하나에 ${REGIONS.join('·')}`);
+    else if (!post.title.includes(reg)) errors.push(`제목에 지역(${reg})을 넣는다`);
+    if (!TITLE_TYPES.includes(tt)) errors.push(`title_type: ${TITLE_TYPES.join('|')} 를 프런트매터에`);
+    const starts = post.title.startsWith(post.mainKeyword);
+    if (!noSpace(post.title).includes(noSpace(post.mainKeyword))) errors.push('제목 안에 메인 키워드를 그대로');
+    if (tt === '질문') { if (!starts) errors.push('질문형 제목은 메인 키워드로 시작'); }
+    else if (TITLE_TYPES.includes(tt) && starts) errors.push(`${tt}형 제목은 메인 키워드로 시작하지 않는다 (상황·숫자·비교 말이 앞에)`);
+    if (tt === '숫자' && !/[0-9]/.test(post.title)) errors.push('숫자형 제목에 숫자를');
+    if (tt === '비교' && !/(vs|VS|차이|아니면|뭐가|어느|대신|나을까|맞을까)/.test(post.title)) errors.push('비교형 제목에 견주는 말(vs·차이·뭐가·어느·나을까 등)');
+  }
   if (post.title.length > 40) errors.push(`제목 40자 안쪽 (지금 ${post.title.length})`);
   if (post.category) errors.push(`category 는 비워 둔다 (발행 때 제목으로 저절로 고른다 — scripts/chulgeo/category.mjs): ${post.category}`);
   const vary = date && date >= VARY_FROM; // 2026-11-23 원고부터 글 모양 돌려 쓰기 (vary.mjs)
@@ -259,7 +280,7 @@ export function lintOne(file, others = []) {
   }
   if (worst.r > 0.2) errors.push(`본문이 ${worst.slug} 와 ${(worst.r * 100).toFixed(0)}% 겹침 (20% 이하 — 유사문서)`);
 
-  return { file, slug, date, post, errors, warns, vary: vary ? v : null, stats: { chars: chars.length, mk, red, blue, yellow, quotes: quotes.length, qa, overlap: Math.round(worst.r * 100) } };
+  return { file, slug, date, post, titleType: meta.title_type || '', errors, warns, vary: vary ? v : null, stats: { chars: chars.length, mk, red, blue, yellow, quotes: quotes.length, qa, overlap: Math.round(worst.r * 100) } };
 }
 
 /** 같은 날 원고 섞기 (README 3) */
@@ -286,15 +307,21 @@ function lintDay(results) {
         if (top('look').length < 3) errors.push(`${d}: 대표사진 글씨 모양 3가지 이상 (지금 ${top('look').length})`);
       }
     }
+    if (d >= TITLE2_FROM && rs.length >= 10) { // 제목·키워드 섞기 (2026-11-22 사용자)
+      const c = {}; for (const r of rs) { const t = r.titleType || '?'; c[t] = (c[t] || 0) + 1; }
+      for (const [t, n] of Object.entries(c)) if (n > 3) errors.push(`${d}: 같은 제목 모양(${t}) ${n}편 — 3편까지`);
+      const plain = rs.filter((r) => !REGIONS.some((g) => r.post.mainKeyword.includes(g))).length;
+      if (plain < 3 || plain > 6) errors.push(`${d}: 지역 없는 검색형 메인 키워드 3~6편 (지금 ${plain})`);
+    }
     if (rs.length >= 10) {
-      const regions = new Set(rs.map((r) => REGIONS.find((g) => r.post.mainKeyword.includes(g))));
+      const regions = new Set(rs.map((r) => regionOf(r.post)));
       if (regions.size < 5) errors.push(`${d}: 지역 5곳 이상 섞기 (지금 ${[...regions].join('·')})`);
-      const visit = rs.filter((r) => VISIT_OK.some((g) => r.post.mainKeyword.includes(g))).length;
+      const visit = rs.filter((r) => VISIT_OK.includes(regionOf(r.post))).length;
       if (visit < 5) errors.push(`${d}: 방문 견적 지역(서울·인천·시흥) 글 5편 이상 (지금 ${visit})`);
     } else if (rs.length >= 5) {
-      const regions = new Set(rs.map((r) => REGIONS.find((g) => r.post.mainKeyword.includes(g))));
+      const regions = new Set(rs.map((r) => regionOf(r.post)));
       if (regions.size < 4) errors.push(`${d}: 지역 4곳 이상 섞기 (지금 ${[...regions].join('·')})`);
-      const visit = rs.filter((r) => VISIT_OK.some((g) => r.post.mainKeyword.includes(g))).length;
+      const visit = rs.filter((r) => VISIT_OK.includes(regionOf(r.post))).length;
       if (visit < 3) errors.push(`${d}: 방문 견적 지역(서울·인천·시흥) 글 3편 이상 (지금 ${visit})`);
     }
   }

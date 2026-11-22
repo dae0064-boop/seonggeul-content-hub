@@ -1,0 +1,90 @@
+{
+  "slug": "2026-11-24-ansan-balkony-cheolgeo",
+  "brand": "다와이철거",
+  "mood": "golden",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "발코니 바닥에 놓인 철거 공구 (대표사진)",
+      "scene": "a hammer, a pry bar and work gloves resting on a dusty tiled apartment balcony floor near a window.",
+      "shot": "tools",
+      "prompt": "Camera and composition: a hammer, a pry bar and work gloves resting on a dusty tiled apartment balcony floor near a window. Shot type: close-up of demolition tools such as a hammer, a pry bar, a cutting machine and work gloves resting on a dusty floor in the space, shallow depth of field. No people in the image. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "세탁기 뺀 날\n세탁실 철거",
+        "look": "band",
+        "style": "pop",
+        "theme": "burgundy"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "세탁기 수전과 배수구가 있는 발코니 구석",
+      "scene": "a corner of an apartment balcony laundry area with a water faucet on the wall and a floor drain, washing machine already removed.",
+      "prompt": "Camera and composition: a corner of an apartment balcony laundry area with a water faucet on the wall and a floor drain, washing machine already removed. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "줄눈이 갈라진 발코니 바닥 타일",
+      "scene": "close view of balcony floor tiles with cracked grout lines and a few lifted tiles.",
+      "prompt": "Camera and composition: close view of balcony floor tiles with cracked grout lines and a few lifted tiles. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "세탁실 철거 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "세탁실 철거 순서",
+        "items": [
+          "창틀·거실 바닥 보양",
+          "선반·건조대 떼기",
+          "수전 막기·배수구 덮기",
+          "벽·바닥 타일 걷기",
+          "마대 담아 반출"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "휴대폰으로 찍기 좋은 발코니 전체 모습",
+      "scene": "a whole apartment balcony seen from the living room door, with shelves and tiles, framed like a phone photo.",
+      "prompt": "Camera and composition: a whole apartment balcony seen from the living room door, with shelves and tiles, framed like a phone photo. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "비닐로 감싸 둔 발코니 샷시",
+      "scene": "balcony window frames wrapped in clear plastic sheeting and tape before demolition.",
+      "prompt": "Camera and composition: balcony window frames wrapped in clear plastic sheeting and tape before demolition. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "발코니 철거 궁금한 점을 담은 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "발코니 철거 궁금한 점",
+        "items": [
+          "세탁실만 할 수 있나",
+          "세탁기 그날 쓰나",
+          "하루면 되나",
+          "집에 있어도 되나"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "선반과 타일을 걷어 낸 빈 세탁실",
+      "scene": "an empty laundry corner of a balcony with shelves and tiles removed, capped faucet and covered drain.",
+      "prompt": "Camera and composition: an empty laundry corner of a balcony with shelves and tiles removed, capped faucet and covered drain. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

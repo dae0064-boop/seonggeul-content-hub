@@ -1,0 +1,88 @@
+{
+ "slug": "2026-11-24-dosuchiryo-silbi-cheonggu",
+ "title": "도수치료 실비청구, 11회째부터 뭐가 달라질까요 (10회마다 확인)",
+ "source": "11/24(화) 13:40 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "진료비 세부내역서의 도수치료 줄을 손가락으로 가리키는 손 (대표사진)",
+   "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Setting: a clean orthopedic clinic reception desk. Close-up of a Korean woman in her 40s pointing with one finger at a line on a blank detailed medical bill on the counter, coral knit sleeve visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: cool clean white indoor light. Expression: pointing at the key object with one finger and a friendly smile. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "hands",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "hands",
+   "thumb_theme": "olive",
+   "thumb_person": "40대 여성의 손(코랄 소매)",
+   "thumb_place": "주제",
+   "thumb_light": "흰 조명",
+   "thumb_mood": "가리킴",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "olive",
+    "font": "jua",
+    "title": "도수치료\n열 번 넘으면?"
+   },
+   "anchor": "blank detailed medical bill"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "도수치료 실비청구를 묻는 O·X 퀴즈 카드",
+   "kind": "card",
+   "card": {
+    "type": "quiz",
+    "title": "도수치료 실비 O·X",
+    "items": [
+     "처음 10회는 그대로 본다",
+     "기준 넘긴 횟수도 실손된다",
+     "5세대도 도수치료 보장"
+    ],
+    "answers": [
+     "O",
+     "X",
+     "X"
+    ],
+    "where": "아래 본문"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "거실 탁자에서 보험 증권 첫 장을 넘겨 보는 40대 남성",
+   "prompt": "Camera and composition: medium shot at a living room table. A Korean man in his 40s in a gray hoodie sitting at a living room table, turning the first page of a plain insurance policy booklet, calm. Background: bright living room with white walls. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a living room table",
+   "bg": "bright living room with white walls",
+   "anchor": "plain insurance policy booklet"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "정형외과 접수대에서 서류 봉투를 받는 50대 여성",
+   "prompt": "Camera and composition: medium shot at a clinic reception desk. A Korean woman in her 50s in a beige trench coat receiving a plain paper envelope from a receptionist at an orthopedic clinic reception desk in soft focus. Background: bright orthopedic clinic lobby. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a clinic reception desk",
+   "bg": "bright orthopedic clinic lobby",
+   "anchor": "plain paper envelope"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "정형외과 치료실 침대 옆에 놓인 빈 도수치료 기록지와 펜",
+   "prompt": "Camera and composition: still life close-up on a treatment bed. A blank manual therapy record sheet and a pen placed on the edge of a padded orthopedic treatment bed, no people. Background: calm orthopedic therapy room. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "still life close-up on a treatment bed",
+   "bg": "calm orthopedic therapy room",
+   "anchor": "blank manual therapy record sheet"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "공원 산책로에서 가볍게 스트레칭하는 50대 여성",
+   "prompt": "Camera and composition: medium shot on a park path. A Korean woman in her 50s in a sporty navy jacket doing a gentle stretch beside a park walking path, relaxed. Background: autumn park with yellow trees. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot on a park path",
+   "bg": "autumn park with yellow trees",
+   "anchor": "park walking path"
+  }
+ ]
+}

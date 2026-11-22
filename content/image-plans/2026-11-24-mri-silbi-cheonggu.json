@@ -1,0 +1,82 @@
+{
+ "slug": "2026-11-24-mri-silbi-cheonggu",
+ "title": "MRI 실비청구, 비급여 MRI는 연 300만 원 특약부터 보세요",
+ "source": "11/24(화) 15:00 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "병원 영상검사실 앞에 놓인 MRI 장비 (대표사진)",
+   "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Setting: a clean hospital imaging room seen through an open door. A modern MRI scanner with its patient table in a calm hospital imaging room, softly lit, no people. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft overcast daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "object",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "object",
+   "thumb_theme": "navy",
+   "thumb_person": "없음",
+   "thumb_place": "주제",
+   "thumb_light": "흐린 날",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "navy",
+    "font": "ptd",
+    "title": "MRI 실비\n얼마나 될까?"
+   },
+   "anchor": "modern MRI scanner"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "MRI 실비청구 서류를 묻고 답하는 채팅 카드",
+   "kind": "card",
+   "card": {
+    "type": "check",
+    "ask": "MRI 실비 서류 뭐 내?",
+    "title": "MRI 실비 서류",
+    "items": [
+     "진료비 영수증",
+     "진료비 세부내역서",
+     "소견서나 진단서"
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "거실 탁자에서 영수증을 보며 계산기를 두드리는 40대 여성",
+   "prompt": "Camera and composition: medium shot at a living room table. A Korean woman in her 40s with shoulder-length hair in a mint cardigan pressing a calculator next to a blank medical receipt at a living room table. Background: bright living room with a window. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a living room table",
+   "bg": "bright living room with a window",
+   "anchor": "calculator next to a blank medical receipt"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "정형외과 진료실에서 빈 모니터를 보며 설명하는 의사와 50대 남성",
+   "prompt": "Camera and composition: medium shot in a consultation room. A Korean doctor in a white coat explaining to a Korean man in his 50s in a brown jacket while pointing at a blank monitor on an orthopedic clinic desk. Background: tidy orthopedic consultation room. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a consultation room",
+   "bg": "tidy orthopedic consultation room",
+   "anchor": "blank monitor on an orthopedic clinic desk"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "병원 원무과 창구에서 서류 봉투를 받는 30대 남성",
+   "prompt": "Camera and composition: medium shot at a hospital billing counter. A Korean man in his 30s in a gray coat receiving a plain paper envelope at a hospital billing counter from a staff member in soft focus. Background: bright hospital lobby. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a hospital billing counter",
+   "bg": "bright hospital lobby",
+   "anchor": "hospital billing counter"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "저녁 식탁에서 휴대폰으로 보험 앱을 함께 보는 60대 부부",
+   "prompt": "Camera and composition: medium shot at a dinner table. A Korean couple in their 60s sitting side by side at a dinner table, looking together at a smartphone with a blank screen, relaxed. Background: warm home dining room. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a dinner table",
+   "bg": "warm home dining room",
+   "anchor": "smartphone with a blank screen"
+  }
+ ]
+}

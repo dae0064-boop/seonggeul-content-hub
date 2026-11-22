@@ -1,0 +1,74 @@
+{
+  "slug": "2026-11-24-gyoyukbi-seaekgongje",
+  "title": "교육비 세액공제, 초등 1·2학년 예체능 학원비도 될까 (2026년 지출분)",
+  "source": "11/24(화) 티스토리 원고 (11/22 저녁 미리 작성) 10:20",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "거실에서 초등학생 딸과 엄마가 피아노 교재를 펼쳐 놓고 이야기하는 모습 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A Korean mother in her 40s in a coral knit sweater and her first-grade daughter in a yellow dress sit at a low living room table facing each other, a children's piano book open between them, the mother explaining with one open hand, a small backpack beside the girl. Expression: explaining with one hand open toward the viewer. Color theme: sage green and sand beige tones with a coral accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "sage green and sand beige tones with a coral accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "teal",
+      "thumb_person": "40대 엄마(코랄 니트)와 초등 1학년 딸(노란 원피스)",
+      "thumb_mood": "설명",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "teal",
+        "font": "jua",
+        "title": "교육비 세액공제\n학원비도 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "초등 예체능 학원비 공제를 한 문장으로 묻는 첫머리 카드",
+      "kind": "card",
+      "card": {
+        "type": "lead",
+        "keyword": "교육비 세액공제",
+        "title": "예체능 학원비\n이제 될까?",
+        "ask": "태권도비도 들어가요?"
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "초등학생 교육비 세액공제 항목을 확인하는 메모 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "style": "memo",
+        "title": "초등학생 1명당 한도",
+        "sub": "한도 안에 함께 들어가요",
+        "items": [
+          "1·2학년 예체능 학원비",
+          "방과후학교 수업료",
+          "학교 급식비",
+          "현장체험학습비"
+        ],
+        "memo": "학원비만 따로 늘지 않아요",
+        "hl": 1
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "학원 가방과 줄넘기, 피아노 교재가 놓인 현관 앞 신발장 위",
+      "prompt": "Camera and composition: a small backpack, a jump rope and a piano book on a shoe cabinet by an entrance. A child's small backpack, a jump rope and a closed piano book rest on top of a shoe cabinet by an apartment entrance, soft daylight, no readable text. Background color: sage green and sand beige. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a small backpack, a jump rope and a piano book on a shoe cabinet by an entrance",
+      "bg": "sage green and sand beige",
+      "kind": "photo",
+      "photo": {
+        "query_en": "kids backpack jump rope",
+        "scene_en": "a child's backpack and a jump rope by an entrance"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}

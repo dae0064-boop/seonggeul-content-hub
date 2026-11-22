@@ -1,0 +1,633 @@
+{
+  "slug": "2026-11-28-hwakjeongilja-hyoryeok",
+  "title": "확정일자 효력, 대항력은 전입신고한 다음 날 언제부터 생길까 (0시)",
+  "category": "생활정보",
+  "tags": [
+    "확정일자효력",
+    "대항력",
+    "우선변제권",
+    "전입신고",
+    "주택임대차보호법",
+    "확정일자받는시기",
+    "전세보증금",
+    "대항력발생시기",
+    "다음날0시",
+    "근저당순위",
+    "전세계약",
+    "이사준비",
+    "세입자권리",
+    "생활제도",
+    "집계약"
+  ],
+  "publishAt": "2026-11-28 21:00",
+  "relatedUrls": [
+    "https://seongdaeeyo.com/entry/%ED%99%95%EC%A0%95%EC%9D%BC%EC%9E%90-%EC%9D%B8%ED%84%B0%EB%84%B7-%EC%8B%A0%EC%B2%AD-%EC%A0%84%EC%9E%85%EC%8B%A0%EA%B3%A0-%ED%95%98%EB%8A%94-%EB%82%A0-%EA%B0%99%EC%9D%B4-%EB%B0%9B%EB%8A%94-%EC%88%9C%EC%84%9C-%EC%88%98%EC%88%98%EB%A3%8C-500%EC%9B%90",
+    "https://seongdaeeyo.com/entry/%EC%84%B8%EC%9E%85%EC%9E%90-%ED%99%94%EC%9E%AC%EB%B3%B4%ED%97%98-%EC%A7%91%EC%A3%BC%EC%9D%B8-%EB%B0%B0%EC%83%81%EA%B9%8C%EC%A7%80-%EB%90%A0%EA%B9%8C-%EC%9E%84%EC%B0%A8%EC%9E%90%EB%B0%B0%EC%83%81%EC%B1%85%EC%9E%84-%ED%99%95%EC%9D%B8%ED%95%98%EB%8A%94-%EB%B2%95"
+  ],
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "주택임대차보호법은 확정일자만으로는 안 되고"
+        },
+        {
+          "t": "이사·전입신고가 함께 있어야 보증금을 먼저 받게 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 이삿짐을 다 들인 날 저녁,"
+        },
+        {
+          "t": "주민센터에서 전입신고와 확정일자까지 마치고"
+        },
+        {
+          "t": "\"이제 보증금은 안전하겠지\" 하고 한숨 돌리기 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그런데 그날 밤 12시가 지나야"
+        },
+        {
+          "t": "비로소 힘이 생기는 권리가 있어요."
+        },
+        {
+          "t": "오늘은 확정일자 효력을 묻고 답하며 정리해 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "먼저 결론이에요."
+        },
+        {
+          "t": "대항력은 이사와 전입신고를 마친 다음 날 0시부터,",
+          "s": "yellow"
+        },
+        {
+          "t": "확정일자 효력도 그 시점부터 함께 살아나요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "새집 현관 신발장 위에 놓인 집 열쇠 꾸러미 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "확정일자 효력, 대항력부터 알아야"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "확정일자 효력이 생기는 순서를 정리한 메모 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "주택임대차보호법 제3조 제1항이 시작이에요."
+        },
+        {
+          "t": "집을 넘겨받고 주민등록을 마치면"
+        },
+        {
+          "t": "그 다음 날부터 제3자에게도 효력이 생겨요.",
+          "segs": [
+            {
+              "t": "그 다음 날",
+              "s": "blue"
+            },
+            {
+              "t": "부터 제3자에게도 효력이 생겨요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이게 대항력이에요. 집주인이 바뀌어도"
+        },
+        {
+          "t": "새 주인에게 \"계약 끝날 때까지 살겠다\"고"
+        },
+        {
+          "t": "말할 수 있는 힘이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "전입신고를 한 때에 주민등록을 한 것으로 봐요."
+        },
+        {
+          "t": "그래서 이사와 전입신고, 두 가지가 다 있어야 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "짐만 옮기고 전입신고를 미루거나,",
+          "s": "yellow"
+        },
+        {
+          "t": "전입신고만 하고 이사를 안 하면 대항력이 없어요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "전입신고는 이사한 날부터 14일 안에 하게 돼 있지만",
+          "segs": [
+            {
+              "t": "전입신고는 이사한 날부터 "
+            },
+            {
+              "t": "14일",
+              "s": "blue"
+            },
+            {
+              "t": " 안에 하게 돼 있지만"
+            }
+          ]
+        },
+        {
+          "t": "대항력을 생각하면 그날 바로 하는 게 좋아요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "우선변제권은 확정일자가 더해져야"
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"확정일자만 받으면 끝 아니에요?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "제3조의2 제2항은 대항력을 갖춘 세입자가"
+        },
+        {
+          "t": "계약서에 확정일자까지 받아야"
+        },
+        {
+          "t": "우선변제권이 생긴다고 정해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "우선변제권은 집이 경매·공매로 넘어갈 때"
+        },
+        {
+          "t": "뒤 순위 권리자보다 먼저"
+        },
+        {
+          "t": "보증금을 돌려받을 수 있는 힘이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "확정일자만 받고 전입신고를 안 하면",
+          "s": "red"
+        },
+        {
+          "t": "우선변제권은 생기지 않아요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "같은 날 근저당이 잡히면"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "확정일자 효력 시점과 전입신고 기한을 숫자로 정리한 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이사 날 확정일자를 받았어도"
+        },
+        {
+          "t": "대항력이 다음 날 0시부터라",
+          "segs": [
+            {
+              "t": "대항력이 "
+            },
+            {
+              "t": "다음 날 0시",
+              "s": "blue"
+            },
+            {
+              "t": "부터라"
+            }
+          ]
+        },
+        {
+          "t": "우선변제권도 그때부터 순위를 다퉈요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "반면 근저당은 등기소에 접수된 날"
+        },
+        {
+          "t": "바로 순위가 매겨져요."
+        },
+        {
+          "t": "그래서 하루 차이가 순서를 가르게 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 3월 2일에 이사·전입신고·확정일자를",
+          "segs": [
+            {
+              "t": "예를 들어 "
+            },
+            {
+              "t": "3월 2일",
+              "s": "blue"
+            },
+            {
+              "t": "에 이사·전입신고·확정일자를"
+            }
+          ]
+        },
+        {
+          "t": "다 마쳤는데 같은 날 근저당이 접수됐다면"
+        },
+        {
+          "t": "내 순위는 3월 3일 0시라 그 근저당 뒤예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이사 당일 같은 집에 근저당이 접수되면",
+          "s": "yellow"
+        },
+        {
+          "t": "그 근저당이 내 보증금보다 앞서게 돼요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그래서 잔금 날과 이사 다음 날에"
+        },
+        {
+          "t": "등기부를 한 번 더 열람해 보는 게 좋아요."
+        },
+        {
+          "t": "새로 잡힌 근저당이 없는지 보는 거예요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "확정일자는 어디서 받을까"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "주민센터 민원 창구가 보이는 밝은 실내 풍경"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "제3조의6이 확정일자 받는 곳을 정해 뒀어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 읍·면사무소, 동 주민센터"
+        },
+        {
+          "t": "✔ 시·군·구 출장소"
+        },
+        {
+          "t": "✔ 지방법원과 지원, 등기소"
+        },
+        {
+          "t": "✔ 공증인"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "인터넷등기소에서도 신청할 수 있어요."
+        },
+        {
+          "t": "전입신고하러 간 김에 주민센터에서"
+        },
+        {
+          "t": "함께 받는 분이 가장 많아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "확정일자를 받으면 계약서에 날짜 도장이 찍혀요."
+        },
+        {
+          "t": "이 원본은 보증금을 돌려받을 때까지"
+        },
+        {
+          "t": "잃어버리지 않게 따로 보관해 두세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "확정일자 효력 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이사 앞둔 분들이 꼭 묻는 네 가지를 모았어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 확정일자는 이사 전에 받아도 되나요?"
+        },
+        {
+          "t": "A1: 네, 계약서만 있으면 미리 받을 수 있어요."
+        },
+        {
+          "t": "다만 효력은 이사와 전입신고를 마친"
+        },
+        {
+          "t": "다음 날 0시부터 함께 따져요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 이사 날 전입신고를 못 하면요?"
+        },
+        {
+          "t": "A2: 대항력이 그만큼 늦어져요."
+        },
+        {
+          "t": "전입신고를 한 다음 날부터 생기니"
+        },
+        {
+          "t": "가능하면 이사 당일 하는 게 좋아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q3: 월세 계약에도 확정일자가 필요할까요?"
+        },
+        {
+          "t": "A3: 보증금이 있다면 우선변제권을 위해"
+        },
+        {
+          "t": "월세 계약도 확정일자를 받아 두면 좋아요."
+        },
+        {
+          "t": "보증금이 적어도 지키는 방법은 같아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q4: 중간에 주소를 잠깐 옮기면 어떻게 되나요?"
+        },
+        {
+          "t": "A4: 대항력은 주민등록을 유지해야 이어져요."
+        },
+        {
+          "t": "계약 중에 전입신고를 다른 곳으로 옮기면",
+          "s": "red"
+        },
+        {
+          "t": "그동안 쌓은 순위를 잃을 수 있어요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "확정일자 효력 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "이사 날 할 일을 세 줄로 남겨요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 체크포인트",
+          "s": "green"
+        },
+        {
+          "t": "이사 당일 전입신고와 확정일자",
+          "s": "green"
+        },
+        {
+          "t": "대항력·우선변제권은 다음 날 0시부터",
+          "s": "green"
+        },
+        {
+          "t": "잔금 날·다음 날 등기부 다시 열람",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "확정일자 효력은 혼자 생기지 않아요."
+        },
+        {
+          "t": "이사와 전입신고가 함께 있어야"
+        },
+        {
+          "t": "대항력과 우선변제권이 같이 살아나요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "세 가지를 같은 날 끝내고,"
+        },
+        {
+          "t": "다음 날 아침 등기부를 한 번 더 보면"
+        },
+        {
+          "t": "이사 날 챙길 일은 거의 다 한 셈이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분은 이사 날 전입신고까지 바로 하셨어요?"
+        },
+        {
+          "t": "\"당일\", \"며칠 뒤\" 중에 남겨 주세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "효력 시점과 부여기관은 주택임대차보호법"
+        },
+        {
+          "t": "제3조·제3조의2·제3조의6 조문을"
+        },
+        {
+          "t": "국가법령정보센터에서 그대로 읽었어요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "확정일자 효력, 전입신고 다음 날 0시를 기억해요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">주택임대차보호법은 확정일자만으로는 안 되고<br>이사·전입신고가 함께 있어야 보증금을 먼저 받게 해요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 이삿짐을 다 들인 날 저녁,<br>주민센터에서 전입신고와 확정일자까지 마치고<br>&quot;이제 보증금은 안전하겠지&quot; 하고 한숨 돌리기 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그런데 그날 밤 12시가 지나야<br>비로소 힘이 생기는 권리가 있어요.<br>오늘은 확정일자 효력을 묻고 답하며 정리해 볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">먼저 결론이에요.<br><span style=\"background-color: #ffe94d;\"><b>대항력은 이사와 전입신고를 마친 다음 날 0시부터,</b></span><br><span style=\"background-color: #ffe94d;\"><b>확정일자 효력도 그 시점부터 함께 살아나요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 1] 새집 현관 신발장 위에 놓인 집 열쇠 꾸러미 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>확정일자 효력, 대항력부터 알아야</h2>\n<p data-ke-size=\"size16\">[이미지 2] 확정일자 효력이 생기는 순서를 정리한 메모 카드</p>\n<p data-ke-size=\"size16\">주택임대차보호법 제3조 제1항이 시작이에요.<br>집을 넘겨받고 주민등록을 마치면<br><span style=\"color: #0078cb;\"><b>그 다음 날</b></span>부터 제3자에게도 효력이 생겨요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">이게 대항력이에요. 집주인이 바뀌어도<br>새 주인에게 &quot;계약 끝날 때까지 살겠다&quot;고<br>말할 수 있는 힘이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">전입신고를 한 때에 주민등록을 한 것으로 봐요.<br>그래서 이사와 전입신고, 두 가지가 다 있어야 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>짐만 옮기고 전입신고를 미루거나,</b></span><br><span style=\"background-color: #ffe94d;\"><b>전입신고만 하고 이사를 안 하면 대항력이 없어요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">전입신고는 이사한 날부터 <span style=\"color: #0078cb;\"><b>14일</b></span> 안에 하게 돼 있지만<br>대항력을 생각하면 그날 바로 하는 게 좋아요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>우선변제권은 확정일자가 더해져야</h2>\n<blockquote data-ke-style=\"style3\">&quot;확정일자만 받으면 끝 아니에요?&quot;</blockquote>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">제3조의2 제2항은 대항력을 갖춘 세입자가<br>계약서에 확정일자까지 받아야<br>우선변제권이 생긴다고 정해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">우선변제권은 집이 경매·공매로 넘어갈 때<br>뒤 순위 권리자보다 먼저<br>보증금을 돌려받을 수 있는 힘이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>확정일자만 받고 전입신고를 안 하면</b></span><br><span style=\"color: #ff0010;\"><b>우선변제권은 생기지 않아요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>같은 날 근저당이 잡히면</h2>\n<p data-ke-size=\"size16\">[이미지 3] 확정일자 효력 시점과 전입신고 기한을 숫자로 정리한 카드</p>\n<p data-ke-size=\"size16\">이사 날 확정일자를 받았어도<br>대항력이 <span style=\"color: #0078cb;\"><b>다음 날 0시</b></span>부터라<br>우선변제권도 그때부터 순위를 다퉈요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">반면 근저당은 등기소에 접수된 날<br>바로 순위가 매겨져요.<br>그래서 하루 차이가 순서를 가르게 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 <span style=\"color: #0078cb;\"><b>3월 2일</b></span>에 이사·전입신고·확정일자를<br>다 마쳤는데 같은 날 근저당이 접수됐다면<br>내 순위는 3월 3일 0시라 그 근저당 뒤예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>이사 당일 같은 집에 근저당이 접수되면</b></span><br><span style=\"background-color: #ffe94d;\"><b>그 근저당이 내 보증금보다 앞서게 돼요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그래서 잔금 날과 이사 다음 날에<br>등기부를 한 번 더 열람해 보는 게 좋아요.<br>새로 잡힌 근저당이 없는지 보는 거예요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>확정일자는 어디서 받을까</h2>\n<p data-ke-size=\"size16\">[이미지 4] 주민센터 민원 창구가 보이는 밝은 실내 풍경</p>\n<p data-ke-size=\"size16\">제3조의6이 확정일자 받는 곳을 정해 뒀어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">✔ 읍·면사무소, 동 주민센터<br>✔ 시·군·구 출장소<br>✔ 지방법원과 지원, 등기소<br>✔ 공증인</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">인터넷등기소에서도 신청할 수 있어요.<br>전입신고하러 간 김에 주민센터에서<br>함께 받는 분이 가장 많아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">확정일자를 받으면 계약서에 날짜 도장이 찍혀요.<br>이 원본은 보증금을 돌려받을 때까지<br>잃어버리지 않게 따로 보관해 두세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>확정일자 효력 Q&amp;A</h2>\n<p data-ke-size=\"size16\">이사 앞둔 분들이 꼭 묻는 네 가지를 모았어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 확정일자는 이사 전에 받아도 되나요?<br>A1: 네, 계약서만 있으면 미리 받을 수 있어요.<br>다만 효력은 이사와 전입신고를 마친<br>다음 날 0시부터 함께 따져요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 이사 날 전입신고를 못 하면요?<br>A2: 대항력이 그만큼 늦어져요.<br>전입신고를 한 다음 날부터 생기니<br>가능하면 이사 당일 하는 게 좋아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q3: 월세 계약에도 확정일자가 필요할까요?<br>A3: 보증금이 있다면 우선변제권을 위해<br>월세 계약도 확정일자를 받아 두면 좋아요.<br>보증금이 적어도 지키는 방법은 같아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q4: 중간에 주소를 잠깐 옮기면 어떻게 되나요?<br>A4: 대항력은 주민등록을 유지해야 이어져요.<br><span style=\"color: #ff0010;\"><b>계약 중에 전입신고를 다른 곳으로 옮기면</b></span><br><span style=\"color: #ff0010;\"><b>그동안 쌓은 순위를 잃을 수 있어요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>확정일자 효력 정리</h2>\n<p data-ke-size=\"size16\">이사 날 할 일을 세 줄로 남겨요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 체크포인트</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>이사 당일 전입신고와 확정일자</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>대항력·우선변제권은 다음 날 0시부터</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>잔금 날·다음 날 등기부 다시 열람</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">확정일자 효력은 혼자 생기지 않아요.<br>이사와 전입신고가 함께 있어야<br>대항력과 우선변제권이 같이 살아나요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">세 가지를 같은 날 끝내고,<br>다음 날 아침 등기부를 한 번 더 보면<br>이사 날 챙길 일은 거의 다 한 셈이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분은 이사 날 전입신고까지 바로 하셨어요?<br>&quot;당일&quot;, &quot;며칠 뒤&quot; 중에 남겨 주세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">효력 시점과 부여기관은 주택임대차보호법<br>제3조·제3조의2·제3조의6 조문을<br>국가법령정보센터에서 그대로 읽었어요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>확정일자 효력, 전입신고 다음 날 0시를 기억해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><b>▶ 함께 보면 좋은 글</b><br><a href=\"https://seongdaeeyo.com/entry/%ED%99%95%EC%A0%95%EC%9D%BC%EC%9E%90-%EC%9D%B8%ED%84%B0%EB%84%B7-%EC%8B%A0%EC%B2%AD-%EC%A0%84%EC%9E%85%EC%8B%A0%EA%B3%A0-%ED%95%98%EB%8A%94-%EB%82%A0-%EA%B0%99%EC%9D%B4-%EB%B0%9B%EB%8A%94-%EC%88%9C%EC%84%9C-%EC%88%98%EC%88%98%EB%A3%8C-500%EC%9B%90\">확정일자 인터넷 신청, 전입신고 하는 날 같이 받는 순서 (수수료 500원)</a><br><a href=\"https://seongdaeeyo.com/entry/%EC%84%B8%EC%9E%85%EC%9E%90-%ED%99%94%EC%9E%AC%EB%B3%B4%ED%97%98-%EC%A7%91%EC%A3%BC%EC%9D%B8-%EB%B0%B0%EC%83%81%EA%B9%8C%EC%A7%80-%EB%90%A0%EA%B9%8C-%EC%9E%84%EC%B0%A8%EC%9E%90%EB%B0%B0%EC%83%81%EC%B1%85%EC%9E%84-%ED%99%95%EC%9D%B8%ED%95%98%EB%8A%94-%EB%B2%95\">세입자 화재보험, 집주인 배상까지 될까? 임차자배상책임 확인하는 법</a></p>"
+}
