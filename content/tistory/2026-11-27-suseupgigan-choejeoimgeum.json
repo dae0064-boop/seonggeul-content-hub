@@ -1,0 +1,625 @@
+{
+  "slug": "2026-11-27-suseupgigan-choejeoimgeum",
+  "title": "수습기간 최저임금, 수습 감액 90%는 누구까지 될까 (3개월)",
+  "category": "생활정보",
+  "tags": [
+    "수습기간최저임금",
+    "수습감액",
+    "근로계약기간",
+    "단순노무",
+    "2027년최저임금",
+    "수습기간월급",
+    "수습90퍼센트",
+    "최저임금법5조",
+    "최저임금시행령3조",
+    "수습시급",
+    "신입월급",
+    "최저시급",
+    "첫월급",
+    "생활제도",
+    "직장인"
+  ],
+  "publishAt": "2026-11-27 12:40",
+  "relatedUrls": [
+    "https://seongdaeeyo.com/entry/%EC%B5%9C%EC%A0%80%EC%9E%84%EA%B8%88-%EC%9B%94%EA%B8%89-%EA%B3%84%EC%82%B0-209%EC%8B%9C%EA%B0%84%EC%9D%84-%EA%B3%B1%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0%EC%99%80-%EB%82%B4%EB%85%84-%EA%B8%88%EC%95%A1-2156880%EC%9B%90",
+    "https://seongdaeeyo.com/entry/%EC%A3%BC%ED%9C%B4%EC%88%98%EB%8B%B9-%EA%B3%84%EC%82%B0-%EC%A3%BC-15%EC%8B%9C%EA%B0%84-%EB%84%98%EC%9C%BC%EB%A9%B4-%EC%96%BC%EB%A7%88-%EB%B0%9B%EC%9D%84%EA%B9%8C-%EC%A3%BC-40%EC%8B%9C%EA%B0%84%EC%9D%B4%EB%A9%B4-8%EC%8B%9C%EA%B0%84%EB%B6%84"
+  ],
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "2027년 최저임금은 시간급 10,700원이라"
+        },
+        {
+          "t": "수습 감액을 해도 시급이 9,630원 아래면 안 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 첫 출근 날 근로계약서에"
+        },
+        {
+          "t": "\"수습 3개월은 90% 지급\"이라고 적혀 있다면"
+        },
+        {
+          "t": "\"이거 원래 이렇게 해도 되는 거야?\" 싶기 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "오늘은 수습기간 최저임금을"
+        },
+        {
+          "t": "법 조문 순서대로 짚어 볼게요."
+        },
+        {
+          "t": "누가 되고 누가 안 되는지가 핵심이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "먼저 결론이에요."
+        },
+        {
+          "t": "수습기간 최저임금 감액은 1년 이상 계약,",
+          "s": "yellow"
+        },
+        {
+          "t": "수습 시작 3개월 안, 단순노무가 아닐 때만 돼요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "첫 출근한 사무실 책상에서 계약서를 보며 고개를 갸웃하는 20대 신입사원 얼굴 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "수습기간 최저임금, 법에 적힌 조건"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "수습기간 최저임금 감액 조건을 순서대로 적은 메모 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "최저임금법 제5조 제2항이 기준이에요."
+        },
+        {
+          "t": "수습 중이라는 이유만으로 깎을 수는 없고,"
+        },
+        {
+          "t": "조건 세 가지가 한꺼번에 맞아야 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "조건이 맞으면 시행령 제3조대로"
+        },
+        {
+          "t": "시간급 최저임금의 10%를 뺀 금액이",
+          "segs": [
+            {
+              "t": "시간급 최저임금의 "
+            },
+            {
+              "t": "10%",
+              "s": "blue"
+            },
+            {
+              "t": "를 뺀 금액이"
+            }
+          ]
+        },
+        {
+          "t": "그 사람의 최저임금이 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "세 가지 중 하나라도 빠지면",
+          "s": "red"
+        },
+        {
+          "t": "수습이어도 최저임금 전액을 줘야 해요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "수습 감액이 되는지 순서대로"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "계약서를 펴 놓고 이 순서로 보면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "① 근로계약 기간이 1년 이상인지 본다"
+        },
+        {
+          "t": "② 수습 시작일부터 3개월 안인지 센다"
+        },
+        {
+          "t": "③ 하는 일이 단순노무 직종인지 본다"
+        },
+        {
+          "t": "④ 깎은 시급이 최저임금 90% 이상인지 본다"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "①에서 6개월, 10개월처럼 1년보다 짧게"
+        },
+        {
+          "t": "기간을 정한 계약이라면 여기서 끝이에요."
+        },
+        {
+          "t": "수습 감액 없이 최저임금 전액이 적용돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "②는 수습을 시작한 날부터 세요."
+        },
+        {
+          "t": "수습을 6개월로 정해 뒀더라도"
+        },
+        {
+          "t": "감액은 앞의 3개월까지만이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그러니 4개월째 월급부터는"
+        },
+        {
+          "t": "수습 중이라도 최저임금 전액이 기준이에요."
+        },
+        {
+          "t": "명세서의 시급이 바뀌었는지 꼭 봐 두세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "③과 ④는 아래에서 하나씩 풀어 볼게요."
+        },
+        {
+          "t": "근로계약 기간과 수습 기간은 서로 다른 칸이라"
+        },
+        {
+          "t": "계약서에서 두 칸을 따로 찾아 읽어야 해요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "단순노무는 처음부터 빠져요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "수습기간 최저임금에 대해 맞는지 틀리는지 풀어 보는 퀴즈 카드"
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"청소 일도 수습 감액이 되나요?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "법은 고용노동부 장관이 고시한"
+        },
+        {
+          "t": "단순노무업무 직종을 따로 빼 뒀어요."
+        },
+        {
+          "t": "청소·경비·운반처럼 몸으로 하는 일이"
+        },
+        {
+          "t": "대표적인 단순노무 종사자예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "단순노무 직종이라면 근로계약 기간이",
+          "s": "yellow"
+        },
+        {
+          "t": "1년이 넘어도 수습 감액을 할 수 없어요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "어느 직종에 들어가는지 헷갈리면"
+        },
+        {
+          "t": "고용노동부 상담센터 1350으로 물어보면 돼요."
+        },
+        {
+          "t": "일하는 내용을 그대로 말하면 답이 빨라요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "2026년·2027년 숫자로 보면"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "탁상 달력과 계산기, 볼펜만 놓인 정리된 책상"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "2026년 최저임금은 시간급 10,320원이에요."
+        },
+        {
+          "t": "수습 감액을 하면 9,288원이 하한이에요.",
+          "segs": [
+            {
+              "t": "수습 감액을 하면 "
+            },
+            {
+              "t": "9,288원",
+              "s": "blue"
+            },
+            {
+              "t": "이 하한이에요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "월 209시간으로 바꾸면"
+        },
+        {
+          "t": "감액 전 금액은 2,156,880원이고"
+        },
+        {
+          "t": "90%는 1,941,192원이에요.",
+          "segs": [
+            {
+              "t": "90%는 "
+            },
+            {
+              "t": "1,941,192원",
+              "s": "blue"
+            },
+            {
+              "t": "이에요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "2027년 최저임금은 시간급 10,700원으로"
+        },
+        {
+          "t": "최저임금위원회가 2026년 7월 14일에 의결했어요."
+        },
+        {
+          "t": "감액 하한은 9,630원,",
+          "segs": [
+            {
+              "t": "감액 하한은 "
+            },
+            {
+              "t": "9,630원",
+              "s": "blue"
+            },
+            {
+              "t": ","
+            }
+          ]
+        },
+        {
+          "t": "월로는 2,012,670원이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "수습이 해를 넘겨 이어지면 1월 1일부터는",
+          "s": "yellow"
+        },
+        {
+          "t": "2027년 금액으로 다시 계산해야 해요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 11월 1일에 1년 계약으로 들어왔다면"
+        },
+        {
+          "t": "11월·12월은 9,288원 이상,"
+        },
+        {
+          "t": "1월 수습 몫은 9,630원 이상이 기준이에요."
+        },
+        {
+          "t": "2월부터는 감액 없이 10,700원이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "주 40시간이 아닌 단시간 근무라면"
+        },
+        {
+          "t": "월 209시간 대신 실제 시간에"
+        },
+        {
+          "t": "감액한 시급을 곱해서 맞춰 보면 돼요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "수습기간 최저임금 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "수습 계약서를 받고 자주 묻는 두 가지예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 계약서에 수습 80%라고 적혀 있어요."
+        },
+        {
+          "t": "A1: 감액은 10%까지라 실제 시급이"
+        },
+        {
+          "t": "최저임금 90%보다 낮으면 법 위반이에요."
+        },
+        {
+          "t": "그 차액은 받을 수 있는 임금이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 정해진 기간 없는 정규직이면요?"
+        },
+        {
+          "t": "A2: 조문은 '1년 이상 기간을 정한 계약'이라"
+        },
+        {
+          "t": "적고 있어요. 내 계약이 해당하는지"
+        },
+        {
+          "t": "1350 상담으로 확인해 보는 게 안전해요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "수습기간 최저임금 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "첫 월급 전에 볼 것을 세 줄로 모았어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 체크포인트",
+          "s": "green"
+        },
+        {
+          "t": "근로계약 기간 1년 이상인지",
+          "s": "green"
+        },
+        {
+          "t": "수습 시작일부터 3개월 안인지",
+          "s": "green"
+        },
+        {
+          "t": "단순노무 직종은 아닌지",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "수습기간 최저임금은 조건이 맞을 때만"
+        },
+        {
+          "t": "10%를 덜 받는 예외예요."
+        },
+        {
+          "t": "조건이 하나라도 빠지면 전액이 기준이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "최저임금보다 적게 주면 최저임금법 제28조에 따라",
+          "s": "red"
+        },
+        {
+          "t": "3년 이하 징역이나 2천만 원 이하 벌금 대상이에요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분 계약서엔 수습이 몇 개월이었나요?"
+        },
+        {
+          "t": "숫자 하나로 남겨 주시면 반가워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "조건은 최저임금법 제5조와 시행령 제3조,"
+        },
+        {
+          "t": "금액은 2026년 최저임금 고시와 2027년"
+        },
+        {
+          "t": "최저임금위원회 의결 보도자료로 다시 계산했어요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "수습기간 최저임금, 수습 감액 조건 세 가지부터 봐요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">2027년 최저임금은 시간급 10,700원이라<br>수습 감액을 해도 시급이 9,630원 아래면 안 돼요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 첫 출근 날 근로계약서에<br>&quot;수습 3개월은 90% 지급&quot;이라고 적혀 있다면<br>&quot;이거 원래 이렇게 해도 되는 거야?&quot; 싶기 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">오늘은 수습기간 최저임금을<br>법 조문 순서대로 짚어 볼게요.<br>누가 되고 누가 안 되는지가 핵심이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">먼저 결론이에요.<br><span style=\"background-color: #ffe94d;\"><b>수습기간 최저임금 감액은 1년 이상 계약,</b></span><br><span style=\"background-color: #ffe94d;\"><b>수습 시작 3개월 안, 단순노무가 아닐 때만 돼요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 1] 첫 출근한 사무실 책상에서 계약서를 보며 고개를 갸웃하는 20대 신입사원 얼굴 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>수습기간 최저임금, 법에 적힌 조건</h2>\n<p data-ke-size=\"size16\">[이미지 2] 수습기간 최저임금 감액 조건을 순서대로 적은 메모 카드</p>\n<p data-ke-size=\"size16\">최저임금법 제5조 제2항이 기준이에요.<br>수습 중이라는 이유만으로 깎을 수는 없고,<br>조건 세 가지가 한꺼번에 맞아야 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">조건이 맞으면 시행령 제3조대로<br>시간급 최저임금의 <span style=\"color: #0078cb;\"><b>10%</b></span>를 뺀 금액이<br>그 사람의 최저임금이 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>세 가지 중 하나라도 빠지면</b></span><br><span style=\"color: #ff0010;\"><b>수습이어도 최저임금 전액을 줘야 해요.</b></span></p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>수습 감액이 되는지 순서대로</h2>\n<p data-ke-size=\"size16\">계약서를 펴 놓고 이 순서로 보면 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">① 근로계약 기간이 1년 이상인지 본다<br>② 수습 시작일부터 3개월 안인지 센다<br>③ 하는 일이 단순노무 직종인지 본다<br>④ 깎은 시급이 최저임금 90% 이상인지 본다</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">①에서 6개월, 10개월처럼 1년보다 짧게<br>기간을 정한 계약이라면 여기서 끝이에요.<br>수습 감액 없이 최저임금 전액이 적용돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">②는 수습을 시작한 날부터 세요.<br>수습을 6개월로 정해 뒀더라도<br>감액은 앞의 3개월까지만이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그러니 4개월째 월급부터는<br>수습 중이라도 최저임금 전액이 기준이에요.<br>명세서의 시급이 바뀌었는지 꼭 봐 두세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">③과 ④는 아래에서 하나씩 풀어 볼게요.<br>근로계약 기간과 수습 기간은 서로 다른 칸이라<br>계약서에서 두 칸을 따로 찾아 읽어야 해요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>단순노무는 처음부터 빠져요</h2>\n<p data-ke-size=\"size16\">[이미지 3] 수습기간 최저임금에 대해 맞는지 틀리는지 풀어 보는 퀴즈 카드</p>\n<blockquote data-ke-style=\"style3\">&quot;청소 일도 수습 감액이 되나요?&quot;</blockquote>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">법은 고용노동부 장관이 고시한<br>단순노무업무 직종을 따로 빼 뒀어요.<br>청소·경비·운반처럼 몸으로 하는 일이<br>대표적인 단순노무 종사자예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>단순노무 직종이라면 근로계약 기간이</b></span><br><span style=\"background-color: #ffe94d;\"><b>1년이 넘어도 수습 감액을 할 수 없어요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">어느 직종에 들어가는지 헷갈리면<br>고용노동부 상담센터 1350으로 물어보면 돼요.<br>일하는 내용을 그대로 말하면 답이 빨라요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>2026년·2027년 숫자로 보면</h2>\n<p data-ke-size=\"size16\">[이미지 4] 탁상 달력과 계산기, 볼펜만 놓인 정리된 책상</p>\n<p data-ke-size=\"size16\">2026년 최저임금은 시간급 10,320원이에요.<br>수습 감액을 하면 <span style=\"color: #0078cb;\"><b>9,288원</b></span>이 하한이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">월 209시간으로 바꾸면<br>감액 전 금액은 2,156,880원이고<br>90%는 <span style=\"color: #0078cb;\"><b>1,941,192원</b></span>이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">2027년 최저임금은 시간급 10,700원으로<br>최저임금위원회가 2026년 7월 14일에 의결했어요.<br>감액 하한은 <span style=\"color: #0078cb;\"><b>9,630원</b></span>,<br>월로는 2,012,670원이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>수습이 해를 넘겨 이어지면 1월 1일부터는</b></span><br><span style=\"background-color: #ffe94d;\"><b>2027년 금액으로 다시 계산해야 해요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 11월 1일에 1년 계약으로 들어왔다면<br>11월·12월은 9,288원 이상,<br>1월 수습 몫은 9,630원 이상이 기준이에요.<br>2월부터는 감액 없이 10,700원이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">주 40시간이 아닌 단시간 근무라면<br>월 209시간 대신 실제 시간에<br>감액한 시급을 곱해서 맞춰 보면 돼요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>수습기간 최저임금 Q&amp;A</h2>\n<p data-ke-size=\"size16\">수습 계약서를 받고 자주 묻는 두 가지예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 계약서에 수습 80%라고 적혀 있어요.<br>A1: 감액은 10%까지라 실제 시급이<br>최저임금 90%보다 낮으면 법 위반이에요.<br>그 차액은 받을 수 있는 임금이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 정해진 기간 없는 정규직이면요?<br>A2: 조문은 '1년 이상 기간을 정한 계약'이라<br>적고 있어요. 내 계약이 해당하는지<br>1350 상담으로 확인해 보는 게 안전해요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>수습기간 최저임금 정리</h2>\n<p data-ke-size=\"size16\">첫 월급 전에 볼 것을 세 줄로 모았어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 체크포인트</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>근로계약 기간 1년 이상인지</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>수습 시작일부터 3개월 안인지</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>단순노무 직종은 아닌지</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">수습기간 최저임금은 조건이 맞을 때만<br>10%를 덜 받는 예외예요.<br>조건이 하나라도 빠지면 전액이 기준이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>최저임금보다 적게 주면 최저임금법 제28조에 따라</b></span><br><span style=\"color: #ff0010;\"><b>3년 이하 징역이나 2천만 원 이하 벌금 대상이에요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분 계약서엔 수습이 몇 개월이었나요?<br>숫자 하나로 남겨 주시면 반가워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">조건은 최저임금법 제5조와 시행령 제3조,<br>금액은 2026년 최저임금 고시와 2027년<br>최저임금위원회 의결 보도자료로 다시 계산했어요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>수습기간 최저임금, 수습 감액 조건 세 가지부터 봐요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><b>▶ 함께 보면 좋은 글</b><br><a href=\"https://seongdaeeyo.com/entry/%EC%B5%9C%EC%A0%80%EC%9E%84%EA%B8%88-%EC%9B%94%EA%B8%89-%EA%B3%84%EC%82%B0-209%EC%8B%9C%EA%B0%84%EC%9D%84-%EA%B3%B1%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0%EC%99%80-%EB%82%B4%EB%85%84-%EA%B8%88%EC%95%A1-2156880%EC%9B%90\">최저임금 월급 계산, 209시간을 곱하는 이유와 내년 금액 (2,156,880원)</a><br><a href=\"https://seongdaeeyo.com/entry/%EC%A3%BC%ED%9C%B4%EC%88%98%EB%8B%B9-%EA%B3%84%EC%82%B0-%EC%A3%BC-15%EC%8B%9C%EA%B0%84-%EB%84%98%EC%9C%BC%EB%A9%B4-%EC%96%BC%EB%A7%88-%EB%B0%9B%EC%9D%84%EA%B9%8C-%EC%A3%BC-40%EC%8B%9C%EA%B0%84%EC%9D%B4%EB%A9%B4-8%EC%8B%9C%EA%B0%84%EB%B6%84\">주휴수당 계산, 주 15시간 넘으면 얼마 받을까 (주 40시간이면 8시간분)</a></p>"
+}

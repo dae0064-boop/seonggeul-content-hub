@@ -1,0 +1,87 @@
+{
+ "slug": "2026-11-29-dangnyo-somopum-yoyangbi",
+ "title": "인슐린 시작한 엄마, 당뇨 소모품 요양비 챙기셨나요",
+ "source": "11/29(일) 16:20 네이버 원고 — 생활보장 홈판형(제도), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 + 정보 카드. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "식탁 위 혈당측정기와 검사지 통을 손가락으로 가리키는 손 (대표사진)",
+   "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Setting: a bright home kitchen table. Close-up of a woman's hand pointing with one finger at a blood glucose meter and a container of blank test strips on a kitchen table, an insulin pen beside them. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: bright clear daylight, high key. Expression: pointing at the key object with one finger and a friendly smile. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "hands",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "hands",
+   "thumb_theme": "navy",
+   "thumb_person": "40대 딸의 손",
+   "thumb_place": "주제",
+   "thumb_light": "밝은 낮",
+   "thumb_mood": "가리킴",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "navy",
+    "font": "ptd",
+    "title": "당뇨 소모품\n돌려받을까?"
+   },
+   "anchor": "blood glucose meter"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "당뇨 소모품 요양비 받는 순서를 정리한 메모 카드",
+   "kind": "card",
+   "card": {
+    "type": "steps",
+    "style": "memo",
+    "title": "요양비 받는 순서",
+    "sub": "순서만 지키면 어렵지 않아요",
+    "items": [
+     "소모품 처방전을 받는다",
+     "공단에 대상자로 등록한다",
+     "등록 제품을 산다",
+     "청구서와 서류를 낸다"
+    ],
+    "memo": "세금계산서를 꼭 달라고",
+    "hl": 3
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "내과 진료실에서 의사가 인슐린 펜 사용법을 설명하는 모습과 고개를 끄덕이는 60대 여성",
+   "prompt": "Camera and composition: medium shot in a clinic consultation room. A Korean doctor showing how to use an insulin pen to a Korean woman in her 60s who nods attentively. Background: bright internal medicine consultation room. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a clinic consultation room",
+   "bg": "bright internal medicine consultation room",
+   "anchor": "insulin pen"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "약국형 의료기기 판매점 진열대에 놓인 혈당측정검사지 상자들",
+   "prompt": "Camera and composition: medium shot of a store shelf. Plain boxes of blood glucose test strips without readable labels lined up on a medical supply store shelf. Background: clean medical supply store. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot of a store shelf",
+   "bg": "clean medical supply store",
+   "anchor": "boxes of blood glucose test strips"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "집 거실 탁자에서 처방전과 세금계산서를 서류 봉투에 넣는 40대 딸의 손",
+   "prompt": "Camera and composition: close-up of hands at a living room table. A woman's hands putting a blank prescription and a blank tax invoice into a document envelope. Background: living room table with soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands at a living room table",
+   "bg": "living room table with soft daylight",
+   "anchor": "blank prescription"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "저녁 식탁에서 웃으며 혈당 수첩을 함께 보는 60대 어머니와 30대 딸",
+   "prompt": "Camera and composition: medium shot at a dining table in the evening. A Korean mother in her 60s and her daughter in her 30s smiling while looking at a small blood sugar notebook together at a dining table. Background: warm dining room with evening light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a dining table in the evening",
+   "bg": "warm dining room with evening light",
+   "anchor": "blood sugar notebook"
+  }
+ ]
+}

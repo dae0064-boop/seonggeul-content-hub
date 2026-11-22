@@ -1,0 +1,88 @@
+{
+ "slug": "2026-11-26-singyeongchiryo-silbi",
+ "title": "신경치료 실비, 씌우는 크라운까지 돌려받을 수 있나요 (자기부담 20%)",
+ "source": "11/26(목) 10:00 네이버 원고 — 생활보장 검색형(실비청구), 실사풍 (11/22 미리 작성)",
+ "note": "6장 = 대표사진 1 + 장면 + 정보 카드. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "치과 진료 의자 옆에서 빈 진료비 영수증을 든 손 (대표사진)",
+   "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Setting: a dental clinic treatment room. Close-up of a Korean man's hands in a gray knit sleeve holding a blank dental clinic receipt beside a dental treatment chair, the chair and dental light softly blurred behind. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: cool clean white indoor light. Expression: pointing at the key object with one finger and a friendly smile. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "hands",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "hands",
+   "thumb_theme": "navy",
+   "thumb_person": "40대 남성",
+   "thumb_place": "주제",
+   "thumb_light": "흰 조명",
+   "thumb_mood": "가리킴",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "navy",
+    "font": "ptd",
+    "title": "신경치료 실비\n될까?"
+   },
+   "anchor": "dental treatment chair"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "신경치료 실비에 대해 헷갈리는 세 가지를 묻는 퀴즈 카드",
+   "kind": "card",
+   "card": {
+    "type": "quiz",
+    "title": "신경치료 실비 O·X",
+    "items": [
+     "신경치료는 급여 칸이 많다",
+     "비급여 크라운도 보상된다",
+     "청구 기한은 3년이다"
+    ],
+    "answers": [
+     "O",
+     "X",
+     "O"
+    ],
+    "where": "아래 Q&A"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "치과 접수대 앞에서 서류 봉투를 받는 40대 남성",
+   "prompt": "Camera and composition: medium shot at a dental clinic reception. A Korean man in his 40s in a navy padded vest receiving a plain envelope from a staff member across a clean dental clinic reception counter. Background: bright dental clinic reception with white counter and plants. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a dental clinic reception",
+   "bg": "bright dental clinic reception with white counter and plants",
+   "anchor": "dental clinic reception counter"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "거실 탁자에서 휴대폰 계산기로 치과 영수증을 맞춰 보는 30대 여성",
+   "prompt": "Camera and composition: medium shot at a living room table. A Korean woman in her 30s with a low ponytail in a cream sweater sitting at a living room table, using a calculator app on her smartphone next to a blank dental receipt. The blank dental receipt and smartphone calculator is clearly visible. Background: bright living room with light wood table. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a living room table",
+   "bg": "bright living room with light wood table",
+   "anchor": "blank dental receipt and smartphone calculator"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "치과 대기실 의자에서 진료 순서를 기다리는 60대 아버지",
+   "prompt": "Camera and composition: medium shot in a clinic waiting area. A Korean man in his 60s in a beige jacket sitting calmly on a chair in a dental clinic waiting area, a tooth model display softly visible on a shelf. The dental clinic waiting area with tooth model display is clearly visible. Background: soft white dental waiting room with a small plant. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a clinic waiting area",
+   "bg": "soft white dental waiting room with a small plant",
+   "anchor": "dental clinic waiting area with tooth model display"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "치과 진료실에서 치아 모형을 가리키며 설명하는 의사의 손",
+   "prompt": "Camera and composition: close-up of hands at a clinic desk. Close-up of a dentist's gloved hand pointing with a small mirror tool at a large plastic tooth model on a consultation desk, no face in the frame. Background: clean white dental consultation room. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands at a clinic desk",
+   "bg": "clean white dental consultation room",
+   "anchor": "plastic tooth model"
+  }
+ ]
+}

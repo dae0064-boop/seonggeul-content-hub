@@ -1,0 +1,83 @@
+{
+ "slug": "2026-11-25-yorogyeolseok-silbi",
+ "title": "새벽 옆구리 통증으로 응급실 간 남편, 요로결석 실비 보세요",
+ "source": "11/25(수) 19:00 네이버 원고 — 생활보장 홈판형(실비청구), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "응급실 앞 대기 의자에서 놀란 얼굴로 이야기를 나누는 40대 부부 (대표사진)",
+   "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Setting: a hospital emergency room waiting area at night. A Korean husband in his 40s in a cobalt blue zip-up jacket and his wife in her 40s sitting on waiting chairs outside an emergency room entrance, talking with surprised faces. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft overcast daylight. Expression: pleasantly surprised, eyebrows up, not scared. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "duo",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "duo",
+   "thumb_theme": "cobalt",
+   "thumb_person": "40대 부부",
+   "thumb_place": "주제",
+   "thumb_light": "흐린 날",
+   "thumb_mood": "놀람",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "cobalt",
+    "font": "ptd",
+    "title": "요로결석 실비\n얼마나 될까?"
+   },
+   "anchor": "emergency room entrance"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "요로결석 실비를 스스로 확인하는 체크 카드",
+   "kind": "card",
+   "card": {
+    "type": "selfcheck",
+    "title": "요로결석 실비 체크",
+    "items": [
+     "결석 진단이 있는지",
+     "급여 칸에 찍혔는지",
+     "응급실에 몇 시간 있었는지"
+    ],
+    "result": "아래 '입원 기준' 부분을 보세요 👇"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "비뇨의학과 진료실에서 빈 초음파 화면을 보며 설명하는 의사",
+   "prompt": "Camera and composition: medium shot in a urology consultation room. A Korean urologist in a white coat pointing at a blank ultrasound monitor while explaining to a patient, calm. Background: bright urology consultation room. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a urology consultation room",
+   "bg": "bright urology consultation room",
+   "anchor": "blank ultrasound monitor"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "응급실 침대 옆 의자에서 남편 손을 잡고 있는 40대 아내",
+   "prompt": "Camera and composition: medium shot beside an emergency room bed. A Korean woman in her 40s sitting on a chair beside an emergency room bed, holding her husband's hand as he rests calmly. Background: clean emergency room bay with curtains. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot beside an emergency room bed",
+   "bg": "clean emergency room bay with curtains",
+   "anchor": "emergency room bed"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "식탁에서 응급실 영수증과 서류 봉투를 정리하는 40대 남성",
+   "prompt": "Camera and composition: medium shot at a kitchen table. A Korean man in his 40s in a gray sweatshirt sorting blank hospital receipts and a plain envelope on a kitchen table in the morning. Background: bright home kitchen. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a kitchen table",
+   "bg": "bright home kitchen",
+   "anchor": "blank hospital receipts and a plain envelope"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "아침 식탁에서 물컵을 든 남편과 웃으며 이야기하는 아내",
+   "prompt": "Camera and composition: medium shot at a breakfast table. A Korean husband in his 40s holding a glass of water and smiling with his wife at a breakfast table, relaxed. Background: sunny home dining room. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a breakfast table",
+   "bg": "sunny home dining room",
+   "anchor": "glass of water"
+  }
+ ]
+}

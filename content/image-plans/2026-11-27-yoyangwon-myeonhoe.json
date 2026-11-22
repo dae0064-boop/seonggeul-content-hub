@@ -1,0 +1,92 @@
+{
+ "slug": "2026-11-27-yoyangwon-myeonhoe",
+ "title": "요양원에 계신 엄마를 보러 가는 주말, 요양원 면회와 외박 전에 알아 둘 것",
+ "source": "11/27(금) 19:00 네이버 원고 — 생활보장 홈판형(돌봄), 실사풍 (11/22 미리 작성)",
+ "note": "6장 = 대표사진 1 + 장면 + 정보 카드. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "요양원 면회실에서 엄마와 손을 맞잡고 이야기하는 40대 딸 (대표사진)",
+   "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Setting: a nursing home visiting room. A Korean daughter in her 40s holding hands with her mother in her 70s across a small table in a nursing home visiting room, a photo album open between them. The photo album on the visiting room table is clearly visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: bright clear daylight, high key. Expression: bright happy smile. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "duo",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "duo",
+   "thumb_theme": "charcoal",
+   "thumb_person": "40대 딸과 70대 엄마",
+   "thumb_place": "주제",
+   "thumb_light": "밝은 낮",
+   "thumb_mood": "반가움",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "charcoal",
+    "font": "ptd",
+    "title": "요양원 면회\n외박도 될까?"
+   },
+   "anchor": "photo album on the visiting room table"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "외박비용 계산과 기억할 점을 나눈 비교 카드",
+   "kind": "card",
+   "card": {
+    "type": "compare",
+    "title": "요양원 외박비용",
+    "ask": "외박하면 비용은요?",
+    "heads": [
+     "외박비용 계산",
+     "기억할 점"
+    ],
+    "items": [
+     [
+      "1회 최대 10일",
+      "밤 12시"
+     ],
+     [
+      "한 달에는 15일까지",
+      "처음 10일 동안"
+     ]
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "집 거실 소파에서 오랜만에 손주와 웃으며 앉아 있는 70대 어머니",
+   "prompt": "Camera and composition: medium shot on a living room sofa. A Korean mother in her 70s smiling on a living room sofa with her grandchild leaning on her shoulder. Background: warm home living room. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot on a living room sofa",
+   "bg": "warm home living room",
+   "anchor": "living room sofa"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "요양원 사무실에서 외박 신청서를 쓰는 50대 아들",
+   "prompt": "Camera and composition: medium shot in a small office. A Korean son in his 50s filling out a plain form at a desk in a nursing home office. The nursing home office desk is clearly visible. Background: tidy nursing home office. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a small office",
+   "bg": "tidy nursing home office",
+   "anchor": "nursing home office desk"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "요양원 복도에서 직원과 인사를 나누는 가족",
+   "prompt": "Camera and composition: medium shot in a hallway. A Korean family greeting a caregiver with a polite bow in a bright nursing home hallway. Background: bright nursing home hallway. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a hallway",
+   "bg": "bright nursing home hallway",
+   "anchor": "nursing home hallway"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "요양원 정원 벤치에서 아버지와 따뜻한 차를 마시는 30대 딸",
+   "prompt": "Camera and composition: medium shot on a garden bench. A Korean daughter in her 30s sharing warm tea with her elderly father on a nursing home garden bench. The warm tea cups on a garden bench is clearly visible. Background: nursing home garden in autumn. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot on a garden bench",
+   "bg": "nursing home garden in autumn",
+   "anchor": "warm tea cups on a garden bench"
+  }
+ ]
+}

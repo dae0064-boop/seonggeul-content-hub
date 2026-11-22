@@ -1,0 +1,87 @@
+{
+  "slug": "2026-11-25-seoul-villa-cheolgeo",
+  "brand": "다와이철거",
+  "mood": "morning",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "빌라 현관 앞 계단에 놓인 철거 공구 (대표사진)",
+      "scene": "a sledgehammer, a pry bar and gloves resting on the dusty floor just inside the entrance of an old Korean villa apartment.",
+      "shot": "tools",
+      "prompt": "Camera and composition: a sledgehammer, a pry bar and gloves resting on the dusty floor just inside the entrance of an old Korean villa apartment. Shot type: close-up of demolition tools such as a hammer, a pry bar, a cutting machine and work gloves resting on a dusty floor in the space, shallow depth of field. No people in the image. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "골목 좁은 동네\n차는 어디에"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "차 한 대가 겨우 지나가는 빌라 골목",
+      "scene": "a narrow residential alley between old low-rise Korean villa buildings with parked cars on one side.",
+      "prompt": "Camera and composition: a narrow residential alley between old low-rise Korean villa buildings with parked cars on one side. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "오래된 빌라 거실의 두꺼운 장판과 벽지",
+      "scene": "an old villa living room with thick layered vinyl flooring curling at the edge and faded wallpaper.",
+      "prompt": "Camera and composition: an old villa living room with thick layered vinyl flooring curling at the edge and faded wallpaper. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "빌라 철거 준비 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "빌라 철거 준비 순서",
+        "items": [
+          "골목 차 댈 자리",
+          "이웃에 날짜 안내",
+          "남길 것·걷을 것",
+          "짐과 가구 빼기",
+          "가스·전기 정리"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "빌라 현관에서 본 좁은 실내 복도",
+      "scene": "a narrow hallway inside an old villa unit seen from the front door.",
+      "prompt": "Camera and composition: a narrow hallway inside an old villa unit seen from the front door. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "계단 벽을 보양재로 덮어 둔 빌라 계단",
+      "scene": "a villa stairwell with walls and handrails covered by protective boards and plastic.",
+      "prompt": "Camera and composition: a villa stairwell with walls and handrails covered by protective boards and plastic. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "빌라 철거 궁금한 점을 담은 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "빌라 철거 궁금한 점",
+        "items": [
+          "차 댈 곳이 없다면",
+          "더 오래 걸리나",
+          "이웃 항의는",
+          "하루에 다 나르나"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "철거를 마치고 비워 둔 빌라 거실",
+      "scene": "an emptied old villa living room with bare cement floor and walls, swept clean, morning light.",
+      "prompt": "Camera and composition: an emptied old villa living room with bare cement floor and walls, swept clean, morning light. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "slug": "2026-11-28-incheon-gangmaru-cheolgeo",
+  "brand": "다와이철거",
+  "mood": "overcast",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "위에서 내려다본 강마루를 반쯤 걷은 거실 (대표사진)",
+      "scene": "high-angle view of a living room floor with half of the glued wooden floorboards removed, showing grey cement with adhesive lines.",
+      "shot": "topdown",
+      "prompt": "Camera and composition: high-angle view of a living room floor with half of the glued wooden floorboards removed, showing grey cement with adhesive lines. Shot type: high-angle view looking down at the floor where the old finish has been removed, showing the bare base. No people in the image. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "본드로 붙은 바닥\n오래 걸리는 이유",
+        "look": "frame",
+        "theme": "brick"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "결이 선명한 강마루가 깔린 거실 바닥",
+      "scene": "a living room floor covered with glued engineered wood flooring with clear wood grain.",
+      "prompt": "Camera and composition: a living room floor covered with glued engineered wood flooring with clear wood grain. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "강마루를 뗀 자리에 줄처럼 남은 본드 자국",
+      "scene": "close-up of hardened adhesive ridges left on a cement floor after floorboards were pulled off.",
+      "prompt": "Camera and composition: close-up of hardened adhesive ridges left on a cement floor after floorboards were pulled off. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "바닥 그라인딩을 위해 짐을 비운 거실",
+      "scene": "an emptied apartment living room with all furniture removed, floor still covered with wooden flooring.",
+      "prompt": "Camera and composition: an emptied apartment living room with all furniture removed, floor still covered with wooden flooring. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "강마루 철거 때 지키는 것을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "강마루 철거 때 지킬 것",
+        "items": [
+          "판과 본드만 걷기",
+          "얕은 각도 지키기",
+          "바닥은 깨지 않기"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "묶어서 쌓아 둔 강마루 조각과 마대",
+      "scene": "broken pieces of wooden flooring bundled and stacked beside tied debris sacks.",
+      "prompt": "Camera and composition: broken pieces of wooden flooring bundled and stacked beside tied debris sacks. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "문 아래와 모서리까지 정리한 바닥 가장자리",
+      "scene": "the edge of a cleaned cement floor along a wall and under a door frame.",
+      "prompt": "Camera and composition: the edge of a cleaned cement floor along a wall and under a door frame. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "본드까지 갈아 내고 평평해진 시멘트 바닥",
+      "scene": "a smooth ground cement floor with adhesive removed, ready for new flooring.",
+      "prompt": "Camera and composition: a smooth ground cement floor with adhesive removed, ready for new flooring. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

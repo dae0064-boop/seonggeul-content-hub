@@ -969,7 +969,19 @@ for (const file of files) {
         if (v3) {
           if (!shot) errors.push(`대표사진(1번)에 thumb_shot 이 없거나 목록 밖입니다 (${Object.keys(st0.thumb_shots || {}).join('·')}) — standards/이미지-기준.md "대표사진 구도 섞기"`);
           else if (!(t.prompt || '').includes(shot.prompt)) errors.push(`대표사진 프롬프트에 구도 문구가 없습니다 — "${shot.prompt}"`);
-          if (!tistory && post.slot === '홈판' && dated >= HF_STYLE_FROM && !(post.issue && t.kind === 'photo') && !HF_SHOTS.includes(t.thumb_shot))
+          // 홈판형 하루 5편 날(HF5_FROM~)은 얼굴 구도(face·duo, 같은 구도 2편까지)로 4편이 최대라 5번째 1편은 사람이 보이는 다른 구도(hands·wide)도 된다
+          // (2026-11-22 — routines/naver-daily.md ⑦ "face 2 · duo 2 · 사람이 보이는 다른 구도 1" 인데 검사기가 막고 있었다)
+          const hf5Other = () => {
+            if (dated < HF5_FROM || !['hands', 'wide'].includes(t.thumb_shot)) return false;
+            const d0 = file.replace(/[^\\/]+$/, '') || './', me0 = file.split(/[\\/]/).pop();
+            return !daySibs(d0, dated).some((f) => {
+              if (f === me0) return false;
+              let sl = ''; try { sl = parsePost(fs.readFileSync(d0 + f, 'utf8')).slot; } catch { return false; }
+              const s1 = planOf(d0 + f)?.images?.find((im) => im.n === 1)?.thumb_shot;
+              return sl === '홈판' && s1 && !HF_SHOTS.includes(s1);
+            });
+          };
+          if (!tistory && post.slot === '홈판' && dated >= HF_STYLE_FROM && !(post.issue && t.kind === 'photo') && !HF_SHOTS.includes(t.thumb_shot) && !hf5Other())
             errors.push(`홈판형 대표사진은 사람 얼굴이 보이는 구도(${HF_SHOTS.join('·')})로 — 지금 ${t.thumb_shot || '없음'} (2026-11-01 사용자)`);
           if (st0.thumb_band_space && !(t.prompt || '').includes(st0.thumb_band_space)) errors.push(`대표사진 프롬프트에 위쪽 띠 자리 문구가 없습니다 — "${st0.thumb_band_space}"`);
         }

@@ -1,0 +1,79 @@
+{
+ "slug": "2026-11-28-silbeoka-jiwon",
+ "title": "걷다가 자꾸 쉬시는 엄마, 실버카 지원부터 알아보세요",
+ "source": "11/28(토) 19:00 네이버 원고 — 생활보장 홈판형(돌봄·제도), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 + 정보 카드. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "아파트 단지 산책로에서 보행 보조 손수레를 잡고 웃으며 인사하는 70대 어머니 (대표사진)",
+   "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Setting: an apartment complex walking path. A Korean woman in her 70s with short gray hair in a plum padded vest holding the handles of a senior walker cart, waving hello, the walker cart clearly visible in front of her. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft overcast daylight. Expression: waving one hand hello with a bright smile. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "face",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "face",
+   "thumb_theme": "plum",
+   "thumb_person": "70대 어머니",
+   "thumb_place": "주제",
+   "thumb_light": "흐린 날",
+   "thumb_mood": "인사",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "plum",
+    "font": "ptd",
+    "title": "실버카 지원\n받을 수 있나?"
+   },
+   "anchor": "senior walker cart"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "실버카 지원을 묻는 첫머리 카드",
+   "kind": "card",
+   "card": {
+    "type": "lead",
+    "keyword": "실버카 지원",
+    "title": "나라에서\n지원해 줄까?",
+    "ask": "그거 지원되는 거 아니야?"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "거실 소파에서 70대 어머니와 40대 딸이 장기요양 인정서를 함께 보는 모습",
+   "prompt": "Camera and composition: medium shot on a living room sofa. A Korean mother in her 70s and her daughter in her 40s sitting on a sofa reading a plain long-term care certificate together. Background: cozy living room with soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot on a living room sofa",
+   "bg": "cozy living room with soft daylight",
+   "anchor": "long-term care certificate"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "복지용구사업소 매장에 진열된 여러 종류의 보행 보조 손수레",
+   "prompt": "Camera and composition: medium shot inside a welfare equipment store. Several senior walker carts and rollators displayed in a row inside a Korean welfare equipment store, no price tags. Background: clean bright store with shelves. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot inside a welfare equipment store",
+   "bg": "clean bright store with shelves",
+   "anchor": "senior walker carts and rollators"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "복지용구사업소 직원이 보행기 손잡이 높이를 맞춰 주는 손",
+   "prompt": "Camera and composition: close-up of hands. A store staff member's hands adjusting the handle height of a senior walker cart for an elderly customer. Background: welfare equipment store with soft light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands",
+   "bg": "welfare equipment store with soft light",
+   "anchor": "handle height of a senior walker cart"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "저녁 무렵 집 앞 골목에서 보행 보조 손수레를 밀며 함께 걷는 모녀",
+   "prompt": "Camera and composition: wide shot in a residential alley in the evening. A Korean mother and daughter walking together in a quiet residential alley at dusk, the mother pushing a senior walker cart. Background: quiet Korean residential alley with warm street lights. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "wide shot in a residential alley in the evening",
+   "bg": "quiet Korean residential alley with warm street lights",
+   "anchor": "pushing a senior walker cart"
+  }
+ ]
+}

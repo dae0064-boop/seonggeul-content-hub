@@ -1,0 +1,80 @@
+{
+  "slug": "2026-11-27-seoul-byeongwon-wonsangbokgu",
+  "brand": "다와이철거",
+  "mood": "fluorescent",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "진료실 칸막이를 걷어 내는 작업자 옆모습 (대표사진)",
+      "scene": "one worker in a safety helmet seen from the side, removing a gypsum partition wall inside an empty clinic room.",
+      "shot": "worker",
+      "prompt": "Camera and composition: one worker in a safety helmet seen from the side, removing a gypsum partition wall inside an empty clinic room. Shot type: one worker wearing a safety helmet, seen from behind or from the side, working in the space. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, cool white fluorescent ceiling lights, clean commercial interior look, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "의원 이전 전\n원상복구 범위",
+        "look": "frame",
+        "theme": "cobalt"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "칸막이로 나뉜 의원 복도와 진료실 문",
+      "scene": "a clinic corridor with several small partitioned rooms and plain doors, no signs.",
+      "prompt": "Camera and composition: a clinic corridor with several small partitioned rooms and plain doors, no signs. Realistic documentary photograph taken with a full-frame camera, cool white fluorescent ceiling lights, clean commercial interior look, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "석고보드 칸막이를 반쯤 걷어 낸 진료실",
+      "scene": "a gypsum board partition half removed, showing metal studs inside an empty treatment room.",
+      "prompt": "Camera and composition: a gypsum board partition half removed, showing metal studs inside an empty treatment room. Realistic documentary photograph taken with a full-frame camera, cool white fluorescent ceiling lights, clean commercial interior look, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "천장재를 열어 드러난 배선과 덕트",
+      "scene": "an opened ceiling grid exposing bundles of wiring and silver ventilation ducts above a clinic.",
+      "prompt": "Camera and composition: an opened ceiling grid exposing bundles of wiring and silver ventilation ducts above a clinic. Realistic documentary photograph taken with a full-frame camera, cool white fluorescent ceiling lights, clean commercial interior look, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "병원 원상복구 준비를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "원상복구 준비",
+        "items": [
+          "의료 장비 이전·처분",
+          "서류 정리",
+          "진료 물품 정리",
+          "건물 작업 시간",
+          "범위 문자로 남기기"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "형광등 아래 비워진 의원 대기실",
+      "scene": "an emptied clinic waiting area under fluorescent ceiling lights, no furniture left.",
+      "prompt": "Camera and composition: an emptied clinic waiting area under fluorescent ceiling lights, no furniture left. Realistic documentary photograph taken with a full-frame camera, cool white fluorescent ceiling lights, clean commercial interior look, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "철거한 칸막이 자재를 묶어 둔 복도",
+      "scene": "bundled partition panels and metal studs stacked neatly along a corridor wall.",
+      "prompt": "Camera and composition: bundled partition panels and metal studs stacked neatly along a corridor wall. Realistic documentary photograph taken with a full-frame camera, cool white fluorescent ceiling lights, clean commercial interior look, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "칸막이를 모두 걷어 낸 넓은 빈 공간",
+      "scene": "a large open empty space after all partitions are removed, bare floor and ceiling grid.",
+      "prompt": "Camera and composition: a large open empty space after all partitions are removed, bare floor and ceiling grid. Realistic documentary photograph taken with a full-frame camera, cool white fluorescent ceiling lights, clean commercial interior look, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

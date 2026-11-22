@@ -1,0 +1,87 @@
+{
+  "slug": "2026-11-26-seoul-yoksil-jeonche-cheolgeo",
+  "brand": "다와이철거",
+  "mood": "evening",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "장갑 낀 손으로 욕실 천장재를 떼는 모습 (대표사진)",
+      "scene": "gloved hands pulling down a plastic ceiling panel in a small apartment bathroom, lit by a work lamp.",
+      "shot": "hands",
+      "prompt": "Camera and composition: gloved hands pulling down a plastic ceiling panel in a small apartment bathroom, lit by a work lamp. Shot type: close-up of two hands in work gloves doing the work; only the hands and forearms are visible, no face or body. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, evening scene, the room lit mainly by a bright work lamp, warm pools of light and deep shadows, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "5단계로 끝내는\n욕실 천장"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "누렇게 바랜 욕실 천장재와 환풍기",
+      "scene": "an old bathroom ceiling made of yellowed plastic strips with a small round exhaust fan.",
+      "prompt": "Camera and composition: an old bathroom ceiling made of yellowed plastic strips with a small round exhaust fan. Realistic documentary photograph taken with a full-frame camera, evening scene, the room lit mainly by a bright work lamp, warm pools of light and deep shadows, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "천장을 열자 보이는 환풍기 덕트와 배관",
+      "scene": "an opened bathroom ceiling showing a flexible exhaust duct and a pipe from the unit above.",
+      "prompt": "Camera and composition: an opened bathroom ceiling showing a flexible exhaust duct and a pipe from the unit above. Realistic documentary photograph taken with a full-frame camera, evening scene, the room lit mainly by a bright work lamp, warm pools of light and deep shadows, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "욕실 전체 철거 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "욕실 전체 철거 순서",
+        "items": [
+          "바닥·문틀 보양",
+          "도기·장·수전 떼기",
+          "천장재·환풍기 떼기",
+          "벽·바닥 타일 걷기",
+          "배관 막음·반출"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "휴대폰으로 올려다 찍은 욕실 천장",
+      "scene": "an upward phone-style view of a bathroom ceiling with a light fixture and exhaust fan.",
+      "prompt": "Camera and composition: an upward phone-style view of a bathroom ceiling with a light fixture and exhaust fan. Realistic documentary photograph taken with a full-frame camera, evening scene, the room lit mainly by a bright work lamp, warm pools of light and deep shadows, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "보양재로 덮은 욕실 앞 거실 바닥",
+      "scene": "a living room floor covered with protective boards in front of an open bathroom door.",
+      "prompt": "Camera and composition: a living room floor covered with protective boards in front of an open bathroom door. Realistic documentary photograph taken with a full-frame camera, evening scene, the room lit mainly by a bright work lamp, warm pools of light and deep shadows, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "욕실 천장 철거 궁금한 점을 담은 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "욕실 천장 궁금한 점",
+        "items": [
+          "천장만 할 수 있나",
+          "환풍기 다시 쓰나",
+          "물 자국이 나오면",
+          "며칠 걸리나"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "천장까지 걷어 내고 비워 둔 욕실",
+      "scene": "a fully stripped bathroom including the ceiling, bare concrete above and cement walls, capped pipes.",
+      "prompt": "Camera and composition: a fully stripped bathroom including the ceiling, bare concrete above and cement walls, capped pipes. Realistic documentary photograph taken with a full-frame camera, evening scene, the room lit mainly by a bright work lamp, warm pools of light and deep shadows, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

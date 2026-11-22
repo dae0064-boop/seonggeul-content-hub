@@ -1,0 +1,83 @@
+{
+  "slug": "2026-11-28-ilsangbaesang-nusu-cheonggu",
+  "title": "일상배상책임 누수 청구, 아래층이 보험사에 직접청구 할 수 있을까 (제724조)",
+  "source": "11/28 티스토리 원고 (11/22 저녁 미리 작성) 12:40",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "아파트 복도에서 마주 서서 차분히 이야기를 나누는 40대 여성과 60대 남성 이웃 (대표사진)",
+      "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). In a bright Korean apartment hallway, a woman in her forties and a man in his sixties stand facing each other and talk calmly about a ceiling leak, both faces visible. Expression: explaining with one hand open toward the viewer. Color theme: warm brown wood and ivory tones with a coral accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "두 사람이 마주 보고 이야기",
+      "bg": "warm brown wood and ivory tones with a coral accent",
+      "note": "대표",
+      "thumb_shot": "duo",
+      "thumb_theme": "charcoal",
+      "thumb_person": "40대 여성과 60대 남성 이웃",
+      "thumb_mood": "설명",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "charcoal",
+        "font": "jua",
+        "title": "일상배상책임 누수 청구\n누가 청구할까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "일상배상책임 누수 청구가 되는 쪽과 안 되는 쪽을 견준 채팅 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "누수 배상 될까?",
+        "ask": "우리 보험으로 될까?",
+        "heads": [
+          "돼요",
+          "안 돼요"
+        ],
+        "items": [
+          [
+            "우리 집 배관",
+            "공용부분"
+          ],
+          [
+            "아래층 수리비",
+            "내 집 수리비"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "일상배상책임 누수 청구 전에 내 계약을 점검하는 자가 체크 카드",
+      "kind": "card",
+      "card": {
+        "type": "selfcheck",
+        "title": "내 계약 점검",
+        "items": [
+          "보험증권 주소",
+          "하나의 주택",
+          "2020년 4월"
+        ],
+        "result": "아래 '증권 주소' 부분을 보세요 👇"
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "욕실 바닥 배수구와 타일, 물기가 남은 밝은 욕실",
+      "prompt": "Camera and composition: a bathroom floor drain and tiles in a bright bathroom. A clean bathroom floor with a round drain and light tiles, a few drops of water left. Background color: warm brown wood and ivory. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a bathroom floor drain and tiles in a bright bathroom",
+      "bg": "warm brown wood and ivory",
+      "kind": "photo",
+      "photo": {
+        "query_en": "bathroom floor drain",
+        "scene_en": "a bathroom floor drain and tiles"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}

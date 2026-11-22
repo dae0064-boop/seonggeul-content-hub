@@ -1,0 +1,81 @@
+{
+  "slug": "2026-11-29-ansan-samusil-cheolgeo",
+  "brand": "다와이철거",
+  "mood": "fluorescent",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "짐을 모두 뺀 텅 빈 사무실 (대표사진)",
+      "scene": "a wide view of an empty office floor after clearing, bare carpet-tile-free floor and ceiling grid, no furniture.",
+      "shot": "empty",
+      "prompt": "Camera and composition: a wide view of an empty office floor after clearing, bare carpet-tile-free floor and ceiling grid, no furniture. Shot type: the space right after demolition, completely empty and swept clean. No people in the image. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, cool white fluorescent ceiling lights, clean commercial interior look, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "사무실 비우는\n5단계",
+        "look": "band",
+        "style": "pop",
+        "theme": "teal"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "사무실 철거 순서 다섯 단계를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "사무실 철거 순서",
+        "items": [
+          "짐·집기 처분",
+          "통신·전기 정리",
+          "칸막이 해체",
+          "바닥재·바닥 배선",
+          "천장·조명과 반출"
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "한쪽에 모아 둔 책상과 사무용 의자",
+      "scene": "office desks and chairs gathered and stacked in one corner.",
+      "prompt": "Camera and composition: office desks and chairs gathered and stacked in one corner. Realistic documentary photograph taken with a full-frame camera, cool white fluorescent ceiling lights, clean commercial interior look, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "천장 아래로 늘어진 통신선과 전선 묶음",
+      "scene": "bundles of network and power cables hanging down from an office ceiling.",
+      "prompt": "Camera and composition: bundles of network and power cables hanging down from an office ceiling. Realistic documentary photograph taken with a full-frame camera, cool white fluorescent ceiling lights, clean commercial interior look, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "반쯤 해체된 사무실 칸막이와 유리벽",
+      "scene": "office partition panels and a glass wall partly dismantled.",
+      "prompt": "Camera and composition: office partition panels and a glass wall partly dismantled. Realistic documentary photograph taken with a full-frame camera, cool white fluorescent ceiling lights, clean commercial interior look, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "형광등 아래 칸막이를 걷어 낸 넓은 사무실",
+      "scene": "a large open office space under fluorescent ceiling lights after partitions are removed.",
+      "prompt": "Camera and composition: a large open office space under fluorescent ceiling lights after partitions are removed. Realistic documentary photograph taken with a full-frame camera, cool white fluorescent ceiling lights, clean commercial interior look, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "묶어 둔 칸막이 판과 철물",
+      "scene": "stacked partition panels and metal frames tied together.",
+      "prompt": "Camera and composition: stacked partition panels and metal frames tied together. Realistic documentary photograph taken with a full-frame camera, cool white fluorescent ceiling lights, clean commercial interior look, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "비질까지 마친 빈 사무실 바닥",
+      "scene": "a swept empty office floor with a broom against the wall.",
+      "prompt": "Camera and composition: a swept empty office floor with a broom against the wall. Realistic documentary photograph taken with a full-frame camera, cool white fluorescent ceiling lights, clean commercial interior look, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

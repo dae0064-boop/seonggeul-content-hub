@@ -1,0 +1,80 @@
+{
+  "slug": "2026-11-27-anyang-cafe-cheolgeo",
+  "brand": "다와이철거",
+  "mood": "evening",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "반쯤 철거된 카페 바 안쪽 (대표사진)",
+      "scene": "the bar area of a small cafe halfway through demolition, counter top removed, lower cabinets still in place, tools resting nearby.",
+      "shot": "midway",
+      "prompt": "Camera and composition: the bar area of a small cafe halfway through demolition, counter top removed, lower cabinets still in place, tools resting nearby. Shot type: the space halfway through demolition, some parts removed and some still in place, tools resting nearby. No people in the image. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, evening scene, the room lit mainly by a bright work lamp, warm pools of light and deep shadows, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "폐업 앞둔 카페\n바 안쪽부터",
+        "look": "band",
+        "theme": "teal"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "머신과 제빙기가 놓인 카페 바 안쪽",
+      "scene": "behind the counter of a small Korean cafe with a sink, shelves and empty spots where machines stood.",
+      "prompt": "Camera and composition: behind the counter of a small Korean cafe with a sink, shelves and empty spots where machines stood. Realistic documentary photograph taken with a full-frame camera, evening scene, the room lit mainly by a bright work lamp, warm pools of light and deep shadows, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "매장 한쪽에 모아 둔 테이블과 의자",
+      "scene": "tables and chairs from a closed cafe gathered and stacked in one corner of the room.",
+      "prompt": "Camera and composition: tables and chairs from a closed cafe gathered and stacked in one corner of the room. Realistic documentary photograph taken with a full-frame camera, evening scene, the room lit mainly by a bright work lamp, warm pools of light and deep shadows, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "바 테이블을 걷은 자리에 드러난 배관",
+      "scene": "exposed water supply and drain pipes sticking out of the floor and wall where a cafe bar counter was removed.",
+      "prompt": "Camera and composition: exposed water supply and drain pipes sticking out of the floor and wall where a cafe bar counter was removed. Realistic documentary photograph taken with a full-frame camera, evening scene, the room lit mainly by a bright work lamp, warm pools of light and deep shadows, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "카페 바 철거 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "카페 바 철거 순서",
+        "items": [
+          "머신·제빙기 빼기",
+          "급배수 분리",
+          "바 상판·하부장",
+          "벽 마감·조명",
+          "배관 막음·반출"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "비워진 카페 홀과 큰 유리창",
+      "scene": "an emptied cafe hall with a large front window and bare floor, no furniture.",
+      "prompt": "Camera and composition: an emptied cafe hall with a large front window and bare floor, no furniture. Realistic documentary photograph taken with a full-frame camera, evening scene, the room lit mainly by a bright work lamp, warm pools of light and deep shadows, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "저녁 작업등 아래 정리 중인 카페 바",
+      "scene": "a cafe bar area being cleared under a bright work lamp, debris bags by the counter base.",
+      "prompt": "Camera and composition: a cafe bar area being cleared under a bright work lamp, debris bags by the counter base. Realistic documentary photograph taken with a full-frame camera, evening scene, the room lit mainly by a bright work lamp, warm pools of light and deep shadows, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "바를 걷어 내고 쓸어 둔 카페 바닥",
+      "scene": "a swept concrete floor where a cafe bar used to be, pipe ends capped.",
+      "prompt": "Camera and composition: a swept concrete floor where a cafe bar used to be, pipe ends capped. Realistic documentary photograph taken with a full-frame camera, evening scene, the room lit mainly by a bright work lamp, warm pools of light and deep shadows, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

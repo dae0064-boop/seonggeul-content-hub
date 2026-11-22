@@ -1,0 +1,92 @@
+{
+ "slug": "2026-11-27-noin-implant-biyong",
+ "title": "노인 임플란트 비용, 65세 이상 2개까지 본인부담 30% (2027년 확대)",
+ "source": "11/27(금) 13:40 네이버 원고 — 생활보장 검색형(비용), 실사풍 (11/22 미리 작성)",
+ "note": "6장 = 대표사진 1 + 장면 + 정보 카드. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "임플란트 치아 모형을 손바닥에 올려 보는 70대 아버지의 손 (대표사진)",
+   "prompt": "Camera and composition: close-up of hands only doing the key action of the topic, no face in the frame, shallow depth of field. Setting: a dental clinic desk. Close-up of an elderly Korean man's hands holding a dental implant tooth model on his open palm, a dental chair softly blurred behind, no face in the frame. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft overcast daylight. Expression: relieved gentle smile. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "hands",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "hands",
+   "thumb_theme": "cobalt",
+   "thumb_person": "70대 아버지",
+   "thumb_place": "주제",
+   "thumb_light": "흐린 날",
+   "thumb_mood": "안심",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "cobalt",
+    "font": "ptd",
+    "title": "노인 임플란트\n비용은?"
+   },
+   "anchor": "dental implant tooth model"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "임플란트 건강보험 되는 경우와 안 되는 경우를 나눈 비교 카드",
+   "kind": "card",
+   "card": {
+    "type": "compare",
+    "title": "임플란트 건강보험",
+    "ask": "부모님도 될까요?",
+    "heads": [
+     "건강보험 되는 경우",
+     "따로 볼 경우"
+    ],
+    "items": [
+     [
+      "65세 이상",
+      "2개를 넘는 임플란트"
+     ],
+     [
+      "부분무치악",
+      "등록 없이 치료"
+     ]
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "치과 진료실에서 의사의 설명을 듣는 70대 어머니와 40대 딸",
+   "prompt": "Camera and composition: medium shot in a dental office. A Korean mother in her 70s and her daughter in her 40s listening to a dentist who points at a plastic tooth model on the desk. Background: clean dental consultation room. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a dental office",
+   "bg": "clean dental consultation room",
+   "anchor": "plastic tooth model on the desk"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "거실 소파에서 신문 대신 휴대폰으로 소식을 보는 70대 아버지",
+   "prompt": "Camera and composition: medium shot on a living room sofa. A Korean father in his 70s with gray hair reading news on his smartphone on a living room sofa, a folded newspaper set aside. The smartphone news screen is clearly visible. Background: warm living room with daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot on a living room sofa",
+   "bg": "warm living room with daylight",
+   "anchor": "smartphone news screen"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "식탁 위에 놓인 틀니 보관함과 물컵",
+   "prompt": "Camera and composition: close-up of a dining table. A denture storage case and a glass of water on a dining table, no people. Background: light wood dining table. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of a dining table",
+   "bg": "light wood dining table",
+   "anchor": "denture storage case"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "치과 대기실에서 아버지 팔짱을 끼고 함께 기다리는 40대 아들",
+   "prompt": "Camera and composition: medium shot in a clinic waiting area. A Korean son in his 40s sitting arm in arm with his elderly father in a dental clinic waiting area, both relaxed. Background: bright dental waiting room. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a clinic waiting area",
+   "bg": "bright dental waiting room",
+   "anchor": "dental clinic waiting area"
+  }
+ ]
+}

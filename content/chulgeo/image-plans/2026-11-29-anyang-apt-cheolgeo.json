@@ -1,0 +1,79 @@
+{
+  "slug": "2026-11-29-anyang-apt-cheolgeo",
+  "brand": "다와이철거",
+  "mood": "day",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "철거 전 집 안을 둘러보는 작업자 뒷모습 (대표사진)",
+      "scene": "one worker in a safety helmet seen from behind, looking around an old apartment living room before demolition.",
+      "shot": "worker",
+      "prompt": "Camera and composition: one worker in a safety helmet seen from behind, looking around an old apartment living room before demolition. Shot type: one worker wearing a safety helmet, seen from behind or from the side, working in the space. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "사진 4장으로\n철거 범위 잡기",
+        "look": "band",
+        "theme": "brick"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "거실 모서리에서 넓게 찍은 아파트 거실",
+      "scene": "a wide view of an older Korean apartment living room taken from the corner.",
+      "prompt": "Camera and composition: a wide view of an older Korean apartment living room taken from the corner. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "꼭 필요한 사진 4장을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "꼭 필요한 사진 4장",
+        "items": [
+          "거실 모서리 넓게",
+          "욕실 천장과 바닥",
+          "싱크대 아래 배관",
+          "현관~엘리베이터"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "남길 가구에 붙여 둔 표시 스티커",
+      "scene": "a blank paper tag stuck on a built-in wardrobe to mark it to keep.",
+      "prompt": "Camera and composition: a blank paper tag stuck on a built-in wardrobe to mark it to keep. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "천장재를 열어 속을 살피는 작업자 옆모습",
+      "scene": "a worker in a helmet seen from the side lifting a ceiling panel to look inside.",
+      "prompt": "Camera and composition: a worker in a helmet seen from the side lifting a ceiling panel to look inside. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "보양재로 덮어 둔 엘리베이터 안",
+      "scene": "the inside of an apartment elevator covered with protective padding.",
+      "prompt": "Camera and composition: the inside of an apartment elevator covered with protective padding. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "철거 범위를 표시한 아파트 평면 메모",
+      "scene": "a hand holding a pencil over a blank floor plan sketch on paper with no writing.",
+      "prompt": "Camera and composition: a hand holding a pencil over a blank floor plan sketch on paper with no writing. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "철거를 마치고 비워 둔 아파트 거실",
+      "scene": "an empty apartment living room after demolition, bare cement walls and floor.",
+      "prompt": "Camera and composition: an empty apartment living room after demolition, bare cement walls and floor. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

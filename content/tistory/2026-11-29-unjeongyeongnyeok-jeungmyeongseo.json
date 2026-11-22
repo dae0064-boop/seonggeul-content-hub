@@ -1,0 +1,622 @@
+{
+  "slug": "2026-11-29-unjeongyeongnyeok-jeungmyeongseo",
+  "title": "운전경력증명서 발급, 가족이 정부24에서 대신 뗄 수 있을까 (수수료 0원)",
+  "category": "생활정보",
+  "tags": [
+    "운전경력증명서발급",
+    "정부24",
+    "대리발급",
+    "영문증명서",
+    "경찰서민원실",
+    "운전경력증명서",
+    "운전경력증명서대리",
+    "운전경력증명서무료",
+    "영문운전경력증명서",
+    "교통민원24",
+    "도로교통법시행규칙",
+    "운전직취업서류",
+    "위임장",
+    "생활제도",
+    "운전면허"
+  ],
+  "publishAt": "2026-11-29 21:00",
+  "relatedUrls": [
+    "https://seongdaeeyo.com/entry/%EC%9D%B8%EA%B0%90%EC%A6%9D%EB%AA%85%EC%84%9C-%EB%8C%80%EB%A6%AC-%EB%B0%9C%EA%B8%89-%EC%9C%84%EC%9E%84%EC%9E%A5%EC%97%90-%EA%BC%AD-%EC%B0%8D%EC%9D%84-%EB%8F%84%EC%9E%A5%EA%B3%BC-%EC%B1%99%EA%B8%B8-%EA%B2%83-%EC%88%98%EC%88%98%EB%A3%8C-600%EC%9B%90",
+    "https://seongdaeeyo.com/entry/%EC%A3%BC%EB%AF%BC%EB%93%B1%EB%A1%9D%EC%A6%9D-%EB%B6%84%EC%8B%A4-%EC%8B%A0%EA%B3%A0-%EB%90%98%EC%B0%BE%EC%9C%BC%EB%A9%B4-%EB%8B%A4%EC%8B%9C-%EC%93%B8-%EC%88%98-%EC%9E%88%EC%9D%84%EA%B9%8C-%EC%9E%AC%EB%B0%9C%EA%B8%89-%EC%88%98%EC%88%98%EB%A3%8C%EA%B9%8C%EC%A7%80-5%EC%B2%9C-%EC%9B%90"
+  ],
+  "blocks": [
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "운전경력증명서를 가족이 대신 떼려면"
+        },
+        {
+          "t": "위임장을 들고 경찰서 민원실로 가야 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "안녕하세요"
+        },
+        {
+          "t": "매일매일 좋은 날을 나누는 성글벙글입니다😊"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "예를 들어 아버지가 운전 일자리에 지원하신다며"
+        },
+        {
+          "t": "\"운전경력증명서 좀 떼 줄래?\" 하고 부탁하시면"
+        },
+        {
+          "t": "내 휴대폰으로 금방 될 것 같기 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "그런데 막상 정부24에 들어가 보면"
+        },
+        {
+          "t": "아버지 명의 인증 단계에서 막혀요."
+        },
+        {
+          "t": "남의 이름으로는 인증이 안 되거든요."
+        },
+        {
+          "t": "오늘은 운전경력증명서 발급을 경우별로 나눠 볼게요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "먼저 결론이에요."
+        },
+        {
+          "t": "운전경력증명서 발급은 수수료가 없고,",
+          "s": "yellow"
+        },
+        {
+          "t": "본인은 정부24에서 바로 뗄 수 있어요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 1,
+      "lines": [
+        {
+          "t": "거실 전체와 식탁에 마주 앉아 이야기하는 70대 아버지와 40대 아들 (대표사진)"
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "운전경력증명서 발급, 기본 정보"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 2,
+      "lines": [
+        {
+          "t": "운전경력증명서 발급에서 되는 쪽과 안 되는 쪽을 견준 채팅 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "정부24 민원 안내에 적힌 내용부터 볼게요."
+        },
+        {
+          "t": "근거는 도로교통법 시행규칙 제129조의2이고,"
+        },
+        {
+          "t": "접수와 처리는 경찰서가 맡아요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "수수료는 무료, 즉 0원이에요.",
+          "segs": [
+            {
+              "t": "수수료는 "
+            },
+            {
+              "t": "무료",
+              "s": "blue"
+            },
+            {
+              "t": ", 즉 0원이에요."
+            }
+          ]
+        },
+        {
+          "t": "신청은 방문, 인터넷, 무인발급기 세 가지로 되고"
+        },
+        {
+          "t": "처리 기간은 즉시, 근무시간 안 3시간이에요.",
+          "segs": [
+            {
+              "t": "처리 기간은 즉시, 근무시간 안 "
+            },
+            {
+              "t": "3시간",
+              "s": "blue"
+            },
+            {
+              "t": "이에요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "인터넷으로는 정부24 말고도"
+        },
+        {
+          "t": "경찰청 교통민원24에서도 뗄 수 있어요."
+        },
+        {
+          "t": "어느 쪽이든 본인 인증이 먼저예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "정부24에서 검색창에 이름을 치면"
+        },
+        {
+          "t": "신청 화면이 바로 나와요."
+        },
+        {
+          "t": "화면에서 국문과 영문 중 하나를 골라요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "출력이 어렵다면 전자문서로 받아"
+        },
+        {
+          "t": "제출할 곳에 파일로 보내는 방법도 있어요."
+        },
+        {
+          "t": "받는 곳이 종이를 원하는지만 먼저 물어보세요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "대리 발급은 온라인이 막혀요"
+        }
+      ]
+    },
+    {
+      "type": "bubble",
+      "lines": [
+        {
+          "t": "\"부모님 것 제가 앱으로 떼면 안 돼요?\""
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "정부24 안내에는 온라인은 대리인 신청이"
+        },
+        {
+          "t": "안 된다고 적혀 있어요."
+        },
+        {
+          "t": "그래서 대리 발급은 방문으로만 돼요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "가족이라도 온라인으로는 대신 뗄 수 없으니",
+          "s": "red"
+        },
+        {
+          "t": "대리 발급은 경찰서를 찾아가야 해요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "대리인이 챙길 서류는 세 가지예요.",
+          "segs": [
+            {
+              "t": "대리인이 챙길 서류는 "
+            },
+            {
+              "t": "세 가지",
+              "s": "blue"
+            },
+            {
+              "t": "예요."
+            }
+          ]
+        },
+        {
+          "t": "대리인 신분증, 위임장, 위임한 사람 신분증이에요."
+        },
+        {
+          "t": "신분증은 유효기간 안의 것이어야 해요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "위임장에는 맡기는 사람이 직접 이름을 쓰고",
+          "s": "yellow"
+        },
+        {
+          "t": "서명이나 도장을 찍어 두는 게 기본이에요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "위임장 양식은 경찰서 민원실에도 있지만"
+        },
+        {
+          "t": "미리 써 가면 창구에서 기다리는 시간이 줄어요."
+        },
+        {
+          "t": "맡기는 사람 연락처도 함께 적어 두면 좋아요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "누가 어디서 뗄 수 있나"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 3,
+      "lines": [
+        {
+          "t": "운전경력증명서 발급을 누가 할 수 있는지 묻는 첫머리 카드"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "헷갈리는 것을 둘로 나눠 봤어요."
+        },
+        {
+          "t": "본인인지, 대신 떼는지가 가장 큰 갈림길이에요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "⭕ 본인이 정부24·교통민원24에서 인터넷 발급"
+        },
+        {
+          "t": "⭕ 대리인이 위임장 들고 경찰서 방문 발급"
+        },
+        {
+          "t": "❌ 가족이 내 휴대폰으로 대신 온라인 신청"
+        },
+        {
+          "t": "❌ 유효기간이 지난 신분증으로 신청"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "부모님이 직접 휴대폰 인증을 하실 수 있다면",
+          "s": "yellow"
+        },
+        {
+          "t": "옆에서 도와 본인 신청으로 하는 게 가장 빨라요.",
+          "s": "yellow"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "인증만 부모님 휴대폰으로 받으면 되니"
+        },
+        {
+          "t": "화면 넘기기는 옆에서 도와드려도 괜찮아요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "영문 증명서는 여권이 필요해요"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "n": 4,
+      "lines": [
+        {
+          "t": "여행 가방 위에 놓인 여권 지갑과 자동차 열쇠"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "해외 렌터카나 외국 회사에 낼 때는"
+        },
+        {
+          "t": "영문 증명서를 따로 골라 떼요."
+        },
+        {
+          "t": "정부24 안내는 이때 여권이 필요하다고 적어요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "온라인으로 영문 증명서를 뗄 때는"
+        },
+        {
+          "t": "여권 정보와 연결해 영문 이름을 채워요."
+        },
+        {
+          "t": "그래서 여권 정보가 맞는지 먼저 봐 두세요.",
+          "segs": [
+            {
+              "t": "그래서 "
+            },
+            {
+              "t": "여권",
+              "s": "blue"
+            },
+            {
+              "t": " 정보가 맞는지 먼저 봐 두세요."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "영문 증명서는 여권 정보와 이름 철자가",
+          "s": "red"
+        },
+        {
+          "t": "맞아야 하니 여권을 먼저 확인하세요.",
+          "s": "red"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "제출할 곳이 국문과 영문 중 무엇을 원하는지"
+        },
+        {
+          "t": "먼저 물어보고 떼면 한 번에 끝나요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "운전경력증명서 발급 Q&A"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "처음 떼는 분들이 자주 묻는 두 가지예요."
+        },
+        {
+          "t": "운전 일자리 서류를 준비할 때 특히 많이 나와요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q1: 기간은 어떻게 고르나요?"
+        },
+        {
+          "t": "A1: 신청 화면에서 조회할 기간을 고르게 돼 있어요."
+        },
+        {
+          "t": "제출하는 곳이 정한 기간이 있다면"
+        },
+        {
+          "t": "그 기간에 맞춰 떼는 게 다시 떼는 일을 줄여요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "Q2: 무인발급기는 어디에 있나요?"
+        },
+        {
+          "t": "A2: 주민센터·구청 같은 관공서에 있어요."
+        },
+        {
+          "t": "본인 확인을 거쳐 본인 것만 뽑을 수 있어요."
+        },
+        {
+          "t": "가까운 곳 위치는 정부24에서 찾아볼 수 있어요."
+        }
+      ]
+    },
+    {
+      "type": "quote",
+      "lines": [
+        {
+          "t": "운전경력증명서 발급 정리"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "누가 떼는지에 따라 세 줄로 남겨요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "✔ 체크포인트",
+          "s": "green"
+        },
+        {
+          "t": "본인은 정부24에서 무료로 즉시",
+          "s": "green"
+        },
+        {
+          "t": "대리 발급은 경찰서 방문만",
+          "s": "green"
+        },
+        {
+          "t": "영문 증명서는 여권 먼저 확인",
+          "s": "green"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "운전경력증명서 발급은 본인이면 몇 분,"
+        },
+        {
+          "t": "대리인이면 서류 세 가지가 핵심이에요."
+        },
+        {
+          "t": "누가 뗄지부터 정하면 나머지는 쉬워요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "부모님 서류를 대신 챙길 때는"
+        },
+        {
+          "t": "휴대폰 인증을 옆에서 도와드리는 게 먼저,"
+        },
+        {
+          "t": "안 되면 위임장을 들고 경찰서로 가는 순서예요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "여러분은 이런 서류, 직접 떼세요, 가족이 떼 주세요?"
+        },
+        {
+          "t": "\"직접\", \"가족\" 중에 남겨 주세요."
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "수수료·처리 기간·대리 서류는 정부24"
+        },
+        {
+          "t": "운전경력증명서 민원 안내를 그대로 보고,"
+        },
+        {
+          "t": "근거 조문 이름까지 확인해 적었어요."
+        },
+        {
+          "t": "(2026년 11월 기준)"
+        }
+      ]
+    },
+    {
+      "type": "p",
+      "lines": [
+        {
+          "t": "좋아요·공감과 구독 부탁드려요💙"
+        },
+        {
+          "t": "운전경력증명서 발급, 본인 인증부터 준비해요."
+        }
+      ]
+    }
+  ],
+  "html": "<blockquote data-ke-style=\"style1\">운전경력증명서를 가족이 대신 떼려면<br>위임장을 들고 경찰서 민원실로 가야 해요.</blockquote>\n<p data-ke-size=\"size16\">안녕하세요<br>매일매일 좋은 날을 나누는 성글벙글입니다😊</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">예를 들어 아버지가 운전 일자리에 지원하신다며<br>&quot;운전경력증명서 좀 떼 줄래?&quot; 하고 부탁하시면<br>내 휴대폰으로 금방 될 것 같기 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">그런데 막상 정부24에 들어가 보면<br>아버지 명의 인증 단계에서 막혀요.<br>남의 이름으로는 인증이 안 되거든요.<br>오늘은 운전경력증명서 발급을 경우별로 나눠 볼게요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">먼저 결론이에요.<br><span style=\"background-color: #ffe94d;\"><b>운전경력증명서 발급은 수수료가 없고,</b></span><br><span style=\"background-color: #ffe94d;\"><b>본인은 정부24에서 바로 뗄 수 있어요.</b></span></p>\n<p data-ke-size=\"size16\">[이미지 1] 거실 전체와 식탁에 마주 앉아 이야기하는 70대 아버지와 40대 아들 (대표사진)</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>운전경력증명서 발급, 기본 정보</h2>\n<p data-ke-size=\"size16\">[이미지 2] 운전경력증명서 발급에서 되는 쪽과 안 되는 쪽을 견준 채팅 카드</p>\n<p data-ke-size=\"size16\">정부24 민원 안내에 적힌 내용부터 볼게요.<br>근거는 도로교통법 시행규칙 제129조의2이고,<br>접수와 처리는 경찰서가 맡아요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">수수료는 <span style=\"color: #0078cb;\"><b>무료</b></span>, 즉 0원이에요.<br>신청은 방문, 인터넷, 무인발급기 세 가지로 되고<br>처리 기간은 즉시, 근무시간 안 <span style=\"color: #0078cb;\"><b>3시간</b></span>이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">인터넷으로는 정부24 말고도<br>경찰청 교통민원24에서도 뗄 수 있어요.<br>어느 쪽이든 본인 인증이 먼저예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">정부24에서 검색창에 이름을 치면<br>신청 화면이 바로 나와요.<br>화면에서 국문과 영문 중 하나를 골라요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">출력이 어렵다면 전자문서로 받아<br>제출할 곳에 파일로 보내는 방법도 있어요.<br>받는 곳이 종이를 원하는지만 먼저 물어보세요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>대리 발급은 온라인이 막혀요</h2>\n<blockquote data-ke-style=\"style3\">&quot;부모님 것 제가 앱으로 떼면 안 돼요?&quot;</blockquote>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">정부24 안내에는 온라인은 대리인 신청이<br>안 된다고 적혀 있어요.<br>그래서 대리 발급은 방문으로만 돼요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>가족이라도 온라인으로는 대신 뗄 수 없으니</b></span><br><span style=\"color: #ff0010;\"><b>대리 발급은 경찰서를 찾아가야 해요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">대리인이 챙길 서류는 <span style=\"color: #0078cb;\"><b>세 가지</b></span>예요.<br>대리인 신분증, 위임장, 위임한 사람 신분증이에요.<br>신분증은 유효기간 안의 것이어야 해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>위임장에는 맡기는 사람이 직접 이름을 쓰고</b></span><br><span style=\"background-color: #ffe94d;\"><b>서명이나 도장을 찍어 두는 게 기본이에요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">위임장 양식은 경찰서 민원실에도 있지만<br>미리 써 가면 창구에서 기다리는 시간이 줄어요.<br>맡기는 사람 연락처도 함께 적어 두면 좋아요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>누가 어디서 뗄 수 있나</h2>\n<p data-ke-size=\"size16\">[이미지 3] 운전경력증명서 발급을 누가 할 수 있는지 묻는 첫머리 카드</p>\n<p data-ke-size=\"size16\">헷갈리는 것을 둘로 나눠 봤어요.<br>본인인지, 대신 떼는지가 가장 큰 갈림길이에요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">⭕ 본인이 정부24·교통민원24에서 인터넷 발급<br>⭕ 대리인이 위임장 들고 경찰서 방문 발급<br>❌ 가족이 내 휴대폰으로 대신 온라인 신청<br>❌ 유효기간이 지난 신분증으로 신청</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #ffe94d;\"><b>부모님이 직접 휴대폰 인증을 하실 수 있다면</b></span><br><span style=\"background-color: #ffe94d;\"><b>옆에서 도와 본인 신청으로 하는 게 가장 빨라요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">인증만 부모님 휴대폰으로 받으면 되니<br>화면 넘기기는 옆에서 도와드려도 괜찮아요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>영문 증명서는 여권이 필요해요</h2>\n<p data-ke-size=\"size16\">[이미지 4] 여행 가방 위에 놓인 여권 지갑과 자동차 열쇠</p>\n<p data-ke-size=\"size16\">해외 렌터카나 외국 회사에 낼 때는<br>영문 증명서를 따로 골라 떼요.<br>정부24 안내는 이때 여권이 필요하다고 적어요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">온라인으로 영문 증명서를 뗄 때는<br>여권 정보와 연결해 영문 이름을 채워요.<br>그래서 <span style=\"color: #0078cb;\"><b>여권</b></span> 정보가 맞는지 먼저 봐 두세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"color: #ff0010;\"><b>영문 증명서는 여권 정보와 이름 철자가</b></span><br><span style=\"color: #ff0010;\"><b>맞아야 하니 여권을 먼저 확인하세요.</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">제출할 곳이 국문과 영문 중 무엇을 원하는지<br>먼저 물어보고 떼면 한 번에 끝나요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>운전경력증명서 발급 Q&amp;A</h2>\n<p data-ke-size=\"size16\">처음 떼는 분들이 자주 묻는 두 가지예요.<br>운전 일자리 서류를 준비할 때 특히 많이 나와요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q1: 기간은 어떻게 고르나요?<br>A1: 신청 화면에서 조회할 기간을 고르게 돼 있어요.<br>제출하는 곳이 정한 기간이 있다면<br>그 기간에 맞춰 떼는 게 다시 떼는 일을 줄여요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">Q2: 무인발급기는 어디에 있나요?<br>A2: 주민센터·구청 같은 관공서에 있어요.<br>본인 확인을 거쳐 본인 것만 뽑을 수 있어요.<br>가까운 곳 위치는 정부24에서 찾아볼 수 있어요.</p>\n<h2 data-ke-size=\"size26\" style=\"text-align: center; font-size: 1.3em; line-height: 1.5; padding: 4px 8px 12px; margin: 8px 0 4px; border-bottom: 2px solid #4a3a30;\"><span style=\"display: block; font-size: 1.6em; line-height: 1; color: #b8a99a;\">“</span>운전경력증명서 발급 정리</h2>\n<p data-ke-size=\"size16\">누가 떼는지에 따라 세 줄로 남겨요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>✔ 체크포인트</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>본인은 정부24에서 무료로 즉시</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>대리 발급은 경찰서 방문만</b></span><br><span style=\"background-color: #dff3e4; color: #0f5a3c;\"><b>영문 증명서는 여권 먼저 확인</b></span></p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">운전경력증명서 발급은 본인이면 몇 분,<br>대리인이면 서류 세 가지가 핵심이에요.<br>누가 뗄지부터 정하면 나머지는 쉬워요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">부모님 서류를 대신 챙길 때는<br>휴대폰 인증을 옆에서 도와드리는 게 먼저,<br>안 되면 위임장을 들고 경찰서로 가는 순서예요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">여러분은 이런 서류, 직접 떼세요, 가족이 떼 주세요?<br>&quot;직접&quot;, &quot;가족&quot; 중에 남겨 주세요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">수수료·처리 기간·대리 서류는 정부24<br>운전경력증명서 민원 안내를 그대로 보고,<br>근거 조문 이름까지 확인해 적었어요.<br>(2026년 11월 기준)</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\">좋아요·공감과 구독 부탁드려요💙<br>운전경력증명서 발급, 본인 인증부터 준비해요.</p>\n<p data-ke-size=\"size16\">&nbsp;</p>\n<p data-ke-size=\"size16\"><b>▶ 함께 보면 좋은 글</b><br><a href=\"https://seongdaeeyo.com/entry/%EC%9D%B8%EA%B0%90%EC%A6%9D%EB%AA%85%EC%84%9C-%EB%8C%80%EB%A6%AC-%EB%B0%9C%EA%B8%89-%EC%9C%84%EC%9E%84%EC%9E%A5%EC%97%90-%EA%BC%AD-%EC%B0%8D%EC%9D%84-%EB%8F%84%EC%9E%A5%EA%B3%BC-%EC%B1%99%EA%B8%B8-%EA%B2%83-%EC%88%98%EC%88%98%EB%A3%8C-600%EC%9B%90\">인감증명서 대리 발급, 위임장에 꼭 찍을 도장과 챙길 것 (수수료 600원)</a><br><a href=\"https://seongdaeeyo.com/entry/%EC%A3%BC%EB%AF%BC%EB%93%B1%EB%A1%9D%EC%A6%9D-%EB%B6%84%EC%8B%A4-%EC%8B%A0%EA%B3%A0-%EB%90%98%EC%B0%BE%EC%9C%BC%EB%A9%B4-%EB%8B%A4%EC%8B%9C-%EC%93%B8-%EC%88%98-%EC%9E%88%EC%9D%84%EA%B9%8C-%EC%9E%AC%EB%B0%9C%EA%B8%89-%EC%88%98%EC%88%98%EB%A3%8C%EA%B9%8C%EC%A7%80-5%EC%B2%9C-%EC%9B%90\">주민등록증 분실 신고, 되찾으면 다시 쓸 수 있을까 재발급 수수료까지 (5천 원)</a></p>"
+}

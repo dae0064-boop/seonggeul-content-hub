@@ -1,0 +1,80 @@
+{
+  "slug": "2026-11-27-incheon-jangpan-cheolgeo",
+  "brand": "다와이철거",
+  "mood": "overcast",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "장판을 반쯤 걷어 낸 방바닥 (대표사진)",
+      "scene": "a bedroom halfway through floor removal, vinyl floor sheet partly rolled back, wallpaper still on the walls.",
+      "shot": "midway",
+      "prompt": "Camera and composition: a bedroom halfway through floor removal, vinyl floor sheet partly rolled back, wallpaper still on the walls. Shot type: the space halfway through demolition, some parts removed and some still in place, tools resting nearby. No people in the image. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "인천 장판 철거\n도배랑 순서",
+        "look": "band",
+        "theme": "charcoal"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "짐을 뺀 방과 낡은 장판",
+      "scene": "an emptied bedroom with old worn vinyl floor covering.",
+      "prompt": "Camera and composition: an emptied bedroom with old worn vinyl floor covering. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "벽지를 뜯어 낸 방 벽면",
+      "scene": "a room wall with old wallpaper torn off in large strips, scraps on the floor.",
+      "prompt": "Camera and composition: a room wall with old wallpaper torn off in large strips, scraps on the floor. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "장판을 걷고 드러난 시멘트 바닥과 얼룩",
+      "scene": "bare cement floor revealed under vinyl flooring, with some darker damp patches near the wall.",
+      "prompt": "Camera and composition: bare cement floor revealed under vinyl flooring, with some darker damp patches near the wall. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "장판 교체 전 준비를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "장판 교체 전 준비",
+        "items": [
+          "짐과 가구 빼기",
+          "몰딩 남길지 정하기",
+          "문 아래 높이 확인",
+          "관리실 일정 확인",
+          "버릴 가구 목록"
+        ]
+      }
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "묶어 둔 헌 장판 두루마리와 마대",
+      "scene": "rolled-up old vinyl flooring and tied debris sacks by a front door.",
+      "prompt": "Camera and composition: rolled-up old vinyl flooring and tied debris sacks by a front door. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "도배지 제거 뒤 남은 벽 아래 조각들",
+      "scene": "scraps of torn wallpaper gathered along the bottom of a wall.",
+      "prompt": "Camera and composition: scraps of torn wallpaper gathered along the bottom of a wall. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "정리를 마친 빈 방과 맨바닥",
+      "scene": "a cleared empty room with bare cement floor and bare walls.",
+      "prompt": "Camera and composition: a cleared empty room with bare cement floor and bare walls. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

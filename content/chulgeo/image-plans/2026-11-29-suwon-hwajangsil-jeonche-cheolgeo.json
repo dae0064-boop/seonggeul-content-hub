@@ -1,0 +1,87 @@
+{
+  "slug": "2026-11-29-suwon-hwajangsil-jeonche-cheolgeo",
+  "brand": "다와이철거",
+  "mood": "overcast",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "타일을 걷어 배관이 드러난 화장실 벽 (대표사진)",
+      "scene": "close-up of a bathroom wall with tiles removed, exposing water pipes and a capped valve in rough cement.",
+      "shot": "detail",
+      "prompt": "Camera and composition: close-up of a bathroom wall with tiles removed, exposing water pipes and a capped valve in rough cement. Shot type: close-up detail of exposed pipes, ducts or wiring left after removal. No people in the image. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "부분 vs 전체\n화장실 철거",
+        "look": "band",
+        "theme": "cobalt"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "부분 철거와 전체 철거를 견준 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "부분 vs 전체 철거",
+        "items": [
+          [
+            "도기·수전만",
+            "타일·천장까지"
+          ],
+          [
+            "타일은 남김",
+            "방수층도 확인"
+          ],
+          [
+            "일정 짧음",
+            "일정 길어짐"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "세면대만 떼어 낸 깨끗한 화장실 벽",
+      "scene": "a clean bathroom wall where only the washbasin was removed, tiles left in place.",
+      "prompt": "Camera and composition: a clean bathroom wall where only the washbasin was removed, tiles left in place. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "줄눈이 검게 변하고 들뜬 오래된 바닥 타일",
+      "scene": "an old bathroom floor with darkened grout and a few cracked, lifted tiles.",
+      "prompt": "Camera and composition: an old bathroom floor with darkened grout and a few cracked, lifted tiles. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "천장재를 떼어 낸 화장실 천장 속 배관과 덕트",
+      "scene": "an opened bathroom ceiling showing pipes and a small ventilation duct.",
+      "prompt": "Camera and composition: an opened bathroom ceiling showing pipes and a small ventilation duct. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "욕조를 들어낸 자리의 바닥과 배수구",
+      "scene": "the floor area where a bathtub was removed, showing a drain opening and rough base.",
+      "prompt": "Camera and composition: the floor area where a bathtub was removed, showing a drain opening and rough base. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "마대에 나눠 담은 타일 조각과 떼어 낸 도기",
+      "scene": "debris sacks filled with tile pieces next to a removed toilet and washbasin in a corridor.",
+      "prompt": "Camera and composition: debris sacks filled with tile pieces next to a removed toilet and washbasin in a corridor. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "전체 철거를 마치고 비워 둔 화장실",
+      "scene": "a fully stripped bathroom with bare walls, floor and opened ceiling, swept clean.",
+      "prompt": "Camera and composition: a fully stripped bathroom with bare walls, floor and opened ceiling, swept clean. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

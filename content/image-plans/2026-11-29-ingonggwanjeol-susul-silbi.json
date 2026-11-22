@@ -1,0 +1,79 @@
+{
+ "slug": "2026-11-29-ingonggwanjeol-susul-silbi",
+ "title": "아버지 무릎 수술 날 잡았다면, 인공관절 수술 실비부터",
+ "source": "11/29(일) 10:00 네이버 원고 — 생활보장 홈판형(실비청구), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 + 정보 카드. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "아침 햇살 드는 정형외과 병실에서 70대 아버지와 40대 아들이 마주 보며 이야기하는 모습 (대표사진)",
+   "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Setting: a bright orthopedic hospital ward room in the morning. A Korean father in his 70s sitting on an orthopedic ward bed with a knee brace and his son in his 40s in a burgundy sweater sitting beside him, both smiling and talking, a knee joint model on the bedside table. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft early-morning sunlight. Expression: relieved gentle smile. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "duo",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "duo",
+   "thumb_theme": "burgundy",
+   "thumb_person": "70대 아버지와 40대 아들",
+   "thumb_place": "주제",
+   "thumb_light": "아침 햇살",
+   "thumb_mood": "안심",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "burgundy",
+    "font": "ptd",
+    "title": "인공관절\n얼마나 나올까?"
+   },
+   "anchor": "knee brace"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "인공관절 수술 실비를 묻는 첫머리 카드",
+   "kind": "card",
+   "card": {
+    "type": "lead",
+    "keyword": "인공관절",
+    "title": "수술비\n얼마 나올까?",
+    "ask": "돈 많이 드는 거 아니냐"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "병실 침대 옆 보호자 의자에 앉아 무릎 보조기를 정리하는 50대 딸",
+   "prompt": "Camera and composition: medium shot beside a hospital bed. A Korean daughter in her 50s sitting on a guardian chair beside a hospital bed, neatly folding a knee support brace. Background: bright hospital ward with pale curtains. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot beside a hospital bed",
+   "bg": "bright hospital ward with pale curtains",
+   "anchor": "knee support brace"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "재활치료실에서 물리치료사의 도움을 받아 무릎을 굽혔다 펴는 70대 남성",
+   "prompt": "Camera and composition: medium shot in a rehabilitation room. A Korean man in his 70s bending and straightening his knee on a rehabilitation table with a physical therapist's help. Background: clean hospital rehabilitation room with exercise equipment. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a rehabilitation room",
+   "bg": "clean hospital rehabilitation room with exercise equipment",
+   "anchor": "rehabilitation table"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "거실 탁자에 입퇴원확인서와 영수증 봉투를 펼쳐 놓고 확인하는 40대 아들의 손",
+   "prompt": "Camera and composition: close-up of hands at a living room table. A man's hands spreading a blank discharge confirmation form and a plain receipt envelope on a living room table. Background: warm living room with soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands at a living room table",
+   "bg": "warm living room with soft daylight",
+   "anchor": "blank discharge confirmation form"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "공원 산책로에서 지팡이 없이 천천히 걷는 70대 아버지와 옆에서 웃는 아들",
+   "prompt": "Camera and composition: wide shot on a park walking path. A Korean father in his 70s walking slowly on a park path without a cane while his son walks beside him smiling. Background: autumn park path with soft morning light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "wide shot on a park walking path",
+   "bg": "autumn park path with soft morning light",
+   "anchor": "park walking path"
+  }
+ ]
+}

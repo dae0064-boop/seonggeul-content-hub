@@ -1,0 +1,68 @@
+{
+  "slug": "2026-11-27-ansan-syasi-cheolgeo",
+  "brand": "다와이철거",
+  "mood": "morning",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "바닥에 놓인 공구와 떼어 낸 창틀 조각 (대표사진)",
+      "scene": "close-up of a pry bar, a cordless drill and work gloves next to removed aluminum window frame pieces on a dusty floor.",
+      "shot": "tools",
+      "prompt": "Camera and composition: close-up of a pry bar, a cordless drill and work gloves next to removed aluminum window frame pieces on a dusty floor. Shot type: close-up of demolition tools such as a hammer, a pry bar, a cutting machine and work gloves resting on a dusty floor in the space, shallow depth of field. No people in the image. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "외풍 심한 집\n샷시 내리는 길"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "오래된 베란다 샷시와 뿌옇게 바랜 유리",
+      "scene": "an old aluminum balcony window frame in a Korean apartment with cloudy glass.",
+      "prompt": "Camera and composition: an old aluminum balcony window frame in a Korean apartment with cloudy glass. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "유리를 먼저 떼어 낸 빈 창틀",
+      "scene": "an empty window frame after the glass panes have been taken out, morning light coming in.",
+      "prompt": "Camera and composition: an empty window frame after the glass panes have been taken out, morning light coming in. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "아파트 창가에 닿아 있는 사다리차 바구니",
+      "scene": "a ladder truck basket reaching up to an apartment balcony window from outside.",
+      "prompt": "Camera and composition: a ladder truck basket reaching up to an apartment balcony window from outside. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "창가 쪽 짐을 치우고 바닥을 덮어 둔 거실",
+      "scene": "a living room with furniture moved away from the windows and the floor covered with protective sheets.",
+      "prompt": "Camera and composition: a living room with furniture moved away from the windows and the floor covered with protective sheets. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "창틀을 떼어 내고 드러난 벽 테두리",
+      "scene": "a wall opening where a window frame has been removed, showing rough edges around the opening.",
+      "prompt": "Camera and composition: a wall opening where a window frame has been removed, showing rough edges around the opening. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "떼어 낸 유리와 창짝을 세워 둔 모습",
+      "scene": "removed window sashes and glass panes standing upright against a wall, padded and secured.",
+      "prompt": "Camera and composition: removed window sashes and glass panes standing upright against a wall, padded and secured. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "새 창이 들어갈 준비를 마친 빈 창 자리",
+      "scene": "a clean empty window opening ready for new window installation.",
+      "prompt": "Camera and composition: a clean empty window opening ready for new window installation. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

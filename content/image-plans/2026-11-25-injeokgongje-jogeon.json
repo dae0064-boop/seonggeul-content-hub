@@ -1,0 +1,94 @@
+{
+  "slug": "2026-11-25-injeokgongje-jogeon",
+  "title": "인적공제 조건, 부모님 경로우대 추가공제는 얼마나 될까 (70세)",
+  "source": "11/25(수) 티스토리 원고 (11/22 저녁 미리 작성) 12:40",
+  "note": "4장(대표 1 + 카드 2 + 장면 사진 1) — 2026-11-07 원고부터 카드 2장은 서로 다른 모양",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "넓은 거실에서 70대 아버지와 40대 아들이 서류를 보며 이야기하는 모습을 멀리서 본 장면 (대표사진)",
+      "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). A wide view of a warm living room like a miniature diorama, a Korean father in his 70s in a gray vest and his son in his 40s in a navy knit sit small at a low table, the son explaining a few blank papers with one open hand, plants and a window around them. Expression: explaining with one hand open toward the viewer. Color theme: warm terracotta and cream tones with a soft gold accent. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "방·장소 전체, 사람은 작게",
+      "bg": "warm terracotta and cream tones with a soft gold accent",
+      "note": "대표",
+      "thumb_shot": "wide",
+      "thumb_theme": "burgundy",
+      "thumb_person": "70대 아버지(회색 조끼)와 40대 아들(네이비 니트), 작게",
+      "thumb_mood": "설명",
+      "overlay": {
+        "kind": "thumb",
+        "look": "band",
+        "theme": "burgundy",
+        "font": "jua",
+        "title": "인적공제 조건\n얼마나 더 빠질까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "인적공제 조건 중 추가공제 네 가지를 숫자로 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "number",
+        "title": "추가공제 네 가지",
+        "items": [
+          [
+            "70세",
+            "경로우대",
+            "기본공제 위에"
+          ],
+          [
+            "200만",
+            "장애인",
+            "나이 제한 없음"
+          ],
+          [
+            "50만",
+            "부녀자",
+            "소득 요건"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "부녀자 공제와 한부모 공제가 되는 경우와 안 되는 경우를 비교한 카드",
+      "kind": "card",
+      "card": {
+        "type": "compare",
+        "title": "부녀자와 한부모",
+        "ask": "둘 다 받을 수 있나요?",
+        "heads": [
+          "부녀자",
+          "한부모"
+        ],
+        "items": [
+          [
+            "배우자가 있는 여성",
+            "기본공제대상인 자녀"
+          ],
+          [
+            "연 50만",
+            "연 100만"
+          ]
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "거실 탁자 위에 놓인 달력과 돋보기, 찻잔",
+      "prompt": "Camera and composition: a desk calendar, a magnifying glass and a teacup on a living room table. A small desk calendar, a round magnifying glass and a teacup on a wooden living room table, soft daylight, no readable text. Background color: warm terracotta and cream. Soft matte clay 3D render, rounded chunky shapes, handmade plasticine texture, gentle studio lighting, miniature diorama feel, richer and more saturated colors than pastel, clear contrast, cozy and warm mood. Base colors cream, apricot, mint, sky blue and warm brown, a little deeper than pastel. Add one bright accent color (coral-red, mustard yellow or cobalt blue) on the main person's clothing or the key object. Korean people and Korean everyday settings. Show only what the image's own scene describes; do not repeat the post's main object in every image. Topic-specific details (medical, tools, places) are welcome where the scene calls for them. Everyone looks calm and relaxed — smiling, or thoughtful and curious; nobody is in pain, sad or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, posters, screens and papers stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+      "shot": "a desk calendar, a magnifying glass and a teacup on a living room table",
+      "bg": "warm terracotta and cream",
+      "kind": "photo",
+      "photo": {
+        "query_en": "calendar magnifying glass tea",
+        "scene_en": "a calendar and a magnifying glass on a table"
+      },
+      "note": "2026-11-04 사용자 \"티스토리도 고화질\" — 무료 고화질 사진(1200px+) 먼저, 없으면 아래 그림"
+    }
+  ]
+}

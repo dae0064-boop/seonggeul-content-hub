@@ -1,0 +1,90 @@
+{
+  "slug": "2026-11-27-suwon-cheolgeo-sajin-gyeonjeok",
+  "brand": "다와이철거",
+  "mood": "day",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "철거 전 방을 둘러보는 안전모 쓴 작업자 뒷모습 (대표사진)",
+      "scene": "one worker in a safety helmet seen from behind, looking around an empty old apartment room before demolition.",
+      "shot": "worker",
+      "prompt": "Camera and composition: one worker in a safety helmet seen from behind, looking around an empty old apartment room before demolition. Shot type: one worker wearing a safety helmet, seen from behind or from the side, working in the space. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "보낼 사진\n5가지 목록",
+        "look": "band",
+        "style": "pop",
+        "theme": "plum"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "철거 전 오래된 아파트 거실 전경",
+      "scene": "a wide view of an older Korean apartment living room before demolition.",
+      "prompt": "Camera and composition: a wide view of an older Korean apartment living room before demolition. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "철거 견적 기준을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "견적 기준 네 가지",
+        "items": [
+          "작업량",
+          "반출 동선",
+          "엘리베이터 유무",
+          "사다리차 진입"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "꼭 필요한 사진 목록을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "보낼 사진 목록",
+        "items": [
+          "방 모서리에서 넓게",
+          "욕실 천장과 바닥",
+          "싱크대 아래 배관",
+          "현관~엘리베이터",
+          "건물 바깥과 도로"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "천장재를 열어 속을 살펴보는 작업자 옆모습",
+      "scene": "a worker in a helmet seen from the side lifting a ceiling panel to look inside.",
+      "prompt": "Camera and composition: a worker in a helmet seen from the side lifting a ceiling panel to look inside. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "엘리베이터 앞 복도와 현관문",
+      "scene": "an apartment corridor between the front door and the elevator.",
+      "prompt": "Camera and composition: an apartment corridor between the front door and the elevator. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "철거 전 욕실 천장과 바닥이 함께 보이는 모습",
+      "scene": "an old bathroom seen from the doorway, ceiling and floor both visible.",
+      "prompt": "Camera and composition: an old bathroom seen from the doorway, ceiling and floor both visible. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "사진 상담을 위해 넓게 찍은 빈 방 모서리",
+      "scene": "a wide shot of an empty room taken from the corner, showing walls, floor and ceiling.",
+      "prompt": "Camera and composition: a wide shot of an empty room taken from the corner, showing walls, floor and ceiling. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

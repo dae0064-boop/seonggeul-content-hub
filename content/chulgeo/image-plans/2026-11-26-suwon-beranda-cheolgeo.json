@@ -1,0 +1,80 @@
+{
+  "slug": "2026-11-26-suwon-beranda-cheolgeo",
+  "brand": "다와이철거",
+  "mood": "golden",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "위에서 내려다본 타일을 걷어 낸 베란다 바닥 (대표사진)",
+      "scene": "an apartment balcony floor seen from above with tiles removed, rough cement and a floor drain, the living room threshold at one edge.",
+      "shot": "topdown",
+      "prompt": "Camera and composition: an apartment balcony floor seen from above with tiles removed, rough cement and a floor drain, the living room threshold at one edge. Shot type: high-angle view looking down at the floor where the old finish has been removed, showing the bare base. No people in the image. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "베란다 바닥\n단차 없앨까",
+        "look": "band",
+        "theme": "olive"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "거실과 베란다 사이 한 칸 낮은 바닥",
+      "scene": "the step down from a living room floor to a lower tiled apartment balcony floor, sliding door frame between them.",
+      "prompt": "Camera and composition: the step down from a living room floor to a lower tiled apartment balcony floor, sliding door frame between them. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "타일을 걷어 내자 드러난 베란다 시멘트 바닥",
+      "scene": "a balcony floor where tiles have been removed revealing grey cement sloping toward a drain.",
+      "prompt": "Camera and composition: a balcony floor where tiles have been removed revealing grey cement sloping toward a drain. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "베란다 단차 줄이기 전 확인할 것을 담은 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "단차 줄이기 전 확인",
+        "items": [
+          "물을 계속 쓸지",
+          "세탁기·배수구 위치",
+          "바닥 난방 계획",
+          "관리사무소 규정",
+          "다음 공정 의견"
+        ]
+      }
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "창틀과 거실 쪽을 비닐로 막아 둔 베란다",
+      "scene": "balcony window frames and a living room door sealed with clear plastic sheeting and tape.",
+      "prompt": "Camera and composition: balcony window frames and a living room door sealed with clear plastic sheeting and tape. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "휴대폰으로 찍은 베란다 바닥과 배수구",
+      "scene": "a phone-style close view of a balcony floor drain surrounded by old tiles.",
+      "prompt": "Camera and composition: a phone-style close view of a balcony floor drain surrounded by old tiles. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "타일 조각을 나눠 담은 마대",
+      "scene": "several sacks filled lightly with broken tiles lined up on a protected corridor floor.",
+      "prompt": "Camera and composition: several sacks filled lightly with broken tiles lined up on a protected corridor floor. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "타일을 걷고 비워 둔 베란다 전체",
+      "scene": "a whole empty apartment balcony after tile removal, bare cement floor and walls, swept clean.",
+      "prompt": "Camera and composition: a whole empty apartment balcony after tile removal, bare cement floor and walls, swept clean. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

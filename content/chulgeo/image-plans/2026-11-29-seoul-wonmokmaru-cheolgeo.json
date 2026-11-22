@@ -1,0 +1,77 @@
+{
+  "slug": "2026-11-29-seoul-wonmokmaru-cheolgeo",
+  "brand": "다와이철거",
+  "mood": "golden",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "바닥에 놓인 공구와 떼어 낸 원목마루 조각 (대표사진)",
+      "scene": "close-up of a pry bar, a floor scraper and work gloves next to thick removed solid wood floorboard pieces on a dusty floor.",
+      "shot": "tools",
+      "prompt": "Camera and composition: close-up of a pry bar, a floor scraper and work gloves next to thick removed solid wood floorboard pieces on a dusty floor. Shot type: close-up of demolition tools such as a hammer, a pry bar, a cutting machine and work gloves resting on a dusty floor in the space, shallow depth of field. No people in the image. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "서울 원목마루\n두꺼운 마루는?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "결이 진한 오래된 원목마루 거실",
+      "scene": "an older Korean apartment living room with dark-grained solid wood flooring showing wear and scratches.",
+      "prompt": "Camera and composition: an older Korean apartment living room with dark-grained solid wood flooring showing wear and scratches. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "원목마루를 떼어 낸 자리의 바닥 상태",
+      "scene": "a cement floor surface with hardened adhesive left where thick wooden boards were removed.",
+      "prompt": "Camera and composition: a cement floor surface with hardened adhesive left where thick wooden boards were removed. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "거실은 그대로 두고 방 하나만 마루를 걷은 모습",
+      "scene": "a bedroom with its wooden floor removed while the living room floor next to it is still intact, boundary at the doorway.",
+      "prompt": "Camera and composition: a bedroom with its wooden floor removed while the living room floor next to it is still intact, boundary at the doorway. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "원목마루를 걷고 낮아진 방문 아래 문턱",
+      "scene": "a bedroom doorway where the floor is now lower, showing a wider gap under the door and a raised threshold.",
+      "prompt": "Camera and composition: a bedroom doorway where the floor is now lower, showing a wider gap under the door and a raised threshold. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "늦은 오후 햇빛이 드는 걷어 낸 거실 바닥",
+      "scene": "a living room with the wooden floor removed, late afternoon sunlight on bare cement.",
+      "prompt": "Camera and composition: a living room with the wooden floor removed, late afternoon sunlight on bare cement. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "원목마루 철거 궁금한 점을 담은 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "원목마루 철거 궁금증",
+        "items": [
+          "덧깔아도 되나",
+          "떼어 낸 판 재사용",
+          "방만 걷으면 짧나",
+          "살면서 걷기"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "접착제 정리까지 마친 평평한 방바닥",
+      "scene": "a flat cleaned cement bedroom floor with adhesive scraped off, ready for new flooring.",
+      "prompt": "Camera and composition: a flat cleaned cement bedroom floor with adhesive scraped off, ready for new flooring. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

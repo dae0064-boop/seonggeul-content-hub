@@ -1,0 +1,76 @@
+{
+  "slug": "2026-11-28-seoul-beranda-hwakjang-cheolgeo",
+  "brand": "다와이철거",
+  "mood": "morning",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "거실과 베란다 사이 문틀을 떼는 작업자 뒷모습 (대표사진)",
+      "scene": "one worker in a safety helmet seen from behind, removing a large sliding door frame between a living room and a balcony.",
+      "shot": "worker",
+      "prompt": "Camera and composition: one worker in a safety helmet seen from behind, removing a large sliding door frame between a living room and a balcony. Shot type: one worker wearing a safety helmet, seen from behind or from the side, working in the space. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "거실 넓히기 전\n확장 철거 순서"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "거실과 베란다 사이 미닫이문과 문틀",
+      "scene": "a Korean apartment living room with a large sliding glass door and frame leading to the balcony.",
+      "prompt": "Camera and composition: a Korean apartment living room with a large sliding glass door and frame leading to the balcony. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "확장 전 확인할 것을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "확장 전 확인",
+        "items": [
+          "관리사무소 규정·절차",
+          "사이 벽 구조",
+          "바깥 샷시 교체 여부"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "미닫이문을 떼어 내고 드러난 문틀 자리",
+      "scene": "the wall opening left after a balcony sliding door has been removed, rough edges of the frame line.",
+      "prompt": "Camera and composition: the wall opening left after a balcony sliding door has been removed, rough edges of the frame line. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "위에서 본 거실과 베란다 사이 바닥 턱",
+      "scene": "high-angle view of the raised concrete threshold between a living room floor and a balcony floor.",
+      "prompt": "Camera and composition: high-angle view of the raised concrete threshold between a living room floor and a balcony floor. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "오래된 베란다 바깥 샷시와 창가",
+      "scene": "an old aluminum outer balcony window with plants removed and the balcony empty.",
+      "prompt": "Camera and composition: an old aluminum outer balcony window with plants removed and the balcony empty. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "베란다 바닥 타일을 걷어 낸 모습",
+      "scene": "a balcony floor with old tiles removed, showing bare concrete.",
+      "prompt": "Camera and composition: a balcony floor with old tiles removed, showing bare concrete. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "문틀과 턱을 걷고 거실과 이어진 베란다",
+      "scene": "a living room now open to the balcony with the frame and threshold removed, bright morning light.",
+      "prompt": "Camera and composition: a living room now open to the balcony with the frame and threshold removed, bright morning light. Realistic documentary photograph taken with a full-frame camera, soft warm early-morning sunlight coming through the window, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

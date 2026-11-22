@@ -1,0 +1,83 @@
+{
+ "slug": "2026-11-29-hwasang-chiryo-silbi",
+ "title": "아이가 뜨거운 물에 덴 날, 화상 치료 실비부터 보세요",
+ "source": "11/29(일) 21:00 네이버 원고 — 생활보장 홈판형(실비청구), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 + 정보 카드. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "저녁 조명 아래 화상 치료를 마치고 붕대 감은 아이 손을 잡고 안심한 30대 엄마 (대표사진)",
+   "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Setting: a warm living room in the evening. A Korean mother in her 30s in a cobalt knit top relieved, holding her child's small bandaged hand, the white burn bandage clearly visible in the foreground. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: warm evening lamp light. Expression: relieved gentle smile. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "face",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "face",
+   "thumb_theme": "cobalt",
+   "thumb_person": "30대 엄마",
+   "thumb_place": "주제",
+   "thumb_light": "저녁 조명",
+   "thumb_mood": "안심",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "cobalt",
+    "font": "jua",
+    "title": "화상 치료 실비\n얼마나 될까?"
+   },
+   "anchor": "white burn bandage"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "화상 치료 실비 대상인지 스스로 점검하는 카드",
+   "kind": "card",
+   "card": {
+    "type": "selfcheck",
+    "title": "중증화상 기준",
+    "items": [
+     "몸 표면의 20% 이상",
+     "몸 표면의 10% 이상",
+     "눈 화상"
+    ],
+    "result": "아래 산정특례를 보세요 👇"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "화상 전문 외래 처치실에서 간호사가 아이 손에 소독 거즈를 감는 장면",
+   "prompt": "Camera and composition: close-up at a treatment table. A nurse's gloved hands wrapping sterile gauze around a child's hand in a burn clinic treatment room. Background: clean outpatient treatment room with white light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up at a treatment table",
+   "bg": "clean outpatient treatment room with white light",
+   "anchor": "sterile gauze"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "대학병원 화상 센터 복도에서 담당 의사의 설명을 듣는 30대 부부",
+   "prompt": "Camera and composition: medium shot in a hospital corridor. A Korean couple in their 30s listening to a doctor in a burn center hallway of a university hospital. Background: bright hospital corridor. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a hospital corridor",
+   "bg": "bright hospital corridor",
+   "anchor": "burn center hallway"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "집 책상에서 화상 진료비 영수증과 세부내역서를 날짜순으로 정리하는 손",
+   "prompt": "Camera and composition: close-up of hands at a home desk. Hands arranging blank burn treatment receipts and itemized bills in date order on a desk. Background: tidy home desk with lamp light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands at a home desk",
+   "bg": "tidy home desk with lamp light",
+   "anchor": "blank burn treatment receipts"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "아이 방 침대에서 붕대 뗀 손으로 그림책을 넘기는 아이와 옆에서 웃는 엄마",
+   "prompt": "Camera and composition: medium shot in a child's room. A child turning pages of a picture book on a bed with a healed hand while the mother smiles beside them. Background: cozy child's bedroom with warm light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a child's room",
+   "bg": "cozy child's bedroom with warm light",
+   "anchor": "picture book"
+  }
+ ]
+}

@@ -1,0 +1,87 @@
+{
+ "slug": "2026-11-27-taljang-susul-silbi",
+ "title": "탈장 수술 실비, 아이 서혜부 탈장도 청구되나요 (본인부담 20%)",
+ "source": "11/27(금) 10:00 네이버 원고 — 생활보장 검색형(실비청구), 실사풍 (11/22 미리 작성)",
+ "note": "6장 = 대표사진 1 + 장면 + 정보 카드. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "소아외과 진료 책상 위에 놓인 수술 안내문 한 장 (대표사진)",
+   "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Setting: a pediatric surgery clinic consultation desk. One plain surgery guide sheet lying on a clean pediatric surgery clinic desk with a small teddy bear softly blurred beside it. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: cool clean white indoor light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "object",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "object",
+   "thumb_theme": "forest",
+   "thumb_person": "없음",
+   "thumb_place": "주제",
+   "thumb_light": "흰 조명",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "forest",
+    "font": "ptd",
+    "title": "탈장 수술 실비\n될까?"
+   },
+   "anchor": "surgery guide sheet"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "탈장 수술 실비에 대해 헷갈리는 세 가지를 묻는 퀴즈 카드",
+   "kind": "card",
+   "card": {
+    "type": "quiz",
+    "title": "탈장 수술 실비 O·X",
+    "items": [
+     "아이 탈장도 청구할 수 있다",
+     "포괄수가 내 몫은 20%다",
+     "1인실 차액도 다 돌아온다"
+    ],
+    "answers": [
+     "O",
+     "O",
+     "X"
+    ],
+    "where": "아래 Q&A"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "소아병동 병실에서 아이 침대 옆 의자에 앉은 30대 아빠",
+   "prompt": "Camera and composition: medium shot in a pediatric ward. A Korean father in his 30s in a gray hoodie sitting on a chair beside a small child's hospital bed in a pediatric ward, watching his sleeping child calmly. The pediatric hospital bed is clearly visible. Background: bright pediatric ward with pastel curtains. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a pediatric ward",
+   "bg": "bright pediatric ward with pastel curtains",
+   "anchor": "pediatric hospital bed"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "병원 원무과 창구에서 서류를 받아 드는 30대 엄마",
+   "prompt": "Camera and composition: medium shot at a hospital billing counter. A Korean mother in her 30s in a beige coat receiving a plain document envelope at a hospital billing counter. Background: clean hospital billing area. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a hospital billing counter",
+   "bg": "clean hospital billing area",
+   "anchor": "hospital billing counter"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "거실 식탁에서 보험 증권을 펼쳐 수술분류표를 찾는 40대 엄마",
+   "prompt": "Camera and composition: medium shot at a dining table. A Korean mother in her 40s in a cream knit sitting at a dining table, turning the pages of a plain insurance policy booklet with a pen in hand. Background: warm dining room with daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a dining table",
+   "bg": "warm dining room with daylight",
+   "anchor": "insurance policy booklet"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "소아과 대기실에서 아이를 안고 진료를 기다리는 30대 아빠",
+   "prompt": "Camera and composition: medium shot in a clinic waiting area. A Korean father in his 30s holding his toddler on his lap in a pediatric clinic waiting area, both calm. Background: cheerful pediatric clinic waiting room. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a clinic waiting area",
+   "bg": "cheerful pediatric clinic waiting room",
+   "anchor": "pediatric clinic waiting area"
+  }
+ ]
+}

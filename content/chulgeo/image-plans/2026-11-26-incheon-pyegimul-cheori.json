@@ -1,0 +1,86 @@
+{
+  "slug": "2026-11-26-incheon-pyegimul-cheori",
+  "brand": "다와이철거",
+  "mood": "overcast",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "현관 앞에 묶어 쌓아 둔 인테리어 폐기물 (대표사진)",
+      "scene": "leftover renovation waste sorted into tied sacks, bundled wood moldings and rolled vinyl flooring next to an apartment front door inside.",
+      "shot": "debris",
+      "prompt": "Camera and composition: leftover renovation waste sorted into tied sacks, bundled wood moldings and rolled vinyl flooring next to an apartment front door inside. Shot type: neatly tied debris sacks and bundled waste stacked by the entrance or corridor, ready to be carried out. No people in the image. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "남은 자재\n4종류 정리"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "베란다 한쪽에 쌓인 장판과 몰딩 조각",
+      "scene": "a corner of an apartment balcony piled with rolled old flooring and cut molding pieces.",
+      "prompt": "Camera and composition: a corner of an apartment balcony piled with rolled old flooring and cut molding pieces. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "남은 자재 네 가지를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "남은 자재 네 가지",
+        "items": [
+          "타일·시멘트 조각",
+          "몰딩·합판·각재",
+          "장판·벽지·비닐",
+          "페인트·실리콘 통"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "묶어 둔 나무 자재와 마대를 옮길 준비",
+      "scene": "bundles of wooden boards tied with string and half-filled sacks ready to be carried out.",
+      "prompt": "Camera and composition: bundles of wooden boards tied with string and half-filled sacks ready to be carried out. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "휴대폰으로 찍은 베란다 폐기물 더미",
+      "scene": "a phone-style photo of mixed renovation leftovers stacked on a balcony floor.",
+      "prompt": "Camera and composition: a phone-style photo of mixed renovation leftovers stacked on a balcony floor. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "보양재를 깐 엘리베이터 바닥",
+      "scene": "an apartment elevator floor and walls covered with protective padding.",
+      "prompt": "Camera and composition: an apartment elevator floor and walls covered with protective padding. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "폐기물 수거 궁금한 점을 담은 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "폐기물 수거 궁금한 점",
+        "items": [
+          "적어도 맡길 수 있나",
+          "섞여 있으면",
+          "페인트 통은",
+          "계단만 있다면"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "폐기물을 모두 치우고 비운 베란다",
+      "scene": "a clean empty apartment balcony after all leftover materials were removed.",
+      "prompt": "Camera and composition: a clean empty apartment balcony after all leftover materials were removed. Realistic documentary photograph taken with a full-frame camera, soft cool overcast light from the window, muted calm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

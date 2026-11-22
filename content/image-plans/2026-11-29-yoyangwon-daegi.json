@@ -1,0 +1,79 @@
+{
+ "slug": "2026-11-29-yoyangwon-daegi",
+ "title": "엄마 요양원 자리 기다린다면, 요양원 대기 중 챙길 것",
+ "source": "11/29(일) 19:00 네이버 원고 — 생활보장 홈판형(돌봄), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 + 정보 카드. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "흐린 날 요양원 상담실에서 40대 딸이 70대 어머니에게 입소 안내를 설명하는 모습 (대표사진)",
+   "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Setting: a calm nursing home consultation room. A Korean daughter in her 40s in a rose blouse explaining gently to her mother in her 70s across a small table in a nursing home consultation room, a nursing home hallway softly blurred through the open door. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft overcast daylight. Expression: explaining with one hand open toward the viewer. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "duo",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "duo",
+   "thumb_theme": "rose",
+   "thumb_person": "70대 어머니와 40대 딸",
+   "thumb_place": "주제",
+   "thumb_light": "흐린 날",
+   "thumb_mood": "설명",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "rose",
+    "font": "ptd",
+    "title": "요양원 대기\n뭘 해야 할까?"
+   },
+   "anchor": "nursing home consultation room"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "요양원 대기 중 챙길 것을 묻는 첫머리 카드",
+   "kind": "card",
+   "card": {
+    "type": "lead",
+    "keyword": "요양원 대기",
+    "title": "기다리는 동안\n뭘 할까?",
+    "ask": "자리가 없어서 대기"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "거실 소파에서 장기요양 인정서를 펼쳐 등급을 확인하는 50대 아들",
+   "prompt": "Camera and composition: medium shot on a living room sofa. A Korean man in his 50s sitting on a sofa reading a plain long-term care certificate. Background: cozy living room with soft overcast light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot on a living room sofa",
+   "bg": "cozy living room with soft overcast light",
+   "anchor": "long-term care certificate"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "집 현관에서 방문요양 요양보호사를 반갑게 맞이하는 70대 어머니",
+   "prompt": "Camera and composition: medium shot at an apartment entrance. A Korean mother in her 70s warmly greeting a home care worker at the apartment entrance. Background: bright apartment entrance with shoe cabinet. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at an apartment entrance",
+   "bg": "bright apartment entrance with shoe cabinet",
+   "anchor": "home care worker"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "요양원 다인실 창가 침대 옆 탁자에 정리된 개인 소지품",
+   "prompt": "Camera and composition: medium shot of a nursing home room. Personal belongings neatly arranged on a bedside table next to a bed by the window of a shared nursing home room. Background: clean nursing home room with daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot of a nursing home room",
+   "bg": "clean nursing home room with daylight",
+   "anchor": "bedside table"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "저녁 식탁에서 노트에 요양원 이름과 연락처를 정리하는 40대 딸",
+   "prompt": "Camera and composition: medium shot at a dining table in the evening. A Korean woman in her 40s writing nursing home names in a notebook at a dining table. Background: warm dining room with evening lamp light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a dining table in the evening",
+   "bg": "warm dining room with evening lamp light",
+   "anchor": "notebook"
+  }
+ ]
+}

@@ -1,0 +1,94 @@
+{
+ "slug": "2026-11-25-janggiyoyang-3deunggeup",
+ "title": "엄마가 장기요양 3등급을 받았다면, 집에서 쓰는 법부터",
+ "source": "11/25(수) 11:20 네이버 원고 — 생활보장 홈판형(돌봄·요양), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 4 + 정보 카드 1. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "주간보호센터 프로그램실 앞에서 미소 지으며 설명하는 70대 어머니 (대표사진)",
+   "prompt": "Camera and composition: close-up, eye level, one person's face and shoulders fill most of the frame; the related scene stays softly blurred in the background. Setting: a bright adult day care center activity room. A Korean woman in her 70s with short curly gray hair in a charcoal cardigan smiling while explaining something with one hand, a day care center activity table with colored pencils softly blurred behind her. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: bright clear daylight, high key. Expression: explaining with one hand open toward the viewer. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "face",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "face",
+   "thumb_theme": "charcoal",
+   "thumb_person": "70대 어머니",
+   "thumb_place": "주제",
+   "thumb_light": "밝은 낮",
+   "thumb_mood": "설명",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "charcoal",
+    "font": "ptd",
+    "title": "장기요양\n집에서 뭘 받을까?"
+   },
+   "anchor": "day care center activity table"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "장기요양 3등급 숫자를 한눈에 정리한 카드",
+   "kind": "card",
+   "card": {
+    "type": "number",
+    "title": "장기요양 3등급 한눈에",
+    "items": [
+     [
+      "60점",
+      "3등급 시작 점수",
+      "75점 미만까지"
+     ],
+     [
+      "15%",
+      "재가 본인부담",
+      "쓴 만큼"
+     ],
+     [
+      "4년",
+      "갱신 유효기간",
+      "처음은 2년"
+     ]
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "거실 탁자에서 공단 통지서와 달력을 펼쳐 놓은 40대 딸",
+   "prompt": "Camera and composition: medium shot at a living room table. A Korean woman in her 40s in a mustard sweater spreading a plain white notice letter and a paper calendar on a living room table, calm. Background: bright living room with plants. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a living room table",
+   "bg": "bright living room with plants",
+   "anchor": "plain white notice letter and a paper calendar"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "주간보호센터에서 어르신들과 함께 체조하는 70대 어머니",
+   "prompt": "Camera and composition: medium shot in an adult day care center. A Korean woman in her 70s doing light chair exercises with other seniors in an adult day care center, a caregiver leading in soft focus, cheerful. Background: bright adult day care center hall. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in an adult day care center",
+   "bg": "bright adult day care center hall",
+   "anchor": "light chair exercises"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "방문요양보호사와 함께 부엌에서 반찬을 만드는 70대 어머니",
+   "prompt": "Camera and composition: medium shot in a home kitchen. A Korean home care worker in a light blue apron and a Korean woman in her 70s preparing side dishes together at a home kitchen counter, smiling. Background: clean home kitchen with daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a home kitchen",
+   "bg": "clean home kitchen with daylight",
+   "anchor": "preparing side dishes together"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "저녁 식탁에서 엄마와 딸이 돌봄 일정표를 함께 보는 모습",
+   "prompt": "Camera and composition: medium shot at a dinner table. A Korean woman in her 70s and her daughter in her 40s looking at a handwritten weekly care schedule on the dinner table together. Background: warm home dining room. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a dinner table",
+   "bg": "warm home dining room",
+   "anchor": "handwritten weekly care schedule"
+  }
+ ]
+}
