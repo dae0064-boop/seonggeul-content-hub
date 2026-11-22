@@ -1,0 +1,94 @@
+{
+ "slug": "2026-11-23-winaesigyeong-silbi",
+ "title": "위내시경 실비, 건강검진 때 받은 것도 청구되나요",
+ "source": "11/23(월) 10:00 네이버 원고 — 생활보장 검색형(실비청구), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 + 정보 카드. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "진료실 검사대 옆에 놓인 위내시경 장비 (대표사진)",
+   "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Setting: a clean gastroenterology endoscopy room in a Korean clinic. A gastroscope endoscopy tower with its coiled flexible scope resting beside a neatly made examination bed with a white sheet, nobody in the room. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: cool clean white indoor light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "object",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "object",
+   "thumb_theme": "navy",
+   "thumb_person": "없음",
+   "thumb_place": "주제",
+   "thumb_light": "흰 조명",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "navy",
+    "font": "jua",
+    "title": "위내시경 실비\n검진도 될까?"
+   },
+   "anchor": "gastroscope endoscopy tower"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "위내시경 실비에 대해 헷갈리는 세 가지를 묻는 퀴즈 카드",
+   "kind": "card",
+   "card": {
+    "type": "quiz",
+    "title": "위내시경 실비 O·X",
+    "items": [
+     "건강검진 위내시경도 된다",
+     "검진 중 뗀 용종은 따로 본다",
+     "청구 기한은 3년이다"
+    ],
+    "answers": [
+     "X",
+     "O",
+     "O"
+    ],
+    "where": "아래 본문"
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "검사실 간호사가 위내시경 장비를 정리하는 손",
+   "prompt": "Camera and composition: close-up of hands in an endoscopy room. Close-up of a Korean nurse's gloved hands in navy scrubs carefully coiling a clean flexible endoscope scope on a stainless tray, no face in the frame. Background: bright clinic endoscopy room with white cabinets. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands in an endoscopy room",
+   "bg": "bright clinic endoscopy room with white cabinets",
+   "anchor": "flexible endoscope scope"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "위내시경 실비청구 서류를 묻고 답하는 채팅 카드",
+   "kind": "card",
+   "card": {
+    "type": "check",
+    "ask": "위내시경 실비 서류 뭐 내?",
+    "title": "위내시경 실비 서류",
+    "items": [
+     "진료비 영수증",
+     "진료비 세부내역서",
+     "질병 이름이 적힌 처방전"
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "식탁에서 영수증과 세부내역서를 나란히 펼쳐 보는 40대 남성",
+   "prompt": "Camera and composition: medium shot at a kitchen table. A Korean man in his 40s in a gray quarter-zip sweater sitting at a kitchen table, comparing a blank medical receipt and a blank detailed bill laid side by side, calm and focused. Background: clean Korean kitchen with white tiles and a small plant. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a kitchen table",
+   "bg": "clean Korean kitchen with white tiles and a small plant",
+   "anchor": "blank medical receipt and a blank detailed bill"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "동네 내과 접수대에서 서류 봉투를 받는 손",
+   "prompt": "Camera and composition: close-up of hands at a reception counter. Close-up of a patient's hands in a brown jacket sleeve receiving a plain envelope across the reception counter of a neighborhood internal medicine clinic, no face in the frame. Background: bright neighborhood clinic reception with soft daylight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up of hands at a reception counter",
+   "bg": "bright neighborhood clinic reception with soft daylight",
+   "anchor": "reception counter of a neighborhood internal medicine clinic"
+  }
+ ]
+}

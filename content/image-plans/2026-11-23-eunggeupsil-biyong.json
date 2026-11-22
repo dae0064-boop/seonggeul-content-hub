@@ -1,0 +1,101 @@
+{
+ "slug": "2026-11-23-eunggeupsil-biyong",
+ "title": "응급실 비용, 동네 응급실과 대학병원 응급실 차이 (경증 90%)",
+ "source": "11/23(월) 16:20 네이버 원고 — 생활보장 검색형(비용), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 + 정보 카드. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "밤늦은 대학병원 응급실 입구 앞에 선 사람들의 뒷모습 (대표사진)",
+   "prompt": "Camera and composition: wide shot of a whole room or place like a miniature diorama, one or two small people doing the key action of the topic. Setting: the entrance of a Korean university hospital emergency room at night. A wide view of a hospital emergency room entrance with its sliding glass doors and a parked ambulance, two small figures of a mother and daughter in winter coats walking toward the doors calmly. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: warm evening lamp light. Expression: relieved gentle smile. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "wide",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "wide",
+   "thumb_theme": "charcoal",
+   "thumb_person": "60대 어머니와 30대 딸, 작게",
+   "thumb_place": "주제",
+   "thumb_light": "저녁 조명",
+   "thumb_mood": "안심",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "charcoal",
+    "font": "jua",
+    "title": "응급실 비용\n왜 다를까?"
+   },
+   "anchor": "hospital emergency room entrance"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "응급실 비용 본인부담을 숫자로 정리한 카드",
+   "kind": "card",
+   "card": {
+    "type": "number",
+    "title": "응급실 본인부담",
+    "items": [
+     [
+      "90%",
+      "경증·비응급",
+      "큰 응급실"
+     ],
+     [
+      "50~60%",
+      "예전 비율",
+      "2024년 전"
+     ],
+     [
+      "5단계",
+      "KTAS",
+      "중증도 기준"
+     ]
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "응급실 접수 창구에서 간호사가 상태를 묻는 장면",
+   "prompt": "Camera and composition: medium shot at an emergency triage desk. A Korean nurse in navy scrubs calmly asking questions at an emergency room triage desk while a Korean man in his 40s in a padded jacket answers, both calm. Background: bright emergency room triage area with white walls. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at an emergency triage desk",
+   "bg": "bright emergency room triage area with white walls",
+   "anchor": "emergency room triage desk"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "밤 시간 응급실 대기 의자에 앉아 아이를 안고 있는 30대 아빠",
+   "prompt": "Camera and composition: medium shot in a waiting area at night. A Korean father in his 30s in a dark green parka sitting on an emergency room waiting chair at night, holding his sleepy young child wrapped in a blanket, calm. Background: quiet emergency waiting area with soft night lighting. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a waiting area at night",
+   "bg": "quiet emergency waiting area with soft night lighting",
+   "anchor": "emergency room waiting chair"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "우리 집 상황에 맞는 응급실을 고르는 자가체크 카드",
+   "kind": "card",
+   "card": {
+    "type": "selfcheck",
+    "title": "어느 응급실로 갈까?",
+    "items": [
+     "가벼운 증상",
+     "가까운 응급실",
+     "숨이 차고 의식이 흐리면"
+    ],
+    "result": "아래 '응급실 실비' 부분도 보세요 👇"
+   }
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "거실 탁자에 응급실 영수증과 체온계를 올려 둔 장면",
+   "prompt": "Camera and composition: top-down close shot of a living room table. A digital thermometer, a blank hospital receipt and a small water cup on a light wood living room table at night, with a soft blanket at the edge of the frame. Background: warm living room table under a lamp. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "top-down close shot of a living room table",
+   "bg": "warm living room table under a lamp",
+   "anchor": "digital thermometer"
+  }
+ ]
+}
