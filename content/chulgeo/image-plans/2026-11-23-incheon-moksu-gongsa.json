@@ -1,0 +1,85 @@
+{
+  "slug": "2026-11-23-incheon-moksu-gongsa",
+  "brand": "다와이철거",
+  "mood": "golden",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "철거가 끝난 방에서 안전모 쓴 작업자가 벽을 살피는 뒷모습 (대표사진)",
+      "scene": "one worker in a safety helmet seen from behind, checking a bare cement wall in an empty room after demolition.",
+      "shot": "worker",
+      "prompt": "Camera and composition: one worker in a safety helmet seen from behind, checking a bare cement wall in an empty room after demolition. Shot type: one worker wearing a safety helmet, seen from behind or from the side, working in the space. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "인천 목수 공사\n다음 날 될까?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "철거 뒤 드러난 벽과 바닥이 보이는 빈 방",
+      "scene": "an empty room right after demolition with bare walls and a bare floor, ready for carpentry.",
+      "prompt": "Camera and composition: an empty room right after demolition with bare walls and a bare floor, ready for carpentry. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "철거 후 목공 전 확인할 것을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "철거 후 목공 전 확인",
+        "items": [
+          "잔해·못 남았나",
+          "배관·전선 드러났나",
+          "바닥 수평",
+          "바꿀 범위 있나"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "벽을 뜯고 드러난 오래된 배관과 전선",
+      "scene": "old pipes and electrical wires exposed in a wall after the finish was torn off. No people.",
+      "prompt": "Camera and composition: old pipes and electrical wires exposed in a wall after the finish was torn off. No people. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "위에서 내려다본 깨끗이 쓸어 둔 바닥",
+      "scene": "high-angle view of a clean swept cement floor in an apartment after demolition.",
+      "prompt": "Camera and composition: high-angle view of a clean swept cement floor in an apartment after demolition. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "마대가 모두 빠지고 자재만 들여 놓은 현관",
+      "scene": "an apartment entrance hall with debris all cleared and new lumber boards stacked neatly against the wall.",
+      "prompt": "Camera and composition: an apartment entrance hall with debris all cleared and new lumber boards stacked neatly against the wall. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "목수 공사 궁금한 점을 담은 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "목수 공사 궁금한 점",
+        "items": [
+          "철거만 맡겨도 되나",
+          "같이 맡기면 편한 점",
+          "살면서 되나"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "목공을 시작하기 전 정리된 빈 거실",
+      "scene": "a tidy empty living room ready for carpentry work, a few lumber boards leaning on the wall.",
+      "prompt": "Camera and composition: a tidy empty living room ready for carpentry work, a few lumber boards leaning on the wall. Realistic documentary photograph taken with a full-frame camera, late-afternoon golden light slanting through the window, warm tones, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}

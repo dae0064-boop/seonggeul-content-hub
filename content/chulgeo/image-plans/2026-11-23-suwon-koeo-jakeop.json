@@ -1,0 +1,87 @@
+{
+  "slug": "2026-11-23-suwon-koeo-jakeop",
+  "brand": "다와이철거",
+  "mood": "day",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "코어 구멍이 뚫린 콘크리트 바닥과 배관 (대표사진)",
+      "scene": "close-up detail of a clean round core-drilled hole in a concrete floor with a new pipe passing through it.",
+      "shot": "detail",
+      "prompt": "Camera and composition: close-up detail of a clean round core-drilled hole in a concrete floor with a new pipe passing through it. Shot type: close-up detail of exposed pipes, ducts or wiring left after removal. No people in the image. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "수원 코어 작업\n구멍 어떻게?",
+        "look": "band",
+        "theme": "cobalt"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "콘크리트 벽에 둥글게 따낸 구멍 여러 개",
+      "scene": "several neat round core-drilled holes in a bare concrete wall of an apartment under renovation.",
+      "prompt": "Camera and composition: several neat round core-drilled holes in a bare concrete wall of an apartment under renovation. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "코어 작업 전 확인할 것을 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "코어 작업 전 확인",
+        "items": [
+          "구멍 위치",
+          "구멍 크기",
+          "벽인지 바닥인지",
+          "벽 안 배관·전선"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "위에서 내려다본 바닥 코어 자리 표시",
+      "scene": "high-angle view of a bare concrete floor with circles drawn in chalk marking where holes will be drilled.",
+      "prompt": "Camera and composition: high-angle view of a bare concrete floor with circles drawn in chalk marking where holes will be drilled. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "코어 기계를 벽에 고정해 둔 작업 현장",
+      "scene": "a core drilling machine fixed to a concrete wall, plastic sheet covering the floor below, a worker seen from behind.",
+      "prompt": "Camera and composition: a core drilling machine fixed to a concrete wall, plastic sheet covering the floor below, a worker seen from behind. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "코어 작업 뒤 나온 콘크리트 원통 조각",
+      "scene": "concrete cylinder cores removed by core drilling, lying on a plastic sheet next to wet dust.",
+      "prompt": "Camera and composition: concrete cylinder cores removed by core drilling, lying on a plastic sheet next to wet dust. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "코어 작업 궁금한 점을 담은 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "코어 작업 궁금한 점",
+        "items": [
+          "한 곳만 되나",
+          "사는 집도 되나",
+          "철거와 같이 되나"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "코어 작업을 마치고 정리한 바닥",
+      "scene": "a clean concrete floor after core drilling, holes finished and the area wiped dry.",
+      "prompt": "Camera and composition: a clean concrete floor after core drilling, holes finished and the area wiped dry. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}
