@@ -1,0 +1,86 @@
+{
+  "slug": "2026-11-23-seoul-jutaek-cheolgeo",
+  "brand": "다와이철거",
+  "mood": "day",
+  "images": [
+    {
+      "n": 1,
+      "file": "01.png",
+      "title": "단독주택 거실에서 안전모 쓴 작업자가 벽지를 걷는 옆모습 (대표사진)",
+      "scene": "one worker in a safety helmet seen from the side, peeling old wallpaper in the living room of an old Korean detached house.",
+      "shot": "worker",
+      "prompt": "Camera and composition: one worker in a safety helmet seen from the side, peeling old wallpaper in the living room of an old Korean detached house. Shot type: one worker wearing a safety helmet, seen from behind or from the side, working in the space. Keep the top third of the image as plain, calm, slightly out-of-focus wall or ceiling with nothing in it, so a title can be placed there later. Put all subjects in the lower two thirds. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks.",
+      "overlay": {
+        "kind": "thumb",
+        "title": "서울 주택 철거\n어디부터?"
+      }
+    },
+    {
+      "n": 2,
+      "file": "02.png",
+      "title": "나무 계단이 있는 오래된 단독주택 내부",
+      "scene": "interior of an old Korean detached house with a wooden staircase, furniture already removed.",
+      "prompt": "Camera and composition: interior of an old Korean detached house with a wooden staircase, furniture already removed. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 3,
+      "file": "03.png",
+      "title": "주택 내부 철거 순서를 정리한 카드",
+      "kind": "card",
+      "card": {
+        "type": "steps",
+        "title": "주택 내부 철거 순서",
+        "items": [
+          "남길 것 표시·짐 빼기",
+          "문·창 주변 보양",
+          "위층부터 마감재",
+          "주방·욕실 설비",
+          "바닥과 반출"
+        ]
+      }
+    },
+    {
+      "n": 4,
+      "file": "04.png",
+      "title": "남겨 둘 나무 기둥과 창틀에 테이프로 표시한 모습",
+      "scene": "an old wooden pillar and window frame marked with strips of blue masking tape to be kept during demolition.",
+      "prompt": "Camera and composition: an old wooden pillar and window frame marked with strips of blue masking tape to be kept during demolition. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 5,
+      "file": "05.png",
+      "title": "좁은 골목 앞에 놓인 마대 자루",
+      "scene": "tied debris sacks placed in a narrow residential alley in front of an old two-story house.",
+      "prompt": "Camera and composition: tied debris sacks placed in a narrow residential alley in front of an old two-story house. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 6,
+      "file": "06.png",
+      "title": "층마다 정리된 폐기물을 계단 아래로 옮기는 모습",
+      "scene": "sorted debris sacks gathered at the bottom of an indoor staircase in a house under demolition.",
+      "prompt": "Camera and composition: sorted debris sacks gathered at the bottom of an indoor staircase in a house under demolition. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    },
+    {
+      "n": 7,
+      "file": "07.png",
+      "title": "주택 철거 궁금한 점을 담은 카드",
+      "kind": "card",
+      "card": {
+        "type": "check",
+        "title": "주택 철거 궁금한 점",
+        "items": [
+          "한 층만 먼저 되나",
+          "며칠 걸리나",
+          "반지하도 되나"
+        ]
+      }
+    },
+    {
+      "n": 8,
+      "file": "08.png",
+      "title": "내부 철거를 마치고 비워 둔 단독주택 거실",
+      "scene": "an empty detached house living room after interior demolition, bare cement walls and swept floor.",
+      "prompt": "Camera and composition: an empty detached house living room after interior demolition, bare cement walls and swept floor. Realistic documentary photograph taken with a full-frame camera, natural daylight mixed with a work lamp, true-to-life textures of cement, dust, tile and wood, honest on-site look, Korean apartments and shops. If workers appear, show them only from behind or from the side wearing safety helmets and work gloves, never as recognizable faces; nobody is hurt and the work looks safe and orderly. Do not draw any written words, letters, numbers or logos anywhere in the image; signs, labels, papers and uniforms stay blank. No company names or brand marks."
+    }
+  ]
+}
