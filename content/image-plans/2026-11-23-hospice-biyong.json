@@ -1,0 +1,83 @@
+{
+ "slug": "2026-11-23-hospice-biyong",
+ "title": "담당 의사가 호스피스를 말한 날, 호스피스 병원 비용이 먼저 걱정된다면",
+ "source": "11/23(월) 17:40 네이버 원고 — 생활보장 홈판형(돌봄), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 + 정보 카드. 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "호스피스 병동 상담실에서 간호사의 설명을 듣고 고개를 끄덕이는 40대 아들",
+   "prompt": "Camera and composition: medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible. Setting: a quiet palliative care ward counseling room in a Korean hospital with a small round table and a soft sofa. A Korean son in his 40s in a gray knit sweater nodding while a Korean nurse in her 50s in a light blue uniform calmly explains, both faces visible, a box of tissues and two paper cups on the table. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: cool clean white indoor light. Expression: nodding with a reassuring smile, hands relaxed. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot from the waist up, two people of different ages facing each other and talking about the topic, both faces visible",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "duo",
+   "thumb_theme": "burgundy",
+   "thumb_person": "40대 아들(회색 니트)과 50대 간호사",
+   "thumb_place": "주제",
+   "thumb_light": "흰 조명",
+   "thumb_mood": "끄덕",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "burgundy",
+    "font": "ptd",
+    "title": "호스피스 병원 비용\n하루 얼마일까?"
+   },
+   "anchor": "palliative care ward counseling room"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "호스피스 병동 복도 창가에서 휴대폰을 들고 생각에 잠긴 40대 딸",
+   "prompt": "Camera and composition: medium shot by a hospital corridor window. A Korean woman in her 40s in a beige trench coat holding a smartphone with a blank screen and looking out of a hospice ward corridor window, thoughtful but calm. Background: quiet hospice ward corridor with soft light and a handrail. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot by a hospital corridor window",
+   "bg": "quiet hospice ward corridor with soft light and a handrail",
+   "anchor": "hospice ward corridor window"
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "호스피스 병동 가족실에 놓인 소파와 담요",
+   "prompt": "Camera and composition: wide shot of a family lounge. A cozy family lounge inside a hospice ward with a soft gray sofa, a folded knitted blanket, a small table with a tea pot, no people. Background: warm family room in a hospital ward with wooden floor. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "wide shot of a family lounge",
+   "bg": "warm family room in a hospital ward with wooden floor",
+   "anchor": "soft gray sofa"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "호스피스 신청 순서를 정리한 단계 카드",
+   "kind": "card",
+   "card": {
+    "type": "steps",
+    "title": "호스피스 신청 순서",
+    "ask": "서류는 뭐가 필요해?",
+    "items": [
+     "호스피스 이용동의서",
+     "의사소견서",
+     "호스피스전문기관"
+    ]
+   }
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "호스피스 병동 상담실 탁자 위에 놓인 빈 동의서와 볼펜",
+   "prompt": "Camera and composition: close-up from slightly above on a table. A blank consent form and a ballpoint pen placed on a light wooden table in a hospital counseling room, a small potted plant at the edge, no people. Background: calm hospital counseling room with white walls. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "close-up from slightly above on a table",
+   "bg": "calm hospital counseling room with white walls",
+   "anchor": "blank consent form and a ballpoint pen"
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "저녁 병실 창가에서 어머니의 손을 잡고 앉아 있는 50대 딸",
+   "prompt": "Camera and composition: medium shot from the side by a window. A Korean woman in her 50s in a navy cardigan sitting beside a hospital bed and gently holding her elderly mother's hand, both calm, warm evening light through the window. Background: hospice patient room with a window and evening lamp light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot from the side by a window",
+   "bg": "hospice patient room with a window and evening lamp light",
+   "anchor": "hospital bed"
+  }
+ ]
+}
