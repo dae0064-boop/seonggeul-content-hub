@@ -19,7 +19,15 @@ $ws = Join-Path $drive 'ClaudeWorkspace'
 $req = Join-Path $ws 'goms-request.txt'
 # 2026-11-13 사용자 "PC 켜놨어 지금 바로 해봐": 10분마다 도는 이 작업이 예약 글 찾기(읽기만) 요청도 본다 (catchup 22시를 기다리지 않게)
 $rlq = Join-Path $ws 'reserved-look-request.txt'
-if (Test-Path $rlq) { try { Remove-Item $rlq -Force; & (Join-Path $PSScriptRoot 'reserved-look.ps1') | Out-Null } catch { } }
+# 파일에 '철거' 가 있으면 철거 블로그 예약 목록을 읽는다 (예: "철거 2026-11-23", 2026-11-23) — 기다릴 수 있어 따로 띄운다
+if (Test-Path $rlq) { try {
+  $rlt = Get-Content $rlq -Raw -Encoding UTF8; Remove-Item $rlq -Force
+  if ($rlt -match '철거') {
+    $rld = (([regex]::Matches($rlt, '\d{4}-\d{2}-\d{2}') | ForEach-Object { $_.Value }) -join ',')
+    . (Join-Path $PSScriptRoot 'lib-detach.ps1')
+    Start-Detached powershell.exe -ArgumentList '-NoProfile', '-WindowStyle', 'Hidden', '-ExecutionPolicy', 'Bypass', '-File', "`"$(Join-Path $PSScriptRoot 'reserved-look.ps1')`"", '-Chulgeo', '-Dates', $rld
+  } else { & (Join-Path $PSScriptRoot 'reserved-look.ps1') | Out-Null }
+} catch { } }
 # 같은 날 사용자 "모두 수정해": reserved-redo-request.txt (첫 줄 = 날짜들, 쉼표) → 예약 글 지우고 새 그림으로 다시 예약. 오래 걸려 따로 띄운다(작업 시간 제한에 같이 꺼지지 않게)
 $rrq = Join-Path $ws 'reserved-redo-request.txt'
 if (Test-Path $rrq) {

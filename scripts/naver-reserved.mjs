@@ -14,7 +14,9 @@ import path from 'node:path';
 
 const argv = process.argv.slice(2);
 const opt = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : d; };
-const id = argv.find((a, i) => !a.startsWith('--') && !['--out', '--cdp', '--dates'].includes(argv[i - 1]));
+const id = argv.find((a, i) => !a.startsWith('--') && !['--out', '--cdp', '--dates', '--dir'].includes(argv[i - 1]));
+// --dir content/chulgeo/posts : 철거 블로그 원고로 견준다 (2026-11-23 철거 11/23 글 7편 두 번 예약 → 지운 뒤 목록 확인)
+const DIR = opt('--dir', 'content/posts');
 const OUT = opt('--out', 'dumps/reserved-look');
 // --list : 글쓰기 화면의 '예약 발행 N건' 목록을 열어 읽기만 (2026-11-13 20:16 첫 살펴보기에서 위치 확인)
 // --delete --dates 2026-11-16,2026-11-17 : 그 날짜 네이버 원고(content/posts) 제목과 똑같은 예약 글만 지운다.
@@ -54,8 +56,8 @@ async function dump(page, name) {
 const normT = (t) => String(t || '').replace(/\s+/g, '').replace(/[·,.?!()（）]/g, '');
 function targets() {
   const out = [];
-  for (const d of DATES) for (const f of fs.readdirSync('content/posts').filter((x) => x.startsWith(d + '-') && x.endsWith('.md'))) {
-    const raw = fs.readFileSync(path.join('content/posts', f), 'utf8');
+  for (const d of DATES) for (const f of fs.readdirSync(DIR).filter((x) => x.startsWith(d + '-') && x.endsWith('.md'))) {
+    const raw = fs.readFileSync(path.join(DIR, f), 'utf8');
     const title = (/^title:\s*(.+)$/m.exec(raw) || [])[1]?.trim();
     if (title) out.push({ date: d, slug: f.replace(/\.md$/, ''), title });
   }
@@ -151,7 +153,9 @@ async function main() {
       const has = (rs, t) => rs.some((r) => normT(r.text).includes(normT(t).slice(0, 22)));
       const found = want.filter((w) => has(rows, w.title));
       log(`목록에서 찾은 우리 원고: ${found.length}/${want.length}`);
-      for (const w of want) log(`  ${has(rows, w.title) ? '●' : '○'} ${w.date} ${w.title}`);
+      const cntOf = (rs, t) => rs.filter((r) => normT(r.text).includes(normT(t).slice(0, 22))).length;
+      for (const w of want) { const n = cntOf(rows, w.title); log(`  ${n ? '●' : '○'} ${w.date} ${w.title}${n > 1 ? `  ⚠ ${n}번 예약됨` : ''}`); }
+      for (const r of rows) log(`    목록: ${r.text}`);
       if (!DELETE || !found.length) { log(DELETE ? '지울 글이 목록에 없어 멈춤' : '읽기만 끝'); return; }
       const deleted = [];
       // 1) 한 편 시험
