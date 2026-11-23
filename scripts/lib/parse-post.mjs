@@ -141,6 +141,7 @@ export function parsePost(raw) {
     titleType: (meta.title_type || '').trim(),
     heads: (meta.heads || '').trim(),
     tone: (meta.tone || '').trim(),   // 말투 (2026-11-03 원고부터 — 하루 20편, 같은 주제라도 다른 느낌으로. lint-post TONES)
+    lane: (meta.lane || '').trim(),   // 네이버 칸 (2026-11-30 원고부터 — lint-post LANE_FROM: 흔한실비 · 주변 · 코드기준 · 돌봄 · 금융)
     extra: (meta.extra || '').trim(),
     draftOnly: (meta.draft_only || '').trim(),   // 확인용 원고 (2026-11-03 사용자 "써서 임시저장해줘") — draft-test 로 임시저장만, 아침 예약은 건너뛴다   // 하루 5편 밖에 사용자가 따로 부탁한 글 (2026-10-26 쇼핑 커넥트 시험) — 하루 배분 검사에서 뺀다
     coupang: (meta.coupang || '').trim(),   // 티스토리 쿠팡 파트너스 글 — 상품 키워드 (content/affiliate/coupang-links.tsv)

@@ -116,6 +116,8 @@ const SEASON_FROM = '2026-11-06';
 //   (standards/상담-유입-계획.md). 이슈 글은 쓰지 않고, 보장과 이어지는 제도 소식은 생활보장 글로 쓴다.
 const CARE10_FROM = '2026-11-10'; // 11/9 사용자가 생활보장 밖 카테고리를 모두 비공개로 → 하루 앞당김
 const SPLIT_CARE10 = { 생활정보: 0, 생활보장: 10 };
+const LANE_FROM = '2026-11-30'; // 📌 칸 배분 + 같은 부위 30일 (2026-11-23 사용자)
+const LANES = { 흔한실비: 4, 주변: 1, 코드기준: 1, 돌봄: 1, 금융: 3 };
 const SPLIT_SEASON = { 생활정보: 10, 생활보장: 10 };
 const HF_SEASON = { 생활정보: 9, 생활보장: 6 };
 // 같은 날 같은 값 몇 편까지 (20편 날)
@@ -1115,7 +1117,19 @@ for (const file of files) {
   }
 
   if (!tistory && dated >= CARE10_FROM && post.category !== '생활보장' && !post.extra) errors.push(`${CARE10_FROM} 원고부터 네이버는 생활보장 글만 씁니다 (category: 생활보장 — 2026-11-09 사용자 "생활보장으로만", standards/상담-유입-계획.md)`);
-  if (!tistory && dated >= CARE10_FROM && post.issue) errors.push(`${CARE10_FROM} 원고부터 이슈·연예 글(issue:)은 쓰지 않습니다 — 보장과 이어지는 제도 소식은 생활보장 글로`);
+  // 📌 2026-11-30 원고부터 칸 배분 (2026-11-23 사용자 — "보험 쪽으로 가되 거기서 잘 되는 방향", 상담 유도 없이 조회수):
+//   흔한 진료·계절 실비 4 · 잘 된 글 주변 1 · 질병코드·적용 기준 1 · 병원비·돌봄 1 · 금융(연금·대출·세금·공제) 3(밤 1 + 아침 2)
+if (!tistory && dated >= LANE_FROM && !post.extra) {
+  if (!LANES[post.lane]) errors.push(`프런트매터 lane: 이 없거나 모르는 값입니다 ("${post.lane}") — ${Object.keys(LANES).join(' / ')} 중 하나 (routines/naver-daily.md 📌)`);
+  else {
+    const d0 = file.replace(/[^\\/]+$/, '') || './';
+    const cnt = {};
+    for (const f of daySibs(d0, dated)) { let l = ''; try { l = parsePost(fs.readFileSync(d0 + f, 'utf8')).lane; } catch {} if (l) cnt[l] = (cnt[l] || 0) + 1; }
+    for (const [l, n] of Object.entries(cnt)) if (LANES[l] && n > LANES[l]) errors.push(`${dated}: ${l} 칸이 ${n}편 — 하루 ${LANES[l]}편까지 (📌 ${LANE_FROM})`);
+  }
+  if (post.lane === '금융' && /(가입하세요|갈아타세요|해지하세요|추천 상품|금리 비교)/.test(bodyOf(post))) errors.push('금융 칸 글에 가입·해지·상품 추천 말이 있습니다 — 계산·비교·조건 설명까지만');
+}
+if (!tistory && dated >= CARE10_FROM && post.issue) errors.push(`${CARE10_FROM} 원고부터 이슈·연예 글(issue:)은 쓰지 않습니다 — 보장과 이어지는 제도 소식은 생활보장 글로`);
 
   // 하루 20편 (2026-11-03 원고부터) — 말투 돌려 쓰기 + 다른 네이버 글과 겹치지 않게 (2026-11-01 사용자:
   //   "같은 주제여도 다른 느낌 다른 말투 다른 내용으로… 최대한 겹치지 않고 중복 컨텐츠가 되지 않도록")
@@ -1125,11 +1139,26 @@ for (const file of files) {
     const myGrams = gramsOf(bodyOf(post));
     const sq = (x) => (x || '').replace(/\s+/g, '');
     const days = (a, b) => Math.round(Math.abs(Date.parse(a) - Date.parse(b)) / 864e5);
+    // 📌 2026-11-30 원고부터 같은 말·같은 부위 30일 (2026-11-23 사용자 — 응급실 비용 ↔ 응급실 실비 5일, 맹장 ↔ 탈장 4일처럼 서로 순위를 나눠 먹었다)
+    const lane30 = dated >= LANE_FROM;
+    const mainDays = lane30 ? 30 : DUP.mainDays;
+    const coreOf = (k) => { let c = sq(k), p; do { p = c; c = c.replace(/(실비청구|실비|실손|보험금|청구서류|청구|서류|비용|진단비|수술비|입원비|보험적용|건강보험|보험)$/, ''); } while (c !== p); return c; };
+    for (const o of allNaverPosts()) {
+      if (o.slug === me) continue;
+      const od = o.slug.slice(0, 10);
+      if (lane30 && post.mainKeyword && o.main && sq(o.main) !== sq(post.mainKeyword) && coreOf(o.main).length >= 2 && coreOf(o.main) === coreOf(post.mainKeyword) && days(od, dated) <= 30)
+        errors.push(`메인 키워드 "${post.mainKeyword}" 가 ${o.slug} ("${o.main}")와 같은 부위·같은 말입니다 — 30일 안에는 같은 부위를 실비·비용으로 나눠 다시 쓰지 않습니다 (📌 ${LANE_FROM})`);
+    }
+    for (const r of publishedNaverRows()) {
+      if (!lane30 || !post.mainKeyword || !r.main || sq(r.main) === sq(post.mainKeyword)) continue;
+      if (coreOf(r.main).length >= 2 && coreOf(r.main) === coreOf(post.mainKeyword) && days(r.date, dated) <= 30)
+        errors.push(`메인 키워드 "${post.mainKeyword}" 가 ${r.date} 글 ("${r.main}")과 같은 부위·같은 말입니다 — 30일 안에는 다시 쓰지 않습니다 (📌 ${LANE_FROM})`);
+    }
     for (const o of allNaverPosts()) {
       if (o.slug === me) continue;
       const od = o.slug.slice(0, 10);
       if (post.mainKeyword && sq(o.main) === sq(post.mainKeyword)) {
-        if (days(od, dated) <= DUP.mainDays) errors.push(`메인 키워드 "${post.mainKeyword}" 를 ${o.slug} 도 씁니다 — ${DUP.mainDays}일 안에는 같은 메인 키워드를 다시 쓰지 않습니다 (같은 묶음의 다른 질문으로)`);
+        if (days(od, dated) <= mainDays) errors.push(`메인 키워드 "${post.mainKeyword}" 를 ${o.slug} 도 씁니다 — ${mainDays}일 안에는 같은 메인 키워드를 다시 쓰지 않습니다 (같은 묶음의 다른 질문으로)`);
       }
       const ts = dice(post.title, o.title);
       if (ts >= DUP.title) errors.push(`제목이 ${o.slug} 와 너무 비슷합니다 (유사도 ${Math.round(ts * 100)}%) — 다른 질문·다른 장면으로`);
@@ -1142,7 +1171,7 @@ for (const file of files) {
     for (const r of publishedNaverRows()) {
       if (!post.mainKeyword || sq(r.main) !== sq(post.mainKeyword)) continue;
       const d = days(r.date, dated);
-      if (d <= DUP.mainDays) errors.push(`메인 키워드 "${post.mainKeyword}" 는 ${r.date} 에 이미 썼습니다 (${r.title}) — ${DUP.mainDays}일 안에는 다시 쓰지 않습니다`);
+      if (d <= mainDays) errors.push(`메인 키워드 "${post.mainKeyword}" 는 ${r.date} 에 이미 썼습니다 (${r.title}) — ${mainDays}일 안에는 다시 쓰지 않습니다`);
       else notes.push(`메인 키워드 "${post.mainKeyword}" 는 ${r.date} 에 쓴 말이에요 (${r.title}) — 그 글과 다른 질문·다른 내용인지 확인`);
     }
   }

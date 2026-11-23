@@ -127,6 +127,22 @@ for (const file of files) {
     if (post.coupang) notes.push(`쿠팡 글: ${post.coupang}${loadLinks().get(post.coupang) ? ' (링크 있음)' : ''}`);
   }
 
+  // 📌 2026-11-30 원고부터 하루 3편 = 구글 틈새 2 · 다음 사전 1 (2026-11-23 사용자 "멈추지 않고 좋은 방향" → "구글에서 검색 자주 되는 걸로" → 이대로 적용)
+  {
+    const day = path.basename(file).slice(0, 10);
+    const T_LANES = { 구글틈새: 2, 다음사전: 1 };
+    if (day >= '2026-11-30') {
+      const lane = post.lane;
+      if (!T_LANES[lane]) errors.push(`프런트매터 lane: 이 없거나 모르는 값입니다 ("${lane}") — 구글틈새 / 다음사전 (routines/tistory-daily.md 📌)`);
+      const sibs = fs.readdirSync(path.dirname(file)).filter((f) => f.startsWith(day) && f.endsWith('.md'));
+      if (sibs.length > 3) errors.push(`${day}: 티스토리 원고 ${sibs.length}편 — 하루 3편까지 (📌 2026-11-30)`);
+      if (T_LANES[lane]) {
+        const same = sibs.filter((f) => new RegExp(`^lane:\\s*${lane}\\s*$`, 'm').test(fs.readFileSync(path.join(path.dirname(file), f), 'utf8'))).length;
+        if (same > T_LANES[lane]) errors.push(`${day}: ${lane} 칸 ${same}편 — 하루 ${T_LANES[lane]}편까지`);
+      }
+    }
+  }
+
   const pct = (x) => `${Math.round(x * 100)}%`;
   if (worst.title >= TITLE_SIM.err) errors.push(`제목이 네이버 글(${worst.titleOf})과 ${pct(worst.title)} 비슷합니다 (${pct(TITLE_SIM.err)} 미만).`);
   else if (worst.title >= TITLE_SIM.note) notes.push(`제목이 네이버 글(${worst.titleOf})과 ${pct(worst.title)} 비슷합니다.`);
