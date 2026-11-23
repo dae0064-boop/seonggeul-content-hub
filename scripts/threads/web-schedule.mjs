@@ -15,6 +15,8 @@
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
+import { split } from './insurance-post.mjs';
+import { wordText } from './word-fix.mjs';
 
 const argv = process.argv.slice(2);
 const opt = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : d; };
@@ -25,7 +27,12 @@ const OUT = opt('--out', `dumps/threads-sched/${stamp}`);
 const MARKS = opt('--marks', '');
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1')), '..', '..');
 const dates = (opt('--daily', '') || '').split(',').map((s) => s.trim()).filter((s) => /^\d{4}-\d{2}-\d{2}$/.test(s));
-if (!dates.length || argv.includes('--help')) { console.log(fs.readFileSync(new URL(import.meta.url)).toString().split('*/')[0]); process.exit(dates.length ? 0 : 1); }
+// 보험 심의글 (2026-11-23 사용자 "예약발행으로 이번주 스레드 다 진행해줘"):
+//   --insurance 2026-11-24:17,2026-11-25:18 --word-dir <Drive 보험글> [--time 15:00]
+//   1/2(앞 절반, 주제 '보험') → '스레드에 추가' → 2/2(뒤 절반) + 심의필 배너(content/threads/insurance/banners/thread-N.jpg) 를 한 스레드로 예약.
+//   글은 심의받은 Word 그대로, 나누기는 insurance-post.mjs 의 split() 과 같다. 예약 표시 줄 끝에 '보험 N편' — insurance-post.mjs 가 그날은 올리지 않는다.
+const insSpec = (opt('--insurance', '') || '').split(',').map((s) => s.trim()).filter((s) => /^\d{4}-\d{2}-\d{2}:\d+$/.test(s));
+if ((!dates.length && !insSpec.length) || argv.includes('--help')) { console.log(fs.readFileSync(new URL(import.meta.url)).toString().split('*/')[0]); process.exit(dates.length || insSpec.length ? 0 : 1); }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const log = (s) => console.log(s);
@@ -55,7 +62,7 @@ function marked(it) {
 function mark(it) {
   const f = marksFile(it.date); if (!f) return;
   fs.mkdirSync(path.dirname(f), { recursive: true });
-  fs.appendFileSync(f, `${it.time}\t${it.text.split('\n')[0]}\t${new Date().toISOString()}\n`);
+  fs.appendFileSync(f, `${it.time}\t${it.text.split('\n')[0]}\t${new Date().toISOString()}${it.n ? `\t보험 ${it.n}편` : ''}\n`);
 }
 
 let shotN = 0;
@@ -84,7 +91,7 @@ async function discard(page) {
   await clickText(dlg, /^취소$/).catch(() => {});
   await sleep(1200);
   const d2 = page.locator('[role="dialog"], [role="alertdialog"]').last();
-  await clickText(d2, /^(삭제|버리기|Discard|Delete)$/i).catch(() => {});
+  await clickText(d2, /^(삭제|버리기|저장 안 함|Discard|Delete|Don't save)$/i).catch(() => {});
   await sleep(1000);
 }
 
@@ -123,6 +130,39 @@ async function scheduleOne(ctx, it) {
         else { await page.keyboard.press('Enter').catch(() => {}); await sleep(1000); }
         topicOk = norm(await dlg.innerText().catch(() => '')).includes(norm(it.topic));
       }
+    }
+
+    // 보험글: '스레드에 추가' → 2/2 글 + 배너 사진
+    if (it.reply) {
+      if (!(await clickText(dlg, /^스레드에 추가$/))) { await discard(page); return { ok: false, why: "'스레드에 추가' 못 찾음" }; }
+      await sleep(1200);
+      const boxes = dlg.locator('[role="textbox"][contenteditable="true"]');
+      if ((await boxes.count()) < 2) { await shot(page, `${it.time.replace(':', '')}-no-reply-box`); await discard(page); return { ok: false, why: '2/2 글 칸 못 찾음' }; }
+      const b2 = boxes.nth(1);
+      await b2.click();
+      const rl = it.reply.split('\n');
+      for (let i = 0; i < rl.length; i++) {
+        if (rl[i]) await page.keyboard.insertText(rl[i]);
+        if (i < rl.length - 1) { await page.keyboard.press('Shift+Enter'); await sleep(80); }
+      }
+      await sleep(800);
+      if (norm(await b2.innerText().catch(() => '')) !== norm(it.reply)) { await shot(page, `${it.time.replace(':', '')}-reply-mismatch`); await discard(page); return { ok: false, why: '2/2 글이 원고와 달라요' }; }
+      if (norm(await boxes.nth(0).innerText().catch(() => '')) !== norm(it.text)) { await discard(page); return { ok: false, why: '1/2 글이 바뀌었어요' }; }
+      const fin = dlg.locator('input[type="file"]');
+      const nf = await fin.count();
+      if (!nf) { await discard(page); return { ok: false, why: '사진 칸 못 찾음' }; }
+      await fin.nth(nf - 1).setInputFiles(it.image);
+      await sleep(4000);
+      // 사진이 2/2 칸(두 번째 글)에 붙었는지 — 두 번째 글 칸보다 아래에 큰 그림이 있어야 한다
+      const placed = await page.evaluate(() => {
+        const d = document.querySelector('[role="dialog"]'); const bx = d.querySelectorAll('[role="textbox"][contenteditable="true"]');
+        if (bx.length < 2) return 'no-box';
+        const y1 = bx[0].getBoundingClientRect().bottom, y2 = bx[1].getBoundingClientRect().top;
+        const big = [...d.querySelectorAll('img')].map((im) => im.getBoundingClientRect()).filter((r) => r.height > 60);
+        return { below2: big.filter((r) => r.top > y2).length, between: big.filter((r) => r.top > y1 && r.top < y2).length };
+      }).catch(() => null);
+      await shot(page, `${it.time.replace(':', '')}-image`);
+      if (!placed || placed.below2 !== 1 || placed.between !== 0) { await discard(page); return { ok: false, why: `배너가 2/2 에만 붙었는지 확인 안 됨 ${JSON.stringify(placed)}` }; }
     }
 
     if (!(await clickText(dlg, /^더 보기$/))) { await discard(page); return { ok: false, why: "'더 보기' 못 찾음" }; }
@@ -193,7 +233,26 @@ const result = [];
 try {
   browser = await chromium.connectOverCDP(CDP);
   const ctx = browser.contexts()[0];
-  for (const d of dates) {
+  if (insSpec.length) {
+    const wordDir = opt('--word-dir', '');
+    const time = opt('--time', '15:00');
+    for (const spec of insSpec) {
+      const [date, nStr] = spec.split(':'); const n = Number(nStr);
+      const file = path.join(wordDir, `스레드 ${n}편.docx`);
+      const image = path.join(ROOT, 'content', 'threads', 'insurance', 'banners', `thread-${n}.jpg`);
+      if (!fs.existsSync(file) || !fs.existsSync(image)) { log(`✗ ${date} 보험 ${n}편 — Word 나 배너가 없어요`); result.push({ date, n, ok: false, why: 'Word·배너 없음' }); break; }
+      const [first, second] = split(wordText(file));
+      if (!second || [...first].length > 500 || [...second].length > 500) { log(`✗ ${date} 보험 ${n}편 — 둘로 나누기 실패 또는 500자 넘음`); result.push({ date, n, ok: false, why: '나누기' }); break; }
+      const it = { date, time, n, topic: '보험', text: first, reply: second, image };
+      if (marked(it)) { log(`  ${date} ${time} 보험 ${n}편 이미 예약됨`); result.push({ date, n, ok: true, skip: true }); continue; }
+      let r;
+      try { r = await scheduleOne(ctx, it); } catch (e) { r = { ok: false, why: String(e.message || e).split('\n')[0] }; }
+      log(`  ${r.ok ? '✓' : '✗'} ${date} ${time} 보험 ${n}편${r.dry ? ' (시험)' : ''}${r.why ? ' — ' + r.why : ''}${r.info ? ' ' + JSON.stringify(r.info) : ''}`);
+      result.push({ date, time, n, ...r });
+      if (!r.ok || DRY) break;
+    }
+  }
+  for (const d of (result.some((r) => !r.ok) || (DRY && insSpec.length)) ? [] : dates) {
     const only = opt('--only', '');
     const items = readDaily(d).filter((x) => !only || x.time === only);
     log(`${d} 일상 ${items.length}편`);
