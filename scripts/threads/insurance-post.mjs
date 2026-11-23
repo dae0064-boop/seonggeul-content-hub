@@ -141,6 +141,15 @@ async function main() {
   log(`심의 적격·유효기간 안: ${ready.length}편 (${ready.map((r) => r.n).join(', ') || '없음'})`);
   if (!ready.length) return 0;
 
+  // 2-0) 스레드 웹 예약(web-schedule.mjs --insurance)으로 걸어 둔 날은 스레드가 직접 올린다 — 여기서 또 올리지 않는다 (2026-11-23)
+  const markDir = arg('--marks') || ['G', 'H', 'D', 'E', 'F', 'I', 'J'].map((l) => `${l}:\\내 드라이브\\ClaudeWorkspace\\threads-scheduled`).find((p) => fs.existsSync(p)) || '';
+  const markedIns = (day) => {
+    const f = markDir ? path.join(markDir, `${day}.tsv`) : '';
+    if (!f || !fs.existsSync(f)) return [];
+    return fs.readFileSync(f, 'utf8').split(/\r?\n/).filter((l) => /\t보험 \d+편\s*$/.test(l));
+  };
+  if (markedIns(today).length) { log(`오늘 보험글은 스레드 예약으로 걸어 뒀어요 (${markedIns(today).map((l) => l.split('\t').pop().trim()).join(', ')}) — 올리지 않아요`); return 0; }
+
   // 2) 내 스레드를 되읽어 이미 올린 편·오늘 올린 수를 본다 (1/2 는 첫 두 줄이 Word 첫 두 줄과 같다)
   const api = threadsApi(token);
   const me = await api.me();
