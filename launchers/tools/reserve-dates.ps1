@@ -32,6 +32,15 @@ function Wait-Quiet {
     Start-Sleep -Seconds 60
   }
 }
+# 2026-11-23 고장: 날짜 지정 예약이 도는 중에 새 요청이 오면 두 번째 예약이 같이 돌아 철거 11/23 글 7편이 두 번씩 예약됐다.
+#   먼저 시작한 reserve-dates 가 끝날 때까지 기다린다 (시작 시각이 더 이른 것만 기다려 서로 기다리는 일은 없다, 최대 5시간)
+$me = Get-CimInstance Win32_Process -Filter "ProcessId=$PID" -ErrorAction SilentlyContinue
+for ($k = 0; $k -lt 300; $k++) {
+  $older = @(Get-CimInstance Win32_Process -ErrorAction SilentlyContinue | Where-Object { $_.ProcessId -ne $PID -and $_.CommandLine -match 'reserve-dates\.ps1' -and $me -and $_.CreationDate -lt $me.CreationDate })
+  if (-not $older.Count) { break }
+  if ($k % 10 -eq 0) { Say "먼저 시작한 날짜 지정 예약이 끝나길 기다려요 ($($older.Count)개)" ; Share }
+  Start-Sleep -Seconds 60
+}
 $list = @($Dates -split ',' | ForEach-Object { $_.Trim() } | Where-Object { $_ -match '^\d{4}-\d{2}-\d{2}$' } | Sort-Object -Unique)
 Say "날짜 지정 예약 시작 — $($list -join ', ') (코드 $(git rev-parse --short HEAD 2>$null))"
 Share
