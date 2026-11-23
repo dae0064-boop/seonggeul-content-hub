@@ -861,6 +861,7 @@ Claude 가 WebSearch 로 직접 판단한다 (위 "최종 목표"). 사용자가
 ## 브랜치
 
 작업 브랜치는 `claude/*`. `main` 에 직접 푸시하지 않는다.
+**PC 대화에서는 합치기도 Claude 가 한다** (2026-11-23 사용자 — "합치는 거 너가 대신해줘, 매번 하기 귀찮아"): `claude/*` 에 커밋 → 검사기 통과 확인 → `git checkout main && git pull && git merge --no-ff <브랜치> && git push origin main`. 사용자에게 GitHub 에서 합치라고 하지 않는다. 클라우드 Routine 의 PR 흐름은 그대로.
 
 ## 여러 대의 컴퓨터에서 이어서 작업하기
 
