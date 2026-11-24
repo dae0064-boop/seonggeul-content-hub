@@ -734,3 +734,18 @@ date	channel	slug	main_keyword	title	category	status
 2026-11-22	tistory	2026-11-22-goyongboheom-pibohomjagyeok	고용보험 피보험자격	고용보험 피보험자격, 신고 안 된 피보험기간 몇 년까지 쳐 줄까 (소급 3년)	생활보장
 2026-11-22	tistory	2026-11-22-mobile-boheomgeum-cheonggu	모바일 보험청구	모바일 보험청구, 앱으로 내면 예상 지급일도 알려 줄까 (청구 단계 4가지)	생활보장
 2026-11-22	tistory	2026-11-22-yeonmaljeongsan-hwangeup-sigi	연말정산 환급 시기	연말정산 환급 시기, 2월 급여일까 아니면 3월일까 (2월분 근로소득)	생활정보
+2026-11-23	naver	2026-11-23-eunggeupsil-biyong	응급실 비용	응급실 비용, 동네 응급실과 대학병원 응급실 차이 (경증 90%)	생활보장
+2026-11-23	naver	2026-11-23-hospice-biyong	호스피스 병원 비용	담당 의사가 호스피스를 말한 날, 호스피스 병원 비용이 먼저 걱정된다면	생활보장
+2026-11-23	naver	2026-11-23-impeulranteu-silbi	임플란트 실비	아버지가 치과 견적서를 받아 온 날, 임플란트 실비부터 확인하세요	생활보장
+2026-11-23	naver	2026-11-23-jeonripseon-susul-silbi	전립선비대증 수술 실비	아버지 수술 날짜가 잡힌 날, 전립선비대증 수술 실비부터 챙겨요	생활보장
+2026-11-23	naver	2026-11-23-jutaekyeongeum-jogeon	주택연금 조건	부모님이 집 한 채가 전부라고 하실 때, 주택연금 조건부터 볼까요	생활보장
+2026-11-23	naver	2026-11-23-maengjang-susul-silbi	맹장수술 실비	맹장수술 실비, 퇴원할 때 서류 4가지만 챙기면 돼요	생활보장
+2026-11-23	naver	2026-11-23-micheonggu-boheomgeum-chatgi	미청구 보험금 찾기	미청구 보험금 찾기, 지난 3년 병원비 실손도 받을 수 있나요	생활보장
+2026-11-23	naver	2026-11-23-silson-gyeyakjeonhwan-halin	실손 계약전환 할인	실손 계약전환 할인, 3년간 50% 받는 조건 (2013년 3월 이전 가입)	생활보장
+2026-11-23	naver	2026-11-23-winaesigyeong-silbi	위내시경 실비	위내시경 실비, 건강검진 때 받은 것도 청구되나요	생활보장
+2026-11-23	naver	2026-11-23-yoyangbohosa-jagyeokjeung-biyong	요양보호사 자격증 비용	엄마를 직접 모시려고 알아보는 날, 요양보호사 자격증 비용부터 보세요	생활보장
+2026-11-23	tistory	2026-11-23-boheomryo-seaekgongje	보험료 세액공제	보험료 세액공제, 부모님 보험료도 100만 원까지 될까 (12%)	생활보장
+2026-11-23	tistory	2026-11-23-jeonsejageum-sodeukgongje	전세자금대출 소득공제	전세자금대출 소득공제, 무주택 세대주면 갚은 돈이 얼마나 빠질까 (40%)	생활정보
+2026-11-23	tistory	2026-11-23-jutaekdambo-ija-sodeukgongje	주택담보대출 이자 소득공제	주택담보대출 이자 소득공제, 고정금리 아니면 한도가 얼마나 줄까 (800만 원)	생활정보
+2026-11-23	tistory	2026-11-23-silsonboheomgeum-yeonmaljeongsan	실손보험금 연말정산	실손보험금 연말정산, 실비 받은 병원비는 의료비 세액공제에서 빠질까 (15%)	생활보장
+2026-11-23	tistory	2026-11-23-yeongeumjeochuk-seaekgongje	연금저축 세액공제	연금저축 세액공제, IRP까지 넣으면 공제율은 몇 %일까 (900만 원)	생활정보
