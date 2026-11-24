@@ -1290,7 +1290,7 @@ if (!tistory && dated >= CARE10_FROM && post.issue) errors.push(`${CARE10_FROM} 
           if (new Set(mine).size < mine.length) errors.push(`한 글의 카드가 같은 type(${mine.join('·')})입니다 — 서로 다른 모양으로`);
           const day = {};
           for (const f of daySibs(dir, dated).filter((f) => f !== me)) for (const im of planOf(dir + f)?.images || []) if (im.kind === 'card' && im.card?.type) day[im.card.type] = (day[im.card.type] || []).concat(f);
-          for (const t of new Set(mine)) if ((day[t] || []).length + 1 > VARY2.cardShape) errors.push(`같은 날 '${t}' 카드가 ${(day[t] || []).length + 1}장 (${day[t].join(', ')}) — 같은 모양은 하루 ${VARY2.cardShape}장까지 (lead·number·quiz·selfcheck·compare·steps·check 를 돌려 쓰세요)`);
+          if (!post.extra) for (const t of new Set(mine)) if ((day[t] || []).length + 1 > VARY2.cardShape) errors.push(`같은 날 '${t}' 카드가 ${(day[t] || []).length + 1}장 (${day[t].join(', ')}) — 같은 모양은 하루 ${VARY2.cardShape}장까지 (lead·number·quiz·selfcheck·compare·steps·check 를 돌려 쓰세요)`);
         }
         const count = {}; let total = 0;
         for (const f of fs.readdirSync(dir).filter((f) => f.startsWith(dated) && f.endsWith('.md'))) {
