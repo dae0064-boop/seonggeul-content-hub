@@ -11,7 +11,9 @@ close: 5
 heads: 긴형
 emph: B
 title_type: 질문
-publish_at: 2026-11-24 12:20
+moved_from: 2026-11-24
+extra: 11/24 PC 꺼져 못 나간 제도 소식 — 사용자 "넣어 줘"(11/25)
+publish_at: 2026-11-25 14:20
 related: 치과크라운비용, 건강보험은 언제 될까요 (65세 이상 2개) | 치과 실비, 스케일링 실비와 치과 실손보험 어디까지 돌려받을까 (연 1회)
 source_url: https://www.nhis.or.kr/nhis/together/wbhaea01600m01.do?mode=view&articleNo=11015278 | https://www.nhis.or.kr/static/html/wbma/c/wbmac0221.html
 tags: 무료 임플란트, 무료임플란트, 임플란트 무료, 본인부담금 면제, 임플란트 본인부담금, 임플란트 건강보험, 덤핑 치과, 덤핑치과, 어르신 임플란트, 65세 임플란트, 노인 임플란트, 부모님 임플란트, 임플란트 건강보험 개수, 치과 건강보험, 국민건강보험공단, 서이추, 이웃추가, 서이추환영
