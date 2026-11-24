@@ -25,9 +25,11 @@ export const SLOTS_OLD = ['07:30', '08:30', '20:00', '21:00', '22:30']; // 2026-
 export const SLOTS = ['08:00', '20:00', '22:00'];
 // 2026-11-05 사용자 "6편으로 줄이고 주제 태그" (일상 4 · 보험 1 · 블로그 1): 11/6 묶음부터 그날 글 1편 21:00
 export const SLOTS1 = ['21:00'];
-const slotsFor = (date) => (date >= '2026-11-06' ? SLOTS1 : date >= '2026-11-04' ? SLOTS : SLOTS_OLD);
+// PC 가 꺼져 못 올린 날의 글을 다른 날 낮에 한 편 더 (2026-11-25 사용자 "올려 줘" — 11/23·11/24 21:00 글)
+export const BLOG_EXTRA = { '2026-11-25': ['19:00'], '2026-11-26': ['19:00'] };
+const slotsFor = (date) => [...(BLOG_EXTRA[date] || []), ...(date >= '2026-11-06' ? SLOTS1 : date >= '2026-11-04' ? SLOTS : SLOTS_OLD)];
 /** 하루 '바로' 글 수 */
-export const blogPerDay = (date) => (date >= '2026-11-06' ? 1 : date >= '2026-11-04' ? 3 : 5);
+export const blogPerDay = (date) => (BLOG_EXTRA[date] || []).length + (date >= '2026-11-06' ? 1 : date >= '2026-11-04' ? 3 : 5);
 /** 주제 태그 — 묶음에 '태그:' 가 있으면 그것, 없으면 본문으로 (2026-11-05 사용자) */
 export function blogTopicTag(it) {
   if (it['태그']) return it['태그'];
