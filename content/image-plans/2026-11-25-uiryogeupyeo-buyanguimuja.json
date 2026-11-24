@@ -1,0 +1,98 @@
+{
+ "slug": "2026-11-25-uiryogeupyeo-buyanguimuja",
+ "title": "의료급여 부양의무자, 장기요양 1·2등급 부모님 가구는 달라지는 3가지",
+ "source": "11/25(수) 12:20 네이버 원고 — 생활보장 제도 소식(복지부 11/23 제4차 기초생활보장 종합계획 중 의료급여), 실사풍",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2(compare·selfcheck). 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "주민센터 상담 탁자 위에 놓인 빈 신청서와 돋보기 안경 (대표사진)",
+   "prompt": "Camera and composition: hero shot of the one key object of the topic, large in the frame and slightly from above, on a simple surface, no people. Setting: a community service center consultation table. A blank application form on a clipboard with a pair of reading glasses resting on it on a consultation table, a service counter softly blurred behind. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: soft early-morning sunlight. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "object",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "object",
+   "thumb_theme": "burgundy",
+   "thumb_person": "없음",
+   "thumb_place": "주제",
+   "thumb_light": "아침 햇살",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "burgundy",
+    "font": "jua",
+    "title": "의료급여 부양의무자\n무엇이 바뀔까?"
+   },
+   "anchor": "blank application form on a clipboard"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "의료급여 부양의무자 기준의 지금과 바뀌는 방향을 나눈 비교 카드",
+   "kind": "card",
+   "card": {
+    "type": "compare",
+    "title": "의료급여 부양의무자",
+    "ask": "우리 집도 바뀌어?",
+    "heads": [
+     "지금",
+     "바뀌면"
+    ],
+    "items": [
+     [
+      "판정 계산식",
+      "고소득·고재산만"
+     ],
+     [
+      "중증장애인 가구",
+      "아예 따지지 않아요"
+     ]
+    ]
+   }
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "거실 탁자에서 서류 봉투를 사이에 두고 이야기하는 40대 아들과 70대 아버지",
+   "prompt": "Camera and composition: medium shot at a living room table. A Korean son in his 40s in a gray hoodie and his father in his 70s in a brown vest talking calmly across a low living room table with a plain document envelope between them. Background: warm living room with a low wooden table. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot at a living room table",
+   "bg": "warm living room with a low wooden table",
+   "anchor": "plain document envelope"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "복지관 프로그램실에서 웃으며 이야기를 나누는 휠체어를 탄 30대 남성과 60대 어머니",
+   "prompt": "Camera and composition: medium shot in a bright community welfare center room. A Korean man in his 30s in a wheelchair wearing a blue sweater smiling and talking with his mother in her 60s in a lavender cardigan in a welfare center program room. Background: bright community welfare center program room. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a bright community welfare center room",
+   "bg": "bright community welfare center program room",
+   "anchor": "wheelchair"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "의료급여 부양의무자 변화를 스스로 확인하는 체크 카드",
+   "kind": "card",
+   "card": {
+    "type": "selfcheck",
+    "title": "우리 집 해당될까",
+    "items": [
+     "중증·희귀질환 가구",
+     "장기요양 1·2등급 노인",
+     "요양병원 간병비"
+    ],
+    "result": "아래 '선정기준' 부분을 보세요 👇"
+   }
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "주민센터 창구에서 담당자와 이야기 나누는 50대 딸과 70대 어머니의 뒷모습",
+   "prompt": "Camera and composition: medium shot from behind at a public service counter. A Korean daughter in her 50s in a navy coat and her mother in her 70s in a camel coat seen from behind, sitting at a community service center counter and talking with a staff member. Background: bright community service center counter. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot from behind at a public service counter",
+   "bg": "bright community service center counter",
+   "anchor": "community service center counter"
+  }
+ ]
+}
