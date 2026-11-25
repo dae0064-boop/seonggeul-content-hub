@@ -9,7 +9,18 @@ $parent = (Get-CimInstance Win32_Process -Filter "ProcessId=$PID" -ErrorAction S
 # 2026-11-12 사용자 "껐다 켰을 때 뜨는 창 모두 제외": 작업 스케줄러가 켠 직후 놓친 아침 실행을 띄운 것이면 끝낸다(손으로 더블클릭한 것은 그대로 돈다)
 $gp = (Get-CimInstance Win32_Process -Filter "ProcessId=$parent" -ErrorAction SilentlyContinue).ParentProcessId
 $gpName = (Get-CimInstance Win32_Process -Filter "ProcessId=$gp" -ErrorAction SilentlyContinue).Name
-if ($gpName -ne 'explorer.exe') { . (Join-Path $PSScriptRoot 'lib-boot.ps1'); if (Test-JustBooted) { Exit-IfJustBooted '아침 실행(auto-day)' 1 } }
+# 2026-11-25 사용자 "하루에 한 번만 진행하고 그 이후 컴터를 켰을 때는 진행되지 않도록": 작업 스케줄러가 띄운 아침 실행은 하루 한 번만.
+#   그날 처음 뜬 것(09:00 이든, 꺼져 있다 켠 뒤의 놓친 실행이든)만 돌고, 10:10 다시 시도·다시 켠 뒤의 놓친 실행은 조용히 끝낸다.
+#   남은 글은 스레드 작업 끝의 catchup-reserve(13·16·19·22시)가 잡는다. 손으로 더블클릭한 것은 그대로 돈다.
+if ($gpName -ne 'explorer.exe') {
+  $ranStamp = Join-Path (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent) ("dumps\auto-day-ran-{0}.txt" -f (Get-Date -Format 'yyyy-MM-dd'))
+  if (Test-Path $ranStamp) {
+    try { . (Join-Path $PSScriptRoot 'lib-drive.ps1'); $d = Find-MyDrive; if ($d) { "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') 오늘 이미 한 번 돌아 건너뜀: 아침 실행(auto-day)" | Add-Content -Encoding UTF8 (Join-Path $d "ClaudeWorkspace\run-logs\boot-skip-$(Get-Date -Format 'yyyy-MM-dd').txt") } } catch { }
+    exit 1
+  }
+  New-Item -ItemType Directory -Force -Path (Split-Path $ranStamp) | Out-Null
+  "$(Get-Date -Format 's') 시작" | Out-File $ranStamp -Encoding utf8
+}
 function Busy {
   Get-CimInstance Win32_Process -ErrorAction SilentlyContinue |
     Where-Object { $_.ProcessId -ne $PID -and $_.ProcessId -ne $parent -and $_.CommandLine -and $_.CommandLine -match $pat }
