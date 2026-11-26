@@ -43,7 +43,9 @@
 | ④ | 인스타그램 | https://www.instagram.com/___sd.eyo/ |
 | ⑤ | 1:1 보험상담(카카오톡) | https://pf.kakao.com/_xixlxkxeX/chat (채팅 바로 열림) |
 
-위젯 코드의 `href="…"` 만 바꾼다. ①~③(내 블로그)은 `target="_top"`, ④·⑤(인스타·카카오톡 — 바깥 사이트)는 `target="_blank"`(새 창, 블로그가 그대로 남는다).
+위젯 코드의 `href="…"` 만 바꾼다. ①~③(내 블로그)은 `target="_top"`, ④·⑤(인스타·카카오톡 — 바깥 사이트)는 `target="_blank"`(새 창, 블로그가 그대로 남는다). `target` 은 한 번만 쓴다(두 번이면 앞의 것이 먹는다).
+- **🖼 투명 그림 주소 (2026-11-26 바꿈)**: `https://raw.githubusercontent.com/dae0064-boop/seonggeul-content-hub/main/content/consult/widget/clear-170x280.png` — **이 파일을 지우거나 옮기지 않는다**(지우면 위젯 5칸이 다시 깨진다). 예전 주소(블로그 글에 올린 `blogfiles.pstatic.net/…/transparent_170x280.png`, 10/2)는 그 사진이 블로그에서 지워져 404 → 네이버가 "직접 등록한 위젯의 이미지 정보가 올바르지 않습니다" 그림을 띄웠다. jsDelivr 주소는 403 이라 쓰지 않는다.
+  위젯 코드 틀: `<a href="(위 표 주소)" target="_top 또는 _blank"><img src="(투명 그림 주소)" width="170" height="280" border="0" /></a>`
 - **2단계(카카오톡 채널 심의 뒤)**: 오른쪽 끝(가로 80~95%)에 "카카오톡 상담" 단추 칸을 하나 더한 판을 다시 만든다.
 
 ## 2. 블로그 소개글 (모바일에서 가장 먼저 보이는 글 — 배너는 모바일 앱에 안 나온다)
