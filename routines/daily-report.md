@@ -29,7 +29,6 @@
    - 티스토리: `content/tistory/<원고 날짜>-*.md` 편수, `node scripts/lint-tistory.mjs` 통과 수.
    - 철거: `content/chulgeo/posts/<원고 날짜>-*` 편수, `node scripts/chulgeo/lint.mjs` 통과 수.
    - 스레드 (⏸ 2026-11-26~ 사용자 "당분간 중지" — PAUSE-DAILY·PAUSE-BLOG 가 있으면 이 줄은 "멈춤"으로만): `content/threads/daily/<원고 날짜>.md`·`content/threads/blog/<원고 날짜>.md` 있는지, 보험 심의글 15:00 차례(STATUS 기준).
-   - 인스타: 오늘 밤 원고를 썼는지 / 멈춤 지시로 건너뛰었는지(티스토리 원고 대화 요약·`routines/instagram-daily.md` 맨 위).
 2. 각 작업 대화의 마지막 보고(`post_turn_summary`, 모자라면 `list_events` 의 마지막 assistant 메시지)에서 **사용자 확인이 필요하다고 한 것**을 모은다.
 3. 오늘 아침 확인(10:47) 대화의 핵심(예약 결과·조회수·고친 것)은 두세 줄로 옮긴다.
 

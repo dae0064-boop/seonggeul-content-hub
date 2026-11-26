@@ -11,7 +11,6 @@
     "threads:selftest": "node scripts/threads/selftest.mjs",
     "threads:doctor": "node scripts/threads/doctor.mjs",
     "threads:compose": "node scripts/threads/compose.mjs",
-    "threads:insurance": "node scripts/threads/insurance-set.mjs",
     "threads:blog": "node scripts/threads/blog-set.mjs",
     "threads:publish": "node scripts/threads/publish.mjs",
     "threads:publish:dry": "node scripts/threads/publish.mjs --dry-run",
@@ -21,8 +20,7 @@
     "images": "node scripts/post-images.mjs",
     "tistory:build": "node scripts/build-tistory.mjs",
     "tistory:lint": "node scripts/lint-tistory.mjs",
-    "tistory:draft": "node scripts/publish-tistory.mjs --save-draft --dump",
-    "clip": "node scripts/clip/make-clip.mjs"
+    "tistory:draft": "node scripts/publish-tistory.mjs --save-draft --dump"
   },
   "dependencies": {
     "playwright": "^1.47.0",

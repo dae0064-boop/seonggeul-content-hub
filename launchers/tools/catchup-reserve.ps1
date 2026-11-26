@@ -25,8 +25,6 @@ try { & (Join-Path $PSScriptRoot 'goms-request-setup.ps1') -IfMissing | Out-Null
 # 2026-11-03 사용자 — 보험글 09·15·21시: 올리기 작업 시각이 바뀌었으면 다시 등록 (다음 날 아침을 기다리지 않게)
 try { & (Join-Path $PSScriptRoot 'threads-setup.ps1') -IfMissing | Out-Null } catch { Note "스레드 올리기 작업 등록 실패: $($_.Exception.Message)" }
 # (2026-11-13 사용자 정리: 인스타 Word·그림을 Drive 로 옮기기·블로그 배너 시안 만들기는 끝남 — 뺌))
-# 인스타 카드뉴스 자동 게시 (2026-11-02) — GOMS 적격 편을 하루 1편, 18~22시 (보통 19시 실행). 키가 없는 PC 는 조용히 넘어간다
-try { & (Join-Path $PSScriptRoot 'insta-post.ps1') | Out-Null; Note '인스타 게시 확인 끝 (기록: run-logs\instagram)' } catch { Note "인스타 게시 실패: $($_.Exception.Message)" }
 # (2026-11-11 사용자) 저녁 GOMS 혼자 로그인 확인은 뺐다 — GOMS 는 "심의 올려줘" 요청 때만 (goms-request.ps1)
 # 사진 찾기 곳(위키미디어·오픈버스·픽사베이)이 되는지 하루 한 번 (2026-11-03 사용자 — "신경 안 쓰면 알아서 확인되는 건가?") → 아침 확인이 읽는다
 if ($drive) {
@@ -92,8 +90,6 @@ try { & (Join-Path $PSScriptRoot 'blog-stats.ps1') | Out-Null } catch { Note "�
 # 2026-11-07 고장 고침: 아침에 크롬이 멈춰 티스토리 상태·구글 색인 요청을 못 한 날은 여기서 다시 한다 (오늘 이미 했으면 두 스크립트가 바로 끝냄)
 try { & (Join-Path $PSScriptRoot 'tistory-stats.ps1') | Out-Null } catch { Note "티스토리 상태 다시 읽기 실패: $($_.Exception.Message)" }
 try { & (Join-Path $PSScriptRoot 'sc-request.ps1') | Out-Null } catch { Note "색인 생성 요청 다시 하기 실패: $($_.Exception.Message)" }
-# 네이버 클립 하루 1편 (2026-11-05 사용자) — 발행된 오늘 글로 세로 영상을 만들어 올린다. 화면 확인 전에는 살펴보기·시험만 (clip-day.ps1)
-try { $cl = & (Join-Path $PSScriptRoot 'clip-day.ps1') | Select-Object -Last 1; if ($cl) { Note "$cl" } } catch { Note "클립 실패: $($_.Exception.Message)" }
 $pendingFor = {
   param($date, $folder, $prefix)
   $lockDir = Join-Path $drive "ClaudeWorkspace\run-locks\$date"

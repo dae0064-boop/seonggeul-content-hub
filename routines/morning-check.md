@@ -170,30 +170,7 @@
    ③ 그 화면을 **같은 아티팩트 주소** https://claude.ai/artifact/TrXRAYDPY9DpYBF967cH82 에 다시 올린다 — 먼저 `Artifact action:"read" url:<그 주소>`, 그다음 `Artifact url:<그 주소> file_path:<스크래치>/overlap-check.html` (새 주소를 만들지 않는다).
    ④ 보고에는 한 줄만: "🔁 겹침: 같은 키워드 N쌍(새로 M) · 비슷 N · 실손·청구 N% · 매체끼리 N건". **새로 생긴 같은 키워드 쌍**이 있으면 그 쌍을 적고, 그 묶음은 앞날 글감에서 다른 질문으로 고르고, **예약 안 된 앞날 원고에 있으면 위 📌 대로 바로 바꾼다**. 이미 발행·예약된 글은 고치지 않는다.
    ⑤ 비슷한 쌍을 보고 서로 다른 질문이면 `content/archive/overlap-ok.tsv` 에 `키워드A⇥키워드B⇥다름|묶음⇥메모` 로 적어 다음부터 '확인함'으로 내린다. 같은 질문인데 '비슷'으로만 나오면 적지 않는다.
-5-2. **⏸ 2026-11-01 사용자 지시로 스레드 자동발행을 모두 멈춤 — `content/threads/PAUSE` 가 있는 동안 5-2 는 하지 않는다** (배너·일정표·재고 경고 모두). 사용자가 새로 구성하면 그때 다시 정한다.
-   (멈추기 전) **스레드 보험글 배너** (2026-10-26 사용자 — 심의 적격 편을 1편부터 하루 4편, 편마다 심의필 번호를 넣은 배너와 함께):
-   Drive `ClaudeWorkspace/goms-approved.tsv`(아침 PC 의 `goms-approved.ps1` 이 GOMS 승인완료 편을 읽어 적는다)를 받아
-   `python3 scripts/threads/banner.py <받은 tsv>` → 새로 생긴 `content/threads/insurance/banners/thread-N.jpg`·`made.tsv` 를 같은 PR 에 넣는다.
-   PC 는 main 의 공개 주소로 배너를 받아 가므로 **PR 이 main 에 합쳐져야** 그 편이 올라간다. tsv 는 저장소에 넣지 않는다.
-   Drive `ClaudeWorkspace/run-logs/threads/<어제·오늘>.log` 에서 올린 편·❌·"배너가 아직 공개 주소에 없어요"를 보고, 문제가 있으면 보고 첫 줄(6)에 쓴다.
-   **일정표 갱신** (2026-10-26 사용자 — "발행한 스레드가 어떤 게 올라갔는지 알려주거나 일정표로"): Drive 에서 `run-logs/threads/posted.tsv`(게시 기록),
-   `goms-approved.tsv`, `goms-fixes.tsv` 를 받고, `goms-done/` 의 `스레드 N편.done` 이름에서 번호만 한 줄씩 적은 파일을 만들어
-   `node scripts/threads/schedule-data.mjs --approved … --registered … --posted … --fixes … --out content/threads/insurance/schedule/data.json` →
-   일정표 아티팩트 **https://claude.ai/artifact/1CBQRqSNcjmK8424fo96fb** 를 먼저 Artifact `read` 한 뒤, 같은 `url` 로
-   `file_path: content/threads/insurance/schedule/index.html`, `files: {"data.json": "content/threads/insurance/schedule/data.json"}` 로 다시 올린다. data.json 은 같은 PR 에.
-   보고에 한 줄: 어제 올라간 편(번호·첫 줄), 오늘 올라갈 편, **게시 예정(승인 재고)이 10편 밑이면 보고 첫 줄(6)에 "⚠ 스레드 승인 재고 N편 — 이틀 안에 끊길 수 있어요"**,
-   GOMS 자동 등록(`run-logs/goms-register-*`) 결과(등록한 번호·멈춤). 반려가 새로 생겼으면 "`goms-revise.cmd` 더블클릭 → 0" 을 사람이 할 일로 적는다.
-5-2-9. **인스타 새 편 태클 점검** (2026-11-05 사용자 — "태클 걸리지 않는 주제로만"): 어젯밤 새로 생긴 `content/instagram/sets/*.json` 편마다 `태클점검` ⓐ~ⓔ 가 실제 카드 내용과 맞는지 본다 — 보험사 의무로 읽히는 말·계산·해지/가입 연결·예외가 둘 이상인 곳이 있으면 그 편은 Word 를 확정하지 말고(바탕 받기 전이면 원고에서 빼고) 보고에 한 줄. 아직 GOMS 에 등록 안 된 편만.
-5-2-10. **🚫 GOMS 는 아침 보고에서 뺀다 (2026-11-11 사용자 — "심의 올려줘라고 이야기하면 말해 주고, 아침마다 문자 오는 거랑 곰스 확인은 빼")**:
-   아침 PC 는 GOMS 를 열지 않고(로그인·인증 문자·승인 읽기·등록 모두 없음), 이 보고에도 GOMS 로그인·인증·대기 편수 줄을 쓰지 않는다.
-   심의 등록과 승인 읽기는 사용자가 "심의 올려줘" 할 때만 PC `goms-request.ps1` 이 한다 (CLAUDE.md 📝). 아래 5-3 은 그때 새로 생긴 승인표가 있으면만 한다.
-5-3. **인스타 카드뉴스 심의필 그림** (2026-11-02 사용자 — "보험심의를 자동으로 올리는 걸 진행". 스레드 PAUSE 와 상관없이 한다, `content/instagram/PAUSE` 가 있으면 건너뜀):
-   Drive `ClaudeWorkspace/goms-approved-insta.tsv`('심의 올려줘' 요청 때 PC 의 `insta-goms.ps1` 이 승인완료 「인스타 카드뉴스 N편」을 읽어 적는다)가 있으면 받아
-   `node scripts/instagram/finalize.mjs --approved <받은 tsv>` → 새로 생긴 `content/instagram/final/<N>/`(01~NN.jpg·approval.txt)를 같은 PR 에 넣는다.
-   PC 는 main 의 공개 주소로 그림을 가져가 올리므로(18~22시, 하루 1편) **PR 이 main 에 합쳐져야** 그 편이 올라간다. tsv 는 저장소에 넣지 않는다.
-   Drive `run-logs/instagram/<어제·오늘>.log`·`posted.tsv`, `run-logs/insta-goms-*` 를 보고 보고에 한 줄: 어제 올라간 편(번호·첫 줄·주소), GOMS 에 새로 등록한 편, 새 승인·반려.
-   ❌ 가 있거나 "연결 키가 맞지 않아요" 면 보고 첫 줄(6)에 쓴다 — 키 문제는 "`launchers/insta-key.cmd` 로 새 키 넣기(docs/INSTAGRAM.md)" 를 사람이 할 일로.
-   반려가 생기면 사유(`run-logs/insta-goms-*/approved/reason-*.txt` 가 없으면 GOMS 화면)를 보고 원고를 고쳐 **새 번호**로 다시 만든다(반려 편 번호는 다시 쓰지 않는다).
+5-2. **⏹ 2026-11-26 사용자: 곰스(GOMS)·심의 안 씀, 스레드 당분간 중지** — 스레드 보험글 배너·일정표, GOMS 승인·등록, 인스타 카드뉴스 심의필 점검은 모두 하지 않는다. 보고에도 GOMS·인스타 줄을 쓰지 않는다. (예전 지시는 git 기록에 있다)
 6. **안 된 글이 한 편이라도 있으면 보고 맨 첫 줄**에 "⚠ 오늘 ○○ N편 예약 안 됨 — 이유 / 사람이 할 일 한 줄"을 쓴다 (2026-10-19 사용자:
    "티스토리가 안 됐으면 말을 했었어야지" — 10/19 카카오 로그인 풀림이 보고 중간에 묻혔다). 그 뒤에 나머지. `PushNotification` 도구가 있으면 같은 한 줄을 휴대폰 알림으로도 보낸다.
    PC 쪽은 draft-day·tistory-day 가 예약 안 된 글이 있으면 화면에 알림 창을 띄운다(`launchers/tools/alert.ps1`).

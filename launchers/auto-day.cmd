@@ -10,8 +10,7 @@ git checkout -q -- "content/posts/*.json" "content/tistory/*.json" "content/tist
 git checkout -q main
 git pull -q
 REM 2026-10-05: the lines above must keep the same byte length (cmd keeps reading this file at the same offset after git pull updates it).
-REM Threads insurance posts: save new Word files to Drive (fast, before the blog run)
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\insurance-word.ps1"
+REM 2026-11-26 user: GOMS and review drafts removed (no insurance Word step).
 powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\draft-day.ps1" -Reserve %*
 REM 2026-11-13 user: each morning reserves only TODAY (blog 10, chulgeo 10, tistory 5). No more reserving the next 2 days ahead (reserve-week.cmd only when away).
 REM Tistory: same day, 30 minutes after each Naver slot (publish_at in content\tistory). Skips if no posts.
