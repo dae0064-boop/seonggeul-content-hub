@@ -26,7 +26,7 @@ if ($Offset -lt 0) {
 }
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 $ps1 = Join-Path $PSScriptRoot 'threads-post.ps1'
-$action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-NoProfile -ExecutionPolicy Bypass -WindowStyle Minimized -File `"$ps1`"" -WorkingDirectory $repo
+$action = New-ScheduledTaskAction -Execute 'wscript.exe' -Argument "`"$(Join-Path $PSScriptRoot 'hidden.vbs')`" `"$ps1`"" -WorkingDirectory $repo
 $times = $times0 | ForEach-Object { ([datetime]::ParseExact($_, 'HH:mm', $null)).AddMinutes($Offset) }
 $trigger = @($times | ForEach-Object { New-ScheduledTaskTrigger -Daily -At $_ })
 # 절전이면 깨워서 올린다. 놓친 시각은 켜진 뒤 한 번만 (같은 날 5편 상한·40분 간격은 스크립트가 지킨다).

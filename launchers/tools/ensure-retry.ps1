@@ -17,7 +17,7 @@ $scanTask = Get-ScheduledTask -TaskName 'SeonggeulIssueScan'
 if ($scanTask -and ([datetime]$scanTask.Triggers[0].StartBoundary).ToString('HH:mm') -ne '06:50') { Unregister-ScheduledTask -TaskName 'SeonggeulIssueScan' -Confirm:$false; $scanTask = $null }
 if (-not $scanTask) {
   $scanAt = '06:50'
-  $act = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-NoProfile -ExecutionPolicy Bypass -WindowStyle Minimized -File `"$(Join-Path $PSScriptRoot 'issue-scan.ps1')`""
+  $act = New-ScheduledTaskAction -Execute 'wscript.exe' -Argument "`"$(Join-Path $PSScriptRoot 'hidden.vbs')`" `"$(Join-Path $PSScriptRoot 'issue-scan.ps1')`"" -WorkingDirectory (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent)
   $set = New-ScheduledTaskSettingsSet -WakeToRun -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Minutes 30) -MultipleInstances IgnoreNew
   Register-ScheduledTask -TaskName 'SeonggeulIssueScan' -Action $act -Trigger (New-ScheduledTaskTrigger -Daily -At $scanAt) -Settings $set -Principal $t.Principal `
     -Description '성글벙글 아침 이슈 모으기 (구글 트렌드·네이버 랭킹 → Drive issues)' -Force | Out-Null

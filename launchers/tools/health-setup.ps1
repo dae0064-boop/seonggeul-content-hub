@@ -8,7 +8,7 @@ $old = Get-ScheduledTask -TaskName $name -ErrorAction SilentlyContinue
 if ($IfMissing -and $old -and @($old.Triggers).Count -eq 2) { exit 0 }  # 예전 매시간 등록이면 다시 등록한다
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 $ps1 = Join-Path $PSScriptRoot 'health.ps1'
-$action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-NoProfile -ExecutionPolicy Bypass -WindowStyle Minimized -File `"$ps1`"" -WorkingDirectory $repo
+$action = New-ScheduledTaskAction -Execute 'wscript.exe' -Argument "`"$(Join-Path $PSScriptRoot 'hidden.vbs')`" `"$ps1`"" -WorkingDirectory $repo
 $trigger = @('07:40', '08:40' | ForEach-Object { New-ScheduledTaskTrigger -Daily -At $_ })
 $settings = New-ScheduledTaskSettingsSet -WakeToRun -StartWhenAvailable -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Minutes 50) -MultipleInstances IgnoreNew
 $principal = New-ScheduledTaskPrincipal -UserId "$env:USERDOMAIN\$env:USERNAME" -LogonType Interactive -RunLevel Limited

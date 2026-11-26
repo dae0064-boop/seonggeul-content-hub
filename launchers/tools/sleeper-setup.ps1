@@ -6,7 +6,7 @@ if ($Remove) { Unregister-ScheduledTask -TaskName $name -Confirm:$false -ErrorAc
 if ($IfMissing -and (Get-ScheduledTask -TaskName $name -ErrorAction SilentlyContinue)) { exit 0 }
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 $ps1 = Join-Path $PSScriptRoot 'sleeper.ps1'
-$action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$ps1`"" -WorkingDirectory $repo
+$action = New-ScheduledTaskAction -Execute 'wscript.exe' -Argument "`"$(Join-Path $PSScriptRoot 'hidden.vbs')`" `"$ps1`"" -WorkingDirectory $repo
 $trigger = New-ScheduledTaskTrigger -Daily -At '00:00'
 $trigger.Repetition = (New-ScheduledTaskTrigger -Once -At '00:00' -RepetitionInterval (New-TimeSpan -Minutes 5) -RepetitionDuration (New-TimeSpan -Hours 24)).Repetition
 # WakeToRun 없음 — 깨어 있을 때만 돈다
