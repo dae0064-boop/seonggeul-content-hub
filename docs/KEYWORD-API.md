@@ -1,5 +1,9 @@
 # 네이버 검색 키 고치기 (경쟁 확인용) — 사용자용, 10분
 
+> **2026-11-26: 네이버 클라우드 NAVER API Hub 키도 된다.** `console.ncloud.com/naver-api-hub/application` 의 Application key
+> (Client ID = `X-NCP-APIGW-API-KEY-ID`, Client Secret = `X-NCP-APIGW-API-KEY`)를 아래 4번처럼 `.env` 의 `NAVER_CLIENT_ID`·`NAVER_CLIENT_SECRET` 에 넣으면 된다.
+> 스크립트(`scripts/lib/naver-search.mjs`)가 개발자센터 주소로 먼저 불러 401 이면 API Hub 주소로 바꿔 부른다. API Hub 에서는 '블로그'(필요하면 뉴스·카페·지식iN)에 체크한다.
+
 **왜 필요한가요?** 아침 자동 실행이 키워드 검색량을 조회할 때, 그 말로 네이버 블로그 검색 상위 10편이
 얼마나 오래된 글인지도 같이 보게 했습니다 (2026-10-19). 오래된 글이 많으면 우리 새 글이 들어갈 틈이 있고,
 최근 글로 꽉 차 있으면 최적화 블로그와 경쟁이 세다는 뜻입니다. 그런데 지금 이 조회가

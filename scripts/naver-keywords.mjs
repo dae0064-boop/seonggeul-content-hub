@@ -15,6 +15,7 @@
  *   NAVER_CLIENT_SECRET    개발자센터 앱 Client Secret  (--with-competition 사용 시)
  */
 
+import { naverSearch } from './lib/naver-search.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -149,12 +150,7 @@ async function keywordTool(hints, host) {
 
 /** 블로그 문서수 — 경쟁강도 근사치 */
 async function blogTotal(query, host) {
-  const res = await fetch(`${host}/v1/search/blog.json?query=${encodeURIComponent(query)}&display=1`, {
-    headers: {
-      'X-Naver-Client-Id': process.env.NAVER_CLIENT_ID,
-      'X-Naver-Client-Secret': process.env.NAVER_CLIENT_SECRET,
-    },
-  });
+  const res = await naverSearch('blog', { query, display: 1 }, { host });
   if (!res.ok) throw new Error(`search/blog ${res.status}`);
   const j = await res.json();
   return j.total ?? null;

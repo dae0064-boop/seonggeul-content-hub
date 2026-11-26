@@ -11,6 +11,7 @@
  * 외부 패키지를 쓰지 않는다. Node 18 이상이면 그냥 돌아간다.
  */
 
+import { naverSearch as naverSearchApi } from './lib/naver-search.mjs';
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -65,10 +66,10 @@ const naverHeaders = () => ({
 });
 
 async function naverSearch(kind, query, display = 20) {
-  const url =
-    `https://openapi.naver.com/v1/search/${kind}.json` +
-    `?query=${encodeURIComponent(query)}&display=${display}&sort=date`;
-  const data = await getJson(url, { headers: naverHeaders() });
+  const res = await naverSearchApi(kind, { query, display, sort: 'date' }, { id: env.NAVER_CLIENT_ID, secret: env.NAVER_CLIENT_SECRET });
+  const text = await res.text();
+  if (!res.ok) { const err = new Error(`HTTP ${res.status} — ${text.slice(0, 200)}`); err.status = res.status; throw err; }
+  const data = JSON.parse(text);
   return (data.items || []).map((it) => ({
     제목: stripTags(it.title),
     요약: stripTags(it.description),

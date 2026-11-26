@@ -12,6 +12,7 @@
  * 통합검색: search.naver.com 첫 화면에 blog.naver.com/<아이디>/ 주소가 있는지만 본다 (스마트블록 자리는 화면마다 달라 순위는 세지 않는다).
  * 결과: <폴더>/rank.json · rank.txt, --log 가 있으면 한 줄씩 덧붙인다 (날짜·나이·슬러그·메인 키워드·블로그 순위·통합검색).
  */
+import { naverSearch } from './lib/naver-search.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -87,11 +88,7 @@ export function myRank(order, blogId) {
 }
 
 async function rankViaApi(keyword, blogId, fetchImpl) {
-  const url = `https://openapi.naver.com/v1/search/blog.json?query=${encodeURIComponent(keyword)}&display=100&sort=sim`;
-  const res = await fetchImpl(url, {
-    headers: { 'X-Naver-Client-Id': process.env.NAVER_CLIENT_ID, 'X-Naver-Client-Secret': process.env.NAVER_CLIENT_SECRET },
-    signal: AbortSignal.timeout(15000),
-  });
+  const res = await naverSearch('blog', { query: keyword, display: 100, sort: 'sim' }, { fetchImpl, signal: AbortSignal.timeout(15000) });
   if (!res.ok) throw new Error(`검색 API ${res.status}`);
   const j = await res.json();
   const order = (j.items || []).map((it) => {
