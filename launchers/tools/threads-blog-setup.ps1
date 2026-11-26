@@ -7,7 +7,7 @@ $name = 'SeonggeulThreadsBlog'
 if ($Remove) { Unregister-ScheduledTask -TaskName $name -Confirm:$false -ErrorAction SilentlyContinue; Write-Host '스레드 블로그 유입 글 작업을 껐어요.'; exit 0 }
 $repo = Split-Path (Split-Path $PSScriptRoot -Parent) -Parent
 $ps1 = Join-Path $PSScriptRoot 'threads-blog.ps1'
-$action = New-ScheduledTaskAction -Execute 'powershell.exe' -Argument "-NoProfile -ExecutionPolicy Bypass -WindowStyle Minimized -File `"$ps1`"" -WorkingDirectory $repo
+$action = New-ScheduledTaskAction -Execute 'wscript.exe' -Argument "`"$(Join-Path $PSScriptRoot 'hidden.vbs')`" `"$ps1`"" -WorkingDirectory $repo
 # 노트북(아침 실행이 09:15 인 PC)은 3분 뒤 — 먼저 올린 PC 가 있으면 스레드를 되읽어 보고 쉰다
 $offset = 0
 $day = Get-ScheduledTask -TaskName 'SeonggeulDailyReserve' -ErrorAction SilentlyContinue

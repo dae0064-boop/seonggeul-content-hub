@@ -36,7 +36,7 @@ if (-not $PSBoundParameters.ContainsKey('At')) {
   if ($old -and $old.Triggers.Count) { try { $At = ([datetime]$old.Triggers[0].StartBoundary).ToString('HH:mm') } catch {} }
 }
 $cmd = Join-Path (Split-Path $PSScriptRoot -Parent) 'auto-day.cmd'
-$action = New-ScheduledTaskAction -Execute 'cmd.exe' -Argument "/c `"$cmd`"" -WorkingDirectory (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent)
+$action = New-ScheduledTaskAction -Execute 'wscript.exe' -Argument "`"$(Join-Path $PSScriptRoot 'morning-once.vbs')`" `"$cmd`"" -WorkingDirectory (Split-Path (Split-Path $PSScriptRoot -Parent) -Parent)
 if (-not $RetryAt) { $RetryAt = ([datetime]::ParseExact($At, 'HH:mm', $null)).AddMinutes(70).ToString('HH:mm') }
 $trigger = @((New-ScheduledTaskTrigger -Daily -At $At), (New-ScheduledTaskTrigger -Daily -At $RetryAt))
 # 절전 중이면 깨워서 돌리고, 그 시각에 꺼져 있었으면 켜진 뒤 바로 돌린다. 3시간 넘게 걸리면 멈춘다.

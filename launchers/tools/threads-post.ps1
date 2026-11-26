@@ -38,7 +38,7 @@ if (-not $Test) {
   try {
     # 2026-11-05: Start-Process 로 띄우면 이 작업 묶음에 남아 15분 뒤 catchup·크롬이 같이 꺼졌다 → 묶음 밖으로 (lib-detach.ps1)
     . (Join-Path $PSScriptRoot 'lib-detach.ps1')
-    Start-Detached powershell.exe -ArgumentList '-NoProfile', '-WindowStyle', 'Minimized', '-ExecutionPolicy', 'Bypass', '-File', "`"$(Join-Path $PSScriptRoot 'catchup-reserve.ps1')`"" -WorkingDirectory $repo
+    Start-Detached powershell.exe -ArgumentList '-NoProfile', '-WindowStyle', 'Hidden', '-ExecutionPolicy', 'Bypass', '-File', "`"$(Join-Path $PSScriptRoot 'catchup-reserve.ps1')`"" -WorkingDirectory $repo
     "  (예약 안 된 글 다시 예약: catchup-reserve 띄움)" | Add-Content -Encoding UTF8 (Join-Path $dir "$(Get-Date -Format 'yyyy-MM-dd').log")
   } catch { "  ⚠ catchup-reserve 를 띄우지 못함: $($_.Exception.Message)" | Add-Content -Encoding UTF8 (Join-Path $dir "$(Get-Date -Format 'yyyy-MM-dd').log") }
 }
