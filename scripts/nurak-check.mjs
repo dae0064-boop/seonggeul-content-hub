@@ -12,6 +12,7 @@
  * 결과: <폴더>/nurak.json · nurak.txt  (Drive blog-stats/<날짜>/ 로 같이 올라간다)
  * 발행 직후 몇 시간은 검색에 안 잡히는 게 보통이라, 오늘 글은 보지 않는다.
  */
+import { naverSearch } from './lib/naver-search.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -81,11 +82,7 @@ export function hitInItems(items, blogId, title) {
 }
 
 async function viaApi(title, blogId, fetchImpl) {
-  const url = `https://openapi.naver.com/v1/search/blog.json?query=${encodeURIComponent(title)}&display=30&sort=sim`;
-  const res = await fetchImpl(url, {
-    headers: { 'X-Naver-Client-Id': process.env.NAVER_CLIENT_ID, 'X-Naver-Client-Secret': process.env.NAVER_CLIENT_SECRET },
-    signal: AbortSignal.timeout(15000),
-  });
+  const res = await naverSearch('blog', { query: title, display: 30, sort: 'sim' }, { fetchImpl, signal: AbortSignal.timeout(15000) });
   if (!res.ok) throw new Error(`검색 API ${res.status}`);
   const j = await res.json();
   return hitInItems(j.items || [], blogId, title);

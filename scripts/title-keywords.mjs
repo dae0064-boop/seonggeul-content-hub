@@ -21,6 +21,7 @@
  * 클라우드 세션에서는 naver.com 이 막혀 돌지 않는다. 사용자 PC 에서 돌린다.
  * 외부 패키지를 쓰지 않는다.
  */
+import { naverSearch } from './lib/naver-search.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -117,17 +118,13 @@ async function keywordTool(hints, host) {
   return (await res.json()).keywordList || [];
 }
 async function blogTotal(query, host) {
-  const res = await fetch(`${host}/v1/search/blog.json?query=${encodeURIComponent(query)}&display=1`, {
-    headers: { 'X-Naver-Client-Id': process.env.NAVER_CLIENT_ID, 'X-Naver-Client-Secret': process.env.NAVER_CLIENT_SECRET },
-  });
+  const res = await naverSearch('blog', { query, display: 1 }, { host });
   if (!res.ok) throw new Error(`검색 API ${res.status}${res.status === 401 ? ' — 네이버 개발자센터 앱에 \'검색\' API 가 없거나 키가 틀렸어요 (docs/KEYWORD-API.md)' : ''}`);
   return (await res.json()).total ?? null;
 }
 /** 블로그 검색 상위 10편의 나이. 네이버 블로그 탭 순서와 꼭 같지는 않지만 경쟁 정도를 가늠한다 */
 async function blogTop(query, host, today = new Date()) {
-  const res = await fetch(`${host}/v1/search/blog.json?query=${encodeURIComponent(query)}&display=10&sort=sim`, {
-    headers: { 'X-Naver-Client-Id': process.env.NAVER_CLIENT_ID, 'X-Naver-Client-Secret': process.env.NAVER_CLIENT_SECRET },
-  });
+  const res = await naverSearch('blog', { query, display: 10, sort: 'sim' }, { host });
   if (!res.ok) throw new Error(`검색 API ${res.status}`);
   const items = (await res.json()).items || [];
   const ages = items.map((it) => {
