@@ -15,8 +15,6 @@
 import { chromium } from 'playwright';
 import fs from 'node:fs';
 import path from 'node:path';
-import { split } from './insurance-post.mjs';
-import { wordText } from './word-fix.mjs';
 
 const argv = process.argv.slice(2);
 const opt = (k, d) => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : d; };
@@ -27,11 +25,8 @@ const OUT = opt('--out', `dumps/threads-sched/${stamp}`);
 const MARKS = opt('--marks', '');
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1')), '..', '..');
 const dates = (opt('--daily', '') || '').split(',').map((s) => s.trim()).filter((s) => /^\d{4}-\d{2}-\d{2}$/.test(s));
-// 보험 심의글 (2026-11-23 사용자 "예약발행으로 이번주 스레드 다 진행해줘"):
-//   --insurance 2026-11-24:17,2026-11-25:18 --word-dir <Drive 보험글> [--time 15:00]
-//   1/2(앞 절반, 주제 '보험') → '스레드에 추가' → 2/2(뒤 절반) + 심의필 배너(content/threads/insurance/banners/thread-N.jpg) 를 한 스레드로 예약.
-//   글은 심의받은 Word 그대로, 나누기는 insurance-post.mjs 의 split() 과 같다. 예약 표시 줄 끝에 '보험 N편' — insurance-post.mjs 가 그날은 올리지 않는다.
-const insSpec = (opt('--insurance', '') || '').split(',').map((s) => s.trim()).filter((s) => /^\d{4}-\d{2}-\d{2}:\d+$/.test(s));
+// (2026-11-26) 보험 심의글(--insurance) 예약은 곰스·심의를 안 쓰게 되어 지웠다.
+const insSpec = [];
 if ((!dates.length && !insSpec.length) || argv.includes('--help')) { console.log(fs.readFileSync(new URL(import.meta.url)).toString().split('*/')[0]); process.exit(dates.length || insSpec.length ? 0 : 1); }
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
@@ -233,25 +228,6 @@ const result = [];
 try {
   browser = await chromium.connectOverCDP(CDP);
   const ctx = browser.contexts()[0];
-  if (insSpec.length) {
-    const wordDir = opt('--word-dir', '');
-    const time = opt('--time', '15:00');
-    for (const spec of insSpec) {
-      const [date, nStr] = spec.split(':'); const n = Number(nStr);
-      const file = path.join(wordDir, `스레드 ${n}편.docx`);
-      const image = path.join(ROOT, 'content', 'threads', 'insurance', 'banners', `thread-${n}.jpg`);
-      if (!fs.existsSync(file) || !fs.existsSync(image)) { log(`✗ ${date} 보험 ${n}편 — Word 나 배너가 없어요`); result.push({ date, n, ok: false, why: 'Word·배너 없음' }); break; }
-      const [first, second] = split(wordText(file));
-      if (!second || [...first].length > 500 || [...second].length > 500) { log(`✗ ${date} 보험 ${n}편 — 둘로 나누기 실패 또는 500자 넘음`); result.push({ date, n, ok: false, why: '나누기' }); break; }
-      const it = { date, time, n, topic: '보험', text: first, reply: second, image };
-      if (marked(it)) { log(`  ${date} ${time} 보험 ${n}편 이미 예약됨`); result.push({ date, n, ok: true, skip: true }); continue; }
-      let r;
-      try { r = await scheduleOne(ctx, it); } catch (e) { r = { ok: false, why: String(e.message || e).split('\n')[0] }; }
-      log(`  ${r.ok ? '✓' : '✗'} ${date} ${time} 보험 ${n}편${r.dry ? ' (시험)' : ''}${r.why ? ' — ' + r.why : ''}${r.info ? ' ' + JSON.stringify(r.info) : ''}`);
-      result.push({ date, time, n, ...r });
-      if (!r.ok || DRY) break;
-    }
-  }
   for (const d of (result.some((r) => !r.ok) || (DRY && insSpec.length)) ? [] : dates) {
     const only = opt('--only', '');
     const items = readDaily(d).filter((x) => !only || x.time === only);

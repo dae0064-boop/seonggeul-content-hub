@@ -21,7 +21,6 @@ content/threads/daily/  스레드 일상 글 — 11/6~ 하루 4편 07:00 · 08:3
                         🧵 11/13~ 스레드 하루 6편 = 일상 4 + 보험 심의 1(15:00) + 블로그 유입 1(21:00) — 2026-11-12 사용자 "일상 + 보험 + 심의글 계속 올려, 전날 밤에 예약": insurance/PAUSE-POST 지움, 일상 글은 19:47 작업이 확인 없이 main 에
                         (지난) 🧵 11/10~ 스레드 하루 5편 = 일상 4 + 블로그 유입 1(21:00) — 보험 심의글은 insurance/PAUSE-POST 로 멈춤 (2026-11-09 사용자 "보험 심의글 제외하고 5개로")
                         ✂ (지난) 11/6~ 스레드 하루 6편 = 일상 4 + 보험 심의 1(15:00, insurance/post-plan.json changes) + 블로그 유입 1(21:00), 글마다 주제 태그 1개 — 2026-11-05 사용자 "노출 0 → 6편으로 줄이고 주제 태그". 그 전 하루 12편
-content/threads/insurance/  스레드 보험 심의글 — 규칙(rules.md)·글감·묶음(sets/, 2026-11-11~ 하루 3편 — 등록은 "심의 올려줘" 때만)
 scripts/           발행·검수 자동화(.mjs) + 워크스페이스 동기화 도구(.py)
 scripts/threads/   스레드 자동 발행·댓글 답변
 routines/          클라우드 자동 작업(Routine) 지시문 정본. 지시를 바꿀 땐 이 파일을 고친다
@@ -37,7 +36,6 @@ docs/OPEN-ISSUES.md 아직 정하지 못한 것들. 규칙을 손대기 전에 �
 docs/STATUS.md     진행 상황 (최근 1주 + 매일 쓰는 목록). 작업을 시작할 때 먼저 읽고, 끝낼 때 갱신한다
 docs/STATUS-archive.md 지난 진행 기록. 통째로 읽지 않고 필요할 때 검색만 한다 (2026-10-27 사용자 — 사용량 줄이기)
 docs/OFFICE-PC.md  다른 PC(사무실 PC)에서 이어서 작업하는 순서 — 사용자용
-content/instagram/ 인스타 카드뉴스(보험 심의) — 규칙 README.md, 원고 sets/, 심의필 넣은 올릴 그림 final/. 자동 심의 등록·게시 docs/INSTAGRAM.md (멈춤 content/instagram/PAUSE)
 content/calendar/title-keywords/  제목용 키워드 조회 결과 (검색량). 제목·키워드를 정할 때 본다
 ```
 
@@ -109,7 +107,7 @@ Google Drive 워크스페이스(`ClaudeWorkspace/`)는 **규칙 메모리 동기
 조회수보다 보험 상담 손님이 먼저다. 위 "조회수가 무조건 1순위"·하루 배분보다 앞선다. 정본 `standards/상담-유입-계획.md`:
 **11/10 원고부터 네이버 하루 10편 = 생활보장 10** (사용자 "생활정보도 빼고 생활보장으로만" — 검사기 `CARE10_FROM`, 이슈·연예·생활정보 0. 실험이라 11/15·11/30 에 생활정보 되살림 여부를 본다). 생활보장 = 보험금·청구 질문(한다팀장과 같은 말 금지는 사용자 결정으로 끔 — `HANDE2_ON`),
 상담 경로(프로필·상담형 글)는 Claude 가 심의 초안을 만들고 사용자가 GOMS 에 올린다. 사용자에게 같은 걸 두 번 묻지 않는다 — 원인을 찾으면 해결안까지 바로 넣고 결과를 알린다.
-**🧰 2026-11-13 (사용자 "다 진행해줘")**: 상담형 심의 초안 10편 `content/consult/상담형-1~10` (.md 정본 → `python3 scripts/consult-word.py <md>` 로 Word). 사용자가 **"증권 정리해줘"·"청구 서류 알려줘"·"상담 연습하자"·"정리 문자 써줘"** 라고 하면 묻지 말고 `content/consult/toolkit/README.md` 대로 — 손님 정보는 저장소에 넣지 않는다. **"경험 N번: …"** 은 `content/experience/interview.md` 질문의 답 → `notes.md` 에 E 번호로. 댓글 답글 초안은 아침 확인이 Drive `comment-replies/<날짜>.md` 에 (PC `blog-comments.ps1` 이 댓글을 읽어 둠, 답글은 사용자가 단다).
+**🧰 2026-11-13 (사용자 "다 진행해줘")** — (상담형 심의 초안 10편은 2026-11-26 곰스를 안 쓰게 되어 지웠다). 사용자가 **"증권 정리해줘"·"청구 서류 알려줘"·"상담 연습하자"·"정리 문자 써줘"** 라고 하면 묻지 말고 `content/consult/toolkit/README.md` 대로 — 손님 정보는 저장소에 넣지 않는다. **"경험 N번: …"** 은 `content/experience/interview.md` 질문의 답 → `notes.md` 에 E 번호로. 댓글 답글 초안은 아침 확인이 Drive `comment-replies/<날짜>.md` 에 (PC `blog-comments.ps1` 이 댓글을 읽어 둠, 답글은 사용자가 단다).
 
 ## 최종 목표: 사용자가 손대지 않는 운영 (2026-10-02 사용자 지시)
 
@@ -138,7 +136,7 @@ Google Drive 워크스페이스(`ClaudeWorkspace/`)는 **규칙 메모리 동기
 
 "내가 요청하면 앞으로 cmd 를 만들지 말고 그냥 바로 진행해 줘." PC 에서 돌아야 하는 일(예약·다시 예약·스레드·곰스·맛집 등)은
 Drive `ClaudeWorkspace/` 에 요청 파일을 남겨 PC 의 2분 지킴이(`launchers/tools/goms-request.ps1`, 하루 종일 — 깨우지는 않음)가 바로 하게 만든다
-(지금 있는 요청: `goms-request.txt` 심의 · `matjip-request.txt` 맛집 · `reserve-request.txt` 날짜 지정 예약 · `reserved-redo-request.txt` 예약 다시 · `reserved-look-request.txt` 예약 글 찾기 · `threads-probe-request.txt` 스레드 예약 화면).
+(지금 있는 요청: `matjip-request.txt` 맛집 · `reserve-request.txt` 날짜 지정 예약 · `reserved-redo-request.txt` 예약 다시 · `reserved-look-request.txt` 예약 글 찾기 · `threads-probe-request.txt` 스레드 예약 화면).
 새 종류의 일이면 지킴이에 요청 처리를 더하고 바로 요청 파일을 남긴다. 사용자에게 "○○.cmd 를 더블클릭하세요"라고 하지 않는다.
 **PC 는 사무실 PC 한 대뿐이다(사용자 — 노트북 안 씀, 안내할 때 '사무실 PC'라고 짚지 말고 그냥 'PC').** 사용자가 대화하는 그 PC 가 발행 PC 다. PC 가 꺼졌거나 절전이면 클라우드에서 깨울 수 없다 — 요청을 남겨 두고 "PC 가 깨어나면 바로 시작"이라고 사실대로 알린다.
 
@@ -788,29 +786,11 @@ Drive 를 못 찾으면 겹침을 막을 수 없다고 알리고 그대로 진�
 스크립트를 고쳐 커밋할 수는 있어도 실제 발행은 확인할 수 없다.
 돌려보지 않고 "발행했습니다"라고 보고하지 말 것.
 
-## GOMS 인증번호 (2026-11-03 사용자 — 휴대폰 인증 시험)
+## ⏹ GOMS·심의 — 쓰지 않음 (2026-11-26 사용자 "곰스는 앞으로 사용 안 할 거야, 기존 작업 모두 삭제")
 
-GOMS 는 로그인할 때 곰스에 등록된 사용자 휴대폰으로 인증번호 문자를 보낸다. PC 의 `launchers/tools/goms-login.ps1`("심의 올려줘" 요청 때 `goms-request.ps1` 이 부름, → `goms-ad.mjs --login-only --otp-dir`)가
-[인증번호받기] 를 누르고 Drive `ClaudeWorkspace/goms-otp/` 에 `waiting.txt` 를 남긴 채 **최대 6분** 기다린다.
-
-**사용자가 어느 Claude 대화에서든 "GOMS 인증번호 123456"(또는 숫자 4~8자리만)이라고 하면, 다른 일보다 먼저 바로** Drive `ClaudeWorkspace/goms-otp`
-폴더(id `1ZZySAXzyGcxyBCRgJO5pdNP5Q_vRti-R`)에 `code.txt` 를 만든다 — `create_file`, 내용은 숫자만, `contentMimeType: text/plain`,
-**`disableConversionToGoogleType: true`**(구글 문서로 바뀌면 PC 가 못 읽는다). 번호는 문자가 온 뒤 보통 3분 안에 끝나므로 확인 질문을 하지 않는다.
-그다음 1~2분 뒤 같은 폴더의 `result.txt`(성공/실패 한 줄)를 읽어 알려 준다. `waiting.txt` 에 "맞지 않았어요"가 있으면 새 번호를 다시 달라고 한다.
-번호는 저장소·커밋·STATUS·다른 기록에 적지 않는다. PC 가 쓰고 나면 지운다. 사용자가 직접 받은 번호만 쓴다 — 번호를 짐작하거나 다른 곳에서 가져오지 않는다.
-(지난 기록) 11/5~11/11 은 매일 08:30 `SeonggeulGomsLogin` 이 저절로 문자를 보냈다 — 사용자가 그 시각에 번호를 못 보내 매일 실패해 **2026-11-11 껐다** (아래 📝).
-
-### 📝 "심의 올려줘" — 요청할 때만 GOMS 심의 등록 (2026-11-11 사용자)
-"인스타 카드뉴스 2개, 스레드 3개 — 매일 하루 5개씩 심의. 매일 아침 올릴 필요는 없고 내가 요청할 때마다 올려 주거나 매일 아침 알림을 보내 줘. 곰스 매일 자동 로그인은 쉽지 않다, 그렇게 일찍 일어나지도 않으니까."
-- **쓰기**: 밤 작업이 스레드 보험글 3편(`routines/threads-insurance-daily.md`)·인스타 카드뉴스 2편(`routines/instagram-daily.md`)을 쓴다. 안 올린 편이 3일 치 넘게 쌓이면 새로 쓰지 않는다. 게시(스레드·인스타)는 계속 멈춤.
-- **아침에는 GOMS 를 아예 열지 않는다** (같은 날 사용자 — "아침마다 문자 오는 거랑 곰스 확인은 빼"): 인증 문자·로그인·승인 읽기·등록 모두 없고, 아침 확인 보고에도 GOMS 줄을 쓰지 않는다. 승인 결과(심의필 번호) 읽기도 "심의 올려줘" 실행 때 같이 한다.
-- **"심의 올려줘"를 받으면 먼저 말해 준다**: 이번에 올라갈 번호(스레드 등록 안 된 가장 작은 31편 이상 번호부터, 인스타 바탕 사진 있는 가장 작은 번호부터 — Drive `goms-done`·`goms-done-insta` 와 저장소 원고로 셈)와 남은 대기 편수를 한두 줄로.
-- **사용자가 어느 대화에서든 "심의 올려줘"(또는 "심의 10개 올려줘", "스레드 6개만" 같은 말)라고 하면 다른 일보다 먼저** Drive `ClaudeWorkspace`(id `1YpVcDBSupzdKKR-YoeFQL-UKNXWOR6Cw`)에
-  `goms-request.txt` 를 만든다 — 있으면 `update_file`, 없으면 `create_file`, `contentMimeType: text/plain`, **`disableConversionToGoogleType: true`**. 내용 세 줄:
-  `요청: <지금 YYYY-MM-DD HH:mm>` / `스레드: 3` / `인스타: 0` (사용자가 숫자를 말하면 그 숫자. 인스타는 2026-11-12 부터 멈춤이고 11/13 대기 Word·그림을 저장소에서 지웠다 — 사용자가 인스타를 콕 집어 말할 때만 넣는다). 확인 질문은 하지 않는다.
-- **2026-11-13 사용자 "심의 올려줘·맛집 올려줘라고 하면 바로 진행"**: PC 작업 `SeonggeulGomsRequest`(07~24시 **2분마다**, 창 없이 `hidden.vbs`, PC 를 깨우지 않음)가 요청 파일만 본다 — 없으면 바로 끝. `goms-request.txt` 가 있으면 GOMS 로그인 → (문자가 필요하면 사용자 휴대폰으로 인증번호) → 스레드 등록 → Drive `goms-request-result.txt`, 요청 파일은 지운다. 2시간 넘은 요청은 열지 않고 지운다(PC 가 자다 깬 아침에 갑자기 돌지 않게).
-  사용자에게는 "PC 가 켜져 있으면 2~3분 안에 인증번호 문자가 와요. 오면 번호를 보내 주세요"라고 알린다. PC 가 절전이면 그때는 못 한다고 알린다.
-- 번호를 받으면 위 "GOMS 인증번호" 대로 `code.txt`. 그 뒤 3~10분 지나 `goms-request-result.txt` 를 읽어 등록한 편 번호를 알린다 (안 끝났으면 `send_later` 로 10분 뒤 다시).
+곰스 로그인·인증번호·"심의 올려줘" 등록·승인 읽기, 스레드 보험 심의글, 인스타 카드뉴스 심의, 상담형 심의 초안을 모두 지웠다(스크립트·원고·Drive 기록, git 기록에는 남음).
+사용자가 "GOMS 인증번호 …"·"심의 올려줘"라고 해도 할 일이 없다 — 그렇다고 알리고, 다시 쓰려면 사용자가 정한다.
+2분 지킴이 `launchers/tools/goms-request.ps1`(작업 `SeonggeulGomsRequest`)는 이름만 남았고 다른 요청(예약·맛집 등)만 본다.
 
 ## PC 잠시 깨우기 (2026-11-05 사용자 — "절전 중에 원격이 안 되면 Claude 앱으로 잠시 절전 풀어 달라고 하면 되잖아")
 
