@@ -5,13 +5,19 @@
 #   Win32_Process.Create(WMI)로 만든 프로세스는 WMI 서비스가 만들어 묶음 밖이다 → 작업이 끝나거나 시간이 다 돼도 살아 있다.
 #   -WindowStyle 은 WMI 로 띄울 때는 쓰지 않는다(크롬은 --start-minimized, powershell 은 인자 -WindowStyle 로).
 #   WMI 가 안 되면 예전처럼 Start-Process (그때는 묶음 안이라 꺼질 수 있다).
+#   2026-11-27 사용자 "중간에 cmd 검정색 창 계속 켜짐": WMI 로 띄운 powershell·cmd·node 는 새 콘솔 창이 보였다.
+#   콘솔 프로그램은 Win32_ProcessStartup ShowWindow=0 으로 창 없이 띄운다. 크롬 같은 창 프로그램은 그대로(--start-minimized).
+#   (주의: 이렇게 띄운 powershell 에 -WindowStyle Minimized 를 주면 숨긴 창이 다시 보인다 → Hidden 을 쓴다)
 function Start-Detached {
   param([Parameter(Mandatory)][string]$FilePath, [string[]]$ArgumentList = @(), [string]$WorkingDirectory = '', [string]$WindowStyle = '')
   $q = { param($s) if ($s -match '^".*"$') { $s } elseif ($s -match '[\s]') { '"' + $s + '"' } else { $s } }
   $line = (@(& $q $FilePath) + @($ArgumentList | ForEach-Object { & $q $_ })) -join ' '
+  $console = [IO.Path]::GetFileName($FilePath.Trim('"')) -match '^(powershell|pwsh|cmd|node|python|git)(\.exe)?$'
+  $hide = ($console -and -not $WindowStyle) -or $WindowStyle -eq 'Hidden'
   try {
     $a = @{ CommandLine = $line }
     if ($WorkingDirectory) { $a.CurrentDirectory = $WorkingDirectory }
+    if ($hide) { $a.ProcessStartupInformation = New-CimInstance -CimClass (Get-CimClass -ClassName Win32_ProcessStartup) -Property @{ ShowWindow = [uint16]0 } -ClientOnly }
     $r = Invoke-CimMethod -ClassName Win32_Process -MethodName Create -Arguments $a -ErrorAction Stop
     if ($r.ReturnValue -eq 0) { return }
     throw "Win32_Process.Create 코드 $($r.ReturnValue)"
@@ -19,7 +25,7 @@ function Start-Detached {
     $sp = @{ FilePath = $FilePath }
     if ($ArgumentList.Count) { $sp.ArgumentList = $ArgumentList }
     if ($WorkingDirectory) { $sp.WorkingDirectory = $WorkingDirectory }
-    if ($WindowStyle) { $sp.WindowStyle = $WindowStyle }
+    if ($WindowStyle) { $sp.WindowStyle = $WindowStyle } elseif ($hide) { $sp.WindowStyle = 'Hidden' }
     Start-Process @sp
   }
 }
