@@ -155,3 +155,15 @@
 - 철거 블로그는 **다른 네이버 계정(`breakandbuild`)**이라 자동화용 크롬을 따로 쓴다: 포트 9223, 프로필 `%LOCALAPPDATA%\blog2-chrome`.
   2026-11-09 사무실 PC 에서 `launchers/two-blog-test.cmd` 로 로그인하고 성글벙글(9222) → 철거(9223) → 성글벙글 이어서 작업을 확인했다. 로그인이 풀리면 같은 실행기를 다시 더블클릭해 새 크롬 창에서 로그인한다. 프로필 폴더가 없으면 아침 실행이 건너뛴다.
 - 처리 표시: Drive `ClaudeWorkspace/run-locks/chulgeo/<슬러그>.done`. 못 올린 글은 다음 날 아침 실행이 먼저 올린다(하루 10편까지, 11/10 까지는 5편).
+
+## 🔗 메인 배너 위젯 5칸 (2026-11-26 — 사용자 "철거 블로그 위젯 주소도 만들어줘")
+배너 아래 카드 5개(왼쪽부터) 위에 투명 위젯을 하나씩 얹는다. 투명 그림은 성글벙글과 같은 `content/consult/widget/clear-170x280.png`(지우지 않는다).
+카테고리 번호는 2026-11-26 블로그 메뉴에서 읽음.
+
+| 칸 | 카드 | 주소 | target |
+|---|---|---|---|
+| ① | 주거 철거 | https://blog.naver.com/PostList.naver?blogId=breakandbuild&categoryNo=6&from=postList | _top |
+| ② | 상가·원상복구 | https://blog.naver.com/PostList.naver?blogId=breakandbuild&categoryNo=7&from=postList | _top |
+| ③ | 목공 | https://blog.naver.com/PostList.naver?blogId=breakandbuild&categoryNo=8&from=postList | _top |
+| ④ | 전화 문의 | tel:01035038923 (휴대폰에서 누르면 전화, PC 에서는 전화 앱이 없으면 아무 일도 없다) | _top |
+| ⑤ | 카카오톡 상담 | (사용자에게 받을 것 — 카카오톡 채널/오픈채팅 주소. 받기 전에는 지어내지 않는다) | _blank |
