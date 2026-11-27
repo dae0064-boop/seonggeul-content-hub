@@ -1,0 +1,94 @@
+{
+ "slug": "2026-11-28-oerae-jinryo-hoetsu",
+ "title": "외래진료 횟수, 2027년부터 300회 넘으면 90% 내요",
+ "source": "11/28(토) 12:20 네이버 원고 — 생활보장 제도 소식(복지부 11/27 국민건강보험법 하위법령 입법예고), 실사풍 (11/27 밤 2차)",
+ "note": "6장 = 대표사진 1 + 장면 3 + 정보 카드 2(quiz·check). 실사풍(생활보장). 정보 카드는 로컬 합성(비용 0)",
+ "images": [
+  {
+   "n": 1,
+   "file": "01.png",
+   "title": "동네 의원 대기실 의자에 놓인 진료 접수증과 약 봉투 (대표사진)",
+   "prompt": "Camera and composition: top-down flat lay view of a table with three to five related objects neatly arranged, no people. Setting: a neighborhood clinic waiting room. A white pharmacy medicine bag, a blank clinic reception slip, a pair of reading glasses and a small blank health notebook neatly arranged on a light wooden bench in a cozy neighborhood clinic waiting room. Keep the top fifth of the image as softly blurred or plain background (a title band goes there). Lighting: cool clean white indoor light. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "overhead",
+   "bg": "natural colors of the real place",
+   "note": "대표",
+   "thumb_shot": "overhead",
+   "thumb_theme": "burgundy",
+   "thumb_person": "없음",
+   "thumb_place": "주제",
+   "thumb_light": "흰 조명",
+   "overlay": {
+    "kind": "thumb",
+    "look": "band",
+    "theme": "burgundy",
+    "font": "ptd",
+    "title": "외래진료 횟수\n바뀐다고?"
+   },
+   "anchor": "pharmacy medicine bag"
+  },
+  {
+   "n": 2,
+   "file": "02.png",
+   "title": "진료 대기실에서 진료 수첩을 보며 미소 짓는 70대 어머니와 40대 딸",
+   "prompt": "Camera and composition: medium shot in a neighborhood clinic waiting room. A Korean mother in her 70s in a lavender cardigan and her daughter in her 40s in a beige knit sitting side by side in a neighborhood clinic waiting room, smiling while looking at a small blank health notebook. Background: cozy neighborhood clinic waiting room softly blurred. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a neighborhood clinic waiting room",
+   "bg": "cozy neighborhood clinic waiting room softly blurred",
+   "anchor": "neighborhood clinic waiting room"
+  },
+  {
+   "n": 3,
+   "file": "03.png",
+   "title": "소아과 대기실에서 아이 손을 잡고 앉아 있는 30대 엄마",
+   "prompt": "Camera and composition: medium shot in a pediatric clinic waiting room. A Korean mother in her 30s in a light gray coat sitting calmly in a bright pediatric clinic waiting room, holding the hand of her smiling young son beside colorful toy shelves. Background: bright pediatric clinic waiting room softly blurred. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in a pediatric clinic waiting room",
+   "bg": "bright pediatric clinic waiting room softly blurred",
+   "anchor": "pediatric clinic waiting room"
+  },
+  {
+   "n": 4,
+   "file": "04.png",
+   "title": "시골 마을 보건지소 앞 벤치에 앉아 순서를 기다리는 70대 아버지",
+   "prompt": "Camera and composition: medium shot in front of a small rural public health clinic. A Korean father in his 70s in a padded vest sitting calmly on a wooden bench in front of a small rural public health clinic building in a Korean countryside village, autumn trees around. Background: small rural public health clinic and village road softly blurred. Natural realistic photograph look, soft daylight, shallow depth of field, real Korean people in real Korean places that match the topic, calm and trustworthy mood, natural colors of the real scene, clean composition. Korean everyday settings. The topic object named first must be clearly visible and recognizable. Everyone shown looks calm; nobody is in pain or scared. Do not draw any written words, letters or numbers anywhere in the image; signs, labels, screens, forms and receipts stay blank or use simple icons only. No money, banknotes, coins or currency symbols anywhere.",
+   "shot": "medium shot in front of a small rural public health clinic",
+   "bg": "small rural public health clinic and village road softly blurred",
+   "anchor": "rural public health clinic"
+  },
+  {
+   "n": 5,
+   "file": "05.png",
+   "title": "외래진료 횟수 개정안 내용을 묻는 O·X 퀴즈 카드",
+   "kind": "card",
+   "card": {
+    "type": "quiz",
+    "title": "외래진료 횟수 O·X",
+    "items": [
+     "연간 300회 기준",
+     "300회까지는 지금처럼",
+     "지역 가산분 본인부담 면제"
+    ],
+    "answers": [
+     "O",
+     "O",
+     "O"
+    ],
+    "where": "본문 아래"
+   }
+  },
+  {
+   "n": 6,
+   "file": "06.png",
+   "title": "부모님이 미리 챙길 것을 묻고 답하는 채팅 카드",
+   "kind": "card",
+   "card": {
+    "type": "check",
+    "ask": "부모님 뭘 챙길까?",
+    "title": "미리 적어 둘 것",
+    "items": [
+     "다니시는 병원",
+     "드시는 약",
+     "겹치는 진료"
+    ]
+   }
+  }
+ ]
+}
